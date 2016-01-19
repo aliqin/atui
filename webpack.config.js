@@ -9,7 +9,7 @@ module.exports = {
         filename: 'build-docs.js'
     },
     plugins: [
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin("[name].css")
     ],
     resolve: {
         root: path.resolve('./')
@@ -25,15 +25,16 @@ module.exports = {
         }, {
             test: /\.css$/,
             loader: "style-loader!css-loader?root=./docs/"
+        }, {
+            test: /\.less$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
         }]
     },
     vue: {
         loaders: {
             less: ExtractTextPlugin.extract(
-                    // activate source maps via loader query
-                    'css?sourceMap!' +
-                    'less?sourceMap'
-                    )
+                // activate source maps via loader query
+                'css?sourceMap!' + 'less?sourceMap')
         }
     },
     babel: {
