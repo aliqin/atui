@@ -98,7 +98,7 @@
         }
       },
       showPlaceholder() {
-      	return this.multiple ? this.value.length <= 0 : (typeof this.value==='undefined' || this.value=='');
+      	return this.multiple ? this.value.length <= 0 : (typeof this.value==='undefined' ||聽this.value=='');
       }
     },
     watch: {

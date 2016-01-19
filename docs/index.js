@@ -4,7 +4,7 @@ require('prismjs')
 require('./js/showLanguage')
 
 import gettingStarted from './example/gettingStarted.vue'
-import affix from 'src/Affix.vue'
+import affix from 'src/components/Affix.vue'
 import container from './example/container.vue'
 import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'

@@ -119,7 +119,7 @@
 </template>
 
 <script>
-  import progressbar from 'src/Progressbar.vue'
+  import progressbar from 'src/components/Progressbar.vue'
   export default {
     data() {
       return {

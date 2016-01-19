@@ -18,14 +18,14 @@
       <a @mousedown.prevent="hit" @mousemove="setActive($index)">
         <partial :name="templateName"></partial>
       </a>
-    </li> 
+    </li>
   </ul>
 </div>
 
 </template>
 
 <script>
-import callAjax from './utils/callAjax.js'
+import callAjax from '../utils/callAjax.js'
 const typeahead = {
     created() {
       this.items = this.primitiveData

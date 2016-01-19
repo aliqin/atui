@@ -65,8 +65,8 @@
 </template>
 
 <script>
-  import tabs from 'src/Tabset.vue'
-  import tab from 'src/Tab.vue'
+  import tabs from 'src/components/Tabset.vue'
+  import tab from 'src/components/Tab.vue'
   export default {
     components: {
       tabs,

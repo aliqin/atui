@@ -79,7 +79,7 @@
 </template>
 
 <script>
-  import tooltip from 'src/Tooltip.vue'
+  import tooltip from 'src/components/Tooltip.vue'
   export default {
     data() {
       return {

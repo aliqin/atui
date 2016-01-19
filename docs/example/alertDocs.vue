@@ -62,7 +62,7 @@
   @click="showRight = !showRight">
   Click to toggle alert on right
 </button>
- 
+
 <button class="btn btn-default btn-lg"
   @click="showTop = !showTop">
   Click to toggle alert on top
@@ -72,19 +72,19 @@
   <strong>Well Done!</strong>
   You successfully read this important alert message.
 </alert>
- 
+
 <alert type="info" >
   <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
 </alert>
- 
+
 <alert type="danger" dismissable>
   <strong>Oh snap!</strong> Change a few things up and try submitting again.
 </alert>
- 
+
 <alert type="warning" dismissable>
   <strong>Warning!</strong> Better check yourself, you're not looking too good.
 </alert>
- 
+
 <alert
   show="{{showRight}}"
   duration="3000"
@@ -96,7 +96,7 @@
   <strong>Well Done!</strong>
   <p>You successfully read this important alert message.</p>
 </alert>
- 
+
 <alert
   show="{{showTop}}"
   duration="3000"
@@ -108,9 +108,9 @@
   <strong>Heads up!</strong>
   <p>This alert needs your attention.</p>
 </alert>
- 
+
 </script></code></pre>
- 
+
     <h2>Options</h2>
     <table class="table table-bordered">
       <thead>
@@ -167,7 +167,7 @@
 </template>
 
 <script>
-  import alert from 'src/Alert.vue'
+  import alert from 'src/components/Alert.vue'
   export default {
     data() {
       return {
