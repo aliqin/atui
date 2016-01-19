@@ -1,13 +1,13 @@
 {
-  "name": "vue-strap",
-  "version": "1.0.3",
-  "description": "Bootstrap components built with Vue.js",
-  "main": "dist/vue-strap.js",
+  "name": "vue-component",
+  "version": "1.0.0",
+  "description": "components built with Vue.js",
+  "main": "dist/vue-component.js",
   "repository": {
     "type": "git",
     "url": "yuche/vue-strap"
   },
-  "homepage": "http://yuche.github.io/vue-strap/",
+  "homepage": "http://gitlab.alibaba-inc.com/aliqin/vue-component",
   "directories": {
     "src": "src/"
   },
@@ -37,6 +37,10 @@
     "css-loader": "^0.21.0",
     "prismjs": "^1.3.0",
     "style-loader": "^0.13.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "jade": "^1.11.0",
+    "jade-loader": "~0.8.0",
+    "less-loader": "^2.2.0",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "7.1.7",
