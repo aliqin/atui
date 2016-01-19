@@ -202,7 +202,7 @@
 </template>
 
 <script>
-  import modal from 'src/Modal.vue'
+  import modal from 'src/components/Modal.vue'
   export default {
     data() {
       return {

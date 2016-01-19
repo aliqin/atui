@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import EventListener from './utils/EventListener.js'
+import EventListener from '../utils/EventListener.js'
 
   export default {
     props: {

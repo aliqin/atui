@@ -1,4 +1,5 @@
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var path = require('path')
 module.exports = {
     entry: './docs/index.js',
@@ -7,6 +8,9 @@ module.exports = {
         publicPath: '/build/',
         filename: 'build-docs.js'
     },
+    plugins: [
+        new ExtractTextPlugin('style.css')
+    ],
     resolve: {
         root: path.resolve('./')
     },
@@ -22,6 +26,15 @@ module.exports = {
             test: /\.css$/,
             loader: "style-loader!css-loader?root=./docs/"
         }]
+    },
+    vue: {
+        loaders: {
+            less: ExtractTextPlugin.extract(
+                    // activate source maps via loader query
+                    'css?sourceMap!' +
+                    'less?sourceMap'
+                    )
+        }
     },
     babel: {
         presets: ['es2015'],

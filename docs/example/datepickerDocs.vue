@@ -96,9 +96,9 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
 </template>
 
 <script>
-  import datepicker from 'src/Datepicker.vue'
-  import select from 'src/Select.vue'
-  import option from 'src/Option.vue'
+  import datepicker from 'src/components/Datepicker.vue'
+  import select from 'src/components/Select.vue'
+  import option from 'src/components/Option.vue'
   export default {
     components: {
       datepicker,

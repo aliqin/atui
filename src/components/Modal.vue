@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import getScrollBarWidth from './utils/getScrollBarWidth.js'
-import EventListener from './utils/EventListener.js'
+import getScrollBarWidth from '../utils/getScrollBarWidth.js'
+import EventListener from '../utils/EventListener.js'
 
   export default {
     props: {
