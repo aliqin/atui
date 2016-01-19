@@ -1,5 +1,6 @@
 require('./assets/docs.css')
 require('./assets/style.css')
+require('../src/styles/themes/alidayu/index.less')
 require('prismjs')
 require('./js/showLanguage')
 
