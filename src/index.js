@@ -1,3 +1,6 @@
+require('../src/styles/themes/alidayu/alidayu.less')
+
+
 import alert from './components/Alert.vue'
 import carousel from './components/Carousel.vue'
 import slider from './components/Slider.vue'
