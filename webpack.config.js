@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var extractLESS = new ExtractTextPlugin('alidayu.css')
 var path = require('path')
 module.exports = {
     entry: './docs/index.js',
@@ -9,7 +10,7 @@ module.exports = {
         filename: 'build-docs.js'
     },
     plugins: [
-        new ExtractTextPlugin("[name].css")
+        extractLESS
     ],
     resolve: {
         root: path.resolve('./')
@@ -27,7 +28,7 @@ module.exports = {
             loader: "style-loader!css-loader?root=./docs/"
         }, {
             test: /\.less$/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+            loader: extractLESS.extract(['css','less'])
         }]
     },
     vue: {
@@ -51,6 +52,7 @@ if (process.env.NODE_ENV === 'production') {
                 NODE_ENV: '"production"'
             }
         }),
+        extractLESS,
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
