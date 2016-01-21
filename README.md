@@ -1,24 +1,24 @@
-# vue-strap
-Bootstrap components built with Vue.js.
+# vue-components
+阿里通信基于Vue.js的组件库.
 
-This repository contains a set of native Vue.js components based on Bootstrap's markup and CSS. As a result no dependency on jQuery or Bootstrap's JavaScript is required. The only required dependencies are:
 
-* [Vue.js](http://vuejs.org/) (required ^v1.x.x, test with v1.0.8).
-* [Bootstrap CSS](http://getbootstrap.com/) (required 3.x.x, test with 3.3.5). VueStrap doesn't depend on a very precise version of Bootstrap.
 
-## Installation
+* [Vue.js](http://vuejs.org/) (基于Vue.js `^v1.x.x 版本以上`,组件仓库使用1.0.8开发).
+
+
+## 安装方法
 
 ### NPM
 
 ```bash
-$ npm install vue-strap
+$ npm install @ali/vue-components
 ```
 
 ### CommonJS
 ```js
-var alert = require('vue-strap/src/alert');
+var alert = require('vue-components/src/alert');
 // or
-var alert = require('vue-strap').alert;
+var alert = require('vue-components').alert;
 
 new Vue({
   components: {
@@ -29,9 +29,9 @@ new Vue({
 
 ### ES6
 ```js
-import alert from 'vue-strap/src/alert'
+import alert from 'vue-components/src/alert'
 // or
-import { alert } from 'vue-strap'
+import { alert } from 'vue-components'
 
 new Vue({
   components: {
@@ -40,35 +40,15 @@ new Vue({
 })
 ```
 
-### AMD
-```js
-$ bower install vue-strap
 
-define(['vue-strap'], function(VueStrap) { var alert = VueStrap.alert; ... });
-```
+### 浏览器引用
 
-### Browser globals
-The `dist` folder contains `vue-strap.js` and `vue-strap.min.js` with all components exported in the <code>window.VueStrap</code> object. These bundles are also available in [CDNJS](https://cdnjs.com/libraries/vue-strap),
-and on both the Bower and NPM packages.
 
 ```html
 <script src="path/to/vue.js"></script>
-<script src="path/to/vue-strap.js"></script>
+<script src="path/to/vue-components.js"></script>
 <script>
   var alert = VueStrap.alert
 </script>
 ```
 
-## Docs
-See the [documentation](http://yuche.github.io/vue-strap/) with live editable examples.
-
-## Local Setup
-* Install with `npm install`
-* Run the docs site in development mode with `npm run docs`. This will watch for file changes as you work.
-* Build with `npm run build`.
-
-## TODO
-See [Roadmap](https://github.com/yuche/vue-strap/issues/41)
-
-## License
-vue-strap is licensed under [The MIT License](LICENSE).

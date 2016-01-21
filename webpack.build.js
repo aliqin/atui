@@ -1,12 +1,13 @@
 var config = require('./webpack.config.js')
 
 config.entry = {
-  'vue-strap': './src/index.js',
+  'vue-components': './src/index.js',
 }
 
 config.output = {
-  filename: './dist/[name].js',
-  library: 'VueStrap',
+  path: './dist',
+  filename: '[name].js',
+  library: 'VueComponents',
   libraryTarget: 'umd'
 }
 
