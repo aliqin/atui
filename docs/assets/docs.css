@@ -128,7 +128,7 @@ body {
 .bs-docs-nav .navbar-brand,
 .bs-docs-nav .navbar-nav > li > a {
   font-weight: 500;
-  color: #563d7c;
+  color: #4CACE2;
 }
 .bs-docs-nav .navbar-nav > li > a:hover,
 .bs-docs-nav .navbar-nav > .active > a,
@@ -556,24 +556,24 @@ body {
   padding: 4px 20px;
   font-size: 13px;
   font-weight: 500;
-  color: #999;
+  color: #4CACE2;
 }
 .bs-docs-sidebar .nav > li > a:hover,
 .bs-docs-sidebar .nav > li > a:focus {
   padding-left: 19px;
-  color: #1D976C;
+  color: #56BFFC;
   text-decoration: none;
   background-color: transparent;
-  border-left: 1px solid #1D976C;
+  border-left: 1px solid #56BFFC;
 }
 .bs-docs-sidebar .nav > .active > a,
 .bs-docs-sidebar .nav > .active:hover > a,
 .bs-docs-sidebar .nav > .active:focus > a {
   padding-left: 18px;
   font-weight: bold;
-  color: #1D976C;
+  color: #56BFFC;
   background-color: transparent;
-  border-left: 2px solid #1D976C;
+  border-left: 2px solid #56BFFC;
 }
 
 /* Nav: second level (shown on .active) */
