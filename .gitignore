@@ -1,9 +1,0 @@
-.DS_Store
-node_modules
-npm-debug.log
-static
-build
-
-vue-component.sublime-project
-
-vue-component.sublime-workspace
