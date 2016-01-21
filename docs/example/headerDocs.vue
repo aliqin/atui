@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="../" class="navbar-brand">VueStrap</a>
+        <a href="../" class="navbar-brand">VueComponent</a>
       </div>
       <nav id="bs-navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
