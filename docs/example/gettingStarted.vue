@@ -3,11 +3,11 @@
 
     <h2>安装方法：CommonJS</h2>
     <pre><code class="language-javascript">
-$ npm install vue-components
+$ tnpm install @ali/vue-components --save-dev
 
-var alert = require('vue-components/lib/alert');
+var alert = require('@ali/vue-components/lib/alert');
 // or
-var alert = require('vue-components').alert;
+var alert = require('@ali/vue-components').alert;
 
 new Vue({
   components: {
@@ -17,11 +17,11 @@ new Vue({
     </code></pre>
     <h2>ES6</h2>
     <pre><code class="language-javascript">
-$ npm install @ali/vue-components
+$ tnpm install @ali/vue-components --save-dev
 
-import alert from 'vue-components/src/alert'
+import alert from '@ali/vue-components/src/alert'
 // or
-import { alert } from 'vue-components'
+import { alert } from '@ali/vue-components'
 
 new Vue({
   components: {
@@ -34,7 +34,7 @@ new Vue({
 &lt;script src=&quot;path/to/vue.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;path/to/vue-components.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
-  var alert = VueStrap.alert
+  var alert = VueComponents.alert
 &lt;/script&gt;
     </code></pre>
   </div>

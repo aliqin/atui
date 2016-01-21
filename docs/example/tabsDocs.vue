@@ -3,35 +3,35 @@
     <h1 class="page-header"><a href="#tabs" class="anchor">Tabs 标签页</a></h1>
     <div class="bs-example">
       <tabs>
-        <tab header="one">
+        <tab header="系统短信签名">
           <p>
             选项卡一内容
           </p>
         </tab>
-        <tab header="two">
+        <tab header="推广短信签名">
            <p>
               选项卡二内容
            </p>
         </tab>
-        <tab header="three" disabled>
+        <tab header="被禁用的" disabled>
           ...
         </tab>
       </tabs>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <tabs>
-  <tab header="one">
+  <tab header="系统短信签名">
     ...
   </tab>
-  <tab header="two">
+  <tab header="推广短信签名">
     ...
   </tab>
-  <tab header="three" disabled>
+  <tab header="被禁用的" disabled>
     ...
   </tab>
 </tabs>
 </script></code></pre>
-  <h2>Tab Options (NOT TABS)</h2>
+  <h2>Tab 选项 (非 TABS)</h2>
   <table class="table table-bordered">
     <thead>
       <tr>
