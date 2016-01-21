@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="aside">
-    <h1 class="page-header"><a href="#aside" class="anchor">Aside</a></h1>
+    <h1 class="page-header"><a href="#aside" class="anchor">Aside 侧边栏</a></h1>
     <div class="bs-example">
       <button class="btn btn-success btn-lg" @click="showRight = true">Show Aside on right</button>
 

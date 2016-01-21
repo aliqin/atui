@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="datepicker">
-    <h1 class="page-header"><a href="#datepicker" class="anchor">Datepicker</a></h1>
+    <h1 class="page-header"><a href="#datepicker" class="anchor">Datepicker 日期控件</a></h1>
     <div class="bs-example">
       <p>
         <pre>

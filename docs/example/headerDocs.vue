@@ -17,9 +17,9 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://github.com/yuche/vue-strap">
+          <li><a href="http://gitlab.alibaba-inc.com/aliqin/vue-component/">
             <span class="icon-github-circled"></span>
-            GitHub
+            GitLab
           </a></li>
         </ul>
       </nav>

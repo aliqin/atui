@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="progressbar">
-    <h1 class="page-header"><a href="#progressbar" class="anchor">Progressbar</a></h1>
+    <h1 class="page-header"><a href="#progressbar" class="anchor">Progressbar 进度条</a></h1>
     <div class="bs-example">
       <h4>Static</h4>
       <div class="row">

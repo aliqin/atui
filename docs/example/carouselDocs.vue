@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="carousel">
-    <h1 class="page-header"><a href="#caoursel" class="anchor">Carousel</a></h1>
+    <h1 class="page-header"><a href="#caoursel" class="anchor">Carousel 走马灯</a></h1>
     <div class="bs-example">
       <carousel>
         <slider>
