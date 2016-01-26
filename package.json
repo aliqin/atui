@@ -34,10 +34,19 @@
     "vue-html-loader": "^1.0.0",
     "vue-loader": "7.1.7",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0"
+    "webpack-dev-server": "^1.12.0",
+    "jasmine-core": "^2.4.1",
+    "json-loader": "^0.5.4",
+    "karma": "^0.13.15",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-spec-reporter": "0.0.23",
+    "karma-webpack": "^1.7.0",
+    "phantomjs": "^1.9.19"
   },
   "scripts": {
     "docs": "webpack-dev-server --inline --hot --quiet",
+    "test": "karma start karma.conf.js --single-run",
     "deploy": "rm -rf build && NODE_ENV=production webpack --progress --colors --display-chunks && node depoly.js",
     "build": "webpack --progress --hide-modules --config  webpack.build.min.js && webpack --progress --hide-modules --config  webpack.build.js"
   },
