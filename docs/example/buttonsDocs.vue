@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="buttons">
-    <h1 class="page-header"><a href="#buttons" class="anchor">Buttons</a></h1>
+    <h1 class="page-header"><a href="#buttons" class="anchor">Buttons 按钮</a></h1>
     <div class="bs-example">
       <h4>Checkbox</h4>
       <checkbox-group :value.sync="checkboxValue">

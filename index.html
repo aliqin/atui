@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <title>阿里通信vue组件库</title>
   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> -->
-  <link rel="stylesheet" type="text/css" href="build/alidayu.css">
+  <link rel="stylesheet" type="text/css" href="build/docs.css">
+  <link rel="stylesheet" type="text/css" href="build/alidayu.css" id="J_ThemeCss">
   <link rel="stylesheet" type="text/css" href="docs/assets/prism-coy.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 </head>
-<body>
+<body class="alidayu">
 <div id="wrapper">
   <header-docs></header-docs>
   <div class="bs-docs-header">
         <div class="container">
           <h1>Vue组件库</h1>
-          <p>基于<a target="_blank" href="http://vuejs.org/">Vue.js</a>的组件库.</p>
+          <p>基于<a target="_blank" href="http://vuejs.org/" style="color:#fff;">Vue.js</a>的组件库.</p>
           <p>无任何依赖，单文件组件库合集</p>
           <br>
           <p>
-            <a class="btn btn-outline-inverse btn-lg" href="https://github.com/yuche/vue-strap">
+            <a class="btn btn-outline-inverse btn-lg" href="http://gitlab.alibaba-inc.com/aliqin/vue-component">
               Code on GitLab
             </a>
           </p>
@@ -28,6 +29,7 @@
   <container>
     <div class="col-md-9">
       <getting-started></getting-started>
+      <tabs-docs></tabs-docs>
       <accordion-docs></accordion-docs>
       <affix-docs></affix-docs>
       <alert-docs></alert-docs>
@@ -40,7 +42,6 @@
       <popover-docs></popover-docs>
       <progressbar-docs></progressbar-docs>
       <select-docs></select-docs>
-      <tabs-docs></tabs-docs>
       <tooltip-docs></tooltip-docs>
       <typeahead-docs></typeahead-docs>
     </div>
@@ -48,7 +49,7 @@
     <affix>
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm ">
         <ul class="nav bs-docs-sidenav" id="sidenav">
-          <li v-for="a in anchor"><a href="#{{ a.toLowerCase() }}">{{ a | space}}</a></li>
+          <li v-for="a in anchor"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
         </ul>
         <a href="#top" class="back-to-top">Back to top</a>
         <a href="http://gitlab.alibaba-inc.com/aliqin/vue-component" class="back-to-top">GitLab</a>
@@ -60,12 +61,12 @@
 <footer class="bs-docs-footer">
   <div class="container">
     <p>
-      Designed and built by <a href="https://github.com/yuche/">alitx</a>.
+
     </p>
   </div>
 </footer>
 <!-- using cdn version here so it works under gh-pages -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.13/vue.min.js"></script>
+<script src="docs/js/vue.min.js"></script>
 <script src="build/build-docs.js"></script>
 
 </body>

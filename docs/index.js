@@ -1,6 +1,8 @@
 require('./assets/docs.css')
 require('./assets/style.css')
 require('../src/styles/themes/alidayu/alidayu.less')
+require('../src/styles/themes/tmallwt/tmallwt.less')
+require('../src/styles/themes/alitx/alitx.less')
 require('prismjs')
 require('./js/showLanguage')
 
@@ -60,7 +62,7 @@ new Vue({
   },
   filters: {
     space(val) {
-      return val.replace('-', ' ')
+      return val.replace(/[\u4e00-\u9fa5]|-/g, '')
     }
   },
   ready() {
@@ -87,8 +89,10 @@ new Vue({
         // = nav.height + header.height + firstSection.margin-top - 6 (for offset)
         if (sections[i] + 420 <= scrollPosition) {
   	      if (navbar) {
-  	        if (navbar.querySelector('.active')) navbar.querySelector('.active').className = ''
-  	        navbar.querySelector('a[href*=' + i + ']').parentNode.className = 'active'
+  	        if (navbar.querySelector('.active')) {
+              navbar.querySelector('.active').className = ''
+    	        navbar.querySelector('a[href*=' + i + ']').parentNode.className = 'active'
+            }
   	      }
         }
       }
