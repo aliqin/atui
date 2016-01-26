@@ -1,6 +1,3 @@
-require('../src/styles/themes/alidayu/alidayu.less')
-
-
 import alert from './components/Alert.vue'
 import carousel from './components/Carousel.vue'
 import slider from './components/Slider.vue'
@@ -24,7 +21,7 @@ import tabset from './components/Tabset.vue'
 import tooltip from './components/Tooltip.vue'
 import typeahead from './components/Typeahead.vue'
 
-const VueStrap = {
+const VueComponents = {
   alert,
   carousel,
   slider,
@@ -49,4 +46,4 @@ const VueStrap = {
   typeahead
 }
 
-module.exports = VueStrap
+module.exports = VueComponents

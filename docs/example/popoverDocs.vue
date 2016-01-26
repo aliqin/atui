@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="popover">
-    <h1 class="page-header"><a href="#popover" class="anchor">Popover</a></h1>
+    <h1 class="page-header"><a href="#popover" class="anchor">Popover 气泡</a></h1>
     <div class="bs-example">
       <popover effect="fade" :header="true" title="Title" content="Lorem ipsum dolor sit amet" placement="top">
         <button class="btn btn-default ">Popover on top</button>

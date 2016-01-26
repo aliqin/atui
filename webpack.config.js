@@ -1,6 +1,9 @@
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
-var extractLESS = new ExtractTextPlugin('alidayu.css')
+var extractAlidayu = new ExtractTextPlugin('alidayu.css')
+var extractTmallwt = new ExtractTextPlugin('tmallwt.css')
+var extractAlitx = new ExtractTextPlugin('alitx.css')
+var extractCSS = new ExtractTextPlugin('docs.css')
 var path = require('path')
 module.exports = {
     entry: './docs/index.js',
@@ -10,7 +13,10 @@ module.exports = {
         filename: 'build-docs.js'
     },
     plugins: [
-        extractLESS
+        extractCSS,
+        extractAlidayu,
+        extractTmallwt,
+        extractAlitx
     ],
     resolve: {
         root: path.resolve('./')
@@ -25,10 +31,19 @@ module.exports = {
             loader: 'babel'
         }, {
             test: /\.css$/,
-            loader: "style-loader!css-loader?root=./docs/"
+            // loader: "style-loader!css-loader?root=./docs/"
+            loader: extractCSS.extract(['css'])
         }, {
-            test: /\.less$/,
-            loader: extractLESS.extract(['css','less'])
+            test: /alidayu\.less$/,
+            loader: extractAlidayu.extract(['css','less'])
+        },
+        {
+            test: /tmallwt\.less$/,
+            loader: extractTmallwt.extract(['css','less'])
+        },
+        {
+            test: /alitx\.less$/,
+            loader: extractAlitx.extract(['css','less'])
         }]
     },
     vue: {
@@ -52,7 +67,10 @@ if (process.env.NODE_ENV === 'production') {
                 NODE_ENV: '"production"'
             }
         }),
-        extractLESS,
+        extractCSS,
+        extractAlidayu,
+        extractTmallwt,
+        extractAlitx,
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false

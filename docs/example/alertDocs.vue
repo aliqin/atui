@@ -1,7 +1,7 @@
 <template>
   <div class="bs-docs-section" id="alert">
     <h1 class="page-header">
-      <a href="#alert" class="anchor">Alert</a>
+      <a href="#alert" class="anchor">Alert 警告提示</a>
     </h1>
     <div class="bs-example" >
       <button class="btn btn-success btn-lg"

@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="affix">
-    <h1 class="page-header"><a href="#affix" class="anchor">Affix</a></h1>
+    <h1 class="page-header"><a href="#affix" class="anchor">Affix 固钉</a></h1>
     <div class="bs-example">
       <h3>
         The sub-navigation on the RIGHT is a live demo of the affix.

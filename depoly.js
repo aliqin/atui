@@ -9,7 +9,7 @@ ghpages.publish(path.join(__dirname, './'), {
     console.log(message);
   }
 }, function(err) {
-  console.log(err)
+  console.log(err || '文档部署成功！')
 });
 
 module.exports = {}
