@@ -14,7 +14,7 @@
   "dependencies": {
     "vue": "^1.0.8"
   },
-  "files": ["LICENSE", "README.md", "CHANGELOG.md", "src", "dist"],
+  "files": ["LICENSE", "README.md", "CHANGELOG.md", "src", "dist", "test"],
   "keywords": ["vue", "vue-component", "aliqin"],
   "devDependencies": {
     "babel-core": "^6.1.21",
@@ -24,6 +24,7 @@
     "babel-runtime": "^6.1.18",
     "css-loader": "^0.21.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "function-bind": "^1.0.2",
     "gh-pages": "^0.8.0",
     "jade": "^1.11.0",
     "jade-loader": "~0.8.0",
@@ -42,7 +43,22 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-spec-reporter": "0.0.23",
     "karma-webpack": "^1.7.0",
-    "phantomjs": "^1.9.19"
+    "phantomjs": "^1.9.19",
+    "babel-preset-stage-2": "^6.0.0",
+    "connect-history-api-fallback": "^1.1.0",
+    "eslint": "^1.10.3",
+    "eslint-friendly-formatter": "^1.2.2",
+    "eslint-loader": "^1.2.0",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.13.3",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.7.0",
+    "inject-loader": "^2.0.1",
+    "rimraf": "^2.5.0",
+    "url-loader": "^0.5.7",
+    "vue-style-loader": "^1.0.0",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.6.0"
   },
   "scripts": {
     "docs": "webpack-dev-server --inline --hot --quiet",
