@@ -19,6 +19,7 @@ module.exports = {
         extractAlitx
     ],
     resolve: {
+      root: path.resolve('./'),
       extensions: ['', '.js', '.vue'],
       alias: {
         'src': path.resolve(__dirname, './src')

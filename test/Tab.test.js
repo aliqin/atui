@@ -1,7 +1,5 @@
-/* global describe, it, expect */
-
 import Vue from 'vue'
-import Tab from 'src/components/Tab.vue'
+import Tab from '../src/components/Tab.vue'
 
 describe('Tab.vue', () => {
   it('should render correct component', () => {
@@ -9,7 +7,7 @@ describe('Tab.vue', () => {
       template: '<div></div>',
       components: { Tab }
     }).$mount()
-    expect(true).toBe(true)
+    expect(true).to.be.ok
   })
 })
 
