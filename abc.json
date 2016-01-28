@@ -1,0 +1,20 @@
+{
+  "type": "cake",
+  "options": {
+    "babel": true
+  },
+  "info": {
+    "platform": [
+      "mobile"
+    ],
+    "project": "app",
+    "workflow": "normal"
+  },
+  "test": {
+    "browsers": [
+      "Chrome"
+    ],
+    "autoWatch": false,
+    "vue": true
+  }
+}
