@@ -14,7 +14,7 @@
     "browsers": [
       "Chrome"
     ],
-    "autoWatch": false,
+    "autoWatch": true,
     "vue": true
   }
 }
