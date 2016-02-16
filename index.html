@@ -28,6 +28,7 @@
   </div>
   <container>
     <div class="col-md-9">
+
       <getting-started></getting-started>
       <tabs-docs></tabs-docs>
       <accordion-docs></accordion-docs>
@@ -44,16 +45,25 @@
       <select-docs></select-docs>
       <tooltip-docs></tooltip-docs>
       <typeahead-docs></typeahead-docs>
+
     </div>
     <div class="col-md-3">
+
     <affix>
+
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm ">
+        <h2>UI组件</h2>
         <ul class="nav bs-docs-sidenav" id="sidenav">
           <li v-for="a in anchor"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+        </ul>
+        <h2>filters</h2>
+        <ul class="nav bs-docs-sidenav">
+          <li v-for="a in filters"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
         </ul>
         <a href="#top" class="back-to-top">Back to top</a>
         <a href="http://gitlab.alibaba-inc.com/aliqin/vue-component" class="back-to-top">GitLab</a>
       </nav>
+
     </affix>
     </div>
   </container>
