@@ -29,18 +29,25 @@ module.exports = {
       root: path.join(__dirname, 'node_modules')
     },
     module: {
-        loaders: [{
+        loaders: [
+        {
             test: /\.vue$/,
             loader: 'vue'
-        }, {
+        },
+        {
             test: /\.js$/,
             exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
             loader: 'babel'
-        }, {
+        },
+        {
             test: /\.css$/,
             // loader: "style-loader!css-loader?root=./docs/"
             loader: extractCSS.extract(['css'])
-        }, {
+        },
+        {   test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+            loader: 'url-loader?limit=100000'
+        },
+        {
             test: /alidayu\.less$/,
             loader: extractAlidayu.extract(['css','less'])
         },
