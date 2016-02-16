@@ -57,7 +57,8 @@ new Vue({
   },
   data() {
     return {
-      anchor: []
+      anchor: [],
+      filters:[]
     }
   },
   filters: {
