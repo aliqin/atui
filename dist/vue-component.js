@@ -5164,4 +5164,4 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-//# sourceMappingURL=vue-components.js.map
+//# sourceMappingURL=vue-component.js.map
