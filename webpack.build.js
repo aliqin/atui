@@ -7,7 +7,7 @@ config.entry = {
 config.output = {
   path: './dist',
   filename: '[name].js',
-  library: 'VueComponents',
+  library: 'VueComponent',
   libraryTarget: 'umd'
 }
 

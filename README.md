@@ -1,4 +1,4 @@
-# vue-components
+# vue-component
 阿里通信基于Vue.js的组件库.
 
 
@@ -11,14 +11,14 @@
 ### NPM
 
 ```bash
-$ npm install @ali/vue-components
+$ npm install @ali/vue-component --save-dev
 ```
 
 ### CommonJS
 ```js
-var alert = require('vue-components/src/alert');
+var alert = require('vue-component/src/alert');
 // or
-var alert = require('vue-components').alert;
+var alert = require('vue-component').alert;
 
 new Vue({
   components: {
@@ -29,9 +29,9 @@ new Vue({
 
 ### ES6
 ```js
-import alert from 'vue-components/src/alert'
+import alert from 'vue-component/src/alert'
 // or
-import { alert } from 'vue-components'
+import { alert } from 'vue-component'
 
 new Vue({
   components: {
@@ -46,9 +46,9 @@ new Vue({
 
 ```html
 <script src="path/to/vue.js"></script>
-<script src="path/to/vue-components.js"></script>
+<script src="path/to/vue-component.js"></script>
 <script>
-  var alert = VueStrap.alert
+  var alert = VueComponent.alert
 </script>
 ```
 
