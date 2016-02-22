@@ -9,6 +9,8 @@ require('./js/showLanguage')
 import gettingStarted from './example/gettingStarted.vue'
 import affix from 'src/components/Affix.vue'
 import container from './example/container.vue'
+import elementsDocs from './example/elementsDocs.vue'
+
 import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
@@ -34,6 +36,7 @@ new Vue({
     gettingStarted,
     container,
     affix,
+    elementsDocs,
     alertDocs,
     headerDocs,
     accordionDocs,
@@ -57,7 +60,8 @@ new Vue({
   },
   data() {
     return {
-      anchor: [],
+      elements:[],
+      components: [],
       filters:[]
     }
   },
@@ -68,8 +72,10 @@ new Vue({
   },
   ready() {
     // add h1.anchor.innerHTML to sidebar list
-    const anchor = document.querySelectorAll('.anchor')
-    this.anchor = [...anchor].map(el=> el.innerHTML.replace(' ', '-'))
+    const elements = document.querySelectorAll('.elements .anchor')
+    const components = document.querySelectorAll('.components .anchor')
+    this.elements = [...elements].map(el=> el.innerHTML.replace(' ', '-'))
+    this.components = [...components].map(el=> el.innerHTML.replace(' ', '-'))
     // Scrollspy
     const section = document.querySelectorAll('.bs-docs-section')
     const sections = {}

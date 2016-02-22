@@ -21,8 +21,8 @@ import tabset from './components/Tabset.vue'
 import tooltip from './components/Tooltip.vue'
 import typeahead from './components/Typeahead.vue'
 
-import toast from './components/Toast.vue'
-import loading from './components/Loading.vue'
+// import toast from './components/Toast.vue'
+// import loading from './components/Loading.vue'
 
 const VueComponent = {
   alert,
@@ -48,8 +48,8 @@ const VueComponent = {
   tooltip,
   typeahead,
 
-  toast,
-  loading
+  // toast,
+  // loading
 }
 
 module.exports = VueComponent

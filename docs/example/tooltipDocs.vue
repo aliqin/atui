@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="tooltip">
-    <h1 class="page-header"><a href="#tooltip" class="anchor">Tooltip 文字提示</a></h1>
+    <h3 class="page-header"><a href="#tooltip" class="anchor">Tooltip 文字提示</a></h3>
     <div class="bs-example">
       <tooltip  :header="true" content="Lorem ipsum dolor sit amet" placement="top">
         <button class="btn btn-default ">tooltip on top</button>

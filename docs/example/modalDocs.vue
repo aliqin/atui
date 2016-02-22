@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="modal">
-    <h1 class="page-header"><a href="#modal" class="anchor">Modal 弹窗</a></h1>
+    <h3 class="page-header"><a href="#modal" class="anchor">Modal 弹窗</a></h3>
     <div class="bs-example">
       <button class="btn btn-default" @click="showModal = true">Show modal</button>
       <modal title="Modal title" :show.sync="showModal">

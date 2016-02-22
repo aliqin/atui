@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="dropdown">
-    <h1 class="page-header"><a href="#dropdown" class="anchor">Dropdown 下拉框</a></h1>
+    <h3 class="page-header"><a href="#dropdown" class="anchor">Dropdown 下拉框</a></h3>
     <div class="bs-example">
       <dropdown>
         <button type="button" class="btn btn-default" data-toggle="dropdown">

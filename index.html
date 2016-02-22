@@ -30,21 +30,28 @@
     <div class="col-md-9">
 
       <getting-started></getting-started>
-      <tabs-docs></tabs-docs>
-      <accordion-docs></accordion-docs>
-      <affix-docs></affix-docs>
-      <alert-docs></alert-docs>
-      <aside-docs></aside-docs>
-      <buttons-docs></buttons-docs>
-      <carousel-docs></carousel-docs>
-      <datepicker-docs></datepicker-docs>
-      <dropdown-docs></dropdown-docs>
-      <modal-docs></modal-docs>
-      <popover-docs></popover-docs>
-      <progressbar-docs></progressbar-docs>
-      <select-docs></select-docs>
-      <tooltip-docs></tooltip-docs>
-      <typeahead-docs></typeahead-docs>
+      <h1>基础样式</h1>
+      <div class="elements">
+        <elements-docs></elements-docs>
+      </div>
+      <h1>UI组件</h1>
+      <div class="components">
+        <tabs-docs></tabs-docs>
+        <accordion-docs></accordion-docs>
+        <affix-docs></affix-docs>
+        <alert-docs></alert-docs>
+        <aside-docs></aside-docs>
+        <buttons-docs></buttons-docs>
+        <carousel-docs></carousel-docs>
+        <datepicker-docs></datepicker-docs>
+        <dropdown-docs></dropdown-docs>
+        <modal-docs></modal-docs>
+        <popover-docs></popover-docs>
+        <progressbar-docs></progressbar-docs>
+        <select-docs></select-docs>
+        <tooltip-docs></tooltip-docs>
+        <typeahead-docs></typeahead-docs>
+      </div>
 
     </div>
     <div class="col-md-3">
@@ -52,9 +59,13 @@
     <affix>
 
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm ">
+        <h2>基础样式</h2>
+        <ul class="nav bs-docs-sidenav">
+          <li v-for="a in elements"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+        </ul>
         <h2>UI组件</h2>
         <ul class="nav bs-docs-sidenav" id="sidenav">
-          <li v-for="a in anchor"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+          <li v-for="a in components"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
         </ul>
         <h2>filters</h2>
         <ul class="nav bs-docs-sidenav">
