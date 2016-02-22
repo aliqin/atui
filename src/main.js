@@ -20,3 +20,6 @@ export {tab} from './components/Tab.vue'
 export {tabset} from './components/Tabset.vue'
 export {tooltip} from './components/Tooltip.vue'
 export {typeahead} from './components/Typeahead.vue'
+
+export {Toast} from './components/Toast.vue'
+export {Loading} from './components/Loading.vue'

@@ -21,7 +21,10 @@ import tabset from './components/Tabset.vue'
 import tooltip from './components/Tooltip.vue'
 import typeahead from './components/Typeahead.vue'
 
-const VueComponents = {
+import toast from './components/Toast.vue'
+import loading from './components/Loading.vue'
+
+const VueComponent = {
   alert,
   carousel,
   slider,
@@ -43,7 +46,10 @@ const VueComponents = {
   tab,
   tabset,
   tooltip,
-  typeahead
+  typeahead,
+
+  toast,
+  loading
 }
 
-module.exports = VueComponents
+module.exports = VueComponent
