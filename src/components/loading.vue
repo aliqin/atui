@@ -1,5 +1,4 @@
 <style lang="less">
-@import "../style/mixin.less";
 .loading {
   position: fixed;
   z-index: 1;
@@ -14,7 +13,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  .transform(translateY(-50%),translateX(-50%));
+  transform:translate(-50%,-50%);
   width: 50px;
   height: 50px;
 }
@@ -195,11 +194,11 @@ export default {
   },
   created () {
     let self = this;
-    window.DAYU = window.DAYU || {};
-    DAYU.showLoading = function() {
+    // window.DAYU = window.DAYU || {};
+    Vue.showLoading = function() {
         self.show();
     }
-    DAYU.hideLoading = function() {
+    Vue.hideLoading = function() {
         self.hide();
     }
   }

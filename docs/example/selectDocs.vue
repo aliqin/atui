@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="select">
-    <h1 class="page-header"><a href="#select" class="anchor">Select 选择框</a></h1>
+    <h3 class="page-header"><a href="#select" class="anchor">Select 选择框</a></h3>
     <p>
       This a <a target="_blank" href="https://silviomoreto.github.io/bootstrap-select/">bootstrap-select</a> implementation.
     </p>
