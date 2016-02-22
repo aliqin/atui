@@ -1,5 +1,4 @@
 <style lang="less">
-@import "../style/mixin.less";
 .toast {
     z-index: 10;
     position: fixed;
@@ -12,7 +11,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        .transform(translate(-50%, -50%));
+        transform:translate(-50%, -50%);
         width: 300px;
         background-color: #f2fbff;
         border:1px solid #b3e5ff;
