@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="accordion">
-    <h1 class="page-header"><a href="#accordion" class="anchor">Accordion 手风琴</a></h1>
+    <h3 class="page-header"><a href="#accordion" class="anchor">Accordion 手风琴</a></h3>
     <div class="bs-example">
       <p>
         <input type="checkbox" v-model="checked">

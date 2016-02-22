@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="tabs">
-    <h1 class="page-header"><a href="#tabs" class="anchor">Tabs 标签页</a></h1>
+    <h3 class="page-header"><a href="#tabs" class="anchor">Tabs 标签页</a></h3>
     <div class="bs-example">
       <tabs>
         <tab header="系统短信签名">
