@@ -21,15 +21,19 @@
 </template>
 
 <script>
-import EventListener from '../utils/EventListener.js'
+import EventListener from './utils/EventListener.js'
+import coerceBoolean from './utils/coerceBoolean.js'
+
   export default {
     props: {
       indicators: {
         type: Boolean,
+        coerce: coerceBoolean,
         default: true
       },
       controls: {
         type: Boolean,
+        coerce: coerceBoolean,
         default: true
       },
       interval: {

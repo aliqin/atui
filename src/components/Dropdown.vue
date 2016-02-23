@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-  import EventListener from '../utils/EventListener'
+  import EventListener from './utils/EventListener'
   export default {
     methods: {
       toggleDropdown(e) {

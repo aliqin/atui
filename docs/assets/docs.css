@@ -1369,7 +1369,7 @@ h1[id] {
 
 /* Error handling */
 .bs-customizer-alert {
-  position: fixed;
+  /*position: fixed;*/
   top: 0;
   right: 0;
   left: 0;
@@ -1378,8 +1378,7 @@ h1[id] {
   color: #fff;
   background-color: #d9534f;
   border-bottom: 1px solid #b94441;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
 }
 .bs-customizer-alert .close {
   margin-top: -4px;
