@@ -6,29 +6,28 @@
     <div class="bs-example" >
       <button class="btn btn-success btn-lg"
         @click="showRight = !showRight">
-        Click to toggle alert on right
+        点击在右边显示或隐藏
       </button>
 
       <button class="btn btn-danger btn-lg"
         @click="showTop = !showTop">
-        Click to toggle alert on top
+        点击在顶部显示或隐藏
       </button>
       <hr>
       <alert type="success" >
-        <strong>Well Done!</strong>
-        You successfully read this important alert message.
+        成功提示的文案
       </alert>
 
       <alert type="info" >
-        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+        消息提示的文案
       </alert>
 
       <alert type="danger" dismissable>
-        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+        错误提示的文案
       </alert>
 
       <alert type="warning" dismissable>
-        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        警告提示的文案
       </alert>
 
       <alert
@@ -40,8 +39,7 @@
         dismissable
       >
         <span class="icon-ok-circled alert-icon-float-left"></span>
-        <strong>Well Done!</strong>
-        <p>You successfully read this important alert message.</p>
+        <p>成功提示的文案</p>
       </alert>
 
       <alert
@@ -52,7 +50,6 @@
         placement="top"
         dismissable>
         <span class="icon-info-circled alert-icon-float-left"></span>
-        <strong>Heads up!</strong>
         <p>This alert needs your attention.</p>
       </alert>
     </div>
@@ -60,29 +57,27 @@
     <pre><code class="language-markup"><script type="language-mark-up">
 <button class="btn btn-default btn-lg"
   @click="showRight = !showRight">
-  Click to toggle alert on right
-</button>
+  点击在右边显示或隐藏
 
 <button class="btn btn-default btn-lg"
   @click="showTop = !showTop">
-  Click to toggle alert on top
+  点击在顶部显示或隐藏
 </button>
 <hr>
 <alert type="success" >
-  <strong>Well Done!</strong>
-  You successfully read this important alert message.
+  成功啦，恭喜你！
 </alert>
 
 <alert type="info" >
-  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+  这是一个消息提醒，你需要注意.
 </alert>
 
 <alert type="danger" dismissable>
-  <strong>Oh snap!</strong> Change a few things up and try submitting again.
+  啊哦，出现了一个错误！
 </alert>
 
 <alert type="warning" dismissable>
-  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  注意，这是一个警告！
 </alert>
 
 <alert
