@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import coerceBoolean from './utils/coerceBoolean.js'
+
   export default {
     props: {
       header: {
@@ -16,6 +18,7 @@
       },
       disabled: {
         type: Boolean,
+        coerce: coerceBoolean,
         default: false
       }
     },
@@ -27,7 +30,7 @@
     },
     computed: {
       show() {
-        return (this.$parent.activeIndex == this.index);
+        return (this.$parent.active == this.index);
       },
       transition() {
         return this.$parent.effect

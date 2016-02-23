@@ -25,7 +25,9 @@
 </template>
 
 <script>
-import callAjax from '../utils/callAjax.js'
+import callAjax from './utils/callAjax.js'
+import coerceBoolean from './utils/coerceBoolean.js'
+
 const typeahead = {
     created() {
       this.items = this.primitiveData
@@ -56,6 +58,7 @@ const typeahead = {
       },
       matchCase: {
         type: Boolean,
+        coerce: coerceBoolean,
         default: false
       },
       onHit: {
@@ -80,10 +83,13 @@ const typeahead = {
     },
     computed: {
       primitiveData() {
+        var _this = this;
+        
         if (this.data) {
           return this.data.filter(value=> {
-            value = this.matchCase ? value : value.toLowerCase()
-            return value.indexOf(this.query) !== -1
+            value = this.matchCase ? value : value.toLowerCase();
+            var query = this.matchCase ? _this.query : _this.query.toLowerCase();
+            return value.indexOf(query) !== -1;
           }).slice(0, this.limit)
         }
       }
@@ -125,7 +131,6 @@ const typeahead = {
         return this.current === index
       },
       hit(e) {
-        console.log("e", e, "e.targetVm", e.targetVM);
         e.preventDefault()
         this.onHit(this.items[this.current], this);
       },
