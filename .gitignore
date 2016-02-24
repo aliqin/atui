@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 static
 build
+coverage
 
 vue-component.sublime-project
 
