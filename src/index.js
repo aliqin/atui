@@ -48,8 +48,8 @@ const VueComponent = {
   tooltip,
   typeahead,
 
-  // toast,
-  // loading
+  toast,
+  loading
 }
 
 module.exports = VueComponent
