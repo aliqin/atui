@@ -3,7 +3,7 @@
 
     <h2>安装方法：CommonJS</h2>
     <pre><code class="language-javascript">
-$ tnpm install @ali/vue-components --save-dev
+$ tnpm install @ali/vue-component --save-dev
 
 var alert = require('@ali/vue-component').alert;
 
