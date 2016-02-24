@@ -5,23 +5,19 @@
     <pre><code class="language-javascript">
 $ tnpm install @ali/vue-components --save-dev
 
-var alert = require('@ali/vue-components/lib/alert');
-// or
-var alert = require('@ali/vue-components').alert;
+var alert = require('@ali/vue-component').alert;
 
 new Vue({
   components: {
-    'alert': alert
+    alert: alert
   }
 })
     </code></pre>
     <h2>ES6</h2>
     <pre><code class="language-javascript">
-$ tnpm install @ali/vue-components --save-dev
+$ tnpm install @ali/vue-component --save-dev
 
-import alert from '@ali/vue-components/src/alert'
-// or
-import { alert } from '@ali/vue-components'
+import { alert } from '@ali/vue-component'
 
 new Vue({
   components: {
@@ -32,9 +28,9 @@ new Vue({
     <h2>浏览器引用</h2>
     <pre><code class="language-markup">
 &lt;script src=&quot;path/to/vue.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;path/to/vue-components.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;path/to/vue-component.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
-  var alert = VueComponents.alert
+  var alert = VueComponent.alert
 &lt;/script&gt;
     </code></pre>
   </div>
