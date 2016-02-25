@@ -25,6 +25,7 @@ import popoverDocs from './example/popoverDocs.vue'
 import progressbarDocs from './example/progressbar-docs.vue'
 import selectDocs from './example/selectDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
+import tableDocs from './example/tableDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import typeaheadDocs from './example/typeaheadDocs.vue'
 
@@ -35,12 +36,12 @@ new Vue({
   components: {
     gettingStarted,
     container,
-    affix,
+    // affix,
     elementsDocs,
     alertDocs,
     headerDocs,
-    accordionDocs,
-    affixDocs,
+    // accordionDocs,
+    // affixDocs,
     asideDocs,
     carouselDocs,
     buttonsDocs,
@@ -51,6 +52,7 @@ new Vue({
     progressbarDocs,
     selectDocs,
     tabsDocs,
+    tableDocs,
     tooltipDocs,
     typeaheadDocs,
     list: {
