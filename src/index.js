@@ -1,57 +1,57 @@
-import alert from './components/Alert.vue'
-import carousel from './components/Carousel.vue'
-import slider from './components/Slider.vue'
-import accordion from './components/Accordion.vue'
-import affix from './components/Affix.vue'
-import aside from './components/Aside.vue'
-import checkboxGroup from './components/checkboxGroup.vue'
-import checkboxBtn from './components/checkboxBtn.vue'
-import datepicker from './components/Datepicker.vue'
-import dropdown from './components/Dropdown.vue'
-import modal from './components/Modal.vue'
-import option from './components/Option.vue'
-import panel from './components/Panel.vue'
-import popover from './components/Popover.vue'
-import progressbar from './components/Progressbar.vue'
-import radioBtn from './components/radioBtn.vue'
-import radioGroup from './components/radioGroup.vue'
-import select from './components/Select.vue'
-import tab from './components/Tab.vue'
-import tabset from './components/Tabset.vue'
-import grid from './components/Table.vue'
-import tooltip from './components/Tooltip.vue'
-import typeahead from './components/Typeahead.vue'
+import Alert from './components/Alert.vue'
+import Carousel from './components/Carousel.vue'
+import Slider from './components/Slider.vue'
+import Accordion from './components/Accordion.vue'
+import Affix from './components/Affix.vue'
+import Aside from './components/Aside.vue'
+import CheckboxGroup from './components/checkboxGroup.vue'
+import CheckboxBtn from './components/checkboxBtn.vue'
+import Datepicker from './components/Datepicker.vue'
+import Dropdown from './components/Dropdown.vue'
+import Modal from './components/Modal.vue'
+import Option from './components/Option.vue'
+import Panel from './components/Panel.vue'
+import Popover from './components/Popover.vue'
+import Progressbar from './components/Progressbar.vue'
+import RadioBtn from './components/radioBtn.vue'
+import RadioGroup from './components/radioGroup.vue'
+import Select from './components/Select.vue'
+import Tab from './components/Tab.vue'
+import Tabset from './components/Tabset.vue'
+import Grid from './components/Table.vue'
+import Tooltip from './components/Tooltip.vue'
+import Typeahead from './components/Typeahead.vue'
 
-import toast from './components/Toast.vue'
-import loading from './components/Loading.vue'
+import Toast from './components/Toast.vue'
+import Loading from './components/Loading.vue'
 
 const VueComponent = {
-  alert,
-  carousel,
-  slider,
-  accordion,
-  affix,
-  aside,
-  checkboxBtn,
-  checkboxGroup,
-  datepicker,
-  dropdown,
-  modal,
-  option,
-  panel,
-  popover,
-  progressbar,
-  radioGroup,
-  radioBtn,
-  select,
-  tab,
-  tabset,
-  grid,
-  tooltip,
-  typeahead,
+  Alert,
+  Carousel,
+  Slider,
+  Accordion,
+  Affix,
+  Aside,
+  CheckboxBtn,
+  CheckboxGroup,
+  Datepicker,
+  Dropdown,
+  Modal,
+  Option,
+  Panel,
+  Popover,
+  Progressbar,
+  RadioGroup,
+  RadioBtn,
+  Select,
+  Tab,
+  Tabset,
+  Grid,
+  Tooltip,
+  Typeahead,
 
-  toast,
-  loading
+  Toast,
+  Loading
 }
 
 module.exports = VueComponent
