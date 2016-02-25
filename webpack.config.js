@@ -63,8 +63,10 @@ module.exports = {
     vue: {
         loaders: {
             less: ExtractTextPlugin.extract(
-                // activate source maps via loader query
-                'css?sourceMap!' + 'less?sourceMap')
+                    // activate source maps via loader query
+                    'css?sourceMap!' +
+                    'less?sourceMap'
+                    )
         }
     },
     babel: {
