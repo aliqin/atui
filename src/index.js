@@ -18,7 +18,7 @@ import radioGroup from './components/radioGroup.vue'
 import select from './components/Select.vue'
 import tab from './components/Tab.vue'
 import tabset from './components/Tabset.vue'
-import table from './components/Table.vue'
+import grid from './components/Table.vue'
 import tooltip from './components/Tooltip.vue'
 import typeahead from './components/Typeahead.vue'
 
@@ -46,7 +46,7 @@ const VueComponent = {
   select,
   tab,
   tabset,
-  table,
+  grid,
   tooltip,
   typeahead,
 
