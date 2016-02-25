@@ -1,7 +1,7 @@
 # vue-component
 阿里通信基于Vue.js的组件库.
 
-
+<p align="center"><a href="http://web.npm.alibaba-inc.com/package/@ali/vue-component" target="_blank"><img src="https://img.shields.io/badge/tnpm-1.0.1-blue.svg?style=flat-square"></a></p>
 
 * [Vue.js](http://vuejs.org/) (基于Vue.js `^v1.x.x 版本以上`,组件仓库使用1.0.8开发).
 
