@@ -18,6 +18,7 @@ export {radioGroup} from './components/radioGroup.vue'
 export {select} from './components/Select.vue'
 export {tab} from './components/Tab.vue'
 export {tabset} from './components/Tabset.vue'
+export {grid} from './components/Table.vue'
 export {tooltip} from './components/Tooltip.vue'
 export {typeahead} from './components/Typeahead.vue'
 
