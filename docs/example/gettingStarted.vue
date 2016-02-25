@@ -5,18 +5,6 @@
     <pre><code class="language-javascript">
 $ tnpm install @ali/vue-component --save-dev
 
-var alert = require('@ali/vue-component').alert;
-
-new Vue({
-  components: {
-    alert: alert
-  }
-})
-    </code></pre>
-    <h2>ES6</h2>
-    <pre><code class="language-javascript">
-$ tnpm install @ali/vue-component --save-dev
-
 import { alert } from '@ali/vue-component'
 
 new Vue({
@@ -25,7 +13,7 @@ new Vue({
   }
 })
     </code></pre>
-    <h2>浏览器引用</h2>
+    <h3>浏览器引用</h3>
     <pre><code class="language-markup">
 &lt;script src=&quot;path/to/vue.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;path/to/vue-component.js&quot;&gt;&lt;/script&gt;
