@@ -14,24 +14,9 @@
 $ npm install @ali/vue-component --save-dev
 ```
 
-### CommonJS
-```js
-var alert = require('vue-component/src/alert');
-// or
-var alert = require('vue-component').alert;
 
-new Vue({
-  components: {
-    'alert': alert
-  }
-})
-```
-
-### ES6
 ```js
-import alert from 'vue-component/src/alert'
-// or
-import { alert } from 'vue-component'
+import { alert } from '@ali/vue-component'
 
 new Vue({
   components: {
@@ -40,9 +25,7 @@ new Vue({
 })
 ```
 
-
 ### 浏览器引用
-
 
 ```html
 <script src="path/to/vue.js"></script>
@@ -51,4 +34,6 @@ new Vue({
   var alert = VueComponent.alert
 </script>
 ```
+
+### 组件文档地址 http://groups.alidemo.cn/aliqin/vue-component/
 
