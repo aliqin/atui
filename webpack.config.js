@@ -3,7 +3,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var extractAlidayu = new ExtractTextPlugin('alidayu.css')
 var extractTmallwt = new ExtractTextPlugin('tmallwt.css')
 var extractAlitx = new ExtractTextPlugin('alitx.css')
-var extractCSS = new ExtractTextPlugin('docs.css')
+var extractDoc = new ExtractTextPlugin('docs.css')
 var path = require('path')
 module.exports = {
     entry: './docs/index.js',
@@ -13,7 +13,7 @@ module.exports = {
         filename: 'build-docs.js'
     },
     plugins: [
-        extractCSS,
+        extractDoc,
         extractAlidayu,
         extractTmallwt,
         extractAlitx
@@ -42,7 +42,7 @@ module.exports = {
         {
             test: /\.css$/,
             // loader: "style-loader!css-loader?root=./docs/"
-            loader: extractCSS.extract(['css'])
+            loader: extractDoc.extract(['css'])
         },
         {   test: /\.(png|woff|woff2|eot|ttf|svg)$/,
             loader: 'url-loader?limit=100000'
@@ -77,13 +77,14 @@ module.exports = {
 };
 if (process.env.NODE_ENV === 'production') {
     delete module.exports.devtool;
+
     module.exports.plugins = [
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
             }
         }),
-        extractCSS,
+        extractDoc,
         extractAlidayu,
         extractTmallwt,
         extractAlitx,

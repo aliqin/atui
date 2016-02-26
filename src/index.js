@@ -1,3 +1,7 @@
+require('../src/styles/themes/alidayu/alidayu.less')
+require('../src/styles/themes/tmallwt/tmallwt.less')
+require('../src/styles/themes/alitx/alitx.less')
+
 import Alert from './components/Alert.vue'
 import Carousel from './components/Carousel.vue'
 import Slider from './components/Slider.vue'

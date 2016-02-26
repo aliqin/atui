@@ -56,7 +56,7 @@
   "scripts": {
     "docs": "webpack-dev-server --inline --hot --quiet",
     "deploy": "rm -rf build && NODE_ENV=production webpack --progress --colors --display-chunks && node depoly.js",
-    "build": "NODE_ENV=production webpack --progress --hide-modules --config  webpack.build.min.js && webpack --progress --hide-modules --config  webpack.build.js",
+    "build": "NODE_ENV=production && webpack --progress --hide-modules --config  webpack.build.js && webpack --progress --hide-modules --config  webpack.build.min.js",
     "ci": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
     "cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
     "test": "./node_modules/.bin/_mocha \"test/**/*.test.js\" --harmony --reporter spec"
