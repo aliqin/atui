@@ -15,7 +15,7 @@ import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
-import asideDocs from './example/asideDocs.vue'
+// import asideDocs from './example/asideDocs.vue'
 import carouselDocs from './example/carouselDocs.vue'
 import buttonsDocs  from './example/buttonsDocs.vue'
 import datepickerDocs from './example/datepickerDocs.vue'
@@ -42,7 +42,7 @@ new Vue({
     headerDocs,
     // accordionDocs,
     // affixDocs,
-    asideDocs,
+    // asideDocs,
     carouselDocs,
     buttonsDocs,
     datepickerDocs,
