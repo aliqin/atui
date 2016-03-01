@@ -1,11 +1,11 @@
 <template>
   <div class="bs-docs-section" id="modal">
-    <h3 class="page-header"><a href="#modal" class="anchor">Modal 弹窗</a></h3>
+    <h3 class="page-header"><a href="#modal" class="anchor">Modal 对话框</a></h3>
     <div class="bs-example">
-      <button class="btn btn-default" @click="showModal = true">Show modal</button>
+      <button class="btn btn-default" @click="showModal = true">显示弹窗</button>
       <modal title="Modal title" :show.sync="showModal">
         <div slot="modal-header" class="modal-header">
-          <h4 class="modal-title">Modal <b>Title</b></h4>
+          <h4 class="modal-title">Modal <b>标题</b></h4>
         </div>
         <div slot="modal-body" class="modal-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -79,7 +79,7 @@
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </modal>
-      <button class="btn btn-danger" @click="smallModal = true">Small modal</button>
+      <button class="btn btn-danger" @click="smallModal = true">小弹窗</button>
       <modal title="Small Modal" :show.sync="smallModal" small>
         <div slot="modal-body" class="modal-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -92,7 +92,7 @@
     <pre><code class="language-markup"><script type="language-mark-up">
 <button class="btn btn-default"
   @click="showModal = true"
-  >Show modal
+  >显示弹窗
 </button>
 <modal :show.sync="showModal">
   <div slot="modal-header" class="modal-header">

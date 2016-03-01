@@ -1,21 +1,22 @@
 require('./assets/docs.css')
 require('./assets/style.css')
-require('../src/styles/themes/alidayu/alidayu.less')
-require('../src/styles/themes/tmallwt/tmallwt.less')
-require('../src/styles/themes/alitx/alitx.less')
+require('../src/styles/themes/alidayu.less')
+require('../src/styles/themes/tmallwt.less')
+require('../src/styles/themes/alitx.less')
 require('prismjs')
 require('./js/showLanguage')
 
 import gettingStarted from './example/gettingStarted.vue'
 import affix from 'src/components/Affix.vue'
 import container from './example/container.vue'
-import elementsDocs from './example/elementsDocs.vue'
+import buttonDocs from './example/buttonDocs.vue'
+import formDocs from './example/formDocs.vue'
 
 import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
-import asideDocs from './example/asideDocs.vue'
+// import asideDocs from './example/asideDocs.vue'
 import carouselDocs from './example/carouselDocs.vue'
 import buttonsDocs  from './example/buttonsDocs.vue'
 import datepickerDocs from './example/datepickerDocs.vue'
@@ -37,24 +38,25 @@ new Vue({
     gettingStarted,
     container,
     // affix,
-    elementsDocs,
+    buttonDocs,
+    formDocs,
     alertDocs,
     headerDocs,
     // accordionDocs,
     // affixDocs,
-    asideDocs,
+    // asideDocs,
     carouselDocs,
     buttonsDocs,
     datepickerDocs,
-    dropdownDocs,
+    // dropdownDocs,
     modalDocs,
     popoverDocs,
-    progressbarDocs,
+    // progressbarDocs,
     selectDocs,
     tabsDocs,
     tableDocs,
     tooltipDocs,
-    typeaheadDocs,
+    // typeaheadDocs,
     list: {
       inherit: true,
       template: ''
