@@ -5,6 +5,13 @@
     <pre><code class="language-javascript">
 $ tnpm install @ali/vue-component --save-dev
 
+// css引入 alidayu or alitx or tmallwt
+import '@ali/vue-component/dist/alidayu.css'
+
+// 或less引入
+import '@ali/vue-component/style/themes/alidayu.less'
+
+// 根据需求引入组件
 import { alert } from '@ali/vue-component'
 
 new Vue({

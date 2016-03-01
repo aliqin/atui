@@ -1,14 +1,15 @@
 require('./assets/docs.css')
 require('./assets/style.css')
-require('../src/styles/themes/alidayu/alidayu.less')
-require('../src/styles/themes/tmallwt/tmallwt.less')
-require('../src/styles/themes/alitx/alitx.less')
+require('../src/styles/themes/alidayu.less')
+require('../src/styles/themes/tmallwt.less')
+require('../src/styles/themes/alitx.less')
 require('prismjs')
 require('./js/showLanguage')
 
 import gettingStarted from './example/gettingStarted.vue'
 import affix from 'src/components/Affix.vue'
 import container from './example/container.vue'
+import buttonDocs from './example/buttonDocs.vue'
 import elementsDocs from './example/elementsDocs.vue'
 
 import headerDocs from './example/headerDocs.vue'
@@ -37,6 +38,7 @@ new Vue({
     gettingStarted,
     container,
     // affix,
+    buttonDocs,
     elementsDocs,
     alertDocs,
     headerDocs,

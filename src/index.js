@@ -1,6 +1,6 @@
-require('../src/styles/themes/alidayu/alidayu.less')
-require('../src/styles/themes/tmallwt/tmallwt.less')
-require('../src/styles/themes/alitx/alitx.less')
+// require('../src/styles/themes/alidayu.less')
+// require('../src/styles/themes/tmallwt.less')
+// require('../src/styles/themes/alitx.less')
 
 import Alert from './components/Alert.vue'
 import Carousel from './components/Carousel.vue'
