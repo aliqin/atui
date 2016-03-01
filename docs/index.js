@@ -1,5 +1,4 @@
 require('./assets/docs.css')
-require('./assets/style.css')
 require('../src/styles/themes/alidayu.less')
 require('../src/styles/themes/tmallwt.less')
 require('../src/styles/themes/alitx.less')
@@ -48,15 +47,15 @@ new Vue({
     carouselDocs,
     buttonsDocs,
     datepickerDocs,
-    dropdownDocs,
+    // dropdownDocs,
     modalDocs,
     popoverDocs,
-    progressbarDocs,
+    // progressbarDocs,
     selectDocs,
     tabsDocs,
     tableDocs,
     tooltipDocs,
-    typeaheadDocs,
+    // typeaheadDocs,
     list: {
       inherit: true,
       template: ''
