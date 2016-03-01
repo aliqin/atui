@@ -1,6 +1,3 @@
-require('../src/styles/themes/alidayu/alidayu.less')
-require('../src/styles/themes/tmallwt/tmallwt.less')
-require('../src/styles/themes/alitx/alitx.less')
 
 export {Alert}  from './components/Alert.vue'
 export {Carousel} from './components/Carousel.vue'
