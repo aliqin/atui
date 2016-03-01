@@ -5,47 +5,47 @@
     <div class="bs-example">
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          <label for="exampleInputEmail1">邮件地址</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <label for="exampleInputPassword1">密码</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
         </div>
         <div class="form-group">
-          <label for="exampleInputFile">File input</label>
+          <label for="exampleInputFile">文章上传</label>
           <input type="file" id="exampleInputFile">
-          <p class="help-block">Example block-level help text here.</p>
+          <p class="help-block">block-level提示文字</p>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Check me out
+            <input type="checkbox"> 选中框
           </label>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">提交</button>
       </form>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    <label for="exampleInputEmail1">邮件地址</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="exampleInputPassword1">密码</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
   </div>
   <div class="form-group">
-    <label for="exampleInputFile">File input</label>
+    <label for="exampleInputFile">文章上传</label>
     <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
+    <p class="help-block">block-level提示文字</p>
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox"> Check me out
+      <input type="checkbox"> 选中框
     </label>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default">提交</button>
 </form>
     </script></code></pre>
     </script>
