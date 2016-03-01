@@ -10,7 +10,7 @@ import gettingStarted from './example/gettingStarted.vue'
 import affix from 'src/components/Affix.vue'
 import container from './example/container.vue'
 import buttonDocs from './example/buttonDocs.vue'
-import elementsDocs from './example/elementsDocs.vue'
+import formDocs from './example/formDocs.vue'
 
 import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'
@@ -39,7 +39,7 @@ new Vue({
     container,
     // affix,
     buttonDocs,
-    elementsDocs,
+    formDocs,
     alertDocs,
     headerDocs,
     // accordionDocs,
