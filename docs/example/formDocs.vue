@@ -13,7 +13,7 @@
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
         </div>
         <div class="form-group">
-          <label for="exampleInputFile">文章上传</label>
+          <label for="exampleInputFile">文件上传</label>
           <input type="file" id="exampleInputFile">
           <p class="help-block">block-level提示文字</p>
         </div>
@@ -36,7 +36,7 @@
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
   </div>
   <div class="form-group">
-    <label for="exampleInputFile">文章上传</label>
+    <label for="exampleInputFile">文件上传</label>
     <input type="file" id="exampleInputFile">
     <p class="help-block">block-level提示文字</p>
   </div>
