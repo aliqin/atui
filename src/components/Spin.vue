@@ -4,32 +4,37 @@
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
  * Licensed under MIT
  */
-.la-ball-triangle-path,
-.la-ball-triangle-path > div {
+.spin,
+.spin > div {
     position: relative;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
-.la-ball-triangle-path {
+.spin {
     display: block;
     font-size: 0;
-    color: #fff;
-}
-.la-ball-triangle-path.la-dark {
     color: #333;
 }
-.la-ball-triangle-path > div {
+.spin > div {
     display: inline-block;
     float: none;
     background-color: currentColor;
     border: 0 solid currentColor;
 }
-.la-ball-triangle-path {
+.spin {
     width: 32px;
     height: 32px;
 }
-.la-ball-triangle-path > div {
+.spin.small{
+  width: 16px;
+  height: 16px;
+}
+.spin.large{
+  width: 64px;
+  height: 64px;
+}
+.spin > div {
     position: absolute;
     top: 0;
     left: 0;
@@ -37,47 +42,39 @@
     height: 10px;
     border-radius: 100%;
 }
-.la-ball-triangle-path > div:nth-child(1) {
+.spin > div:nth-child(1) {
     -webkit-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
 }
-.la-ball-triangle-path > div:nth-child(2) {
+.spin > div:nth-child(2) {
     -webkit-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
 }
-.la-ball-triangle-path > div:nth-child(3) {
+.spin > div:nth-child(3) {
     -webkit-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
 }
-.la-ball-triangle-path.la-sm {
+.spin.small {
     width: 16px;
     height: 16px;
 }
-.la-ball-triangle-path.la-sm > div {
+.spin.small > div {
     width: 4px;
     height: 4px;
 }
-.la-ball-triangle-path.la-2x {
+.spin.large {
     width: 64px;
     height: 64px;
 }
-.la-ball-triangle-path.la-2x > div {
+.spin.large > div {
     width: 20px;
     height: 20px;
-}
-.la-ball-triangle-path.la-3x {
-    width: 96px;
-    height: 96px;
-}
-.la-ball-triangle-path.la-3x > div {
-    width: 30px;
-    height: 30px;
 }
 /*
  * Animations
@@ -468,7 +465,7 @@
 }
 </style>
 <template>
-<div class="la-ball-triangle-path" v-show="isShow">
+<div :class="[spin,size]" v-show="spining">
   <div></div>
   <div></div>
   <div></div>
@@ -477,20 +474,28 @@
 <script>
 export default {
   name: 'loading',
-  compiled () {
-    var self = this;
+  props:{
+    spining:{
+      type:Boolean,
+      default:false
+    },
+    size:{
+      type:String,
+      default:'default'
+    }
   },
-  data (){
+  data () {
     return {
-      isShow:false
+      spin:'spin',
+      size: this.size
     }
   },
   methods: {
     show () {
-      this.isShow = true;
+      this.spining = true;
     },
     hide () {
-      this.isShow = false;
+      this.spining = false;
     }
   },
   created () {
