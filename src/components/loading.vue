@@ -1,176 +1,477 @@
 <style lang="less">
-.loading {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0 ,0.15);
-  z-index:9;
+/*!
+ * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
+ * Copyright 2015 Daniel Cardoso <@DanielCardoso>
+ * Licensed under MIT
+ */
+.la-ball-triangle-path,
+.la-ball-triangle-path > div {
+    position: relative;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
-.sk-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform:translate(-50%,-50%);
-  width: 50px;
-  height: 50px;
+.la-ball-triangle-path {
+    display: block;
+    font-size: 0;
+    color: #fff;
 }
-.sk-circle .sk-child {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+.la-ball-triangle-path.la-dark {
+    color: #333;
 }
-.sk-circle .sk-child:before {
-  content: '';
-  display: block;
-  margin: 0 auto;
-  width: 15%;
-  height: 15%;
-  background-color: #fff;
-  border-radius: 100%;
-  -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
-          animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+.la-ball-triangle-path > div {
+    display: inline-block;
+    float: none;
+    background-color: currentColor;
+    border: 0 solid currentColor;
 }
-.sk-circle .sk-circle2 {
-  -webkit-transform: rotate(30deg);
-      -ms-transform: rotate(30deg);
-          transform: rotate(30deg);
+.la-ball-triangle-path {
+    width: 32px;
+    height: 32px;
 }
-.sk-circle .sk-circle3 {
-  -webkit-transform: rotate(60deg);
-      -ms-transform: rotate(60deg);
-          transform: rotate(60deg);
+.la-ball-triangle-path > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
 }
-.sk-circle .sk-circle4 {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
+.la-ball-triangle-path > div:nth-child(1) {
+    -webkit-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
+       -moz-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
+         -o-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
+            animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
 }
-.sk-circle .sk-circle5 {
-  -webkit-transform: rotate(120deg);
-      -ms-transform: rotate(120deg);
-          transform: rotate(120deg);
+.la-ball-triangle-path > div:nth-child(2) {
+    -webkit-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
+       -moz-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
+         -o-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
+            animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
 }
-.sk-circle .sk-circle6 {
-  -webkit-transform: rotate(150deg);
-      -ms-transform: rotate(150deg);
-          transform: rotate(150deg);
+.la-ball-triangle-path > div:nth-child(3) {
+    -webkit-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
+       -moz-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
+         -o-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
+            animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
 }
-.sk-circle .sk-circle7 {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+.la-ball-triangle-path.la-sm {
+    width: 16px;
+    height: 16px;
 }
-.sk-circle .sk-circle8 {
-  -webkit-transform: rotate(210deg);
-      -ms-transform: rotate(210deg);
-          transform: rotate(210deg);
+.la-ball-triangle-path.la-sm > div {
+    width: 4px;
+    height: 4px;
 }
-.sk-circle .sk-circle9 {
-  -webkit-transform: rotate(240deg);
-      -ms-transform: rotate(240deg);
-          transform: rotate(240deg);
+.la-ball-triangle-path.la-2x {
+    width: 64px;
+    height: 64px;
 }
-.sk-circle .sk-circle10 {
-  -webkit-transform: rotate(270deg);
-      -ms-transform: rotate(270deg);
-          transform: rotate(270deg);
+.la-ball-triangle-path.la-2x > div {
+    width: 20px;
+    height: 20px;
 }
-.sk-circle .sk-circle11 {
-  -webkit-transform: rotate(300deg);
-      -ms-transform: rotate(300deg);
-          transform: rotate(300deg);
+.la-ball-triangle-path.la-3x {
+    width: 96px;
+    height: 96px;
 }
-.sk-circle .sk-circle12 {
-  -webkit-transform: rotate(330deg);
-      -ms-transform: rotate(330deg);
-          transform: rotate(330deg);
+.la-ball-triangle-path.la-3x > div {
+    width: 30px;
+    height: 30px;
 }
-.sk-circle .sk-circle2:before {
-  -webkit-animation-delay: -1.1s;
-          animation-delay: -1.1s;
+/*
+ * Animations
+ */
+@-webkit-keyframes ball-triangle-path-ball-one {
+    0% {
+        -webkit-transform: translate(0, 220%);
+                transform: translate(0, 220%);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -webkit-transform: translate(110%, 0);
+                transform: translate(110%, 0);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -webkit-transform: translate(220%, 220%);
+                transform: translate(220%, 220%);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0, 220%);
+                transform: translate(0, 220%);
+    }
 }
-.sk-circle .sk-circle3:before {
-  -webkit-animation-delay: -1s;
-          animation-delay: -1s;
+@-moz-keyframes ball-triangle-path-ball-one {
+    0% {
+        -moz-transform: translate(0, 220%);
+             transform: translate(0, 220%);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -moz-transform: translate(110%, 0);
+             transform: translate(110%, 0);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -moz-transform: translate(220%, 220%);
+             transform: translate(220%, 220%);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translate(0, 220%);
+             transform: translate(0, 220%);
+    }
 }
-.sk-circle .sk-circle4:before {
-  -webkit-animation-delay: -0.9s;
-          animation-delay: -0.9s;
+@-o-keyframes ball-triangle-path-ball-one {
+    0% {
+        -o-transform: translate(0, 220%);
+           transform: translate(0, 220%);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -o-transform: translate(110%, 0);
+           transform: translate(110%, 0);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -o-transform: translate(220%, 220%);
+           transform: translate(220%, 220%);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -o-transform: translate(0, 220%);
+           transform: translate(0, 220%);
+    }
 }
-.sk-circle .sk-circle5:before {
-  -webkit-animation-delay: -0.8s;
-          animation-delay: -0.8s;
+@keyframes ball-triangle-path-ball-one {
+    0% {
+        -webkit-transform: translate(0, 220%);
+           -moz-transform: translate(0, 220%);
+             -o-transform: translate(0, 220%);
+                transform: translate(0, 220%);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -webkit-transform: translate(110%, 0);
+           -moz-transform: translate(110%, 0);
+             -o-transform: translate(110%, 0);
+                transform: translate(110%, 0);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -webkit-transform: translate(220%, 220%);
+           -moz-transform: translate(220%, 220%);
+             -o-transform: translate(220%, 220%);
+                transform: translate(220%, 220%);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0, 220%);
+           -moz-transform: translate(0, 220%);
+             -o-transform: translate(0, 220%);
+                transform: translate(0, 220%);
+    }
 }
-.sk-circle .sk-circle6:before {
-  -webkit-animation-delay: -0.7s;
-          animation-delay: -0.7s;
+@-webkit-keyframes ball-triangle-path-ball-two {
+    0% {
+        -webkit-transform: translate(110%, 0);
+                transform: translate(110%, 0);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -webkit-transform: translate(220%, 220%);
+                transform: translate(220%, 220%);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -webkit-transform: translate(0, 220%);
+                transform: translate(0, 220%);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(110%, 0);
+                transform: translate(110%, 0);
+    }
 }
-.sk-circle .sk-circle7:before {
-  -webkit-animation-delay: -0.6s;
-          animation-delay: -0.6s;
+@-moz-keyframes ball-triangle-path-ball-two {
+    0% {
+        -moz-transform: translate(110%, 0);
+             transform: translate(110%, 0);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -moz-transform: translate(220%, 220%);
+             transform: translate(220%, 220%);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -moz-transform: translate(0, 220%);
+             transform: translate(0, 220%);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translate(110%, 0);
+             transform: translate(110%, 0);
+    }
 }
-.sk-circle .sk-circle8:before {
-  -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s;
+@-o-keyframes ball-triangle-path-ball-two {
+    0% {
+        -o-transform: translate(110%, 0);
+           transform: translate(110%, 0);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -o-transform: translate(220%, 220%);
+           transform: translate(220%, 220%);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -o-transform: translate(0, 220%);
+           transform: translate(0, 220%);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -o-transform: translate(110%, 0);
+           transform: translate(110%, 0);
+    }
 }
-.sk-circle .sk-circle9:before {
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
+@keyframes ball-triangle-path-ball-two {
+    0% {
+        -webkit-transform: translate(110%, 0);
+           -moz-transform: translate(110%, 0);
+             -o-transform: translate(110%, 0);
+                transform: translate(110%, 0);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -webkit-transform: translate(220%, 220%);
+           -moz-transform: translate(220%, 220%);
+             -o-transform: translate(220%, 220%);
+                transform: translate(220%, 220%);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -webkit-transform: translate(0, 220%);
+           -moz-transform: translate(0, 220%);
+             -o-transform: translate(0, 220%);
+                transform: translate(0, 220%);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(110%, 0);
+           -moz-transform: translate(110%, 0);
+             -o-transform: translate(110%, 0);
+                transform: translate(110%, 0);
+    }
 }
-.sk-circle .sk-circle10:before {
-  -webkit-animation-delay: -0.3s;
-          animation-delay: -0.3s;
+@-webkit-keyframes ball-triangle-path-ball-tree {
+    0% {
+        -webkit-transform: translate(220%, 220%);
+                transform: translate(220%, 220%);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -webkit-transform: translate(0, 220%);
+                transform: translate(0, 220%);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -webkit-transform: translate(110%, 0);
+                transform: translate(110%, 0);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(220%, 220%);
+                transform: translate(220%, 220%);
+    }
 }
-.sk-circle .sk-circle11:before {
-  -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s;
+@-moz-keyframes ball-triangle-path-ball-tree {
+    0% {
+        -moz-transform: translate(220%, 220%);
+             transform: translate(220%, 220%);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -moz-transform: translate(0, 220%);
+             transform: translate(0, 220%);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -moz-transform: translate(110%, 0);
+             transform: translate(110%, 0);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translate(220%, 220%);
+             transform: translate(220%, 220%);
+    }
 }
-.sk-circle .sk-circle12:before {
-  -webkit-animation-delay: -0.1s;
-          animation-delay: -0.1s;
+@-o-keyframes ball-triangle-path-ball-tree {
+    0% {
+        -o-transform: translate(220%, 220%);
+           transform: translate(220%, 220%);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -o-transform: translate(0, 220%);
+           transform: translate(0, 220%);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -o-transform: translate(110%, 0);
+           transform: translate(110%, 0);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -o-transform: translate(220%, 220%);
+           transform: translate(220%, 220%);
+    }
 }
-@-webkit-keyframes sk-circleBounceDelay {
-  0%, 80%, 100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  40% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes sk-circleBounceDelay {
-  0%, 80%, 100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  40% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+@keyframes ball-triangle-path-ball-tree {
+    0% {
+        -webkit-transform: translate(220%, 220%);
+           -moz-transform: translate(220%, 220%);
+             -o-transform: translate(220%, 220%);
+                transform: translate(220%, 220%);
+    }
+    17% {
+        opacity: .25;
+    }
+    33% {
+        opacity: 1;
+        -webkit-transform: translate(0, 220%);
+           -moz-transform: translate(0, 220%);
+             -o-transform: translate(0, 220%);
+                transform: translate(0, 220%);
+    }
+    50% {
+        opacity: .25;
+    }
+    66% {
+        opacity: 1;
+        -webkit-transform: translate(110%, 0);
+           -moz-transform: translate(110%, 0);
+             -o-transform: translate(110%, 0);
+                transform: translate(110%, 0);
+    }
+    83% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(220%, 220%);
+           -moz-transform: translate(220%, 220%);
+             -o-transform: translate(220%, 220%);
+                transform: translate(220%, 220%);
+    }
 }
 </style>
 <template>
-<div class="loading" v-show="isShow">
-  <div class="sk-circle">
-    <div class="sk-circle1 sk-child"></div>
-    <div class="sk-circle2 sk-child"></div>
-    <div class="sk-circle3 sk-child"></div>
-    <div class="sk-circle4 sk-child"></div>
-    <div class="sk-circle5 sk-child"></div>
-    <div class="sk-circle6 sk-child"></div>
-    <div class="sk-circle7 sk-child"></div>
-    <div class="sk-circle8 sk-child"></div>
-    <div class="sk-circle9 sk-child"></div>
-    <div class="sk-circle10 sk-child"></div>
-    <div class="sk-circle11 sk-child"></div>
-    <div class="sk-circle12 sk-child"></div>
-  </div>
+<div class="la-ball-triangle-path" v-show="isShow">
+  <div></div>
+  <div></div>
+  <div></div>
 </div>
 </template>
 <script>
