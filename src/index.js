@@ -27,7 +27,7 @@ import Tooltip from './components/Tooltip.vue'
 import Typeahead from './components/Typeahead.vue'
 
 import Toast from './components/Toast.vue'
-import Loading from './components/Loading.vue'
+import Spin from './components/Spin.vue'
 
 const VueComponent = {
   Alert,
@@ -55,7 +55,7 @@ const VueComponent = {
   Typeahead,
 
   Toast,
-  Loading
+  Spin
 }
 
 module.exports = VueComponent

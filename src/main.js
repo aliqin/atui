@@ -24,4 +24,4 @@ export {Tooltip} from './components/Tooltip.vue'
 export {Typeahead} from './components/Typeahead.vue'
 
 export {Toast} from './components/Toast.vue'
-export {Loading} from './components/Loading.vue'
+export {Spin} from './components/Spin.vue'
