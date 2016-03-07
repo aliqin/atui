@@ -1,6 +1,5 @@
 // 13291895654 to 132 9189 5654
-import Vue from 'vue'
-Vue.filter('number-beautify', function(number, searchKey) {
+Vue.filter('phoneNumber', function(number, searchKey) {
   var ret = ''
   number = '' + number
   number = number.replace(/[^\d]/g, '').substr(0, 11);

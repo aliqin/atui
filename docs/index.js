@@ -31,6 +31,12 @@ import tableDocs from './example/tableDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import typeaheadDocs from './example/typeaheadDocs.vue'
 
+
+// filters
+import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
+
+
+
 Vue.config.debug = true
 
 new Vue({
@@ -60,10 +66,13 @@ new Vue({
     tableDocs,
     tooltipDocs,
     // typeaheadDocs,
-    list: {
-      inherit: true,
-      template: ''
-    }
+    // list: {
+    //   inherit: true,
+    //   template: ''
+    // }
+
+    // filters
+    phoneNumberDocs
   },
   data() {
     return {
@@ -81,8 +90,10 @@ new Vue({
     // add h1.anchor.innerHTML to sidebar list
     const elements = document.querySelectorAll('.elements .anchor')
     const components = document.querySelectorAll('.components .anchor')
+    const filters = document.querySelectorAll('.filters .anchor')
     this.elements = [...elements].map(el=> el.innerHTML.replace(' ', '-'))
     this.components = [...components].map(el=> el.innerHTML.replace(' ', '-'))
+    this.filters = [...filters].map(el=> el.innerHTML.replace(' ', '-'))
     // Scrollspy
     const section = document.querySelectorAll('.bs-docs-section')
     const sections = {}
