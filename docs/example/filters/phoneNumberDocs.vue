@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="phoneNumber">
-    <h3 class="page-header"><a href="#phoneNumber" class="anchor">手机号码过滤</a></h3>
+    <h3 class="page-header"><a href="#phoneNumber" class="anchor">手机号码格式化</a></h3>
     <div class="bs-example">
     <input type="text" v-model="number" />
     <div>{{number | phone-number}}</div>
