@@ -44,10 +44,10 @@ body {
   position: relative; /* For scrollspy */
 }
 
-body {
+/*body {
   font-family: 'Source Sans Pro', 'helvetica neue', 'Avenir Next', 'Avenir',Arial, sans-serif;
 }
-
+*/
 .bs-docs-section h1 {
   font-size: 42px
 }

@@ -1,5 +1,4 @@
 require('./assets/docs.css')
-require('./assets/style.css')
 require('../src/styles/themes/alidayu.less')
 require('../src/styles/themes/tmallwt.less')
 require('../src/styles/themes/alitx.less')
@@ -10,13 +9,15 @@ import gettingStarted from './example/gettingStarted.vue'
 import affix from 'src/components/Affix.vue'
 import container from './example/container.vue'
 import buttonDocs from './example/buttonDocs.vue'
+import spinDocs from './example/spinDocs.vue'
+import inputDocs from './example/inputDocs.vue'
 import formDocs from './example/formDocs.vue'
 
 import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
-// import asideDocs from './example/asideDocs.vue'
+import asideDocs from './example/asideDocs.vue'
 import carouselDocs from './example/carouselDocs.vue'
 import buttonsDocs  from './example/buttonsDocs.vue'
 import datepickerDocs from './example/datepickerDocs.vue'
@@ -30,6 +31,12 @@ import tableDocs from './example/tableDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import typeaheadDocs from './example/typeaheadDocs.vue'
 
+
+// filters
+import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
+
+
+
 Vue.config.debug = true
 
 new Vue({
@@ -39,6 +46,8 @@ new Vue({
     container,
     // affix,
     buttonDocs,
+    spinDocs,
+    inputDocs,
     formDocs,
     alertDocs,
     headerDocs,
@@ -46,7 +55,7 @@ new Vue({
     // affixDocs,
     // asideDocs,
     carouselDocs,
-    buttonsDocs,
+    // buttonsDocs,
     datepickerDocs,
     // dropdownDocs,
     modalDocs,
@@ -57,10 +66,13 @@ new Vue({
     tableDocs,
     tooltipDocs,
     // typeaheadDocs,
-    list: {
-      inherit: true,
-      template: ''
-    }
+    // list: {
+    //   inherit: true,
+    //   template: ''
+    // }
+
+    // filters
+    phoneNumberDocs
   },
   data() {
     return {
@@ -78,8 +90,10 @@ new Vue({
     // add h1.anchor.innerHTML to sidebar list
     const elements = document.querySelectorAll('.elements .anchor')
     const components = document.querySelectorAll('.components .anchor')
+    const filters = document.querySelectorAll('.filters .anchor')
     this.elements = [...elements].map(el=> el.innerHTML.replace(' ', '-'))
     this.components = [...components].map(el=> el.innerHTML.replace(' ', '-'))
+    this.filters = [...filters].map(el=> el.innerHTML.replace(' ', '-'))
     // Scrollspy
     const section = document.querySelectorAll('.bs-docs-section')
     const sections = {}

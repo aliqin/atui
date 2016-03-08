@@ -110,10 +110,10 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Description</th>
+          <th>名称</th>
+          <th>类型</th>
+          <th>默认值</th>
+          <th>说明</th>
         </tr>
       </thead>
       <tbody>
@@ -121,13 +121,13 @@
           <td>show</td>
           <td><code>Boolean</code></td>
           <td><code>true</code></td>
-          <td>Whether show the component</td>
+          <td>是否显示</td>
         </tr>
         <tr>
           <td>dismissable</td>
           <td><code>Boolean</code></td>
           <td><code>false</code></td>
-          <td>Whether show close button</td>
+          <td>是否显示关闭按钮</td>
         </tr>
         <tr>
           <td>type</td>
@@ -137,13 +137,13 @@
           <code>warning</code>
           <code>danger</code></td>
           <td><code>success</code></td>
-          <td>Components styles</td>
+          <td>组件样式</td>
         </tr>
         <tr>
           <td>duration</td>
           <td><code>Number</code></td>
           <td><code>0</code></td>
-          <td>Auto close duration. Set <code>0</code> or a negative number will NOT be auto-close.</td>
+          <td>自动关闭时间. 设置为 <code>0</code>或负数将不自动关闭.</td>
         </tr>
         <tr>
           <td>width</td>
@@ -154,7 +154,7 @@
           <td>placement</td>
           <td><code>String</code>. one of <code>top</code>, <code>top-right</code></td>
           <td></td>
-          <td>how to position the component.</td>
+          <td>组件的位置</td>
         </tr>
       </tbody>
     </table>
