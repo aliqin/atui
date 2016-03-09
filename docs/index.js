@@ -44,34 +44,32 @@ new Vue({
   components: {
     gettingStarted,
     container,
-    // affix,
+    affix,
     buttonDocs,
     spinDocs,
     inputDocs,
     formDocs,
     alertDocs,
     headerDocs,
-    // accordionDocs,
-    // affixDocs,
-    // asideDocs,
+    accordionDocs,
+    affixDocs,
+    asideDocs,
     carouselDocs,
-    // buttonsDocs,
+    buttonsDocs,
     datepickerDocs,
-    // dropdownDocs,
+    dropdownDocs,
     modalDocs,
     popoverDocs,
-    // progressbarDocs,
+    progressbarDocs,
     selectDocs,
     tabsDocs,
     tableDocs,
     tooltipDocs,
-    // typeaheadDocs,
-    // list: {
-    //   inherit: true,
-    //   template: ''
-    // }
-
-    // filters
+    typeaheadDocs,
+    list: {
+      inherit: true,
+      template: ''
+    },
     phoneNumberDocs
   },
   data() {
