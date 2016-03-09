@@ -1,7 +1,44 @@
 //
 // Alerts
 // --------------------------------------------------
+@alert-padding:               10px;
+@alert-border-radius:         4px;
+@alert-link-font-weight:      bold;
 
+@alert-success-bg:            #f4fcf5;
+@alert-success-text:          #666;
+@alert-success-border:        #a5e5af;
+
+
+@alert-info-bg:               #f5fbfe;
+@alert-info-text:             #666;
+@alert-info-border:           #ace0fa;
+
+@alert-warning-bg:            #fff9f2;
+@alert-warning-text:          #666;
+@alert-warning-border:        #ffd399;
+
+@alert-danger-bg:             #fff7f7;
+@alert-danger-text:           #666;
+@alert-danger-border:         #ffbdbd;
+
+
+@alert-help-bg:             #fbf7ff;
+@alert-help-text:           #666;
+@alert-help-border:         #e1c2ff;
+
+.alert-variant(@background; @border; @text-color) {
+  background-color: @background;
+  border-color: @border;
+  color: @text-color;
+
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+  .alert-link {
+    color: darken(@text-color, 10%);
+  }
+}
 
 // Base styles
 // -------------------------
@@ -70,4 +107,8 @@
 
 .alert-danger {
   .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+}
+
+.alert-help {
+  .alert-variant(@alert-help-bg; @alert-help-border; @alert-help-text);
 }

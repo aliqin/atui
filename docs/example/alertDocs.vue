@@ -30,6 +30,10 @@
         警告提示的文案
       </alert>
 
+      <alert type="help" dismissable>
+        帮助提示文案
+      </alert>
+
       <alert
         :show.sync="showRight"
         :duration="3000"
@@ -65,19 +69,23 @@
 </button>
 <hr>
 <alert type="success" >
-  成功啦，恭喜你！
+  成功提示的文案
 </alert>
 
 <alert type="info" >
-  这是一个消息提醒，你需要注意.
+  消息提示的文案
 </alert>
 
 <alert type="danger" dismissable>
-  啊哦，出现了一个错误！
+  错误提示的文案
 </alert>
 
 <alert type="warning" dismissable>
-  注意，这是一个警告！
+  警告提示的文案
+</alert>
+
+<alert type="help" dismissable>
+  帮助提示文案
 </alert>
 
 <alert
@@ -135,7 +143,9 @@
           <code>success</code>
           <code>info</code>
           <code>warning</code>
-          <code>danger</code></td>
+          <code>danger</code>
+          <code>help</code>
+          </td>
           <td><code>success</code></td>
           <td>组件样式</td>
         </tr>

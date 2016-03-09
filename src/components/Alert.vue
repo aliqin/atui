@@ -7,6 +7,7 @@
       'alert-warning':(type == 'warning'),
       'alert-info':	(type == 'info'),
       'alert-danger':	(type == 'danger'),
+      'alert-help': (type == 'help'),
       'top': 			(placement === 'top'),
       'top-right': 	(placement === 'top-right')
     }"
