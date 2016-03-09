@@ -11,6 +11,7 @@ import container from './example/container.vue'
 import buttonDocs from './example/buttonDocs.vue'
 import spinDocs from './example/spinDocs.vue'
 import inputDocs from './example/inputDocs.vue'
+import textareaDocs from './example/textareaDocs.vue'
 import formDocs from './example/formDocs.vue'
 
 import headerDocs from './example/headerDocs.vue'
@@ -48,6 +49,7 @@ new Vue({
     buttonDocs,
     spinDocs,
     inputDocs,
+    textareaDocs,
     formDocs,
     alertDocs,
     headerDocs,
