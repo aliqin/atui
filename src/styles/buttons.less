@@ -3,8 +3,11 @@
 
 .btn {
   display: inline-block;
+  padding: 7px 20px;
+  background-color: @btn-primary-bg;
   background-image: none;
   font-size: 12px;
+  color: #fff;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -12,6 +15,15 @@
   border: 1px solid transparent;
   cursor: pointer;
   touch-action: manipulation;
+  outline: none;
+
+  &:hover {
+    background-color: @btn-primary-hover-bg;
+  }
+
+  &:focus, &:active {
+    background-color: @btn-primary-click-bg;
+  }
 }
 
 // Size of the button
@@ -134,6 +146,7 @@
   button {
     float: left;
     display: inline-block;
+    padding: 7px 20px;
     background-image: none;
     background-color: #fff;
     font-size: 12px;

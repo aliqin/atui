@@ -1,18 +1,33 @@
 <template>
   <div class="bs-docs-section" id="buttons">
-    <h3 class="page-header"><a href="#buttons" class="anchor">Input 输入框</a></h3>
+    <h3 class="page-header"><a href="#buttons" class="anchor">输入框</a></h3>
     <div class="bs-example">
-    <h4>文本输入框</h4>
-    <div class="form-group">
-        <input placeholder="输入框－大" type="text" class="form-control input-lg"/>
+    <h4>输入框尺寸</h4>
+    <div>
+      <input type="text" placeholder="输入框－大尺寸" class="input input-large"></input>
     </div>
-    <div class="form-group">
-        <input placeholder="输入框－中" type="text" class="form-control"/>
+    <br>
+    <div>
+      <input type="text" placeholder="输入框－默认尺寸" class="input"></input>
     </div>
-    <div class="form-group">
-        <input placeholder="输入框－小" type="text" class="form-control input-sm"/>
+    <br>
+    <div>
+      <input type="text" placeholder="输入框－小尺寸" class="input input-small"></input>
     </div>
-    <h4>验证状态</h4>
+    <h4>输入框状态</h4>
+    <div>
+      <input type="text" placeholder="禁用输入框－默认尺寸" class="input" disabled></input>
+    </div>
+    <br>
+    <div>
+      <input type="text" placeholder="error输入框－默认尺寸" class="input input-error"></input>
+    </div>
+    <br>
+    <div>
+      <input type="text" placeholder="success输入框－默认尺寸" class="input input-success"></input>
+    </div>
+
+    <!-- <h4>验证状态</h4>
     <div class="form-group has-success">
       <label class="control-label" for="inputSuccess1">成功</label>
       <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
@@ -54,10 +69,19 @@
     <div class="form-group">
         <textarea class="form-control" placeholder="文本域"></textarea>
     </div>
-    </div>
+    </div> -->
 
 <pre><code class="language-markup"><script type="language-mark-up">
-
+<!-- input输入框，样式采用名称组合的形式 -->
+<!-- 用样式input，标识是个input输入框，且具有默认的样式 -->
+<!-- 输入框尺寸，有大号（input-large）、中号（input-default，可省略）和小号（input-small）-->
+<!-- 输入框状态，有错误（input-error）、正确（input-success）、禁用（标签加disabled属性即可）-->
+<input type="text" placeholder="输入框－默认尺寸" class="input"></input>
+<input type="text" placeholder="输入框－大尺寸" class="input input-large"></input>
+<input type="text" placeholder="输入框－小尺寸" class="input input-small"></input>
+<input type="text" placeholder="禁用输入框－默认尺寸" class="input" disabled></input>
+<input type="text" placeholder="错误输入框－默认尺寸" class="input input-error"></input>
+<input type="text" placeholder="成功输入框－默认尺寸" class="input input-success"></input>
 </script></code></pre>
   </div>
 </template>
