@@ -1,11 +1,28 @@
-//
-// Modals
-// --------------------------------------------------
+//== Modals
 
-// .modal-open      - body class for killing the scroll
-// .modal           - container to scroll within
-// .modal-dialog    - positioning shell for the actual modal
-// .modal-content   - actual modal w/ bg and corners and shit
+// z-index;
+@zindex-modal-background:  1040;
+@zindex-modal:             1050;
+
+//** Padding applied to the modal body
+@modal-inner-padding:         15px;
+
+//** Padding applied to the modal title
+@modal-title-padding:         15px;
+//** Modal title line-height
+@modal-title-line-height:     1.5;
+
+@modal-content-bg:                             #fff;
+@modal-content-border-color:                   rgba(0,0,0,.2);
+@modal-content-fallback-border-color:          #999;
+@modal-backdrop-bg:           #000;
+@modal-backdrop-opacity:      .5;
+@modal-header-border-color:   #e5e5e5;
+@modal-footer-border-color:   @modal-header-border-color;
+
+@modal-lg:                    900px;
+@modal-md:                    600px;
+@modal-sm:                    300px;
 
 // Kill the scroll on the body
 .modal-open {
@@ -23,6 +40,10 @@
   left: 0;
   z-index: @zindex-modal;
   -webkit-overflow-scrolling: touch;
+  background:#ffffff;
+  border:1px solid #e6e6e6;
+  box-shadow:0px 2px 4px 0px rgba(0,0,0,0.10);
+  border-radius:8px;
 
   // Prevent Chrome on Windows from adding a focus outline. For details, see
   // https://github.com/twbs/bootstrap/pull/10951.
@@ -54,7 +75,6 @@
   border: 1px solid @modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
   border: 1px solid @modal-content-border-color;
   border-radius: @border-radius-large;
-  .box-shadow(0 3px 9px rgba(0,0,0,.5));
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
