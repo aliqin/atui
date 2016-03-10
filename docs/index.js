@@ -63,7 +63,7 @@ new Vue({
     modalDocs,
     popoverDocs,
     progressbarDocs,
-    selectDocs,
+    // selectDocs,
     tabsDocs,
     tableDocs,
     tooltipDocs,
