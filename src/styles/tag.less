@@ -1,0 +1,97 @@
+//
+// tags
+// --------------------------------------------------
+
+@tag-default-text : #999999;
+@tag-text : #ffffff;
+
+@tag-default-bg : #f2f2f2;
+@tag-green-bg : #1dbf38;
+@tag-orange-bg : #ff9000;
+@tag-red-bg : #ff5959;
+
+.tag {
+	display: inline-block;
+	vertical-align: middle;
+	height: 22px;
+	line-height: 22px;
+	border-radius: 4px;
+	padding: 0 8px;
+	font-size: 10px;
+	overflow: hidden;
+	opacity: .85;
+	background-color: @tag-default-bg;
+	transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+	&:hover {
+		opacity: 1;
+	}
+
+	.tag-text {
+		cursor: pointer;
+		color: @tag-default-text;
+		text-decoration: none;
+
+	}
+
+	.tag-close {
+		color: @tag-default-text;
+		opacity: 0.66;
+		cursor: pointer;
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		line-height: 10px;
+		font-size: 16px;
+		transform: scale(0.83333333) rotate(-2deg);
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&-green {
+		background-color: @tag-green-bg;
+		.tag-text {
+			color: @tag-text
+		}
+		.tag-close {
+			color: @tag-text;
+			opacity: 0.66;
+			cursor: pointer;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&-orange {
+		background-color: @tag-orange-bg;
+		.tag-text {
+			color: @tag-text
+		}
+		.tag-close {
+			color: @tag-text;
+			opacity: 0.66;
+			cursor: pointer;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&-red {
+		background-color: @tag-red-bg;
+		.tag-text {
+			color: @tag-text
+		}
+		.tag-close {
+			color: @tag-text;
+			opacity: 0.66;
+			cursor: pointer;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
