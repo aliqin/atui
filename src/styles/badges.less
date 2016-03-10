@@ -2,9 +2,14 @@
 // Badges
 // --------------------------------------------------
 
+@badge-bg:         #fff;
+@badge-count-bg:   #ff6666;
+@badge-dot-bg:     @badge-count-bg;
+@badge-count-text: #fff;
 
 // Base class
 .badge {
+  position: relative;
   display: inline-block;
   min-width: 10px;
   padding: 3px 7px;
@@ -17,6 +22,43 @@
   text-align: center;
   background-color: @badge-bg;
   border-radius: @badge-border-radius;
+
+  .badge-count {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    transform: translateX(30%);
+    z-index: 10;
+    min-width: 20px;
+    height: 18px;
+    line-height: 18px;
+    background-color: @badge-count-bg;
+    color: @badge-count-text;
+    font-family:ArialMT;
+    font-weight: 100;
+    text-align: center;
+    border-radius: 10px;
+    padding: 0 7px;
+    font-size: 11px;
+    white-space: nowrap;
+    transform: -10% center;
+    box-shadow: 0 0 0 1px #fff;
+  }
+
+  .badge-dot {
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: @badge-dot-bg;
+    z-index: 10;
+    transform-origin: 0px center;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 1px #fff;
+  }
+
 
   // Empty badges collapse automatically (not available in IE8)
   &:empty {

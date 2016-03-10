@@ -16,6 +16,7 @@ import formDocs from './example/formDocs.vue'
 
 import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'
+import badgeDocs from './example/badgeDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
 import asideDocs from './example/asideDocs.vue'
@@ -52,6 +53,7 @@ new Vue({
     textareaDocs,
     formDocs,
     alertDocs,
+    badgeDocs,
     headerDocs,
     accordionDocs,
     affixDocs,
