@@ -36,16 +36,18 @@
 
 // Size of input
 // --------------------------------------------------
-.input-large {
-  padding: @input-large-padding;
-}
+.input {
+  &.large {
+    padding: @input-large-padding;
+  }
 
-.input-default {
-  padding: @input-default-padding
-}
+  &.default {
+    padding: @input-default-padding
+  }
 
-.input-small {
-  padding: @input-small-padding;
+  &.small {
+    padding: @input-small-padding;
+  }
 }
 
 // Status of input
@@ -57,7 +59,17 @@
   box-shadow: none;
 }
 
-input[disabled], .input-disabled {
+.error() {
+  border-color: @input-error-border;
+  box-shadow: 0px 0px 0px 2px @input-error-shadow-color;
+}
+
+.success() {
+  border-color: @input-success-border;
+  box-shadow: 0px 0px 0px 2px @input-success-shadow-color;
+}
+
+input[disabled], .input.disabled {
   .disabled();
 
   &:hover {
@@ -73,47 +85,41 @@ input[disabled], .input-disabled {
   }
 }
 
-.error() {
-  border-color: @input-error-border;
-  box-shadow: 0px 0px 0px 2px @input-error-shadow-color;
-}
-
-.input-error {
-  .error();
-
-  &:hover {
+.input {
+  &.error {
     .error();
+
+    &:hover {
+      .error();
+
+      &:active, &:focus {
+        .error();
+      }
+    }
 
     &:active, &:focus {
       .error();
     }
   }
 
-  &:active, &:focus {
-    .error();
-  }
-}
-
-.success() {
-  border-color: @input-success-border;
-  box-shadow: 0px 0px 0px 2px @input-success-shadow-color;
-}
-
-.input-success {
-  .success();
-
-  &:hover {
+  &.success {
     .success();
 
-    &:active, &:focus {
+    &:hover {
+      .success();
+
+      &:active, &:focus {
+        .success();
+      }
+    }
+
+    &:focus, &:active, &:focus {
       .success();
     }
   }
-
-  &:focus, &:active, &:focus {
-    .success();
-  }
 }
+
+
 
 
 // // Base styles
