@@ -7,6 +7,18 @@
   box-shadow:0px 0px 0px 2px @textarea-click-shadow-color;
 }
 
+.error() {
+  border-color: @textarea-error-border;
+  box-shadow: 0px 0px 0px 2px @textarea-error-shadow-color;
+}
+
+.disabled() {
+  background: @textarea-disabled-background;
+  color: @textarea-disabled-color;
+  border-color: @textarea-disabled-border;
+  box-shadow: none;
+}
+
 .textarea {
   width: @textarea-width;
   min-width: 370px;
@@ -30,37 +42,25 @@
   &:active, &:focus {
     .active();
   }
-}
 
-.error() {
-  border-color: @textarea-error-border;
-  box-shadow: 0px 0px 0px 2px @textarea-error-shadow-color;
-}
-
-.textarea-error {
-  .error();
-
-  &:hover {
+  &.error {
     .error();
+
+    &:hover {
+      .error();
+
+      &:active, &:focus {
+        .error();
+      }
+    }
 
     &:active, &:focus {
       .error();
     }
   }
-
-  &:active, &:focus {
-    .error();
-  }
 }
 
-.disabled() {
-  background: @textarea-disabled-background;
-  color: @textarea-disabled-color;
-  border-color: @textarea-disabled-border;
-  box-shadow: none;
-}
-
-textarea[disabled], .textarea-disabled {
+textarea[disabled], .textarea.disabled {
   .disabled();
 
   &:hover {

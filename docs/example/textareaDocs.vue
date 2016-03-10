@@ -10,7 +10,7 @@
       <textarea class="textarea" disabled>文本框被禁用了</textarea>
     </div>
     <div>
-      <textarea class="textarea textarea-error">信息错误了</textarea>
+      <textarea class="textarea error">信息错误了</textarea>
     </div>
     <h4>有字数限制文本域</h4>
     <div>
@@ -19,10 +19,10 @@
 <pre><code class="language-markup"><script type="language-mark-up">
 <!-- textarea文本域 -->
 <!-- 用样式textarea，标识是个文本域 -->
-<!-- 文本域有错误（textarea-error）状态和禁用状态（加disabled属性即可） -->
+<!-- 文本域有错误（error）状态和禁用状态（加disabled属性即可） -->
 <textarea class="textarea" placeholder="请输入描述信息"></textarea>
-<textarea class="textarea textarea-error">信息错误了</textarea>
-<textarea class="textarea textarea-error">信息错误了</textarea>
+<textarea class="textarea error">信息错误了</textarea>
+<textarea class="textarea error">信息错误了</textarea>
 
 <!-- 有字数限制的文本域，通过组件方式调用 -->
 <!-- 参数limit-words指定限制的最多字数 -->

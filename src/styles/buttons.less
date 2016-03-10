@@ -28,43 +28,53 @@
 
 // Size of the button
 // ----------------------------------------------------
-.btn-default {
-  padding: 7px 20px;
-}
+.btn {
+  &.default {
+    padding: 7px 20px;
+  }
 
-.btn-large {
-  padding: 8px 20px;
-}
+  &.large {
+    padding: 8px 20px;
+  }
 
-.btn-small {
-  padding: 2px 10px;
+  &.small {
+    padding: 2px 10px;
+  }
 }
 
 // Category button
 // ----------------------------------------------------
 
-.btn-primary {
-  background-color: @btn-primary-bg;
-  color: #fff;
+.btn {
+  &.primary {
+    background-color: @btn-primary-bg;
+    color: #fff;
 
-  &:hover {
-    background-color: @btn-primary-hover-bg;
+    &:hover {
+      background-color: @btn-primary-hover-bg;
+    }
+
+    &:focus, &:active {
+      background-color: @btn-primary-click-bg;
+    }
   }
 
-  &:focus, &:active {
-    background-color: @btn-primary-click-bg;
-  }
-}
+  &.secondary {
+    background-color: #fff;
+    color: @btn-secondary-color;
+    border-color: @btn-secondary-border;
 
-.btn-secondary {
-  background-color: #fff;
-  color: @btn-secondary-color;
-  border-color: @btn-secondary-border;
+    &:hover {
+      background-color: @btn-secondary-hover-bg;
+      color: @btn-secondary-hover-color;
+      border-color: @btn-secondary-hover-border;
 
-  &:hover {
-    background-color: @btn-secondary-hover-bg;
-    color: @btn-secondary-hover-color;
-    border-color: @btn-secondary-hover-border;
+      &:focus, &:active {
+        background-color: @btn-secondary-click-bg;
+        color: @btn-secondary-click-color;
+        border-color: @btn-secondary-click-border;
+      }
+    }
 
     &:focus, &:active {
       background-color: @btn-secondary-click-bg;
@@ -73,22 +83,22 @@
     }
   }
 
-  &:focus, &:active {
-    background-color: @btn-secondary-click-bg;
-    color: @btn-secondary-click-color;
-    border-color: @btn-secondary-click-border;
-  }
-}
-
-.btn-tertiary {
-  background-color: #fff;
-  color: #666;
-  border-color: #d9d9d9;
-
-  &:hover {
+  &.tertiary {
     background-color: #fff;
-    color: @btn-tertiary-hover-color;
-    border-color: @btn-tertiary-hover-border;
+    color: #666;
+    border-color: #d9d9d9;
+
+    &:hover {
+      background-color: #fff;
+      color: @btn-tertiary-hover-color;
+      border-color: @btn-tertiary-hover-border;
+
+      &:focus, &:active {
+        background-color: #fff;
+        color: @btn-tertiary-click-color;
+        border-color: @btn-tertiary-click-border;
+      }
+    }
 
     &:focus, &:active {
       background-color: #fff;
@@ -97,51 +107,45 @@
     }
   }
 
-  &:focus, &:active {
-    background-color: #fff;
-    color: @btn-tertiary-click-color;
-    border-color: @btn-tertiary-click-border;
+  &.disabled {
+    background-color: #f2f2f2;
+    color: #ccc;
+    cursor: default;
   }
-}
 
-.btn-disabled {
-  background-color: #f2f2f2;
-  color: #ccc;
-  cursor: default;
-}
+  &.text {
+    background-color: transparent;
+    color: #666;
 
-.btn-text {
-  background-color: transparent;
-  color: #666;
-
-  &:hover, &:focus, &:active {
-    background-color: #f2faff;
+    &:hover, &:focus, &:active {
+      background-color: #f2faff;
+    }
   }
 }
 
 // Size of the btn group
 // ------------------------------------------
-.group-default {
-  button {
-    padding: 7px 20px;
-  }
-}
-
-.group-large {
-  button {
-    padding: 8px 20px;
-  }
-}
-
-.group-small {
-  button {
-    padding: 2px 10px;
-  }
-}
-
 .btn-group {
   .clearfix();
   display: inline-block;
+
+  &.default {
+    button {
+      padding: 7px 20px;
+    }
+  }
+
+  &.large {
+    button {
+      padding: 8px 20px;
+    }
+  }
+
+  &.small {
+    button {
+      padding: 2px 10px;
+    }
+  }
 
   button {
     float: left;
@@ -159,6 +163,7 @@
     border-width: 1px 1px 1px 0;
     cursor: pointer;
     touch-action: manipulation;
+    outline: none;
 
     &.active, &:focus, &:active {
       border-color: #00a0ff;
