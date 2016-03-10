@@ -11,10 +11,12 @@ import container from './example/container.vue'
 import buttonDocs from './example/buttonDocs.vue'
 import spinDocs from './example/spinDocs.vue'
 import inputDocs from './example/inputDocs.vue'
+import textareaDocs from './example/textareaDocs.vue'
 import formDocs from './example/formDocs.vue'
 
 import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'
+import badgeDocs from './example/badgeDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
 import asideDocs from './example/asideDocs.vue'
@@ -44,34 +46,34 @@ new Vue({
   components: {
     gettingStarted,
     container,
-    // affix,
+    affix,
     buttonDocs,
     spinDocs,
     inputDocs,
+    textareaDocs,
     formDocs,
     alertDocs,
+    badgeDocs,
     headerDocs,
-    // accordionDocs,
-    // affixDocs,
-    // asideDocs,
+    accordionDocs,
+    affixDocs,
+    asideDocs,
     carouselDocs,
-    // buttonsDocs,
+    buttonsDocs,
     datepickerDocs,
-    // dropdownDocs,
+    dropdownDocs,
     modalDocs,
     popoverDocs,
-    // progressbarDocs,
-    selectDocs,
+    progressbarDocs,
+    // selectDocs,
     tabsDocs,
     tableDocs,
     tooltipDocs,
-    // typeaheadDocs,
-    // list: {
-    //   inherit: true,
-    //   template: ''
-    // }
-
-    // filters
+    typeaheadDocs,
+    list: {
+      inherit: true,
+      template: ''
+    },
     phoneNumberDocs
   },
   data() {
