@@ -1,7 +1,36 @@
 //
 // Dropdown menus
 // --------------------------------------------------
+//
+@zindex-dropdown:          1000;
+@dropdown-bg:                    #fff;
+@dropdown-border:                #4CACE2;
+@dropdown-fallback-border:       #ccc;
+@dropdown-divider-bg:            #d9d9d9;
 
+
+@dropdown-link-color:            @gray-dark;
+@dropdown-link-hover-color:      @brand-primary;
+@dropdown-link-hover-bg:         rgba(76,172,226,0.40);
+
+@dropdown-link-active-color:     @component-active-color;
+@dropdown-link-active-bg:        @component-active-bg;
+
+@dropdown-link-disabled-color:   @gray-light;
+
+@dropdown-header-color:          @gray-light;
+
+@dropdown-caret-color:           #000;
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+@zindex-dropdown:          1000;
 
 // Dropdown arrow/caret
 .caret {
@@ -10,16 +39,18 @@
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top:   @caret-width-base dashed;
-  border-top:   @caret-width-base solid ~"\9"; // IE8
-  border-right: @caret-width-base solid transparent;
-  border-left:  @caret-width-base solid transparent;
+  border-top:   4px dashed;
+  border-top:   4px solid ~"\9"; // IE8
+  border-right: 4px solid transparent;
+  border-left:  4px solid transparent;
 }
 
 // The dropdown wrapper (div)
 .dropup,
 .dropdown {
   position: relative;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 // Prevent the focus on the dropdown toggle when closing dropdowns
@@ -44,8 +75,8 @@
   background-color: @dropdown-bg;
   border: 1px solid @dropdown-fallback-border; // IE8 fallback
   border: 1px solid @dropdown-border;
-  border-radius: @border-radius-base;
-  .box-shadow(0 6px 12px rgba(0,0,0,.175));
+  border-radius: 4px;
+  box-shadow : 0 6px 12px rgba(0,0,0,.175);
   background-clip: padding-box;
 
   // Aligns the dropdown menu to right

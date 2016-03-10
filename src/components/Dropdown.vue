@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-group">
+  <div class="dropdown">
     <slot></slot>
     <slot name="dropdown-menu"></slot>
   </div>
@@ -7,6 +7,12 @@
 <script>
   import EventListener from './utils/EventListener'
   export default {
+    props:{
+      trigger:{
+        type: String,
+        default: 'click'
+      }
+    },
     methods: {
       toggleDropdown(e) {
         e.preventDefault()
@@ -16,10 +22,18 @@
     ready() {
       const el = this.$el
       const toggle = el.querySelector('[data-toggle="dropdown"]')
-      if (toggle)
-      {
-        toggle.style.borderRadius = '4px'
-        toggle.addEventListener('click', this.toggleDropdown)
+      if (toggle) {
+        const event = this.trigger === 'click' ? 'click' : 'mouseenter'
+        toggle.addEventListener(event, this.toggleDropdown)
+      }
+      if(this.trigger === 'hover') {
+        var me = this;
+        me.$el.addEventListener('mouseleave',()=>{
+          setTimeout(()=>{
+            me.$el.classList.remove('open')
+          },300)
+          
+        })
       }
       this._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!el.contains(e.target)) el.classList.remove('open')
