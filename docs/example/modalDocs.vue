@@ -125,31 +125,31 @@
         <td>title</td>
         <td><code>String</code></td>
         <td></td>
-        <td>Title of the modal component.</td>
+        <td>标题</td>
       </tr>
       <tr>
         <td>width</td>
         <td><code>Number, String or null</code></td>
         <td><code>null</code></td>
-        <td>Pass a Number in pixels or a String with relational sizes ( ex: '80%' or '5em' ). If null, the modal will be responsive per bootstrap's default.</td>
+        <td> ( 例如: '80%' 或 '5em' 或500 ) 如果不填那么就是自动宽</td>
       </tr>
       <tr>
         <td>callback</td>
         <td><code>Function</code></td>
         <td></td>
-        <td>A callback Function when you click the modal primary button.</td>
+        <td>当点击主要按钮时触发的回调.</td>
       </tr>
       <tr>
         <td>large</td>
         <td><code>Boolean</code></td>
         <td><code>false</code></td>
-        <td>Creates a large modal ( see boostrap's documentation for .modal-lg )</td>
+        <td>大的弹窗</td>
       </tr>
       <tr>
         <td>small</td>
         <td><code>Boolean</code></td>
         <td><code>false</code></td>
-        <td>Creates a small modal ( see boostrap's documentation for .modal-sm )</td>
+        <td>小的弹窗</td>
       </tr>
     </tbody>
   </table>
