@@ -14,7 +14,7 @@
     </div>
     <h4>有字数限制文本域</h4>
     <div>
-      <limit-textarea limit-words="10" placeholder="这里只能输入10个字"></limit-textarea>
+      <limit-textarea :limit-words="10" placeholder="这里只能输入10个字"></limit-textarea>
     </div>
 <pre><code class="language-markup"><script type="language-mark-up">
 <!-- textarea文本域 -->
@@ -26,7 +26,7 @@
 
 <!-- 有字数限制的文本域，通过组件方式调用 -->
 <!-- 参数limit-words指定限制的最多字数 -->
-<limit-textarea limit-words="10"></limit-textarea>
+<limit-textarea :limit-words="10"></limit-textarea>
 </script></code></pre>
   </div>
 </template>

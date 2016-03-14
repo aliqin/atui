@@ -1,15 +1,10 @@
 <template>
-  <label class="btn"
+  <label class="button"
   v-bind:class="{
     'active':checked,
-    'btn-success':type == 'success',
-    'btn-warning':type == 'warning',
-    'btn-info':type == 'info',
-    'btn-danger':type == 'danger',
-    'btn-default':type == 'default',
-    'btn-primary':type == 'primary'
+    'large': size == 'large',
+    'small': size == 'small'
   }">
-
     <input type="checkbox" autocomplete="off"
     :checked="checked"
     @click="handleClick"
@@ -18,8 +13,13 @@
     <slot></slot>
   </label>
 </template>
-
 <script>
+//'btn-success':type == 'success',
+// 'btn-warning':type == 'warning',
+// 'btn-info':type == 'info',
+// 'btn-danger':type == 'danger',
+// 'btn-default':type == 'default',
+// 'btn-primary':type == 'primary',
 import coerceBoolean from './utils/coerceBoolean.js'
 
   export default {
@@ -31,12 +31,8 @@ import coerceBoolean from './utils/coerceBoolean.js'
         type: Boolean,
         coerce: coerceBoolean,
         default: false
-      }
-    },
-    computed: {
-      type() {
-        return this.$parent.type
-      }
+      },
+      size: String
     },
     methods: {
       handleClick() {

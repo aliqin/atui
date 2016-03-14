@@ -1,13 +1,9 @@
 <template>
-  <label class="btn"
+  <label class="button"
   v-bind:class="{
     'active':active,
-    'btn-success':type == 'success',
-    'btn-warning':type == 'warning',
-    'btn-info':type == 'info',
-    'btn-danger':type == 'danger',
-    'btn-default':type == 'default',
-    'btn-primary':type == 'primary'
+    'large': size == 'large',
+    'small': size == 'small'
   }">
 
     <input type="radio" autocomplete="off"
@@ -32,12 +28,13 @@ import coerceBoolean from './utils/coerceBoolean.js'
         type: Boolean,
         coerce: coerceBoolean,
         default: false
+      },
+      size: {
+        type: String,
+        default: 'default'
       }
     },
     computed: {
-      type() {
-        return this.$parent.type
-      },
       active() {
         return this.$parent.value === this.value
       }
