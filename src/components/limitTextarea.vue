@@ -1,6 +1,6 @@
 <template>
 <div class="limitTextarea">
-  <textarea class="textarea" maxlength="{{limitWords}}" placeholder="{{ placeholder }}" v-model="content" :class="{'textarea-error': overLimit}"></textarea>
+  <textarea class="textarea" maxlength="{{limitWords}}" placeholder="{{ placeholder }}" v-model="content" :class="{'error': overLimit}"></textarea>
   <p :class="{'words-error': overLimit}">{{ curWords }}/{{ limitWords }}</p>
 </div>
 </template>
