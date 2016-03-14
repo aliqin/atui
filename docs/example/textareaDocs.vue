@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="textarea">
-    <h3 class="page-header"><a href="#textarea" class="anchor">文本域</a></h3>
+    <h3 class="page-header"><a href="#textarea" class="anchor">textarea 文本域</a></h3>
     <div class="bs-example">
     <h4>基础文本域</h4>
     <div>
