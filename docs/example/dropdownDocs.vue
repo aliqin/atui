@@ -3,10 +3,10 @@
     <h3 class="page-header"><a href="#dropdown" class="anchor">Dropdown 下拉框</a></h3>
     <div class="bs-example">
       <dropdown>
-        <button type="button" class="btn btn-default" data-toggle="dropdown">
+        <div  data-toggle="dropdown">
           点击显示菜单
           <span class="caret"></span>
-        </button>
+        </div>
         <ul name="dropdown-menu" class="dropdown-menu">
           <li><a href="#">选项一</a></li>
           <li><a href="#">选项二</a></li>

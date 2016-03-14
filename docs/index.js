@@ -13,10 +13,12 @@ import spinDocs from './example/spinDocs.vue'
 import inputDocs from './example/inputDocs.vue'
 import textareaDocs from './example/textareaDocs.vue'
 import formDocs from './example/formDocs.vue'
+import switchDocs from './example/switchDocs.vue'
 
 import headerDocs from './example/headerDocs.vue'
 import alertDocs from './example/alertDocs.vue'
 import badgeDocs from './example/badgeDocs.vue'
+import tagDocs from './example/tagDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
 import asideDocs from './example/asideDocs.vue'
@@ -51,9 +53,11 @@ new Vue({
     spinDocs,
     inputDocs,
     textareaDocs,
+    switchDocs,
     formDocs,
     alertDocs,
     badgeDocs,
+    tagDocs,
     headerDocs,
     accordionDocs,
     affixDocs,
@@ -65,7 +69,7 @@ new Vue({
     modalDocs,
     popoverDocs,
     progressbarDocs,
-    // selectDocs,
+    selectDocs,
     tabsDocs,
     tableDocs,
     tooltipDocs,
