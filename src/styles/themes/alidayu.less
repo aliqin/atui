@@ -96,28 +96,28 @@
 //
 //## Settings for some of the most global styles.
 
-//** Background color for `<body>`.
-@body-bg:               #fff;
-//** Global text color on `<body>`.
-@text-color:            @gray-dark;
+// //** Background color for `<body>`.
+// @body-bg:               #fff;
+// //** Global text color on `<body>`.
+// @text-color:            @gray-dark;
 
-//** Global textual link color.
-@link-color:            @brand-primary;
-//** Link hover color set via `darken()` function.
-@link-hover-color:      #FF7500;//darken(@link-color, 15%);
-//** Link hover decoration.
-@link-hover-decoration: underline;
+// //** Global textual link color.
+// @link-color:            @brand-primary;
+// //** Link hover color set via `darken()` function.
+// @link-hover-color:      #FF7500;//darken(@link-color, 15%);
+// //** Link hover decoration.
+// @link-hover-decoration: underline;
 
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+// @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+// @font-family-serif:       Georgia, "Times New Roman", Times, serif;
+// //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-// @font-family-base:        @font-family-sans-serif;
+// // @font-family-base:        @font-family-sans-serif;
 @font-family-base:        "PingFang SC ","Hiragino Sans GB","Microsoft Yahei";
 
 @font-size-base:          14px;
@@ -131,16 +131,16 @@
 @font-size-h5:            @font-size-base;
 @font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
 
-//** Unit-less `line-height` for use in components like buttons.
-@line-height-base:        1.5; // 20/14
-//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+// //** Unit-less `line-height` for use in components like buttons.
+// @line-height-base:        1.5; // 20/14
+// //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+// @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
-//** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
-@headings-font-weight:    500;
-@headings-line-height:    1.1;
-@headings-color:          inherit;
+// //** By default, this inherits from the `<body>`.
+// @headings-font-family:    inherit;
+// @headings-font-weight:    500;
+// @headings-line-height:    1.1;
+// @headings-color:          inherit;
 
 
 //== Iconography
@@ -193,21 +193,21 @@
 //
 //## Customizes the `.table` component with basic values, each used across all table variations.
 
-//** Padding for `<th>`s and `<td>`s.
-@table-cell-padding:            8px;
-//** Padding for cells in `.table-condensed`.
-@table-condensed-cell-padding:  5px;
+// //** Padding for `<th>`s and `<td>`s.
+// @table-cell-padding:            8px;
+// //** Padding for cells in `.table-condensed`.
+// @table-condensed-cell-padding:  5px;
 
-//** Default background color used for all tables.
-@table-bg:                      transparent;
-//** Background color used for `.table-striped`.
-@table-bg-accent:               #f9f9f9;
-//** Background color used for `.table-hover`.
-@table-bg-hover:                #f5f5f5;
-@table-bg-active:               @table-bg-hover;
+// //** Default background color used for all tables.
+// @table-bg:                      transparent;
+// //** Background color used for `.table-striped`.
+// @table-bg-accent:               #f9f9f9;
+// //** Background color used for `.table-hover`.
+// @table-bg-hover:                #f5f5f5;
+// @table-bg-active:               @table-bg-hover;
 
-//** Border color for table and cell borders.
-@table-border-color:            #ddd;
+// //** Border color for table and cell borders.
+// @table-border-color:            #ddd;
 
 
 // //== Buttons
@@ -428,62 +428,62 @@
 //
 //##
 
-// Basics of a navbar
-@navbar-height:                    50px;
-@navbar-margin-bottom:             @line-height-computed;
-@navbar-border-radius:             @border-radius-base;
-@navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
-@navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
-@navbar-collapse-max-height:       340px;
+// // Basics of a navbar
+// @navbar-height:                    50px;
+// @navbar-margin-bottom:             @line-height-computed;
+// @navbar-border-radius:             @border-radius-base;
+// @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
+// @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
+// @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
-@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+// @navbar-default-color:             #777;
+// @navbar-default-bg:                #f8f8f8;
+// @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
-// Navbar links
-@navbar-default-link-color:                #777;
-@navbar-default-link-hover-color:          #333;
-@navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #555;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
-@navbar-default-link-disabled-color:       #ccc;
-@navbar-default-link-disabled-bg:          transparent;
+// // Navbar links
+// @navbar-default-link-color:                #777;
+// @navbar-default-link-hover-color:          #333;
+// @navbar-default-link-hover-bg:             transparent;
+// @navbar-default-link-active-color:         #555;
+// @navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
+// @navbar-default-link-disabled-color:       #ccc;
+// @navbar-default-link-disabled-bg:          transparent;
 
-// Navbar brand label
-@navbar-default-brand-color:               @navbar-default-link-color;
-@navbar-default-brand-hover-color:         darken(@navbar-default-brand-color, 10%);
-@navbar-default-brand-hover-bg:            transparent;
+// // Navbar brand label
+// @navbar-default-brand-color:               @navbar-default-link-color;
+// @navbar-default-brand-hover-color:         darken(@navbar-default-brand-color, 10%);
+// @navbar-default-brand-hover-bg:            transparent;
 
-// Navbar toggle
-@navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #888;
-@navbar-default-toggle-border-color:       #ddd;
+// // Navbar toggle
+// @navbar-default-toggle-hover-bg:           #ddd;
+// @navbar-default-toggle-icon-bar-bg:        #888;
+// @navbar-default-toggle-border-color:       #ddd;
 
 
-//=== Inverted navbar
-// Reset inverted navbar basics
-@navbar-inverse-color:                      lighten(@gray-light, 15%);
-@navbar-inverse-bg:                         #222;
-@navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
+// //=== Inverted navbar
+// // Reset inverted navbar basics
+// @navbar-inverse-color:                      lighten(@gray-light, 15%);
+// @navbar-inverse-bg:                         #222;
+// @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
-// Inverted navbar links
-@navbar-inverse-link-color:                 lighten(@gray-light, 15%);
-@navbar-inverse-link-hover-color:           #fff;
-@navbar-inverse-link-hover-bg:              transparent;
-@navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
-@navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
-@navbar-inverse-link-disabled-color:        #444;
-@navbar-inverse-link-disabled-bg:           transparent;
+// // Inverted navbar links
+// @navbar-inverse-link-color:                 lighten(@gray-light, 15%);
+// @navbar-inverse-link-hover-color:           #fff;
+// @navbar-inverse-link-hover-bg:              transparent;
+// @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
+// @navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
+// @navbar-inverse-link-disabled-color:        #444;
+// @navbar-inverse-link-disabled-bg:           transparent;
 
-// Inverted navbar brand label
-@navbar-inverse-brand-color:                @navbar-inverse-link-color;
-@navbar-inverse-brand-hover-color:          #fff;
-@navbar-inverse-brand-hover-bg:             transparent;
+// // Inverted navbar brand label
+// @navbar-inverse-brand-color:                @navbar-inverse-link-color;
+// @navbar-inverse-brand-hover-color:          #fff;
+// @navbar-inverse-brand-hover-bg:             transparent;
 
-// Inverted navbar toggle
-@navbar-inverse-toggle-hover-bg:            #333;
-@navbar-inverse-toggle-icon-bar-bg:         #fff;
-@navbar-inverse-toggle-border-color:        #333;
+// // Inverted navbar toggle
+// @navbar-inverse-toggle-hover-bg:            #333;
+// @navbar-inverse-toggle-icon-bar-bg:         #fff;
+// @navbar-inverse-toggle-border-color:        #333;
 
 
 //== Navs
@@ -491,28 +491,28 @@
 //##
 
 //=== Shared nav styles
-@nav-link-padding:                          13px 30px;
-@nav-link-hover-bg:                         @gray-lighter;
+// @nav-link-padding:                          13px 30px;
+// @nav-link-hover-bg:                         @gray-lighter;
 
-@nav-disabled-link-color:                   @gray-light;
-@nav-disabled-link-hover-color:             @gray-light;
+// @nav-disabled-link-color:                   @gray-light;
+// @nav-disabled-link-hover-color:             @gray-light;
 
-//== Tabs
-@nav-tabs-border-color:                     #E6E6E6;
+// //== Tabs
+// @nav-tabs-border-color:                     #E6E6E6;
 
-@nav-tabs-link-hover-border-color:          @gray-lighter;
+// @nav-tabs-link-hover-border-color:          @gray-lighter;
 
-@nav-tabs-active-link-hover-bg:             @body-bg;
-@nav-tabs-active-link-hover-color:          @gray;
-@nav-tabs-active-link-hover-border-color:   #ddd;
+// @nav-tabs-active-link-hover-bg:             @body-bg;
+// @nav-tabs-active-link-hover-color:          @gray;
+// @nav-tabs-active-link-hover-border-color:   #ddd;
 
-@nav-tabs-justified-link-border-color:            #ddd;
-@nav-tabs-justified-active-link-border-color:     @body-bg;
+// @nav-tabs-justified-link-border-color:            #ddd;
+// @nav-tabs-justified-active-link-border-color:     @body-bg;
 
-//== Pills
-@nav-pills-border-radius:                   @border-radius-base;
-@nav-pills-active-link-hover-bg:            @component-active-bg;
-@nav-pills-active-link-hover-color:         @component-active-color;
+// //== Pills
+// @nav-pills-border-radius:                   @border-radius-base;
+// @nav-pills-active-link-hover-bg:            @component-active-bg;
+// @nav-pills-active-link-hover-color:         @component-active-color;
 
 
 //== Pagination
@@ -774,58 +774,58 @@
 //
 //##
 
-@panel-bg:                    #fff;
-@panel-body-padding:          15px;
-@panel-heading-padding:       10px 15px;
-@panel-footer-padding:        @panel-heading-padding;
-@panel-border-radius:         @border-radius-base;
+// @panel-bg:                    #fff;
+// @panel-body-padding:          15px;
+// @panel-heading-padding:       10px 15px;
+// @panel-footer-padding:        @panel-heading-padding;
+// @panel-border-radius:         @border-radius-base;
 
-//** Border color for elements within panels
-@panel-inner-border:          #ddd;
-@panel-footer-bg:             #f5f5f5;
+// //** Border color for elements within panels
+// @panel-inner-border:          #ddd;
+// @panel-footer-bg:             #f5f5f5;
 
-@panel-default-text:          @gray-dark;
-@panel-default-border:        #ddd;
-@panel-default-heading-bg:    #f5f5f5;
+// @panel-default-text:          @gray-dark;
+// @panel-default-border:        #ddd;
+// @panel-default-heading-bg:    #f5f5f5;
 
-@panel-primary-text:          #fff;
-@panel-primary-border:        @brand-primary;
-@panel-primary-heading-bg:    @brand-primary;
+// @panel-primary-text:          #fff;
+// @panel-primary-border:        @brand-primary;
+// @panel-primary-heading-bg:    @brand-primary;
 
-@panel-success-text:          @state-success-text;
-@panel-success-border:        @state-success-border;
-@panel-success-heading-bg:    @state-success-bg;
+// @panel-success-text:          @state-success-text;
+// @panel-success-border:        @state-success-border;
+// @panel-success-heading-bg:    @state-success-bg;
 
-@panel-info-text:             @state-info-text;
-@panel-info-border:           @state-info-border;
-@panel-info-heading-bg:       @state-info-bg;
+// @panel-info-text:             @state-info-text;
+// @panel-info-border:           @state-info-border;
+// @panel-info-heading-bg:       @state-info-bg;
 
-@panel-warning-text:          @state-warning-text;
-@panel-warning-border:        @state-warning-border;
-@panel-warning-heading-bg:    @state-warning-bg;
+// @panel-warning-text:          @state-warning-text;
+// @panel-warning-border:        @state-warning-border;
+// @panel-warning-heading-bg:    @state-warning-bg;
 
-@panel-danger-text:           @state-danger-text;
-@panel-danger-border:         @state-danger-border;
-@panel-danger-heading-bg:     @state-danger-bg;
+// @panel-danger-text:           @state-danger-text;
+// @panel-danger-border:         @state-danger-border;
+// @panel-danger-heading-bg:     @state-danger-bg;
 
 
 //== Thumbnails
 //
 //##
 
-//** Padding around the thumbnail image
-@thumbnail-padding:           4px;
-//** Thumbnail background color
-@thumbnail-bg:                @body-bg;
-//** Thumbnail border color
-@thumbnail-border:            #ddd;
-//** Thumbnail border radius
-@thumbnail-border-radius:     @border-radius-base;
+// //** Padding around the thumbnail image
+// @thumbnail-padding:           4px;
+// //** Thumbnail background color
+// @thumbnail-bg:                @body-bg;
+// //** Thumbnail border color
+// @thumbnail-border:            #ddd;
+// //** Thumbnail border radius
+// @thumbnail-border-radius:     @border-radius-base;
 
-//** Custom text color for thumbnail captions
-@thumbnail-caption-color:     @text-color;
-//** Padding around the thumbnail caption
-@thumbnail-caption-padding:   9px;
+// //** Custom text color for thumbnail captions
+// @thumbnail-caption-color:     @text-color;
+// //** Padding around the thumbnail caption
+// @thumbnail-caption-padding:   9px;
 
 
 //== Wells
@@ -859,58 +859,58 @@
 //
 //##
 
-@breadcrumb-padding-vertical:   8px;
-@breadcrumb-padding-horizontal: 15px;
-//** Breadcrumb background color
-@breadcrumb-bg:                 #f5f5f5;
-//** Breadcrumb text color
-@breadcrumb-color:              #ccc;
-//** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       @gray-light;
-//** Textual separator for between breadcrumb elements
-@breadcrumb-separator:          "/";
+// @breadcrumb-padding-vertical:   8px;
+// @breadcrumb-padding-horizontal: 15px;
+// //** Breadcrumb background color
+// @breadcrumb-bg:                 #f5f5f5;
+// //** Breadcrumb text color
+// @breadcrumb-color:              #ccc;
+// //** Text color of current page in the breadcrumb
+// @breadcrumb-active-color:       @gray-light;
+// //** Textual separator for between breadcrumb elements
+// @breadcrumb-separator:          "/";
 
 
 //== Carousel
 //
 //##
 
-@carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
+// @carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
 
-@carousel-control-color:                      #fff;
-@carousel-control-width:                      15%;
-@carousel-control-opacity:                    .5;
-@carousel-control-font-size:                  20px;
+// @carousel-control-color:                      #fff;
+// @carousel-control-width:                      15%;
+// @carousel-control-opacity:                    .5;
+// @carousel-control-font-size:                  20px;
 
-@carousel-indicator-active-bg:                #fff;
-@carousel-indicator-border-color:             #fff;
+// @carousel-indicator-active-bg:                #fff;
+// @carousel-indicator-border-color:             #fff;
 
-@carousel-caption-color:                      #fff;
+// @carousel-caption-color:                      #fff;
 
 
 //== Close
 //
 //##
 
-@close-font-weight:           bold;
-@close-color:                 #000;
-@close-text-shadow:           0 1px 0 #fff;
+// @close-font-weight:           bold;
+// @close-color:                 #000;
+// @close-text-shadow:           0 1px 0 #fff;
 
 
 //== Code
 //
 //##
 
-@code-color:                  #c7254e;
-@code-bg:                     #f9f2f4;
+// @code-color:                  #c7254e;
+// @code-bg:                     #f9f2f4;
 
-@kbd-color:                   #fff;
-@kbd-bg:                      #333;
+// @kbd-color:                   #fff;
+// @kbd-bg:                      #333;
 
-@pre-bg:                      #f5f5f5;
-@pre-color:                   @gray-dark;
-@pre-border-color:            #ccc;
-@pre-scrollable-max-height:   340px;
+// @pre-bg:                      #f5f5f5;
+// @pre-color:                   @gray-dark;
+// @pre-border-color:            #ccc;
+// @pre-scrollable-max-height:   340px;
 
 
 //== Type
