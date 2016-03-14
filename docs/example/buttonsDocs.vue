@@ -1,7 +1,28 @@
 <template>
   <div class="bs-docs-section" id="buttons">
-    <h3 class="page-header"><a href="#buttons" class="anchor">Buttons 按钮</a></h3>
+    <h3 class="page-header"><a href="#buttons" class="anchor">Buttons 组合切换按钮</a></h3>
     <div class="bs-example">
+      <h4>基础组合切换按钮样式使用</h4>
+      <div class="btn-group large">
+        <button type="button" class="active">总计</button>
+        <button type="button">语音验证码统计</button>
+        <button type="button">短信验证码统计</button>
+      </div>
+      <br><br>
+      <div class="btn-group">
+        <button type="button">总计</button>
+        <button type="button" class="active">语音验证码统计</button>
+        <button type="button">短信验证码统计</button>
+        <button type="button">流量验证码统计</button>
+      </div>
+      <br><br>
+      <div class="btn-group small">
+        <button type="button">总计</button>
+        <button type="button">语音验证码统计</button>
+        <button type="button" class="active">短信验证码统计</button>
+        <button type="button">流量验证码统计</button>
+        <button type="button">通话</button>
+      </div>
       <h4>Checkbox</h4>
       <checkbox-group :value.sync="checkboxValue">
         <checkbox value="left">Left</checkbox>
@@ -15,13 +36,13 @@ Checkbox value: {{checkboxValue | json}}
       </p>
       <hr>
       <h4>Radio</h4>
-      <radio-group :value.sync="radioValue" type="primary">
+      <radio-group :value.sync="radioValue" size="large">
         <radio value="left">Left</radio>
         <radio value="middle" checked>Middle</radio>
         <radio value="right">Right</radio>
       </radio-group>
 
-      <radio-group :value.sync="radioValue" type="success">
+      <radio-group :value.sync="radioValue" size="small">
         <radio value="left">Left</radio>
         <radio value="middle" checked>Middle</radio>
         <radio value="right">Right</radio>
@@ -34,55 +55,50 @@ Radio value: {{radioValue}}
     </div>
 
     <pre><code class="language-markup"><script type="language-mark-up">
+<!-- 组合切换按钮，样式采用名称组合的形式 -->
+<!-- 按钮组可包含多个按钮 -->
+<!-- 用样式btn-group，标识是个按钮组 -->
+<!-- 按钮组尺寸，有大号（large）、中号（default，可以不写）和小号（small）-->
+<!-- 通过增加active样式，默认选中按钮 -->
+<div class="btn-group large">
+  <button type="button" class="active">总计</button>
+  <button type="button">语音验证码统计</button>
+  <button type="button">短信验证码统计</button>
+</div>
+<div class="btn-group">
+  <button type="button">总计</button>
+  <button type="button" class="active">语音验证码统计</button>
+  <button type="button">短信验证码统计</button>
+  <button type="button">流量验证码统计</button>
+</div>
+<div class="btn-group small">
+  <button type="button">总计</button>
+  <button type="button">语音验证码统计</button>
+  <button type="button" class="active">短信验证码统计</button>
+  <button type="button">流量验证码统计</button>
+  <button type="button">通话</button>
+</div>
+<!-- 集合类似checkbox和radio功能的按钮组合调用方式如下 -->
 <checkbox-group :value.sync="checkboxValue">
   <checkbox value="left">Left</checkbox>
   <checkbox value="middle" checked>Middle</checkbox>
   <checkbox value="right">Right</checkbox>
 </checkbox-group>
 
-<radio-group :value.sync="radioValue" type="primary">
+<radio-group :value.sync="radioValue" size="large">
   <radio value="left">Left</radio>
   <radio value="middle" checked>Middle</radio>
   <radio value="right">Right</radio>
 </radio-group>
 
-<radio-group :value.sync="radioValue" type="success">
+<radio-group :value.sync="radioValue" size="small">
   <radio value="left">Left</radio>
   <radio value="middle" checked>Middle</radio>
   <radio value="right">Right</radio>
 </radio-group>
+
+
 </script></code></pre>
-
-    <h2>Group options</h2>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>value</td>
-          <td>Array</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td><code>String</code>, one of <code>default</code>
-          <code>primary</code>
-          <code>danger</code>
-          <code>info</code>
-          <code>warning</code>
-          <code>success</code></td>
-          <td><code>default</code></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </template>
 

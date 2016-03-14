@@ -1,5 +1,8 @@
 <template>
-  <div class="btn-group" data-toggle="buttons">
+  <div class="btn-group" data-toggle="buttons" :class="{
+    'large': size == 'large',
+    'small': size == 'small'
+  }">
     <slot></slot>
   </div>
 </template>
@@ -14,6 +17,10 @@
         }
       },
       type: {
+        type: String,
+        default: 'default'
+      },
+      size: {
         type: String,
         default: 'default'
       }
