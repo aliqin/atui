@@ -5,20 +5,21 @@
   </span>
   <span v-else class="badge">
     <slot></slot>
-    <sup v-if='count' class="badge-count">
+    <sup v-if='count && count >=0' class="badge-count">
       {{count | short}}
     </sup>
   </span>
 </template>
 
-<script >
+<script>
   export default {
     props: {
       count: {
         type: Number
       },
       dot: {
-        type: Boolean
+        type: Boolean,
+        default: false
       }
     },
     filters: {
