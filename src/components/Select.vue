@@ -1,6 +1,6 @@
 <template>
-  <div class="btn-group" v-bind:class="{open: show}">
-    <button v-el:btn type="button" class="btn btn-default dropdown-toggle"
+  <div v-bind:class="{open: show,select:true}">
+    <button v-el:btn type="button" class="dropdown-toggle"
       @click="toggleDropdown"
       @blur="show = (search ? show : false)"
     >

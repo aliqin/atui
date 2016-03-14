@@ -571,13 +571,13 @@ body {
 /* All levels of nav */
 .bs-docs-sidebar .nav > li > a {
   display: block;
-  padding: 4px 20px;
+  padding: 4px 10px;
   font-size: 13px;
   font-weight: 500;
 }
 .bs-docs-sidebar .nav > li > a:hover,
 .bs-docs-sidebar .nav > li > a:focus {
-  padding-left: 19px;
+  padding-left: 9px;
   text-decoration: none;
   background-color: transparent;
   /*border-left: 1px solid #56BFFC;*/
