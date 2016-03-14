@@ -11,7 +11,9 @@
     </div>
 
 <pre><code class="language-markup"><script type="language-mark-up">
-
+<spin :spining="true" size="small"></spin>
+<spin :spining="true"></spin>
+<spin :spining="true" size="large"></spin>
 </script></code></pre>
 
   </div>
