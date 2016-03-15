@@ -20,8 +20,8 @@
         </slot>
         <slot name="modal-footer">
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" @click="close">Close</button>
-            <button type="button" class="btn btn-primary" @click="callback">Save changes</button>
+            <button type="button" class="btn btn-default" @click="callback">确定</button>
+            <button type="button" class="btn tertiary" @click="close">取消</button>
           </div>
         </slot>
       </div>
