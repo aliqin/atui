@@ -43,7 +43,7 @@
         dismissable
       >
         <span class="icon-ok-circled alert-icon-float-left"></span>
-        <p>成功提示的文案</p>
+        <p>在右边显示的警告</p>
       </alert>
 
       <alert
@@ -54,7 +54,7 @@
         placement="top"
         dismissable>
         <span class="icon-info-circled alert-icon-float-left"></span>
-        <p>This alert needs your attention.</p>
+        <p>在顶部显示的警告</p>
       </alert>
     </div>
 
@@ -97,7 +97,7 @@
   dismissable>
   <span class="icon-ok-circled alert-icon-float-left"></span>
   <strong>Well Done!</strong>
-  <p>You successfully read this important alert message.</p>
+  <p>在右边显示的警告.</p>
 </alert>
 
 <alert
@@ -109,7 +109,7 @@
   dismissable>
   <span class="icon-info-circled alert-icon-float-left"></span>
   <strong>Heads up!</strong>
-  <p>This alert needs your attention.</p>
+  <p>在顶部显示的警告</p>
 </alert>
 
 </script></code></pre>
