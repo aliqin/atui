@@ -6,15 +6,23 @@
   <div class="tooltip"
     v-bind:class="{
     'top':    placement === 'top',
+    'top-left':    placement === 'topLeft',
+    'top-right':    placement === 'topRight',
     'left':   placement === 'left',
+    'left-top':   placement === 'leftTop',
+    'left-bottom':   placement === 'leftBottom',
     'right':  placement === 'right',
-    'bottom': placement === 'bottom'
+    'right-top':  placement === 'rightTop',
+    'right-bottom':  placement === 'rightBottom',
+    'bottom': placement === 'bottom',
+    'bottom-left': placement === 'bottomLeft',
+    'bottom-right': placement === 'bottomRight'
     }"
     v-el:popover
     v-show="show"
     :transition="effect"
     role="tooltip">
-    <div class="tooltip-arrow"></div>
+    <div class="tooltip-arrow" v-el:arrow></div>
     <div class="tooltip-inner">
       {{{content}}}
     </div>
