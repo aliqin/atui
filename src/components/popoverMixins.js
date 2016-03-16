@@ -37,7 +37,7 @@ const PopoverMixin = {
   },
   methods: {
     toggle() {
-      this.show = !this.show
+      this.show = !this.show;
     }
   },
   ready() {
@@ -46,8 +46,8 @@ const PopoverMixin = {
     const triger  = this.$els.trigger.children[0]
 
     if (this.trigger === 'hover') {
-      this._mouseenterEvent = EventListener.listen(triger, 'mouseenter', ()=> this.show = true)
-      this._mouseleaveEvent = EventListener.listen(triger, 'mouseleave', ()=> this.show = false)
+      this._mouseenterEvent = EventListener.listen(triger, 'mouseenter', ()=> self.show = true)
+      this._mouseleaveEvent = EventListener.listen(triger, 'mouseleave', ()=> self.show = false)
     } else if (this.trigger === 'focus') {
       this._focusEvent = EventListener.listen(triger, 'focus', ()=> this.show = true)
       this._blurEvent = EventListener.listen(triger, 'blur', ()=> this.show = false)
@@ -61,11 +61,11 @@ const PopoverMixin = {
         this.position.top = triger.offsetTop  - popover.offsetHeight
         break
       case 'topLeft' :
-        this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4
+        this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4 
         this.position.top = triger.offsetTop  - popover.offsetHeight
         break
       case 'topRight' :
-        this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4
+        this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4 
         this.position.top = triger.offsetTop  - popover.offsetHeight
         break
       case 'left':
@@ -74,11 +74,11 @@ const PopoverMixin = {
         break
       case 'leftTop':
         this.position.left = triger.offsetLeft - popover.offsetWidth
-        this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 + popover.offsetHeight / 4
+        this.position.top = triger.offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4
         break
       case 'leftBottom':
         this.position.left = triger.offsetLeft - popover.offsetWidth
-        this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4
+        this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4
         break
       case 'right':
         this.position.left = triger.offsetLeft + triger.offsetWidth
@@ -86,11 +86,11 @@ const PopoverMixin = {
         break
       case 'rightTop':
         this.position.left = triger.offsetLeft + triger.offsetWidth
-        this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 + popover.offsetHeight / 4
+        this.position.top = triger.offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4
         break
       case 'rightBottom':
         this.position.left = triger.offsetLeft + triger.offsetWidth
-        this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4
+        this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4
         break
       case 'bottom':
         this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2
@@ -111,6 +111,7 @@ const PopoverMixin = {
     popover.style.left = this.position.left + 'px'
     popover.style.display = 'none'
     this.show = !this.show
+    
   },
   beforeDestroy() {
     if (this._blurEvent) {
