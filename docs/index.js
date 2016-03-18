@@ -5,35 +5,44 @@ require('../src/styles/themes/alitx.less')
 require('prismjs')
 require('./js/showLanguage')
 
+import headerDocs from './example/headerDocs.vue'
 import gettingStarted from './example/gettingStarted.vue'
-import affix from 'src/components/Affix.vue'
-import container from './example/container.vue'
+
+import gridDocs from './example/gridDocs.vue'
+
+// 表单类
 import buttonDocs from './example/buttonDocs.vue'
-import spinDocs from './example/spinDocs.vue'
+import buttonsDocs  from './example/buttonsDocs.vue'
 import inputDocs from './example/inputDocs.vue'
-import textareaDocs from './example/textareaDocs.vue'
 import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
+import dropdownDocs from './example/dropdownDocs.vue'
+import selectDocs from './example/selectDocs.vue'
+import datepickerDocs from './example/datepickerDocs.vue'
+import progressbarDocs from './example/progressbar-docs.vue'
+import typeaheadDocs from './example/typeaheadDocs.vue'
 
-import headerDocs from './example/headerDocs.vue'
+
+// 展示类
 import alertDocs from './example/alertDocs.vue'
+import modalDocs from './example/modalDocs.vue'
+import tableDocs from './example/tableDocs.vue'
 import badgeDocs from './example/badgeDocs.vue'
+import carouselDocs from './example/carouselDocs.vue'
+import affix from 'src/components/Affix.vue'
+import container from './example/container.vue'
+import spinDocs from './example/spinDocs.vue'
+import textareaDocs from './example/textareaDocs.vue'
 import tagDocs from './example/tagDocs.vue'
+import tooltipDocs from './example/tooltipDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
+
+
+// 导航类
 import affixDocs from './example/affixDocs.vue'
 import asideDocs from './example/asideDocs.vue'
-import carouselDocs from './example/carouselDocs.vue'
-import buttonsDocs  from './example/buttonsDocs.vue'
-import datepickerDocs from './example/datepickerDocs.vue'
-import dropdownDocs from './example/dropdownDocs.vue'
-import modalDocs from './example/modalDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
-import progressbarDocs from './example/progressbar-docs.vue'
-import selectDocs from './example/selectDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
-import tableDocs from './example/tableDocs.vue'
-import tooltipDocs from './example/tooltipDocs.vue'
-import typeaheadDocs from './example/typeaheadDocs.vue'
 
 
 // filters
@@ -47,6 +56,7 @@ new Vue({
   el: '#wrapper',
   components: {
     gettingStarted,
+    gridDocs,
     container,
     affix,
     buttonDocs,
@@ -61,7 +71,7 @@ new Vue({
     headerDocs,
     accordionDocs,
     affixDocs,
-    asideDocs,
+    // asideDocs,
     carouselDocs,
     buttonsDocs,
     datepickerDocs,

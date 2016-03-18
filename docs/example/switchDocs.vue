@@ -26,10 +26,22 @@
         </table>
         
       <h4 class="example-title">带文字形式</h4>
-        <Switch>
+        <table class="switchDocs-demo-table">
+          <tr>
+            <td><Switch>
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
-        </Switch>
+        </Switch></td>
+            <td><Switch :disabled="disabled" :checked="true">
+          <span slot="checkedPart">开</span>
+          <span slot="unCheckedPart">关</span>
+        </Switch></td>
+            <td><Switch :disabled="disabled">
+          <span slot="checkedPart">开</span>
+          <span slot="unCheckedPart">关</span>
+        </Switch></td>
+          </tr>
+        </table>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
@@ -40,6 +52,14 @@
 <Switch :checked="checked" :on-change="changeHandler"></Switch>
 <Switch :disabled="disabled"></Switch>
 <Switch>
+  <span slot="checkedPart">开</span>
+  <span slot="unCheckedPart">关</span>
+</Switch>
+<Switch :disabled="disabled" :checked="true">
+  <span slot="checkedPart">开</span>
+  <span slot="unCheckedPart">关</span>
+</Switch>
+<Switch :disabled="disabled">
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
 </Switch>
