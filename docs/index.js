@@ -43,6 +43,7 @@ import affixDocs from './example/affixDocs.vue'
 import asideDocs from './example/asideDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
+import stepsDocs from './example/stepsDocs.vue'
 
 
 // filters
@@ -82,6 +83,7 @@ new Vue({
     selectDocs,
     tabsDocs,
     tableDocs,
+    stepsDocs,
     tooltipDocs,
     typeaheadDocs,
     list: {
