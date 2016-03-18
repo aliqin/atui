@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div class="navWrapper">
     <!-- Nav tabs -->
-     <ul class="nav nav-tabs" role="tablist">
-            <li
+     <ul :class="{
+      'nav': true,
+      'nav-tabs': (tabType === 'nav-tabs'),
+      'nav-base': (tabType === 'base') }" role="tablist">
+            <li 
                 v-for="r in renderData"
                 v-bind:class="{
                   'active': ($index === active),
@@ -14,6 +17,7 @@
                 <a href="#">{{{r.header}}}</a>
             </li>
      </ul>
+
 
      <!-- Tab panes -->
      <div class="tab-content" v-el:tabContent>
@@ -32,13 +36,19 @@
       active: {
         type: Number,
         default: 0
+      },
+      tabType: {
+        type: String,
+        default: 'nav-tabs'
       }
     },
+
     data() {
       return {
         renderData: []
       }
     },
+
     methods: {
         handleTabListClick(index, el) {
             if (!el.disabled) this.active = index
@@ -47,7 +57,12 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+  .navWrapper {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
   .nav-tabs {
     margin-bottom: 15px
   }
