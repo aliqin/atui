@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="select">
-    <h3 class="page-header"><a href="#select" class="anchor">Select 下拉框</a></h3>
+    <h3 class="page-header"><a href="#select" class="anchor">Select - 选择框</a></h3>
     <p>
       This a <a target="_blank" href="https://silviomoreto.github.io/bootstrap-select/">bootstrap-select</a> implementation.
     </p>
@@ -74,6 +74,11 @@ Select data : {{arr}}
       <p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
       <v-select :value.sync="arr2" :options="fruitOptions" :close-on-select="true">
       </v-select>
+
+      <h4>Disabled selects</h4>
+      <v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+      </v-select>
+
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <v-select>
@@ -153,6 +158,12 @@ fruitOptions = [
           <td><code>1024</code></td>
           <td>Limit the number of elements you are allowed to select.</td>
         </tr>
+        <tr>
+          <td>disabled</td>
+          <td><code>Boolean</code></td>
+          <td><code>false</code></td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
 
@@ -181,7 +192,8 @@ fruitOptions = [
         single: [],
         multiple: [],
         multipleLimit: [],
-        custom: []
+        custom: [],
+        disabled: []
       }
     }
   }
