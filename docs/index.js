@@ -8,6 +8,8 @@ require('./js/showLanguage')
 import headerDocs from './example/headerDocs.vue'
 import gettingStarted from './example/gettingStarted.vue'
 
+import gridDocs from './example/gridDocs.vue'
+
 // 表单类
 import buttonDocs from './example/buttonDocs.vue'
 import buttonsDocs  from './example/buttonsDocs.vue'
@@ -54,6 +56,7 @@ new Vue({
   el: '#wrapper',
   components: {
     gettingStarted,
+    gridDocs,
     container,
     affix,
     buttonDocs,
