@@ -36,7 +36,7 @@
 
   export default {
     components: {
-      limitTextarea
+      limitTextarea: limitTextarea
     },
     data() {
       return {
