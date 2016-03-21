@@ -2,7 +2,25 @@
   <div class="bs-docs-section" id="tabs">
     <h3 class="page-header"><a href="#tabs" class="anchor">Tabs 标签页</a></h3>
     <div class="bs-example">
-      <tabs>
+      <h4>基础型</h4>
+      <tabs :tab-type="tabType">
+        <tab header="系统短信签名">
+          <p>
+            选项卡一内容
+          </p>
+        </tab>
+        <tab header="推广短信签名">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="被禁用的" disabled>
+          ...
+        </tab>
+      </tabs>
+      <br><br>
+      <h4>选项卡型</h4>
+      <tabs >
         <tab header="系统短信签名">
           <p>
             选项卡一内容
@@ -63,6 +81,11 @@
   import tabs from 'src/components/Tabset.vue'
   import tab from 'src/components/Tab.vue'
   export default {
+    data () {
+      return {
+        tabType: "base"
+      }
+    },
     components: {
       tabs,
       tab
