@@ -2,39 +2,133 @@
 // Forms
 // --------------------------------------------------
 
-
-// Normalize non-controls
-//
-// Restyle and baseline non-control form elements.
-
-fieldset {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
-  // so we reset that to ensure it behaves more like a standard block element.
-  // See https://github.com/twbs/bootstrap/issues/12359.
-  min-width: 0;
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
 }
 
-legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: @line-height-computed;
-  font-size: (@font-size-base * 1.5);
-  line-height: inherit;
-  color: @legend-color;
-  border: 0;
-  border-bottom: 1px solid @legend-border-color;
+input[type="checkbox"] {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  box-shadow: none;
+  outline: none;
+
+  &:checked {
+    background-color: #00A0FF;
+    border-color: #00A0FF;
+
+    &:after {
+      position: absolute;
+      left: 2px;
+      top: 1px;
+      width: 10px;
+      height: 10px;
+      line-height: 10px;
+      background-color: #00A0FF;
+      content: '\00ac';
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 2px;
+      text-align: center;
+      transform: rotate(135deg);
+    }
+  }
+
+  &[disabled] {
+    background-color: #f2f2f2;
+    border-color: #e6e6e6;
+    color: #ccc;
+    cursor: not-allowed;
+
+    &:checked {
+      background-color: #f2f2f2;
+      border-color: #e6e6e6;
+      color: #ccc;
+
+      &:after {
+        background-color: #f2f2f2;
+        color: #ccc;
+      }
+    }
+  }
 }
 
-label {
-  display: inline-block;
-  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
-  margin-bottom: 5px;
-  font-weight: bold;
+
+input[type="radio"] {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 7px;
+  box-shadow: none;
+  outline: none;
+
+  &:checked {
+    border-color: #00A0FF;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      width: 6px;
+      height: 6px;
+      background-color: #00A0FF;
+      border-radius: 3px;
+    }
+  }
+
+  &[disabled] {
+    background-color: #f2f2f2;
+    border-color: #e6e6e6;
+    cursor: not-allowed;
+
+    &:checked {
+      border-color: #e6e6e6;
+
+      &:after {
+        background-color: #ccc;
+      }
+    }
+  }
 }
+
+// fieldset {
+//   padding: 0;
+//   margin: 0;
+//   border: 0;
+//   // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+//   // so we reset that to ensure it behaves more like a standard block element.
+//   // See https://github.com/twbs/bootstrap/issues/12359.
+//   min-width: 0;
+// }
+
+// legend {
+//   display: block;
+//   width: 100%;
+//   padding: 0;
+//   margin-bottom: @line-height-computed;
+//   font-size: (@font-size-base * 1.5);
+//   line-height: inherit;
+//   color: @legend-color;
+//   border: 0;
+//   border-bottom: 1px solid @legend-border-color;
+// }
+
+// label {
+//   display: inline-block;
+//   max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+//   margin-bottom: 5px;
+//   font-weight: bold;
+// }
 
 
 // Normalize form controls
@@ -44,40 +138,40 @@ label {
 // address browser inconsistencies.
 
 // Override content-box in Normalize (* isn't specific enough)
-input[type="search"] {
-  .box-sizing(border-box);
-}
+// input[type="search"] {
+//   .box-sizing(border-box);
+// }
 
-// Position radios and checkboxes better
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 4px 0 0;
-  margin-top: 1px \9; // IE8-9
-  line-height: normal;
-}
+// // Position radios and checkboxes better
+// input[type="radio"],
+// input[type="checkbox"] {
+//   margin: 4px 0 0;
+//   margin-top: 1px \9; // IE8-9
+//   line-height: normal;
+// }
 
-input[type="file"] {
-  display: block;
-}
+// input[type="file"] {
+//   display: block;
+// }
 
-// Make range inputs behave like textual form controls
-input[type="range"] {
-  display: block;
-  width: 100%;
-}
+// // Make range inputs behave like textual form controls
+// input[type="range"] {
+//   display: block;
+//   width: 100%;
+// }
 
-// Make multiple select elements height not fixed
-select[multiple],
-select[size] {
-  height: auto;
-}
+// // Make multiple select elements height not fixed
+// select[multiple],
+// select[size] {
+//   height: auto;
+// }
 
-// Focus for file, radio, and checkbox
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  .tab-focus();
-}
+// // Focus for file, radio, and checkbox
+// input[type="file"]:focus,
+// input[type="radio"]:focus,
+// input[type="checkbox"]:focus {
+//   .tab-focus();
+// }
 
 // Adjust output element
 output {
@@ -169,9 +263,9 @@ output {
 // be added to `.form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
-input[type="search"] {
-  -webkit-appearance: none;
-}
+// input[type="search"] {
+//   -webkit-appearance: none;
+// }
 
 
 // Special styles for iOS temporal inputs
@@ -183,26 +277,26 @@ input[type="search"] {
 //
 // Note that as of 8.3, iOS doesn't support `datetime` or `week`.
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="date"],
-  input[type="time"],
-  input[type="datetime-local"],
-  input[type="month"] {
-    &.form-control {
-      line-height: @input-height-base;
-    }
+// @media screen and (-webkit-min-device-pixel-ratio: 0) {
+//   input[type="date"],
+//   input[type="time"],
+//   input[type="datetime-local"],
+//   input[type="month"] {
+//     &.form-control {
+//       line-height: @input-height-base;
+//     }
 
-    &.input-sm,
-    .input-group-sm & {
-      line-height: @input-height-small;
-    }
+//     &.input-sm,
+//     .input-group-sm & {
+//       line-height: @input-height-small;
+//     }
 
-    &.input-lg,
-    .input-group-lg & {
-      line-height: @input-height-large;
-    }
-  }
-}
+//     &.input-lg,
+//     .input-group-lg & {
+//       line-height: @input-height-large;
+//     }
+//   }
+// }
 
 
 // Form groups
@@ -219,82 +313,82 @@ input[type="search"] {
 //
 // Indent the labels to position radios/checkboxes as hanging controls.
 
-.radio,
-.checkbox {
-  position: relative;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
+// .radio,
+// .checkbox {
+//   position: relative;
+//   display: block;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
 
-  label {
-    min-height: @line-height-computed; // Ensure the input doesn't jump when there is no text
-    padding-left: 20px;
-    margin-bottom: 0;
-    font-weight: normal;
-    cursor: pointer;
-  }
-}
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
-  position: absolute;
-  margin-left: -20px;
-  margin-top: 4px \9;
-}
+//   label {
+//     min-height: @line-height-computed; // Ensure the input doesn't jump when there is no text
+//     padding-left: 20px;
+//     margin-bottom: 0;
+//     font-weight: normal;
+//     cursor: pointer;
+//   }
+// }
+// .radio input[type="radio"],
+// .radio-inline input[type="radio"],
+// .checkbox input[type="checkbox"],
+// .checkbox-inline input[type="checkbox"] {
+//   position: absolute;
+//   margin-left: -20px;
+//   margin-top: 4px \9;
+// }
 
-.radio + .radio,
-.checkbox + .checkbox {
-  margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
-}
+// .radio + .radio,
+// .checkbox + .checkbox {
+//   margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
+// }
 
-// Radios and checkboxes on same line
-.radio-inline,
-.checkbox-inline {
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  margin-bottom: 0;
-  vertical-align: middle;
-  font-weight: normal;
-  cursor: pointer;
-}
-.radio-inline + .radio-inline,
-.checkbox-inline + .checkbox-inline {
-  margin-top: 0;
-  margin-left: 10px; // space out consecutive inline controls
-}
+// // Radios and checkboxes on same line
+// .radio-inline,
+// .checkbox-inline {
+//   position: relative;
+//   display: inline-block;
+//   padding-left: 20px;
+//   margin-bottom: 0;
+//   vertical-align: middle;
+//   font-weight: normal;
+//   cursor: pointer;
+// }
+// .radio-inline + .radio-inline,
+// .checkbox-inline + .checkbox-inline {
+//   margin-top: 0;
+//   margin-left: 10px; // space out consecutive inline controls
+// }
 
-// Apply same disabled cursor tweak as for inputs
-// Some special care is needed because <label>s don't inherit their parent's `cursor`.
-//
-// Note: Neither radios nor checkboxes can be readonly.
-input[type="radio"],
-input[type="checkbox"] {
-  &[disabled],
-  &.disabled,
-  fieldset[disabled] & {
-    cursor: @cursor-disabled;
-  }
-}
-// These classes are used directly on <label>s
-.radio-inline,
-.checkbox-inline {
-  &.disabled,
-  fieldset[disabled] & {
-    cursor: @cursor-disabled;
-  }
-}
-// These classes are used on elements with <label> descendants
-.radio,
-.checkbox {
-  &.disabled,
-  fieldset[disabled] & {
-    label {
-      cursor: @cursor-disabled;
-    }
-  }
-}
+// // Apply same disabled cursor tweak as for inputs
+// // Some special care is needed because <label>s don't inherit their parent's `cursor`.
+// //
+// // Note: Neither radios nor checkboxes can be readonly.
+// input[type="radio"],
+// input[type="checkbox"] {
+//   &[disabled],
+//   &.disabled,
+//   fieldset[disabled] & {
+//     cursor: @cursor-disabled;
+//   }
+// }
+// // These classes are used directly on <label>s
+// .radio-inline,
+// .checkbox-inline {
+//   &.disabled,
+//   fieldset[disabled] & {
+//     cursor: @cursor-disabled;
+//   }
+// }
+// // These classes are used on elements with <label> descendants
+// .radio,
+// .checkbox {
+//   &.disabled,
+//   fieldset[disabled] & {
+//     label {
+//       cursor: @cursor-disabled;
+//     }
+//   }
+// }
 
 
 // Static form control text
