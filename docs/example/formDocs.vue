@@ -20,31 +20,29 @@
         <div class="checkbox">
           <h4>checkbox 复选框</h4>
           <input type="checkbox" id="cb1" />
-          <label for="cb1">复选框</label>
+          <label for="cb1">未选中状态</label>
           <br>
           <input type="checkbox" id="cb2" checked />
-          <label for="cb2">默认选中的复选框</label>
+          <label for="cb2">选中状态</label>
           <br>
           <input type="checkbox" id="cb3" disabled />
-          <label for="cb3">禁用的复选框</label>
+          <label for="cb3">未选中不可点击状态</label>
           <br>
           <input type="checkbox" id="cb4" checked disabled />
-          <label for="cb4">禁用的复选框</label>
+          <label for="cb4">选中不可点击状态</label>
           <h4>radio 单选框</h4>
-          <input type="radio" name="hobby" id="radio1" />
-          <label for="radio1">画画</label>
-          <input type="radio" name="hobby" checked id="radio2" />
-          <label for="radio2">游泳</label>
-          <input type="radio" name="hobby" id="radio3" />
-          <label for="radio3">跳舞</label>
-          <input type="radio" name="hobby" id="radio4" />
-          <label for="radio4">诗朗诵</label>
+          <input type="radio" id="radio1" />
+          <label for="radio1">未选中状态</label>
           <br>
-          <input type="radio" id="radio5" disabled />
-          <label for="radio5">被禁用的单选框</label>
+          <input type="radio" id="radio2" checked />
+          <label for="radio2">选中状态</label>
           <br>
-          <input type="radio" id="radio5" checked disabled />
-          <label for="radio5">被禁用的单选框</label>
+          <input type="radio" id="radio3" disabled />
+          <label for="radio3">未选中不可点击状态</label>
+          <br>
+          <input type="radio" id="radio4" checked disabled />
+          <label for="radio4">选中不可点击状态</label>
+
         </div>
         <button type="submit" class="btn">提交</button>
       </form>
