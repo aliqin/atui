@@ -28,6 +28,24 @@
       </div>
   </div>
   <container>
+  <div class="col-md-5">
+      <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm ">
+        <h3>基础样式</h3>
+        <ul class="nav bs-docs-sidenav">
+          <li v-for="a in elements"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+        </ul>
+        <h3>UI组件</h3>
+        <ul class="nav bs-docs-sidenav" id="sidenav">
+          <li v-for="a in components"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+        </ul>
+        <h3>filters</h3>
+        <ul class="nav bs-docs-sidenav">
+          <li v-for="a in filters"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+        </ul>
+        <a href="#top" class="back-to-top">Back to top</a>
+        <a href="http://gitlab.alibaba-inc.com/aliqin/vue-component" class="back-to-top">GitLab</a>
+      </nav>
+    </div>
     <div class="col-md-19">
 
       <getting-started></getting-started>
@@ -74,28 +92,7 @@
       <phone-number-docs></phone-number-docs>
       </div>
     </div>
-    <div class="col-md-5">
-
-  
-
-      <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm ">
-        <h3>基础样式</h3>
-        <ul class="nav bs-docs-sidenav">
-          <li v-for="a in elements"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
-        </ul>
-        <h3>UI组件</h3>
-        <ul class="nav bs-docs-sidenav" id="sidenav">
-          <li v-for="a in components"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
-        </ul>
-        <h3>filters</h3>
-        <ul class="nav bs-docs-sidenav">
-          <li v-for="a in filters"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
-        </ul>
-        <a href="#top" class="back-to-top">Back to top</a>
-        <a href="http://gitlab.alibaba-inc.com/aliqin/vue-component" class="back-to-top">GitLab</a>
-      </nav>
-
-    </div>
+    
   </container>
 </div>
 <footer class="bs-docs-footer">
