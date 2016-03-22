@@ -1,46 +1,12 @@
 <template>
-    <div class="vue-pagination-box" v-if="totalPage > 1">
-        <ul class="vue-pagination">
+    <div class="pagination" v-if="totalPage > 1">
+        <ul class="pagination-item">
             <li v-for="page in pageRange" @click="pageClick(page.num)" :class={'current':page.className}>
                 {{page.text}}
             </li>
         </ul>
     </div>
 </template>
-<style lang="less">
-@import "../style/lesshat.less";
-.vue-pagination-box{
-    margin-top:10px;
-}
-.vue-pagination{
-    float:right;
-    & > li{
-        cursor: pointer;
-        border-radius: 2px;
-        border: 1px solid #FFF;
-        height: 30px;
-        line-height: 30px;
-        padding-left: 11px;
-        padding-right: 11px;
-        text-align: center;
-        list-style: none;
-        float: left;
-        user-select:none;
-        .border-radius(2px);
-        &:hover{
-            border: 1px solid #AAA;
-            color: #666;
-            text-decoration: none;
-        }
-        &.current{
-            background-color: #FFF;
-            border: 1px solid #333;
-            color: #333;
-        }
-    }
-}
-
-</style>
 <script>
 export default {
     props: {

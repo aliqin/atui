@@ -37,7 +37,7 @@
 </script></code></pre>
   </div>
   <h2>Options</h2>
-  <h4 style="margin: 10px 0;">Steps</h4>
+  <h4 style="margin: 20px 0;">Steps</h4>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -56,7 +56,7 @@
       </tr>
     </tbody>
   </table>
-  <h4 style="margin: 10px 0;">Steps step</h4>
+  <h4 style="margin: 20px 0;">Steps step</h4>
   <table class="table table-bordered">
     <thead>
       <tr>
