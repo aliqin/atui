@@ -30,6 +30,7 @@
           <br>
           <input type="checkbox" id="cb4" checked disabled />
           <label for="cb4">选中不可点击状态</label>
+          <br>
           <h4>radio 单选框</h4>
           <input type="radio" id="radio1" />
           <label for="radio1">未选中状态</label>
@@ -42,7 +43,9 @@
           <br>
           <input type="radio" id="radio4" checked disabled />
           <label for="radio4">选中不可点击状态</label>
-
+          <br>
+          <h4>Upload 文件上传</h4>
+          <upload-file id="file" :upload-time="10"></upload-file>
         </div>
         <button type="submit" class="btn">提交</button>
       </form>
@@ -77,4 +80,18 @@ checkbox复选框
   </div>
 </template>
 
+<script>
+  import uploadFile from 'src/components/upload.vue'
+
+  export default {
+    components: {
+      uploadFile: uploadFile
+    },
+    data() {
+      return {
+        uploadTime: 0
+      }
+    }
+  }
+</script>
 

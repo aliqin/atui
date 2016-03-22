@@ -44,6 +44,7 @@ import asideDocs from './example/asideDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import stepsDocs from './example/stepsDocs.vue'
+import breadcrumbDocs from './example/breadcrumbDocs.vue'
 
 
 // filters
@@ -84,6 +85,7 @@ new Vue({
     tabsDocs,
     tableDocs,
     stepsDocs,
+    breadcrumbDocs,
     tooltipDocs,
     typeaheadDocs,
     list: {

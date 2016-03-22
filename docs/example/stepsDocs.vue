@@ -2,31 +2,88 @@
   <div class="bs-docs-section" id="steps">
     <h3 class="page-header"><a href="#steps" class="anchor">Steps 步骤条</a></h3>  
     <div class="bs-example">
-        <steps>
-            <step></step>
+        <h4 class="example-title">基础型</h4>
+        <steps :current="current">
+            <step title="已完成"></step>
+            <step title="进行中" ></step>
+            <step title="有一个待运行"></step>
+            <step title="待运行"></step>
         </steps>
+        <br><br>
+        <h4 class="example-title">带文字描述</h4>
+        <steps :current="current">
+            <step title="已完成" description="这里是多信息"></step>
+            <step title="进行中" description="这里是多信息的耶哦"></step>
+            <step title="有一个待运行" description="描述啊描述啊"></step>
+            <step title="待运行" description="这里是多信息的描述啊"></step>
+        </steps>
+        <br>
+        <button type="button" class="btn default primary" @click="_next">next</button>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-
+<steps :current="current">
+    <step title="已完成"></step>
+    <step title="进行中" ></step>
+    <step title="有一个待运行"></step>
+    <step title="待运行"></step>
+</steps>
+<steps :current="current">
+    <step title="已完成" description="这里是多信息"></step>
+    <step title="进行中" description="这里是多信息的耶哦"></step>
+    <step title="有一个待运行" description="描述啊描述啊"></step>
+    <step title="待运行" description="这里是多信息的描述啊"></step>
+</steps>
 </script></code></pre>
   </div>
   <h2>Options</h2>
+  <h4 style="margin: 10px 0;">Steps</h4>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        
+        <td>current</td>
+        <td>Number</td>
+        <td>0</td>
+        <td>当前正在执行的步骤数，可以通过status属性覆盖状态</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 style="margin: 10px 0;">Steps step</h4>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>说明</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>title</td>
+        <td>String</td>
+        <td>无</td>
+        <td>标题</td>
       </tr>
       <tr>
-        
+        <td>description</td>
+        <td>String</td>
+        <td>无</td>
+        <td>步骤的详情描述</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>String</td>
+        <td>无</td>
+        <td>执行step的状态，当不设置此属性时，父组件Steps会自动根据current来设置对应status,（可选值wait, process, finish）</td>
       </tr>
     </tbody>
   </table>
@@ -38,12 +95,21 @@
   export default {
     data () {
       return {
-
+        current: 0
       }
     },
     components: {
       steps,
       step
+    },
+    methods: {
+      _next () {
+        if(this.current === 3) {
+          this.current = 0;
+          return
+        }
+        this.current++;
+      }
     }
   }
 </script>
