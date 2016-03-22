@@ -4,7 +4,7 @@ import MenuItem from './MenuItem.vue'
 // import Divider from './Divider.vue'
 
 Menu.SubMenu = SubMenu
-Menu.Item = MenuItem
+Menu.MenuItem = MenuItem
 // Menu.Divider = Divider
 
 export default Menu

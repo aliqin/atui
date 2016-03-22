@@ -1,8 +1,19 @@
 <template>
-  <div class="bs-docs-section" id="modal">
-    <h3 class="page-header"><a href="#modal" class="anchor">Menu 菜单</a></h3>
+  <div class="bs-docs-section" id="menu">
+    <h3 class="page-header"><a href="#menu" class="menu">Menu 菜单</a></h3>
     <div class="bs-example">
-
+    <menu>
+      <menu-item>
+        菜单1
+      </menu-item>
+      <menu-item>顶起顶起</menu-item>
+      <menu-item>顶起顶起</menu-item>
+      <menu-item>
+        <sub-menu>
+          <menu-item>顶起顶起</menu-item>
+        </sub-menu>
+      </menu-item>
+    </menu>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 
@@ -54,7 +65,8 @@
 </template>
 
 <script>
-  import Menu, { SubMenu, MenuItem }  from 'src/components/menu/'
+  import Menu from 'src/components/menu/'
+  const { SubMenu, MenuItem } = Menu
   export default {
     data() {
       return {
