@@ -9,7 +9,7 @@
       <menu-item>顶起顶起</menu-item>
       <menu-item>顶起顶起</menu-item>
       <menu-item>
-        <sub-menu>
+        <sub-menu title="子导航">
           <menu-item>顶起顶起</menu-item>
         </sub-menu>
       </menu-item>
