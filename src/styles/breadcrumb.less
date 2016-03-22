@@ -1,0 +1,32 @@
+
+// - breadcrumb
+
+@breadcrumb-link-color: 			#999999;
+@breadcrumb-last-link-color: 		#666;
+@breadcrumb-slash-color: 			#ccc;
+
+.breadcrumbs {
+	.breadcrumb {
+		padding: 0;
+		background-color: #fff;
+		.breadcrumb-link {
+			padding: 0 22px;
+			color: @breadcrumb-link-color;
+			font-size: 12px;
+			font-family:MicrosoftYaHei;
+		}
+	}
+	
+	.breadcrumb:last-child .breadcrumb-link{
+		color: @breadcrumb-last-link-color;
+	}
+
+	.breadcrumb-slash {
+		color: @breadcrumb-slash-color;
+		font-size: 12px;
+	}
+
+	span:last-child .breadcrumb-slash {
+		display: none;
+	}
+}
