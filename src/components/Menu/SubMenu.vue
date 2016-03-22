@@ -1,11 +1,11 @@
 <template>
-  <li class="vue-sub-menu">
+  <ul class="vue-sub-menu">
     <slot></slot>
-  </div>
+  </ul>
 </template>
 
 <script>
-import coerceBoolean from './utils/coerceBoolean.js'
+import coerceBoolean from '../utils/coerceBoolean.js'
 
   export default {
     props: {
