@@ -1,4 +1,5 @@
 <template>
+  <div>{{title}}</div>
   <ul class="vue-sub-menu">
     <slot></slot>
   </ul>
@@ -9,22 +10,15 @@ import coerceBoolean from '../utils/coerceBoolean.js'
 
   export default {
     props: {
-      oneAtATime: {
+      title:String,
+      isOpen: {
         type: Boolean,
         coerce: coerceBoolean,
         default: false
       }
     },
     created() {
-      this.$on('isOpenEvent', (child)=> {
-        if (this.oneAtATime) {
-          this.$children.forEach((item) => {
-            if (child !== item ) {
-              item.isOpen = false
-            }
-          })
-        }
-      })
+      
     }
   }
 </script>
