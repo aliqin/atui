@@ -21,6 +21,10 @@
             <span class="icon-github-circled"></span>
             GitLab
           </a></li>
+          <li><a href="http://ued.aliqin.alibaba.net/webcompon/" target="_blank">
+            <span class="icon-github-circled"></span>
+            视觉稿
+          </a></li>
         </ul>
       </nav>
     </div>

@@ -153,14 +153,14 @@ new Vue({
 
 // import Router from './routers'
 
-// // debug
-// Vue.config.debug = true
+// // // debug
+// // Vue.config.debug = true
 
-// // start app
+// // // start app
 // var App = Vue.extend({
 //   components:{
 //     accordion: require('src/components/accordion.vue')
 //   }
 // })
 
-// Router.start(App, '#components')
+// Router.start(App,'#wrapper')
