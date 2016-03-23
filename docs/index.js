@@ -14,6 +14,7 @@ import gridDocs from './example/gridDocs.vue'
 import buttonDocs from './example/buttonDocs.vue'
 import buttonsDocs  from './example/buttonsDocs.vue'
 import inputDocs from './example/inputDocs.vue'
+import uploadDocs from './example/uploadDocs.vue'
 import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
@@ -67,6 +68,7 @@ new Vue({
     spinDocs,
     inputDocs,
     textareaDocs,
+    uploadDocs,
     switchDocs,
     formDocs,
     alertDocs,

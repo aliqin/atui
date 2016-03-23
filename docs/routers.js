@@ -15,6 +15,7 @@ import buttonDocs from './example/buttonDocs.vue'
 import buttonsDocs  from './example/buttonsDocs.vue'
 import inputDocs from './example/inputDocs.vue'
 import textareaDocs from './example/textareaDocs.vue'
+import uploadDocs from './example/uploadDocs.vue'
 import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
@@ -82,6 +83,9 @@ router.map({
 			'/textarea': {
 				component:textareaDocs
 			},
+      '/upload': {
+        component:uploadDocs
+      },
 			'/form': {
 				component:formDocs
 			},
