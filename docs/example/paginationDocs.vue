@@ -2,7 +2,12 @@
   <div class="bs-docs-section" id="pagination">
     <h3 class="page-header"><a href="#pagination" class="anchor">pagination 翻页</a></h3>  
     <div class="bs-example">
-      <pagination id="pagination-search-list" :total-page.sync="totalPage" :curr-page.sync="currPage" />
+      <pagination id="pagination-search-list",
+                  :total-page.sync="totalPage", 
+                  :curr-page.sync="currPage", 
+                  :show-jumper="showJumper",
+                  :total="total"
+      />
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
@@ -30,23 +35,32 @@
 </template>
 
 <script>
-  import pagination from 'src/components/Pagination.vue'
+  import Pagination from 'src/components/Pagination/'
+  const { Jumper } = Pagination
   export default {
     data () {
       return {
         id: "12",
         totalPage: 100,
-        currPage: 10
+        currPage: 10,
+        showJumper: true,
+        total: 100
       }
     },
     components: {
-      pagination
+      Pagination,
+      Jumper
+    },
+    events: {
+      pageChange () {
+
+      }
     }
   }
 </script>
 
 <style lang="less">
-  .example-title {
-    margin: 20px 0;
-  }
+  // .example-title {
+  //   margin: 20px 0;
+  // }
 </style>
