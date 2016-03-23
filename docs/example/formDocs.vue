@@ -45,7 +45,36 @@
           <label for="radio4">选中不可点击状态</label>
           <br>
           <h4>Upload 文件上传</h4>
-          <upload-file id="file" :upload-time="10"></upload-file>
+          <h5>1、点击上传</h5>
+          <form id="upload1" method="post" action="{{ajaxUrl}}">
+            <file-upload
+              id="file-upload-click-test"
+              form-id="upload1"
+              model="model"
+              upload-type="click"
+              :ajax="ajaxUrl"
+              :multiple="multiple"
+              name="files1"
+              :auto-submit="true"
+              :hide-button="true"
+              :file-list.sync="fileList">
+            </file-upload>
+           </form>
+           <h5>2、支持拖拽上传</h5>
+           <form id="upload2" method="post" action="{{ajaxUrl}}">
+            <file-upload
+              id="file-upload-drag-test"
+              form-id="upload2"
+              model="model"
+              upload-type="drag"
+              :ajax="ajaxUrl"
+              :multiple="multiple"
+              name="files2"
+              :auto-submit="autoSubmit"
+              :hide-button="hideButton"
+              :file-list.sync="fileList">
+            </file-upload>
+           </form>
         </div>
         <button type="submit" class="btn">提交</button>
       </form>
@@ -85,11 +114,17 @@ checkbox复选框
 
   export default {
     components: {
-      uploadFile: uploadFile
+      fileUpload: uploadFile
     },
     data() {
       return {
-        uploadTime: 0
+        uploadTime: 0,
+        model: null,
+        fileList: [],
+        multiple: true,
+        hideButton: false,
+        autoSubmit: false,
+        ajaxUrl: 'http://mosquito.ie:3004/upload'
       }
     }
   }
