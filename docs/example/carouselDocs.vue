@@ -2,7 +2,7 @@
   <div class="bs-docs-section" id="carousel">
     <h3 class="page-header"><a href="#caoursel" class="anchor">Carousel 走马灯</a></h3>
     <div class="bs-example">
-      <carousel indicators="false" controls="true">
+      <carousel indicators="true" controls="true">
         <slider>
           <img src="http://placehold.it/1200x500?text=one">
           <div class="carousel-caption">
