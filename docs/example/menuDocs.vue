@@ -1,22 +1,35 @@
 <template>
   <div class="bs-docs-section" id="menu">
-    <h3 class="page-header"><a href="#menu" class="menu">Menu 菜单</a></h3>
+    <h3 class="page-header"><a href="#menu" class="anchor">Menu 菜单</a></h3>
     <div class="bs-example">
     <menu>
-      <menu-item>
-        菜单1
-      </menu-item>
-      <menu-item>顶起顶起</menu-item>
-      <menu-item>顶起顶起</menu-item>
-      <menu-item>
-        <sub-menu title="子导航">
-          <menu-item>顶起顶起</menu-item>
-        </sub-menu>
-      </menu-item>
+      <menu-item>菜单1</menu-item>
+      <sub-menu title="子导航1">
+        <menu-item>子导航11</menu-item>
+        <menu-item>子导航12</menu-item>
+        <menu-item>子导航13</menu-item>
+      </sub-menu>
+      <sub-menu title="子导航2">
+        <menu-item>子导航21</menu-item>
+        <menu-item>子导航22</menu-item>
+        <menu-item>子导航23</menu-item>
+      </sub-menu>
     </menu>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-
+<menu>
+  <menu-item>菜单1</menu-item>
+  <sub-menu title="子导航1">
+    <menu-item>子导航11</menu-item>
+    <menu-item>子导航12</menu-item>
+    <menu-item>子导航13</menu-item>
+  </sub-menu>
+  <sub-menu title="子导航2">
+    <menu-item>子导航21</menu-item>
+    <menu-item>子导航22</menu-item>
+    <menu-item>子导航23</menu-item>
+  </sub-menu>
+</menu>
   </script></code></pre>
   <h2>Options</h2>
   <table class="table table-bordered">
