@@ -90,8 +90,9 @@
 </template>
 
 <script>
-  import steps from 'src/components/Steps.vue'
-  import step from 'src/components/Step.vue'
+  import Steps from 'src/components/Steps/'
+  import Step from 'src/components/Steps/Step.vue'
+
   export default {
     data () {
       return {
@@ -99,8 +100,8 @@
       }
     },
     components: {
-      steps,
-      step
+      Steps,
+      Step
     },
     methods: {
       _next () {

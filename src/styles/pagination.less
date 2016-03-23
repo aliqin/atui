@@ -13,57 +13,75 @@
 @pagination-disabled-border:           @pagination-disabled-color;
 
 .pagination{
-    margin-top:10px;
     display: inline-block;
+    vertical-align: middle;
+    margin: 0;
 
-}
-.pagination-items{
-    float:right;
-    padding: 0;
-    & > li.pagination-item{
-        cursor: pointer;
-        border: 1px solid @pagination-border;
-        height: 30px;
-        line-height: 30px;
-        padding-left: 11px;
-        padding-right: 11px;
-        text-align: center;
-        list-style: none;
+    .pagination-selector {
         float: left;
-        margin: 0 8px;
-        user-select:none;
-        color: #666;
-        border-radius: 4px;
-        font-size: 12px;
-        &:hover{
-            border: 1px solid @pagination-hover-color;
-            color: @pagination-hover-color;
-            text-decoration: none;
-        }
-        &.current{
-            background-color: @pagination-current-bg;
-            border: 1px solid @pagination-current-border;
-            color: @pagination-current-color;
-        }
+        display: inline-block;
+        vertical-align: middle;
+        margin: 4px 30px 0 0;
+    }
 
-        &-ellipsis {
-          border: none;
-          &:hover {
-            border: none;
-          }
-        }
+    .pagination-jump {
+        float: right;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    
+    .pagination-items{
+        float:right;
+        padding: 0;
+        margin-top: 2px;
+        & > li.pagination-item{
+            cursor: pointer;
+            border: 1px solid @pagination-border;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 11px;
+            padding-right: 11px;
+            text-align: center;
+            list-style: none;
+            float: left;
+            margin: 0 8px;
+            user-select:none;
+            color: #666;
+            border-radius: 4px;
+            font-size: 12px;
+            &:hover{
+                border: 1px solid @pagination-hover-color;
+                color: @pagination-hover-color;
+                text-decoration: none;
+            }
+            &.current{
+                background-color: @pagination-current-bg;
+                border: 1px solid @pagination-current-border;
+                color: @pagination-current-color;
+            }
 
-        &-disabled {
-            border-color: @pagination-disabled-border;
-            color: @pagination-disabled-color;
-            &:hover {
-              border-color: @pagination-disabled-border;
-              color: @pagination-disabled-color;
-              cursor: default;
+            &-ellipsis {
+              border: none;
+              &:hover {
+                border: none;
+              }
+            }
+
+            &-disabled {
+                border-color: @pagination-disabled-border;
+                color: @pagination-disabled-color;
+                &:hover {
+                  border-color: @pagination-disabled-border;
+                  color: @pagination-disabled-color;
+                  cursor: default;
+                }
             }
         }
     }
 }
+
+
 
 
 
