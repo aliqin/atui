@@ -1,6 +1,6 @@
 <template>
-  <div>{{title}}</div>
-  <ul class="vue-sub-menu">
+  <div class="vue-sub-menu-title" @click="triggerSub">{{title}}</div>
+  <ul class="vue-sub-menu panel-collapse collapse-transition" v-show="isOpen">
     <slot></slot>
   </ul>
 </template>
@@ -14,11 +14,16 @@ import coerceBoolean from '../utils/coerceBoolean.js'
       isOpen: {
         type: Boolean,
         coerce: coerceBoolean,
-        default: false
+        default: true
       }
     },
     created() {
       
+    },
+    methods:{
+      triggerSub(){
+        this.isOpen = !this.isOpen
+      }
     }
   }
 </script>
