@@ -23,7 +23,6 @@
 <script>
 import EventListener from './utils/EventListener.js'
 import coerceBoolean from './utils/coerceBoolean.js'
-
   export default {
     props: {
       indicators: {
@@ -75,7 +74,6 @@ import coerceBoolean from './utils/coerceBoolean.js'
       slide(direction, selected, prev) {
         if (this._prevSelectedEvent) this._prevSelectedEvent.remove()
         if (this._selectedEvent) this._selectedEvent.remove()
-
         const prevSelectedEl = this.slider[prev]
         const selectedEl = this.slider[selected]
         const transitionendFn = ()=> {
@@ -83,7 +81,6 @@ import coerceBoolean from './utils/coerceBoolean.js'
           selectedEl.classList.add('active')
           this.isAnimating = false
         }
-
         direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')
         // request property that requires layout to force a layout
         var x = selectedEl.clientHeight
@@ -115,7 +112,6 @@ import coerceBoolean from './utils/coerceBoolean.js'
         el.addEventListener('mouseleave', ()=> intervalManager(true, this.nextClick, this.interval))
       }
     },
-
   }
 </script>
 

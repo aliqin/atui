@@ -22,5 +22,31 @@
 	}
 }
 .vue-sub-menu-title {
+	position: relative;
+    display: block;
+    white-space: nowrap;
 	cursor: pointer;
+	&::after{
+		font-family: "anticon" !important;
+		font-style: normal;
+		vertical-align: baseline;
+		text-align: center;
+		text-transform: none;
+		text-rendering: auto;
+		position: absolute;
+		-webkit-transition: -webkit-transform .3s ease;
+		transition: -webkit-transform .3s ease;
+		transition: transform .3s ease;
+		transition: transform .3s ease, -webkit-transform .3s ease;
+		content: "\E603";
+		right: 16px;
+		top: 0;
+		display: inline-block;
+		font-size: 12px;
+		font-size: 8px \9;
+		-webkit-transform: scale(.66666667) rotate(0deg);
+		transform: scale(.66666667) rotate(0deg);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+		zoom: 1;
+	}
 }

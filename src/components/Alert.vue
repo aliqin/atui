@@ -18,6 +18,7 @@
       @click="show = false">
       <span>&times;</span>
     </button>
+    <icon :type="type"></icon>
     <slot></slot>
   </div>
 </template>
@@ -31,6 +32,11 @@ import coerceBoolean from './utils/coerceBoolean.js'
         type: String
       },
       dismissable: {
+        type: Boolean,
+        coerce: coerceBoolean,
+        default: false,
+      },
+      showIcon: {
         type: Boolean,
         coerce: coerceBoolean,
         default: false,

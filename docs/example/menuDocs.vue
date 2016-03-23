@@ -5,9 +5,9 @@
     <menu>
       <menu-item>菜单1</menu-item>
       <sub-menu title="子导航1">
-        <menu-item>子导航11</menu-item>
-        <menu-item>子导航12</menu-item>
-        <menu-item>子导航13</menu-item>
+        <menu-item><a href="http://www.taobao.com" target="_blank">淘宝</a></menu-item>
+        <menu-item><a href="http://www.tmall.com" target="_blank">天猫</a></menu-item>
+        <menu-item><a href="http://www.alipay.com" target="_blank">支付宝</a></menu-item>
       </sub-menu>
       <sub-menu title="子导航2">
         <menu-item>子导航21</menu-item>
@@ -20,9 +20,9 @@
 <menu>
   <menu-item>菜单1</menu-item>
   <sub-menu title="子导航1">
-    <menu-item>子导航11</menu-item>
-    <menu-item>子导航12</menu-item>
-    <menu-item>子导航13</menu-item>
+    <menu-item><a href="http://www.taobao.com" target="_blank">淘宝</a></menu-item>
+    <menu-item><a href="http://www.tmall.com" target="_blank">天猫</a></menu-item>
+    <menu-item><a href="http://www.alipay.com" target="_blank">支付宝</a></menu-item>
   </sub-menu>
   <sub-menu title="子导航2">
     <menu-item>子导航21</menu-item>
