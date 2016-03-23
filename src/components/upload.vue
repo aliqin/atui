@@ -444,18 +444,24 @@
       parseResponse(response) {
         let data = null;
 
-        try {
-          data = JSON.parse(response);
-        } catch (e) {
-          this.setError('Unexpected response from the server');
-        }
-
-        if (data.success) {
-          this.state = 'success';
-          this.model = data.data;
-          this.$dispatch('completed::file-upload', {model: this.model});
+        if(!response) {
+          this.setError('服务器没有响应，或响应数据格式有问题');
         } else {
-          this.setError(data.error);
+          try {
+            data = JSON.parse(response);
+          } catch (e) {
+            this.setError('服务器响应数据格式有问题');
+          }
+
+          if(data) {
+            if (data.success) {
+              this.state = 'success';
+              this.model = data.data;
+              this.$dispatch('completed::file-upload', {model: this.model});
+            } else if(data.error) {
+              this.setError(data.error);
+            }
+          }
         }
       },
       setError(message) {

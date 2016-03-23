@@ -75,6 +75,12 @@ upload文件上传
           <td>取值有<code>click</code>和<code>drop</code>两种，分别代表点击上传和支持拖拽上传</td>
         </tr>
         <tr>
+          <td>accept</td>
+          <td><code>String</code></td>
+          <td><code>空</code></td>
+          <td>上传的文件类型指定，详细可查看MIME类型</td>
+        </tr>
+        <tr>
           <td>ajax</td>
           <td><code>String</code></td>
           <td><code>空</code></td>
@@ -111,10 +117,16 @@ upload文件上传
           <td>上传的文件列表</td>
         </tr>
         <tr>
+          <td>method</td>
+          <td><code>String</code></td>
+          <td><code>POST</code></td>
+          <td>上传文件请求类型</td>
+        </tr>
+        <tr>
           <td>completed::file-upload</td>
           <td><code>Function</code></td>
           <td></td>
-          <td>上传请求执行完成后的回调，需要在events中捕获。参数格式是string，表示请求的错误提示；参数格式是object，表示请求成功响应返回的结果</td>
+          <td>上传请求执行完成后的回调，需要在events中捕获。</td>
         </tr>
       </tbody>
     </table>
@@ -137,7 +149,7 @@ upload文件上传
         multiple: true,
         hideButton: false,
         autoSubmit: false,
-        ajaxUrl: 'http://mosquito.ie:3004/upload'
+        ajaxUrl: 'http://localhost:8080/upload'
       }
     },
     events: {
