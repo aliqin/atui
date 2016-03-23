@@ -6,7 +6,8 @@
                   :total-page.sync="totalPage", 
                   :curr-page.sync="currPage", 
                   :show-jumper="showJumper",
-                  :total="total"
+                  :total="total",
+                  :simple="true"
       />
     </div>
 <pre>
@@ -36,11 +37,9 @@
 
 <script>
   import Pagination from 'src/components/Pagination/'
-  const { Jumper } = Pagination
   export default {
     data () {
       return {
-        id: "12",
         totalPage: 100,
         currPage: 10,
         showJumper: true,
@@ -48,8 +47,7 @@
       }
     },
     components: {
-      Pagination,
-      Jumper
+      Pagination
     },
     events: {
       pageChange () {
