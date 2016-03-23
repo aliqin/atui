@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="datepicker">
-    <h1 class="page-header"><a href="#datepicker" class="anchor">Datepicker</a></h1>
+    <h1 class="page-header"><a href="#datepicker" class="anchor">Datepicker 日历控件</a></h1>
     <div class="bs-example">
       <p>
         <pre>
@@ -9,7 +9,7 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
       </p>
       <datepicker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
       :format="format.toString()" :show-reset-button="reset"></datepicker>
-      <h4>Disabled days of week</h4>
+      <h4>禁用一周的某日</h4>
 
       <v-select multiple :value.sync="disabled">
   <v-option value="0">0</v-option>
@@ -21,7 +21,7 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
   <v-option value="6">6</v-option>
       </v-select>
 
-      <h4>Format</h4>
+      <h4>格式化</h4>
       <v-select :value.sync="format" >
         <v-option value="yyyy,MM,dd">yyyy,MM,dd</v-option>
         <v-option value="yyyy-MM-dd">yyyy-MM-dd</v-option>
@@ -30,8 +30,8 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
         <v-option value="MMMM/dd/yyyy">MMMM/dd/yyyy</v-option>
       </v-select>
 
-      <h4>Reset button</h4>
-      <label><input type="checkbox" v-model="reset" @click="x"> toggle reset button</label>
+      <h4>重置按钮</h4>
+      <label><input type="checkbox" v-model="reset" @click="x">打开或关闭重置功能</label>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <datepicker
@@ -72,33 +72,32 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
           <td>value</td>
           <td><code>String</code></td>
           <td></td>
-          <td>Value of the input DOM</td>
+          <td>输入框里的默认值</td>
         </tr>
         <tr>
           <td>Width</td>
           <td><code>String</code></td>
           <td>200px</td>
-          <td>Width of the input DOM</td>
+          <td>输入框的宽度</td>
         </tr>
         <tr>
           <td>format</td>
           <td><code>String</code></td>
           <td><code>MMMM/dd/yyyy</code></td>
-          <td>The date format, combination of d, dd, M, MM ,MMM , MMMM, yyyy.</td>
+          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>
         </tr>
         <tr>
           <td>disabledDaysOfWeek</td>
           <td><code>Array</code></td>
           <td></td>
-          <td>Days of the week that should be disabled. Values are 0 (Sunday) to 6 (Saturday).
-             Multiple values should be comma-separated.</td>
+          <td>禁用一周的某一天. 按 0 到 6 .
+             禁用多天可用<code>逗号</code>分隔</td>
         </tr>
         <tr>
           <td>showResetButton</td>
           <td><code>Boolean</code></td>
           <td>false</td>
-          <td>If <strong>true</strong> shows an &times; shaped button to clear the selected date.
-            Usefull in forms where date entry is optional.</td>
+          <td>是否显示清除日期按钮</td>
         </tr>
       </tbody>
     </table>
