@@ -1,15 +1,15 @@
 <template>
 <div class="file-upload">
-  <div class="click-upload" v-if="uploadType == 'click'" id="{{id}}">
+  <div class="click-upload" v-if="uploadType == 'click'">
     <div>
       <input
         type="file"
         name="files[]"
-        id="file"
+        id="{{id}}"
         accept="accept"
         v-bind:multiple="multiple"
         v-on:change="onChange($event)" />
-      <label for="file">
+      <label for="{{id}}">
         <span class="btn tertiary small">点击上传</span>
       </label>
     </div>
@@ -18,7 +18,7 @@
         <span>{{file}}</span>
       </a>
     </div>
-    <button type="submit" class="btn" v-if="!hideButton && !autoSubmit" v-on:click.prevent="submitForm($event)">{{text.button}}</button>
+    <button type="submit" class="btn" v-if="!hideButton && !autoSubmit" v-on:click.prevent="submitForm($event)">Upload</button>
     <div class="state">
       <div class="upload-rate" v-show="state == 'uploading'">
         <span class="rate-control">
@@ -43,21 +43,21 @@
       </div>
     </div>
   </div>
-  <div v-if="uploadType == 'drag'" id="{{id}}" class="drag-upload {{advancedUpload ? 'active' : ''}} {{dragover ? 'is-dragover' : ''}}">
+  <div v-if="uploadType == 'drag'" class="drag-upload {{advancedUpload ? 'active' : ''}} {{dragover ? 'is-dragover' : ''}}">
       <div v-if="state == null || state == 'retry'">
         <input
             type="file"
             name="files[]"
-            id="file"
+            id="{{id}}"
             accept="accept"
             v-bind:multiple="multiple && advancedUpload"
             v-on:change="onChange($event)" />
-        <label for="file">
-          <span v-if="fileList.length == 0 && advancedUpload">{{text.drag}}</span>
+        <label for="{{id}}">
+          <span v-if="fileList.length == 0 && advancedUpload">将文件拖拽至框中上传或点此上传</span>
           <p v-if="fileList.length > 0" v-for="file in selectFiles">{{file}}</p>
         </label>
         <br>
-        <button type="submit" class="btn" v-if="!hideButton && !autoSubmit" v-on:click.prevent="submitForm($event)">{{text.button}}</button>
+        <button type="submit" class="btn" v-if="!hideButton && !autoSubmit" v-on:click.prevent="submitForm($event)">Upload</button>
       </div>
       <div class="state" v-if="state != null">
         <span class="state-uploading animate" v-show="state == 'uploading'">
@@ -251,9 +251,6 @@
         type: String,
         default: 'files',
       },
-      model: {
-        default: null,
-      },
       multiple: {
         type: Boolean,
         default: false,
@@ -269,9 +266,6 @@
         type: Object,
         default() {
           return {
-            drag: '将文件拖拽至框中上传或点此上传',
-            selected: 'files selected',
-            button: 'Upload',
             uploading: '上传中...',
             retry: '请重试',
           }
@@ -283,7 +277,8 @@
         state: null,
         dragover: false,
         progress: '0%',
-        errorMessage: ''
+        errorMessage: '',
+        model: null
       }
     },
     computed: {
@@ -305,13 +300,13 @@
         return result;
       }
     },
-    events: {
-      'submit::file-upload'(id) {
-        if (this.id === id) {
-          this.submitForm()
-        }
-      }
-    },
+    // events: {
+    //   'submit::file-upload'(id) {
+    //     if (this.id === id) {
+    //       this.submitForm()
+    //     }
+    //   }
+    // },
     ready() {
       this._input = this.$el.querySelector('input');
 
@@ -402,11 +397,12 @@
 
         xhr.onload = () => {
           this.state = null;
-          if (xhr.status >= 200 && xhr.status < 400) {
-            this.parseResponse(xhr.responseText);
-          } else {
-            this.parseResponse(xhr.responseText);
-          }
+          // if (xhr.status >= 200 && xhr.status < 400) {
+          //   this.parseResponse(xhr.responseText);
+          // } else {
+          //   this.parseResponse(xhr.responseText);
+          // }
+          this.parseResponse(xhr.responseText);
         }
 
         xhr.upload.onprogress = (e) => {
