@@ -3,7 +3,7 @@
   role="menuitem"
   :style="style"
   :title="title"
-  @click="onClick">
+  @click="onSelect">
   <slot></slot>
 </li>
 </template>
@@ -24,9 +24,7 @@ export default {
   },
 
   methods: {
-    onClick (e) {
-      
-    },
+    
   }
 }
 </script>
