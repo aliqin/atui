@@ -135,7 +135,7 @@ upload文件上传
 </template>
 
 <script>
-  import uploadFile from 'src/components/upload.vue'
+  import uploadFile from 'src/components/Uploader.vue'
 
   export default {
     components: {
