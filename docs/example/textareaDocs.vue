@@ -32,7 +32,7 @@
 </template>
 
 <script>
-  import limitTextarea from 'src/components/limitTextarea.vue'
+  import limitTextarea from 'src/components/Textarea.vue'
 
   export default {
     components: {
