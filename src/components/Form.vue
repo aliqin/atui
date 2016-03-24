@@ -1,5 +1,5 @@
 <template>
-<form class="form-{{arragement}}">
+<form class="form-{{arragement}}" onSubmit="{{onSubmit}}">
   <solt></solt>
 </form>
 </template>
@@ -14,7 +14,8 @@
       arragement: {
         type: String,
         default: 'horizontal'
-      }
+      },
+      onSubmit: Function
     }
   }
 </script>
