@@ -91,12 +91,16 @@
 
         <button type="submit">Submit</button>
       </form> -->
-      <Form>
-        <FromItem label="姓名："></FromItem>
+      <Form :onSubmit="onSubmit">
+        <FromItem label="姓名：" :rules="" :validStatus="valid.nameStatus">
+          <Input placeholder="请输入姓名" defaultValue=""></Input>
+        </FromItem>
       </Form>
-      <Form arragement="vertical">
-        <FromItem label="姓名："></FromItem>
-      </Form>
+      <!-- <Form arragement="vertical">
+        <FromItem label="姓名：" :rules="" :validStatus="">
+          <Input placeholder="请输入姓名" defaultValue=""></Input>
+        </FromItem>
+      </Form> -->
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 checkbox复选框
@@ -121,8 +125,11 @@ export default {
   data() {
     return {
       myform: {},
-      model: {
-        contactRequired: false
+      valid: {
+        nameStatus: '',
+      },
+      onSubmit: function() {
+        alert('验证成功');
       }
     }
   },

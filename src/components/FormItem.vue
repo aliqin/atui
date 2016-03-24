@@ -1,6 +1,6 @@
 <template>
 <div class="form-item">
-  <label for="{{id}}"></label>
+  <label>{{label}}</label>
   <solt></solt>
 </div>
 </template>
@@ -11,7 +11,6 @@
   export default {
     props: {
       label: String,
-      id: String,
       //验证规则
       rules: {
         type: Array,
