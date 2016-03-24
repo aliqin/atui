@@ -26,7 +26,7 @@ import Grid from './components/Table.vue'
 import Tooltip from './components/Tooltip.vue'
 import Typeahead from './components/Typeahead.vue'
 
-import Toast from './components/Toast.vue'
+// import Toast from './components/Toast.vue'
 import Spin from './components/Spin.vue'
 
 const VueComponent = {
@@ -53,8 +53,6 @@ const VueComponent = {
   Grid,
   Tooltip,
   Typeahead,
-
-  Toast,
   Spin
 }
 
