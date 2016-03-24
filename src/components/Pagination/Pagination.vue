@@ -1,35 +1,19 @@
 <template>
     <div class="pagination" v-if="totalPage > 1">
-        <div class="pagination-selector">
-            <v-select :value.sync="single", :placeholder="placeholder",@change="_selectPageSize">
-                <v-option value="10">10 条/页</v-option>
-                <v-option value="20">20 条/页</v-option>
-                <v-option value="30">30 条/页</v-option>
-                <v-option value="40">40 条/页</v-option>
-            </v-select>
-            <span class="pagination-totalpage">共{{ total }}条数据</span>
-        </div>
+        <Options :total="total" :single="single"  :placeholder="placeholder" :show-size-changer="showSizeChanger"></Options>
         <jumper 
             :quick-go="showJumper ? _handleChange.bind(this) : null",
             :curr-page="currPage",
-            :total-page="totalPage"
+            :total-page="totalPage",
+            :mini="mini"
         ></jumper>
-        <ul class="pagination-items">
-            <li v-for="page in pageRange" @click="pageClick(page.num)" :class="{'current':(page.className==='current'),
-            'pagination-item-disabled':(page.className==='disabled'),
-            'pagination-item-ellipsis':(page.className==='ellipsis')}" class="pagination-item">
-                {{page.text}}
-            </li>
-        </ul>
-        
+        <pager :page-range="pageRange" :simple="simple"  :mini="mini" :page-click="pageClick"></pager>
     </div>
-        
 </template>
 <script>
 import jumper from './Jumper.vue'
-import vSelect from '../Select.vue'
-import vOption from '../Option.vue'
-
+import pager from './Pager.vue'
+import Options from './Options.vue'
 export default {
     props: {
         id: {
@@ -41,16 +25,29 @@ export default {
         },
         totalPage: Number,
         total: Number,
-        currPage : Number,
+        currPage : {
+            type: Number
+        },
         showJumper: Boolean,
-        showPageSizeChanger: false
+        showSizeChanger: Boolean,
+        simple: {
+            type: Boolean,
+            default: false
+        },
+        mini: {
+            type: Boolean,
+            default: false
+        },
+        single: {
+            type: Array,
+            default: ['10']
+        }
     },
     data () {
         return {
             pageRange : [],
             prevShow : 1,
             nextShow : 1,
-            single: "10",
             placeholder: '10 条/页'
         }
     },
@@ -67,12 +64,12 @@ export default {
         }
     },
     components: {
-        jumper,vSelect,vOption
+        jumper,pager,Options
     },
     methods : {
 
         _changePageSize(value) {
-            alert(value)
+
         },
 
         getPageRange (){
@@ -106,42 +103,63 @@ export default {
 
             this.pageRange = []
 
-            //上一页
-            if (currPage != 1){
-                this.pageRange.push({num:currPage-1, text:'<'})
+            if(this.simple) {
+                //上一页
+                if (currPage != 1){
+                    this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
+                } else {
+                    this.pageRange.push({text:'<', className:'disabled'});
+                }
+
+                this.pageRange.push({num:this.currPage, text:this.currPage, className: 'current'})
+                this.pageRange.push({text:'/', className: 'slash'})
+                this.pageRange.push({text:totalPage})
+
+                // 下一页
+                if (currPage != totalPage){
+                    this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
+                } else {
+                    this.pageRange.push({text:'>', className:'disabled'})
+                }
+
             } else {
-                this.pageRange.push({text:'<', className:'disabled'});
-            }
-            
-            //第一页
-            if (start >= 2){
-                this.pageRange.push({num:1, text:1})
-            }
-            //省略号
-            if (start > 2){
-                this.pageRange.push({text:'...', className:'ellipsis'})
-            }
-            //显示的页码列表
-            for (var i=start; i<=end; i++){
-                this.pageRange.push({
-                    num : i,
-                    text : i,
-                    className : (i==currPage) ? 'current' : ''
-                })
-            }
-            //省略号
-            if (end < totalPage-1){
-                this.pageRange.push({text:'...', className:'ellipsis'})
-            }
-            //最后一页
-            if (end <= totalPage-1){
-                this.pageRange.push({num:totalPage, text:totalPage})
-            }
-            //下一页
-            if (currPage != totalPage){
-                this.pageRange.push({num:currPage+1, text:'>'})
-            } else {
-                this.pageRange.push({text:'>', className:'disabled'})
+                //上一页
+                if (currPage != 1){
+                    this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
+                } else {
+                    this.pageRange.push({text:'<', className:'disabled'});
+                }
+                
+                //第一页
+                if (start >= 2){
+                    this.pageRange.push({num:1, text:1})
+                }
+                //省略号
+                if (start > 2){
+                    this.pageRange.push({text:'...', className:'ellipsis'})
+                }
+                //显示的页码列表
+                for (var i=start; i<=end; i++){
+                    this.pageRange.push({
+                        num : i,
+                        text : i,
+                        className : (i==currPage) ? 'current' : ''
+                    })
+                }
+                //省略号
+                if (end < totalPage-1){
+                    this.pageRange.push({text:'...', className:'ellipsis'})
+                }
+                //最后一页
+                if (end <= totalPage-1){
+                    this.pageRange.push({num:totalPage, text:totalPage})
+                }
+                //下一页
+                if (currPage != totalPage){
+                    this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
+                } else {
+                    this.pageRange.push({text:'>', className:'disabled'})
+                }
             }
         },
         pageClick (i){
