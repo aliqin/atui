@@ -1,11 +1,17 @@
 <template>
-	<div v-if="quickGo"  title="Quick jump to page" class="pagination-jump">
-    跳至
-    <input type="text" :value="_current" @change="_handleChange($event)" class="input-jumper"/>
-    页
-  	<button type="button" class="btn default tertiary btn-jumper" @click="_go">跳转</button>
+	<div v-if="quickGo" class="pagination-jump">
+	    <div class="input-jumper-wrap">
+		    跳至
+		    <input type="text" :value="_current" @change="_handleChange($event)" :class="{
+		    	'input-jumper': (!mini),
+		    	'mini-input-jumper': mini}"/>
+		    页
+	    </div>
+	  	<button type="button" class="btn tertiary" @click="_go" :class="{
+			'default': (!mini),
+			'small': mini}">
+		跳转</button>
   	</div>
-
 </template>
 
 <script>
@@ -20,6 +26,10 @@
 			},
 			totalPage: {
 				type: Number
+			},
+			mini: {
+				type: Boolean,
+				default: false
 			}
 		},
 
@@ -62,11 +72,5 @@
 </script>
 
 <style lang="less">
-	.input-jumper {
-		width: 38px;
-		border: 1px solid #d9d9d9;
-		background: #fff;
-		border-radius: 4px;
-		height: 28px;
-	}
+
 </style>
