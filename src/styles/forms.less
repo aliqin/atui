@@ -102,20 +102,60 @@ input[type="radio"] {
 }
 
 .form {
+  font-size: 12px;
+
   .row {
     margin: 5px 0;
   }
 
-  .required {
+  .form-item {
+    margin-bottom: 24px;
+    color: #666;
+
+    &.form-item-with-help {
+      margin-bottom: 6px;
+    }
+  }
+
+  .status-icon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+  }
+
+  .has-error {
+    .status-icon, .status-info {
+      color: #FF5959;
+    }
+  }
+
+  .has-success {
+    .status-icon .status-info {
+      color: #1DBF38;
+    }
+  }
+
+  .required-icon {
     padding: 0 5px;
     color: #ff7500;
-    font-size: 18px;
-    font-style: normal;
   }
 
   .form-label {
-    color: #666666;
+    padding: 7px 0;
+    color: #666;
     text-align: right;
+    vertical-align: middle;
+  }
+
+  .form-input {
+    position: relative;
+    padding-right: 30px;
+  }
+
+  .status-info {
+    height: 18px;
+    line-height: 18px;
   }
 }
 
