@@ -2,58 +2,45 @@ require('../src/styles/themes/alidayu.less')
 require('../src/styles/themes/tmallwt.less')
 require('../src/styles/themes/alitx.less')
 
-import Alert from './components/Alert.vue'
-import Carousel from './components/Carousel.vue'
-import Slider from './components/Slider.vue'
-import Accordion from './components/Accordion.vue'
-import Affix from './components/Affix.vue'
-import Aside from './components/Aside.vue'
-import CheckboxGroup from './components/checkboxGroup.vue'
-import CheckboxBtn from './components/checkboxBtn.vue'
-import Datepicker from './components/Datepicker.vue'
-import Dropdown from './components/Dropdown.vue'
-import Modal from './components/Modal.vue'
-import Option from './components/Option.vue'
-import Panel from './components/Panel.vue'
-import Popover from './components/Popover.vue'
-import Progressbar from './components/Progressbar.vue'
-import RadioBtn from './components/radioBtn.vue'
-import RadioGroup from './components/radioGroup.vue'
-import Select from './components/Select.vue'
-import Tab from './components/Tab.vue'
-import Tabset from './components/Tabset.vue'
-import Grid from './components/Table.vue'
-import Tooltip from './components/Tooltip.vue'
-import Typeahead from './components/Typeahead.vue'
+// 表单类
+// export {Button} from './components/Button.vue'
+// export {ButtonsDocs} from './components/Buttons.vue'
+// export {Input} from './components/Input.vue'
+export {Uploader} from './components/Uploader.vue'
+// export {Form} from './components/Form.vue'
+export {Switch} from './components/Switch.vue'
+export {Dropdown} from './components/Dropdown.vue'
+export {Select} from './components/Select.vue'
+export {Datepicker} from './components/Datepicker.vue'
+// export progressbar} from './components/progressbar.vue'
+export {Typeahead} from './components/Typeahead.vue'
 
-// import Toast from './components/Toast.vue'
-import Spin from './components/Spin.vue'
 
-const VueComponent = {
-  Alert,
-  Carousel,
-  Slider,
-  Accordion,
-  Affix,
-  Aside,
-  CheckboxBtn,
-  CheckboxGroup,
-  Datepicker,
-  Dropdown,
-  Modal,
-  Option,
-  Panel,
-  Popover,
-  Progressbar,
-  RadioGroup,
-  RadioBtn,
-  Select,
-  Tab,
-  Tabset,
-  Grid,
-  Tooltip,
-  Typeahead,
-  Spin
-}
+// 展示类
+export {Alert} from './components/Alert.vue'
+export {Modal} from './components/Modal.vue'
+export {Table} from './components/Table.vue'
+export {Badge} from './components/Badge.vue'
+export {Carousel} from './components/Carousel.vue'
+export {Affix} from './components/Affix.vue'
+// export {Container} from './components/Container.vue'
+export {Spin} from './components/Spin.vue'
+export {Textarea} from './components/Textarea.vue'
+export {Tag} from './components/Tag.vue'
+export {Tooltip} from './components/Tooltip.vue'
+export {Accordion} from './components/Accordion.vue'
 
-module.exports = VueComponent
+
+// 导航类
+// export affix} from './components/affix.vue'
+// export aside} from './components/aside.vue'
+export {Popover} from './components/Popover.vue'
+export {Tabs} from './components/Tabset/'
+export {Steps} from './components/Steps/index'
+export {Menu} from './components/Menu/index'
+export {Breadcrumb} from './components/Breadcrumb.vue'
+export {Pagination} from './components/Pagination/'
+
+
+// filters
+export {phoneNumber} from './filters/phoneNumber'

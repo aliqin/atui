@@ -20,7 +20,7 @@ import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
 import datepickerDocs from './example/datepickerDocs.vue'
-import progressbarDocs from './example/progressbar-docs.vue'
+// import progressbarDocs from './example/progressbar-docs.vue'
 import typeaheadDocs from './example/typeaheadDocs.vue'
 
 
@@ -40,8 +40,8 @@ import accordionDocs from './example/accordionDocs.vue'
 
 
 // 导航类
-import affixDocs from './example/affixDocs.vue'
-import asideDocs from './example/asideDocs.vue'
+// import affixDocs from './example/affixDocs.vue'
+// import asideDocs from './example/asideDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import stepsDocs from './example/stepsDocs.vue'
@@ -76,7 +76,7 @@ new Vue({
     tagDocs,
     headerDocs,
     accordionDocs,
-    affixDocs,
+    // affixDocs,
     // asideDocs,
     carouselDocs,
     buttonsDocs,
@@ -84,7 +84,7 @@ new Vue({
     dropdownDocs,
     modalDocs,
     popoverDocs,
-    progressbarDocs,
+    // progressbarDocs,
     selectDocs,
     tabsDocs,
     tableDocs,

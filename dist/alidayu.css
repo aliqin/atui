@@ -1,10 +1,140 @@
-.navWrapper[_v-149b3b9e] {
+@-webkit-keyframes appear-from-inside {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  75% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes appear-from-inside {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  75% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.file-upload .select-files {
+  width: 227px;
+}
+.file-upload .select-files .file-item {
+  display: block;
+  position: relative;
+  width: 227px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 30px;
+  text-align: left;
+  border-radius: 4px;
+}
+.file-upload .select-files .file-item:hover {
+  background-color: #F2FAFF;
+  text-decoration: none;
+}
+.file-upload .select-files .file-item span {
+  color: #00A0FF;
+}
+.file-upload input[type="file"] {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.file-upload input[type="file"] + label {
+  display: inline-block;
+  max-width: 80%;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+}
+.file-upload input[type="file"] + label:hover,
+.file-upload input[type="file"] + label:focus {
+  color: #39bfd3;
+}
+.file-upload input[type="file"]:focus + label,
+.file-upload input[type="file"].has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+.file-upload .drag-upload {
+  position: relative;
+  background-color: #c8dadf;
+  padding: 100px 20px;
+  text-align: center;
+}
+.file-upload .drag-upload.active {
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  -webkit-transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+}
+.file-upload .drag-upload .state .state-uploading {
+  font-style: italic;
+}
+.file-upload .drag-upload .animate {
+  -webkit-animation: appear-from-inside 0.25s ease-in-out;
+          animation: appear-from-inside 0.25s ease-in-out;
+}
+.file-upload .drag-upload.is-dragover {
+  outline-offset: -20px;
+  outline-color: #c8dadf;
+  background-color: #fff;
+}
+.file-upload .upload-rate .rate-control {
   position: relative;
   display: inline-block;
-  vertical-align: middle;
+  width: 90px;
+  height: 22px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  overflow: hidden;
 }
-.nav-tabs[_v-149b3b9e] {
-  margin-bottom: 15px;
+.file-upload .upload-rate .rate {
+  display: inline-block;
+  width: 0;
+  height: 22px;
+  background-color: #d9d9d9;
+  border-radius: 4px 0 0 4px;
+  -webkit-transition-property: width;
+  transition-property: width;
+}
+.file-upload .upload-rate .rate.active {
+  width: 90px;
+  -webkit-transition-property: width;
+  transition-property: width;
+}
+.file-upload .upload-rate .rate-tip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 90px;
+  height: 22px;
+  line-height: 22px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+}
+.file-upload .upload-rate a {
+  color: #00A0FF;
+}
+.file-upload .upload-rate a:hover {
+  text-decoration: none;
 }
 /*!
  * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
@@ -257,6 +387,48 @@
     -webkit-transform: translate(220%, 220%);
     transform: translate(220%, 220%);
   }
+}
+.limitTextarea p {
+  color: #999;
+  font-size: 12px;
+}
+.limitTextarea .words-error {
+  color: #ff5959;
+}
+.navWrapper[_v-7fbbdc9b] {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 40px;
+  box-sizing: content-box;
+}
+.navWrapper .arrow-next[_v-7fbbdc9b],
+.navWrapper .arrow-prev[_v-7fbbdc9b] {
+  position: absolute;
+  top: -2px;
+  z-index: 10;
+  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+  background-color: #fff;
+}
+.navWrapper .arrow-prev[_v-7fbbdc9b] {
+  left: 0;
+}
+.navWrapper .arrow-next[_v-7fbbdc9b] {
+  right: -6px;
+}
+.nav-tabs[_v-7fbbdc9b] {
+  margin-bottom: 15px;
+}
+.nav-scroll[_v-7fbbdc9b] {
+  max-width: 99999px;
+  overflow: hidden;
 }
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -3289,18 +3461,49 @@ input[type="radio"][disabled]:checked {
 input[type="radio"][disabled]:checked:after {
   background-color: #ccc;
 }
+.form {
+  font-size: 12px;
+}
 .form .row {
   margin: 5px 0;
 }
-.form .required {
+.form .form-item {
+  margin-bottom: 24px;
+  color: #666;
+}
+.form .form-item.form-item-with-help {
+  margin-bottom: 6px;
+}
+.form .status-icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+}
+.form .has-error .status-icon,
+.form .has-error .status-info {
+  color: #FF5959;
+}
+.form .has-success .status-icon .status-info {
+  color: #1DBF38;
+}
+.form .required-icon {
   padding: 0 5px;
   color: #ff7500;
-  font-size: 18px;
-  font-style: normal;
 }
 .form .form-label {
-  color: #666666;
+  padding: 7px 0;
+  color: #666;
   text-align: right;
+  vertical-align: middle;
+}
+.form .form-input {
+  position: relative;
+  padding-right: 30px;
+}
+.form .status-info {
+  height: 18px;
+  line-height: 18px;
 }
 output {
   display: block;
@@ -4096,9 +4299,9 @@ tbody.collapse.in {
   pointer-events: none;
 }
 .input {
-  width: 50%;
+  width: 100%;
   min-width: 138px;
-  padding: 8px 10px;
+  padding: 7px 10px;
   background: #fff;
   color: #666;
   font-size: 12px;
@@ -4123,7 +4326,7 @@ tbody.collapse.in {
   padding: 10px;
 }
 .input.default {
-  padding: 8px 10px;
+  padding: 7px 10px;
 }
 .input.small {
   padding: 4px 8px;
@@ -4292,6 +4495,8 @@ textarea[disabled]:focus,
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+  transition: transform .3s linear;
+  width: 99999px;
 }
 .nav > li {
   position: relative;
@@ -7455,6 +7660,21 @@ button.close {
 }
 .affix {
   position: fixed;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1458875830_3228507.eot');
+  /* IE9*/
+  src: url('//at.alicdn.com/t/font_1458875830_3228507.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/font_1458875830_3228507.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/font_1458875830_3228507.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/font_1458875830_3228507.svg#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 14px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
 }
 @-ms-viewport {
   width: device-width;
