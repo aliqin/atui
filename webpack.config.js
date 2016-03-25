@@ -78,22 +78,19 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
     delete module.exports.devtool;
 
-    module.exports.plugins = [
+    module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
             }
         }),
-        extractDoc,
-        extractAlidayu,
-        extractTmallwt,
-        extractAlitx,
         new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ];
+          compress: {
+            warnings: true
+          }
+        }),
+        new webpack.optimize.OccurenceOrderPlugin()
+    ]);
 }
 
 
