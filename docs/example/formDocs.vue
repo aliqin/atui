@@ -90,13 +90,14 @@
         </div>
 
         <button type="submit">Submit</button>
-      </form> -->
-      <Form :onSubmit="onSubmit">
-        <FromItem label="姓名：" :rules="" :validStatus="valid.nameStatus">
-          <Input placeholder="请输入姓名" defaultValue=""></Input>
+      </form>
+      <pre>{{ myform | json }}</pre> -->
+      <!-- <Form>
+        <FromItem label="姓名：" :labelCol="7" :validStatus="valid.nameStatus">
+          <FromInput type="text" placeholder="请输入姓名" defaultValue="" ></FromInput>
         </FromItem>
       </Form>
-      <!-- <Form arragement="vertical">
+      <Form arragement="vertical">
         <FromItem label="姓名：" :rules="" :validStatus="">
           <Input placeholder="请输入姓名" defaultValue=""></Input>
         </FromItem>
@@ -115,21 +116,23 @@ radio单选框
 </template>
 
 <script>
-import Form from 'src/components/Form.vue';
-import FromItem from 'src/components/FormItem.vue';
+// import Form from 'src/components/Form.vue';
+// import FromItem from 'src/components/FormItem.vue';
+// import FromInput from 'src/components/FormInput.vue';
+// import fromValid from 'src/plugins/form-valid.js';
+// Vue.use(fromValid);
 
 export default {
-  components: {
-    Form
-  },
+  // components: {
+  //   Form,
+  //   FromItem,
+  //   FromInput
+  // },
   data() {
     return {
       myform: {},
       valid: {
         nameStatus: '',
-      },
-      onSubmit: function() {
-        alert('验证成功');
       }
     }
   },
