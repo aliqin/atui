@@ -23,15 +23,15 @@
       </alert>
 
       <alert type="danger" dismissable>
-        错误提示的文案
+        错误提示的文案,可关闭
       </alert>
 
       <alert type="warning" dismissable>
-        警告提示的文案
+        警告提示的文案,可关闭
       </alert>
 
       <alert type="help" dismissable>
-        帮助提示文案
+        帮助提示文案,可关闭
       </alert>
 
       <alert

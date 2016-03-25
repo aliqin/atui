@@ -2,23 +2,23 @@
   <div class="bs-docs-section" id="carousel">
     <h3 class="page-header"><a href="#caoursel" class="anchor">Carousel 走马灯</a></h3>
     <div class="bs-example">
-      <carousel indicators="false" controls="true">
+      <carousel indicators="true" controls="true">
         <slider>
-          <img src="http://placehold.it/1200x500?text=one">
+          <img style="width:100%" src="https://img.alicdn.com/tps/TB1Pq31KpXXXXbFXXXXXXXXXXXX-888-400.png">
           <div class="carousel-caption">
            <h3>Slide #1</h3>
            <p>sunt in culpa qui officia deserunt mollit a.</p>
          </div>
         </slider>
         <slider>
-          <img src="http://placehold.it/1200x500?text=two">
+          <img style="width:100%" src="https://img.alicdn.com/tps/TB1ih3pJXXXXXbZXVXXXXXXXXXX-888-400.png">
           <div class="carousel-caption">
            <h3>Slide #2</h3>
            <p>sunt in culpa qui officia deserunt mollit a.</p>
          </div>
         </slider>
         <slider>
-          <img src="http://placehold.it/1200x500?text=three">
+          <img style="width:100%" src="https://img.alicdn.com/tps/TB1fEtIKpXXXXbEXVXXXXXXXXXX-888-400.jpg">
           <div class="carousel-caption">
            <h3>Slide #3</h3>
            <p>sunt in culpa qui officia deserunt mollit a.</p>

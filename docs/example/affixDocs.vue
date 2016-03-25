@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-docs-section" id="affix">
+  <!-- <div class="bs-docs-section" id="affix">
     <h3 class="page-header"><a href="#affix" class="anchor">Affix 固钉</a></h3>
     <div class="bs-example">
       <h3>
@@ -39,7 +39,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->
 </template>
 
 <script>

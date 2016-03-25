@@ -14,6 +14,7 @@ import gridDocs from './example/gridDocs.vue'
 import buttonDocs from './example/buttonDocs.vue'
 import buttonsDocs  from './example/buttonsDocs.vue'
 import inputDocs from './example/inputDocs.vue'
+import uploadDocs from './example/uploadDocs.vue'
 import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
@@ -44,6 +45,9 @@ import asideDocs from './example/asideDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import stepsDocs from './example/stepsDocs.vue'
+import menuDocs from './example/menuDocs.vue'
+import breadcrumbDocs from './example/breadcrumbDocs.vue'
+import paginationDocs from './example/paginationDocs.vue'
 
 
 // filters
@@ -64,6 +68,7 @@ new Vue({
     spinDocs,
     inputDocs,
     textareaDocs,
+    uploadDocs,
     switchDocs,
     formDocs,
     alertDocs,
@@ -84,8 +89,11 @@ new Vue({
     tabsDocs,
     tableDocs,
     stepsDocs,
+    breadcrumbDocs,
+    paginationDocs,
     tooltipDocs,
     typeaheadDocs,
+    menuDocs,
     list: {
       inherit: true,
       template: ''
@@ -146,3 +154,19 @@ new Vue({
     }
   }
 })
+
+
+
+// import Router from './routers'
+
+// // // debug
+// // Vue.config.debug = true
+
+// // // start app
+// var App = Vue.extend({
+//   components:{
+//     accordion: require('src/components/accordion.vue')
+//   }
+// })
+
+// Router.start(App,'#wrapper')

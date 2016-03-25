@@ -3,78 +3,143 @@
   <div class="bs-docs-section" id="form">
     <h3 class="page-header"><a href="#form" class="anchor">form 表单 </a></h3>
     <div class="bs-example">
-      <form>
-        <!-- <div class="form-group">
-          <label for="exampleInputEmail1">邮件地址</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">
+      <!-- <form class="container form" v-form name="myform" @submit.prevent="onSubmit">
+        <div class="errors" v-if="myform.$submitted">
+            <p v-if="myform.name.$error.required">Name is required.</p>
+            <p v-if="myform.email.$error.email">Email is not valid.</p>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">密码</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputFile">文件上传</label>
-          <input type="file" id="exampleInputFile">
-          <p class="help-block">block-level提示文字</p>
-        </div> -->
-        <div class="checkbox">
-          <h4>checkbox 复选框</h4>
-          <input type="checkbox" id="cb1" />
-          <label for="cb1">未选中状态</label>
-          <br>
-          <input type="checkbox" id="cb2" checked />
-          <label for="cb2">选中状态</label>
-          <br>
-          <input type="checkbox" id="cb3" disabled />
-          <label for="cb3">未选中不可点击状态</label>
-          <br>
-          <input type="checkbox" id="cb4" checked disabled />
-          <label for="cb4">选中不可点击状态</label>
-          <h4>radio 单选框</h4>
-          <input type="radio" id="radio1" />
-          <label for="radio1">未选中状态</label>
-          <br>
-          <input type="radio" id="radio2" checked />
-          <label for="radio2">选中状态</label>
-          <br>
-          <input type="radio" id="radio3" disabled />
-          <label for="radio3">未选中不可点击状态</label>
-          <br>
-          <input type="radio" id="radio4" checked disabled />
-          <label for="radio4">选中不可点击状态</label>
 
+        <div class="row">
+          <div class="col-lg-7 form-label">
+            <label><span class="required">*</span>姓名：</label>
+          </div>
+          <div class="col-lg-7">
+            <input class="input" v-model="model.name" v-form-ctrl required name="name" />
+          </div>
         </div>
-        <button type="submit" class="btn">提交</button>
+
+        <div class="row">
+          <div class="col-lg-7 form-label">
+            <label><span class="required">*</span>邮箱：</label>
+          </div>
+          <div class="col-lg-17">
+            <input class="input" v-model="model.email" v-form-ctrl name="email" type="email" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-7 form-label">
+            <label>性别：</label>
+          </div>
+          <div class="col-lg-17">
+            <label>
+              <input v-form-ctrl name="sexy" type="radio" />
+              女
+            </label>
+            <label>
+              <input v-form-ctrl name="sexy" type="radio" checked />
+              男
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-7 form-label">
+            <label>多选框：</label>
+          </div>
+          <div class="col-lg-17">
+            <label>
+              <input v-form-ctrl name="cb1" type="checkbox" />
+              未选中状态
+            </label>
+            <label>
+              <input v-form-ctrl name="cb2" type="checkbox" checked />
+              选中状态
+            </label>
+            <label>
+              <input v-form-ctrl name="cb3" type="checkbox" disabled />
+              未选中不可点击状态
+            </label>
+            <label>
+              <input v-form-ctrl name="cb4" type="checkbox" checked disabled />
+              选中不可点击状态
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <label>
+            <div class="col-lg-7 form-label">
+              <span>Contact details <span v-if="model.contactRequired">*</span></span>
+            </div>
+            <div class="col-lg-17">
+              <textarea class="textarea" v-model="model.contact" :required="model.contactRequired" v-form-ctrl name="comments"></textarea>
+            </div>
+          </label>
+        </div>
+
+        <div class="row" v-if="model.contactRequired">
+          <label>
+            <div class="col-lg-7 form-label">
+              <span>3 digit code *</span>
+            </div>
+            <div class="col-lg-17">
+              <input class="input" v-model="model.code" v-form-ctrl name="code" type="text" pattern="[A-Za-z]{3}" required />
+            </div>
+          </label>
+        </div>
+
+        <button type="submit">Submit</button>
       </form>
+      <pre>{{ myform | json }}</pre> -->
+      <!-- <Form>
+        <FromItem label="姓名：" :labelCol="7" :validStatus="valid.nameStatus">
+          <FromInput type="text" placeholder="请输入姓名" defaultValue="" ></FromInput>
+        </FromItem>
+      </Form>
+      <Form arragement="vertical">
+        <FromItem label="姓名：" :rules="" :validStatus="">
+          <Input placeholder="请输入姓名" defaultValue=""></Input>
+        </FromItem>
+      </Form> -->
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 checkbox复选框
+使用方式与原生的一样 <input type="checkbox" id="cb" checked disabled />
 
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">邮件地址</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">密码</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">文件上传</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">block-level提示文字</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> 选中框
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">提交</button>
-</form>
+radio单选框
+使用方式与原生的一样 <input type="radio" id="radio" checked disabled />
     </script></code></pre>
     </script>
     </code>
   </div>
 </template>
 
+<script>
+// import Form from 'src/components/Form.vue';
+// import FromItem from 'src/components/FormItem.vue';
+// import FromInput from 'src/components/FormInput.vue';
+// import fromValid from 'src/plugins/form-valid.js';
+// Vue.use(fromValid);
 
+export default {
+  // components: {
+  //   Form,
+  //   FromItem,
+  //   FromInput
+  // },
+  data() {
+    return {
+      myform: {},
+      valid: {
+        nameStatus: '',
+      }
+    }
+  },
+  methods: {
+    onSubmit: function () {
+      console.log(this.myform.$valid);
+    }
+  }
+}
+</script>
