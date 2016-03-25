@@ -2,8 +2,8 @@
   <div class="bs-docs-section" id="tabs">
     <h3 class="page-header"><a href="#tabs" class="anchor">Tabs 标签页</a></h3>
     <div class="bs-example">
-      <h4>基础型</h4>
-      <tabs :tab-type="tabType">
+    <h4 class="example-title">基础型</h4>
+      <tabs :base="true">
         <tab header="系统短信签名">
           <p>
             选项卡一内容
@@ -19,8 +19,8 @@
         </tab>
       </tabs>
       <br><br>
-      <h4>选项卡型</h4>
-      <tabs >
+      <h4 class="example-title">Tab数量较多的情况</h4>
+      <tabs :base="true">
         <tab header="系统短信签名">
           <p>
             选项卡一内容
@@ -33,6 +33,64 @@
         </tab>
         <tab header="被禁用的" disabled>
           ...
+        </tab>
+        <tab header="推广短信签名系统短信签名啊啊啊啊啊啊啊啊">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="系统短信签名啊啊啊啊啊啊啊啊">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+      </tabs>
+      <br><br>
+      <h4 class="example-title">选项卡型</h4>
+      <tabs >
+        <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
+          <p>
+            选项卡一内容
+          </p>
+        </tab>
+        <tab header="推广短信签名">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="被禁用的" disabled>
+          ...
+        </tab>
+        <tab header="被禁用的" disabled>
+          ...
+        </tab>
+        <tab header="推广短信签名">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="推广短信签名">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="被禁用的" disabled>
+          ...
+        </tab>
+        <tab header="推广短信签名">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="推广短信签名">
+           <p>
+              选项卡二内容
+           </p>
         </tab>
       </tabs>
     </div>
@@ -78,8 +136,10 @@
 </template>
 
 <script>
-  import tabs from 'src/components/Tabset.vue'
-  import tab from 'src/components/Tab.vue'
+  // import Tabs from 'src/components/Tabset/'
+  // const {Tab} = Tabs
+  import Tabs from 'src/components/Tabset'
+  import Tab from 'src/components/Tab'
   export default {
     data () {
       return {
@@ -87,8 +147,14 @@
       }
     },
     components: {
-      tabs,
-      tab
+      Tabs,
+      Tab
     }
   }
 </script>
+
+<style>
+  .example-title {
+    margin: 20px 0;
+  }
+</style>
