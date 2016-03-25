@@ -34,12 +34,13 @@
 
 // Base class
 // --------------------------------------------------
-
 .nav {
   margin-bottom: 0;
   padding-left: 0; // Override default ul/ol
   list-style: none;
   &:extend(.clearfix all);
+  transition: transform .3s linear;
+  width: 99999px;
 
   > li {
     position: relative;
@@ -331,3 +332,4 @@
   // Remove the top rounded corners here since there is a hard edge above the menu
   .border-top-radius(0);
 }
+
