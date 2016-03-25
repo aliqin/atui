@@ -1,16 +1,36 @@
 <template>
-<div class="form-item">
-  <label>{{label}}</label>
-  <solt></solt>
+<div class="form-item row" :class="{'form-item-with-help': validStatus}">
+  <label v-if="label" class="col-lg-{{labelCol}}">{{label}}</label>
+  <div class="col-lg-{{wrapperCol}}">
+    <solt></solt>
+  </div>
 </div>
 </template>
-<style>
+<style lang="less">
+.form-item {
+  position: relative;
+  margin-bottom: 24px;
+  color: #666;
 
+  &.form-item-with-help {
+    margin-bottom: 6px;
+  }
+
+  label {
+    padding: 7px 0;
+    text-align: right;
+    vertical-align: middle;
+  }
+}
 </style>
 <script>
   export default {
     props: {
       label: String,
+      labelCol: {
+        type: Number,
+        default: 7
+      },
       //验证规则
       rules: {
         type: Array,
@@ -34,6 +54,11 @@
       hasFeedback: {
         type: Boolean,
         default: false
+      }
+    },
+    computed: {
+      wrapperCol() {
+        return 24 - this.labelCol;
       }
     }
   }
