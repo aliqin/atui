@@ -21,7 +21,7 @@
     <span v-if="renderData.length > showLen" class="arrow-next" @click="next">&gt;</span>
 
      <!-- Tab panes -->
-     <div class="tab-content" v-el:tabContent>
+     <div class="tab-content" v-el:tab-content>
         <slot></slot>
      </div>
   </div>
