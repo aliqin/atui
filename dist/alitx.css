@@ -3468,7 +3468,7 @@ input[type="radio"][disabled]:checked:after {
   margin: 5px 0;
 }
 .form .form-item {
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   color: #666;
 }
 .form .form-item.form-item-with-help {
@@ -3502,8 +3502,8 @@ input[type="radio"][disabled]:checked:after {
   padding-right: 30px;
 }
 .form .status-info {
-  height: 18px;
-  line-height: 18px;
+  height: 20px;
+  line-height: 20px;
 }
 output {
   display: block;
