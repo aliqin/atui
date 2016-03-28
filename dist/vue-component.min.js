@@ -148,7 +148,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
-	var _phoneNumber = __webpack_require__(267);
+	var _phoneNumber = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./filters/phoneNumber\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -7672,32 +7672,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = "\n<div class=\"pagination\" v-if=\"totalPage > 1\">\n    <Options :total=\"total\" :single=\"single\"  :placeholder=\"placeholder\" :show-size-changer=\"showSizeChanger\"></Options>\n    <jumper \n        :quick-go=\"showJumper ? _handleChange.bind(this) : null\",\n        :curr-page=\"currPage\",\n        :total-page=\"totalPage\",\n        :mini=\"mini\"\n    ></jumper>\n    <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</div>\n";
 
 /***/ },
-/* 267 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	// 13291895654 to 132 9189 5654
-	Vue.filter('phoneNumber', function (number, searchKey) {
-	  var ret = '';
-	  number = '' + number;
-	  number = number.replace(/[^\d]/g, '').substr(0, 11);
-	  var keyIndex = number.indexOf(searchKey);
-	  for (var i = 0; i < number.length; i++) {
-	    if (3 === i || 7 === i) {
-	      ret += ' ';
-	    }
-	    ret += number[i];
-	  }
-	  if (searchKey) {
-	    ret = ret.replace(searchKey, '<span class="h">' + searchKey + '</span>');
-	  }
-	  return ret;
-	});
-	
-	module.exports = {};
-
-/***/ },
+/* 267 */,
 /* 268 */
 /***/ function(module, exports) {
 
