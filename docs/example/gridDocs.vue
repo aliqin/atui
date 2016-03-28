@@ -4,64 +4,110 @@
     <div class="bs-example">
       <div class="container grid-demo">
         <v-row>
-          <div class="col-lg-24">col-lg-24</div>
+          <v-col span="24">col-lg-24</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-23">col-lg-23</div>
-          <div class="col-lg-1">1</div>
+          <v-col span="23">col-lg-23</v-col>
+          <v-col span="1">1</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-22">col-lg-22</div>
-          <div class="col-lg-2">2</div>
+          <v-col span="22">col-lg-22</v-col>
+          <v-col span="2">2</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-21">col-lg-21</div>
-          <div class="col-lg-3">col-lg-3</div>
+          <v-col span="21">col-lg-21</v-col>
+          <v-col span="3">col-lg-3</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-20">col-lg-20</div>
-          <div class="col-lg-4">col-lg-4</div>
+          <v-col span="20">col-lg-20</v-col>
+          <v-col span="4">col-lg-4</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-19">col-lg-19</div>
-          <div class="col-lg-5">col-lg-5</div>
+          <v-col span="19">col-lg-19</v-col>
+          <v-col span="5">col-lg-5</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-18">col-lg-18</div>
-          <div class="col-lg-6">col-lg-6</div>
+          <v-col span="18">col-lg-18</v-col>
+          <v-col span="6">col-lg-6</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-17">col-lg-17</div>
-          <div class="col-lg-7">col-lg-7</div>
+          <v-col span="17">col-lg-17</v-col>
+          <v-col span="7">col-lg-7</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-16">col-lg-16</div>
-          <div class="col-lg-8">col-lg-8</div>
+          <v-col span="16">col-lg-16</v-col>
+          <v-col span="8">col-lg-8</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-15">col-lg-15</div>
-          <div class="col-lg-9">col-lg-9</div>
+          <v-col span="15">col-lg-15</v-col>
+          <v-col span="9">col-lg-9</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-14">col-lg-14</div>
-          <div class="col-lg-10">col-lg-10</div>
+          <v-col span="14">col-lg-14</v-col>
+          <v-col span="10">col-lg-10</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-13">col-lg-13</div>
-          <div class="col-lg-11">col-lg-11</div>
+          <v-col span="13">col-lg-13</v-col>
+          <v-col span="11">col-lg-11</v-col>
         </v-row>
         <v-row>
-          <div class="col-lg-12">col-lg-12</div>
-          <div class="col-lg-12">col-lg-12</div>
+          <v-col span="12">col-lg-12</v-col>
+          <v-col span="12">col-lg-12</v-col>
         </v-row>
       </div>
     </div>
-    <v-row>
-      <v-col span="5">5</v-col>
-      <v-col span="19">19</v-col>
-    </v-row>
     <pre><code class="language-markup"><script type="language-mark-up">
-
+<v-row>
+  <v-col span="24">col-lg-24</v-col>
+</v-row>
+<v-row>
+  <v-col span="23">col-lg-23</v-col>
+  <v-col span="1">1</v-col>
+</v-row>
+<v-row>
+  <v-col span="22">col-lg-22</v-col>
+  <v-col span="2">2</v-col>
+</v-row>
+<v-row>
+  <v-col span="21">col-lg-21</v-col>
+  <v-col span="3">col-lg-3</v-col>
+</v-row>
+<v-row>
+  <v-col span="20">col-lg-20</v-col>
+  <v-col span="4">col-lg-4</v-col>
+</v-row>
+<v-row>
+  <v-col span="19">col-lg-19</v-col>
+  <v-col span="5">col-lg-5</v-col>
+</v-row>
+<v-row>
+  <v-col span="18">col-lg-18</v-col>
+  <v-col span="6">col-lg-6</v-col>
+</v-row>
+<v-row>
+  <v-col span="17">col-lg-17</v-col>
+  <v-col span="7">col-lg-7</v-col>
+</v-row>
+<v-row>
+  <v-col span="16">col-lg-16</v-col>
+  <v-col span="8">col-lg-8</v-col>
+</v-row>
+<v-row>
+  <v-col span="15">col-lg-15</v-col>
+  <v-col span="9">col-lg-9</v-col>
+</v-row>
+<v-row>
+  <v-col span="14">col-lg-14</v-col>
+  <v-col span="10">col-lg-10</v-col>
+</v-row>
+<v-row>
+  <v-col span="13">col-lg-13</v-col>
+  <v-col span="11">col-lg-11</v-col>
+</v-row>
+<v-row>
+  <v-col span="12">col-lg-12</v-col>
+  <v-col span="12">col-lg-12</v-col>
+</v-row>
 </script></code></pre>
     </script>
     </code>
