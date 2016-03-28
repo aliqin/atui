@@ -1,6 +1,6 @@
-require('../src/styles/themes/alidayu.less')
-require('../src/styles/themes/tmallwt.less')
-require('../src/styles/themes/alitx.less')
+require('src/styles/themes/alidayu.less')
+require('src/styles/themes/tmallwt.less')
+require('src/styles/themes/alitx.less')
 
 // 表单类
 // import Button from './components/Button.vue'
