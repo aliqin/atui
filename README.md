@@ -16,7 +16,7 @@ $ npm install @ali/vue-component --save-dev
 
 
 ```js
-import { alert } from '@ali/vue-component'
+import { Alert } from '@ali/vue-component'
 
 new Vue({
   components: {
