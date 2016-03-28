@@ -1,3 +1,3 @@
-import Input from './Input.vue'
+import vInput from './Input.vue'
 
-export default { Input }
+export default { vInput }

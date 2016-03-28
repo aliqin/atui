@@ -8,10 +8,10 @@ require('src/styles/themes/alitx.less')
 
 // import Button from './components/Button.vue'
 // import ButtonsDocs from './components/Buttons.vue'
-// import Input from './components/Input.vue'
+import Input from './components/Input/index'
 import Uploader from './components/Uploader.vue'
 // import Form from './components/Form.vue'
-import Switch from './components/Switch.vue'
+import Switch from './components/Switch/index'
 import Dropdown from './components/Dropdown.vue'
 import Select from './components/Select.vue'
 import Datepicker from './components/Datepicker.vue'
@@ -23,13 +23,13 @@ import Typeahead from './components/Typeahead.vue'
 import Alert from './components/Alert.vue'
 import Modal from './components/Modal.vue'
 import Table from './components/Table.vue'
-import Badge from './components/Badge.vue'
+import Badge from './components/Badge/index'
 import Carousel from './components/Carousel.vue'
 import Affix from './components/Affix.vue'
 // import Container from './components/Container.vue'
 import Spin from './components/Spin.vue'
 import Textarea from './components/Textarea.vue'
-import Tag from './components/Tag.vue'
+import Tag from './components/Tag/index'
 import Tooltip from './components/Tooltip.vue'
 import Accordion from './components/Accordion.vue'
 
@@ -38,7 +38,7 @@ import Accordion from './components/Accordion.vue'
 // import ffix from './components/affix.vue'
 // import side from './components/aside.vue'
 import Popover from './components/Popover.vue'
-import Tabs from './components/Tabset/'
+import Tabset from './components/Tabset/index'
 import Steps from './components/Steps/index'
 import Menu from './components/Menu/index'
 import Breadcrumb from './components/Breadcrumb/'
@@ -49,6 +49,7 @@ import Pagination from './components/Pagination/'
 import phoneNumber from './filters/phoneNumber'
 
 const VueComponent = {
+  Input,
   Uploader,
   Switch,
   Dropdown,
@@ -67,7 +68,7 @@ const VueComponent = {
   Tooltip,
   Accordion,
   Popover,
-  Tabs,
+  Tabset,
   Steps,
   Menu,
   Breadcrumb,
