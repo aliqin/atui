@@ -88,7 +88,7 @@ import Pagination from './components/Pagination/'
 // filters
 import phoneNumber from './filters/phoneNumber'
 
-const VueStrap = {
+const VueComponent = {
   Uploader,
   Switch,
   Dropdown,
@@ -114,4 +114,4 @@ const VueStrap = {
   Pagination
 }
 
-module.imports= VueComponent
+module.exports= VueComponent
