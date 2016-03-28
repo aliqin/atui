@@ -6,9 +6,9 @@ require('src/styles/themes/alitx.less')
 
 
 
-// import Button from './components/Button.vue'
+import Button from './components/Button/'
 // import ButtonsDocs from './components/Buttons.vue'
-// import Input from './components/Input.vue'
+import Input from './components/Input/'
 import Uploader from './components/Uploader.vue'
 // import Form from './components/Form.vue'
 import Switch from './components/Switch/'
@@ -63,6 +63,8 @@ const VueComponent = {
   Affix,
   Spin,
   Textarea,
+  Input,
+  Button,
   Tag,
   Tooltip,
   Accordion,

@@ -208,11 +208,12 @@ radio单选框
 // import fromValid from 'src/plugins/form-valid.js';
 // Vue.use(fromValid);
 import Input from 'src/components/Input/';
-import vButton from 'src/components/Button.vue';
+import Button from 'src/components/Button/';
 import vSelect from 'src/components/Select.vue';
 import vOption from 'src/components/Option.vue';
 
-const vInput = Input.vInput
+const vInput = Input.vInput;
+const vButton = Button;
 
 export default {
   components: {

@@ -95,7 +95,8 @@
 </template>
 
 <script>
-import vButton from '../../src/components/Button.vue';
+import Button from '../../src/components/Button/';
+const vButton = Button;
 export default{
   components: {
     vButton
