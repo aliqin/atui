@@ -32,7 +32,3 @@
     }
   }
 </script>
-
-<style lang="less">
-  @import "../../styles/input.less";
-</style>
