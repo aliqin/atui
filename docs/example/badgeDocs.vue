@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="badge">
-    <h3 class="page-header"><a href="#badge" class="anchor">Badge 徽标数</a></h3>  
+    <h3 class="page-header"><a href="#badge" class="anchor">Badge 徽标数</a></h3>
     <div class="bs-example">
       <h4 class="example-title">基础型</h4>
       <badge :count="6">
@@ -75,7 +75,7 @@
 </template>
 
 <script>
-  import badge from 'src/components/Badge.vue'
+  import badge from 'src/components/Badge/'
   export default {
     data () {
       return {
