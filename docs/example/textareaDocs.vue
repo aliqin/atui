@@ -4,45 +4,82 @@
     <div class="bs-example">
     <h4>基础文本域</h4>
     <div>
-      <textarea class="textarea" placeholder="请输入描述信息"></textarea>
+      <v-textarea placeholder="请输入描述信息"></v-textarea>
     </div>
     <div>
-      <textarea class="textarea" disabled>文本框被禁用了</textarea>
+      <v-textarea disabled content="文本框被禁用了"></v-textarea>
     </div>
     <div>
-      <textarea class="textarea error">信息错误了</textarea>
+      <v-textarea error content="信息错误了"></v-textarea>
     </div>
     <h4>有字数限制文本域</h4>
     <div>
-      <limit-textarea :limit-words="10" placeholder="这里只能输入10个字"></limit-textarea>
+      <v-textarea :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
+    </div>
+    <div>
+      <v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
     </div>
 <pre><code class="language-markup"><script type="language-mark-up">
-<!-- textarea文本域 -->
-<!-- 用样式textarea，标识是个文本域 -->
-<!-- 文本域有错误（error）状态和禁用状态（加disabled属性即可） -->
-<textarea class="textarea" placeholder="请输入描述信息"></textarea>
-<textarea class="textarea error">信息错误了</textarea>
-<textarea class="textarea error">信息错误了</textarea>
-
-<!-- 有字数限制的文本域，通过组件方式调用 -->
-<!-- 参数limit-words指定限制的最多字数 -->
-<limit-textarea :limit-words="10"></limit-textarea>
+<v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></limit-v>
 </script></code></pre>
+    <h4>参数</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>参数名</th>
+          <th>类型</th>
+          <th>默认值</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>content</td>
+          <td><code>String</code></td>
+          <td><code>空</code></td>
+          <td>文本域内容</td>
+        </tr>
+        <tr>
+          <td>placeholder</td>
+          <td><code>String</code></td>
+          <td><code>空</code></td>
+          <td>文本域预期值的提示信息</td>
+        </tr>
+        <tr>
+          <td>disabled</td>
+          <td></td>
+          <td></td>
+          <td>文本域状态，禁用</td>
+        </tr>
+       <tr>
+          <td>error</td>
+          <td></td>
+          <td></td>
+          <td>文本域状态，输入验证失败</td>
+        </tr>
+        <tr>
+          <td>success</td>
+          <td></td>
+          <td></td>
+          <td>文本域状态，输入验证成功</td>
+        </tr>
+        <tr>
+          <td>limit-words</td>
+          <td><code>Number</code></td>
+          <td></td>
+          <td>文本域限制字数</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
-  import limitTextarea from 'src/components/Textarea.vue'
+  import vTextarea from 'src/components/Textarea.vue'
 
   export default {
     components: {
-      limitTextarea: limitTextarea
-    },
-    data() {
-      return {
-        checkboxValue: [],
-        radioValue: ''
-      }
+      vTextarea
     }
   }
 </script>
