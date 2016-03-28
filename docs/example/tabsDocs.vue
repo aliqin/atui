@@ -138,8 +138,8 @@
 <script>
   // import Tabs from 'src/components/Tabset/'
   // const {Tab} = Tabs
-  import Tabs from 'src/components/Tabset'
-  import Tab from 'src/components/Tab'
+  import Tabs from 'src/components/Tabset/Tabset'
+  import Tab from 'src/components/Tabset/Tab'
   export default {
     data () {
       return {
