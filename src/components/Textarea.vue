@@ -1,18 +1,41 @@
 <template>
 <div class="limitTextarea">
-  <textarea class="textarea" maxlength="{{limitWords}}" placeholder="{{ placeholder }}" v-model="content" :class="{'error': overLimit}"></textarea>
-  <p :class="{'words-error': overLimit}">{{ curWords }}/{{ limitWords }}</p>
+  <div v-if="limitWords" class="limit-textarea ">
+    <textarea v-if="isDisabled" disabled class="textarea" maxlength="{{limitWords}}" placeholder="{{placeholder}}" v-model="content" :class="classObj"></textarea>
+    <textarea v-else class="textarea" maxlength="{{limitWords}}" placeholder="{{placeholder}}" v-model="content" :class="classObj"></textarea>
+    <p :class="{'words-error': overLimit}">{{ curWords }}/{{ limitWords }}</p>
+  </div>
+  <template v-else>
+    <textarea v-if="isDisabled" disabled class="textarea" :class="classObj" placeholder="{{placeholder}}" v-model="content"></textarea>
+    <textarea v-else class="textarea" :class="classObj" placeholder="{{placeholder}}" v-model="content"></textarea>
+  </template>
 </div>
 </template>
 
 <script>
   export default {
-    props: ['limitWords','placeholder'],
+    props: {
+      limitWords: Number,
+      placeholder: String,
+      disabled: null,
+      error: null,
+      success: null,
+      content: String
+    },
     data () {
       return {
         curWords: 0,
         content: '',
-        overLimit: false
+        overLimit: false,
+        isDisabled: typeof(this.disabled) !== 'undefined'
+      }
+    },
+    computed: {
+      classObj () {
+        return {
+          'error': typeof(this.error) !== 'undefined' || this.overLimit,
+          'success': typeof(this.success) !== 'undefined'
+        }
       }
     },
     watch: {
@@ -30,15 +53,5 @@
 </script>
 
 <style lang="less">
-  .limitTextarea {
-
-    p {
-      color: #999;
-      font-size: 12px;
-    }
-
-    .words-error {
-      color: #ff5959;
-    }
-  }
+  @import "../styles/textarea.less";
 </style>
