@@ -2,47 +2,104 @@
   <div class="bs-docs-section" id="button">
     <h3 class="page-header"><a href="#buttons" class="anchor">Button 按钮</a></h3>
     <div class="bs-example">
-      <h4>基础按钮</h4>
-      <button type="button" class="btn large primary">大号+主按钮</button>
-      <button type="button" class="btn large secondary">大号+次按钮</button>
-      <button type="button" class="btn large tertiary">大号+三级按钮</button>
-      <button type="button" class="btn large disabled">大号+失效按钮</button>
-      <button type="button" class="btn large text">大号+文字型按钮</button>
-      <br><br>
-      <button type="button" class="btn primary">中号+主按钮</button>
-      <button type="button" class="btn secondary">中号+次按钮</button>
-      <button type="button" class="btn tertiary">中号+三级按钮</button>
-      <button type="button" class="btn disabled">中号+失效按钮</button>
-      <button type="button" class="btn text">中号+文字型按钮</button>
-      <br><br>
-      <button type="button" class="btn small primary">小号+主按钮</button>
-      <button type="button" class="btn small secondary">小号+次按钮</button>
-      <button type="button" class="btn small tertiary">小号+三级按钮</button>
-      <button type="button" class="btn small disabled">小号+失效按钮</button>
-      <button type="button" class="btn small text">小号+文字型按钮</button>
+      <v-button large primary value="大号+主按钮"></v-button>
+      <v-button primary value="中号+主按钮"></v-button>
+      <v-button small primary value="小号+主按钮"></v-button>
+      <br>
+      <v-button large secondary value="大号+次按钮"></v-button>
+      <v-button secondary value="中号+次按钮"></v-button>
+      <v-button small secondary value="小号+次按钮"></v-button>
+      <br>
+      <v-button large tertiary value="大号+三级按钮"></v-button>
+      <v-button tertiary value="中号+三级按钮"></v-button>
+      <v-button small tertiary value="小号+三级按钮"></v-button>
+      <br>
+      <v-button large disabled value="大号+失效按钮"></v-button>
+      <v-button disabled value="中号+失效按钮"></v-button>
+      <v-button small disabled value="小号+失效按钮"></v-button>
+      <br>
+      <v-button large text value="大号+文字型按钮"></v-button>
+      <v-button text value="中号+文字型按钮"></v-button>
+      <v-button small text value="小号+文字型按钮"></v-button>
     </div>
 
 <pre><code class="language-markup"><script type="language-mark-up">
-<!-- 基础按钮，样式采用名称组合的形式 -->
-<!-- 用样式btn，标识是个按钮，且具有默认样式 -->
-<!-- 按钮尺寸，有大号（large）、中号（default，可以不写）和小号（small）-->
-<!-- 按钮类型，有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->
-<button type="button" class="btn large primary">大号+主按钮</button>
-<button type="button" class="btn large secondary">大号+次按钮</button>
-<button type="button" class="btn large tertiary">大号+三级按钮</button>
-<button type="button" class="btn large disabled">大号+失效按钮</button>
-<button type="button" class="btn large text">大号+文字型按钮</button>
-<button type="button" class="btn default primary">中号+主按钮</button>
-<button type="button" class="btn default secondary">中号+次按钮</button>
-<button type="button" class="btn default tertiary">中号+三级按钮</button>
-<button type="button" class="btn default disabled">中号+失效按钮</button>
-<button type="button" class="btn default text">中号+文字型按钮</button>
-<button type="button" class="btn small primary">小号+主按钮</button>
-<button type="button" class="btn small secondary">小号+次按钮</button>
-<button type="button" class="btn small tertiary">小号+三级按钮</button>
-<button type="button" class="btn small disabled">小号+失效按钮</button>
-<button type="button" class="btn small text">小号+文字型按钮</button>
+<!-- 基础按钮，使用封装的Button组件，通过添加属性，呈现样式 -->
+<!-- 大号（large）、中号（默认）和小号（small）-->
+<!-- 有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->
+<!-- 通过属性value控制按钮文案 -->
+<v-button large primary value="大号+主按钮"></v-button>
 </script></code></pre>
+    <h4>参数</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>参数名</th>
+          <th>类型</th>
+          <th>默认值</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>value</td>
+          <td><code>String</code></td>
+          <td><code>确定</code></td>
+          <td>按钮文案</td>
+        </tr>
+        <tr>
+          <td>large</td>
+          <td></td>
+          <td></td>
+          <td>按钮尺寸，大</td>
+        </tr>
+        <tr>
+          <td>small</td>
+          <td></td>
+          <td></td>
+          <td>按钮尺寸，小</td>
+        </tr>
+        <tr>
+          <td>primary</td>
+          <td></td>
+          <td></td>
+          <td>按钮类型，主按钮</td>
+        </tr>
+        <tr>
+          <td>secondary</td>
+          <td></td>
+          <td></td>
+          <td>按钮类型，次按钮</td>
+        </tr>
+        <tr>
+          <td>tertiary</td>
+          <td></td>
+          <td></td>
+          <td>按钮类型，三级按钮</td>
+        </tr>
+        <tr>
+          <td>disabled</td>
+          <td></td>
+          <td></td>
+          <td>按钮类型，失效按钮</td>
+        </tr>
+        <tr>
+          <td>text</td>
+          <td></td>
+          <td></td>
+          <td>按钮类型，文字型按钮</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
+
+<script>
+import vButton from '../../src/components/Button.vue';
+export default{
+  components: {
+    vButton
+  }
+}
+</script>
 
