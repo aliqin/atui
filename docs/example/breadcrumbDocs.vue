@@ -73,10 +73,9 @@
 </template>
 
 <script>
-  //import Breadcrumb, { BreadcrumbItem } from 'src/components/Breadcrumb'
-  import breadcrumb from 'src/components/Breadcrumb/Breadcrumb.vue'
-  import breadcrumbItem from 'src/components/Breadcrumb/BreadcrumbItem.vue'
-
+  import Breadcrumb  from 'src/components/Breadcrumb/'
+  const {BreadcrumbItem} = Breadcrumb
+  
   export default {
     data () {
       return {
@@ -84,8 +83,8 @@
       }
     },
     components: {
-      breadcrumb,
-      breadcrumbItem
+      Breadcrumb,
+      BreadcrumbItem
     }
   }
 </script>
