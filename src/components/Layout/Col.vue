@@ -5,7 +5,10 @@
 <script>
 export default {
   props: {
-    span:Number,
+    span:{
+      type:String,
+      default:'1'
+    },
     type:{
       type:String,
       default:'lg'
@@ -13,7 +16,7 @@ export default {
   },
   data() {
     return {
-      className:['col',type,span].join('-')
+      className:['col',this.type,this.span].join('-')
     }
   }
 }
