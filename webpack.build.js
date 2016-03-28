@@ -16,11 +16,11 @@ config.output = {
 }
 
 config.plugins = (config.plugins || []).concat([
-	// new webpack.ProvidePlugin({
- //        Vue: 'vue',
- //        VueComponent: 'vue-component'
+	new webpack.ProvidePlugin({
+        Vue: 'vue',
+        VueComponent: 'vue-component'
 
- //    }),
+    }),
     new webpack.optimize.CommonsChunkPlugin({
 		name: "Vue",
 		filename: "vue.js",
