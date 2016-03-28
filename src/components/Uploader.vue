@@ -314,7 +314,7 @@
         this.addDragEvt();
       } else {
         if (!this.formId) {
-          throw "You need to wrap this component in a form and specify it's id in a 'form-id' attribute."
+          throw "需要将该组件放置在一个有form-id属性值的form标签中"
         }
         this._wrappingForm = document.getElementById(this.formId);
       }

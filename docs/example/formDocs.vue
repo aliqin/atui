@@ -5,8 +5,8 @@
     <div class="bs-example">
       <form class="form">
         <div class="form-item row form-item-with-help">
-          <label class="form-label col-lg-7"><span class="required-icon">*</span>用户名：</label>
-          <div class="col-lg-17">
+          <label class="form-label col-lg-4"><span class="required-icon">*</span>用户名：</label>
+          <div class="col-lg-20">
             <div class="form-input">
               <input type="text" class="input" placeholder="电话号码" />
               <i class="iconfont status-icon">&#xe600;</i>
@@ -15,10 +15,20 @@
           </div>
         </div>
         <div class="form-item row form-item-with-help has-error">
-          <label class="form-label col-lg-7"><span class="required-icon">*</span>用户名：</label>
-          <div class="col-lg-17">
+          <label class="form-label col-lg-4"><span class="required-icon">*</span>用户名：</label>
+          <div class="col-lg-20">
             <div class="form-input">
               <input type="text" class="input error" placeholder="电话号码" />
+              <i class="iconfont status-icon">&#xe600;</i>
+            </div>
+            <div class="status-info">请输入有效的电话号码</div>
+          </div>
+        </div>
+        <div class="form-item row form-item-with-help has-success">
+          <label class="form-label col-lg-4"><span class="required-icon">*</span>用户名：</label>
+          <div class="col-lg-20">
+            <div class="form-input">
+              <input type="text" class="input success" placeholder="电话号码" />
               <i class="iconfont status-icon">&#xe600;</i>
             </div>
             <div class="status-info">请输入有效的电话号码</div>
