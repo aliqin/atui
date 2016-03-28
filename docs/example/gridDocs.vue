@@ -56,10 +56,10 @@
         </div>
       </div>
     </div>
-    <row>
-      <col span="5">sdfsdf</col>
-      <col span="19">sdfsdfsdf</col>
-    </row>
+    <v-row>
+      <v-cols span="5">5</v-cols>
+      <v-cols span="19">19</v-cols>
+    </v-row>
     <pre><code class="language-markup"><script type="language-mark-up">
 
 </script></code></pre>
@@ -81,13 +81,10 @@
 </style>
 <script>
   import Layout from 'src/components/Layout/'
-  const { Row, Col } = Layout
-  debugger
+  const vRow = Layout.Row
+  const vCols = Layout.Col
   export default {
-    data() {
-      
-    },
-    components: { Row, Col },
+    components: { vRow, vCols },
   }
 </script>
 

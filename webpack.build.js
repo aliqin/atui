@@ -1,6 +1,8 @@
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
 
+delete config.devtool
+
 config.entry = {
 	Vue: ['vue'],
 	VueComponent: ['./src/index.js']
@@ -25,18 +27,21 @@ config.plugins = (config.plugins || []).concat([
     }),
     new webpack.optimize.CommonsChunkPlugin({
 		name: "VueComponent",
-		filename: "vue-component.js",
+		filename: "vuecomponent.js",
     }),
     new webpack.DefinePlugin({
         'process.env': {
             NODE_ENV: '"production"'
         }
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        },
+        output: {
+            "ascii_only": true
+        }
+    }),
     new webpack.optimize.OccurenceOrderPlugin()
 
 ])
