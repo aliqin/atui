@@ -18,6 +18,9 @@ config.output = {
 config.plugins = (config.plugins || []).concat([
 	new webpack.ProvidePlugin({
         Vue: 'vue',
+
+    }),
+    new webpack.ProvidePlugin({
         VueComponent: 'vue-component'
 
     }),
@@ -25,10 +28,10 @@ config.plugins = (config.plugins || []).concat([
 		name: "Vue",
 		filename: "vue.js",
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-		name: "VueComponent",
-		filename: "vuecomponent.js",
-    }),
+  //   new webpack.optimize.CommonsChunkPlugin({
+		// name: "VueComponent",
+		// filename: "vuecomponent.js",
+  //   }),
     new webpack.DefinePlugin({
         'process.env': {
             NODE_ENV: '"production"'
