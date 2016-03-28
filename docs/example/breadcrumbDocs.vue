@@ -73,8 +73,9 @@
 </template>
 
 <script>
-  import breadcrumb from 'src/components/Breadcrumb.vue'
-  import breadcrumbItem from 'src/components/BreadcrumbItem.vue'
+  //import Breadcrumb, { BreadcrumbItem } from 'src/components/Breadcrumb'
+  import breadcrumb from 'src/components/Breadcrumb/Breadcrumb.vue'
+  import breadcrumbItem from 'src/components/Breadcrumb/BreadcrumbItem.vue'
 
   export default {
     data () {

@@ -20,7 +20,7 @@
       <v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
     </div>
 <pre><code class="language-markup"><script type="language-mark-up">
-<v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></limit-v>
+<v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
 </script></code></pre>
     <h4>参数</h4>
     <table class="table table-bordered">
