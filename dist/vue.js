@@ -1,7 +1,17 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Vue"] = factory();
+	else
+		root["Vue"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
-/******/ 	var parentJsonpFunction = window["webpackJsonp"];
-/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules) {
+/******/ 	var parentJsonpFunction = window["webpackJsonp_name_"];
+/******/ 	window["webpackJsonp_name_"] = function webpackJsonpCallback(chunkIds, moreModules) {
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
 /******/ 		var moduleId, chunkId, i = 0, callbacks = [];
@@ -76,7 +86,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"vue-component"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"VueComponent"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -99,15 +109,15 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(76);
+	module.exports = __webpack_require__(35);
 
 
 /***/ },
 
-/***/ 76:
+/***/ 35:
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process, Vue) {/*!
+	/*!
 	 * Vue.js v1.0.15
 	 * (c) 2016 Evan You
 	 * Released under the MIT License.
@@ -1080,7 +1090,7 @@
 	
 	var warn = undefined;
 	
-	if (process.env.NODE_ENV !== 'production') {
+	if (false) {
 	  (function () {
 	    var hasConsole = typeof console !== 'undefined';
 	    warn = function (msg, e) {
@@ -1187,7 +1197,7 @@
 	    var selector = el;
 	    el = document.querySelector(el);
 	    if (!el) {
-	      process.env.NODE_ENV !== 'production' && warn('Cannot find element: ' + selector);
+	      ("production") !== 'production' && warn('Cannot find element: ' + selector);
 	    }
 	  }
 	  return el;
@@ -1577,7 +1587,7 @@
 	      var is = hasAttrs && getIsBinding(el);
 	      if (is) {
 	        return is;
-	      } else if (process.env.NODE_ENV !== 'production') {
+	      } else if (false) {
 	        if (tag.indexOf('-') > -1 || /HTMLUnknownElement/.test(el.toString()) &&
 	        // Chrome returns unknown for several HTML5 elements.
 	        // https://code.google.com/p/chromium/issues/detail?id=540526
@@ -1666,13 +1676,13 @@
 	    }
 	  }
 	  if (!valid) {
-	    process.env.NODE_ENV !== 'production' && warn('Invalid prop: type check failed for ' + prop.path + '="' + prop.raw + '".' + ' Expected ' + formatType(expectedType) + ', got ' + formatValue(value) + '.');
+	    ("production") !== 'production' && warn('Invalid prop: type check failed for ' + prop.path + '="' + prop.raw + '".' + ' Expected ' + formatType(expectedType) + ', got ' + formatValue(value) + '.');
 	    return false;
 	  }
 	  var validator = options.validator;
 	  if (validator) {
 	    if (!validator.call(null, value)) {
-	      process.env.NODE_ENV !== 'production' && warn('Invalid prop: custom validator check failed for ' + prop.path + '="' + prop.raw + '"');
+	      ("production") !== 'production' && warn('Invalid prop: custom validator check failed for ' + prop.path + '="' + prop.raw + '"');
 	      return false;
 	    }
 	  }
@@ -1747,7 +1757,7 @@
 	      return parentVal;
 	    }
 	    if (typeof childVal !== 'function') {
-	      process.env.NODE_ENV !== 'production' && warn('The "data" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.');
+	      ("production") !== 'production' && warn('The "data" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.');
 	      return parentVal;
 	    }
 	    if (!parentVal) {
@@ -1781,7 +1791,7 @@
 	
 	strats.el = function (parentVal, childVal, vm) {
 	  if (!vm && childVal && typeof childVal !== 'function') {
-	    process.env.NODE_ENV !== 'production' && warn('The "el" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.');
+	    ("production") !== 'production' && warn('The "el" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.');
 	    return;
 	  }
 	  var ret = childVal || parentVal;
@@ -1803,7 +1813,7 @@
 	
 	strats.paramAttributes = function () {
 	  /* istanbul ignore next */
-	  process.env.NODE_ENV !== 'production' && warn('"paramAttributes" option has been deprecated in 0.12. ' + 'Use "props" instead.');
+	  ("production") !== 'production' && warn('"paramAttributes" option has been deprecated in 0.12. ' + 'Use "props" instead.');
 	};
 	
 	/**
@@ -1882,7 +1892,7 @@
 	    for (var i = 0, l = ids.length; i < l; i++) {
 	      var key = ids[i];
 	      if (commonTagRE.test(key) || reservedTagRE.test(key)) {
-	        process.env.NODE_ENV !== 'production' && warn('Do not use built-in or reserved HTML elements as component ' + 'id: ' + key);
+	        ("production") !== 'production' && warn('Do not use built-in or reserved HTML elements as component ' + 'id: ' + key);
 	        continue;
 	      }
 	      def = components[key];
@@ -1943,7 +1953,7 @@
 	      asset = assets[i];
 	      var id = typeof asset === 'function' ? asset.options && asset.options.name || asset.id : asset.name || asset.id;
 	      if (!id) {
-	        process.env.NODE_ENV !== 'production' && warn('Array-syntax assets must provide a "name" or "id" field.');
+	        ("production") !== 'production' && warn('Array-syntax assets must provide a "name" or "id" field.');
 	      } else {
 	        res[id] = asset;
 	      }
@@ -2015,7 +2025,7 @@
 	
 	function assertAsset(val, type, id) {
 	  if (!val) {
-	    process.env.NODE_ENV !== 'production' && warn('Failed to resolve ' + type + ': ' + id);
+	    ("production") !== 'production' && warn('Failed to resolve ' + type + ': ' + id);
 	  }
 	}
 	
@@ -2796,7 +2806,7 @@
 	 */
 	
 	var warnNonExistent;
-	if (process.env.NODE_ENV !== 'production') {
+	if (false) {
 	  warnNonExistent = function (path) {
 	    warn('You are setting a non-existent path "' + path.raw + '" ' + 'on a vm instance. Consider pre-initializing the property ' + 'with the "data" option for more reliable reactivity ' + 'and better performance.');
 	  };
@@ -2829,7 +2839,7 @@
 	      obj = obj[key];
 	      if (!isObject(obj)) {
 	        obj = {};
-	        if (process.env.NODE_ENV !== 'production' && last._isVue) {
+	        if (false) {
 	          warnNonExistent(path);
 	        }
 	        set(last, key, obj);
@@ -2840,7 +2850,7 @@
 	      } else if (key in obj) {
 	        obj[key] = val;
 	      } else {
-	        if (process.env.NODE_ENV !== 'production' && obj._isVue) {
+	        if (false) {
 	          warnNonExistent(path);
 	        }
 	        set(obj, key, val);
@@ -2946,7 +2956,7 @@
 	
 	function compileGetter(exp) {
 	  if (improperKeywordsRE.test(exp)) {
-	    process.env.NODE_ENV !== 'production' && warn('Avoid using reserved keywords in expression: ' + exp);
+	    ("production") !== 'production' && warn('Avoid using reserved keywords in expression: ' + exp);
 	  }
 	  // reset state
 	  saved.length = 0;
@@ -2972,7 +2982,7 @@
 	  try {
 	    return new Function('scope', 'return ' + body + ';');
 	  } catch (e) {
-	    process.env.NODE_ENV !== 'production' && warn('Invalid expression. ' + 'Generated function body: ' + body);
+	    ("production") !== 'production' && warn('Invalid expression. ' + 'Generated function body: ' + body);
 	  }
 	}
 	
@@ -2990,7 +3000,7 @@
 	      setPath(scope, path, val);
 	    };
 	  } else {
-	    process.env.NODE_ENV !== 'production' && warn('Invalid setter expression: ' + exp);
+	    ("production") !== 'production' && warn('Invalid setter expression: ' + exp);
 	  }
 	}
 	
@@ -3080,7 +3090,7 @@
 	  runBatcherQueue(userQueue);
 	  // dev tool hook
 	  /* istanbul ignore if */
-	  if (process.env.NODE_ENV !== 'production') {
+	  if (false) {
 	    if (inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__) {
 	      window.__VUE_DEVTOOLS_GLOBAL_HOOK__.emit('flush');
 	    }
@@ -3103,7 +3113,7 @@
 	    has[id] = null;
 	    watcher.run();
 	    // in dev build, check and stop circular updates.
-	    if (process.env.NODE_ENV !== 'production' && has[id] != null) {
+	    if (false) {
 	      circular[id] = (circular[id] || 0) + 1;
 	      if (circular[id] > config._maxUpdateCount) {
 	        queue.splice(has[id], 1);
@@ -3225,7 +3235,7 @@
 	  try {
 	    value = this.getter.call(scope, scope);
 	  } catch (e) {
-	    if (process.env.NODE_ENV !== 'production' && config.warnExpressionErrors) {
+	    if (false) {
 	      warn('Error when evaluating expression "' + this.expression + '". ' + (config.debug ? '' : 'Turn on debug mode to see stack trace.'), e);
 	    }
 	  }
@@ -3261,7 +3271,7 @@
 	  try {
 	    this.setter.call(scope, scope, value);
 	  } catch (e) {
-	    if (process.env.NODE_ENV !== 'production' && config.warnExpressionErrors) {
+	    if (false) {
 	      warn('Error when evaluating setter "' + this.expression + '"', e);
 	    }
 	  }
@@ -3269,7 +3279,7 @@
 	  var forContext = scope.$forContext;
 	  if (forContext && forContext.alias === this.expression) {
 	    if (forContext.filters) {
-	      process.env.NODE_ENV !== 'production' && warn('It seems you are using two-way binding on ' + 'a v-for alias (' + this.expression + '), and the ' + 'v-for has filters. This will not work properly. ' + 'Either remove the filters or use an array of ' + 'objects and bind to object properties instead.');
+	      ("production") !== 'production' && warn('It seems you are using two-way binding on ' + 'a v-for alias (' + this.expression + '), and the ' + 'v-for has filters. This will not work properly. ' + 'Either remove the filters or use an array of ' + 'objects and bind to object properties instead.');
 	      return;
 	    }
 	    forContext._withLock(function () {
@@ -3328,7 +3338,7 @@
 	    this.queued = true;
 	    // record before-push error stack in debug mode
 	    /* istanbul ignore if */
-	    if (process.env.NODE_ENV !== 'production' && config.debug) {
+	    if (false) {
 	      this.prevError = new Error('[vue] async stack trace');
 	    }
 	    pushWatcher(this);
@@ -3357,7 +3367,7 @@
 	      // so the full cross-tick stack trace is available.
 	      var prevError = this.prevError;
 	      /* istanbul ignore if */
-	      if (process.env.NODE_ENV !== 'production' && config.debug && prevError) {
+	      if (false) {
 	        this.prevError = null;
 	        try {
 	          this.cb.call(this.vm, value, oldValue);
@@ -3454,7 +3464,7 @@
 	
 	var ref = {
 	  bind: function bind() {
-	    process.env.NODE_ENV !== 'production' && warn('v-ref:' + this.arg + ' must be used on a child ' + 'component. Found on <' + this.el.tagName.toLowerCase() + '>.');
+	    ("production") !== 'production' && warn('v-ref:' + this.arg + ' must be used on a child ' + 'component. Found on <' + this.el.tagName.toLowerCase() + '>.');
 	  }
 	};
 	
@@ -3641,13 +3651,13 @@
 	
 	      // only allow binding on native attributes
 	      if (disallowedInterpAttrRE.test(attr) || attr === 'name' && (tag === 'PARTIAL' || tag === 'SLOT')) {
-	        process.env.NODE_ENV !== 'production' && warn(attr + '="' + descriptor.raw + '": ' + 'attribute interpolation is not allowed in Vue.js ' + 'directives and special attributes.');
+	        ("production") !== 'production' && warn(attr + '="' + descriptor.raw + '": ' + 'attribute interpolation is not allowed in Vue.js ' + 'directives and special attributes.');
 	        this.el.removeAttribute(attr);
 	        this.invalid = true;
 	      }
 	
 	      /* istanbul ignore if */
-	      if (process.env.NODE_ENV !== 'production') {
+	      if (false) {
 	        var raw = attr + '="' + descriptor.raw + '": ';
 	        // warn src
 	        if (attr === 'src') {
@@ -3791,7 +3801,7 @@
 	    }
 	
 	    if (typeof handler !== 'function') {
-	      process.env.NODE_ENV !== 'production' && warn('v-on:' + this.arg + '="' + this.expression + '" expects a function value, ' + 'got ' + handler);
+	      ("production") !== 'production' && warn('v-on:' + this.arg + '="' + this.expression + '" expects a function value, ' + 'got ' + handler);
 	      return;
 	    }
 	
@@ -4181,7 +4191,7 @@
 	    // friendly warning...
 	    this.checkFilters();
 	    if (this.hasRead && !this.hasWrite) {
-	      process.env.NODE_ENV !== 'production' && warn('It seems you are using a read-only filter with ' + 'v-model. You might want to use a two-way filter ' + 'to ensure correct behavior.');
+	      ("production") !== 'production' && warn('It seems you are using a read-only filter with ' + 'v-model. You might want to use a two-way filter ' + 'to ensure correct behavior.');
 	    }
 	    var el = this.el;
 	    var tag = el.tagName;
@@ -4193,7 +4203,7 @@
 	    } else if (tag === 'TEXTAREA') {
 	      handler = handlers.text;
 	    } else {
-	      process.env.NODE_ENV !== 'production' && warn('v-model does not support element type: ' + tag);
+	      ("production") !== 'production' && warn('v-model does not support element type: ' + tag);
 	      return;
 	    }
 	    el.__v_model = this;
@@ -4762,7 +4772,7 @@
 	      replace(el, this.anchor);
 	      this.factory = new FragmentFactory(this.vm, el);
 	    } else {
-	      process.env.NODE_ENV !== 'production' && warn('v-if="' + this.expression + '" cannot be ' + 'used on an instance root element.');
+	      ("production") !== 'production' && warn('v-if="' + this.expression + '" cannot be ' + 'used on an instance root element.');
 	      this.invalid = true;
 	    }
 	  },
@@ -4828,7 +4838,7 @@
 	    }
 	
 	    if (!this.alias) {
-	      process.env.NODE_ENV !== 'production' && warn('Alias is required in v-for.');
+	      ("production") !== 'production' && warn('Alias is required in v-for.');
 	      return;
 	    }
 	
@@ -5158,7 +5168,7 @@
 	      if (!cache[id]) {
 	        cache[id] = frag;
 	      } else if (trackByKey !== '$index') {
-	        process.env.NODE_ENV !== 'production' && this.warnDuplicate(value);
+	        ("production") !== 'production' && this.warnDuplicate(value);
 	      }
 	    } else {
 	      id = this.id;
@@ -5166,7 +5176,7 @@
 	        if (value[id] === null) {
 	          value[id] = frag;
 	        } else {
-	          process.env.NODE_ENV !== 'production' && this.warnDuplicate(value);
+	          ("production") !== 'production' && this.warnDuplicate(value);
 	        }
 	      } else {
 	        def(value, id, frag);
@@ -5195,7 +5205,7 @@
 	      frag = value[this.id];
 	    }
 	    if (frag && (frag.reused || frag.fresh)) {
-	      process.env.NODE_ENV !== 'production' && this.warnDuplicate(value);
+	      ("production") !== 'production' && this.warnDuplicate(value);
 	    }
 	    return frag;
 	  },
@@ -5366,7 +5376,7 @@
 	  return ret;
 	}
 	
-	if (process.env.NODE_ENV !== 'production') {
+	if (false) {
 	  vFor.warnDuplicate = function (value) {
 	    warn('Duplicate value found in v-for="' + this.descriptor.raw + '": ' + JSON.stringify(value) + '. Use track-by="$index" if ' + 'you are expecting duplicate values.');
 	  };
@@ -5500,7 +5510,7 @@
 	  // check css transition type
 	  this.type = hooks && hooks.type;
 	  /* istanbul ignore if */
-	  if (process.env.NODE_ENV !== 'production') {
+	  if (false) {
 	    if (this.type && this.type !== TYPE_TRANSITION && this.type !== TYPE_ANIMATION) {
 	      warn('invalid CSS transition type for transition="' + this.id + '": ' + this.type);
 	    }
@@ -5942,7 +5952,7 @@
 	        this.setComponent(this.expression);
 	      }
 	    } else {
-	      process.env.NODE_ENV !== 'production' && warn('cannot mount component "' + this.expression + '" ' + 'on already mounted element: ' + this.el);
+	      ("production") !== 'production' && warn('cannot mount component "' + this.expression + '" ' + 'on already mounted element: ' + this.el);
 	    }
 	  },
 	
@@ -6103,7 +6113,7 @@
 	        this.cache[this.Component.cid] = child;
 	      }
 	      /* istanbul ignore if */
-	      if (process.env.NODE_ENV !== 'production' && this.el.hasAttribute('transition') && child._isFragment) {
+	      if (false) {
 	        warn('Transitions will not work on a fragment instance. ' + 'Template: ' + child.$options.template);
 	      }
 	      return child;
@@ -6188,7 +6198,7 @@
 	    var self = this;
 	    var current = this.childVM;
 	    // for devtool inspection
-	    if (process.env.NODE_ENV !== 'production') {
+	    if (false) {
 	      if (current) current._inactive = true;
 	      target._inactive = false;
 	    }
@@ -6327,7 +6337,7 @@
 	    name = names[i];
 	    options = propOptions[name] || empty;
 	
-	    if (process.env.NODE_ENV !== 'production' && name === '$data') {
+	    if (false) {
 	      warn('Do not use $data as prop.');
 	      continue;
 	    }
@@ -6337,7 +6347,7 @@
 	    // so we need to camelize the path here
 	    path = camelize(name);
 	    if (!identRE$1.test(path)) {
-	      process.env.NODE_ENV !== 'production' && warn('Invalid prop key: "' + name + '". Prop keys ' + 'must be valid identifiers.');
+	      ("production") !== 'production' && warn('Invalid prop key: "' + name + '". Prop keys ' + 'must be valid identifiers.');
 	      continue;
 	    }
 	
@@ -6373,7 +6383,7 @@
 	      } else {
 	        prop.dynamic = true;
 	        // check non-settable path for two-way bindings
-	        if (process.env.NODE_ENV !== 'production' && prop.mode === propBindingModes.TWO_WAY && !settablePathRE.test(value)) {
+	        if (false) {
 	          prop.mode = propBindingModes.ONE_WAY;
 	          warn('Cannot bind two-way prop with non-settable ' + 'parent path: ' + value);
 	        }
@@ -6381,7 +6391,7 @@
 	      prop.parentPath = value;
 	
 	      // warn required two-way
-	      if (process.env.NODE_ENV !== 'production' && options.twoWay && prop.mode !== propBindingModes.TWO_WAY) {
+	      if (false) {
 	        warn('Prop "' + name + '" expects a two-way binding type.');
 	      }
 	    } else if ((value = getAttr(el, attr)) !== null) {
@@ -6389,7 +6399,7 @@
 	      prop.raw = value;
 	    } else if (options.required) {
 	      // warn missing required
-	      process.env.NODE_ENV !== 'production' && warn('Missing required prop: ' + name);
+	      ("production") !== 'production' && warn('Missing required prop: ' + name);
 	    }
 	    // push prop
 	    props.push(prop);
@@ -6435,7 +6445,7 @@
 	            }, null, null, scope); // el, host, scope
 	          }
 	        } else {
-	            process.env.NODE_ENV !== 'production' && warn('Cannot bind dynamic prop on a root instance' + ' with no parent: ' + prop.name + '="' + raw + '"');
+	            ("production") !== 'production' && warn('Cannot bind dynamic prop on a root instance' + ' with no parent: ' + prop.name + '="' + raw + '"');
 	          }
 	      } else if (prop.optimizedLiteral) {
 	        // optimized literal, cast it and just set once
@@ -6469,7 +6479,7 @@
 	  var def = options['default'];
 	  // warn against non-factory defaults for Object & Array
 	  if (isObject(def)) {
-	    process.env.NODE_ENV !== 'production' && warn('Object/Array as default prop values will be shared ' + 'across multiple instances. Use a factory function ' + 'to return the default value instead.');
+	    ("production") !== 'production' && warn('Object/Array as default prop values will be shared ' + 'across multiple instances. Use a factory function ' + 'to return the default value instead.');
 	  }
 	  // call factory function for non-Function types
 	  return typeof def === 'function' && options.type !== Function ? def.call(vm) : def;
@@ -6670,7 +6680,7 @@
 	      // non-component, just compile as a normal element.
 	      replacerLinkFn = compileDirectives(el.attributes, options);
 	    }
-	  } else if (process.env.NODE_ENV !== 'production' && containerAttrs) {
+	  } else if (false) {
 	    // warn container directives for fragment instances
 	    var names = containerAttrs.filter(function (attr) {
 	      // allow vue-loader/vueify scoped css attributes
@@ -7093,7 +7103,7 @@
 	      arg = name;
 	      pushDir('bind', publicDirectives.bind, tokens);
 	      // warn against mixing mustaches with v-bind
-	      if (process.env.NODE_ENV !== 'production') {
+	      if (false) {
 	        if (name === 'class' && Array.prototype.some.call(attrs, function (attr) {
 	          return attr.name === ':class' || attr.name === 'v-bind:class';
 	        })) {
@@ -7142,7 +7152,7 @@
 	
 	              dirDef = resolveAsset(options, 'directives', dirName);
 	
-	              if (process.env.NODE_ENV !== 'production') {
+	              if (false) {
 	                assertAsset(dirDef, 'directive', dirName);
 	              }
 	
@@ -7300,7 +7310,7 @@
 	    if (options.replace) {
 	      /* istanbul ignore if */
 	      if (el === document.body) {
-	        process.env.NODE_ENV !== 'production' && warn('You are mounting an instance with a template to ' + '<body>. This will replace <body> entirely. You ' + 'should probably use `replace: false` here.');
+	        ("production") !== 'production' && warn('You are mounting an instance with a template to ' + '<body>. This will replace <body> entirely. You ' + 'should probably use `replace: false` here.');
 	      }
 	      // there are many cases where the instance must
 	      // become a fragment instance: basically anything that
@@ -7329,7 +7339,7 @@
 	      return el;
 	    }
 	  } else {
-	    process.env.NODE_ENV !== 'production' && warn('Invalid template option: ' + template);
+	    ("production") !== 'production' && warn('Invalid template option: ' + template);
 	  }
 	}
 	
@@ -7424,7 +7434,7 @@
 	    var el = options.el;
 	    var props = options.props;
 	    if (props && !el) {
-	      process.env.NODE_ENV !== 'production' && warn('Props will not be compiled if no `el` option is ' + 'provided at instantiation.');
+	      ("production") !== 'production' && warn('Props will not be compiled if no `el` option is ' + 'provided at instantiation.');
 	    }
 	    // make sure to convert string selectors into element now
 	    el = options.el = query(el);
@@ -7444,7 +7454,7 @@
 	    if (optionsData) {
 	      this._data = optionsData;
 	      for (var prop in propsData) {
-	        if (process.env.NODE_ENV !== 'production' && hasOwn(optionsData, prop)) {
+	        if (false) {
 	          warn('Data field "' + prop + '" is already defined ' + 'as a prop. Use prop default value instead.');
 	        }
 	        if (this._props[prop].raw !== null || !hasOwn(optionsData, prop)) {
@@ -7704,7 +7714,7 @@
 	      if (method) {
 	        vm[action](key, method, options);
 	      } else {
-	        process.env.NODE_ENV !== 'production' && warn('Unknown method: "' + handler + '" when ' + 'registering callback for ' + action + ': "' + key + '".');
+	        ("production") !== 'production' && warn('Unknown method: "' + handler + '" when ' + 'registering callback for ' + action + ': "' + key + '".');
 	      }
 	    } else if (handler && type === 'object') {
 	      register(vm, action, key, handler.handler, handler);
@@ -7829,7 +7839,7 @@
 	  this._scope = scope;
 	  this._frag = frag;
 	  // store directives on node in dev mode
-	  if (process.env.NODE_ENV !== 'production' && this.el) {
+	  if (false) {
 	    this.el._vue_directives = this.el._vue_directives || [];
 	    this.el._vue_directives.push(this);
 	  }
@@ -8009,7 +8019,7 @@
 	    this._withLock(function () {
 	      this._watcher.set(value);
 	    });
-	  } else if (process.env.NODE_ENV !== 'production') {
+	  } else if (false) {
 	    warn('Directive.set() can only be used inside twoWay' + 'directives.');
 	  }
 	};
@@ -8071,7 +8081,7 @@
 	        unwatchFns[i]();
 	      }
 	    }
-	    if (process.env.NODE_ENV !== 'production' && this.el) {
+	    if (false) {
 	      this.el._vue_directives.$remove(this);
 	    }
 	    this.vm = this.el = this._watcher = this._listeners = null;
@@ -8347,7 +8357,7 @@
 	    for (i = 0, l = filters.length; i < l; i++) {
 	      filter = filters[i];
 	      fn = resolveAsset(this.$options, 'filters', filter.name);
-	      if (process.env.NODE_ENV !== 'production') {
+	      if (false) {
 	        assertAsset(fn, 'filter', filter.name);
 	      }
 	      if (!fn) continue;
@@ -8379,7 +8389,7 @@
 	
 	  Vue.prototype._resolveComponent = function (id, cb) {
 	    var factory = resolveAsset(this.$options, 'components', id);
-	    if (process.env.NODE_ENV !== 'production') {
+	    if (false) {
 	      assertAsset(factory, 'component', id);
 	    }
 	    if (!factory) {
@@ -8407,7 +8417,7 @@
 	            cbs[i](res);
 	          }
 	        }, function reject(reason) {
-	          process.env.NODE_ENV !== 'production' && warn('Failed to resolve async component: ' + id + '. ' + (reason ? '\nReason: ' + reason : ''));
+	          ("production") !== 'production' && warn('Failed to resolve async component: ' + id + '. ' + (reason ? '\nReason: ' + reason : ''));
 	        });
 	      }
 	    } else {
@@ -8467,7 +8477,7 @@
 	      return extendOptions._Ctor;
 	    }
 	    var name = extendOptions.name || Super.options.name;
-	    if (process.env.NODE_ENV !== 'production') {
+	    if (false) {
 	      if (!/^[a-zA-Z][\w-]+$/.test(name)) {
 	        warn('Invalid component name: ' + name);
 	        name = null;
@@ -8556,7 +8566,7 @@
 	        return this.options[type + 's'][id];
 	      } else {
 	        /* istanbul ignore if */
-	        if (process.env.NODE_ENV !== 'production') {
+	        if (false) {
 	          if (type === 'component' && (commonTagRE.test(id) || reservedTagRE.test(id))) {
 	            warn('Do not use built-in or reserved HTML elements as component ' + 'id: ' + id);
 	          }
@@ -9135,7 +9145,7 @@
 	
 	  Vue.prototype.$mount = function (el) {
 	    if (this._isCompiled) {
-	      process.env.NODE_ENV !== 'production' && warn('$mount() should be called only once.');
+	      ("production") !== 'production' && warn('$mount() should be called only once.');
 	      return;
 	    }
 	    el = query(el);
@@ -9465,7 +9475,7 @@
 	
 	  insert: function insert(id) {
 	    var partial = resolveAsset(this.vm.$options, 'partials', id);
-	    if (process.env.NODE_ENV !== 'production') {
+	    if (false) {
 	      assertAsset(partial, 'partial', id);
 	    }
 	    if (partial) {
@@ -9622,7 +9632,7 @@
 	
 	// devtools global hook
 	/* istanbul ignore if */
-	if (process.env.NODE_ENV !== 'production' && inBrowser) {
+	if (false) {
 	  if (window.__VUE_DEVTOOLS_GLOBAL_HOOK__) {
 	    window.__VUE_DEVTOOLS_GLOBAL_HOOK__.emit('init', Vue);
 	  } else if (/Chrome\/\d+/.test(navigator.userAgent)) {
@@ -9631,107 +9641,10 @@
 	}
 	
 	module.exports = Vue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(77), __webpack_require__(76)))
-
-/***/ },
-
-/***/ 77:
-/***/ function(module, exports) {
-
-	// shim for using process in browser
-	
-	var process = module.exports = {};
-	var queue = [];
-	var draining = false;
-	var currentQueue;
-	var queueIndex = -1;
-	
-	function cleanUpNextTick() {
-	    draining = false;
-	    if (currentQueue.length) {
-	        queue = currentQueue.concat(queue);
-	    } else {
-	        queueIndex = -1;
-	    }
-	    if (queue.length) {
-	        drainQueue();
-	    }
-	}
-	
-	function drainQueue() {
-	    if (draining) {
-	        return;
-	    }
-	    var timeout = setTimeout(cleanUpNextTick);
-	    draining = true;
-	
-	    var len = queue.length;
-	    while(len) {
-	        currentQueue = queue;
-	        queue = [];
-	        while (++queueIndex < len) {
-	            if (currentQueue) {
-	                currentQueue[queueIndex].run();
-	            }
-	        }
-	        queueIndex = -1;
-	        len = queue.length;
-	    }
-	    currentQueue = null;
-	    draining = false;
-	    clearTimeout(timeout);
-	}
-	
-	process.nextTick = function (fun) {
-	    var args = new Array(arguments.length - 1);
-	    if (arguments.length > 1) {
-	        for (var i = 1; i < arguments.length; i++) {
-	            args[i - 1] = arguments[i];
-	        }
-	    }
-	    queue.push(new Item(fun, args));
-	    if (queue.length === 1 && !draining) {
-	        setTimeout(drainQueue, 0);
-	    }
-	};
-	
-	// v8 likes predictible objects
-	function Item(fun, array) {
-	    this.fun = fun;
-	    this.array = array;
-	}
-	Item.prototype.run = function () {
-	    this.fun.apply(null, this.array);
-	};
-	process.title = 'browser';
-	process.browser = true;
-	process.env = {};
-	process.argv = [];
-	process.version = ''; // empty string to avoid regexp issues
-	process.versions = {};
-	
-	function noop() {}
-	
-	process.on = noop;
-	process.addListener = noop;
-	process.once = noop;
-	process.off = noop;
-	process.removeListener = noop;
-	process.removeAllListeners = noop;
-	process.emit = noop;
-	
-	process.binding = function (name) {
-	    throw new Error('process.binding is not supported');
-	};
-	
-	process.cwd = function () { return '/' };
-	process.chdir = function (dir) {
-	    throw new Error('process.chdir is not supported');
-	};
-	process.umask = function() { return 0; };
-
 
 /***/ }
 
-/******/ });
+/******/ })
+});
+;
 //# sourceMappingURL=vue.js.map
