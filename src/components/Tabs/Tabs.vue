@@ -1,6 +1,6 @@
 <template>
   <div class="navWrapper">
-    <span v-if="renderData.length > showLen " class="arrow-prev" @click="prev">&lt;</span>
+    <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">&lt;</span>
     <!-- Nav tabs -->
      <ul :class="{
       'nav': true,
@@ -18,7 +18,7 @@
                 <a href="#">{{{r.header}}}</a>
             </li>
      </ul>
-    <span v-if="renderData.length > showLen" class="arrow-next" @click="next">&gt;</span>
+    <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next">&gt;</span>
 
      <!-- Tab panes -->
      <div class="tab-content" v-el:tab-content>

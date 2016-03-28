@@ -3,118 +3,189 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Tabs 标签页</a></h3>
     <div class="bs-example">
     <h4 class="example-title">基础型</h4>
-      <tabs :base="true">
-        <tab header="系统短信签名">
+      <v-tabs :base="true">
+        <v-tab header="系统短信签名">
           <p>
             选项卡一内容
           </p>
-        </tab>
-        <tab header="推广短信签名">
+        </v-tab>
+        <v-tab header="推广短信签名">
            <p>
               选项卡二内容
            </p>
-        </tab>
-        <tab header="被禁用的" disabled>
+        </v-tab>
+        <v-tab header="被禁用的" disabled>
           ...
-        </tab>
-      </tabs>
+        </v-tab>
+      </v-tabs>
       <br><br>
       <h4 class="example-title">Tab数量较多的情况</h4>
-      <tabs :base="true">
-        <tab header="系统短信签名">
+      <v-tabs :base="true">
+        <v-tab header="系统短信签名">
           <p>
             选项卡一内容
           </p>
-        </tab>
-        <tab header="推广短信签名">
+        </v-tab>
+        <v-tab header="推广短信签名">
            <p>
               选项卡二内容
            </p>
-        </tab>
-        <tab header="被禁用的" disabled>
+        </v-tab>
+        <v-tab header="被禁用的" disabled>
           ...
-        </tab>
-        <tab header="推广短信签名系统短信签名啊啊啊啊啊啊啊啊">
+        </v-tab>
+        <v-tab header="推广短信签名系统短信签名啊啊啊啊啊啊啊啊">
            <p>
               选项卡二内容
            </p>
-        </tab>
-        <tab header="系统短信签名啊啊啊啊啊啊啊啊">
+        </v-tab>
+        <v-tab header="系统短信签名啊啊啊啊啊啊啊啊">
            <p>
               选项卡二内容
            </p>
-        </tab>
-        <tab header="系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊">
+        </v-tab>
+        <v-tab header="系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊">
            <p>
               选项卡二内容
            </p>
-        </tab>
-      </tabs>
+        </v-tab>
+      </v-tabs>
       <br><br>
       <h4 class="example-title">选项卡型</h4>
-      <tabs >
-        <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
+      <v-tabs >
+        <v-tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
           <p>
             选项卡一内容
           </p>
-        </tab>
-        <tab header="推广短信签名">
+        </v-tab>
+        <v-tab header="推广短信签名">
            <p>
               选项卡二内容
            </p>
-        </tab>
-        <tab header="被禁用的" disabled>
+        </v-tab>
+        <v-tab header="被禁用的" disabled>
           ...
-        </tab>
-        <tab header="被禁用的" disabled>
+        </v-tab>
+        <v-tab header="被禁用的" disabled>
           ...
-        </tab>
-        <tab header="推广短信签名">
+        </v-tab>
+        <v-tab header="推广短信签名">
            <p>
               选项卡二内容
            </p>
-        </tab>
-        <tab header="推广短信签名">
+        </v-tab>
+        <v-tab header="推广短信签名">
            <p>
               选项卡二内容
            </p>
-        </tab>
-        <tab header="被禁用的" disabled>
+        </v-tab>
+        <v-tab header="被禁用的" disabled>
           ...
-        </tab>
-        <tab header="推广短信签名">
+        </v-tab>
+        <v-tab header="推广短信签名">
            <p>
               选项卡二内容
            </p>
-        </tab>
-        <tab header="推广短信签名">
+        </v-tab>
+        <v-tab header="推广短信签名">
            <p>
               选项卡二内容
            </p>
-        </tab>
-      </tabs>
+        </v-tab>
+      </v-tabs>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<tabs>
-  <tab header="系统短信签名">
+<v-tabs>
+  <v-tab header="系统短信签名">
     ...
-  </tab>
-  <tab header="推广短信签名">
+  </v-tab>
+  <v-tab header="推广短信签名">
     ...
-  </tab>
-  <tab header="被禁用的" disabled>
+  </v-tab>
+  <v-tab header="被禁用的" disabled>
     ...
-  </tab>
-</tabs>
+  </v-tab>
+</v-tabs>
+<v-tabs :base="true">
+  <v-tab header="系统短信签名">
+    <p>
+      选项卡一内容
+    </p>
+  </v-tab>
+  <v-tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+  <v-tab header="被禁用的" disabled>
+    ...
+  </v-tab>
+  <v-tab header="推广短信签名系统短信签名啊啊啊啊啊啊啊啊">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+  <v-tab header="系统短信签名啊啊啊啊啊啊啊啊">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+  <v-tab header="系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+</v-tabs>
+<v-tabs >
+  <v-tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
+    <p>
+      选项卡一内容
+    </p>
+  </v-tab>
+  <v-tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+  <v-tab header="被禁用的" disabled>
+    ...
+  </v-tab>
+  <v-tab header="被禁用的" disabled>
+    ...
+  </v-tab>
+  <v-tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+  <v-tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+  <v-tab header="被禁用的" disabled>
+    ...
+  </v-tab>
+  <v-tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+  <v-tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </v-tab>
+</v-tabs>
 </script></code></pre>
   <h2>Tab 选项 (非 TABS)</h2>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
@@ -122,24 +193,39 @@
         <td>header</td>
         <td><code>String</code></td>
         <td></td>
-        <td>Heading text of the tab.</td>
+        <td>Heading text of the v-tab.</td>
       </tr>
       <tr>
         <td>disabled</td>
         <td><code>Boolean</code></td>
         <td>false</td>
-        <td>Whether tab is clickable and can be activated. </td>
+        <td>Whether v-tab is clickable and can be activated. </td>
       </tr>
+      <tr>
+        <td>base</td>
+        <td><code>Boolean</code></td>
+        <td>false</td>
+        <td>是否采用基础型的Tab样式</td>
+      </tr>
+      <tr>
+        <td>show-len</td>
+        <td><code>Number</code></td>
+        <td>3</td>
+        <td>当前想要显示出多少个Tab</td>
+      </tr>
+
     </tbody>
   </table>
   </div>
 </template>
 
 <script>
-  // import Tabs from 'src/components/Tabset/'
-  // const {Tab} = Tabs
-  import Tabs from 'src/components/Tabset/Tabset'
-  import Tab from 'src/components/Tabset/Tab'
+  // import v-Tabs from 'src/components/v-Tabset/'
+  // const {v-Tab} = v-Tabs
+  // import v-Tabs from 'src/components/v-Tabset/v-Tabset'
+  // import v-Tab from 'src/components/v-Tabset/v-Tab'
+  import vTabs from 'src/components/Tabs/'
+  const {vTab} = vTabs
   export default {
     data () {
       return {
@@ -147,8 +233,8 @@
       }
     },
     components: {
-      Tabs,
-      Tab
+      vTabs,
+      vTab
     }
   }
 </script>
