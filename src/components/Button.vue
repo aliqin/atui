@@ -9,7 +9,7 @@
       small: null,
       value: {
         type: String,
-        defalut: '确定'
+        default: '确定'
       },
       primary: null,
       secondary: null,
