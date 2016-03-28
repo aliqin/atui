@@ -1,6 +1,6 @@
-import vSteps from './Steps.vue';
-import vStep  from './Step.vue';
+import Steps from './Steps.vue';
+import Step  from './Step.vue';
 
-vSteps.vStep = vStep;
+Steps.Step = Step;
 
-export default vSteps
+export default Steps
