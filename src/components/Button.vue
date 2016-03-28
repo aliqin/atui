@@ -1,0 +1,38 @@
+<template>
+  <button type="button" class="btn" :class="btnClassObj">{{{value}}}</button>
+</template>
+
+<script>
+  export default {
+    props: {
+      large: null,
+      small: null,
+      value: {
+        type: String,
+        defalut: '确定'
+      },
+      primary: null,
+      secondary: null,
+      tertiary: null,
+      disabled: null,
+      text: null
+    },
+    data () {
+      return {
+        btnClassObj: {
+          'large': typeof(this.large) !== "undefined",
+          'small': typeof(this.small) !== "undefined",
+          'primary': typeof(this.primary) !== "undefined",
+          'secondary': typeof(this.secondary) !== "undefined",
+          'tertiary': typeof(this.tertiary) !== "undefined",
+          'disabled': typeof(this.disabled) !== "undefined",
+          'text': typeof(this.text) !== "undefined"
+        }
+      }
+    }
+  }
+</script>
+
+<style lang="less">
+@import "../styles/buttons.less";
+</style>
