@@ -87,7 +87,7 @@
 
 <script>
 import Input from 'src/components/Input/';
-const vInput = Input.vInput
+const vInput = Input.vInput;
 export default{
   components: {
     vInput

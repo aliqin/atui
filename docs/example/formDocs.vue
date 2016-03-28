@@ -207,10 +207,12 @@ radio单选框
 // import FromInput from 'src/components/FormInput.vue';
 // import fromValid from 'src/plugins/form-valid.js';
 // Vue.use(fromValid);
-import vInput from 'src/components/Input.vue';
+import Input from 'src/components/Input/';
 import vButton from 'src/components/Button.vue';
 import vSelect from 'src/components/Select.vue';
 import vOption from 'src/components/Option.vue';
+
+const vInput = Input.vInput
 
 export default {
   components: {
