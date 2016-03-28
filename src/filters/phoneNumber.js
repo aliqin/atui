@@ -1,5 +1,5 @@
 // 13291895654 to 132 9189 5654
-import 'Vue' from 'vue'
+import Vue from 'vue'
 Vue.filter('phoneNumber', function(number, searchKey) {
   var ret = ''
   number = '' + number
