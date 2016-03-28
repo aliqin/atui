@@ -224,7 +224,7 @@
   // const {v-Tab} = v-Tabs
   // import v-Tabs from 'src/components/v-Tabset/v-Tabset'
   // import v-Tab from 'src/components/v-Tabset/v-Tab'
-  import vTabs from 'src/components/Tabs/'
+  import vTabs from 'src/components/Tabset/'
   const {vTab} = vTabs
   export default {
     data () {
