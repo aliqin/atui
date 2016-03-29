@@ -465,7 +465,7 @@
 }
 </style>
 <template>
-<div :class="[spin,size]" v-show="show">
+<div :class="['spin',size]" v-show="show">
   <div></div>
   <div></div>
   <div></div>
