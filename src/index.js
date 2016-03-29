@@ -6,8 +6,8 @@ require('src/styles/themes/alitx.less')
 
 
 import Icon from './components/Icon/'
-import Form from './components/Layout/'
-import Layout from './components/Form/'
+import Form from './components/Form/'
+import Layout from './components/Layout/'
 import Button from './components/Button/'
 import Input from './components/Input/'
 import Uploader from './components/Uploader/'
