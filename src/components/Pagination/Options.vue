@@ -11,8 +11,10 @@
 </template>
 
 <script>
-	import vSelect from '../Select.vue'
-	import vOption from '../Option.vue'
+	import vSelect from '../Select/';
+
+  const vOption = vSelect.Option;
+
 	export default {
 		props: {
 			total: {

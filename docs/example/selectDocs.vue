@@ -171,8 +171,10 @@ fruitOptions = [
 </template>
 
 <script>
-  import vSelect from 'src/components/Select.vue'
-  import vOption from 'src/components/Option.vue'
+  import vSelect from 'src/components/Select/';
+
+  const vOption = vSelect.Option;
+
   export default {
     components: {
       vSelect,
