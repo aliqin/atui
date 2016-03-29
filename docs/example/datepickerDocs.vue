@@ -106,13 +106,15 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
 
 <script>
   import datepicker from 'src/components/Datepicker.vue'
-  import select from 'src/components/Select.vue'
-  import option from 'src/components/Option.vue'
+  import vSelect from 'src/components/Select/';
+
+  const vOption = vSelect.Option;
+
   export default {
     components: {
       datepicker,
-      'v-select': select,
-      'v-option': option
+      vSelect,
+      vOption
     },
     data() {
       return {
