@@ -6,7 +6,8 @@ require('src/styles/themes/alitx.less')
 
 
 import Icon from './components/Icon/'
-import Form from './components/Form/'
+import Form from './components/Layout/'
+import Layout from './components/Form/'
 import Button from './components/Button/'
 import Input from './components/Input/'
 import Uploader from './components/Uploader/'
@@ -49,6 +50,7 @@ import Pagination from './components/Pagination/'
 import phoneNumber from './filters/phoneNumber'
 
 const VueComponent = {
+  Layout,
   Icon,
   Form,
   Uploader,
