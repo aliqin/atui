@@ -1,5 +1,5 @@
 <template>
-<i :class="{iconfont:true,type:type}">
+<i class="iconfont icon-{{type}}">
   <slot></slot>
 </i>
 </template>
