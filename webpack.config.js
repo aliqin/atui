@@ -66,7 +66,8 @@ module.exports = {
                     // activate source maps via loader query
                     'css?sourceMap!' +
                     'less?sourceMap'
-                    )
+                    ),
+            
         }
     },
     babel: {

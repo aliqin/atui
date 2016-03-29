@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import EventListener from './utils/EventListener.js'
+import EventListener from '../utils/EventListener.js'
 const localeConfig = {
   zh_CN : {
     weekRange: ['日', '一', '二', '三', '四', '五', '六'],

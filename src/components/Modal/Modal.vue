@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import getScrollBarWidth from './utils/getScrollBarWidth.js'
-import EventListener from './utils/EventListener.js'
-import coerceBoolean from './utils/coerceBoolean.js'
+import getScrollBarWidth from '../utils/getScrollBarWidth.js'
+import EventListener from '../utils/EventListener.js'
+import coerceBoolean from '../utils/coerceBoolean.js'
 
   export default {
     props: {

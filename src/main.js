@@ -1,3 +1,6 @@
+// 基础类
+export {Icon} from './components/Icon/'
+
 // 表单类
 export {Button} from './components/Button.vue'
 export {ButtonsDocs} from './components/Buttons.vue'
