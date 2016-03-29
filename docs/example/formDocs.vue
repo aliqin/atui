@@ -209,11 +209,11 @@ radio单选框
 // Vue.use(fromValid);
 import Input from 'src/components/Input/';
 import Button from 'src/components/Button/';
-import vSelect from 'src/components/Select.vue';
-import vOption from 'src/components/Option.vue';
+import vSelect from 'src/components/Select/';
 
 const vInput = Input;
 const vButton = Button;
+const vOption = vSelect.Option;
 
 export default {
   components: {
