@@ -4,7 +4,7 @@
     <h3 class="page-header"><a href="#form" class="anchor">Form 表单 </a></h3>
     <div class="bs-example">
       <v-form :submit="formSubmitFun">
-        <form-item required label="联系人电话：" label-col="4">
+        <form-item required label="联系人电话：" label-col="4" has-icon tip="123">
           <v-input type="text" placeholder="电话号码"></v-input>
         </form-item>
         <form-item required label="验证码：" label-col="4">

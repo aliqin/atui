@@ -12,7 +12,7 @@
         <slot></slot>
         <i v-if="showIcon" class="iconfont status-icon">&#xe600;</i>
       </div>
-      <div v-if="tip" class="status-info">{{tip}}</div>
+      <div v-if="tip && validStatus" class="status-info">{{tip}}</div>
     </v-col>
   </div>
 </v-row>
@@ -57,7 +57,7 @@
           'has-success': this.validStatus == 'success'
         },
         isRequired: typeof(this.required) !== 'undefined',
-        showIcon: typeof(this.hasIcon) !== 'undefined'
+        showIcon: this.validStatus && typeof(this.hasIcon) !== 'undefined'
       }
     },
 

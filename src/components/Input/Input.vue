@@ -15,19 +15,21 @@
       },
       large: null,
       small: null,
-      disabled: null,
-      error: null,
-      success: null
+      validStatus: {
+        type: String,
+        default: ''
+      }
     },
     data () {
       return {
         classObj: {
           'large': typeof(this.large) !== "undefined",
           'small': typeof(this.small) !== "undefined",
-          'error': typeof(this.error) !== "undefined",
-          'success': typeof(this.success) !== "undefined"
+          'error': this.validStatus == 'error',
+          'success': this.validStatus == 'success',
+          'warn': this.validStatus == 'warn',
         },
-        isDisabled: typeof(this.disabled) !== "undefined"
+        isDisabled: this.validStatus == 'disabled'
       }
     }
   }
