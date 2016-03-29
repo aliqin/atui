@@ -6,7 +6,8 @@ require('src/styles/themes/alitx.less')
 
 
 import Icon from './components/Icon/'
-
+import Form from './components/Form/'
+import Layout from './components/Layout/'
 import Button from './components/Button/'
 import Input from './components/Input/'
 import Uploader from './components/Uploader/'
@@ -27,7 +28,7 @@ import Badge from './components/Badge/'
 import Carousel from './components/Carousel/'
 import Affix from './components/Affix.vue'
 // import Container from './components/Container.vue'
-import Loading from './components/Loading/'
+import Spin from './components/Spin/'
 import Textarea from './components/Textarea/'
 import Tag from './components/Tag/'
 import Tooltip from './components/Tooltip/'
@@ -49,7 +50,9 @@ import Pagination from './components/Pagination/'
 import phoneNumber from './filters/phoneNumber'
 
 const VueComponent = {
+  Layout,
   Icon,
+  Form,
   Uploader,
   Switch,
   Dropdown,
