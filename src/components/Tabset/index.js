@@ -1,6 +1,6 @@
-import vTabset from './Tabset.vue'
-import vTab from './Tab.vue'
+import Tabset from './Tabset.vue'
+import Tab from './Tab.vue'
 
-vTabset.vTab = vTab
+Tabset.Tab = Tab
 
-export default vTabset
+export default Tabset
