@@ -3,62 +3,23 @@
   <div class="bs-docs-section" id="form">
     <h3 class="page-header"><a href="#form" class="anchor">form 表单 </a></h3>
     <div class="bs-example">
-      <form class="form">
-        <div class="form-item row">
-          <label class="form-label col-lg-4"><span class="required-icon">*</span>联系人电话：</label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <v-input type="text" placeholder="电话号码"></v-input>
-            </div>
-          </div>
-        </div>
-        <div class="form-item row">
-          <label class="form-label col-lg-4"><span class="required-icon">*</span>验证码：</label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <v-input type="text" placeholder="请输入验证码"></v-input>
-              <v-button tertiary value="获取验证码"></v-button>
-            </div>
-          </div>
-        </div>
-        <div class="form-item row">
-          <label class="form-label col-lg-4"><span class="required-icon">*</span>应用名/网站名：</label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <v-input type="text" placeholder="若还未上线可填无"></v-input>
-            </div>
-          </div>
-        </div>
-        <div class="form-item row">
-          <label class="form-label col-lg-4"><span class="required-icon">*</span>行业：</label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
-            </div>
-          </div>
-        </div>
-        <div class="form-item row">
-          <label class="form-label col-lg-4"></label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <input type="checkbox" />
-              <label>阅读并接受《用户协议》</label>
-            </div>
-          </div>
-        </div>
-        <div class="form-item row">
-          <label class="form-label col-lg-4"></label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <v-button primary></v-button>
-              <v-button tertiary value="重置条件"></v-button>
-            </div>
-          </div>
-        </div>
-
-
-
-        <form-item required label="电话号码：" has-icon label-col="4" tip="请输入有效的电话号码">
+      <v-form :submit="formSubmitFun">
+        <form-item required label="联系人电话：" label-col="4">
+          <v-input type="text" placeholder="电话号码"></v-input>
+        </form-item>
+        <form-item required label="验证码：" label-col="4">
+          <v-col span="20">
+            <v-input type="text" placeholder="请输入验证码"></v-input>
+          </v-col>
+          <v-col span="4"><v-button tertiary value="获取验证码"></v-button></v-col>
+        </form-item>
+        <form-item required label="应用名/网站名：" label-col="4">
+          <v-input type="text" placeholder="若还未上线可填无"></v-input>
+        </form-item>
+        <form-item required label="行业：" label-col="4">
+          <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+        </form-item>
+        <form-item required label="电话号码：" has-icon label-col="4">
           <v-input placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tip="请输入有效的电话号码">
@@ -67,7 +28,14 @@
         <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tip="请输入有效的电话号码">
           <v-input success placeholder="请输入电话号码"></v-input>
         </form-item>
-      </form>
+        <form-item required label-col="4">
+          <label><input type="checkbox" />阅读并接受《用户协议》</label>
+        </form-item>
+        <form-item required label-col="4">
+          <v-button primary></v-button>
+          <v-button tertiary value="重置条件"></v-button>
+        </form-item>
+      </v-form>
       <!-- <form class="container form" v-form name="myform" @submit.prevent="onSubmit">
         <div class="errors" v-if="myform.$submitted">
             <p v-if="myform.name.$error.required">Name is required.</p>
@@ -189,18 +157,23 @@ radio单选框
 import vInput from 'src/components/Input/';
 import vButton from 'src/components/Button/';
 import vSelect from 'src/components/Select/';
-import vForm from 'src/components/Form/'
+import vForm from 'src/components/Form/';
+import Layout from 'src/components/Layout/';
 
 const vOption = vSelect.Option;
 const FormItem = vForm.FormItem;
+const vCol = Layout.Col;
+const vRow = Layout.Row;
 
 export default {
   components: {
+    vCol,
+    vRow,
     vInput,
     vButton,
     vSelect,
     vOption,
-    // Form,
+    vForm,
     FormItem
     // FormInput
   },
@@ -217,6 +190,9 @@ export default {
       myform: {},
       valid: {
         nameStatus: '',
+      },
+      formSubmitFun() {
+        alert(1);
       }
     }
   },
