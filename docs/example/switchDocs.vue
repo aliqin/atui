@@ -10,69 +10,69 @@
             <th>禁用</th>
           </tr>
           <tr>
-            <td><Switch class="small"></Switch></td>
-            <td><Switch class="small" :checked="checked" :on-change="changeHandler"></Switch>
+            <td><v-switch class="small"></v-switch></td>
+            <td><v-switch class="small" :checked="checked" :on-change="changeHandler"></v-switch>
             <modal :show.sync="smallModal" width="400px">
               <div slot="modal-body" class="modal-body">当前状态为{{ checked ? '开' : '关' }}</div>
             </modal<
             /td>
-            <td><Switch class="small" :disabled="disabled"></Switch></td>
+            <td><v-switch class="small" :disabled="disabled"></v-switch></td>
           </tr>
           <tr>
-            <td><Switch></Switch></td>
-            <td><Switch :checked="checked" :on-change="changeHandler"></Switch></td>
-            <td><Switch :disabled="disabled"></Switch></td>
+            <td><v-switch></v-switch></td>
+            <td><v-switch :checked="checked" :on-change="changeHandler"></v-switch></td>
+            <td><v-switch :disabled="disabled"></v-switch></td>
           </tr>
         </table>
         
       <h4 class="example-title">带文字形式</h4>
         <table class="switchDocs-demo-table">
           <tr>
-            <td><Switch>
+            <td><v-switch>
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
-        </Switch></td>
-            <td><Switch :disabled="disabled" :checked="true">
+        </v-switch></td>
+            <td><v-switch :disabled="disabled" :checked="true">
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
-        </Switch></td>
-            <td><Switch :disabled="disabled">
+        </v-switch></td>
+            <td><v-switch :disabled="disabled">
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
-        </Switch></td>
+        </v-switch></td>
           </tr>
         </table>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<Switch class="small"></Switch>
-<Switch class="small" :checked="checked" :on-change="changeHandler"></Switch>
-<Switch class="small" :disabled="disabled"></Switch>
-<Switch></Switch>
-<Switch :checked="checked" :on-change="changeHandler"></Switch>
-<Switch :disabled="disabled"></Switch>
-<Switch>
+<v-switch class="small"></v-switch>
+<v-switch class="small" :checked="checked" :on-change="changeHandler"></v-switch>
+<v-switch class="small" :disabled="disabled"></v-switch>
+<v-switch></v-switch>
+<v-switch :checked="checked" :on-change="changeHandler"></v-switch>
+<v-switch :disabled="disabled"></v-switch>
+<v-switch>
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
-</Switch>
-<Switch :disabled="disabled" :checked="true">
+</v-switch>
+<v-switch :disabled="disabled" :checked="true">
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
-</Switch>
-<Switch :disabled="disabled">
+</v-switch>
+<v-switch :disabled="disabled">
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
-</Switch>
+</v-switch>
 </script></code></pre>
   </div>
   <h2>Options</h2>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
@@ -111,7 +111,7 @@
 </template>
 
 <script>
-  import Switch from 'src/components/Switch.vue'
+  import vSwitch from 'src/components/Switch/'
   import modal from 'src/components/Modal.vue'
   export default {
     data () {
@@ -122,7 +122,7 @@
       }
     },
     components: {
-      Switch,
+      vSwitch,
       modal
     },
     methods: {

@@ -25,7 +25,6 @@
     <div>
       <v-input success type="text" placeholder="success输入框－默认尺寸"></v-input>
     </div>
-
 <pre><code class="language-markup"><script type="language-mark-up">
 <!-- input输入框，使用封装的Input组件，通过添加属性，呈现样式 -->
 <!-- 大号（large）、中号（默认）、小号（small）、禁用（disabled）、错误提示（error）、成功提示（success）-->
@@ -87,7 +86,8 @@
 </template>
 
 <script>
-import vInput from '../../src/components/Input.vue';
+import Input from 'src/components/Input/';
+const vInput = Input;
 export default{
   components: {
     vInput

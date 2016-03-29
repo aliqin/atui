@@ -106,15 +106,86 @@
     ...
   </tab>
 </tabs>
+<tabs :base="true">
+  <tab header="系统短信签名">
+    <p>
+      选项卡一内容
+    </p>
+  </tab>
+  <tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+  <tab header="被禁用的" disabled>
+    ...
+  </tab>
+  <tab header="推广短信签名系统短信签名啊啊啊啊啊啊啊啊">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+  <tab header="系统短信签名啊啊啊啊啊啊啊啊">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+  <tab header="系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+</tabs>
+<tabs >
+  <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
+    <p>
+      选项卡一内容
+    </p>
+  </tab>
+  <tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+  <tab header="被禁用的" disabled>
+    ...
+  </tab>
+  <tab header="被禁用的" disabled>
+    ...
+  </tab>
+  <tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+  <tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+  <tab header="被禁用的" disabled>
+    ...
+  </tab>
+  <tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+  <tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+</tabs>
 </script></code></pre>
   <h2>Tab 选项 (非 TABS)</h2>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
@@ -128,22 +199,33 @@
         <td>disabled</td>
         <td><code>Boolean</code></td>
         <td>false</td>
-        <td>Whether tab is clickable and can be activated. </td>
+        <td>是否禁用当前Tab</td>
       </tr>
+      <tr>
+        <td>base</td>
+        <td><code>Boolean</code></td>
+        <td>false</td>
+        <td>是否采用基础型的Tab样式</td>
+      </tr>
+      <tr>
+        <td>show-len</td>
+        <td><code>Number</code></td>
+        <td>3</td>
+        <td>当前想要显示出多少个Tab</td>
+      </tr>
+
     </tbody>
   </table>
   </div>
 </template>
 
 <script>
-  // import Tabs from 'src/components/Tabset/'
-  // const {Tab} = Tabs
-  import Tabs from 'src/components/Tabset/Tabset'
-  import Tab from 'src/components/Tabset/Tab'
+  import Tabs from 'src/components/Tabset/'
+  const {Tab} = Tabs
+
   export default {
     data () {
       return {
-        tabType: "base"
       }
     },
     components: {

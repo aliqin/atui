@@ -3,41 +3,41 @@
     <h3 class="page-header"><a href="#steps" class="anchor">Steps 步骤条</a></h3>  
     <div class="bs-example">
         <h4 class="example-title">基础型</h4>
-        <steps :current="current">
-            <step title="已完成"></step>
-            <step title="进行中" ></step>
-            <step title="有一个待运行"></step>
-            <step title="待运行"></step>
-        </steps>
+        <v-steps :current="current">
+            <v-step title="已完成"></v-step>
+            <v-step title="进行中" ></v-step>
+            <v-step title="有一个待运行"></v-step>
+            <v-step title="待运行"></v-step>
+        </v-steps>
         <br><br>
         <h4 class="example-title">带文字描述</h4>
-        <steps :current="current">
-            <step title="已完成" description="这里是多信息"></step>
-            <step title="进行中" description="这里是多信息的耶哦"></step>
-            <step title="有一个待运行" description="描述啊描述啊"></step>
-            <step title="待运行" description="这里是多信息的描述啊"></step>
-        </steps>
+        <v-steps :current="current">
+            <v-step title="已完成" description="这里是多信息"></v-step>
+            <v-step title="进行中" description="这里是多信息的耶哦"></v-step>
+            <v-step title="有一个待运行" description="描述啊描述啊"></v-step>
+            <v-step title="待运行" description="这里是多信息的描述啊"></v-step>
+        </v-steps>
         <br>
         <button type="button" class="btn default primary" @click="_next">next</button>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<steps :current="current">
-    <step title="已完成"></step>
-    <step title="进行中" ></step>
-    <step title="有一个待运行"></step>
-    <step title="待运行"></step>
-</steps>
-<steps :current="current">
-    <step title="已完成" description="这里是多信息"></step>
-    <step title="进行中" description="这里是多信息的耶哦"></step>
-    <step title="有一个待运行" description="描述啊描述啊"></step>
-    <step title="待运行" description="这里是多信息的描述啊"></step>
-</steps>
+<v-steps :current="current">
+    <v-step title="已完成"></v-step>
+    <v-step title="进行中" ></v-step>
+    <v-step title="有一个待运行"></v-step>
+    <v-step title="待运行"></v-step>
+</v-steps>
+<v-steps :current="current">
+    <v-step title="已完成" description="这里是多信息"></v-step>
+    <v-step title="进行中" description="这里是多信息的耶哦"></v-step>
+    <v-step title="有一个待运行" description="描述啊描述啊"></v-step>
+    <v-step title="待运行" description="这里是多信息的描述啊"></v-step>
+</v-steps>
 </script></code></pre>
   </div>
   <h2>Options</h2>
-  <h4 style="margin: 20px 0;">Steps</h4>
+  <h4 style="margin: 20px 0;">vSteps</h4>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -56,7 +56,7 @@
       </tr>
     </tbody>
   </table>
-  <h4 style="margin: 20px 0;">Steps step</h4>
+  <h4 style="margin: 20px 0;">vSteps vStep</h4>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -91,8 +91,7 @@
 
 <script>
   import Steps from 'src/components/Steps/'
-  import Step from 'src/components/Steps/Step.vue'
-
+  const {Step} = Steps
   export default {
     data () {
       return {
@@ -100,8 +99,8 @@
       }
     },
     components: {
-      Steps,
-      Step
+      vSteps:Steps,
+      vStep:Step
     },
     methods: {
       _next () {

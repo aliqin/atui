@@ -3,29 +3,30 @@
     <h3 class="page-header"><a href="#tag" class="anchor">Tag 标签</a></h3>
     <div class="bs-example">
       <h4 class="example-title">基本标签</h4>
-      <tag>标签一</tag>
-      <tag closable :on-close="closeTag">标签（回调）</tag>
-      <tag :href="href">标签（链接）</tag>
+      <v-tag>标签一</v-tag>
+      <v-tag closable :on-close="closeTag">标签（回调）</v-tag>
+      <v-tag :href="href">标签（链接）</v-tag>
       <h4 class="example-title">三种颜色的标签</h4>
-      <tag color="green">标签</tag>
-      <tag color="orange" closable :on-close="closeTag">标签</tag>
-      <tag color="red">标签</tag>
+      <v-tag color="green">标签</v-tag>
+      <v-tag color="orange" closable :on-close="closeTag">标签</v-tag>
+      <v-tag color="red">标签</v-tag>
     </div>
-<pre><code class="language-markup"><script type="language-mark-up"><tag>标签一</tag>
-<tag closable :on-close="closeTag">标签（回调）</tag>
-<tag :href="href">标签（链接）</tag>
-<tag color="green">标签</tag>
-<tag color="orange" closable :on-close="closeTag">标签</tag>
-<tag color="red">标签</tag>
+<pre><code class="language-markup"><script type="language-mark-up">
+<v-tag>标签一</v-tag>
+<v-tag closable :on-close="closeTag">标签（回调）</v-tag>
+<v-tag :href="href">标签（链接）</v-tag>
+<v-tag color="green">标签</v-tag>
+<v-tag color="orange" closable :on-close="closeTag">标签</v-tag>
+<v-tag color="red">标签</v-tag>
 </script></code></pre>
   <h2>Options</h2>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
@@ -60,7 +61,7 @@
 </template>
 
 <script>
-  import tag from 'src/components/Tag.vue'
+  import vTag from 'src/components/Tag/'
   export default {
     data () {
       return {
@@ -73,7 +74,7 @@
       }
     },
     components: {
-      tag
+      vTag
     }
   }
 </script>
