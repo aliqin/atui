@@ -138,7 +138,7 @@ content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
 </template>
 
 <script>
-  import tooltip from 'src/components/Tooltip.vue'
+  import tooltip from 'src/components/Tooltip/'
   export default {
     data() {
       return {

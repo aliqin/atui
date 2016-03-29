@@ -107,7 +107,7 @@
 </template>
 
 <script>
-  import popover from 'src/components/Popover.vue'
+  import popover from 'src/components/Popover/'
   export default {
     data() {
       return {

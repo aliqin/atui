@@ -75,7 +75,7 @@
 </template>
 
 <script>
-  import vTextarea from 'src/components/Textarea.vue'
+  import vTextarea from 'src/components/Textarea/'
 
   export default {
     components: {

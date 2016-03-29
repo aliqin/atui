@@ -1,7 +1,7 @@
 <template>
-  <div class="bs-docs-section" id="alert">
+  <div class="bs-docs-section" id="message">
     <h3 class="page-header">
-      <a href="#alert" class="anchor">Alert 警告提示</a>
+      <a href="#message" class="anchor">message 警告提示</a>
     </h3>
     <div class="bs-example" >
       <button class="btn btn-success btn-lg"
@@ -14,27 +14,27 @@
         点击在顶部显示或隐藏
       </button>
       <hr>
-      <alert type="success" >
+      <message type="success" >
         成功提示的文案
-      </alert>
+      </message>
 
-      <alert type="info" >
+      <message type="info" >
         消息提示的文案
-      </alert>
+      </message>
 
-      <alert type="danger" dismissable>
+      <message type="danger" dismissable>
         错误提示的文案,可关闭
-      </alert>
+      </message>
 
-      <alert type="warning" dismissable>
+      <message type="warning" dismissable>
         警告提示的文案,可关闭
-      </alert>
+      </message>
 
-      <alert type="help" dismissable>
+      <message type="help" dismissable>
         帮助提示文案,可关闭
-      </alert>
+      </message>
 
-      <alert
+      <message
         :show.sync="showRight"
         :duration="3000"
         type="success"
@@ -42,20 +42,20 @@
         placement="top-right"
         dismissable
       >
-        <span class="icon-ok-circled alert-icon-float-left"></span>
+        <span class="icon-ok-circled message-icon-float-left"></span>
         <p>在右边显示的警告</p>
-      </alert>
+      </message>
 
-      <alert
+      <message
         :show.sync="showTop"
         :duration="3000"
         type="danger"
         width="400px"
         placement="top"
         dismissable>
-        <span class="icon-info-circled alert-icon-float-left"></span>
+        <span class="icon-info-circled message-icon-float-left"></span>
         <p>在顶部显示的警告</p>
-      </alert>
+      </message>
     </div>
 
     <pre><code class="language-markup"><script type="language-mark-up">
@@ -68,49 +68,49 @@
   点击在顶部显示或隐藏
 </button>
 <hr>
-<alert type="success" >
+<message type="success" >
   成功提示的文案
-</alert>
+</message>
 
-<alert type="info" >
+<message type="info" >
   消息提示的文案
-</alert>
+</message>
 
-<alert type="danger" dismissable>
+<message type="danger" dismissable>
   错误提示的文案
-</alert>
+</message>
 
-<alert type="warning" dismissable>
+<message type="warning" dismissable>
   警告提示的文案
-</alert>
+</message>
 
-<alert type="help" dismissable>
+<message type="help" dismissable>
   帮助提示文案
-</alert>
+</message>
 
-<alert
+<message
   show="{{showRight}}"
   duration="3000"
   type="success"
   width="400px"
   placement="top-right"
   dismissable>
-  <span class="icon-ok-circled alert-icon-float-left"></span>
+  <span class="icon-ok-circled message-icon-float-left"></span>
   <strong>Well Done!</strong>
   <p>在右边显示的警告.</p>
-</alert>
+</message>
 
-<alert
+<message
   show="{{showTop}}"
   duration="3000"
   type="info"
   width="400px"
   placement="top"
   dismissable>
-  <span class="icon-info-circled alert-icon-float-left"></span>
+  <span class="icon-info-circled message-icon-float-left"></span>
   <strong>Heads up!</strong>
   <p>在顶部显示的警告</p>
-</alert>
+</message>
 
 </script></code></pre>
 
@@ -172,7 +172,7 @@
 </template>
 
 <script>
-  import alert from 'src/components/Alert.vue'
+  import Message from 'src/components/Message/'
   export default {
     data() {
       return {
@@ -181,13 +181,13 @@
       }
     },
     components: {
-      alert,
+      Message,
     }
   }
 </script>
 
 <style>
-  .alert-icon-float-left {
+  .message-icon-float-left {
     font-size:32px;float:left;margin-right:5px;
   }
 </style>

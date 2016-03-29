@@ -1,14 +1,14 @@
 <template>
-  <div class="bs-docs-section" id="datepicker">
-    <h1 class="page-header"><a href="#datepicker" class="anchor">Datepicker 日历控件</a></h1>
+  <div class="bs-docs-section" id="Calendar">
+    <h1 class="page-header"><a href="#Calendar" class="anchor">Calendar 日历控件</a></h1>
     <div class="bs-example">
       <p>
         <pre>
 Selected date is: {{new Date(value).toString().slice(0, -23)}}
         </pre>
       </p>
-      <datepicker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-      :format="format.toString()" :show-reset-button="reset"></datepicker>
+      <Calendar v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
+      :format="format.toString()" :show-reset-button="reset"></Calendar>
       <h4>禁用一周的某日</h4>
 
       <v-select multiple :value.sync="disabled">
@@ -34,13 +34,13 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
       <label><input type="checkbox" v-model="reset" @click="x">打开或关闭重置功能</label>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<datepicker
+<calendar
   :value.sync="value"
   :disabled-days-of-Week="disabled"
   :format="format"
   :show-reset-button="reset">
-</datepicker>
-<select multiple :value.sync="disabled" size=5>
+</calendar>
+<v-select multiple :value.sync="disabled" size=5>
   <v-option value="0">0</v-option>
   <v-option value="1">1</v-option>
   <v-option value="2">2</v-option>
@@ -48,14 +48,14 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
   <v-option value="4">4</v-option>
   <v-option value="5">5</v-option>
   <v-option value="6">6</v-option>
-</select>
-<select  :value.sync="format">
+</v-select>
+<v-select  :value.sync="format">
   <v-option value="yyyy,MM,dd">yyyy,MM,dd</v-option>
   <v-option value="yyyy-MM-dd">yyyy-MM-dd</v-option>
   <v-option value="yyyy.MM.dd">yyyy.MM.dd</v-option>
   <v-option value="MMM/dd/yyyy">MMM/dd/yyyy</v-option>
   <v-option value="MMMM/dd/yyyy">MMMM/dd/yyyy</v-option>
-</select>
+</v-select>
     </script></code></pre>
     <h2>Option</h2>
     <table class="table table-bordered">
@@ -105,14 +105,14 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
 </template>
 
 <script>
-  import datepicker from 'src/components/Datepicker.vue'
-  import vSelect from 'src/components/Select/';
+  import Calendar from 'src/components/Calendar/'
+  import vSelect from 'src/components/Select/'
 
   const vOption = vSelect.Option;
 
   export default {
     components: {
-      datepicker,
+      Calendar,
       vSelect,
       vOption
     },

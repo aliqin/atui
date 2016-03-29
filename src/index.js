@@ -5,42 +5,42 @@ require('src/styles/themes/alitx.less')
 
 
 
+import Icon from './components/Icon/'
 
 import Button from './components/Button/'
-// import ButtonsDocs from './components/Buttons.vue'
 import Input from './components/Input/'
-import Uploader from './components/Uploader.vue'
+import Uploader from './components/Uploader/'
 // import Form from './components/Form.vue'
 import Switch from './components/Switch/'
-import Dropdown from './components/Dropdown.vue'
-import Select from './components/Select'
-import Datepicker from './components/Datepicker.vue'
+import Dropdown from './components/Dropdown/'
+import Select from './components/Select/'
+import Calendar from './components/Calendar/'
 // import rogressbar from './components/progressbar.vue'
 import Typeahead from './components/Typeahead.vue'
 
 
 // 展示类
-import Alert from './components/Alert.vue'
-import Modal from './components/Modal.vue'
-import Table from './components/Table.vue'
+import Message from './components/Message/'
+import Dialog from './components/Dialog/'
+import Table from './components/Table/'
 import Badge from './components/Badge/'
-import Carousel from './components/Carousel.vue'
+import Carousel from './components/Carousel/'
 import Affix from './components/Affix.vue'
 // import Container from './components/Container.vue'
-import Spin from './components/Spin.vue'
-import Textarea from './components/Textarea.vue'
+import Loading from './components/Loading/'
+import Textarea from './components/Textarea/'
 import Tag from './components/Tag/'
-import Tooltip from './components/Tooltip.vue'
-import Accordion from './components/Accordion.vue'
+import Tooltip from './components/Tooltip/'
+import Accordion from './components/Accordion/'
 
 
 // 导航类
 // import ffix from './components/affix.vue'
 // import side from './components/aside.vue'
-import Popover from './components/Popover.vue'
-import Tabs from './components/Tabset/'
-import Steps from './components/Steps/index'
-import Menu from './components/Menu/index'
+import Popover from './components/Popover/'
+import Tabs from './components/Tabs/'
+import Steps from './components/Steps/'
+import Menu from './components/Menu/'
 import Breadcrumb from './components/Breadcrumb/'
 import Pagination from './components/Pagination/'
 
@@ -49,14 +49,15 @@ import Pagination from './components/Pagination/'
 import phoneNumber from './filters/phoneNumber'
 
 const VueComponent = {
+  Icon,
   Uploader,
   Switch,
   Dropdown,
   Select,
-  Datepicker,
+  Calendar,
   Typeahead,
-  Alert,
-  Modal,
+  Message,
+  Dialog,
   Table,
   Badge,
   Carousel,
@@ -76,4 +77,4 @@ const VueComponent = {
   Pagination
 }
 
-module.exports= VueComponent
+module.exports = VueComponent

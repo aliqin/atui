@@ -220,7 +220,7 @@
 </template>
 
 <script>
-  import Tabs from 'src/components/Tabset/'
+  import Tabs from 'src/components/Tabs/'
   const {Tab} = Tabs
 
   export default {

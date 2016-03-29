@@ -150,7 +150,7 @@ new Vue {
 
 <script>
   import typeahead from 'src/components/Typeahead.vue'
-  import tooltip from 'src/components/Tooltip.vue'
+  import tooltip from 'src/components/Tooltip/'
   export default {
     components: {
       typeahead,
