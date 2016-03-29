@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="pagination">
-    <h3 class="page-header"><a href="#pagination" class="anchor">pagination 翻页</a></h3>  
+    <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>  
     <div class="bs-example">
       <h4 class="example-title">完全版</h4>
       <pagination :total-page.sync="totalPage", 

@@ -34,7 +34,7 @@ import badgeDocs from './example/badgeDocs.vue'
 import carouselDocs from './example/carouselDocs.vue'
 import affix from 'src/components/Affix.vue'
 import container from './example/container.vue'
-import loadingDocs from './example/loadingDocs.vue'
+import spinDocs from './example/spinDocs.vue'
 import textareaDocs from './example/textareaDocs.vue'
 import tagDocs from './example/tagDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
@@ -68,7 +68,7 @@ new Vue({
     container,
     affix,
     buttonDocs,
-    loadingDocs,
+    spinDocs,
     inputDocs,
     textareaDocs,
     uploaderDocs,

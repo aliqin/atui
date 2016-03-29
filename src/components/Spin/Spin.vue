@@ -4,37 +4,37 @@
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
  * Licensed under MIT
  */
-.loading,
-.loading > div {
+.spin,
+.spin > div {
     position: relative;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
-.loading {
+.spin {
     display: block;
     font-size: 0;
     color: #333;
 }
-.loading > div {
+.spin > div {
     display: inline-block;
     float: none;
     background-color: currentColor;
     border: 0 solid currentColor;
 }
-.loading {
+.spin {
     width: 32px;
     height: 32px;
 }
-.loading.small{
+.spin.small{
   width: 16px;
   height: 16px;
 }
-.loading.large{
+.spin.large{
   width: 64px;
   height: 64px;
 }
-.loading > div {
+.spin > div {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,37 +42,37 @@
     height: 10px;
     border-radius: 100%;
 }
-.loading > div:nth-child(1) {
+.spin > div:nth-child(1) {
     -webkit-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
 }
-.loading > div:nth-child(2) {
+.spin > div:nth-child(2) {
     -webkit-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
 }
-.loading > div:nth-child(3) {
+.spin > div:nth-child(3) {
     -webkit-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
 }
-.loading.small {
+.spin.small {
     width: 16px;
     height: 16px;
 }
-.loading.small > div {
+.spin.small > div {
     width: 4px;
     height: 4px;
 }
-.loading.large {
+.spin.large {
     width: 64px;
     height: 64px;
 }
-.loading.large > div {
+.spin.large > div {
     width: 20px;
     height: 20px;
 }
@@ -465,7 +465,7 @@
 }
 </style>
 <template>
-<div :class="[spin,size]" v-show="show">
+<div :class="['spin',size]" v-show="show">
   <div></div>
   <div></div>
   <div></div>
@@ -473,7 +473,7 @@
 </template>
 <script>
 export default {
-  name: 'loading',
+  name: 'spin',
   props:{
     show:{
       type:Boolean,
@@ -486,7 +486,6 @@ export default {
   },
   data () {
     return {
-      spin:'spin',
       size: this.size
     }
   },
