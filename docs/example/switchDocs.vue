@@ -112,7 +112,7 @@
 
 <script>
   import vSwitch from 'src/components/Switch/'
-  import modal from 'src/components/Modal.vue'
+  import Modal from 'src/components/Modal/'
   export default {
     data () {
       return {
@@ -123,7 +123,7 @@
     },
     components: {
       vSwitch,
-      modal
+      Modal
     },
     methods: {
       changeHandler (checked) {

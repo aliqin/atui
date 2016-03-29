@@ -49,7 +49,7 @@
 </template>
 
 <script>
-  import grid from 'src/components/Table.vue'
+  import grid from 'src/components/Table/'
   const dataSource = [{
     key: '1',
     name: '胡彦斌',

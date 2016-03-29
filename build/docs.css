@@ -1,6 +1,6 @@
 .btn {
   display: inline-block;
-  padding: 7px 20px;
+  padding: 6px 20px;
   background-color: #00a0ff;
   background-image: none;
   font-size: 12px;
@@ -269,35 +269,35 @@
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
  * Licensed under MIT
  */
-.spin,
-.spin > div {
+.loading,
+.loading > div {
   position: relative;
   box-sizing: border-box;
 }
-.spin {
+.loading {
   display: block;
   font-size: 0;
   color: #333;
 }
-.spin > div {
+.loading > div {
   display: inline-block;
   float: none;
   background-color: currentColor;
   border: 0 solid currentColor;
 }
-.spin {
+.loading {
   width: 32px;
   height: 32px;
 }
-.spin.small {
+.loading.small {
   width: 16px;
   height: 16px;
 }
-.spin.large {
+.loading.large {
   width: 64px;
   height: 64px;
 }
-.spin > div {
+.loading > div {
   position: absolute;
   top: 0;
   left: 0;
@@ -305,31 +305,31 @@
   height: 10px;
   border-radius: 100%;
 }
-.spin > div:nth-child(1) {
+.loading > div:nth-child(1) {
   -webkit-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
 }
-.spin > div:nth-child(2) {
+.loading > div:nth-child(2) {
   -webkit-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
 }
-.spin > div:nth-child(3) {
+.loading > div:nth-child(3) {
   -webkit-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
 }
-.spin.small {
+.loading.small {
   width: 16px;
   height: 16px;
 }
-.spin.small > div {
+.loading.small > div {
   width: 4px;
   height: 4px;
 }
-.spin.large {
+.loading.large {
   width: 64px;
   height: 64px;
 }
-.spin.large > div {
+.loading.large > div {
   width: 20px;
   height: 20px;
 }
@@ -613,7 +613,7 @@ textarea[disabled]:focus,
   text-align: center;
   width: 33%;
 }
-.navWrapper[_v-7fbbdc9b] {
+.navWrapper[_v-6f63fa2a] {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -622,8 +622,8 @@ textarea[disabled]:focus,
   padding-right: 40px;
   box-sizing: content-box;
 }
-.navWrapper .arrow-next[_v-7fbbdc9b],
-.navWrapper .arrow-prev[_v-7fbbdc9b] {
+.navWrapper .arrow-next[_v-6f63fa2a],
+.navWrapper .arrow-prev[_v-6f63fa2a] {
   position: absolute;
   top: -2px;
   z-index: 10;
@@ -635,16 +635,16 @@ textarea[disabled]:focus,
   text-align: center;
   background-color: #fff;
 }
-.navWrapper .arrow-prev[_v-7fbbdc9b] {
+.navWrapper .arrow-prev[_v-6f63fa2a] {
   left: 0;
 }
-.navWrapper .arrow-next[_v-7fbbdc9b] {
+.navWrapper .arrow-next[_v-6f63fa2a] {
   right: -6px;
 }
-.nav-tabs[_v-7fbbdc9b] {
+.nav-tabs[_v-6f63fa2a] {
   margin-bottom: 15px;
 }
-.nav-scroll[_v-7fbbdc9b] {
+.nav-scroll[_v-6f63fa2a] {
   max-width: 99999px;
   overflow: hidden;
 }

@@ -157,7 +157,7 @@
 </template>
 
 <script>
-  import modal from 'src/components/Modal.vue'
+  import Modal from 'src/components/Modal/'
   export default {
     data() {
       return {
@@ -170,7 +170,7 @@
       }
     },
     components: {
-      modal
+      Modal
     }
   }
 </script>

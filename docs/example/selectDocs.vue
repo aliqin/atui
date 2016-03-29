@@ -171,14 +171,14 @@ fruitOptions = [
 </template>
 
 <script>
-  import vSelect from 'src/components/Select/';
+  import Select from 'src/components/Select/';
 
-  const vOption = vSelect.Option;
+  const Option = Select.Option;
 
   export default {
     components: {
-      vSelect,
-      vOption
+      vSelect:Select,
+      vOption:Option
     },
     data() {
       return {

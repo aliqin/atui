@@ -16,25 +16,25 @@ import iconDocs from './example/iconDocs.vue'
 import buttonDocs from './example/buttonDocs.vue'
 import buttonsDocs  from './example/buttonsDocs.vue'
 import inputDocs from './example/inputDocs.vue'
-import uploadDocs from './example/uploadDocs.vue'
+import uploaderDocs from './example/uploaderDocs.vue'
 import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
-import datepickerDocs from './example/datepickerDocs.vue'
+import calendarDocs from './example/calendarDocs.vue'
 // import progressbarDocs from './example/progressbar-docs.vue'
 import typeaheadDocs from './example/typeaheadDocs.vue'
 
 
 // 展示类
-import alertDocs from './example/alertDocs.vue'
+import messageDocs from './example/messageDocs.vue'
 import modalDocs from './example/modalDocs.vue'
 import tableDocs from './example/tableDocs.vue'
 import badgeDocs from './example/badgeDocs.vue'
 import carouselDocs from './example/carouselDocs.vue'
 import affix from 'src/components/Affix.vue'
 import container from './example/container.vue'
-import spinDocs from './example/spinDocs.vue'
+import loadingDocs from './example/loadingDocs.vue'
 import textareaDocs from './example/textareaDocs.vue'
 import tagDocs from './example/tagDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
@@ -68,13 +68,13 @@ new Vue({
     container,
     affix,
     buttonDocs,
-    spinDocs,
+    loadingDocs,
     inputDocs,
     textareaDocs,
-    uploadDocs,
+    uploaderDocs,
     switchDocs,
     formDocs,
-    alertDocs,
+    messageDocs,
     badgeDocs,
     tagDocs,
     headerDocs,
@@ -83,7 +83,7 @@ new Vue({
     // asideDocs,
     carouselDocs,
     buttonsDocs,
-    datepickerDocs,
+    calendarDocs,
     dropdownDocs,
     modalDocs,
     popoverDocs,
