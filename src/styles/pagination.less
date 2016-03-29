@@ -14,6 +14,11 @@
 
 @pagination-ellipsis-color:             #999;
 
+@pagination-item-default-lineHeight:            30px;
+@pagination-item-mini-lineHeight:               20px;
+@pagination-item-default-prev-lineHeight:       2.2;
+@pagination-item-mini-prev-lineHeight:          1.6;      
+
 .pagination{
     display: inline-block;
     vertical-align: middle;
@@ -70,7 +75,7 @@
             cursor: pointer;
             border: 1px solid @pagination-border;
             height: 30px;
-            line-height: 30px;
+            line-height: @pagination-item-default-lineHeight;
             padding-left: 6px;
             padding-right: 6px;
             text-align: center;
@@ -94,7 +99,7 @@
             }
 
             &-prev, &-next {
-                line-height: 2.2;
+                line-height: @pagination-item-default-prev-lineHeight;
             }
 
             &-ellipsis {
@@ -129,7 +134,7 @@
         & > li.pagination-item{
             cursor: pointer;
             height: 30px;
-            line-height: 30px;
+            line-height: @pagination-item-default-lineHeight;
             padding-left: 6px;
             padding-right: 6px;
             text-align: center;
@@ -150,7 +155,7 @@
             }
 
             &-prev, &-next {
-                line-height: 2.2;
+                line-height: @pagination-item-default-prev-lineHeight;
             }
 
             &-prev {
@@ -177,7 +182,7 @@
         & > li.pagination-item{
             cursor: pointer;
             height: 22px;
-            line-height: 22px;
+            line-height: @pagination-item-mini-lineHeight;
             padding-left: 3px;
             padding-right: 3px;
             text-align: center;
@@ -200,7 +205,7 @@
             }
 
             &-prev, &-next {
-                line-height: 1.7;
+                line-height: @pagination-item-mini-prev-lineHeight;
             }
 
             &-ellipsis {
