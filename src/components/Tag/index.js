@@ -1,3 +1,3 @@
-import vTag from './Tag.vue'
+import Tag from './Tag.vue'
 
-export default vTag
+export default Tag
