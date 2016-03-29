@@ -212,7 +212,7 @@ import Button from 'src/components/Button/';
 import vSelect from 'src/components/Select.vue';
 import vOption from 'src/components/Option.vue';
 
-const vInput = Input.vInput;
+const vInput = Input;
 const vButton = Button;
 
 export default {
