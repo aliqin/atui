@@ -44,7 +44,7 @@ module.exports = {
             // loader: "style-loader!css-loader?root=./docs/"
             loader: extractDoc.extract(['css'])
         },
-        {   test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        {   test: /\.(png)$/,
             loader: 'url-loader?limit=100000'
         },
         {

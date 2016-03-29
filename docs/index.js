@@ -9,6 +9,8 @@ import headerDocs from './example/headerDocs.vue'
 import gettingStarted from './example/gettingStarted.vue'
 
 import gridDocs from './example/gridDocs.vue'
+//  基础类
+import iconDocs from './example/iconDocs.vue'
 
 // 表单类
 import buttonDocs from './example/buttonDocs.vue'
@@ -62,6 +64,7 @@ new Vue({
   components: {
     gettingStarted,
     gridDocs,
+    iconDocs,
     container,
     affix,
     buttonDocs,
