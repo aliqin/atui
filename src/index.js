@@ -21,7 +21,7 @@ import Typeahead from './components/Typeahead.vue'
 
 // 展示类
 import Message from './components/Message/'
-import Dialog from './components/Dialog/'
+import Modal from './components/Modal/'
 import Table from './components/Table/'
 import Badge from './components/Badge/'
 import Carousel from './components/Carousel/'
@@ -57,7 +57,7 @@ const VueComponent = {
   Calendar,
   Typeahead,
   Message,
-  Dialog,
+  Modal,
   Table,
   Badge,
   Carousel,
