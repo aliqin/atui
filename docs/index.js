@@ -28,7 +28,7 @@ import typeaheadDocs from './example/typeaheadDocs.vue'
 
 // 展示类
 import messageDocs from './example/messageDocs.vue'
-import dialogDocs from './example/dialogDocs.vue'
+import modalDocs from './example/modalDocs.vue'
 import tableDocs from './example/tableDocs.vue'
 import badgeDocs from './example/badgeDocs.vue'
 import carouselDocs from './example/carouselDocs.vue'
@@ -85,7 +85,7 @@ new Vue({
     buttonsDocs,
     calendarDocs,
     dropdownDocs,
-    dialogDocs,
+    modalDocs,
     popoverDocs,
     // progressbarDocs,
     selectDocs,
