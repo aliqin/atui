@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Alert from '../src/components/Alert.vue'
+import Alert from '../src/components/Message/'
 
 describe('Alert.vue', () => {
   it('Alert组件的显示内容是否正确', () => {
