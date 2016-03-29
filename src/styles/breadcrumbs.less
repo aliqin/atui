@@ -1,35 +1,66 @@
 //
 // Breadcrumbs
 // --------------------------------------------------
-@breadcrumb-padding-vertical:   8px;
-@breadcrumb-padding-horizontal: 15px;
-//** Breadcrumb background color
-@breadcrumb-bg:                 #f5f5f5;
-//** Breadcrumb text color
-@breadcrumb-color:              #ccc;
-//** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       @gray-light;
-//** Textual separator for between breadcrumb elements
-@breadcrumb-separator:          "/";
+@breadcrumb-link-color:       #999999;
+@breadcrumb-last-link-color:    #666;
+@breadcrumb-slash-color:      #ccc;
 
-.breadcrumb {
-  padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
-  margin-bottom: @line-height-computed;
-  list-style: none;
-  background-color: @breadcrumb-bg;
-  border-radius: @border-radius-base;
-
-  > li {
-    display: inline-block;
-
-    + li:before {
-      content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
-      padding: 0 5px;
-      color: @breadcrumb-color;
+.breadcrumbs {
+  .breadcrumb {
+    padding: 0;
+    background-color: #fff;
+    .breadcrumb-link {
+      padding: 0 22px;
+      color: @breadcrumb-link-color;
+      font-size: 12px;
+      font-family:MicrosoftYaHei;
     }
   }
+  
+  .breadcrumb:last-child .breadcrumb-link{
+    color: @breadcrumb-last-link-color;
+  }
 
-  > .active {
-    color: @breadcrumb-active-color;
+  .breadcrumb-slash {
+    color: @breadcrumb-slash-color;
+    font-size: 12px;
+  }
+
+  span:last-child .breadcrumb-slash {
+    display: none;
   }
 }
+
+
+//@breadcrumb-padding-vertical:   8px;
+//@breadcrumb-padding-horizontal: 15px;
+//** Breadcrumb background color
+//@breadcrumb-bg:                 #f5f5f5;
+//** Breadcrumb text color
+//@breadcrumb-color:              #ccc;
+//** Text color of current page in the breadcrumb
+//@breadcrumb-active-color:       @gray-light;
+//** Textual separator for between breadcrumb elements
+// @breadcrumb-separator:          "/";
+
+// .breadcrumb {
+//   padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
+//   margin-bottom: @line-height-computed;
+//   list-style: none;
+//   background-color: @breadcrumb-bg;
+//   border-radius: @border-radius-base;
+
+//   > li {
+//     display: inline-block;
+
+//     + li:before {
+//       content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+//       padding: 0 5px;
+//       color: @breadcrumb-color;
+//     }
+//   }
+
+//   > .active {
+//     color: @breadcrumb-active-color;
+//   }
+// }
