@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="input">
-    <h3 class="page-header"><a href="#input" class="anchor">input 输入框</a></h3>
+    <h3 class="page-header"><a href="#input" class="anchor">Input 输入框</a></h3>
     <div class="bs-example">
     <div>
       <v-input large type="text" placeholder="输入框－大尺寸"></v-input>
