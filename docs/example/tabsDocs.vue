@@ -199,7 +199,7 @@
         <td>disabled</td>
         <td><code>Boolean</code></td>
         <td>false</td>
-        <td>Whether tab is clickable and can be activated. </td>
+        <td>是否禁用当前Tab</td>
       </tr>
       <tr>
         <td>base</td>
@@ -226,7 +226,6 @@
   export default {
     data () {
       return {
-        
       }
     },
     components: {
