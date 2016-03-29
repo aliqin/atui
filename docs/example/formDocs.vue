@@ -58,36 +58,15 @@
 
 
 
-        <div class="form-item row form-item-with-help">
-          <label class="form-label col-lg-4"><span class="required-icon">*</span>用户名：</label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <input type="text" class="input" placeholder="电话号码" />
-              <i class="iconfont status-icon">&#xe600;</i>
-            </div>
-            <div class="status-info">请输入有效的电话号码</div>
-          </div>
-        </div>
-        <div class="form-item row form-item-with-help has-error">
-          <label class="form-label col-lg-4"><span class="required-icon">*</span>用户名：</label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <input type="text" class="input error" placeholder="电话号码" />
-              <i class="iconfont status-icon">&#xe600;</i>
-            </div>
-            <div class="status-info">请输入有效的电话号码</div>
-          </div>
-        </div>
-        <div class="form-item row form-item-with-help has-success">
-          <label class="form-label col-lg-4"><span class="required-icon">*</span>用户名：</label>
-          <div class="col-lg-20">
-            <div class="form-input">
-              <input type="text" class="input success" placeholder="电话号码" />
-              <i class="iconfont status-icon">&#xe600;</i>
-            </div>
-            <div class="status-info">请输入有效的电话号码</div>
-          </div>
-        </div>
+        <form-item required label="电话号码：" has-icon label-col="4" tip="请输入有效的电话号码">
+          <v-input placeholder="请输入电话号码"></v-input>
+        </form-item>
+        <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tip="请输入有效的电话号码">
+          <v-input error placeholder="请输入电话号码"></v-input>
+        </form-item>
+        <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tip="请输入有效的电话号码">
+          <v-input success placeholder="请输入电话号码"></v-input>
+        </form-item>
       </form>
       <!-- <form class="container form" v-form name="myform" @submit.prevent="onSubmit">
         <div class="errors" v-if="myform.$submitted">
@@ -210,18 +189,20 @@ radio单选框
 import vInput from 'src/components/Input/';
 import vButton from 'src/components/Button/';
 import vSelect from 'src/components/Select/';
+import vForm from 'src/components/Form/'
 
 const vOption = vSelect.Option;
+const FormItem = vForm.FormItem;
 
 export default {
   components: {
     vInput,
     vButton,
     vSelect,
-    vOption
+    vOption,
     // Form,
-    // FromItem,
-    // FromInput
+    FormItem
+    // FormInput
   },
   data() {
     return {

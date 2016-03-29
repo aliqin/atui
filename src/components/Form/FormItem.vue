@@ -1,35 +1,33 @@
 <template>
-<div class="form-item row" :class="{'form-item-with-help': validStatus}">
-  <label v-if="label" class="col-lg-{{labelCol}}">{{label}}</label>
-  <div class="col-lg-{{wrapperCol}}">
-    <solt></solt>
+<v-row>
+  <div class="form-item" :class="classObj">
+    <v-col :span="labelCol" class="form-label">
+      <label v-if="label">
+        <span v-if="isRequired" class="required-icon">*</span>
+        {{label}}
+      </label>
+    </v-col>
+    <v-col :span="wrapperCol">
+      <div class="form-input">
+        <slot></slot>
+        <i v-if="showIcon" class="iconfont status-icon">&#xe600;</i>
+      </div>
+      <div v-if="tip" class="status-info">{{tip}}</div>
+    </v-col>
   </div>
-</div>
+</v-row>
 </template>
-<style lang="less">
-.form-item {
-  position: relative;
-  margin-bottom: 24px;
-  color: #666;
-
-  &.form-item-with-help {
-    margin-bottom: 6px;
-  }
-
-  label {
-    padding: 7px 0;
-    text-align: right;
-    vertical-align: middle;
-  }
-}
-</style>
 <script>
+
+  import Layout from 'src/components/Layout/';
+  const vRow = Layout.Row;
+  const vCol = Layout.Col;
   export default {
     props: {
       label: String,
       labelCol: {
-        type: Number,
-        default: 7
+        type: String,
+        default: '7'
       },
       //验证规则
       rules: {
@@ -37,10 +35,7 @@
         default: []
       },
       //是否必填
-      required: {
-        type: Boolean,
-        default: false
-      },
+      required: null,
       //提示信息，如不设置，会根据验证规则自动生成
       tip: String,
       //额外提示信息，设置后，会和提示信息一起显示
@@ -51,15 +46,30 @@
         default: ''
       },
       //配合validateStatus属性使用，是否展示校验状态图标
-      hasFeedback: {
-        type: Boolean,
-        default: false
+      hasIcon: null
+    },
+
+    data () {
+      return {
+        classObj: {
+          'form-item-with-help': this.validStatus,
+          'has-error': this.validStatus == 'error',
+          'has-success': this.validStatus == 'success'
+        },
+        isRequired: typeof(this.required) !== 'undefined',
+        showIcon: typeof(this.hasIcon) !== 'undefined'
       }
     },
+
     computed: {
       wrapperCol() {
-        return 24 - this.labelCol;
+        var span = new Number(24 - this.labelCol);
+        return span.toString();
       }
+    },
+    components: {
+      vRow,
+      vCol
     }
   }
 </script>
