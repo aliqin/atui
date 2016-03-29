@@ -3908,112 +3908,41 @@
 	//           <v-button tertiary value="重置条件"></v-button>
 	//         </form-item>
 	//       </v-form>
-	//       <!-- <form class="container form" v-form name="myform" @submit.prevent="onSubmit">
-	//         <div class="errors" v-if="myform.$submitted">
-	//             <p v-if="myform.name.$error.required">Name is required.</p>
-	//             <p v-if="myform.email.$error.email">Email is not valid.</p>
-	//         </div>
-	//
-	//         <div class="row">
-	//           <div class="col-lg-7 form-label">
-	//             <label><span class="required">*</span>姓名：</label>
-	//           </div>
-	//           <div class="col-lg-7">
-	//             <input class="input" v-model="model.name" v-form-ctrl required name="name" />
-	//           </div>
-	//         </div>
-	//
-	//         <div class="row">
-	//           <div class="col-lg-7 form-label">
-	//             <label><span class="required">*</span>邮箱：</label>
-	//           </div>
-	//           <div class="col-lg-17">
-	//             <input class="input" v-model="model.email" v-form-ctrl name="email" type="email" required />
-	//           </div>
-	//         </div>
-	//
-	//         <div class="row">
-	//           <div class="col-lg-7 form-label">
-	//             <label>性别：</label>
-	//           </div>
-	//           <div class="col-lg-17">
-	//             <label>
-	//               <input v-form-ctrl name="sexy" type="radio" />
-	//               女
-	//             </label>
-	//             <label>
-	//               <input v-form-ctrl name="sexy" type="radio" checked />
-	//               男
-	//             </label>
-	//           </div>
-	//         </div>
-	//
-	//         <div class="row">
-	//           <div class="col-lg-7 form-label">
-	//             <label>多选框：</label>
-	//           </div>
-	//           <div class="col-lg-17">
-	//             <label>
-	//               <input v-form-ctrl name="cb1" type="checkbox" />
-	//               未选中状态
-	//             </label>
-	//             <label>
-	//               <input v-form-ctrl name="cb2" type="checkbox" checked />
-	//               选中状态
-	//             </label>
-	//             <label>
-	//               <input v-form-ctrl name="cb3" type="checkbox" disabled />
-	//               未选中不可点击状态
-	//             </label>
-	//             <label>
-	//               <input v-form-ctrl name="cb4" type="checkbox" checked disabled />
-	//               选中不可点击状态
-	//             </label>
-	//           </div>
-	//         </div>
-	//
-	//         <div class="row">
-	//           <label>
-	//             <div class="col-lg-7 form-label">
-	//               <span>Contact details <span v-if="model.contactRequired">*</span></span>
-	//             </div>
-	//             <div class="col-lg-17">
-	//               <textarea class="textarea" v-model="model.contact" :required="model.contactRequired" v-form-ctrl name="comments"></textarea>
-	//             </div>
-	//           </label>
-	//         </div>
-	//
-	//         <div class="row" v-if="model.contactRequired">
-	//           <label>
-	//             <div class="col-lg-7 form-label">
-	//               <span>3 digit code *</span>
-	//             </div>
-	//             <div class="col-lg-17">
-	//               <input class="input" v-model="model.code" v-form-ctrl name="code" type="text" pattern="[A-Za-z]{3}" required />
-	//             </div>
-	//           </label>
-	//         </div>
-	//
-	//         <button type="submit">Submit</button>
-	//       </form>
-	//       <pre>{{ myform | json }}</pre> -->
-	//       <!-- <Form>
-	//         <FromItem label="姓名：" :labelCol="7" :validStatus="valid.nameStatus">
-	//           <FromInput type="text" placeholder="请输入姓名" defaultValue="" ></FromInput>
-	//         </FromItem>
-	//       </Form>
-	//       <Form arragement="vertical">
-	//         <FromItem label="姓名：" :rules="" :validStatus="">
-	//           <Input placeholder="请输入姓名" defaultValue=""></Input>
-	//         </FromItem>
-	//       </Form> -->
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// checkbox复选框
-	// 使用方式与原生的一样 <input type="checkbox" id="cb" checked disabled />
-	//
-	// radio单选框
-	// 使用方式与原生的一样 <input type="radio" id="radio" checked disabled />
+	// <v-form :submit="formSubmitFun">
+	//   <form-item required label="联系人电话：" label-col="4">
+	//     <v-input type="text" placeholder="电话号码"></v-input>
+	//   </form-item>
+	//   <form-item required label="验证码：" label-col="4">
+	//     <v-col span="20">
+	//       <v-input type="text" placeholder="请输入验证码"></v-input>
+	//     </v-col>
+	//     <v-col span="4"><v-button tertiary value="获取验证码"></v-button></v-col>
+	//   </form-item>
+	//   <form-item required label="应用名/网站名：" label-col="4">
+	//     <v-input type="text" placeholder="若还未上线可填无"></v-input>
+	//   </form-item>
+	//   <form-item required label="行业：" label-col="4">
+	//     <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+	//   </form-item>
+	//   <form-item required label="电话号码：" has-icon label-col="4">
+	//     <v-input placeholder="请输入电话号码"></v-input>
+	//   </form-item>
+	//   <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tip="请输入有效的电话号码">
+	//     <v-input error placeholder="请输入电话号码"></v-input>
+	//   </form-item>
+	//   <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tip="请输入有效的电话号码">
+	//     <v-input success placeholder="请输入电话号码"></v-input>
+	//   </form-item>
+	//   <form-item required label-col="4">
+	//     <label><input type="checkbox" />阅读并接受《用户协议》</label>
+	//   </form-item>
+	//   <form-item required label-col="4">
+	//     <v-button primary></v-button>
+	//     <v-button tertiary value="重置条件"></v-button>
+	//   </form-item>
+	// </v-form>
 	//     </script></code></pre>
 	//     </script>
 	//     </code>
@@ -4701,7 +4630,7 @@
 /* 205 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <v-form :submit=\"formSubmitFun\">\n        <form-item required label=\"联系人电话：\" label-col=\"4\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"验证码：\" label-col=\"4\">\n          <v-col span=\"20\">\n            <v-input type=\"text\" placeholder=\"请输入验证码\"></v-input>\n          </v-col>\n          <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" has-icon label-col=\"4\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" tip=\"请输入有效的电话号码\">\n          <v-input error placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" tip=\"请输入有效的电话号码\">\n          <v-input success placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button primary></v-button>\n          <v-button tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n      <!-- <form class=\"container form\" v-form name=\"myform\" @submit.prevent=\"onSubmit\">\n        <div class=\"errors\" v-if=\"myform.$submitted\">\n            <p v-if=\"myform.name.$error.required\">Name is required.</p>\n            <p v-if=\"myform.email.$error.email\">Email is not valid.</p>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-lg-7 form-label\">\n            <label><span class=\"required\">*</span>姓名：</label>\n          </div>\n          <div class=\"col-lg-7\">\n            <input class=\"input\" v-model=\"model.name\" v-form-ctrl required name=\"name\" />\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-lg-7 form-label\">\n            <label><span class=\"required\">*</span>邮箱：</label>\n          </div>\n          <div class=\"col-lg-17\">\n            <input class=\"input\" v-model=\"model.email\" v-form-ctrl name=\"email\" type=\"email\" required />\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-lg-7 form-label\">\n            <label>性别：</label>\n          </div>\n          <div class=\"col-lg-17\">\n            <label>\n              <input v-form-ctrl name=\"sexy\" type=\"radio\" />\n              女\n            </label>\n            <label>\n              <input v-form-ctrl name=\"sexy\" type=\"radio\" checked />\n              男\n            </label>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-lg-7 form-label\">\n            <label>多选框：</label>\n          </div>\n          <div class=\"col-lg-17\">\n            <label>\n              <input v-form-ctrl name=\"cb1\" type=\"checkbox\" />\n              未选中状态\n            </label>\n            <label>\n              <input v-form-ctrl name=\"cb2\" type=\"checkbox\" checked />\n              选中状态\n            </label>\n            <label>\n              <input v-form-ctrl name=\"cb3\" type=\"checkbox\" disabled />\n              未选中不可点击状态\n            </label>\n            <label>\n              <input v-form-ctrl name=\"cb4\" type=\"checkbox\" checked disabled />\n              选中不可点击状态\n            </label>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <label>\n            <div class=\"col-lg-7 form-label\">\n              <span>Contact details <span v-if=\"model.contactRequired\">*</span></span>\n            </div>\n            <div class=\"col-lg-17\">\n              <textarea class=\"textarea\" v-model=\"model.contact\" :required=\"model.contactRequired\" v-form-ctrl name=\"comments\"></textarea>\n            </div>\n          </label>\n        </div>\n\n        <div class=\"row\" v-if=\"model.contactRequired\">\n          <label>\n            <div class=\"col-lg-7 form-label\">\n              <span>3 digit code *</span>\n            </div>\n            <div class=\"col-lg-17\">\n              <input class=\"input\" v-model=\"model.code\" v-form-ctrl name=\"code\" type=\"text\" pattern=\"[A-Za-z]{3}\" required />\n            </div>\n          </label>\n        </div>\n\n        <button type=\"submit\">Submit</button>\n      </form>\n      <pre>{{ myform | json }}</pre> -->\n      <!-- <Form>\n        <FromItem label=\"姓名：\" :labelCol=\"7\" :validStatus=\"valid.nameStatus\">\n          <FromInput type=\"text\" placeholder=\"请输入姓名\" defaultValue=\"\" ></FromInput>\n        </FromItem>\n      </Form>\n      <Form arragement=\"vertical\">\n        <FromItem label=\"姓名：\" :rules=\"\" :validStatus=\"\">\n          <Input placeholder=\"请输入姓名\" defaultValue=\"\"></Input>\n        </FromItem>\n      </Form> -->\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\ncheckbox复选框\n使用方式与原生的一样 <input type=\"checkbox\" id=\"cb\" checked disabled />\n\nradio单选框\n使用方式与原生的一样 <input type=\"radio\" id=\"radio\" checked disabled />\n    </script></code></pre>\n    </script>\n    </code>\n  </div>\n";
+	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <v-form :submit=\"formSubmitFun\">\n        <form-item required label=\"联系人电话：\" label-col=\"4\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"验证码：\" label-col=\"4\">\n          <v-col span=\"20\">\n            <v-input type=\"text\" placeholder=\"请输入验证码\"></v-input>\n          </v-col>\n          <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" has-icon label-col=\"4\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" tip=\"请输入有效的电话号码\">\n          <v-input error placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" tip=\"请输入有效的电话号码\">\n          <v-input success placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button primary></v-button>\n          <v-button tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-form :submit=\"formSubmitFun\">\n  <form-item required label=\"联系人电话：\" label-col=\"4\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"验证码：\" label-col=\"4\">\n    <v-col span=\"20\">\n      <v-input type=\"text\" placeholder=\"请输入验证码\"></v-input>\n    </v-col>\n    <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" has-icon label-col=\"4\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" tip=\"请输入有效的电话号码\">\n    <v-input error placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" tip=\"请输入有效的电话号码\">\n    <v-input success placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button primary></v-button>\n    <v-button tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n  </div>\n";
 
 /***/ },
 /* 206 */
