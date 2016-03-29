@@ -90,8 +90,8 @@
 </template>
 
 <script>
-  import vSteps from 'src/components/Steps/'
-  const {vStep} = vSteps
+  import Steps from 'src/components/Steps/'
+  const {Step} = Steps
   export default {
     data () {
       return {
@@ -99,8 +99,8 @@
       }
     },
     components: {
-      vSteps,
-      vStep
+      vSteps:Steps,
+      vStep:Step
     },
     methods: {
       _next () {
