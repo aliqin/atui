@@ -7,7 +7,7 @@ default:
     - nvm alias default 4.2.1
     - tnpm -v || npm install --silent -g tnpm --registry=http://registry.npm.alibaba-inc.com
     - tnpm install -g @ali/def-ci --silent
-    - tnpm install --unsafe-perm
+    - tnpm install --unsafe-perm --production
     - node -v; npm -v; tnpm -v
   unit_test:
     exec:
