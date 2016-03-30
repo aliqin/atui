@@ -23,10 +23,10 @@
           <v-input placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" :tip="请输入有效的电话号码">
-          <v-input error placeholder="请输入电话号码"></v-input>
+          <v-input valid-status="error" placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" :tip="请输入有效的电话号码">
-          <v-input success placeholder="请输入电话号码"></v-input>
+          <v-input valid-status="success" placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label-col="4">
           <label><input type="checkbox" />阅读并接受《用户协议》</label>
