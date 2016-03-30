@@ -1,15 +1,14 @@
 <template>
-	<div v-if="!closed" :class="{
-	  'tag':		true,
-      'tag-green':(color == 'green'),
-      'tag-orange':(color == 'orange'),
-      'tag-red':(color == 'red')}" >
+	<div v-if="!closed" :class="wrapClasses">
 		<a :href="href" class="tag-text"><slot></slot></a>
-		<i v-if="closable" class="tag-close" @click="closeHandler">x</i>
+		<span v-if="closable" class="tag-close" @click="closeHandler">
+			<icon type="close" size="12"></icon>
+		</span>
 	</div>
 </template>
 
 <script>
+	import Icon from '../Icon/'
 	export default {
 		props: {
 			color: {
@@ -34,11 +33,26 @@
 			}
 		},
 
+		computed: {
+			wrapClasses() {
+				return {
+					'tag':		true,
+				    'tag-green':this.color === 'green',
+				    'tag-orange':this.color === 'orange',
+				    'tag-red':this.color == 'red'
+				}
+			}
+		},
+
 		methods: {
 			closeHandler (e) {
 				this.closed = true;				
 				this.onClose.call(this, e)
 			}
+		},
+
+		components: {
+			Icon
 		}
 	}
 </script>
