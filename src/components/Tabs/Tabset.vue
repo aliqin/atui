@@ -1,11 +1,10 @@
 <template>
   <div class="navWrapper">
-    <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">&lt;</span>
+    <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">
+      <icon type="prev" size="12"></icon>
+    </span>
     <!-- Nav tabs -->
-     <ul :class="{
-      'nav': true,
-      'nav-tabs': (!base),
-      'nav-base': (base)}" role="tablist">
+     <ul :class="wrapClasses" role="tablist">
             <li 
                 v-for="r in renderData"
                 v-bind:class="{
@@ -18,7 +17,9 @@
                 <a href="#">{{{r.header}}}</a>
             </li>
      </ul>
-    <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next">&gt;</span>
+    <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next">
+        <icon type="next" size="12"></icon>
+    </span>
 
      <!-- Tab panes -->
      <div class="tab-content" v-el:tab-content>
@@ -29,6 +30,7 @@
 </template>
 
 <script>
+  import Icon from '../Icon/'
   export default {
     props: {
       effect: {
@@ -59,6 +61,20 @@
         prev_tabIndex:0,
         next_tabIndex:0,
         itemsWidth: []
+      }
+    },
+
+    components: {
+      Icon
+    },
+
+    computed: {
+      wrapClasses () {
+        return {
+          'nav': true,
+          'nav-tabs': !this.base,
+          'nav-base': this.base
+        }
       }
     },
 
