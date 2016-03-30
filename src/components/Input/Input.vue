@@ -24,16 +24,18 @@
         default: ''
       }
     },
-    data () {
-      return {
-        classObj: {
+    computed: {
+      classObj () {
+        return {
           'large': typeof(this.large) !== "undefined",
           'small': typeof(this.small) !== "undefined",
           'error': this.validStatus == 'error',
           'success': this.validStatus == 'success',
           'warn': this.validStatus == 'warn',
-        },
-        isDisabled: this.validStatus == 'disabled'
+        }
+      },
+      isDisabled () {
+        return this.validStatus == 'disabled';
       }
     }
   }

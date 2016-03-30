@@ -4,8 +4,8 @@
     <h3 class="page-header"><a href="#form" class="anchor">Form 表单 </a></h3>
     <div class="bs-example">
       <v-form :submit="formSubmitFun">
-        <form-item required label="联系人电话：" valid-status="" label-col="4" has-icon :tip="123">
-          <v-input type="text" placeholder="电话号码" :value.sync="tel"></v-input>
+        <form-item required label="联系人电话：" :valid-status="telStatus" label-col="4" has-icon :tip="123">
+          <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel"></v-input>
         </form-item>
         <form-item required label="验证码：" label-col="4">
           <v-col span="20">
@@ -32,7 +32,7 @@
           <label><input type="checkbox" />阅读并接受《用户协议》</label>
         </form-item>
         <form-item required label-col="4">
-          <v-button primary></v-button>
+          <v-button primary @click="validFun"></v-button>
           <v-button tertiary value="重置条件"></v-button>
         </form-item>
       </v-form>
@@ -126,7 +126,8 @@ export default {
       formSubmitFun() {
         alert(1);
       },
-      tel: '123'
+      tel: '',
+      telStatus: ''
     }
   },
   watch: {
@@ -135,8 +136,10 @@ export default {
     }
   },
   methods: {
-    onSubmit: function () {
-      console.log(this.myform.$valid);
+    validFun () {
+      if(!this.tel) {
+        this.telStatus = 'error';
+      }
     }
   }
 }
