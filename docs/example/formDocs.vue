@@ -36,7 +36,9 @@
           <v-button tertiary value="重置条件"></v-button>
         </form-item>
       </v-form>
-      <address-select></address-select>
+      <address-select level="2" placeholder="请选择省市"></address-select>
+      <address-select level="3" placeholder="请选择省市区"></address-select>
+      <address-select level="4" placeholder="请选择省市区街道"></address-select>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <v-form :submit="formSubmitFun">
