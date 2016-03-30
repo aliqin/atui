@@ -108,7 +108,7 @@ export default {
                 if (currPage != 1){
                     this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
                 } else {
-                    this.pageRange.push({text:'<', className:'disabled'});
+                    this.pageRange.push({className:'disabled', icon: 'prev'});
                 }
 
                 this.pageRange.push({num:this.currPage, text:this.currPage, className: 'current'})
@@ -119,7 +119,7 @@ export default {
                 if (currPage != totalPage){
                     this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
                 } else {
-                    this.pageRange.push({text:'>', className:'disabled'})
+                    this.pageRange.push({className:'disabled', icon: 'next'})
                 }
 
             } else {
@@ -127,7 +127,7 @@ export default {
                 if (currPage != 1){
                     this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
                 } else {
-                    this.pageRange.push({text:'<', className:'disabled'});
+                    this.pageRange.push({className:'disabled', icon: 'prev'});
                 }
                 
                 //第一页
@@ -158,7 +158,7 @@ export default {
                 if (currPage != totalPage){
                     this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
                 } else {
-                    this.pageRange.push({text:'>', className:'disabled'})
+                    this.pageRange.push({className:'disabled', icon: 'next'})
                 }
             }
         },
