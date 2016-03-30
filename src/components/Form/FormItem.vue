@@ -49,24 +49,26 @@
       hasIcon: null
     },
 
-    data () {
-      return {
-        classObj: {
+    computed: {
+      classObj () {
+        return {
           'form-item-with-help': this.validStatus,
           'has-error': this.validStatus == 'error',
           'has-success': this.validStatus == 'success'
-        },
-        isRequired: typeof(this.required) !== 'undefined',
-        showIcon: this.validStatus && typeof(this.hasIcon) !== 'undefined'
-      }
-    },
-
-    computed: {
+        };
+      },
+      isRequired () {
+        return typeof(this.required) !== 'undefined';
+      },
+      showIcon () {
+        this.validStatus && typeof(this.hasIcon) !== 'undefined';
+      },
       wrapperCol() {
         var span = new Number(24 - this.labelCol);
         return span.toString();
       }
     },
+
     components: {
       vRow,
       vCol

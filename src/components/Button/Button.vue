@@ -1,10 +1,14 @@
 <template>
-  <button type="button" class="btn" :class="btnClassObj">{{{value}}}</button>
+  <button type="{{type}}" class="btn" :class="btnClassObj">{{{value}}}</button>
 </template>
 
 <script>
   export default {
     props: {
+      type: {
+        type: String,
+        default: 'button'
+      },
       large: null,
       small: null,
       value: {
@@ -17,9 +21,9 @@
       disabled: null,
       text: null
     },
-    data () {
-      return {
-        btnClassObj: {
+    computed: {
+      btnClassObj () {
+        return {
           'large': typeof(this.large) !== "undefined",
           'small': typeof(this.small) !== "undefined",
           'primary': typeof(this.primary) !== "undefined",
