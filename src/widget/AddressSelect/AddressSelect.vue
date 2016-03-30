@@ -37,7 +37,9 @@
         <div class="street-content" v-show="current == 'street'">
           <dl>
             <dd>
-              <!-- <a title="明光路街道" attr-id="340102001" href="javascript:;" attr-parent-id="340102">明光路街道</a> -->
+              <template v-for="street in streetList">
+                <a title="{{street[0]}}" attr-id="{{$key}}" parent-id="{{street[1]}}" href="javascript:;">{{street[0]}}</a>
+              </template>
             </dd>
           </dl>
         </div>
