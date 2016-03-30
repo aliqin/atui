@@ -144,14 +144,18 @@ export default {
     }
   },
   methods: {
+    /**
+     * 点击el节点，显示地址pop框
+     */
     showAddrPopFun () {
       this.showAddrPop = true;
     },
     hideAddrPopFun () {
       this.showAddrPop = false;
     },
-    //https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town.do?l1=330000&l2=330200&l3=330281&_ksTS=1459308346095_54&callback=jsonp55
-    //https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town.do?l1=140000&l2=140600&l3=140624&jsonpcallback=jsonp_016244470332174377
+    /**
+     * 异步获取街道列表
+     */
     getStreet () {
       let self = this;
       self.jsonp({
@@ -167,24 +171,21 @@ export default {
           if(res && res.success) {
             self.streetList = res.result || {};
           }
-          console.log('=========');
-          console.log(res);
-          console.log('=========');
         },
         fail: function(res) {
-          console.log(res.msg);
+          throw new Error(res.msg);
         }
       });
 
     },
+    /**
+     * 实现jsonp调用
+     */
     jsonp (options) {
         options = options || {};
-        if (!options.url) {
-            throw new Error("参数不合法");
-        }
 
         //创建 script 标签并加入到页面中
-        var callbackName = ('jsonp_' + Math.random()).replace(".", "");
+        var callbackName = ('jsonp_' + Math.random()).replace('.', '');
         var oHead = document.getElementsByTagName('head')[0];
         options.data[options.callback] = callbackName;
         var params = this.formatParams(options.data);
@@ -207,10 +208,13 @@ export default {
             oS.timer = setTimeout(function () {
                 window[callbackName] = null;
                 oHead.removeChild(oS);
-                options.fail && options.fail({ message: "超时" });
+                options.fail && options.fail({ message: '超时' });
             }, options.time);
         }
     },
+    /**
+     * 格式化jsonp参数
+     */
     formatParams (data) {
         var arr = [];
         for (var name in data) {
@@ -218,6 +222,9 @@ export default {
         }
         return arr.join('&');
     },
+    /**
+     * 切换省市区街道导航
+     */
     navChoose (index) {
       this.current = index;
     },
@@ -225,6 +232,10 @@ export default {
       this.province = province;
       this.provinceId = provId;
       this.current = this.tabList[1].id;
+      this.$dispatch('select-province', {
+        provinceName: this.province,
+        provinceId: this.provinceId
+      } ,this);
     },
     chooseCity (cityId, city) {
       var tabLen = this.tabList.length;
@@ -235,6 +246,10 @@ export default {
       } else {
         this.hideAddrPopFun();
       }
+      this.$dispatch('select-city', {
+        cityName: this.city,
+        cityId: this.cityId
+      } ,this);
     },
     chooseCounty (countyId, county) {
       var tabLen = this.tabList.length;
@@ -245,11 +260,19 @@ export default {
       } else {
         this.hideAddrPopFun();
       }
+      this.$dispatch('select-county', {
+        countyName: this.county,
+        countyId: this.countyId
+      } ,this);
     },
     chooseStreet (streetId, street) {
       this.street = street;
       this.streetId = streetId;
       this.hideAddrPopFun();
+      this.$dispatch('select-street', {
+        streetName: this.street,
+        streetId: this.streetId
+      } ,this);
     }
   }
 }
