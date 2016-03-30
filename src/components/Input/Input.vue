@@ -14,7 +14,6 @@
       },
       large: null,
       small: null,
-      disabled: null,
       validStatus: {
         type: String,
         default: ''
