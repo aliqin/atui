@@ -32,7 +32,3 @@
     }
   }
 </script>
-
-<style lang="less">
-@import "../../styles/buttons.less";
-</style>
