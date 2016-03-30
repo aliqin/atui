@@ -79,21 +79,104 @@ export default {
       county: '',
       countyId: '',
       street: '',
+      streetId: '',
       provinceList: nation.province,
-      countyList: nation.county
+      countyList: nation.county,
+      streetList: {}
+    }
+  },
+  watch: {
+    provinceId () {
+      this.cityId = '';
+      this.city = '';
+      this.county = '';
+      this.countyId = '';
+      this.street = '';
+      this.streetId = '';
+    },
+
+    cityId () {
+      this.county = '';
+      this.countyId = '';
+      this.street = '';
+      this.streetId = '';
+    },
+
+    countyId () {
+      this.street = '';
+      this.streetId = '';
+      this.getStreet();
     }
   },
   methods: {
-    // jsonData () {
-    //   var name = jsonpData.name;
-    //   var age= jsonpData.age;
-    //   alert(name+":"+age);
-    // },
-    // getJSONP (jsonData) {
-    //   let script = document.createElement('script');
-    //   script.src = '';
+    //https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town.do?l1=330000&l2=330200&l3=330281&_ksTS=1459308346095_54&callback=jsonp55
+    //https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town.do?l1=140000&l2=140600&l3=140624&jsonpcallback=jsonp_016244470332174377
+    getStreet () {
+      let self = this;
+      self.jsonp({
+        url: '//lsp.wuliu.taobao.com/locationservice/addr/output_address_town.do',
+        data: {
+          l1: self.provinceId,
+          l2: self.cityId,
+          l3: self.countyId
+        },
+        time: 10000,
+        callback: 'callback',
+        success: function(res) {
+          if(res && res.success) {
+            self.streetList = res.result || {};
+          }
+          console.log('=========');
+          console.log(res);
+          console.log('=========');
+        },
+        fail: function(res) {
+          console.log(res.msg);
+        }
+      });
 
-    // },
+    },
+    jsonp (options) {
+        options = options || {};
+        if (!options.url) {
+            throw new Error("参数不合法");
+        }
+
+        //创建 script 标签并加入到页面中
+        var callbackName = ('jsonp_' + Math.random()).replace(".", "");
+        var oHead = document.getElementsByTagName('head')[0];
+        options.data[options.callback] = callbackName;
+        var params = this.formatParams(options.data);
+        var oS = document.createElement('script');
+        oHead.appendChild(oS);
+
+        //创建jsonp回调函数
+        window[callbackName] = function (json) {
+            oHead.removeChild(oS);
+            clearTimeout(oS.timer);
+            window[callbackName] = null;
+            options.success && options.success(json);
+        };
+
+        //发送请求
+        oS.src = options.url + '?' + params;
+
+        //超时处理
+        if (options.time) {
+            oS.timer = setTimeout(function () {
+                window[callbackName] = null;
+                oHead.removeChild(oS);
+                options.fail && options.fail({ message: "超时" });
+            }, options.time);
+        }
+    },
+    formatParams (data) {
+        var arr = [];
+        for (var name in data) {
+            arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+        }
+        return arr.join('&');
+    },
     navChoose (index) {
       this.current = index;
     },
