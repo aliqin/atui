@@ -4,8 +4,8 @@
     <h3 class="page-header"><a href="#form" class="anchor">Form 表单 </a></h3>
     <div class="bs-example">
       <v-form :submit="formSubmitFun">
-        <form-item required label="联系人电话：" label-col="4" has-icon tip="123">
-          <v-input type="text" placeholder="电话号码"></v-input>
+        <form-item required label="联系人电话：" label-col="4" has-icon :tip="123">
+          <v-input type="text" placeholder="电话号码" :value.sync="tel"></v-input>
         </form-item>
         <form-item required label="验证码：" label-col="4">
           <v-col span="20">
@@ -19,13 +19,13 @@
         <form-item required label="行业：" label-col="4">
           <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
         </form-item>
-        <form-item required label="电话号码：" has-icon label-col="4">
+        <form-item required label="电话号码：" label-col="4">
           <v-input placeholder="请输入电话号码"></v-input>
         </form-item>
-        <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tip="请输入有效的电话号码">
+        <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" :tip="请输入有效的电话号码">
           <v-input error placeholder="请输入电话号码"></v-input>
         </form-item>
-        <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tip="请输入有效的电话号码">
+        <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" :tip="请输入有效的电话号码">
           <v-input success placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label-col="4">
@@ -125,7 +125,13 @@ export default {
       },
       formSubmitFun() {
         alert(1);
-      }
+      },
+      tel: '123'
+    }
+  },
+  watch: {
+    tel(newVal, oldVal) {
+      alert(newVal);
     }
   },
   methods: {

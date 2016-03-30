@@ -1,6 +1,6 @@
 <template>
-  <input v-if="isDisabled" type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" disabled />
-  <input v-else type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" />
+  <input v-if="isDisabled" type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" disabled v-model="value" />
+  <input v-else type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" />
 </template>
 <script>
   export default {
@@ -16,6 +16,10 @@
       large: null,
       small: null,
       validStatus: {
+        type: String,
+        default: ''
+      },
+      value: {
         type: String,
         default: ''
       }
