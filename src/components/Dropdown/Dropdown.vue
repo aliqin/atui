@@ -1,22 +1,29 @@
 <template>
-  <div class="dropdown">
+  <div :class="{dropdown:true,open:open}">
     <slot></slot>
     <slot name="dropdown-menu"></slot>
   </div>
 </template>
 <script>
   import EventListener from '../utils/EventListener'
+  import coerceBoolean from '../utils/coerceBoolean.js'
+
   export default {
     props:{
       trigger:{
         type: String,
         default: 'click'
+      },
+      open:{
+        type: Boolean,
+        coerce: coerceBoolean,
+        default: false
       }
     },
     methods: {
       toggleDropdown(e) {
         e.preventDefault()
-        this.$el.classList.toggle('open')
+        this.open = !this.open
       }
     },
     ready() {
@@ -30,13 +37,16 @@
         var me = this;
         me.$el.addEventListener('mouseleave',()=>{
           setTimeout(()=>{
-            me.$el.classList.remove('open')
+            me.open = false
           },300)
           
         })
       }
+      let self = this;
       this._closeEvent = EventListener.listen(window, 'click', (e)=> {
-        if (!el.contains(e.target)) el.classList.remove('open')
+        if (!el.contains(e.target)) { 
+          self.open = false
+        }
       })
     },
     beforeDestroy() {

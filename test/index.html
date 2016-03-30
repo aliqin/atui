@@ -68,11 +68,16 @@
     </breadcrumb>
     <br/> <br/> <br/>
     <tag color="orange" closable :on-close="closeTag">标签</tag>
-
+ <br/> <br/> <br/>
 <v-row>
-<v-col span="24">sdfsfd</v-col>
+<v-col span="16">
+栅格16
+</v-col>
+<v-col span="8">
+栅格8
+</v-col>
 </v-row>
-
+ <br/> <br/> <br/>
 <v-form :submit="formSubmitFun">
   <form-item required label="联系人电话：" label-col="4">
     <v-input type="text" placeholder="电话号码"></v-input>
@@ -106,8 +111,8 @@
     <v-button tertiary value="重置条件"></v-button>
   </form-item>
 </v-form>
+
     
-Switch 开关
 
   </div>
   <script>
@@ -128,7 +133,7 @@ Switch 开关
         breadcrumb:VueComponent.Breadcrumb,
         BreadcrumbItem:VueComponent.Breadcrumb.BreadcrumbItem,
         vForm:VueComponent.Form,
-        vFormItem:VueComponent.Form.FormItem
+        FormItem:VueComponent.Form.FormItem
       },
       data: {
         message: 'Hello Vue.js!'

@@ -3,18 +3,21 @@
     <thead>
         <tr>
             <th v-if="rowSelection">
-                <input type="checkbox" @change="onCheckAll"/>
+                <input type="checkbox" @change="onCheckAll" :disabled="isCheckAllDisabled"/>
             </th>
             <th v-for="key in columns" :class="{'multi-col':key.multiCols}" :width="key.width">
                 {{key['title']}}
-                <template v-if="key.multiCols">
-                    <span class="iconfont">&#xe608;</span>
-                    <ul>
-                        <li v-for="col in key.multiCols"><a href="javascript:void(0);" @click="onSelectColumn(col.id, col.dataId)">{{col.name}}</a></li>
-                    </ul>
+                <template v-if="key.filters">
+                    <dropdown data-toggle="dropdown" :open="isOpen">
+                        <div data-toggle="dropdown">
+                        <icon type="filter"></icon>
+                        </div>
+                        <ul name="dropdown-menu" class="dropdown-menu">
+                            <li v-for="col in key.filters"><a href="javascript:void(0);" @click="onFilter(col.value, key)">{{col.text}}</a></li>
+                        </ul>
+                    </dropdown>
                 </template>
             </th>
-
         </tr>
     </thead>
     <tbody>
@@ -24,14 +27,39 @@
             | filterBy filterKey
             | orderBy sortKey sortOrders[sortKey]">
             <td v-if="rowSelection">
-                <input type="checkbox" v-model="checkedKeys" :value="entry[rowKey]"  />
-            </td>
-            <td v-for="key in columns" v-bind="{'data-key': entry[rowKey] ,'data-column':key.dataIndex,'data-value':entry[key.dataIndex]}">
-                <template v-if="key.render">
-                    {{{key.render(entry, rowIndex)}}}
+                <template v-if="internalRowSelectable(entry)">
+                    <input type="checkbox" v-model="checkedKeys" :value="entry[rowKey]"  />
                 </template>
                 <template v-else>
-                {{{entry[key.dataIndex] | g_filter key.filter}}}
+                    <input type="checkbox" v-model="checkedKeys" :value="entry[rowKey]" disabled />
+                </template>
+            </td>
+            <td v-for="key in columns" v-bind="{'data-key': entry[rowKey] ,'data-column':key.dataIndex,'data-value':entry[key.dataIndex]}">
+                <template v-if="key.as == 'text'">
+                    <template v-if="key.render">
+                        {{key.render(entry, rowIndex, this)}}
+                    </template>
+                    <template v-else>
+                        <template v-if="key.filter">
+                            {{{entry[key.dataIndex] | g_filter key.filter}}}
+                        </template>
+                        <template v-else>
+                            {{entry[key.dataIndex]}}
+                        </template>
+                    </template>
+                </template>
+                <template v-else>
+                    <template v-if="key.render">
+                        {{{key.render(entry, rowIndex, this)}}}
+                    </template>
+                    <template v-else>
+                        <template v-if="key.filter">
+                            {{{entry[key.dataIndex] | g_filter key.filter}}}
+                        </template>
+                        <template v-else>
+                            {{entry[key.dataIndex]}}
+                        </template>
+                    </template>
                 </template>
             </td>
         </tr>
@@ -39,14 +67,26 @@
 </table>
 </template>
 
-<script>
+<script type="text/babel">
+import Icon from '../Icon/'
+import Dropdown from '../Dropdown/'
 export default{
     props: {
         dataSrouce: Array,
         columns: Array,
         filterKey: String,
         rowSelection:Boolean,
+        isRowSelectable: {
+            type: Function,
+            default: function(rowData) {
+                return true;
+            }
+        },
         rowKey:String
+    },
+    components:{
+        Icon,
+        Dropdown
     },
     data () {
         let sortOrders = {}
@@ -54,10 +94,24 @@ export default{
         this.compileTbody();
         return {
             sortKey: '',
+            isOpen:false,
             sortOrders: sortOrders,
             data:this.dataSrouce,
             checkedKeys:[],
             checkedDataList:[],
+            internalRowSelectable: function(rowData) {
+                this.isCheckAllDisabled = true;
+                if (this.isRowSelectable(rowData)) {
+                    this.isCheckAllDisabled = false;
+                    return true;
+                } else {
+                    return false;
+                }
+            },
+            isCheckAllDisabled: {
+                type: Boolean,
+                default: true
+            },
             scope: null
         }
     },
@@ -98,15 +152,27 @@ export default{
             self.checkedDataList = [];
             if(event.target.checked) {
                 self.dataSrouce.forEach((key,i) => {
-                    if(key[self.rowKey]) {
-                        self.checkedKeys.push(key[self.rowKey]);
-                        self.checkedDataList.push(key);
+                    if(self.isRowSelectable(key)) {
+                        if(key[self.rowKey]) {
+                            self.checkedKeys.push(key[self.rowKey]);
+                            self.checkedDataList.push(key);
+                        }
                     }
                 })
             }
         },
         onSelectColumn (col, dataId) {
-            this.$dispatch('table-selectCol', col, dataId);
+            // this.$dispatch('table-selectCol', col, dataId);
+        },
+        onFilter (value,key) {
+            if(!key.onFilter) {
+                return;
+            }
+            this.isOpen = false;
+            let filterSource = this.data.filter((record) =>{
+                return key.onFilter.call(this,value,record);
+            })
+            this.dataSrouce = filterSource;
         }
     }
 }
