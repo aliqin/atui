@@ -4,17 +4,23 @@
     			 'mini-pagination-items': (!simple && mini)}" >
         <li v-for="page in pageRange" @click="pageClick(page.num)" :class="{
         'current':(page.className==='current'),
+		'pagination-item':true,
         'pagination-item-prev':(page.className==='prev'),
         'pagination-item-next':(page.className==='next'),
         'pagination-item-disabled':(page.className==='disabled'),
         'pagination-item-ellipsis':(page.className==='ellipsis'),
-        'pagination-item-slash':(page.className==='slash')}" class="pagination-item">
-            {{page.text}}
+        'pagination-item-slash':(page.className==='slash')}">
+    		<span v-if="page.className!='prev' && page.className!='next'">
+    			{{page.text}}
+    		</span>
+    		<icon v-if="page.className==='prev'" type="prev" size="12" color="#666" ></icon>
+    		<icon v-if="page.className==='next'" type="next" size="12" color="#666"></icon>
         </li>
     </ul>
 </template>
 
 <script>
+	import Icon from '../Icon/'
 	export default {
 		props: {
 			simple: {
@@ -33,6 +39,9 @@
 				type: Function,
 				default: () => {}
 			}
+		},
+		components: {
+			Icon
 		}
 	}
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <input v-if="isDisabled" type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" disabled />
-  <input v-else type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" />
+  <input v-if="isDisabled" type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" disabled v-model="value" />
+  <input v-else type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" />
 </template>
 <script>
   export default {
@@ -15,19 +15,27 @@
       },
       large: null,
       small: null,
-      disabled: null,
-      error: null,
-      success: null
+      validStatus: {
+        type: String,
+        default: ''
+      },
+      value: {
+        type: String,
+        default: ''
+      }
     },
-    data () {
-      return {
-        classObj: {
+    computed: {
+      classObj () {
+        return {
           'large': typeof(this.large) !== "undefined",
           'small': typeof(this.small) !== "undefined",
-          'error': typeof(this.error) !== "undefined",
-          'success': typeof(this.success) !== "undefined"
-        },
-        isDisabled: typeof(this.disabled) !== "undefined"
+          'error': this.validStatus == 'error',
+          'success': this.validStatus == 'success',
+          'warn': this.validStatus == 'warn',
+        }
+      },
+      isDisabled () {
+        return this.validStatus == 'disabled';
       }
     }
   }
