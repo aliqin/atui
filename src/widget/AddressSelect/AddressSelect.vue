@@ -1,11 +1,11 @@
 <template>
-  <div class="address-box">
-    <div v-if="province" class="ad-select has-select">{{province}}{{city}}{{county}}{{street}}</div>
-    <div v-else class="ad-select">请选择省市区</div>
+  <div class="address-box" @click.stop="showAddrPopFun" @blur="hideAddrPopFun">
+    <div v-if="province" class="ad-select has-select">{{selectAddr}}</div>
+    <div v-else class="ad-select">{{placeholder}}</div>
     <i class="ad-drop"></i>
-    <div class="ad-overlay">
+    <div class="ad-overlay" v-show="showAddrPop">
       <ul class="tab-list">
-        <li v-for="tab in tabList" :class="{'active': current == tab.id}" :style="{'width': (100/tabList.length)+'%'}" @click="navChoose(tab.id)">{{tab.name}}</li>
+        <li v-for="tab in tabList" :class="{'active': current == tab.id}" :style="{'width': (100/tabList.length)+'%'}" @click.stop.stop="navChoose(tab.id)">{{tab.name}}</li>
       </ul>
       <div class="tab-content">
         <div class="province-content" v-show="current == 'province'">
@@ -20,25 +20,25 @@
           <dl>
             <dd>
               <template v-for="county in countyList">
-                <a v-if="county[2] == provinceId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click="chooseCity(county[0], county[1][0])" :class="{'active': cityId == county[0]}">{{county[1][0]}}</a>
+                <a v-if="county[2] == provinceId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click.stop="chooseCity(county[0], county[1][0])" :class="{'active': cityId == county[0]}">{{county[1][0]}}</a>
               </template>
             </dd>
           </dl>
         </div>
-        <div class="county-content" v-show="current == 'county'">
+        <div class="county-content" v-if="tabList[2]" v-show="current == 'county'">
           <dl>
             <dd>
               <template v-for="county in countyList">
-                <a v-if="county[2] == cityId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click="chooseCounty(county[0], county[1][0])" :class="{'active': countyId == county[0]}">{{county[1][0]}}</a>
+                <a v-if="county[2] == cityId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click.stop="chooseCounty(county[0], county[1][0])" :class="{'active': countyId == county[0]}">{{county[1][0]}}</a>
               </template>
             </dd>
           </dl>
         </div>
-        <div class="street-content" v-show="current == 'street'">
+        <div class="street-content" v-if="tabList[3]" v-show="current == 'street'">
           <dl>
             <dd>
               <template v-for="street in streetList">
-                <a title="{{street[0]}}" attr-id="{{$key}}" parent-id="{{street[1]}}" href="javascript:;">{{street[0]}}</a>
+                <a title="{{street[0]}}" attr-id="{{$key}}" parent-id="{{street[1]}}" href="javascript:;" @click.stop="chooseStreet($key, street[0])" :class="{'active': streetId == $key}">{{street[0]}}</a>
               </template>
             </dd>
           </dl>
@@ -53,9 +53,16 @@
 import nation from './addr.js';
 
 export default {
+  props: {
+    level: {
+      type: String,
+      default: '4'
+    },
+    placeholder: String
+  },
   data () {
     return {
-      tabList: [
+      allTab: [
         {
           name: '省份',
           id: 'province'
@@ -73,6 +80,7 @@ export default {
           id: 'street'
         }
       ],
+      showAddrPop: false,
       current: 'province',
       province: '',
       provinceId: '',
@@ -85,6 +93,31 @@ export default {
       provinceList: nation.province,
       countyList: nation.county,
       streetList: {}
+    }
+  },
+  computed: {
+    tabList () {
+      let level = this.level - 0;
+      level = typeof(level) == 'number' ? level : 4;
+
+
+      return this.allTab.slice(0, level);
+    },
+    selectAddr () {
+      let text = this.province;
+      if(this.city) {
+        text = text +  ' / ' + this.city;
+      }
+
+      if(this.county) {
+        text = text + ' / ' + this.county;
+      }
+
+      if(this.street) {
+        text = text + ' / ' + this.street;
+      }
+
+      return text;
     }
   },
   watch: {
@@ -111,6 +144,12 @@ export default {
     }
   },
   methods: {
+    showAddrPopFun () {
+      this.showAddrPop = true;
+    },
+    hideAddrPopFun () {
+      this.showAddrPop = false;
+    },
     //https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town.do?l1=330000&l2=330200&l3=330281&_ksTS=1459308346095_54&callback=jsonp55
     //https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town.do?l1=140000&l2=140600&l3=140624&jsonpcallback=jsonp_016244470332174377
     getStreet () {
@@ -193,6 +232,8 @@ export default {
       this.cityId = cityId;
       if(tabLen > 2) {
         this.current = this.tabList[2].id;
+      } else {
+        this.hideAddrPopFun();
       }
     },
     chooseCounty (countyId, county) {
@@ -201,7 +242,14 @@ export default {
       this.countyId = countyId;
       if(tabLen > 3) {
         this.current = this.tabList[3].id;
+      } else {
+        this.hideAddrPopFun();
       }
+    },
+    chooseStreet (streetId, street) {
+      this.street = street;
+      this.streetId = streetId;
+      this.hideAddrPopFun();
     }
   }
 }
