@@ -269,35 +269,35 @@
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
  * Licensed under MIT
  */
-.loading,
-.loading > div {
+.spin,
+.spin > div {
   position: relative;
   box-sizing: border-box;
 }
-.loading {
+.spin {
   display: block;
   font-size: 0;
   color: #333;
 }
-.loading > div {
+.spin > div {
   display: inline-block;
   float: none;
   background-color: currentColor;
   border: 0 solid currentColor;
 }
-.loading {
+.spin {
   width: 32px;
   height: 32px;
 }
-.loading.small {
+.spin.small {
   width: 16px;
   height: 16px;
 }
-.loading.large {
+.spin.large {
   width: 64px;
   height: 64px;
 }
-.loading > div {
+.spin > div {
   position: absolute;
   top: 0;
   left: 0;
@@ -305,31 +305,31 @@
   height: 10px;
   border-radius: 100%;
 }
-.loading > div:nth-child(1) {
+.spin > div:nth-child(1) {
   -webkit-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
 }
-.loading > div:nth-child(2) {
+.spin > div:nth-child(2) {
   -webkit-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
 }
-.loading > div:nth-child(3) {
+.spin > div:nth-child(3) {
   -webkit-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
 }
-.loading.small {
+.spin.small {
   width: 16px;
   height: 16px;
 }
-.loading.small > div {
+.spin.small > div {
   width: 4px;
   height: 4px;
 }
-.loading.large {
+.spin.large {
   width: 64px;
   height: 64px;
 }
-.loading.large > div {
+.spin.large > div {
   width: 20px;
   height: 20px;
 }
@@ -4547,23 +4547,25 @@ fieldset[disabled] .navbar-inverse .btn-link:hover,
 fieldset[disabled] .navbar-inverse .btn-link:focus {
   color: #444;
 }
-.breadcrumb {
-  padding: 8px 15px;
-  margin-bottom: 21px;
-  list-style: none;
-  background-color: #f5f5f5;
-  border-radius: 4px;
+.breadcrumbs .breadcrumb {
+  padding: 0;
+  background-color: #fff;
 }
-.breadcrumb > li {
-  display: inline-block;
+.breadcrumbs .breadcrumb .breadcrumb-link {
+  padding: 0 22px;
+  color: #999999;
+  font-size: 12px;
+  font-family: MicrosoftYaHei;
 }
-.breadcrumb > li + li:before {
-  content: "/\A0";
-  padding: 0 5px;
+.breadcrumbs .breadcrumb:last-child .breadcrumb-link {
+  color: #666;
+}
+.breadcrumbs .breadcrumb-slash {
   color: #ccc;
+  font-size: 12px;
 }
-.breadcrumb > .active {
-  color: #dddddd;
+.breadcrumbs span:last-child .breadcrumb-slash {
+  display: none;
 }
 .pagination {
   display: inline-block;
@@ -6434,26 +6436,6 @@ button.close {
 }
 .step.step-status-wait .step-head-inner > .step-icon {
   color: #cccccc;
-}
-.breadcrumbs .breadcrumb {
-  padding: 0;
-  background-color: #fff;
-}
-.breadcrumbs .breadcrumb .breadcrumb-link {
-  padding: 0 22px;
-  color: #999999;
-  font-size: 12px;
-  font-family: MicrosoftYaHei;
-}
-.breadcrumbs .breadcrumb:last-child .breadcrumb-link {
-  color: #666;
-}
-.breadcrumbs .breadcrumb-slash {
-  color: #ccc;
-  font-size: 12px;
-}
-.breadcrumbs span:last-child .breadcrumb-slash {
-  display: none;
 }
 .vue-menu {
   background: #36394d;

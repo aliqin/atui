@@ -1,7 +1,7 @@
 <template>
   <div class="bs-docs-section" id="message">
     <h3 class="page-header">
-      <a href="#message" class="anchor">message 警告提示</a>
+      <a href="#message" class="anchor">Message 警告提示</a>
     </h3>
     <div class="bs-example" >
       <button class="btn btn-success btn-lg"

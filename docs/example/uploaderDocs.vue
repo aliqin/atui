@@ -1,8 +1,8 @@
 <template>
   <div class="bs-docs-section" id="upload">
-    <h3 class="page-header"><a href="#upload" class="anchor">upload 文件上传 </a></h3>
+    <h3 class="page-header"><a href="#upload" class="anchor">Uploader 文件上传 </a></h3>
     <div class="bs-example">
-      <h4>Upload 文件上传</h4>
+      <h4>Uploader 文件上传</h4>
       <h5>1、点击上传</h5>
       <form id="upload1" method="post" action="{{ajaxUrl}}">
         <file-upload
