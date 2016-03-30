@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  props: {
-  }
+	props: {
+	},
+	style:{
+	  type:String
+	}
 }
 </script>

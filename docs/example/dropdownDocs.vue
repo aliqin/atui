@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#dropdown" class="anchor">Dropdown 下拉框</a></h3>
     <div class="bs-example">
       <dropdown>
-        <div  data-toggle="dropdown">
+        <div data-toggle="dropdown">
           点击显示菜单
           <span class="caret"></span>
         </div>
