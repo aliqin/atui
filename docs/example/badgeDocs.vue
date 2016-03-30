@@ -3,46 +3,46 @@
     <h3 class="page-header"><a href="#badge" class="anchor">Badge 徽标数</a></h3>
     <div class="bs-example">
       <h4 class="example-title">基础型</h4>
-      <badge :count="6">
+      <badge :count="6" :show="true">
         <a href="javascript:;" class="badge-count-example"></a>
       </badge>
       <h4 class="example-title">大数字型</h4>
-      <badge :count="99">
+      <badge :count="99" :show="true">
         <a href="javascript:;" class="badge-count-example"></a>
       </badge>
 
-      <badge :count="1000">
+      <badge :count="1000" :show="true">
         <a href="javascript:;" class="badge-count-example"></a>
       </badge>
       <h4 class="example-title">小红点型</h4>
-        <badge :dot="true">
+        <badge :dot="true" :show="true">
           <a href="javascript:;" class="badge-count-example"></a>
         </badge>
 
-        <badge :dot="true">
+        <badge :dot="true" :show="true">
           <a href="javascript:;" >这是一个文字链接</a>
         </badge>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<badge :count="6">
+<badge :count="6" :show="true">
   <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
-<badge :count="99">
+<badge :count="99" :show="true">
   <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
-<badge :count="1000">
+<badge :count="1000" :show="true">
   <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
-<badge :dot="true">
-    <span class="badge-dot-example"></span>
+<badge :dot="true" :show="true">
+  <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
-<badge :dot="true">
-    <a href="javascript:;" >这是一个文字链接</a>
+<badge :dot="true" :show="true">
+  <a href="javascript:;" >这是一个文字链接</a>
 </badge>
 
 </script></code></pre>
@@ -51,10 +51,10 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
@@ -70,6 +70,12 @@
         <td></td>
         <td>展示的红点</td>
       </tr>
+      <tr>
+        <td>show</td>
+        <td><code>Boolean</code></td>
+        <td>false</td>
+        <td>是否展示徽标数</td>
+      </tr>
     </tbody>
   </table>
 </template>
@@ -79,7 +85,7 @@
   export default {
     data () {
       return {
-
+        show: true
       }
     },
     components: {
