@@ -49,6 +49,9 @@ import Pagination from './components/Pagination/'
 // filters
 import phoneNumber from './filters/phoneNumber'
 
+//widgets
+import AddressSelect from './widget/AddressSelect/'
+
 const VueComponent = {
   Layout,
   Icon,
@@ -77,7 +80,8 @@ const VueComponent = {
   Steps,
   Menu,
   Breadcrumb,
-  Pagination
+  Pagination,
+  AddressSelect
 }
 
 module.exports = VueComponent
