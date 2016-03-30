@@ -10,7 +10,12 @@
     <v-col :span="wrapperCol">
       <div class="form-input">
         <slot></slot>
-        <i v-if="showIcon" class="iconfont status-icon">&#xe600;</i>
+        <template v-if="showIcon">
+          <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
+          <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
+          <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
+          <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
+        </template>
       </div>
       <div v-if="tip && validStatus" class="status-info">{{tip}}</div>
     </v-col>
@@ -20,6 +25,7 @@
 <script>
 
   import Layout from 'src/components/Layout/';
+  import Icon from 'src/components/Icon/';
   const vRow = Layout.Row;
   const vCol = Layout.Col;
   export default {
@@ -61,7 +67,7 @@
         return typeof(this.required) !== 'undefined';
       },
       showIcon () {
-        this.validStatus && typeof(this.hasIcon) !== 'undefined';
+        return this.validStatus && typeof(this.hasIcon) !== 'undefined';
       },
       wrapperCol() {
         var span = new Number(24 - this.labelCol);
@@ -71,7 +77,8 @@
 
     components: {
       vRow,
-      vCol
+      vCol,
+      Icon
     }
   }
 </script>
