@@ -9,18 +9,24 @@
       </ul>
       <div class="tab-content">
         <div class="province-content" v-show="current == 'province'">
-          <dl v-for="key in provinceList">
+          <dl v-for="key in list.provinceList">
             <dt>{{$key}}</dt>
             <dd>
-              <a v-for="prov in key" title="{{prov[1][0]}}" attr-id="{{prov[0]}}" href="javascript:;" @click="chooseProvince(prov[0], prov[1][0])" :class="{'active': provinceId == prov[0]}" track-by="prov[0]">{{prov[1][0]}}</a>
+              <a v-for="prov in key" title="{{prov[1]}}" attr-id="{{prov[0]}}" href="javascript:;" @click="chooseProvince(prov[0], prov[1])" :class="{'active': provinceId == prov[0]}" track-by="prov[0]">
+                <input v-if="provinceId == prov[0]" value="{{prov[1]}}" type="hidden" v-model="province" />
+                {{prov[1]}}
+              </a>
             </dd>
           </dl>
         </div>
         <div class="city-content" v-show="current == 'city'">
           <dl>
             <dd>
-              <template v-for="county in countyList">
-                <a v-if="county[2] == provinceId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click.stop="chooseCity(county[0], county[1][0])" :class="{'active': cityId == county[0]}" track-by="county[0]">{{county[1][0]}}</a>
+              <template v-for="item in list.countyList">
+                <a v-if="item[2] == provinceId" title="{{item[1][0]}}" attr-id="{{item[0]}}" href="javascript:;" @click.stop="chooseCity(item[0], item[1][0])" :class="{'active': cityId == item[0]}" track-by="item[0]">
+                  <input v-if="cityId == item[0]" value="{{item[1][0]}}" type="hidden" v-model="city" />
+                  {{item[1][0]}}
+                </a>
               </template>
             </dd>
           </dl>
@@ -28,8 +34,11 @@
         <div class="county-content" v-if="tabList[2]" v-show="current == 'county'">
           <dl>
             <dd>
-              <template v-for="county in countyList">
-                <a v-if="county[2] == cityId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click.stop="chooseCounty(county[0], county[1][0])" :class="{'active': countyId == county[0]}" track-by="county[0]">{{county[1][0]}}</a>
+              <template v-for="item in list.countyList">
+                <a v-if="item[2] == cityId" title="{{item[1][0]}}" attr-id="{{item[0]}}" href="javascript:;" @click.stop="chooseCounty(item[0], item[1][0])" :class="{'active': countyId == item[0]}" track-by="item[0]">
+                  <input v-if="countyId == item[0]" value="{{item[1][0]}}" type="hidden" v-model="county" />
+                  {{item[1][0]}}
+                </a>
               </template>
             </dd>
           </dl>
@@ -37,8 +46,11 @@
         <div class="street-content" v-if="tabList[3]" v-show="current == 'street'">
           <dl>
             <dd>
-              <template v-for="street in streetList">
-                <a title="{{street[0]}}" attr-id="{{$key}}" parent-id="{{street[1]}}" href="javascript:;" @click.stop="chooseStreet($key, street[0])" :class="{'active': streetId == $key}" track-by="$key">{{street[0]}}</a>
+              <template v-for="item in list.streetList">
+                <a title="{{item[0]}}" attr-id="{{$key}}" parent-id="{{item[1]}}" href="javascript:;" @click.stop="chooseStreet($key, item[0])" :class="{'active': streetId == $key}" track-by="$key">
+                  <input v-if="streetId == $key" value="{{item[0]}}" type="hidden" v-model="street" />
+                  {{item[0]}}
+                </a>
               </template>
             </dd>
           </dl>
@@ -51,6 +63,7 @@
 
 <script>
 import nation from './addr.js';
+import EventListener from 'src/components/utils/EventListener'
 
 export default {
   props: {
@@ -58,7 +71,16 @@ export default {
       type: String,
       default: '4'
     },
-    placeholder: String
+    placeholder: String,
+    defaultAddr: {
+      type: Object,
+      default: {
+        provinceId: '',
+        cityId: '',
+        countyId: '',
+        streetId: ''
+      }
+    }
   },
   data () {
     return {
@@ -82,17 +104,19 @@ export default {
       ],
       showAddrPop: false,
       current: 'province',
+      list: {
+        provinceList: nation.province,
+        countyList: nation.county,
+        streetList: {}
+      },
       province: '',
-      provinceId: '',
+      provinceId: this.defaultAddr.provinceId,
       city: '',
-      cityId: '',
+      cityId: this.defaultAddr.cityId,
       county: '',
-      countyId: '',
+      countyId: this.defaultAddr.countyId,
       street: '',
-      streetId: '',
-      provinceList: nation.province,
-      countyList: nation.county,
-      streetList: {}
+      streetId: this.defaultAddr.streetId
     }
   },
   computed: {
@@ -120,28 +144,24 @@ export default {
       return text;
     }
   },
-  watch: {
-    provinceId () {
-      this.cityId = '';
-      this.city = '';
-      this.county = '';
-      this.countyId = '';
-      this.street = '';
-      this.streetId = '';
-    },
+  ready () {
+    let self = this;
+    const el = this.$el;
 
-    cityId () {
-      this.county = '';
-      this.countyId = '';
-      this.street = '';
-      this.streetId = '';
-    },
+    this._closeEvent = EventListener.listen(window, 'click', (e)=> {
+      if (!el.contains(e.target)) {
+        self.hideAddrPopFun();
+      }
+    })
 
-    countyId () {
-      this.street = '';
-      this.streetId = '';
+    if(this.provinceId && this.cityId && this.countyId) {
       this.getStreet();
     }
+
+    this.defaultTab();
+  },
+  beforeDestroy() {
+    if (this._closeEvent) this._closeEvent.remove();
   },
   methods: {
     /**
@@ -152,6 +172,36 @@ export default {
     },
     hideAddrPopFun () {
       this.showAddrPop = false;
+    },
+    defaultTab () {
+      let level = this.level;
+
+      if(this.streetId || this.countyId) {
+        if(level > 3) {
+          this.current = 'street';
+        } else if(level > 2) {
+          this.current = 'county';
+        } else if(level > 1) {
+          this.current = 'city';
+        }
+        return;
+      }
+
+      if(this.cityId) {
+        if(level > 2) {
+          this.current = 'county';
+        } else if(level > 1) {
+          this.current = 'city';
+        }
+        return;
+      }
+
+      if(this.provinceId) {
+        if(level > 1) {
+          this.current = 'city';
+        }
+        return;
+      }
     },
     /**
      * 异步获取街道列表
@@ -169,7 +219,7 @@ export default {
         callback: 'callback',
         success: function(res) {
           if(res && res.success) {
-            self.streetList = res.result || {};
+            self.list.streetList = res.result || {};
           }
         },
         fail: function(res) {
@@ -232,6 +282,7 @@ export default {
       this.province = province;
       this.provinceId = provId;
       this.current = this.tabList[1].id;
+      this.changeProvinceId();
       this.$dispatch('select-province', {
         provinceName: this.province,
         provinceId: this.provinceId
@@ -246,6 +297,7 @@ export default {
       } else {
         this.hideAddrPopFun();
       }
+      this.changeCityId();
       this.$dispatch('select-city', {
         cityName: this.city,
         cityId: this.cityId
@@ -260,6 +312,7 @@ export default {
       } else {
         this.hideAddrPopFun();
       }
+      this.changeCountyId();
       this.$dispatch('select-county', {
         countyName: this.county,
         countyId: this.countyId
@@ -273,7 +326,29 @@ export default {
         streetName: this.street,
         streetId: this.streetId
       } ,this);
+    },
+    changeProvinceId () {
+      this.cityId = '';
+      this.city = '';
+      this.county = '';
+      this.countyId = '';
+      this.street = '';
+      this.streetId = '';
+    },
+
+    changeCityId () {
+      this.county = '';
+      this.countyId = '';
+      this.street = '';
+      this.streetId = '';
+    },
+
+    changeCountyId () {
+      this.street = '';
+      this.streetId = '';
+      this.getStreet();
     }
   }
 }
+
 </script>
