@@ -53,20 +53,20 @@ export default {
   },
   events: {
     'select-province' (prov, addressSelectVue) {
-      alert('选择的省份是：'+ prov.provinceName);
-      alert('选择的省份ID是：'+prov.provinceId)
+      console.log('选择的省份是：'+ prov.provinceName);
+      console.log('选择的省份ID是：'+prov.provinceId)
     },
     'select-city' (city, addressSelectVue) {
-      alert('选择的城市是：'+ city.cityName);
-      alert('选择的城市ID是：'+city.cityId)
+      console.log('选择的城市是：'+ city.cityName);
+      console.log('选择的城市ID是：'+city.cityId)
     },
     'select-county' (county, addressSelectVue) {
-      alert('选择的县/区是：'+ county.countyName);
-      alert('选择的县/区ID是：'+county.countyId)
+      console.log('选择的县/区是：'+ county.countyName);
+      console.log('选择的县/区ID是：'+county.countyId)
     },
     'select-street' (street, addressSelectVue) {
-      alert('选择的街道是：'+ street.streetName);
-      alert('选择的街道ID是：'+street.streetId)
+      console.log('选择的街道是：'+ street.streetName);
+      console.log('选择的街道ID是：'+street.streetId)
     }
   }
 }

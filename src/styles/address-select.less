@@ -25,6 +25,13 @@
     width: 10px;
     height: 5px;
     background: url(//img.alicdn.com/tps/i4/T1J6x.FkFeXXX_ownc-30-40.png) -10px -25px no-repeat;
+    transform: rotate(0);
+    transition: transform 1s;
+
+    &.drop-down {
+      transform: rotate(180deg);
+      transition: transform 1s;
+    }
   }
 
   .ad-overlay {
@@ -32,7 +39,7 @@
     left: -1px;
     top: 28px;
     width: 300px;
-    height: 255px;
+    min-height: 255px;
     background-color: #fff;
     border: 1px solid #d9d9d9;
     z-index: 99;
