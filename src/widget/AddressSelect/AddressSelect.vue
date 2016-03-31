@@ -2,7 +2,7 @@
   <div class="address-box" @click.stop="showAddrPopFun" @blur="hideAddrPopFun">
     <div v-if="province" class="ad-select has-select">{{selectAddr}}</div>
     <div v-else class="ad-select">{{placeholder}}</div>
-    <i class="ad-drop"></i>
+    <i class="ad-drop" :class="{'drop-down': showAddrPop}"></i>
     <div class="ad-overlay" v-show="showAddrPop">
       <ul class="tab-list">
         <li v-for="tab in tabList" :class="{'active': current == tab.id}" :style="{'width': (100/tabList.length)+'%'}" @click.stop.stop="navChoose(tab.id)">{{tab.name}}</li>
@@ -12,7 +12,7 @@
           <dl v-for="key in provinceList">
             <dt>{{$key}}</dt>
             <dd>
-              <a v-for="prov in key" title="{{prov[1][0]}}" attr-id="{{prov[0]}}" href="javascript:;" @click="chooseProvince(prov[0], prov[1][0])" :class="{'active': provinceId == prov[0]}">{{prov[1][0]}}</a>
+              <a v-for="prov in key" title="{{prov[1][0]}}" attr-id="{{prov[0]}}" href="javascript:;" @click="chooseProvince(prov[0], prov[1][0])" :class="{'active': provinceId == prov[0]}" track-by="prov[0]">{{prov[1][0]}}</a>
             </dd>
           </dl>
         </div>
@@ -20,7 +20,7 @@
           <dl>
             <dd>
               <template v-for="county in countyList">
-                <a v-if="county[2] == provinceId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click.stop="chooseCity(county[0], county[1][0])" :class="{'active': cityId == county[0]}">{{county[1][0]}}</a>
+                <a v-if="county[2] == provinceId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click.stop="chooseCity(county[0], county[1][0])" :class="{'active': cityId == county[0]}" track-by="county[0]">{{county[1][0]}}</a>
               </template>
             </dd>
           </dl>
@@ -29,7 +29,7 @@
           <dl>
             <dd>
               <template v-for="county in countyList">
-                <a v-if="county[2] == cityId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click.stop="chooseCounty(county[0], county[1][0])" :class="{'active': countyId == county[0]}">{{county[1][0]}}</a>
+                <a v-if="county[2] == cityId" title="{{county[1][0]}}" attr-id="{{county[0]}}" href="javascript:;" @click.stop="chooseCounty(county[0], county[1][0])" :class="{'active': countyId == county[0]}" track-by="county[0]">{{county[1][0]}}</a>
               </template>
             </dd>
           </dl>
@@ -38,7 +38,7 @@
           <dl>
             <dd>
               <template v-for="street in streetList">
-                <a title="{{street[0]}}" attr-id="{{$key}}" parent-id="{{street[1]}}" href="javascript:;" @click.stop="chooseStreet($key, street[0])" :class="{'active': streetId == $key}">{{street[0]}}</a>
+                <a title="{{street[0]}}" attr-id="{{$key}}" parent-id="{{street[1]}}" href="javascript:;" @click.stop="chooseStreet($key, street[0])" :class="{'active': streetId == $key}" track-by="$key">{{street[0]}}</a>
               </template>
             </dd>
           </dl>
