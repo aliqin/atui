@@ -36,9 +36,6 @@
           <v-button tertiary value="重置条件"></v-button>
         </form-item>
       </v-form>
-      <address-select level="2" placeholder="请选择省市"></address-select>
-      <address-select level="3" placeholder="请选择省市区"></address-select>
-      <address-select level="4" placeholder="请选择省市区街道"></address-select>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <v-form :submit="formSubmitFun">
@@ -91,7 +88,6 @@ import vButton from 'src/components/Button/';
 import vSelect from 'src/components/Select/';
 import vForm from 'src/components/Form/';
 import Layout from 'src/components/Layout/';
-import AddressSelect from 'src/widget/AddressSelect/'
 
 const vOption = vSelect.Option;
 const FormItem = vForm.FormItem;
@@ -107,8 +103,7 @@ export default {
     vSelect,
     vOption,
     vForm,
-    FormItem,
-    AddressSelect
+    FormItem
     // FormInput
   },
   data() {
