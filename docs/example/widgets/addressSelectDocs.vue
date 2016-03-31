@@ -50,6 +50,24 @@ import AddressSelect from 'src/widget/AddressSelect/'
 export default {
   components: {
     AddressSelect
+  },
+  events: {
+    'select-province' (prov, addressSelectVue) {
+      console.log('选择的省份是：'+ prov.provinceName);
+      console.log('选择的省份ID是：'+prov.provinceId)
+    },
+    'select-city' (city, addressSelectVue) {
+      console.log('选择的城市是：'+ city.cityName);
+      console.log('选择的城市ID是：'+city.cityId)
+    },
+    'select-county' (county, addressSelectVue) {
+      console.log('选择的县/区是：'+ county.countyName);
+      console.log('选择的县/区ID是：'+county.countyId)
+    },
+    'select-street' (street, addressSelectVue) {
+      console.log('选择的街道是：'+ street.streetName);
+      console.log('选择的街道ID是：'+street.streetId)
+    }
   }
 }
 </script>
