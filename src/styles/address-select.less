@@ -1,0 +1,123 @@
+.address-box {
+  position: relative;
+  width: 300px;
+  height: 30px;
+  padding: 0 26px 0 10px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+
+  .ad-select {
+    line-height: 30px;
+    font-size: 12px;
+    color: #ccc;
+
+    &.has-select {
+      color: #666;
+    }
+  }
+
+  .ad-drop {
+    display: block;
+    position: absolute;
+    top: 13px;
+    right: 8px;
+    width: 10px;
+    height: 5px;
+    background: url(//img.alicdn.com/tps/i4/T1J6x.FkFeXXX_ownc-30-40.png) -10px -25px no-repeat;
+  }
+
+  .ad-overlay {
+    position: absolute;
+    left: -1px;
+    top: 28px;
+    width: 300px;
+    height: 255px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    z-index: 99;
+  }
+
+  .tab-list {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-size: 12px;
+
+    li {
+      // width: 25%;
+      height: 40px;
+      line-height: 40px;
+      color: #666;
+      text-align: center;
+      list-style: none;
+      border: 1px solid #d9d9d9;
+      border-left: 0 none;
+      border-top: 0 none;
+
+      &:last-child {
+        border-right: 0 none;
+      }
+
+      &.active {
+        background-color: #fff;
+        color: #00a0ff;
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 10px 10px 10px 15px;
+    font-size: 12px;
+
+    dl {
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 3px 0;
+      margin: 0;
+    }
+
+    dt {
+      width: 35px;
+      line-height: 2;
+      padding-right: 10px;
+      font-weight: bold;
+    }
+
+    dd {
+      width: 239px;
+
+      a {
+        display: inline-block;
+        line-height: 2;
+        padding: 0 8px;
+        color: #666;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: #F2FAFF;
+          color: #666;
+          text-decoration: none;
+        }
+
+        &:active, &:focus, &.active {
+          background-color: #00a0ff;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .city-content, .county-content, .street-content {
+    padding: 0 5px;
+
+    dd {
+      width: 100%;
+    }
+  }
+}
