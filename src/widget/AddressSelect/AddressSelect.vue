@@ -110,16 +110,28 @@ export default {
         streetList: {}
       },
       province: '',
-      provinceId: this.defaultAddr.provinceId,
+      // provinceId: this.defaultAddr.provinceId,
       city: '',
-      cityId: this.defaultAddr.cityId,
+      // cityId: this.defaultAddr.cityId,
       county: '',
-      countyId: this.defaultAddr.countyId,
-      street: '',
-      streetId: this.defaultAddr.streetId
+      // countyId: this.defaultAddr.countyId,
+      street: ''
+      // streetId: this.defaultAddr.streetId
     }
   },
   computed: {
+    provinceId () {
+      return this.defaultAddr.provinceId;
+    },
+    cityId () {
+      return this.defaultAddr.cityId;
+    },
+    countyId () {
+      return this.defaultAddr.countyId;
+    },
+    streetId () {
+      return this.defaultAddr.streetId;
+    },
     tabList () {
       let level = this.level - 0;
       level = typeof(level) == 'number' ? level : 4;
