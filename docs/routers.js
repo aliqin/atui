@@ -51,6 +51,9 @@ import stepsDocs from './example/stepsDocs.vue'
 // filters
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
+//widgets
+import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
+
 // configure router
 var Vue = require('vue')
 var VueRouter = require('vue-router')
@@ -144,7 +147,11 @@ router.map({
 			},
 			'/steps': {
 				component:stepsDocs
-			}
+			},
+      //widgets
+      '/addressselect' {
+        component:addressSelectDocs
+      }
 		}
 	}
 })

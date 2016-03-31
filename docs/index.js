@@ -55,6 +55,9 @@ import paginationDocs from './example/paginationDocs.vue'
 // filters
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
+//widgets
+import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
+
 
 
 Vue.config.debug = true
@@ -101,13 +104,15 @@ new Vue({
       inherit: true,
       template: ''
     },
-    phoneNumberDocs
+    phoneNumberDocs,
+    addressSelectDocs
   },
   data() {
     return {
       elements:[],
       components: [],
-      filters:[]
+      filters:[],
+      widgets:[]
     }
   },
   filters: {
@@ -120,9 +125,11 @@ new Vue({
     const elements = document.querySelectorAll('.elements .anchor')
     const components = document.querySelectorAll('.components .anchor')
     const filters = document.querySelectorAll('.filters .anchor')
+    const widgets = document.querySelectorAll('.widgets .anchor')
     this.elements = [...elements].map(el=> el.innerHTML.replace(' ', '-'))
     this.components = [...components].map(el=> el.innerHTML.replace(' ', '-'))
     this.filters = [...filters].map(el=> el.innerHTML.replace(' ', '-'))
+    this.widgets = [...widgets].map(el=> el.innerHTML.replace(' ', '-'))
     // Scrollspy
     const section = document.querySelectorAll('.bs-docs-section')
     const sections = {}

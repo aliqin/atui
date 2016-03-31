@@ -65,6 +65,11 @@ import coerceBoolean from '../utils/coerceBoolean.js'
           this._timeout = setTimeout(()=> this.show = false, this.duration)
         }
       }
+    },
+    methods:{
+      success() {
+
+      }
     }
   }
 </script>

@@ -168,7 +168,7 @@ fruitOptions = [
 </template>
 
 <script>
-  import Select from 'src/components/Select/';
+  import Select from 'src/components/Select/'
 
   const Option = Select.Option;
 
