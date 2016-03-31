@@ -46,8 +46,8 @@ const PopoverMixin = {
     const triger  = this.$els.trigger.children[0]
 
     if (this.trigger === 'hover') {
-      this._mouseenterEvent = EventListener.listen(triger, 'mouseenter', ()=> self.show = true)
-      this._mouseleaveEvent = EventListener.listen(triger, 'mouseleave', ()=> self.show = false)
+      this._mouseenterEvent = EventListener.listen(triger, 'mouseenter', ()=> this.show = true)
+      this._mouseleaveEvent = EventListener.listen(triger, 'mouseleave', ()=> this.show = false)
     } else if (this.trigger === 'focus') {
       this._focusEvent = EventListener.listen(triger, 'focus', ()=> this.show = true)
       this._blurEvent = EventListener.listen(triger, 'blur', ()=> this.show = false)
