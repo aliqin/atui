@@ -3,45 +3,45 @@
     <h3 class="page-header"><a href="#badge" class="anchor">Badge 徽标数</a></h3>
     <div class="bs-example">
       <h4 class="example-title">基础型</h4>
-      <badge :count="6" :show="true">
+      <badge :count="6">
         <a href="javascript:;" class="badge-count-example"></a>
       </badge>
       <h4 class="example-title">大数字型</h4>
-      <badge :count="99" :show="true">
+      <badge :count="99">
         <a href="javascript:;" class="badge-count-example"></a>
       </badge>
 
-      <badge :count="1000" :show="true">
+      <badge :count="1000" >
         <a href="javascript:;" class="badge-count-example"></a>
       </badge>
       <h4 class="example-title">小红点型</h4>
-        <badge :dot="true" :show="true">
+        <badge :dot="true" >
           <a href="javascript:;" class="badge-count-example"></a>
         </badge>
 
-        <badge :dot="true" :show="true">
+        <badge :dot="true" >
           <a href="javascript:;" >这是一个文字链接</a>
         </badge>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<badge :count="6" :show="true">
+<badge :count="6">
   <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
-<badge :count="99" :show="true">
+<badge :count="99">
   <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
-<badge :count="1000" :show="true">
+<badge :count="1000">
   <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
-<badge :dot="true" :show="true">
+<badge :dot="true">
   <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
-<badge :dot="true" :show="true">
+<badge :dot="true">
   <a href="javascript:;" >这是一个文字链接</a>
 </badge>
 
@@ -70,12 +70,6 @@
         <td></td>
         <td>展示的红点</td>
       </tr>
-      <tr>
-        <td>show</td>
-        <td><code>Boolean</code></td>
-        <td>false</td>
-        <td>是否展示徽标数</td>
-      </tr>
     </tbody>
   </table>
 </template>
@@ -85,7 +79,7 @@
   export default {
     data () {
       return {
-        show: true
+
       }
     },
     components: {
