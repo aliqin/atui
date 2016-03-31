@@ -53,7 +53,12 @@
         <tr>
           <td>default-addr</td>
           <td><code>Object</code></td>
-          <td><code>空对象</code></td>
+          <td><code>{
+        provinceId: '',
+        cityId: '',
+        countyId: '',
+        streetId: ''
+      }</code></td>
           <td>默认要选中的省份、城市、县/区、街道对应ID</td>
         </tr>
       </tbody>
