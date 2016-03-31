@@ -5,11 +5,11 @@
     <div class="bs-example">
       <v-form :submit="formSubmitFun">
         <form-item required label="联系人电话：" :valid-status="telStatus" label-col="4" has-icon :tip="123">
-          <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel"></v-input>
+          <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel" @click="clickFun"></v-input>
         </form-item>
         <form-item required label="验证码：" label-col="4">
           <v-col span="20">
-            <v-input type="text" placeholder="请输入验证码"></v-input>
+            <v-input disabled type="text" placeholder="请输入验证码"></v-input>
           </v-col>
           <v-col span="4"><v-button tertiary value="获取验证码"></v-button></v-col>
         </form-item>
@@ -23,10 +23,10 @@
           <v-input placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" :tip="请输入有效的电话号码">
-          <v-input error placeholder="请输入电话号码"></v-input>
+          <v-input valid-status="error" placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" :tip="请输入有效的电话号码">
-          <v-input success placeholder="请输入电话号码"></v-input>
+          <v-input valid-status="success" placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label-col="4">
           <label><input type="checkbox" />阅读并接受《用户协议》</label>
@@ -36,7 +36,9 @@
           <v-button tertiary value="重置条件"></v-button>
         </form-item>
       </v-form>
-      <address-select></address-select>
+      <address-select level="2" placeholder="请选择省市"></address-select>
+      <address-select level="3" placeholder="请选择省市区"></address-select>
+      <address-select level="4" placeholder="请选择省市区街道"></address-select>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <v-form :submit="formSubmitFun">
@@ -140,6 +142,9 @@ export default {
       if(!this.tel) {
         this.telStatus = 'error';
       }
+    },
+    clickFun () {
+      alert('click');
     }
   }
 }

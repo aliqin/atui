@@ -1,5 +1,5 @@
 <template>
-  <form class="form form-{{arragement}}" @submit="{{submit}}">
+  <form class="form" :class="classObj" @submit="{{submit}}">
     <slot></slot>
   </form>
 </template>
