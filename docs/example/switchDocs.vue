@@ -12,10 +12,7 @@
           <tr>
             <td><v-switch small></v-switch></td>
             <td><v-switch small checked :on-change="changeHandler"></v-switch>
-            <modal :show.sync="smallModal" width="400px">
-              <div slot="modal-body" class="modal-body">当前状态为{{ checked ? '开' : '关' }}</div>
-            </modal<
-            /td>
+            </td>
             <td><v-switch small disabled></v-switch></td>
           </tr>
           <tr>
@@ -32,16 +29,31 @@
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
         </v-switch></td>
-            <td><v-switch disabled checked>
+            <td><v-switch :disabled="disabled" checked>
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
-        </v-switch></td>
-            <td><v-switch disabled>
+        </v-switch>
+        </td>
+            <td><v-switch :disabled="disabled">
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
-        </v-switch></td>
+        </v-switch>
+        </td>
           </tr>
         </table>
+        <h4 class="example-title">带图标形式</h4>
+        <table class="switchDocs-demo-table">
+            <tr>
+              <td>
+                <v-switch>
+                  <span slot="checkedPart"><v-icon type="tick" size="16"></v-icon></span>
+                  <span slot="unCheckedPart"><v-icon type="close" size="12"></v-icon></span>
+                </v-switch>
+              </td>      
+            </tr>
+        </table>
+
+        <v-button large primary value="toggle disabled" @click="_clickHandler"></v-button>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
@@ -55,13 +67,17 @@
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
 </v-switch>
-<v-switch disabled checked>
+<v-switch :disabled="disabled" checked>
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
 </v-switch>
-<v-switch disabled>
+<v-switch :disabled="disabled">
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
+</v-switch>
+<v-switch>
+  <span slot="checkedPart"><v-icon type="tick" size="16"></v-icon></span>
+  <span slot="unCheckedPart"><v-icon type="close" size="12"></v-icon></span>
 </v-switch>
 </script></code></pre>
   </div>
@@ -112,7 +128,8 @@
 
 <script>
   import vSwitch from 'src/components/Switch/'
-  import Modal from 'src/components/Modal/'
+  import vButton from 'src/components/Button/'
+  import vIcon from 'src/components/Icon/'
   export default {
     data () {
       return {
@@ -122,13 +139,15 @@
       }
     },
     components: {
-      vSwitch,
-      Modal
+      vSwitch, vButton, vIcon
     },
     methods: {
       changeHandler (checked) {
         this.checked = checked;
-        this.smallModal = true;
+        alert(checked)
+      },
+      _clickHandler () {
+        this.disabled = !this.disabled
       }
     }
   }
