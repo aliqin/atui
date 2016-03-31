@@ -19,7 +19,9 @@
       <span>&times;</span>
     </button>
     <icon :type="type"></icon>
-    <slot></slot>
+    <slot>
+      {{content}}
+    </slot>
   </div>
 </template>
 
@@ -58,6 +60,11 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         type: String
       }
     },
+    data() {
+      return {
+        content:''
+      }
+    },
     watch: {
       show(val) {
         if (this._timeout) clearTimeout(this._timeout)
@@ -67,9 +74,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
       }
     },
     methods:{
-      success() {
-
-      }
+      
     }
   }
 </script>

@@ -21,9 +21,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr v-show="!dataSrouce.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">没有任何数据</td></tr>
+        <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">没有任何数据</td></tr>
         <tr v-for="
-            (rowIndex, entry) in dataSrouce
+            (rowIndex, entry) in dataSource
             | filterBy filterKey
             | orderBy sortKey sortOrders[sortKey]">
             <td v-if="rowSelection">
@@ -72,7 +72,7 @@ import Icon from '../Icon/'
 import Dropdown from '../Dropdown/'
 export default{
     props: {
-        dataSrouce: Array,
+        dataSource: Array,
         columns: Array,
         filterKey: String,
         rowSelection:Boolean,
@@ -96,7 +96,7 @@ export default{
             sortKey: '',
             isOpen:false,
             sortOrders: sortOrders,
-            data:this.dataSrouce,
+            data:this.dataSource,
             checkedKeys:[],
             checkedDataList:[],
             internalRowSelectable: function(rowData) {
@@ -120,13 +120,13 @@ export default{
             var self = this;
             // 有时候需要多选的时候传两个字段，所以再保存一份选中的数据列集合
             self.checkedDataList = [];
-            self.dataSrouce.forEach((item,i) => {
+            self.dataSource.forEach((item,i) => {
                 if(checkedKeys.indexOf(item[self.rowKey]) >=0 ) {
                     self.checkedDataList.push(item);
                 }
             });
         },
-        dataSrouce:{
+        dataSource:{
             handler () {
                 this.compileTbody();
             },
@@ -151,7 +151,7 @@ export default{
             self.checkedKeys = [];
             self.checkedDataList = [];
             if(event.target.checked) {
-                self.dataSrouce.forEach((key,i) => {
+                self.dataSource.forEach((key,i) => {
                     if(self.isRowSelectable(key)) {
                         if(key[self.rowKey]) {
                             self.checkedKeys.push(key[self.rowKey]);
@@ -172,7 +172,7 @@ export default{
             let filterSource = this.data.filter((record) =>{
                 return key.onFilter.call(this,value,record);
             })
-            this.dataSrouce = filterSource;
+            this.dataSource = filterSource;
         }
     }
 }

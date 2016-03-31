@@ -8,6 +8,10 @@
         @click="showRight = !showRight">
         点击在右边显示或隐藏
       </button>
+      <button class="btn btn-success btn-lg"
+        @click="showMessage">
+        通用顶部提示
+      </button>
 
       <button class="btn btn-danger btn-lg"
         @click="showTop = !showTop">
@@ -182,6 +186,11 @@
     },
     components: {
       Message,
+    },
+    methods:{
+      showMessage() {
+        Message.success('我成功啦～～')
+      }
     }
   }
 </script>
