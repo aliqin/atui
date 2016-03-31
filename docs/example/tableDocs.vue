@@ -4,7 +4,7 @@
     <div class="bs-example">
       <grid :data-source="gridData" :columns="gridColumns" :row-selection="true" :filter-key="filterKey" row-key="key"></grid>
     </div>
-    <input type="button" @click="changeData"/>
+    <input type="button" @click="changeData" value="改变数据源"/>
     <pre><code class="language-markup"><script type="language-mark-up">
 <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" :filter-key="filterKey"></grid>
 <script>
@@ -212,7 +212,7 @@
       onSelectChange(selectedRow){
 
       },changeData() {
-        this.gridData = data.concat(data);
+        this.gridData = this.gridData.concat(data);
       }
     }
   }
