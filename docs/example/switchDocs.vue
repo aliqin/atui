@@ -10,18 +10,18 @@
             <th>禁用</th>
           </tr>
           <tr>
-            <td><v-switch class="small"></v-switch></td>
-            <td><v-switch class="small" :checked="checked" :on-change="changeHandler"></v-switch>
+            <td><v-switch small></v-switch></td>
+            <td><v-switch small checked :on-change="changeHandler"></v-switch>
             <modal :show.sync="smallModal" width="400px">
               <div slot="modal-body" class="modal-body">当前状态为{{ checked ? '开' : '关' }}</div>
             </modal<
             /td>
-            <td><v-switch class="small" :disabled="disabled"></v-switch></td>
+            <td><v-switch small disabled></v-switch></td>
           </tr>
           <tr>
             <td><v-switch></v-switch></td>
-            <td><v-switch :checked="checked" :on-change="changeHandler"></v-switch></td>
-            <td><v-switch :disabled="disabled"></v-switch></td>
+            <td><v-switch checked :on-change="changeHandler"></v-switch></td>
+            <td><v-switch disabled></v-switch></td>
           </tr>
         </table>
         
@@ -32,11 +32,11 @@
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
         </v-switch></td>
-            <td><v-switch :disabled="disabled" :checked="true">
+            <td><v-switch disabled checked>
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
         </v-switch></td>
-            <td><v-switch :disabled="disabled">
+            <td><v-switch disabled>
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
         </v-switch></td>
@@ -45,21 +45,21 @@
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<v-switch class="small"></v-switch>
-<v-switch class="small" :checked="checked" :on-change="changeHandler"></v-switch>
-<v-switch class="small" :disabled="disabled"></v-switch>
+<v-switch small></v-switch>
+<v-switch small checked :on-change="changeHandler"></v-switch>
+<v-switch small disabled></v-switch>
 <v-switch></v-switch>
-<v-switch :checked="checked" :on-change="changeHandler"></v-switch>
-<v-switch :disabled="disabled"></v-switch>
+<v-switch checked :on-change="changeHandler"></v-switch>
+<v-switch disabled></v-switch>
 <v-switch>
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
 </v-switch>
-<v-switch :disabled="disabled" :checked="true">
+<v-switch disabled checked>
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
 </v-switch>
-<v-switch :disabled="disabled">
+<v-switch disabled>
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
 </v-switch>
@@ -89,7 +89,7 @@
         <td>当前开关是否禁用</td>
       </tr>
       <tr>
-        <td>onChange</td>
+        <td>on-change</td>
         <td><code>Function(checked)</code></td>
         <td></td>
         <td>状态变化后的回调函数，返回参数为当前checked（boolean）</td>
