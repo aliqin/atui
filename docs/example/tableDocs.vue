@@ -4,9 +4,9 @@
     <div class="bs-example">
       <grid :data-source="gridData" :columns="gridColumns" :row-selection="true" :filter-key="filterKey" row-key="key"></grid>
     </div>
-
+    <input type="button" @click="changeData"/>
     <pre><code class="language-markup"><script type="language-mark-up">
-<grid :data-source="gridData" :columns="gridColumns" rowSelection="true" row-key="key"></grid>
+<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" :filter-key="filterKey"></grid>
 <script>
   import Grid from 'src/components/Table/'
   import Icon from 'src/components/Icon/'
@@ -68,7 +68,17 @@
     name: '李秀莲大嘴哥',
     age: 32,
     address: '西湖区湖底公园123号',
-  }];
+  }]
+
+  const rowSelection = {
+    selectedRowKeys:['key'],
+    onChange: this.onSelectChange,
+    getCheckboxProps(record) {
+      return {
+        disabled: record.name === '胡彦祖'    // 配置无法勾选的列
+      }
+    }
+  }
 
   export default {
     components: {
@@ -78,7 +88,8 @@
     data() {
       return {
         gridData:data,
-        gridColumns: columns
+        gridColumns: columns,
+        rowSelection:rowSelection
       }
     }
   }
@@ -195,6 +206,13 @@
       return {
         gridData:data,
         gridColumns: columns
+      }
+    },
+    methods:{
+      onSelectChange(selectedRow){
+
+      },changeData() {
+        this.gridData = data.concat(data);
       }
     }
   }

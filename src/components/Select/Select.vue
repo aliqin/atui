@@ -1,13 +1,13 @@
 <template>
-  <div class="btn-group" v-bind:class="{open: show}">
-    <button v-el:btn type="button" class="btn btn-default dropdown-toggle"
+  <div class="select-container" v-bind:class="{open: show}">
+    <button v-el:btn type="button" class="dropdown-toggle"
       @click="toggleDropdown"
       @blur="show = (search ? show : false)"
       v-bind="{disabled: disabled}"
     >
       <span class="btn-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
       <span class="btn-content">{{ selectedItems }}</span>
-      <span class="caret"></span>
+      <span class="caret"><icon type="up"></icon></span>
     </button>
     <ul class="dropdown-menu">
       <template v-if="options.length">
@@ -28,19 +28,23 @@
 </template>
 
 <script>
-import coerceBoolean from '../utils/coerceBoolean.js'
+  import coerceBoolean from '../utils/coerceBoolean.js'
+  import Icon from '../Icon/'
   export default {
     props: {
       options: {
         type: Array,
         default() { return [] },
       },
+      width:{
+        type: Array,
+      },
       value: {
         twoWay: true
       },
       placeholder: {
         type: String,
-        default: 'Nothing Selected'
+        default: '请选择'
       },
       multiple: {
         type: Boolean,
@@ -66,6 +70,9 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         coerce: coerceBoolean,
         default: false
       }
+    },
+    components:{
+      Icon
     },
     ready() {
       if (this.value.constructor !== Array) {

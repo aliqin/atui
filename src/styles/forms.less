@@ -1,6 +1,49 @@
 //
 // Forms
 // --------------------------------------------------
+//** `<input>` background color
+@input-bg:                       #fff;
+// //** `<input disabled>` background color
+@input-bg-disabled:              @gray-lighter;
+
+// //** Text color for `<input>`s
+@input-color:                    @gray;
+// //** `<input>` border color
+@input-border:                   #ccc;
+
+@input-border-radius:            @border-radius-base;
+//** Large `.form-control` border radius
+@input-border-radius-large:      @border-radius-large;
+//** Small `.form-control` border radius
+@input-border-radius-small:      @border-radius-small;
+
+// //** Border color for inputs on focus
+@input-border-focus:             #4CACE2;
+
+// //** Placeholder text color
+@input-color-placeholder:        #ccc;
+
+// //** Default `.form-control` height
+@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+//** `.form-group` margin
+@form-group-margin-bottom:       15px;
+
+@legend-color:                   @gray-dark;
+@legend-border-color:            #e5e5e5;
+
+//** Background color for textual input addons
+@input-group-addon-bg:           @gray-lighter;
+//** Border color for textual input addons
+@input-group-addon-border-color: #ccc;
+
+//** Disabled cursor for form controls and buttons.
+@cursor-disabled:                not-allowed;
+
 
 input[type="checkbox"],
 input[type="radio"] {
