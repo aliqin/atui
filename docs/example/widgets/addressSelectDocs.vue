@@ -3,16 +3,27 @@
   <div class="bs-docs-section" id="addressselect">
     <h3 class="page-header"><a href="#addressselect" class="anchor">AddressSelect 地址选择 </a></h3>
     <div class="bs-example">
+      <h4>无默认选中</h4>
       <address-select level="2" placeholder="请选择省市"></address-select>
       <br>
       <address-select level="3" placeholder="请选择省市区"></address-select>
       <br>
       <address-select level="4" placeholder="请选择省市区街道"></address-select>
+      <br>
+      <h4>有默认选中</h4>
+      <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr1"></address-select>
+      <br>
+      <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr2"></address-select>
+      <br>
+      <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr3"></address-select>
+      <br>
+      <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr4"></address-select>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<address-select level="2" placeholder="请选择省市"></address-select>
-<address-select level="3" placeholder="请选择省市区"></address-select>
-<address-select level="4" placeholder="请选择省市区街道"></address-select>
+<address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr1"></address-select>
+<address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr2"></address-select>
+<address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr3"></address-select>
+<address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr4"></address-select>
     </script></code></pre>
     </script>
     </code>
@@ -39,6 +50,17 @@
           <td><code>4</code></td>
           <td>省份-城市-县区-街道四级地址，要显示几级</td>
         </tr>
+        <tr>
+          <td>default-addr</td>
+          <td><code>Object</code></td>
+          <td><code>{
+        provinceId: '',
+        cityId: '',
+        countyId: '',
+        streetId: ''
+      }</code></td>
+          <td>默认要选中的省份、城市、县/区、街道对应ID</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -48,6 +70,28 @@
 import AddressSelect from 'src/widget/AddressSelect/'
 
 export default {
+  data () {
+    return {
+      defaultAddr1: {
+        provinceId: '440000'
+      },
+      defaultAddr2: {
+        provinceId: '440000',
+        cityId: '440800'
+      },
+      defaultAddr3: {
+        provinceId: '440000',
+        cityId: '440800',
+        countyId: '440883'
+      },
+      defaultAddr4: {
+        provinceId: '440000',
+        cityId: '440800',
+        countyId: '440883',
+        streetId: '440883001'
+      }
+    }
+  },
   components: {
     AddressSelect
   },
