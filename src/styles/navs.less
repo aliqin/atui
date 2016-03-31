@@ -32,6 +32,7 @@
 @nav-pills-active-link-hover-bg:            @component-active-bg;
 @nav-pills-active-link-hover-color:         @component-active-color;
 
+
 // Base class
 // --------------------------------------------------
 .nav {
@@ -104,7 +105,37 @@
 // Tabs
 // -------------------------
 
-// Give the tabs something to sit on
+.tabsWrapper {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden; 
+    padding-left: 20px;
+    padding-right: 40px;
+    box-sizing: content-box;
+
+    .arrow-next ,.arrow-prev {
+      position: absolute;
+      top: -2px;
+      z-index:10;
+      cursor: pointer;
+      display: inline-block;
+      width: 20px;
+      height: 54px;
+      line-height: 54px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .arrow-prev {
+      left: 0;
+    }
+
+    .arrow-next {
+      right: -6px;
+    }
+
+
 .nav-tabs {
   border-bottom: 1px solid @nav-tabs-border-color;
   > li {
@@ -201,7 +232,7 @@
     .nav-tabs-justified();
   }
 }
-
+}
 
 
 // Pills
