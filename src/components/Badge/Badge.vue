@@ -1,7 +1,7 @@
 <template>
   <span v-if="dot" class="badge">
     <slot></slot>
-    <sup v-if="show" class="badge-dot"></sup>
+    <sup class="badge-dot"></sup>
   </span>
   <span v-else class="badge">
     <slot></slot>
