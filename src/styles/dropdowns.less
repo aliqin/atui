@@ -10,8 +10,8 @@
 
 
 @dropdown-link-color:            @gray-dark;
-@dropdown-link-hover-color:      @brand-primary;
-@dropdown-link-hover-bg:         rgba(76,172,226,0.40);
+@dropdown-link-hover-color:      #fff;
+@dropdown-link-hover-bg:         #66c6ff;
 
 @dropdown-link-active-color:     @component-active-color;
 @dropdown-link-active-bg:        @component-active-bg;
@@ -35,19 +35,15 @@
 // Dropdown arrow/caret
 .caret {
   display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top:   4px dashed;
-  border-top:   4px solid ~"\9"; // IE8
-  border-right: 4px solid transparent;
-  border-left:  4px solid transparent;
+  position: absolute;
+  top:50%;
+  transform:translateY(-50%);
+  right:10px;
 }
 
 // The dropdown wrapper (div)
 .dropup,
-.dropdown,.select {
+.dropdown {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -78,6 +74,8 @@
   border-radius: 4px;
   box-shadow : 0 6px 12px rgba(0,0,0,.175);
   background-clip: padding-box;
+  border:1px solid #d9d9d9;
+  border-radius:4px;
 
   // Aligns the dropdown menu to right
   //
