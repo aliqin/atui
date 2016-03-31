@@ -52,6 +52,10 @@ export default {
         }
     },
     watch : {
+        totalPage () {
+            this.getPageRange()
+        },
+
         currPage () {
             this.getPageRange()
             this.onChange(this.currPage)
