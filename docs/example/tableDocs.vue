@@ -2,18 +2,19 @@
   <div class="bs-docs-section" id="table">
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
-      <grid :data-srouce="gridData" :columns="gridColumns" :row-selection="true" :filter-key="filterKey" row-key="key"></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="true" :filter-key="filterKey" row-key="key"></grid>
     </div>
 
     <pre><code class="language-markup"><script type="language-mark-up">
-<grid :data-srouce="gridData" :columns="gridColumns" rowSelection="true" row-key="key"></grid>
+<grid :data-source="gridData" :columns="gridColumns" rowSelection="true" row-key="key"></grid>
 <script>
-  import grid from 'src/components/Table/'
+  import Grid from 'src/components/Table/'
+  import Icon from 'src/components/Icon/'
   const columns = [{
     title: '姓名',
     dataIndex: 'name',
     filters: [{
-      text: '姓李的',
+      text: '姓李的的',
       value: '李',
     }, {
       text: '姓胡的',
@@ -38,7 +39,14 @@
     }],
     filterMultiple: false,
     onFilter: (value, record) => record.address.indexOf(value) === 0
-  }];
+  },{
+      title: '操作',
+      key: 'operation',
+      render(text, record) {
+        return '<icon type="info" />详情'
+      }
+    }
+  ];
 
   const data = [{
     key: '1',
@@ -64,7 +72,8 @@
 
   export default {
     components: {
-      grid
+      Grid,
+      Icon
     },
     data() {
       return {
@@ -115,12 +124,13 @@
 </template>
 
 <script>
-  import grid from 'src/components/Table/'
+  import Grid from 'src/components/Table/'
+  import Icon from 'src/components/Icon/'
   const columns = [{
     title: '姓名',
     dataIndex: 'name',
     filters: [{
-      text: '姓李的',
+      text: '姓李的的',
       value: '李',
     }, {
       text: '姓胡的',
@@ -145,7 +155,14 @@
     }],
     filterMultiple: false,
     onFilter: (value, record) => record.address.indexOf(value) === 0
-  }];
+  },{
+      title: '操作',
+      key: 'operation',
+      render(text, record) {
+        return '<icon type="info" />详情'
+      }
+    }
+  ];
 
   const data = [{
     key: '1',
@@ -171,7 +188,8 @@
 
   export default {
     components: {
-      grid
+      Grid,
+      Icon
     },
     data() {
       return {
