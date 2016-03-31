@@ -1,5 +1,5 @@
 import Message from './Message.vue'
-import Vue from 'Vue'
+import Vue from 'vue'
 
 ['info','success','error','warn','loading'].forEach((type,i) =>{
 	Message[type] = function(cont,duar) {
@@ -18,7 +18,7 @@ import Vue from 'Vue'
 			$msg.setAttribute(':show','show')
 			div.appendChild($msg)
 
-			
+
 			new Vue({
 			  el: div,
 			  components:{
