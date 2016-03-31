@@ -21,19 +21,20 @@
 			disabled: {
 				type: Boolean,
 				default: false
+			},
+			small: {
+				type: Boolean,
+				default: false
 			}
 		},
 		computed: {
 			wrapClasses () {
 				return {
 					'switch'			: true,
+					'small'				: this.small,
 					'switch-checked'	: this.checked,
 					'switch-disabled'	: this.disabled
 				}
-			},
-			small () {
-				// 根据small参数来判断是否显示switch-content里面的两个slot,因为在小型switch里面承载不下超过12px大小的字体
-				return this.$el.className.indexOf('small') > -1 ? true : false;
 			}
 		},
 		methods: {

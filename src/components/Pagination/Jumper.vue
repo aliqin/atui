@@ -2,14 +2,10 @@
 	<div v-if="quickGo" class="pagination-jump">
 	    <div class="input-jumper-wrap">
 		    跳至
-		    <input type="text" :value="_current" @change="_handleChange($event)" :class="{
-		    	'input-jumper': (!mini),
-		    	'mini-input-jumper': mini}"/>
+		    <input type="text" :value="_current" @change="_handleChange($event)" :class="_inputWrapClasses"/>
 		    页
 	    </div>
-	  	<button type="button" class="btn tertiary" @click="_go" :class="{
-			'default': (!mini),
-			'small': mini}">
+	  	<button type="button" @click="_go" :class="_btnWrapClasses">
 		跳转</button>
   	</div>
 </template>
@@ -35,6 +31,23 @@
 
 		compiled () {
 			this._current = this.currPage
+		},
+
+		computed: {
+			_inputWrapClasses() {
+				return {
+					'input-jumper': !this.mini,
+		    		'mini-input-jumper': this.mini
+				}
+			},
+			_btnWrapClasses() {
+				return {
+					'btn': true,
+					'tertiary': true,
+					'default': !this.mini,
+					'small': this.mini
+				}
+			}
 		},
 
 		data () {

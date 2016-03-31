@@ -18,7 +18,7 @@ import Vue from 'vue'
 			$msg.setAttribute(':show','show')
 			div.appendChild($msg)
 
-			
+
 			new Vue({
 			  el: div,
 			  components:{

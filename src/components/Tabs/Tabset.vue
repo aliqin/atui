@@ -1,5 +1,5 @@
 <template>
-  <div class="navWrapper">
+  <div class="tabsWrapper">
     <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">
       <icon type="prev" size="12"></icon>
     </span>
@@ -63,11 +63,9 @@
         itemsWidth: []
       }
     },
-
     components: {
       Icon
     },
-
     computed: {
       wrapClasses () {
         return {
@@ -77,7 +75,6 @@
         }
       }
     },
-
     methods: {
         handleTabListClick(index, el) {
           if (!el.disabled) this.active = index
@@ -140,7 +137,7 @@
     ready () {
         const self = this    
         /**
-         * 动态去设置容器navWrapper的宽度以及内部nav的宽度，以便让它不溢出，类似于轮播图。
+         * 动态去设置容器tabsWrapper的宽度以及内部nav的宽度，以便让它不溢出，类似于轮播图。
          * 这里需要用setTimeout函数，否则获取不到dom节点。
          */        
         setTimeout( () => {
@@ -150,45 +147,3 @@
   }
 
 </script>
-
-<style lang="less" scoped>
-  .navWrapper {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden; 
-    padding-left: 20px;
-    padding-right: 40px;
-    box-sizing: content-box;
-
-    .arrow-next ,.arrow-prev {
-      position: absolute;
-      top: -2px;
-      z-index:10;
-      cursor: pointer;
-      display: inline-block;
-      width: 20px;
-      height: 54px;
-      line-height: 54px;
-      text-align: center;
-      background-color: #fff;
-    }
-
-    .arrow-prev {
-      left: 0;
-    }
-
-    .arrow-next {
-      right: -6px;
-    }
-
-  }
-  .nav-tabs {
-    margin-bottom: 15px
-  }
-
-  .nav-scroll {
-    max-width: 99999px;
-    overflow: hidden;
-  }
-</style>
