@@ -1,59 +1,63 @@
 <template>
-  <div class="address-box" @click.stop="showAddrPopFun" @blur="hideAddrPopFun">
-    <div v-if="province" class="ad-select has-select">{{selectAddr}}</div>
+  <div class="address-box" :class="classObj" @click.stop="showAddrPopFun" @blur="hideAddrPopFun">
+    <div v-if="province" class="ad-select has-select" v-html="selectAddr"></div>
     <div v-else class="ad-select">{{placeholder}}</div>
     <i class="ad-drop" :class="{'drop-down': showAddrPop}"></i>
     <div class="ad-overlay" v-show="showAddrPop">
-      <ul class="tab-list">
-        <li v-for="tab in tabList" :class="{'active': current == tab.id}" :style="{'width': (100/tabList.length)+'%'}" @click.stop.stop="navChoose(tab.id)">{{tab.name}}</li>
-      </ul>
-      <div class="tab-content">
-        <div class="province-content" v-show="current == 'province'">
-          <dl v-for="key in list.provinceList">
-            <dt>{{$key}}</dt>
-            <dd>
-              <a v-for="prov in key" title="{{prov[1]}}" attr-id="{{prov[0]}}" href="javascript:;" @click="chooseProvince(prov[0], prov[1])" :class="{'active': provinceId == prov[0]}" track-by="prov[0]">
-                <input v-if="provinceId == prov[0]" value="{{prov[1]}}" type="hidden" v-model="province" />
-                {{prov[1]}}
-              </a>
-            </dd>
-          </dl>
+      <div class="ad-overlay-container">
+        <div class="tab-list">
+          <ul>
+            <li v-for="tab in tabList" :class="{'active': current == tab.id}" :style="{'width': (100/tabList.length)+'%'}" @click.stop.stop="navChoose(tab.id)">{{tab.name}}</li>
+          </ul>
         </div>
-        <div class="city-content" v-show="current == 'city'">
-          <dl>
-            <dd>
-              <template v-for="item in list.countyList">
-                <a v-if="item[2] == provinceId" title="{{item[1][0]}}" attr-id="{{item[0]}}" href="javascript:;" @click.stop="chooseCity(item[0], item[1][0])" :class="{'active': cityId == item[0]}" track-by="item[0]">
-                  <input v-if="cityId == item[0]" value="{{item[1][0]}}" type="hidden" v-model="city" />
-                  {{item[1][0]}}
+        <div class="tab-content">
+          <div class="province-content" v-show="current == 'province'">
+            <dl v-for="key in list.provinceList">
+              <dt>{{$key}}</dt>
+              <dd>
+                <a v-for="prov in key" title="{{prov[1]}}" attr-id="{{prov[0]}}" href="javascript:;" @click="chooseProvince(prov[0], prov[1])" :class="{'active': provinceId == prov[0]}" track-by="prov[0]">
+                  <input v-if="provinceId == prov[0]" value="{{prov[1]}}" type="hidden" v-model="province" />
+                  {{prov[1]}}
                 </a>
-              </template>
-            </dd>
-          </dl>
-        </div>
-        <div class="county-content" v-if="tabList[2]" v-show="current == 'county'">
-          <dl>
-            <dd>
-              <template v-for="item in list.countyList">
-                <a v-if="item[2] == cityId" title="{{item[1][0]}}" attr-id="{{item[0]}}" href="javascript:;" @click.stop="chooseCounty(item[0], item[1][0])" :class="{'active': countyId == item[0]}" track-by="item[0]">
-                  <input v-if="countyId == item[0]" value="{{item[1][0]}}" type="hidden" v-model="county" />
-                  {{item[1][0]}}
-                </a>
-              </template>
-            </dd>
-          </dl>
-        </div>
-        <div class="street-content" v-if="tabList[3]" v-show="current == 'street'">
-          <dl>
-            <dd>
-              <template v-for="item in list.streetList">
-                <a title="{{item[0]}}" attr-id="{{$key}}" parent-id="{{item[1]}}" href="javascript:;" @click.stop="chooseStreet($key, item[0])" :class="{'active': streetId == $key}" track-by="$key">
-                  <input v-if="streetId == $key" value="{{item[0]}}" type="hidden" v-model="street" />
-                  {{item[0]}}
-                </a>
-              </template>
-            </dd>
-          </dl>
+              </dd>
+            </dl>
+          </div>
+          <div class="city-content" v-show="current == 'city'">
+            <dl>
+              <dd>
+                <template v-for="item in list.countyList">
+                  <a v-if="item[2] == provinceId" title="{{item[1][0]}}" attr-id="{{item[0]}}" href="javascript:;" @click.stop="chooseCity(item[0], item[1][0])" :class="{'active': cityId == item[0]}" track-by="item[0]">
+                    <input v-if="cityId == item[0]" value="{{item[1][0]}}" type="hidden" v-model="city" />
+                    {{item[1][0]}}
+                  </a>
+                </template>
+              </dd>
+            </dl>
+          </div>
+          <div class="county-content" v-if="tabList[2]" v-show="current == 'county'">
+            <dl>
+              <dd>
+                <template v-for="item in list.countyList">
+                  <a v-if="item[2] == cityId" title="{{item[1][0]}}" attr-id="{{item[0]}}" href="javascript:;" @click.stop="chooseCounty(item[0], item[1][0])" :class="{'active': countyId == item[0]}" track-by="item[0]">
+                    <input v-if="countyId == item[0]" value="{{item[1][0]}}" type="hidden" v-model="county" />
+                    {{item[1][0]}}
+                  </a>
+                </template>
+              </dd>
+            </dl>
+          </div>
+          <div class="street-content" v-if="tabList[3]" v-show="current == 'street'">
+            <dl>
+              <dd>
+                <template v-for="item in list.streetList">
+                  <a title="{{item[0]}}" attr-id="{{$key}}" parent-id="{{item[1]}}" href="javascript:;" @click.stop="chooseStreet($key, item[0])" :class="{'active': streetId == $key}" track-by="$key">
+                    <input v-if="streetId == $key" value="{{item[0]}}" type="hidden" v-model="street" />
+                    {{item[0]}}
+                  </a>
+                </template>
+              </dd>
+            </dl>
+          </div>
         </div>
       </div>
     </div>
@@ -80,7 +84,9 @@ export default {
         countyId: '',
         streetId: ''
       }
-    }
+    },
+    large: null,
+    small: null
   },
   data () {
     return {
@@ -110,16 +116,23 @@ export default {
         streetList: {}
       },
       province: '',
-      // provinceId: this.defaultAddr.provinceId,
       city: '',
-      // cityId: this.defaultAddr.cityId,
       county: '',
-      // countyId: this.defaultAddr.countyId,
-      street: ''
-      // streetId: this.defaultAddr.streetId
+      street: '',
+      classObj: {
+        'large': typeof(this.large) !== 'undefined',
+        'small': typeof(this.small) !== 'undefined'
+      }
     }
   },
   computed: {
+    // iconClassObj () {
+    //   return {
+    //     'large': typeof(this.large) !== 'undefined',
+    //     'small': typeof(this.small) !== 'undefined',
+    //     'drop-down': showAddrPop
+    //   };
+    // },
     provinceId () {
       return this.defaultAddr.provinceId;
     },
@@ -141,16 +154,17 @@ export default {
     },
     selectAddr () {
       let text = this.province;
+      let space = '<span>/</span>';
       if(this.city) {
-        text = text +  ' / ' + this.city;
+        text = text + space + this.city;
       }
 
       if(this.county) {
-        text = text + ' / ' + this.county;
+        text = text + space + this.county;
       }
 
       if(this.street) {
-        text = text + ' / ' + this.street;
+        text = text + space + this.street;
       }
 
       return text;
