@@ -45,7 +45,6 @@
 		position: relative;
 		display: inline-block;
 		vertical-align: top;
-
 	}
 
 	.step-head {
@@ -116,9 +115,12 @@
 		}
 		.step-tail {
 			> i {
-				background: @finish-tail-color;
+				background: @process-tail-color;
 				&:after { 
+					width: 100%;
 					background: @finish-tail-color;
+					transition: all 0.4s ease;
+					opacity: 1;
 				}
 			}
 		}
