@@ -4,9 +4,9 @@
     <h3 class="page-header"><a href="#addressselect" class="anchor">AddressSelect 地址选择 </a></h3>
     <div class="bs-example">
       <h4>无默认选中</h4>
-      <address-select level="2" placeholder="请选择省市"></address-select>
+      <address-select large level="2" placeholder="请选择省市"></address-select>
       <br>
-      <address-select level="3" placeholder="请选择省市区"></address-select>
+      <address-select small level="3" placeholder="请选择省市区"></address-select>
       <br>
       <address-select level="4" placeholder="请选择省市区街道"></address-select>
       <br>
