@@ -155,7 +155,9 @@ export default {
       // })
       // return filterSource
       // column.onFilter.call(this, value, record);
-      this.$dispatch('change', this.pagination, value,column.sorter)
+      let filters = {};
+      filters[column.dataIndex] = [value]
+      this.$dispatch('change', this.pagination, filters, column.sorter)
     }
   }
 }
