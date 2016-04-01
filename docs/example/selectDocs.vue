@@ -7,7 +7,7 @@
 Select data : {{single}}
         </pre>
       </p>
-      <v-select :value.sync="single">
+      <v-select :value.sync="single" style="width:200px;">
         <v-option value="Apple">Apple</v-option>
         <v-option value="Banana">Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
@@ -168,7 +168,7 @@ fruitOptions = [
 </template>
 
 <script>
-  import Select from 'src/components/Select/';
+  import Select from 'src/components/Select/'
 
   const Option = Select.Option;
 

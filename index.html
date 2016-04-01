@@ -5,7 +5,7 @@
   <title>阿里通信vue组件库</title>
   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> -->
 
-  <link rel="stylesheet" type="text/css" href="build/alidayu.css" id="J_ThemeCss">
+  <link rel="stylesheet" type="text/css" href="build/alitx.css" id="J_ThemeCss">
   <link rel="stylesheet" type="text/css" href="build/docs.css">
   <link rel="stylesheet" type="text/css" href="docs/assets/prism-coy.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -25,6 +25,10 @@
           <h3>UI组件</h3>
           <ul class="nav bs-docs-sidenav" id="sidenav">
             <li v-for="a in components"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+          </ul>
+          <h3>widget组件</h3>
+          <ul class="nav bs-docs-sidenav" id="sidenav">
+            <li v-for="a in widgets"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
           </ul>
           <h3>filters</h3>
           <ul class="nav bs-docs-sidenav">
@@ -80,13 +84,17 @@
         <pagination-docs></pagination-docs>
         <menu-docs></menu-docs>
       </div>
+      <h3>widget</h3>
+      <div class="widgets">
+        <address-select-docs></address-select-docs>
+      </div>
 
       <h3>过滤器</h3>
       <div class="filters">
       <phone-number-docs></phone-number-docs>
       </div>
     </div>
-    
+
   </container>
 </div>
 <footer class="bs-docs-footer">

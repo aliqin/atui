@@ -11,15 +11,15 @@
         <a href="javascript:;" class="badge-count-example"></a>
       </badge>
 
-      <badge :count="1000">
+      <badge :count="1000" >
         <a href="javascript:;" class="badge-count-example"></a>
       </badge>
       <h4 class="example-title">小红点型</h4>
-        <badge :dot="true">
+        <badge :dot="true" >
           <a href="javascript:;" class="badge-count-example"></a>
         </badge>
 
-        <badge :dot="true">
+        <badge :dot="true" >
           <a href="javascript:;" >这是一个文字链接</a>
         </badge>
     </div>
@@ -38,11 +38,11 @@
 </badge>
 
 <badge :dot="true">
-    <span class="badge-dot-example"></span>
+  <a href="javascript:;" class="badge-count-example"></a>
 </badge>
 
 <badge :dot="true">
-    <a href="javascript:;" >这是一个文字链接</a>
+  <a href="javascript:;" >这是一个文字链接</a>
 </badge>
 
 </script></code></pre>
@@ -51,10 +51,10 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>

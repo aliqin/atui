@@ -10,18 +10,15 @@
             <th>禁用</th>
           </tr>
           <tr>
-            <td><v-switch class="small"></v-switch></td>
-            <td><v-switch class="small" :checked="checked" :on-change="changeHandler"></v-switch>
-            <modal :show.sync="smallModal" width="400px">
-              <div slot="modal-body" class="modal-body">当前状态为{{ checked ? '开' : '关' }}</div>
-            </modal<
-            /td>
-            <td><v-switch class="small" :disabled="disabled"></v-switch></td>
+            <td><v-switch small></v-switch></td>
+            <td><v-switch small checked :on-change="changeHandler"></v-switch>
+            </td>
+            <td><v-switch small disabled></v-switch></td>
           </tr>
           <tr>
             <td><v-switch></v-switch></td>
-            <td><v-switch :checked="checked" :on-change="changeHandler"></v-switch></td>
-            <td><v-switch :disabled="disabled"></v-switch></td>
+            <td><v-switch checked :on-change="changeHandler"></v-switch></td>
+            <td><v-switch disabled></v-switch></td>
           </tr>
         </table>
         
@@ -32,36 +29,55 @@
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
         </v-switch></td>
-            <td><v-switch :disabled="disabled" :checked="true">
+            <td><v-switch :disabled="disabled" checked>
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
-        </v-switch></td>
+        </v-switch>
+        </td>
             <td><v-switch :disabled="disabled">
           <span slot="checkedPart">开</span>
           <span slot="unCheckedPart">关</span>
-        </v-switch></td>
+        </v-switch>
+        </td>
           </tr>
         </table>
+        <h4 class="example-title">带图标形式</h4>
+        <table class="switchDocs-demo-table">
+            <tr>
+              <td>
+                <v-switch>
+                  <span slot="checkedPart"><v-icon type="tick" size="16"></v-icon></span>
+                  <span slot="unCheckedPart"><v-icon type="close" size="12"></v-icon></span>
+                </v-switch>
+              </td>      
+            </tr>
+        </table>
+
+        <v-button large primary value="toggle disabled" @click="_clickHandler"></v-button>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<v-switch class="small"></v-switch>
-<v-switch class="small" :checked="checked" :on-change="changeHandler"></v-switch>
-<v-switch class="small" :disabled="disabled"></v-switch>
+<v-switch small></v-switch>
+<v-switch small checked :on-change="changeHandler"></v-switch>
+<v-switch small disabled></v-switch>
 <v-switch></v-switch>
-<v-switch :checked="checked" :on-change="changeHandler"></v-switch>
-<v-switch :disabled="disabled"></v-switch>
+<v-switch checked :on-change="changeHandler"></v-switch>
+<v-switch disabled></v-switch>
 <v-switch>
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
 </v-switch>
-<v-switch :disabled="disabled" :checked="true">
+<v-switch :disabled="disabled" checked>
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
 </v-switch>
 <v-switch :disabled="disabled">
   <span slot="checkedPart">开</span>
   <span slot="unCheckedPart">关</span>
+</v-switch>
+<v-switch>
+  <span slot="checkedPart"><v-icon type="tick" size="16"></v-icon></span>
+  <span slot="unCheckedPart"><v-icon type="close" size="12"></v-icon></span>
 </v-switch>
 </script></code></pre>
   </div>
@@ -89,7 +105,7 @@
         <td>当前开关是否禁用</td>
       </tr>
       <tr>
-        <td>onChange</td>
+        <td>on-change</td>
         <td><code>Function(checked)</code></td>
         <td></td>
         <td>状态变化后的回调函数，返回参数为当前checked（boolean）</td>
@@ -112,7 +128,8 @@
 
 <script>
   import vSwitch from 'src/components/Switch/'
-  import Modal from 'src/components/Modal/'
+  import vButton from 'src/components/Button/'
+  import vIcon from 'src/components/Icon/'
   export default {
     data () {
       return {
@@ -122,13 +139,15 @@
       }
     },
     components: {
-      vSwitch,
-      Modal
+      vSwitch, vButton, vIcon
     },
     methods: {
       changeHandler (checked) {
         this.checked = checked;
-        this.smallModal = true;
+        alert(checked)
+      },
+      _clickHandler () {
+        this.disabled = !this.disabled
       }
     }
   }

@@ -19,6 +19,7 @@
       <icon type="filter">过滤</icon>
       <icon type="doc">附件</icon>
       <icon type="calendar">日历</icon>
+      <icon type="tick">对勾</icon>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <!--更多icon请看这里 http://iconfont.cn/users/project?pid=77664 -->
@@ -39,6 +40,7 @@
 <icon type="filter">过滤</icon>
 <icon type="doc">附件</icon>
 <icon type="calendar">日历</icon>
+<icon type="tick">对勾</icon>
   </script></code></pre>
   <h2>Options</h2>
   </div>
