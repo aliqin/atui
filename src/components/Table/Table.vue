@@ -146,16 +146,13 @@ export default {
       // this.$dispatch('table-selectCol', col, dataId);
     },
     onFilter(value, column) {
-      if (!column.onFilter) {
-        return;
-      }
-      this.isOpen = false;
+      this.isOpen = false
       // let filterSource = this.dataSource.filter((record) => {
       //   return column.onFilter.call(this, value, record)
       // })
       // return filterSource
       // column.onFilter.call(this, value, record);
-      let filters = {};
+      let filters = {}
       filters[column.dataIndex] = [value]
       this.$dispatch('change', this.pagination, filters, column.sorter)
     }
