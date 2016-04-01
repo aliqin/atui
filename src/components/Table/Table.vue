@@ -5,15 +5,15 @@
       <th v-if="rowSelection">
           <input type="checkbox" @change="onCheckAll" />
       </th>
-      <th v-for="key in columns" :class="{'multi-col':key.multiCols}" :width="key.width">
-          {{key['title']}}
-        <template v-if="key.filters">
+      <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
+          {{column['title']}}
+        <template v-if="column.filters">
           <dropdown data-toggle="dropdown" :open="isOpen">
             <div data-toggle="dropdown">
               <icon type="filter"></icon>
             </div>
             <ul name="dropdown-menu" class="dropdown-menu">
-              <li v-for="col in key.filters"><a href="javascript:void(0);" @click="onFilter(col.value, key)">{{col.text}}</a></li>
+              <li v-for="col in column.filters"><a href="javascript:void(0);" @click="onFilter(col.value, column)">{{col.text}}</a></li>
             </ul>
           </dropdown>
         </template>
@@ -29,30 +29,30 @@
         <td v-if="rowSelection">
             <input type="checkbox" v-model="checkedKeys" :value="entry[rowKey]" disabled />
         </td>
-        <td v-for="key in columns" v-bind="{'data-key': entry[rowKey] ,'data-column':key.dataIndex,'data-value':entry[key.dataIndex]}">
-          <template v-if="key.as == 'text'">
-            <template v-if="key.render">
-                {{key.render(entry, rowIndex, this)}}
+        <td v-for="column in columns" v-bind="{'data-key': entry[rowKey] ,'data-column':column.dataIndex,'data-value':entry[column.dataIndex]}">
+          <template v-if="column.as == 'text'">
+            <template v-if="column.render">
+                {{column.render(entry, rowIndex, this)}}
             </template>
             <template v-else>
-                <template v-if="key.filter">
-                    {{{entry[key.dataIndex] | g_filter key.filter}}}
+                <template v-if="column.filter">
+                    {{{entry[column.dataIndex] | g_filter column.filter}}}
                 </template>
                 <template v-else>
-                    {{entry[key.dataIndex]}}
+                    {{entry[column.dataIndex]}}
                 </template>
             </template>
           </template>
           <template v-else>
-            <template v-if="key.render">
-                {{{key.render(entry, rowIndex, this)}}}
+            <template v-if="column.render">
+                {{{column.render(entry, rowIndex, this)}}}
             </template>
             <template v-else>
-                <template v-if="key.filter">
-                    {{{entry[key.dataIndex] | g_filter key.filter}}}
+                <template v-if="column.filter">
+                    {{{entry[column.dataIndex] | g_filter column.filter}}}
                 </template>
                 <template v-else>
-                    {{entry[key.dataIndex]}}
+                    {{entry[column.dataIndex]}}
                 </template>
             </template>
           </template>
@@ -67,11 +67,13 @@ import Icon from '../Icon/'
 import Dropdown from '../Dropdown/'
 export default {
   props: {
+    pagination:Object,
     dataSource: Array,
     columns: Array,
     filterKey: String,
     rowSelection: Object,
-    rowKey: String
+    rowKey: String,
+    onChange:Function
   },
   components: {
     Icon,
@@ -84,7 +86,6 @@ export default {
     return {
       sortKey: '',
       isOpen: false,
-      originData:null,
       sortOrders: sortOrders,
       checkedKeys: [],
       checkedDataList: [],
@@ -92,7 +93,8 @@ export default {
     }
   },
   ready () {
-    this.originData = this.dataSource
+    // this.originData = this.dataSource
+    console.log(this.onChange)
   },
   watch: {
     checkedKeys(checkedKeys) {
@@ -143,15 +145,17 @@ export default {
     onSelectColumn(col, dataId) {
       // this.$dispatch('table-selectCol', col, dataId);
     },
-    onFilter(value, key) {
-      if (!key.onFilter) {
+    onFilter(value, column) {
+      if (!column.onFilter) {
         return;
       }
       this.isOpen = false;
-      let filterSource = this.originData.filter((record) => {
-        return key.onFilter.call(this, value, record);
-      })
-      this.dataSource = filterSource;
+      // let filterSource = this.dataSource.filter((record) => {
+      //   return column.onFilter.call(this, value, record)
+      // })
+      // return filterSource
+      // column.onFilter.call(this, value, record);
+      this.$dispatch('change', this.pagination, value,column.sorter)
     }
   }
 }
