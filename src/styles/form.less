@@ -1,0 +1,161 @@
+// form组件样式
+// created by ruohuan
+
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  box-shadow: none;
+  outline: none;
+
+  &:checked {
+    background-color: #00A0FF;
+    border-color: #00A0FF;
+
+    &:after {
+      position: absolute;
+      left: 2px;
+      top: 1px;
+      width: 10px;
+      height: 10px;
+      line-height: 10px;
+      background-color: #00A0FF;
+      content: '\00ac';
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 2px;
+      text-align: center;
+      transform: rotate(135deg);
+    }
+  }
+
+  &[disabled] {
+    background-color: #f2f2f2;
+    border-color: #e6e6e6;
+    color: #ccc;
+    cursor: not-allowed;
+
+    &:checked {
+      background-color: #f2f2f2;
+      border-color: #e6e6e6;
+      color: #ccc;
+
+      &:after {
+        background-color: #f2f2f2;
+        color: #ccc;
+      }
+    }
+  }
+}
+
+
+input[type="radio"] {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 7px;
+  box-shadow: none;
+  outline: none;
+
+  &:checked {
+    border-color: #00A0FF;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      width: 6px;
+      height: 6px;
+      background-color: #00A0FF;
+      border-radius: 3px;
+    }
+  }
+
+  &[disabled] {
+    background-color: #f2f2f2;
+    border-color: #e6e6e6;
+    cursor: not-allowed;
+
+    &:checked {
+      border-color: #e6e6e6;
+
+      &:after {
+        background-color: #ccc;
+      }
+    }
+  }
+}
+
+.form {
+  font-size: 12px;
+
+  .row {
+    margin: 5px 0;
+  }
+
+  .form-item {
+    .clearfix();
+    margin-bottom: 26px;
+    color: #666;
+
+    &.form-item-with-help {
+      margin-bottom: 6px;
+    }
+  }
+
+  .status-icon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+  }
+
+  .has-success {
+    .status-icon, .status-info {
+      color: #1DBF38;
+    }
+  }
+
+  .has-error {
+    .status-icon, .status-info {
+      color: #FF5959;
+    }
+  }
+
+  .required-icon {
+    padding: 0 5px;
+    color: #ff7500;
+  }
+
+  .form-label {
+    padding: 7px 0;
+    color: #666;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  .form-input {
+    position: relative;
+    padding-right: 30px;
+  }
+
+  .status-info {
+    height: 20px;
+    line-height: 20px;
+  }
+}
