@@ -1,30 +1,44 @@
 .address-box {
   position: relative;
   width: 300px;
-  height: 30px;
-  padding: 0 26px 0 10px;
+  padding: 6px 26px 6px 10px;
   background-color: #fff;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #bfbfbf;
   border-radius: 4px;
 
+  &.large {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &.small {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
   .ad-select {
-    line-height: 30px;
     font-size: 12px;
     color: #ccc;
 
     &.has-select {
       color: #666;
     }
+
+    span {
+      padding: 0 5px 0 4px;
+      color: #d6d6d6;
+    }
   }
 
   .ad-drop {
     display: block;
     position: absolute;
-    top: 13px;
+    top: 50%;
     right: 8px;
     width: 10px;
     height: 5px;
-    background: url(//img.alicdn.com/tps/i4/T1J6x.FkFeXXX_ownc-30-40.png) -10px -25px no-repeat;
+    margin-top: -2.5px;
+    background: url(//img.alicdn.com/tps/TB11TPQMXXXXXa6XVXXXXXXXXXX-10-5.png) 0 0 no-repeat;
     transform: rotate(0);
     transition: transform 1s;
 
@@ -37,41 +51,53 @@
   .ad-overlay {
     position: absolute;
     left: -1px;
-    top: 28px;
-    width: 300px;
-    min-height: 255px;
+    top: 100%;
+    margin-top: 1px;
+    padding-top: 4px;
     background-color: #fff;
-    border: 1px solid #d9d9d9;
     z-index: 99;
   }
 
+  .ad-overlay-container {
+    width: 300px;
+    min-height: 255px;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3), 0 0px 1px 0 rgba(0, 0, 0, 0.3);
+  }
+
   .tab-list {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    padding: 0;
+    padding: 6px 5px 0 5px;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #fff;
     font-size: 12px;
+    border-bottom: 1px solid #d9d9d9;
+
+    ul {
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 0;
+      padding: 0;
+    }
 
     li {
-      // width: 25%;
       height: 40px;
       line-height: 40px;
       color: #666;
       text-align: center;
       list-style: none;
-      border: 1px solid #d9d9d9;
-      border-left: 0 none;
-      border-top: 0 none;
-
-      &:last-child {
-        border-right: 0 none;
-      }
+      border: 1px solid #fff;
+      border-top-width: 2px;
+      cursor: pointer;
 
       &.active {
-        background-color: #fff;
+        position: relative;
+        top: 1px;
         color: #00a0ff;
+        border-color: #d9d9d9;
+        border-bottom-color: #fff;
+        border-top-width: 1px;
+        border-radius: 3px;
       }
     }
   }
@@ -91,6 +117,7 @@
       width: 35px;
       line-height: 2;
       padding-right: 10px;
+      color: #666;
       font-weight: bold;
     }
 
