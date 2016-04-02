@@ -126,13 +126,6 @@ export default {
     }
   },
   computed: {
-    // iconClassObj () {
-    //   return {
-    //     'large': typeof(this.large) !== 'undefined',
-    //     'small': typeof(this.small) !== 'undefined',
-    //     'drop-down': showAddrPop
-    //   };
-    // },
     provinceId () {
       return this.defaultAddr.provinceId;
     },

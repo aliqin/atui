@@ -7,7 +7,7 @@
         {{label}}
       </label>
     </v-col>
-    <v-col :span="wrapperCol">
+    <v-col :span="wrapperCol || calcWrapperCol">
       <div class="form-input">
         <slot></slot>
         <template v-if="showIcon">
@@ -34,6 +34,10 @@
       labelCol: {
         type: String,
         default: '7'
+      },
+      wrapperCol: {
+        type: String,
+        default: ''
       },
       //验证规则
       rules: {
@@ -69,7 +73,7 @@
       showIcon () {
         return this.validStatus && typeof(this.hasIcon) !== 'undefined';
       },
-      wrapperCol() {
+      calcWrapperCol() {
         var span = new Number(24 - this.labelCol);
         return span.toString();
       }
