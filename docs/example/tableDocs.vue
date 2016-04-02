@@ -2,96 +2,11 @@
   <div class="bs-docs-section" id="table">
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="true" :filter-key="filterKey" row-key="key" @change="onTableChange"></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" :filter-key="filterKey" row-key="key" @change="onTableChange"></grid>
     </div>
     <input type="button" @click="changeData" value="改变数据源"/>
     <pre><code class="language-markup"><script type="language-mark-up">
-<grid :data-source="gridData" :columns="gridColumns" :row-selection="true" :filter-key="filterKey" row-key="key" @change="onTableChange"></grid>
-import Grid from 'src/components/Table/'
-  import Icon from 'src/components/Icon/'
-  const columns = [{
-    title: '姓名',
-    dataIndex: 'name',
-    filters: [{
-      text: '姓李的的',
-      value: '李',
-    }, {
-      text: '姓胡的',
-      value: '胡',
-    }],
-    // 指定确定筛选的条件函数
-    // 这里是名字中第一个字是 value
-    onFilter: (value, record) => record.name.indexOf(value) === 0
-  }, {
-    title: '年龄',
-    dataIndex: 'age',
-    sorter: (a, b) => a.age - b.age,
-  }, {
-    title: '地址',
-    dataIndex: 'address',
-    filters: [{
-      text: '南湖',
-      value: '南湖',
-    }, {
-      text: '西湖',
-      value: '西湖',
-    }],
-    filterMultiple: false,
-    onFilter: (value, record) => record.address.indexOf(value) === 0
-  },{
-      title: '操作',
-      key: 'operation',
-      render(text, record) {
-        return '<icon type="info" />详情'
-      }
-    }
-  ];
 
-  const data = [{
-    key: '1',
-    name: '胡斌',
-    age: 32,
-    address: '南湖区湖底公园1号',
-  }, {
-    key: '2',
-    name: '胡彦祖',
-    age: 42,
-    address: '西湖区湖底公园12号',
-  }, {
-    key: '3',
-    name: '李大嘴',
-    age: 32,
-    address: '南湖区湖底公园123号',
-  }, {
-    key: '4',
-    name: '李秀莲大嘴哥',
-    age: 32,
-    address: '西湖区湖底公园123号',
-  }];
-
-  export default {
-    components: {
-      Grid,
-      Icon
-    },
-    data() {
-      return {
-        gridData:[],
-        gridColumns: columns
-      }
-    },
-    methods:{
-      onSelectChange(selectedRow){
-
-      },
-      changeData() {
-        this.gridData = data;
-      },
-      onTableChange(i,j,k) {
-        console.log(i,j,k)
-      }
-    }
-  }
 </script></code></pre>
   <h3>Table 选项 </h3>
   <table class="table table-bordered">
@@ -195,7 +110,22 @@ import Grid from 'src/components/Table/'
     age: 32,
     address: '西湖区湖底公园123号',
   }];
-
+  const rowSelection = {
+    getCheckboxProps(record) {
+      return {
+        disabled: record.name === '胡彦祖'    // 配置无法勾选的列
+      };
+    },
+    onChange(selectedRowKeys, selectedRows) {
+      console.log(selectedRowKeys, selectedRows);
+    },
+    onSelect(record, selected, selectedRows) {
+      console.log(record, selected, selectedRows);
+    },
+    onSelectAll(selected, selectedRows, changeRows) {
+      console.log(selected, selectedRows, changeRows);
+    }
+  };
   export default {
     components: {
       Grid,
@@ -204,11 +134,12 @@ import Grid from 'src/components/Table/'
     data() {
       return {
         gridData:[],
-        gridColumns: columns
+        gridColumns: columns,
+        rowSelection:rowSelection
       }
     },
     methods:{
-      onSelectChange(selectedRow){
+      onSelectChange(selectedRow) {
 
       },
       changeData() {
