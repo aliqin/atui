@@ -2,13 +2,12 @@
 <table class="table">
   <thead>
     <tr>
-      <th v-if="rowSelection">
+      <th v-if="dataSource.length && rowSelection">
           <input type="checkbox" @change="onCheckAll" />
       </th>
       <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
           {{column['title']}}
-        <template v-if="column.filters">
-          <dropdown data-toggle="dropdown" :open="isOpen">
+          <dropdown v-if="column.filters" data-toggle="dropdown" :open="isOpen">
             <div data-toggle="dropdown">
               <icon type="filter"></icon>
             </div>
@@ -16,7 +15,6 @@
               <li v-for="col in column.filters"><a href="javascript:void(0);" @click="onFilter(col.value, column)">{{col.text}}</a></li>
             </ul>
           </dropdown>
-        </template>
       </th>
     </tr>
   </thead>
@@ -26,7 +24,7 @@
         (rowIndex, record) in dataSource
         | orderBy sortKey sortOrders[sortKey]">
         <td v-if="rowSelection">
-            <input type="checkbox" v-model="checkedKeys" :value="record[rowKey]"/>
+            <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change="onCheckOne($event,record)" />
         </td>
         <td v-for="column in columns" v-bind="{'data-key': record[rowKey] ,'data-column':column.dataIndex,'data-value':record[column.dataIndex]}">
             <template v-if="column.render">
@@ -49,17 +47,7 @@ export default {
     pagination:Object,
     dataSource: Array,
     columns: Array,
-    rowSelection: {
-      type:Object,
-      default:{
-        getCheckboxProps(record) {
-          return {};
-        },
-        onChange() {},
-        onSelect() {},
-        onSelectAll() {}
-      }
-    },
+    rowSelection: Object,
     rowKey: String,
     onChange:Function
   },
@@ -69,33 +57,30 @@ export default {
   },
   data() {
     let sortOrders = {}
-    this.columns.forEach((key) => sortOrders[key] = 1);
+    this.columns.forEach((key) => sortOrders[key] = 1)
     this.compileTbody();
     return {
       sortKey: '',
       isOpen: false,
       sortOrders: sortOrders,
-      checkedKeys: [],
-      checkedDataList: [],
+      checkedValues: [],
+      checkedRows: [],
       scope: null
     }
   },
-  ready () {
-    // this.originData = this.dataSource
-  },
-  watch: {
-    checkedKeys(checkedKeys) {
-      var me = this;
-      // 有时候需要多选的时候传两个字段，所以再保存一份选中的数据列集合
-      me.checkedDataList = [];
-      me.dataSource.forEach((item, i) => {
-        if (checkedKeys.indexOf(item[me.rowKey]) >= 0) {
-          me.checkedDataList.push(item);
-        }
+  computed: {
+    checkedValues() {
+      const me = this
+      return this.checkedRows.map((record) => {
+        return record[me.rowKey]
       })
     },
+
+  },
+  watch: {
     dataSource: {
-      handler() {
+      handler(item) {
+        console.log(item)
         this.compileTbody()
       },
       deep: true
@@ -115,24 +100,42 @@ export default {
       this.sortOrders[key] = this.sortOrders[key] * -1
     },
     onCheckAll() {
+      event.stopPropagation()
       let me = this
-      me.checkedKeys = []
-      me.checkedDataList = []
+      const changeRows = []
       const checked = event.target.checked
       if(checked) {
         me.dataSource.forEach((record,i) => {
-          if(record[me.rowKey]) {
-              me.checkedKeys.push(record[me.rowKey]);
-              me.checkedDataList.push(record);
+          if(me.checkedRows.indexOf(record) < 0) {
+            me.checkedRows.push(record)
+            changeRows.push(record)
           }
         })
+      } else {
+        me.dataSource.forEach((record,i) => {
+          if(me.checkedRows.indexOf(record) >= 0) {
+            changeRows.push(record)
+          }
+        })
+        me.checkedValues = []
+        me.checkedRows = []
       }
       if( me.rowSelection.onSelectAll ) {
-        me.rowSelection.onSelectAll.call(null,checked,me.checkedDataList)
+        me.rowSelection.onSelectAll.call(null,checked,me.checkedRows,changeRows)
       }
     },
-    onSelect(col, dataId) {
-      // this.$dispatch('table-selectCol', col, dataId);
+    onCheckOne(event,record) {
+      event.stopPropagation()
+      const me = this
+      const checked = event.target.checked
+      if(checked) {
+        me.checkedRows.push(record)
+      } else {
+        me.checkedRows = me.checkedRows.filter((item) => {
+          return record[me.rowKey]!= item[me.rowKey]
+        })
+      }
+      me.rowSelection.onSelect.call(null,record,checked,me.checkedRows)
     },
     onFilter(value, column) {
       this.isOpen = false
@@ -144,9 +147,6 @@ export default {
       filters[column.dataIndex] = [value]
       this.$dispatch('change', this.pagination, filters, column.sorter)
     }
-  },
-  compiled() {
-
   }
 }
 </script>
