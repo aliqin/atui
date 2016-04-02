@@ -139,9 +139,6 @@
       }
     },
     methods:{
-      onSelectChange(selectedRow) {
-
-      },
       changeData() {
         this.gridData = data;
       },
