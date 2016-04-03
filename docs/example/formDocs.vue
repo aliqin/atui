@@ -17,7 +17,7 @@
           <v-input type="text" placeholder="若还未上线可填无"></v-input>
         </form-item>
         <form-item required label="行业：" label-col="4">
-          <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+          <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>
         </form-item>
         <form-item required label="电话号码：" label-col="4">
           <v-input placeholder="请输入电话号码"></v-input>
@@ -52,7 +52,7 @@
     <v-input type="text" placeholder="若还未上线可填无"></v-input>
   </form-item>
   <form-item required label="行业：" label-col="4">
-    <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+    <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>
   </form-item>
   <form-item required label="电话号码：" has-icon label-col="4">
     <v-input placeholder="请输入电话号码"></v-input>

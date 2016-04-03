@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th v-if="dataSource.length && rowSelection">
-          <input type="checkbox" @change="onCheckAll" />
+          <input type="checkbox" @change.stop="onCheckAll" />
       </th>
       <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
           {{column['title']}}
@@ -24,11 +24,11 @@
         (rowIndex, record) in dataSource
         | orderBy sortKey sortOrders[sortKey]">
         <td v-if="rowSelection">
-            <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change="onCheckOne($event,record)" />
+            <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
         </td>
-        <td v-for="column in columns" v-bind="{'data-key': record[rowKey] ,'data-column':column.dataIndex,'data-value':record[column.dataIndex]}">
+        <td v-for="column in columns">
             <template v-if="column.render">
-                {{{column.render(record, rowIndex, this)}}}
+                {{{column.render(record[column.dataIndex],record)}}}
             </template>
             <template v-else>
                 {{record[column.dataIndex]}}
@@ -80,7 +80,6 @@ export default {
   watch: {
     dataSource: {
       handler(item) {
-        console.log(item)
         this.compileTbody()
       },
       deep: true
@@ -100,7 +99,6 @@ export default {
       this.sortOrders[key] = this.sortOrders[key] * -1
     },
     onCheckAll() {
-      event.stopPropagation()
       let me = this
       const changeRows = []
       const checked = event.target.checked
@@ -125,7 +123,6 @@ export default {
       }
     },
     onCheckOne(event,record) {
-      event.stopPropagation()
       const me = this
       const checked = event.target.checked
       if(checked) {
