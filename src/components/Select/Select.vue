@@ -39,7 +39,7 @@
       width:{
         type: Array,
       },
-      value: {
+      defaultValue: {
         twoWay: true
       },
       placeholder: {
@@ -69,23 +69,29 @@
         type: Boolean,
         coerce: coerceBoolean,
         default: false
+      },
+      onChange:{
+        type:Function,
+        default() {
+
+        }
       }
     },
     components:{
       Icon
     },
     ready() {
-      if (this.value.constructor !== Array) {
-        if (this.value.length === 0) {
-          this.value = []
+      if (this.defaultValue.constructor !== Array) {
+        if (this.defaultValue.length === 0) {
+          this.defaultValue = []
         } else {
-          this.value = [this.value]
+          this.defaultValue = [this.defaultValue]
         }
       } else {
-        if (!this.multiple && this.value.length > 1) {
-          this.value = this.value.slice(0, 1)
-        } else if (this.multiple && this.value.length > this.limit) {
-          this.value = this.value.slice(0, this.limit)
+        if (!this.multiple && this.defaultValue.length > 1) {
+          this.defaultValue = this.defaultValue.slice(0, 1)
+        } else if (this.multiple && this.defaultValue.length > this.limit) {
+          this.defaultValue = this.defaultValue.slice(0, this.limit)
         }
       }
     },
@@ -99,39 +105,39 @@
     computed: {
       selectedItems() {
         let foundItems = []
-        if (this.value.length) {
-          for (let item in this.value) {
-            if (typeof this.value[item] === "string") {
-              foundItems.push(this.value[item])
+        if (this.defaultValue.length) {
+          for (let item in this.defaultValue) {
+            if (typeof this.defaultValue[item] === "string") {
+              foundItems.push(this.defaultValue[item])
             }
           }
           return foundItems.join(', ')
         }
       },
       showPlaceholder() {
-        return this.value.length === 0
+        return this.defaultValue.length === 0
       }
     },
     watch: {
-      value(val) {
+      defaultValue(val) {
         if (val.length > this.limit) {
           this.showNotify = true
-          this.value.pop()
+          this.defaultValue.pop()
           setTimeout(() => this.showNotify = false, 1000)
         }
       }
     },
     methods: {
       select(v) {
-          if (this.value.indexOf(v) === -1) {
+          if (this.defaultValue.indexOf(v) === -1) {
             if (this.multiple) {
-              this.value.push(v)
+              this.defaultValue.push(v)
             } else {
-              this.value = [v]
+              this.defaultValue = [v]
             }
           } else {
             if (this.multiple) {
-              this.value.$remove(v)
+              this.defaultValue.$remove(v)
             }
           }
           if (this.closeOnSelect) {
@@ -140,6 +146,11 @@
       },
       toggleDropdown() {
         this.show = !this.show
+      }
+    },
+    events:{
+      change(text,value) {
+        this.onChange(text,value)
       }
     }
   }

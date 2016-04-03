@@ -1,18 +1,28 @@
 <template>
-  <li style="position:relative">
-    <a @mousedown.prevent="handleClick" style="cursor:pointer">
-      <span v-el:v><slot></slot></span>
-      <span class="glyphicon glyphicon-ok check-mark" v-show="chosen"></span>
+  <li :class="{disabled:disabled}">
+    <a @mousedown.prevent="handleClick">
+      <span v-el:content><slot></slot></span>
+      <icon type="tick" v-show="chosen"></icon>
     </a>
   </li>
 </template>
 
 <script>
+  import coerceBoolean from '../utils/coerceBoolean.js'
+  import Icon from '../Icon/'
   export default {
     props: {
       value: {
         type: String
+      },
+      disabled:{
+        type: Boolean,
+        coerce: coerceBoolean,
+        default:false
       }
+    },
+    components:{
+      Icon
     },
     data() {
       return {
@@ -21,19 +31,23 @@
     },
     computed: {
       chosen() {
-        return this.$parent.value.indexOf(this.value) !== -1
+        return this.$parent.defaultValue.indexOf(this.value) !== -1
       }
     },
     methods: {
       handleClick() {
+        if(this.disabled) {
+          return;
+        }
         const parent = this.$parent
         if (parent.multiple) {
-          const index = parent.value.indexOf(this.value)
-          index === -1 ? parent.value.push(this.value) : parent.value.splice(index, 1)
+          const index = parent.defaultValue.indexOf(this.value)
+          index === -1 ? parent.defaultValue.push(this.value) : parent.defaultValue.splice(index, 1)
         } else {
-          parent.value = [this.value]
+          parent.defaultValue = [this.value]
           parent.show = false
         }
+        this.$dispatch('change',this.$els.content.innerHTML,this.value)
       }
     }
   }

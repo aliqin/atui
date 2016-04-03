@@ -4,7 +4,7 @@
     <div class="bs-example">
       <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" :filter-key="filterKey" row-key="key" @change="onTableChange"></grid>
     </div>
-    <input type="button" @click="changeData" value="改变数据源"/>
+    <input type="button" @click="changeData" value="填充表格数据"/>
     <pre><code class="language-markup"><script type="language-mark-up">
 
 </script></code></pre>
@@ -61,8 +61,6 @@
       text: '姓胡的',
       value: '胡',
     }],
-    // 指定确定筛选的条件函数
-    // 这里是名字中第一个字是 value
     onFilter: (value, record) => record.name.indexOf(value) === 0
   }, {
     title: '年龄',
@@ -84,7 +82,7 @@
       title: '操作',
       key: 'operation',
       render(text, record) {
-        return '<icon type="info" />详情'
+        return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
       }
     }
   ];
