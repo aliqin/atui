@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import AddressSelect from 'src/widget/AddressSelect/'
+import {AddressSelect} from 'src/widget/'
 
 export default {
   data () {

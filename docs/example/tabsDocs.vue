@@ -220,7 +220,7 @@
 </template>
 
 <script>
-  import Tabs from 'src/components/Tabs/'
+  import {Tabs} from 'src/'
   const {Tab} = Tabs
 
   export default {

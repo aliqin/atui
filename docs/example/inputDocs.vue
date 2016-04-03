@@ -86,11 +86,10 @@
 </template>
 
 <script>
-import Input from 'src/components/Input/';
-const vInput = Input;
+import {Input} from 'src/'
 export default{
   components: {
-    vInput
+    vInput:Input
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="steps">
-    <h3 class="page-header"><a href="#steps" class="anchor">Steps 步骤条</a></h3>  
+    <h3 class="page-header"><a href="#steps" class="anchor">Steps 步骤条</a></h3>
     <div class="bs-example">
         <h4 class="example-title">基础型</h4>
         <v-steps :current="current">
@@ -90,7 +90,7 @@
 </template>
 
 <script>
-  import Steps from 'src/components/Steps/'
+  import {Steps} from 'src/'
   const {Step} = Steps
   export default {
     data () {

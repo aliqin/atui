@@ -5,7 +5,8 @@ delete config.devtool
 
 config.entry = {
 	Vue: ['vue'],
-	VueComponent: ['./src/index.js']
+	VueComponent: ['./src/index.js'],
+  VueWidget:['./src/widget/index.js']
 }
 
 config.output = {

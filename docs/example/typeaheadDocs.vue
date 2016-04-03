@@ -149,12 +149,11 @@ new Vue {
 </template>
 
 <script>
-  import typeahead from 'src/components/Typeahead.vue'
-  import tooltip from 'src/components/Tooltip/'
+  import {Typeahead,Tooltip} from 'src/'
   export default {
     components: {
-      typeahead,
-      tooltip
+      Typeahead,
+      Tooltip
     },
     partials: {
     },

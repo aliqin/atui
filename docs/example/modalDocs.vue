@@ -157,7 +157,7 @@
 </template>
 
 <script>
-  import Modal from 'src/components/Modal/'
+  import {Modal} from 'src/'
   export default {
     data() {
       return {
