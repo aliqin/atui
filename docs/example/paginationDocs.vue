@@ -85,6 +85,15 @@
       </tr>
     </tbody>
   </table>
+  <br>
+  <strong>注：</strong>pagination组件会监听当前currPage的变化，当其发生变化时pagination组件会向上派发一个回调事件，名字叫pageChange，回调参数就是当前页以及pagination的id，需要在引用pagination的当前文件里面的events对象里将其加入进去.
+  <pre><code class="language-markup"><script type="language-mark-up">
+    events: {
+      pageChange (page, id) {
+          
+      }
+    }
+  </script></code></pre>
 </template>
 
 <script>
@@ -103,9 +112,12 @@
       Pagination
     },
     events: {
-      pageChange () {
+      pageChange (page, id) {
 
       }
+    },
+    ready () {
+
     }
   }
 </script>

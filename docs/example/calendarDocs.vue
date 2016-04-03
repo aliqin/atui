@@ -11,7 +11,7 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
       :format="format.toString()" :show-reset-button="reset"></Calendar>
       <h4>禁用一周的某日</h4>
 
-      <v-select multiple :value.sync="disabled">
+      <v-select multiple :default-value.sync="disabled">
   <v-option value="0">0</v-option>
   <v-option value="1">1</v-option>
   <v-option value="2">2</v-option>
@@ -22,7 +22,7 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
       </v-select>
 
       <h4>格式化</h4>
-      <v-select :value.sync="format" >
+      <v-select :default-value.sync="format" >
         <v-option value="yyyy,MM,dd">yyyy,MM,dd</v-option>
         <v-option value="yyyy-MM-dd">yyyy-MM-dd</v-option>
         <v-option value="yyyy.MM.dd">yyyy.MM.dd</v-option>
@@ -40,7 +40,7 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
   :format="format"
   :show-reset-button="reset">
 </calendar>
-<v-select multiple :value.sync="disabled" size=5>
+<v-select multiple :default-value.sync="disabled" size=5>
   <v-option value="0">0</v-option>
   <v-option value="1">1</v-option>
   <v-option value="2">2</v-option>
@@ -49,7 +49,7 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
   <v-option value="5">5</v-option>
   <v-option value="6">6</v-option>
 </v-select>
-<v-select  :value.sync="format">
+<v-select  :default-value.sync="format">
   <v-option value="yyyy,MM,dd">yyyy,MM,dd</v-option>
   <v-option value="yyyy-MM-dd">yyyy-MM-dd</v-option>
   <v-option value="yyyy.MM.dd">yyyy.MM.dd</v-option>

@@ -20,8 +20,8 @@
       <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr4"></address-select>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr1"></address-select>
-<address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr2"></address-select>
+<address-select large level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr1"></address-select>
+<address-select small level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr2"></address-select>
 <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr3"></address-select>
 <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr4"></address-select>
     </script></code></pre>
@@ -49,6 +49,18 @@
           <td><code>String</code></td>
           <td><code>4</code></td>
           <td>省份-城市-县区-街道四级地址，要显示几级</td>
+        </tr>
+        <tr>
+          <td>large</td>
+          <td></td>
+          <td></td>
+          <td>组件尺寸，大</td>
+        </tr>
+        <tr>
+          <td>small</td>
+          <td></td>
+          <td></td>
+          <td>组件尺寸，小</td>
         </tr>
         <tr>
           <td>default-addr</td>

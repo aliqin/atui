@@ -7,7 +7,7 @@
         <form-item required label="联系人电话：" :valid-status="telStatus" label-col="4" has-icon :tip="123">
           <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel" @click="clickFun"></v-input>
         </form-item>
-        <form-item required label="验证码：" label-col="4">
+        <form-item required label="验证码：" label-col="4" wrapper-col="4">
           <v-col span="20">
             <v-input disabled type="text" placeholder="请输入验证码"></v-input>
           </v-col>
@@ -17,7 +17,7 @@
           <v-input type="text" placeholder="若还未上线可填无"></v-input>
         </form-item>
         <form-item required label="行业：" label-col="4">
-          <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+          <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>
         </form-item>
         <form-item required label="电话号码：" label-col="4">
           <v-input placeholder="请输入电话号码"></v-input>
@@ -52,7 +52,7 @@
     <v-input type="text" placeholder="若还未上线可填无"></v-input>
   </form-item>
   <form-item required label="行业：" label-col="4">
-    <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+    <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>
   </form-item>
   <form-item required label="电话号码：" has-icon label-col="4">
     <v-input placeholder="请输入电话号码"></v-input>
