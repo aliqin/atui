@@ -135,11 +135,11 @@ upload文件上传
 </template>
 
 <script>
-  import uploadFile from 'src/components/Uploader/'
+  import UploadFile from 'src/'
 
   export default {
     components: {
-      fileUpload: uploadFile
+      FileUpload: UploadFile
     },
     data() {
       return {

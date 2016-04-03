@@ -78,7 +78,7 @@
 </template>
 
 <script>
-  import Menu from 'src/components/menu/'
+  import {Menu} from 'src/'
   const { SubMenu, MenuItem } = Menu
   export default {
     data() {

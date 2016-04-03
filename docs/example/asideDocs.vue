@@ -98,7 +98,7 @@ class="btn btn-danger btn-lg"
 </template>
 
 <script>
-  import sidebar from 'src/components/Aside.vue'
+  import {sidebar} from 'src/'
   export default {
     components: {
       sidebar

@@ -75,7 +75,7 @@
 </template>
 
 <script>
-  import badge from 'src/components/Badge/'
+  import {badge} from 'src/'
   export default {
     data () {
       return {
