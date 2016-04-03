@@ -107,7 +107,7 @@
 </template>
 
 <script>
-  import popover from 'src/components/Popover/'
+  import {Popover} from 'src/'
   export default {
     data() {
       return {
@@ -116,7 +116,7 @@
       }
     },
     components: {
-      popover
+      Popover
     }
   }
 </script>

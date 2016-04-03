@@ -61,7 +61,7 @@
 </template>
 
 <script>
-  import vTag from 'src/components/Tag/'
+  import {Tag as vTag} from 'src/'
   export default {
     data () {
       return {

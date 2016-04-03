@@ -1,24 +1,24 @@
 <template>
   <div class="bs-docs-section" id="pagination">
-    <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>  
+    <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>
     <div class="bs-example">
       <h4 class="example-title">完全版</h4>
-      <pagination :total-page.sync="totalPage", 
-                  :curr-page.sync="currPage", 
+      <pagination :total-page.sync="totalPage",
+                  :curr-page.sync="currPage",
                   :total="total",
                   :show-jumper="true",
                   :show-size-changer="true">
       </pagination>
       <h4 class="example-title">迷你版</h4>
-      <pagination :total-page.sync="totalPage", 
-                  :curr-page.sync="currPage", 
+      <pagination :total-page.sync="totalPage",
+                  :curr-page.sync="currPage",
                   :total="total",
                   :show-jumper="true",
                   :mini="true">
       </pagination>
       <h4 class="example-title">精简版</h4>
-      <pagination :total-page.sync="totalPage", 
-                  :curr-page.sync="currPage", 
+      <pagination :total-page.sync="totalPage",
+                  :curr-page.sync="currPage",
                   :total="total",
                   :simple="true">
       </pagination>
@@ -90,14 +90,14 @@
   <pre><code class="language-markup"><script type="language-mark-up">
     events: {
       pageChange (page, id) {
-          
+
       }
     }
   </script></code></pre>
 </template>
 
 <script>
-  import Pagination from 'src/components/Pagination/'
+  import {Pagination} from 'src/'
   export default {
     data () {
       return {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
-  <link rel="stylesheet" href="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/alidayu.css"/>
+  <link rel="stylesheet" href="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/tmallwt.css"/>
   <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/vue.js"></script>
   <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/VueComponent.js"></script>
 </head>
@@ -26,7 +26,7 @@
       <li><a href="#">其它</a></li>
     </ul>
   </dropdown>
-  
+
   <br/> <br/> <br/>
   <steps :current="current">
       <step title="已完成"></step>
@@ -39,7 +39,7 @@
    <badge :count="6">
       <a href="javascript:;" class="badge-count-example"></a>
     </badge>
-    
+
     <br/> <br/> <br/>
     <tabs>
     <tab header="系统短信签名">
@@ -52,9 +52,16 @@
       three
     </tab>
   </tabs>
-    
+
     <br/> <br/> <br/>
-    
+    <v-select default-value="Apple">
+    <v-option value="Apple">Apple</v-option>
+    <v-option value="Banana">Banana</v-option>
+    <v-option value="Cherry">Cherry</v-option>
+    <v-option value="Orange">Orange</v-option>
+    <v-option value="Grape">Grape</v-option>
+  </v-select>
+    <br/> <br/> <br/>
     <breadcrumb>
       <breadcrumb-item :href="href">一级类目</breadcrumb-item>
       <breadcrumb-item :href="href">二级类目</breadcrumb-item>
@@ -92,7 +99,7 @@
     <v-input type="text" placeholder="若还未上线可填无"></v-input>
   </form-item>
   <form-item required label="行业：" label-col="4">
-    <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+    <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>
   </form-item>
   <form-item required label="电话号码：" has-icon label-col="4">
     <v-input placeholder="请输入电话号码"></v-input>
@@ -112,7 +119,7 @@
   </form-item>
 </v-form>
 
-    
+
 
   </div>
   <script>
@@ -123,6 +130,8 @@
         vCol:VueComponent.Layout.Col,
         vButton:VueComponent.Button,
         vInput:VueComponent.Input,
+        vSelect:VueComponent.Select,
+        vOption:VueComponent.Select.Option,
         dropdown:VueComponent.Dropdown,
         steps:VueComponent.Steps,
         step:VueComponent.Steps.Step,
