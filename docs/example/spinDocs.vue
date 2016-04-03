@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import Spin from 'src/components/Spin/'
+  import {Spin} from 'src/'
   export default {
     components: {
       Spin

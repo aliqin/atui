@@ -126,7 +126,7 @@
   }
 </style>
 <script>
-  import Layout from 'src/components/Layout/'
+  import {Layout} from 'src/'
   const vRow = Layout.Row
   const vCol = Layout.Col
   export default {

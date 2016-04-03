@@ -92,7 +92,7 @@
 </template>
 
 <script>
-  import dropdown from 'src/components/Dropdown/'
+  import {dropdown} from 'src/'
   export default {
     components: {
       dropdown

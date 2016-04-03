@@ -103,10 +103,7 @@ Radio value: {{radioValue}}
 </template>
 
 <script>
-  import radioGroup from 'src/components/radioGroup.vue'
-  import radio from 'src/components/radioBtn.vue'
-  import checkboxGroup from 'src/components/checkboxGroup.vue'
-  import checkbox from 'src/components/checkboxBtn.vue'
+  import {radioGroup,radio,checkboxGroup,checkbox} from 'src/'
 
   export default {
     components: {

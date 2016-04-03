@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="switch">
-    <h3 class="page-header"><a href="#switch" class="anchor">Switch 开关</a></h3>  
+    <h3 class="page-header"><a href="#switch" class="anchor">Switch 开关</a></h3>
     <div class="bs-example">
       <h4 class="example-title" >基本类型</h4>
         <table class="switchDocs-demo-table">
@@ -21,7 +21,7 @@
             <td><v-switch disabled></v-switch></td>
           </tr>
         </table>
-        
+
       <h4 class="example-title">带文字形式</h4>
         <table class="switchDocs-demo-table">
           <tr>
@@ -49,7 +49,7 @@
                   <span slot="checkedPart"><v-icon type="tick" size="16"></v-icon></span>
                   <span slot="unCheckedPart"><v-icon type="close" size="12"></v-icon></span>
                 </v-switch>
-              </td>      
+              </td>
             </tr>
         </table>
 
@@ -127,9 +127,8 @@
 </template>
 
 <script>
-  import vSwitch from 'src/components/Switch/'
-  import vButton from 'src/components/Button/'
-  import vIcon from 'src/components/Icon/'
+  import {Switch,Button,Icon} from 'src/'
+
   export default {
     data () {
       return {
@@ -139,7 +138,9 @@
       }
     },
     components: {
-      vSwitch, vButton, vIcon
+      vSwitch:Switch,
+      vButton:Button,
+      vIcon:Icon
     },
     methods: {
       changeHandler (checked) {

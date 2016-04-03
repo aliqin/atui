@@ -49,8 +49,7 @@
 </template>
 
 <script>
-  import Grid from 'src/components/Table/'
-  import Icon from 'src/components/Icon/'
+  import {Grid,Icon} from 'src/'
   const columns = [{
     title: '姓名',
     dataIndex: 'name',

@@ -83,26 +83,22 @@
 // import FromInput from 'src/components/FormInput.vue';
 // import fromValid from 'src/plugins/form-valid.js';
 // Vue.use(fromValid);
-import vInput from 'src/components/Input/';
-import vButton from 'src/components/Button/';
-import vSelect from 'src/components/Select/';
-import vForm from 'src/components/Form/';
-import Layout from 'src/components/Layout/';
+import {Input,Button,Select,Form,Layout} from 'src/'
 
-const vOption = vSelect.Option;
-const FormItem = vForm.FormItem;
-const vCol = Layout.Col;
-const vRow = Layout.Row;
+const Option = Select.Option;
+const FormItem = Form.FormItem;
+const Col = Layout.Col;
+const Row = Layout.Row;
 
 export default {
   components: {
-    vCol,
-    vRow,
-    vInput,
-    vButton,
-    vSelect,
-    vOption,
-    vForm,
+    vCol:Col,
+    vRow:Row,
+    vInput:Input,
+    vButton:Button,
+    vSelect:Select,
+    vOption:Option,
+    vForm:Form,
     FormItem
     // FormInput
   },

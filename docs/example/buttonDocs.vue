@@ -95,7 +95,7 @@
 </template>
 
 <script>
-import Button from '../../src/components/Button/';
+import {Button} from 'src/';
 const vButton = Button;
 export default{
   components: {
