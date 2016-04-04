@@ -4,4 +4,3 @@ const VueWidget = {
   AddressSelect
 }
 module.exports = VueWidget
-
