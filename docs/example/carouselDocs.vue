@@ -3,43 +3,43 @@
     <h3 class="page-header"><a href="#caoursel" class="anchor">Carousel 走马灯</a></h3>
     <div class="bs-example">
       <carousel indicators="true" controls="true">
-        <slider>
+        <slide>
           <img style="width:100%" src="https://img.alicdn.com/tps/TB1Pq31KpXXXXbFXXXXXXXXXXXX-888-400.png">
           <div class="carousel-caption">
            <h3>Slide #1</h3>
            <p>sunt in culpa qui officia deserunt mollit a.</p>
          </div>
-        </slider>
-        <slider>
+        </slide>
+        <slide>
           <img style="width:100%" src="https://img.alicdn.com/tps/TB1ih3pJXXXXXbZXVXXXXXXXXXX-888-400.png">
           <div class="carousel-caption">
            <h3>Slide #2</h3>
            <p>sunt in culpa qui officia deserunt mollit a.</p>
          </div>
-        </slider>
-        <slider>
+        </slide>
+        <slide>
           <img style="width:100%" src="https://img.alicdn.com/tps/TB1fEtIKpXXXXbEXVXXXXXXXXXX-888-400.jpg">
           <div class="carousel-caption">
            <h3>Slide #3</h3>
            <p>sunt in culpa qui officia deserunt mollit a.</p>
          </div>
-        </slider>
+        </slide>
       </carousel>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <carousel>
-  <slider>
+  <slide>
     <img src="http://placehold.it/1200x400?text=one">
       <div class="carousel-caption">
        ...
      </div>
-  </slider>
-  <slider>
+  </slide>
+  <slide>
     <img src="http://placehold.it/1200x400?text=two">
-  </slider>
-  <slider>
+  </slide>
+  <slide>
     <img src="http://placehold.it/1200x400?text=three">
-  </slider>
+  </slide>
 </carousel>
 </script></code></pre>
 
@@ -80,12 +80,12 @@
 </template>
 
 <script>
-  import carousel from 'src/components/Carousel/'
-  import slider from 'src/components/Slider.vue'
+  import {Carousel} from 'src/'
+  const Slide = Carousel.Slide
   export default {
     components: {
-      carousel,
-      slider
+      Carousel,
+      Slide
     }
   }
 </script>

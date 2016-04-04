@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="breadcrumb">
-    <h3 class="page-header"><a href="#breadcrumb" class="anchor">Breadcrumb 面包屑</a></h3>  
+    <h3 class="page-header"><a href="#breadcrumb" class="anchor">Breadcrumb 面包屑</a></h3>
     <div class="bs-example">
       <h4 class="example-title">基本样式</h4>
       <breadcrumb>
@@ -73,9 +73,9 @@
 </template>
 
 <script>
-  import Breadcrumb  from 'src/components/Breadcrumb/'
+  import {Breadcrumb}  from 'src/'
   const {BreadcrumbItem} = Breadcrumb
-  
+
   export default {
     data () {
       return {

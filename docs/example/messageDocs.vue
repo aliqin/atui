@@ -176,7 +176,7 @@
 </template>
 
 <script>
-  import Message from 'src/components/Message/'
+  import {Message} from 'src/'
   export default {
     data() {
       return {

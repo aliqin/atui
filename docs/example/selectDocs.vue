@@ -207,8 +207,7 @@
 </template>
 
 <script>
-  import Select from 'src/components/Select/'
-  import Icon from 'src/components/Icon/'
+  import {Select,Icon} from 'src/'
   const Option = Select.Option
 
   export default {

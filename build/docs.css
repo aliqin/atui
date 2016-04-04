@@ -136,32 +136,6 @@
 .file-upload .upload-rate a:hover {
   text-decoration: none;
 }
-.example-title {
-  margin: 20px 0;
-}
-.switchDocs-demo-table {
-  border: none;
-  width: 50%;
-}
-.switchDocs-demo-table th {
-  text-align: left;
-}
-.switchDocs-demo-table td {
-  text-align: left;
-  padding: 10px;
-  padding-left: 0;
-}
-.badge-count-example,
-.badge-dot-example {
-  width: 42px;
-  height: 42px;
-  background-color: #eee;
-  display: inline-block;
-  border-radius: 6px;
-}
-.example-title {
-  margin: 20px 0;
-}
 /*!
  * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
@@ -413,6 +387,32 @@
     -webkit-transform: translate(220%, 220%);
     transform: translate(220%, 220%);
   }
+}
+.example-title {
+  margin: 20px 0;
+}
+.switchDocs-demo-table {
+  border: none;
+  width: 50%;
+}
+.switchDocs-demo-table th {
+  text-align: left;
+}
+.switchDocs-demo-table td {
+  text-align: left;
+  padding: 10px;
+  padding-left: 0;
+}
+.badge-count-example,
+.badge-dot-example {
+  width: 42px;
+  height: 42px;
+  background-color: #eee;
+  display: inline-block;
+  border-radius: 6px;
+}
+.example-title {
+  margin: 20px 0;
 }
 .example-title {
   margin: 20px 0;

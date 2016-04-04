@@ -1,6 +1,6 @@
 <template>
-  <div class="bs-docs-section" id="Calendar">
-    <h1 class="page-header"><a href="#Calendar" class="anchor">Calendar 日历控件</a></h1>
+  <div class="bs-docs-section" id="calendar">
+    <h1 class="page-header"><a href="#calendar" class="anchor">Calendar 日历控件</a></h1>
     <div class="bs-example">
       <p>
         <pre>
@@ -105,16 +105,15 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
 </template>
 
 <script>
-  import Calendar from 'src/components/Calendar/'
-  import vSelect from 'src/components/Select/'
+  import {Calendar,Select} from 'src/'
 
-  const vOption = vSelect.Option;
+  const Option = Select.Option;
 
   export default {
     components: {
       Calendar,
-      vSelect,
-      vOption
+      vSelect:Select,
+      vOption:Option
     },
     data() {
       return {
