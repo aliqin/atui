@@ -40,7 +40,8 @@
         type: Array,
       },
       defaultValue: {
-        twoWay: true
+        twoWay: true,
+        default:''
       },
       placeholder: {
         type: String,
