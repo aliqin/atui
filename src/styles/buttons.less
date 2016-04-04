@@ -101,6 +101,12 @@
 // Category button
 // ----------------------------------------------------
 
+.disabled() {
+  background-color: #f2f2f2;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
 .btn {
   &.primary {
     background-color: @btn-primary-bg;
@@ -108,6 +114,10 @@
 
     &:hover {
       background-color: @btn-primary-hover-bg;
+
+      &:focus, &:active {
+        background-color: @btn-primary-click-bg;
+      }
     }
 
     &:focus, &:active {
@@ -163,18 +173,34 @@
     }
   }
 
-  &.disabled {
-    background-color: #f2f2f2;
-    color: #ccc;
-    cursor: not-allowed;
-  }
-
   &.text {
     background-color: transparent;
     color: #666;
 
     &:hover, &:focus, &:active {
       background-color: #f2faff;
+    }
+
+    &:hover {
+      &:focus, &:active {
+        background-color: #f2faff;
+      }
+    }
+  }
+
+  &.disabled {
+    .disabled();
+
+    &:hover {
+      .disabled();
+
+      &:focus, &:focus {
+        .disabled();
+      }
+    }
+
+    &:focus, &:focus {
+      .disabled();
     }
   }
 }
