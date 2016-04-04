@@ -1,5 +1,7 @@
 <template>
-  <button type="{{type}}" class="btn" :class="btnClassObj">{{{value}}}</button>
+  <button type="{{type}}" class="btn" :class="btnClassObj">{{value}}
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -13,7 +15,7 @@
       small: null,
       value: {
         type: String,
-        default: '确定'
+        default: ''
       },
       primary: null,
       secondary: null,
