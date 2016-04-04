@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/tmallwt.css"/>
   <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/vue.js"></script>
   <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/VueComponent.js"></script>
+  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/VueWidget.js"></script>
 </head>
 <body>
   <div id="container" style="margin:10px">
@@ -108,7 +109,7 @@
     <v-input error placeholder="请输入电话号码"></v-input>
   </form-item>
   <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tip="请输入有效的电话号码">
-    <v-input success placeholder="请输入电话号码"></v-input>
+    <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr2"></address-select>
   </form-item>
   <form-item required label-col="4">
     <label><input type="checkbox" />阅读并接受《用户协议》</label>
@@ -133,16 +134,17 @@
         vSelect:VueComponent.Select,
         vOption:VueComponent.Select.Option,
         dropdown:VueComponent.Dropdown,
-        steps:VueComponent.Steps,
-        step:VueComponent.Steps.Step,
-        tabs:VueComponent.Tabs,
-        tab:VueComponent.Tabs.Tab,
-        badge:VueComponent.Badge,
-        tag:VueComponent.Tag,
-        breadcrumb:VueComponent.Breadcrumb,
+        Steps:VueComponent.Steps,
+        Step:VueComponent.Steps.Step,
+        Tabs:VueComponent.Tabs,
+        Tab:VueComponent.Tabs.Tab,
+        Badge:VueComponent.Badge,
+        Tag:VueComponent.Tag,
+        Breadcrumb:VueComponent.Breadcrumb,
         BreadcrumbItem:VueComponent.Breadcrumb.BreadcrumbItem,
-        vForm:VueComponent.Form,
-        FormItem:VueComponent.Form.FormItem
+        VForm:VueComponent.Form,
+        FormItem:VueComponent.Form.FormItem,
+        AddressSelect:VueWidget.AddressSelect,
       },
       data: {
         message: 'Hello Vue.js!'
