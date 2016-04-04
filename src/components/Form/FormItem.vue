@@ -1,32 +1,28 @@
 <template>
-<v-row>
-  <div class="form-item" :class="classObj">
-    <v-col :span="labelCol" class="form-label">
-      <label v-if="label">
-        <span v-if="isRequired" class="required-icon">*</span>
-        {{label}}
-      </label>
-    </v-col>
-    <v-col :span="wrapperCol || calcWrapperCol">
-      <div class="form-input">
-        <slot></slot>
-        <template v-if="showIcon">
-          <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
-          <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
-          <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
-          <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
-        </template>
-      </div>
-      <div v-if="tip && validStatus" class="status-info">{{tip}}</div>
-    </v-col>
-  </div>
-</v-row>
+<div class="form-item" :class="classObj">
+  <v-col :span="labelCol">
+    <label v-if="label" class="form-label">
+      <span v-if="isRequired" class="required-icon">*</span>
+      {{label}}
+    </label>
+  </v-col>
+  <v-col :span="wrapperCol || calcWrapperCol">
+    <div class="form-input">
+      <slot></slot>
+      <template v-if="showIcon">
+        <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
+        <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
+        <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
+        <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
+      </template>
+    </div>
+    <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
+  </v-col>
+</div>
 </template>
 <script>
-
   import Layout from 'src/components/Layout/';
   import Icon from 'src/components/Icon/';
-  const vRow = Layout.Row;
   const vCol = Layout.Col;
   export default {
     props: {
@@ -47,7 +43,10 @@
       //是否必填
       required: null,
       //提示信息，如不设置，会根据验证规则自动生成
-      tip: String,
+      tips: {
+        type: String,
+        default: ''
+      },
       //额外提示信息，设置后，会和提示信息一起显示
       extra: String,
       //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
@@ -62,7 +61,7 @@
     computed: {
       classObj () {
         return {
-          'form-item-with-help': this.validStatus,
+          // 'form-item-with-help': this.validStatus,
           'has-error': this.validStatus == 'error',
           'has-success': this.validStatus == 'success'
         };
@@ -80,7 +79,6 @@
     },
 
     components: {
-      vRow,
       vCol,
       Icon
     }
