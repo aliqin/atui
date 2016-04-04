@@ -1,7 +1,7 @@
 import AddressSelect from './AddressSelect/'
 
-const VueComponent = {
+const VueWidget = {
   AddressSelect
 }
-module.exports = VueComponent
+module.exports = VueWidget
 
