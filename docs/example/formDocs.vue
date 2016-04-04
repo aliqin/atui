@@ -4,10 +4,10 @@
     <h3 class="page-header"><a href="#form" class="anchor">Form 表单 </a></h3>
     <div class="bs-example">
       <v-form :submit="formSubmitFun">
-        <form-item required label="联系人电话：" :valid-status="telStatus" label-col="4" has-icon :tip="123">
+        <form-item required label="联系人电话：" :valid-status="telStatus" label-col="4" has-icon tips="123">
           <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel" @click="clickFun"></v-input>
         </form-item>
-        <form-item required label="验证码：" label-col="4" wrapper-col="4">
+        <form-item required label="验证码：" label-col="4" wrapper-col="10">
           <v-col span="20">
             <v-input disabled type="text" placeholder="请输入验证码"></v-input>
           </v-col>
@@ -22,24 +22,24 @@
         <form-item required label="电话号码：" label-col="4">
           <v-input placeholder="请输入电话号码"></v-input>
         </form-item>
-        <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" :tip="请输入有效的电话号码">
+        <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tips="请输入有效的电话号码">
           <v-input valid-status="error" placeholder="请输入电话号码"></v-input>
         </form-item>
-        <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" :tip="请输入有效的电话号码">
+        <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tips="请输入有效的电话号码">
           <v-input valid-status="success" placeholder="请输入电话号码"></v-input>
         </form-item>
         <form-item required label-col="4">
           <label><input type="checkbox" />阅读并接受《用户协议》</label>
         </form-item>
         <form-item required label-col="4">
-          <v-button primary @click="validFun"></v-button>
+          <v-button primary @click="validFun">确定</v-button>
           <v-button tertiary value="重置条件"></v-button>
         </form-item>
       </v-form>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <v-form :submit="formSubmitFun">
-  <form-item required label="联系人电话：" label-col="4" has-icon :tip="123">
+  <form-item required label="联系人电话：" label-col="4" has-icon tips="123">
     <v-input type="text" placeholder="电话号码" :value.sync="tel"></v-input>
   </form-item>
   <form-item required label="验证码：" label-col="4">
@@ -57,17 +57,17 @@
   <form-item required label="电话号码：" has-icon label-col="4">
     <v-input placeholder="请输入电话号码"></v-input>
   </form-item>
-  <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tip="请输入有效的电话号码">
+  <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tips="请输入有效的电话号码">
     <v-input error placeholder="请输入电话号码"></v-input>
   </form-item>
-  <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tip="请输入有效的电话号码">
+  <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tips="请输入有效的电话号码">
     <v-input success placeholder="请输入电话号码"></v-input>
   </form-item>
   <form-item required label-col="4">
     <label><input type="checkbox" />阅读并接受《用户协议》</label>
   </form-item>
   <form-item required label-col="4">
-    <v-button primary></v-button>
+    <v-button primary value="确定"></v-button>
     <v-button tertiary value="重置条件"></v-button>
   </form-item>
 </v-form>
@@ -120,7 +120,7 @@ export default {
         alert(1);
       },
       tel: '',
-      telStatus: ''
+      telStatus: 'error'
     }
   },
   watch: {
