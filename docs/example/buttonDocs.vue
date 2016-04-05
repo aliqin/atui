@@ -14,9 +14,9 @@
       <v-button tertiary value="中号+三级按钮"></v-button>
       <v-button small tertiary value="小号+三级按钮"></v-button>
       <br>
-      <v-button large disabled value="大号+失效按钮"></v-button>
-      <v-button disabled value="中号+失效按钮"></v-button>
-      <v-button small disabled value="小号+失效按钮"></v-button>
+      <v-button large :disabled="true" value="大号+失效按钮"></v-button>
+      <v-button :disabled="true" value="中号+失效按钮"></v-button>
+      <v-button small :disabled="true" value="小号+失效按钮"></v-button>
       <br>
       <v-button large text value="大号+文字型按钮"></v-button>
       <v-button text value="中号+文字型按钮"></v-button>
@@ -87,8 +87,8 @@
         </tr>
         <tr>
           <td>disabled</td>
-          <td></td>
-          <td></td>
+          <td><code>Boolean</code></td>
+          <td><code>false</code></td>
           <td>按钮类型，失效按钮</td>
         </tr>
         <tr>

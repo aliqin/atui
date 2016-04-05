@@ -129,6 +129,21 @@ export default {
       streetId: this.defaultAddr.streetId
     }
   },
+  watch: {
+    defaultAddr (newVal, oldVal) {
+      if(newVal.provinceId !== oldVal.provinceId) {
+        this.province = '';
+        this.city = '';
+        this.county = '';
+        this.street = '';
+        this.provinceId = this.defaultAddr.provinceId || '';
+        this.cityId     = this.defaultAddr.cityId || '';
+        this.countyId   = this.defaultAddr.countyId || '';
+        this.getStreet();
+        this.streetId   = this.defaultAddr.streetId || '';
+      }
+    }
+  },
   computed: {
     // provinceId () {
     //   return this.defaultAddr.provinceId;

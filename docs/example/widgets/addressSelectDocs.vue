@@ -18,6 +18,8 @@
       <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr3"></address-select>
       <br>
       <address-select level="4" placeholder="请选择省市区街道" :default-addr="defaultAddr4"></address-select>
+      <br>
+      <button type="button" class="btn" id="J_click">点击</button>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <address-select large level="4" placeholder="请选择省市区街道" :default-addr.sync="defaultAddr1"></address-select>
@@ -79,6 +81,7 @@
 </template>
 
 <script>
+
 import {AddressSelect} from 'src/widget/'
 
 export default {
@@ -123,6 +126,19 @@ export default {
     'select-street' (street, addressSelectVue) {
       console.log('选择的街道是：'+ street.streetName);
       console.log('选择的街道ID是：'+street.streetId)
+    }
+  },
+  attached () {
+    var $btn = document.getElementById('J_click');
+    var self = this;
+
+    $btn.onclick = function() {
+      self.defaultAddr4 = {
+        provinceId: '140000',
+        cityId: '140200',
+        countyId: '140227',
+        // streetId: '140227402'
+      }
     }
   }
 }
