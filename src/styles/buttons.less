@@ -107,6 +107,22 @@
   cursor: not-allowed;
 }
 
+.btn[disabled], .btn.disabled {
+  .disabled();
+
+  &:hover {
+    .disabled();
+
+    &:focus, &:focus {
+      .disabled();
+    }
+  }
+
+  &:focus, &:focus {
+    .disabled();
+  }
+}
+
 .btn {
   &.primary {
     background-color: @btn-primary-bg;
@@ -185,22 +201,6 @@
       &:focus, &:active {
         background-color: #f2faff;
       }
-    }
-  }
-
-  &.disabled {
-    .disabled();
-
-    &:hover {
-      .disabled();
-
-      &:focus, &:focus {
-        .disabled();
-      }
-    }
-
-    &:focus, &:focus {
-      .disabled();
     }
   }
 }
