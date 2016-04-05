@@ -63,7 +63,6 @@ export default {
       sortKey: '',
       isOpen: false,
       sortOrders: sortOrders,
-      checkedValues: [],
       checkedRows: [],
       scope: null
     }
@@ -71,11 +70,14 @@ export default {
   computed: {
     checkedValues() {
       const me = this
-      return this.checkedRows.map((record) => {
+      let checkedKeys = me.checkedRows.map((record) => {
         return record[me.rowKey]
       })
-    },
-
+      if(me.rowSelection.onChange) {
+        me.rowSelection.onChange.call(null,me.checkedRows,checkedKeys)
+      }
+      return checkedKeys
+    }
   },
   watch: {
     dataSource: {
@@ -132,7 +134,9 @@ export default {
           return record[me.rowKey]!= item[me.rowKey]
         })
       }
-      me.rowSelection.onSelect.call(null,record,checked,me.checkedRows)
+      if(me.rowSelection.onSelect) {
+        me.rowSelection.call(null,record,checked,me.checkedRows)
+      }
     },
     onFilter(value, column) {
       this.isOpen = false
