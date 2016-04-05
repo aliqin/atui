@@ -20,7 +20,10 @@
       primary: null,
       secondary: null,
       tertiary: null,
-      disabled: null,
+      disabled: {
+        type: Boolean,
+        default: false
+      },
       text: null
     },
     computed: {
@@ -31,7 +34,7 @@
           'primary': typeof(this.primary) !== "undefined",
           'secondary': typeof(this.secondary) !== "undefined",
           'tertiary': typeof(this.tertiary) !== "undefined",
-          'disabled': typeof(this.disabled) !== "undefined",
+          'disabled': !!this.disabled,
           'text': typeof(this.text) !== "undefined"
         }
       }
