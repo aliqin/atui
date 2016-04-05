@@ -135,7 +135,7 @@ export default {
         })
       }
       if(me.rowSelection.onSelect) {
-        me.rowSelection.call(null,record,checked,me.checkedRows)
+        me.rowSelection.onSelect.call(null,record,checked,me.checkedRows)
       }
     },
     onFilter(value, column) {
