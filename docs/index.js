@@ -105,7 +105,10 @@ new Vue({
       template: ''
     },
     phoneNumberDocs,
-    addressSelectDocs
+    addressSelectDocs,
+    // addressSelectDocs:function(resolve) {
+    //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
+    // }
   },
   data() {
     return {

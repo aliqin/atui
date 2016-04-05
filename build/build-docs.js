@@ -263,6 +263,9 @@
 	    phoneNumberDocs: _phoneNumberDocs2.default,
 	    addressSelectDocs: _addressSelectDocs2.default
 	  },
+	  // addressSelectDocs:function(resolve) {
+	  //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
+	  // }
 	  data: function data() {
 	    return {
 	      elements: [],
@@ -2116,32 +2119,29 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	// <v-row>
-	//   <div class="form-item" :class="classObj">
-	//     <v-col :span="labelCol" class="form-label">
-	//       <label v-if="label">
-	//         <span v-if="isRequired" class="required-icon">*</span>
-	//         {{label}}
-	//       </label>
-	//     </v-col>
-	//     <v-col :span="wrapperCol || calcWrapperCol">
-	//       <div class="form-input">
-	//         <slot></slot>
-	//         <template v-if="showIcon">
-	//           <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
-	//           <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
-	//           <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
-	//           <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
-	//         </template>
-	//       </div>
-	//       <div v-if="tip && validStatus" class="status-info">{{tip}}</div>
-	//     </v-col>
-	//   </div>
-	// </v-row>
+	// <div class="form-item" :class="classObj">
+	//   <v-col :span="labelCol">
+	//     <label v-if="label" class="form-label">
+	//       <span v-if="isRequired" class="required-icon">*</span>
+	//       {{label}}
+	//     </label>
+	//   </v-col>
+	//   <v-col :span="wrapperCol || calcWrapperCol">
+	//     <div class="form-input">
+	//       <slot></slot>
+	//       <template v-if="showIcon">
+	//         <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
+	//         <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
+	//         <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
+	//         <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
+	//       </template>
+	//     </div>
+	//     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
+	//   </v-col>
+	// </div>
 	// </template>
 	// <script>
 	
-	var vRow = _Layout2.default.Row;
 	var vCol = _Layout2.default.Col;
 	exports.default = {
 	  props: {
@@ -2162,7 +2162,10 @@
 	    //是否必填
 	    required: null,
 	    //提示信息，如不设置，会根据验证规则自动生成
-	    tip: String,
+	    tips: {
+	      type: String,
+	      default: ''
+	    },
 	    //额外提示信息，设置后，会和提示信息一起显示
 	    extra: String,
 	    //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
@@ -2177,7 +2180,7 @@
 	  computed: {
 	    classObj: function classObj() {
 	      return {
-	        'form-item-with-help': this.validStatus,
+	        // 'form-item-with-help': this.validStatus,
 	        'has-error': this.validStatus == 'error',
 	        'has-success': this.validStatus == 'success'
 	      };
@@ -2195,7 +2198,6 @@
 	  },
 	
 	  components: {
-	    vRow: vRow,
 	    vCol: vCol,
 	    Icon: _Icon2.default
 	  }
@@ -2335,7 +2337,7 @@
 /* 149 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<v-row>\n  <div class=\"form-item\" :class=\"classObj\">\n    <v-col :span=\"labelCol\" class=\"form-label\">\n      <label v-if=\"label\">\n        <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n        {{label}}\n      </label>\n    </v-col>\n    <v-col :span=\"wrapperCol || calcWrapperCol\">\n      <div class=\"form-input\">\n        <slot></slot>\n        <template v-if=\"showIcon\">\n          <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n          <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n          <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n          <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n        </template>\n      </div>\n      <div v-if=\"tip && validStatus\" class=\"status-info\">{{tip}}</div>\n    </v-col>\n  </div>\n</v-row>\n";
+	module.exports = "\n<div class=\"form-item\" :class=\"classObj\">\n  <v-col :span=\"labelCol\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</div>\n";
 
 /***/ },
 /* 150 */
@@ -2383,7 +2385,9 @@
 	  value: true
 	});
 	// <template>
-	//   <button type="{{type}}" class="btn" :class="btnClassObj">{{{value}}}</button>
+	//   <button type="{{type}}" class="btn" :class="btnClassObj">
+	//     <slot>{{value}}</slot>
+	//   </button>
 	// </template>
 	//
 	// <script>
@@ -2397,7 +2401,7 @@
 	    small: null,
 	    value: {
 	      type: String,
-	      default: '确定'
+	      default: ''
 	    },
 	    primary: null,
 	    secondary: null,
@@ -2427,7 +2431,7 @@
 /* 153 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<button type=\"{{type}}\" class=\"btn\" :class=\"btnClassObj\">{{{value}}}</button>\n";
+	module.exports = "\n<button type=\"{{type}}\" class=\"btn\" :class=\"btnClassObj\">\n  <slot>{{value}}</slot>\n</button>\n";
 
 /***/ },
 /* 154 */
@@ -3521,7 +3525,7 @@
 	//           <input type="text" placeholder="Search" v-model="searchText" class="form-control" autocomplete="off">
 	//         </li>
 	//         <li v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
-	//           <a @mousedown.prevent="select(option.value)" style="cursor:pointer">
+	//           <a @mousedown.prevent.stop="select(option.value)" style="cursor:pointer">
 	//             {{ option.label }}
 	//             <span class="glyphicon glyphicon-ok check-mark" v-show="value.indexOf(option.value) !== -1"></span>
 	//           </a>
@@ -3676,7 +3680,7 @@
 /* 178 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show}\" _v-f750b48a=\"\">\n  <button v-el:btn=\"\" type=\"button\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" @blur=\"show = (search ? show : false)\" v-bind=\"{disabled: disabled}\" _v-f750b48a=\"\">\n    <span class=\"btn-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n    <span class=\"btn-content\" _v-f750b48a=\"\">{{ selectedItems }}</span>\n    <span class=\"caret\" _v-f750b48a=\"\"><icon type=\"up\" _v-f750b48a=\"\"></icon></span>\n  </button>\n  <ul class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <template v-if=\"options.length\">\n      <li v-if=\"search\" class=\"bs-searchbox\" _v-f750b48a=\"\">\n        <input type=\"text\" placeholder=\"Search\" v-model=\"searchText\" class=\"form-control\" autocomplete=\"off\" _v-f750b48a=\"\">\n      </li>\n      <li v-for=\"option in options | filterBy searchText \" v-bind:id=\"option.value\" style=\"position:relative\" _v-f750b48a=\"\">\n        <a @mousedown.prevent=\"select(option.value)\" style=\"cursor:pointer\" _v-f750b48a=\"\">\n          {{ option.label }}\n          <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"value.indexOf(option.value) !== -1\" _v-f750b48a=\"\"></span>\n        </a>\n      </li>\n    </template>\n    <slot v-else=\"\" _v-f750b48a=\"\"></slot>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\" _v-f750b48a=\"\">Limit reached ({{limit}} items max).</div>\n  </ul>\n</div>\n";
+	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show}\" _v-f750b48a=\"\">\n  <button v-el:btn=\"\" type=\"button\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" @blur=\"show = (search ? show : false)\" v-bind=\"{disabled: disabled}\" _v-f750b48a=\"\">\n    <span class=\"btn-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n    <span class=\"btn-content\" _v-f750b48a=\"\">{{ selectedItems }}</span>\n    <span class=\"caret\" _v-f750b48a=\"\"><icon type=\"up\" _v-f750b48a=\"\"></icon></span>\n  </button>\n  <ul class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <template v-if=\"options.length\">\n      <li v-if=\"search\" class=\"bs-searchbox\" _v-f750b48a=\"\">\n        <input type=\"text\" placeholder=\"Search\" v-model=\"searchText\" class=\"form-control\" autocomplete=\"off\" _v-f750b48a=\"\">\n      </li>\n      <li v-for=\"option in options | filterBy searchText \" v-bind:id=\"option.value\" style=\"position:relative\" _v-f750b48a=\"\">\n        <a @mousedown.prevent.stop=\"select(option.value)\" style=\"cursor:pointer\" _v-f750b48a=\"\">\n          {{ option.label }}\n          <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"value.indexOf(option.value) !== -1\" _v-f750b48a=\"\"></span>\n        </a>\n      </li>\n    </template>\n    <slot v-else=\"\" _v-f750b48a=\"\"></slot>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\" _v-f750b48a=\"\">Limit reached ({{limit}} items max).</div>\n  </ul>\n</div>\n";
 
 /***/ },
 /* 179 */
@@ -3759,7 +3763,7 @@
 	
 	// <template>
 	//   <li :class="{disabled:disabled}">
-	//     <a @mousedown.prevent="handleClick">
+	//     <a @mousedown.prevent.stop="handleClick">
 	//       <span v-el:content><slot></slot></span>
 	//       <icon type="tick" v-show="chosen"></icon>
 	//     </a>
@@ -3826,7 +3830,7 @@
 /* 183 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li :class=\"{disabled:disabled}\" _v-38ea94b4=\"\">\n  <a @mousedown.prevent=\"handleClick\" _v-38ea94b4=\"\">\n    <span v-el:content=\"\" _v-38ea94b4=\"\"><slot _v-38ea94b4=\"\"></slot></span>\n    <icon type=\"tick\" v-show=\"chosen\" _v-38ea94b4=\"\"></icon>\n  </a>\n</li>\n";
+	module.exports = "\n<li :class=\"{disabled:disabled}\" _v-38ea94b4=\"\">\n  <a @mousedown.prevent.stop=\"handleClick\" _v-38ea94b4=\"\">\n    <span v-el:content=\"\" _v-38ea94b4=\"\"><slot _v-38ea94b4=\"\"></slot></span>\n    <icon type=\"tick\" v-show=\"chosen\" _v-38ea94b4=\"\"></icon>\n  </a>\n</li>\n";
 
 /***/ },
 /* 184 */
@@ -15356,7 +15360,6 @@
 	      sortKey: '',
 	      isOpen: false,
 	      sortOrders: sortOrders,
-	      checkedValues: [],
 	      checkedRows: [],
 	      scope: null
 	    };
@@ -15365,9 +15368,13 @@
 	  computed: {
 	    checkedValues: function checkedValues() {
 	      var me = this;
-	      return this.checkedRows.map(function (record) {
+	      var checkedKeys = me.checkedRows.map(function (record) {
 	        return record[me.rowKey];
 	      });
+	      if (me.rowSelection.onChange) {
+	        me.rowSelection.onChange.call(null, me.checkedRows, checkedKeys);
+	      }
+	      return checkedKeys;
 	    }
 	  },
 	  watch: {
@@ -15426,7 +15433,9 @@
 	          return record[me.rowKey] != item[me.rowKey];
 	        });
 	      }
-	      me.rowSelection.onSelect.call(null, record, checked, me.checkedRows);
+	      if (me.rowSelection.onSelect) {
+	        me.rowSelection.call(null, record, checked, me.checkedRows);
+	      }
 	    },
 	    onFilter: function onFilter(value, column) {
 	      this.isOpen = false;
@@ -19215,14 +19224,22 @@
 	//       <v-button large text value="大号+文字型按钮"></v-button>
 	//       <v-button text value="中号+文字型按钮"></v-button>
 	//       <v-button small text value="小号+文字型按钮"></v-button>
+	//       <br>
+	//       <v-button>
+	//         <icon type="close">关闭</icon>
+	//       </v-button>
 	//     </div>
 	//
 	// <pre><code class="language-markup"><script type="language-mark-up">
 	// <!-- 基础按钮，使用封装的Button组件，通过添加属性，呈现样式 -->
 	// <!-- 大号（large）、中号（默认）和小号（small）-->
 	// <!-- 有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->
-	// <!-- 通过属性value控制按钮文案 -->
+	// <!-- 可以通过属性value控制按钮文案或者组件调用中插入html代码 -->
 	// <v-button large primary value="大号+主按钮"></v-button>
+	// <v-button large primary>大号+主按钮</v-button>
+	// <v-button>
+	//   <icon type="close">关闭</icon>
+	// </v-button>
 	// </script></code></pre>
 	//     <h4>参数</h4>
 	//     <table class="table table-bordered">
@@ -19238,7 +19255,7 @@
 	//         <tr>
 	//           <td>value</td>
 	//           <td><code>String</code></td>
-	//           <td><code>确定</code></td>
+	//           <td><code>空</code></td>
 	//           <td>按钮文案</td>
 	//         </tr>
 	//         <tr>
@@ -19292,7 +19309,8 @@
 	
 	exports.default = {
 	  components: {
-	    vButton: vButton
+	    vButton: vButton,
+	    Icon: _src.Icon
 	  }
 	};
 	// </script>
@@ -19304,7 +19322,7 @@
 /* 328 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"button\">\n    <h3 class=\"page-header\"><a href=\"#buttons\" class=\"anchor\">Button 按钮</a></h3>\n    <div class=\"bs-example\">\n      <v-button large primary value=\"大号+主按钮\"></v-button>\n      <v-button primary value=\"中号+主按钮\"></v-button>\n      <v-button small primary value=\"小号+主按钮\"></v-button>\n      <br>\n      <v-button large secondary value=\"大号+次按钮\"></v-button>\n      <v-button secondary value=\"中号+次按钮\"></v-button>\n      <v-button small secondary value=\"小号+次按钮\"></v-button>\n      <br>\n      <v-button large tertiary value=\"大号+三级按钮\"></v-button>\n      <v-button tertiary value=\"中号+三级按钮\"></v-button>\n      <v-button small tertiary value=\"小号+三级按钮\"></v-button>\n      <br>\n      <v-button large disabled value=\"大号+失效按钮\"></v-button>\n      <v-button disabled value=\"中号+失效按钮\"></v-button>\n      <v-button small disabled value=\"小号+失效按钮\"></v-button>\n      <br>\n      <v-button large text value=\"大号+文字型按钮\"></v-button>\n      <v-button text value=\"中号+文字型按钮\"></v-button>\n      <v-button small text value=\"小号+文字型按钮\"></v-button>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<!-- 基础按钮，使用封装的Button组件，通过添加属性，呈现样式 -->\n<!-- 大号（large）、中号（默认）和小号（small）-->\n<!-- 有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->\n<!-- 通过属性value控制按钮文案 -->\n<v-button large primary value=\"大号+主按钮\"></v-button>\n</script></code></pre>\n    <h4>参数</h4>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td><code>确定</code></td>\n          <td>按钮文案</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>按钮尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>按钮尺寸，小</td>\n        </tr>\n        <tr>\n          <td>primary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，主按钮</td>\n        </tr>\n        <tr>\n          <td>secondary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，次按钮</td>\n        </tr>\n        <tr>\n          <td>tertiary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，三级按钮</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，失效按钮</td>\n        </tr>\n        <tr>\n          <td>text</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，文字型按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"button\">\n    <h3 class=\"page-header\"><a href=\"#buttons\" class=\"anchor\">Button 按钮</a></h3>\n    <div class=\"bs-example\">\n      <v-button large primary value=\"大号+主按钮\"></v-button>\n      <v-button primary value=\"中号+主按钮\"></v-button>\n      <v-button small primary value=\"小号+主按钮\"></v-button>\n      <br>\n      <v-button large secondary value=\"大号+次按钮\"></v-button>\n      <v-button secondary value=\"中号+次按钮\"></v-button>\n      <v-button small secondary value=\"小号+次按钮\"></v-button>\n      <br>\n      <v-button large tertiary value=\"大号+三级按钮\"></v-button>\n      <v-button tertiary value=\"中号+三级按钮\"></v-button>\n      <v-button small tertiary value=\"小号+三级按钮\"></v-button>\n      <br>\n      <v-button large disabled value=\"大号+失效按钮\"></v-button>\n      <v-button disabled value=\"中号+失效按钮\"></v-button>\n      <v-button small disabled value=\"小号+失效按钮\"></v-button>\n      <br>\n      <v-button large text value=\"大号+文字型按钮\"></v-button>\n      <v-button text value=\"中号+文字型按钮\"></v-button>\n      <v-button small text value=\"小号+文字型按钮\"></v-button>\n      <br>\n      <v-button>\n        <icon type=\"close\">关闭</icon>\n      </v-button>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<!-- 基础按钮，使用封装的Button组件，通过添加属性，呈现样式 -->\n<!-- 大号（large）、中号（默认）和小号（small）-->\n<!-- 有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->\n<!-- 可以通过属性value控制按钮文案或者组件调用中插入html代码 -->\n<v-button large primary value=\"大号+主按钮\"></v-button>\n<v-button large primary>大号+主按钮</v-button>\n<v-button>\n  <icon type=\"close\">关闭</icon>\n</v-button>\n</script></code></pre>\n    <h4>参数</h4>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>按钮文案</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>按钮尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>按钮尺寸，小</td>\n        </tr>\n        <tr>\n          <td>primary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，主按钮</td>\n        </tr>\n        <tr>\n          <td>secondary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，次按钮</td>\n        </tr>\n        <tr>\n          <td>tertiary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，三级按钮</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，失效按钮</td>\n        </tr>\n        <tr>\n          <td>text</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，文字型按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 329 */
@@ -19843,10 +19861,10 @@
 	//     <h3 class="page-header"><a href="#form" class="anchor">Form 表单 </a></h3>
 	//     <div class="bs-example">
 	//       <v-form :submit="formSubmitFun">
-	//         <form-item required label="联系人电话：" :valid-status="telStatus" label-col="4" has-icon :tip="123">
+	//         <form-item required label="联系人电话：" :valid-status="telStatus" label-col="4" has-icon tips="123">
 	//           <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel" @click="clickFun"></v-input>
 	//         </form-item>
-	//         <form-item required label="验证码：" label-col="4" wrapper-col="4">
+	//         <form-item required label="验证码：" label-col="4" wrapper-col="10">
 	//           <v-col span="20">
 	//             <v-input disabled type="text" placeholder="请输入验证码"></v-input>
 	//           </v-col>
@@ -19861,24 +19879,24 @@
 	//         <form-item required label="电话号码：" label-col="4">
 	//           <v-input placeholder="请输入电话号码"></v-input>
 	//         </form-item>
-	//         <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" :tip="请输入有效的电话号码">
+	//         <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tips="请输入有效的电话号码">
 	//           <v-input valid-status="error" placeholder="请输入电话号码"></v-input>
 	//         </form-item>
-	//         <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" :tip="请输入有效的电话号码">
+	//         <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tips="请输入有效的电话号码">
 	//           <v-input valid-status="success" placeholder="请输入电话号码"></v-input>
 	//         </form-item>
 	//         <form-item required label-col="4">
 	//           <label><input type="checkbox" />阅读并接受《用户协议》</label>
 	//         </form-item>
 	//         <form-item required label-col="4">
-	//           <v-button primary @click="validFun"></v-button>
+	//           <v-button primary @click="validFun">确定</v-button>
 	//           <v-button tertiary value="重置条件"></v-button>
 	//         </form-item>
 	//       </v-form>
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
 	// <v-form :submit="formSubmitFun">
-	//   <form-item required label="联系人电话：" label-col="4" has-icon :tip="123">
+	//   <form-item required label="联系人电话：" label-col="4" has-icon tips="123">
 	//     <v-input type="text" placeholder="电话号码" :value.sync="tel"></v-input>
 	//   </form-item>
 	//   <form-item required label="验证码：" label-col="4">
@@ -19896,17 +19914,17 @@
 	//   <form-item required label="电话号码：" has-icon label-col="4">
 	//     <v-input placeholder="请输入电话号码"></v-input>
 	//   </form-item>
-	//   <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tip="请输入有效的电话号码">
+	//   <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tips="请输入有效的电话号码">
 	//     <v-input error placeholder="请输入电话号码"></v-input>
 	//   </form-item>
-	//   <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tip="请输入有效的电话号码">
+	//   <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tips="请输入有效的电话号码">
 	//     <v-input success placeholder="请输入电话号码"></v-input>
 	//   </form-item>
 	//   <form-item required label-col="4">
 	//     <label><input type="checkbox" />阅读并接受《用户协议》</label>
 	//   </form-item>
 	//   <form-item required label-col="4">
-	//     <v-button primary></v-button>
+	//     <v-button primary value="确定"></v-button>
 	//     <v-button tertiary value="重置条件"></v-button>
 	//   </form-item>
 	// </v-form>
@@ -19952,7 +19970,7 @@
 	      },
 	
 	      tel: '',
-	      telStatus: ''
+	      telStatus: 'error'
 	    };
 	  },
 	
@@ -19980,7 +19998,7 @@
 /* 340 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">Form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <v-form :submit=\"formSubmitFun\">\n        <form-item required label=\"联系人电话：\" :valid-status=\"telStatus\" label-col=\"4\" has-icon :tip=\"123\">\n          <v-input type=\"text\" placeholder=\"电话号码\" :valid-status=\"telStatus\" :value.sync=\"tel\" @click=\"clickFun\"></v-input>\n        </form-item>\n        <form-item required label=\"验证码：\" label-col=\"4\" wrapper-col=\"4\">\n          <v-col span=\"20\">\n            <v-input disabled type=\"text\" placeholder=\"请输入验证码\"></v-input>\n          </v-col>\n          <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" label-col=\"4\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" :tip=\"请输入有效的电话号码\">\n          <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" :tip=\"请输入有效的电话号码\">\n          <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button primary @click=\"validFun\"></v-button>\n          <v-button tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-form :submit=\"formSubmitFun\">\n  <form-item required label=\"联系人电话：\" label-col=\"4\" has-icon :tip=\"123\">\n    <v-input type=\"text\" placeholder=\"电话号码\" :value.sync=\"tel\"></v-input>\n  </form-item>\n  <form-item required label=\"验证码：\" label-col=\"4\">\n    <v-col span=\"20\">\n      <v-input type=\"text\" placeholder=\"请输入验证码\"></v-input>\n    </v-col>\n    <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" has-icon label-col=\"4\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" tip=\"请输入有效的电话号码\">\n    <v-input error placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" tip=\"请输入有效的电话号码\">\n    <v-input success placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button primary></v-button>\n    <v-button tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n  </div>\n";
+	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">Form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <v-form :submit=\"formSubmitFun\">\n        <form-item required label=\"联系人电话：\" :valid-status=\"telStatus\" label-col=\"4\" has-icon tips=\"123\">\n          <v-input type=\"text\" placeholder=\"电话号码\" :valid-status=\"telStatus\" :value.sync=\"tel\" @click=\"clickFun\"></v-input>\n        </form-item>\n        <form-item required label=\"验证码：\" label-col=\"4\" wrapper-col=\"10\">\n          <v-col span=\"20\">\n            <v-input disabled type=\"text\" placeholder=\"请输入验证码\"></v-input>\n          </v-col>\n          <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" label-col=\"4\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button primary @click=\"validFun\">确定</v-button>\n          <v-button tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-form :submit=\"formSubmitFun\">\n  <form-item required label=\"联系人电话：\" label-col=\"4\" has-icon tips=\"123\">\n    <v-input type=\"text\" placeholder=\"电话号码\" :value.sync=\"tel\"></v-input>\n  </form-item>\n  <form-item required label=\"验证码：\" label-col=\"4\">\n    <v-col span=\"20\">\n      <v-input type=\"text\" placeholder=\"请输入验证码\"></v-input>\n    </v-col>\n    <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" has-icon label-col=\"4\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" tips=\"请输入有效的电话号码\">\n    <v-input error placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" tips=\"请输入有效的电话号码\">\n    <v-input success placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button primary value=\"确定\"></v-button>\n    <v-button tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n  </div>\n";
 
 /***/ },
 /* 341 */
@@ -21580,7 +21598,101 @@
 	//     </div>
 	//     <input type="button" @click="changeData" value="填充表格数据"/>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
+	// import {Table,Icon} from 'src/'
+	//   const columns = [{
+	//     title: '姓名',
+	//     dataIndex: 'name',
+	//     filters: [{
+	//       text: '姓李的的',
+	//       value: '李',
+	//     }, {
+	//       text: '姓胡的',
+	//       value: '胡',
+	//     }],
+	//     onFilter: (value, record) => record.name.indexOf(value) === 0
+	//   }, {
+	//     title: '年龄',
+	//     dataIndex: 'age',
+	//     sorter: (a, b) => a.age - b.age,
+	//   }, {
+	//     title: '地址',
+	//     dataIndex: 'address',
+	//     filters: [{
+	//       text: '南湖',
+	//       value: '南湖',
+	//     }, {
+	//       text: '西湖',
+	//       value: '西湖',
+	//     }],
+	//     filterMultiple: false,
+	//     onFilter: (value, record) => record.address.indexOf(value) === 0
+	//   },{
+	//       title: '操作',
+	//       key: 'operation',
+	//       render(text, record) {
+	//         return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
+	//       }
+	//     }
+	//   ];
 	//
+	//   const data = [{
+	//     key: '1',
+	//     name: '胡斌',
+	//     age: 32,
+	//     address: '南湖区湖底公园1号',
+	//   }, {
+	//     key: '2',
+	//     name: '胡彦祖',
+	//     age: 42,
+	//     address: '西湖区湖底公园12号',
+	//   }, {
+	//     key: '3',
+	//     name: '李大嘴',
+	//     age: 32,
+	//     address: '南湖区湖底公园123号',
+	//   }, {
+	//     key: '4',
+	//     name: '李秀莲大嘴哥',
+	//     age: 32,
+	//     address: '西湖区湖底公园123号',
+	//   }];
+	//   const rowSelection = {
+	//     getCheckboxProps(record) {
+	//       return {
+	//         disabled: record.name === '胡彦祖'    // 配置无法勾选的列
+	//       };
+	//     },
+	//     onChange(selectedRowKeys, selectedRows) {
+	//       console.log(selectedRowKeys, selectedRows);
+	//     },
+	//     onSelect(record, selected, selectedRows) {
+	//       console.log(record, selected, selectedRows);
+	//     },
+	//     onSelectAll(selected, selectedRows, changeRows) {
+	//       console.log(selected, selectedRows, changeRows);
+	//     }
+	//   };
+	//   export default {
+	//     components: {
+	//       Grid:Table,
+	//       Icon
+	//     },
+	//     data() {
+	//       return {
+	//         gridData:[],
+	//         gridColumns: columns,
+	//         rowSelection:rowSelection
+	//       }
+	//     },
+	//     methods:{
+	//       changeData() {
+	//         this.gridData = data;
+	//       },
+	//       onTableChange(i,j,k) {
+	//         console.log(i,j,k)
+	//       }
+	//     }
+	//   }
 	// </script></code></pre>
 	//   <h3>Table 选项 </h3>
 	//   <table class="table table-bordered">
@@ -21664,7 +21776,7 @@
 	};
 	exports.default = {
 	  components: {
-	    Grid: _src.Grid,
+	    Grid: _src.Table,
 	    Icon: _src.Icon
 	  },
 	  data: function data() {
@@ -21692,7 +21804,7 @@
 /* 367 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" :filter-key=\"filterKey\" row-key=\"key\" @change=\"onTableChange\"></grid>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" :filter-key=\"filterKey\" row-key=\"key\" @change=\"onTableChange\"></grid>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\nimport {Table,Icon} from 'src/'\n  const columns = [{\n    title: '姓名',\n    dataIndex: 'name',\n    filters: [{\n      text: '姓李的的',\n      value: '李',\n    }, {\n      text: '姓胡的',\n      value: '胡',\n    }],\n    onFilter: (value, record) => record.name.indexOf(value) === 0\n  }, {\n    title: '年龄',\n    dataIndex: 'age',\n    sorter: (a, b) => a.age - b.age,\n  }, {\n    title: '地址',\n    dataIndex: 'address',\n    filters: [{\n      text: '南湖',\n      value: '南湖',\n    }, {\n      text: '西湖',\n      value: '西湖',\n    }],\n    filterMultiple: false,\n    onFilter: (value, record) => record.address.indexOf(value) === 0\n  },{\n      title: '操作',\n      key: 'operation',\n      render(text, record) {\n        return '<icon type=\"info\" /><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n      }\n    }\n  ];\n\n  const data = [{\n    key: '1',\n    name: '胡斌',\n    age: 32,\n    address: '南湖区湖底公园1号',\n  }, {\n    key: '2',\n    name: '胡彦祖',\n    age: 42,\n    address: '西湖区湖底公园12号',\n  }, {\n    key: '3',\n    name: '李大嘴',\n    age: 32,\n    address: '南湖区湖底公园123号',\n  }, {\n    key: '4',\n    name: '李秀莲大嘴哥',\n    age: 32,\n    address: '西湖区湖底公园123号',\n  }];\n  const rowSelection = {\n    getCheckboxProps(record) {\n      return {\n        disabled: record.name === '胡彦祖'    // 配置无法勾选的列\n      };\n    },\n    onChange(selectedRowKeys, selectedRows) {\n      console.log(selectedRowKeys, selectedRows);\n    },\n    onSelect(record, selected, selectedRows) {\n      console.log(record, selected, selectedRows);\n    },\n    onSelectAll(selected, selectedRows, changeRows) {\n      console.log(selected, selectedRows, changeRows);\n    }\n  };\n  export default {\n    components: {\n      Grid:Table,\n      Icon\n    },\n    data() {\n      return {\n        gridData:[],\n        gridColumns: columns,\n        rowSelection:rowSelection\n      }\n    },\n    methods:{\n      changeData() {\n        this.gridData = data;\n      },\n      onTableChange(i,j,k) {\n        console.log(i,j,k)\n      }\n    }\n  }\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 368 */
@@ -24014,6 +24126,10 @@
 	var VueWidget = {
 	  AddressSelect: _AddressSelect2.default
 	};
+	// require.ensure([], function(require) {
+	//   VueWidget.AddressSelect = require('./AddressSelect/')
+	//   console.log(VueWidget.AddressSelect)
+	// })
 	module.exports = VueWidget;
 
 /***/ },

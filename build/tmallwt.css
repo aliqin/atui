@@ -3082,11 +3082,8 @@ input[type="radio"][disabled]:checked:after {
 .form {
   font-size: 12px;
 }
-.form .row {
-  margin: 5px 0;
-}
 .form .form-item {
-  margin-bottom: 26px;
+  margin-bottom: 20px;
   color: #666;
 }
 .form .form-item:before,
@@ -3104,9 +3101,6 @@ input[type="radio"][disabled]:checked:after {
 }
 .form .form-item:after {
   clear: both;
-}
-.form .form-item.form-item-with-help {
-  margin-bottom: 6px;
 }
 .form .status-icon {
   position: absolute;
@@ -3127,6 +3121,8 @@ input[type="radio"][disabled]:checked:after {
   color: #ff7500;
 }
 .form .form-label {
+  display: block;
+  width: 100%;
   padding: 7px 0;
   color: #666;
   text-align: right;
@@ -5071,6 +5067,7 @@ a.thumbnail.active {
 input[disabled],
 .input.disabled {
   cursor: not-allowed !important;
+  background-color: #f2f2f2;
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -5080,6 +5077,7 @@ input[disabled],
 input[disabled]:hover,
 .input.disabled:hover {
   cursor: not-allowed !important;
+  background-color: #f2f2f2;
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -5091,6 +5089,7 @@ input[disabled]:hover:active,
 input[disabled]:hover:focus,
 .input.disabled:hover:focus {
   cursor: not-allowed !important;
+  background-color: #f2f2f2;
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -5102,6 +5101,7 @@ input[disabled]:active,
 input[disabled]:focus,
 .input.disabled:focus {
   cursor: not-allowed !important;
+  background-color: #f2f2f2;
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -5184,6 +5184,10 @@ input[disabled]:focus,
 .btn.primary:hover {
   background-color: #ff8080;
 }
+.btn.primary:hover:focus,
+.btn.primary:hover:active {
+  background-color: #ce2929;
+}
 .btn.primary:focus,
 .btn.primary:active {
   background-color: #ce2929;
@@ -5232,11 +5236,6 @@ input[disabled]:focus,
   color: #ce2929;
   border-color: #ce2929;
 }
-.btn.disabled {
-  background-color: #f2f2f2;
-  color: #ccc;
-  cursor: not-allowed;
-}
 .btn.text {
   background-color: transparent;
   color: #666;
@@ -5245,6 +5244,48 @@ input[disabled]:focus,
 .btn.text:focus,
 .btn.text:active {
   background-color: #f2faff;
+}
+.btn.text:hover:focus,
+.btn.text:hover:active {
+  background-color: #f2faff;
+}
+.btn.disabled {
+  cursor: not-allowed !important;
+  background-color: #f2f2f2;
+  background: #f2f2f2;
+  color: #ccc;
+  border-color: #e6e6e6;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.btn.disabled:hover {
+  cursor: not-allowed !important;
+  background-color: #f2f2f2;
+  background: #f2f2f2;
+  color: #ccc;
+  border-color: #e6e6e6;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.btn.disabled:hover:focus,
+.btn.disabled:hover:focus {
+  cursor: not-allowed !important;
+  background-color: #f2f2f2;
+  background: #f2f2f2;
+  color: #ccc;
+  border-color: #e6e6e6;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.btn.disabled:focus,
+.btn.disabled:focus {
+  cursor: not-allowed !important;
+  background-color: #f2f2f2;
+  background: #f2f2f2;
+  color: #ccc;
+  border-color: #e6e6e6;
+  box-shadow: none;
+  cursor: not-allowed;
 }
 .textarea {
   width: 100%;
@@ -5292,6 +5333,7 @@ input[disabled]:focus,
 textarea[disabled],
 .textarea.disabled {
   cursor: not-allowed !important;
+  background-color: #f2f2f2;
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -5301,6 +5343,7 @@ textarea[disabled],
 textarea[disabled]:hover,
 .textarea.disabled:hover {
   cursor: not-allowed !important;
+  background-color: #f2f2f2;
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -5312,6 +5355,7 @@ textarea[disabled]:hover:active,
 textarea[disabled]:hover:focus,
 .textarea.disabled:hover:focus {
   cursor: not-allowed !important;
+  background-color: #f2f2f2;
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -5323,6 +5367,7 @@ textarea[disabled]:active,
 textarea[disabled]:focus,
 .textarea.disabled:focus {
   cursor: not-allowed !important;
+  background-color: #f2f2f2;
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
