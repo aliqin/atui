@@ -1,6 +1,6 @@
 <template>
   <li :class="{disabled:disabled}">
-    <a @mousedown.prevent="handleClick">
+    <a @mousedown.prevent.stop="handleClick">
       <span v-el:content><slot></slot></span>
       <icon type="tick" v-show="chosen"></icon>
     </a>

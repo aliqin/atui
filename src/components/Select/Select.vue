@@ -15,7 +15,7 @@
           <input type="text" placeholder="Search" v-model="searchText" class="form-control" autocomplete="off">
         </li>
         <li v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
-          <a @mousedown.prevent="select(option.value)" style="cursor:pointer">
+          <a @mousedown.prevent.stop="select(option.value)" style="cursor:pointer">
             {{ option.label }}
             <span class="glyphicon glyphicon-ok check-mark" v-show="value.indexOf(option.value) !== -1"></span>
           </a>
