@@ -107,22 +107,6 @@
   cursor: not-allowed;
 }
 
-.btn[disabled], .btn.disabled {
-  .disabled();
-
-  &:hover {
-    .disabled();
-
-    &:focus, &:focus {
-      .disabled();
-    }
-  }
-
-  &:focus, &:focus {
-    .disabled();
-  }
-}
-
 .btn {
   &.primary {
     background-color: @btn-primary-bg;
@@ -202,5 +186,21 @@
         background-color: #f2faff;
       }
     }
+  }
+}
+
+.btn[disabled], .btn.disabled {
+  .disabled();
+
+  &:hover {
+    .disabled();
+
+    &:focus, &:focus {
+      .disabled();
+    }
+  }
+
+  &:focus, &:focus {
+    .disabled();
   }
 }
