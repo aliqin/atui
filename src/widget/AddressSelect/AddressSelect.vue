@@ -122,22 +122,26 @@ export default {
       classObj: {
         'large': typeof(this.large) !== 'undefined',
         'small': typeof(this.small) !== 'undefined'
-      }
+      },
+      provinceId: this.defaultAddr.provinceId,
+      cityId: this.defaultAddr.cityId,
+      countyId: this.defaultAddr.countyId,
+      streetId: this.defaultAddr.streetId
     }
   },
   computed: {
-    provinceId () {
-      return this.defaultAddr.provinceId;
-    },
-    cityId () {
-      return this.defaultAddr.cityId;
-    },
-    countyId () {
-      return this.defaultAddr.countyId;
-    },
-    streetId () {
-      return this.defaultAddr.streetId;
-    },
+    // provinceId () {
+    //   return this.defaultAddr.provinceId;
+    // },
+    // cityId () {
+    //   return this.defaultAddr.cityId;
+    // },
+    // countyId () {
+    //   return this.defaultAddr.countyId;
+    // },
+    // streetId () {
+    //   return this.defaultAddr.streetId;
+    // },
     tabList () {
       let level = this.level - 0;
       level = typeof(level) == 'number' ? level : 4;
