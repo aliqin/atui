@@ -10,6 +10,7 @@ import Form from './components/Form/'
 import Layout from './components/Layout/'
 import Button from './components/Button/'
 import Input from './components/Input/'
+import Searchbox from './components/Searchbox/'
 import Uploader from './components/Uploader/'
 // import Form from './components/Form.vue'
 import Switch from './components/Switch/'
@@ -56,6 +57,7 @@ const VueComponent = {
   Layout,
   Icon,
   Form,
+  Searchbox,
   Uploader,
   Switch,
   Dropdown,

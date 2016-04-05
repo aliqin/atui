@@ -18,6 +18,7 @@ import buttonsDocs  from './example/buttonsDocs.vue'
 import inputDocs from './example/inputDocs.vue'
 import uploaderDocs from './example/uploaderDocs.vue'
 import formDocs from './example/formDocs.vue'
+import searchboxDocs from './example/searchboxDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
@@ -77,6 +78,7 @@ new Vue({
     uploaderDocs,
     switchDocs,
     formDocs,
+    searchboxDocs,
     messageDocs,
     badgeDocs,
     tagDocs,
