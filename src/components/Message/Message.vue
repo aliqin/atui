@@ -27,7 +27,7 @@
 
 <script>
 import coerceBoolean from '../utils/coerceBoolean.js'
-
+import Icon from '../Icon'
   export default {
     props: {
       type: {
@@ -60,10 +60,8 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         type: String
       }
     },
-    data() {
-      return {
-        content:''
-      }
+    components:{
+      Icon
     },
     watch: {
       show(val) {
@@ -72,9 +70,6 @@ import coerceBoolean from '../utils/coerceBoolean.js'
           this._timeout = setTimeout(()=> this.show = false, this.duration)
         }
       }
-    },
-    methods:{
-      
     }
   }
 </script>

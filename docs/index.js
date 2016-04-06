@@ -18,7 +18,6 @@ import buttonsDocs  from './example/buttonsDocs.vue'
 import inputDocs from './example/inputDocs.vue'
 import uploaderDocs from './example/uploaderDocs.vue'
 import formDocs from './example/formDocs.vue'
-import searchboxDocs from './example/searchboxDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
@@ -57,7 +56,7 @@ import paginationDocs from './example/paginationDocs.vue'
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
 //widgets
-import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
+// import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
 
 
@@ -78,7 +77,6 @@ new Vue({
     uploaderDocs,
     switchDocs,
     formDocs,
-    searchboxDocs,
     messageDocs,
     badgeDocs,
     tagDocs,
@@ -107,7 +105,7 @@ new Vue({
       template: ''
     },
     phoneNumberDocs,
-    addressSelectDocs,
+    // addressSelectDocs,
     // addressSelectDocs:function(resolve) {
     //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
     // }

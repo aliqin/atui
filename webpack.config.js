@@ -67,7 +67,7 @@ module.exports = {
                     'css?sourceMap!' +
                     'less?sourceMap'
                     ),
-            
+
         }
     },
     babel: {
