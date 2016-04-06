@@ -56,7 +56,7 @@ import paginationDocs from './example/paginationDocs.vue'
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
 //widgets
-import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
+// import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
 
 
@@ -105,7 +105,7 @@ new Vue({
       template: ''
     },
     phoneNumberDocs,
-    addressSelectDocs,
+    // addressSelectDocs,
     // addressSelectDocs:function(resolve) {
     //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
     // }

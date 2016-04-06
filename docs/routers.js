@@ -17,6 +17,7 @@ import inputDocs from './example/inputDocs.vue'
 import textareaDocs from './example/textareaDocs.vue'
 import uploadDocs from './example/uploadDocs.vue'
 import formDocs from './example/formDocs.vue'
+import searchboxDocs from './example/searchboxDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
@@ -92,6 +93,9 @@ router.map({
 			'/form': {
 				component:formDocs
 			},
+      'searchbox': {
+        component:searchboxDocs
+      },
 			'/switch': {
 				component:switchDocs
 			},

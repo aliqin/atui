@@ -1,3 +1,55 @@
+.search-box {
+  position: relative;
+}
+.search-box input {
+  padding-right: 25px;
+}
+.search-box .icon-search {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+}
+.search-box .search-list-containter {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-top: 4px;
+  z-index: 9999;
+}
+.search-box .list-dropdown {
+  height: 193px;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
+}
+.search-box .list-dropdown li {
+  list-style: none;
+}
+.search-box .list-dropdown a {
+  display: block;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-box .list-dropdown a {
+  padding: 0 10px;
+  text-decoration: none;
+}
+.search-box .list-dropdown a:hover {
+  background-color: #F2FAFF;
+}
 @-webkit-keyframes appear-from-inside {
   from {
     -webkit-transform: scale(0);
