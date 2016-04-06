@@ -1,40 +1,44 @@
 import Message from './Message.vue'
 import Vue from 'vue'
 
+
 ['info','success','error','warn','loading'].forEach((type,i) =>{
-	Message[type] = function(cont,duar) {
-		let $msg = document.getElementById('J_Component_message')
-		let content,duration,show;
-		if(!$msg) {
-			const div = document.createElement('div')
-	  		document.body.appendChild(div);
-			$msg = document.createElement('message')
-			$msg.id = 'J_Component_message'
-			$msg.innerHTML = "{{content}}"
-			$msg.setAttribute('showIcon','true')
-			$msg.setAttribute('placement','top')
-			$msg.setAttribute('dismissable','false')
-			$msg.setAttribute(':content','content')
-			$msg.setAttribute(':show','show')
-			div.appendChild($msg)
+	Message[type] = function(content,duration) {
+    duration = duration || 3000
 
-
-			new Vue({
-			  el: div,
-			  components:{
-			  	Message:Message
-			  },
-			  data: {
-		    	content:'',
-		    	duration:duration,
-		    	show:show
-			  }
-			})
-		}
-		content = cont
-		duration = duar
-		show = true
+    if(!document.getElementsByClassName('vue-message').length) {
+      let box = document.createElement('div')
+      box.className = 'vue-message'
+      document.body.appendChild(box)
+    }
+		let div = document.createElement('div')
+  	document.getElementsByClassName('vue-message')[0].appendChild(div)
+    new Vue({
+      el:div,
+      template:'<message class="vue-message-notice" :show="show" :duration="duration" :type="type" width="400px" placement="top" @click="hide()">{{content}}</message>',
+      components:{
+        Message:Message
+      },
+      data:{
+        content:content,
+        type:type,
+        duration:duration,
+        show:true
+      },
+      ready:function() {
+        let me = this
+        if(me.duration) {
+          setTimeout(() => {
+            let notice = document.getElementsByClassName('vue-message-notice')
+            let element = notice[notice.length-1]
+            console.log(element)
+            document.getElementsByClassName('vue-message')[0].removeChild(element)
+          },duration)
+        }
+      }
+    })
 	}
+
 })
 
 export default Message
