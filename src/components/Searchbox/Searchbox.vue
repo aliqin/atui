@@ -2,7 +2,7 @@
   <div class="search-box">
     <input type="text" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" @focus="focusInput" debounce="500" />
     <icon type="search" :color="iconColor" size="14"></icon>
-    <div v-if="searchList.length > 0" class="search-list-containter">
+    <div v-if="searchList && searchList.length > 0" class="search-list-containter">
       <ul class="list-dropdown" v-show="showPop">
         <li v-for="item in searchList | filterBy value">
           <a href="javascript:;" @click="checkItem($index, item[textField])" title="{{item[textField]}}">{{item[textField]}}</a>
@@ -80,7 +80,7 @@
     methods: {
       focusInput () {
         this.iconColor = '#00A0FF';
-        if(this.searchList.length > 0) {
+        if(this.searchList && this.searchList.length > 0) {
           this.showPop = true;
         } else {
           this.showPop = false;
@@ -98,65 +98,3 @@
     }
   }
 </script>
-<style lang="less">
-  .search-box {
-    position: relative;
-
-    input {
-      padding-right: 25px;
-    }
-
-    .icon-search {
-      position: absolute;
-      right: 8px;
-      top: 6px;
-    }
-
-    .search-list-containter {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      padding-top: 4px;
-      z-index: 9999;
-    }
-
-    .list-dropdown {
-      height: 193px;
-      padding: 0;
-      margin: 0;
-      background-color: #fff;
-      border: 1px solid #d9d9d9;
-      border-radius: 4px;
-      box-shadow:  0 1px 4px 0 rgba(0,0,0,0.1);
-      overflow-y: scroll;
-
-      li {
-        list-style: none;
-      }
-
-      a {
-        display: block;
-        width: 100%;
-        height: 32px;
-        line-height: 32px;
-        color: #666;
-        font-size: 12px;
-        cursor: pointer;
-        word-break: keep-all;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      a {
-        padding: 0 10px;
-        text-decoration: none;
-
-        &:hover {
-          background-color: #F2FAFF;
-        }
-      }
-    }
-  }
-</style>
