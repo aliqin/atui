@@ -133,6 +133,12 @@ export default {
     showResetButton: {
       type: Boolean,
       default: false
+    },
+    onChange:{
+      type:Function,
+      default() {
+
+      }
     }
   },
   data() {
@@ -211,6 +217,7 @@ export default {
         this.currDate = date
         this.value = this.stringify(this.currDate)
         this.displayDayView = false
+        this.$dispatch('change',this.value)
       }
     },
     switchMonthView() {

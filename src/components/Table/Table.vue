@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th v-if="dataSource.length && rowSelection">
-          <input type="checkbox" @change.stop="onCheckAll" />
+          <input type="checkbox" @change.stop="onCheckAll" v-model="dataSource.length == checkedRows.length" />
       </th>
       <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
           {{column['title']}}
@@ -24,7 +24,8 @@
         (rowIndex, record) in dataSource
         | orderBy sortKey sortOrders[sortKey]">
         <td v-if="rowSelection">
-            <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
+          <input v-if="rowSelection.getCheckboxProps(record)" type="checkbox" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
+            <input v-else type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)"/>
         </td>
         <td v-for="column in columns">
             <template v-if="column.render">
@@ -145,6 +146,7 @@ export default {
       //   return column.onFilter.call(this, value, record)
       // })
       // column.onFilter.call(this, value, record);
+      this.checkedRows = []
       let filters = {}
       filters[column.dataIndex] = [value]
       this.$dispatch('change', this.pagination, filters, column.sorter)
