@@ -7,7 +7,7 @@
 					{{ stepNumber }}
 				</span>
 				<span v-else class="step-finish-icon">
-					<icon type="tick" color="#2db7f5" size="20"></icon>
+					<icon type="tick" size="20"></icon>
 				</span>
 			</div>
 		</div>

@@ -22,6 +22,7 @@ import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
 import calendarDocs from './example/calendarDocs.vue'
+import searchboxDocs from './example/searchboxDocs.vue'
 // import progressbarDocs from './example/progressbar-docs.vue'
 import typeaheadDocs from './example/typeaheadDocs.vue'
 
@@ -56,7 +57,7 @@ import paginationDocs from './example/paginationDocs.vue'
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
 //widgets
-// import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
+import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
 
 
@@ -100,12 +101,13 @@ new Vue({
     tooltipDocs,
     typeaheadDocs,
     menuDocs,
+    searchboxDocs,
     list: {
       inherit: true,
       template: ''
     },
     phoneNumberDocs,
-    // addressSelectDocs,
+    addressSelectDocs
     // addressSelectDocs:function(resolve) {
     //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
     // }
