@@ -10,9 +10,12 @@
       </button>
       <button class="btn btn-success btn-lg"
         @click="showMessage">
-        通用顶部提示
+        代码调用，不需要在页面中写组件标签
       </button>
-
+      <button class="btn btn-default btn-lg"
+        @click="showCenter = !showCenter">
+        点击在中间显示或隐藏
+      </button>
       <button class="btn btn-danger btn-lg"
         @click="showTop = !showTop">
         点击在顶部显示或隐藏
@@ -51,6 +54,18 @@
       </message>
 
       <message
+        :show.sync="showCenter"
+        duration="3000"
+        type="success"
+        width="400px"
+        placement="center"
+        dismissable>
+        <span class="icon-ok-circled message-icon-float-left"></span>
+        <strong>Well Done!</strong>
+        <p>在中间显示的警告.</p>
+      </message>
+
+      <message
         :show.sync="showTop"
         :duration="3000"
         type="danger"
@@ -63,58 +78,77 @@
     </div>
 
     <pre><code class="language-markup"><script type="language-mark-up">
-<button class="btn btn-default btn-lg"
-  @click="showRight = !showRight">
-  点击在右边显示或隐藏
+<button class="btn btn-success btn-lg"
+        @click="showRight = !showRight">
+        点击在右边显示或隐藏
+      </button>
+      <button class="btn btn-success btn-lg"
+        @click="showMessage">
+        代码调用，不需要在页面中写组件标签
+      </button>
+      <button class="btn btn-default btn-lg"
+        @click="showCenter = !showCenter">
+        点击在中间显示或隐藏
+      </button>
+      <button class="btn btn-danger btn-lg"
+        @click="showTop = !showTop">
+        点击在顶部显示或隐藏
+      </button>
+      <hr>
+      <message type="success" >
+        成功提示的文案
+      </message>
 
-<button class="btn btn-default btn-lg"
-  @click="showTop = !showTop">
-  点击在顶部显示或隐藏
-</button>
-<hr>
-<message type="success" >
-  成功提示的文案
-</message>
+      <message type="info" >
+        消息提示的文案
+      </message>
 
-<message type="info" >
-  消息提示的文案
-</message>
+      <message type="danger" dismissable>
+        错误提示的文案,可关闭
+      </message>
 
-<message type="danger" dismissable>
-  错误提示的文案
-</message>
+      <message type="warning" dismissable>
+        警告提示的文案,可关闭
+      </message>
 
-<message type="warning" dismissable>
-  警告提示的文案
-</message>
+      <message type="help" dismissable>
+        帮助提示文案,可关闭
+      </message>
 
-<message type="help" dismissable>
-  帮助提示文案
-</message>
+      <message
+        :show.sync="showRight"
+        :duration="3000"
+        type="success"
+        width="400px"
+        placement="top-right"
+        dismissable
+      >
+        <span class="icon-ok-circled message-icon-float-left"></span>
+        <p>在右边显示的警告</p>
+      </message>
 
-<message
-  show="{{showRight}}"
-  duration="3000"
-  type="success"
-  width="400px"
-  placement="top-right"
-  dismissable>
-  <span class="icon-ok-circled message-icon-float-left"></span>
-  <strong>Well Done!</strong>
-  <p>在右边显示的警告.</p>
-</message>
+      <message
+        :show="showCenter"
+        duration="3000"
+        type="success"
+        width="400px"
+        placement="center"
+        dismissable>
+        <span class="icon-ok-circled message-icon-float-left"></span>
+        <strong>Well Done!</strong>
+        <p>在中间显示的警告.</p>
+      </message>
 
-<message
-  show="{{showTop}}"
-  duration="3000"
-  type="info"
-  width="400px"
-  placement="top"
-  dismissable>
-  <span class="icon-info-circled message-icon-float-left"></span>
-  <strong>Heads up!</strong>
-  <p>在顶部显示的警告</p>
-</message>
+      <message
+        :show.sync="showTop"
+        :duration="3000"
+        type="danger"
+        width="400px"
+        placement="top"
+        dismissable>
+        <span class="icon-info-circled message-icon-float-left"></span>
+        <p>在顶部显示的警告</p>
+      </message>
 
 </script></code></pre>
 
@@ -181,7 +215,8 @@
     data() {
       return {
         showRight: false,
-        showTop: false
+        showTop: false,
+        showCenter:false
       }
     },
     components: {

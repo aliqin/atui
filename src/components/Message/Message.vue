@@ -9,7 +9,8 @@
       'alert-danger':	(type == 'danger'),
       'alert-help': (type == 'help'),
       'top': 			(placement === 'top'),
-      'top-right': 	(placement === 'top-right')
+      'top-right': 	(placement === 'top-right'),
+      'center':      (placement === 'center'),
     }"
     transition="fade"
     v-bind:style="{width:width}"
@@ -73,7 +74,7 @@ import Icon from '../Icon'
   }
 </script>
 
-<style>
+<style lang="less">
 .fade-transition {
   transition: opacity .3s ease;
 }
@@ -94,6 +95,13 @@ import Icon from '../Icon'
   position: fixed;
   top: 30px;
   right: 50px;
+  z-index: 2;
+}
+.alert.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
   z-index: 2;
 }
 </style>

@@ -8,7 +8,7 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
         </pre>
       </p>
       <date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-      :format="format.toString()" :show-reset-button="reset"></DatePicker>
+      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></DatePicker>
       <h4>禁用一周的某日</h4>
 
       <v-select multiple :default-value.sync="disabled">
@@ -127,8 +127,18 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
       disabled() {
         this.$refs.dp.getDateRange()
       },
+      watch:{
+        value(val) {
+          console.log(val)
+        }
+      },
       format(newV) {
         this.value = this.$refs.dp.stringify(new Date(this.value))
+      }
+    },
+    methods:{
+      selectChange(value) {
+        alert(value)
       }
     }
   }

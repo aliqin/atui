@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 
 ['info','success','error','warn','loading'].forEach((type,i) =>{
-	Message[type] = function(content,duration) {
+	Message[type] = function(content,duration,placement) {
     duration = duration || 3000
 
     if(!document.getElementsByClassName('vue-message').length) {
@@ -15,7 +15,7 @@ import Vue from 'vue'
   	document.getElementsByClassName('vue-message')[0].appendChild(div)
     new Vue({
       el:div,
-      template:'<message class="vue-message-notice" :show="show" :duration="duration" :type="type" width="400px" placement="top" @click="hide()">{{content}}</message>',
+      template:'<message class="vue-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :placement="placement" @click="hide()">{{content}}</message>',
       components:{
         Message:Message
       },
@@ -23,10 +23,16 @@ import Vue from 'vue'
         content:content,
         type:type,
         duration:duration,
-        show:true
+        show:true,
+        placement:placement
       },
       ready:function() {
         let me = this
+        // me.content = content
+        // me.type = type
+        // me.show = true
+        // me.duration = duration || me.duration
+        // me.placement = placement || me.placement
         if(me.duration) {
           setTimeout(() => {
             let notice = document.getElementsByClassName('vue-message-notice')

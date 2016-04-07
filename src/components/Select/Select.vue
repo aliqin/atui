@@ -70,12 +70,6 @@
         type: Boolean,
         coerce: coerceBoolean,
         default: false
-      },
-      onChange:{
-        type:Function,
-        default() {
-
-        }
       }
     },
     components:{
