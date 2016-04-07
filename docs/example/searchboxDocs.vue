@@ -3,6 +3,7 @@
     <h3 class="page-header"><a href="#searchbox" class="anchor">Searchbox 搜索框</a></h3>
     <div class="bs-example">
       <searchbox placeholder="请输入关键词搜索" :value.sync="defaultVal" :search-list="searchList" text-field="name"></searchbox>
+      <searchbox placeholder="请输入关键词搜索"></searchbox>
     </div>
 <pre><code class="language-markup"><script type="language-mark-up">
 <searchbox placeholder="请输入关键词搜索" :value.sync="defaultVal" :search-list="searchList" text-field="name"></searchbox>
