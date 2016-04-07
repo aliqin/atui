@@ -34,12 +34,9 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
       <label><input type="checkbox" v-model="reset" @click="x">打开或关闭重置功能</label>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<calendar
-  :value.sync="value"
-  :disabled-days-of-Week="disabled"
-  :format="format"
-  :show-reset-button="reset">
-</calendar>
+<date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
+      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></DatePicker>
+
 <v-select multiple :default-value.sync="disabled" size=5>
   <v-option value="0">0</v-option>
   <v-option value="1">1</v-option>

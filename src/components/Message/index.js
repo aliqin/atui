@@ -5,7 +5,7 @@ import Vue from 'vue'
 ['info','success','error','warn','loading'].forEach((type,i) =>{
 	Message[type] = function(content,duration,placement) {
     duration = duration || 3000
-
+    placement = placement || 'top'
     if(!document.getElementsByClassName('vue-message').length) {
       let box = document.createElement('div')
       box.className = 'vue-message'
@@ -37,7 +37,6 @@ import Vue from 'vue'
           setTimeout(() => {
             let notice = document.getElementsByClassName('vue-message-notice')
             let element = notice[notice.length-1]
-            console.log(element)
             document.getElementsByClassName('vue-message')[0].removeChild(element)
           },duration)
         }
