@@ -14,8 +14,7 @@
     transition="fade"
     v-bind:style="{width:width}"
     role="alert">
-    <button v-show="dismissable" type="button" class="close"
-      @click="show = false">
+    <button v-show="dismissable" type="button" class="close" @click="show = false">
       <span>&times;</span>
     </button>
     <icon :type="type"></icon>

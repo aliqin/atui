@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#modal" class="anchor">Modal 对话框</a></h3>
     <div class="bs-example">
       <button class="btn btn-default" @click="showModal = true">显示弹窗</button>
-      <modal title="Modal title" :show.sync="showModal">
+      <modal title="Modal title" :show.sync="showModal" backdrop="false">
         <div slot="modal-header" class="modal-header">
           <h4 class="modal-title">Modal <b>标题</b></h4>
         </div>

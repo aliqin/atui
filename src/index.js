@@ -16,7 +16,7 @@ import Uploader from './components/Uploader/'
 import Switch from './components/Switch/'
 import Dropdown from './components/Dropdown/'
 import Select from './components/Select/'
-import Calendar from './components/Calendar/'
+import DatePicker from './components/DatePicker/'
 // import rogressbar from './components/progressbar.vue'
 import Typeahead from './components/Typeahead.vue'
 
@@ -62,7 +62,7 @@ const VueComponent = {
   Switch,
   Dropdown,
   Select,
-  Calendar,
+  DatePicker,
   Typeahead,
   Message,
   Modal,

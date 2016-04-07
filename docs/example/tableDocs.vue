@@ -2,7 +2,9 @@
   <div class="bs-docs-section" id="table">
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
+    <row>
       <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" :filter-key="filterKey" row-key="key" @change="onTableChange"></grid>
+    </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/>
     <pre><code class="language-markup"><script type="language-mark-up">
@@ -143,7 +145,7 @@ import {Table,Icon} from 'src/'
 </template>
 
 <script>
-  import {Table,Icon} from 'src/'
+  import {Table,Icon,Layout} from 'src/'
   const columns = [{
     title: '姓名',
     dataIndex: 'name',
@@ -220,7 +222,8 @@ import {Table,Icon} from 'src/'
   export default {
     components: {
       Grid:Table,
-      Icon
+      Icon,
+      Row:Layout.Row
     },
     data() {
       return {
