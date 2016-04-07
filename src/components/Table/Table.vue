@@ -92,8 +92,9 @@ export default {
       let me = this;
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
       this.$nextTick(() => {
-        me.scope = me.scope || me.$parent;
-        me.scope.$compile(me.$el.getElementsByTagName('tbody')[0]);
+        // console.log(me)
+        // me.scope = me.scope || me.$parent;
+        me._context.$compile(me.$el.getElementsByTagName('tbody')[0]);
       });
     },
     sortBy(key) {
