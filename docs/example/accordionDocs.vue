@@ -7,16 +7,20 @@
         Open only one at a time.
       </p>
       <accordion :one-at-atime="checked">
-        <panel header="Panel #1" :is-open="true">
+        <panel :is-open="true">
+          <div slot="panel-header">Panel #1</div>
           内容一
         </panel>
-        <panel header="Panel #2">
+        <panel>
+          <div slot="panel-header">Panel #2</div>
           内容二
         </panel>
-        <panel header="Panel #3">
+        <panel>
+          <div slot="panel-header">Panel #3</div>
           内容三
         </panel>
-        <panel header="Panel #4">
+        <panel>
+          <div slot="panel-header">Panel #4</div>
           内容四
         </panel>
       </accordion>
@@ -24,19 +28,22 @@
     <pre><code class="language-markup"><script type="language-mark-up">
 <input type="checkbox" v-model="checked">
 <label for="checked">Open only one at a time.</label>
-
 <accordion :one-at-atime="checked">
-  <panel header="Panel #1" :is-open="true">
-    ...
+  <panel :is-open="true">
+    <div slot="panel-header">Panel #1</div>
+    内容一
   </panel>
-  <panel header="Panel #2">
-    ...
+  <panel>
+    <div slot="panel-header">Panel #2</div>
+    内容二
   </panel>
-  <panel header="Panel #3">
-    ...
+  <panel>
+    <div slot="panel-header">Panel #3</div>
+    内容三
   </panel>
-  <panel header="Panel #4">
-    ...
+  <panel>
+    <div slot="panel-header">Panel #4</div>
+    内容四
   </panel>
 </accordion>
 </script></code></pre>
@@ -77,18 +84,22 @@
           <td>Whether accordion group is open or closed.</td>
         </tr>
         <tr>
-          <td>header</td>
-          <td><code>String</code></td>
+          <td>slot::panel-header</td>
+          <td><code>slot node</code></td>
           <td></td>
-          <td>The clickable text on the group's header. You need one to be able to click on the header for toggling.</td>
+          <td>以内容分发的形式自定义header里面的内容，注意：因为header自动绑定了展开收起的事件，所以
+          如果用户自定义的元素里有事件绑定的操作，建议使用事件修饰符（例：@click.prev.stop=""）</td>
         </tr>
       </tbody>
-    </table>
+    </table> 
   </div>
-</template>
+</template> 
+
 
 <script>
-  import {accordion,panel} from 'src/'
+  import {Accordion} from 'src/'
+  const {Panel} = Accordion
+
   export default {
     data() {
       return {
@@ -96,8 +107,8 @@
       }
     },
     components: {
-      accordion,
-      panel
+      Accordion,
+      Panel
     }
   }
 </script>
