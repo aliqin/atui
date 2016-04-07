@@ -1,14 +1,14 @@
 <template>
-	<div v-if="!closed" :class="wrapClasses">
-		<a :href="href" class="tag-text"><slot></slot></a>
+	<div v-if="!closed" :class="wrapClasses" :style="{'background-color': color}">
+		<a :href="href" class="tag-text" :style="{'fontSize': size+'px'}"><slot></slot></a>
 		<span v-if="closable" class="tag-close" @click="closeHandler">
-			<icon type="close" size="12"></icon>
+			<v-icon type="close" :size="size"></v-icon>
 		</span>
 	</div>
 </template>
 
 <script>
-	import Icon from '../Icon/'
+	import vIcon from '../Icon/'
 	export default {
 		props: {
 			color: {
@@ -24,6 +24,10 @@
 			onClose: {
 				type: Function,
 				default: () => {}
+			},
+			size: {
+				type: String,
+				default: "12"
 			}
 		},
 
@@ -37,9 +41,7 @@
 			wrapClasses() {
 				return {
 					'tag':		true,
-				    'tag-green':this.color === 'green',
-				    'tag-orange':this.color === 'orange',
-				    'tag-red':this.color == 'red'
+					'tag-color': this.color
 				}
 			}
 		},
@@ -52,7 +54,11 @@
 		},
 
 		components: {
-			Icon
+			vIcon
+		},
+
+		ready () {
+
 		}
 	}
 </script>

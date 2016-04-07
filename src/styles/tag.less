@@ -13,8 +13,9 @@
 .tag {
 	display: inline-block;
 	vertical-align: middle;
-	height: 22px;
-	line-height: 22px;
+	min-height: 22px;
+	// line-height: 22px;
+	line-height: 2;
 	border-radius: 4px;
 	padding: 0 8px;
 	font-size: 10px;
@@ -30,7 +31,6 @@
 		cursor: pointer;
 		color: @tag-default-text;
 		text-decoration: none;
-
 	}
 
 	.tag-close {
@@ -38,48 +38,16 @@
 		opacity: 0.66;
 		cursor: pointer;
 		display: inline-block;
-		width: 10px;
-		height: 10px;
-		line-height: 10px;
-		font-size: 16px;
-		transform: scale(0.83333333) rotate(-2deg);
+		// width: 10px;
+		// height: 10px;
+		// line-height: 10px;
+		// font-size: 16px;
+		// transform: scale(0.83333333) rotate(-2deg);
 		&:hover {
 			opacity: 1;
 		}
 	}
-
-	&-green {
-		background-color: @tag-green-bg;
-		.tag-text {
-			color: @tag-text
-		}
-		.tag-close {
-			color: @tag-text;
-			opacity: 0.66;
-			cursor: pointer;
-			&:hover {
-				opacity: 1;
-			}
-		}
-	}
-
-	&-orange {
-		background-color: @tag-orange-bg;
-		.tag-text {
-			color: @tag-text
-		}
-		.tag-close {
-			color: @tag-text;
-			opacity: 0.66;
-			cursor: pointer;
-			&:hover {
-				opacity: 1;
-			}
-		}
-	}
-
-	&-red {
-		background-color: @tag-red-bg;
+	&-color {
 		.tag-text {
 			color: @tag-text
 		}
