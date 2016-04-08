@@ -84,10 +84,6 @@
 			max-width: 100px;
 			font-size: 12px;
 		}
-		.step-main-title:last-child{
-			padding: 0;
-		}
-
 	}
 
 	&.step-status-process {
@@ -134,6 +130,15 @@
 			background-color: #fff;
 			> .step-icon {
 				color: @wait-icon-color;
+			}
+		}
+	}
+
+	// 最后一个项目，将其title的padding设置为0
+	&.step-item-last {
+		.step-main {
+			.step-main-title {
+				padding: 0;
 			}
 		}
 	}
