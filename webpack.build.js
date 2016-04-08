@@ -1,6 +1,6 @@
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
-delete config.devtool
+// delete config.devtool
 config.entry = {
     Vue: ['vue'],
     VueComponent: ['./src/index.js'],
