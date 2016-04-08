@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th v-if="dataSource.length && rowSelection">
-          <input type="checkbox" @change.stop="onCheckAll" v-model="dataSource.length == checkedRows.length" />
+          <input type="checkbox" @change.stop="onCheckAll"/>
       </th>
       <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
           {{column['title']}}
@@ -24,8 +24,7 @@
         (rowIndex, record) in dataSource
         | orderBy sortKey sortOrders[sortKey]">
         <td v-if="rowSelection">
-          <input v-if="rowSelection.getCheckboxProps(record)" type="checkbox" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
-            <input v-else type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)"/>
+             <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
         </td>
         <td v-for="column in columns">
             <template v-if="column.render">
@@ -59,7 +58,7 @@ export default {
   data() {
     let sortOrders = {}
     this.columns.forEach((key) => sortOrders[key] = 1)
-    this.compileTbody();
+    this.compileTbody()
     return {
       sortKey: '',
       isOpen: false,
