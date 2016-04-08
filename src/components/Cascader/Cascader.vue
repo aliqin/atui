@@ -4,11 +4,8 @@
       <v-input readonly></v-input>
     </span>
     <div class="cascader-menus">
-      <ul class="cascader-menu" v-if="root">
-        <li class="cascader-menu-item" v-for="option in root">{{option.label}}</li>
-      </ul>
-      <ul class="cascader-menu" v-for="index in childs">
-        <!-- <li class="cascader-menu-item" v-for="option in root">{{option.label}}</li> -->
+      <ul class="cascader-menu" v-for="menu in menus">
+        <li class="cascader-menu-item" v-for="option in menu" @click="changeOption($index,option)">{{option.label}}</li>
       </ul>
     </div>
   </div>
@@ -22,7 +19,8 @@
       options:{
         type: Array,
         required:true
-      }
+      },
+      defaultValue:Array
     },
     components:{
       vInput:Input
@@ -30,29 +28,38 @@
     data() {
       return {
         childs:0,
-        root:[]
+        menus:[]
       }
     },
     created() {
       let me = this
+      me.menus[0] = []
       me.options.forEach((option,i) => {
-        me.root.push({
+        me.menus[0].push({
           label:option.label,
-          value:option.value
+          value:option.value,
+          children:option.children
         })
       });
-      let children = this.options[0].children
-      console.log(children)
-      while(children && children.length) {
-        me.childs++
-        children = children[0].children
-      }
+      // me.childs++
+      // let children = this.options[0].children
+      // // 算出层级，初始化界面的选择框
+      // while(children && children.length) {
+      //   me.childs++
+      //   children = children[0].children
+      // }
     },
     ready() {
 
     },
     methods: {
-
+      changeOption(index,option) {
+        let me = this
+        if(option.children) {
+          me.menus[index+1] = option.children
+        }
+        me.$set('menus',me.menus)
+      }
     }
   }
 </script>
