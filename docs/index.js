@@ -29,6 +29,7 @@ import typeaheadDocs from './example/typeaheadDocs.vue'
 
 // 展示类
 import messageDocs from './example/messageDocs.vue'
+import cascaderDocs from './example/cascaderDocs.vue'
 import modalDocs from './example/modalDocs.vue'
 import tableDocs from './example/tableDocs.vue'
 import badgeDocs from './example/badgeDocs.vue'
@@ -79,6 +80,7 @@ new Vue({
     switchDocs,
     formDocs,
     messageDocs,
+    cascaderDocs,
     badgeDocs,
     tagDocs,
     headerDocs,
