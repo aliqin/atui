@@ -75,7 +75,7 @@
 </template>
 
 <script>
-  import {badge} from 'src/'
+  import {Badge} from 'src/'
   export default {
     data () {
       return {
@@ -83,7 +83,7 @@
       }
     },
     components: {
-      badge
+      Badge
     }
   }
 </script>
