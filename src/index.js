@@ -22,6 +22,7 @@ import Typeahead from './components/Typeahead.vue'
 
 
 // 展示类
+import Cascader from './components/Cascader/'
 import Message from './components/Message/'
 import Modal from './components/Modal/'
 import Table from './components/Table/'
@@ -65,6 +66,7 @@ const VueComponent = {
   DatePicker,
   Typeahead,
   Message,
+  Cascader,
   Modal,
   Table,
   Badge,
@@ -82,8 +84,7 @@ const VueComponent = {
   Steps,
   Menu,
   Breadcrumb,
-  Pagination,
-  // AddressSelect
+  Pagination
 }
 
 module.exports = VueComponent
