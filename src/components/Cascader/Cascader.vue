@@ -3,9 +3,12 @@
     <span class="cascader-picker">
       <v-input readonly></v-input>
     </span>
-    <div class="cascader-menus" v-if="data.length">
-      <ul class="cascader-menu" v-for="options in data">
-        <li class="cascader-menu-item" v-for="option in options">{{option.label}}</li>
+    <div class="cascader-menus">
+      <ul class="cascader-menu" v-if="root">
+        <li class="cascader-menu-item" v-for="option in root">{{option.label}}</li>
+      </ul>
+      <ul class="cascader-menu" v-for="index in childs">
+        <!-- <li class="cascader-menu-item" v-for="option in root">{{option.label}}</li> -->
       </ul>
     </div>
   </div>
@@ -17,7 +20,8 @@
   export default {
     props:{
       options:{
-        type: Array
+        type: Array,
+        required:true
       }
     },
     components:{
@@ -25,26 +29,27 @@
     },
     data() {
       return {
-        data:[]
+        childs:0,
+        root:[]
       }
     },
     created() {
       let me = this
-      me.data.push([]);
-      this.options.forEach((option,i) => {
-        let level = 0;
-        me.data[level] = []
-        me.data[level].push({
+      me.options.forEach((option,i) => {
+        me.root.push({
           label:option.label,
           value:option.value
         })
-        // while(option.children) {
-        //   level ++
-        //   me.data[level] = []
-        //   me.data.push(children);
-        // }
-      })
-      console.log(me.data)
+      });
+      let children = this.options[0].children
+      console.log(children)
+      while(children && children.length) {
+        me.childs++
+        children = children[0].children
+      }
+    },
+    ready() {
+
     },
     methods: {
 
