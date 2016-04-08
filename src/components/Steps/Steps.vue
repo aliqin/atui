@@ -71,7 +71,7 @@
 				this.itemsWidth.forEach((w) => {
 					tw += w
 				})
-				const dw = Math.floor((this.previousStepsWidth - tw)/len) - 1;
+				const dw = Math.floor((this.previousStepsWidth - tw)/len)*0.6 - 1;
 				if(dw <= 0) {
 					return
 				}
