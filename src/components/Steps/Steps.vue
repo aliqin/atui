@@ -58,7 +58,7 @@
 			    this.previousStepsWidth = Math.floor(this.$el.offsetWidth);
 			    this._update();
 
-        	this.$el.children[len].style.position = 'absolute'
+        	//this.$el.children[len].style.position = 'absolute'
 
 			    // 算出tailWidth, 动态更新子组件
 			    this.$children.forEach((child, index) => {
@@ -71,7 +71,7 @@
 				this.itemsWidth.forEach((w) => {
 					tw += w
 				})
-				const dw = Math.floor((this.previousStepsWidth - tw)/len ) - 1;
+				const dw = Math.floor((this.previousStepsWidth - tw)/len) - 1;
 				if(dw <= 0) {
 					return
 				}
