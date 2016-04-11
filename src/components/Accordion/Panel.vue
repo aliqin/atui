@@ -27,6 +27,13 @@ import coerceBoolean from '../utils/coerceBoolean.js'
       },
       header: {
         type: String
+      },
+      onToggle: {
+        type: Function,
+        default: () => {}
+      },
+      index: {
+        type: Number
       }
     },
     data() {
@@ -37,6 +44,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
     methods: {
       toggleIsOpen() {
         this.isOpen = !this.isOpen
+        this.onToggle(this)
         this.$dispatch('isOpenEvent', this)
       }
     },
