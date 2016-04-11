@@ -5,14 +5,14 @@
     </span>
     <div class="cascader-menus" v-show="isOpen">
       <ul class="cascader-menu" v-for="(index, menu) in menus">
-        <li class="cascader-menu-item" :class="{selected:selectedArray[index] === option.value}" v-for="option in menu" @click="changeOption(index,option)">{{option.label}}</li>
+        <li class="cascader-menu-item" :class="{selected:selectedArray[index] === option.label}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
       </ul>
     </div>
   </div>
 </template>
 <script>
+  import EventListener from '../utils/EventListener'
   import Input from '../Input'
-  import coerceBoolean from '../utils/coerceBoolean.js'
 
   export default {
     props:{
@@ -31,10 +31,16 @@
       displayRender:{
         type:Function,
         default (label) {
-          return label.join(' / ')
+          return label.join('/')
         }
       },
-      defaultValue:Array
+      expandTrigger:{
+        type:String,
+        default:'click'
+      },
+      defaultValue:{
+        type: Array
+      }
     },
     components:{
       vInput:Input
@@ -43,12 +49,8 @@
       return {
         menus:[],
         selectedArray:[],
+        selectedValue:'',
         isOpen:false
-      }
-    },
-    computed:{
-      selectedValue() {
-        this.displayRender(this.selectedArray)
       }
     },
     created() {
@@ -61,6 +63,14 @@
           children:option.children
         })
       });
+      if(me.defaultValue) {
+        me.defaultValue.forEach((value,i) => {
+          let option = me.menus[i].find((option) => {
+            return option.value === value
+          })
+          me.changeOption(i,option)
+        })
+      }
       // me.childs++
       // let children = this.options[0].children
       // // 算出层级，初始化界面的选择框
@@ -68,27 +78,34 @@
       //   me.childs++
       //   children = children[0].children
       // }
-      if(me.defaultValue) {
-        let value = me.defaultValue[0]
-        let option = me.menus[0].filter((option) => {
-          return option.value === value
-        })
-        me.changeOption(0,option)
-      }
+
+    },
+    ready() {
+      const el = this.$el
+      let me = this
+      me._closeEvent = EventListener.listen(window, 'click', (e)=> {
+        if (!el.contains(e.target)) {
+          me.isOpen = false
+        }
+      })
     },
     methods: {
-      changeOption(index,option) {
+      changeOption(index,option,event) {
         let me = this
         let menus = me.menus.slice(0,index + 1)
         me.selectedArray = me.selectedArray.slice(0,index + 1)
-        me.selectedArray[index] = option.value
+        me.selectedArray[index] = option.label
         if(option.children) {
           menus.push(option.children)
         }
         me.menus = menus
         // 触发事件
-        if(index == me.options.length) {
-          this.$dispatch('change', me.selectedValue, option)
+        if(index === me.options.length) {
+          me.selectedValue = me.displayRender(me.selectedArray)
+          // 有事件来的才触发自定义事件，使用defaultValue填充的不触发
+          if(event) {
+            me.$dispatch('change', me.selectedValue, option)
+          }
         }
       },
       toggleMenus() {
