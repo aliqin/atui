@@ -1,13 +1,20 @@
 <template>
 	<div :class="wrapClasses" :style="{'width': tailWidth}">
-		<div v-if="!lastStep" class="step-tail"><i></i></div>
+		<div v-if="!lastStep" class="step-tail">
+			<i>
+				<i :style="{ backgroundColor: color }"></i>
+			</i>
+		</div>
 		<div class="step-head">
 			<div class="step-head-inner">
-				<span v-if="status !== 'finish'" class="step-icon">
+				<span v-if="status !== 'finish'" class="step-icon" 
+					:style="{
+						borderColor: status==='process'?color:'#e9e9e9', 
+						backgroundColor: status==='process'?color:'#fff'}">
 					{{ stepNumber }}
 				</span>
 				<span v-else class="step-finish-icon">
-					<icon type="tick" size="20"></icon>
+					<icon type="success" size="28" :color="color"></icon>
 				</span>
 			</div>
 		</div>
@@ -27,7 +34,8 @@
 			status: String,
 			stepNumber: Number,
 			lastStep: Boolean,
-			tailWidth: String
+			tailWidth: String,
+			color: String
 		},
 		computed: {
 			wrapClasses () {
