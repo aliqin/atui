@@ -106,9 +106,9 @@ new Vue({
     searchboxDocs,
     phoneNumberDocs,
     // addressSelectDocs
-    addressSelectDocs:function(resolve) {
-      require(['./example/widgets/addressSelectDocs.vue'], resolve);
-    }
+    // addressSelectDocs:function(resolve) {
+    //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
+    // }
   },
   data() {
     return {

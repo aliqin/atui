@@ -31,7 +31,7 @@
       displayRender:{
         type:Function,
         default (label) {
-          return label.join('/')
+          return label.join(' / ')
         }
       },
       expandTrigger:{
@@ -97,16 +97,14 @@
         me.selectedArray[index] = option.label
         if(option.children) {
           menus.push(option.children)
-        }
-        me.menus = menus
-        // 触发事件
-        if(index === me.options.length) {
+        } else {
           me.selectedValue = me.displayRender(me.selectedArray)
           // 有事件来的才触发自定义事件，使用defaultValue填充的不触发
           if(event) {
             me.$dispatch('change', me.selectedValue, option)
           }
         }
+        me.menus = menus
       },
       toggleMenus() {
         this.isOpen = !this.isOpen
