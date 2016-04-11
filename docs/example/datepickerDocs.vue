@@ -1,14 +1,14 @@
 <template>
-  <div class="bs-docs-section" id="calendar">
-    <h1 class="page-header"><a href="#calendar" class="anchor">Calendar 日历控件</a></h1>
+  <div class="bs-docs-section" id="datepicker">
+    <h1 class="page-header"><a href="#datepicker" class="anchor">DatePicker 日期选择</a></h1>
     <div class="bs-example">
       <p>
         <pre>
 Selected date is: {{new Date(value).toString().slice(0, -23)}}
         </pre>
       </p>
-      <Calendar v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-      :format="format.toString()" :show-reset-button="reset"></Calendar>
+      <date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
+      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></DatePicker>
       <h4>禁用一周的某日</h4>
 
       <v-select multiple :default-value.sync="disabled">
@@ -34,12 +34,9 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
       <label><input type="checkbox" v-model="reset" @click="x">打开或关闭重置功能</label>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<calendar
-  :value.sync="value"
-  :disabled-days-of-Week="disabled"
-  :format="format"
-  :show-reset-button="reset">
-</calendar>
+<date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
+      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></DatePicker>
+
 <v-select multiple :default-value.sync="disabled" size=5>
   <v-option value="0">0</v-option>
   <v-option value="1">1</v-option>
@@ -105,13 +102,13 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
 </template>
 
 <script>
-  import {Calendar,Select} from 'src/'
+  import {DatePicker,Select} from 'src/'
 
   const Option = Select.Option;
 
   export default {
     components: {
-      Calendar,
+      DatePicker,
       vSelect:Select,
       vOption:Option
     },
@@ -127,8 +124,18 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
       disabled() {
         this.$refs.dp.getDateRange()
       },
+      watch:{
+        value(val) {
+          console.log(val)
+        }
+      },
       format(newV) {
         this.value = this.$refs.dp.stringify(new Date(this.value))
+      }
+    },
+    methods:{
+      selectChange(value) {
+        alert(value)
       }
     }
   }

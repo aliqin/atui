@@ -9,7 +9,7 @@
       <h4 class="example-title">三种颜色的标签</h4>
       <v-tag color="green">标签</v-tag>
       <v-tag color="orange" closable :on-close="closeTag">标签</v-tag>
-      <v-tag color="red">标签</v-tag>
+      <v-tag color="red" size="20">标签</v-tag>
     </div>
 <pre><code class="language-markup"><script type="language-mark-up">
 <v-tag>标签一</v-tag>
@@ -17,7 +17,7 @@
 <v-tag :href="href">标签（链接）</v-tag>
 <v-tag color="green">标签</v-tag>
 <v-tag color="orange" closable :on-close="closeTag">标签</v-tag>
-<v-tag color="red">标签</v-tag>
+<v-tag color="red" size="20">标签</v-tag>
 </script></code></pre>
   <h2>Options</h2>
   <table class="table table-bordered">
@@ -43,6 +43,12 @@
         <td>Tag的颜色，默认为#f2f2f2</td>
       </tr>
       <tr>
+        <td>size</td>
+        <td><code>String</code></td>
+        <td></td>
+        <td>Tag的尺寸，默认为12px</td>
+      </tr>
+      <tr>
         <td>href</td>
         <td><code>String</code></td>
         <td></td>
@@ -65,7 +71,8 @@
   export default {
     data () {
       return {
-        href: 'http://www.aliqin.cn'
+        href: 'http://www.aliqin.cn',
+        size: 20
       }
     },
     methods: {

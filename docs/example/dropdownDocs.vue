@@ -92,10 +92,10 @@
 </template>
 
 <script>
-  import {dropdown} from 'src/'
+  import {Dropdown} from 'src/'
   export default {
     components: {
-      dropdown
+      Dropdown
     }
   }
 </script>

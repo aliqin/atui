@@ -21,13 +21,15 @@ import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
-import calendarDocs from './example/calendarDocs.vue'
+import datepickerDocs from './example/datepickerDocs.vue'
+import searchboxDocs from './example/searchboxDocs.vue'
 // import progressbarDocs from './example/progressbar-docs.vue'
 import typeaheadDocs from './example/typeaheadDocs.vue'
 
 
 // 展示类
 import messageDocs from './example/messageDocs.vue'
+import cascaderDocs from './example/cascaderDocs.vue'
 import modalDocs from './example/modalDocs.vue'
 import tableDocs from './example/tableDocs.vue'
 import badgeDocs from './example/badgeDocs.vue'
@@ -56,7 +58,7 @@ import paginationDocs from './example/paginationDocs.vue'
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
 //widgets
-// import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
+import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
 
 
@@ -78,6 +80,7 @@ new Vue({
     switchDocs,
     formDocs,
     messageDocs,
+    cascaderDocs,
     badgeDocs,
     tagDocs,
     headerDocs,
@@ -86,7 +89,7 @@ new Vue({
     // asideDocs,
     carouselDocs,
     buttonsDocs,
-    calendarDocs,
+    datepickerDocs,
     dropdownDocs,
     modalDocs,
     popoverDocs,
@@ -100,12 +103,13 @@ new Vue({
     tooltipDocs,
     typeaheadDocs,
     menuDocs,
+    searchboxDocs,
     list: {
       inherit: true,
       template: ''
     },
     phoneNumberDocs,
-    // addressSelectDocs,
+    addressSelectDocs
     // addressSelectDocs:function(resolve) {
     //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
     // }
