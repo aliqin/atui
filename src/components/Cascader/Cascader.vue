@@ -1,11 +1,11 @@
 <template>
   <div class="casader">
     <span class="cascader-picker">
-      <v-input readonly @click="toggleMenus" :value="selectedValue" :placeholder="placeholder"></v-input>
+      <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder"></v-input>
     </span>
     <div class="cascader-menus" v-show="isOpen">
       <ul class="cascader-menu" v-for="(index, menu) in menus">
-        <li class="cascader-menu-item" :class="{selected:selectedArray[index] === option.label}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
+        <li class="cascader-menu-item" :class="{selected:selectedOptions[index] === option}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
       </ul>
     </div>
   </div>
@@ -48,9 +48,23 @@
     data() {
       return {
         menus:[],
-        selectedArray:[],
-        selectedValue:'',
+        selectedOptions:[],
+        displayValue:'',
         isOpen:false
+      }
+    },
+    computed:{
+      selectedValue() {
+        let me = this
+        return me.selectedOptions.map((option) => {
+          return option.value
+        })
+      },
+      selectedLabel() {
+        let me = this
+        return me.selectedOptions.map((option) => {
+          return option.label
+        })
       }
     },
     created() {
@@ -93,15 +107,15 @@
       changeOption(index,option,event) {
         let me = this
         let menus = me.menus.slice(0,index + 1)
-        me.selectedArray = me.selectedArray.slice(0,index + 1)
-        me.selectedArray[index] = option.label
+        me.selectedOptions = me.selectedOptions.slice(0,index + 1)
+        me.selectedOptions[index] = option
         if(option.children) {
           menus.push(option.children)
         } else {
-          me.selectedValue = me.displayRender(me.selectedArray)
+          me.displayValue = me.displayRender(me.selectedLabel)
           // 有事件来的才触发自定义事件，使用defaultValue填充的不触发
           if(event) {
-            me.$dispatch('change', me.selectedValue, option)
+            me.$dispatch('change', me.selectedValue, me.selectedOptions)
           }
         }
         me.menus = menus
