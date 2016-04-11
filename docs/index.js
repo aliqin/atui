@@ -46,19 +46,19 @@ import accordionDocs from './example/accordionDocs.vue'
 // 导航类
 // import affixDocs from './example/affixDocs.vue'
 // import asideDocs from './example/asideDocs.vue'
-import popoverDocs from './example/popoverDocs.vue'
-import tabsDocs from './example/tabsDocs.vue'
-import stepsDocs from './example/stepsDocs.vue'
-import menuDocs from './example/menuDocs.vue'
-import breadcrumbDocs from './example/breadcrumbDocs.vue'
-import paginationDocs from './example/paginationDocs.vue'
+// import popoverDocs from './example/popoverDocs.vue'
+// import tabsDocs from './example/tabsDocs.vue'
+// import stepsDocs from './example/stepsDocs.vue'
+// import menuDocs from './example/menuDocs.vue'
+// import breadcrumbDocs from './example/breadcrumbDocs.vue'
+// import paginationDocs from './example/paginationDocs.vue'
 
 
-// filters
-import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
+// // filters
+// import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
-//widgets
-import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
+// //widgets
+// import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
 
 
@@ -92,24 +92,24 @@ new Vue({
     datepickerDocs,
     dropdownDocs,
     modalDocs,
-    popoverDocs,
+    // popoverDocs,
     // progressbarDocs,
-    selectDocs,
-    tabsDocs,
-    tableDocs,
-    stepsDocs,
-    breadcrumbDocs,
-    paginationDocs,
-    tooltipDocs,
-    typeaheadDocs,
-    menuDocs,
-    searchboxDocs,
-    list: {
-      inherit: true,
-      template: ''
-    },
-    phoneNumberDocs,
-    addressSelectDocs
+    // selectDocs,
+    // tabsDocs,
+    // tableDocs,
+    // stepsDocs,
+    // breadcrumbDocs,
+    // paginationDocs,
+    // tooltipDocs,
+    // typeaheadDocs,
+    // menuDocs,
+    // searchboxDocs,
+    // list: {
+    //   inherit: true,
+    //   template: ''
+    // },
+    // phoneNumberDocs,
+    // addressSelectDocs
     // addressSelectDocs:function(resolve) {
     //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
     // }

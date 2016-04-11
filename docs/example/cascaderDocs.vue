@@ -2,7 +2,7 @@
   <div class="bs-docs-section" id="cascader">
     <h3 class="page-header"><a href="#cascader" class="anchor">Cascader 级联选择</a></h3>
     <div class="bs-example">
-      <cascader :options="options" @change="onChange" :defaultValue="defaultValue"></cascader>
+      <cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 
@@ -20,23 +20,22 @@
     </thead>
     <tbody>
       <tr>
-        <td>indicators</td>
-        <td><code>Boolean</code></td>
-        <td><code>true</code></td>
-        <td>Whether to show the indicators.</td>
+        <td>options</td>
+        <td><code>Array</code></td>
+        <td><code>[]</code></td>
+        <td>要绑定的数据源</td>
       </tr>
       <tr>
-        <td>controls</td>
-        <td><code>Boolean</code></td>
-        <td><code>true</code></td>
-        <td>Whether to show the direction controls.</td>
+        <td>defaultValue</td>
+        <td><code>Array</code></td>
+        <td><code>[]</code></td>
+        <td>默认选中的值.</td>
       </tr>
       <tr>
-        <td>interval</td>
-        <td><code>Number</code></td>
-        <td><code>5000</code></td>
-        <td>The amount of time to delay between automatically cycling an item. If set to 0 or a negative number,
-          carousel will not automatically cycle.
+        <td>change</td>
+        <td><code>Function</code></td>
+        <td><code>function(selectedValue, option) {}</code></td>
+        <td>选择到最后一项触发的change事件
         </td>
       </tr>
     </tbody>
@@ -67,7 +66,9 @@
         label: '中华门',
       }],
     }],
-  }];
+  }]
+
+  const defaultValue = ['zhejiang', 'hangzhou', 'xihu']
 
   import {Cascader} from 'src/'
   export default {
@@ -77,13 +78,12 @@
     data() {
       return {
         options:options,
-        defaultValue:['zhejiang', 'hangzhou', 'xihu']
-
+        defaultValue:defaultValue
       }
     },
-    methoeds:{
-      onChange(selectedValue, option) {
-        console.log(selectedValue, option)
+    methods:{
+      selectChange(selectedValue, option) {
+        alert(selectedValue)
       }
     }
   }
