@@ -5,7 +5,7 @@
     </span>
     <div class="cascader-menus" v-show="isOpen">
       <ul class="cascader-menu" v-for="(index, menu) in menus">
-        <li class="cascader-menu-item" :class="{selected:selectedOptions[index] === option}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
+        <li class="cascader-menu-item" :class="{selected:selectedOptions[index] === option,disabled:option.disabled}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
       </ul>
     </div>
   </div>
@@ -107,6 +107,9 @@
       changeOption(index,option,event) {
         let me = this
         let menus = me.menus.slice(0,index + 1)
+        if(option.disabled) {
+          return
+        }
         me.selectedOptions = me.selectedOptions.slice(0,index + 1)
         me.selectedOptions[index] = option
         if(option.children) {
@@ -175,19 +178,17 @@
     &.selected,&.selected:hover{
       background: #d5f1fd;
     }
+    &.disabled {
+      cursor: not-allowed;
+      color: #ccc;
+    }
+    &.disabled:hover{
+      background: transparent
+    }
 }
 
 .cascader-menu-item:hover {
     background: #eaf8fe;
-}
-
-.cascader-menu-item-disabled {
-    cursor: not-allowed;
-    color: #ccc;
-}
-
-.cascader-menu-item-disabled:hover {
-    background: transparent
 }
 
 .cascader-menu-item-active {
