@@ -11,12 +11,15 @@ import '@ali/vue-component/dist/alidayu.css'
 // 或less引入
 import '@ali/vue-component/style/themes/alidayu.less'
 
-// 根据需求引入组件
-import { alert } from '@ali/vue-component'
+// 引入组件
+import { Alert } from '@ali/vue-component'
+
+// 如果没有使用rollup或webpak2.0，整个组件JS都会打包进去，使用如下方式可按需打包
+import Alert from '@ali/vue-component/src/components/Alert'
 
 new Vue({
   components: {
-    alert
+    Alert
   }
 })
     </code></pre>
