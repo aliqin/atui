@@ -3,17 +3,17 @@
     <h3 class="page-header"><a href="#steps" class="anchor">Steps 步骤条</a></h3>
     <div class="bs-example">
         <h4 class="example-title">基础型</h4>
-        <v-steps :current="current">
-            <v-step title="已完成"></v-step>
-            <v-step title="进行中" ></v-step>
+        <v-steps :current="current" color="#ff7500">
+            <v-step title="已完成" ></v-step>
+            <v-step title="进行中"></v-step>
             <v-step title="有一个待运行"></v-step>
             <v-step title="待运行"></v-step>
         </v-steps>
         <br><br>
         <h4 class="example-title">带文字描述</h4>
-        <v-steps :current="current">
+        <v-steps :current="current" color="#00a0ff">
             <v-step title="已完成" description="这里是多信息"></v-step>
-            <v-step title="进行中" description="这里是多信息的耶哦"></v-step>
+            <v-step title="进行中"  description="这里是多信息的耶哦"></v-step>
             <v-step title="有一个待运行" description="描述啊描述啊"></v-step>
             <v-step title="待运行" description="这里是多信息的描述啊"></v-step>
         </v-steps>
@@ -22,15 +22,15 @@
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<v-steps :current="current">
-    <v-step title="已完成"></v-step>
-    <v-step title="进行中" ></v-step>
+<v-steps :current="current" color="#ff7500">
+    <v-step title="已完成" ></v-step>
+    <v-step title="进行中"></v-step>
     <v-step title="有一个待运行"></v-step>
     <v-step title="待运行"></v-step>
 </v-steps>
-<v-steps :current="current">
+<v-steps :current="current" color="#00a0ff">
     <v-step title="已完成" description="这里是多信息"></v-step>
-    <v-step title="进行中" description="这里是多信息的耶哦"></v-step>
+    <v-step title="进行中"  description="这里是多信息的耶哦"></v-step>
     <v-step title="有一个待运行" description="描述啊描述啊"></v-step>
     <v-step title="待运行" description="这里是多信息的描述啊"></v-step>
 </v-steps>
@@ -53,6 +53,12 @@
         <td>Number</td>
         <td>0</td>
         <td>当前正在执行的步骤数，可以通过status属性覆盖状态</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>String</td>
+        <td></td>
+        <td>指定步骤条的样式颜色</td>
       </tr>
     </tbody>
   </table>

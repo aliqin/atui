@@ -10,6 +10,9 @@
 			current: {
 				type: Number,
 				default: 0
+			},
+			color: {
+				type: String
 			}
 		},
 		watch: {
@@ -32,6 +35,7 @@
 				this.$children.forEach((child, index) => {
 					child.stepNumber = (index + 1).toString();
 					child.lastStep = index === len;
+					child.color = self.color;
 
 					if(index === self.current) {
 						child.status = 'process'

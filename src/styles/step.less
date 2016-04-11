@@ -19,7 +19,16 @@
 	      border-radius: 1px;
 	      width: 100%;
 	      position: relative;
-	      &:after {
+	      // &:after {
+	      //   position: absolute;
+	      //   content: '';
+	      //   top: 0;
+	      //   width: 0;
+	      //   background: @process-tail-color;
+	      //   height: 100%;
+	      //   opacity: 0;
+	      // }
+	      i {
 	        position: absolute;
 	        content: '';
 	        top: 0;
@@ -45,17 +54,22 @@
 			height: 26px;
 			line-height: 26px;
 			text-align: center;
-			border-radius: 26px;
+			// border-radius: 26px;
 			font-size: 14px;
 			margin-right: 8px;
-			border: 1px solid @process-tail-color;
+			// border: 1px solid @process-tail-color;
 			transition: background-color 0.3s ease, border-color 0.3s ease;
 			> .step-icon {
-				line-height: 1;
+					display: inline-block;
+					width: 26px;
+					height: 26px;
+					line-height: 1.8;
 			    top: -1px;
 			    color: @process-tail-color;
 			    position: relative;
-
+			    border: 1px solid @process-tail-color;
+			    border-radius: 50%;
+			    text-align: center;
 			}
 
 			.step-finish-icon {
@@ -88,10 +102,10 @@
 
 	&.step-status-process {
 		.step-head-inner {
-			border-color: @process-icon-color;
-			background-color: @process-icon-bg-color;
 			> .step-icon {
 				color: #fff;
+				border-color: @process-icon-color;
+				background-color: @process-icon-bg-color;
 			}
 		}
     .step-main {
@@ -101,8 +115,6 @@
 
 	&.step-status-finish {
 		.step-head-inner {
-			border-color: @finish-icon-color;
-			background-color: #fff;
 			> .step-icon {
 				color: @finish-icon-color;
 			}
@@ -110,7 +122,13 @@
 		.step-tail {
 			> i {
 				background: @process-tail-color;
-				&:after {
+				// &:after {
+				// 	width: 100%;
+				// 	background: @finish-tail-color;
+				// 	transition: all 0.4s ease;
+				// 	opacity: 1;
+				// }
+				i {
 					width: 100%;
 					background: @finish-tail-color;
 					transition: all 0.4s ease;
@@ -126,8 +144,6 @@
 
 	&.step-status-wait {
 		.step-head-inner {
-			border-color: @wait-icon-color;
-			background-color: #fff;
 			> .step-icon {
 				color: @wait-icon-color;
 			}
