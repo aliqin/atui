@@ -17,7 +17,7 @@ import Switch from './components/Switch/'
 import Dropdown from './components/Dropdown/'
 import Select from './components/Select/'
 import DatePicker from './components/DatePicker/'
-// import rogressbar from './components/progressbar.vue'
+// import Progressbar from './components/progressbar.vue'
 import Typeahead from './components/Typeahead.vue'
 
 

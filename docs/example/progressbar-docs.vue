@@ -119,7 +119,7 @@
 </template>
 
 <script>
-  import {progressbar} from 'src/'
+  import {Progressbar} from 'src/'
   export default {
     data() {
       return {
