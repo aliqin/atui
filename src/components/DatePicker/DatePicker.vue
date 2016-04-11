@@ -133,12 +133,6 @@ export default {
     showResetButton: {
       type: Boolean,
       default: false
-    },
-    onChange:{
-      type:Function,
-      default() {
-
-      }
     }
   },
   data() {
