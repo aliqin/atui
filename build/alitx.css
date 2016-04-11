@@ -7564,5 +7564,30 @@ button.close {
   text-align: center;
   width: 33%;
 }
+.badge-count-example,
+.badge-dot-example {
+  width: 42px;
+  height: 42px;
+  background-color: #eee;
+  display: inline-block;
+  border-radius: 6px;
+}
+.example-title {
+  margin: 20px 0;
+}
+.badge-count-example,
+.badge-dot-example {
+  width: 42px;
+  height: 42px;
+  background-color: #eee;
+  display: inline-block;
+  border-radius: 6px;
+}
+.example-title {
+  margin: 20px 0;
+}
+.example-title {
+  margin: 20px 0;
+}
 
 /*# sourceMappingURL=alitx.css.map*/

@@ -1,6 +1,34 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	var parentJsonpFunction = window["webpackJsonp"];
+/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules) {
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, callbacks = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId])
+/******/ 				callbacks.push.apply(callbacks, installedChunks[chunkId]);
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			modules[moduleId] = moreModules[moduleId];
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
+/******/ 		while(callbacks.length)
+/******/ 			callbacks.shift().call(null, __webpack_require__);
+/******/
+/******/ 	};
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// "0" means "already loaded"
+/******/ 	// Array means "loading", array contains callbacks
+/******/ 	var installedChunks = {
+/******/ 		0:0
+/******/ 	};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -26,6 +54,29 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId, callback) {
+/******/ 		// "0" is the signal for "already loaded"
+/******/ 		if(installedChunks[chunkId] === 0)
+/******/ 			return callback.call(null, __webpack_require__);
+/******/
+/******/ 		// an array means "currently loading".
+/******/ 		if(installedChunks[chunkId] !== undefined) {
+/******/ 			installedChunks[chunkId].push(callback);
+/******/ 		} else {
+/******/ 			// start chunk loading
+/******/ 			installedChunks[chunkId] = [callback];
+/******/ 			var head = document.getElementsByTagName('head')[0];
+/******/ 			var script = document.createElement('script');
+/******/ 			script.type = 'text/javascript';
+/******/ 			script.charset = 'utf-8';
+/******/ 			script.async = true;
+/******/
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".build-docs.js";
+/******/ 			head.appendChild(script);
+/******/ 		}
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -162,14 +213,50 @@
 	
 	var _accordionDocs2 = _interopRequireDefault(_accordionDocs);
 	
+	var _affixDocs = __webpack_require__(414);
+	
+	var _affixDocs2 = _interopRequireDefault(_affixDocs);
+	
+	var _asideDocs = __webpack_require__(419);
+	
+	var _asideDocs2 = _interopRequireDefault(_asideDocs);
+	
+	var _popoverDocs = __webpack_require__(422);
+	
+	var _popoverDocs2 = _interopRequireDefault(_popoverDocs);
+	
+	var _tabsDocs = __webpack_require__(425);
+	
+	var _tabsDocs2 = _interopRequireDefault(_tabsDocs);
+	
+	var _stepsDocs = __webpack_require__(430);
+	
+	var _stepsDocs2 = _interopRequireDefault(_stepsDocs);
+	
+	var _menuDocs = __webpack_require__(434);
+	
+	var _menuDocs2 = _interopRequireDefault(_menuDocs);
+	
+	var _breadcrumbDocs = __webpack_require__(437);
+	
+	var _breadcrumbDocs2 = _interopRequireDefault(_breadcrumbDocs);
+	
+	var _paginationDocs = __webpack_require__(441);
+	
+	var _paginationDocs2 = _interopRequireDefault(_paginationDocs);
+	
+	var _phoneNumberDocs = __webpack_require__(445);
+	
+	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(414);
+	__webpack_require__(448);
 	// require('../src/styles/themes/alidayu.less')
 	// require('../src/styles/themes/tmallwt.less')
 	__webpack_require__(333);
-	__webpack_require__(415);
-	__webpack_require__(416);
+	__webpack_require__(449);
+	__webpack_require__(450);
 	//  基础类
 	
 	
@@ -182,19 +269,12 @@
 	
 	
 	// 导航类
-	// import affixDocs from './example/affixDocs.vue'
-	// import asideDocs from './example/asideDocs.vue'
-	// import popoverDocs from './example/popoverDocs.vue'
-	// import tabsDocs from './example/tabsDocs.vue'
-	// import stepsDocs from './example/stepsDocs.vue'
-	// import menuDocs from './example/menuDocs.vue'
-	// import breadcrumbDocs from './example/breadcrumbDocs.vue'
-	// import paginationDocs from './example/paginationDocs.vue'
 	
-	// // filters
-	// import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 	
-	// //widgets
+	// filters
+	
+	
+	//widgets
 	// import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 	
 	Vue.config.debug = true;
@@ -226,29 +306,25 @@
 	    buttonsDocs: _buttonsDocs2.default,
 	    datepickerDocs: _datepickerDocs2.default,
 	    dropdownDocs: _dropdownDocs2.default,
-	    modalDocs: _modalDocs2.default
+	    modalDocs: _modalDocs2.default,
+	    popoverDocs: _popoverDocs2.default,
+	    // progressbarDocs,
+	    selectDocs: _selectDocs2.default,
+	    tabsDocs: _tabsDocs2.default,
+	    tableDocs: _tableDocs2.default,
+	    stepsDocs: _stepsDocs2.default,
+	    breadcrumbDocs: _breadcrumbDocs2.default,
+	    paginationDocs: _paginationDocs2.default,
+	    tooltipDocs: _tooltipDocs2.default,
+	    typeaheadDocs: _typeaheadDocs2.default,
+	    menuDocs: _menuDocs2.default,
+	    searchboxDocs: _searchboxDocs2.default,
+	    phoneNumberDocs: _phoneNumberDocs2.default,
+	    // addressSelectDocs
+	    addressSelectDocs: function addressSelectDocs(resolve) {
+	      __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(451)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
+	    }
 	  },
-	  // popoverDocs,
-	  // progressbarDocs,
-	  // selectDocs,
-	  // tabsDocs,
-	  // tableDocs,
-	  // stepsDocs,
-	  // breadcrumbDocs,
-	  // paginationDocs,
-	  // tooltipDocs,
-	  // typeaheadDocs,
-	  // menuDocs,
-	  // searchboxDocs,
-	  // list: {
-	  //   inherit: true,
-	  //   template: ''
-	  // },
-	  // phoneNumberDocs,
-	  // addressSelectDocs
-	  // addressSelectDocs:function(resolve) {
-	  //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
-	  // }
 	  data: function data() {
 	    return {
 	      elements: [],
@@ -1813,7 +1889,7 @@
 	__webpack_require__(333);
 	// import Form from './components/Form.vue'
 	
-	// import rogressbar from './components/progressbar.vue'
+	// import Progressbar from './components/progressbar.vue'
 	
 	
 	// 展示类
@@ -22074,7 +22150,51 @@
 	//       <cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
+	// <cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
 	//
+	// const options = [{
+	//     value: 'zhejiang',
+	//     label: '浙江',
+	//     children: [{
+	//       value: 'hangzhou',
+	//       label: '杭州',
+	//       children: [{
+	//         value: 'xihu',
+	//         label: '西湖',
+	//       }],
+	//     }],
+	//   }, {
+	//     value: 'jiangsu',
+	//     label: '江苏',
+	//     children: [{
+	//       value: 'nanjing',
+	//       label: '南京',
+	//       children: [{
+	//         value: 'zhonghuamen',
+	//         label: '中华门',
+	//       }],
+	//     }],
+	//   }]
+	//
+	//   const defaultValue = ['zhejiang', 'hangzhou', 'xihu']
+	//
+	//   import {Cascader} from 'src/'
+	//   export default {
+	//     components: {
+	//       Cascader
+	//     },
+	//     data() {
+	//       return {
+	//         options:options,
+	//         defaultValue:defaultValue
+	//       }
+	//     },
+	//     methods:{
+	//       selectChange(selectedValue, option) {
+	//         alert(selectedValue)
+	//       }
+	//     }
+	//   }
 	// </script></code></pre>
 	//
 	//   <h2>Options</h2>
@@ -22164,7 +22284,7 @@
 /* 381 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"cascader\">\n    <h3 class=\"page-header\"><a href=\"#cascader\" class=\"anchor\">Cascader 级联选择</a></h3>\n    <div class=\"bs-example\">\n      <cascader :options=\"options\" @change=\"selectChange\" :default-value=\"defaultValue\"></cascader>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n\n</script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>options</td>\n        <td><code>Array</code></td>\n        <td><code>[]</code></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>defaultValue</td>\n        <td><code>Array</code></td>\n        <td><code>[]</code></td>\n        <td>默认选中的值.</td>\n      </tr>\n      <tr>\n        <td>change</td>\n        <td><code>Function</code></td>\n        <td><code>function(selectedValue, option) {}</code></td>\n        <td>选择到最后一项触发的change事件\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"cascader\">\n    <h3 class=\"page-header\"><a href=\"#cascader\" class=\"anchor\">Cascader 级联选择</a></h3>\n    <div class=\"bs-example\">\n      <cascader :options=\"options\" @change=\"selectChange\" :default-value=\"defaultValue\"></cascader>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<cascader :options=\"options\" @change=\"selectChange\" :default-value=\"defaultValue\"></cascader>\n\nconst options = [{\n    value: 'zhejiang',\n    label: '浙江',\n    children: [{\n      value: 'hangzhou',\n      label: '杭州',\n      children: [{\n        value: 'xihu',\n        label: '西湖',\n      }],\n    }],\n  }, {\n    value: 'jiangsu',\n    label: '江苏',\n    children: [{\n      value: 'nanjing',\n      label: '南京',\n      children: [{\n        value: 'zhonghuamen',\n        label: '中华门',\n      }],\n    }],\n  }]\n\n  const defaultValue = ['zhejiang', 'hangzhou', 'xihu']\n\n  import {Cascader} from 'src/'\n  export default {\n    components: {\n      Cascader\n    },\n    data() {\n      return {\n        options:options,\n        defaultValue:defaultValue\n      }\n    },\n    methods:{\n      selectChange(selectedValue, option) {\n        alert(selectedValue)\n      }\n    }\n  }\n</script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>options</td>\n        <td><code>Array</code></td>\n        <td><code>[]</code></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>defaultValue</td>\n        <td><code>Array</code></td>\n        <td><code>[]</code></td>\n        <td>默认选中的值.</td>\n      </tr>\n      <tr>\n        <td>change</td>\n        <td><code>Function</code></td>\n        <td><code>function(selectedValue, option) {}</code></td>\n        <td>选择到最后一项触发的change事件\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 382 */
@@ -23656,12 +23776,1489 @@
 
 /***/ },
 /* 414 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(415)
+	__vue_script__ = __webpack_require__(417)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/affixDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(418)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 415 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(416);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(121)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./affixDocs.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./affixDocs.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 416 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(120)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n.animated {\n    -webkit-animation-duration: 3s;\n    animation-duration: 3s;\n    -webkit-animation-fill-mode: both;\n    animation-fill-mode: both;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite\n}\n@-webkit-keyframes shake {\n    0%, 100% {-webkit-transform: translateX(0);transform: translateX(0);}\n    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-5px);transform: translateX(-5px);}\n    20%, 40%, 60%, 80% {-webkit-transform: translateX(5px);transform: translateX(5px);}\n}\n@keyframes shake {\n    0%, 100% {-webkit-transform: translateX(0);transform: translateX(0);}\n    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-5px);transform: translateX(-5px);}\n    20%, 40%, 60%, 80% {-webkit-transform: translateX(5px);transform: translateX(5px);}\n}\n.shake {\n    -webkit-animation-name: shake;\n    animation-name: shake;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 417 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(130);
+	
+	exports.default = {
+	  components: {
+	    tooltip: _src.tooltip
+	  }
+	};
+	// </script>
+	//
+	// <style>
+	// .animated {
+	//     -webkit-animation-duration: 3s;
+	//     animation-duration: 3s;
+	//     -webkit-animation-fill-mode: both;
+	//     animation-fill-mode: both;
+	//     animation-iteration-count: infinite
+	// }
+	// @keyframes shake {
+	//     0%, 100% {transform: translateX(0);}
+	//     10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+	//     20%, 40%, 60%, 80% {transform: translateX(5px);}
+	// }
+	// .shake {
+	//     -webkit-animation-name: shake;
+	//     animation-name: shake;
+	// }
+	// </style>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <!-- <div class="bs-docs-section" id="affix">
+	//     <h3 class="page-header"><a href="#affix" class="anchor">Affix 固钉</a></h3>
+	//     <div class="bs-example">
+	//       <h3>
+	//         The sub-navigation on the RIGHT is a live demo of the affix.
+	//         <tooltip trigger="hover" effect="fadein" content="I'm a direction, not jerking off!" placement="left">
+	//           <span class="glyphicon glyphicon-hand-right pull-right animated shake"></span>
+	//         </tooltip>
+	//       </h3>
+	//     </div>
+	//     <pre><code class="language-markup"><script type="language-mark-up">
+	// <affix offset="">
+	//   <nav class="sidebar">
+	//     <ul>
+	//       <li>...</li>
+	//       <li>...</li>
+	//       <li>...</li>
+	//     </ul>
+	//   </nav>
+	// </affix>
+	// </script></code></pre>
+	//     <h2>Options</h2>
+	//     <table class="table table-bordered">
+	//       <thead>
+	//         <tr>
+	//           <th>Name</th>
+	//           <th>Type</th>
+	//           <th>Default</th>
+	//           <th>Description</th>
+	//         </tr>
+	//       </thead>
+	//       <tbody>
+	//         <tr>
+	//           <td>offset</td>
+	//           <td><code>Number</code></td>
+	//           <td><code>0</code></td>
+	//           <td>Pixels to offset from top of screen when calculating position of scroll.</td>
+	//         </tr>
+	//       </tbody>
+	//     </table>
+	//   </div> -->
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 418 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <!-- <div class=\"bs-docs-section\" id=\"affix\">\n    <h3 class=\"page-header\"><a href=\"#affix\" class=\"anchor\">Affix 固钉</a></h3>\n    <div class=\"bs-example\">\n      <h3>\n        The sub-navigation on the RIGHT is a live demo of the affix.\n        <tooltip trigger=\"hover\" effect=\"fadein\" content=\"I'm a direction, not jerking off!\" placement=\"left\">\n          <span class=\"glyphicon glyphicon-hand-right pull-right animated shake\"></span>\n        </tooltip>\n      </h3>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<affix offset=\"\">\n  <nav class=\"sidebar\">\n    <ul>\n      <li>...</li>\n      <li>...</li>\n      <li>...</li>\n    </ul>\n  </nav>\n</affix>\n</script></code></pre>\n    <h2>Options</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>offset</td>\n          <td><code>Number</code></td>\n          <td><code>0</code></td>\n          <td>Pixels to offset from top of screen when calculating position of scroll.</td>\n        </tr>\n      </tbody>\n    </table>\n  </div> -->\n";
+
+/***/ },
+/* 419 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(420)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/asideDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(421)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 420 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(130);
+	
+	exports.default = {
+	  components: {
+	    sidebar: _src.sidebar
+	  },
+	  data: function data() {
+	    return {
+	      showLeft: false,
+	      showRight: false
+	    };
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div class="bs-docs-section" id="aside">
+	//     <h3 class="page-header"><a href="#aside" class="anchor">Aside 侧边栏</a></h3>
+	//     <div class="bs-example">
+	//       <button class="btn btn-success btn-lg" @click="showRight = true">Show Aside on right</button>
+	//
+	//       <sidebar :show.sync="showRight" placement="right" header="Title" :width="350">
+	//         <h4>Text in aside</h4>
+	//         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	//         tempor incididunt ut labore et dolore magna aliqua.</p>
+	//         <p> Ut enim ad minim veniam,
+	//         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	//         consequat.</p>
+	//           <pre><code class="language-javascript">
+	// if (talk === cheap){
+	//   code.style.display = 'block'
+	// }
+	//         </code></pre>
+	//         <div class="aside-footer">
+	//           <button type="button" class="btn btn-default" @click="showRight=false">Close</button>
+	//         </div>
+	//       </sidebar>
+	//
+	//       <button class="btn btn-danger btn-lg" @click="showLeft = true">Show Aside on left</button>
+	//
+	//       <sidebar  :show.sync="showLeft" placement="left" header="Title" :width="350">
+	//         <h4>Text in aside</h4>
+	//         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	//         tempor incididunt ut labore et dolore magna aliqua.</p>
+	//         <p> Ut enim ad minim veniam,
+	//         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	//         consequat.</p>
+	//         <pre><code class="language-javascript">
+	// if (talk === cheap){
+	//   code.style.display = 'block'
+	// }
+	//         </code></pre>
+	//         <div class="aside-footer">
+	//           <button type="button" class="btn btn-default" @click="showLeft=false">Close</button>
+	//         </div>
+	//       </sidebar>
+	//     </div>
+	//     <pre><code class="language-markup"><script type="language-mark-up">
+	// <button
+	// class="btn btn-success btn-lg"
+	// @click="showRight = true">Show Aside on right</button>
+	//
+	// <sidebar :show.sync="showRight" placement="right" header="Title" :width="350">
+	// ...
+	// </sidebar>
+	//
+	// <button
+	// class="btn btn-danger btn-lg"
+	// @click="showLeft = true">Show Aside on left</button>
+	//
+	// <sidebar :show.sync="showLeft" placement="left" header="Title" :width="350">
+	// ...
+	// </sidebar></script></code></pre>
+	//
+	//     <h2>Options</h2>
+	//     <table class="table table-bordered">
+	//       <thead>
+	//         <tr>
+	//           <th>Name</th>
+	//           <th>Type</th>
+	//           <th>Default</th>
+	//           <th>Description</th>
+	//         </tr>
+	//       </thead>
+	//       <tbody>
+	//         <tr>
+	//           <td>show</td>
+	//           <td><code>Boolean</code></td>
+	//           <td></td>
+	//           <td>Whether show the component.</td>
+	//         </tr>
+	//         <tr>
+	//           <td>placement</td>
+	//           <td><code>String</code>, one of <code>left</code>, <code>right</code></td>
+	//           <td><code>right</code></td>
+	//           <td>how to position the component.</td>
+	//         </tr>
+	//         <tr>
+	//           <td>header</td>
+	//           <td><code>String</code></td>
+	//           <td></td>
+	//           <td>Header text of the aside component.</td>
+	//         </tr>
+	//         <tr>
+	//           <td>width</td>
+	//           <td><code>Number</code></td>
+	//           <td></td>
+	//           <td></td>
+	//         </tr>
+	//       </tbody>
+	//     </table>
+	//   </div>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 421 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"aside\">\n    <h3 class=\"page-header\"><a href=\"#aside\" class=\"anchor\">Aside 侧边栏</a></h3>\n    <div class=\"bs-example\">\n      <button class=\"btn btn-success btn-lg\" @click=\"showRight = true\">Show Aside on right</button>\n\n      <sidebar :show.sync=\"showRight\" placement=\"right\" header=\"Title\" :width=\"350\">\n        <h4>Text in aside</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.</p>\n        <p> Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n        consequat.</p>\n          <pre><code class=\"language-javascript\">\nif (talk === cheap){\n  code.style.display = 'block'\n}\n        </code></pre>\n        <div class=\"aside-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"showRight=false\">Close</button>\n        </div>\n      </sidebar>\n\n      <button class=\"btn btn-danger btn-lg\" @click=\"showLeft = true\">Show Aside on left</button>\n\n      <sidebar  :show.sync=\"showLeft\" placement=\"left\" header=\"Title\" :width=\"350\">\n        <h4>Text in aside</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.</p>\n        <p> Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n        consequat.</p>\n        <pre><code class=\"language-javascript\">\nif (talk === cheap){\n  code.style.display = 'block'\n}\n        </code></pre>\n        <div class=\"aside-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"showLeft=false\">Close</button>\n        </div>\n      </sidebar>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button\nclass=\"btn btn-success btn-lg\"\n@click=\"showRight = true\">Show Aside on right</button>\n\n<sidebar :show.sync=\"showRight\" placement=\"right\" header=\"Title\" :width=\"350\">\n...\n</sidebar>\n\n<button\nclass=\"btn btn-danger btn-lg\"\n@click=\"showLeft = true\">Show Aside on left</button>\n\n<sidebar :show.sync=\"showLeft\" placement=\"left\" header=\"Title\" :width=\"350\">\n...\n</sidebar></script></code></pre>\n\n    <h2>Options</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>show</td>\n          <td><code>Boolean</code></td>\n          <td></td>\n          <td>Whether show the component.</td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code>, one of <code>left</code>, <code>right</code></td>\n          <td><code>right</code></td>\n          <td>how to position the component.</td>\n        </tr>\n        <tr>\n          <td>header</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>Header text of the aside component.</td>\n        </tr>\n        <tr>\n          <td>width</td>\n          <td><code>Number</code></td>\n          <td></td>\n          <td></td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+
+/***/ },
+/* 422 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(423)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/popoverDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(424)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 423 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(130);
+	
+	exports.default = {
+	  data: function data() {
+	    return {
+	      title: 'Title',
+	      text: 'Lorem ipsum dolor sit amet'
+	    };
+	  },
+	
+	  components: {
+	    Popover: _src.Popover
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div class="bs-docs-section" id="popover">
+	//     <h3 class="page-header"><a href="#popover" class="anchor">Popover 气泡</a></h3>
+	//     <div class="bs-example">
+	//       <popover effect="fade" :header="true" title="Title" content="Lorem ipsum dolor sit amet" placement="top">
+	//         <button class="btn btn-default ">Popover on top</button>
+	//       </popover>
+	//       <popover effect="fade" :header="true" title="Title" content="Lorem ipsum dolor sit amet" placement="left">
+	//         <button class="btn btn-default ">Popover on left</button>
+	//       </popover>
+	//       <popover effect="fade" :header="true" title="Title" content="Lorem ipsum dolor sit amet" placement="right">
+	//         <button class="btn btn-default ">Popover on right</button>
+	//       </popover>
+	//       <popover effect="fade" placement="bottom" :header="true" title="Title" content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
+	//         <button class="btn btn-default ">Popover on bottom</button>
+	//       </popover>
+	//       <hr>
+	//       <h4>No title</h4>
+	//       <popover effect="fade"  title="Title" content="Lorem ipsum dolor sit amet" placement="top">
+	//         <button class="btn btn-default ">Popover on top</button>
+	//       </popover>
+	//       <popover effect="fade"  title="Title" content="Lorem ipsum dolor sit amet" placement="left">
+	//         <button class="btn btn-default ">Popover on left</button>
+	//       </popover>
+	//       <popover effect="fade"  title="Title" content="Lorem ipsum dolor sit amet" placement="right">
+	//         <button class="btn btn-default ">Popover on right</button>
+	//       </popover>
+	//       <popover effect="fade" placement="bottom"  title="Title" content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
+	//         <button class="btn btn-default ">Popover on bottom</button>
+	//       </popover>
+	//       <hr>
+	//       <h4>Triger</h4>
+	//       <p>
+	//         <popover effect="scale"  title="Title" content="Lorem ipsum dolor sit amet" placement="top" trigger="hover">
+	//             <button class="btn btn-default ">Mouseenter</button>
+	//         </popover>
+	//       </p>
+	//       <popover effect="scale"
+	//       title="Title" content="Lorem ipsum dolor sit amet" placement="bottom" trigger="focus">
+	//         <input type="text" class="form-control" placeholder="Focus">
+	//       </popover>
+	//     </div>
+	//     <pre><code class="language-markup"><script type="language-mark-up">
+	// <popover
+	//   effect="fade"
+	//   placement="bottom"
+	//   title="Title"
+	//   content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
+	//   <button class="btn btn-default ">Popover on bottom</button>
+	// </popover>
+	// </script></code></pre>
+	//   <h2>Options</h2>
+	//   <table class="table table-bordered">
+	//     <thead>
+	//       <tr>
+	//         <th>Name</th>
+	//         <th>Type</th>
+	//         <th>Default</th>
+	//         <th>Description</th>
+	//       </tr>
+	//     </thead>
+	//     <tbody>
+	//       <tr>
+	//         <td>trigger</td>
+	//         <td><code>String</code>, one of <code>click</code>
+	//         <code>focus</code>
+	//         <code>hover</code></td>
+	//         <td><code>click</code></td>
+	//         <td>How the popover is triggered.</td>
+	//       </tr>
+	//       <tr>
+	//         <td>effect</td>
+	//         <td><code>String</code>, one of <code>scale</code> <code>fade</code></td>
+	//         <td><code>fade</code></td>
+	//         <td></td>
+	//       </tr>
+	//       <tr>
+	//         <td>title</td>
+	//         <td><code>String</code></td>
+	//         <td></td>
+	//         <td></td>
+	//       </tr>
+	//       <tr>
+	//         <td>content</td>
+	//         <td><code>String</code></td>
+	//         <td></td>
+	//         <td></td>
+	//       </tr>
+	//       <tr>
+	//         <td>header</td>
+	//         <td><code>Boolean</code></td>
+	//         <td><code>true</code></td>
+	//         <td>Whether to show the header.</td>
+	//       </tr>
+	//       <tr>
+	//         <td>placement</td>
+	//         <td><code>String</code>, one of <code>top</code>
+	//         <code>left</code>
+	//         <code>right</code>
+	//         <code>bottom</code></td>
+	//         <td></td>
+	//         <td>How to position the popover.</td>
+	//       </tr>
+	//     </tbody>
+	//   </table>
+	//   </div>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 424 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"popover\">\n    <h3 class=\"page-header\"><a href=\"#popover\" class=\"anchor\">Popover 气泡</a></h3>\n    <div class=\"bs-example\">\n      <popover effect=\"fade\" :header=\"true\" title=\"Title\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\">\n        <button class=\"btn btn-default \">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" :header=\"true\" title=\"Title\" content=\"Lorem ipsum dolor sit amet\" placement=\"left\">\n        <button class=\"btn btn-default \">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" :header=\"true\" title=\"Title\" content=\"Lorem ipsum dolor sit amet\" placement=\"right\">\n        <button class=\"btn btn-default \">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" placement=\"bottom\" :header=\"true\" title=\"Title\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n        <button class=\"btn btn-default \">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>No title</h4>\n      <popover effect=\"fade\"  title=\"Title\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\">\n        <button class=\"btn btn-default \">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\"  title=\"Title\" content=\"Lorem ipsum dolor sit amet\" placement=\"left\">\n        <button class=\"btn btn-default \">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\"  title=\"Title\" content=\"Lorem ipsum dolor sit amet\" placement=\"right\">\n        <button class=\"btn btn-default \">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" placement=\"bottom\"  title=\"Title\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n        <button class=\"btn btn-default \">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>Triger</h4>\n      <p>\n        <popover effect=\"scale\"  title=\"Title\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\" trigger=\"hover\">\n            <button class=\"btn btn-default \">Mouseenter</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\"\n      title=\"Title\" content=\"Lorem ipsum dolor sit amet\" placement=\"bottom\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </popover>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<popover\n  effect=\"fade\"\n  placement=\"bottom\"\n  title=\"Title\"\n  content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n  <button class=\"btn btn-default \">Popover on bottom</button>\n</popover>\n</script></code></pre>\n  <h2>Options</h2>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code>, one of <code>click</code>\n        <code>focus</code>\n        <code>hover</code></td>\n        <td><code>click</code></td>\n        <td>How the popover is triggered.</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code>, one of <code>scale</code> <code>fade</code></td>\n        <td><code>fade</code></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>header</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the header.</td>\n      </tr>\n      <tr>\n        <td>placement</td>\n        <td><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></td>\n        <td></td>\n        <td>How to position the popover.</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+
+/***/ },
+/* 425 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(426)
+	__vue_script__ = __webpack_require__(428)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/tabsDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(429)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 426 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(427);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(121)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./tabsDocs.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./tabsDocs.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 427 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(120)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n.example-title {\n  margin: 20px 0;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 428 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(130);
+	
+	var Tab = _src.Tabs.Tab; // <template>
+	//   <div class="bs-docs-section" id="tabs">
+	//     <h3 class="page-header"><a href="#tabs" class="anchor">Tabs 标签页</a></h3>
+	//     <div class="bs-example">
+	//     <h4 class="example-title">基础型</h4>
+	//       <tabs :base="true">
+	//         <tab header="系统短信签名">
+	//           <p>
+	//             选项卡一内容
+	//           </p>
+	//         </tab>
+	//         <tab header="推广短信签名">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//         <tab header="被禁用的" disabled>
+	//           ...
+	//         </tab>
+	//       </tabs>
+	//       <br><br>
+	//       <h4 class="example-title">Tab数量较多的情况</h4>
+	//       <tabs :base="true">
+	//         <tab header="系统短信签名">
+	//           <p>
+	//             选项卡一内容
+	//           </p>
+	//         </tab>
+	//         <tab header="推广短信签名">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//         <tab header="被禁用的" disabled>
+	//           ...
+	//         </tab>
+	//         <tab header="推广短信签名系统短信签名啊啊啊啊啊啊啊啊">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//         <tab header="系统短信签名啊啊啊啊啊啊啊啊">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//         <tab header="系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//       </tabs>
+	//       <br><br>
+	//       <h4 class="example-title">选项卡型</h4>
+	//       <tabs >
+	//         <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
+	//           <p>
+	//             选项卡一内容
+	//           </p>
+	//         </tab>
+	//         <tab header="推广短信签名">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//         <tab header="被禁用的" disabled>
+	//           ...
+	//         </tab>
+	//         <tab header="被禁用的" disabled>
+	//           ...
+	//         </tab>
+	//         <tab header="推广短信签名">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//         <tab header="推广短信签名">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//         <tab header="被禁用的" disabled>
+	//           ...
+	//         </tab>
+	//         <tab header="推广短信签名">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//         <tab header="推广短信签名">
+	//            <p>
+	//               选项卡二内容
+	//            </p>
+	//         </tab>
+	//       </tabs>
+	//     </div>
+	//     <pre><code class="language-markup"><script type="language-mark-up">
+	// <tabs>
+	//   <tab header="系统短信签名">
+	//     ...
+	//   </tab>
+	//   <tab header="推广短信签名">
+	//     ...
+	//   </tab>
+	//   <tab header="被禁用的" disabled>
+	//     ...
+	//   </tab>
+	// </tabs>
+	// <tabs :base="true">
+	//   <tab header="系统短信签名">
+	//     <p>
+	//       选项卡一内容
+	//     </p>
+	//   </tab>
+	//   <tab header="推广短信签名">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	//   <tab header="被禁用的" disabled>
+	//     ...
+	//   </tab>
+	//   <tab header="推广短信签名系统短信签名啊啊啊啊啊啊啊啊">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	//   <tab header="系统短信签名啊啊啊啊啊啊啊啊">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	//   <tab header="系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	// </tabs>
+	// <tabs >
+	//   <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
+	//     <p>
+	//       选项卡一内容
+	//     </p>
+	//   </tab>
+	//   <tab header="推广短信签名">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	//   <tab header="被禁用的" disabled>
+	//     ...
+	//   </tab>
+	//   <tab header="被禁用的" disabled>
+	//     ...
+	//   </tab>
+	//   <tab header="推广短信签名">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	//   <tab header="推广短信签名">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	//   <tab header="被禁用的" disabled>
+	//     ...
+	//   </tab>
+	//   <tab header="推广短信签名">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	//   <tab header="推广短信签名">
+	//      <p>
+	//         选项卡二内容
+	//      </p>
+	//   </tab>
+	// </tabs>
+	// </script></code></pre>
+	//   <h2>Tab 选项 (非 TABS)</h2>
+	//   <table class="table table-bordered">
+	//     <thead>
+	//       <tr>
+	//         <th>参数</th>
+	//         <th>类型</th>
+	//         <th>默认值</th>
+	//         <th>说明</th>
+	//       </tr>
+	//     </thead>
+	//     <tbody>
+	//       <tr>
+	//         <td>header</td>
+	//         <td><code>String</code></td>
+	//         <td></td>
+	//         <td>Heading text of the tab.</td>
+	//       </tr>
+	//       <tr>
+	//         <td>disabled</td>
+	//         <td><code>Boolean</code></td>
+	//         <td>false</td>
+	//         <td>是否禁用当前Tab</td>
+	//       </tr>
+	//       <tr>
+	//         <td>base</td>
+	//         <td><code>Boolean</code></td>
+	//         <td>false</td>
+	//         <td>是否采用基础型的Tab样式</td>
+	//       </tr>
+	//       <tr>
+	//         <td>show-len</td>
+	//         <td><code>Number</code></td>
+	//         <td>3</td>
+	//         <td>当前想要显示出多少个Tab</td>
+	//       </tr>
+	//
+	//     </tbody>
+	//   </table>
+	//   </div>
+	// </template>
+	//
+	// <script>
+	
+	exports.default = {
+	  data: function data() {
+	    return {};
+	  },
+	
+	  components: {
+	    Tabs: _src.Tabs,
+	    Tab: Tab
+	  }
+	};
+	// </script>
+	//
+	// <style>
+	//   .example-title {
+	//     margin: 20px 0;
+	//   }
+	// </style>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 429 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"tabs\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Tabs 标签页</a></h3>\n    <div class=\"bs-example\">\n    <h4 class=\"example-title\">基础型</h4>\n      <tabs :base=\"true\">\n        <tab header=\"系统短信签名\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n      </tabs>\n      <br><br>\n      <h4 class=\"example-title\">Tab数量较多的情况</h4>\n      <tabs :base=\"true\">\n        <tab header=\"系统短信签名\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n      </tabs>\n      <br><br>\n      <h4 class=\"example-title\">选项卡型</h4>\n      <tabs >\n        <tab header=\"推广短信签名啊啊啊中啊啊啊啊啊啊啊\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n      </tabs>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<tabs>\n  <tab header=\"系统短信签名\">\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n    ...\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n</tabs>\n<tabs :base=\"true\">\n  <tab header=\"系统短信签名\">\n    <p>\n      选项卡一内容\n    </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n</tabs>\n<tabs >\n  <tab header=\"推广短信签名啊啊啊中啊啊啊啊啊啊啊\">\n    <p>\n      选项卡一内容\n    </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n</tabs>\n</script></code></pre>\n  <h2>Tab 选项 (非 TABS)</h2>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>header</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>Heading text of the tab.</td>\n      </tr>\n      <tr>\n        <td>disabled</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否禁用当前Tab</td>\n      </tr>\n      <tr>\n        <td>base</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否采用基础型的Tab样式</td>\n      </tr>\n      <tr>\n        <td>show-len</td>\n        <td><code>Number</code></td>\n        <td>3</td>\n        <td>当前想要显示出多少个Tab</td>\n      </tr>\n\n    </tbody>\n  </table>\n  </div>\n";
+
+/***/ },
+/* 430 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(431)
+	__vue_script__ = __webpack_require__(432)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/stepsDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(433)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 431 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 415 */
+/* 432 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(130);
+	
+	var Step = _src.Steps.Step; // <template>
+	//   <div class="bs-docs-section" id="steps">
+	//     <h3 class="page-header"><a href="#steps" class="anchor">Steps 步骤条</a></h3>
+	//     <div class="bs-example">
+	//         <h4 class="example-title">基础型</h4>
+	//         <v-steps :current="current">
+	//             <v-step title="已完成"></v-step>
+	//             <v-step title="进行中" ></v-step>
+	//             <v-step title="有一个待运行"></v-step>
+	//             <v-step title="待运行"></v-step>
+	//         </v-steps>
+	//         <br><br>
+	//         <h4 class="example-title">带文字描述</h4>
+	//         <v-steps :current="current">
+	//             <v-step title="已完成" description="这里是多信息"></v-step>
+	//             <v-step title="进行中" description="这里是多信息的耶哦"></v-step>
+	//             <v-step title="有一个待运行" description="描述啊描述啊"></v-step>
+	//             <v-step title="待运行" description="这里是多信息的描述啊"></v-step>
+	//         </v-steps>
+	//         <br>
+	//         <button type="button" class="btn default primary" @click="_next">next</button>
+	//     </div>
+	// <pre>
+	// <code class="language-markup"><script type="language-mark-up">
+	// <v-steps :current="current">
+	//     <v-step title="已完成"></v-step>
+	//     <v-step title="进行中" ></v-step>
+	//     <v-step title="有一个待运行"></v-step>
+	//     <v-step title="待运行"></v-step>
+	// </v-steps>
+	// <v-steps :current="current">
+	//     <v-step title="已完成" description="这里是多信息"></v-step>
+	//     <v-step title="进行中" description="这里是多信息的耶哦"></v-step>
+	//     <v-step title="有一个待运行" description="描述啊描述啊"></v-step>
+	//     <v-step title="待运行" description="这里是多信息的描述啊"></v-step>
+	// </v-steps>
+	// </script></code></pre>
+	//   </div>
+	//   <h2>Options</h2>
+	//   <h4 style="margin: 20px 0;">vSteps</h4>
+	//   <table class="table table-bordered">
+	//     <thead>
+	//       <tr>
+	//         <th>参数</th>
+	//         <th>类型</th>
+	//         <th>默认值</th>
+	//         <th>说明</th>
+	//       </tr>
+	//     </thead>
+	//     <tbody>
+	//       <tr>
+	//         <td>current</td>
+	//         <td>Number</td>
+	//         <td>0</td>
+	//         <td>当前正在执行的步骤数，可以通过status属性覆盖状态</td>
+	//       </tr>
+	//     </tbody>
+	//   </table>
+	//   <h4 style="margin: 20px 0;">vSteps vStep</h4>
+	//   <table class="table table-bordered">
+	//     <thead>
+	//       <tr>
+	//         <th>参数</th>
+	//         <th>类型</th>
+	//         <th>默认值</th>
+	//         <th>说明</th>
+	//       </tr>
+	//     </thead>
+	//     <tbody>
+	//       <tr>
+	//         <td>title</td>
+	//         <td>String</td>
+	//         <td>无</td>
+	//         <td>标题</td>
+	//       </tr>
+	//       <tr>
+	//         <td>description</td>
+	//         <td>String</td>
+	//         <td>无</td>
+	//         <td>步骤的详情描述</td>
+	//       </tr>
+	//       <tr>
+	//         <td>status</td>
+	//         <td>String</td>
+	//         <td>无</td>
+	//         <td>执行step的状态，当不设置此属性时，父组件Steps会自动根据current来设置对应status,（可选值wait, process, finish）</td>
+	//       </tr>
+	//     </tbody>
+	//   </table>
+	// </template>
+	//
+	// <script>
+	
+	exports.default = {
+	  data: function data() {
+	    return {
+	      current: 0
+	    };
+	  },
+	
+	  components: {
+	    vSteps: _src.Steps,
+	    vStep: Step
+	  },
+	  methods: {
+	    _next: function _next() {
+	      if (this.current === 3) {
+	        this.current = 0;
+	        return;
+	      }
+	      this.current++;
+	    }
+	  }
+	};
+	// </script>
+	//
+	// <style lang="less">
+	//   .badge-count-example, .badge-dot-example {
+	//     width: 42px;
+	//     height: 42px;
+	//     background-color: #eee;
+	//     display: inline-block;
+	//     border-radius: 6px;
+	//   }
+	//   .example-title {
+	//     margin: 20px 0;
+	//   }
+	// </style>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 433 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"steps\">\n    <h3 class=\"page-header\"><a href=\"#steps\" class=\"anchor\">Steps 步骤条</a></h3>\n    <div class=\"bs-example\">\n        <h4 class=\"example-title\">基础型</h4>\n        <v-steps :current=\"current\">\n            <v-step title=\"已完成\"></v-step>\n            <v-step title=\"进行中\" ></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br><br>\n        <h4 class=\"example-title\">带文字描述</h4>\n        <v-steps :current=\"current\">\n            <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n            <v-step title=\"进行中\" description=\"这里是多信息的耶哦\"></v-step>\n            <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n            <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n        </v-steps>\n        <br>\n        <button type=\"button\" class=\"btn default primary\" @click=\"_next\">next</button>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-steps :current=\"current\">\n    <v-step title=\"已完成\"></v-step>\n    <v-step title=\"进行中\" ></v-step>\n    <v-step title=\"有一个待运行\"></v-step>\n    <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\">\n    <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n    <v-step title=\"进行中\" description=\"这里是多信息的耶哦\"></v-step>\n    <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n    <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n</v-steps>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <h4 style=\"margin: 20px 0;\">vSteps</h4>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>current</td>\n        <td>Number</td>\n        <td>0</td>\n        <td>当前正在执行的步骤数，可以通过status属性覆盖状态</td>\n      </tr>\n    </tbody>\n  </table>\n  <h4 style=\"margin: 20px 0;\">vSteps vStep</h4>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>title</td>\n        <td>String</td>\n        <td>无</td>\n        <td>标题</td>\n      </tr>\n      <tr>\n        <td>description</td>\n        <td>String</td>\n        <td>无</td>\n        <td>步骤的详情描述</td>\n      </tr>\n      <tr>\n        <td>status</td>\n        <td>String</td>\n        <td>无</td>\n        <td>执行step的状态，当不设置此属性时，父组件Steps会自动根据current来设置对应status,（可选值wait, process, finish）</td>\n      </tr>\n    </tbody>\n  </table>\n";
+
+/***/ },
+/* 434 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(435)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/menuDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(436)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 435 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(130);
+	
+	var SubMenu = _src.Menu.SubMenu; // <template>
+	//   <div class="bs-docs-section" id="menu">
+	//     <h3 class="page-header"><a href="#menu" class="anchor">Menu 菜单</a></h3>
+	//     <div class="bs-example">
+	//     <menu>
+	//       <menu-item>菜单1</menu-item>
+	//       <sub-menu title="子导航1">
+	//         <menu-item><a href="http://www.taobao.com" target="_blank">淘宝</a></menu-item>
+	//         <menu-item><a href="http://www.tmall.com" target="_blank">天猫</a></menu-item>
+	//         <menu-item><a href="http://www.alipay.com" target="_blank">支付宝</a></menu-item>
+	//       </sub-menu>
+	//       <sub-menu title="子导航2">
+	//         <menu-item>子导航21</menu-item>
+	//         <menu-item>子导航22</menu-item>
+	//         <menu-item>子导航23</menu-item>
+	//       </sub-menu>
+	//     </menu>
+	//     </div>
+	//     <pre><code class="language-markup"><script type="language-mark-up">
+	// <menu>
+	//   <menu-item>菜单1</menu-item>
+	//   <sub-menu title="子导航1">
+	//     <menu-item><a href="http://www.taobao.com" target="_blank">淘宝</a></menu-item>
+	//     <menu-item><a href="http://www.tmall.com" target="_blank">天猫</a></menu-item>
+	//     <menu-item><a href="http://www.alipay.com" target="_blank">支付宝</a></menu-item>
+	//   </sub-menu>
+	//   <sub-menu title="子导航2">
+	//     <menu-item>子导航21</menu-item>
+	//     <menu-item>子导航22</menu-item>
+	//     <menu-item>子导航23</menu-item>
+	//   </sub-menu>
+	// </menu>
+	//   </script></code></pre>
+	//   <h2>Options</h2>
+	//   <table class="table table-bordered">
+	//     <thead>
+	//       <tr>
+	//         <th>Name</th>
+	//         <th>Type</th>
+	//         <th>Default</th>
+	//         <th>Description</th>
+	//       </tr>
+	//     </thead>
+	//     <tbody>
+	//       <tr>
+	//         <td>title</td>
+	//         <td><code>String</code></td>
+	//         <td></td>
+	//         <td>标题</td>
+	//       </tr>
+	//       <tr>
+	//         <td>width</td>
+	//         <td><code>Number, String or null</code></td>
+	//         <td><code>null</code></td>
+	//         <td> ( 例如: '80%' 或 '5em' 或500 ) 如果不填那么就是自动宽</td>
+	//       </tr>
+	//       <tr>
+	//         <td>callback</td>
+	//         <td><code>Function</code></td>
+	//         <td></td>
+	//         <td>当点击主要按钮时触发的回调.</td>
+	//       </tr>
+	//       <tr>
+	//         <td>large</td>
+	//         <td><code>Boolean</code></td>
+	//         <td><code>false</code></td>
+	//         <td>大的弹窗</td>
+	//       </tr>
+	//       <tr>
+	//         <td>small</td>
+	//         <td><code>Boolean</code></td>
+	//         <td><code>false</code></td>
+	//         <td>小的弹窗</td>
+	//       </tr>
+	//     </tbody>
+	//   </table>
+	//   </div>
+	// </template>
+	//
+	// <script>
+	
+	var MenuItem = _src.Menu.MenuItem;
+	exports.default = {
+	  data: function data() {
+	    return {
+	      showModal: false,
+	      fadeModal: false,
+	      zoomModal: false,
+	      showCustomModal: false,
+	      largeModal: false,
+	      smallModal: false
+	    };
+	  },
+	
+	  components: { Menu: _src.Menu, SubMenu: SubMenu, MenuItem: MenuItem }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 436 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"menu\">\n    <h3 class=\"page-header\"><a href=\"#menu\" class=\"anchor\">Menu 菜单</a></h3>\n    <div class=\"bs-example\">\n    <menu>\n      <menu-item>菜单1</menu-item>\n      <sub-menu title=\"子导航1\">\n        <menu-item><a href=\"http://www.taobao.com\" target=\"_blank\">淘宝</a></menu-item>\n        <menu-item><a href=\"http://www.tmall.com\" target=\"_blank\">天猫</a></menu-item>\n        <menu-item><a href=\"http://www.alipay.com\" target=\"_blank\">支付宝</a></menu-item>\n      </sub-menu>\n      <sub-menu title=\"子导航2\">\n        <menu-item>子导航21</menu-item>\n        <menu-item>子导航22</menu-item>\n        <menu-item>子导航23</menu-item>\n      </sub-menu>\n    </menu>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<menu>\n  <menu-item>菜单1</menu-item>\n  <sub-menu title=\"子导航1\">\n    <menu-item><a href=\"http://www.taobao.com\" target=\"_blank\">淘宝</a></menu-item>\n    <menu-item><a href=\"http://www.tmall.com\" target=\"_blank\">天猫</a></menu-item>\n    <menu-item><a href=\"http://www.alipay.com\" target=\"_blank\">支付宝</a></menu-item>\n  </sub-menu>\n  <sub-menu title=\"子导航2\">\n    <menu-item>子导航21</menu-item>\n    <menu-item>子导航22</menu-item>\n    <menu-item>子导航23</menu-item>\n  </sub-menu>\n</menu>\n  </script></code></pre>\n  <h2>Options</h2>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>标题</td>\n      </tr>\n      <tr>\n        <td>width</td>\n        <td><code>Number, String or null</code></td>\n        <td><code>null</code></td>\n        <td> ( 例如: '80%' 或 '5em' 或500 ) 如果不填那么就是自动宽</td>\n      </tr>\n      <tr>\n        <td>callback</td>\n        <td><code>Function</code></td>\n        <td></td>\n        <td>当点击主要按钮时触发的回调.</td>\n      </tr>\n      <tr>\n        <td>large</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>大的弹窗</td>\n      </tr>\n      <tr>\n        <td>small</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>小的弹窗</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+
+/***/ },
+/* 437 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(438)
+	__vue_script__ = __webpack_require__(439)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/breadcrumbDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(440)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 438 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 439 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(130);
+	
+	var BreadcrumbItem = _src.Breadcrumb.BreadcrumbItem; // <template>
+	//   <div class="bs-docs-section" id="breadcrumb">
+	//     <h3 class="page-header"><a href="#breadcrumb" class="anchor">Breadcrumb 面包屑</a></h3>
+	//     <div class="bs-example">
+	//       <h4 class="example-title">基本样式</h4>
+	//       <breadcrumb>
+	//         <breadcrumb-item :href="href">一级类目</breadcrumb-item>
+	//         <breadcrumb-item :href="href">二级类目</breadcrumb-item>
+	//         <breadcrumb-item>三级类目</breadcrumb-item>
+	//       </breadcrumb>
+	//       <h4 class="example-title">分隔符样式（选用）</h4>
+	//       <breadcrumb slash="&gt;">
+	//         <breadcrumb-item :href="href">一级类目</breadcrumb-item>
+	//         <breadcrumb-item :href="href">二级类目</breadcrumb-item>
+	//         <breadcrumb-item :href="href">三级类目</breadcrumb-item>
+	//         <breadcrumb-item>四级类目</breadcrumb-item>
+	//       </breadcrumb>
+	//     </div>
+	// <pre>
+	// <code class="language-markup"><script type="language-mark-up">
+	// <breadcrumb>
+	//   <breadcrumb-item :href="href">一级类目</breadcrumb-item>
+	//   <breadcrumb-item :href="href">二级类目</breadcrumb-item>
+	//   <breadcrumb-item>三级类目</breadcrumb-item>
+	// </breadcrumb>
+	// <breadcrumb slash="&gt;">
+	//   <breadcrumb-item :href="href">一级类目</breadcrumb-item>
+	//   <breadcrumb-item :href="href">二级类目</breadcrumb-item>
+	//   <breadcrumb-item :href="href">三级类目</breadcrumb-item>
+	//   <breadcrumb-item>四级类目</breadcrumb-item>
+	// </breadcrumb>
+	// </script></code></pre>
+	//   </div>
+	//   <h2>Options</h2>
+	//   <h4 style="margin: 20px 0;">Breadcrumb</h4>
+	//   <table class="table table-bordered">
+	//     <thead>
+	//       <tr>
+	//         <th>参数</th>
+	//         <th>类型</th>
+	//         <th>默认值</th>
+	//         <th>说明</th>
+	//       </tr>
+	//     </thead>
+	//     <tbody>
+	//       <tr>
+	//         <td>slash</td>
+	//         <td>String</td>
+	//         <td>/</td>
+	//         <td>每一级类目之间的分隔符</td>
+	//       </tr>
+	//     </tbody>
+	//   </table>
+	//   <h4 style="margin: 20px 0;">BreadcrumbItem</h4>
+	//   <table class="table table-bordered">
+	//     <thead>
+	//       <tr>
+	//         <th>参数</th>
+	//         <th>类型</th>
+	//         <th>默认值</th>
+	//         <th>说明</th>
+	//       </tr>
+	//     </thead>
+	//     <tbody>
+	//       <tr>
+	//         <td>href</td>
+	//         <td>String</td>
+	//         <td>无</td>
+	//         <td>链接，如果不传则不可点击</td>
+	//       </tr>
+	//     </tbody>
+	//   </table>
+	// </template>
+	//
+	// <script>
+	
+	exports.default = {
+	  data: function data() {
+	    return {
+	      href: 'http://www.taobao.com'
+	    };
+	  },
+	
+	  components: {
+	    Breadcrumb: _src.Breadcrumb,
+	    BreadcrumbItem: BreadcrumbItem
+	  }
+	};
+	// </script>
+	//
+	// <style lang="less">
+	//   .badge-count-example, .badge-dot-example {
+	//     width: 42px;
+	//     height: 42px;
+	//     background-color: #eee;
+	//     display: inline-block;
+	//     border-radius: 6px;
+	//   }
+	//   .example-title {
+	//     margin: 20px 0;
+	//   }
+	// </style>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 440 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"breadcrumb\">\n    <h3 class=\"page-header\"><a href=\"#breadcrumb\" class=\"anchor\">Breadcrumb 面包屑</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">基本样式</h4>\n      <breadcrumb>\n        <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n        <breadcrumb-item>三级类目</breadcrumb-item>\n      </breadcrumb>\n      <h4 class=\"example-title\">分隔符样式（选用）</h4>\n      <breadcrumb slash=\"&gt;\">\n        <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">三级类目</breadcrumb-item>\n        <breadcrumb-item>四级类目</breadcrumb-item>\n      </breadcrumb>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<breadcrumb>\n  <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n  <breadcrumb-item>三级类目</breadcrumb-item>\n</breadcrumb>\n<breadcrumb slash=\"&gt;\">\n  <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">三级类目</breadcrumb-item>\n  <breadcrumb-item>四级类目</breadcrumb-item>\n</breadcrumb>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <h4 style=\"margin: 20px 0;\">Breadcrumb</h4>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>slash</td>\n        <td>String</td>\n        <td>/</td>\n        <td>每一级类目之间的分隔符</td>\n      </tr>\n    </tbody>\n  </table>\n  <h4 style=\"margin: 20px 0;\">BreadcrumbItem</h4>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>href</td>\n        <td>String</td>\n        <td>无</td>\n        <td>链接，如果不传则不可点击</td>\n      </tr>\n    </tbody>\n  </table>\n";
+
+/***/ },
+/* 441 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(442)
+	__vue_script__ = __webpack_require__(443)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/paginationDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(444)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 442 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 443 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(130);
+	
+	exports.default = {
+	  data: function data() {
+	    return {
+	      totalPage: 100,
+	      currPage: 10,
+	      showJumper: true,
+	      total: 100,
+	      showSizeChanger: true
+	    };
+	  },
+	
+	  components: {
+	    Pagination: _src.Pagination
+	  },
+	  events: {
+	    pageChange: function pageChange(page, id) {}
+	  },
+	  ready: function ready() {}
+	};
+	// </script>
+	//
+	// <style lang="less">
+	//   .example-title {
+	//     margin: 20px 0;
+	//   }
+	// </style>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div class="bs-docs-section" id="pagination">
+	//     <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>
+	//     <div class="bs-example">
+	//       <h4 class="example-title">完全版</h4>
+	//       <pagination :total-page.sync="totalPage",
+	//                   :curr-page.sync="currPage",
+	//                   :total="total",
+	//                   :show-jumper="true",
+	//                   :show-size-changer="true">
+	//       </pagination>
+	//       <h4 class="example-title">迷你版</h4>
+	//       <pagination :total-page.sync="totalPage",
+	//                   :curr-page.sync="currPage",
+	//                   :total="total",
+	//                   :show-jumper="true",
+	//                   :mini="true">
+	//       </pagination>
+	//       <h4 class="example-title">精简版</h4>
+	//       <pagination :total-page.sync="totalPage",
+	//                   :curr-page.sync="currPage",
+	//                   :total="total",
+	//                   :simple="true">
+	//       </pagination>
+	//     </div>
+	// <pre>
+	// <code class="language-markup"><script type="language-mark-up">
+	// <pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :show-jumper="true" :show-size-changer="true"></pagination>
+	// <pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :show-jumper="true" :mini="true"></pagination>
+	// <pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :simple="true"></pagination>
+	// </script></code></pre>
+	//   </div>
+	//   <h2>Options</h2>
+	//   <table class="table table-bordered">
+	//     <thead>
+	//       <tr>
+	//         <th>参数</th>
+	//         <th>类型</th>
+	//         <th>默认值</th>
+	//         <th>说明</th>
+	//       </tr>
+	//     </thead>
+	//     <tbody>
+	//       <tr>
+	//         <td>total-page</td>
+	//         <td>Number</td>
+	//         <td>无</td>
+	//         <td>总页数</td>
+	//       </tr>
+	//       <tr>
+	//         <td>curr-page</td>
+	//         <td>Number</td>
+	//         <td>无</td>
+	//         <td>当前页</td>
+	//       </tr>
+	//       <tr>
+	//         <td>total</td>
+	//         <td>Number</td>
+	//         <td>无</td>
+	//         <td>数据总条数</td>
+	//       </tr>
+	//       <tr>
+	//         <td>show-jumper</td>
+	//         <td>Boolean</td>
+	//         <td>false</td>
+	//         <td>是否开启跳转功能</td>
+	//       </tr>
+	//       <tr>
+	//         <td>show-size-changer</td>
+	//         <td>Boolean</td>
+	//         <td>false</td>
+	//         <td>是否开启修改每页条数功能</td>
+	//       </tr>
+	//       <tr>
+	//         <td>simple</td>
+	//         <td>Boolean</td>
+	//         <td>false</td>
+	//         <td>是否采用精简版样式</td>
+	//       </tr>
+	//       <tr>
+	//         <td>mini</td>
+	//         <td>Boolean</td>
+	//         <td>false</td>
+	//         <td>是否采用迷你版样式</td>
+	//       </tr>
+	//     </tbody>
+	//   </table>
+	//   <br>
+	//   <strong>注：</strong>pagination组件会监听当前currPage的变化，当其发生变化时pagination组件会向上派发一个回调事件，名字叫pageChange，回调参数就是当前页以及pagination的id，需要在引用pagination的当前文件里面的events对象里将其加入进去.
+	//   <pre><code class="language-markup"><script type="language-mark-up">
+	//     events: {
+	//       pageChange (page, id) {
+	//
+	//       }
+	//     }
+	//   </script></code></pre>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 444 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"pagination\">\n    <h3 class=\"page-header\"><a href=\"#pagination\" class=\"anchor\">Pagination 翻页</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">完全版</h4>\n      <pagination :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :show-jumper=\"true\",\n                  :show-size-changer=\"true\">\n      </pagination>\n      <h4 class=\"example-title\">迷你版</h4>\n      <pagination :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :show-jumper=\"true\",\n                  :mini=\"true\">\n      </pagination>\n      <h4 class=\"example-title\">精简版</h4>\n      <pagination :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :simple=\"true\">\n      </pagination>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<pagination :total-page.sync=\"totalPage\" :curr-page.sync=\"currPage\" :total=\"total\" :show-jumper=\"true\" :show-size-changer=\"true\"></pagination>\n<pagination :total-page.sync=\"totalPage\" :curr-page.sync=\"currPage\" :total=\"total\" :show-jumper=\"true\" :mini=\"true\"></pagination>\n<pagination :total-page.sync=\"totalPage\" :curr-page.sync=\"currPage\" :total=\"total\" :simple=\"true\"></pagination>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>total-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>总页数</td>\n      </tr>\n      <tr>\n        <td>curr-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>当前页</td>\n      </tr>\n      <tr>\n        <td>total</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>数据总条数</td>\n      </tr>\n      <tr>\n        <td>show-jumper</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启跳转功能</td>\n      </tr>\n      <tr>\n        <td>show-size-changer</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启修改每页条数功能</td>\n      </tr>\n      <tr>\n        <td>simple</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用精简版样式</td>\n      </tr>\n      <tr>\n        <td>mini</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用迷你版样式</td>\n      </tr>\n    </tbody>\n  </table>\n  <br>\n  <strong>注：</strong>pagination组件会监听当前currPage的变化，当其发生变化时pagination组件会向上派发一个回调事件，名字叫pageChange，回调参数就是当前页以及pagination的id，需要在引用pagination的当前文件里面的events对象里将其加入进去.\n  <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n    events: {\n      pageChange (page, id) {\n\n      }\n    }\n  </script></code></pre>\n";
+
+/***/ },
+/* 445 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(446)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(447)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 446 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _phoneNumber = __webpack_require__(330);
+	
+	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  data: function data() {
+	    return {
+	      number: '13291896699'
+	    };
+	  }
+	};
+	// </script>
+	//
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div class="bs-docs-section" id="phoneNumber">
+	//     <h3 class="page-header"><a href="#phoneNumber" class="anchor">手机号码格式化</a></h3>
+	//     <div class="bs-example">
+	//     <input type="text" v-model="number" />
+	//     <div>{{number | phone-number}}</div>
+	//     </div>
+	//
+	// <pre><code class="language-markup"><script type="language-mark-up">
+	//
+	// </script></code></pre>
+	//   </div>
+	// </template>
+	// <script>
+
+/***/ },
+/* 447 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phoneNumber\">\n    <h3 class=\"page-header\"><a href=\"#phoneNumber\" class=\"anchor\">手机号码格式化</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phone-number}}</div>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n\n</script></code></pre>\n  </div>\n";
+
+/***/ },
+/* 448 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 449 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -24385,7 +25982,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 416 */
+/* 450 */
 /***/ function(module, exports) {
 
 	"use strict";
