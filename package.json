@@ -1,6 +1,6 @@
 {
   "name": "@ali/vue-component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "components built with Vue.js",
   "main": "src/index.js",
   "repository": {
@@ -61,7 +61,6 @@
     "docs": "webpack-dev-server --inline --hot --quiet",
     "deploy": "rm -rf build && NODE_ENV=production webpack --progress --colors --display-chunks && node depoly.js",
     "build": "NODE_ENV=production && webpack --progress --hide-modules --config  webpack.build.js",
-    "publish" :"npm run build && node publish.js",
     "ci": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
     "cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
     "test": "def ci test"
