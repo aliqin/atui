@@ -2,7 +2,7 @@
   <div class="bs-docs-section" id="cascader">
     <h3 class="page-header"><a href="#cascader" class="anchor">Cascader 级联选择</a></h3>
     <div class="bs-example">
-      <cascader :options="options" @change="onChange"></cascader>
+      <cascader :options="options" @change="onChange" :defaultValue="defaultValue"></cascader>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 
@@ -76,12 +76,14 @@
     },
     data() {
       return {
-        options:options
+        options:options,
+        defaultValue:['zhejiang', 'hangzhou', 'xihu']
+
       }
     },
     methoeds:{
-      onChange(value) {
-        console.log(value)
+      onChange(selectedValue, option) {
+        console.log(selectedValue, option)
       }
     }
   }

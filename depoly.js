@@ -6,7 +6,7 @@ ghpages.publish(path.join(__dirname, './'), {
   // add:true,
   src:'{docs/**/*,build/**/*,index.html}',
   logger: function(message) {
-    console.log(message);
+    console.log(message)
   }
 }, function(err) {
   console.log(err || '文档部署成功！')
