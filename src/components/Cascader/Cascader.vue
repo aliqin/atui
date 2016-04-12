@@ -120,6 +120,7 @@
           if(event) {
             me.$dispatch('change', me.selectedValue, me.selectedOptions)
           }
+          self.isOpen = false
         }
         me.menus = menus
       },

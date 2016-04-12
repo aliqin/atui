@@ -8,7 +8,7 @@
         </pre>
       </p>
       <v-select :default-value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
-        <v-option value="Apple">Apple</v-option>
+        <v-option value="Apple">苹果</v-option>
         <v-option value="Banana" disabled>Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
         <v-option value="Orange">OrangeText</v-option>
@@ -227,7 +227,7 @@
         ],
         arr: [],
         arr2: [],
-        single: [],
+        single: 'Apple',
         multiple: [],
         multipleLimit: [],
         custom: [],
