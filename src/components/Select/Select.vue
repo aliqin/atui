@@ -6,7 +6,7 @@
       v-bind="{disabled: disabled}"
     >
       <span class="btn-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
-      <span class="btn-content">{{ selectedItems }}</span>
+      <span class="btn-content">{{{ selectedLabels }}}</span>
       <span class="caret"><icon type="up"></icon></span>
     </button>
     <ul class="dropdown-menu">
@@ -15,14 +15,14 @@
           <input type="text" placeholder="Search" v-model="searchText" class="form-control" autocomplete="off">
         </li>
         <li v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
-          <a @mousedown.prevent.stop="select(option.value)" style="cursor:pointer">
+          <a @mousedown.prevent.stop="select(option.label,option.value)" style="cursor:pointer">
             {{ option.label }}
             <span class="glyphicon glyphicon-ok check-mark" v-show="value.indexOf(option.value) !== -1"></span>
           </a>
         </li>
       </template>
       <slot v-else></slot>
-      <div class="notify" v-show="showNotify" transition="fadein">Limit reached ({{limit}} items max).</div>
+      <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
     </ul>
   </div>
 </template>
@@ -33,8 +33,7 @@
   export default {
     props: {
       options: {
-        type: Array,
-        default() { return [] },
+        type: Array
       },
       width:{
         type: Array,
@@ -75,7 +74,7 @@
     components:{
       Icon
     },
-    ready() {
+    created() {
       if (this.defaultValue.constructor !== Array) {
         if (this.defaultValue.length === 0) {
           this.defaultValue = []
@@ -94,23 +93,13 @@
       return {
         searchText: null,
         show: false,
+        selectedLabels:[],
         showNotify: false
       }
     },
     computed: {
-      selectedItems() {
-        let foundItems = []
-        if (this.defaultValue.length) {
-          for (let item in this.defaultValue) {
-            if (typeof this.defaultValue[item] === "string") {
-              foundItems.push(this.defaultValue[item])
-            }
-          }
-          return foundItems.join(', ')
-        }
-      },
       showPlaceholder() {
-        return this.defaultValue.length === 0
+        return this.selectedLabels.length === 0
       }
     },
     watch: {
@@ -123,29 +112,36 @@
       }
     },
     methods: {
-      select(v) {
-          if (this.defaultValue.indexOf(v) === -1) {
-            if (this.multiple) {
-              this.defaultValue.push(v)
-            } else {
-              this.defaultValue = [v]
-            }
-          } else {
-            if (this.multiple) {
-              this.defaultValue.$remove(v)
-            }
-          }
-          if (this.closeOnSelect) {
-            this.toggleDropdown()
-          }
+      select(label,value) {
+          this.$emit('change',label,value)
       },
       toggleDropdown() {
         this.show = !this.show
       }
     },
     events:{
-      change(text,value) {
-        this.onChange(text,value)
+      change(label,value) {
+        if(this.multiple) {
+          if(this.selectedLabels.indexOf(label) === -1) {
+            this.selectedLabels.push(label)
+          }
+        }else {
+          this.selectedLabels = [label]
+        }
+        if (this.defaultValue.indexOf(value) === -1) {
+          if (this.multiple) {
+            this.defaultValue.push(value)
+          } else {
+            this.defaultValue = [value]
+          }
+        } else {
+          if (this.multiple) {
+            this.defaultValue.$remove(value)
+          }
+        }
+        if (this.closeOnSelect || !this.multiple) {
+          this.toggleDropdown()
+        }
       }
     }
   }

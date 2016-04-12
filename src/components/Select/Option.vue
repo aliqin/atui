@@ -34,18 +34,15 @@
         return this.$parent.defaultValue.indexOf(this.value) !== -1
       }
     },
+    ready() {
+      if(this.chosen) {
+        this.$parent.selectedLabels = [this.$els.content.innerHTML]
+      }
+    },
     methods: {
       handleClick() {
         if(this.disabled) {
           return;
-        }
-        const parent = this.$parent
-        if (parent.multiple) {
-          const index = parent.defaultValue.indexOf(this.value)
-          index === -1 ? parent.defaultValue.push(this.value) : parent.defaultValue.splice(index, 1)
-        } else {
-          parent.defaultValue = [this.value]
-          parent.show = false
         }
         this.$dispatch('change',this.$els.content.innerHTML,this.value)
       }
