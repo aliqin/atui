@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
     <row>
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" :filter-key="filterKey" row-key="key" @change="onTableChange"></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @change="onTableChange"></grid>
     </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/>
@@ -157,6 +157,7 @@ import {Table,Icon} from 'src/'
       text: '姓胡的',
       value: '胡',
     }],
+    sorter:true,
     onFilter: (value, record) => record.name.indexOf(value) === 0
   }, {
     title: '年龄',
