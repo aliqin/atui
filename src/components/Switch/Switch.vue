@@ -1,5 +1,5 @@
 <template>
-	<span :class="wrapClasses" @click="changeHandler">
+	<span :class="wrapClasses" @click="changeHandler" :style="{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}">
 		<span class="switch-content">
 			<slot v-if="checked && !small" name="checkedPart"></slot>
 			<slot v-if="!checked && !small" name="unCheckedPart"></slot>
@@ -25,7 +25,11 @@
 			small: {
 				type: Boolean,
 				default: false
-			}
+			},
+      color: {
+        type: String,
+        default: "#00a0ff"
+      }
 		},
 		computed: {
 			wrapClasses () {
@@ -35,7 +39,8 @@
 					'switch-checked'	: this.checked,
 					'switch-disabled'	: this.disabled
 				}
-			}
+			},
+
 		},
 		methods: {
 			changeHandler () {
@@ -46,5 +51,5 @@
 				this.onChange(this.checked);
 			}
 		}
-	}	
+	}
 </script>
