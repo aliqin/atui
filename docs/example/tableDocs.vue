@@ -19,6 +19,7 @@ import {Table,Icon} from 'src/'
       text: '姓胡的',
       value: '胡',
     }],
+    sorter: true,
     onFilter: (value, record) => record.name.indexOf(value) === 0
   }, {
     title: '年龄',

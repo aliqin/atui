@@ -1,5 +1,5 @@
 <template>
-<i :class="['iconfont','icon-' + type]" v-bind:style="{ fontSize: size + 'px',color:color }">
+<i :class="['iconfont','icon-' + type]" :style="{ fontSize: size + 'px',color:color }">
   <slot></slot>
 </i>
 </template>
@@ -13,7 +13,7 @@ export default {
     },
     size:{
     	type:String,
-    	default:'14'    
+    	default:'14'
     },
     color:{
     	type:String
