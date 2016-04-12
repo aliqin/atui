@@ -15,16 +15,28 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         default: false
       }
     },
+    methods: {
+      _mapIndexToChildComponent () {
+        const self = this;
+        self.$children.forEach((item, index) => {
+          item.index = index
+        })
+      }
+    },
     created() {
       this.$on('isOpenEvent', (child)=> {
         if (this.oneAtATime) {
-          this.$children.forEach((item) => {
+          this.$children.forEach((item, index) => {
+            item.index = index
             if (child !== item ) {
               item.isOpen = false
-            }
+            } 
           })
         }
       })
+    },
+    ready () {
+      this._mapIndexToChildComponent();
     }
   }
 </script>

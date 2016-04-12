@@ -12,15 +12,15 @@
           内容一
         </panel>
         <panel>
-          <div slot="panel-header">Panel #2</div>
+          <div slot="panel-header" >Panel #2</div>
           内容二
         </panel>
         <panel>
-          <div slot="panel-header">Panel #3</div>
+          <div slot="panel-header" >Panel #3</div>
           内容三
         </panel>
         <panel>
-          <div slot="panel-header">Panel #4</div>
+          <div slot="panel-header" >Panel #4</div>
           内容四
         </panel>
       </accordion>
