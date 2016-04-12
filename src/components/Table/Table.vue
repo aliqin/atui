@@ -30,7 +30,7 @@
         </td>
         <td v-for="column in columns">
             <template v-if="column.render">
-                {{{column.render(record[column.dataIndex],record)}}}
+                {{{column.render(record[column.dataIndex],record,rowIndex)}}}
             </template>
             <template v-else>
                 {{record[column.dataIndex]}}
