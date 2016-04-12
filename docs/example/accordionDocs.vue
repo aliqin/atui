@@ -8,19 +8,19 @@
       </p>
       <accordion :one-at-atime="checked">
         <panel :is-open="true">
-          <div slot="panel-header">Panel #1</div>
+          <div slot="panel-header" class="custom-class">Panel #1</div>
           内容一
         </panel>
         <panel>
-          <div slot="panel-header" >Panel #2</div>
+          <div slot="panel-header" class="custom-class">Panel #2</div>
           内容二
         </panel>
         <panel>
-          <div slot="panel-header" >Panel #3</div>
+          <div slot="panel-header" class="custom-class">Panel #3</div>
           内容三
         </panel>
         <panel>
-          <div slot="panel-header" >Panel #4</div>
+          <div slot="panel-header" class="custom-class">Panel #4</div>
           内容四
         </panel>
       </accordion>
@@ -30,19 +30,19 @@
 <label for="checked">Open only one at a time.</label>
 <accordion :one-at-atime="checked">
   <panel :is-open="true">
-    <div slot="panel-header">Panel #1</div>
+    <div slot="panel-header" class="custom-class">Panel #1</div>
     内容一
   </panel>
   <panel>
-    <div slot="panel-header">Panel #2</div>
+    <div slot="panel-header" class="custom-class">Panel #2</div>
     内容二
   </panel>
   <panel>
-    <div slot="panel-header">Panel #3</div>
+    <div slot="panel-header" class="custom-class">Panel #3</div>
     内容三
   </panel>
   <panel>
-    <div slot="panel-header">Panel #4</div>
+    <div slot="panel-header" class="custom-class">Panel #4</div>
     内容四
   </panel>
 </accordion>
@@ -91,9 +91,9 @@
           如果用户自定义的元素里有事件绑定的操作，建议使用事件修饰符（例：@click.prev.stop=""）</td>
         </tr>
       </tbody>
-    </table> 
+    </table>
   </div>
-</template> 
+</template>
 
 
 <script>
@@ -112,3 +112,8 @@
     }
   }
 </script>
+<style>
+  .custom-class {
+    padding: 10px 15px;
+  }
+</style>
