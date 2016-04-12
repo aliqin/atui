@@ -12,7 +12,8 @@
 				default: 0
 			},
 			color: {
-				type: String
+				type: String,
+        default: "#ff7500"
 			}
 		},
 		watch: {
