@@ -7,7 +7,7 @@
       </th>
       <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
           {{column['title']}}
-          <dropdown v-if="column.filters" data-toggle="dropdown" :open="isOpen">
+          <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" :open.asyc="filterOpened">
             <div data-toggle="dropdown">
               <icon type="filter"></icon>
             </div>
@@ -15,14 +15,16 @@
               <li v-for="col in column.filters"><a href="javascript:void(0);" @click="onFilter(col.value, column)">{{col.text}}</a></li>
             </ul>
           </dropdown>
+          <div v-if="dataSource.length && column.sorter" class="table-sorter">
+            <icon type="up" @click="sortAction(column,'ascend')" size="10" :class="{active:sorderOrder == 'ascend'}"></icon>
+            <icon type="down" @click="sortAction(column,'descend')" size="10" :class="{active:sorderOrder == 'descend'}"></icon>
+          </div>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">没有任何数据</td></tr>
-    <tr v-for="
-        (rowIndex, record) in dataSource
-        | orderBy sortKey sortOrders[sortKey]">
+    <tr v-for="(rowIndex, record) in dataSource">
         <td v-if="rowSelection">
              <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
         </td>
@@ -56,13 +58,11 @@ export default {
     Dropdown
   },
   data() {
-    let sortOrders = {}
-    this.columns.forEach((key) => sortOrders[key] = 1)
     this.compileTbody()
     return {
       sortKey: '',
-      isOpen: false,
-      sortOrders: sortOrders,
+      filterOpened: false,
+      sorderOrder:'',
       checkedRows: [],
       scope: null
     }
@@ -74,7 +74,7 @@ export default {
         return record[me.rowKey]
       })
       if(me.rowSelection.onChange) {
-        me.rowSelection.onChange.call(null,me.checkedRows,checkedKeys)
+        me.rowSelection.onChange(me.checkedRows,checkedKeys)
       }
       return checkedKeys
     }
@@ -97,9 +97,15 @@ export default {
         me._context.$compile(me.$el.getElementsByTagName('tbody')[0]);
       });
     },
-    sortBy(key) {
-      this.sortKey = key
-      this.sortOrders[key] = this.sortOrders[key] * -1
+    sortAction(column,order) {
+      if(typeof column.sorter === 'Function') {
+        // TODO:客户端排序
+      }
+      this.sorderOrder = order
+      this.$dispatch('change', this.pagination, this.filters, {
+        field:column.dataIndex,
+        order:order
+      })
     },
     onCheckAll() {
       let me = this
@@ -140,7 +146,7 @@ export default {
       }
     },
     onFilter(value, column) {
-      this.isOpen = false
+      this.filterOpened = false
       // let filterSource = this.dataSource.filter((record) => {
       //   return column.onFilter.call(this, value, record)
       // })
