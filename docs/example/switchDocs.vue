@@ -10,7 +10,7 @@
             <th>禁用</th>
           </tr>
           <tr>
-            <td><v-switch small></v-switch></td>
+            <td><v-switch small color="#000"></v-switch></td>
             <td><v-switch small checked :on-change="changeHandler"></v-switch>
             </td>
             <td><v-switch small disabled></v-switch></td>
@@ -57,7 +57,7 @@
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<v-switch small></v-switch>
+<v-switch small color="#000"></v-switch>
 <v-switch small checked :on-change="changeHandler"></v-switch>
 <v-switch small disabled></v-switch>
 <v-switch></v-switch>
@@ -103,6 +103,12 @@
         <td><code>Boolean</code></td>
         <td>false</td>
         <td>当前开关是否禁用</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td><code>String</code></td>
+        <td>#00a0ff</td>
+        <td>switch的颜色</td>
       </tr>
       <tr>
         <td>on-change</td>
