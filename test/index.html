@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
-  <link rel="stylesheet" href="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/tmallwt.css"/>
-  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/vue.js"></script>
-  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/VueComponent.js"></script>
-  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.1/VueWidget.js"></script>
+  <link rel="stylesheet" href="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/tmallwt.css"/>
+  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/vue.js"></script>
+  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/VueComponent.js"></script>
+  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/VueWidget.js"></script>
 </head>
 <body>
   <div id="container" style="margin:10px">
@@ -120,12 +120,102 @@
   </form-item>
 </v-form>
 
-
+日历
+<hr/>
 <date-picker></date-picker>
+
+ <br/> <br/> <br/>
+表格
+<hr/>
+<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection"  row-key="key" @change="onTableChange"></grid>
   </div>
   <script>
+
+var columns = [{
+    title: '姓名',
+    dataIndex: 'name',
+    filters: [{
+      text: '姓李的的',
+      value: '李',
+    }, {
+      text: '姓胡的',
+      value: '胡',
+    }],
+    sorter: true,
+    onFilter: (value, record) => record.name.indexOf(value) === 0
+  }, {
+    title: '年龄',
+    dataIndex: 'age',
+    sorter: (a, b) => a.age - b.age,
+  }, {
+    title: '地址',
+    dataIndex: 'address',
+    filters: [{
+      text: '南湖',
+      value: '南湖',
+    }, {
+      text: '西湖',
+      value: '西湖',
+    }],
+    filterMultiple: false,
+    onFilter: (value, record) => record.address.indexOf(value) === 0
+  },{
+      title: '操作',
+      key: 'operation',
+      render(text, record) {
+        return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
+      }
+    }
+  ];
+
+  var data = [{
+    key: '1',
+    name: '胡斌',
+    age: 32,
+    address: '南湖区湖底公园1号',
+  }, {
+    key: '2',
+    name: '胡彦祖',
+    age: 42,
+    address: '西湖区湖底公园12号',
+  }, {
+    key: '3',
+    name: '李大嘴',
+    age: 32,
+    address: '南湖区湖底公园123号',
+  }, {
+    key: '4',
+    name: '李秀莲大嘴哥',
+    age: 32,
+    address: '西湖区湖底公园123号',
+  }];
+  var rowSelection = {
+    getCheckboxProps(record) {
+      return {
+        disabled: record.name === '胡彦祖'    // 配置无法勾选的列
+      };
+    },
+    onChange(selectedRowKeys, selectedRows) {
+      console.log(selectedRowKeys, selectedRows);
+    },
+    onSelect(record, selected, selectedRows) {
+      console.log(record, selected, selectedRows);
+    },
+    onSelectAll(selected, selectedRows, changeRows) {
+      console.log(selected, selectedRows, changeRows);
+    }
+  };
+
+
+
+
     new Vue({
       el: '#container',
+      data:{
+        gridData:data,
+        gridColumns: columns,
+        rowSelection:rowSelection
+      },
       components:{
         vRow:VueComponent.Layout.Row,
         vCol:VueComponent.Layout.Col,
@@ -138,8 +228,10 @@
         Step:VueComponent.Steps.Step,
         Tabs:VueComponent.Tabs,
         Tab:VueComponent.Tabs.Tab,
+        Grid:VueComponent.Table,
         Badge:VueComponent.Badge,
         Tag:VueComponent.Tag,
+        Icon:VueComponent.Icon,
         Breadcrumb:VueComponent.Breadcrumb,
         BreadcrumbItem:VueComponent.Breadcrumb.BreadcrumbItem,
         VForm:VueComponent.Form,
@@ -147,8 +239,10 @@
         AddressSelect:VueWidget.AddressSelect,
         DatePicker:VueComponent.DatePicker
       },
-      data: {
-        message: 'Hello Vue.js!'
+      methods:{
+        onTableChange:function(i,j,k) {
+          console.log(i,j,k)
+        }
       }
   })
   </script>

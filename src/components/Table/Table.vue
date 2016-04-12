@@ -16,8 +16,8 @@
             </ul>
           </dropdown>
           <div v-if="dataSource.length && column.sorter" class="table-sorter">
-            <icon type="up" @click="sortAction(column,'ascend')" size="10" :class="{active:sorderOrder == 'ascend'}"></icon>
-            <icon type="down" @click="sortAction(column,'descend')" size="10" :class="{active:sorderOrder == 'descend'}"></icon>
+            <icon type="up" @click="sortAction(column,$index,'ascend')" size="10" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
+            <icon type="down" @click="sortAction(column,$index,'descend')" size="10" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
           </div>
       </th>
     </tr>
@@ -62,7 +62,7 @@ export default {
     return {
       sortKey: '',
       filterOpened: false,
-      sorderOrder:'',
+      sorderOrder:[],
       checkedRows: [],
       scope: null
     }
@@ -97,11 +97,12 @@ export default {
         me._context.$compile(me.$el.getElementsByTagName('tbody')[0]);
       });
     },
-    sortAction(column,order) {
+    sortAction(column,index,order) {
       if(typeof column.sorter === 'Function') {
         // TODO:客户端排序
       }
-      this.sorderOrder = order
+      this.sorderOrder[index] = order
+      this.sorderOrder = Object.assign([],this.sorderOrder)
       this.$dispatch('change', this.pagination, this.filters, {
         field:column.dataIndex,
         order:order
