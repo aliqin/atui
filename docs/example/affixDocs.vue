@@ -43,10 +43,10 @@
 </template>
 
 <script>
-  import {tooltip} from 'src/'
+  import {Tooltip} from 'src/'
   export default {
     components: {
-      tooltip
+      Tooltip
     }
   }
 </script>

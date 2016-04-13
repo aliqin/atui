@@ -237,6 +237,7 @@ import {Table,Icon} from 'src/'
     methods:{
       changeData() {
         this.gridData = data;
+        console.log(this.gridData)
       },
       onTableChange(i,j,k) {
         console.log(i,j,k)
