@@ -1,5 +1,5 @@
 <template>
-  <div class="select-container" v-bind:class="{open: show}">
+  <div class="select-container" v-bind:class="{open: show,disabled: disabled}">
     <button v-el:btn type="button" class="dropdown-toggle"
       @click="toggleDropdown"
       @blur="show = (search ? show : false)"
@@ -7,7 +7,7 @@
     >
       <span class="btn-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
       <span class="btn-content">{{{ selectedLabels }}}</span>
-      <span class="caret"><icon type="up" size="12"></icon></span>
+      <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
     </button>
     <ul class="dropdown-menu">
       <template v-if="options.length">
@@ -148,5 +148,12 @@
 </script>
 
 <style scoped>
-
+.caret .iconfont{
+  display: inline-block;
+  transition: all .3s ease;
+  transform:rotate(0deg);
+}
+.caret.open .iconfont{
+  transform:rotate(180deg);
+}
 </style>
