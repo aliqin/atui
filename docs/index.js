@@ -1,6 +1,6 @@
 require('./assets/docs.css')
-// require('../src/styles/themes/alidayu.less')
-// require('../src/styles/themes/tmallwt.less')
+require('../src/styles/themes/alidayu.less')
+require('../src/styles/themes/tmallwt.less')
 require('../src/styles/themes/alitx.less')
 require('prismjs')
 require('./js/showLanguage')
@@ -24,7 +24,7 @@ import selectDocs from './example/selectDocs.vue'
 import datepickerDocs from './example/datepickerDocs.vue'
 import searchboxDocs from './example/searchboxDocs.vue'
 // import progressbarDocs from './example/progressbar-docs.vue'
-import typeaheadDocs from './example/typeaheadDocs.vue'
+// import typeaheadDocs from './example/typeaheadDocs.vue'
 
 
 // 展示类
@@ -49,7 +49,7 @@ import asideDocs from './example/asideDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import stepsDocs from './example/stepsDocs.vue'
-import menuDocs from './example/menuDocs.vue'
+// import menuDocs from './example/menuDocs.vue'
 import breadcrumbDocs from './example/breadcrumbDocs.vue'
 import paginationDocs from './example/paginationDocs.vue'
 
@@ -101,14 +101,14 @@ new Vue({
     breadcrumbDocs,
     paginationDocs,
     tooltipDocs,
-    typeaheadDocs,
-    menuDocs,
+    // typeaheadDocs,
+    // menuDocs,
     searchboxDocs,
     phoneNumberDocs,
     // addressSelectDocs
-    addressSelectDocs:function(resolve) {
-      require(['./example/widgets/addressSelectDocs.vue'], resolve);
-    }
+    // addressSelectDocs:function(resolve) {
+    //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
+    // }
   },
   data() {
     return {

@@ -138,7 +138,8 @@ content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
 </template>
 
 <script>
-  import {Tooltip} from 'src/components/Tooltip/'
+  import {Tooltip} from 'src/'
+
   export default {
     data() {
       return {
