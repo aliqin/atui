@@ -14,7 +14,7 @@
     </div>
     <h4>有字数限制文本域</h4>
     <div>
-      <v-textarea :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
+      <v-textarea :limit-words="10" placeholder="这里只能输入10个字" error name="ruohuan" v-ref:textarea-limit></v-textarea>
     </div>
     <div>
       <v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
