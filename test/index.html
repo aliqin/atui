@@ -8,6 +8,7 @@
   <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/vue.js"></script>
   <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/VueComponent.js"></script>
   <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/VueWidget.js"></script>
+  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/VueFilter.js"></script>
 </head>
 <body>
   <div id="container" style="margin:10px">
@@ -128,7 +129,12 @@
 表格
 <hr/>
 <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection"  row-key="key" @change="onTableChange"></grid>
-  </div>
+
+Filter
+ <br/> <br/> <br/>
+<input value="13254565255 | " ></div>
+
+</div>
   <script>
 
 var columns = [{
