@@ -153,7 +153,7 @@ router.map({
 				component:stepsDocs
 			},
       //widgets
-      '/addressselect' {
+      '/addressselect': {
         component:addressSelectDocs
       }
 		}
