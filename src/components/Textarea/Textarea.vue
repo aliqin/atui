@@ -1,15 +1,6 @@
 <template>
-<div class="limitTextarea">
-  <div v-if="limitWords" class="limit-textarea ">
-    <textarea v-if="isDisabled" disabled class="textarea" maxlength="{{limitWords}}" placeholder="{{placeholder}}" v-model="content" :class="classObj"></textarea>
-    <textarea v-else class="textarea" maxlength="{{limitWords}}" placeholder="{{placeholder}}" v-model="content" :class="classObj"></textarea>
-    <p :class="{'words-error': overLimit}">{{ curWords }}/{{ limitWords }}</p>
-  </div>
-  <template v-else>
-    <textarea v-if="isDisabled" disabled class="textarea" :class="classObj" placeholder="{{placeholder}}" v-model="content"></textarea>
-    <textarea v-else class="textarea" :class="classObj" placeholder="{{placeholder}}" v-model="content"></textarea>
-  </template>
-</div>
+<textarea v-bind="{disabled: isDisabled}" maxlength="{{limitWords}}" class="textarea" :class="classObj" name="{{name}}" placeholder="{{placeholder}}" v-model="content"></textarea>
+<p v-if="limitWords" class="limit-word-area" :class="{'words-error': overLimit}">{{ curWords }}/{{ limitWords }}</p>
 </template>
 
 <script>
@@ -17,6 +8,7 @@
     props: {
       limitWords: Number,
       placeholder: String,
+      name: String,
       disabled: null,
       error: null,
       success: null,
