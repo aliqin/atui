@@ -19,6 +19,7 @@
       </modal>
       <button class="btn btn-primary" @click="zoomModal = true">Zoom modal</button>
       <modal title="Zoom Modal" :show.sync="zoomModal" effect="zoom" width="400">
+        <div slot="modal-header"></div>
         <div slot="modal-body" class="modal-body">
           高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。
         </div>
@@ -50,6 +51,8 @@
           高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。
         </div>
       </modal>
+
+      <button @click="showConfirm">使用程序直接弹出</button>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <button class="btn btn-default"
@@ -158,6 +161,7 @@
 
 <script>
   import {Modal} from 'src/'
+  const confirm = Modal.confirm
   export default {
     data() {
       return {
@@ -171,6 +175,18 @@
     },
     components: {
       Modal
+    },
+    methods:{
+      showConfirm() {
+        confirm({
+          title: '您是否确认要删除这项内容',
+          content: '一些解释',
+          onOk() {
+            console.log('确定');
+          },
+          onCancel() {}
+        });
+      }
     }
   }
 </script>
