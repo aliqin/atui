@@ -1,6 +1,6 @@
 // 13291895654 to 132 9189 5654
-import Vue from 'vue'
-Vue.filter('phoneNumber', function(number, searchKey) {
+
+module.exports = function(number, searchKey) {
   var ret = ''
   number = '' + number
   number = number.replace(/[^\d]/g, '').substr(0, 11);
@@ -15,6 +15,4 @@ Vue.filter('phoneNumber', function(number, searchKey) {
     ret = ret.replace(searchKey, '<span class="h">' + searchKey + '</span>')
   }
   return ret
-})
-
-module.exports = {}
+}
