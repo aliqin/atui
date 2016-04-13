@@ -1,7 +1,12 @@
 .select-container {
   position: relative;
   display: inline-block;
-
+  &.disabled{
+    background: #f2f2f2;
+    color: #ccc;
+    border-color: #e6e6e6;
+    cursor: not-allowed;
+  }
   .dropdown-toggle{
     min-width: 140px;
     width:100%;
