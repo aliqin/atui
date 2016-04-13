@@ -7,7 +7,7 @@
     >
       <span class="btn-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
       <span class="btn-content">{{{ selectedLabels }}}</span>
-      <span class="caret"><icon type="up"></icon></span>
+      <span class="caret"><icon type="up" size="12"></icon></span>
     </button>
     <ul class="dropdown-menu">
       <template v-if="options.length">
@@ -17,7 +17,7 @@
         <li v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
           <a @mousedown.prevent.stop="select(option.label,option.value)" style="cursor:pointer">
             {{ option.label }}
-            <span class="glyphicon glyphicon-ok check-mark" v-show="value.indexOf(option.value) !== -1"></span>
+            <icon type="tick" v-show="value.indexOf(option.value) !== -1"></icon>
           </a>
         </li>
       </template>

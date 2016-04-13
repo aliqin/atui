@@ -5,7 +5,7 @@
  * Licensed under MIT
  */
 .spin,
-.spin > div {
+.spin > .sping-point {
     position: relative;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -16,7 +16,7 @@
     font-size: 0;
     color: #333;
 }
-.spin > div {
+.spin > .sping-point {
     display: inline-block;
     float: none;
     background-color: currentColor;
@@ -34,7 +34,7 @@
   width: 64px;
   height: 64px;
 }
-.spin > div {
+.spin > .sping-point {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,19 +42,19 @@
     height: 10px;
     border-radius: 100%;
 }
-.spin > div:nth-child(1) {
+.spin > .sping-point:nth-child(1) {
     -webkit-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
 }
-.spin > div:nth-child(2) {
+.spin > .sping-point:nth-child(2) {
     -webkit-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
 }
-.spin > div:nth-child(3) {
+.spin > .sping-point:nth-child(3) {
     -webkit-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
@@ -466,9 +466,10 @@
 </style>
 <template>
 <div :class="['spin',size]" v-show="show">
-  <div></div>
-  <div></div>
-  <div></div>
+  <div class="sping-point"></div>
+  <div class="sping-point"></div>
+  <div class="sping-point"></div>
+  <slot></slot>
 </div>
 </template>
 <script>
