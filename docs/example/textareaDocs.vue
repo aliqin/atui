@@ -14,7 +14,7 @@
     </div>
     <h4>有字数限制文本域</h4>
     <div>
-      <v-textarea :limit-words="10" placeholder="这里只能输入10个字" error name="ruohuan" v-ref:textarea-limit></v-textarea>
+      <v-textarea :limit-words="50" placeholder="这里只能输入50个字" :error="validStatus == 'error'" name="ruohuan" v-ref:textarea-limit :content.sync="content"></v-textarea>
     </div>
     <div>
       <v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
@@ -80,6 +80,23 @@
   export default {
     components: {
       vTextarea
+    },
+
+    data () {
+      return {
+        validStatus: '',
+        content: '我是文本域内容，内容字数不能少于2个哦，否则会提示错误哦'
+      }
+    },
+
+    watch: {
+      content (val) {
+        let len = val.length;
+
+        if(len < 2) {
+          this.validStatus = 'error';
+        }
+      }
     }
   }
 </script>
