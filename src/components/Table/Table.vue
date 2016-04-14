@@ -119,12 +119,6 @@ export default {
       const changeRows = []
       const checked = event.target.checked
       if(checked) {
-        // me.checkedRows = me.dataSource.filter((record)=>{
-        //   if (this.rowSelection.getCheckboxProps) {
-        //     return !this.props.rowSelection.getCheckboxProps(record).disabled;
-        //   }
-        // })
-        const getCheckboxProps = this.rowSelection.getCheckboxProps
         me.checkebleRows.forEach((record,i) => {
           if(me.checkedRows.indexOf(record) < 0) {
             me.checkedRows.push(record)
