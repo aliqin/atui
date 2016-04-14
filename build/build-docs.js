@@ -3644,8 +3644,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-56e2284a&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Select.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-56e2284a&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Select.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-f750b48a&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Select.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-f750b48a&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Select.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3663,7 +3663,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n.caret .iconfont[_v-56e2284a]{\n  display: inline-block;\n  -webkit-transition: all .3s ease;\n  transition: all .3s ease;\n  -webkit-transform:rotate(0deg);\n          transform:rotate(0deg);\n}\n.caret.open .iconfont[_v-56e2284a]{\n  -webkit-transform:rotate(180deg);\n          transform:rotate(180deg);\n}\n", ""]);
+	exports.push([module.id, "\n.caret .iconfont[_v-f750b48a]{\n  display: inline-block;\n  -webkit-transition: all .3s ease;\n  transition: all .3s ease;\n  -webkit-transform:rotate(0deg);\n          transform:rotate(0deg);\n}\n.caret.open .iconfont[_v-f750b48a]{\n  -webkit-transform:rotate(180deg);\n          transform:rotate(180deg);\n}\n", ""]);
 	
 	// exports
 
@@ -3782,7 +3782,8 @@
 	      searchText: null,
 	      show: false,
 	      selectedLabels: [],
-	      showNotify: false
+	      showNotify: false,
+	      value: this.multiple ? [] : ''
 	    };
 	  },
 	
@@ -3819,19 +3820,20 @@
 	          this.selectedLabels.push(label);
 	        }
 	      } else {
-	        this.selectedLabels = [label];
+	        this.selectedLabels = label;
 	      }
 	      if (this.defaultValue.indexOf(value) === -1) {
 	        if (this.multiple) {
 	          this.defaultValue.push(value);
 	        } else {
-	          this.defaultValue = [value];
+	          this.defaultValue = value;
 	        }
 	      } else {
 	        if (this.multiple) {
 	          this.defaultValue.$remove(value);
 	        }
 	      }
+	      if (this.multiple) {}
 	      if (this.closeOnSelect || !this.multiple) {
 	        this.toggleDropdown();
 	      }
@@ -3857,7 +3859,7 @@
 /* 185 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled}\" _v-56e2284a=\"\">\n  <button v-el:btn=\"\" type=\"button\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" @blur=\"show = (search ? show : false)\" v-bind=\"{disabled: disabled}\" _v-56e2284a=\"\">\n    <span class=\"btn-placeholder\" v-show=\"showPlaceholder\" _v-56e2284a=\"\">{{placeholder}}</span>\n    <span class=\"btn-content\" _v-56e2284a=\"\">{{{ selectedLabels }}}</span>\n    <span :class=\"{caret:true,open:show}\" _v-56e2284a=\"\"><icon type=\"down\" size=\"12\" _v-56e2284a=\"\"></icon></span>\n  </button>\n  <ul class=\"dropdown-menu\" _v-56e2284a=\"\">\n    <template v-if=\"options.length\">\n      <li v-if=\"search\" class=\"bs-searchbox\" _v-56e2284a=\"\">\n        <input type=\"text\" placeholder=\"Search\" v-model=\"searchText\" class=\"form-control\" autocomplete=\"off\" _v-56e2284a=\"\">\n      </li>\n      <li v-for=\"option in options | filterBy searchText \" v-bind:id=\"option.value\" style=\"position:relative\" _v-56e2284a=\"\">\n        <a @mousedown.prevent.stop=\"select(option.label,option.value)\" style=\"cursor:pointer\" _v-56e2284a=\"\">\n          {{ option.label }}\n          <icon type=\"tick\" v-show=\"value.indexOf(option.value) !== -1\" _v-56e2284a=\"\"></icon>\n        </a>\n      </li>\n    </template>\n    <slot v-else=\"\" _v-56e2284a=\"\"></slot>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\" _v-56e2284a=\"\">最多可选 ({{limit}})项.</div>\n  </ul>\n</div>\n";
+	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled}\" _v-f750b48a=\"\">\n  <button v-el:btn=\"\" type=\"button\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" @blur=\"show = (search ? show : false)\" v-bind=\"{disabled: disabled}\" _v-f750b48a=\"\">\n    <span class=\"btn-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n    <span class=\"btn-content\" _v-f750b48a=\"\">{{{ selectedLabels }}}</span>\n    <span :class=\"{caret:true,open:show}\" _v-f750b48a=\"\"><icon type=\"down\" size=\"12\" _v-f750b48a=\"\"></icon></span>\n  </button>\n  <ul class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <template v-if=\"options.length\">\n      <li v-if=\"search\" class=\"bs-searchbox\" _v-f750b48a=\"\">\n        <input type=\"text\" placeholder=\"Search\" v-model=\"searchText\" class=\"form-control\" autocomplete=\"off\" _v-f750b48a=\"\">\n      </li>\n      <li v-for=\"option in options | filterBy searchText \" v-bind:id=\"option.value\" style=\"position:relative\" _v-f750b48a=\"\">\n        <a @mousedown.prevent.stop=\"select(option.label,option.value)\" style=\"cursor:pointer\" _v-f750b48a=\"\">\n          {{ option.label }}\n          <icon type=\"tick\" v-show=\"value.indexOf(option.value) !== -1\" _v-f750b48a=\"\"></icon>\n        </a>\n      </li>\n    </template>\n    <slot v-else=\"\" _v-f750b48a=\"\"></slot>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\" _v-f750b48a=\"\">最多可选 ({{limit}})项.</div>\n  </ul>\n</div>\n";
 
 /***/ },
 /* 186 */
@@ -3894,8 +3896,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-edbc4a58&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Option.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-edbc4a58&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Option.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-38ea94b4&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Option.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-38ea94b4&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Option.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3913,7 +3915,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\na span.check-mark[_v-edbc4a58] {\n  position: absolute;\n  display: inline-block;\n  right: 15px;\n  margin-top: 5px;\n}\n", ""]);
+	exports.push([module.id, "\na span.check-mark[_v-38ea94b4] {\n  position: absolute;\n  display: inline-block;\n  right: 15px;\n  margin-top: 5px;\n}\n", ""]);
 	
 	// exports
 
@@ -4005,7 +4007,7 @@
 /* 190 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li :class=\"{disabled:disabled}\" _v-edbc4a58=\"\">\n  <a @mousedown.prevent.stop=\"handleClick\" _v-edbc4a58=\"\">\n    <span v-el:content=\"\" _v-edbc4a58=\"\"><slot _v-edbc4a58=\"\"></slot></span>\n    <icon type=\"tick\" v-show=\"chosen\" _v-edbc4a58=\"\"></icon>\n  </a>\n</li>\n";
+	module.exports = "\n<li :class=\"{disabled:disabled}\" _v-38ea94b4=\"\">\n  <a @mousedown.prevent.stop=\"handleClick\" _v-38ea94b4=\"\">\n    <span v-el:content=\"\" _v-38ea94b4=\"\"><slot _v-38ea94b4=\"\"></slot></span>\n    <icon type=\"tick\" v-show=\"chosen\" _v-38ea94b4=\"\"></icon>\n  </a>\n</li>\n";
 
 /***/ },
 /* 191 */
@@ -5425,7 +5427,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {/*!
-	 * Vue.js v1.0.21
+	 * Vue.js v1.0.20
 	 * (c) 2016 Evan You
 	 * Released under the MIT License.
 	 */
@@ -6162,7 +6164,7 @@
 	  var close = escapeRegex(config.delimiters[1]);
 	  var unsafeOpen = escapeRegex(config.unsafeDelimiters[0]);
 	  var unsafeClose = escapeRegex(config.unsafeDelimiters[1]);
-	  tagRE = new RegExp(unsafeOpen + '((?:.|\\n)+?)' + unsafeClose + '|' + open + '((?:.|\\n)+?)' + close, 'g');
+	  tagRE = new RegExp(unsafeOpen + '(.+?)' + unsafeClose + '|' + open + '(.+?)' + close, 'g');
 	  htmlRE = new RegExp('^' + unsafeOpen + '.*' + unsafeClose + '$');
 	  // reset cache
 	  cache = new Cache(1000);
@@ -6187,6 +6189,7 @@
 	  if (hit) {
 	    return hit;
 	  }
+	  text = text.replace(/\n/g, '');
 	  if (!tagRE.test(text)) {
 	    return null;
 	  }
@@ -6402,21 +6405,22 @@
 	});
 	
 	var warn = undefined;
-	var formatComponentName = undefined;
 	
 	if (process.env.NODE_ENV !== 'production') {
 	  (function () {
 	    var hasConsole = typeof console !== 'undefined';
-	
-	    warn = function (msg, vm) {
-	      if (hasConsole && !config.silent) {
-	        console.error('[Vue warn]: ' + msg + (vm ? formatComponentName(vm) : ''));
+	    warn = function (msg, e) {
+	      if (hasConsole && (!config.silent || config.debug)) {
+	        console.warn('[Vue warn]: ' + msg);
+	        /* istanbul ignore if */
+	        if (config.debug) {
+	          if (e) {
+	            throw e;
+	          } else {
+	            console.warn(new Error('Warning Stack Trace').stack);
+	          }
+	        }
 	      }
-	    };
-	
-	    formatComponentName = function (vm) {
-	      var name = vm._isVue ? vm.$options.name : vm.name;
-	      return name ? ' (found in component: <' + hyphenate(name) + '>)' : '';
 	    };
 	  })();
 	}
@@ -7051,7 +7055,7 @@
 	      return parentVal;
 	    }
 	    if (typeof childVal !== 'function') {
-	      process.env.NODE_ENV !== 'production' && warn('The "data" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.', vm);
+	      process.env.NODE_ENV !== 'production' && warn('The "data" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.');
 	      return parentVal;
 	    }
 	    if (!parentVal) {
@@ -7085,7 +7089,7 @@
 	
 	strats.el = function (parentVal, childVal, vm) {
 	  if (!vm && childVal && typeof childVal !== 'function') {
-	    process.env.NODE_ENV !== 'production' && warn('The "el" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.', vm);
+	    process.env.NODE_ENV !== 'production' && warn('The "el" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.');
 	    return;
 	  }
 	  var ret = childVal || parentVal;
@@ -7099,6 +7103,15 @@
 	
 	strats.init = strats.created = strats.ready = strats.attached = strats.detached = strats.beforeCompile = strats.compiled = strats.beforeDestroy = strats.destroyed = strats.activate = function (parentVal, childVal) {
 	  return childVal ? parentVal ? parentVal.concat(childVal) : isArray(childVal) ? childVal : [childVal] : parentVal;
+	};
+	
+	/**
+	 * 0.11 deprecation warning
+	 */
+	
+	strats.paramAttributes = function () {
+	  /* istanbul ignore next */
+	  process.env.NODE_ENV !== 'production' && warn('"paramAttributes" option has been deprecated in 0.12. ' + 'Use "props" instead.');
 	};
 	
 	/**
@@ -7299,26 +7312,31 @@
 	 * @param {Object} options
 	 * @param {String} type
 	 * @param {String} id
-	 * @param {Boolean} warnMissing
 	 * @return {Object|Function}
 	 */
 	
-	function resolveAsset(options, type, id, warnMissing) {
+	function resolveAsset(options, type, id) {
 	  /* istanbul ignore if */
 	  if (typeof id !== 'string') {
 	    return;
 	  }
 	  var assets = options[type];
 	  var camelizedId;
-	  var res = assets[id] ||
+	  return assets[id] ||
 	  // camelCase ID
 	  assets[camelizedId = camelize(id)] ||
 	  // Pascal Case ID
 	  assets[camelizedId.charAt(0).toUpperCase() + camelizedId.slice(1)];
-	  if (process.env.NODE_ENV !== 'production' && warnMissing && !res) {
-	    warn('Failed to resolve ' + type.slice(0, -1) + ': ' + id, options);
+	}
+	
+	/**
+	 * Assert asset exists
+	 */
+	
+	function assertAsset(val, type, id) {
+	  if (!val) {
+	    process.env.NODE_ENV !== 'production' && warn('Failed to resolve ' + type + ': ' + id);
 	  }
-	  return res;
 	}
 	
 	var uid$1 = 0;
@@ -7435,9 +7453,10 @@
 	});
 	
 	/**
-	 * Convenience method to remove the element at given index or target element reference.
+	 * Convenience method to remove the element at given index.
 	 *
-	 * @param {*} item
+	 * @param {Number} index
+	 * @param {*} val
 	 */
 	
 	def(arrayProto, '$remove', function $remove(item) {
@@ -7734,6 +7753,7 @@
 		getOuterHTML: getOuterHTML,
 		mergeOptions: mergeOptions,
 		resolveAsset: resolveAsset,
+		assertAsset: assertAsset,
 		checkComponentAttr: checkComponentAttr,
 		commonTagRE: commonTagRE,
 		reservedTagRE: reservedTagRE,
@@ -8120,8 +8140,8 @@
 	
 	var warnNonExistent;
 	if (process.env.NODE_ENV !== 'production') {
-	  warnNonExistent = function (path, vm) {
-	    warn('You are setting a non-existent path "' + path.raw + '" ' + 'on a vm instance. Consider pre-initializing the property ' + 'with the "data" option for more reliable reactivity ' + 'and better performance.', vm);
+	  warnNonExistent = function (path) {
+	    warn('You are setting a non-existent path "' + path.raw + '" ' + 'on a vm instance. Consider pre-initializing the property ' + 'with the "data" option for more reliable reactivity ' + 'and better performance.');
 	  };
 	}
 	
@@ -8153,7 +8173,7 @@
 	      if (!isObject(obj)) {
 	        obj = {};
 	        if (process.env.NODE_ENV !== 'production' && last._isVue) {
-	          warnNonExistent(path, last);
+	          warnNonExistent(path);
 	        }
 	        set(last, key, obj);
 	      }
@@ -8164,7 +8184,7 @@
 	        obj[key] = val;
 	      } else {
 	        if (process.env.NODE_ENV !== 'production' && obj._isVue) {
-	          warnNonExistent(path, obj);
+	          warnNonExistent(path);
 	        }
 	        set(obj, key, val);
 	      }
@@ -8431,8 +8451,8 @@
 	    if (process.env.NODE_ENV !== 'production' && has[id] != null) {
 	      circular[id] = (circular[id] || 0) + 1;
 	      if (circular[id] > config._maxUpdateCount) {
-	        warn('You may have an infinite update loop for watcher ' + 'with expression "' + watcher.expression + '"', watcher.vm);
-	        break;
+	        queue.splice(has[id], 1);
+	        warn('You may have an infinite update loop for watcher ' + 'with expression: ' + watcher.expression);
 	      }
 	    }
 	  }
@@ -8536,7 +8556,7 @@
 	    value = this.getter.call(scope, scope);
 	  } catch (e) {
 	    if (process.env.NODE_ENV !== 'production' && config.warnExpressionErrors) {
-	      warn('Error when evaluating expression ' + '"' + this.expression + '": ' + e.toString(), this.vm);
+	      warn('Error when evaluating expression "' + this.expression + '". ' + (config.debug ? '' : 'Turn on debug mode to see stack trace.'), e);
 	    }
 	  }
 	  // "touch" every property so they are all tracked as
@@ -8572,14 +8592,14 @@
 	    this.setter.call(scope, scope, value);
 	  } catch (e) {
 	    if (process.env.NODE_ENV !== 'production' && config.warnExpressionErrors) {
-	      warn('Error when evaluating setter ' + '"' + this.expression + '": ' + e.toString(), this.vm);
+	      warn('Error when evaluating setter "' + this.expression + '"', e);
 	    }
 	  }
 	  // two-way sync for v-for alias
 	  var forContext = scope.$forContext;
 	  if (forContext && forContext.alias === this.expression) {
 	    if (forContext.filters) {
-	      process.env.NODE_ENV !== 'production' && warn('It seems you are using two-way binding on ' + 'a v-for alias (' + this.expression + '), and the ' + 'v-for has filters. This will not work properly. ' + 'Either remove the filters or use an array of ' + 'objects and bind to object properties instead.', this.vm);
+	      process.env.NODE_ENV !== 'production' && warn('It seems you are using two-way binding on ' + 'a v-for alias (' + this.expression + '), and the ' + 'v-for has filters. This will not work properly. ' + 'Either remove the filters or use an array of ' + 'objects and bind to object properties instead.');
 	      return;
 	    }
 	    forContext._withLock(function () {
@@ -9319,9 +9339,9 @@
 	var EL = 1500;
 	var COMPONENT = 1500;
 	var PARTIAL = 1750;
-	var IF = 2100;
-	var FOR = 2200;
-	var SLOT = 2300;
+	var FOR = 2000;
+	var IF = 2000;
+	var SLOT = 2100;
 	
 	var uid$3 = 0;
 	
@@ -9347,7 +9367,7 @@
 	    }
 	
 	    if (!this.alias) {
-	      process.env.NODE_ENV !== 'production' && warn('Invalid v-for expression "' + this.descriptor.raw + '": ' + 'alias is required.', this.vm);
+	      process.env.NODE_ENV !== 'production' && warn('Alias is required in v-for.');
 	      return;
 	    }
 	
@@ -9689,7 +9709,7 @@
 	    var primitive = !isObject(value);
 	    var id;
 	    if (key || trackByKey || primitive) {
-	      id = trackByKey ? trackByKey === '$index' ? index : getPath(value, trackByKey) : key || value;
+	      id = trackByKey ? trackByKey === '$index' ? index : value[trackByKey] : key || value;
 	      if (!cache[id]) {
 	        cache[id] = frag;
 	      } else if (trackByKey !== '$index') {
@@ -9724,7 +9744,7 @@
 	    var primitive = !isObject(value);
 	    var frag;
 	    if (key || trackByKey || primitive) {
-	      var id = trackByKey ? trackByKey === '$index' ? index : getPath(value, trackByKey) : key || value;
+	      var id = trackByKey ? trackByKey === '$index' ? index : value[trackByKey] : key || value;
 	      frag = this.cache[id];
 	    } else {
 	      frag = value[this.id];
@@ -9751,7 +9771,7 @@
 	    var key = hasOwn(scope, '$key') && scope.$key;
 	    var primitive = !isObject(value);
 	    if (trackByKey || key || primitive) {
-	      var id = trackByKey ? trackByKey === '$index' ? index : getPath(value, trackByKey) : key || value;
+	      var id = trackByKey ? trackByKey === '$index' ? index : value[trackByKey] : key || value;
 	      this.cache[id] = null;
 	    } else {
 	      value[this.id] = null;
@@ -9903,7 +9923,7 @@
 	
 	if (process.env.NODE_ENV !== 'production') {
 	  vFor.warnDuplicate = function (value) {
-	    warn('Duplicate value found in v-for="' + this.descriptor.raw + '": ' + JSON.stringify(value) + '. Use track-by="$index" if ' + 'you are expecting duplicate values.', this.vm);
+	    warn('Duplicate value found in v-for="' + this.descriptor.raw + '": ' + JSON.stringify(value) + '. Use track-by="$index" if ' + 'you are expecting duplicate values.');
 	  };
 	}
 	
@@ -9925,7 +9945,7 @@
 	      this.anchor = createAnchor('v-if');
 	      replace(el, this.anchor);
 	    } else {
-	      process.env.NODE_ENV !== 'production' && warn('v-if="' + this.expression + '" cannot be ' + 'used on an instance root element.', this.vm);
+	      process.env.NODE_ENV !== 'production' && warn('v-if="' + this.expression + '" cannot be ' + 'used on an instance root element.');
 	      this.invalid = true;
 	    }
 	  },
@@ -10358,7 +10378,7 @@
 	    // friendly warning...
 	    this.checkFilters();
 	    if (this.hasRead && !this.hasWrite) {
-	      process.env.NODE_ENV !== 'production' && warn('It seems you are using a read-only filter with ' + 'v-model="' + this.descriptor.raw + '". ' + 'You might want to use a two-way filter to ensure correct behavior.', this.vm);
+	      process.env.NODE_ENV !== 'production' && warn('It seems you are using a read-only filter with ' + 'v-model. You might want to use a two-way filter ' + 'to ensure correct behavior.');
 	    }
 	    var el = this.el;
 	    var tag = el.tagName;
@@ -10370,7 +10390,7 @@
 	    } else if (tag === 'TEXTAREA') {
 	      handler = handlers.text;
 	    } else {
-	      process.env.NODE_ENV !== 'production' && warn('v-model does not support element type: ' + tag, this.vm);
+	      process.env.NODE_ENV !== 'production' && warn('v-model does not support element type: ' + tag);
 	      return;
 	    }
 	    el.__v_model = this;
@@ -10486,7 +10506,7 @@
 	    }
 	
 	    if (typeof handler !== 'function') {
-	      process.env.NODE_ENV !== 'production' && warn('v-on:' + this.arg + '="' + this.expression + '" expects a function value, ' + 'got ' + handler, this.vm);
+	      process.env.NODE_ENV !== 'production' && warn('v-on:' + this.arg + '="' + this.expression + '" expects a function value, ' + 'got ' + handler);
 	      return;
 	    }
 	
@@ -10579,17 +10599,11 @@
 	    if (value) {
 	      var isImportant = importantRE.test(value) ? 'important' : '';
 	      if (isImportant) {
-	        /* istanbul ignore if */
-	        if (process.env.NODE_ENV !== 'production') {
-	          warn('It\'s probably a bad idea to use !important with inline rules. ' + 'This feature will be deprecated in a future version of Vue.');
-	        }
 	        value = value.replace(importantRE, '').trim();
-	        this.el.style.setProperty(prop.kebab, value, isImportant);
-	      } else {
-	        this.el.style[prop.camel] = value;
 	      }
+	      this.el.style.setProperty(prop, value, isImportant);
 	    } else {
-	      this.el.style[prop.camel] = '';
+	      this.el.style.removeProperty(prop);
 	    }
 	  }
 	
@@ -10634,17 +10648,11 @@
 	  while (i--) {
 	    prefixed = camelPrefixes[i] + upper;
 	    if (prefixed in testEl.style) {
-	      return {
-	        kebab: prefixes[i] + prop,
-	        camel: prefixed
-	      };
+	      return prefixes[i] + prop;
 	    }
 	  }
 	  if (camel in testEl.style) {
-	    return {
-	      kebab: prop,
-	      camel: camel
-	    };
+	    return prop;
 	  }
 	}
 	
@@ -10691,7 +10699,7 @@
 	
 	      // only allow binding on native attributes
 	      if (disallowedInterpAttrRE.test(attr) || attr === 'name' && (tag === 'PARTIAL' || tag === 'SLOT')) {
-	        process.env.NODE_ENV !== 'production' && warn(attr + '="' + descriptor.raw + '": ' + 'attribute interpolation is not allowed in Vue.js ' + 'directives and special attributes.', this.vm);
+	        process.env.NODE_ENV !== 'production' && warn(attr + '="' + descriptor.raw + '": ' + 'attribute interpolation is not allowed in Vue.js ' + 'directives and special attributes.');
 	        this.el.removeAttribute(attr);
 	        this.invalid = true;
 	      }
@@ -10701,12 +10709,12 @@
 	        var raw = attr + '="' + descriptor.raw + '": ';
 	        // warn src
 	        if (attr === 'src') {
-	          warn(raw + 'interpolation in "src" attribute will cause ' + 'a 404 request. Use v-bind:src instead.', this.vm);
+	          warn(raw + 'interpolation in "src" attribute will cause ' + 'a 404 request. Use v-bind:src instead.');
 	        }
 	
 	        // warn style
 	        if (attr === 'style') {
-	          warn(raw + 'interpolation in "style" attribute will cause ' + 'the attribute to be discarded in Internet Explorer. ' + 'Use v-bind:style instead.', this.vm);
+	          warn(raw + 'interpolation in "style" attribute will cause ' + 'the attribute to be discarded in Internet Explorer. ' + 'Use v-bind:style instead.');
 	        }
 	      }
 	    }
@@ -10802,7 +10810,7 @@
 	
 	var ref = {
 	  bind: function bind() {
-	    process.env.NODE_ENV !== 'production' && warn('v-ref:' + this.arg + ' must be used on a child ' + 'component. Found on <' + this.el.tagName.toLowerCase() + '>.', this.vm);
+	    process.env.NODE_ENV !== 'production' && warn('v-ref:' + this.arg + ' must be used on a child ' + 'component. Found on <' + this.el.tagName.toLowerCase() + '>.');
 	  }
 	};
 	
@@ -10866,16 +10874,19 @@
 	  },
 	
 	  cleanup: function cleanup(value) {
-	    if (!this.prevKeys) return;
-	
-	    var i = this.prevKeys.length;
-	    while (i--) {
-	      var key = this.prevKeys[i];
-	      if (!key) continue;
-	
-	      var keys = isPlainObject(key) ? Object.keys(key) : [key];
-	      for (var j = 0, l = keys.length; j < l; j++) {
-	        toggleClasses(this.el, keys[j], removeClass);
+	    if (this.prevKeys) {
+	      var i = this.prevKeys.length;
+	      while (i--) {
+	        var key = this.prevKeys[i];
+	        if (!key) continue;
+	        if (isPlainObject(key)) {
+	          var keys = Object.keys(key);
+	          for (var k = 0; k < keys.length; k++) {
+	            removeClass(this.el, keys[k]);
+	          }
+	        } else {
+	          removeClass(this.el, key);
+	        }
 	      }
 	    }
 	  }
@@ -10885,46 +10896,20 @@
 	  var keys = Object.keys(obj);
 	  for (var i = 0, l = keys.length; i < l; i++) {
 	    var key = keys[i];
-	    if (!obj[key]) continue;
-	    toggleClasses(el, key, addClass);
+	    if (obj[key]) {
+	      addClass(el, key);
+	    }
 	  }
 	}
 	
 	function stringToObject(value) {
 	  var res = {};
 	  var keys = value.trim().split(/\s+/);
-	  for (var i = 0, l = keys.length; i < l; i++) {
+	  var i = keys.length;
+	  while (i--) {
 	    res[keys[i]] = true;
 	  }
 	  return res;
-	}
-	
-	/**
-	 * Add or remove a class/classes on an element
-	 *
-	 * @param {Element} el
-	 * @param {String} key The class name. This may or may not
-	 *                     contain a space character, in such a
-	 *                     case we'll deal with multiple class
-	 *                     names at once.
-	 * @param {Function} fn
-	 */
-	
-	function toggleClasses(el, key, fn) {
-	  key = key.trim();
-	
-	  if (key.indexOf(' ') === -1) {
-	    fn(el, key);
-	    return;
-	  }
-	
-	  // The key contains one or more space characters.
-	  // Since a class name doesn't accept such characters, we
-	  // treat it as multiple classes.
-	  var keys = key.split(/\s+/);
-	  for (var i = 0, l = keys.length; i < l; i++) {
-	    fn(el, keys[i]);
-	  }
 	}
 	
 	var component = {
@@ -11142,7 +11127,7 @@
 	      }
 	      /* istanbul ignore if */
 	      if (process.env.NODE_ENV !== 'production' && this.el.hasAttribute('transition') && child._isFragment) {
-	        warn('Transitions will not work on a fragment instance. ' + 'Template: ' + child.$options.template, child);
+	        warn('Transitions will not work on a fragment instance. ' + 'Template: ' + child.$options.template);
 	      }
 	      return child;
 	    }
@@ -11301,11 +11286,10 @@
 	 *
 	 * @param {Element|DocumentFragment} el
 	 * @param {Array} propOptions
-	 * @param {Vue} vm
 	 * @return {Function} propsLinkFn
 	 */
 	
-	function compileProps(el, propOptions, vm) {
+	function compileProps(el, propOptions) {
 	  var props = [];
 	  var names = Object.keys(propOptions);
 	  var i = names.length;
@@ -11315,7 +11299,7 @@
 	    options = propOptions[name] || empty;
 	
 	    if (process.env.NODE_ENV !== 'production' && name === '$data') {
-	      warn('Do not use $data as prop.', vm);
+	      warn('Do not use $data as prop.');
 	      continue;
 	    }
 	
@@ -11324,7 +11308,7 @@
 	    // so we need to camelize the path here
 	    path = camelize(name);
 	    if (!identRE$1.test(path)) {
-	      process.env.NODE_ENV !== 'production' && warn('Invalid prop key: "' + name + '". Prop keys ' + 'must be valid identifiers.', vm);
+	      process.env.NODE_ENV !== 'production' && warn('Invalid prop key: "' + name + '". Prop keys ' + 'must be valid identifiers.');
 	      continue;
 	    }
 	
@@ -11362,14 +11346,14 @@
 	        // check non-settable path for two-way bindings
 	        if (process.env.NODE_ENV !== 'production' && prop.mode === propBindingModes.TWO_WAY && !settablePathRE.test(value)) {
 	          prop.mode = propBindingModes.ONE_WAY;
-	          warn('Cannot bind two-way prop with non-settable ' + 'parent path: ' + value, vm);
+	          warn('Cannot bind two-way prop with non-settable ' + 'parent path: ' + value);
 	        }
 	      }
 	      prop.parentPath = value;
 	
 	      // warn required two-way
 	      if (process.env.NODE_ENV !== 'production' && options.twoWay && prop.mode !== propBindingModes.TWO_WAY) {
-	        warn('Prop "' + name + '" expects a two-way binding type.', vm);
+	        warn('Prop "' + name + '" expects a two-way binding type.');
 	      }
 	    } else if ((value = getAttr(el, attr)) !== null) {
 	      // has literal binding!
@@ -11379,10 +11363,10 @@
 	      var lowerCaseName = path.toLowerCase();
 	      value = /[A-Z\-]/.test(name) && (el.getAttribute(lowerCaseName) || el.getAttribute(':' + lowerCaseName) || el.getAttribute('v-bind:' + lowerCaseName) || el.getAttribute(':' + lowerCaseName + '.once') || el.getAttribute('v-bind:' + lowerCaseName + '.once') || el.getAttribute(':' + lowerCaseName + '.sync') || el.getAttribute('v-bind:' + lowerCaseName + '.sync'));
 	      if (value) {
-	        warn('Possible usage error for prop `' + lowerCaseName + '` - ' + 'did you mean `' + attr + '`? HTML is case-insensitive, remember to use ' + 'kebab-case for props in templates.', vm);
+	        warn('Possible usage error for prop `' + lowerCaseName + '` - ' + 'did you mean `' + attr + '`? HTML is case-insensitive, remember to use ' + 'kebab-case for props in templates.');
 	      } else if (options.required) {
 	        // warn missing required
-	        warn('Missing required prop: ' + name, vm);
+	        warn('Missing required prop: ' + name);
 	      }
 	    }
 	    // push prop
@@ -11450,37 +11434,6 @@
 	}
 	
 	/**
-	 * Process a prop with a rawValue, applying necessary coersions,
-	 * default values & assertions and call the given callback with
-	 * processed value.
-	 *
-	 * @param {Vue} vm
-	 * @param {Object} prop
-	 * @param {*} rawValue
-	 * @param {Function} fn
-	 */
-	
-	function processPropValue(vm, prop, rawValue, fn) {
-	  var isSimple = prop.dynamic && isSimplePath(prop.parentPath);
-	  var value = rawValue;
-	  if (value === undefined) {
-	    value = getPropDefaultValue(vm, prop);
-	  }
-	  value = coerceProp(prop, value);
-	  var coerced = value !== rawValue;
-	  if (!assertProp(prop, value, vm)) {
-	    value = undefined;
-	  }
-	  if (isSimple && !coerced) {
-	    withoutConversion(function () {
-	      fn(value);
-	    });
-	  } else {
-	    fn(value);
-	  }
-	}
-	
-	/**
 	 * Set a prop's initial value on a vm and its data object.
 	 *
 	 * @param {Vue} vm
@@ -11489,36 +11442,26 @@
 	 */
 	
 	function initProp(vm, prop, value) {
-	  processPropValue(vm, prop, value, function (value) {
-	    defineReactive(vm, prop.path, value);
-	  });
-	}
-	
-	/**
-	 * Update a prop's value on a vm.
-	 *
-	 * @param {Vue} vm
-	 * @param {Object} prop
-	 * @param {*} value
-	 */
-	
-	function updateProp(vm, prop, value) {
-	  processPropValue(vm, prop, value, function (value) {
-	    vm[prop.path] = value;
-	  });
+	  var key = prop.path;
+	  value = coerceProp(prop, value);
+	  if (value === undefined) {
+	    value = getPropDefaultValue(vm, prop.options);
+	  }
+	  if (assertProp(prop, value)) {
+	    defineReactive(vm, key, value);
+	  }
 	}
 	
 	/**
 	 * Get the default value of a prop.
 	 *
 	 * @param {Vue} vm
-	 * @param {Object} prop
+	 * @param {Object} options
 	 * @return {*}
 	 */
 	
-	function getPropDefaultValue(vm, prop) {
+	function getPropDefaultValue(vm, options) {
 	  // no default, return undefined
-	  var options = prop.options;
 	  if (!hasOwn(options, 'default')) {
 	    // absent boolean value defaults to false
 	    return options.type === Boolean ? false : undefined;
@@ -11526,7 +11469,7 @@
 	  var def = options['default'];
 	  // warn against non-factory defaults for Object & Array
 	  if (isObject(def)) {
-	    process.env.NODE_ENV !== 'production' && warn('Invalid default value for prop "' + prop.name + '": ' + 'Props with type Object/Array must use a factory function ' + 'to return the default value.', vm);
+	    process.env.NODE_ENV !== 'production' && warn('Object/Array as default prop values will be shared ' + 'across multiple instances. Use a factory function ' + 'to return the default value instead.');
 	  }
 	  // call factory function for non-Function types
 	  return typeof def === 'function' && options.type !== Function ? def.call(vm) : def;
@@ -11537,10 +11480,9 @@
 	 *
 	 * @param {Object} prop
 	 * @param {*} value
-	 * @param {Vue} vm
 	 */
 	
-	function assertProp(prop, value, vm) {
+	function assertProp(prop, value) {
 	  if (!prop.options.required && ( // non-required
 	  prop.raw === null || // abscent
 	  value == null) // null or undefined
@@ -11549,28 +11491,39 @@
 	    }
 	  var options = prop.options;
 	  var type = options.type;
-	  var valid = !type;
-	  var expectedTypes = [];
+	  var valid = true;
+	  var expectedType;
 	  if (type) {
-	    if (!isArray(type)) {
-	      type = [type];
-	    }
-	    for (var i = 0; i < type.length && !valid; i++) {
-	      var assertedType = assertType(value, type[i]);
-	      expectedTypes.push(assertedType.expectedType);
-	      valid = assertedType.valid;
+	    if (type === String) {
+	      expectedType = 'string';
+	      valid = typeof value === expectedType;
+	    } else if (type === Number) {
+	      expectedType = 'number';
+	      valid = typeof value === 'number';
+	    } else if (type === Boolean) {
+	      expectedType = 'boolean';
+	      valid = typeof value === 'boolean';
+	    } else if (type === Function) {
+	      expectedType = 'function';
+	      valid = typeof value === 'function';
+	    } else if (type === Object) {
+	      expectedType = 'object';
+	      valid = isPlainObject(value);
+	    } else if (type === Array) {
+	      expectedType = 'array';
+	      valid = isArray(value);
+	    } else {
+	      valid = value instanceof type;
 	    }
 	  }
 	  if (!valid) {
-	    if (process.env.NODE_ENV !== 'production') {
-	      warn('Invalid prop: type check failed for prop "' + prop.name + '".' + ' Expected ' + expectedTypes.map(formatType).join(', ') + ', got ' + formatValue(value) + '.', vm);
-	    }
+	    process.env.NODE_ENV !== 'production' && warn('Invalid prop: type check failed for ' + prop.path + '="' + prop.raw + '".' + ' Expected ' + formatType(expectedType) + ', got ' + formatValue(value) + '.');
 	    return false;
 	  }
 	  var validator = options.validator;
 	  if (validator) {
 	    if (!validator(value)) {
-	      process.env.NODE_ENV !== 'production' && warn('Invalid prop: custom validator check failed for prop "' + prop.name + '".', vm);
+	      process.env.NODE_ENV !== 'production' && warn('Invalid prop: custom validator check failed for ' + prop.path + '="' + prop.raw + '"');
 	      return false;
 	    }
 	  }
@@ -11594,61 +11547,9 @@
 	  return coerce(value);
 	}
 	
-	/**
-	 * Assert the type of a value
-	 *
-	 * @param {*} value
-	 * @param {Function} type
-	 * @return {Object}
-	 */
-	
-	function assertType(value, type) {
-	  var valid;
-	  var expectedType;
-	  if (type === String) {
-	    expectedType = 'string';
-	    valid = typeof value === expectedType;
-	  } else if (type === Number) {
-	    expectedType = 'number';
-	    valid = typeof value === expectedType;
-	  } else if (type === Boolean) {
-	    expectedType = 'boolean';
-	    valid = typeof value === expectedType;
-	  } else if (type === Function) {
-	    expectedType = 'function';
-	    valid = typeof value === expectedType;
-	  } else if (type === Object) {
-	    expectedType = 'object';
-	    valid = isPlainObject(value);
-	  } else if (type === Array) {
-	    expectedType = 'array';
-	    valid = isArray(value);
-	  } else {
-	    valid = value instanceof type;
-	  }
-	  return {
-	    valid: valid,
-	    expectedType: expectedType
-	  };
+	function formatType(val) {
+	  return val ? val.charAt(0).toUpperCase() + val.slice(1) : 'custom type';
 	}
-	
-	/**
-	 * Format type for output
-	 *
-	 * @param {String} type
-	 * @return {String}
-	 */
-	
-	function formatType(type) {
-	  return type ? type.charAt(0).toUpperCase() + type.slice(1) : 'custom type';
-	}
-	
-	/**
-	 * Format value
-	 *
-	 * @param {*} value
-	 * @return {String}
-	 */
 	
 	function formatValue(val) {
 	  return Object.prototype.toString.call(val).slice(8, -1);
@@ -11666,9 +11567,19 @@
 	    var childKey = prop.path;
 	    var parentKey = prop.parentPath;
 	    var twoWay = prop.mode === bindingModes.TWO_WAY;
+	    var isSimple = isSimplePath(parentKey);
 	
 	    var parentWatcher = this.parentWatcher = new Watcher(parent, parentKey, function (val) {
-	      updateProp(child, prop, val);
+	      val = coerceProp(prop, val);
+	      if (assertProp(prop, val)) {
+	        if (isSimple) {
+	          withoutConversion(function () {
+	            child[childKey] = val;
+	          });
+	        } else {
+	          child[childKey] = val;
+	        }
+	      }
 	    }, {
 	      twoWay: twoWay,
 	      filters: prop.filters,
@@ -11678,7 +11589,14 @@
 	    });
 	
 	    // set the child initial value.
-	    initProp(child, prop, parentWatcher.value);
+	    var value = parentWatcher.value;
+	    if (isSimple && value !== undefined) {
+	      withoutConversion(function () {
+	        initProp(child, prop, value);
+	      });
+	    } else {
+	      initProp(child, prop, value);
+	    }
 	
 	    // setup two-way binding
 	    if (twoWay) {
@@ -11798,7 +11716,7 @@
 	  /* istanbul ignore if */
 	  if (process.env.NODE_ENV !== 'production') {
 	    if (this.type && this.type !== TYPE_TRANSITION && this.type !== TYPE_ANIMATION) {
-	      warn('invalid CSS transition type for transition="' + this.id + '": ' + this.type, vm);
+	      warn('invalid CSS transition type for transition="' + this.id + '": ' + this.type);
 	    }
 	  }
 	  // bind
@@ -12295,7 +12213,7 @@
 	 */
 	
 	function compileAndLinkProps(vm, el, props, scope) {
-	  var propsLinkFn = compileProps(el, props, vm);
+	  var propsLinkFn = compileProps(el, props);
 	  var propDirs = linkAndCapture(function () {
 	    propsLinkFn(vm, scope);
 	  }, vm);
@@ -12786,7 +12704,7 @@
 	        if (name === 'class' && Array.prototype.some.call(attrs, function (attr) {
 	          return attr.name === ':class' || attr.name === 'v-bind:class';
 	        })) {
-	          warn('class="' + rawValue + '": Do not mix mustache interpolation ' + 'and v-bind for "class" on the same element. Use one or the other.', options);
+	          warn('class="' + rawValue + '": Do not mix mustache interpolation ' + 'and v-bind for "class" on the same element. Use one or the other.');
 	        }
 	      }
 	    } else
@@ -12824,7 +12742,12 @@
 	                continue;
 	              }
 	
-	              dirDef = resolveAsset(options, 'directives', dirName, true);
+	              dirDef = resolveAsset(options, 'directives', dirName);
+	
+	              if (process.env.NODE_ENV !== 'production') {
+	                assertAsset(dirDef, 'directive', dirName);
+	              }
+	
 	              if (dirDef) {
 	                pushDir(dirName, dirDef);
 	              }
@@ -13076,7 +12999,7 @@
 	    }
 	    /* eslint-enable no-cond-assign */
 	    if (process.env.NODE_ENV !== 'production' && getBindAttr(el, 'slot')) {
-	      warn('The "slot" attribute must be static.', vm.$parent);
+	      warn('The "slot" attribute must be static.');
 	    }
 	  }
 	  for (name in contents) {
@@ -13161,7 +13084,7 @@
 	    var el = options.el;
 	    var props = options.props;
 	    if (props && !el) {
-	      process.env.NODE_ENV !== 'production' && warn('Props will not be compiled if no `el` option is ' + 'provided at instantiation.', this);
+	      process.env.NODE_ENV !== 'production' && warn('Props will not be compiled if no `el` option is ' + 'provided at instantiation.');
 	    }
 	    // make sure to convert string selectors into element now
 	    el = options.el = query(el);
@@ -13179,7 +13102,7 @@
 	    var data = this._data = dataFn ? dataFn() : {};
 	    if (!isPlainObject(data)) {
 	      data = {};
-	      process.env.NODE_ENV !== 'production' && warn('data functions should return an object.', this);
+	      process.env.NODE_ENV !== 'production' && warn('data functions should return an object.');
 	    }
 	    var props = this._props;
 	    var runtimeData = this._runtimeData ? typeof this._runtimeData === 'function' ? this._runtimeData() : this._runtimeData : null;
@@ -13196,7 +13119,7 @@
 	      if (!props || !hasOwn(props, key) || runtimeData && hasOwn(runtimeData, key) && props[key].raw === null) {
 	        this._proxy(key);
 	      } else if (process.env.NODE_ENV !== 'production') {
-	        warn('Data field "' + key + '" is already defined ' + 'as a prop. Use prop default value instead.', this);
+	        warn('Data field "' + key + '" is already defined ' + 'as a prop. Use prop default value instead.');
 	      }
 	    }
 	    // observe data
@@ -13396,7 +13319,7 @@
 	          handler._fromParent = true;
 	          vm.$on(name.replace(eventRE), handler);
 	        } else if (process.env.NODE_ENV !== 'production') {
-	          warn('v-on:' + name + '="' + attrs[i].value + '" ' + 'expects a function value, got ' + handler, vm);
+	          warn('v-on:' + name + '="' + attrs[i].value + '"' + (vm.$options.name ? ' on component <' + vm.$options.name + '>' : '') + ' expects a function value, got ' + handler);
 	        }
 	      }
 	    }
@@ -13445,7 +13368,7 @@
 	      if (method) {
 	        vm[action](key, method, options);
 	      } else {
-	        process.env.NODE_ENV !== 'production' && warn('Unknown method: "' + handler + '" when ' + 'registering callback for ' + action + ': "' + key + '".', vm);
+	        process.env.NODE_ENV !== 'production' && warn('Unknown method: "' + handler + '" when ' + 'registering callback for ' + action + ': "' + key + '".');
 	      }
 	    } else if (handler && type === 'object') {
 	      register(vm, action, key, handler.handler, handler);
@@ -14086,7 +14009,10 @@
 	    var filter, fn, args, arg, offset, i, l, j, k;
 	    for (i = 0, l = filters.length; i < l; i++) {
 	      filter = filters[write ? l - i - 1 : i];
-	      fn = resolveAsset(this.$options, 'filters', filter.name, true);
+	      fn = resolveAsset(this.$options, 'filters', filter.name);
+	      if (process.env.NODE_ENV !== 'production') {
+	        assertAsset(fn, 'filter', filter.name);
+	      }
 	      if (!fn) continue;
 	      fn = write ? fn.write : fn.read || fn;
 	      if (typeof fn !== 'function') continue;
@@ -14119,7 +14045,10 @@
 	    if (typeof value === 'function') {
 	      factory = value;
 	    } else {
-	      factory = resolveAsset(this.$options, 'components', value, true);
+	      factory = resolveAsset(this.$options, 'components', value);
+	      if (process.env.NODE_ENV !== 'production') {
+	        assertAsset(factory, 'component', value);
+	      }
 	    }
 	    if (!factory) {
 	      return;
@@ -14721,7 +14650,7 @@
 	
 	  Vue.prototype.$mount = function (el) {
 	    if (this._isCompiled) {
-	      process.env.NODE_ENV !== 'production' && warn('$mount() should be called only once.', this);
+	      process.env.NODE_ENV !== 'production' && warn('$mount() should be called only once.');
 	      return;
 	    }
 	    el = query(el);
@@ -14880,7 +14809,10 @@
 	  },
 	
 	  insert: function insert(id) {
-	    var partial = resolveAsset(this.vm.$options, 'partials', id, true);
+	    var partial = resolveAsset(this.vm.$options, 'partials', id);
+	    if (process.env.NODE_ENV !== 'production') {
+	      assertAsset(partial, 'partial', id);
+	    }
 	    if (partial) {
 	      this.factory = new FragmentFactory(this.vm, partial);
 	      vIf.insert.call(this);
@@ -14936,7 +14868,9 @@
 	  // because why not
 	  var n = delimiter === 'in' ? 3 : 2;
 	  // extract and flatten keys
-	  var keys = Array.prototype.concat.apply([], toArray(arguments, n));
+	  var keys = toArray(arguments, n).reduce(function (prev, cur) {
+	    return prev.concat(cur);
+	  }, []);
 	  var res = [];
 	  var item, key, val, j;
 	  for (var i = 0, l = arr.length; i < l; i++) {
@@ -14961,58 +14895,26 @@
 	/**
 	 * Filter filter for arrays
 	 *
-	 * @param {String|Array<String>|Function} ...sortKeys
-	 * @param {Number} [order]
+	 * @param {String} sortKey
+	 * @param {String} reverse
 	 */
 	
-	function orderBy(arr) {
-	  var comparator = null;
-	  var sortKeys = undefined;
+	function orderBy(arr, sortKey, reverse) {
 	  arr = convertArray(arr);
-	
-	  // determine order (last argument)
-	  var args = toArray(arguments, 1);
-	  var order = args[args.length - 1];
-	  if (typeof order === 'number') {
-	    order = order < 0 ? -1 : 1;
-	    args = args.length > 1 ? args.slice(0, -1) : args;
-	  } else {
-	    order = 1;
-	  }
-	
-	  // determine sortKeys & comparator
-	  var firstArg = args[0];
-	  if (!firstArg) {
+	  if (!sortKey) {
 	    return arr;
-	  } else if (typeof firstArg === 'function') {
-	    // custom comparator
-	    comparator = function (a, b) {
-	      return firstArg(a, b) * order;
-	    };
-	  } else {
-	    // string keys. flatten first
-	    sortKeys = Array.prototype.concat.apply([], args);
-	    comparator = function (a, b, i) {
-	      i = i || 0;
-	      return i >= sortKeys.length - 1 ? baseCompare(a, b, i) : baseCompare(a, b, i) || comparator(a, b, i + 1);
-	    };
 	  }
-	
-	  function baseCompare(a, b, sortKeyIndex) {
-	    var sortKey = sortKeys[sortKeyIndex];
-	    if (sortKey) {
-	      if (sortKey !== '$key') {
-	        if (isObject(a) && '$value' in a) a = a.$value;
-	        if (isObject(b) && '$value' in b) b = b.$value;
-	      }
-	      a = isObject(a) ? getPath(a, sortKey) : a;
-	      b = isObject(b) ? getPath(b, sortKey) : b;
-	    }
-	    return a === b ? 0 : a > b ? order : -order;
-	  }
-	
+	  var order = reverse && reverse < 0 ? -1 : 1;
 	  // sort on a copy to avoid mutating original array
-	  return arr.slice().sort(comparator);
+	  return arr.slice().sort(function (a, b) {
+	    if (sortKey !== '$key') {
+	      if (isObject(a) && '$value' in a) a = a.$value;
+	      if (isObject(b) && '$value' in b) b = b.$value;
+	    }
+	    a = isObject(a) ? getPath(a, sortKey) : a;
+	    b = isObject(b) ? getPath(b, sortKey) : b;
+	    return a === b ? 0 : a > b ? order : -order;
+	  });
 	}
 	
 	/**
@@ -15332,19 +15234,17 @@
 	
 	installGlobalAPI(Vue);
 	
-	Vue.version = '1.0.21';
+	Vue.version = '1.0.20';
 	
 	// devtools global hook
 	/* istanbul ignore next */
-	setTimeout(function () {
-	  if (config.devtools) {
-	    if (devtools) {
-	      devtools.emit('init', Vue);
-	    } else if (process.env.NODE_ENV !== 'production' && inBrowser && /Chrome\/\d+/.test(window.navigator.userAgent)) {
-	      console.log('Download the Vue Devtools for a better development experience:\n' + 'https://github.com/vuejs/vue-devtools');
-	    }
+	if (config.devtools) {
+	  if (devtools) {
+	    devtools.emit('init', Vue);
+	  } else if (process.env.NODE_ENV !== 'production' && inBrowser && /Chrome\/\d+/.test(window.navigator.userAgent)) {
+	    console.log('Download the Vue Devtools for a better development experience:\n' + 'https://github.com/vuejs/vue-devtools');
 	  }
-	}, 0);
+	}
 	
 	module.exports = Vue;
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(216)))
@@ -15907,11 +15807,10 @@
 	  data: function data() {
 	    this.compileTbody();
 	    return {
-	      isCheckedAll: false,
 	      filterOpened: false,
+	      isCheckedAll: false,
 	      sorderOrder: [],
-	      checkedRows: [],
-	      scope: null
+	      checkedRows: []
 	    };
 	  },
 	
@@ -15947,6 +15846,10 @@
 	      deep: true
 	    }
 	  },
+	  ready: function ready() {
+	    console.log(this.$refs);
+	  },
+	
 	  methods: {
 	    compileTbody: function compileTbody() {
 	      var me = this;
@@ -15954,7 +15857,7 @@
 	      this.$nextTick(function () {
 	        // console.log(me)
 	        // me.scope = me.scope || me.$parent;
-	        me._context.$compile(me.$el.getElementsByTagName('tbody')[0]);
+	        me._context.$compile(me.$el.getElementsByTagName('table')[0]);
 	      });
 	    },
 	    sortAction: function sortAction(column, index, order) {
@@ -16016,7 +15919,9 @@
 	
 	    // filter时触发
 	    onFilter: function onFilter(value, column) {
-	      this.filterOpened = false;
+	      // this.filterOpened = false
+	      console.log(this.$refs);
+	      this.$refs.dropdown.open = false;
 	      this.checkedRows = [];
 	      this.isCheckedAll = false;
 	      var filters = {};
@@ -16030,6 +15935,7 @@
 	/* generated by vue-loader */
 	// <template>
 	// <div :class="{'table-container':true,loading:loading}">
+	// {{filterOpened}}
 	//   <spin size="sm" v-if="loading"></spin>
 	//   <div class="table-body">
 	//     <table class="table">
@@ -16040,7 +15946,7 @@
 	//           </th>
 	//           <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
 	//               {{column['title']}}
-	//               <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" :open.asyc="filterOpened">
+	//               <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" v-el:dropdown>
 	//                 <div data-toggle="dropdown">
 	//                   <icon type="filter"></icon>
 	//                 </div>
@@ -16253,7 +16159,7 @@
 /* 240 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"{'table-container':true,loading:loading}\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <div class=\"table-body\">\n    <table class=\"table\">\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :class=\"{'multi-col':column.multiCols}\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"dataSource.length && column.filters\" data-toggle=\"dropdown\" :open.asyc=\"filterOpened\">\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" @click=\"sortAction(column,$index,'ascend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" @click=\"sortAction(column,$index,'descend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-show=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">没有任何数据</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\">\n            <td v-if=\"rowSelection\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
+	module.exports = "\n<div :class=\"{'table-container':true,loading:loading}\">\n{{filterOpened}}\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <div class=\"table-body\">\n    <table class=\"table\">\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :class=\"{'multi-col':column.multiCols}\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"dataSource.length && column.filters\" data-toggle=\"dropdown\" v-el:dropdown>\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" @click=\"sortAction(column,$index,'ascend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" @click=\"sortAction(column,$index,'descend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-show=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">没有任何数据</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\">\n            <td v-if=\"rowSelection\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
 
 /***/ },
 /* 241 */
@@ -16407,8 +16313,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-6055299b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-6055299b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -16426,7 +16332,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n.carousel-control[_v-6055299b] {\n  cursor: pointer;\n}\n", ""]);
+	exports.push([module.id, "\n.carousel-control[_v-276df37b] {\n  cursor: pointer;\n}\n", ""]);
 	
 	// exports
 
@@ -16592,7 +16498,7 @@
 /* 250 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-6055299b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-6055299b=\"\">\n    <indicator _v-6055299b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-6055299b=\"\">\n    <slot _v-6055299b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-6055299b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-6055299b=\"\"></span>\n    <span class=\"sr-only\" _v-6055299b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-6055299b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-6055299b=\"\"></span>\n    <span class=\"sr-only\" _v-6055299b=\"\">Next</span>\n  </a>\n</div>\n";
+	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
 /* 251 */
@@ -18144,8 +18050,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-23c67a48&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Tab.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-23c67a48&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Tab.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-22291468&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Tab.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-22291468&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Tab.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -18163,7 +18069,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n.tab-content > .tab-pane[_v-23c67a48] {\n  display: block;\n}\n", ""]);
+	exports.push([module.id, "\n.tab-content > .tab-pane[_v-22291468] {\n  display: block;\n}\n", ""]);
 	
 	// exports
 
@@ -18250,7 +18156,7 @@
 /* 297 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div role=\"tabpanel\" class=\"tab-pane\" v-bind:class=\"{hide:!show}\" v-show=\"show\" :transition=\"transition\" _v-23c67a48=\"\">\n  <slot _v-23c67a48=\"\"></slot>\n</div>\n";
+	module.exports = "\n<div role=\"tabpanel\" class=\"tab-pane\" v-bind:class=\"{hide:!show}\" v-show=\"show\" :transition=\"transition\" _v-22291468=\"\">\n  <slot _v-22291468=\"\"></slot>\n</div>\n";
 
 /***/ },
 /* 298 */
@@ -20762,9 +20668,9 @@
 	//           <span class="caret"></span>
 	//         </div>
 	//         <ul name="dropdown-menu" class="dropdown-menu">
-	//           <li><a href="#">选项一</a></li>
-	//           <li><a href="#">选项二</a></li>
-	//           <li><a href="#">选项三</a></li>
+	//           <li><a>选项一</a></li>
+	//           <li><a>选项二</a></li>
+	//           <li><a>选项三</a></li>
 	//           <li role="separator" class="divider"></li>
 	//           <li><a href="#">其它</a></li>
 	//         </ul>
@@ -20774,9 +20680,9 @@
 	//           点击显示菜单 <span class="caret"></span>
 	//         </button>
 	//         <ul name="dropdown-menu" class="dropdown-menu">
-	//           <li><a href="#">选项一</a></li>
-	//           <li><a href="#">选项二</a></li>
-	//           <li><a href="#">选项三</a></li>
+	//           <li><a>选项一</a></li>
+	//           <li><a>选项二</a></li>
+	//           <li><a>选项三</a></li>
 	//           <li role="separator" class="divider"></li>
 	//           <li><a href="#">其它</a></li>
 	//         </ul>
@@ -20851,7 +20757,7 @@
 /* 367 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"dropdown\">\n    <h3 class=\"page-header\"><a href=\"#dropdown\" class=\"anchor\">Dropdown 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <dropdown>\n        <div data-toggle=\"dropdown\">\n          点击显示菜单\n          <span class=\"caret\"></span>\n        </div>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"btn btn-success\" data-toggle=\"dropdown\">\n          点击显示菜单 <span class=\"caret\"></span>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"dropdown\">\n          点击显示菜单 <span class=\"caret\"></span>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown trigger=\"hover\">\n        <a href=\"#\" data-toggle=\"dropdown\">\n          鼠标移上来显示 <span class=\"caret\"></span>\n        </a>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<dropdown>\n  <button type=\"button\" class=\"btn btn-default\" data-toggle=\"dropdown\">\n    点击显示菜单\n    <span class=\"caret\"></span>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n</script></code></pre>\n\n\n<h2>Options</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code> one of <code>click</code> <code>hover</code></td>\n          <td>触发类型</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"dropdown\">\n    <h3 class=\"page-header\"><a href=\"#dropdown\" class=\"anchor\">Dropdown 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <dropdown>\n        <div data-toggle=\"dropdown\">\n          点击显示菜单\n          <span class=\"caret\"></span>\n        </div>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"btn btn-success\" data-toggle=\"dropdown\">\n          点击显示菜单 <span class=\"caret\"></span>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"dropdown\">\n          点击显示菜单 <span class=\"caret\"></span>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown trigger=\"hover\">\n        <a href=\"#\" data-toggle=\"dropdown\">\n          鼠标移上来显示 <span class=\"caret\"></span>\n        </a>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<dropdown>\n  <button type=\"button\" class=\"btn btn-default\" data-toggle=\"dropdown\">\n    点击显示菜单\n    <span class=\"caret\"></span>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n</script></code></pre>\n\n\n<h2>Options</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code> one of <code>click</code> <code>hover</code></td>\n          <td>触发类型</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 368 */
@@ -20906,7 +20812,7 @@
 	// 选中值 : {{multiple.join(', ')}}
 	//         </pre>
 	//       </p>
-	//       <v-select multiple :default-value.sync="multiple">
+	//       <v-select multiple :default-value.sync="multiple" @change="onSlectChange">
 	//         <v-option value="Apple">Apple</v-option>
 	//         <v-option value="Banana">Banana</v-option>
 	//         <v-option value="Cherry">Cherry</v-option>
@@ -21127,7 +21033,7 @@
 /* 370 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选中值 : {{single}}\n        </pre>\n      </p>\n      <v-select :default-value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉</h4>\n      <p>\n        <pre>\n选中值 : {{multiple.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :default-value.sync=\"multiple\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉限制</h4>\n      <p>\n        <pre>\n选中值 : {{multipleLimit.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :limit=\"2\" :default-value.sync=\"multipleLimit\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>自定义模板</h4>\n      <p>\n        <pre>\n选中值 : {{custom.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :default-value.sync=\"custom\">\n        <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n        <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n        <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n        <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n      </v-select>\n      <hr />\n      <h4>使用数据填充Select选择框内容</h4>\n      <p>\n        可以指定一个数组来填充选项内容，并可搜索\n        <pre>\n选中值 : {{arr}}\n        </pre>\n      </p>\n      <v-select :default-value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n      </v-select>\n\n      <hr />\n      <h4>Automatically close array driven selects</h4>\n      <p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n      <v-select :default-value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n      </v-select>\n\n      <h4>禁用的下拉框</h4>\n      <v-select :default-value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n      </v-select>\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<p>\n  <pre>\n选中值 : {{single}}\n  </pre>\n</p>\n<v-select :default-value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉</h4>\n<p>\n  <pre>\n选中值 : {{multiple.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :default-value.sync=\"multiple\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉限制</h4>\n<p>\n  <pre>\n选中值 : {{multipleLimit.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :limit=\"2\" :default-value.sync=\"multipleLimit\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>自定义模板</h4>\n<p>\n  <pre>\n选中值 : {{custom.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :default-value.sync=\"custom\">\n  <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n  <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n  <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n  <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n</v-select>\n<hr />\n<h4>使用数据填充Select选择框内容</h4>\n<p>\n  可以指定一个数组来填充选项内容，并可搜索\n  <pre>\n选中值 : {{arr}}\n  </pre>\n</p>\n<v-select :default-value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n</v-select>\n\n<hr />\n<h4>Automatically close array driven selects</h4>\n<p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n<v-select :default-value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n</v-select>\n\n<h4>禁用的下拉框</h4>\n<v-select :default-value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n</v-select>\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>defaultValue</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选中值 : {{single}}\n        </pre>\n      </p>\n      <v-select :default-value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉</h4>\n      <p>\n        <pre>\n选中值 : {{multiple.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :default-value.sync=\"multiple\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉限制</h4>\n      <p>\n        <pre>\n选中值 : {{multipleLimit.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :limit=\"2\" :default-value.sync=\"multipleLimit\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>自定义模板</h4>\n      <p>\n        <pre>\n选中值 : {{custom.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :default-value.sync=\"custom\">\n        <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n        <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n        <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n        <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n      </v-select>\n      <hr />\n      <h4>使用数据填充Select选择框内容</h4>\n      <p>\n        可以指定一个数组来填充选项内容，并可搜索\n        <pre>\n选中值 : {{arr}}\n        </pre>\n      </p>\n      <v-select :default-value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n      </v-select>\n\n      <hr />\n      <h4>Automatically close array driven selects</h4>\n      <p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n      <v-select :default-value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n      </v-select>\n\n      <h4>禁用的下拉框</h4>\n      <v-select :default-value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n      </v-select>\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<p>\n  <pre>\n选中值 : {{single}}\n  </pre>\n</p>\n<v-select :default-value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉</h4>\n<p>\n  <pre>\n选中值 : {{multiple.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :default-value.sync=\"multiple\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉限制</h4>\n<p>\n  <pre>\n选中值 : {{multipleLimit.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :limit=\"2\" :default-value.sync=\"multipleLimit\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>自定义模板</h4>\n<p>\n  <pre>\n选中值 : {{custom.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :default-value.sync=\"custom\">\n  <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n  <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n  <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n  <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n</v-select>\n<hr />\n<h4>使用数据填充Select选择框内容</h4>\n<p>\n  可以指定一个数组来填充选项内容，并可搜索\n  <pre>\n选中值 : {{arr}}\n  </pre>\n</p>\n<v-select :default-value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n</v-select>\n\n<hr />\n<h4>Automatically close array driven selects</h4>\n<p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n<v-select :default-value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n</v-select>\n\n<h4>禁用的下拉框</h4>\n<v-select :default-value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n</v-select>\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>defaultValue</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
 
 /***/ },
 /* 371 */
@@ -22201,7 +22107,7 @@
 	//       <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @change="onTableChange" :loading="loading"></grid>
 	//     </row>
 	//     </div>
-	//     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="变成loading样式"/>
+	//     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
 	// import {Table,Icon} from 'src/'
 	//   const columns = [{
@@ -22285,7 +22191,7 @@
 	//     },
 	//     data() {
 	//       return {
-	//         gridData:[],
+	//         gridData:data,
 	//         gridColumns: columns,
 	//         rowSelection:rowSelection,
 	//         loading:false
@@ -22344,7 +22250,7 @@
 	// <script>
 	
 	
-	var data = [{
+	var _data = [{
 	  key: '1',
 	  name: '胡斌',
 	  age: 32,
@@ -22390,7 +22296,7 @@
 	  data: function data() {
 	    return {
 	      loading: false,
-	      gridData: [],
+	      gridData: _data,
 	      gridColumns: columns,
 	      rowSelection: rowSelection
 	    };
@@ -22398,14 +22304,14 @@
 	
 	  methods: {
 	    changeData: function changeData() {
-	      this.gridData = data;
+	      this.gridData = _data;
 	      console.log(this.gridData);
 	    },
 	    onTableChange: function onTableChange(i, j, k) {
 	      console.log(i, j, k);
 	    },
 	    changeLoading: function changeLoading() {
-	      this.loading = true;
+	      this.loading = !this.loading;
 	    }
 	  }
 	};
@@ -22417,7 +22323,7 @@
 /* 390 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @change=\"onTableChange\" :loading=\"loading\"></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"变成loading样式\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\nimport {Table,Icon} from 'src/'\n  const columns = [{\n    title: '姓名',\n    dataIndex: 'name',\n    filters: [{\n      text: '姓李的的',\n      value: '李',\n    }, {\n      text: '姓胡的',\n      value: '胡',\n    }],\n    sorter: true,\n    onFilter: (value, record) => record.name.indexOf(value) === 0\n  }, {\n    title: '年龄',\n    dataIndex: 'age',\n    sorter: (a, b) => a.age - b.age,\n  }, {\n    title: '地址',\n    dataIndex: 'address',\n    filters: [{\n      text: '南湖',\n      value: '南湖',\n    }, {\n      text: '西湖',\n      value: '西湖',\n    }],\n    filterMultiple: false,\n    onFilter: (value, record) => record.address.indexOf(value) === 0\n  },{\n      title: '操作',\n      key: 'operation',\n      render(text, record) {\n        return '<icon type=\"info\" /><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n      }\n    }\n  ];\n\n  const data = [{\n    key: '1',\n    name: '胡斌',\n    age: 32,\n    address: '南湖区湖底公园1号',\n  }, {\n    key: '2',\n    name: '胡彦祖',\n    age: 42,\n    address: '西湖区湖底公园12号',\n  }, {\n    key: '3',\n    name: '李大嘴',\n    age: 32,\n    address: '南湖区湖底公园123号',\n  }, {\n    key: '4',\n    name: '李秀莲大嘴哥',\n    age: 32,\n    address: '西湖区湖底公园123号',\n  }];\n  const rowSelection = {\n    getCheckboxProps(record) {\n      return {\n        disabled: record.name === '胡彦祖'    // 配置无法勾选的列 s\n      };\n    },\n    onChange(selectedRowKeys, selectedRows) {\n      console.log(selectedRowKeys, selectedRows);\n    },\n    onSelect(record, selected, selectedRows) {\n      console.log(record, selected, selectedRows);\n    },\n    onSelectAll(selected, selectedRows, changeRows) {\n      console.log(selected, selectedRows, changeRows);\n    }\n  };\n  export default {\n    components: {\n      Grid:Table,\n      Icon\n    },\n    data() {\n      return {\n        gridData:[],\n        gridColumns: columns,\n        rowSelection:rowSelection,\n        loading:false\n      }\n    },\n    methods:{\n      changeData() {\n        this.gridData = data;\n      },\n      onTableChange(i,j,k) {\n        console.log(i,j,k)\n      }\n    }\n  }\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @change=\"onTableChange\" :loading=\"loading\"></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\nimport {Table,Icon} from 'src/'\n  const columns = [{\n    title: '姓名',\n    dataIndex: 'name',\n    filters: [{\n      text: '姓李的的',\n      value: '李',\n    }, {\n      text: '姓胡的',\n      value: '胡',\n    }],\n    sorter: true,\n    onFilter: (value, record) => record.name.indexOf(value) === 0\n  }, {\n    title: '年龄',\n    dataIndex: 'age',\n    sorter: (a, b) => a.age - b.age,\n  }, {\n    title: '地址',\n    dataIndex: 'address',\n    filters: [{\n      text: '南湖',\n      value: '南湖',\n    }, {\n      text: '西湖',\n      value: '西湖',\n    }],\n    filterMultiple: false,\n    onFilter: (value, record) => record.address.indexOf(value) === 0\n  },{\n      title: '操作',\n      key: 'operation',\n      render(text, record) {\n        return '<icon type=\"info\" /><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n      }\n    }\n  ];\n\n  const data = [{\n    key: '1',\n    name: '胡斌',\n    age: 32,\n    address: '南湖区湖底公园1号',\n  }, {\n    key: '2',\n    name: '胡彦祖',\n    age: 42,\n    address: '西湖区湖底公园12号',\n  }, {\n    key: '3',\n    name: '李大嘴',\n    age: 32,\n    address: '南湖区湖底公园123号',\n  }, {\n    key: '4',\n    name: '李秀莲大嘴哥',\n    age: 32,\n    address: '西湖区湖底公园123号',\n  }];\n  const rowSelection = {\n    getCheckboxProps(record) {\n      return {\n        disabled: record.name === '胡彦祖'    // 配置无法勾选的列 s\n      };\n    },\n    onChange(selectedRowKeys, selectedRows) {\n      console.log(selectedRowKeys, selectedRows);\n    },\n    onSelect(record, selected, selectedRows) {\n      console.log(record, selected, selectedRows);\n    },\n    onSelectAll(selected, selectedRows, changeRows) {\n      console.log(selected, selectedRows, changeRows);\n    }\n  };\n  export default {\n    components: {\n      Grid:Table,\n      Icon\n    },\n    data() {\n      return {\n        gridData:data,\n        gridColumns: columns,\n        rowSelection:rowSelection,\n        loading:false\n      }\n    },\n    methods:{\n      changeData() {\n        this.gridData = data;\n      },\n      onTableChange(i,j,k) {\n        console.log(i,j,k)\n      }\n    }\n  }\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 391 */

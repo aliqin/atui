@@ -21,7 +21,7 @@
 选中值 : {{multiple.join(', ')}}
         </pre>
       </p>
-      <v-select multiple :default-value.sync="multiple">
+      <v-select multiple :default-value.sync="multiple" @change="onSlectChange">
         <v-option value="Apple">Apple</v-option>
         <v-option value="Banana">Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
