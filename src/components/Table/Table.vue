@@ -1,6 +1,5 @@
 <template>
 <div :class="{'table-container':true,loading:loading}">
-{{filterOpened}}
   <spin size="sm" v-if="loading"></spin>
   <div class="table-body">
     <table class="table">
@@ -11,7 +10,7 @@
           </th>
           <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
               {{column['title']}}
-              <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" v-el:dropdown>
+              <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" :open="filterOpened">
                 <div data-toggle="dropdown">
                   <icon type="filter"></icon>
                 </div>
@@ -70,7 +69,6 @@ export default {
   data() {
     this.compileTbody()
     return {
-      filterOpened:false,
       isCheckedAll: false,
       sorderOrder:[],
       checkedRows: []
@@ -174,14 +172,17 @@ export default {
     },
     // filter时触发
     onFilter(value, column) {
-      // this.filterOpened = false
-      console.log(this.$refs)
-      this.$refs.dropdown.open = false
-      this.checkedRows = []
-      this.isCheckedAll = false
+      let me = this
+      me.$set('filterOpened',true)
+      setTimeout(()=>{
+        me.$set('filterOpened',false)
+      },100)
+
+      me.checkedRows = []
+      me.isCheckedAll = false
       let filters = {}
       filters[column.dataIndex] = [value]
-      this.$dispatch('change', this.pagination, filters, column.sorter)
+      me.$dispatch('change', this.pagination, filters, column.sorter)
     }
   }
 }
