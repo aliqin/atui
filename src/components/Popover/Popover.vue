@@ -58,6 +58,4 @@ import PopoverMixin from '../popoverMixins.js'
     opacity: 0;
   }
 }
-
-
 </style>
