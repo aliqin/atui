@@ -1,49 +1,56 @@
 <template>
-<table class="table">
-  <thead>
-    <tr>
-      <th v-if="dataSource.length && rowSelection">
-          <input type="checkbox" v-bind="{checked:isCheckedAll}" @change="onCheckAll"/>
-      </th>
-      <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
-          {{column['title']}}
-          <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" :open.asyc="filterOpened">
-            <div data-toggle="dropdown">
-              <icon type="filter"></icon>
-            </div>
-            <ul name="dropdown-menu" class="dropdown-menu">
-              <li v-for="col in column.filters"><a href="javascript:void(0);" @click="onFilter(col.value, column)">{{col.text}}</a></li>
-            </ul>
-          </dropdown>
-          <div v-if="dataSource.length && column.sorter" class="table-sorter">
-            <icon type="up" @click="sortAction(column,$index,'ascend')" size="10" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
-            <icon type="down" @click="sortAction(column,$index,'descend')" size="10" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
-          </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">没有任何数据</td></tr>
-    <tr v-for="(rowIndex, record) in dataSource">
-        <td v-if="rowSelection">
-             <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
-        </td>
-        <td v-for="column in columns">
-            <template v-if="column.render">
-                {{{column.render(record[column.dataIndex],record,rowIndex)}}}
-            </template>
-            <template v-else>
-                {{record[column.dataIndex]}}
-            </template>
-        </td>
-    </tr>
-  </tbody>
-</table>
+<div :class="{'table-container':true,loading:loading}">
+  <spin size="sm" v-if="loading"></spin>
+  <div class="table-body">
+    <table class="table">
+      <thead class="table-thead">
+        <tr>
+          <th v-if="rowSelection">
+              <input v-if="dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll}" @change="onCheckAll"/>
+          </th>
+          <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
+              {{column['title']}}
+              <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" :open.asyc="filterOpened">
+                <div data-toggle="dropdown">
+                  <icon type="filter"></icon>
+                </div>
+                <ul name="dropdown-menu" class="dropdown-menu">
+                  <li v-for="col in column.filters"><a href="javascript:void(0);" @click="onFilter(col.value, column)">{{col.text}}</a></li>
+                </ul>
+              </dropdown>
+              <div v-if="dataSource.length && column.sorter" class="table-sorter">
+                <icon type="up" @click="sortAction(column,$index,'ascend')" size="10" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
+                <icon type="down" @click="sortAction(column,$index,'descend')" size="10" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
+              </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="table-tbody">
+        <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">没有任何数据</td></tr>
+        <tr v-for="(rowIndex, record) in dataSource">
+            <td v-if="rowSelection">
+                 <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
+            </td>
+            <td v-for="column in columns">
+                <template v-if="column.render">
+                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}
+                </template>
+                <template v-else>
+                    {{record[column.dataIndex]}}
+                </template>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
 </template>
 
 <script type="text/babel">
 import Icon from '../Icon/'
 import Dropdown from '../Dropdown/'
+import Spin from '../Spin/'
 export default {
   props: {
     pagination:Object,
@@ -51,11 +58,13 @@ export default {
     columns: Array,
     rowSelection: Object,
     rowKey: String,
+    loading:Boolean,
     onChange:Function
   },
   components: {
     Icon,
-    Dropdown
+    Dropdown,
+    Spin
   },
   data() {
     this.compileTbody()

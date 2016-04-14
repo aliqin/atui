@@ -3,10 +3,10 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
     <row>
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @change="onTableChange"></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @change="onTableChange" :loading="loading"></grid>
     </row>
     </div>
-    <input type="button" @click="changeData" value="填充表格数据"/>
+    <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="变成loading样式"/>
     <pre><code class="language-markup"><script type="language-mark-up">
 import {Table,Icon} from 'src/'
   const columns = [{
@@ -92,7 +92,8 @@ import {Table,Icon} from 'src/'
       return {
         gridData:[],
         gridColumns: columns,
-        rowSelection:rowSelection
+        rowSelection:rowSelection,
+        loading:false
       }
     },
     methods:{
@@ -229,6 +230,7 @@ import {Table,Icon} from 'src/'
     },
     data() {
       return {
+        loading:false,
         gridData:[],
         gridColumns: columns,
         rowSelection:rowSelection
@@ -241,6 +243,9 @@ import {Table,Icon} from 'src/'
       },
       onTableChange(i,j,k) {
         console.log(i,j,k)
+      },
+      changeLoading() {
+        this.loading = true
       }
     }
   }
