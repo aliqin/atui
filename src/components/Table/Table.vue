@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th v-if="dataSource.length && rowSelection">
-          <input type="checkbox" v-bind="{checked:isCheckedAll}" @change.stop="onCheckAll"/>
+          <input type="checkbox" v-bind="{checked:isCheckedAll}" @change="onCheckAll"/>
       </th>
       <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
           {{column['title']}}
@@ -64,7 +64,6 @@ export default {
       filterOpened: false,
       sorderOrder:[],
       checkedRows: [],
-      checkebleRows:[],
       scope: null
     }
   },
@@ -78,15 +77,18 @@ export default {
         me.rowSelection.onChange(checkedKeys,me.checkedRows)
       }
       return checkedKeys
+    },
+    checkebleRows() {
+      // 过滤出非禁用的项供选择使用
+      return this.dataSource.filter((record) => {
+        return !this.rowSelection.getCheckboxProps || !this.rowSelection.getCheckboxProps(record).disabled
+      })
     }
   },
   watch: {
     dataSource: {
       handler(item) {
-        // 过滤出非禁用的项供选择使用
-        this.checkebleRows = this.dataSource.filter((record) => {
-          return !this.rowSelection.getCheckboxProps || !this.rowSelection.getCheckboxProps(record).disabled
-        })
+        this.checkedRows = []
         this.compileTbody()
       },
       deep: true
@@ -132,7 +134,6 @@ export default {
             changeRows.push(record)
           }
         })
-        me.checkedValues = []
         me.checkedRows = []
       }
       if( me.rowSelection.onSelectAll ) {
