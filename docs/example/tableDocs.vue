@@ -70,7 +70,7 @@ import {Table,Icon} from 'src/'
   const rowSelection = {
     getCheckboxProps(record) {
       return {
-        disabled: record.name === '胡彦祖'    // 配置无法勾选的列
+        disabled: record.name === '胡彦祖'    // 配置无法勾选的列 s
       };
     },
     onChange(selectedRowKeys, selectedRows) {
