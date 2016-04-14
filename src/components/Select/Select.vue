@@ -94,7 +94,8 @@
         searchText: null,
         show: false,
         selectedLabels:[],
-        showNotify: false
+        showNotify: false,
+        value:this.multiple ? [] : ''
       }
     },
     computed: {
@@ -126,18 +127,20 @@
             this.selectedLabels.push(label)
           }
         }else {
-          this.selectedLabels = [label]
+          this.selectedLabels = label
         }
         if (this.defaultValue.indexOf(value) === -1) {
           if (this.multiple) {
             this.defaultValue.push(value)
           } else {
-            this.defaultValue = [value]
+            this.defaultValue = value
           }
         } else {
           if (this.multiple) {
             this.defaultValue.$remove(value)
           }
+        }
+        if(this.multiple) {
         }
         if (this.closeOnSelect || !this.multiple) {
           this.toggleDropdown()

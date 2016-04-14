@@ -128,8 +128,8 @@
  <br/> <br/> <br/>
 表格
 <hr/>
-<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection"  row-key="key" @change="onTableChange"></grid>
-
+<grid :data-source="gridData" :loading="tableLoading" :columns="gridColumns" :row-selection="rowSelection"  row-key="key" @change="onTableChange"></grid>
+<input type="button" @click="changeLoading" value="变成loading样式"/>
 Filter
  <br/> <br/> <br/>
 {{13254565255 | phoneNumber}}
@@ -220,7 +220,8 @@ var columns = [{
       data:{
         gridData:data,
         gridColumns: columns,
-        rowSelection:rowSelection
+        rowSelection:rowSelection,
+        tableLoading:false
       },
       components:{
         vRow:VueComponent.Layout.Row,
@@ -248,8 +249,12 @@ var columns = [{
       methods:{
         onTableChange:function(i,j,k) {
           console.log(i,j,k)
+        },
+        changeLoading:function() {
+          this.tableLoading = !this.tableLoading
         }
       }
+
   })
   </script>
 </body>
