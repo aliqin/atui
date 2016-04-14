@@ -46,7 +46,7 @@ const PopoverMixin = {
      * 设置tooltip坐标
      * @param cb
        */
-    setTooltipPos (cb) {
+    resetPos () {
       const popover = this.$els.popover
       const triger  = this.$els.trigger.children[0]
 
@@ -103,39 +103,19 @@ const PopoverMixin = {
           console.log('Wrong placement prop')
       }
 
-      popover.style.top = this.position.top + 'px'
-      popover.style.left = this.position.left + 'px'
+      popover.style.width   = popover.offsetWidth + 'px'
+      popover.style.height  = popover.offsetHeight + 'px'
+      popover.style.top     = this.position.top + 'px'
+      popover.style.left    = this.position.left + 'px'
+      popover.style.display = 'none'
+
+      this.show = !this.show
 
       //使用transform:translate定位,会影响到transform:scale动画效果
       //this.position.top = this.position.top - triger.offsetHeight - 5
       //this.position.left -= 5
       //popover.style.transform = 'translate(' + this.position.left + 'px, ' + this.position.top + 'px)'
-
-      cb()
     },
-
-    /**
-     * 校准tooltip坐标
-     */
-    ajustTooltipPos () {
-      const me      = this
-      const popover = this.$els.popover
-      const triger  = this.$els.trigger.children[0]
-      let w         = popover.offsetWidth
-      let h         = popover.offsetHeight
-
-      this.setTooltipPos(() => {
-        //修改绝对定位元素的坐标，元素的宽度和高度也会变化,故在修改坐标后,需要重新检查
-        //目前看,检查1次即可保证定位精准
-        if ((popover.offsetWidth == w && popover.offsetHeight == h) || ++this.ajustTimes > 2) {
-          popover.style.display = 'none'
-          me.show               = !me.show
-        }
-        else {
-          me.ajustTooltipPos()
-        }
-      })
-    }
   },
 
   ready() {
@@ -153,8 +133,7 @@ const PopoverMixin = {
       this._clickEvent = EventListener.listen(triger, 'click', this.toggle)
     }
 
-    this.ajustTimes = 0
-    this.ajustTooltipPos()
+    this.resetPos()
   },
 
   beforeDestroy() {
