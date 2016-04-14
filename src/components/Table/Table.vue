@@ -89,6 +89,8 @@ export default {
     dataSource: {
       handler(item) {
         this.checkedRows = []
+        this.checkedValues = []
+        this.isCheckedAll = false
         this.compileTbody()
       },
       deep: true
