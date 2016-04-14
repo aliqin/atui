@@ -1,3 +1,19 @@
+.table-container{
+  position: relative;
+  .spin{
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 1;
+    transform:translate(-50%,-50%);
+  }
+}
+.table-container.loading .table-body{
+  opacity: .7;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  pointer-events: none;
+}
 .table {
   width: 100%;
   border-collapse: collapse;
