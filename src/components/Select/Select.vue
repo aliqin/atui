@@ -75,18 +75,10 @@
       Icon
     },
     created() {
-      if (this.defaultValue.constructor !== Array) {
-        if (this.defaultValue.length === 0) {
-          this.defaultValue = []
-        } else {
-          this.defaultValue = [this.defaultValue]
-        }
-      } else {
-        if (!this.multiple && this.defaultValue.length > 1) {
-          this.defaultValue = this.defaultValue.slice(0, 1)
-        } else if (this.multiple && this.defaultValue.length > this.limit) {
-          this.defaultValue = this.defaultValue.slice(0, this.limit)
-        }
+      if (!this.multiple && Array.isArray(this.defaultValue)) {
+        this.defaultValue = this.defaultValue.slice(0, 1)
+      } else if (this.multiple && this.defaultValue.length > this.limit) {
+        this.defaultValue = this.defaultValue.slice(0, this.limit)
       }
     },
     data() {
@@ -105,7 +97,7 @@
     },
     watch: {
       defaultValue(val) {
-        if (val.length > this.limit) {
+        if (this.multiple && val.length > this.limit) {
           this.showNotify = true
           this.defaultValue.pop()
           setTimeout(() => this.showNotify = false, 1000)
@@ -126,22 +118,19 @@
           if(this.selectedLabels.indexOf(label) === -1) {
             this.selectedLabels.push(label)
           }
-        }else {
+        } else {
           this.selectedLabels = label
         }
-        if (this.defaultValue.indexOf(value) === -1) {
-          if (this.multiple) {
+        if (this.multiple) {
+          if(this.defaultValue.indexOf(value) === -1) {
             this.defaultValue.push(value)
           } else {
-            this.defaultValue = value
-          }
-        } else {
-          if (this.multiple) {
             this.defaultValue.$remove(value)
           }
+        } else {
+          this.defaultValue = value
         }
-        if(this.multiple) {
-        }
+
         if (this.closeOnSelect || !this.multiple) {
           this.toggleDropdown()
         }
