@@ -44,9 +44,9 @@ const PopoverMixin = {
 
     /**
      * 设置tooltip坐标
-     * @param cb
+     * @param initial
        */
-    resetPos () {
+    resetPos (initial) {
       const popover = this.$els.popover
       const triger  = this.$els.trigger.children[0]
 
@@ -107,9 +107,11 @@ const PopoverMixin = {
       popover.style.height  = popover.offsetHeight + 'px'
       popover.style.top     = this.position.top + 'px'
       popover.style.left    = this.position.left + 'px'
-      popover.style.display = 'none'
 
-      this.show = !this.show
+      if (initial) {
+        popover.style.display = 'none'
+        this.show             = !this.show
+      }
 
       //使用transform:translate定位,会影响到transform:scale动画效果
       //this.position.top = this.position.top - triger.offsetHeight - 5
@@ -133,7 +135,7 @@ const PopoverMixin = {
       this._clickEvent = EventListener.listen(triger, 'click', this.toggle)
     }
 
-    this.resetPos()
+    this.resetPos(true)
   },
 
   beforeDestroy() {
