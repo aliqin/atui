@@ -1,6 +1,7 @@
 <template>
 <textarea v-bind="{disabled: isDisabled}" maxlength="{{limitWords}}" class="textarea" :class="classObj" name="{{name}}" placeholder="{{placeholder}}" v-model="content"></textarea>
-<p v-if="limitWords" class="limit-word-area" :class="wordClass">{{ curWords }}/{{ limitWords }}</p>
+<p v-if="limitWords" class="words-area" :class="wordClass">{{ curWords }}/{{ limitWords }}</p>
+<p v-if="showWordsCount" class="words-area">{{ countTips }}{{ curWords }}</p>
 </template>
 
 <script>
@@ -12,7 +13,12 @@
       disabled: null,
       error: null,
       success: null,
-      content: String
+      content: String,
+      wordsCount: null,
+      countTips: {
+        type: String,
+        default: '输入字数：'
+      }
     },
     data () {
       return {
@@ -22,6 +28,10 @@
       }
     },
     computed: {
+      showWordsCount () {
+        return this.wordsCount == true || this.wordsCount === 'true' || this.wordsCount === '';
+      },
+
       curWords () {
         if (this.content) {
           return this.content.length;
