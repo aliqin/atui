@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th v-if="dataSource.length && rowSelection">
-          <input type="checkbox" @change.stop="onCheckAll"/>
+          <input type="checkbox" v-bind="{checked:isCheckedAll}" @change.stop="onCheckAll"/>
       </th>
       <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
           {{column['title']}}
@@ -60,10 +60,11 @@ export default {
   data() {
     this.compileTbody()
     return {
-      sortKey: '',
+      isCheckedAll: false,
       filterOpened: false,
       sorderOrder:[],
       checkedRows: [],
+      checkebleRows:[],
       scope: null
     }
   },
@@ -74,7 +75,7 @@ export default {
         return record[me.rowKey]
       })
       if(me.rowSelection.onChange) {
-        me.rowSelection.onChange(me.checkedRows,checkedKeys)
+        me.rowSelection.onChange(checkedKeys,me.checkedRows)
       }
       return checkedKeys
     }
@@ -82,6 +83,10 @@ export default {
   watch: {
     dataSource: {
       handler(item) {
+        // 过滤出非禁用的项供选择使用
+        this.checkebleRows = this.dataSource.filter((record) => {
+          return !this.rowSelection.getCheckboxProps || !this.rowSelection.getCheckboxProps(record).disabled
+        })
         this.compileTbody()
       },
       deep: true
@@ -108,19 +113,27 @@ export default {
         order:order
       })
     },
+    // 点击全选框触发
     onCheckAll() {
       let me = this
       const changeRows = []
       const checked = event.target.checked
       if(checked) {
-        me.dataSource.forEach((record,i) => {
+        // me.checkedRows = me.dataSource.filter((record)=>{
+        //   if (this.rowSelection.getCheckboxProps) {
+        //     return !this.props.rowSelection.getCheckboxProps(record).disabled;
+        //   }
+        // })
+        const getCheckboxProps = this.rowSelection.getCheckboxProps
+        me.checkebleRows.forEach((record,i) => {
           if(me.checkedRows.indexOf(record) < 0) {
             me.checkedRows.push(record)
             changeRows.push(record)
           }
         })
+        me.isCheckedAll = true
       } else {
-        me.dataSource.forEach((record,i) => {
+        me.checkebleRows.forEach((record,i) => {
           if(me.checkedRows.indexOf(record) >= 0) {
             changeRows.push(record)
           }
@@ -132,11 +145,14 @@ export default {
         me.rowSelection.onSelectAll.call(null,checked,me.checkedRows,changeRows)
       }
     },
+    // 选中某一个单选框时触发
     onCheckOne(event,record) {
       const me = this
       const checked = event.target.checked
       if(checked) {
-        me.checkedRows.push(record)
+        if(me.checkedRows.indexOf(record) === -1) {
+          me.checkedRows.push(record)
+        }
       } else {
         me.checkedRows = me.checkedRows.filter((item) => {
           return record[me.rowKey]!= item[me.rowKey]
@@ -145,14 +161,13 @@ export default {
       if(me.rowSelection.onSelect) {
         me.rowSelection.onSelect.call(null,record,checked,me.checkedRows)
       }
+      me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
     },
+    // filter时触发
     onFilter(value, column) {
       this.filterOpened = false
-      // let filterSource = this.dataSource.filter((record) => {
-      //   return column.onFilter.call(this, value, record)
-      // })
-      // column.onFilter.call(this, value, record);
       this.checkedRows = []
+      this.isCheckedAll = false
       let filters = {}
       filters[column.dataIndex] = [value]
       this.$dispatch('change', this.pagination, filters, column.sorter)
