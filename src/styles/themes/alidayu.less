@@ -1,22 +1,16 @@
-@zindex-navbar:            1000;
-@zindex-dropdown:          1080;
-@zindex-select:            1080;
-@zindex-message:           1090;
-@zindex-popover:           1060;
-@zindex-tooltip:           1070;
-@zindex-navbar-fixed:      1030;
-@zindex-modal-background:  1040;
-@zindex-modal:             1050;
+@import "./common.less";
 //
 // Variables
 // --------------------------------------------------
+// 品牌色
+@primary-color:#00a0ff;
 
 // Button
-@btn-primary-bg             : #00a0ff;
+@btn-primary-bg             : @primary-color;
 @btn-primary-hover-bg       : #66c6ff;
 @btn-primary-click-bg       : #0090e6;
 
-@btn-secondary-color        : #00a0ff;
+@btn-secondary-color        : @primary-color;
 @btn-secondary-border       : #66c6ff;
 @btn-secondary-hover-bg     : #f2faff;
 @btn-secondary-hover-border : #66c6ff;
@@ -53,7 +47,7 @@
 @input-success-shadow-color: rgba(29,191,56,0.30);
 
 @input-hover-border: #999;
-@input-click-border: #00a0ff;
+@input-click-border: @primary-color;
 
 @input-click-shadow-color: rgba(0,160,255,0.30);
 
@@ -72,7 +66,7 @@
 
 @textarea-border: #d9d9d9;
 @textarea-hover-border: #bfbfbf;
-@textarea-click-border: #00a0ff;
+@textarea-click-border: @primary-color;
 @textarea-disabled-border: #e6e6e6;
 @textarea-error-border: #ff5959;
 
@@ -93,94 +87,6 @@
 //checkbox & radio
 @checkbox-bg: #00A0FF;
 @radio-bg: @checkbox-bg;
-
-
-
-
-
-
-//== Colors
-//
-//## Gray and brand colors for use across Bootstrap.
-
-@gray-base:              #666;
-@gray-darker:            lighten(@gray-base, 13.5%); // #222
-@gray-dark:              lighten(@gray-base, 20%);   // #333
-@gray:                   lighten(@gray-base, 33.5%); // #555
-@gray-light:             lighten(@gray-base, 46.7%); // #777
-@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
-
-@brand-primary:         #4CACE2;
-@brand-success:         #4CACE2;
-@brand-info:            #F2FBFF;
-@brand-warning:         #FFFBF2;
-@brand-danger:          #FFF7F7;
-
-
-
-@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-// // @font-family-base:        @font-family-sans-serif;
-@font-family-base:        "PingFang SC ","Hiragino Sans GB","Microsoft Yahei";
-
-@font-size-base:          14px;
-@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
-@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
-
-@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
-@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
-@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
-@font-size-h5:            @font-size-base;
-@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
-
-// //** Unit-less `line-height` for use in components like buttons.
-@line-height-base:        1.5; // 20/14
-
-@padding-base-vertical:     6px;
-@padding-base-horizontal:   12px;
-
-@padding-large-vertical:    10px;
-@padding-large-horizontal:  16px;
-
-@padding-small-vertical:    5px;
-@padding-small-horizontal:  10px;
-
-@padding-xs-vertical:       1px;
-@padding-xs-horizontal:     5px;
-
-@line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
-@line-height-small:         1.5;
-
-@border-radius-base:        4px;
-@border-radius-large:       6px;
-@border-radius-small:       3px;
-
-//** Global color for active items (e.g., navs or dropdowns).
-@component-active-color:    #fff;
-//** Global background color for active items (e.g., navs or dropdowns).
-@component-active-bg:       @brand-primary;
-
-//** Width of the `border` for generating carets that indicate dropdowns.
-@caret-width-base:          4px;
-//** Carets increase slightly in size for larger components.
-@caret-width-large:         5px;
-
-
-@state-success-text:             #3c763d;
-@state-success-bg:               #dff0d8;
-@state-success-border:           darken(spin(@state-success-bg, -10), 5%);
-
-@state-info-text:                #31708f;
-@state-info-bg:                  #d9edf7;
-@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
-
-@state-warning-text:             #8a6d3b;
-@state-warning-bg:               #fcf8e3;
-@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
-
-@state-danger-text:              #a94442;
-@state-danger-bg:                #f2dede;
-@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
 
 
 @import "../bootstrap.less";
