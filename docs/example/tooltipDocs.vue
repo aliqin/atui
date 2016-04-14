@@ -2,58 +2,112 @@
   <div class="bs-docs-section" id="tooltip">
     <h3 class="page-header"><a href="#tooltip" class="anchor">Tooltip 文字提示</a></h3>
     <div class="bs-example">
-          <tooltip content="talk is cheap show me the code" placement="topLeft" >
-            <button class="btn btn-default ">上左</button>
-          </tooltip>
-          <tooltip   content="talk is cheap show me the code" placement="top">
-            <button class="btn btn-default ">上边</button>
-          </tooltip>
-          <tooltip   content="Lorem ipsum dolor sit amet" placement="topRight">
-            <button class="btn btn-default ">上右</button>
-          </tooltip>
-
-          <tooltip   content="what does the fox say ？" placement="leftTop">
-            <button class="btn btn-default ">左上</button>
-          </tooltip>
-          <tooltip   content="Are you kidding me?" placement="left">
-            <button class="btn btn-default ">左边</button>
-          </tooltip>
-          <tooltip   content="no, i'm serious! " placement="leftBottom">
-            <button class="btn btn-default ">左下</button>
-          </tooltip>
-
-            <tooltip   content="bang bang bang!" placement="rightTop">
+      <table class="table-tooltip" cellspacing="5">
+        <tr>
+          <td></td>
+          <td>
+            <tooltip content="talk is cheap show me the code" placement="topLeft">
+              <button class="btn btn-default ">上左</button>
+            </tooltip>
+          </td>
+          <td>
+            <tooltip
+              content="我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字"
+              placement="top">
+              <button class="btn btn-default ">上边</button>
+            </tooltip>
+          </td>
+          <td>
+            <tooltip content="Lorem ipsum dolor sit amet" placement="topRight">
+              <button class="btn btn-default ">上右</button>
+            </tooltip>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <tooltip content="what does the fox say ？" placement="leftTop">
+              <button class="btn btn-default ">左上</button>
+            </tooltip>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <tooltip content="bang bang bang!" placement="rightTop">
               <button class="btn btn-default ">右上</button>
             </tooltip>
-            <tooltip   content="Lorem ipsum dolor sit amet" placement="right">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <tooltip content="Are you kidding me?" placement="left">
+              <button class="btn btn-default ">左边</button>
+            </tooltip>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <tooltip content="Lorem ipsum dolor sit amet" placement="right">
               <button class="btn btn-default ">右边</button>
             </tooltip>
-            <tooltip   content="Lorem ipsum dolor sit amet" placement="rightBottom">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <tooltip content="no, i'm serious! " placement="leftBottom">
+              <button class="btn btn-default ">左下</button>
+            </tooltip>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <tooltip content="Lorem ipsum dolor sit amet" placement="rightBottom">
               <button class="btn btn-default ">右下</button>
             </tooltip>
-            <tooltip  placement="bottomLeft" content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <tooltip placement="bottomLeft"
+                     content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
               <button class="btn btn-default ">下左</button>
             </tooltip>
-            <tooltip  placement="bottom" content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
+          </td>
+          <td>
+            <tooltip placement="bottom"
+                     content="我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字">
               <button class="btn btn-default ">下边</button>
             </tooltip>
-            <tooltip  placement="bottomRight" content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
+          </td>
+          <td>
+            <tooltip placement="bottomRight"
+                     content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
               <button class="btn btn-default ">下右</button>
             </tooltip>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+
 
       <h4>Triger</h4>
       <p>
         <tooltip trigger="click"
-        effect="fadein" content="提示文字" placement="top" trigger="hover">
-            <button class="btn btn-default ">Click</button>
+                 effect="fadein" content="提示文字" placement="top" trigger="hover">
+          <button class="btn btn-default ">Click</button>
         </tooltip>
       </p>
       <tooltip effect="scale"
-    content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
+               content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
         <input type="text" class="form-control" placeholder="Focus">
       </tooltip>
     </div>
-    <pre><code class="language-markup"><script type="language-mark-up">
+    <pre><code class="language-markup">
+      <script type="language-mark-up">
 <tooltip content="talk is cheap show me the code" placement="topLeft">
 <button class="btn btn-default ">上左</button>
 </tooltip>
@@ -98,18 +152,20 @@
 content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
   <input type="text" class="form-control" placeholder="Focus">
 </tooltip>
-</script></code></pre>
-  <h2>Options</h2>
-  <table class="table table-bordered">
-    <thead>
+
+      </script>
+    </code></pre>
+    <h2>Options</h2>
+    <table class="table table-bordered">
+      <thead>
       <tr>
         <th>Name</th>
         <th>Type</th>
         <th>Default</th>
         <th>Description</th>
       </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
       <tr>
         <td>trigger</td>
         <td><code>String</code></td>
@@ -127,13 +183,14 @@ content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
         <td></td>
         <td>内容</td>
       </tr>
-        <td>placement</td>
-        <td><code>String</code></td>
-        <td></td>
-        <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight</td>
+      <td>placement</td>
+      <td><code>String</code></td>
+      <td></td>
+      <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight
+      </td>
       </tr>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -157,10 +214,23 @@ content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
   .table-demo {
     position: relative;
     width: 100%;
+
     td {
       text-align: center;
       width: 33%;
     }
   }
 
+  .table-tooltip {
+    td {
+      position: relative;
+      padding: 5px;
+    }
+  }
+
+  .bs-example {
+    p {
+      position: relative;
+    }
+  }
 </style>

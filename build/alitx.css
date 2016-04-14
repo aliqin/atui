@@ -7833,6 +7833,13 @@ button.close {
   text-align: center;
   width: 33%;
 }
+.table-tooltip td {
+  position: relative;
+  padding: 5px;
+}
+.bs-example p {
+  position: relative;
+}
 .badge-count-example,
 .badge-dot-example {
   width: 42px;
