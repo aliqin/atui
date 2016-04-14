@@ -68,6 +68,11 @@
   box-shadow: 0px 0px 0px 2px @textarea-error-shadow-color;
 }
 
+.success() {
+  border-color: @textarea-success-border;
+  box-shadow: 0px 0px 0px 2px @textarea-success-shadow-color;
+}
+
 .disabled() {
   background: @textarea-disabled-background;
   color: @textarea-disabled-color;
@@ -113,6 +118,22 @@
 
     &:active, &:focus {
       .error();
+    }
+  }
+
+  &.success {
+    .success();
+
+    &:hover {
+      .success();
+
+      &:active, &:focus {
+        .success();
+      }
+    }
+
+    &:active, &:focus {
+      .success();
     }
   }
 }
