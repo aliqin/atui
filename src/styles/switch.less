@@ -2,7 +2,7 @@
 // Switch
 // --------------------------------------------------
 @switch-default-bg			: #bfbfbf;
-@switch-checked-bg 			: #00a0ff;
+@switch-checked-bg 			: @primary-color;
 @switch-circle-bg			: #fff;
 @switch-disabled-circle-bg 	: #ccc;
 @switch-disabled-bg 		: #f2f2f2;
@@ -19,7 +19,7 @@
 	background-color: @switch-default-bg;
 	border: 1px solid @switch-default-bg;
 	border-radius: 100px;
-	cursor: pointer; 
+	cursor: pointer;
 	-webkit-transition: all .15s linear;
 	transition: all .15s linear;
 	user-select: none;
@@ -70,7 +70,7 @@
 		}
 	}
 
-	// 小型的switch开关 
+	// 小型的switch开关
 	// ------------------------ start ---------------------
 	&.small {
 		width: 26px;
