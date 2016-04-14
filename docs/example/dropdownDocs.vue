@@ -8,9 +8,9 @@
           <span class="caret"></span>
         </div>
         <ul name="dropdown-menu" class="dropdown-menu">
-          <li><a href="#">选项一</a></li>
-          <li><a href="#">选项二</a></li>
-          <li><a href="#">选项三</a></li>
+          <li><a>选项一</a></li>
+          <li><a>选项二</a></li>
+          <li><a>选项三</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="#">其它</a></li>
         </ul>
@@ -20,9 +20,9 @@
           点击显示菜单 <span class="caret"></span>
         </button>
         <ul name="dropdown-menu" class="dropdown-menu">
-          <li><a href="#">选项一</a></li>
-          <li><a href="#">选项二</a></li>
-          <li><a href="#">选项三</a></li>
+          <li><a>选项一</a></li>
+          <li><a>选项二</a></li>
+          <li><a>选项三</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="#">其它</a></li>
         </ul>

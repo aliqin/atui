@@ -35,16 +35,15 @@
       }
       if(this.trigger === 'hover') {
         var me = this;
-        me.$el.addEventListener('mouseleave',()=>{
+        me.$el.addEventListener('mouseleave',() => {
           setTimeout(()=>{
             me.open = false
           },300)
-          
         })
       }
       let self = this;
       this._closeEvent = EventListener.listen(window, 'click', (e)=> {
-        if (!el.contains(e.target)) { 
+        if (!el.contains(e.target)) {
           self.open = false
         }
       })

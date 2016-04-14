@@ -6,7 +6,7 @@
       <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @change="onTableChange" :loading="loading"></grid>
     </row>
     </div>
-    <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="变成loading样式"/>
+    <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
     <pre><code class="language-markup"><script type="language-mark-up">
 import {Table,Icon} from 'src/'
   const columns = [{
@@ -90,7 +90,7 @@ import {Table,Icon} from 'src/'
     },
     data() {
       return {
-        gridData:[],
+        gridData:data,
         gridColumns: columns,
         rowSelection:rowSelection,
         loading:false
@@ -231,7 +231,7 @@ import {Table,Icon} from 'src/'
     data() {
       return {
         loading:false,
-        gridData:[],
+        gridData:data,
         gridColumns: columns,
         rowSelection:rowSelection
       }
@@ -245,7 +245,7 @@ import {Table,Icon} from 'src/'
         console.log(i,j,k)
       },
       changeLoading() {
-        this.loading = true
+        this.loading = !this.loading
       }
     }
   }

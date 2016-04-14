@@ -1,5 +1,6 @@
 <template>
 <div :class="{'table-container':true,loading:loading}">
+{{filterOpened}}
   <spin size="sm" v-if="loading"></spin>
   <div class="table-body">
     <table class="table">
@@ -10,7 +11,7 @@
           </th>
           <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
               {{column['title']}}
-              <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" :open.asyc="filterOpened">
+              <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" v-el:dropdown>
                 <div data-toggle="dropdown">
                   <icon type="filter"></icon>
                 </div>
@@ -69,11 +70,10 @@ export default {
   data() {
     this.compileTbody()
     return {
+      filterOpened:false,
       isCheckedAll: false,
-      filterOpened: false,
       sorderOrder:[],
-      checkedRows: [],
-      scope: null
+      checkedRows: []
     }
   },
   computed: {
@@ -105,6 +105,9 @@ export default {
       deep: true
     }
   },
+  ready(){
+    console.log(this.$refs)
+  },
   methods: {
     compileTbody() {
       let me = this;
@@ -112,7 +115,7 @@ export default {
       this.$nextTick(() => {
         // console.log(me)
         // me.scope = me.scope || me.$parent;
-        me._context.$compile(me.$el.getElementsByTagName('tbody')[0]);
+        me._context.$compile(me.$el.getElementsByTagName('table')[0]);
       });
     },
     sortAction(column,index,order) {
@@ -171,7 +174,9 @@ export default {
     },
     // filter时触发
     onFilter(value, column) {
-      this.filterOpened = false
+      // this.filterOpened = false
+      console.log(this.$refs)
+      this.$refs.dropdown.open = false
       this.checkedRows = []
       this.isCheckedAll = false
       let filters = {}
