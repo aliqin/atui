@@ -1,6 +1,6 @@
 <template>
 <textarea v-bind="{disabled: isDisabled}" maxlength="{{limitWords}}" class="textarea" :class="classObj" name="{{name}}" placeholder="{{placeholder}}" v-model="content"></textarea>
-<p v-if="limitWords" class="limit-word-area" :class="{'words-error': overLimit}">{{ curWords }}/{{ limitWords }}</p>
+<p v-if="limitWords" class="limit-word-area" :class="wordClass">{{ curWords }}/{{ limitWords }}</p>
 </template>
 
 <script>
@@ -16,17 +16,30 @@
     },
     data () {
       return {
-        curWords: 0,
         content: '',
         overLimit: false,
-        isDisabled: typeof(this.disabled) !== 'undefined'
+        isDisabled: this.disabled == true || this.disabled === ''
       }
     },
     computed: {
+      curWords () {
+        if (this.content) {
+          return this.content.length;
+        }
+
+        return 0;
+      },
+
       classObj () {
         return {
-          'error': typeof(this.error) !== 'undefined' || this.overLimit,
-          'success': typeof(this.success) !== 'undefined'
+          'error': this.error || this.error === '' || this.overLimit,
+          'success': this.success == true || this.success === ''
+        }
+      },
+
+      wordClass () {
+        return {
+          'words-error': this.error || this.error === '' || this.overLimit
         }
       }
     },
