@@ -2,16 +2,15 @@
 // Dropdown menus
 // --------------------------------------------------
 //
-@zindex-dropdown:          1000;
 @dropdown-bg:                    #fff;
-@dropdown-border:                #4CACE2;
+@dropdown-border:                @primary-color;
 @dropdown-fallback-border:       #ccc;
 @dropdown-divider-bg:            #d9d9d9;
 
 
 @dropdown-link-color:            @gray-dark;
 @dropdown-link-hover-color:      #fff;
-@dropdown-link-hover-bg:         #66c6ff;
+@dropdown-link-hover-bg:         saturate(@primary-color,20%);
 
 @dropdown-link-active-color:     @component-active-color;
 @dropdown-link-active-bg:        @component-active-bg;
@@ -30,7 +29,6 @@
 //
 // Note: These variables are not generated into the Customizer.
 
-@zindex-dropdown:          1000;
 
 // Dropdown arrow/caret
 .caret {
@@ -65,10 +63,9 @@
   left: 0;
   z-index: @zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
-  float: left;
   min-width: 100%;
   padding: 0;
-  margin: 3px 0 0; // override default ul
+  margin: 0; // override default ul
   list-style: none;
   font-size: @font-size-base;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
