@@ -58,8 +58,7 @@ export default {
     columns: Array,
     rowSelection: Object,
     rowKey: String,
-    loading:Boolean,
-    onChange:Function
+    loading:Boolean
   },
   components: {
     Icon,
@@ -99,12 +98,11 @@ export default {
         this.checkedValues = []
         this.isCheckedAll = false
         this.compileTbody()
-      },
-      deep: true
+      }
     }
   },
   ready(){
-    console.log(this.$refs)
+
   },
   methods: {
     compileTbody() {
