@@ -40,6 +40,10 @@ const PopoverMixin = {
   methods: {
     toggle() {
       this.show = !this.show;
+
+      if(this.show) {
+        this.resetPos()
+      }
     },
 
     /**
@@ -103,10 +107,16 @@ const PopoverMixin = {
           console.log('Wrong placement prop')
       }
 
-      popover.style.width   = popover.offsetWidth + 'px'
-      popover.style.height  = popover.offsetHeight + 'px'
-      popover.style.top     = this.position.top + 'px'
-      popover.style.left    = this.position.left + 'px'
+      //如果popover没有大小,则重新设置一次
+      if (popover.offsetWidth == 0 && popover.offsetHeight == 0) {
+        setTimeout(() => this.resetPos(initial))
+        return
+      }
+
+      popover.style.width  = popover.offsetWidth + 'px'
+      popover.style.height = popover.offsetHeight + 'px'
+      popover.style.top    = this.position.top + 'px'
+      popover.style.left   = this.position.left + 'px'
 
       if (initial) {
         popover.style.display = 'none'
@@ -122,14 +132,22 @@ const PopoverMixin = {
 
   ready() {
     if (!this.$els.popover) return console.error("Couldn't find popover v-el in your component that uses popoverMixin.");
+
+    const me      = this
     const popover = this.$els.popover
     const triger  = this.$els.trigger.children[0]
 
     if (this.trigger === 'hover') {
-      this._mouseenterEvent = EventListener.listen(triger, 'mouseenter', ()=> this.show = true)
+      this._mouseenterEvent = EventListener.listen(triger, 'mouseenter', ()=> {
+        me.show = true
+        me.resetPos()
+      })
       this._mouseleaveEvent = EventListener.listen(triger, 'mouseleave', ()=> this.show = false)
     } else if (this.trigger === 'focus') {
-      this._focusEvent = EventListener.listen(triger, 'focus', ()=> this.show = true)
+      this._focusEvent = EventListener.listen(triger, 'focus', ()=> {
+        me.show = true
+        me.resetPos()
+      })
       this._blurEvent = EventListener.listen(triger, 'blur', ()=> this.show = false)
     } else {
       this._clickEvent = EventListener.listen(triger, 'click', this.toggle)
