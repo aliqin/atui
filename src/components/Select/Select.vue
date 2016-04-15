@@ -9,21 +9,22 @@
       <span class="btn-content">{{{ selectedLabels }}}</span>
       <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
     </button>
-    <ul class="dropdown-menu">
-      <template v-if="options.length">
-        <li v-if="search" class="bs-searchbox">
-          <input type="text" placeholder="Search" v-model="searchText" class="form-control" autocomplete="off">
-        </li>
-        <li v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
-          <a @mousedown.prevent.stop="select(option.label,option.value)" style="cursor:pointer">
-            {{ option.label }}
-            <icon type="tick" v-show="value.indexOf(option.value) !== -1"></icon>
-          </a>
-        </li>
-      </template>
-      <slot v-else></slot>
-      <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
-    </ul>
+    <div v-if="options.length" class="dropdown-menu">
+      <div v-if="search" class="option bs-searchbox">
+        <input type="text" placeholder="Search" v-model="searchText" class="form-control" autocomplete="off">
+      </div>
+      <div class="option" v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
+        <a @mousedown.prevent.stop="select(option.label,option.value)" style="cursor:pointer">
+          {{ option.label }}
+          <icon type="tick" v-show="value.indexOf(option.value) !== -1"></icon>
+        </a>
+      </div>
+    </div>
+    <div v-else class="dropdown-menu">
+      <slot></slot>
+    </div>
+    <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
+
   </div>
 </template>
 

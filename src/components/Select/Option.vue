@@ -1,10 +1,10 @@
 <template>
-  <li :class="{disabled:disabled}">
+  <div :class="{option:true,disabled:disabled}">
     <a @mousedown.prevent.stop="handleClick">
       <span v-el:content><slot></slot></span>
       <icon type="tick" v-show="chosen"></icon>
     </a>
-  </li>
+  </div>
 </template>
 
 <script>

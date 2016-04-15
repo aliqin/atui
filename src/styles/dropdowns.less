@@ -3,14 +3,14 @@
 // --------------------------------------------------
 //
 @dropdown-bg:                    #fff;
-@dropdown-border:                @primary-color;
+@dropdown-border:                @primary-color-hover;
 @dropdown-fallback-border:       #ccc;
 @dropdown-divider-bg:            #d9d9d9;
 
 
 @dropdown-link-color:            @gray-dark;
 @dropdown-link-hover-color:      #fff;
-@dropdown-link-hover-bg:         saturate(@primary-color,20%);
+@dropdown-link-hover-bg:         @primary-color-hover;
 
 @dropdown-link-active-color:     @component-active-color;
 @dropdown-link-active-bg:        @component-active-bg;
@@ -92,7 +92,7 @@
   }
 
   // Links within the dropdown menu
-  > li > a {
+  > .option > a {
     display: block;
     padding: 3px 20px;
     clear: both;
@@ -104,7 +104,7 @@
 }
 
 // Hover/Focus state
-.dropdown-menu > li > a {
+.dropdown-menu > .option > a {
   &:hover,
   &:focus {
     text-decoration: none;
