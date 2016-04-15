@@ -16,7 +16,7 @@
         @click="showCenter = !showCenter">
         点击在中间显示或隐藏
       </button>
-      <button class="btn btn-danger btn-lg"
+      <button class="btn btn-error btn-lg"
         @click="showTop = !showTop">
         点击在顶部显示或隐藏
       </button>
@@ -29,7 +29,7 @@
         消息提示的文案
       </message>
 
-      <message type="danger" dismissable>
+      <message type="error" dismissable>
         错误提示的文案,可关闭
       </message>
 
@@ -68,7 +68,7 @@
       <message
         :show.sync="showTop"
         :duration="3000"
-        type="danger"
+        type="error"
         width="400px"
         placement="top"
         dismissable>
@@ -224,7 +224,7 @@
     },
     methods:{
       showMessage() {
-        Message.success('我成功啦～～')
+        Message.error('我错误啦～～')
       }
     }
   }
