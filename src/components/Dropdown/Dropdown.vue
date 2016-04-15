@@ -1,7 +1,9 @@
 <template>
   <div :class="{dropdown:true,open:open}">
     <slot></slot>
-    <slot name="dropdown-menu"></slot>
+    <div style="padding-top:3px;">
+      <slot name="dropdown-menu"></slot>
+    </div>
   </div>
 </template>
 <script>
@@ -27,16 +29,21 @@
       }
     },
     ready() {
-      const el = this.$el
+      const me = this
+      const el = me.$el
       const toggle = el.querySelector('[data-toggle="dropdown"]')
-      if (toggle) {
-        const event = this.trigger === 'click' ? 'click' : 'mouseenter'
-        toggle.addEventListener(event, this.toggleDropdown)
+      if(!toggle) {
+        return
       }
-      if(this.trigger === 'hover') {
-        var me = this;
+      const event = me.trigger === 'click' ? 'click' : 'mouseenter'
+      toggle.addEventListener(event, ()=>{
+        clearTimeout(me.timeout)
+        me.open = true
+      })
+
+      if(me.trigger === 'hover') {
         me.$el.addEventListener('mouseleave',() => {
-          setTimeout(()=>{
+          me.timeout = setTimeout(()=>{
             me.open = false
           },300)
         })
