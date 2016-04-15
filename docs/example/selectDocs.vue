@@ -71,7 +71,13 @@
       <p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
       <v-select :default-value.sync="arr2" :options="fruitOptions" :close-on-select="true">
       </v-select>
-
+      <v-select placeholder="选择类别" style="width:200px;">
+        <tabs>
+          <tab header="系统短信签名"></tab>
+          <tab header="系统短信签名"></tab>
+          <tab header="系统短信签名"></tab>
+        </tabs>
+      </v-select>
       <h4>禁用的下拉框</h4>
       <v-select :default-value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
       </v-select>
@@ -207,14 +213,16 @@
 </template>
 
 <script>
-  import {Select,Icon} from 'src/'
+  import {Select,Icon,Tabs} from 'src/'
   const Option = Select.Option
-
+  const Tab = Tabs.Tab
   export default {
     components: {
       vSelect:Select,
       vOption:Option,
-      Icon:Icon
+      Icon:Icon,
+      Tabs,
+      Tab
     },
     data() {
       return {
