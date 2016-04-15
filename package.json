@@ -59,6 +59,7 @@
   },
   "scripts": {
     "docs": "webpack-dev-server --host 0.0.0.0",
+    "debug": "webpack-dev-server --host 0.0.0.0 --config  webpack.build.js",
     "deploy": "rm -rf build && NODE_ENV=production webpack --progress --colors --display-chunks && node depoly.js",
     "build": "NODE_ENV=production && webpack --progress --hide-modules --config  webpack.build.js",
     "ci": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
