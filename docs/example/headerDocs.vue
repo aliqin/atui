@@ -11,10 +11,6 @@
         <a href="" class="navbar-brand">VueComponent</a>
       </div>
       <nav id="bs-navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav" id="J_header">
-          <li v-for="theme in themes">
-            <a href="#tabs" :class="{active:theme.active}" @click="changeTheme(theme.csslink,$event)">{{theme.name}}风格</a>
-          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="http://gitlab.alibaba-inc.com/aliqin/vue-component/">
@@ -29,10 +25,34 @@
       </nav>
     </div>
   </header>
+  <ul class="themes" id="J_header">
+    <li v-for="theme in themes" :class="{active:theme.active}" :style="{backgroundColor:theme.color}" @click="changeTheme(theme.csslink,$event)">
+    </li>
+  </ul>
 </template>
-<style>
+<style lang="less">
   .navbar-nav .active {
     background-color: #eee !important;
+  }
+  .themes{
+    position: fixed;
+    right:50px;
+    top:50px;
+    list-style: none;
+    li{
+      float:left;
+      background:#ff7500;
+      width:12px;
+      height:12px;
+      border-radius:100%;
+      text-indent: -10000px;
+      margin:0 5px;
+      cursor: pointer;
+      &.active{
+        width:15px;
+        height:15px;
+      }
+    }
   }
 </style>
 <script>
@@ -43,17 +63,20 @@ export default {
       {
           name : '大鱼',
           csslink:'alidayu.css',
-          active:true
+          active:true,
+          color:'#00aaff'
       },
       {
           name : '天猫网厅',
           csslink:'tmallwt.css',
-          active:false
+          active:false,
+          color:'#e52e2e'
       },
       {
           name : '阿里通信',
           csslink:'alitx.css',
-          active:false
+          active:false,
+          color:'#ff7500'
       },
       ]
     }

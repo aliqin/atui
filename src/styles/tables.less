@@ -1,3 +1,4 @@
+
 .table-container{
   position: relative;
   .spin{
@@ -21,40 +22,7 @@
 .table thead {
   background-color: #F7F7F7;
 }
-.table thead tr:hover {
-  background-color: #F7F7F7;
-}
-.table thead .multi-col {
-  position: relative;
-}
-.table thead .multi-col:hover {
-  cursor: pointer;
-}
-.table thead .multi-col:hover ul {
-  display: block;
-}
-.table thead .multi-col ul {
-  display: none;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-}
-.table thead .multi-col ul li {
-  background-color: #fff;
-}
-.table thead .multi-col ul a {
-  display: block;
-  height: 32px;
-  padding: 7px 8px;
-  text-decoration: none;
-  color: #333;
-  font-size: 12px;
-  line-height: 20px;
-}
-.table thead .multi-col ul a:hover {
-  cursor: pointer;
-  background-color: #f2f2f2;
-}
+
 .table tbody,
 .table tfoot {
   background-color: #FFF;
@@ -69,8 +37,8 @@
   padding: 12px 15px;
   color: #666;
 }
-.table tr:hover {
-  background-color: #FEFEFE;
+.table tbody tr:hover {
+  background-color: @tr-hover-color;
 }
 .table tr.none td {
   text-align: center;
@@ -153,10 +121,6 @@
 .table .pagination {
   float: right;
   margin-top: 0;
-}
-.table-loading {
-  position: absolute;
-  background: url(//img.alicdn.com/tps/i1/T1cKm3XkRpXXXXXXXX-48-48.gif) no-repeat center center;
 }
 .table-sorter{
   position: relative;
