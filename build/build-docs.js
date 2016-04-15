@@ -17221,6 +17221,10 @@
 	  methods: {
 	    toggle: function toggle() {
 	      this.show = !this.show;
+	
+	      if (this.show) {
+	        this.resetPos();
+	      }
 	    },
 	
 	
@@ -17229,6 +17233,8 @@
 	     * @param initial
 	       */
 	    resetPos: function resetPos(initial) {
+	      var _this = this;
+	
 	      var popover = this.$els.popover;
 	      var triger = this.$els.trigger.children[0];
 	
@@ -17285,6 +17291,14 @@
 	          console.log('Wrong placement prop');
 	      }
 	
+	      //如果popover没有大小,则重新设置一次
+	      if (popover.offsetWidth == 0 && popover.offsetHeight == 0) {
+	        setTimeout(function () {
+	          return _this.resetPos(initial);
+	        });
+	        return;
+	      }
+	
 	      popover.style.width = popover.offsetWidth + 'px';
 	      popover.style.height = popover.offsetHeight + 'px';
 	      popover.style.top = this.position.top + 'px';
@@ -17303,25 +17317,29 @@
 	  },
 	
 	  ready: function ready() {
-	    var _this = this;
+	    var _this2 = this;
 	
 	    if (!this.$els.popover) return console.error("Couldn't find popover v-el in your component that uses popoverMixin.");
+	
+	    var me = this;
 	    var popover = this.$els.popover;
 	    var triger = this.$els.trigger.children[0];
 	
 	    if (this.trigger === 'hover') {
 	      this._mouseenterEvent = _EventListener2.default.listen(triger, 'mouseenter', function () {
-	        return _this.show = true;
+	        me.show = true;
+	        me.resetPos();
 	      });
 	      this._mouseleaveEvent = _EventListener2.default.listen(triger, 'mouseleave', function () {
-	        return _this.show = false;
+	        return _this2.show = false;
 	      });
 	    } else if (this.trigger === 'focus') {
 	      this._focusEvent = _EventListener2.default.listen(triger, 'focus', function () {
-	        return _this.show = true;
+	        me.show = true;
+	        me.resetPos();
 	      });
 	      this._blurEvent = _EventListener2.default.listen(triger, 'blur', function () {
-	        return _this.show = false;
+	        return _this2.show = false;
 	      });
 	    } else {
 	      this._clickEvent = _EventListener2.default.listen(triger, 'click', this.toggle);
