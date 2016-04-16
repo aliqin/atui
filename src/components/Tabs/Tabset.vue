@@ -1,25 +1,22 @@
 <template>
   <div class="tabsWrapper">
-    <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">
-      <icon type="prev" size="12"></icon>
-    </span>
-    <!-- Nav tabs -->
-     <ul :class="wrapClasses" role="tablist" style="width: 99999px;">
-            <li
-                v-for="r in renderData"
-                v-bind:class="{
-                  'active': ($index === active),
-                  'disabled': r.disabled
-                }"
-                @click.prevent="handleTabListClick($index, r)"
-                :disabled="r.disabled"
-            >
-                <a href="#">{{{r.header}}}</a>
-            </li>
-     </ul>
-    <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next">
-        <icon type="next" size="12"></icon>
-    </span>
+    <div class="tabs-header">
+      <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev"><icon type="prev" size="12"></icon></span>
+      <ul :class="wrapClasses" role="tablist" style="width: 99999px;">
+        <li v-for="r in renderData"
+            v-bind:class="{
+              'active': ($index === active),
+              'disabled': r.disabled
+            }"
+            @click.prevent="handleTabListClick($index, r)"
+            :disabled="r.disabled"
+        >
+            <a href="#">{{{r.header}}}</a>
+        </li>
+      </ul>
+      <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next"><icon type="next" size="12"></icon>
+      </span>
+    </div>
 
      <!-- Tab panes -->
      <div class="tab-content" v-el:tab-content>
@@ -110,6 +107,7 @@
           const self = this
           const dom  = self.$el
           const nav  = dom.querySelector('.nav')
+          const tabsHeader = dom.querySelector('.tabs-header')
           const list = nav.children
           const showlen  = this.showLen
           const len  = list.length
@@ -124,8 +122,7 @@
               self.wrapperWidth += _itemWidth
             }
           }
-
-          dom.style.width = self.wrapperWidth + 'px'
+          tabsHeader.style.width = self.wrapperWidth + 'px'
           self.$el.style.visibility = 'visible'
         }
     },
