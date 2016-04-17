@@ -7,7 +7,7 @@
 选中值 : {{single}}
         </pre>
       </p>
-      <v-select :default-value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+      <v-select :value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
         <v-option value="Apple">苹果</v-option>
         <v-option value="Banana" disabled>Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
@@ -21,7 +21,7 @@
 选中值 : {{multiple.join(', ')}}
         </pre>
       </p>
-      <v-select multiple :default-value.sync="multiple" @change="onSlectChange">
+      <v-select multiple :value.sync="multiple" @change="onSlectChange">
         <v-option value="Apple">Apple</v-option>
         <v-option value="Banana">Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
@@ -35,7 +35,7 @@
 选中值 : {{multipleLimit.join(', ')}}
         </pre>
       </p>
-      <v-select multiple :limit="2" :default-value.sync="multipleLimit">
+      <v-select multiple :limit="2" :value.sync="multipleLimit">
         <v-option value="Apple">Apple</v-option>
         <v-option value="Banana">Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
@@ -49,7 +49,7 @@
 选中值 : {{custom.join(', ')}}
         </pre>
       </p>
-      <v-select multiple :default-value.sync="custom">
+      <v-select multiple :value.sync="custom">
         <v-option value="success"><icon type="success" color="green"></icon> 成功</v-option>
         <v-option value="error"><icon type="error" color="red"></icon> 错误</v-option>
         <v-option value="help"><icon type="help"></icon> 帮助</v-option>
@@ -63,14 +63,15 @@
 选中值 : {{arr}}
         </pre>
       </p>
-      <v-select :default-value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
+      <v-select :value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
       </v-select>
 
       <hr />
       <h4>Automatically close array driven selects</h4>
       <p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
-      <v-select :default-value.sync="arr2" :options="fruitOptions" :close-on-select="true">
+      <v-select :value.sync="arr2" :options="fruitOptions" :close-on-select="true">
       </v-select>
+      <h4>下拉出自定义类容</h4>
       <v-select placeholder="选择类别" style="width:200px;">
         <tabs>
           <tab header="系统短信签名"></tab>
@@ -79,7 +80,11 @@
         </tabs>
       </v-select>
       <h4>禁用的下拉框</h4>
-      <v-select :default-value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+      <v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+      </v-select>
+
+      <h4>tags</h4>
+      <v-select tags="true" :options="fruitOptions" :close-on-select="true">
       </v-select>
 
     </div>
@@ -89,7 +94,7 @@
 选中值 : {{single}}
   </pre>
 </p>
-<v-select :default-value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+<v-select :value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -103,7 +108,7 @@
 选中值 : {{multiple.join(', ')}}
   </pre>
 </p>
-<v-select multiple :default-value.sync="multiple">
+<v-select multiple :value.sync="multiple">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -117,7 +122,7 @@
 选中值 : {{multipleLimit.join(', ')}}
   </pre>
 </p>
-<v-select multiple :limit="2" :default-value.sync="multipleLimit">
+<v-select multiple :limit="2" :value.sync="multipleLimit">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -131,7 +136,7 @@
 选中值 : {{custom.join(', ')}}
   </pre>
 </p>
-<v-select multiple :default-value.sync="custom">
+<v-select multiple :value.sync="custom">
   <v-option value="success"><icon type="success" color="green"></icon> 成功</v-option>
   <v-option value="error"><icon type="error" color="red"></icon> 错误</v-option>
   <v-option value="help"><icon type="help"></icon> 帮助</v-option>
@@ -145,17 +150,17 @@
 选中值 : {{arr}}
   </pre>
 </p>
-<v-select :default-value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
+<v-select :value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
 </v-select>
 
 <hr />
 <h4>Automatically close array driven selects</h4>
 <p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
-<v-select :default-value.sync="arr2" :options="fruitOptions" :close-on-select="true">
+<v-select :value.sync="arr2" :options="fruitOptions" :close-on-select="true">
 </v-select>
 
 <h4>禁用的下拉框</h4>
-<v-select :default-value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+<v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
 </v-select>
 </script></code></pre>
 
