@@ -18,7 +18,7 @@
     <button v-show="dismissable" type="button" class="close" @click="show = false">
       <span>&times;</span>
     </button>
-    <icon :type="type"></icon>
+    <icon v-if="showIcon" :type="type"></icon>
     <slot>
       {{content}}
     </slot>
@@ -41,7 +41,7 @@ import Icon from '../Icon'
       showIcon: {
         type: Boolean,
         coerce: coerceBoolean,
-        default: false,
+        default: true,
       },
       show: {
         type: Boolean,
