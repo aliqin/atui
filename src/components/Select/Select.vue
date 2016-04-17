@@ -1,21 +1,22 @@
 <template>
-  <div class="select-container" v-bind:class="{open: show,disabled: disabled}">
-    <div class="select-toggle" tabindex="1" class="dropdown-toggle"
-      @click="toggleDropdown" @input="onInput"
-      v-bind="{disabled: disabled,contenteditable:tags}"
+  <div class="select-container" v-bind:class="{open: show,disabled: disabled,multiple:multiple}">
+    <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" v-bind="{disabled: disabled}"
     >
-      <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
-
-      <span v-if="!multiple" :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
-      <div v-if="multiple">
-        <tag v-for="lable in selectedLabels" closable>{{label}}</tag>
+      <template v-if="!multiple">
+        <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
+        <span class="btn-content">{{ selectedOptions[0].label }}</span>
+        <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
+      </template>
+      <div v-else>
+        <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
+        <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{option.label}}</tag>
+        <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keyup.delete="deleteTag"/>
       </div>
-      <span v-else class="btn-content">{{{ selectedLabels }}}</span>
 
     </div>
     <div v-if="options.length" class="dropdown-menu">
       <div v-if="search" class="option bs-searchbox">
-        <input type="text" placeholder="Search" v-model="searchText" class="form-control" autocomplete="off">
+        <input type="text" placeholder="Search" v-model="searchText" autocomplete="off">
       </div>
       <div class="option" v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
         <a @mousedown.prevent.stop="select(option.label,option.value)" style="cursor:pointer">
@@ -49,7 +50,6 @@
         twoWay: true,
         default:''
       },
-      tags:null,
       placeholder: {
         type: String,
         default: '请选择'
@@ -68,11 +68,6 @@
         type: Number,
         default: 1024
       },
-      closeOnSelect: { // only works when multiple==false
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
-      },
       disabled: {
         type: Boolean,
         coerce: coerceBoolean,
@@ -84,9 +79,6 @@
       Tag
     },
     created() {
-      if(this.tags) {
-        this.multiple = true
-      }
       if (!this.multiple && Array.isArray(this.value)) {
         this.value = this.value.slice(0, 1)
       } else if (this.multiple && this.value.length > this.limit) {
@@ -97,15 +89,15 @@
       return {
         searchText: null,
         show: false,
-        selectedLabels:[],
-        showNotify: false,
-        value:this.multiple ? [] : ''
+        selectedOptions:[],
+        showPlaceholder:true,
+        showNotify: false
       }
     },
     computed: {
-      showPlaceholder() {
-        return this.selectedLabels.length === 0
-      }
+      // showPlaceholder() {
+      //   return this.selectedOptions.length === 0
+      // }
     },
     watch: {
       value(val) {
@@ -126,35 +118,50 @@
           return
         }
         this.show = !this.show
-        if(this.tags) {
+        if(this.multiple) {
           this.showPlaceholder = false
+          this.$els.searchField.focus()
+        }
+      },
+      closeTag(option) {
+        this.selectedOptions.$remove(option)
+      },
+      deleteTag() {
+        let input = event.target
+        let value = input.value
+        if(value.length === 0) {
+          let options = this.selectedOptions
+          let option = options[options.length -1]
+          this.selectedOptions.$remove(option)
         }
       },
       onInput() {
-        console.log(event)
+        let input = event.target
+        let value = input.value
+        let width = value.length * 10
+        input.style.width = (width + 10) + 'px'
       }
     },
     events:{
-      change(label,value) {
+      change(option) {
         if(this.multiple) {
-          if(this.selectedLabels.indexOf(label) === -1) {
-            this.selectedLabels.push(label)
-          }
-        } else {
-          this.selectedLabels = label
-        }
-        if (this.multiple) {
-          if(this.value.indexOf(value) === -1) {
-            this.value.push(value)
+          let isSelected = this.selectedOptions.some((item)=>{
+            return item.value === option.value
+          })
+          if(!isSelected) {
+            this.selectedOptions.push(option)
           } else {
-            this.value.$remove(value)
+            this.selectedOptions = this.selectedOptions.filter((item)=>{
+              return item.value !== option.value
+            })
           }
         } else {
-          this.value = value
+          this.selectedOptions = [option]
+          this.value = option.value
         }
 
-        if (this.closeOnSelect || !this.multiple) {
-          this.toggleDropdown()
+        if (!this.multiple) {
+          this.show = false
         }
       }
     },

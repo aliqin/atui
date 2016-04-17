@@ -9,11 +9,9 @@
 
 
 @dropdown-link-color:            @gray-dark;
-@dropdown-link-hover-color:      #fff;
-@dropdown-link-hover-bg:         @primary-color-hover;
+@dropdown-link-hover-bg:         @primary-list-hover;
 
-@dropdown-link-active-color:     @component-active-color;
-@dropdown-link-active-bg:        @component-active-bg;
+@dropdown-link-active-bg:        @primary-color-hover;
 
 @dropdown-link-disabled-color:   @gray-light;
 
@@ -40,11 +38,17 @@
 
   .iconfont {
     color: #bfbfbf;
+    display: inline-block;
+    transition: all .3s ease;
+    transform:rotate(0deg);
   }
 }
 
+.caret.open .iconfont{
+  transform:rotate(180deg);
+}
+
 // The dropdown wrapper (div)
-.dropup,
 .dropdown {
   position: relative;
   display: inline-block;
@@ -59,18 +63,16 @@
 // The dropdown menu (ul)
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 105%;
   left: 0;
   z-index: @zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
   min-width: 100%;
-  padding: 0;
   margin: 0; // override default ul
   list-style: none;
   font-size: @font-size-base;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
   background-color: @dropdown-bg;
-  border: 1px solid @dropdown-fallback-border; // IE8 fallback
   border: 1px solid @dropdown-border;
   border-radius: 4px;
   box-shadow : 0 6px 12px rgba(0,0,0,.175);
@@ -99,7 +101,11 @@
     font-weight: normal;
     line-height: @line-height-base;
     color: @dropdown-link-color;
-    white-space: nowrap; // prevent links from randomly breaking onto new lines
+    white-space: nowrap;
+  }
+  > .chosen > a{
+    background-color:@dropdown-link-active-bg;
+    color:#fff;
   }
 }
 
@@ -108,7 +114,6 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    color: @dropdown-link-hover-color;
     background-color: @dropdown-link-hover-bg;
   }
 }
@@ -118,7 +123,6 @@
   &,
   &:hover,
   &:focus {
-    color: @dropdown-link-active-color;
     text-decoration: none;
     outline: 0;
     background-color: @dropdown-link-active-bg;
