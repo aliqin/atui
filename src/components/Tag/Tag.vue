@@ -21,10 +21,6 @@
 			href: {
 				type: String
 			},
-			onClose: {
-				type: Function,
-				default: () => {}
-			},
 			size: {
 				type: String,
 				default: "12"
@@ -40,16 +36,16 @@
 		computed: {
 			wrapClasses() {
 				return {
-					'tag':		true,
-					'tag-color': this.color
+					'atui-tag':		true,
+					'atui-tag-color': this.color
 				}
 			}
 		},
 
 		methods: {
 			closeHandler (e) {
-				this.closed = true;				
-				this.onClose.call(this, e)
+				this.closed = true
+				this.$dispatch('close',e)
 			}
 		},
 

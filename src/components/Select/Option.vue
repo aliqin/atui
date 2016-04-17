@@ -1,8 +1,7 @@
 <template>
-  <div :class="{option:true,disabled:disabled}">
+  <div :class="{option:true,disabled:disabled,chosen:chosen}">
     <a @mousedown.prevent.stop="handleClick">
       <span v-el:content><slot></slot></span>
-      <icon type="tick" v-show="chosen"></icon>
     </a>
   </div>
 </template>
@@ -31,12 +30,18 @@
     },
     computed: {
       chosen() {
-        return this.$parent.defaultValue.indexOf(this.value) !== -1
+        return this.$parent.selectedOptions.some((item)=>{
+          return item.value === this.value
+        })
       }
     },
     ready() {
       if(this.chosen) {
-        this.$parent.selectedLabels = [this.$els.content.innerHTML]
+        let option = {
+          label:this.$els.content.innerHTML,
+          value:this.value
+        }
+        this.$parent.selectedOptions.push(option)
       }
     },
     methods: {
@@ -44,7 +49,11 @@
         if(this.disabled) {
           return;
         }
-        this.$dispatch('change',this.$els.content.innerHTML,this.value)
+        let option = {
+          label:this.$els.content.innerHTML,
+          value:this.value
+        }
+        this.$dispatch('change',option)
       }
     }
   }

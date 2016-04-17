@@ -10,30 +10,48 @@
   }
 
   .select-toggle{
-    width:100%;
+    min-width: 100px;
     text-align: left;
     background:#ffffff;
     border:1px solid #d9d9d9;
     border-radius:4px;
     font-size: 12px;
-    padding: 6px 30px 6px 10px;
+    padding-left:10px;
+    height:30px;
+    line-height: 30px;
+    overflow: hidden;
+    > span{
+      display: block;
+    }
 
     &:focus{
       border:1px solid @primary-color;
-      box-shadow:0px 0px 0px 2px @primary-color-hover;
+      box-shadow:0px 0px 0px 2px fade(@primary-color-hover,0.3);
       outline: none;
     }
 
     &.large {
-      padding: 8px 30px 8px 10px;
+      height: 34px;
+      line-height: 34px;
     }
 
     &.small {
-      padding: 2px 30px 2px 10px;
+      height: 28px;
+      line-height: 28px;
     }
+
+    .atui-tag{
+      margin:0 5px;
+    }
+
   }
   .select-placeholder{
     color:#ccc;
+  }
+  .select-search-field{
+    width:.75em;
+    outline: 0;
+    border:none;
   }
 }
 
