@@ -24,9 +24,7 @@
       Icon
     },
     data() {
-      return {
-        chosen: false
-      }
+
     },
     computed: {
       chosen() {
@@ -36,13 +34,14 @@
       }
     },
     ready() {
-      if(this.chosen) {
+      if(this.$parent.value === this.value){
         let option = {
           label:this.$els.content.innerHTML,
           value:this.value
         }
         this.$parent.selectedOptions.push(option)
       }
+
     },
     methods: {
       handleClick() {

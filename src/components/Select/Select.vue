@@ -9,7 +9,7 @@
       </template>
       <div v-else>
         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
-        <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{option.label}}</tag>
+        <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keyup.delete="deleteTag"/>
       </div>
 
@@ -84,6 +84,9 @@
       } else if (this.multiple && this.value.length > this.limit) {
         this.value = this.value.slice(0, this.limit)
       }
+      if(this.value) {
+        this.showPlaceholder = false
+      }
     },
     data() {
       return {
@@ -95,9 +98,7 @@
       }
     },
     computed: {
-      // showPlaceholder() {
-      //   return this.selectedOptions.length === 0
-      // }
+
     },
     watch: {
       value(val) {
@@ -139,21 +140,25 @@
         let input = event.target
         let value = input.value
         let width = value.length * 10
+        this.showPlaceholder = false
         input.style.width = (width + 10) + 'px'
       }
     },
     events:{
       change(option) {
+        this.showPlaceholder = false
         if(this.multiple) {
           let isSelected = this.selectedOptions.some((item)=>{
             return item.value === option.value
           })
           if(!isSelected) {
             this.selectedOptions.push(option)
+            this.value.push(option.value)
           } else {
             this.selectedOptions = this.selectedOptions.filter((item)=>{
               return item.value !== option.value
             })
+            this.value.$remove(option.value)
           }
         } else {
           this.selectedOptions = [option]
