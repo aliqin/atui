@@ -1,24 +1,3 @@
-<style>
-  input.datepicker-input.with-reset-button {
-    padding-right: 25px;
-  }
-
-  div.datepicker > button.close {
-    position: absolute;
-    top: calc(50% - 13px);
-    right: 10px;
-  }
-
-  div.datepicker > button.close {
-    outline: none;
-    z-index: 2;
-  }
-
-  div.datepicker > button.close:focus {
-    opacity: .2;
-  }
-</style>
-
 <template>
   <div class="datepicker">
     <input class="form-control datepicker-input" :class="{'with-reset-button': showResetButton}" type="text"
