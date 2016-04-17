@@ -46,19 +46,19 @@
 
 	'use strict';
 	
-	var _toConsumableArray2 = __webpack_require__(81);
+	var _toConsumableArray2 = __webpack_require__(82);
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _headerDocs = __webpack_require__(119);
+	var _headerDocs = __webpack_require__(120);
 	
 	var _headerDocs2 = _interopRequireDefault(_headerDocs);
 	
-	var _gettingStarted = __webpack_require__(124);
+	var _gettingStarted = __webpack_require__(125);
 	
 	var _gettingStarted2 = _interopRequireDefault(_gettingStarted);
 	
-	var _gridDocs = __webpack_require__(126);
+	var _gridDocs = __webpack_require__(127);
 	
 	var _gridDocs2 = _interopRequireDefault(_gridDocs);
 	
@@ -130,7 +130,7 @@
 	
 	var _carouselDocs2 = _interopRequireDefault(_carouselDocs);
 	
-	var _Affix = __webpack_require__(253);
+	var _Affix = __webpack_require__(257);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
@@ -430,14 +430,15 @@
 /* 78 */,
 /* 79 */,
 /* 80 */,
-/* 81 */
+/* 81 */,
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _from = __webpack_require__(82);
+	var _from = __webpack_require__(83);
 	
 	var _from2 = _interopRequireDefault(_from);
 	
@@ -456,28 +457,28 @@
 	};
 
 /***/ },
-/* 82 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(83), __esModule: true };
-
-/***/ },
 /* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(84);
-	__webpack_require__(108);
-	module.exports = __webpack_require__(92).Array.from;
+	module.exports = { "default": __webpack_require__(84), __esModule: true };
 
 /***/ },
 /* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(85);
+	__webpack_require__(109);
+	module.exports = __webpack_require__(93).Array.from;
+
+/***/ },
+/* 85 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
-	var $at  = __webpack_require__(85)(true);
+	var $at  = __webpack_require__(86)(true);
 	
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(88)(String, 'String', function(iterated){
+	__webpack_require__(89)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -492,11 +493,11 @@
 	});
 
 /***/ },
-/* 85 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(86)
-	  , defined   = __webpack_require__(87);
+	var toInteger = __webpack_require__(87)
+	  , defined   = __webpack_require__(88);
 	// true  -> String#at
 	// false -> String#codePointAt
 	module.exports = function(TO_STRING){
@@ -514,7 +515,7 @@
 	};
 
 /***/ },
-/* 86 */
+/* 87 */
 /***/ function(module, exports) {
 
 	// 7.1.4 ToInteger
@@ -525,7 +526,7 @@
 	};
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -535,20 +536,20 @@
 	};
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY        = __webpack_require__(89)
-	  , $export        = __webpack_require__(90)
-	  , redefine       = __webpack_require__(95)
-	  , hide           = __webpack_require__(96)
-	  , has            = __webpack_require__(101)
-	  , Iterators      = __webpack_require__(102)
-	  , $iterCreate    = __webpack_require__(103)
-	  , setToStringTag = __webpack_require__(104)
-	  , getProto       = __webpack_require__(97).getProto
-	  , ITERATOR       = __webpack_require__(105)('iterator')
+	var LIBRARY        = __webpack_require__(90)
+	  , $export        = __webpack_require__(91)
+	  , redefine       = __webpack_require__(96)
+	  , hide           = __webpack_require__(97)
+	  , has            = __webpack_require__(102)
+	  , Iterators      = __webpack_require__(103)
+	  , $iterCreate    = __webpack_require__(104)
+	  , setToStringTag = __webpack_require__(105)
+	  , getProto       = __webpack_require__(98).getProto
+	  , ITERATOR       = __webpack_require__(106)('iterator')
 	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
@@ -606,18 +607,18 @@
 	};
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports) {
 
 	module.exports = true;
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(91)
-	  , core      = __webpack_require__(92)
-	  , ctx       = __webpack_require__(93)
+	var global    = __webpack_require__(92)
+	  , core      = __webpack_require__(93)
+	  , ctx       = __webpack_require__(94)
 	  , PROTOTYPE = 'prototype';
 	
 	var $export = function(type, name, source){
@@ -663,7 +664,7 @@
 	module.exports = $export;
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -672,18 +673,18 @@
 	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '1.2.6'};
 	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(94);
+	var aFunction = __webpack_require__(95);
 	module.exports = function(fn, that, length){
 	  aFunction(fn);
 	  if(that === undefined)return fn;
@@ -704,7 +705,7 @@
 	};
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -713,18 +714,18 @@
 	};
 
 /***/ },
-/* 95 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(96);
-
-/***/ },
 /* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $          = __webpack_require__(97)
-	  , createDesc = __webpack_require__(98);
-	module.exports = __webpack_require__(99) ? function(object, key, value){
+	module.exports = __webpack_require__(97);
+
+/***/ },
+/* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $          = __webpack_require__(98)
+	  , createDesc = __webpack_require__(99);
+	module.exports = __webpack_require__(100) ? function(object, key, value){
 	  return $.setDesc(object, key, createDesc(1, value));
 	} : function(object, key, value){
 	  object[key] = value;
@@ -732,7 +733,7 @@
 	};
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports) {
 
 	var $Object = Object;
@@ -750,7 +751,7 @@
 	};
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports) {
 
 	module.exports = function(bitmap, value){
@@ -763,16 +764,16 @@
 	};
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Thank's IE8 for his funny defineProperty
-	module.exports = !__webpack_require__(100)(function(){
+	module.exports = !__webpack_require__(101)(function(){
 	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
 	});
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -784,7 +785,7 @@
 	};
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -793,23 +794,23 @@
 	};
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports) {
 
 	module.exports = {};
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $              = __webpack_require__(97)
-	  , descriptor     = __webpack_require__(98)
-	  , setToStringTag = __webpack_require__(104)
+	var $              = __webpack_require__(98)
+	  , descriptor     = __webpack_require__(99)
+	  , setToStringTag = __webpack_require__(105)
 	  , IteratorPrototype = {};
 	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(96)(IteratorPrototype, __webpack_require__(105)('iterator'), function(){ return this; });
+	__webpack_require__(97)(IteratorPrototype, __webpack_require__(106)('iterator'), function(){ return this; });
 	
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = $.create(IteratorPrototype, {next: descriptor(1, next)});
@@ -817,34 +818,34 @@
 	};
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var def = __webpack_require__(97).setDesc
-	  , has = __webpack_require__(101)
-	  , TAG = __webpack_require__(105)('toStringTag');
+	var def = __webpack_require__(98).setDesc
+	  , has = __webpack_require__(102)
+	  , TAG = __webpack_require__(106)('toStringTag');
 	
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
 
 /***/ },
-/* 105 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var store  = __webpack_require__(106)('wks')
-	  , uid    = __webpack_require__(107)
-	  , Symbol = __webpack_require__(91).Symbol;
+	var store  = __webpack_require__(107)('wks')
+	  , uid    = __webpack_require__(108)
+	  , Symbol = __webpack_require__(92).Symbol;
 	module.exports = function(name){
 	  return store[name] || (store[name] =
 	    Symbol && Symbol[name] || (Symbol || uid)('Symbol.' + name));
 	};
 
 /***/ },
-/* 106 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global = __webpack_require__(91)
+	var global = __webpack_require__(92)
 	  , SHARED = '__core-js_shared__'
 	  , store  = global[SHARED] || (global[SHARED] = {});
 	module.exports = function(key){
@@ -852,7 +853,7 @@
 	};
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports) {
 
 	var id = 0
@@ -862,18 +863,18 @@
 	};
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ctx         = __webpack_require__(93)
-	  , $export     = __webpack_require__(90)
-	  , toObject    = __webpack_require__(109)
-	  , call        = __webpack_require__(110)
-	  , isArrayIter = __webpack_require__(113)
-	  , toLength    = __webpack_require__(114)
-	  , getIterFn   = __webpack_require__(115);
-	$export($export.S + $export.F * !__webpack_require__(118)(function(iter){ Array.from(iter); }), 'Array', {
+	var ctx         = __webpack_require__(94)
+	  , $export     = __webpack_require__(91)
+	  , toObject    = __webpack_require__(110)
+	  , call        = __webpack_require__(111)
+	  , isArrayIter = __webpack_require__(114)
+	  , toLength    = __webpack_require__(115)
+	  , getIterFn   = __webpack_require__(116);
+	$export($export.S + $export.F * !__webpack_require__(119)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -904,21 +905,21 @@
 
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(87);
+	var defined = __webpack_require__(88);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
-/* 110 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
-	var anObject = __webpack_require__(111);
+	var anObject = __webpack_require__(112);
 	module.exports = function(iterator, fn, value, entries){
 	  try {
 	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -931,17 +932,17 @@
 	};
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(112);
+	var isObject = __webpack_require__(113);
 	module.exports = function(it){
 	  if(!isObject(it))throw TypeError(it + ' is not an object!');
 	  return it;
 	};
 
 /***/ },
-/* 112 */
+/* 113 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -949,12 +950,12 @@
 	};
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
-	var Iterators  = __webpack_require__(102)
-	  , ITERATOR   = __webpack_require__(105)('iterator')
+	var Iterators  = __webpack_require__(103)
+	  , ITERATOR   = __webpack_require__(106)('iterator')
 	  , ArrayProto = Array.prototype;
 	
 	module.exports = function(it){
@@ -962,36 +963,36 @@
 	};
 
 /***/ },
-/* 114 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(86)
+	var toInteger = __webpack_require__(87)
 	  , min       = Math.min;
 	module.exports = function(it){
 	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 	};
 
 /***/ },
-/* 115 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(116)
-	  , ITERATOR  = __webpack_require__(105)('iterator')
-	  , Iterators = __webpack_require__(102);
-	module.exports = __webpack_require__(92).getIteratorMethod = function(it){
+	var classof   = __webpack_require__(117)
+	  , ITERATOR  = __webpack_require__(106)('iterator')
+	  , Iterators = __webpack_require__(103);
+	module.exports = __webpack_require__(93).getIteratorMethod = function(it){
 	  if(it != undefined)return it[ITERATOR]
 	    || it['@@iterator']
 	    || Iterators[classof(it)];
 	};
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
-	var cof = __webpack_require__(117)
-	  , TAG = __webpack_require__(105)('toStringTag')
+	var cof = __webpack_require__(118)
+	  , TAG = __webpack_require__(106)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
 	
@@ -1007,7 +1008,7 @@
 	};
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -1017,10 +1018,10 @@
 	};
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ITERATOR     = __webpack_require__(105)('iterator')
+	var ITERATOR     = __webpack_require__(106)('iterator')
 	  , SAFE_CLOSING = false;
 	
 	try {
@@ -1043,17 +1044,17 @@
 	};
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(120)
-	__vue_script__ = __webpack_require__(122)
+	__webpack_require__(121)
+	__vue_script__ = __webpack_require__(123)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/headerDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(123)
+	__vue_template__ = __webpack_require__(124)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1062,13 +1063,13 @@
 
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports) {
 
 	/*
@@ -1124,7 +1125,7 @@
 
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1230,17 +1231,17 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<header class=\"navbar navbar-top bs-docs-nav\" id=\"top\" role=\"banner\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button class=\"navbar-toggle collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#bs-navbar\" aria-controls=\"bs-navbar\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a href=\"\" class=\"navbar-brand\">VueComponent</a>\n    </div>\n    <nav id=\"bs-navbar\" class=\"collapse navbar-collapse\">\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"http://gitlab.alibaba-inc.com/aliqin/vue-component/\">\n          <span class=\"icon-github-circled\"></span>\n          GitLab\n        </a></li>\n        <li><a href=\"http://ued.aliqin.alibaba.net/webcompon/\" target=\"_blank\">\n          <span class=\"icon-github-circled\"></span>\n          视觉稿\n        </a></li>\n      </ul>\n    </nav>\n  </div>\n</header>\n<ul class=\"themes\" id=\"J_header\">\n  <li v-for=\"theme in themes\" :class=\"{active:theme.active}\" :style=\"{backgroundColor:theme.color}\" @click=\"changeTheme(theme.csslink,$event)\">\n  </li>\n</ul>\n";
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(125)
+	__vue_template__ = __webpack_require__(126)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1249,18 +1250,18 @@
 
 
 /***/ },
-/* 125 */
+/* 126 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"getting-started\">\n\n    <h2>安装方法：CommonJS</h2>\n    <pre><code class=\"language-javascript\">\n$ tnpm install @ali/vue-component --save-dev\n\n// css引入 alidayu or alitx or tmallwt\nimport '@ali/vue-component/dist/alidayu.css'\n\n// 或less引入\nimport '@ali/vue-component/style/themes/alidayu.less'\n\n// 引入组件\nimport { Alert } from '@ali/vue-component'\n\n// 如果没有使用rollup或webpak2.0，整个组件JS都会打包进去，使用如下方式可按需打包\nimport Alert from '@ali/vue-component/src/components/Alert'\n\nnew Vue({\n  components: {\n    Alert\n  }\n})\n    </code></pre>\n    <h3>浏览器引用</h3>\n    <pre><code class=\"language-markup\">\n&lt;script src=&quot;path/to/vue.js&quot;&gt;&lt;/script&gt;\n&lt;script src=&quot;path/to/vue-component.js&quot;&gt;&lt;/script&gt;\n&lt;script&gt;\n  var alert = VueComponent.alert\n&lt;/script&gt;\n    </code></pre>\n  </div>\n";
 
 /***/ },
-/* 126 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(127)
-	__vue_script__ = __webpack_require__(130)
+	__webpack_require__(128)
+	__vue_script__ = __webpack_require__(131)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
@@ -1274,16 +1275,16 @@
 
 
 /***/ },
-/* 127 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(128);
+	var content = __webpack_require__(129);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1300,10 +1301,10 @@
 	}
 
 /***/ },
-/* 128 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -1314,7 +1315,7 @@
 
 
 /***/ },
-/* 129 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -1536,7 +1537,7 @@
 
 
 /***/ },
-/* 130 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1545,7 +1546,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var vRow = _src.Layout.Row; // <template>
 	//   <div class="bs-docs-section" id="grid">
@@ -1687,96 +1688,96 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 131 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Form = __webpack_require__(136);
+	var _Form = __webpack_require__(137);
 	
 	var _Form2 = _interopRequireDefault(_Form);
 	
-	var _Layout = __webpack_require__(144);
+	var _Layout = __webpack_require__(145);
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
-	var _Button = __webpack_require__(152);
+	var _Button = __webpack_require__(153);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _Input = __webpack_require__(156);
+	var _Input = __webpack_require__(157);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Searchbox = __webpack_require__(160);
+	var _Searchbox = __webpack_require__(161);
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 	
-	var _Uploader = __webpack_require__(165);
+	var _Uploader = __webpack_require__(166);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 	
-	var _Switch = __webpack_require__(170);
+	var _Switch = __webpack_require__(171);
 	
 	var _Switch2 = _interopRequireDefault(_Switch);
 	
-	var _Dropdown = __webpack_require__(174);
+	var _Dropdown = __webpack_require__(175);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Select = __webpack_require__(179);
+	var _Select = __webpack_require__(180);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _DatePicker = __webpack_require__(190);
+	var _DatePicker = __webpack_require__(195);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
-	var _Typeahead = __webpack_require__(198);
+	var _Typeahead = __webpack_require__(202);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
-	var _Cascader = __webpack_require__(204);
+	var _Cascader = __webpack_require__(208);
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 	
-	var _Message = __webpack_require__(209);
+	var _Message = __webpack_require__(213);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
-	var _Modal = __webpack_require__(216);
+	var _Modal = __webpack_require__(220);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Table = __webpack_require__(227);
+	var _Table = __webpack_require__(231);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 	
-	var _Badge = __webpack_require__(240);
+	var _Badge = __webpack_require__(244);
 	
 	var _Badge2 = _interopRequireDefault(_Badge);
 	
-	var _Carousel = __webpack_require__(244);
+	var _Carousel = __webpack_require__(248);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Affix = __webpack_require__(253);
+	var _Affix = __webpack_require__(257);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _Spin = __webpack_require__(235);
+	var _Spin = __webpack_require__(239);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 	
-	var _Textarea = __webpack_require__(258);
+	var _Textarea = __webpack_require__(262);
 	
 	var _Textarea2 = _interopRequireDefault(_Textarea);
 	
-	var _Tag = __webpack_require__(262);
+	var _Tag = __webpack_require__(185);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
@@ -1878,7 +1879,7 @@
 	module.exports = VueComponent;
 
 /***/ },
-/* 132 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1887,7 +1888,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(133);
+	var _Icon = __webpack_require__(134);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -1896,16 +1897,16 @@
 	exports.default = _Icon2.default;
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(134)
+	__vue_script__ = __webpack_require__(135)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Icon/Icon.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(135)
+	__vue_template__ = __webpack_require__(136)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1914,7 +1915,7 @@
 
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1950,13 +1951,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<i :class=\"['iconfont','icon-' + type]\" :style=\"{ fontSize: size + 'px',color:color }\">\n  <slot></slot>\n</i>\n";
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1965,11 +1966,11 @@
 	  value: true
 	});
 	
-	var _Form = __webpack_require__(137);
+	var _Form = __webpack_require__(138);
 	
 	var _Form2 = _interopRequireDefault(_Form);
 	
-	var _FormItem = __webpack_require__(142);
+	var _FormItem = __webpack_require__(143);
 	
 	var _FormItem2 = _interopRequireDefault(_FormItem);
 	
@@ -1980,17 +1981,17 @@
 	exports.default = _Form2.default;
 
 /***/ },
-/* 137 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(138)
-	__vue_script__ = __webpack_require__(140)
+	__webpack_require__(139)
+	__vue_script__ = __webpack_require__(141)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Form/Form.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(141)
+	__vue_template__ = __webpack_require__(142)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1999,16 +2000,16 @@
 
 
 /***/ },
-/* 138 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(139);
+	var content = __webpack_require__(140);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2025,10 +2026,10 @@
 	}
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -2039,7 +2040,7 @@
 
 
 /***/ },
-/* 140 */
+/* 141 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2079,22 +2080,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 141 */
+/* 142 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<form class=\"form\" :class=\"classObj\" @submit=\"{{submit}}\">\n  <slot></slot>\n</form>\n";
 
 /***/ },
-/* 142 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(143)
+	__vue_script__ = __webpack_require__(144)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Form/FormItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(151)
+	__vue_template__ = __webpack_require__(152)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2103,7 +2104,7 @@
 
 
 /***/ },
-/* 143 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2112,11 +2113,11 @@
 	  value: true
 	});
 	
-	var _Layout = __webpack_require__(144);
+	var _Layout = __webpack_require__(145);
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -2211,7 +2212,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 144 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2220,11 +2221,11 @@
 	  value: true
 	});
 	
-	var _Row = __webpack_require__(145);
+	var _Row = __webpack_require__(146);
 	
 	var _Row2 = _interopRequireDefault(_Row);
 	
-	var _Col = __webpack_require__(148);
+	var _Col = __webpack_require__(149);
 	
 	var _Col2 = _interopRequireDefault(_Col);
 	
@@ -2233,16 +2234,16 @@
 	exports.default = { Row: _Row2.default, Col: _Col2.default };
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(146)
+	__vue_script__ = __webpack_require__(147)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Layout/Row.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(147)
+	__vue_template__ = __webpack_require__(148)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2251,7 +2252,7 @@
 
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2274,22 +2275,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"row\"><slot></slot></div>\n";
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(149)
+	__vue_script__ = __webpack_require__(150)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Layout/Col.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(150)
+	__vue_template__ = __webpack_require__(151)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2298,7 +2299,7 @@
 
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2332,19 +2333,19 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"className\"><slot></slot></div>\n";
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"form-item\" :class=\"classObj\">\n  <v-col :span=\"labelCol\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</div>\n";
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2353,7 +2354,7 @@
 	  value: true
 	});
 	
-	var _Button = __webpack_require__(153);
+	var _Button = __webpack_require__(154);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 
@@ -2362,16 +2363,16 @@
 	exports.default = _Button2.default;
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(154)
+	__vue_script__ = __webpack_require__(155)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Button/Button.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(155)
+	__vue_template__ = __webpack_require__(156)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2380,7 +2381,7 @@
 
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2430,13 +2431,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<button type=\"{{type}}\" class=\"btn\" :class=\"btnClassObj\">\n  <slot>{{value}}</slot>\n</button>\n";
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2445,7 +2446,7 @@
 	  value: true
 	});
 	
-	var _Input = __webpack_require__(157);
+	var _Input = __webpack_require__(158);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -2454,16 +2455,16 @@
 	exports.default = _Input2.default;
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(158)
+	__vue_script__ = __webpack_require__(159)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Input/Input.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(159)
+	__vue_template__ = __webpack_require__(160)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2472,7 +2473,7 @@
 
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2522,13 +2523,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<input type=\"{{type}}\" class=\"input\" :class=\"classObj\" placeholder=\"{{placeholder}}\" v-model=\"value\" />\n";
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2537,7 +2538,7 @@
 	  value: true
 	});
 	
-	var _Searchbox = __webpack_require__(161);
+	var _Searchbox = __webpack_require__(162);
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 
@@ -2546,16 +2547,16 @@
 	exports.default = _Searchbox2.default;
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(162)
+	__vue_script__ = __webpack_require__(163)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Searchbox/Searchbox.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(164)
+	__vue_template__ = __webpack_require__(165)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2564,7 +2565,7 @@
 
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2573,11 +2574,11 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _EventListener = __webpack_require__(163);
+	var _EventListener = __webpack_require__(164);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -2686,7 +2687,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2726,13 +2727,13 @@
 	exports.default = EventListener;
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"search-box\">\n  <input type=\"text\" class=\"input\" :class=\"classObj\" placeholder=\"{{placeholder}}\" v-model=\"value\" @focus=\"focusInput\" debounce=\"500\" />\n  <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n  <div v-if=\"searchList && searchList.length > 0\" class=\"search-list-containter\">\n    <ul class=\"list-dropdown\" v-show=\"showPop\">\n      <li v-for=\"item in searchList | filterBy value\">\n        <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" title=\"{{item[textField]}}\">{{item[textField]}}</a>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2741,7 +2742,7 @@
 	  value: true
 	});
 	
-	var _Uploader = __webpack_require__(166);
+	var _Uploader = __webpack_require__(167);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 
@@ -2750,17 +2751,17 @@
 	exports.default = _Uploader2.default;
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(167)
-	__vue_script__ = __webpack_require__(168)
+	__webpack_require__(168)
+	__vue_script__ = __webpack_require__(169)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Uploader/Uploader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(169)
+	__vue_template__ = __webpack_require__(170)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2769,13 +2770,13 @@
 
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3329,13 +3330,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"file-upload\">\n  <div class=\"click-upload\" v-if=\"uploadType == 'click'\">\n    <div>\n      <input\n        type=\"file\"\n        name=\"files[]\"\n        id=\"{{id}}\"\n        accept=\"accept\"\n        v-bind:multiple=\"multiple\"\n        v-on:change=\"onChange($event)\" />\n      <label for=\"{{id}}\">\n        <span class=\"btn tertiary small\">点击上传</span>\n      </label>\n    </div>\n    <div class=\"select-files\" v-if=\"fileList.length > 0\">\n      <a class=\"file-item\" href=\"javascript:;\" v-for=\"file in selectFiles\">\n        <span>{{file}}</span>\n      </a>\n    </div>\n    <button type=\"submit\" class=\"btn\" v-if=\"!hideButton && !autoSubmit\" v-on:click.prevent=\"submitForm($event)\">Upload</button>\n    <div class=\"state\">\n      <div class=\"upload-rate\" v-show=\"state == 'uploading'\">\n        <span class=\"rate-control\">\n          <span class=\"rate\" :style=\"{'width': +progress * 0.9 + 'px'}\"></span>\n          <span class=\"rate-tip\">\n            {{text.uploading}}\n            <span v-if=\"advancedUpload\">{{progress}}</span>\n          </span>\n        </span>\n        <a class=\"cancel-upload\" href=\"javascript:;\">取消</a>\n      </div>\n      <div class=\"upload-rate\" v-show=\"state == 'success'\">\n        <span class=\"rate-control\">\n          <span class=\"rate\" :style=\"{'width': '90px'}\"></span>\n          <span class=\"rate-tip\">上传成功</span>\n        </span>\n        <a class=\"continu-upload\" @click.prevent=\"restart\" href=\"javascript:;\">继续上传？</a>\n      </div>\n      <div class=\"upload-rate\" v-show=\"state == 'error'\">\n        <span>出错了！{{errorMessage}}</span>\n        <a class=\"continu-upload\" @click.prevent=\"retry\" href=\"javascript:;\">请重试</a>\n      </div>\n    </div>\n  </div>\n  <div v-if=\"uploadType == 'drag'\" class=\"drag-upload {{advancedUpload ? 'active' : ''}} {{dragover ? 'is-dragover' : ''}}\">\n      <div v-if=\"state == null || state == 'retry'\">\n        <input\n            type=\"file\"\n            name=\"files[]\"\n            id=\"{{id}}\"\n            accept=\"accept\"\n            v-bind:multiple=\"multiple && advancedUpload\"\n            v-on:change=\"onChange($event)\" />\n        <label for=\"{{id}}\">\n          <span v-if=\"fileList.length == 0 && advancedUpload\">将文件拖拽至框中上传或点此上传</span>\n          <p v-if=\"fileList.length > 0\" v-for=\"file in selectFiles\">{{file}}</p>\n        </label>\n        <br>\n        <button type=\"submit\" class=\"btn\" v-if=\"!hideButton && !autoSubmit\" v-on:click.prevent=\"submitForm($event)\">Upload</button>\n      </div>\n      <div class=\"state\" v-if=\"state != null\">\n        <span class=\"state-uploading animate\" v-show=\"state == 'uploading'\">\n          {{text.uploading}}\n          <span v-if=\"advancedUpload\">{{progress}}</span>\n        </span>\n        <span class=\"state-success animate\" v-show=\"state == 'success'\">\n          上传成功\n          <a href=\"#\" v-on:click.prevent=\"restart\" role=\"button\" v-show=\"multiple\">继续上传?</a>\n        </span>\n        <span class=\"state-error animate\" v-show=\"state == 'error'\">\n          出错了!\n          <span>{{errorMessage}}</span>\n          <a href=\"#\" v-on:click.prevent=\"retry\">请重试</a>\n        </span>\n      </div>\n  </div>\n</div>\n\n";
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3344,7 +3345,7 @@
 	  value: true
 	});
 	
-	var _Switch = __webpack_require__(171);
+	var _Switch = __webpack_require__(172);
 	
 	var _Switch2 = _interopRequireDefault(_Switch);
 
@@ -3353,16 +3354,16 @@
 	exports.default = _Switch2.default;
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(172)
+	__vue_script__ = __webpack_require__(173)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Switch/Switch.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(173)
+	__vue_template__ = __webpack_require__(174)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -3371,7 +3372,7 @@
 
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3436,13 +3437,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <span :class=\"wrapClasses\" @click=\"changeHandler\" :style=\"{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}\">\n\t\t<span class=\"switch-content\">\n\t\t\t<slot v-if=\"checked && !small\" name=\"checkedPart\"></slot>\n\t\t\t<slot v-if=\"!checked && !small\" name=\"unCheckedPart\"></slot>\n\t\t</span>\n\t</span>\n";
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3451,7 +3452,7 @@
 	  value: true
 	});
 	
-	var _Dropdown = __webpack_require__(175);
+	var _Dropdown = __webpack_require__(176);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
@@ -3460,16 +3461,16 @@
 	exports.default = _Dropdown2.default;
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(176)
+	__vue_script__ = __webpack_require__(177)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Dropdown/Dropdown.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(178)
+	__vue_template__ = __webpack_require__(179)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -3478,7 +3479,7 @@
 
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3487,11 +3488,11 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(163);
+	var _EventListener = __webpack_require__(164);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -3560,7 +3561,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3576,13 +3577,13 @@
 	};
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"{dropdown:true,open:open}\">\n  <slot></slot>\n  <div style=\"padding-top:3px;\">\n    <slot name=\"dropdown-menu\"></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3591,11 +3592,11 @@
 	  value: true
 	});
 	
-	var _Select = __webpack_require__(180);
+	var _Select = __webpack_require__(181);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Option = __webpack_require__(185);
+	var _Option = __webpack_require__(190);
 	
 	var _Option2 = _interopRequireDefault(_Option);
 	
@@ -3606,17 +3607,17 @@
 	exports.default = _Select2.default;
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(181)
-	__vue_script__ = __webpack_require__(183)
+	__webpack_require__(182)
+	__vue_script__ = __webpack_require__(184)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Select/Select.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(184)
+	__vue_template__ = __webpack_require__(189)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -3625,16 +3626,16 @@
 
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(182);
+	var content = __webpack_require__(183);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -3651,10 +3652,10 @@
 	}
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -3665,7 +3666,7 @@
 
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3674,27 +3675,39 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _EventListener = __webpack_require__(164);
+	
+	var _EventListener2 = _interopRequireDefault(_EventListener);
+	
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
+	
+	var _Tag = __webpack_require__(185);
+	
+	var _Tag2 = _interopRequireDefault(_Tag);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
 	//   <div class="select-container" v-bind:class="{open: show,disabled: disabled}">
-	//     <button v-el:btn type="button" class="dropdown-toggle"
-	//       @click="toggleDropdown"
-	//       @blur="show = (search ? show : false)"
-	//       v-bind="{disabled: disabled}"
+	//     <div class="select-toggle" tabindex="1" class="dropdown-toggle"
+	//       @click="toggleDropdown" @input="onInput"
+	//       v-bind="{disabled: disabled,contenteditable:tags}"
 	//     >
-	//       <span class="btn-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
-	//       <span class="btn-content">{{{ selectedLabels }}}</span>
-	//       <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
-	//     </button>
+	//       <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
+	//
+	//       <span v-if="!multiple" :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
+	//       <div v-if="multiple">
+	//         <tag v-for="lable in selectedLabels" closable>{{label}}</tag>
+	//       </div>
+	//       <span v-else class="btn-content">{{{ selectedLabels }}}</span>
+	//
+	//     </div>
 	//     <div v-if="options.length" class="dropdown-menu">
 	//       <div v-if="search" class="option bs-searchbox">
 	//         <input type="text" placeholder="Search" v-model="searchText" class="form-control" autocomplete="off">
@@ -3723,10 +3736,11 @@
 	    width: {
 	      type: Array
 	    },
-	    defaultValue: {
+	    value: {
 	      twoWay: true,
 	      default: ''
 	    },
+	    tags: null,
 	    placeholder: {
 	      type: String,
 	      default: '请选择'
@@ -3757,13 +3771,17 @@
 	    }
 	  },
 	  components: {
-	    Icon: _Icon2.default
+	    Icon: _Icon2.default,
+	    Tag: _Tag2.default
 	  },
 	  created: function created() {
-	    if (!this.multiple && Array.isArray(this.defaultValue)) {
-	      this.defaultValue = this.defaultValue.slice(0, 1);
-	    } else if (this.multiple && this.defaultValue.length > this.limit) {
-	      this.defaultValue = this.defaultValue.slice(0, this.limit);
+	    if (this.tags) {
+	      this.multiple = true;
+	    }
+	    if (!this.multiple && Array.isArray(this.value)) {
+	      this.value = this.value.slice(0, 1);
+	    } else if (this.multiple && this.value.length > this.limit) {
+	      this.value = this.value.slice(0, this.limit);
 	    }
 	  },
 	  data: function data() {
@@ -3782,12 +3800,12 @@
 	    }
 	  },
 	  watch: {
-	    defaultValue: function defaultValue(val) {
+	    value: function value(val) {
 	      var _this = this;
 	
 	      if (this.multiple && val.length > this.limit) {
 	        this.showNotify = true;
-	        this.defaultValue.pop();
+	        this.value.pop();
 	        setTimeout(function () {
 	          return _this.showNotify = false;
 	        }, 1000);
@@ -3799,7 +3817,17 @@
 	      this.$emit('change', label, value);
 	    },
 	    toggleDropdown: function toggleDropdown() {
+	      if (this.disabled) {
+	        this.show = false;
+	        return;
+	      }
 	      this.show = !this.show;
+	      if (this.tags) {
+	        this.showPlaceholder = false;
+	      }
+	    },
+	    onInput: function onInput() {
+	      console.log(event);
 	    }
 	  },
 	  events: {
@@ -3812,19 +3840,30 @@
 	        this.selectedLabels = label;
 	      }
 	      if (this.multiple) {
-	        if (this.defaultValue.indexOf(value) === -1) {
-	          this.defaultValue.push(value);
+	        if (this.value.indexOf(value) === -1) {
+	          this.value.push(value);
 	        } else {
-	          this.defaultValue.$remove(value);
+	          this.value.$remove(value);
 	        }
 	      } else {
-	        this.defaultValue = value;
+	        this.value = value;
 	      }
 	
 	      if (this.closeOnSelect || !this.multiple) {
 	        this.toggleDropdown();
 	      }
 	    }
+	  },
+	  ready: function ready() {
+	    var me = this;
+	    me._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
+	      if (!me.$el.contains(e.target)) {
+	        me.show = false;
+	      }
+	    });
+	  },
+	  beforeDestroy: function beforeDestroy() {
+	    if (this._closeEvent) this._closeEvent.remove();
 	  }
 	};
 	// </script>
@@ -3843,23 +3882,34 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 184 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled}\" _v-f750b48a=\"\">\n  <button v-el:btn=\"\" type=\"button\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" @blur=\"show = (search ? show : false)\" v-bind=\"{disabled: disabled}\" _v-f750b48a=\"\">\n    <span class=\"btn-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n    <span class=\"btn-content\" _v-f750b48a=\"\">{{{ selectedLabels }}}</span>\n    <span :class=\"{caret:true,open:show}\" _v-f750b48a=\"\"><icon type=\"down\" size=\"12\" _v-f750b48a=\"\"></icon></span>\n  </button>\n  <div v-if=\"options.length\" class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <div v-if=\"search\" class=\"option bs-searchbox\" _v-f750b48a=\"\">\n      <input type=\"text\" placeholder=\"Search\" v-model=\"searchText\" class=\"form-control\" autocomplete=\"off\" _v-f750b48a=\"\">\n    </div>\n    <div class=\"option\" v-for=\"option in options | filterBy searchText \" v-bind:id=\"option.value\" style=\"position:relative\" _v-f750b48a=\"\">\n      <a @mousedown.prevent.stop=\"select(option.label,option.value)\" style=\"cursor:pointer\" _v-f750b48a=\"\">\n        {{ option.label }}\n        <icon type=\"tick\" v-show=\"value.indexOf(option.value) !== -1\" _v-f750b48a=\"\"></icon>\n      </a>\n    </div>\n  </div>\n  <div v-else=\"\" class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <slot _v-f750b48a=\"\"></slot>\n  </div>\n  <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\" _v-f750b48a=\"\">最多可选 ({{limit}})项.</div>\n\n</div>\n";
-
-/***/ },
 /* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Tag = __webpack_require__(186);
+	
+	var _Tag2 = _interopRequireDefault(_Tag);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Tag2.default;
+
+/***/ },
+/* 186 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __vue_script__, __vue_template__
-	__webpack_require__(186)
-	__vue_script__ = __webpack_require__(188)
+	__vue_script__ = __webpack_require__(187)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Select/Option.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(189)
+	  console.warn("[vue-loader] src/components/Tag/Tag.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(188)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -3868,16 +3918,131 @@
 
 
 /***/ },
-/* 186 */
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _Icon = __webpack_require__(133);
+	
+	var _Icon2 = _interopRequireDefault(_Icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+		props: {
+			color: {
+				type: String
+			},
+			closable: {
+				type: Boolean,
+				default: false
+			},
+			href: {
+				type: String
+			},
+			onClose: {
+				type: Function,
+				default: function _default() {}
+			},
+			size: {
+				type: String,
+				default: "12"
+			}
+		},
+	
+		data: function data() {
+			return {
+				closed: false
+			};
+		},
+	
+	
+		computed: {
+			wrapClasses: function wrapClasses() {
+				return {
+					'tag': true,
+					'tag-color': this.color
+				};
+			}
+		},
+	
+		methods: {
+			closeHandler: function closeHandler(e) {
+				this.closed = true;
+				this.onClose.call(this, e);
+			}
+		},
+	
+		components: {
+			vIcon: _Icon2.default
+		},
+	
+		ready: function ready() {}
+	};
+	// </script>
+	//
+	//
+	//
+
+	/* generated by vue-loader */
+	// <template>
+	// 	<div v-if="!closed" :class="wrapClasses" :style="{'background-color': color}">
+	// 		<a :href="href" class="tag-text" :style="{'fontSize': size+'px'}"><slot></slot></a>
+	// 		<span v-if="closable" class="tag-close" @click="closeHandler">
+	// 			<v-icon type="close" :size="size"></v-icon>
+	// 		</span>
+	// 	</div>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 188 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div v-if=\"!closed\" :class=\"wrapClasses\" :style=\"{'background-color': color}\">\n\t<a :href=\"href\" class=\"tag-text\" :style=\"{'fontSize': size+'px'}\"><slot></slot></a>\n\t<span v-if=\"closable\" class=\"tag-close\" @click=\"closeHandler\">\n\t\t<v-icon type=\"close\" :size=\"size\"></v-icon>\n\t</span>\n</div>\n";
+
+/***/ },
+/* 189 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled}\" _v-f750b48a=\"\">\n  <div class=\"select-toggle\" tabindex=\"1\" @click=\"toggleDropdown\" @input=\"onInput\" v-bind=\"{disabled: disabled,contenteditable:tags}\" _v-f750b48a=\"\">\n    <span class=\"select-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n\n    <span v-if=\"!multiple\" :class=\"{caret:true,open:show}\" _v-f750b48a=\"\"><icon type=\"down\" size=\"12\" _v-f750b48a=\"\"></icon></span>\n    <div v-if=\"multiple\" _v-f750b48a=\"\">\n      <tag v-for=\"lable in selectedLabels\" closable=\"\" _v-f750b48a=\"\">{{label}}</tag>\n    </div>\n    <span v-else=\"\" class=\"btn-content\" _v-f750b48a=\"\">{{{ selectedLabels }}}</span>\n\n  </div>\n  <div v-if=\"options.length\" class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <div v-if=\"search\" class=\"option bs-searchbox\" _v-f750b48a=\"\">\n      <input type=\"text\" placeholder=\"Search\" v-model=\"searchText\" class=\"form-control\" autocomplete=\"off\" _v-f750b48a=\"\">\n    </div>\n    <div class=\"option\" v-for=\"option in options | filterBy searchText \" v-bind:id=\"option.value\" style=\"position:relative\" _v-f750b48a=\"\">\n      <a @mousedown.prevent.stop=\"select(option.label,option.value)\" style=\"cursor:pointer\" _v-f750b48a=\"\">\n        {{ option.label }}\n        <icon type=\"tick\" v-show=\"value.indexOf(option.value) !== -1\" _v-f750b48a=\"\"></icon>\n      </a>\n    </div>\n  </div>\n  <div v-else=\"\" class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <slot _v-f750b48a=\"\"></slot>\n  </div>\n  <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\" _v-f750b48a=\"\">最多可选 ({{limit}})项.</div>\n\n</div>\n";
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(191)
+	__vue_script__ = __webpack_require__(193)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Select/Option.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(194)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(187);
+	var content = __webpack_require__(192);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -3894,10 +4059,10 @@
 	}
 
 /***/ },
-/* 187 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -3908,7 +4073,7 @@
 
 
 /***/ },
-/* 188 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3917,11 +4082,11 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -3991,13 +4156,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 189 */
+/* 194 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"{option:true,disabled:disabled}\" _v-38ea94b4=\"\">\n  <a @mousedown.prevent.stop=\"handleClick\" _v-38ea94b4=\"\">\n    <span v-el:content=\"\" _v-38ea94b4=\"\"><slot _v-38ea94b4=\"\"></slot></span>\n    <icon type=\"tick\" v-show=\"chosen\" _v-38ea94b4=\"\"></icon>\n  </a>\n</div>\n";
 
 /***/ },
-/* 190 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4006,27 +4171,31 @@
 	  value: true
 	});
 	
-	var _DatePicker = __webpack_require__(191);
+	var _DatePicker = __webpack_require__(196);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
-
+	
+	var _RangePicker = __webpack_require__(199);
+	
+	var _RangePicker2 = _interopRequireDefault(_RangePicker);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
+	_DatePicker2.default.RangePicker = _RangePicker2.default;
+	
 	exports.default = _DatePicker2.default;
 
 /***/ },
-/* 191 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(192)
-	__webpack_require__(194)
-	__vue_script__ = __webpack_require__(196)
+	__vue_script__ = __webpack_require__(197)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/DatePicker/DatePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(197)
+	__vue_template__ = __webpack_require__(198)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4035,87 +4204,7 @@
 
 
 /***/ },
-/* 192 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(193);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./DatePicker.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./DatePicker.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 193 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(121)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\ninput.datepicker-input.with-reset-button {\n  padding-right: 25px;\n}\n\ndiv.datepicker > button.close {\n  position: absolute;\n  top: calc(50% - 13px);\n  right: 10px;\n}\n\ndiv.datepicker > button.close {\n  outline: none;\n  z-index: 2;\n}\n\ndiv.datepicker > button.close:focus {\n  opacity: .2;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 194 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(195);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./DatePicker.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./DatePicker.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 195 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(121)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n.datepicker{\n    position: relative;\n    display: inline-block;\n}\n\n.datepicker-popup{\n    position: absolute;\n    border: 1px solid #ccc;\n    border-radius: 5px;\n    background: #fff;\n    margin-top: 2px;\n    z-index: 1000;\n    box-shadow: 0 6px 12px rgba(0,0,0,0.175);\n}\n.datepicker-inner{\n    width: 218px;\n\n}\n.datepicker-body{\n    padding: 10px 10px;\n}\n.datepicker-ctrl p,\n.datepicker-ctrl span,\n.datepicker-body span{\n    display: inline-block;\n    width: 28px;\n    line-height: 28px;\n    height: 28px;\n    border-radius: 4px;\n}\n.datepicker-ctrl p {\n    width: 65%;\n}\n.datepicker-ctrl span {\n  position: absolute;\n}\n.datepicker-body span {\n  text-align: center;\n}\n.datepicker-monthRange span{\n  width: 48px;\n  height: 50px;\n  line-height: 45px;\n}\n.datepicker-item-disable {\n  background-color: white!important;\n  cursor: not-allowed!important;\n}\n.decadeRange span:first-child,\n.decadeRange span:last-child,\n.datepicker-item-disable,\n.datepicker-item-gray{\n    color: #999;\n}\n\n.datepicker-dateRange-item-active:hover,\n.datepicker-dateRange-item-active {\n    background: rgb(50, 118, 177)!important;\n    color: white!important;\n}\n.datepicker-monthRange {\n  margin-top: 10px\n}\n.datepicker-monthRange span,\n.datepicker-ctrl span,\n.datepicker-ctrl p,\n.datepicker-dateRange span {\n  cursor: pointer;\n}\n.datepicker-monthRange span:hover,\n.datepicker-ctrl p:hover,\n.datepicker-ctrl i:hover,\n.datepicker-dateRange span:hover,\n.datepicker-dateRange-item-hover {\n    background-color : #eeeeee;\n}\n\n.datepicker-weekRange span{\n    font-weight: bold;\n}\n.datepicker-label{\n    background-color: #f8f8f8;\n    font-weight: 700;\n    padding: 7px 0;\n    text-align: center;\n}\n.datepicker-ctrl{\n    position: relative;\n    height: 30px;\n    line-height: 30px;\n    font-weight: bold;\n    text-align: center;\n}\n.month-btn{\n  font-weight: bold;\n  -webkit-user-select:none;\n    -moz-user-select:none;\n    -ms-user-select:none;\n    user-select:none;\n}\n.datepicker-preBtn{\n    left: 2px;\n}\n.datepicker-nextBtn{\n    right: 2px;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 196 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4124,37 +4213,16 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(163);
+	var _EventListener = __webpack_require__(164);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <style>
-	//   input.datepicker-input.with-reset-button {
-	//     padding-right: 25px;
-	//   }
-	//
-	//   div.datepicker > button.close {
-	//     position: absolute;
-	//     top: calc(50% - 13px);
-	//     right: 10px;
-	//   }
-	//
-	//   div.datepicker > button.close {
-	//     outline: none;
-	//     z-index: 2;
-	//   }
-	//
-	//   div.datepicker > button.close:focus {
-	//     opacity: .2;
-	//   }
-	// </style>
-	//
 	// <template>
 	//   <div class="datepicker">
 	//     <input class="form-control datepicker-input" :class="{'with-reset-button': showResetButton}" type="text"
@@ -4240,7 +4308,7 @@
 	      twoWay: true
 	    },
 	    format: {
-	      default: 'MMMM/dd/yyyy'
+	      default: 'yyyy-MMMM-dd'
 	    },
 	    locale: {
 	      default: 'zh_CN'
@@ -4497,136 +4565,26 @@
 	  }
 	};
 	// </script>
-	//
-	// <style>
-	// .datepicker{
-	//     position: relative;
-	//     display: inline-block;
-	// }
-	//
-	// .datepicker-popup{
-	//     position: absolute;
-	//     border: 1px solid #ccc;
-	//     border-radius: 5px;
-	//     background: #fff;
-	//     margin-top: 2px;
-	//     z-index: 1000;
-	//     box-shadow: 0 6px 12px rgba(0,0,0,0.175);
-	// }
-	// .datepicker-inner{
-	//     width: 218px;
-	//
-	// }
-	// .datepicker-body{
-	//     padding: 10px 10px;
-	// }
-	// .datepicker-ctrl p,
-	// .datepicker-ctrl span,
-	// .datepicker-body span{
-	//     display: inline-block;
-	//     width: 28px;
-	//     line-height: 28px;
-	//     height: 28px;
-	//     border-radius: 4px;
-	// }
-	// .datepicker-ctrl p {
-	//     width: 65%;
-	// }
-	// .datepicker-ctrl span {
-	//   position: absolute;
-	// }
-	// .datepicker-body span {
-	//   text-align: center;
-	// }
-	// .datepicker-monthRange span{
-	//   width: 48px;
-	//   height: 50px;
-	//   line-height: 45px;
-	// }
-	// .datepicker-item-disable {
-	//   background-color: white!important;
-	//   cursor: not-allowed!important;
-	// }
-	// .decadeRange span:first-child,
-	// .decadeRange span:last-child,
-	// .datepicker-item-disable,
-	// .datepicker-item-gray{
-	//     color: #999;
-	// }
-	//
-	// .datepicker-dateRange-item-active:hover,
-	// .datepicker-dateRange-item-active {
-	//     background: rgb(50, 118, 177)!important;
-	//     color: white!important;
-	// }
-	// .datepicker-monthRange {
-	//   margin-top: 10px
-	// }
-	// .datepicker-monthRange span,
-	// .datepicker-ctrl span,
-	// .datepicker-ctrl p,
-	// .datepicker-dateRange span {
-	//   cursor: pointer;
-	// }
-	// .datepicker-monthRange span:hover,
-	// .datepicker-ctrl p:hover,
-	// .datepicker-ctrl i:hover,
-	// .datepicker-dateRange span:hover,
-	// .datepicker-dateRange-item-hover {
-	//     background-color : #eeeeee;
-	// }
-	//
-	// .datepicker-weekRange span{
-	//     font-weight: bold;
-	// }
-	// .datepicker-label{
-	//     background-color: #f8f8f8;
-	//     font-weight: 700;
-	//     padding: 7px 0;
-	//     text-align: center;
-	// }
-	// .datepicker-ctrl{
-	//     position: relative;
-	//     height: 30px;
-	//     line-height: 30px;
-	//     font-weight: bold;
-	//     text-align: center;
-	// }
-	// .month-btn{
-	//   font-weight: bold;
-	//   -webkit-user-select:none;
-	//     -moz-user-select:none;
-	//     -ms-user-select:none;
-	//     user-select:none;
-	// }
-	// .datepicker-preBtn{
-	//     left: 2px;
-	// }
-	// .datepicker-nextBtn{
-	//     right: 2px;
-	// }
-	// </style>
 
 	/* generated by vue-loader */
 
 /***/ },
-/* 197 */
+/* 198 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"datepicker\">\n  <input class=\"form-control datepicker-input\" :class=\"{'with-reset-button': showResetButton}\" type=\"text\"\n      v-bind:style=\"{width:width}\"\n      @click=\"inputClick\"\n      v-model=\"value\"/>\n  <icon type=\"calendar\"></icon>\n  <div class=\"datepicker-popup\" v-show=\"displayDayView\">\n    <div class=\"datepicker-inner\">\n      <div class=\"datepicker-body\">\n        <div class=\"datepicker-ctrl\">\n          <span class=\"month-btn datepicker-preBtn\" @click=\"preNextMonthClick(0)\">&lt;</span>\n          <span class=\"month-btn datepicker-nextBtn\" @click=\"preNextMonthClick(1)\">&gt;</span>\n          <p @click=\"switchMonthView\">{{stringifyDayHeader(currDate)}}</p>\n        </div>\n        <div class=\"datepicker-weekRange\">\n          <span v-for=\"w in weekRange\">{{w}}</span>\n        </div>\n        <div class=\"datepicker-dateRange\">\n          <span v-for=\"d in dateRange\" v-bind:class=\"d.sclass\" @click=\"daySelect(d.date,this)\">{{d.text}}</span>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"datepicker-popup\" v-show=\"displayMonthView\">\n    <div class=\"datepicker-inner\">\n      <div class=\"datepicker-body\">\n        <div class=\"datepicker-ctrl\">\n          <span class=\"month-btn datepicker-preBtn\" @click=\"preNextYearClick(0)\">&lt;</span>\n          <span class=\"month-btn datepicker-nextBtn\" @click=\"preNextYearClick(1)\">&gt;</span>\n          <p @click=\"switchDecadeView\">{{stringifyYearHeader(currDate)}}</p>\n        </div>\n        <div class=\"datepicker-monthRange\">\n          <template v-for=\"m in monthNames\">\n            <span   v-bind:class=\"{'datepicker-dateRange-item-active':\n                (this.monthNames[this.parse(this.value).getMonth()]  === m) &&\n                this.currDate.getFullYear() === this.parse(this.value).getFullYear()}\"\n                @click=\"monthSelect($index)\"\n              >{{m.substr(0,3)}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"datepicker-popup\" v-show=\"displayYearView\">\n    <div class=\"datepicker-inner\">\n      <div class=\"datepicker-body\">\n        <div class=\"datepicker-ctrl\">\n          <span class=\"month-btn datepicker-preBtn\" @click=\"preNextDecadeClick(0)\">&lt;</span>\n          <span class=\"month-btn datepicker-nextBtn\" @click=\"preNextDecadeClick(1)\">&gt;</span>\n          <p>{{stringifyDecadeHeader(currDate)}}</p>\n        </div>\n        <div class=\"datepicker-monthRange decadeRange\">\n          <template v-for=\"decade in decadeRange\">\n            <span v-bind:class=\"{'datepicker-dateRange-item-active':\n                this.parse(this.value).getFullYear() === decade.text}\"\n                @click.stop=\"yearSelect(decade.text)\"\n              >{{decade.text}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 198 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(199)
-	__vue_script__ = __webpack_require__(201)
+	__vue_script__ = __webpack_require__(200)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Typeahead.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(203)
+	  console.warn("[vue-loader] src/components/DatePicker/RangePicker.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(201)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4635,16 +4593,104 @@
 
 
 /***/ },
-/* 199 */
+/* 200 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _DatePicker = __webpack_require__(196);
+	
+	var _DatePicker2 = _interopRequireDefault(_DatePicker);
+	
+	var _coerceBoolean = __webpack_require__(178);
+	
+	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	// <div class="range-picker">
+	//   <input type="" placeholder="开始日期" @click="triggerStart" / >
+	//     <span class="range-picker-separator"> ~ </span>
+	//   <input type="text" placeholder="结束日期" @click="triggerEnd">
+	//   <div class="range-picker-content">
+	//     <date-picker v-show="showEndPicker || showStartPicker"></date-picker>
+	//   </div>
+	// </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  props: {
+	    trigger: {
+	      type: String,
+	      default: 'click'
+	    },
+	    open: {
+	      type: Boolean,
+	      coerce: _coerceBoolean2.default,
+	      default: false
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      showStartPicker: false,
+	      showEndPicker: false
+	    };
+	  },
+	
+	  methods: {
+	    triggerStart: function triggerStart() {
+	      this.showStartPicker = !this.showStartPicker;
+	    },
+	    triggerEnd: function triggerEnd() {
+	      this.showEndPicker = !this.showEndPicker;
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 201 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"range-picker\">\n  <input type=\"\" placeholder=\"开始日期\" @click=\"triggerStart\" / >\n    <span class=\"range-picker-separator\"> ~ </span>\n  <input type=\"text\" placeholder=\"结束日期\" @click=\"triggerEnd\">\n  <div class=\"range-picker-content\">\n    <date-picker v-show=\"showEndPicker || showStartPicker\"></date-picker>\n  </div>\n</div>\n";
+
+/***/ },
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(203)
+	__vue_script__ = __webpack_require__(205)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Typeahead.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(207)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(200);
+	var content = __webpack_require__(204);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -4661,10 +4707,10 @@
 	}
 
 /***/ },
-/* 200 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -4675,7 +4721,7 @@
 
 
 /***/ },
-/* 201 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4684,11 +4730,11 @@
 	  value: true
 	});
 	
-	var _callAjax = __webpack_require__(202);
+	var _callAjax = __webpack_require__(206);
 	
 	var _callAjax2 = _interopRequireDefault(_callAjax);
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -4860,7 +4906,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 202 */
+/* 206 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -4884,13 +4930,13 @@
 	};
 
 /***/ },
-/* 203 */
+/* 207 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div style=\"position: relative\"\n  v-bind:class=\"{'open':showDropdown}\"\n  >\n  <input type=\"text\" class=\"form-control\"\n    :placeholder=\"placeholder\"\n    autocomplete=\"off\"\n    v-model=\"query\"\n    @input=\"update\"\n    @keydown.up=\"up\"\n    @keydown.down=\"down\"\n    @keydown.enter= \"hit\"\n    @keydown.esc=\"reset\"\n    @blur=\"showDropdown = false\"\n  />\n  <ul class=\"dropdown-menu\" v-el:dropdown>\n    <li v-for=\"item in items\" v-bind:class=\"{'active': isActive($index)}\">\n      <a @mousedown.prevent=\"hit\" @mousemove=\"setActive($index)\">\n        <partial :name=\"templateName\"></partial>\n      </a>\n    </li>\n  </ul>\n</div>\n\n";
 
 /***/ },
-/* 204 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4899,7 +4945,7 @@
 	  value: true
 	});
 	
-	var _Cascader = __webpack_require__(205);
+	var _Cascader = __webpack_require__(209);
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 
@@ -4908,17 +4954,17 @@
 	exports.default = _Cascader2.default;
 
 /***/ },
-/* 205 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(206)
-	__vue_script__ = __webpack_require__(207)
+	__webpack_require__(210)
+	__vue_script__ = __webpack_require__(211)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Cascader/Cascader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(208)
+	__vue_template__ = __webpack_require__(212)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4927,13 +4973,13 @@
 
 
 /***/ },
-/* 206 */
+/* 210 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 207 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4942,11 +4988,11 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(163);
+	var _EventListener = __webpack_require__(164);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Input = __webpack_require__(156);
+	var _Input = __webpack_require__(157);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
@@ -5176,13 +5222,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 208 */
+/* 212 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"casader\">\n  <span class=\"cascader-picker\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div class=\"cascader-menus\" v-show=\"isOpen\">\n    <ul class=\"cascader-menu\" v-for=\"(index, menu) in menus\">\n      <li class=\"cascader-menu-item\" :class=\"{selected:selectedOptions[index] === option,disabled:option.disabled}\" v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 209 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5191,11 +5237,11 @@
 	  value: true
 	});
 	
-	var _Message = __webpack_require__(210);
+	var _Message = __webpack_require__(214);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
-	var _vue = __webpack_require__(214);
+	var _vue = __webpack_require__(218);
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
@@ -5247,17 +5293,17 @@
 	exports.default = _Message2.default;
 
 /***/ },
-/* 210 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(211)
-	__vue_script__ = __webpack_require__(212)
+	__webpack_require__(215)
+	__vue_script__ = __webpack_require__(216)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Message/Message.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(213)
+	__vue_template__ = __webpack_require__(217)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5266,13 +5312,13 @@
 
 
 /***/ },
-/* 211 */
+/* 215 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 212 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5281,11 +5327,11 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -5311,7 +5357,7 @@
 	//     <button v-show="dismissable" type="button" class="close" @click="show = false">
 	//       <span>&times;</span>
 	//     </button>
-	//     <icon :type="type"></icon>
+	//     <icon v-if="showIcon" :type="type"></icon>
 	//     <slot>
 	//       {{content}}
 	//     </slot>
@@ -5332,7 +5378,7 @@
 	    showIcon: {
 	      type: Boolean,
 	      coerce: _coerceBoolean2.default,
-	      default: false
+	      default: true
 	    },
 	    show: {
 	      type: Boolean,
@@ -5404,13 +5450,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 213 */
+/* 217 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div\n  v-show=\"show\"\n  v-bind:class=\"{\n    'alert':\t\ttrue,\n    'alert-success':(type == 'success'),\n    'alert-warning':(type == 'warning'),\n    'alert-info':\t(type == 'info'),\n    'alert-error':\t(type == 'error' || type == 'danger'),\n    'alert-help': (type == 'help'),\n    'top': \t\t\t(placement === 'top'),\n    'top-right': \t(placement === 'top-right'),\n    'center':      (placement === 'center'),\n  }\"\n  transition=\"fade\"\n  v-bind:style=\"{width:width}\"\n  role=\"alert\">\n  <button v-show=\"dismissable\" type=\"button\" class=\"close\" @click=\"show = false\">\n    <span>&times;</span>\n  </button>\n  <icon :type=\"type\"></icon>\n  <slot>\n    {{content}}\n  </slot>\n</div>\n";
+	module.exports = "\n<div\n  v-show=\"show\"\n  v-bind:class=\"{\n    'alert':\t\ttrue,\n    'alert-success':(type == 'success'),\n    'alert-warning':(type == 'warning'),\n    'alert-info':\t(type == 'info'),\n    'alert-error':\t(type == 'error' || type == 'danger'),\n    'alert-help': (type == 'help'),\n    'top': \t\t\t(placement === 'top'),\n    'top-right': \t(placement === 'top-right'),\n    'center':      (placement === 'center'),\n  }\"\n  transition=\"fade\"\n  v-bind:style=\"{width:width}\"\n  role=\"alert\">\n  <button v-show=\"dismissable\" type=\"button\" class=\"close\" @click=\"show = false\">\n    <span>&times;</span>\n  </button>\n  <icon v-if=\"showIcon\" :type=\"type\"></icon>\n  <slot>\n    {{content}}\n  </slot>\n</div>\n";
 
 /***/ },
-/* 214 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {/*!
@@ -15234,10 +15280,10 @@
 	}
 	
 	module.exports = Vue;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(215)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(219)))
 
 /***/ },
-/* 215 */
+/* 219 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -15334,7 +15380,7 @@
 
 
 /***/ },
-/* 216 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15343,7 +15389,7 @@
 	  value: true
 	});
 	
-	var _Modal = __webpack_require__(217);
+	var _Modal = __webpack_require__(221);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
@@ -15386,17 +15432,17 @@
 	exports.default = _Modal2.default;
 
 /***/ },
-/* 217 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(218)
-	__vue_script__ = __webpack_require__(220)
+	__webpack_require__(222)
+	__vue_script__ = __webpack_require__(224)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Modal/Modal.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(226)
+	__vue_template__ = __webpack_require__(230)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15405,16 +15451,16 @@
 
 
 /***/ },
-/* 218 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(219);
+	var content = __webpack_require__(223);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -15431,10 +15477,10 @@
 	}
 
 /***/ },
-/* 219 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -15445,7 +15491,7 @@
 
 
 /***/ },
-/* 220 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15454,19 +15500,19 @@
 	  value: true
 	});
 	
-	var _isInteger = __webpack_require__(221);
+	var _isInteger = __webpack_require__(225);
 	
 	var _isInteger2 = _interopRequireDefault(_isInteger);
 	
-	var _getScrollBarWidth = __webpack_require__(225);
+	var _getScrollBarWidth = __webpack_require__(229);
 	
 	var _getScrollBarWidth2 = _interopRequireDefault(_getScrollBarWidth);
 	
-	var _EventListener = __webpack_require__(163);
+	var _EventListener = __webpack_require__(164);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -15635,40 +15681,40 @@
 	// <script>
 
 /***/ },
-/* 221 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(222), __esModule: true };
+	module.exports = { "default": __webpack_require__(226), __esModule: true };
 
 /***/ },
-/* 222 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(223);
-	module.exports = __webpack_require__(92).Number.isInteger;
+	__webpack_require__(227);
+	module.exports = __webpack_require__(93).Number.isInteger;
 
 /***/ },
-/* 223 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
-	var $export = __webpack_require__(90);
+	var $export = __webpack_require__(91);
 	
-	$export($export.S, 'Number', {isInteger: __webpack_require__(224)});
+	$export($export.S, 'Number', {isInteger: __webpack_require__(228)});
 
 /***/ },
-/* 224 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
-	var isObject = __webpack_require__(112)
+	var isObject = __webpack_require__(113)
 	  , floor    = Math.floor;
 	module.exports = function isInteger(it){
 	  return !isObject(it) && isFinite(it) && floor(it) === it;
 	};
 
 /***/ },
-/* 225 */
+/* 229 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -15707,13 +15753,13 @@
 	};
 
 /***/ },
-/* 226 */
+/* 230 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div role=\"dialog\"\n  v-bind:class=\"{\n  'modal':true,\n  'fade':effect === 'fade',\n  'zoom':effect === 'zoom'\n  }\"\n  >\n  <div v-bind:class=\"{'modal-dialog':true,'modal-lg':large,'modal-sm':small}\" role=\"document\"\n    v-bind:style=\"{width: optionalWidth}\">\n    <div class=\"modal-content\">\n      <slot name=\"modal-header\">\n        <div class=\"modal-header\">\n          <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n          <h4 class=\"modal-title\" >{{title}}</h4>\n        </div>\n      </slot>\n      <slot name=\"modal-body\">\n        <div class=\"modal-body\"></div>\n      </slot>\n      <slot name=\"modal-footer\">\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"callback\">确定</button>\n          <button type=\"button\" class=\"btn tertiary\" @click=\"close\">取消</button>\n        </div>\n      </slot>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 227 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15722,7 +15768,7 @@
 	  value: true
 	});
 	
-	var _Table = __webpack_require__(228);
+	var _Table = __webpack_require__(232);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -15731,16 +15777,16 @@
 	exports.default = _Table2.default;
 
 /***/ },
-/* 228 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(229)
+	__vue_script__ = __webpack_require__(233)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Table/Table.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(239)
+	__vue_template__ = __webpack_require__(243)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15749,7 +15795,7 @@
 
 
 /***/ },
-/* 229 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15758,19 +15804,19 @@
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(230);
+	var _assign = __webpack_require__(234);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Dropdown = __webpack_require__(174);
+	var _Dropdown = __webpack_require__(175);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Spin = __webpack_require__(235);
+	var _Spin = __webpack_require__(239);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 	
@@ -15783,8 +15829,7 @@
 	    columns: Array,
 	    rowSelection: Object,
 	    rowKey: String,
-	    loading: Boolean,
-	    onChange: Function
+	    loading: Boolean
 	  },
 	  components: {
 	    Icon: _Icon2.default,
@@ -15827,14 +15872,10 @@
 	        this.checkedValues = [];
 	        this.isCheckedAll = false;
 	        this.compileTbody();
-	      },
-	
-	      deep: true
+	      }
 	    }
 	  },
-	  ready: function ready() {
-	    console.log(this.$refs);
-	  },
+	  ready: function ready() {},
 	
 	  methods: {
 	    compileTbody: function compileTbody() {
@@ -15974,38 +16015,38 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 230 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(231), __esModule: true };
+	module.exports = { "default": __webpack_require__(235), __esModule: true };
 
 /***/ },
-/* 231 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(232);
-	module.exports = __webpack_require__(92).Object.assign;
+	__webpack_require__(236);
+	module.exports = __webpack_require__(93).Object.assign;
 
 /***/ },
-/* 232 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(90);
+	var $export = __webpack_require__(91);
 	
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(233)});
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(237)});
 
 /***/ },
-/* 233 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.1 Object.assign(target, source, ...)
-	var $        = __webpack_require__(97)
-	  , toObject = __webpack_require__(109)
-	  , IObject  = __webpack_require__(234);
+	var $        = __webpack_require__(98)
+	  , toObject = __webpack_require__(110)
+	  , IObject  = __webpack_require__(238);
 	
 	// should work with symbols and should have deterministic property order (V8 bug)
-	module.exports = __webpack_require__(100)(function(){
+	module.exports = __webpack_require__(101)(function(){
 	  var a = Object.assign
 	    , A = {}
 	    , B = {}
@@ -16034,17 +16075,17 @@
 	} : Object.assign;
 
 /***/ },
-/* 234 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(117);
+	var cof = __webpack_require__(118);
 	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 	  return cof(it) == 'String' ? it.split('') : Object(it);
 	};
 
 /***/ },
-/* 235 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16053,7 +16094,7 @@
 	  value: true
 	});
 	
-	var _Spin = __webpack_require__(236);
+	var _Spin = __webpack_require__(240);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 
@@ -16062,16 +16103,16 @@
 	exports.default = _Spin2.default;
 
 /***/ },
-/* 236 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(237)
+	__vue_script__ = __webpack_require__(241)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Spin/Spin.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(238)
+	__vue_template__ = __webpack_require__(242)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16080,7 +16121,7 @@
 
 
 /***/ },
-/* 237 */
+/* 241 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16138,19 +16179,19 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 238 */
+/* 242 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"['spin',size]\" v-show=\"show\">\n  <div class=\"sping-point\"></div>\n  <div class=\"sping-point\"></div>\n  <div class=\"sping-point\"></div>\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 239 */
+/* 243 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"{'table-container':true,loading:loading}\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <div class=\"table-body\">\n    <table class=\"table\">\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :class=\"{'multi-col':column.multiCols}\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"dataSource.length && column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" @click=\"sortAction(column,$index,'ascend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" @click=\"sortAction(column,$index,'descend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-show=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">没有任何数据</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\">\n            <td v-if=\"rowSelection\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
 
 /***/ },
-/* 240 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16159,7 +16200,7 @@
 	  value: true
 	});
 	
-	var _Badge = __webpack_require__(241);
+	var _Badge = __webpack_require__(245);
 	
 	var _Badge2 = _interopRequireDefault(_Badge);
 
@@ -16168,16 +16209,16 @@
 	exports.default = _Badge2.default;
 
 /***/ },
-/* 241 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(242)
+	__vue_script__ = __webpack_require__(246)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Badge/Badge.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(243)
+	__vue_template__ = __webpack_require__(247)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16186,7 +16227,7 @@
 
 
 /***/ },
-/* 242 */
+/* 246 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16237,13 +16278,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 243 */
+/* 247 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span v-if=\"dot\" class=\"badge\" :class=\"wrapClasses\">\n  <slot></slot>\n  <sup class=\"badge-dot\"></sup>\n</span>\n<span v-else  class=\"badge\" :class=\"wrapClasses\">\n  <slot></slot>\n  <sup v-if='count > 0' class=\"badge-count\">\n    {{count | short}}\n  </sup>\n</span>\n";
 
 /***/ },
-/* 244 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16252,11 +16293,11 @@
 	  value: true
 	});
 	
-	var _Carousel = __webpack_require__(245);
+	var _Carousel = __webpack_require__(249);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Slide = __webpack_require__(250);
+	var _Slide = __webpack_require__(254);
 	
 	var _Slide2 = _interopRequireDefault(_Slide);
 	
@@ -16267,17 +16308,17 @@
 	exports.default = _Carousel2.default;
 
 /***/ },
-/* 245 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(246)
-	__vue_script__ = __webpack_require__(248)
+	__webpack_require__(250)
+	__vue_script__ = __webpack_require__(252)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Carousel/Carousel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(249)
+	__vue_template__ = __webpack_require__(253)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16286,16 +16327,16 @@
 
 
 /***/ },
-/* 246 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(247);
+	var content = __webpack_require__(251);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -16312,10 +16353,10 @@
 	}
 
 /***/ },
-/* 247 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -16326,7 +16367,7 @@
 
 
 /***/ },
-/* 248 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16335,15 +16376,15 @@
 	  value: true
 	});
 	
-	var _toConsumableArray2 = __webpack_require__(81);
+	var _toConsumableArray2 = __webpack_require__(82);
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _EventListener = __webpack_require__(163);
+	var _EventListener = __webpack_require__(164);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -16483,22 +16524,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 249 */
+/* 253 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
-/* 250 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(251)
+	__vue_script__ = __webpack_require__(255)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Carousel/Slide.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(252)
+	__vue_template__ = __webpack_require__(256)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16507,7 +16548,7 @@
 
 
 /***/ },
-/* 251 */
+/* 255 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16554,23 +16595,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 252 */
+/* 256 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"item\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 253 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(254)
-	__vue_script__ = __webpack_require__(256)
+	__webpack_require__(258)
+	__vue_script__ = __webpack_require__(260)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Affix.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(257)
+	__vue_template__ = __webpack_require__(261)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16579,16 +16620,16 @@
 
 
 /***/ },
-/* 254 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(255);
+	var content = __webpack_require__(259);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -16605,10 +16646,10 @@
 	}
 
 /***/ },
-/* 255 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -16619,7 +16660,7 @@
 
 
 /***/ },
-/* 256 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16628,7 +16669,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(163);
+	var _EventListener = __webpack_require__(164);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -16728,13 +16769,13 @@
 	// <script>
 
 /***/ },
-/* 257 */
+/* 261 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n<div v-bind:class=\"{'vue-affix': affixed}\"\n  v-bind:style=\"styles\">\n  <slot></slot>\n</div>\n</div>\n";
 
 /***/ },
-/* 258 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16743,7 +16784,7 @@
 	  value: true
 	});
 	
-	var _Textarea = __webpack_require__(259);
+	var _Textarea = __webpack_require__(263);
 	
 	var _Textarea2 = _interopRequireDefault(_Textarea);
 
@@ -16752,16 +16793,16 @@
 	exports.default = _Textarea2.default;
 
 /***/ },
-/* 259 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(260)
+	__vue_script__ = __webpack_require__(264)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Textarea/Textarea.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(261)
+	__vue_template__ = __webpack_require__(265)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16770,7 +16811,7 @@
 
 
 /***/ },
-/* 260 */
+/* 264 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16848,136 +16889,10 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 261 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<textarea v-bind=\"{disabled: isDisabled}\" maxlength=\"{{limitWords}}\" class=\"textarea\" :class=\"classObj\" name=\"{{name}}\" placeholder=\"{{placeholder}}\" v-model=\"content\"></textarea>\n<p v-if=\"limitWords\" class=\"words-area\" :class=\"wordClass\">{{ curWords }}/{{ limitWords }}</p>\n<p v-if=\"showWordsCount\" class=\"words-area\">{{ countTips }}{{ curWords }}</p>\n";
-
-/***/ },
-/* 262 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Tag = __webpack_require__(263);
-	
-	var _Tag2 = _interopRequireDefault(_Tag);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _Tag2.default;
-
-/***/ },
-/* 263 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(264)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Tag/Tag.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(265)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-
-
-/***/ },
-/* 264 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _Icon = __webpack_require__(132);
-	
-	var _Icon2 = _interopRequireDefault(_Icon);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-		props: {
-			color: {
-				type: String
-			},
-			closable: {
-				type: Boolean,
-				default: false
-			},
-			href: {
-				type: String
-			},
-			onClose: {
-				type: Function,
-				default: function _default() {}
-			},
-			size: {
-				type: String,
-				default: "12"
-			}
-		},
-	
-		data: function data() {
-			return {
-				closed: false
-			};
-		},
-	
-	
-		computed: {
-			wrapClasses: function wrapClasses() {
-				return {
-					'tag': true,
-					'tag-color': this.color
-				};
-			}
-		},
-	
-		methods: {
-			closeHandler: function closeHandler(e) {
-				this.closed = true;
-				this.onClose.call(this, e);
-			}
-		},
-	
-		components: {
-			vIcon: _Icon2.default
-		},
-	
-		ready: function ready() {}
-	};
-	// </script>
-	//
-	//
-	//
-
-	/* generated by vue-loader */
-	// <template>
-	// 	<div v-if="!closed" :class="wrapClasses" :style="{'background-color': color}">
-	// 		<a :href="href" class="tag-text" :style="{'fontSize': size+'px'}"><slot></slot></a>
-	// 		<span v-if="closable" class="tag-close" @click="closeHandler">
-	// 			<v-icon type="close" :size="size"></v-icon>
-	// 		</span>
-	// 	</div>
-	// </template>
-	//
-	// <script>
-
-/***/ },
 /* 265 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div v-if=\"!closed\" :class=\"wrapClasses\" :style=\"{'background-color': color}\">\n\t<a :href=\"href\" class=\"tag-text\" :style=\"{'fontSize': size+'px'}\"><slot></slot></a>\n\t<span v-if=\"closable\" class=\"tag-close\" @click=\"closeHandler\">\n\t\t<v-icon type=\"close\" :size=\"size\"></v-icon>\n\t</span>\n</div>\n";
+	module.exports = "\n<textarea v-bind=\"{disabled: isDisabled}\" maxlength=\"{{limitWords}}\" class=\"textarea\" :class=\"classObj\" name=\"{{name}}\" placeholder=\"{{placeholder}}\" v-model=\"content\"></textarea>\n<p v-if=\"limitWords\" class=\"words-area\" :class=\"wordClass\">{{ curWords }}/{{ limitWords }}</p>\n<p v-if=\"showWordsCount\" class=\"words-area\">{{ countTips }}{{ curWords }}</p>\n";
 
 /***/ },
 /* 266 */
@@ -17026,7 +16941,7 @@
 	var content = __webpack_require__(269);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -17046,7 +16961,7 @@
 /* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -17160,11 +17075,11 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(163);
+	var _EventListener = __webpack_require__(164);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -17409,7 +17324,7 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -17495,7 +17410,7 @@
 	var content = __webpack_require__(279);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -17515,7 +17430,7 @@
 /* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -17535,7 +17450,7 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -17671,7 +17586,7 @@
 	var content = __webpack_require__(285);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -17691,7 +17606,7 @@
 /* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -17838,7 +17753,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -17924,6 +17839,7 @@
 	      var self = this;
 	      var dom = self.$el;
 	      var nav = dom.querySelector('.nav');
+	      var tabsHeader = dom.querySelector('.tabs-header');
 	      var list = nav.children;
 	      var showlen = this.showLen;
 	      var len = list.length;
@@ -17938,8 +17854,7 @@
 	          self.wrapperWidth += _itemWidth;
 	        }
 	      }
-	
-	      dom.style.width = self.wrapperWidth + 'px';
+	      tabsHeader.style.width = self.wrapperWidth + 'px';
 	      self.$el.style.visibility = 'visible';
 	    }
 	  },
@@ -17964,26 +17879,23 @@
 	/* generated by vue-loader */
 	// <template>
 	//   <div class="tabsWrapper">
-	//     <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">
-	//       <icon type="prev" size="12"></icon>
-	//     </span>
-	//     <!-- Nav tabs -->
-	//      <ul :class="wrapClasses" role="tablist" style="width: 99999px;">
-	//             <li
-	//                 v-for="r in renderData"
-	//                 v-bind:class="{
-	//                   'active': ($index === active),
-	//                   'disabled': r.disabled
-	//                 }"
-	//                 @click.prevent="handleTabListClick($index, r)"
-	//                 :disabled="r.disabled"
-	//             >
-	//                 <a href="#">{{{r.header}}}</a>
-	//             </li>
-	//      </ul>
-	//     <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next">
-	//         <icon type="next" size="12"></icon>
-	//     </span>
+	//     <div class="tabs-header">
+	//       <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev"><icon type="prev" size="12"></icon></span>
+	//       <ul :class="wrapClasses" role="tablist" style="width: 99999px;">
+	//         <li v-for="r in renderData"
+	//             v-bind:class="{
+	//               'active': ($index === active),
+	//               'disabled': r.disabled
+	//             }"
+	//             @click.prevent="handleTabListClick($index, r)"
+	//             :disabled="r.disabled"
+	//         >
+	//             <a href="#">{{{r.header}}}</a>
+	//         </li>
+	//       </ul>
+	//       <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next"><icon type="next" size="12"></icon>
+	//       </span>
+	//     </div>
 	//
 	//      <!-- Tab panes -->
 	//      <div class="tab-content" v-el:tab-content>
@@ -17999,7 +17911,7 @@
 /* 291 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"tabsWrapper\">\n  <span v-if=\"renderData.length > showLen && showLen >= 3 \" class=\"arrow-prev\" @click=\"prev\">\n    <icon type=\"prev\" size=\"12\"></icon>\n  </span>\n  <!-- Nav tabs -->\n   <ul :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n          <li\n              v-for=\"r in renderData\"\n              v-bind:class=\"{\n                'active': ($index === active),\n                'disabled': r.disabled\n              }\"\n              @click.prevent=\"handleTabListClick($index, r)\"\n              :disabled=\"r.disabled\"\n          >\n              <a href=\"#\">{{{r.header}}}</a>\n          </li>\n   </ul>\n  <span v-if=\"renderData.length > showLen && showLen >= 3\" class=\"arrow-next\" @click=\"next\">\n      <icon type=\"next\" size=\"12\"></icon>\n  </span>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
+	module.exports = "\n<div class=\"tabsWrapper\">\n  <div class=\"tabs-header\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3 \" class=\"arrow-prev\" @click=\"prev\"><icon type=\"prev\" size=\"12\"></icon></span>\n    <ul :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          v-bind:class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"#\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" class=\"arrow-next\" @click=\"next\"><icon type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
 
 /***/ },
 /* 292 */
@@ -18030,7 +17942,7 @@
 	var content = __webpack_require__(294);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -18050,7 +17962,7 @@
 /* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -18070,7 +17982,7 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -18338,7 +18250,7 @@
 		value: true
 	});
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -18467,7 +18379,7 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -18522,7 +18434,7 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(177);
+	var _coerceBoolean = __webpack_require__(178);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -19198,7 +19110,7 @@
 		value: true
 	});
 	
-	var _Icon = __webpack_require__(132);
+	var _Icon = __webpack_require__(133);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -19295,7 +19207,7 @@
 		value: true
 	});
 	
-	var _Select = __webpack_require__(179);
+	var _Select = __webpack_require__(180);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
@@ -19440,7 +19352,7 @@
 	var content = __webpack_require__(342);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -19460,7 +19372,7 @@
 /* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -19480,7 +19392,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: { Icon: _src.Icon }
@@ -19579,7 +19491,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var vButton = _src.Button; // <template>
 	//   <div class="bs-docs-section" id="button">
@@ -19732,7 +19644,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: {
@@ -19891,7 +19803,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: {
@@ -20025,7 +19937,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -20233,7 +20145,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var Option = _src.Select.Option; // <template>
 	//
@@ -20415,7 +20327,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  data: function data() {
@@ -20634,7 +20546,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: {
@@ -20773,7 +20685,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var Option = _src.Select.Option; // <template>
 	//   <div class="bs-docs-section" id="select">
@@ -20784,7 +20696,7 @@
 	// 选中值 : {{single}}
 	//         </pre>
 	//       </p>
-	//       <v-select :default-value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+	//       <v-select :value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
 	//         <v-option value="Apple">苹果</v-option>
 	//         <v-option value="Banana" disabled>Banana</v-option>
 	//         <v-option value="Cherry">Cherry</v-option>
@@ -20798,7 +20710,7 @@
 	// 选中值 : {{multiple.join(', ')}}
 	//         </pre>
 	//       </p>
-	//       <v-select multiple :default-value.sync="multiple" @change="onSlectChange">
+	//       <v-select multiple :value.sync="multiple" @change="onSlectChange">
 	//         <v-option value="Apple">Apple</v-option>
 	//         <v-option value="Banana">Banana</v-option>
 	//         <v-option value="Cherry">Cherry</v-option>
@@ -20812,7 +20724,7 @@
 	// 选中值 : {{multipleLimit.join(', ')}}
 	//         </pre>
 	//       </p>
-	//       <v-select multiple :limit="2" :default-value.sync="multipleLimit">
+	//       <v-select multiple :limit="2" :value.sync="multipleLimit">
 	//         <v-option value="Apple">Apple</v-option>
 	//         <v-option value="Banana">Banana</v-option>
 	//         <v-option value="Cherry">Cherry</v-option>
@@ -20826,7 +20738,7 @@
 	// 选中值 : {{custom.join(', ')}}
 	//         </pre>
 	//       </p>
-	//       <v-select multiple :default-value.sync="custom">
+	//       <v-select multiple :value.sync="custom">
 	//         <v-option value="success"><icon type="success" color="green"></icon> 成功</v-option>
 	//         <v-option value="error"><icon type="error" color="red"></icon> 错误</v-option>
 	//         <v-option value="help"><icon type="help"></icon> 帮助</v-option>
@@ -20840,14 +20752,15 @@
 	// 选中值 : {{arr}}
 	//         </pre>
 	//       </p>
-	//       <v-select :default-value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
+	//       <v-select :value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
 	//       </v-select>
 	//
 	//       <hr />
 	//       <h4>Automatically close array driven selects</h4>
 	//       <p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
-	//       <v-select :default-value.sync="arr2" :options="fruitOptions" :close-on-select="true">
+	//       <v-select :value.sync="arr2" :options="fruitOptions" :close-on-select="true">
 	//       </v-select>
+	//       <h4>下拉出自定义类容</h4>
 	//       <v-select placeholder="选择类别" style="width:200px;">
 	//         <tabs>
 	//           <tab header="系统短信签名"></tab>
@@ -20856,7 +20769,11 @@
 	//         </tabs>
 	//       </v-select>
 	//       <h4>禁用的下拉框</h4>
-	//       <v-select :default-value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+	//       <v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+	//       </v-select>
+	//
+	//       <h4>tags</h4>
+	//       <v-select tags="true" :options="fruitOptions" :close-on-select="true">
 	//       </v-select>
 	//
 	//     </div>
@@ -20866,7 +20783,7 @@
 	// 选中值 : {{single}}
 	//   </pre>
 	// </p>
-	// <v-select :default-value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+	// <v-select :value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
 	//   <v-option value="Apple">Apple</v-option>
 	//   <v-option value="Banana" disabled>Banana</v-option>
 	//   <v-option value="Cherry">Cherry</v-option>
@@ -20880,7 +20797,7 @@
 	// 选中值 : {{multiple.join(', ')}}
 	//   </pre>
 	// </p>
-	// <v-select multiple :default-value.sync="multiple">
+	// <v-select multiple :value.sync="multiple">
 	//   <v-option value="Apple">Apple</v-option>
 	//   <v-option value="Banana">Banana</v-option>
 	//   <v-option value="Cherry">Cherry</v-option>
@@ -20894,7 +20811,7 @@
 	// 选中值 : {{multipleLimit.join(', ')}}
 	//   </pre>
 	// </p>
-	// <v-select multiple :limit="2" :default-value.sync="multipleLimit">
+	// <v-select multiple :limit="2" :value.sync="multipleLimit">
 	//   <v-option value="Apple">Apple</v-option>
 	//   <v-option value="Banana">Banana</v-option>
 	//   <v-option value="Cherry">Cherry</v-option>
@@ -20908,7 +20825,7 @@
 	// 选中值 : {{custom.join(', ')}}
 	//   </pre>
 	// </p>
-	// <v-select multiple :default-value.sync="custom">
+	// <v-select multiple :value.sync="custom">
 	//   <v-option value="success"><icon type="success" color="green"></icon> 成功</v-option>
 	//   <v-option value="error"><icon type="error" color="red"></icon> 错误</v-option>
 	//   <v-option value="help"><icon type="help"></icon> 帮助</v-option>
@@ -20922,17 +20839,17 @@
 	// 选中值 : {{arr}}
 	//   </pre>
 	// </p>
-	// <v-select :default-value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
+	// <v-select :value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
 	// </v-select>
 	//
 	// <hr />
 	// <h4>Automatically close array driven selects</h4>
 	// <p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
-	// <v-select :default-value.sync="arr2" :options="fruitOptions" :close-on-select="true">
+	// <v-select :value.sync="arr2" :options="fruitOptions" :close-on-select="true">
 	// </v-select>
 	//
 	// <h4>禁用的下拉框</h4>
-	// <v-select :default-value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+	// <v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
 	// </v-select>
 	// </script></code></pre>
 	//
@@ -21027,7 +20944,7 @@
 /* 369 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选中值 : {{single}}\n        </pre>\n      </p>\n      <v-select :default-value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉</h4>\n      <p>\n        <pre>\n选中值 : {{multiple.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :default-value.sync=\"multiple\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉限制</h4>\n      <p>\n        <pre>\n选中值 : {{multipleLimit.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :limit=\"2\" :default-value.sync=\"multipleLimit\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>自定义模板</h4>\n      <p>\n        <pre>\n选中值 : {{custom.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :default-value.sync=\"custom\">\n        <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n        <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n        <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n        <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n      </v-select>\n      <hr />\n      <h4>使用数据填充Select选择框内容</h4>\n      <p>\n        可以指定一个数组来填充选项内容，并可搜索\n        <pre>\n选中值 : {{arr}}\n        </pre>\n      </p>\n      <v-select :default-value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n      </v-select>\n\n      <hr />\n      <h4>Automatically close array driven selects</h4>\n      <p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n      <v-select :default-value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n      </v-select>\n      <v-select placeholder=\"选择类别\" style=\"width:200px;\">\n        <tabs>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n        </tabs>\n      </v-select>\n      <h4>禁用的下拉框</h4>\n      <v-select :default-value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n      </v-select>\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<p>\n  <pre>\n选中值 : {{single}}\n  </pre>\n</p>\n<v-select :default-value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉</h4>\n<p>\n  <pre>\n选中值 : {{multiple.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :default-value.sync=\"multiple\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉限制</h4>\n<p>\n  <pre>\n选中值 : {{multipleLimit.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :limit=\"2\" :default-value.sync=\"multipleLimit\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>自定义模板</h4>\n<p>\n  <pre>\n选中值 : {{custom.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :default-value.sync=\"custom\">\n  <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n  <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n  <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n  <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n</v-select>\n<hr />\n<h4>使用数据填充Select选择框内容</h4>\n<p>\n  可以指定一个数组来填充选项内容，并可搜索\n  <pre>\n选中值 : {{arr}}\n  </pre>\n</p>\n<v-select :default-value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n</v-select>\n\n<hr />\n<h4>Automatically close array driven selects</h4>\n<p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n<v-select :default-value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n</v-select>\n\n<h4>禁用的下拉框</h4>\n<v-select :default-value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n</v-select>\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>defaultValue</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选中值 : {{single}}\n        </pre>\n      </p>\n      <v-select :value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉</h4>\n      <p>\n        <pre>\n选中值 : {{multiple.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :value.sync=\"multiple\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉限制</h4>\n      <p>\n        <pre>\n选中值 : {{multipleLimit.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :limit=\"2\" :value.sync=\"multipleLimit\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>自定义模板</h4>\n      <p>\n        <pre>\n选中值 : {{custom.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :value.sync=\"custom\">\n        <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n        <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n        <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n        <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n      </v-select>\n      <hr />\n      <h4>使用数据填充Select选择框内容</h4>\n      <p>\n        可以指定一个数组来填充选项内容，并可搜索\n        <pre>\n选中值 : {{arr}}\n        </pre>\n      </p>\n      <v-select :value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n      </v-select>\n\n      <hr />\n      <h4>Automatically close array driven selects</h4>\n      <p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n      <v-select :value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n      </v-select>\n      <h4>下拉出自定义类容</h4>\n      <v-select placeholder=\"选择类别\" style=\"width:200px;\">\n        <tabs>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n        </tabs>\n      </v-select>\n      <h4>禁用的下拉框</h4>\n      <v-select :value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n      </v-select>\n\n      <h4>tags</h4>\n      <v-select tags=\"true\" :options=\"fruitOptions\" :close-on-select=\"true\">\n      </v-select>\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<p>\n  <pre>\n选中值 : {{single}}\n  </pre>\n</p>\n<v-select :value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉</h4>\n<p>\n  <pre>\n选中值 : {{multiple.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :value.sync=\"multiple\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉限制</h4>\n<p>\n  <pre>\n选中值 : {{multipleLimit.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :limit=\"2\" :value.sync=\"multipleLimit\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>自定义模板</h4>\n<p>\n  <pre>\n选中值 : {{custom.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :value.sync=\"custom\">\n  <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n  <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n  <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n  <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n</v-select>\n<hr />\n<h4>使用数据填充Select选择框内容</h4>\n<p>\n  可以指定一个数组来填充选项内容，并可搜索\n  <pre>\n选中值 : {{arr}}\n  </pre>\n</p>\n<v-select :value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n</v-select>\n\n<hr />\n<h4>Automatically close array driven selects</h4>\n<p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n<v-select :value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n</v-select>\n\n<h4>禁用的下拉框</h4>\n<v-select :value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n</v-select>\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>defaultValue</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
 
 /***/ },
 /* 370 */
@@ -21057,19 +20974,19 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
-	var Option = _src.Select.Option; // <template>
+	var RangePicker = _src.DatePicker.RangePicker; // <template>
 	//   <div class="bs-docs-section" id="datepicker">
 	//     <h1 class="page-header"><a href="#datepicker" class="anchor">DatePicker 日期选择</a></h1>
 	//     <div class="bs-example">
 	//       <p>
 	//         <pre>
-	// Selected date is: {{new Date(value).toString().slice(0, -23)}}
+	// 选择日期是: {{new Date(value).toString().slice(0, -23)}}
 	//         </pre>
 	//       </p>
 	//       <date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-	//       :format="format.toString()" :show-reset-button="reset" @change="selectChange"></DatePicker>
+	//       :format="format.toString()" :show-reset-button="reset" @change="selectChange"></date-picker>
 	//       <h4>禁用一周的某日</h4>
 	//
 	//       <v-select multiple :default-value.sync="disabled">
@@ -21093,6 +21010,8 @@
 	//
 	//       <h4>重置按钮</h4>
 	//       <label><input type="checkbox" v-model="reset" @click="x">打开或关闭重置功能</label>
+	//
+	//       <range-picker></range-picker>
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
 	// <date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
@@ -21164,10 +21083,12 @@
 	//
 	// <script>
 	
+	var Option = _src.Select.Option;
 	
 	exports.default = {
 	  components: {
 	    DatePicker: _src.DatePicker,
+	    RangePicker: RangePicker,
 	    vSelect: _src.Select,
 	    vOption: Option
 	  },
@@ -21208,7 +21129,7 @@
 /* 372 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"datepicker\">\n    <h1 class=\"page-header\"><a href=\"#datepicker\" class=\"anchor\">DatePicker 日期选择</a></h1>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\nSelected date is: {{new Date(value).toString().slice(0, -23)}}\n        </pre>\n      </p>\n      <date-picker v-ref:dp :value.sync=\"value\" :disabled-days-of-Week=\"disabled\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></DatePicker>\n      <h4>禁用一周的某日</h4>\n\n      <v-select multiple :default-value.sync=\"disabled\">\n  <v-option value=\"0\">0</v-option>\n  <v-option value=\"1\">1</v-option>\n  <v-option value=\"2\">2</v-option>\n  <v-option value=\"3\">3</v-option>\n  <v-option value=\"4\">4</v-option>\n  <v-option value=\"5\">5</v-option>\n  <v-option value=\"6\">6</v-option>\n      </v-select>\n\n      <h4>格式化</h4>\n      <v-select :default-value.sync=\"format\" >\n        <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n        <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n        <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n        <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n        <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n      </v-select>\n\n      <h4>重置按钮</h4>\n      <label><input type=\"checkbox\" v-model=\"reset\" @click=\"x\">打开或关闭重置功能</label>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<date-picker v-ref:dp :value.sync=\"value\" :disabled-days-of-Week=\"disabled\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></DatePicker>\n\n<v-select multiple :default-value.sync=\"disabled\" size=5>\n  <v-option value=\"0\">0</v-option>\n  <v-option value=\"1\">1</v-option>\n  <v-option value=\"2\">2</v-option>\n  <v-option value=\"3\">3</v-option>\n  <v-option value=\"4\">4</v-option>\n  <v-option value=\"5\">5</v-option>\n  <v-option value=\"6\">6</v-option>\n</v-select>\n<v-select  :default-value.sync=\"format\">\n  <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n  <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n  <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n  <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n  <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n</v-select>\n    </script></code></pre>\n    <h2>Option</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n        <tr>\n          <td>format</td>\n          <td><code>String</code></td>\n          <td><code>MMMM/dd/yyyy</code></td>\n          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>\n        </tr>\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n        <tr>\n          <td>showResetButton</td>\n          <td><code>Boolean</code></td>\n          <td>false</td>\n          <td>是否显示清除日期按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"datepicker\">\n    <h1 class=\"page-header\"><a href=\"#datepicker\" class=\"anchor\">DatePicker 日期选择</a></h1>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选择日期是: {{new Date(value).toString().slice(0, -23)}}\n        </pre>\n      </p>\n      <date-picker v-ref:dp :value.sync=\"value\" :disabled-days-of-Week=\"disabled\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></date-picker>\n      <h4>禁用一周的某日</h4>\n\n      <v-select multiple :default-value.sync=\"disabled\">\n  <v-option value=\"0\">0</v-option>\n  <v-option value=\"1\">1</v-option>\n  <v-option value=\"2\">2</v-option>\n  <v-option value=\"3\">3</v-option>\n  <v-option value=\"4\">4</v-option>\n  <v-option value=\"5\">5</v-option>\n  <v-option value=\"6\">6</v-option>\n      </v-select>\n\n      <h4>格式化</h4>\n      <v-select :default-value.sync=\"format\" >\n        <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n        <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n        <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n        <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n        <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n      </v-select>\n\n      <h4>重置按钮</h4>\n      <label><input type=\"checkbox\" v-model=\"reset\" @click=\"x\">打开或关闭重置功能</label>\n\n      <range-picker></range-picker>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<date-picker v-ref:dp :value.sync=\"value\" :disabled-days-of-Week=\"disabled\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></DatePicker>\n\n<v-select multiple :default-value.sync=\"disabled\" size=5>\n  <v-option value=\"0\">0</v-option>\n  <v-option value=\"1\">1</v-option>\n  <v-option value=\"2\">2</v-option>\n  <v-option value=\"3\">3</v-option>\n  <v-option value=\"4\">4</v-option>\n  <v-option value=\"5\">5</v-option>\n  <v-option value=\"6\">6</v-option>\n</v-select>\n<v-select  :default-value.sync=\"format\">\n  <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n  <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n  <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n  <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n  <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n</v-select>\n    </script></code></pre>\n    <h2>Option</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n        <tr>\n          <td>format</td>\n          <td><code>String</code></td>\n          <td><code>MMMM/dd/yyyy</code></td>\n          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>\n        </tr>\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n        <tr>\n          <td>showResetButton</td>\n          <td><code>Boolean</code></td>\n          <td>false</td>\n          <td>是否显示清除日期按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 373 */
@@ -21238,7 +21159,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: {
@@ -21353,7 +21274,7 @@
 	var content = __webpack_require__(378);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -21373,7 +21294,7 @@
 /* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -21393,7 +21314,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  data: function data() {
@@ -21409,7 +21330,7 @@
 	  },
 	  methods: {
 	    showMessage: function showMessage() {
-	      _src.Message.error('我错误啦～～');
+	      _src.Message.error('出错啦～～');
 	    }
 	  }
 	};
@@ -21473,8 +21394,7 @@
 	//         placement="top-right"
 	//         dismissable
 	//       >
-	//         <span class="icon-ok-circled message-icon-float-left"></span>
-	//         <p>在右边显示的警告</p>
+	//         在右边显示的警告
 	//       </message>
 	//
 	//       <message
@@ -21484,9 +21404,7 @@
 	//         width="400px"
 	//         placement="center"
 	//         dismissable>
-	//         <span class="icon-ok-circled message-icon-float-left"></span>
-	//         <strong>Well Done!</strong>
-	//         <p>在中间显示的警告.</p>
+	//         在中间显示的警告
 	//       </message>
 	//
 	//       <message
@@ -21496,84 +21414,97 @@
 	//         width="400px"
 	//         placement="top"
 	//         dismissable>
-	//         <span class="icon-info-circled message-icon-float-left"></span>
-	//         <p>在顶部显示的警告</p>
+	//         在顶部显示的警告
 	//       </message>
 	//     </div>
 	//
 	//     <pre><code class="language-markup"><script type="language-mark-up">
 	// <button class="btn btn-success btn-lg"
-	//         @click="showRight = !showRight">
-	//         点击在右边显示或隐藏
-	//       </button>
-	//       <button class="btn btn-success btn-lg"
-	//         @click="showMessage">
-	//         代码调用，不需要在页面中写组件标签
-	//       </button>
-	//       <button class="btn btn-default btn-lg"
-	//         @click="showCenter = !showCenter">
-	//         点击在中间显示或隐藏
-	//       </button>
-	//       <button class="btn btn-danger btn-lg"
-	//         @click="showTop = !showTop">
-	//         点击在顶部显示或隐藏
-	//       </button>
-	//       <hr>
-	//       <message type="success" >
-	//         成功提示的文案
-	//       </message>
+	//   @click="showRight = !showRight">
+	//   点击在右边显示或隐藏
+	// </button>
+	// <button class="btn btn-success btn-lg"
+	//   @click="showMessage">
+	//   代码调用，不需要在页面中写组件标签
+	// </button>
+	// <button class="btn btn-default btn-lg"
+	//   @click="showCenter = !showCenter">
+	//   点击在中间显示或隐藏
+	// </button>
+	// <button class="btn btn-error btn-lg"
+	//   @click="showTop = !showTop">
+	//   点击在顶部显示或隐藏
+	// </button>
+	// <hr>
+	// <message type="success" >
+	//   成功提示的文案
+	// </message>
 	//
-	//       <message type="info" >
-	//         消息提示的文案
-	//       </message>
+	// <message type="info" >
+	//   消息提示的文案
+	// </message>
 	//
-	//       <message type="danger" dismissable>
-	//         错误提示的文案,可关闭
-	//       </message>
+	// <message type="error" dismissable>
+	//   错误提示的文案,可关闭
+	// </message>
 	//
-	//       <message type="warning" dismissable>
-	//         警告提示的文案,可关闭
-	//       </message>
+	// <message type="warning" dismissable>
+	//   警告提示的文案,可关闭
+	// </message>
 	//
-	//       <message type="help" dismissable>
-	//         帮助提示文案,可关闭
-	//       </message>
+	// <message type="help" dismissable>
+	//   帮助提示文案,可关闭
+	// </message>
 	//
-	//       <message
-	//         :show.sync="showRight"
-	//         :duration="3000"
-	//         type="success"
-	//         width="400px"
-	//         placement="top-right"
-	//         dismissable
-	//       >
-	//         <span class="icon-ok-circled message-icon-float-left"></span>
-	//         <p>在右边显示的警告</p>
-	//       </message>
+	// <message
+	//   :show.sync="showRight"
+	//   :duration="3000"
+	//   type="success"
+	//   width="400px"
+	//   placement="top-right"
+	//   dismissable
+	// >
+	//   在右边显示的警告
+	// </message>
 	//
-	//       <message
-	//         :show="showCenter"
-	//         duration="3000"
-	//         type="success"
-	//         width="400px"
-	//         placement="center"
-	//         dismissable>
-	//         <span class="icon-ok-circled message-icon-float-left"></span>
-	//         <strong>Well Done!</strong>
-	//         <p>在中间显示的警告.</p>
-	//       </message>
+	// <message
+	//   :show.sync="showCenter"
+	//   duration="3000"
+	//   type="success"
+	//   width="400px"
+	//   placement="center"
+	//   dismissable>
+	//   在中间显示的警告
+	// </message>
 	//
-	//       <message
-	//         :show.sync="showTop"
-	//         :duration="3000"
-	//         type="danger"
-	//         width="400px"
-	//         placement="top"
-	//         dismissable>
-	//         <span class="icon-info-circled message-icon-float-left"></span>
-	//         <p>在顶部显示的警告</p>
-	//       </message>
+	// <message
+	//   :show.sync="showTop"
+	//   :duration="3000"
+	//   type="error"
+	//   width="400px"
+	//   placement="top"
+	//   dismissable>
+	//   在顶部显示的警告
+	// </message>
 	//
+	// import {Message} from '@ali/atui'
+	//   export default {
+	//     data() {
+	//       return {
+	//         showRight: false,
+	//         showTop: false,
+	//         showCenter:false
+	//       }
+	//     },
+	//     components: {
+	//       Message,
+	//     },
+	//     methods:{
+	//       showMessage() {
+	//         Message.error('出错啦～～')
+	//       }
+	//     }
+	//   }
 	// </script></code></pre>
 	//
 	//     <h2>Options</h2>
@@ -21628,6 +21559,12 @@
 	//           <td></td>
 	//           <td>组件的位置</td>
 	//         </tr>
+	//         <tr>
+	//           <td>showIcon</td>
+	//           <td><code>Boolean</code></td>
+	//           <td><code>true</code></td>
+	//           <td>是否显示相应的ICON</td>
+	//         </tr>
 	//       </tbody>
 	//     </table>
 	//   </div>
@@ -21639,7 +21576,7 @@
 /* 380 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"message\">\n    <h3 class=\"page-header\">\n      <a href=\"#message\" class=\"anchor\">Message 警告提示</a>\n    </h3>\n    <div class=\"bs-example\" >\n      <button class=\"btn btn-success btn-lg\"\n        @click=\"showRight = !showRight\">\n        点击在右边显示或隐藏\n      </button>\n      <button class=\"btn btn-success btn-lg\"\n        @click=\"showMessage\">\n        代码调用，不需要在页面中写组件标签\n      </button>\n      <button class=\"btn btn-default btn-lg\"\n        @click=\"showCenter = !showCenter\">\n        点击在中间显示或隐藏\n      </button>\n      <button class=\"btn btn-error btn-lg\"\n        @click=\"showTop = !showTop\">\n        点击在顶部显示或隐藏\n      </button>\n      <hr>\n      <message type=\"success\" >\n        成功提示的文案\n      </message>\n\n      <message type=\"info\" >\n        消息提示的文案\n      </message>\n\n      <message type=\"error\" dismissable>\n        错误提示的文案,可关闭\n      </message>\n\n      <message type=\"warning\" dismissable>\n        警告提示的文案,可关闭\n      </message>\n\n      <message type=\"help\" dismissable>\n        帮助提示文案,可关闭\n      </message>\n\n      <message\n        :show.sync=\"showRight\"\n        :duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"top-right\"\n        dismissable\n      >\n        <span class=\"icon-ok-circled message-icon-float-left\"></span>\n        <p>在右边显示的警告</p>\n      </message>\n\n      <message\n        :show.sync=\"showCenter\"\n        duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"center\"\n        dismissable>\n        <span class=\"icon-ok-circled message-icon-float-left\"></span>\n        <strong>Well Done!</strong>\n        <p>在中间显示的警告.</p>\n      </message>\n\n      <message\n        :show.sync=\"showTop\"\n        :duration=\"3000\"\n        type=\"error\"\n        width=\"400px\"\n        placement=\"top\"\n        dismissable>\n        <span class=\"icon-info-circled message-icon-float-left\"></span>\n        <p>在顶部显示的警告</p>\n      </message>\n    </div>\n\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button class=\"btn btn-success btn-lg\"\n        @click=\"showRight = !showRight\">\n        点击在右边显示或隐藏\n      </button>\n      <button class=\"btn btn-success btn-lg\"\n        @click=\"showMessage\">\n        代码调用，不需要在页面中写组件标签\n      </button>\n      <button class=\"btn btn-default btn-lg\"\n        @click=\"showCenter = !showCenter\">\n        点击在中间显示或隐藏\n      </button>\n      <button class=\"btn btn-danger btn-lg\"\n        @click=\"showTop = !showTop\">\n        点击在顶部显示或隐藏\n      </button>\n      <hr>\n      <message type=\"success\" >\n        成功提示的文案\n      </message>\n\n      <message type=\"info\" >\n        消息提示的文案\n      </message>\n\n      <message type=\"danger\" dismissable>\n        错误提示的文案,可关闭\n      </message>\n\n      <message type=\"warning\" dismissable>\n        警告提示的文案,可关闭\n      </message>\n\n      <message type=\"help\" dismissable>\n        帮助提示文案,可关闭\n      </message>\n\n      <message\n        :show.sync=\"showRight\"\n        :duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"top-right\"\n        dismissable\n      >\n        <span class=\"icon-ok-circled message-icon-float-left\"></span>\n        <p>在右边显示的警告</p>\n      </message>\n\n      <message\n        :show=\"showCenter\"\n        duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"center\"\n        dismissable>\n        <span class=\"icon-ok-circled message-icon-float-left\"></span>\n        <strong>Well Done!</strong>\n        <p>在中间显示的警告.</p>\n      </message>\n\n      <message\n        :show.sync=\"showTop\"\n        :duration=\"3000\"\n        type=\"danger\"\n        width=\"400px\"\n        placement=\"top\"\n        dismissable>\n        <span class=\"icon-info-circled message-icon-float-left\"></span>\n        <p>在顶部显示的警告</p>\n      </message>\n\n</script></code></pre>\n\n    <h2>Options</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>show</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示</td>\n        </tr>\n        <tr>\n          <td>dismissable</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否显示关闭按钮</td>\n        </tr>\n        <tr>\n          <td>type</td>\n          <td><code>String</code>, one of\n          <code>success</code>\n          <code>info</code>\n          <code>warning</code>\n          <code>danger</code>\n          <code>help</code>\n          </td>\n          <td><code>success</code></td>\n          <td>组件样式</td>\n        </tr>\n        <tr>\n          <td>duration</td>\n          <td><code>Number</code></td>\n          <td><code>0</code></td>\n          <td>自动关闭时间. 设置为 <code>0</code>或负数将不自动关闭.</td>\n        </tr>\n        <tr>\n          <td>width</td>\n          <td><code>String</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code>. one of <code>top</code>, <code>top-right</code></td>\n          <td></td>\n          <td>组件的位置</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"message\">\n    <h3 class=\"page-header\">\n      <a href=\"#message\" class=\"anchor\">Message 警告提示</a>\n    </h3>\n    <div class=\"bs-example\" >\n      <button class=\"btn btn-success btn-lg\"\n        @click=\"showRight = !showRight\">\n        点击在右边显示或隐藏\n      </button>\n      <button class=\"btn btn-success btn-lg\"\n        @click=\"showMessage\">\n        代码调用，不需要在页面中写组件标签\n      </button>\n      <button class=\"btn btn-default btn-lg\"\n        @click=\"showCenter = !showCenter\">\n        点击在中间显示或隐藏\n      </button>\n      <button class=\"btn btn-error btn-lg\"\n        @click=\"showTop = !showTop\">\n        点击在顶部显示或隐藏\n      </button>\n      <hr>\n      <message type=\"success\" >\n        成功提示的文案\n      </message>\n\n      <message type=\"info\" >\n        消息提示的文案\n      </message>\n\n      <message type=\"error\" dismissable>\n        错误提示的文案,可关闭\n      </message>\n\n      <message type=\"warning\" dismissable>\n        警告提示的文案,可关闭\n      </message>\n\n      <message type=\"help\" dismissable>\n        帮助提示文案,可关闭\n      </message>\n\n      <message\n        :show.sync=\"showRight\"\n        :duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"top-right\"\n        dismissable\n      >\n        在右边显示的警告\n      </message>\n\n      <message\n        :show.sync=\"showCenter\"\n        duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"center\"\n        dismissable>\n        在中间显示的警告\n      </message>\n\n      <message\n        :show.sync=\"showTop\"\n        :duration=\"3000\"\n        type=\"error\"\n        width=\"400px\"\n        placement=\"top\"\n        dismissable>\n        在顶部显示的警告\n      </message>\n    </div>\n\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button class=\"btn btn-success btn-lg\"\n  @click=\"showRight = !showRight\">\n  点击在右边显示或隐藏\n</button>\n<button class=\"btn btn-success btn-lg\"\n  @click=\"showMessage\">\n  代码调用，不需要在页面中写组件标签\n</button>\n<button class=\"btn btn-default btn-lg\"\n  @click=\"showCenter = !showCenter\">\n  点击在中间显示或隐藏\n</button>\n<button class=\"btn btn-error btn-lg\"\n  @click=\"showTop = !showTop\">\n  点击在顶部显示或隐藏\n</button>\n<hr>\n<message type=\"success\" >\n  成功提示的文案\n</message>\n\n<message type=\"info\" >\n  消息提示的文案\n</message>\n\n<message type=\"error\" dismissable>\n  错误提示的文案,可关闭\n</message>\n\n<message type=\"warning\" dismissable>\n  警告提示的文案,可关闭\n</message>\n\n<message type=\"help\" dismissable>\n  帮助提示文案,可关闭\n</message>\n\n<message\n  :show.sync=\"showRight\"\n  :duration=\"3000\"\n  type=\"success\"\n  width=\"400px\"\n  placement=\"top-right\"\n  dismissable\n>\n  在右边显示的警告\n</message>\n\n<message\n  :show.sync=\"showCenter\"\n  duration=\"3000\"\n  type=\"success\"\n  width=\"400px\"\n  placement=\"center\"\n  dismissable>\n  在中间显示的警告\n</message>\n\n<message\n  :show.sync=\"showTop\"\n  :duration=\"3000\"\n  type=\"error\"\n  width=\"400px\"\n  placement=\"top\"\n  dismissable>\n  在顶部显示的警告\n</message>\n\nimport {Message} from '@ali/atui'\n  export default {\n    data() {\n      return {\n        showRight: false,\n        showTop: false,\n        showCenter:false\n      }\n    },\n    components: {\n      Message,\n    },\n    methods:{\n      showMessage() {\n        Message.error('出错啦～～')\n      }\n    }\n  }\n</script></code></pre>\n\n    <h2>Options</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>show</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示</td>\n        </tr>\n        <tr>\n          <td>dismissable</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否显示关闭按钮</td>\n        </tr>\n        <tr>\n          <td>type</td>\n          <td><code>String</code>, one of\n          <code>success</code>\n          <code>info</code>\n          <code>warning</code>\n          <code>danger</code>\n          <code>help</code>\n          </td>\n          <td><code>success</code></td>\n          <td>组件样式</td>\n        </tr>\n        <tr>\n          <td>duration</td>\n          <td><code>Number</code></td>\n          <td><code>0</code></td>\n          <td>自动关闭时间. 设置为 <code>0</code>或负数将不自动关闭.</td>\n        </tr>\n        <tr>\n          <td>width</td>\n          <td><code>String</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code>. one of <code>top</code>, <code>top-right</code></td>\n          <td></td>\n          <td>组件的位置</td>\n        </tr>\n        <tr>\n          <td>showIcon</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示相应的ICON</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 381 */
@@ -21669,7 +21606,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	// <template>
 	//   <div class="bs-docs-section" id="cascader">
@@ -21820,7 +21757,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var confirm = _src.Modal.confirm; // <template>
 	//   <div class="bs-docs-section" id="modal">
@@ -22051,7 +21988,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var columns = [{
 	  title: '姓名',
@@ -22072,6 +22009,9 @@
 	  dataIndex: 'age',
 	  sorter: function sorter(a, b) {
 	    return a.age - b.age;
+	  },
+	  render: function render(text, record, index) {
+	    return '<input type="text" v-model="gridData[' + index + '].age" />';
 	  }
 	}, {
 	  title: '地址',
@@ -22120,6 +22060,9 @@
 	//     title: '年龄',
 	//     dataIndex: 'age',
 	//     sorter: (a, b) => a.age - b.age,
+	//     render(text, record,index) {
+	//       return '<input type="text" v-model="gridData['+ index +'].age" />'
+	//     }
 	//   }, {
 	//     title: '地址',
 	//     dataIndex: 'address',
@@ -22272,13 +22215,13 @@
 	    };
 	  },
 	  onChange: function onChange(selectedRowKeys, selectedRows) {
-	    console.log(selectedRowKeys, selectedRows);
+	    console.log('onChange', selectedRowKeys, selectedRows);
 	  },
 	  onSelect: function onSelect(record, selected, selectedRows) {
-	    console.log(record, selected, selectedRows);
+	    console.log('onSelect', record, selected, selectedRows);
 	  },
 	  onSelectAll: function onSelectAll(selected, selectedRows, changeRows) {
-	    console.log(selected, selectedRows, changeRows);
+	    console.log('onSelectAll', selected, selectedRows, changeRows);
 	  }
 	};
 	exports.default = {
@@ -22317,7 +22260,7 @@
 /* 389 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @change=\"onTableChange\" :loading=\"loading\"></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\nimport {Table,Icon} from 'src/'\n  const columns = [{\n    title: '姓名',\n    dataIndex: 'name',\n    filters: [{\n      text: '姓李的的',\n      value: '李',\n    }, {\n      text: '姓胡的',\n      value: '胡',\n    }],\n    sorter: true,\n    onFilter: (value, record) => record.name.indexOf(value) === 0\n  }, {\n    title: '年龄',\n    dataIndex: 'age',\n    sorter: (a, b) => a.age - b.age,\n  }, {\n    title: '地址',\n    dataIndex: 'address',\n    filters: [{\n      text: '南湖',\n      value: '南湖',\n    }, {\n      text: '西湖',\n      value: '西湖',\n    }],\n    filterMultiple: false,\n    onFilter: (value, record) => record.address.indexOf(value) === 0\n  },{\n      title: '操作',\n      key: 'operation',\n      render(text, record) {\n        return '<icon type=\"info\" /><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n      }\n    }\n  ];\n\n  const data = [{\n    key: '1',\n    name: '胡斌',\n    age: 32,\n    address: '南湖区湖底公园1号',\n  }, {\n    key: '2',\n    name: '胡彦祖',\n    age: 42,\n    address: '西湖区湖底公园12号',\n  }, {\n    key: '3',\n    name: '李大嘴',\n    age: 32,\n    address: '南湖区湖底公园123号',\n  }, {\n    key: '4',\n    name: '李秀莲大嘴哥',\n    age: 32,\n    address: '西湖区湖底公园123号',\n  }];\n  const rowSelection = {\n    getCheckboxProps(record) {\n      return {\n        disabled: record.name === '胡彦祖'    // 配置无法勾选的列 s\n      };\n    },\n    onChange(selectedRowKeys, selectedRows) {\n      console.log(selectedRowKeys, selectedRows);\n    },\n    onSelect(record, selected, selectedRows) {\n      console.log(record, selected, selectedRows);\n    },\n    onSelectAll(selected, selectedRows, changeRows) {\n      console.log(selected, selectedRows, changeRows);\n    }\n  };\n  export default {\n    components: {\n      Grid:Table,\n      Icon\n    },\n    data() {\n      return {\n        gridData:data,\n        gridColumns: columns,\n        rowSelection:rowSelection,\n        loading:false\n      }\n    },\n    methods:{\n      changeData() {\n        this.gridData = data;\n      },\n      onTableChange(i,j,k) {\n        console.log(i,j,k)\n      }\n    }\n  }\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @change=\"onTableChange\" :loading=\"loading\"></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\nimport {Table,Icon} from 'src/'\n  const columns = [{\n    title: '姓名',\n    dataIndex: 'name',\n    filters: [{\n      text: '姓李的的',\n      value: '李',\n    }, {\n      text: '姓胡的',\n      value: '胡',\n    }],\n    sorter: true,\n    onFilter: (value, record) => record.name.indexOf(value) === 0\n  }, {\n    title: '年龄',\n    dataIndex: 'age',\n    sorter: (a, b) => a.age - b.age,\n    render(text, record,index) {\n      return '<input type=\"text\" v-model=\"gridData['+ index +'].age\" />'\n    }\n  }, {\n    title: '地址',\n    dataIndex: 'address',\n    filters: [{\n      text: '南湖',\n      value: '南湖',\n    }, {\n      text: '西湖',\n      value: '西湖',\n    }],\n    filterMultiple: false,\n    onFilter: (value, record) => record.address.indexOf(value) === 0\n  },{\n      title: '操作',\n      key: 'operation',\n      render(text, record) {\n        return '<icon type=\"info\" /><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n      }\n    }\n  ];\n\n  const data = [{\n    key: '1',\n    name: '胡斌',\n    age: 32,\n    address: '南湖区湖底公园1号',\n  }, {\n    key: '2',\n    name: '胡彦祖',\n    age: 42,\n    address: '西湖区湖底公园12号',\n  }, {\n    key: '3',\n    name: '李大嘴',\n    age: 32,\n    address: '南湖区湖底公园123号',\n  }, {\n    key: '4',\n    name: '李秀莲大嘴哥',\n    age: 32,\n    address: '西湖区湖底公园123号',\n  }];\n  const rowSelection = {\n    getCheckboxProps(record) {\n      return {\n        disabled: record.name === '胡彦祖'    // 配置无法勾选的列 s\n      };\n    },\n    onChange(selectedRowKeys, selectedRows) {\n      console.log(selectedRowKeys, selectedRows);\n    },\n    onSelect(record, selected, selectedRows) {\n      console.log(record, selected, selectedRows);\n    },\n    onSelectAll(selected, selectedRows, changeRows) {\n      console.log(selected, selectedRows, changeRows);\n    }\n  };\n  export default {\n    components: {\n      Grid:Table,\n      Icon\n    },\n    data() {\n      return {\n        gridData:data,\n        gridColumns: columns,\n        rowSelection:rowSelection,\n        loading:false\n      }\n    },\n    methods:{\n      changeData() {\n        this.gridData = data;\n      },\n      onTableChange(i,j,k) {\n        console.log(i,j,k)\n      }\n    }\n  }\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 390 */
@@ -22354,7 +22297,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  data: function data() {
@@ -22493,7 +22436,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var Slide = _src.Carousel.Slide; // <template>
 	//   <div class="bs-docs-section" id="carousel">
@@ -22641,7 +22584,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: {
@@ -22708,7 +22651,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: {
@@ -22875,7 +22818,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  data: function data() {
@@ -23014,7 +22957,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  data: function data() {
@@ -23289,7 +23232,7 @@
 	var content = __webpack_require__(415);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -23309,7 +23252,7 @@
 /* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -23329,7 +23272,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var Panel = _src.Accordion.Panel; // <template>
 	//   <div class="bs-docs-section" id="accordion">
@@ -23487,7 +23430,7 @@
 	var content = __webpack_require__(420);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -23507,7 +23450,7 @@
 /* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -23527,7 +23470,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: {
@@ -23636,7 +23579,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  components: {
@@ -23787,7 +23730,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  data: function data() {
@@ -23949,7 +23892,7 @@
 	var content = __webpack_require__(431);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(129)(content, {});
+	var update = __webpack_require__(130)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -23969,7 +23912,7 @@
 /* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(121)();
+	exports = module.exports = __webpack_require__(122)();
 	// imports
 	
 	
@@ -23989,7 +23932,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var Tab = _src.Tabs.Tab; // <template>
 	//   <div class="bs-docs-section" id="tabs">
@@ -24275,7 +24218,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var Step = _src.Steps.Step; // <template>
 	//   <div class="bs-docs-section" id="steps">
@@ -24455,7 +24398,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	var BreadcrumbItem = _src.Breadcrumb.BreadcrumbItem; // <template>
 	//   <div class="bs-docs-section" id="breadcrumb">
@@ -24603,7 +24546,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(131);
+	var _src = __webpack_require__(132);
 	
 	exports.default = {
 	  data: function data() {

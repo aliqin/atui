@@ -49,8 +49,7 @@
         placement="top-right"
         dismissable
       >
-        <span class="icon-ok-circled message-icon-float-left"></span>
-        <p>在右边显示的警告</p>
+        在右边显示的警告
       </message>
 
       <message
@@ -60,9 +59,7 @@
         width="400px"
         placement="center"
         dismissable>
-        <span class="icon-ok-circled message-icon-float-left"></span>
-        <strong>Well Done!</strong>
-        <p>在中间显示的警告.</p>
+        在中间显示的警告
       </message>
 
       <message
@@ -72,84 +69,97 @@
         width="400px"
         placement="top"
         dismissable>
-        <span class="icon-info-circled message-icon-float-left"></span>
-        <p>在顶部显示的警告</p>
+        在顶部显示的警告
       </message>
     </div>
 
     <pre><code class="language-markup"><script type="language-mark-up">
 <button class="btn btn-success btn-lg"
-        @click="showRight = !showRight">
-        点击在右边显示或隐藏
-      </button>
-      <button class="btn btn-success btn-lg"
-        @click="showMessage">
-        代码调用，不需要在页面中写组件标签
-      </button>
-      <button class="btn btn-default btn-lg"
-        @click="showCenter = !showCenter">
-        点击在中间显示或隐藏
-      </button>
-      <button class="btn btn-danger btn-lg"
-        @click="showTop = !showTop">
-        点击在顶部显示或隐藏
-      </button>
-      <hr>
-      <message type="success" >
-        成功提示的文案
-      </message>
+  @click="showRight = !showRight">
+  点击在右边显示或隐藏
+</button>
+<button class="btn btn-success btn-lg"
+  @click="showMessage">
+  代码调用，不需要在页面中写组件标签
+</button>
+<button class="btn btn-default btn-lg"
+  @click="showCenter = !showCenter">
+  点击在中间显示或隐藏
+</button>
+<button class="btn btn-error btn-lg"
+  @click="showTop = !showTop">
+  点击在顶部显示或隐藏
+</button>
+<hr>
+<message type="success" >
+  成功提示的文案
+</message>
 
-      <message type="info" >
-        消息提示的文案
-      </message>
+<message type="info" >
+  消息提示的文案
+</message>
 
-      <message type="danger" dismissable>
-        错误提示的文案,可关闭
-      </message>
+<message type="error" dismissable>
+  错误提示的文案,可关闭
+</message>
 
-      <message type="warning" dismissable>
-        警告提示的文案,可关闭
-      </message>
+<message type="warning" dismissable>
+  警告提示的文案,可关闭
+</message>
 
-      <message type="help" dismissable>
-        帮助提示文案,可关闭
-      </message>
+<message type="help" dismissable>
+  帮助提示文案,可关闭
+</message>
 
-      <message
-        :show.sync="showRight"
-        :duration="3000"
-        type="success"
-        width="400px"
-        placement="top-right"
-        dismissable
-      >
-        <span class="icon-ok-circled message-icon-float-left"></span>
-        <p>在右边显示的警告</p>
-      </message>
+<message
+  :show.sync="showRight"
+  :duration="3000"
+  type="success"
+  width="400px"
+  placement="top-right"
+  dismissable
+>
+  在右边显示的警告
+</message>
 
-      <message
-        :show="showCenter"
-        duration="3000"
-        type="success"
-        width="400px"
-        placement="center"
-        dismissable>
-        <span class="icon-ok-circled message-icon-float-left"></span>
-        <strong>Well Done!</strong>
-        <p>在中间显示的警告.</p>
-      </message>
+<message
+  :show.sync="showCenter"
+  duration="3000"
+  type="success"
+  width="400px"
+  placement="center"
+  dismissable>
+  在中间显示的警告
+</message>
 
-      <message
-        :show.sync="showTop"
-        :duration="3000"
-        type="danger"
-        width="400px"
-        placement="top"
-        dismissable>
-        <span class="icon-info-circled message-icon-float-left"></span>
-        <p>在顶部显示的警告</p>
-      </message>
+<message
+  :show.sync="showTop"
+  :duration="3000"
+  type="error"
+  width="400px"
+  placement="top"
+  dismissable>
+  在顶部显示的警告
+</message>
 
+import {Message} from '@ali/atui'
+  export default {
+    data() {
+      return {
+        showRight: false,
+        showTop: false,
+        showCenter:false
+      }
+    },
+    components: {
+      Message,
+    },
+    methods:{
+      showMessage() {
+        Message.error('出错啦～～')
+      }
+    }
+  }
 </script></code></pre>
 
     <h2>Options</h2>
@@ -204,6 +214,12 @@
           <td></td>
           <td>组件的位置</td>
         </tr>
+        <tr>
+          <td>showIcon</td>
+          <td><code>Boolean</code></td>
+          <td><code>true</code></td>
+          <td>是否显示相应的ICON</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -224,7 +240,7 @@
     },
     methods:{
       showMessage() {
-        Message.error('我错误啦～～')
+        Message.error('出错啦～～')
       }
     }
   }

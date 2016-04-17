@@ -4,11 +4,11 @@
     <div class="bs-example">
       <p>
         <pre>
-Selected date is: {{new Date(value).toString().slice(0, -23)}}
+选择日期是: {{new Date(value).toString().slice(0, -23)}}
         </pre>
       </p>
       <date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></DatePicker>
+      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></date-picker>
       <h4>禁用一周的某日</h4>
 
       <v-select multiple :default-value.sync="disabled">
@@ -32,6 +32,8 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
 
       <h4>重置按钮</h4>
       <label><input type="checkbox" v-model="reset" @click="x">打开或关闭重置功能</label>
+
+      <range-picker></range-picker>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
@@ -103,12 +105,13 @@ Selected date is: {{new Date(value).toString().slice(0, -23)}}
 
 <script>
   import {DatePicker,Select} from 'src/'
-
+  const RangePicker = DatePicker.RangePicker
   const Option = Select.Option;
 
   export default {
     components: {
       DatePicker,
+      RangePicker,
       vSelect:Select,
       vOption:Option
     },

@@ -25,6 +25,9 @@ import {Table,Icon} from 'src/'
     title: '年龄',
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
+    render(text, record,index) {
+      return '<input type="text" v-model="gridData['+ index +'].age" />'
+    }
   }, {
     title: '地址',
     dataIndex: 'address',
@@ -164,6 +167,9 @@ import {Table,Icon} from 'src/'
     title: '年龄',
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
+    render(text, record,index) {
+      return '<input type="text" v-model="gridData['+ index +'].age" />'
+    }
   }, {
     title: '地址',
     dataIndex: 'address',
@@ -213,13 +219,13 @@ import {Table,Icon} from 'src/'
       };
     },
     onChange(selectedRowKeys, selectedRows) {
-      console.log(selectedRowKeys, selectedRows);
+      console.log('onChange',selectedRowKeys, selectedRows);
     },
     onSelect(record, selected, selectedRows) {
-      console.log(record, selected, selectedRows);
+      console.log('onSelect',record, selected, selectedRows);
     },
     onSelectAll(selected, selectedRows, changeRows) {
-      console.log(selected, selectedRows, changeRows);
+      console.log('onSelectAll',selected, selectedRows, changeRows);
     }
   };
   export default {
