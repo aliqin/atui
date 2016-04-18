@@ -13,74 +13,75 @@
 <script>
 	export default {
 		props: {
-			quickGo: {
-				type: Function,
-				default: ()=>{}
-			},
-			currPage: {
-				type: Number
-			},
-			totalPage: {
-				type: Number
-			},
-			mini: {
-				type: Boolean,
-				default: false
-			}
-		},
+      quickGo  : {
+        type   : Function,
+        default: function () {
+        }
+      },
+      currPage : {
+        type: Number
+      },
+      totalPage: {
+        type: Number
+      },
+      mini     : {
+        type   : Boolean,
+        default: false
+      }
+    },
 
-		compiled () {
-			this._current = this.currPage
-		},
+    compiled () {
+      this._current = this.currPage
+    },
 
-		computed: {
-			_inputWrapClasses() {
-				return {
-					'input-jumper': !this.mini,
-		    		'mini-input-jumper': this.mini
-				}
-			},
-			_btnWrapClasses() {
-				return {
-					'btn': true,
-					'tertiary': true,
-					'default': !this.mini,
-					'small': this.mini
-				}
-			}
-		},
+    computed: {
+      _inputWrapClasses() {
+        return {
+          'input-jumper'     : !this.mini,
+          'mini-input-jumper': this.mini
+        }
+      },
+      _btnWrapClasses() {
+        return {
+          'btn'     : true,
+          'tertiary': true,
+          'default' : !this.mini,
+          'small'   : this.mini
+        }
+      }
+    },
 
-		data () {
-			return {
-				_current: null
-			}
-		},
+    data () {
+      return {
+        _current: null
+      }
+    },
 
-		methods: {
-		    _handleChange (e) {
-		    	let val = e.target.value
-		    	if(Number(val) > this.totalPage) {
-		    		this._current = this.totalPage
-		    		return
-		    	}
-		      	this._current = e.target.value
-		    },
+    methods: {
+      _handleChange (e) {
+        let val = e.target.value
+        if (Number(val) > this.totalPage) {
+          this._current = this.totalPage
+          return
+        }
+        this._current = e.target.value
+      },
 
-		    _go (e) {
-		    	if(this._current === '') {
-		    		return
-		    	}
+      _go (e) {
+        if (this._current === '') {
+          return
+        }
 
-		    	let val = Number(this._current)
-		    	if(isNaN(val)) {
-		    		val = this.currPage;
-		    	}
-		    	const c = this.quickGo(val)
-		    	this.currPage = c
-		    	this._current = c
+        let val = Number(this._current)
+        if (isNaN(val)) {
+          val = this.currPage;
+        }
+        const c       = this.quickGo(val)
+        this.currPage = c
+        this._current = c
 
-		    }
-		}
+      }
+    }
 	}
 </script>
 
