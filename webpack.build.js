@@ -24,23 +24,19 @@ config.plugins = (config.plugins || []).concat([
         name: "Vue",
         filename: "vue.js",
     }),
-    //   new webpack.optimize.CommonsChunkPlugin({
-    // name: "VueComponent",
-    // filename: "vuecomponent.js",
-    //   }),
     new webpack.DefinePlugin({
         'process.env': {
             NODE_ENV: '"production"'
         }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false
-        },
-        output: {
-            "ascii_only": true
-        }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //     compress: {
+    //         warnings: false
+    //     },
+    //     output: {
+    //         "ascii_only": true
+    //     }
+    // }),
     new webpack.optimize.OccurenceOrderPlugin()
 ])
 module.exports = config
