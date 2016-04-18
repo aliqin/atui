@@ -82,7 +82,7 @@ export default {
     _changePageSize(value) {
 
     },
-    getPageRange (){
+    getPageRange () {
         var start = 0
         var end = 0
         var showLen = this.prevShow + this.nextShow + 1
