@@ -172,7 +172,7 @@
           this.show = false
         }
         // 需要把option的change事件继续冒泡给上一层级调用
-        this.$dispatch('change',option)
+        // return true
       }
     },
     ready() {
