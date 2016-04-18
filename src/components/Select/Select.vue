@@ -10,7 +10,7 @@
       <div v-else>
         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
-        <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keyup.delete="deleteTag"/>
+        <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keyup.delete="deleteTag" v-model="searchText" autocomplete="off"/>
       </div>
 
     </div>
@@ -19,7 +19,7 @@
         <input type="text" placeholder="Search" v-model="searchText" autocomplete="off">
       </div>
       <div class="option" v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
-        <a @mousedown.prevent.stop="select(option.label,option.value)" style="cursor:pointer">
+        <a @mousedown.prevent.stop="select(option)" style="cursor:pointer">
           {{ option.label }}
           <icon type="tick" v-show="value.indexOf(option.value) !== -1"></icon>
         </a>
@@ -87,6 +87,9 @@
       if(this.value) {
         this.showPlaceholder = false
       }
+      this.$children.forEach((option)=>{
+
+      })
     },
     data() {
       return {
@@ -110,8 +113,9 @@
       }
     },
     methods: {
-      select(label,value) {
-          this.$emit('change',label,value)
+      select(option) {
+          this.$emit('change',option)
+          return true
       },
       toggleDropdown() {
         if(this.disabled) {
