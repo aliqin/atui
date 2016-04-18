@@ -28,7 +28,7 @@
         })
       }
     },
-    create() {
+    ready() {
       if(this.$parent.value == this.value){
         let option = {
           label:this.$els.content.innerHTML,
