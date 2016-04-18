@@ -70,7 +70,10 @@ export default {
     return {
       isCheckedAll: false,
       sorderOrder:[],
-      checkedRows: []
+      checkedRows: [],
+      filters:{},
+      sorter:{}
+
     }
   },
   computed: {
@@ -110,8 +113,8 @@ export default {
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
       this.$nextTick(() => {
         // console.log(me)
-        // me.scope = me.scope || me.$parent;
-        me._context.$compile(me.$el.getElementsByTagName('table')[0]);
+        // me.scope = me.scope || me.$parent
+        me._context.$compile(me.$el.getElementsByTagName('table')[0])
       });
     },
     sortAction(column,index,order) {
@@ -120,7 +123,7 @@ export default {
       }
       this.sorderOrder[index] = order
       this.sorderOrder = Object.assign([],this.sorderOrder)
-      this.$dispatch('change', this.pagination, this.filters, {
+      this.$dispatch('table-change', this.pagination, this.filters, {
         field:column.dataIndex,
         order:order
       })
@@ -147,8 +150,9 @@ export default {
         me.checkedRows = []
       }
       if( me.rowSelection.onSelectAll ) {
-        me.rowSelection.onSelectAll.call(null,checked,me.checkedRows,changeRows)
+        me.rowSelection.onSelectAll(checked,me.checkedRows,changeRows)
       }
+      me.$dispatch('table-change', this.pagination, this.filters, this.sorter)
     },
     // 选中某一个单选框时触发
     onCheckOne(event,record) {
@@ -164,7 +168,7 @@ export default {
         })
       }
       if(me.rowSelection.onSelect) {
-        me.rowSelection.onSelect.call(null,record,checked,me.checkedRows)
+        me.rowSelection.onSelect(record,checked,me.checkedRows)
       }
       me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
     },
@@ -178,9 +182,8 @@ export default {
 
       me.checkedRows = []
       me.isCheckedAll = false
-      let filters = {}
-      filters[column.dataIndex] = [value]
-      me.$dispatch('change', this.pagination, filters, column.sorter)
+      me.filters[column.dataIndex] = [value]
+      me.$dispatch('table-change', this.pagination, me.filters, column.sorter)
     }
   }
 }

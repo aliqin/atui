@@ -137,7 +137,7 @@ Filter
 </div>
   <script>
 
-var columns = [{
+  let  columns = [{
     title: '姓名',
     dataIndex: 'name',
     filters: [{
@@ -153,6 +153,9 @@ var columns = [{
     title: '年龄',
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
+    render(text, record,index) {
+      return '<input type="text" v-model="gridData['+ index +'].age" />'
+    }
   }, {
     title: '地址',
     dataIndex: 'address',
@@ -174,7 +177,7 @@ var columns = [{
     }
   ];
 
-  var data = [{
+  let  data = [{
     key: '1',
     name: '胡斌',
     age: 32,
@@ -195,25 +198,22 @@ var columns = [{
     age: 32,
     address: '西湖区湖底公园123号',
   }];
-  var rowSelection = {
+  let rowSelection = {
     getCheckboxProps(record) {
       return {
         disabled: record.name === '胡彦祖'    // 配置无法勾选的列
       };
     },
     onChange(selectedRowKeys, selectedRows) {
-      console.log(selectedRowKeys, selectedRows);
+      console.log('onChange',selectedRowKeys, selectedRows);
     },
     onSelect(record, selected, selectedRows) {
-      console.log(record, selected, selectedRows);
+      console.log('onSelect',record, selected, selectedRows);
     },
     onSelectAll(selected, selectedRows, changeRows) {
-      console.log(selected, selectedRows, changeRows);
+      console.log('onSelectAll',selected, selectedRows, changeRows);
     }
   };
-
-
-
 
     new Vue({
       el: '#container',
