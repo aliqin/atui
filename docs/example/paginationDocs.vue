@@ -127,8 +127,8 @@
       pageChange (page, id) {
 
       },
-      pageSizeChange (data) {
-        console.log('EVENT', 'pageSizeChange', data.label, data.value)
+      'pagination-size-change' (data) {
+        console.log('EVENT', 'pagination-size-change', data.label, data.value)
       },
     },
     methods:{
