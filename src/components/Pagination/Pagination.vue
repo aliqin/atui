@@ -1,6 +1,6 @@
 <template>
   <div class="pagination" :class="wrapClasses" v-if="totalPage > 1">
-    <Options :total="total" :single="single"  :placeholder="placeholder" :show-size-changer="showSizeChanger"></Options>
+    <options :total="total" :default-size="defaultSize"  :placeholder="placeholder" :show-size-changer="showSizeChanger"></options>
     <jumper
         :quick-go="showJumper ? _handleChange.bind(this) : null",
         :curr-page="currPage",
@@ -38,9 +38,9 @@ export default {
       type: Boolean,
       default: false
     },
-    single: {
-      type: Array,
-      default: ['10']
+    defaultSize: {
+      type: String,
+      default: '10'
     },
     class: {
       type: String
