@@ -7,7 +7,7 @@
 	    </div>
 	  	<button type="button" @click="_go" :class="_btnWrapClasses">
 		跳转</button>
-  	</div>
+  </div>
 </template>
 
 <script>
