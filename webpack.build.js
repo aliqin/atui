@@ -29,14 +29,14 @@ config.plugins = (config.plugins || []).concat([
             NODE_ENV: '"production"'
         }
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //     compress: {
-    //         warnings: false
-    //     },
-    //     output: {
-    //         "ascii_only": true
-    //     }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        },
+        output: {
+            "ascii_only": true
+        }
+    }),
     new webpack.optimize.OccurenceOrderPlugin()
 ])
 module.exports = config
