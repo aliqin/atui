@@ -114,8 +114,7 @@
     },
     methods: {
       select(option) {
-          this.$emit('change',option)
-          return true
+        this.$emit('change',option)
       },
       toggleDropdown() {
         if(this.disabled) {
@@ -172,6 +171,7 @@
         if (!this.multiple) {
           this.show = false
         }
+        return true;
       }
     },
     ready() {
