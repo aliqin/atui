@@ -7,6 +7,7 @@
                   :curr-page.sync="currPage",
                   :total="total",
                   :show-jumper="true",
+                  :default-size="defaultSize",
                   :show-size-changer="true">
       </pagination>
       <h4 class="example-title">迷你版</h4>
@@ -23,6 +24,9 @@
                   :simple="true"
                   class="custom">
       </pagination>
+
+
+      <input type="button" value="changeTotalPage" @click="changeTotalPage"/>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
@@ -53,6 +57,12 @@
         <td>Number</td>
         <td>无</td>
         <td>当前页</td>
+      </tr>
+      <tr>
+        <td>default-size</td>
+        <td>Number</td>
+        <td>one of <code>10、20、30</code></td>
+        <td>如果有选择页码大小的话，这个可以指定每页的大小</td>
       </tr>
       <tr>
         <td>total</td>
@@ -106,7 +116,8 @@
         currPage: 10,
         showJumper: true,
         total: 100,
-        showSizeChanger: true
+        showSizeChanger: true,
+        defaultSize:20
       }
     },
     components: {
@@ -115,6 +126,17 @@
     events: {
       pageChange (page, id) {
 
+      },
+      'pagination-size-change' (data) {
+        console.log('EVENT', 'pagination-size-change', data.label, data.value)
+      },
+    },
+    methods:{
+      changeTotalPage() {
+        this.totalPage = 50
+        this.currPage = 20
+        this.total = 1000
+        this.defaultSize = 30
       }
     },
     ready () {

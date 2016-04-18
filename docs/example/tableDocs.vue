@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
     <row>
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @change="onTableChange" :loading="loading"></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading"></grid>
     </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
@@ -104,7 +104,8 @@ import {Table,Icon} from 'src/'
         this.gridData = data;
       },
       onTableChange(i,j,k) {
-        console.log(i,j,k)
+        alert(3)
+        console.log('table-change',i,j,k)
       }
     }
   }
@@ -219,13 +220,13 @@ import {Table,Icon} from 'src/'
       };
     },
     onChange(selectedRowKeys, selectedRows) {
-      console.log('onChange',selectedRowKeys, selectedRows);
+      console.log('rowSelection.onChange',selectedRowKeys, selectedRows);
     },
     onSelect(record, selected, selectedRows) {
-      console.log('onSelect',record, selected, selectedRows);
+      console.log('rowSelection.onSelect',record, selected, selectedRows);
     },
     onSelectAll(selected, selectedRows, changeRows) {
-      console.log('onSelectAll',selected, selectedRows, changeRows);
+      console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);
     }
   };
   export default {
@@ -245,10 +246,9 @@ import {Table,Icon} from 'src/'
     methods:{
       changeData() {
         this.gridData = data;
-        console.log(this.gridData)
       },
       onTableChange(i,j,k) {
-        console.log(i,j,k)
+        console.log('sdfsdfsdfsdf',i,j,k)
       },
       changeLoading() {
         this.loading = !this.loading

@@ -2986,6 +2986,9 @@ tbody.collapse.in {
   display: inline-block;
   vertical-align: middle;
 }
+.dropdown-toggle {
+  cursor: pointer;
+}
 .dropdown-toggle:focus {
   outline: 0;
 }
@@ -3156,6 +3159,9 @@ tbody.collapse.in {
 }
 .select-container .select-toggle .atui-tag {
   margin: 0 5px;
+}
+.select-container .multiple .select-toggle {
+  cursor: default;
 }
 .select-container .select-placeholder {
   position: absolute;
