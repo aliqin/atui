@@ -21,7 +21,7 @@
 				type: Number
 			},
 			defaultSize: {
-				type: String
+				type: Number
 			},
 			placeholder: {
 				type: String

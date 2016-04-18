@@ -29,12 +29,12 @@
     computed: {
       chosen() {
         return this.$parent.selectedOptions.some((item)=>{
-          return item.value === this.value
+          return item.value == this.value
         })
       }
     },
     ready() {
-      if(this.$parent.value === this.value){
+      if(this.$parent.value == this.value){
         let option = {
           label:this.$els.content.innerHTML,
           value:this.value

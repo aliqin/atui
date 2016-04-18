@@ -39,8 +39,8 @@ export default {
       default: false
     },
     defaultSize: {
-      type: String,
-      default: '10'
+      type: Number,
+      default: 10
     },
     class: {
       type: String
