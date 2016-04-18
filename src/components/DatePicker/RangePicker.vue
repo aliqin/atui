@@ -1,10 +1,10 @@
 <template>
 <div class="range-picker">
-  <input type="" placeholder="开始日期" @click="triggerStart" / >
-    <span class="range-picker-separator"> ~ </span>
-  <input type="text" placeholder="结束日期" @click="triggerEnd">
+  <input type="text" placeholder="开始日期" @click="triggerStart" />
+  <span class="range-picker-separator"> </span>
+  <input type="text" placeholder="结束日期" @click="triggerEnd" />
   <div class="range-picker-content">
-    <date-picker v-show="showEndPicker || showStartPicker"></date-picker>
+    <date-picker v-show="showEndPicker"></date-picker>
   </div>
 </div>
 </template>
