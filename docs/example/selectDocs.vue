@@ -176,7 +176,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>defaultValue</td>
+          <td>value</td>
           <td><code>Array/String</code></td>
           <td><code>[]</code></td>
           <td>默认要选中的值，如果是多选框可以设置数组</td>
