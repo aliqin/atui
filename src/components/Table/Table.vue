@@ -71,9 +71,8 @@ export default {
       isCheckedAll: false,
       sorderOrder:[],
       checkedRows: [],
-      filters:{},
-      sorter:{}
-
+      filters:null,
+      sorter:null
     }
   },
   computed: {

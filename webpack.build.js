@@ -24,6 +24,10 @@ config.plugins = (config.plugins || []).concat([
         name: "Vue",
         filename: "vue.js",
     }),
+    //   new webpack.optimize.CommonsChunkPlugin({
+    // name: "VueComponent",
+    // filename: "vuecomponent.js",
+    //   }),
     new webpack.DefinePlugin({
         'process.env': {
             NODE_ENV: '"production"'
