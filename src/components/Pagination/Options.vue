@@ -31,10 +31,6 @@
 				default: false
 			}
 		},
-
-    data() {
-    },
-
     components: {
       vSelect, vOption
     },

@@ -41,13 +41,13 @@
   export default {
     props: {
       options: {
-        type: Array
+        type: Array,
+        default:[]
       },
       width:{
         type: Array,
       },
       value: {
-        twoWay: true,
         default:''
       },
       placeholder: {

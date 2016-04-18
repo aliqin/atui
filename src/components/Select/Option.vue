@@ -7,7 +7,6 @@
 </template>
 
 <script>
-  import coerceBoolean from '../utils/coerceBoolean.js'
   import Icon from '../Icon/'
   export default {
     props: {
@@ -15,17 +14,13 @@
         type: String
       },
       disabled:{
-        type: Boolean,
-        coerce: coerceBoolean,
-        default:false
+        type: Boolean
       }
     },
     components:{
       Icon
     },
-    data() {
 
-    },
     computed: {
       chosen() {
         return this.$parent.selectedOptions.some((item)=>{
@@ -33,7 +28,7 @@
         })
       }
     },
-    ready() {
+    create() {
       if(this.$parent.value == this.value){
         let option = {
           label:this.$els.content.innerHTML,
@@ -58,11 +53,3 @@
   }
 </script>
 
-<style scoped>
-  a span.check-mark {
-    position: absolute;
-    display: inline-block;
-    right: 15px;
-    margin-top: 5px;
-  }
-</style>
