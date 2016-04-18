@@ -115,7 +115,10 @@
     events: {
       pageChange (page, id) {
 
-      }
+      },
+      pageSizeChange (data) {
+        console.log('EVENT', 'pageSizeChange', data.label, data.value)
+      },
     },
     ready () {
 

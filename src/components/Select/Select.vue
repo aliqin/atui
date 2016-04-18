@@ -114,7 +114,7 @@
     },
     methods: {
       select(option) {
-        this.$emit('change',option)
+        this.$dispatch('change',option)
       },
       toggleDropdown() {
         if(this.disabled) {
@@ -150,6 +150,7 @@
     events:{
       change(option) {
         this.showPlaceholder = false
+
         if(this.multiple) {
           let isSelected = this.selectedOptions.some((item)=>{
             return item.value === option.value
@@ -171,6 +172,7 @@
         if (!this.multiple) {
           this.show = false
         }
+
         // 需要把option的change事件继续冒泡给上一层级调用
         return true
       }

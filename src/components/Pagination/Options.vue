@@ -1,6 +1,6 @@
 <template>
     <div v-if="showSizeChanger" class="pagination-selector">
-        <v-select :default-value.sync="single" :placeholder="placeholder">
+        <v-select :default-value.sync="single" :placeholder="placeholder" >
             <v-option value="10">10 条/页</v-option>
             <v-option value="20">20 条/页</v-option>
             <v-option value="30">30 条/页</v-option>
@@ -33,13 +33,21 @@
 			}
 		},
 
-		data() {
-			return {
-				single: ['10']
-			}
-		},
-		components: {
-			vSelect, vOption
-		}
+    data() {
+      return {
+        single: ['10']
+      }
+    },
+
+    components: {
+      vSelect, vOption
+    },
+
+    events: {
+      change (data) {
+        this.$dispatch('pageSizeChange', data)
+        return true
+      }
+    },
 	}
 </script>
