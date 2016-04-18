@@ -52,7 +52,8 @@
         </div>
       </modal>
 
-      <button @click="showConfirm">使用程序直接弹出</button>
+      <button @click="showConfirm">使用程序直接弹出confirm</button>
+      <button @click="showError">使用程序直接弹出error</button>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <button class="btn btn-default"
@@ -162,6 +163,7 @@
 <script>
   import {Modal} from 'src/'
   const confirm = Modal.confirm
+  const error = Modal.error
   export default {
     data() {
       return {
@@ -181,6 +183,16 @@
         confirm({
           title: '您是否确认要删除这项内容',
           content: '一些解释',
+          onOk() {
+            console.log('确定');
+          },
+          onCancel() {}
+        });
+      },
+      showError() {
+        error({
+          title: '出错了',
+          content: '是不是忘记吃药了？',
           onOk() {
             console.log('确定');
           },
