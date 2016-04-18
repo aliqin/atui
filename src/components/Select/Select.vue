@@ -171,7 +171,8 @@
         if (!this.multiple) {
           this.show = false
         }
-        return true;
+        // 需要把option的change事件继续冒泡给上一层级调用
+        return true
       }
     },
     ready() {
