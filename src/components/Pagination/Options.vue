@@ -37,7 +37,7 @@
 
     events: {
       change (data) {
-        this.$dispatch('pageSizeChange', data)
+        this.$dispatch('pagination-size-change', data)
         return true
       }
     },
