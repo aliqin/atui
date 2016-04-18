@@ -248,8 +248,8 @@
       }
     },
     methods:{
-      onSlectChange(text,value) {
-        console.log(text,value)
+      onSlectChange(option) {
+        console.log(option)
       }
     }
   }
