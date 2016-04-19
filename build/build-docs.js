@@ -4037,6 +4037,9 @@
 	    createTag: function createTag() {
 	      if (this.tags) {
 	        var value = event.target.value;
+	        if (!value.trim().length) {
+	          return;
+	        }
 	        if (this.value.indexOf(value) === -1) {
 	          this.selectedOptions.push({
 	            label: value,
