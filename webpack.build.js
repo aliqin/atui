@@ -35,7 +35,7 @@ config.plugins = (config.plugins || []).concat([
     }),
     new webpack.optimize.UglifyJsPlugin({
         compress: {
-            warnings: false
+            warnings: true
         },
         output: {
             "ascii_only": true

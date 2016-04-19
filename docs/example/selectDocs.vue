@@ -43,28 +43,20 @@
         <v-option value="Grape">Grape</v-option>
       </v-select>
       <hr>
-      <h4>自定义模板</h4>
+      <h4>tags</h4>
       <p>
         <pre>
 选中值 : {{custom.join(', ')}}
         </pre>
       </p>
-      <v-select multiple :value.sync="custom">
-        <v-option value="success"><icon type="success" color="green"></icon> 成功</v-option>
-        <v-option value="error"><icon type="error" color="red"></icon> 错误</v-option>
-        <v-option value="help"><icon type="help"></icon> 帮助</v-option>
-        <v-option value="info"><icon type="info"></icon> 信息</v-option>
+      <v-select tags :value.sync="custom">
+        <v-option value="Apple">Apple</v-option>
+        <v-option value="Banana">Banana</v-option>
+        <v-option value="Cherry">Cherry</v-option>
+        <v-option value="Orange">Orange</v-option>
+        <v-option value="Grape">Grape</v-option>
       </v-select>
       <hr />
-      <h4>使用数据填充Select选择框内容</h4>
-      <p>
-        可以指定一个数组来填充选项内容，并可搜索
-        <pre>
-选中值 : {{arr}}
-        </pre>
-      </p>
-      <v-select :value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
-      </v-select>
 
       <hr />
       <h4>Automatically close array driven selects</h4>
@@ -78,13 +70,6 @@
           <tab header="系统短信签名"></tab>
           <tab header="系统短信签名"></tab>
         </tabs>
-      </v-select>
-      <h4>禁用的下拉框</h4>
-      <v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
-      </v-select>
-
-      <h4>tags</h4>
-      <v-select tags="true" :options="fruitOptions" :close-on-select="true">
       </v-select>
 
     </div>

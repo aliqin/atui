@@ -10,7 +10,7 @@
       <div v-else>
         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
-        <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keyup.delete="deleteTag" v-model="searchText" autocomplete="off"/>
+        <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
       </div>
     </div>
     <div class="dropdown-menu">
@@ -40,24 +40,21 @@
         type: String,
         default: '请选择'
       },
+      tags:{
+        type:Boolean
+      },
       multiple: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
+        type: Boolean
       },
       search: { // Allow searching (only works when options are provided)
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
+        type: Boolean
       },
       limit: {
         type: Number,
         default: 1024
       },
       disabled: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
+        type: Boolean
       }
     },
     components:{
@@ -65,12 +62,15 @@
       Tag
     },
     created() {
+      if(this.tags) {
+        this.multiple = true
+      }
       if (!this.multiple && Array.isArray(this.value)) {
         this.value = this.value.slice(0, 1)
       } else if (this.multiple && this.value.length > this.limit) {
         this.value = this.value.slice(0, this.limit)
       }
-      if(this.value) {
+      if(this.value && this.value.length) {
         this.showPlaceholder = false
       }
 
@@ -98,6 +98,15 @@
           this.showNotify = true
           this.value.pop()
           setTimeout(() => this.showNotify = false, 1000)
+        }
+      },
+      selectedOptions() {
+        if(this.multiple) {
+          this.value = this.selectedOptions.map((option)=>{
+            return option.value
+          })
+        } else {
+          this.value = this.selectedOptions[0].value
         }
       }
     },
@@ -134,6 +143,18 @@
         let width = value.length * 10
         this.showPlaceholder = false
         input.style.width = (width + 10) + 'px'
+      },
+      createTag() {
+        if(this.tags) {
+          let value = event.target.value
+          if(this.value.indexOf(value) === -1) {
+            this.selectedOptions.push({
+              label:value,
+              value:value
+            })
+          }
+          this.searchText = '';
+        }
       }
     },
     events:{
@@ -151,6 +172,7 @@
             this.selectedOptions = this.selectedOptions.filter((item)=>{
               return item.value !== option.value
             })
+            console.log(this.value)
             this.value.$remove(option.value)
           }
         } else {
@@ -161,7 +183,6 @@
         if (!this.multiple) {
           this.show = false
         }
-
         // 需要把option的change事件继续冒泡给上一层级调用
         return true
       }
@@ -169,17 +190,6 @@
     ready() {
       // 如果设置了子option元素同时又传了options，那么优先使用option子组件的内容
       let me = this
-      // if(me.$children && me.$children.length) {
-      //   me.options = []
-      //   me.$children.forEach((option)=>{
-      //     console.log('option',option)
-      //     me.options.push({
-      //       value:option.value,
-      //       label:option.$els.content.innerHTML,
-      //       disabled:option.disabled
-      //     })
-      //   })
-      // }
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!me.$el.contains(e.target)) {
           me.show = false

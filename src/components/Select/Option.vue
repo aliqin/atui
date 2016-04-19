@@ -9,6 +9,7 @@
 <script>
   import Icon from '../Icon/'
   export default {
+    name:'option',
     props: {
       value: {
         type: String
@@ -28,6 +29,9 @@
         })
       },
       show() {
+        // if(!this.$els.content){
+        //   return
+        // }
         let searchText = this.$parent.searchText.trim()
         if(searchText.length && this.$parent.multiple) {
           return this.$els.content.innerText.indexOf(searchText) >=0
