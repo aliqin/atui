@@ -1,5 +1,6 @@
 <template>
-  <div class="pagination" :class="wrapClasses" v-if="totalPage > 1">
+  <div class="pagination">
+  <template v-if="totalPage > 1">
     <options :total="total" :default-size="defaultSize"  :placeholder="placeholder" :show-size-changer="showSizeChanger"></options>
     <jumper
         :quick-go="showJumper ? _handleChange.bind(this) : null",
@@ -8,6 +9,7 @@
         :mini="mini"
     ></jumper>
     <pager :page-range="pageRange" :simple="simple"  :mini="mini" :page-click="pageClick"></pager>
+  </template>
   </div>
 </template>
 <script>
@@ -41,9 +43,6 @@ export default {
     defaultSize: {
       type: Number,
       default: 10
-    },
-    class: {
-      type: String
     }
   },
   data () {
@@ -52,11 +51,6 @@ export default {
       prevShow : 1,
       nextShow : 1,
       placeholder: '10 条/页'
-    }
-  },
-  computed : {
-    wrapClasses() {
-      return this.class.split(' ')
     }
   },
   watch : {

@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
   <link rel="stylesheet" href="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/tmallwt.css"/>
-  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/vue.js"></script>
-  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/VueComponent.js"></script>
-  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/VueWidget.js"></script>
-  <script src="http://g-assets.daily.taobao.net/aliqin/vue-component/0.0.4/VueFilter.js"></script>
+  <script src="http://localhost:9999/build/Vue.js"></script>
+  <script src="http://localhost:9999/build/VueComponent.js"></script>
+  <script src="http://localhost:9999/build/VueWidget.js"></script>
+  <script src="http://localhost:9999/build/VueFilter.js"></script>
 </head>
 <body>
   <div id="container" style="margin:10px">
@@ -38,6 +38,10 @@
   </steps>
 
    <br/> <br/> <br/>
+   <badge dot>
+      <a href="javascript:;" class="badge-count-example">朋友圈</a>
+    </badge>
+
    <badge :count="6">
       <a href="javascript:;" class="badge-count-example"></a>
     </badge>
@@ -76,7 +80,7 @@
       <breadcrumb-item>四级类目</breadcrumb-item>
     </breadcrumb>
     <br/> <br/> <br/>
-    <tag color="orange" closable :on-close="closeTag">标签</tag>
+    <tag color="orange" closable>标签</tag>
  <br/> <br/> <br/>
 <v-row>
 <v-col span="16">
@@ -137,7 +141,7 @@ Filter
 </div>
   <script>
 
-  let  columns = [{
+  var  columns = [{
     title: '姓名',
     dataIndex: 'name',
     filters: [{
@@ -177,7 +181,7 @@ Filter
     }
   ];
 
-  let  data = [{
+  var  data = [{
     key: '1',
     name: '胡斌',
     age: 32,
@@ -198,7 +202,7 @@ Filter
     age: 32,
     address: '西湖区湖底公园123号',
   }];
-  let rowSelection = {
+  var rowSelection = {
     getCheckboxProps(record) {
       return {
         disabled: record.name === '胡彦祖'    // 配置无法勾选的列

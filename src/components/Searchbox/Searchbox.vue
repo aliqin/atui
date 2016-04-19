@@ -1,6 +1,6 @@
 <template>
   <div class="search-box">
-    <input type="text" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" @focus="focusInput" debounce="500" />
+    <input type="text" class="input" :class="classObj" :placeholder="placeholder" v-model="value" @focus="focusInput" debounce="500" />
     <icon type="search" :color="iconColor" size="14"></icon>
     <div v-if="searchList && searchList.length > 0" class="search-list-containter">
       <ul class="list-dropdown" v-show="showPop">
@@ -37,8 +37,7 @@
         default: 'name'
       },
       filterField: {
-        type: Array,
-        default: []
+        type: Array
       }
     },
     data () {

@@ -34,19 +34,20 @@
       },
       //验证规则
       rules: {
-        type: Array,
-        default: []
+        type: Array
       },
       validResult: {
         type: Object,
-        default: {
-          requiredValid: {
-            validStatus: 'success',
-            tips:''
-          },
-          minlengthValid: {
-            validStatus: 'success',
-            tips: ''
+        default() {
+          return {
+            requiredValid: {
+              validStatus: 'success',
+              tips:''
+            },
+            minlengthValid: {
+              validStatus: 'success',
+              tips: ''
+            }
           }
         }
       },

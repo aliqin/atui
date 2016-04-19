@@ -50,8 +50,7 @@ import Icon from '../Icon'
         twoWay: true
       },
       duration: {
-        type: Number,
-        default: 0
+        type: [String, Number]
       },
       width: {
         type: String

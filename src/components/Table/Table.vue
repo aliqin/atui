@@ -96,6 +96,7 @@ export default {
   watch: {
     dataSource: {
       handler(item) {
+        console.log('dataSource changed',item)
         this.checkedRows = []
         this.checkedValues = []
         this.isCheckedAll = false

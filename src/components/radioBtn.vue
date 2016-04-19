@@ -20,6 +20,7 @@
 import coerceBoolean from './utils/coerceBoolean.js'
 
   export default {
+    name:'radio-btn',
     props: {
       value: {
         type: String
