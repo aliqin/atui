@@ -27,7 +27,7 @@
       </thead>
       <tbody class="table-tbody">
         <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">没有任何数据</td></tr>
-        <tr v-for="(rowIndex, record) in dataSource">
+        <tr v-for="(rowIndex, record) in dataSource" :track-by="rowKey">
             <td v-if="rowSelection">
                  <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
             </td>
@@ -91,16 +91,21 @@ export default {
       return this.dataSource.filter((record) => {
         return !this.rowSelection.getCheckboxProps || !this.rowSelection.getCheckboxProps(record).disabled
       })
-    }
+    },
+    // isCheckedAll() {
+    //   let me = this
+    //   me.checkedRows.length === me.checkebleRows.length
+    // }
   },
   watch: {
     dataSource: {
       handler(item) {
-        console.log('dataSource changed',item)
-        this.checkedRows = []
-        this.checkedValues = []
-        this.isCheckedAll = false
-        this.compileTbody()
+        // this.checkedRows = []
+        // this.checkedValues = []
+        // this.isCheckedAll = false
+        let me = this
+        me.compileTbody()
+        me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
       }
     }
   },
@@ -140,6 +145,7 @@ export default {
             changeRows.push(record)
           }
         })
+        // 不能使用计算属性，因为会与点击全选的行为相冲突
         me.isCheckedAll = true
       } else {
         me.checkebleRows.forEach((record,i) => {

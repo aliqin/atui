@@ -169,7 +169,7 @@ import {Table,Icon} from 'src/'
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
     render(text, record,index) {
-      return '<input type="text" v-model="gridData['+ index +'].age" />'
+      return '<input type="text" v-model="gridData['+ index +'].sex" />'
     }
   }, {
     title: '地址',
@@ -245,7 +245,12 @@ import {Table,Icon} from 'src/'
     },
     methods:{
       changeData() {
-        this.gridData = data;
+        this.gridData.push({
+          key: Math.random(),
+          name: '李秀莲大嘴哥',
+          age: Math.random(),
+          address: '西湖区湖底公园123号',
+        })
       },
       onTableChange(i,j,k) {
         console.log('sdfsdfsdfsdf',i,j,k)
