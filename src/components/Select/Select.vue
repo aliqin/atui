@@ -12,16 +12,14 @@
         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keyup.delete="deleteTag" v-model="searchText" autocomplete="off"/>
       </div>
-
     </div>
-    <div v-if="options.length" class="dropdown-menu">
+    <div v-if="options && options.length" class="dropdown-menu">
       <div v-if="search" class="option bs-searchbox">
         <input type="text" placeholder="Search" v-model="searchText" autocomplete="off">
       </div>
-      <div class="option" v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
+      <div v-for="option in options | filterBy searchText " :class="{option:true,disabled:option.disabled,chosen:option.chosen}" style="position:relative">
         <a @mousedown.prevent.stop="select(option)" style="cursor:pointer">
           {{ option.label }}
-          <icon type="tick" v-show="value.indexOf(option.value) !== -1"></icon>
         </a>
       </div>
     </div>
@@ -41,8 +39,7 @@
   export default {
     props: {
       options: {
-        type: Array,
-        default:[]
+        type: Array
       },
       width:{
         type: Array,
@@ -88,7 +85,7 @@
         this.showPlaceholder = false
       }
       this.$children.forEach((option)=>{
-
+        console.log(option)
       })
     },
     data() {
