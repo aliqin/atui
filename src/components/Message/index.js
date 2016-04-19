@@ -15,7 +15,7 @@ import Vue from 'vue'
   	document.getElementsByClassName('vue-message')[0].appendChild(div)
     new Vue({
       el:div,
-      template:'<message class="vue-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :placement="placement" @click="hide()">{{content}}</message>',
+      template:'<message class="vue-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :placement="placement">{{content}}</message>',
       components:{
         Message:Message
       },
