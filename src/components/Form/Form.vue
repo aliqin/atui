@@ -1,6 +1,8 @@
 <template>
-  <form class="form" :class="classObj" @submit="{{submit}}">
-    <slot></slot>
+  <form class="form" :class="classObj">
+    <v-row>
+      <slot></slot>
+    </v-row>
   </form>
 </template>
 <style>
@@ -8,12 +10,13 @@
 .form-vertical {}
 </style>
 <script>
+  import Layout from 'src/components/Layout/';
+  const vRow = Layout.Row;
   export default {
     props: {
       //表单元素排列方式，有纵向和横向两种 horizontal、vertical
       horizontal: null,
-      vertical: null,
-      submit: Function
+      vertical: null
     },
 
     data () {
@@ -23,6 +26,10 @@
           'form-vertical': typeof(this.vertical) !== 'undefined'
         }
       }
+    },
+
+    components: {
+      vRow
     }
   }
 </script>
