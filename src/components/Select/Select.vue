@@ -70,7 +70,7 @@
       } else if (this.multiple && this.value.length > this.limit) {
         this.value = this.value.slice(0, this.limit)
       }
-      if(this.value && this.value.length) {
+      if(this.value.length) {
         this.showPlaceholder = false
       }
 
@@ -183,6 +183,7 @@
         if (!this.multiple) {
           this.show = false
         }
+        this.searchText = ''
         // 需要把option的change事件继续冒泡给上一层级调用
         return true
       }
