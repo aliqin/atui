@@ -261,7 +261,8 @@ export default {
   methods: {
     clickFun () {
       alert('click');
-    }
+    },
+    validFun() {}
   }
 }
 </script>

@@ -19,11 +19,6 @@ export default {
       default:'default'
     }
   },
-  data () {
-    return {
-      size: this.size
-    }
-  },
   methods: {
     show () {
       this.show = true;

@@ -88,6 +88,7 @@ const localeConfig = {
   }
 }
 export default {
+  name:'date-picker',
   props: {
     value: {
       type: String,

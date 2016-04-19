@@ -8,6 +8,7 @@
 import coerceBoolean from '../utils/coerceBoolean.js'
 
   export default {
+    name:'accordion',
     props: {
       oneAtATime: {
         type: Boolean,
@@ -30,7 +31,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
             item.index = index
             if (child !== item ) {
               item.isOpen = false
-            } 
+            }
           })
         }
       })

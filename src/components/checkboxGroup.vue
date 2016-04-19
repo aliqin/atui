@@ -9,6 +9,7 @@
 
 <script>
   export default {
+    name:'checkbox-group',
     props: {
       value: {
         type: Array,

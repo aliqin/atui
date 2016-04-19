@@ -78,11 +78,13 @@ export default {
     placeholder: String,
     defaultAddr: {
       type: Object,
-      default: {
-        provinceId: '',
-        cityId: '',
-        countyId: '',
-        streetId: ''
+      default(){
+        return {
+          provinceId: '',
+          cityId: '',
+          countyId: '',
+          streetId: ''
+        }
       }
     },
     large: null,

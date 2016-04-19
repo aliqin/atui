@@ -4,7 +4,7 @@
     >
       <template v-if="!multiple">
         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
-        <span class="btn-content">{{ selectedOptions[0].label }}</span>
+        <span class="btn-content">{{ showText }}</span>
         <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
       </template>
       <div v-else>
@@ -13,20 +13,12 @@
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keyup.delete="deleteTag" v-model="searchText" autocomplete="off"/>
       </div>
     </div>
-    <div v-if="options && options.length" class="dropdown-menu">
-      <div v-if="search" class="option bs-searchbox">
-        <input type="text" placeholder="Search" v-model="searchText" autocomplete="off">
-      </div>
-      <div v-for="option in options | filterBy searchText " :class="{option:true,disabled:option.disabled,chosen:option.chosen}" style="position:relative">
-        <a @mousedown.prevent.stop="select(option)" style="cursor:pointer">
-          {{ option.label }}
-        </a>
-      </div>
-    </div>
-    <div v-else class="dropdown-menu">
+    <div class="dropdown-menu">
       <slot></slot>
+      <div v-show="noResult" class="no-result">无结果</div>
+      <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
     </div>
-    <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
+
 
   </div>
 </template>
@@ -38,9 +30,6 @@
   import Tag from '../Tag/'
   export default {
     props: {
-      options: {
-        type: Array
-      },
       width:{
         type: Array,
       },
@@ -84,21 +73,24 @@
       if(this.value) {
         this.showPlaceholder = false
       }
-      this.$children.forEach((option)=>{
-        console.log(option)
-      })
+
+
     },
     data() {
       return {
-        searchText: null,
+        searchText: '',
+        noResult:false,
         show: false,
         selectedOptions:[],
         showPlaceholder:true,
-        showNotify: false
+        showNotify: false,
+        options:[]
       }
     },
     computed: {
-
+      showText() {
+        return this.selectedOptions && this.selectedOptions[0] && this.selectedOptions[0].label
+      }
     },
     watch: {
       value(val) {
@@ -171,11 +163,23 @@
         }
 
         // 需要把option的change事件继续冒泡给上一层级调用
-        // return true
+        return true
       }
     },
     ready() {
+      // 如果设置了子option元素同时又传了options，那么优先使用option子组件的内容
       let me = this
+      // if(me.$children && me.$children.length) {
+      //   me.options = []
+      //   me.$children.forEach((option)=>{
+      //     console.log('option',option)
+      //     me.options.push({
+      //       value:option.value,
+      //       label:option.$els.content.innerHTML,
+      //       disabled:option.disabled
+      //     })
+      //   })
+      // }
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!me.$el.contains(e.target)) {
           me.show = false

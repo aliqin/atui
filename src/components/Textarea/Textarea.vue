@@ -22,7 +22,6 @@
     },
     data () {
       return {
-        content: '',
         overLimit: false,
         isDisabled: this.disabled == true || this.disabled === ''
       }
