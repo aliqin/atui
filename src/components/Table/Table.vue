@@ -90,7 +90,9 @@ export default {
     checkebleRows() {
       // 过滤出非禁用的项供选择使用
       return this.dataSource.filter((record) => {
-        return !this.rowSelection.getCheckboxProps || !this.rowSelection.getCheckboxProps(record).disabled
+        if(this.rowSelection) {
+          return !this.rowSelection.getCheckboxProps || !this.rowSelection.getCheckboxProps(record).disabled
+        }
       })
     },
     // isCheckedAll() {
