@@ -82,25 +82,4 @@ import Icon from '../Icon'
   height: 0;
   opacity: 0;
 }
-.alert.top {
-  position: fixed;
-  top: 30px;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  z-index: 2;
-}
-.alert.top-right {
-  position: fixed;
-  top: 30px;
-  right: 50px;
-  z-index: 2;
-}
-.alert.center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,50%);
-  z-index: 2;
-}
 </style>
