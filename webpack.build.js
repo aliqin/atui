@@ -4,7 +4,7 @@ var config = require('./webpack.config.js')
 config.entry = {
     Vue: ['vue'],
     VueComponent: ['./src/index.js'],
-    VueWidget: ['./src/widgets/index.js'],
+    // VueWidget: ['./src/widgets/index.js'],
     VueFilter: ['./src/filters/index.js']
 }
 config.output = {
