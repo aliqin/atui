@@ -1704,7 +1704,7 @@
 	
 	var _Form2 = _interopRequireDefault(_Form);
 	
-	var _Layout = __webpack_require__(146);
+	var _Layout = __webpack_require__(143);
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
@@ -1934,6 +1934,7 @@
 	//
 	// <script>
 	exports.default = {
+	  name: 'icon',
 	  props: {
 	    type: {
 	      type: String,
@@ -1973,7 +1974,7 @@
 	
 	var _Form2 = _interopRequireDefault(_Form);
 	
-	var _FormItem = __webpack_require__(144);
+	var _FormItem = __webpack_require__(151);
 	
 	var _FormItem2 = _interopRequireDefault(_FormItem);
 	
@@ -1994,7 +1995,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Form/Form.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(143)
+	__vue_template__ = __webpack_require__(150)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2044,16 +2045,25 @@
 
 /***/ },
 /* 142 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
-	//   <form class="form" :class="classObj" @submit="{{submit}}">
-	//     <slot></slot>
+	
+	var _Layout = __webpack_require__(143);
+	
+	var _Layout2 = _interopRequireDefault(_Layout);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var vRow = _Layout2.default.Row; // <template>
+	//   <form class="form" :class="classObj">
+	//     <v-row>
+	//       <slot></slot>
+	//     </v-row>
 	//   </form>
 	// </template>
 	// <style>
@@ -2061,12 +2071,12 @@
 	// .form-vertical {}
 	// </style>
 	// <script>
+	
 	exports.default = {
 	  props: {
 	    //表单元素排列方式，有纵向和横向两种 horizontal、vertical
 	    horizontal: null,
-	    vertical: null,
-	    submit: Function
+	    vertical: null
 	  },
 	
 	  data: function data() {
@@ -2076,6 +2086,11 @@
 	        'form-vertical': typeof this.vertical !== 'undefined'
 	      }
 	    };
+	  },
+	
+	
+	  components: {
+	    vRow: vRow
 	  }
 	};
 	// </script>
@@ -2084,9 +2099,25 @@
 
 /***/ },
 /* 143 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<form class=\"form\" :class=\"classObj\" @submit=\"{{submit}}\">\n  <slot></slot>\n</form>\n";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Row = __webpack_require__(144);
+	
+	var _Row2 = _interopRequireDefault(_Row);
+	
+	var _Col = __webpack_require__(147);
+	
+	var _Col2 = _interopRequireDefault(_Col);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = { Row: _Row2.default, Col: _Col2.default };
 
 /***/ },
 /* 144 */
@@ -2097,8 +2128,8 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Form/FormItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(153)
+	  console.warn("[vue-loader] src/components/Layout/Row.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(146)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2108,154 +2139,6 @@
 
 /***/ },
 /* 145 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Layout = __webpack_require__(146);
-	
-	var _Layout2 = _interopRequireDefault(_Layout);
-	
-	var _Icon = __webpack_require__(134);
-	
-	var _Icon2 = _interopRequireDefault(_Icon);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	// <div class="form-item" :class="classObj">
-	//   <v-col :span="labelCol">
-	//     <label v-if="label" class="form-label">
-	//       <span v-if="isRequired" class="required-icon">*</span>
-	//       {{label}}
-	//     </label>
-	//   </v-col>
-	//   <v-col :span="wrapperCol || calcWrapperCol">
-	//     <div class="form-input">
-	//       <slot></slot>
-	//       <template v-if="showIcon">
-	//         <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
-	//         <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
-	//         <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
-	//         <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
-	//       </template>
-	//     </div>
-	//     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
-	//   </v-col>
-	// </div>
-	// </template>
-	// <script>
-	
-	var vCol = _Layout2.default.Col;
-	exports.default = {
-	  props: {
-	    label: String,
-	    labelCol: {
-	      type: String,
-	      default: '7'
-	    },
-	    wrapperCol: {
-	      type: String,
-	      default: ''
-	    },
-	    //验证规则
-	    rules: {
-	      type: Array,
-	      default: []
-	    },
-	    //是否必填
-	    required: null,
-	    //提示信息，如不设置，会根据验证规则自动生成
-	    tips: {
-	      type: String,
-	      default: ''
-	    },
-	    //额外提示信息，设置后，会和提示信息一起显示
-	    extra: String,
-	    //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
-	    validStatus: {
-	      type: String,
-	      default: ''
-	    },
-	    //配合validateStatus属性使用，是否展示校验状态图标
-	    hasIcon: null
-	  },
-	
-	  computed: {
-	    classObj: function classObj() {
-	      return {
-	        // 'form-item-with-help': this.validStatus,
-	        'has-error': this.validStatus == 'error',
-	        'has-success': this.validStatus == 'success'
-	      };
-	    },
-	    isRequired: function isRequired() {
-	      return typeof this.required !== 'undefined';
-	    },
-	    showIcon: function showIcon() {
-	      return this.validStatus && typeof this.hasIcon !== 'undefined';
-	    },
-	    calcWrapperCol: function calcWrapperCol() {
-	      var span = new Number(24 - this.labelCol);
-	      return span.toString();
-	    }
-	  },
-	
-	  components: {
-	    vCol: vCol,
-	    Icon: _Icon2.default
-	  }
-	};
-	// </script>
-
-	/* generated by vue-loader */
-
-/***/ },
-/* 146 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Row = __webpack_require__(147);
-	
-	var _Row2 = _interopRequireDefault(_Row);
-	
-	var _Col = __webpack_require__(150);
-	
-	var _Col2 = _interopRequireDefault(_Col);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = { Row: _Row2.default, Col: _Col2.default };
-
-/***/ },
-/* 147 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(148)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Layout/Row.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(149)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-
-
-/***/ },
-/* 148 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2278,22 +2161,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 149 */
+/* 146 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"row\"><slot></slot></div>\n";
 
 /***/ },
-/* 150 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(151)
+	__vue_script__ = __webpack_require__(148)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Layout/Col.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(152)
+	__vue_template__ = __webpack_require__(149)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2302,7 +2185,7 @@
 
 
 /***/ },
-/* 151 */
+/* 148 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2336,16 +2219,145 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 152 */
+/* 149 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"className\"><slot></slot></div>\n";
 
 /***/ },
+/* 150 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<form class=\"form\" :class=\"classObj\">\n  <v-row>\n    <slot></slot>\n  </v-row>\n</form>\n";
+
+/***/ },
+/* 151 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(152)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Form/FormItem.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(153)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+
+
+/***/ },
+/* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Layout = __webpack_require__(143);
+	
+	var _Layout2 = _interopRequireDefault(_Layout);
+	
+	var _Icon = __webpack_require__(134);
+	
+	var _Icon2 = _interopRequireDefault(_Icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	// <v-col class="form-item" :class="classObj" :span="itemCol">
+	//   <v-col :span="labelCol">
+	//     <label v-if="label" class="form-label">
+	//       <span v-if="isRequired" class="required-icon">*</span>
+	//       {{label}}
+	//     </label>
+	//   </v-col>
+	//   <v-col :span="wrapperCol || calcWrapperCol">
+	//     <div class="form-input">
+	//       <slot></slot>
+	//       <template v-if="showIcon">
+	//         <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
+	//         <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
+	//         <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
+	//         <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
+	//       </template>
+	//     </div>
+	//     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
+	//   </v-col>
+	// </v-col>
+	// </template>
+	// <script>
+	
+	var vCol = _Layout2.default.Col;
+	exports.default = {
+	  props: {
+	    label: String,
+	    itemCol: {
+	      type: String,
+	      default: '24'
+	    },
+	    labelCol: {
+	      type: String,
+	      default: '7'
+	    },
+	    wrapperCol: {
+	      type: String,
+	      default: ''
+	    },
+	    //是否必填
+	    required: null,
+	    //提示信息，如不设置，会根据验证规则自动生成
+	    tips: {
+	      type: String,
+	      default: ''
+	    },
+	    //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
+	    validStatus: {
+	      type: String,
+	      default: ''
+	    },
+	    //配合validateStatus属性使用，是否展示校验状态图标
+	    hasIcon: null
+	  },
+	
+	  computed: {
+	    classObj: function classObj() {
+	      return {
+	        'form-item-with-help': this.validStatus,
+	        'has-error': this.validStatus == 'error',
+	        'has-success': this.validStatus == 'success'
+	      };
+	    },
+	    isRequired: function isRequired() {
+	      return typeof this.required !== 'undefined';
+	    },
+	    showIcon: function showIcon() {
+	      return this.validStatus && typeof this.hasIcon !== 'undefined';
+	    },
+	    calcWrapperCol: function calcWrapperCol() {
+	      var span = new Number(24 - this.labelCol);
+	      return span.toString();
+	    }
+	  },
+	
+	  components: {
+	    vCol: vCol,
+	    Icon: _Icon2.default
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
 /* 153 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"form-item\" :class=\"classObj\">\n  <v-col :span=\"labelCol\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</div>\n";
+	module.exports = "\n<v-col class=\"form-item\" :class=\"classObj\" :span=\"itemCol\">\n  <v-col :span=\"labelCol\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</v-col>\n";
 
 /***/ },
 /* 154 */
@@ -2485,7 +2497,7 @@
 	  value: true
 	});
 	// <template>
-	//   <input type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" />
+	//   <input type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" :valid-status.sync="validStatus" maxlength="{{maxlength}}" />
 	// </template>
 	// <script>
 	exports.default = {
@@ -2500,15 +2512,69 @@
 	    },
 	    large: null,
 	    small: null,
+	    value: {
+	      type: String,
+	      default: ''
+	    },
+	    //是否必填
+	    required: {
+	      type: Boolean,
+	      default: false
+	    },
+	    requiredTips: String,
+	    maxlength: String,
+	    minlength: String,
+	    minlengthTips: String,
+	    //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
 	    validStatus: {
 	      type: String,
 	      default: ''
 	    },
-	    value: {
+	    //验证规则
+	    rules: {
+	      type: Array
+	    },
+	    validResult: {
+	      type: Object,
+	      default: function _default() {
+	        return {
+	          requiredValid: {
+	            validStatus: 'success',
+	            tips: ''
+	          },
+	          minlengthValid: {
+	            validStatus: 'success',
+	            tips: ''
+	          }
+	        };
+	      }
+	    },
+	    tips: {
 	      type: String,
 	      default: ''
 	    }
 	  },
+	
+	  data: function data() {
+	    return {
+	      results: {
+	        requiredValid: {
+	          validStatus: 'success',
+	          tips: ''
+	        },
+	        minlengthValid: {
+	          validStatus: 'success',
+	          tips: ''
+	        },
+	        isPhoneValid: {
+	          validStatus: 'success',
+	          tips: ''
+	        }
+	      }
+	    };
+	  },
+	
+	
 	  computed: {
 	    classObj: function classObj() {
 	      return {
@@ -2519,6 +2585,134 @@
 	        'warn': this.validStatus == 'warn'
 	      };
 	    }
+	  },
+	
+	  watch: {
+	    value: function value(newVal, oldVal) {
+	      if (this.validResult) {
+	        this.valid(newVal);
+	      }
+	    },
+	
+	
+	    results: {
+	      handler: function handler(val, oldVal) {
+	        var self = this;
+	        var tips = '';
+	        var status = '';
+	        for (var key in val) {
+	          var obj = val[key];
+	          if (obj) {
+	            tips += obj.tips + '  ';
+	
+	            if (obj.validStatus !== 'success') {
+	              status = 'error';
+	            }
+	          }
+	        }
+	
+	        self.validStatus = status;
+	        self.tips = tips;
+	        self.validResult = self.results;
+	      },
+	      deep: true
+	    }
+	  },
+	
+	  methods: {
+	    valid: function valid(val) {
+	      if (typeof this.required !== "undefined") {
+	        this.requiredValid(val);
+	      }
+	
+	      if (this.minlength) {
+	        this.minlengthValid(val);
+	      }
+	
+	      if (this.rules) {
+	        this.rulesValid(val);
+	      }
+	    },
+	    rulesItemValid: function rulesItemValid(rule, value) {
+	      var self = this;
+	
+	      switch (rule) {
+	        case 'required':
+	          self.requiredValid(value);
+	        case 'isPhone':
+	          self.phoneValid(value);
+	          break;
+	        case 'isNumber':
+	          self.numberValid(value);
+	          break;
+	        case 'isTelephone':
+	          self.telValid(value);
+	          break;
+	      }
+	    },
+	    requiredValid: function requiredValid(val) {
+	      var self = this;
+	
+	      self.results = self.results || {};
+	
+	      if (!val) {
+	        self.results.requiredValid = {
+	          validStatus: 'error',
+	          tips: self.requiredTips || '输入不能为空'
+	        };
+	      } else {
+	        self.results.requiredValid = {
+	          validStatus: 'success',
+	          tips: ''
+	        };
+	      }
+	    },
+	    minlengthValid: function minlengthValid(val) {
+	      var self = this;
+	      var minlength = self.minlength - 0;
+	
+	      self.results = self.results || {};
+	
+	      if (val) {
+	        var len = val.length;
+	
+	        if (val.length < minlength) {
+	          self.results.minlengthValid = {
+	            validStatus: 'error',
+	            tips: self.minlengthTips || '输入字符数不能小于' + len
+	          };
+	        } else {
+	          self.results.minlengthValid = {
+	            validStatus: 'success',
+	            tips: ''
+	          };
+	        }
+	      }
+	    },
+	    rulesValid: function rulesValid(value) {
+	      var self = this;
+	
+	      self.rules.forEach(function (val, index) {
+	        self.rulesItemValid(val, value);
+	      });
+	    },
+	    phoneValid: function phoneValid(value) {
+	      var rule = /^1\d{10}$/;
+	
+	      if (rule.test(value) || value == '') {
+	        this.results.isPhoneValid = {
+	          validStatus: 'success',
+	          tips: ''
+	        };
+	      } else {
+	        this.results.isPhoneValid = {
+	          validStatus: 'error',
+	          tips: this.isPhoneValidTips || '输入手机号码格式错误'
+	        };
+	      }
+	    },
+	    numberValid: function numberValid(value) {},
+	    telValid: function telValid(value) {}
 	  }
 	};
 	// </script>
@@ -2529,7 +2723,7 @@
 /* 161 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<input type=\"{{type}}\" class=\"input\" :class=\"classObj\" placeholder=\"{{placeholder}}\" v-model=\"value\" />\n";
+	module.exports = "\n<input type=\"{{type}}\" class=\"input\" :class=\"classObj\" placeholder=\"{{placeholder}}\" v-model=\"value\" :valid-status.sync=\"validStatus\" maxlength=\"{{maxlength}}\" />\n";
 
 /***/ },
 /* 162 */
@@ -2589,7 +2783,7 @@
 	
 	// <template>
 	//   <div class="search-box">
-	//     <input type="text" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" @focus="focusInput" debounce="500" />
+	//     <input type="text" class="input" :class="classObj" :placeholder="placeholder" v-model="value" @focus="focusInput" debounce="500" />
 	//     <icon type="search" :color="iconColor" size="14"></icon>
 	//     <div v-if="searchList && searchList.length > 0" class="search-list-containter">
 	//       <ul class="list-dropdown" v-show="showPop">
@@ -2623,8 +2817,7 @@
 	      default: 'name'
 	    },
 	    filterField: {
-	      type: Array,
-	      default: []
+	      type: Array
 	    }
 	  },
 	  data: function data() {
@@ -2733,7 +2926,7 @@
 /* 166 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"search-box\">\n  <input type=\"text\" class=\"input\" :class=\"classObj\" placeholder=\"{{placeholder}}\" v-model=\"value\" @focus=\"focusInput\" debounce=\"500\" />\n  <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n  <div v-if=\"searchList && searchList.length > 0\" class=\"search-list-containter\">\n    <ul class=\"list-dropdown\" v-show=\"showPop\">\n      <li v-for=\"item in searchList | filterBy value\">\n        <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" title=\"{{item[textField]}}\">{{item[textField]}}</a>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"search-box\">\n  <input type=\"text\" class=\"input\" :class=\"classObj\" :placeholder=\"placeholder\" v-model=\"value\" @focus=\"focusInput\" debounce=\"500\" />\n  <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n  <div v-if=\"searchList && searchList.length > 0\" class=\"search-list-containter\">\n    <ul class=\"list-dropdown\" v-show=\"showPop\">\n      <li v-for=\"item in searchList | filterBy value\">\n        <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" title=\"{{item[textField]}}\">{{item[textField]}}</a>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
 /* 167 */
@@ -3702,31 +3895,21 @@
 	//     >
 	//       <template v-if="!multiple">
 	//         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
-	//         <span class="btn-content">{{ selectedOptions[0].label }}</span>
+	//         <span class="btn-content">{{ showText }}</span>
 	//         <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
 	//       </template>
 	//       <div v-else>
 	//         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
 	//         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
-	//         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keyup.delete="deleteTag" v-model="searchText" autocomplete="off"/>
-	//       </div>
-	//
-	//     </div>
-	//     <div v-if="options.length" class="dropdown-menu">
-	//       <div v-if="search" class="option bs-searchbox">
-	//         <input type="text" placeholder="Search" v-model="searchText" autocomplete="off">
-	//       </div>
-	//       <div class="option" v-for="option in options | filterBy searchText " v-bind:id="option.value" style="position:relative">
-	//         <a @mousedown.prevent.stop="select(option)" style="cursor:pointer">
-	//           {{ option.label }}
-	//           <icon type="tick" v-show="value.indexOf(option.value) !== -1"></icon>
-	//         </a>
+	//         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
 	//       </div>
 	//     </div>
-	//     <div v-else class="dropdown-menu">
+	//     <div class="dropdown-menu">
 	//       <slot></slot>
+	//       <div v-show="noResult" class="no-result">无结果</div>
+	//       <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
 	//     </div>
-	//     <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
+	//
 	//
 	//   </div>
 	// </template>
@@ -3734,10 +3917,6 @@
 	// <script>
 	exports.default = {
 	  props: {
-	    options: {
-	      type: Array,
-	      default: []
-	    },
 	    width: {
 	      type: Array
 	    },
@@ -3748,24 +3927,21 @@
 	      type: String,
 	      default: '请选择'
 	    },
+	    tags: {
+	      type: Boolean
+	    },
 	    multiple: {
-	      type: Boolean,
-	      coerce: _coerceBoolean2.default,
-	      default: false
+	      type: Boolean
 	    },
 	    search: { // Allow searching (only works when options are provided)
-	      type: Boolean,
-	      coerce: _coerceBoolean2.default,
-	      default: false
+	      type: Boolean
 	    },
 	    limit: {
 	      type: Number,
 	      default: 1024
 	    },
 	    disabled: {
-	      type: Boolean,
-	      coerce: _coerceBoolean2.default,
-	      default: false
+	      type: Boolean
 	    }
 	  },
 	  components: {
@@ -3773,27 +3949,35 @@
 	    Tag: _Tag2.default
 	  },
 	  created: function created() {
+	    if (this.tags) {
+	      this.multiple = true;
+	    }
 	    if (!this.multiple && Array.isArray(this.value)) {
 	      this.value = this.value.slice(0, 1);
 	    } else if (this.multiple && this.value.length > this.limit) {
 	      this.value = this.value.slice(0, this.limit);
 	    }
-	    if (this.value) {
+	    if (this.value.length) {
 	      this.showPlaceholder = false;
 	    }
-	    this.$children.forEach(function (option) {});
 	  },
 	  data: function data() {
 	    return {
-	      searchText: null,
+	      searchText: '',
+	      noResult: false,
 	      show: false,
 	      selectedOptions: [],
 	      showPlaceholder: true,
-	      showNotify: false
+	      showNotify: false,
+	      options: []
 	    };
 	  },
 	
-	  computed: {},
+	  computed: {
+	    showText: function showText() {
+	      return this.selectedOptions && this.selectedOptions[0] && this.selectedOptions[0].label;
+	    }
+	  },
 	  watch: {
 	    value: function value(val) {
 	      var _this = this;
@@ -3804,6 +3988,15 @@
 	        setTimeout(function () {
 	          return _this.showNotify = false;
 	        }, 1000);
+	      }
+	    },
+	    selectedOptions: function selectedOptions() {
+	      if (this.multiple) {
+	        this.value = this.selectedOptions.map(function (option) {
+	          return option.value;
+	        });
+	      } else {
+	        this.value = this.selectedOptions[0].value;
 	      }
 	    }
 	  },
@@ -3840,6 +4033,18 @@
 	      var width = value.length * 10;
 	      this.showPlaceholder = false;
 	      input.style.width = width + 10 + 'px';
+	    },
+	    createTag: function createTag() {
+	      if (this.tags) {
+	        var value = event.target.value;
+	        if (this.value.indexOf(value) === -1) {
+	          this.selectedOptions.push({
+	            label: value,
+	            value: value
+	          });
+	        }
+	        this.searchText = '';
+	      }
 	    }
 	  },
 	  events: {
@@ -3857,6 +4062,7 @@
 	          this.selectedOptions = this.selectedOptions.filter(function (item) {
 	            return item.value !== option.value;
 	          });
+	          console.log(this.value);
 	          this.value.$remove(option.value);
 	        }
 	      } else {
@@ -3867,12 +4073,13 @@
 	      if (!this.multiple) {
 	        this.show = false;
 	      }
-	
+	      this.searchText = '';
 	      // 需要把option的change事件继续冒泡给上一层级调用
-	      // return true
+	      return true;
 	    }
 	  },
 	  ready: function ready() {
+	    // 如果设置了子option元素同时又传了options，那么优先使用option子组件的内容
 	    var me = this;
 	    me._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
 	      if (!me.$el.contains(e.target)) {
@@ -4025,7 +4232,7 @@
 /* 190 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled,multiple:multiple}\" _v-f750b48a=\"\">\n  <div class=\"select-toggle\" tabindex=\"1\" @click=\"toggleDropdown\" v-bind=\"{disabled: disabled}\" _v-f750b48a=\"\">\n    <template v-if=\"!multiple\">\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n      <span class=\"btn-content\" _v-f750b48a=\"\">{{ selectedOptions[0].label }}</span>\n      <span :class=\"{caret:true,open:show}\" _v-f750b48a=\"\"><icon type=\"down\" size=\"12\" _v-f750b48a=\"\"></icon></span>\n    </template>\n    <div v-else=\"\" _v-f750b48a=\"\">\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable=\"\" @close=\"closeTag(option)\" _v-f750b48a=\"\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field=\"\" class=\"select-search-field\" @input=\"onInput\" @keyup.delete=\"deleteTag\" v-model=\"searchText\" autocomplete=\"off\" _v-f750b48a=\"\">\n    </div>\n\n  </div>\n  <div v-if=\"options.length\" class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <div v-if=\"search\" class=\"option bs-searchbox\" _v-f750b48a=\"\">\n      <input type=\"text\" placeholder=\"Search\" v-model=\"searchText\" autocomplete=\"off\" _v-f750b48a=\"\">\n    </div>\n    <div class=\"option\" v-for=\"option in options | filterBy searchText \" v-bind:id=\"option.value\" style=\"position:relative\" _v-f750b48a=\"\">\n      <a @mousedown.prevent.stop=\"select(option)\" style=\"cursor:pointer\" _v-f750b48a=\"\">\n        {{ option.label }}\n        <icon type=\"tick\" v-show=\"value.indexOf(option.value) !== -1\" _v-f750b48a=\"\"></icon>\n      </a>\n    </div>\n  </div>\n  <div v-else=\"\" class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <slot _v-f750b48a=\"\"></slot>\n  </div>\n  <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\" _v-f750b48a=\"\">最多可选 ({{limit}})项.</div>\n\n</div>\n";
+	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled,multiple:multiple}\" _v-f750b48a=\"\">\n  <div class=\"select-toggle\" tabindex=\"1\" @click=\"toggleDropdown\" v-bind=\"{disabled: disabled}\" _v-f750b48a=\"\">\n    <template v-if=\"!multiple\">\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n      <span class=\"btn-content\" _v-f750b48a=\"\">{{ showText }}</span>\n      <span :class=\"{caret:true,open:show}\" _v-f750b48a=\"\"><icon type=\"down\" size=\"12\" _v-f750b48a=\"\"></icon></span>\n    </template>\n    <div v-else=\"\" _v-f750b48a=\"\">\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\" _v-f750b48a=\"\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable=\"\" @close=\"closeTag(option)\" _v-f750b48a=\"\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field=\"\" class=\"select-search-field\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\" _v-f750b48a=\"\">\n    </div>\n  </div>\n  <div class=\"dropdown-menu\" _v-f750b48a=\"\">\n    <slot _v-f750b48a=\"\"></slot>\n    <div v-show=\"noResult\" class=\"no-result\" _v-f750b48a=\"\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\" _v-f750b48a=\"\">最多可选 ({{limit}})项.</div>\n  </div>\n\n\n</div>\n";
 
 /***/ },
 /* 191 */
@@ -4062,6 +4269,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
+	  name: 'option',
 	  props: {
 	    value: {
 	      type: String
@@ -4081,14 +4289,27 @@
 	      return this.$parent.selectedOptions.some(function (item) {
 	        return item.value == _this.value;
 	      });
+	    },
+	    show: function show() {
+	      // if(!this.$els.content){
+	      //   return
+	      // }
+	      var searchText = this.$parent.searchText.trim();
+	      if (searchText.length && this.$parent.multiple) {
+	        return this.$els.content.innerText.indexOf(searchText) >= 0;
+	      }
+	      return true;
 	    }
 	  },
 	  ready: function ready() {
+	    var option = {
+	      label: this.$els.content.innerHTML,
+	      value: this.value,
+	      disabled: this.disabled
+	    };
+	    this.$parent.$data.options.push(option);
+	
 	    if (this.$parent.value == this.value) {
-	      var option = {
-	        label: this.$els.content.innerHTML,
-	        value: this.value
-	      };
 	      this.$parent.selectedOptions.push(option);
 	    }
 	  },
@@ -4111,7 +4332,7 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div :class="{option:true,disabled:disabled,chosen:chosen}">
+	//   <div v-if="show" :class="{option:true,disabled:disabled,chosen:chosen}">
 	//     <a @mousedown.prevent.stop="handleClick">
 	//       <span v-el:content><slot></slot></span>
 	//     </a>
@@ -4124,7 +4345,7 @@
 /* 193 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"{option:true,disabled:disabled,chosen:chosen}\">\n  <a @mousedown.prevent.stop=\"handleClick\">\n    <span v-el:content><slot></slot></span>\n  </a>\n</div>\n";
+	module.exports = "\n<div v-if=\"show\" :class=\"{option:true,disabled:disabled,chosen:chosen}\">\n  <a @mousedown.prevent.stop=\"handleClick\">\n    <span v-el:content><slot></slot></span>\n  </a>\n</div>\n";
 
 /***/ },
 /* 194 */
@@ -4267,6 +4488,7 @@
 	  }
 	};
 	exports.default = {
+	  name: 'date-picker',
 	  props: {
 	    value: {
 	      type: String,
@@ -5118,7 +5340,7 @@
 	['info', 'success', 'error', 'warn', 'loading'].forEach(function (type, i) {
 	  _Message2.default[type] = function (content, duration, placement) {
 	    duration = duration || 3000;
-	    placement = placement || 'top';
+	    placement = placement || 'center';
 	    if (!document.getElementsByClassName('vue-message').length) {
 	      var box = document.createElement('div');
 	      box.className = 'vue-message';
@@ -5128,7 +5350,7 @@
 	    document.getElementsByClassName('vue-message')[0].appendChild(div);
 	    new _vue2.default({
 	      el: div,
-	      template: '<message class="vue-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :placement="placement" @click="hide()">{{content}}</message>',
+	      template: '<message class="vue-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :placement="placement">{{content}}</message>',
 	      components: {
 	        Message: _Message2.default
 	      },
@@ -5255,8 +5477,7 @@
 	      twoWay: true
 	    },
 	    duration: {
-	      type: Number,
-	      default: 0
+	      type: [String, Number]
 	    },
 	    width: {
 	      type: String
@@ -5291,27 +5512,6 @@
 	// .fade-leave {
 	//   height: 0;
 	//   opacity: 0;
-	// }
-	// .alert.top {
-	//   position: fixed;
-	//   top: 30px;
-	//   margin: 0 auto;
-	//   left: 0;
-	//   right: 0;
-	//   z-index: 2;
-	// }
-	// .alert.top-right {
-	//   position: fixed;
-	//   top: 30px;
-	//   right: 50px;
-	//   z-index: 2;
-	// }
-	// .alert.center {
-	//   position: fixed;
-	//   top: 50%;
-	//   left: 50%;
-	//   transform: translate(-50%,50%);
-	//   z-index: 2;
 	// }
 	// </style>
 
@@ -15821,6 +16021,10 @@
 	  props: {
 	    pagination: Object,
 	    dataSource: Array,
+	    noDataTip: {
+	      type: String,
+	      default: '没有任何数据'
+	    },
 	    columns: Array,
 	    rowSelection: Object,
 	    rowKey: String,
@@ -15837,6 +16041,7 @@
 	      isCheckedAll: false,
 	      sorderOrder: [],
 	      checkedRows: [],
+	      filterOpened: false,
 	      filters: null,
 	      sorter: null
 	    };
@@ -15858,17 +16063,28 @@
 	
 	      // 过滤出非禁用的项供选择使用
 	      return this.dataSource.filter(function (record) {
-	        return !_this.rowSelection.getCheckboxProps || !_this.rowSelection.getCheckboxProps(record).disabled;
+	        if (_this.rowSelection) {
+	          return !_this.rowSelection.getCheckboxProps || !_this.rowSelection.getCheckboxProps(record).disabled;
+	        }
 	      });
 	    }
 	  },
+	
+	  // isCheckedAll() {
+	  //   let me = this
+	  //   me.checkedRows.length === me.checkebleRows.length
+	  // }
 	  watch: {
 	    dataSource: {
 	      handler: function handler(item) {
-	        this.checkedRows = [];
-	        this.checkedValues = [];
-	        this.isCheckedAll = false;
-	        this.compileTbody();
+	        // this.checkedRows = []
+	        // this.checkedValues = []
+	        // this.isCheckedAll = false
+	        var me = this;
+	        me.compileTbody();
+	        if (me.checkebleRows) {
+	          me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length;
+	        }
 	      }
 	    }
 	  },
@@ -15908,6 +16124,7 @@
 	            changeRows.push(record);
 	          }
 	        });
+	        // 不能使用计算属性，因为会与点击全选的行为相冲突
 	        me.isCheckedAll = true;
 	      } else {
 	        me.checkebleRows.forEach(function (record, i) {
@@ -15945,13 +16162,14 @@
 	    // filter时触发
 	    onFilter: function onFilter(value, column) {
 	      var me = this;
-	      me.$set('filterOpened', true);
+	      me.filterOpened = true;
 	      setTimeout(function () {
-	        me.$set('filterOpened', false);
+	        me.filterOpened = false;
 	      }, 100);
 	
 	      me.checkedRows = [];
 	      me.isCheckedAll = false;
+	      me.filters = {};
 	      me.filters[column.dataIndex] = [value];
 	      me.$dispatch('table-change', this.pagination, me.filters, column.sorter);
 	    }
@@ -15988,8 +16206,8 @@
 	//         </tr>
 	//       </thead>
 	//       <tbody class="table-tbody">
-	//         <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">没有任何数据</td></tr>
-	//         <tr v-for="(rowIndex, record) in dataSource">
+	//         <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td></tr>
+	//         <tr v-for="(rowIndex, record) in dataSource" :track-by="rowKey">
 	//             <td v-if="rowSelection">
 	//                  <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
 	//             </td>
@@ -16147,12 +16365,6 @@
 	      default: 'default'
 	    }
 	  },
-	  data: function data() {
-	    return {
-	      size: this.size
-	    };
-	  },
-	
 	  methods: {
 	    show: function show() {
 	      this.show = true;
@@ -16185,7 +16397,7 @@
 /* 241 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"{'table-container':true,loading:loading}\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <div class=\"table-body\">\n    <table class=\"table\">\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :class=\"{'multi-col':column.multiCols}\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"dataSource.length && column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" @click=\"sortAction(column,$index,'ascend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" @click=\"sortAction(column,$index,'descend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-show=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">没有任何数据</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\">\n            <td v-if=\"rowSelection\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
+	module.exports = "\n<div :class=\"{'table-container':true,loading:loading}\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <div class=\"table-body\">\n    <table class=\"table\">\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :class=\"{'multi-col':column.multiCols}\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"dataSource.length && column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" @click=\"sortAction(column,$index,'ascend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" @click=\"sortAction(column,$index,'descend')\" size=\"10\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-show=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">{{noDataTip}}</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"rowKey\">\n            <td v-if=\"rowSelection\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
 
 /***/ },
 /* 242 */
@@ -16233,40 +16445,31 @@
 	  value: true
 	});
 	// <template>
-	//   <span v-if="dot" class="badge" :class="wrapClasses">
-	//     <slot></slot>
-	//     <sup class="badge-dot"></sup>
-	//   </span>
-	//   <span v-else  class="badge" :class="wrapClasses">
-	//     <slot></slot>
+	// <span class="badge">
+	//   <slot></slot>
+	//   <sup class="badge-dot" v-if="dot"></sup>
+	//   <template v-else>
 	//     <sup v-if='count > 0' class="badge-count">
 	//       {{count | short}}
 	//     </sup>
-	//   </span>
+	//   </template>
+	// </span>
 	// </template>
 	//
 	// <script>
 	exports.default = {
+	  name: 'badge',
 	  props: {
 	    count: {
 	      type: Number
 	    },
 	    dot: {
-	      type: Boolean,
-	      default: false
-	    },
-	    class: {
-	      type: String
+	      type: Boolean
 	    }
 	  },
 	  filters: {
 	    short: function short(value) {
 	      return value >= 100 ? '99+' : value;
-	    }
-	  },
-	  computed: {
-	    wrapClasses: function wrapClasses() {
-	      return ['badge'].concat(this.class.split(' '));
 	    }
 	  }
 	};
@@ -16278,7 +16481,7 @@
 /* 245 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<span v-if=\"dot\" class=\"badge\" :class=\"wrapClasses\">\n  <slot></slot>\n  <sup class=\"badge-dot\"></sup>\n</span>\n<span v-else  class=\"badge\" :class=\"wrapClasses\">\n  <slot></slot>\n  <sup v-if='count > 0' class=\"badge-count\">\n    {{count | short}}\n  </sup>\n</span>\n";
+	module.exports = "\n<span class=\"badge\">\n  <slot></slot>\n  <sup class=\"badge-dot\" v-if=\"dot\"></sup>\n  <template v-else>\n    <sup v-if='count > 0' class=\"badge-count\">\n      {{count | short}}\n    </sup>\n  </template>\n</span>\n";
 
 /***/ },
 /* 246 */
@@ -16840,7 +17043,6 @@
 	  },
 	  data: function data() {
 	    return {
-	      content: '',
 	      overLimit: false,
 	      isDisabled: this.disabled == true || this.disabled === ''
 	    };
@@ -17328,6 +17530,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
+	  name: 'accordion',
 	  props: {
 	    oneAtATime: {
 	      type: Boolean,
@@ -18768,9 +18971,6 @@
 	        defaultSize: {
 	            type: Number,
 	            default: 10
-	        },
-	        class: {
-	            type: String
 	        }
 	    },
 	    data: function data() {
@@ -18782,11 +18982,6 @@
 	        };
 	    },
 	
-	    computed: {
-	        wrapClasses: function wrapClasses() {
-	            return this.class.split(' ');
-	        }
-	    },
 	    watch: {
 	        totalPage: function totalPage() {
 	            this.getPageRange();
@@ -18904,7 +19099,7 @@
 	            this.getPageRange();
 	        },
 	        onChange: function onChange(pageNum) {
-	            this.$dispatch('pageChange', pageNum, this.id);
+	            this.$dispatch('pagination-page-change', pageNum, this.id);
 	        },
 	        _isValid: function _isValid(page) {
 	            return typeof page === 'number' && page >= 1 && page !== this.currPage;
@@ -18935,7 +19130,8 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div class="pagination" :class="wrapClasses" v-if="totalPage > 1">
+	//   <div class="pagination">
+	//   <template v-if="totalPage > 1">
 	//     <options :total="total" :default-size="defaultSize"  :placeholder="placeholder" :show-size-changer="showSizeChanger"></options>
 	//     <jumper
 	//         :quick-go="showJumper ? _handleChange.bind(this) : null",
@@ -18944,6 +19140,7 @@
 	//         :mini="mini"
 	//     ></jumper>
 	//     <pager :page-range="pageRange" :simple="simple"  :mini="mini" :page-click="pageClick"></pager>
+	//   </template>
 	//   </div>
 	// </template>
 	// <script>
@@ -19267,7 +19464,7 @@
 /* 332 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"pagination\" :class=\"wrapClasses\" v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"defaultSize\"  :placeholder=\"placeholder\" :show-size-changer=\"showSizeChanger\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\",\n      :curr-page=\"currPage\",\n      :total-page=\"totalPage\",\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</div>\n";
+	module.exports = "\n<div class=\"pagination\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"defaultSize\"  :placeholder=\"placeholder\" :show-size-changer=\"showSizeChanger\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\",\n      :curr-page=\"currPage\",\n      :total-page=\"totalPage\",\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
 
 /***/ },
 /* 333 */
@@ -20149,77 +20346,204 @@
 	//   <div class="bs-docs-section" id="form">
 	//     <h3 class="page-header"><a href="#form" class="anchor">Form 表单 </a></h3>
 	//     <div class="bs-example">
-	//       <v-form :submit="formSubmitFun">
-	//         <form-item required label="联系人电话：" :valid-status="telStatus" label-col="4" has-icon tips="123">
-	//           <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel" @click="clickFun"></v-input>
+	//       <h4>纵向排列</h4>
+	//       <v-form action="aaa.do" method="post">
+	//         <form-item required label="姓名：" :valid-status="form1.nameStatus" label-col="4" has-icon :tips="form1.nameTips">
+	//           <v-input type="text" placeholder="请输入您的姓名"  :value.sync="username" required required-tips="用户名为必填项" maxlength="12" minlength="2" minlength-tips="用户名不能少于2个字符" :valid-status.sync="form1.nameStatus" :tips.sync="form1.nameTips" :valid-result.sync="form1.nameValidResult"></v-input>
 	//         </form-item>
-	//         <form-item required label="验证码：" label-col="4" wrapper-col="10">
-	//           <v-col span="20">
-	//             <v-input disabled type="text" placeholder="请输入验证码"></v-input>
-	//           </v-col>
-	//           <v-col span="4"><v-button tertiary value="获取验证码"></v-button></v-col>
+	//         <form-item required label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon :tips="form1.telTips">
+	//           <v-input type="tel" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel" :valid-result.sync="form1.telValidResult" :rules="['isPhone']"></v-input>
 	//         </form-item>
-	//         <form-item required label="应用名/网站名：" label-col="4">
-	//           <v-input type="text" placeholder="若还未上线可填无"></v-input>
+	//         <form-item required label="性别" label-col="4">
+	//           <label><input type="checkbox" name="sexy" checked />男</label>
+	//           <label><input type="checkbox" name="sexy" />女</label>
 	//         </form-item>
 	//         <form-item required label="行业：" label-col="4">
+	//           <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+	//         </form-item>
+	//         <form-item label-col="4">
+	//           <v-button type="submit" primary>确定</v-button>
+	//           <v-button type="reset" tertiary value="重置条件"></v-button>
+	//         </form-item>
+	//       </v-form>
+	//       <h4>横向排列</h4>
+	//       <v-form action="aaa.do" method="post">
+	//         <form-item label="联系人电话：" item-col="8" label-col="10">
+	//           <v-input type="text" placeholder="电话号码"></v-input>
+	//         </form-item>
+	//         <form-item label="联系人电话：" item-col="8" label-col="10">
+	//           <v-input type="text" placeholder="电话号码"></v-input>
+	//         </form-item>
+	//         <form-item label="联系人电话：" item-col="8" label-col="10">
+	//           <v-input type="text" placeholder="电话号码"></v-input>
+	//         </form-item>
+	//         <form-item label="联系人电话：" item-col="8" label-col="10">
+	//           <v-input type="text" placeholder="电话号码"></v-input>
+	//         </form-item>
+	//         <form-item label="联系人电话：" item-col="8" label-col="10">
+	//           <v-input type="text" placeholder="电话号码"></v-input>
+	//         </form-item>
+	//         <form-item label="联系人电话：" item-col="8" label-col="10">
+	//           <v-input type="text" placeholder="电话号码"></v-input>
+	//         </form-item>
+	//         <form-item label="联系人电话：" item-col="8" label-col="10">
+	//           <v-input type="text" placeholder="电话号码"></v-input>
+	//         </form-item>
+	//         <form-item required label="应用名/网站名：" item-col="8" label-col="10">
+	//           <v-input type="text" placeholder="若还未上线可填无"></v-input>
+	//         </form-item>
+	//         <form-item required label="行业：" item-col="8" label-col="10">
 	//           <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>
 	//         </form-item>
-	//         <form-item required label="电话号码：" label-col="4">
+	//         <form-item required label="电话号码：" item-col="8" label-col="10">
 	//           <v-input placeholder="请输入电话号码"></v-input>
 	//         </form-item>
-	//         <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tips="请输入有效的电话号码">
+	//         <form-item required label="电话号码：" valid-status="error" has-icon item-col="8" label-col="10" tips="请输入有效的电话号码">
 	//           <v-input valid-status="error" placeholder="请输入电话号码"></v-input>
 	//         </form-item>
-	//         <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tips="请输入有效的电话号码">
+	//         <form-item required label="电话号码：" valid-status="success" has-icon item-col="8" label-col="10" tips="请输入有效的电话号码">
 	//           <v-input valid-status="success" placeholder="请输入电话号码"></v-input>
 	//         </form-item>
-	//         <form-item required label-col="4">
+	//         <form-item required label-col="0">
 	//           <label><input type="checkbox" />阅读并接受《用户协议》</label>
 	//         </form-item>
 	//         <form-item required label-col="4">
-	//           <v-button primary @click="validFun">确定</v-button>
-	//           <v-button tertiary value="重置条件"></v-button>
+	//           <v-button type="submit" primary @click="validFun">确定</v-button>
+	//           <v-button type="reset" tertiary value="重置条件"></v-button>
 	//         </form-item>
 	//       </v-form>
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// <v-form :submit="formSubmitFun">
-	//   <form-item required label="联系人电话：" label-col="4" has-icon tips="123">
-	//     <v-input type="text" placeholder="电话号码" :value.sync="tel"></v-input>
+	// 纵向排列
+	// <v-form action="aaa.do" method="post">
+	//   <form-item required label="姓名：" :valid-status="form1.nameStatus" label-col="4" has-icon :tips="form1.nameTips">
+	//     <v-input type="text" placeholder="请输入您的姓名"  :value.sync="username" required required-tips="用户名为必填项" maxlength="12" minlength="2" minlength-tips="用户名不能少于2个字符" :valid-status.sync="form1.nameStatus" :tips.sync="form1.nameTips" :valid-result.sync="form1.nameValidResult"></v-input>
 	//   </form-item>
-	//   <form-item required label="验证码：" label-col="4">
-	//     <v-col span="20">
-	//       <v-input type="text" placeholder="请输入验证码"></v-input>
-	//     </v-col>
-	//     <v-col span="4"><v-button tertiary value="获取验证码"></v-button></v-col>
+	//   <form-item required label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon tips="form1.telTips">
+	//     <v-input type="text" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel"></v-input>
 	//   </form-item>
-	//   <form-item required label="应用名/网站名：" label-col="4">
-	//     <v-input type="text" placeholder="若还未上线可填无"></v-input>
+	//   <form-item required label="性别" label-col="4">
+	//     <label><input type="checkbox" name="sexy" checked />男</label>
+	//     <label><input type="checkbox" name="sexy" />女</label>
 	//   </form-item>
 	//   <form-item required label="行业：" label-col="4">
 	//     <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>
 	//   </form-item>
-	//   <form-item required label="电话号码：" has-icon label-col="4">
+	//   <form-item label-col="4">
+	//     <v-button type="submit" primary @click="validFun">确定</v-button>
+	//     <v-button type="reset" tertiary value="重置条件"></v-button>
+	//   </form-item>
+	// </v-form>
+	// 横向排列
+	// <v-form action="aaa.do" method="post">
+	//   <form-item label="联系人电话：" item-col="8" label-col="10">
+	//     <v-input type="text" placeholder="电话号码"></v-input>
+	//   </form-item>
+	//   <form-item label="联系人电话：" item-col="8" label-col="10">
+	//     <v-input type="text" placeholder="电话号码"></v-input>
+	//   </form-item>
+	//   <form-item label="联系人电话：" item-col="8" label-col="10">
+	//     <v-input type="text" placeholder="电话号码"></v-input>
+	//   </form-item>
+	//   <form-item label="联系人电话：" item-col="8" label-col="10">
+	//     <v-input type="text" placeholder="电话号码"></v-input>
+	//   </form-item>
+	//   <form-item label="联系人电话：" item-col="8" label-col="10">
+	//     <v-input type="text" placeholder="电话号码"></v-input>
+	//   </form-item>
+	//   <form-item label="联系人电话：" item-col="8" label-col="10">
+	//     <v-input type="text" placeholder="电话号码"></v-input>
+	//   </form-item>
+	//   <form-item required label="联系人电话：" :valid-status="telStatus" item-col="8" label-col="10" has-icon tips="123">
+	//     <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel" @click="clickFun"></v-input>
+	//   </form-item>
+	//   <form-item required label="应用名/网站名：" item-col="8" label-col="10">
+	//     <v-input type="text" placeholder="若还未上线可填无"></v-input>
+	//   </form-item>
+	//   <form-item required label="行业：" item-col="8" label-col="10">
+	//     <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+	//   </form-item>
+	//   <form-item required label="电话号码：" item-col="8" label-col="10">
 	//     <v-input placeholder="请输入电话号码"></v-input>
 	//   </form-item>
-	//   <form-item required label="电话号码：" valid-status="error" has-icon label-col="4" tips="请输入有效的电话号码">
-	//     <v-input error placeholder="请输入电话号码"></v-input>
+	//   <form-item required label="电话号码：" valid-status="error" has-icon item-col="8" label-col="10" tips="请输入有效的电话号码">
+	//     <v-input valid-status="error" placeholder="请输入电话号码"></v-input>
 	//   </form-item>
-	//   <form-item required label="电话号码：" valid-status="success" has-icon label-col="4" tips="请输入有效的电话号码">
-	//     <v-input success placeholder="请输入电话号码"></v-input>
+	//   <form-item required label="电话号码：" valid-status="success" has-icon item-col="8" label-col="10" tips="请输入有效的电话号码">
+	//     <v-input valid-status="success" placeholder="请输入电话号码"></v-input>
 	//   </form-item>
-	//   <form-item required label-col="4">
+	//   <form-item required label-col="0">
 	//     <label><input type="checkbox" />阅读并接受《用户协议》</label>
 	//   </form-item>
 	//   <form-item required label-col="4">
-	//     <v-button primary value="确定"></v-button>
-	//     <v-button tertiary value="重置条件"></v-button>
+	//     <v-button type="submit" primary @click="validFun">确定</v-button>
+	//     <v-button type="reset" tertiary value="重置条件"></v-button>
 	//   </form-item>
 	// </v-form>
 	//     </script></code></pre>
 	//     </script>
 	//     </code>
+	//     <h4>FormItem组件参数</h4>
+	//     <table class="table table-bordered">
+	//       <thead>
+	//         <tr>
+	//           <th>参数名</th>
+	//           <th>类型</th>
+	//           <th>默认值</th>
+	//           <th>说明</th>
+	//         </tr>
+	//       </thead>
+	//       <tbody>
+	//         <tr>
+	//           <td>item-col</td>
+	//           <td><code>String</code></td>
+	//           <td><code>24</code></td>
+	//           <td>以24格为准，当前FormItem组件占的栅格列数</td>
+	//         </tr>
+	//         <tr>
+	//           <td>label</td>
+	//           <td><code>String</code></td>
+	//           <td><code>空</code></td>
+	//           <td>label域文案</td>
+	//         </tr>
+	//         <tr>
+	//           <td>label-col</td>
+	//           <td><code>String</code></td>
+	//           <td><code>7</code></td>
+	//           <td>以当前的FormItem组件为准，label域占的列数</td>
+	//         </tr>
+	//         <tr>
+	//           <td>wrapper-col</td>
+	//           <td></td>
+	//           <td><code>24-（label-col属性值）</code></td>
+	//           <td>以当前的FormItem组件为准，非label域占的列数</td>
+	//         </tr>
+	//         <tr>
+	//           <td>required</td>
+	//           <td></td>
+	//           <td></td>
+	//           <td>是否是必填项，配置后，会在label文案前加’*‘标识</td>
+	//         </tr>
+	//         <tr>
+	//           <td>tips</td>
+	//           <td><code>String</code></td>
+	//           <td><code>空</code></td>
+	//           <td>各种状态下的提示文案</td>
+	//         </tr>
+	//         <tr>
+	//           <td>valid-status</td>
+	//           <td><code>String</code></td>
+	//           <td><code>空</code></td>
+	//           <td>当前验证状态，有空,success,warning,error,validating</td>
+	//         </tr>
+	//         <tr>
+	//           <td>has-icon</td>
+	//           <td></td>
+	//           <td></td>
+	//           <td>配合validateStatus属性使用，是否展示校验状态图标</td>
+	//         </tr>
+	//       </tbody>
+	//     </table>
 	//   </div>
 	// </template>
 	//
@@ -20250,33 +20574,31 @@
 	    return {
 	      arr: [],
 	      industry: [{ value: '1', label: '计算机' }, { value: '2', label: '网络' }, { value: '3', label: '电子信息' }, { value: '4', label: '材料工程' }, { value: '5', label: '医学' }],
-	      myform: {},
-	      valid: {
-	        nameStatus: ''
-	      },
-	      formSubmitFun: function formSubmitFun() {
-	        alert(1);
-	      },
-	
+	      username: '',
 	      tel: '',
-	      telStatus: 'error'
+	      form1: {
+	        nameValidResult: {},
+	        nameStatus: '',
+	        nameTips: '',
+	        telValidResult: {},
+	        telStatus: '',
+	        telTips: '输入手机号码格式错误'
+	      }
 	    };
 	  },
 	
 	  watch: {
-	    tel: function tel(newVal, oldVal) {
-	      alert(newVal);
+	    'form1.nameValidResult': function form1NameValidResult(val) {
+	      console.log('======');
+	      console.log(val);
+	      console.log('======');
 	    }
 	  },
 	  methods: {
-	    validFun: function validFun() {
-	      if (!this.tel) {
-	        this.telStatus = 'error';
-	      }
-	    },
 	    clickFun: function clickFun() {
 	      alert('click');
-	    }
+	    },
+	    validFun: function validFun() {}
 	  }
 	};
 	// </script>
@@ -20287,7 +20609,7 @@
 /* 357 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">Form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <v-form :submit=\"formSubmitFun\">\n        <form-item required label=\"联系人电话：\" :valid-status=\"telStatus\" label-col=\"4\" has-icon tips=\"123\">\n          <v-input type=\"text\" placeholder=\"电话号码\" :valid-status=\"telStatus\" :value.sync=\"tel\" @click=\"clickFun\"></v-input>\n        </form-item>\n        <form-item required label=\"验证码：\" label-col=\"4\" wrapper-col=\"10\">\n          <v-col span=\"20\">\n            <v-input disabled type=\"text\" placeholder=\"请输入验证码\"></v-input>\n          </v-col>\n          <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" label-col=\"4\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button primary @click=\"validFun\">确定</v-button>\n          <v-button tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-form :submit=\"formSubmitFun\">\n  <form-item required label=\"联系人电话：\" label-col=\"4\" has-icon tips=\"123\">\n    <v-input type=\"text\" placeholder=\"电话号码\" :value.sync=\"tel\"></v-input>\n  </form-item>\n  <form-item required label=\"验证码：\" label-col=\"4\">\n    <v-col span=\"20\">\n      <v-input type=\"text\" placeholder=\"请输入验证码\"></v-input>\n    </v-col>\n    <v-col span=\"4\"><v-button tertiary value=\"获取验证码\"></v-button></v-col>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" label-col=\"4\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" has-icon label-col=\"4\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon label-col=\"4\" tips=\"请输入有效的电话号码\">\n    <v-input error placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon label-col=\"4\" tips=\"请输入有效的电话号码\">\n    <v-input success placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button primary value=\"确定\"></v-button>\n    <v-button tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n  </div>\n";
+	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">Form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <h4>纵向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n          <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n        </form-item>\n        <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n          <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isPhone']\"></v-input>\n        </form-item>\n        <form-item required label=\"性别\" label-col=\"4\">\n          <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n          <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item label-col=\"4\">\n          <v-button type=\"submit\" primary>确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n      <h4>横向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n          <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"0\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n纵向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n  </form-item>\n  <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon tips=\"form1.telTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\"></v-input>\n  </form-item>\n  <form-item required label=\"性别\" label-col=\"4\">\n    <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n    <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n横向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"联系人电话：\" :valid-status=\"telStatus\" item-col=\"8\" label-col=\"10\" has-icon tips=\"123\">\n    <v-input type=\"text\" placeholder=\"电话号码\" :valid-status=\"telStatus\" :value.sync=\"tel\" @click=\"clickFun\"></v-input>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n    <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"0\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n    <h4>FormItem组件参数</h4>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>item-col</td>\n          <td><code>String</code></td>\n          <td><code>24</code></td>\n          <td>以24格为准，当前FormItem组件占的栅格列数</td>\n        </tr>\n        <tr>\n          <td>label</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>label域文案</td>\n        </tr>\n        <tr>\n          <td>label-col</td>\n          <td><code>String</code></td>\n          <td><code>7</code></td>\n          <td>以当前的FormItem组件为准，label域占的列数</td>\n        </tr>\n        <tr>\n          <td>wrapper-col</td>\n          <td></td>\n          <td><code>24-（label-col属性值）</code></td>\n          <td>以当前的FormItem组件为准，非label域占的列数</td>\n        </tr>\n        <tr>\n          <td>required</td>\n          <td></td>\n          <td></td>\n          <td>是否是必填项，配置后，会在label文案前加’*‘标识</td>\n        </tr>\n        <tr>\n          <td>tips</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>各种状态下的提示文案</td>\n        </tr>\n        <tr>\n          <td>valid-status</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>当前验证状态，有空,success,warning,error,validating</td>\n        </tr>\n        <tr>\n          <td>has-icon</td>\n          <td></td>\n          <td></td>\n          <td>配合validateStatus属性使用，是否展示校验状态图标</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 358 */
@@ -20690,10 +21012,10 @@
 	//     <div class="bs-example">
 	//       <p>
 	//         <pre>
-	// 选中值 : {{single}}
+	//         选中值 : {{single}}
 	//         </pre>
 	//       </p>
-	//       <v-select :value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+	//       <v-select value="Apple" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
 	//         <v-option value="Apple">苹果</v-option>
 	//         <v-option value="Banana" disabled>Banana</v-option>
 	//         <v-option value="Cherry">Cherry</v-option>
@@ -20701,12 +21023,8 @@
 	//         <v-option value="Grape">Grape</v-option>
 	//       </v-select>
 	//       <hr>
-	//       <h4>多选下拉</h4>
-	//       <p>
-	//         <pre>
-	// 选中值 : {{multiple.join(', ')}}
-	//         </pre>
-	//       </p>
+	//       <h4>多选下拉(只能选已有的)</h4>
+	//
 	//       <v-select multiple :value.sync="multiple" @change="onSlectChange">
 	//         <v-option value="Apple">Apple</v-option>
 	//         <v-option value="Banana">Banana</v-option>
@@ -20714,139 +21032,73 @@
 	//         <v-option value="Orange">Orange</v-option>
 	//         <v-option value="Grape">Grape</v-option>
 	//       </v-select>
+	//
 	//       <hr>
-	//       <h4>多选下拉限制</h4>
-	//       <p>
-	//         <pre>
-	// 选中值 : {{multipleLimit.join(', ')}}
-	//         </pre>
-	//       </p>
-	//       <v-select multiple :limit="2" :value.sync="multipleLimit">
+	//       <h4>tags(输入回车时变成一个tag)</h4>
+	//
+	//       <v-select tags :value="Banana">
 	//         <v-option value="Apple">Apple</v-option>
 	//         <v-option value="Banana">Banana</v-option>
 	//         <v-option value="Cherry">Cherry</v-option>
 	//         <v-option value="Orange">Orange</v-option>
 	//         <v-option value="Grape">Grape</v-option>
 	//       </v-select>
-	//       <hr>
-	//       <h4>自定义模板</h4>
-	//       <p>
-	//         <pre>
-	// 选中值 : {{custom.join(', ')}}
-	//         </pre>
-	//       </p>
-	//       <v-select multiple :value.sync="custom">
-	//         <v-option value="success"><icon type="success" color="green"></icon> 成功</v-option>
-	//         <v-option value="error"><icon type="error" color="red"></icon> 错误</v-option>
-	//         <v-option value="help"><icon type="help"></icon> 帮助</v-option>
-	//         <v-option value="info"><icon type="info"></icon> 信息</v-option>
-	//       </v-select>
 	//       <hr />
-	//       <h4>使用数据填充Select选择框内容</h4>
-	//       <p>
-	//         可以指定一个数组来填充选项内容，并可搜索
-	//         <pre>
-	// 选中值 : {{arr}}
-	//         </pre>
-	//       </p>
-	//       <v-select :value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
-	//       </v-select>
 	//
-	//       <hr />
-	//       <h4>Automatically close array driven selects</h4>
-	//       <p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
-	//       <v-select :value.sync="arr2" :options="fruitOptions" :close-on-select="true">
-	//       </v-select>
+	//
 	//       <h4>下拉出自定义类容</h4>
 	//       <v-select placeholder="选择类别" style="width:200px;">
+	//       <v-option>
 	//         <tabs>
 	//           <tab header="系统短信签名"></tab>
 	//           <tab header="系统短信签名"></tab>
 	//           <tab header="系统短信签名"></tab>
 	//         </tabs>
-	//       </v-select>
-	//       <h4>禁用的下拉框</h4>
-	//       <v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
-	//       </v-select>
-	//
-	//       <h4>tags</h4>
-	//       <v-select tags="true" :options="fruitOptions" :close-on-select="true">
+	//       </v-option>
 	//       </v-select>
 	//
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// <p>
-	//   <pre>
-	// 选中值 : {{single}}
-	//   </pre>
-	// </p>
-	// <v-select :value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
-	//   <v-option value="Apple">Apple</v-option>
+	// <v-select value="Apple" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+	//   <v-option value="Apple">苹果</v-option>
 	//   <v-option value="Banana" disabled>Banana</v-option>
 	//   <v-option value="Cherry">Cherry</v-option>
 	//   <v-option value="Orange">OrangeText</v-option>
 	//   <v-option value="Grape">Grape</v-option>
 	// </v-select>
 	// <hr>
-	// <h4>多选下拉</h4>
-	// <p>
-	//   <pre>
-	// 选中值 : {{multiple.join(', ')}}
-	//   </pre>
-	// </p>
-	// <v-select multiple :value.sync="multiple">
+	// <h4>多选下拉(只能选已有的)</h4>
+	//
+	// <v-select multiple :value.sync="multiple" @change="onSlectChange">
 	//   <v-option value="Apple">Apple</v-option>
 	//   <v-option value="Banana">Banana</v-option>
 	//   <v-option value="Cherry">Cherry</v-option>
 	//   <v-option value="Orange">Orange</v-option>
 	//   <v-option value="Grape">Grape</v-option>
 	// </v-select>
+	//
 	// <hr>
-	// <h4>多选下拉限制</h4>
-	// <p>
-	//   <pre>
-	// 选中值 : {{multipleLimit.join(', ')}}
-	//   </pre>
-	// </p>
-	// <v-select multiple :limit="2" :value.sync="multipleLimit">
+	// <h4>tags(输入回车时变成一个tag)</h4>
+	//
+	// <v-select tags :value="Banana">
 	//   <v-option value="Apple">Apple</v-option>
 	//   <v-option value="Banana">Banana</v-option>
 	//   <v-option value="Cherry">Cherry</v-option>
 	//   <v-option value="Orange">Orange</v-option>
 	//   <v-option value="Grape">Grape</v-option>
 	// </v-select>
-	// <hr>
-	// <h4>自定义模板</h4>
-	// <p>
-	//   <pre>
-	// 选中值 : {{custom.join(', ')}}
-	//   </pre>
-	// </p>
-	// <v-select multiple :value.sync="custom">
-	//   <v-option value="success"><icon type="success" color="green"></icon> 成功</v-option>
-	//   <v-option value="error"><icon type="error" color="red"></icon> 错误</v-option>
-	//   <v-option value="help"><icon type="help"></icon> 帮助</v-option>
-	//   <v-option value="info"><icon type="info"></icon> 信息</v-option>
-	// </v-select>
 	// <hr />
-	// <h4>使用数据填充Select选择框内容</h4>
-	// <p>
-	//   可以指定一个数组来填充选项内容，并可搜索
-	//   <pre>
-	// 选中值 : {{arr}}
-	//   </pre>
-	// </p>
-	// <v-select :value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
-	// </v-select>
 	//
-	// <hr />
-	// <h4>Automatically close array driven selects</h4>
-	// <p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
-	// <v-select :value.sync="arr2" :options="fruitOptions" :close-on-select="true">
-	// </v-select>
 	//
-	// <h4>禁用的下拉框</h4>
-	// <v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+	// <h4>下拉出自定义类容</h4>
+	// <v-select placeholder="选择类别" style="width:200px;">
+	// <v-option>
+	//   <tabs>
+	//     <tab header="系统短信签名"></tab>
+	//     <tab header="系统短信签名"></tab>
+	//     <tab header="系统短信签名"></tab>
+	//   </tabs>
+	// </v-option>
 	// </v-select>
 	// </script></code></pre>
 	//
@@ -20941,7 +21193,7 @@
 /* 367 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选中值 : {{single}}\n        </pre>\n      </p>\n      <v-select :value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉</h4>\n      <p>\n        <pre>\n选中值 : {{multiple.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :value.sync=\"multiple\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉限制</h4>\n      <p>\n        <pre>\n选中值 : {{multipleLimit.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :limit=\"2\" :value.sync=\"multipleLimit\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>自定义模板</h4>\n      <p>\n        <pre>\n选中值 : {{custom.join(', ')}}\n        </pre>\n      </p>\n      <v-select multiple :value.sync=\"custom\">\n        <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n        <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n        <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n        <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n      </v-select>\n      <hr />\n      <h4>使用数据填充Select选择框内容</h4>\n      <p>\n        可以指定一个数组来填充选项内容，并可搜索\n        <pre>\n选中值 : {{arr}}\n        </pre>\n      </p>\n      <v-select :value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n      </v-select>\n\n      <hr />\n      <h4>Automatically close array driven selects</h4>\n      <p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n      <v-select :value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n      </v-select>\n      <h4>下拉出自定义类容</h4>\n      <v-select placeholder=\"选择类别\" style=\"width:200px;\">\n        <tabs>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n        </tabs>\n      </v-select>\n      <h4>禁用的下拉框</h4>\n      <v-select :value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n      </v-select>\n\n      <h4>tags</h4>\n      <v-select tags=\"true\" :options=\"fruitOptions\" :close-on-select=\"true\">\n      </v-select>\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<p>\n  <pre>\n选中值 : {{single}}\n  </pre>\n</p>\n<v-select :value.sync=\"single\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉</h4>\n<p>\n  <pre>\n选中值 : {{multiple.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :value.sync=\"multiple\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉限制</h4>\n<p>\n  <pre>\n选中值 : {{multipleLimit.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :limit=\"2\" :value.sync=\"multipleLimit\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>自定义模板</h4>\n<p>\n  <pre>\n选中值 : {{custom.join(', ')}}\n  </pre>\n</p>\n<v-select multiple :value.sync=\"custom\">\n  <v-option value=\"success\"><icon type=\"success\" color=\"green\"></icon> 成功</v-option>\n  <v-option value=\"error\"><icon type=\"error\" color=\"red\"></icon> 错误</v-option>\n  <v-option value=\"help\"><icon type=\"help\"></icon> 帮助</v-option>\n  <v-option value=\"info\"><icon type=\"info\"></icon> 信息</v-option>\n</v-select>\n<hr />\n<h4>使用数据填充Select选择框内容</h4>\n<p>\n  可以指定一个数组来填充选项内容，并可搜索\n  <pre>\n选中值 : {{arr}}\n  </pre>\n</p>\n<v-select :value.sync=\"arr\" :options=\"fruitOptions\" :search=\"true\" :close-on-select=\"true\">\n</v-select>\n\n<hr />\n<h4>Automatically close array driven selects</h4>\n<p>Using the property :close-on-select=\"true\" array driven selects will auto-close after selecting an entry.</p>\n<v-select :value.sync=\"arr2\" :options=\"fruitOptions\" :close-on-select=\"true\">\n</v-select>\n\n<h4>禁用的下拉框</h4>\n<v-select :value.sync=\"disabled\" :options=\"fruitOptions\" :close-on-select=\"true\" :disabled=\"true\">\n</v-select>\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n        选中值 : {{single}}\n        </pre>\n      </p>\n      <v-select value=\"Apple\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉(只能选已有的)</h4>\n\n      <v-select multiple :value.sync=\"multiple\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n\n      <hr>\n      <h4>tags(输入回车时变成一个tag)</h4>\n\n      <v-select tags :value=\"Banana\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr />\n\n\n      <h4>下拉出自定义类容</h4>\n      <v-select placeholder=\"选择类别\" style=\"width:200px;\">\n      <v-option>\n        <tabs>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n        </tabs>\n      </v-option>\n      </v-select>\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-select value=\"Apple\" placeholder=\"请选择一个水果\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">苹果</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉(只能选已有的)</h4>\n\n<v-select multiple :value.sync=\"multiple\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n\n<hr>\n<h4>tags(输入回车时变成一个tag)</h4>\n\n<v-select tags :value=\"Banana\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr />\n\n\n<h4>下拉出自定义类容</h4>\n<v-select placeholder=\"选择类别\" style=\"width:200px;\">\n<v-option>\n  <tabs>\n    <tab header=\"系统短信签名\"></tab>\n    <tab header=\"系统短信签名\"></tab>\n    <tab header=\"系统短信签名\"></tab>\n  </tabs>\n</v-option>\n</v-select>\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
 
 /***/ },
 /* 368 */
@@ -21006,7 +21258,7 @@
 	//       </v-select>
 	//
 	//       <h4>重置按钮</h4>
-	//       <label><input type="checkbox" v-model="reset" @click="x">打开或关闭重置功能</label>
+	//       <label><input type="checkbox" v-model="reset">打开或关闭重置功能</label>
 	//
 	//       <range-picker></range-picker>
 	//     </div>
@@ -21126,7 +21378,7 @@
 /* 370 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"datepicker\">\n    <h1 class=\"page-header\"><a href=\"#datepicker\" class=\"anchor\">DatePicker 日期选择</a></h1>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选择日期是: {{new Date(value).toString().slice(0, -23)}}\n        </pre>\n      </p>\n      <date-picker v-ref:dp :value.sync=\"value\" :disabled-days-of-Week=\"disabled\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></date-picker>\n      <h4>禁用一周的某日</h4>\n\n      <v-select multiple :default-value.sync=\"disabled\">\n  <v-option value=\"0\">0</v-option>\n  <v-option value=\"1\">1</v-option>\n  <v-option value=\"2\">2</v-option>\n  <v-option value=\"3\">3</v-option>\n  <v-option value=\"4\">4</v-option>\n  <v-option value=\"5\">5</v-option>\n  <v-option value=\"6\">6</v-option>\n      </v-select>\n\n      <h4>格式化</h4>\n      <v-select :default-value.sync=\"format\" >\n        <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n        <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n        <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n        <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n        <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n      </v-select>\n\n      <h4>重置按钮</h4>\n      <label><input type=\"checkbox\" v-model=\"reset\" @click=\"x\">打开或关闭重置功能</label>\n\n      <range-picker></range-picker>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<date-picker v-ref:dp :value.sync=\"value\" :disabled-days-of-Week=\"disabled\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></DatePicker>\n\n<v-select multiple :default-value.sync=\"disabled\" size=5>\n  <v-option value=\"0\">0</v-option>\n  <v-option value=\"1\">1</v-option>\n  <v-option value=\"2\">2</v-option>\n  <v-option value=\"3\">3</v-option>\n  <v-option value=\"4\">4</v-option>\n  <v-option value=\"5\">5</v-option>\n  <v-option value=\"6\">6</v-option>\n</v-select>\n<v-select  :default-value.sync=\"format\">\n  <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n  <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n  <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n  <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n  <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n</v-select>\n    </script></code></pre>\n    <h2>Option</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n        <tr>\n          <td>format</td>\n          <td><code>String</code></td>\n          <td><code>MMMM/dd/yyyy</code></td>\n          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>\n        </tr>\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n        <tr>\n          <td>showResetButton</td>\n          <td><code>Boolean</code></td>\n          <td>false</td>\n          <td>是否显示清除日期按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"datepicker\">\n    <h1 class=\"page-header\"><a href=\"#datepicker\" class=\"anchor\">DatePicker 日期选择</a></h1>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选择日期是: {{new Date(value).toString().slice(0, -23)}}\n        </pre>\n      </p>\n      <date-picker v-ref:dp :value.sync=\"value\" :disabled-days-of-Week=\"disabled\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></date-picker>\n      <h4>禁用一周的某日</h4>\n\n      <v-select multiple :default-value.sync=\"disabled\">\n  <v-option value=\"0\">0</v-option>\n  <v-option value=\"1\">1</v-option>\n  <v-option value=\"2\">2</v-option>\n  <v-option value=\"3\">3</v-option>\n  <v-option value=\"4\">4</v-option>\n  <v-option value=\"5\">5</v-option>\n  <v-option value=\"6\">6</v-option>\n      </v-select>\n\n      <h4>格式化</h4>\n      <v-select :default-value.sync=\"format\" >\n        <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n        <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n        <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n        <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n        <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n      </v-select>\n\n      <h4>重置按钮</h4>\n      <label><input type=\"checkbox\" v-model=\"reset\">打开或关闭重置功能</label>\n\n      <range-picker></range-picker>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<date-picker v-ref:dp :value.sync=\"value\" :disabled-days-of-Week=\"disabled\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></DatePicker>\n\n<v-select multiple :default-value.sync=\"disabled\" size=5>\n  <v-option value=\"0\">0</v-option>\n  <v-option value=\"1\">1</v-option>\n  <v-option value=\"2\">2</v-option>\n  <v-option value=\"3\">3</v-option>\n  <v-option value=\"4\">4</v-option>\n  <v-option value=\"5\">5</v-option>\n  <v-option value=\"6\">6</v-option>\n</v-select>\n<v-select  :default-value.sync=\"format\">\n  <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n  <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n  <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n  <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n  <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n</v-select>\n    </script></code></pre>\n    <h2>Option</h2>\n    <table class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n        <tr>\n          <td>format</td>\n          <td><code>String</code></td>\n          <td><code>MMMM/dd/yyyy</code></td>\n          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>\n        </tr>\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n        <tr>\n          <td>showResetButton</td>\n          <td><code>Boolean</code></td>\n          <td>false</td>\n          <td>是否显示清除日期按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 371 */
@@ -22251,7 +22503,12 @@
 	
 	  methods: {
 	    changeData: function changeData() {
-	      this.gridData = _data;
+	      this.gridData.push({
+	        key: Math.random(),
+	        name: '李秀莲大嘴哥',
+	        age: Math.random(),
+	        address: '西湖区湖底公园123号'
+	      });
 	    },
 	    onTableChange: function onTableChange(i, j, k) {
 	      console.log('sdfsdfsdfsdf', i, j, k);
@@ -24602,7 +24859,7 @@
 	//     <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>
 	//     <div class="bs-example">
 	//       <h4 class="example-title">完全版</h4>
-	//       <pagination :total-page.sync="totalPage",
+	//       <pagination class="customclass" :total-page.sync="totalPage",
 	//                   :curr-page.sync="currPage",
 	//                   :total="total",
 	//                   :show-jumper="true",
@@ -24712,7 +24969,7 @@
 /* 443 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"pagination\">\n    <h3 class=\"page-header\"><a href=\"#pagination\" class=\"anchor\">Pagination 翻页</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">完全版</h4>\n      <pagination :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :show-jumper=\"true\",\n                  :default-size=\"defaultSize\",\n                  :show-size-changer=\"true\">\n      </pagination>\n      <h4 class=\"example-title\">迷你版</h4>\n      <pagination :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :show-jumper=\"true\",\n                  :mini=\"true\">\n      </pagination>\n      <h4 class=\"example-title\">精简版</h4>\n      <pagination :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :simple=\"true\"\n                  class=\"custom\">\n      </pagination>\n\n\n      <input type=\"button\" value=\"changeTotalPage\" @click=\"changeTotalPage\"/>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<pagination :total-page.sync=\"totalPage\" :curr-page.sync=\"currPage\" :total=\"total\" :show-jumper=\"true\" :show-size-changer=\"true\"></pagination>\n<pagination :total-page.sync=\"totalPage\" :curr-page.sync=\"currPage\" :total=\"total\" :show-jumper=\"true\" :mini=\"true\"></pagination>\n<pagination :total-page.sync=\"totalPage\",:curr-page.sync=\"currPage\",:total=\"total\",:simple=\"true\" class=\"custom\"></pagination>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>total-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>总页数</td>\n      </tr>\n      <tr>\n        <td>curr-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>当前页</td>\n      </tr>\n      <tr>\n        <td>default-size</td>\n        <td>Number</td>\n        <td>one of <code>10、20、30</code></td>\n        <td>如果有选择页码大小的话，这个可以指定每页的大小</td>\n      </tr>\n      <tr>\n        <td>total</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>数据总条数</td>\n      </tr>\n      <tr>\n        <td>show-jumper</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启跳转功能</td>\n      </tr>\n      <tr>\n        <td>show-size-changer</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启修改每页条数功能</td>\n      </tr>\n      <tr>\n        <td>simple</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用精简版样式</td>\n      </tr>\n      <tr>\n        <td>mini</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用迷你版样式</td>\n      </tr>\n    </tbody>\n  </table>\n  <br>\n  <strong>注：</strong>pagination组件会监听当前currPage的变化，当其发生变化时pagination组件会向上派发一个回调事件，名字叫pageChange，回调参数就是当前页以及pagination的id，需要在引用pagination的当前文件里面的events对象里将其加入进去.\n  <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n    events: {\n      pageChange (page, id) {\n\n      }\n    }\n  </script></code></pre>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"pagination\">\n    <h3 class=\"page-header\"><a href=\"#pagination\" class=\"anchor\">Pagination 翻页</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">完全版</h4>\n      <pagination class=\"customclass\" :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :show-jumper=\"true\",\n                  :default-size=\"defaultSize\",\n                  :show-size-changer=\"true\">\n      </pagination>\n      <h4 class=\"example-title\">迷你版</h4>\n      <pagination :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :show-jumper=\"true\",\n                  :mini=\"true\">\n      </pagination>\n      <h4 class=\"example-title\">精简版</h4>\n      <pagination :total-page.sync=\"totalPage\",\n                  :curr-page.sync=\"currPage\",\n                  :total=\"total\",\n                  :simple=\"true\"\n                  class=\"custom\">\n      </pagination>\n\n\n      <input type=\"button\" value=\"changeTotalPage\" @click=\"changeTotalPage\"/>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<pagination :total-page.sync=\"totalPage\" :curr-page.sync=\"currPage\" :total=\"total\" :show-jumper=\"true\" :show-size-changer=\"true\"></pagination>\n<pagination :total-page.sync=\"totalPage\" :curr-page.sync=\"currPage\" :total=\"total\" :show-jumper=\"true\" :mini=\"true\"></pagination>\n<pagination :total-page.sync=\"totalPage\",:curr-page.sync=\"currPage\",:total=\"total\",:simple=\"true\" class=\"custom\"></pagination>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>total-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>总页数</td>\n      </tr>\n      <tr>\n        <td>curr-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>当前页</td>\n      </tr>\n      <tr>\n        <td>default-size</td>\n        <td>Number</td>\n        <td>one of <code>10、20、30</code></td>\n        <td>如果有选择页码大小的话，这个可以指定每页的大小</td>\n      </tr>\n      <tr>\n        <td>total</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>数据总条数</td>\n      </tr>\n      <tr>\n        <td>show-jumper</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启跳转功能</td>\n      </tr>\n      <tr>\n        <td>show-size-changer</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启修改每页条数功能</td>\n      </tr>\n      <tr>\n        <td>simple</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用精简版样式</td>\n      </tr>\n      <tr>\n        <td>mini</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用迷你版样式</td>\n      </tr>\n    </tbody>\n  </table>\n  <br>\n  <strong>注：</strong>pagination组件会监听当前currPage的变化，当其发生变化时pagination组件会向上派发一个回调事件，名字叫pageChange，回调参数就是当前页以及pagination的id，需要在引用pagination的当前文件里面的events对象里将其加入进去.\n  <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n    events: {\n      pageChange (page, id) {\n\n      }\n    }\n  </script></code></pre>\n";
 
 /***/ },
 /* 444 */

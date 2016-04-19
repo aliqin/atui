@@ -169,28 +169,6 @@
   height: 0;
   opacity: 0;
 }
-.alert.top {
-  position: fixed;
-  top: 30px;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  z-index: 2;
-}
-.alert.top-right {
-  position: fixed;
-  top: 30px;
-  right: 50px;
-  z-index: 2;
-}
-.alert.center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
-  z-index: 2;
-}
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -3144,6 +3122,7 @@ tbody.collapse.in {
 }
 .select-container .select-toggle > span {
   display: block;
+  -webkit-user-select: none;
 }
 .select-container .select-toggle:focus {
   border: 1px solid #ff7500;
@@ -3172,7 +3151,7 @@ tbody.collapse.in {
   line-height: 20px;
   height: 20px;
   margin-top: -10px;
-  cursor: text;
+  cursor: default;
 }
 .select-container .select-search-field {
   width: .75em;
@@ -4735,6 +4714,27 @@ a.thumbnail.active {
 }
 .alert > p + p {
   margin-top: 5px;
+}
+.alert.top {
+  position: fixed;
+  top: 30px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.alert.top-right {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  z-index: 1090;
+}
+.alert.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 1090;
 }
 .alert-dismissable,
 .alert-dismissible {

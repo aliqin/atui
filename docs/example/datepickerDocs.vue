@@ -31,7 +31,7 @@
       </v-select>
 
       <h4>重置按钮</h4>
-      <label><input type="checkbox" v-model="reset" @click="x">打开或关闭重置功能</label>
+      <label><input type="checkbox" v-model="reset">打开或关闭重置功能</label>
 
       <range-picker></range-picker>
     </div>

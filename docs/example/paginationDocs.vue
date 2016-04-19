@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>
     <div class="bs-example">
       <h4 class="example-title">完全版</h4>
-      <pagination :total-page.sync="totalPage",
+      <pagination class="customclass" :total-page.sync="totalPage",
                   :curr-page.sync="currPage",
                   :total="total",
                   :show-jumper="true",
@@ -129,7 +129,7 @@
       },
       'pagination-size-change' (data) {
         console.log('EVENT', 'pagination-size-change', data.label, data.value)
-      },
+      }
     },
     methods:{
       changeTotalPage() {

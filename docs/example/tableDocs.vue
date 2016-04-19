@@ -245,7 +245,12 @@ import {Table,Icon} from 'src/'
     },
     methods:{
       changeData() {
-        this.gridData = data;
+        this.gridData.push({
+          key: Math.random(),
+          name: '李秀莲大嘴哥',
+          age: Math.random(),
+          address: '西湖区湖底公园123号',
+        })
       },
       onTableChange(i,j,k) {
         console.log('sdfsdfsdfsdf',i,j,k)
