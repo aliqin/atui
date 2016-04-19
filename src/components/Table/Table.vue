@@ -71,6 +71,7 @@ export default {
       isCheckedAll: false,
       sorderOrder:[],
       checkedRows: [],
+      filterOpened:false,
       filters:null,
       sorter:null
     }
@@ -181,13 +182,14 @@ export default {
     // filter时触发
     onFilter(value, column) {
       let me = this
-      me.$set('filterOpened',true)
+      me.filterOpened = true
       setTimeout(()=>{
-        me.$set('filterOpened',false)
+        me.filterOpened = false
       },100)
 
       me.checkedRows = []
       me.isCheckedAll = false
+      me.filters = {}
       me.filters[column.dataIndex] = [value]
       me.$dispatch('table-change', this.pagination, me.filters, column.sorter)
     }

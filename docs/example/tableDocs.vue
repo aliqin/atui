@@ -169,7 +169,7 @@ import {Table,Icon} from 'src/'
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
     render(text, record,index) {
-      return '<input type="text" v-model="gridData['+ index +'].sex" />'
+      return '<input type="text" v-model="gridData['+ index +'].age" />'
     }
   }, {
     title: '地址',
