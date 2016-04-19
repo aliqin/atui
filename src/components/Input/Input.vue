@@ -1,5 +1,5 @@
 <template>
-  <input type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" />
+  <input type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" :valid-status.sync="validStatus" maxlength="{{maxlength}}" />
 </template>
 <script>
   export default {
@@ -14,15 +14,67 @@
       },
       large: null,
       small: null,
+      value: {
+        type: String,
+        default: ''
+      },
+      //是否必填
+      required: {
+        type: Boolean,
+        default: false
+      },
+      requiredTips: String,
+      maxlength: String,
+      minlength: String,
+      minlengthTips: String,
+      //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
       validStatus: {
         type: String,
         default: ''
       },
-      value: {
+      //验证规则
+      rules: {
+        type: Array,
+        default: []
+      },
+      validResult: {
+        type: Object,
+        default: {
+          requiredValid: {
+            validStatus: 'success',
+            tips:''
+          },
+          minlengthValid: {
+            validStatus: 'success',
+            tips: ''
+          }
+        }
+      },
+      tips: {
         type: String,
         default: ''
       }
     },
+
+    data () {
+      return {
+        results: {
+          requiredValid: {
+            validStatus: 'success',
+            tips:''
+          },
+          minlengthValid: {
+            validStatus: 'success',
+            tips: ''
+          },
+          isPhoneValid: {
+            validStatus: 'success',
+            tips: ''
+          }
+        }
+      }
+    },
+
     computed: {
       classObj () {
         return {
@@ -33,6 +85,141 @@
           'warn': this.validStatus == 'warn',
         }
       }
+    },
+
+    watch: {
+      value (newVal, oldVal) {
+        if(this.validResult) {
+          this.valid(newVal);
+        }
+      },
+
+      results: {
+        handler: function (val, oldVal) {
+          let self = this;
+          let tips = '';
+          let status = '';
+          for(let key in val) {
+            let obj = val[key];
+            if(obj) {
+              tips += obj.tips + '  ';
+
+              if(obj.validStatus !== 'success') {
+                status = 'error';
+              }
+            }
+          }
+
+          self.validStatus = status;
+          self.tips = tips;
+          self.validResult = self.results;
+        },
+        deep: true
+      }
+    },
+
+    methods: {
+      valid (val) {
+        if(typeof(this.required) !== "undefined") {
+          this.requiredValid(val);
+        }
+
+        if(this.minlength) {
+          this.minlengthValid(val);
+        }
+
+        if(this.rules) {
+          this.rulesValid(val);
+        }
+      },
+
+      rulesItemValid (rule, value) {
+        let self = this;
+
+        switch(rule) {
+          case 'required':
+            self.requiredValid(value);
+          case 'isPhone':
+            self.phoneValid(value);
+            break;
+          case 'isNumber':
+            self.numberValid(value);
+            break;
+          case 'isTelephone':
+            self.telValid(value);
+            break;
+        }
+      },
+
+      requiredValid (val) {
+        let self = this;
+
+        self.results = self.results || {};
+
+        if(!val) {
+          self.results.requiredValid = {
+            validStatus: 'error',
+            tips: self.requiredTips || '输入不能为空'
+          };
+        } else {
+          self.results.requiredValid = {
+            validStatus: 'success',
+            tips: ''
+          };
+        }
+      },
+
+      minlengthValid (val) {
+        let self = this;
+        let minlength = self.minlength - 0;
+
+        self.results = self.results || {};
+
+        if(val) {
+          let  len = val.length;
+
+          if(val.length < minlength) {
+            self.results.minlengthValid = {
+              validStatus: 'error',
+              tips: self.minlengthTips || '输入字符数不能小于' + len
+            };
+          } else {
+            self.results.minlengthValid = {
+              validStatus: 'success',
+              tips: ''
+            };
+          }
+        }
+      },
+
+      rulesValid (value) {
+        let self = this;
+
+        self.rules.forEach((val, index) => {
+          self.rulesItemValid(val, value);
+        });
+      },
+
+      phoneValid (value) {
+        let rule = /^1\d{10}$/
+
+        if (rule.test(value) || value == '') {
+          this.results.isPhoneValid = {
+            validStatus: 'success',
+            tips: ''
+          };
+        } else {
+          this.results.isPhoneValid = {
+            validStatus: 'error',
+            tips: this.isPhoneValidTips || '输入手机号码格式错误'
+          };
+        }
+      },
+
+      numberValid (value) {},
+
+      telValid (value) {}
+
     }
   }
 </script>
