@@ -1,5 +1,5 @@
 <template>
-<div class="form-item" :class="classObj">
+<v-col class="form-item" :class="classObj" :span="itemCol">
   <v-col :span="labelCol">
     <label v-if="label" class="form-label">
       <span v-if="isRequired" class="required-icon">*</span>
@@ -18,7 +18,7 @@
     </div>
     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
   </v-col>
-</div>
+</v-col>
 </template>
 <script>
   import Layout from 'src/components/Layout/';
@@ -27,6 +27,10 @@
   export default {
     props: {
       label: String,
+      itemCol: {
+        type: String,
+        default: '24'
+      },
       labelCol: {
         type: String,
         default: '7'
@@ -35,11 +39,6 @@
         type: String,
         default: ''
       },
-      //验证规则
-      rules: {
-        type: Array,
-        default: []
-      },
       //是否必填
       required: null,
       //提示信息，如不设置，会根据验证规则自动生成
@@ -47,8 +46,6 @@
         type: String,
         default: ''
       },
-      //额外提示信息，设置后，会和提示信息一起显示
-      extra: String,
       //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
       validStatus: {
         type: String,
@@ -61,7 +58,7 @@
     computed: {
       classObj () {
         return {
-          // 'form-item-with-help': this.validStatus,
+          'form-item-with-help': this.validStatus,
           'has-error': this.validStatus == 'error',
           'has-success': this.validStatus == 'success'
         };
