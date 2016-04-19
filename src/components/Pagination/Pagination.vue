@@ -178,7 +178,7 @@ export default {
         this.getPageRange()
     },
     onChange (pageNum) {
-        this.$dispatch('pageChange', pageNum, this.id);
+        this.$dispatch('pagination-page-change', pageNum, this.id);
     },
     _isValid (page) {
         return typeof page === 'number' && page >= 1 && page !== this.currPage

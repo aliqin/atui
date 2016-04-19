@@ -129,7 +129,7 @@
       },
       'pagination-size-change' (data) {
         console.log('EVENT', 'pagination-size-change', data.label, data.value)
-      },
+      }
     },
     methods:{
       changeTotalPage() {

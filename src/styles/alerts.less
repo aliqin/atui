@@ -71,7 +71,27 @@
     margin-top: 5px;
   }
 }
-
+.alert.top {
+  position: fixed;
+  top: 30px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.alert.top-right {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  z-index: @zindex-message;
+}
+.alert.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+  z-index: @zindex-message;
+}
 // Dismissible alerts
 //
 // Expand the right padding and account for the close button's positioning.

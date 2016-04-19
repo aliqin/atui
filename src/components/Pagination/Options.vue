@@ -40,6 +40,6 @@
         this.$dispatch('pagination-size-change', data)
         return true
       }
-    },
+    }
 	}
 </script>
