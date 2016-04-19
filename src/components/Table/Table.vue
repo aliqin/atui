@@ -106,7 +106,9 @@ export default {
         // this.isCheckedAll = false
         let me = this
         me.compileTbody()
-        me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
+        if(me.checkebleRows) {
+          me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
+        }
       }
     }
   },
