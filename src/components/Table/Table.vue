@@ -26,7 +26,7 @@
         </tr>
       </thead>
       <tbody class="table-tbody">
-        <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">没有任何数据</td></tr>
+        <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td></tr>
         <tr v-for="(rowIndex, record) in dataSource" :track-by="rowKey">
             <td v-if="rowSelection">
                  <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
@@ -55,6 +55,10 @@ export default {
   props: {
     pagination:Object,
     dataSource: Array,
+    noDataTip:{
+      type:String,
+      default:'没有任何数据'
+    },
     columns: Array,
     rowSelection: Object,
     rowKey: String,
