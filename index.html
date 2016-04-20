@@ -9,8 +9,7 @@
   <link rel="stylesheet" type="text/css" href="build/docs.css">
   <link rel="stylesheet" type="text/css" href="docs/assets/prism-coy.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <script src="docs/js/vue.min.js"></script>
-  <script src="build/build-docs.js"></script>
+
 </head>
 <body class="alidayu">
 <div id="wrapper">
@@ -107,6 +106,9 @@
     </p>
   </div>
 </footer>
-
+<!-- using cdn version here so it works under gh-pages -->
+<script src="docs/js/vue.min.js"></script>
+<script src="build/build-docs.js"></script>
+<script src="http://localhost:8080/webpack-dev-server.js"></script>
 </body>
 </html>
