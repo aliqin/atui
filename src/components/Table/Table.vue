@@ -10,17 +10,17 @@
           </th>
           <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
               {{column['title']}}
-              <dropdown v-if="dataSource.length && column.filters" data-toggle="dropdown" :open="filterOpened">
+              <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
                 <div data-toggle="dropdown">
-                  <icon type="filter"></icon>
+                  <icon type="filter" size="12"></icon>
                 </div>
                 <ul name="dropdown-menu" class="dropdown-menu">
                   <li v-for="col in column.filters"><a href="javascript:void(0);" @click="onFilter(col.value, column)">{{col.text}}</a></li>
                 </ul>
               </dropdown>
               <div v-if="dataSource.length && column.sorter" class="table-sorter">
-                <icon type="up" @click="sortAction(column,$index,'ascend')" size="10" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
-                <icon type="down" @click="sortAction(column,$index,'descend')" size="10" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
+                <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" size="10" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
+                <icon type="down" size="10" @click="sortAction(column,$index,'descend')" size="10" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
               </div>
           </th>
         </tr>

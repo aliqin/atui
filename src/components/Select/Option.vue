@@ -1,8 +1,6 @@
 <template>
-  <div v-if="show" :class="{option:true,disabled:disabled,chosen:chosen}">
-    <a @mousedown.prevent.stop="handleClick">
-      <span v-el:content><slot></slot></span>
-    </a>
+  <div v-if="show" :class="{option:true,disabled:disabled,chosen:chosen}" @mousedown.prevent.stop="handleClick">
+    <span v-el:content><slot></slot></span>
   </div>
 </template>
 
