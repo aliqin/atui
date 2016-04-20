@@ -7,6 +7,7 @@
     </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
+    <input type="button" @click="emptyData" value="清空数据"/>
     <pre><code class="language-markup"><script type="language-mark-up">
 import {Table,Icon} from 'src/'
   const columns = [{
@@ -251,6 +252,9 @@ import {Table,Icon} from 'src/'
           age: Math.random(),
           address: '西湖区湖底公园123号',
         })
+      },
+      emptyData() {
+        this.gridData = []
       },
       onTableChange(i,j,k) {
         console.log('sdfsdfsdfsdf',i,j,k)

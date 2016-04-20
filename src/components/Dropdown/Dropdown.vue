@@ -1,9 +1,7 @@
 <template>
   <div :class="{dropdown:true,open:open}">
     <slot></slot>
-    <div style="padding-top:3px;">
-      <slot name="dropdown-menu"></slot>
-    </div>
+    <slot name="dropdown-menu"></slot>
   </div>
 </template>
 <script>
