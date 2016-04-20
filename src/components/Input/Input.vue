@@ -47,6 +47,18 @@
             minlengthValid: {
               validStatus: 'success',
               tips: ''
+            },
+            isNumberValid: {
+              validStatus: 'success',
+              tips: ''
+            },
+            isTelValid: {
+              validStatus: 'success',
+              tips: ''
+            },
+            isEmailValid: {
+              validStatus: 'success',
+              tips: ''
             }
           }
         }
@@ -69,6 +81,18 @@
             tips: ''
           },
           isPhoneValid: {
+            validStatus: 'success',
+            tips: ''
+          },
+          isNumberValid: {
+            validStatus: 'success',
+            tips: ''
+          },
+          isTelValid: {
+            validStatus: 'success',
+            tips: ''
+          },
+          isEmailValid: {
             validStatus: 'success',
             tips: ''
           }
@@ -149,6 +173,9 @@
           case 'isTelephone':
             self.telValid(value);
             break;
+          case 'isEmail':
+            self.emailValid(value);
+            break;
         }
       },
 
@@ -197,12 +224,13 @@
         let self = this;
 
         self.rules.forEach((val, index) => {
+          debugger;
           self.rulesItemValid(val, value);
         });
       },
 
       phoneValid (value) {
-        let rule = /^1\d{10}$/
+        let rule = /^1\d{10}$/;
 
         if (rule.test(value) || value == '') {
           this.results.isPhoneValid = {
@@ -217,10 +245,53 @@
         }
       },
 
-      numberValid (value) {},
+      numberValid (value) {
+        let rule = /^\d*$/;
 
-      telValid (value) {}
+        if(rule.test(value) || value == '') {
+          this.results.isNumberValid = {
+            validStatus: 'success',
+            tips: ''
+          };
+        } else {
+          this.results.isNumberValid = {
+            validStatus: 'error',
+            tips: this.isPhoneValidTips || '数字验证失败'
+          };
+        }
+      },
 
+      telValid (value) {
+        let rule = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/;
+
+        if(rule.test(value) || value == '') {
+          this.results.isTelValid = {
+            validStatus: 'success',
+            tips: ''
+          };
+        } else {
+          this.results.isTelValid = {
+            validStatus: 'error',
+            tips: this.isPhoneValidTips || '输入固话格式错误，固话请用-'
+          };
+        }
+      },
+
+      emailValid (value) {
+        let rule = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+
+        if(rule.test(value) || value == '') {
+          this.results.isEmailValid = {
+            validStatus: 'success',
+            tips: ''
+          };
+        } else {
+          this.results.isEmailValid = {
+            validStatus: 'error',
+            tips: this.isPhoneValidTips || '输入email格式错误'
+          };
+        }
+      }
     }
   }
 </script>
