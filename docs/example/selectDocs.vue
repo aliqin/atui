@@ -2,12 +2,10 @@
   <div class="bs-docs-section" id="select">
     <h3 class="page-header"><a href="#select" class="anchor">Select 下拉框</a></h3>
     <div class="bs-example">
-      <p>
         <pre>
         选中值 : {{single}}
         </pre>
-      </p>
-      <v-select value="Apple" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+      <v-select :value="single" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
         <v-option value="Apple">苹果</v-option>
         <v-option value="Banana" disabled>Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
@@ -168,6 +166,7 @@
           {value:'Orange', label:'Orange'},
           {value:'Grape', label:'Grape'},
         ],
+        placeholder:'请选择一个水果',
         arr: [],
         arr2: [],
         single: 'Apple',
