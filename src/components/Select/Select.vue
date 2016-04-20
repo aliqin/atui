@@ -73,8 +73,6 @@
       if(this.value.length) {
         this.showPlaceholder = false
       }
-
-
     },
     data() {
       return {
@@ -147,7 +145,10 @@
       createTag() {
         if(this.tags) {
           let value = event.target.value
-          if(this.value.indexOf(value) === -1) {
+          if(!value.trim().length) {
+            return
+          }
+          if(this.value.trim().indexOf(value) === -1) {
             this.selectedOptions.push({
               label:value,
               value:value

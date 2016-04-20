@@ -2,12 +2,10 @@
   <div class="bs-docs-section" id="select">
     <h3 class="page-header"><a href="#select" class="anchor">Select 下拉框</a></h3>
     <div class="bs-example">
-      <p>
         <pre>
-选中值 : {{single}}
+        选中值 : {{single}}
         </pre>
-      </p>
-      <v-select value="Apple" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+      <v-select :value="single" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
         <v-option value="Apple">苹果</v-option>
         <v-option value="Banana" disabled>Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
@@ -51,78 +49,46 @@
 
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<p>
-  <pre>
-选中值 : {{single}}
-  </pre>
-</p>
-<v-select :value.sync="single" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
-  <v-option value="Apple">Apple</v-option>
+<v-select value="Apple" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+  <v-option value="Apple">苹果</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
   <v-option value="Orange">OrangeText</v-option>
   <v-option value="Grape">Grape</v-option>
 </v-select>
 <hr>
-<h4>多选下拉</h4>
-<p>
-  <pre>
-选中值 : {{multiple.join(', ')}}
-  </pre>
-</p>
-<v-select multiple :value.sync="multiple">
+<h4>多选下拉(只能选已有的)</h4>
+
+<v-select multiple :value.sync="multiple" @change="onSlectChange">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
   <v-option value="Orange">Orange</v-option>
   <v-option value="Grape">Grape</v-option>
 </v-select>
+
 <hr>
-<h4>多选下拉限制</h4>
-<p>
-  <pre>
-选中值 : {{multipleLimit.join(', ')}}
-  </pre>
-</p>
-<v-select multiple :limit="2" :value.sync="multipleLimit">
+<h4>tags(输入回车时变成一个tag)</h4>
+
+<v-select tags :value="Banana">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
   <v-option value="Orange">Orange</v-option>
   <v-option value="Grape">Grape</v-option>
 </v-select>
-<hr>
-<h4>自定义模板</h4>
-<p>
-  <pre>
-选中值 : {{custom.join(', ')}}
-  </pre>
-</p>
-<v-select multiple :value.sync="custom">
-  <v-option value="success"><icon type="success" color="green"></icon> 成功</v-option>
-  <v-option value="error"><icon type="error" color="red"></icon> 错误</v-option>
-  <v-option value="help"><icon type="help"></icon> 帮助</v-option>
-  <v-option value="info"><icon type="info"></icon> 信息</v-option>
-</v-select>
 <hr />
-<h4>使用数据填充Select选择框内容</h4>
-<p>
-  可以指定一个数组来填充选项内容，并可搜索
-  <pre>
-选中值 : {{arr}}
-  </pre>
-</p>
-<v-select :value.sync="arr" :options="fruitOptions" :search="true" :close-on-select="true">
-</v-select>
 
-<hr />
-<h4>Automatically close array driven selects</h4>
-<p>Using the property :close-on-select="true" array driven selects will auto-close after selecting an entry.</p>
-<v-select :value.sync="arr2" :options="fruitOptions" :close-on-select="true">
-</v-select>
 
-<h4>禁用的下拉框</h4>
-<v-select :value.sync="disabled" :options="fruitOptions" :close-on-select="true" :disabled="true">
+<h4>下拉出自定义类容</h4>
+<v-select placeholder="选择类别" style="width:200px;">
+<v-option>
+  <tabs>
+    <tab header="系统短信签名"></tab>
+    <tab header="系统短信签名"></tab>
+    <tab header="系统短信签名"></tab>
+  </tabs>
+</v-option>
 </v-select>
 </script></code></pre>
 
@@ -200,6 +166,7 @@
           {value:'Orange', label:'Orange'},
           {value:'Grape', label:'Grape'},
         ],
+        placeholder:'请选择一个水果',
         arr: [],
         arr2: [],
         single: 'Apple',

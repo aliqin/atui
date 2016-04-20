@@ -1,7 +1,7 @@
 <template>
   <div class="pagination">
   <template v-if="totalPage > 1">
-    <options :total="total" :default-size="defaultSize"  :placeholder="placeholder" :show-size-changer="showSizeChanger"></options>
+    <options :total="total" :default-size="defaultSize" :show-size-changer="showSizeChanger"></options>
     <jumper
         :quick-go="showJumper ? _handleChange.bind(this) : null",
         :curr-page="currPage",
@@ -49,8 +49,7 @@ export default {
     return {
       pageRange : [],
       prevShow : 1,
-      nextShow : 1,
-      placeholder: '10 条/页'
+      nextShow : 1
     }
   },
   watch : {
