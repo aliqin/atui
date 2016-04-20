@@ -117,3 +117,22 @@
   }
 }
 
+.caret {
+  display: inline-block;
+  position: absolute;
+  top:50%;
+  transform:translateY(-50%);
+  right:10px;
+
+  .iconfont {
+    color: #bfbfbf;
+    display: inline-block;
+    transition: all .3s ease;
+    transform:rotate(0deg);
+  }
+}
+
+.caret.open .iconfont{
+  transform:rotate(180deg);
+}
+
