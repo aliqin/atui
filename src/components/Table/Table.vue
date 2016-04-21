@@ -27,7 +27,7 @@
       </thead>
       <tbody class="table-tbody">
         <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td></tr>
-        <tr v-for="(rowIndex, record) in dataSource" :track-by="rowKey">
+        <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
             <td v-if="rowSelection">
                  <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
             </td>
