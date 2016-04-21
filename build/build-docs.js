@@ -22876,14 +22876,19 @@
 	//     <spin show></spin>
 	//     <h4>大的加载</h4>
 	//     <spin show size="large"></spin>
-	//     <h4>隐藏的大的加载</h4>
+	//     <h4>隐藏的大的加载(默认不加show就不显示)</h4>
 	//     <spin size="large"></spin>
 	//     </div>
 	//
 	// <pre><code class="language-markup"><script type="language-mark-up">
-	// <spin :show="true" size="small"></spin>
-	// <spin :show="true"></spin>
-	// <spin :show="true" size="large"></spin>
+	// <h4>小的加载</h4>
+	// <spin show size="small"></spin>
+	// <h4>普通加载</h4>
+	// <spin show></spin>
+	// <h4>大的加载</h4>
+	// <spin show size="large"></spin>
+	// <h4>隐藏的大的加载(默认不加show就不显示)</h4>
+	// <spin size="large"></spin>
 	// </script></code></pre>
 	//
 	//   </div>
@@ -22895,7 +22900,7 @@
 /* 399 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"spin\">\n    <h3 class=\"page-header\"><a href=\"#spin\" class=\"anchor\">Spin 加载中</a></h3>\n    <div class=\"bs-example\">\n    <h4>小的加载</h4>\n    <spin show size=\"small\"></spin>\n    <h4>普通加载</h4>\n    <spin show></spin>\n    <h4>大的加载</h4>\n    <spin show size=\"large\"></spin>\n    <h4>隐藏的大的加载</h4>\n    <spin size=\"large\"></spin>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<spin :show=\"true\" size=\"small\"></spin>\n<spin :show=\"true\"></spin>\n<spin :show=\"true\" size=\"large\"></spin>\n</script></code></pre>\n\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"spin\">\n    <h3 class=\"page-header\"><a href=\"#spin\" class=\"anchor\">Spin 加载中</a></h3>\n    <div class=\"bs-example\">\n    <h4>小的加载</h4>\n    <spin show size=\"small\"></spin>\n    <h4>普通加载</h4>\n    <spin show></spin>\n    <h4>大的加载</h4>\n    <spin show size=\"large\"></spin>\n    <h4>隐藏的大的加载(默认不加show就不显示)</h4>\n    <spin size=\"large\"></spin>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<h4>小的加载</h4>\n<spin show size=\"small\"></spin>\n<h4>普通加载</h4>\n<spin show></spin>\n<h4>大的加载</h4>\n<spin show size=\"large\"></spin>\n<h4>隐藏的大的加载(默认不加show就不显示)</h4>\n<spin size=\"large\"></spin>\n</script></code></pre>\n\n  </div>\n";
 
 /***/ },
 /* 400 */

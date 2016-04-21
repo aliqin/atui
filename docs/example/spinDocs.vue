@@ -8,14 +8,19 @@
     <spin show></spin>
     <h4>大的加载</h4>
     <spin show size="large"></spin>
-    <h4>隐藏的大的加载</h4>
+    <h4>隐藏的大的加载(默认不加show就不显示)</h4>
     <spin size="large"></spin>
     </div>
 
 <pre><code class="language-markup"><script type="language-mark-up">
-<spin :show="true" size="small"></spin>
-<spin :show="true"></spin>
-<spin :show="true" size="large"></spin>
+<h4>小的加载</h4>
+<spin show size="small"></spin>
+<h4>普通加载</h4>
+<spin show></spin>
+<h4>大的加载</h4>
+<spin show size="large"></spin>
+<h4>隐藏的大的加载(默认不加show就不显示)</h4>
+<spin size="large"></spin>
 </script></code></pre>
 
   </div>
