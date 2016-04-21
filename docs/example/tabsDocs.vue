@@ -179,7 +179,7 @@
 </tabs>
 </script></code></pre>
   <h2>Tab 选项 (非 TABS)</h2>
-  <table class="table table-bordered">
+  <table class="atui-table table-bordered">
     <thead>
       <tr>
         <th>参数</th>

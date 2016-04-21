@@ -5,6 +5,7 @@
 // 品牌色
 @primary-color:#ff7500;
 @primary-color-hover:#ffac66;
+@primary-color-click:#e66900;
 @primary-list-hover:#fff8f2;
 
 
@@ -46,13 +47,13 @@
 @input-default-background: #fff;
 @input-disabled-background: #f2f2f2;
 
-@input-error-shadow-color: rgba(255,89,89,0.30);
-@input-success-shadow-color: rgba(29,191,56,0.30);
+@input-error-shadow-color: fade(@input-error-border,0.30);
+@input-success-shadow-color: fade(@input-success-border,0.30);
 
 @input-hover-border: #999;
-@input-click-border: #00a0ff;
+@input-click-border: @primary-color;
 
-@input-click-shadow-color: rgba(0,160,255,0.30);
+@input-click-shadow-color: fade(@primary-color,30);
 
 // textarea文本域
 @textarea-width: 100%;

@@ -31,7 +31,7 @@
 <v-textarea placeholder="请输入描述信息" :words-count="true" count-tips="您输入的字数是："></v-textarea>
 </script></code></pre>
     <h4>参数</h4>
-    <table class="table table-bordered">
+    <table class="atui-table table-bordered">
       <thead>
         <tr>
           <th>参数名</th>

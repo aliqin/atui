@@ -1,5 +1,5 @@
 
-.table-container{
+.atui-table-container{
   position: relative;
   .spin{
     position: absolute;
@@ -8,24 +8,28 @@
     z-index: 1;
     transform:translate(-50%,-50%);
   }
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .table thead {
+}
+.atui-table-container.loading .atui-table-body{
+  opacity: .7;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.atui-table {
+  width: 100%;
+  border-collapse: collapse;
+  thead {
     background-color: #F7F7F7;
   }
-
-  .table tbody,
-  .table tfoot {
+  tbody,tfoot {
     background-color: #FFF;
   }
-  .table th,
-  .table td {
+  th,td{
     text-align: left;
     vertical-align: middle;
   }
-  .table th {
+  th{
     position: relative;
     padding: 12px 15px;
     color: #666;
@@ -56,36 +60,31 @@
       }
     }
   }
-  .table tbody tr:hover {
+
+  tbody tr:hover {
     background-color: @tr-hover-color;
   }
-  .table tr.none td {
+  tr.none td {
     text-align: center;
   }
-  .table tr.none:hover {
+  tr.none:hover {
     background-color: #FFF;
   }
-  .table tfoot tr:hover {
+  tfoot tr:hover {
     background-color: inherit;
   }
-  .table td {
+  td {
     position: relative;
     padding: 15px;
     border-bottom: 1px solid #F0F0F0;
     color: #666;
   }
 
-  .table .pagination {
+  .pagination {
     float: right;
     margin-top: 0;
   }
-}
-.table-container.loading .table-body{
-  opacity: .7;
-  -webkit-filter: blur(1px);
-  filter: blur(1px);
-  pointer-events: none;
-}
 
+}
 
 

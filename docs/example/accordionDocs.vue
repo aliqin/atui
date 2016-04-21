@@ -48,7 +48,7 @@
 </accordion>
 </script></code></pre>
     <h2>Accordion Options</h2>
-    <table class="table table-bordered">
+    <table class="atui-table table-bordered">
       <thead>
         <tr>
           <th>Name</th>
@@ -67,7 +67,7 @@
       </tbody>
     </table>
     <h2>Panel Options</h2>
-    <table class="table table-bordered">
+    <table class="atui-table table-bordered">
       <thead>
         <tr>
           <th>Name</th>
