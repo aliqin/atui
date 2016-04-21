@@ -72,14 +72,3 @@ import Icon from '../Icon'
     }
   }
 </script>
-
-<style lang="less">
-.fade-transition {
-  transition: opacity .3s ease;
-}
-.fade-enter,
-.fade-leave {
-  height: 0;
-  opacity: 0;
-}
-</style>
