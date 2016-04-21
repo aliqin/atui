@@ -112,7 +112,7 @@ import {Table,Icon} from 'src/'
   }
 </script></code></pre>
   <h3>Table 选项 </h3>
-  <table class="table table-bordered">
+  <table class="atui-table table-bordered">
     <thead>
       <tr>
         <th>名称</th>

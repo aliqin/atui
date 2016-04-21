@@ -1,8 +1,8 @@
 <template>
-<div :class="{'table-container':true,loading:loading}">
+<div :class="{'atui-table-container':true,loading:loading}">
   <spin size="sm" v-if="loading"></spin>
-  <div class="table-body">
-    <table class="table">
+  <div class="atui-table-body">
+    <table class="atui-table">
       <thead class="table-thead">
         <tr>
           <th v-if="rowSelection">
@@ -199,7 +199,7 @@ export default {
       me.isCheckedAll = false
       me.filters = {}
       me.filters[column.dataIndex] = [value]
-      me.$dispatch('table-change', this.pagination, me.filters, column.sorter)
+      me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
     }
   }
 }
