@@ -5,7 +5,7 @@
       <h4>Uploader 文件上传</h4>
       <h5>1、点击上传</h5>
       <form id="upload1" method="post" action="{{ajaxUrl}}">
-        <file-upload
+        <uploader
           id="file-upload-click-test"
           form-id="upload1"
           upload-type="click"
@@ -15,11 +15,11 @@
           :auto-submit="true"
           :hide-button="true"
           :file-list.sync="fileList1">
-        </file-upload>
+        </uploader>
       </form>
       <h5>2、支持拖拽上传</h5>
       <form id="upload2" method="post" action="{{ajaxUrl}}">
-        <file-upload
+        <uploader
           id="file-upload-drag-test"
           form-id="upload2"
           upload-type="drag"
@@ -29,20 +29,38 @@
           :auto-submit="autoSubmit"
           :hide-button="hideButton"
           :file-list.sync="fileList2">
-        </file-upload>
+        </uploader>
       </form>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 upload文件上传
 1、点击上传调用方式
-<form id="upload1" method="post" action="upload.do">
-  <file-upload id="file-upload-click-test" form-id="upload1" upload-type="click" :ajax="upload.do" :multiple="true" name="files1" :auto-submit="true" :hide-button="true" :file-list.sync="fileList1">
-  </file-upload>
+<form id="upload1" method="post" action="{{ajaxUrl}}">
+  <uploader
+    id="file-upload-click-test"
+    form-id="upload1"
+    upload-type="click"
+    :ajax="ajaxUrl"
+    :multiple="multiple"
+    name="files1"
+    :auto-submit="true"
+    :hide-button="true"
+    :file-list.sync="fileList1">
+  </uploader>
 </form>
 2、支持拖拽上传调用方式
-<form id="upload2" method="post" action="upload.do">
-  <file-upload id="file-upload-drag-test" form-id="upload2" upload-type="drag" :ajax="upload.do" :multiple="true" name="files2" :auto-submit="false" :hide-button="false" :file-list.sync="fileList2">
-  </file-upload>
+<form id="upload2" method="post" action="{{ajaxUrl}}">
+  <uploader
+    id="file-upload-drag-test"
+    form-id="upload2"
+    upload-type="drag"
+    :ajax="ajaxUrl"
+    :multiple="multiple"
+    name="files2"
+    :auto-submit="autoSubmit"
+    :hide-button="hideButton"
+    :file-list.sync="fileList2">
+  </uploader>
 </form>
     </script></code></pre>
     <h4>参数</h4>
@@ -135,11 +153,11 @@ upload文件上传
 </template>
 
 <script>
-  import UploadFile from 'src/'
+  import {Uploader} from 'src/'
 
   export default {
     components: {
-      FileUpload: UploadFile
+      Uploader
     },
     data() {
       return {

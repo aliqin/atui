@@ -4,7 +4,7 @@
         v-bind:style="{width:width}"
         @click="inputClick"
         v-model="value"/>
-    <icon type="calendar"></icon>
+    <!-- <icon type="calendar"></icon> -->
     <div class="datepicker-popup" v-show="displayDayView">
       <div class="datepicker-inner">
         <div class="datepicker-body">

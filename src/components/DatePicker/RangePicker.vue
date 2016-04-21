@@ -4,7 +4,7 @@
   <span class="range-picker-separator"> </span>
   <input type="text" placeholder="结束日期" @click="triggerEnd" />
   <div class="range-picker-content">
-    <date-picker v-show="showEndPicker"></date-picker>
+    <!-- <date-picker v-show="showEndPicker"></date-picker> -->
   </div>
 </div>
 </template>
@@ -28,6 +28,9 @@
         showStartPicker:false,
         showEndPicker:false
       }
+    },
+    components: {
+      DatePicker
     },
     methods: {
       triggerStart() {
