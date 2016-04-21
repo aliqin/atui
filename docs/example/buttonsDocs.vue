@@ -23,7 +23,7 @@
         <button type="button">流量验证码统计</button>
         <button type="button">通话</button>
       </div>
-      <h4>Checkbox</h4>
+      <!-- <h4>Checkbox</h4>
       <checkbox-group :value.sync="checkboxValue">
         <checkbox value="left">Left</checkbox>
         <checkbox value="middle" checked>Middle</checkbox>
@@ -51,7 +51,7 @@ Checkbox value: {{checkboxValue | json}}
         <pre>
 Radio value: {{radioValue}}
         </pre>
-      </p>
+      </p> -->
     </div>
 
     <pre><code class="language-markup"><script type="language-mark-up">
@@ -78,26 +78,6 @@ Radio value: {{radioValue}}
   <button type="button">流量验证码统计</button>
   <button type="button">通话</button>
 </div>
-<!-- 集合类似checkbox和radio功能的按钮组合调用方式如下 -->
-<checkbox-group :value.sync="checkboxValue">
-  <checkbox value="left">Left</checkbox>
-  <checkbox value="middle" checked>Middle</checkbox>
-  <checkbox value="right">Right</checkbox>
-</checkbox-group>
-
-<radio-group :value.sync="radioValue" size="large">
-  <radio value="left">Left</radio>
-  <radio value="middle" checked>Middle</radio>
-  <radio value="right">Right</radio>
-</radio-group>
-
-<radio-group :value.sync="radioValue" size="small">
-  <radio value="left">Left</radio>
-  <radio value="middle" checked>Middle</radio>
-  <radio value="right">Right</radio>
-</radio-group>
-
-
 </script></code></pre>
   </div>
 </template>

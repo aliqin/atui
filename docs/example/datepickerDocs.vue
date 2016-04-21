@@ -37,7 +37,7 @@
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></DatePicker>
+      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></date-picker>
 
 <v-select multiple :default-value.sync="disabled" size=5>
   <v-option value="0">0</v-option>
