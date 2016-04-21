@@ -39,7 +39,7 @@
 </v-button>
 </script></code></pre>
     <h4>参数</h4>
-    <table class="table table-bordered">
+    <table class="atui-table table-bordered">
       <thead>
         <tr>
           <th>参数名</th>

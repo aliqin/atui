@@ -49,7 +49,10 @@
 
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<v-select value="Apple" placeholder="请选择一个水果" style="width:200px;" @change="onSlectChange">
+<pre>
+  选中值 : {{single}}
+  </pre>
+<v-select :value="single" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
   <v-option value="Apple">苹果</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -90,10 +93,11 @@
   </tabs>
 </v-option>
 </v-select>
+
 </script></code></pre>
 
     <h2>Select 选项</h2>
-    <table class="table table-bordered">
+    <table class="atui-table table-bordered">
       <thead>
         <tr>
           <th>Name</th>
@@ -178,6 +182,7 @@
     },
     methods:{
       onSlectChange(option) {
+        this.single = option.value
         console.log(option)
       }
     }

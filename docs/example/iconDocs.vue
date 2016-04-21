@@ -11,7 +11,7 @@
       <icon type="down">向下</icon>
       <icon type="prev">上一页</icon>
       <icon type="next">下一页</icon>
-      <icon type="waring" color="red" size="20">警告</icon>
+      <icon type="warning" color="red" size="20">警告</icon>
       <icon type="error">错误</icon>
       <icon type="info">信息</icon>
       <icon type="help">帮助</icon>
@@ -32,7 +32,7 @@
 <icon type="down">向下</icon>
 <icon type="prev">上一页</icon>
 <icon type="next">下一页</icon>
-<icon type="waring" color="red" size="36">警告</icon>
+<icon type="warning" color="red" size="36">警告</icon>
 <icon type="error">错误</icon>
 <icon type="info">信息</icon>
 <icon type="help">帮助</icon>

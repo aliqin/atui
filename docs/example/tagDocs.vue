@@ -20,7 +20,7 @@
 <v-tag color="red" size="20">标签</v-tag>
 </script></code></pre>
   <h2>Options</h2>
-  <table class="table table-bordered">
+  <table class="atui-table table-bordered">
     <thead>
       <tr>
         <th>参数</th>

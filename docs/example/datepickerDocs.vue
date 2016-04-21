@@ -57,7 +57,7 @@
 </v-select>
     </script></code></pre>
     <h2>Option</h2>
-    <table class="table table-bordered">
+    <table class="atui-table table-bordered">
       <thead>
         <tr>
           <th>Name</th>

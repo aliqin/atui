@@ -58,7 +58,7 @@ class="btn btn-danger btn-lg"
 </sidebar></script></code></pre>
 
     <h2>Options</h2>
-    <table class="table table-bordered">
+    <table class="atui-table table-bordered">
       <thead>
         <tr>
           <th>Name</th>

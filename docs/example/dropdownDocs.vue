@@ -70,7 +70,7 @@
 
 
 <h2>Options</h2>
-    <table class="table table-bordered">
+    <table class="atui-table table-bordered">
       <thead>
         <tr>
           <th>名称</th>
