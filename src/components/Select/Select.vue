@@ -18,8 +18,6 @@
       <div v-show="noResult" class="no-result">无结果</div>
       <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
     </div>
-
-
   </div>
 </template>
 
@@ -34,7 +32,7 @@
         type: Array,
       },
       value: {
-        default:''
+        type:[String,Array]
       },
       placeholder: {
         type: String,
@@ -62,16 +60,25 @@
       Tag
     },
     created() {
-      if(this.tags) {
-        this.multiple = true
+      let me = this
+      if(me.tags) {
+        me.multiple = true
       }
-      if (!this.multiple && Array.isArray(this.value)) {
-        this.value = this.value.slice(0, 1)
-      } else if (this.multiple && this.value.length > this.limit) {
-        this.value = this.value.slice(0, this.limit)
+      if(!me.value) {
+        me.value = me.multiple ? [] : ''
+      } 
+      console.log(me.value)
+      if(me.multiple && !Array.isArray(me.value)) {
+        me.value = [me.value]
       }
-      if(this.value.length) {
-        this.showPlaceholder = false
+      if(!me.multiple && Array.isArray(me.value)) {
+        me.value = me.value.slice(0, 1)
+      }
+      if (me.multiple && me.value.length > me.limit) {
+        me.value = me.value.slice(0, me.limit)
+      }
+      if(me.value.length) {
+        me.showPlaceholder = false
       }
     },
     data() {
@@ -145,10 +152,11 @@
       createTag() {
         if(this.tags) {
           let value = event.target.value
-          if(!value.trim().length) {
+          console.log(value)
+          if(!value || !value.trim().length) {
             return
           }
-          if(this.value.trim().indexOf(value) === -1) {
+          if(this.value.indexOf(value) === -1) {
             this.selectedOptions.push({
               label:value,
               value:value

@@ -1,11 +1,11 @@
 <template>
-  <div v-if="show" :class="{option:true,disabled:disabled,chosen:chosen}" @mousedown.prevent.stop="handleClick">
-    <span v-el:content><slot></slot></span>
+  <div v-show="show", :class="{option:true,disabled:disabled,chosen:chosen}" @mousedown.prevent.stop="handleClick">
+    <slot></slot>
   </div>
 </template>
 
 <script>
-  import Icon from '../Icon/'
+  // import Icon from '../Icon/'
   export default {
     name:'option',
     props: {
@@ -17,7 +17,7 @@
       }
     },
     components:{
-      Icon
+      // Icon
     },
 
     computed: {
@@ -27,19 +27,16 @@
         })
       },
       show() {
-        // if(!this.$els.content){
-        //   return
-        // }
         let searchText = this.$parent.searchText.trim()
         if(searchText.length && this.$parent.multiple) {
-          return this.$els.content.innerText.indexOf(searchText) >=0
+          return this.$el.innerText.indexOf(searchText) >=0
         }
         return true;
       }
     },
     ready() {
       let option = {
-        label:this.$els.content.innerHTML,
+        label:this.$el.innerText,
         value:this.value,
         disabled:this.disabled
       }
@@ -56,7 +53,7 @@
           return;
         }
         let option = {
-          label:this.$els.content.innerHTML,
+          label:this.$el.innerText,
           value:this.value
         }
         this.$dispatch('change',option)
