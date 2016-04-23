@@ -11,8 +11,7 @@ export default {
   name: 'spin',
   props:{
     show:{
-      type:Boolean,
-      default:false
+      type:Boolean
     },
     size:{
       type:String,

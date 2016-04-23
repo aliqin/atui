@@ -3,17 +3,24 @@
     <h3 class="page-header"><a href="#spin" class="anchor">Spin 加载中</a></h3>
     <div class="bs-example">
     <h4>小的加载</h4>
-    <spin :show="true" size="small"></spin>
+    <spin show size="small"></spin>
     <h4>普通加载</h4>
-    <spin :show="true"></spin>
+    <spin show></spin>
     <h4>大的加载</h4>
-    <spin :show="true" size="large"></spin>
+    <spin show size="large"></spin>
+    <h4>隐藏的大的加载(默认不加show就不显示)</h4>
+    <spin size="large"></spin>
     </div>
 
 <pre><code class="language-markup"><script type="language-mark-up">
-<spin :show="true" size="small"></spin>
-<spin :show="true"></spin>
-<spin :show="true" size="large"></spin>
+<h4>小的加载</h4>
+<spin show size="small"></spin>
+<h4>普通加载</h4>
+<spin show></spin>
+<h4>大的加载</h4>
+<spin show size="large"></spin>
+<h4>隐藏的大的加载(默认不加show就不显示)</h4>
+<spin size="large"></spin>
 </script></code></pre>
 
   </div>
