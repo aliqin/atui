@@ -1,5 +1,9 @@
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
+var vueChunk = new webpack.optimize.CommonsChunkPlugin({
+    name: "Vue",
+    filename: "vue.dev.js",
+})
 // delete config.devtool
 
 config.entry = {
@@ -15,30 +19,20 @@ config.output = {
     libraryTarget: 'umd'
 }
 config.plugins = (config.plugins || []).concat([
-    new webpack.ProvidePlugin({
-        Vue: 'vue',
-    }),
-    // new webpack.ProvidePlugin({
-    //     VueComponent: 'vue-component'
-    // }),
-    new webpack.optimize.CommonsChunkPlugin({
-        name: "Vue",
-        filename: "vue.dev.js",
-    }),
-    //   new webpack.optimize.CommonsChunkPlugin({
-    // name: "VueComponent",
-    // filename: "vuecomponent.js",
-    //   }),
+  vueChunk
+  // new webpack.ProvidePlugin({
+  //     Vue: 'vue',
+  // }),
+  // // new webpack.ProvidePlugin({
+  // //     VueComponent: 'vue-component'
+  // // })
     
 ])
 
 if (process.env.NODE_ENV === 'production') {
-  config.output = {
-      path: './dist',
-      filename: '[name].js',
-      library: '[name]',
-      libraryTarget: 'umd'
-  }
+  vueChunk.filenameTemplate = 'vue.js'
+  config.output.filename = '[name].js'
+  // remove vue依赖的环境判断
   config.plugins = config.plugins.concat([
     new webpack.DefinePlugin({
         'process.env': {
