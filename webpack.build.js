@@ -9,7 +9,7 @@ var vueChunk = new webpack.optimize.CommonsChunkPlugin({
 config.entry = {
     Vue: ['vue'],
     VueComponent: ['./src/index.js'],
-    // VueWidget: ['./src/widgets/index.js'],
+    VueWidget: ['./src/widgets/index.js'],
     VueFilter: ['./src/filters/index.js']
 }
 config.output = {

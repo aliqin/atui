@@ -86,7 +86,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"VueComponent","2":"VueFilter"}[chunkId]||chunkId) + ".dev.js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"VueComponent","2":"VueFilter","3":"VueWidget"}[chunkId]||chunkId) + ".dev.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -10139,34 +10139,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	process.umask = function() { return 0; };
 
-
-/***/ },
-
-/***/ 323:
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function (number, searchKey) {
-	  var ret = '';
-	  number = '' + number;
-	  number = number.replace(/[^\d]/g, '').substr(0, 11);
-	  var keyIndex = number.indexOf(searchKey);
-	  for (var i = 0; i < number.length; i++) {
-	    if (3 === i || 7 === i) {
-	      ret += ' ';
-	    }
-	    ret += number[i];
-	  }
-	  if (searchKey) {
-	    ret = ret.replace(searchKey, '<span class="h">' + searchKey + '</span>');
-	  }
-	  return ret;
-	};
 
 /***/ }
 
