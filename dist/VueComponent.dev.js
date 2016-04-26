@@ -7497,6 +7497,10 @@ return webpackJsonp_name_([1],[
 	    base: {
 	      type: Boolean,
 	      default: false
+	    },
+	    trigger: {
+	      type: String,
+	      default: 'click'
 	    }
 	  },
 	
@@ -7602,13 +7606,25 @@ return webpackJsonp_name_([1],[
 	//   <div class="tabsWrapper">
 	//     <div class="tabs-header">
 	//       <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev"><icon type="prev" size="12"></icon></span>
-	//       <ul :class="wrapClasses" role="tablist" style="width: 99999px;">
+	//       <ul v-if="trigger=='click'" :class="wrapClasses" role="tablist" style="width: 99999px;">
 	//         <li v-for="r in renderData"
 	//             v-bind:class="{
 	//               'active': ($index === active),
 	//               'disabled': r.disabled
 	//             }"
 	//             @click.prevent="handleTabListClick($index, r)"
+	//             :disabled="r.disabled"
+	//         >
+	//             <a href="#">{{{r.header}}}</a>
+	//         </li>
+	//       </ul>
+	//       <ul v-else :class="wrapClasses" role="tablist" style="width: 99999px;">
+	//       <li v-for="r in renderData"
+	//             v-bind:class="{
+	//               'active': ($index === active),
+	//               'disabled': r.disabled
+	//             }"
+	//             @mouseenter.prevent="handleTabListClick($index, r)"
 	//             :disabled="r.disabled"
 	//         >
 	//             <a href="#">{{{r.header}}}</a>
@@ -7632,7 +7648,7 @@ return webpackJsonp_name_([1],[
 /* 279 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"tabsWrapper\">\n  <div class=\"tabs-header\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3 \" class=\"arrow-prev\" @click=\"prev\"><icon type=\"prev\" size=\"12\"></icon></span>\n    <ul :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          v-bind:class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"#\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" class=\"arrow-next\" @click=\"next\"><icon type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
+	module.exports = "\n<div class=\"tabsWrapper\">\n  <div class=\"tabs-header\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3 \" class=\"arrow-prev\" @click=\"prev\"><icon type=\"prev\" size=\"12\"></icon></span>\n    <ul v-if=\"trigger=='click'\" :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          v-bind:class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"#\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <ul v-else :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n    <li v-for=\"r in renderData\"\n          v-bind:class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @mouseenter.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"#\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" class=\"arrow-next\" @click=\"next\"><icon type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
 
 /***/ },
 /* 280 */
