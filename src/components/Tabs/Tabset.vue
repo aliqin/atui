@@ -2,13 +2,25 @@
   <div class="tabsWrapper">
     <div class="tabs-header">
       <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev"><icon type="prev" size="12"></icon></span>
-      <ul :class="wrapClasses" role="tablist" style="width: 99999px;">
+      <ul v-if="trigger=='click'" :class="wrapClasses" role="tablist" style="width: 99999px;">
         <li v-for="r in renderData"
             v-bind:class="{
               'active': ($index === active),
               'disabled': r.disabled
             }"
             @click.prevent="handleTabListClick($index, r)"
+            :disabled="r.disabled"
+        >
+            <a href="#">{{{r.header}}}</a>
+        </li>
+      </ul>
+      <ul v-else :class="wrapClasses" role="tablist" style="width: 99999px;">
+      <li v-for="r in renderData"
+            v-bind:class="{
+              'active': ($index === active),
+              'disabled': r.disabled
+            }"
+            @mouseenter.prevent="handleTabListClick($index, r)"
             :disabled="r.disabled"
         >
             <a href="#">{{{r.header}}}</a>
@@ -45,6 +57,10 @@
       base: {
         type: Boolean,
         default: false
+      },
+      trigger: {
+        type: String,
+        default: 'click'
       }
     },
 
