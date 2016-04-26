@@ -32,7 +32,7 @@
         type: Array,
       },
       value: {
-        type:[String,Array]
+        default:''
       },
       placeholder: {
         type: String,
