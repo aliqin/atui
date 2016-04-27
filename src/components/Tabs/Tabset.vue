@@ -11,7 +11,7 @@
             @click.prevent="handleTabListClick($index, r)"
             :disabled="r.disabled"
         >
-            <a href="#">{{{r.header}}}</a>
+            <a href="javascript:void(0);">{{{r.header}}}</a>
         </li>
       </ul>
       <ul v-else :class="wrapClasses" role="tablist" style="width: 99999px;">
@@ -23,7 +23,7 @@
             @mouseenter.prevent="handleTabListClick($index, r)"
             :disabled="r.disabled"
         >
-            <a href="#">{{{r.header}}}</a>
+            <a href="javascript:void(0);">{{{r.header}}}</a>
         </li>
       </ul>
       <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next"><icon type="next" size="12"></icon>
