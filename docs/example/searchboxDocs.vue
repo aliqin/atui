@@ -76,7 +76,7 @@ export default{
   },
   watch: {
     defaultVal (newVal, oldVal) {
-      alert(newVal);
+      console.log(newVal);
     }
   },
   events: {
