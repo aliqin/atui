@@ -21,6 +21,8 @@ import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
+import calendarDocs from './example/calendarDocs.vue'
+
 import datepickerDocs from './example/datepickerDocs.vue'
 import searchboxDocs from './example/searchboxDocs.vue'
 // import progressbarDocs from './example/progressbar-docs.vue'
@@ -85,6 +87,7 @@ new Vue({
     tagDocs,
     headerDocs,
     accordionDocs,
+    calendarDocs,
     // affixDocs,
     // asideDocs,
     carouselDocs,
