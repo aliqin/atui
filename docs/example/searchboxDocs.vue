@@ -49,10 +49,11 @@
 </template>
 
 <script>
-import {Searchbox} from 'src/'
+import {Searchbox, Message} from 'src/'
 export default{
   components: {
-    Searchbox
+    Searchbox,
+    Message
   },
   data () {
     return {
@@ -76,7 +77,7 @@ export default{
   },
   watch: {
     defaultVal (newVal, oldVal) {
-      console.log(newVal);
+      Message.info(newVal);
     }
   },
   events: {
