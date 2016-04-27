@@ -156,7 +156,7 @@ import {Message} from '@ali/atui'
     },
     methods:{
       showMessage() {
-        Message.error('出错啦～～')
+        Message.success('成功啦')
       }
     }
   }
@@ -240,7 +240,7 @@ import {Message} from '@ali/atui'
     },
     methods:{
       showMessage() {
-        Message.error('出错啦～～')
+        Message.success('成功啦')
       }
     }
   }

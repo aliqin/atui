@@ -44,6 +44,11 @@
 }
 
 // The dropdown menu (ul)
+.hover-trigger:hover{
+  .dropdown-menu{
+    display:block;
+  }
+}
 .dropdown-menu {
   position: absolute;
   top: 105%;
@@ -65,6 +70,7 @@
   border-radius:4px;
 
   > .option, > li > a{
+    cursor:pointer;
     display: block;
     padding: 3px 20px;
     clear: both;

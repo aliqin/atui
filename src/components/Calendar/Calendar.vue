@@ -1,33 +1,33 @@
 <template>
-  <div class="datepicker">
-    <div class="datepicker-popup" v-show="displayDayView">
-      <div class="datepicker-inner">
-        <div class="datepicker-body">
-          <div class="datepicker-ctrl">
-            <span class="month-btn datepicker-preBtn" @click="preNextMonthClick(0)">&lt;</span>
-            <span class="month-btn datepicker-nextBtn" @click="preNextMonthClick(1)">&gt;</span>
+  <div class="atui-calendar">
+    <div class="atui-calendar-popup" v-show="displayDayView">
+      <div class="atui-calendar-inner">
+        <div class="atui-calendar-body">
+          <div class="atui-calendar-ctrl">
+            <span class="month-btn atui-calendar-preBtn" @click="preNextMonthClick(0)">&lt;</span>
+            <span class="month-btn atui-calendar-nextBtn" @click="preNextMonthClick(1)">&gt;</span>
             <p @click="switchMonthView">{{stringifyDayHeader(currDate)}}</p>
           </div>
-          <div class="datepicker-weekRange">
+          <div class="atui-calendar-weekRange">
             <span v-for="w in weekRange">{{w}}</span>
           </div>
-          <div class="datepicker-dateRange">
+          <div class="atui-calendar-dateRange">
             <span v-for="d in dateRange" v-bind:class="d.sclass" @click="daySelect(d.date,this)">{{d.text}}</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="datepicker-popup" v-show="displayMonthView">
-      <div class="datepicker-inner">
-        <div class="datepicker-body">
-          <div class="datepicker-ctrl">
-            <span class="month-btn datepicker-preBtn" @click="preNextYearClick(0)">&lt;</span>
-            <span class="month-btn datepicker-nextBtn" @click="preNextYearClick(1)">&gt;</span>
+    <div class="atui-calendar-popup" v-show="displayMonthView">
+      <div class="atui-calendar-inner">
+        <div class="atui-calendar-body">
+          <div class="atui-calendar-ctrl">
+            <span class="month-btn atui-calendar-preBtn" @click="preNextYearClick(0)">&lt;</span>
+            <span class="month-btn atui-calendar-nextBtn" @click="preNextYearClick(1)">&gt;</span>
             <p @click="switchDecadeView">{{stringifyYearHeader(currDate)}}</p>
           </div>
-          <div class="datepicker-monthRange">
+          <div class="atui-calendar-monthRange">
             <template v-for="m in monthNames">
-              <span   v-bind:class="{'datepicker-dateRange-item-active':
+              <span   v-bind:class="{'atui-calendar-dateRange-item-active':
                   (this.monthNames[this.parse(this.value).getMonth()]  === m) &&
                   this.currDate.getFullYear() === this.parse(this.value).getFullYear()}"
                   @click="monthSelect($index)"
@@ -37,17 +37,17 @@
         </div>
       </div>
     </div>
-    <div class="datepicker-popup" v-show="displayYearView">
-      <div class="datepicker-inner">
-        <div class="datepicker-body">
-          <div class="datepicker-ctrl">
-            <span class="month-btn datepicker-preBtn" @click="preNextDecadeClick(0)">&lt;</span>
-            <span class="month-btn datepicker-nextBtn" @click="preNextDecadeClick(1)">&gt;</span>
+    <div class="atui-calendar-popup" v-show="displayYearView">
+      <div class="atui-calendar-inner">
+        <div class="atui-calendar-body">
+          <div class="atui-calendar-ctrl">
+            <span class="month-btn atui-calendar-preBtn" @click="preNextDecadeClick(0)">&lt;</span>
+            <span class="month-btn atui-calendar-nextBtn" @click="preNextDecadeClick(1)">&gt;</span>
             <p>{{stringifyDecadeHeader(currDate)}}</p>
           </div>
-          <div class="datepicker-monthRange decadeRange">
+          <div class="atui-calendar-monthRange decadeRange">
             <template v-for="decade in decadeRange">
-              <span v-bind:class="{'datepicker-dateRange-item-active':
+              <span v-bind:class="{'atui-calendar-dateRange-item-active':
                   this.parse(this.value).getFullYear() === decade.text}"
                   @click.stop="yearSelect(decade.text)"
                 >{{decade.text}}</span>
@@ -94,20 +94,16 @@ export default {
       default : 'zh_CN'
     },
     disabledDaysOfWeek: {
-      type: Array,
-      default() {
-        return []
-      }
+      type: Array
     },
     width: {
       type: String,
-      default: '200px'
+      default: '100%'
     },
     showMonth:null,
     showYear:null,
     showResetButton: {
-      type: Boolean,
-      default: false
+      type: Boolean
     }
   },
   data() {
@@ -116,7 +112,7 @@ export default {
       dateRange: [],
       decadeRange: [],
       currDate: new Date,
-      displayDayView: false,
+      displayDayView: true,
       displayMonthView: false,
       displayYearView: false,
       monthNames: localeConfig[this.locale].monthNames
@@ -180,7 +176,7 @@ export default {
       this.currDate = new Date(year, this.currDate.getMonth(), this.currDate.getDate())
     },
     daySelect(date, el) {
-      if (el.$el.classList[0] === 'datepicker-item-disable') {
+      if (el.$el.classList[0] === 'atui-calendar-item-disable') {
         return false
       } else {
         this.currDate = date
@@ -289,7 +285,7 @@ export default {
           this.dateRange.push({
             text: dayText,
             date: new Date(preMonth.year, preMonth.month, dayText),
-            sclass: 'datepicker-item-gray'
+            sclass: 'atui-calendar-item-gray'
           })
         }
       }
@@ -299,7 +295,7 @@ export default {
         const week = date.getDay()
         let sclass = ''
         this.disabledDaysOfWeek.forEach((el)=> {
-          if (week === parseInt(el, 10)) sclass = 'datepicker-item-disable'
+          if (week === parseInt(el, 10)) sclass = 'atui-calendar-item-disable'
         })
 
       if (i === time.day) {
@@ -307,7 +303,7 @@ export default {
           const valueDate = this.parse(this.value)
           if (valueDate) {
             if (valueDate.getFullYear() === time.year && valueDate.getMonth() === time.month) {
-              sclass = 'datepicker-dateRange-item-active'
+              sclass = 'atui-calendar-dateRange-item-active'
             }
           }
         }
@@ -327,7 +323,7 @@ export default {
           this.dateRange.push({
             text: i,
             date: new Date(nextMonth.year, nextMonth.month, i),
-            sclass: 'datepicker-item-gray'
+            sclass: 'atui-calendar-item-gray'
           })
         }
       }
