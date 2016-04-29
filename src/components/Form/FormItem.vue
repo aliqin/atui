@@ -1,5 +1,5 @@
 <template>
-<v-col class="form-item" :class="classObj" :span="itemCol">
+<div class="form-item" :class="classObj">
   <v-col :span="labelCol">
     <label v-if="label" class="form-label">
       <span v-if="isRequired" class="required-icon">*</span>
@@ -18,7 +18,7 @@
     </div>
     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
   </v-col>
-</v-col>
+</div>
 </template>
 <script>
   import Layout from 'src/components/Layout/';
@@ -57,11 +57,15 @@
 
     computed: {
       classObj () {
-        return {
+        let obj = {
           'form-item-with-help': this.validStatus,
           'has-error': this.validStatus == 'error',
           'has-success': this.validStatus == 'success'
         };
+
+        obj['col-lg-'+this.itemCol] = true;
+
+        return obj;
       },
       isRequired () {
         return typeof(this.required) !== 'undefined';
