@@ -108,7 +108,7 @@ new Vue({
     // menuDocs,
     searchboxDocs,
     phoneNumberDocs,
-    // addressSelectDocs
+    addressSelectDocs
     // addressSelectDocs:function(resolve) {
     //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
     // }

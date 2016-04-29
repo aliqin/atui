@@ -258,7 +258,7 @@ return webpackJsonp_name_([1],[
 	
 	
 	//widgets
-	// import AddressSelect from './widget/AddressSelect/'
+	// import AddressSelect from './widgets/AddressSelect/'
 	
 	var VueComponent = {
 	  Layout: _Layout2.default,
@@ -1012,7 +1012,7 @@ return webpackJsonp_name_([1],[
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	// <v-col class="form-item" :class="classObj" :span="itemCol">
+	// <div class="form-item" :class="classObj">
 	//   <v-col :span="labelCol">
 	//     <label v-if="label" class="form-label">
 	//       <span v-if="isRequired" class="required-icon">*</span>
@@ -1031,7 +1031,7 @@ return webpackJsonp_name_([1],[
 	//     </div>
 	//     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
 	//   </v-col>
-	// </v-col>
+	// </div>
 	// </template>
 	// <script>
 	
@@ -1069,11 +1069,15 @@ return webpackJsonp_name_([1],[
 	
 	  computed: {
 	    classObj: function classObj() {
-	      return {
+	      var obj = {
 	        'form-item-with-help': this.validStatus,
 	        'has-error': this.validStatus == 'error',
 	        'has-success': this.validStatus == 'success'
 	      };
+	
+	      obj['col-lg-' + this.itemCol] = true;
+	
+	      return obj;
 	    },
 	    isRequired: function isRequired() {
 	      return typeof this.required !== 'undefined';
@@ -1100,7 +1104,7 @@ return webpackJsonp_name_([1],[
 /* 108 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<v-col class=\"form-item\" :class=\"classObj\" :span=\"itemCol\">\n  <v-col :span=\"labelCol\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</v-col>\n";
+	module.exports = "\n<div class=\"form-item\" :class=\"classObj\">\n  <v-col :span=\"labelCol\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</div>\n";
 
 /***/ },
 /* 109 */
