@@ -82,7 +82,7 @@
 
 <script>
 
-import {AddressSelect} from 'src/widget/'
+import {AddressSelect} from 'src/widgets/'
 
 export default {
   data () {
