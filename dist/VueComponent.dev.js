@@ -4008,7 +4008,8 @@ return webpackJsonp_name_([1],[
 	    },
 	    placement: {
 	      type: String
-	    }
+	    },
+	    content: String
 	  },
 	  components: {
 	    Icon: _Icon2.default
