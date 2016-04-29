@@ -62,8 +62,6 @@ import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 //widgets
 import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
-
-
 Vue.config.debug = true
 
 new Vue({

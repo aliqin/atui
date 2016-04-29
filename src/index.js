@@ -16,7 +16,7 @@ import Uploader from './components/Uploader/'
 import Switch from './components/Switch/'
 import Dropdown from './components/Dropdown/'
 import Select from './components/Select/'
-import Calendar from './components/Calendar/'
+// import Calendar from './components/Calendar/'
 import DatePicker from './components/DatePicker/'
 // import Progressbar from './components/progressbar.vue'
 import Typeahead from './components/Typeahead.vue'
@@ -53,7 +53,7 @@ import Pagination from './components/Pagination/'
 import phoneNumber from './filters/phoneNumber'
 
 //widgets
-// import AddressSelect from './widgets/AddressSelect/'
+import AddressSelect from './widgets/AddressSelect/'
 
 const VueComponent = {
   Layout,
@@ -64,7 +64,7 @@ const VueComponent = {
   Switch,
   Dropdown,
   Select,
-  Calendar,
+  // Calendar,
   DatePicker,
   Typeahead,
   Message,
