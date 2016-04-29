@@ -21,7 +21,7 @@ import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
-import calendarDocs from './example/calendarDocs.vue'
+// import calendarDocs from './example/calendarDocs.vue'
 
 import datepickerDocs from './example/datepickerDocs.vue'
 import searchboxDocs from './example/searchboxDocs.vue'
@@ -60,9 +60,7 @@ import paginationDocs from './example/paginationDocs.vue'
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
 //widgets
-// import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
-
-
+import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
 Vue.config.debug = true
 
@@ -87,7 +85,7 @@ new Vue({
     tagDocs,
     headerDocs,
     accordionDocs,
-    calendarDocs,
+    // calendarDocs,
     // affixDocs,
     // asideDocs,
     carouselDocs,
@@ -108,7 +106,7 @@ new Vue({
     // menuDocs,
     searchboxDocs,
     phoneNumberDocs,
-    // addressSelectDocs
+    addressSelectDocs
     // addressSelectDocs:function(resolve) {
     //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
     // }
