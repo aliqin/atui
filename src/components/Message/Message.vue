@@ -57,7 +57,8 @@ import Icon from '../Icon'
       },
       placement: {
         type: String
-      }
+      },
+      content: String
     },
     components:{
       Icon

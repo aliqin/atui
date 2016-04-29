@@ -10,7 +10,7 @@
 
 <script>
 import EventListener from '../utils/EventListener.js'
-import Icon from '../Icon'
+import Icon from 'src/components/Icon/';
 
 export default {
   name:'date-picker',
@@ -42,11 +42,16 @@ export default {
   },
   data() {
     return {
-      
+      inputClick () {
+
+      }
     }
   },
   methods:{
-    
+
+  },
+  components: {
+    Icon
   }
 }
 </script>

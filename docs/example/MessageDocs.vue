@@ -240,7 +240,7 @@ import {Message} from '@ali/atui'
     },
     methods:{
       showMessage() {
-        Message.success('成功啦')
+        Message['success']('成功啦', 3000, 'center')
       }
     }
   }
