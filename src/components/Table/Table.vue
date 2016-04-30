@@ -8,7 +8,7 @@
           <th v-if="rowSelection">
               <input v-if="dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll}" @change="onCheckAll"/>
           </th>
-          <th v-for="column in columns" :class="{'multi-col':column.multiCols}" :width="column.width">
+          <th v-for="column in columns" :width="column.width">
               {{column['title']}}
               <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
                 <div data-toggle="dropdown">
@@ -19,14 +19,14 @@
                 </ul>
               </dropdown>
               <div v-if="dataSource.length && column.sorter" class="table-sorter">
-                <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" size="10" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
-                <icon type="down" size="10" @click="sortAction(column,$index,'descend')" size="10" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
+                <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
+                <icon type="down" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
               </div>
           </th>
         </tr>
       </thead>
       <tbody class="table-tbody">
-        <tr v-show="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td></tr>
+        <tr v-if="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td></tr>
         <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
             <td v-if="rowSelection">
                  <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
@@ -62,7 +62,12 @@ export default {
     columns: Array,
     rowSelection: Object,
     rowKey: String,
-    loading:Boolean
+    loading:Boolean,
+    fixedHeader:Boolean,
+    size:{
+      type:String,
+      default:'default'
+    }
   },
   components: {
     Icon,
@@ -82,7 +87,7 @@ export default {
   },
   computed: {
     checkedValues() {
-      const me = this
+      let me = this
       let checkedKeys = me.checkedRows.map((record) => {
         return record[me.rowKey]
       })
@@ -98,38 +103,37 @@ export default {
           return !this.rowSelection.getCheckboxProps || !this.rowSelection.getCheckboxProps(record).disabled
         }
       })
-    },
-    // isCheckedAll() {
-    //   let me = this
-    //   me.checkedRows.length === me.checkebleRows.length
-    // }
+    }
   },
   watch: {
     dataSource: {
-      handler(item) {
+      handler(data) {
         // this.checkedRows = []
         // this.checkedValues = []
         // this.isCheckedAll = false
         let me = this
         me.compileTbody()
+        // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
+        me.checkedRows = data.filter((record) => {
+          return me.checkedValues.indexOf(record[me.rowKey]) >= 0
+        })
         if(me.checkebleRows) {
           me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
+        } else {
+          me.isCheckedAll = false
         }
       }
     }
   },
-  ready(){
-
-  },
   methods: {
     compileTbody() {
-      let me = this;
+      let me = this
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
       this.$nextTick(() => {
         // console.log(me)
         // me.scope = me.scope || me.$parent
         me._context.$compile(me.$el.getElementsByTagName('table')[0])
-      });
+      })
     },
     sortAction(column,index,order) {
       if(typeof column.sorter === 'Function') {
