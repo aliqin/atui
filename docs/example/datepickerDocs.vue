@@ -7,19 +7,10 @@
 选择日期是: {{new Date(value).toString().slice(0, -23)}}
         </pre>
       </p>
-      <date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></date-picker>
-      <h4>禁用一周的某日</h4>
+      <date-picker v-ref:dp :value.sync="value"
+      :format="format.toString()" @change="selectChange"></date-picker>
 
-      <v-select multiple :default-value.sync="disabled">
-  <v-option value="0">0</v-option>
-  <v-option value="1">1</v-option>
-  <v-option value="2">2</v-option>
-  <v-option value="3">3</v-option>
-  <v-option value="4">4</v-option>
-  <v-option value="5">5</v-option>
-  <v-option value="6">6</v-option>
-      </v-select>
+
 
       <h4>格式化</h4>
       <v-select :default-value.sync="format" >
@@ -30,8 +21,7 @@
         <v-option value="MMMM/dd/yyyy">MMMM/dd/yyyy</v-option>
       </v-select>
 
-      <h4>重置按钮</h4>
-      <label><input type="checkbox" v-model="reset">打开或关闭重置功能</label>
+      <h4>日期范围选择（rangePicker）</h4>
 
       <range-picker></range-picker>
     </div>

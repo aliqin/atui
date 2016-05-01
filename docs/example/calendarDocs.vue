@@ -7,19 +7,11 @@
 选择日期是: {{new Date(value).toString().slice(0, -23)}}
         </pre>
       </p>
-      <calendar v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
+      <calendar v-ref:calendar :value.sync="value" :disabled-date="disabledDate"
       :format="format.toString()" :show-reset-button="reset" @change="selectChange"></calendar>
       <h4>禁用一周的某日</h4>
 
-      <v-select multiple :default-value.sync="disabled">
-  <v-option value="0">0</v-option>
-  <v-option value="1">1</v-option>
-  <v-option value="2">2</v-option>
-  <v-option value="3">3</v-option>
-  <v-option value="4">4</v-option>
-  <v-option value="5">5</v-option>
-  <v-option value="6">6</v-option>
-      </v-select>
+
 
       <h4>格式化</h4>
       <v-select :default-value.sync="format" >
@@ -30,31 +22,10 @@
         <v-option value="MMMM/dd/yyyy">MMMM/dd/yyyy</v-option>
       </v-select>
 
-      <h4>重置按钮</h4>
-      <label><input type="checkbox" v-model="reset">打开或关闭重置功能</label>
 
-      <range-picker></range-picker>
+
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<calendar v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></calendar>
-
-<v-select multiple :default-value.sync="disabled" size=5>
-  <v-option value="0">0</v-option>
-  <v-option value="1">1</v-option>
-  <v-option value="2">2</v-option>
-  <v-option value="3">3</v-option>
-  <v-option value="4">4</v-option>
-  <v-option value="5">5</v-option>
-  <v-option value="6">6</v-option>
-</v-select>
-<v-select  :default-value.sync="format">
-  <v-option value="yyyy,MM,dd">yyyy,MM,dd</v-option>
-  <v-option value="yyyy-MM-dd">yyyy-MM-dd</v-option>
-  <v-option value="yyyy.MM.dd">yyyy.MM.dd</v-option>
-  <v-option value="MMM/dd/yyyy">MMM/dd/yyyy</v-option>
-  <v-option value="MMMM/dd/yyyy">MMMM/dd/yyyy</v-option>
-</v-select>
     </script></code></pre>
     <h2>Option</h2>
     <table class="atui-table table-bordered">
@@ -116,22 +87,22 @@
     data() {
       return {
         disabled: [],
-        value: 'Oct/06/2015',
+        value: '11/06/2015',
         format: ['MMM/dd/yyyy'],
-        reset: true
+        disabledDate(date) {
+          if (!date) {
+            return false;
+          }
+          return date.getTime() >= new Date(2015, 11, 17).getTime();
+        }
       }
     },
     watch: {
-      disabled() {
-        this.$refs.dp.getDateRange()
-      },
-      watch:{
-        value(val) {
-          console.log(val)
-        }
+      value(val) {
+        console.log(val)
       },
       format(newV) {
-        this.value = this.$refs.dp.stringify(new Date(this.value))
+        this.value = this.$refs.calendar.stringify(new Date(this.value))
       }
     },
     methods:{
