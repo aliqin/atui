@@ -1,8 +1,8 @@
 <template>
 <div class="range-picker">
-  <input type="text" placeholder="开始日期" @click="triggerStart" />
+  <date-picker placeholder="开始日期"></date-picker>
   <span class="range-picker-separator"> </span>
-  <input type="text" placeholder="结束日期" @click="triggerEnd" />
+  <date-picker placeholder="结束日期"></date-picker>
   <div class="range-picker-content">
     <!-- <date-picker v-show="showEndPicker"></date-picker> -->
   </div>

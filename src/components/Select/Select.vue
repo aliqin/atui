@@ -66,8 +66,7 @@
       }
       if(!me.value) {
         me.value = me.multiple ? [] : ''
-      } 
-      console.log(me.value)
+      }
       if(me.multiple && !Array.isArray(me.value)) {
         me.value = [me.value]
       }
@@ -198,7 +197,6 @@
       }
     },
     ready() {
-      // 如果设置了子option元素同时又传了options，那么优先使用option子组件的内容
       let me = this
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!me.$el.contains(e.target)) {

@@ -1,6 +1,6 @@
 <template>
   <div class="atui-calendar">
-    <div class="atui-calendar-popup" v-show="displayDayView">
+    <div class="atui-calendar-popup" v-show="show">
       <div class="atui-calendar-inner">
         <div class="atui-calendar-body">
           <div class="atui-calendar-ctrl">
@@ -12,7 +12,7 @@
             <span v-for="w in weekRange">{{w}}</span>
           </div>
           <div class="atui-calendar-dateRange">
-            <span v-for="d in dateRange" v-bind:class="d.sclass" @click="daySelect(d.date,this)">{{d.text}}</span>
+            <span v-for="d in dateRange" v-bind:class="d.sclass" @click="daySelect(d.date,$event)">{{d.text}}</span>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
           </div>
           <div class="atui-calendar-monthRange">
             <template v-for="m in monthNames">
-              <span   v-bind:class="{'atui-calendar-dateRange-item-active':
+              <span v-bind:class="{'atui-calendar-dateRange-item-active':
                   (this.monthNames[this.parse(this.value).getMonth()]  === m) &&
                   this.currDate.getFullYear() === this.parse(this.value).getFullYear()}"
                   @click="monthSelect($index)"
@@ -93,17 +93,23 @@ export default {
     locale:{
       default : 'zh_CN'
     },
-    disabledDaysOfWeek: {
-      type: Array
+    disabledDate: {
+      type: Function,
+      default() {
+        return function(){}
+      }
     },
     width: {
       type: String,
       default: '100%'
     },
-    showMonth:null,
-    showYear:null,
-    showResetButton: {
-      type: Boolean
+    show:{
+      type:Boolean,
+      default:true
+    },
+    mode:{
+      type:String,
+      default:'month'
     }
   },
   data() {
@@ -126,13 +132,6 @@ export default {
   methods: {
     close() {
       this.displayDayView = this.displayMonthView = this.displayMonthView = false
-    },
-    inputClick() {
-      if (this.displayMonthView || this.displayYearView) {
-        this.displayDayView = false
-      } else {
-        this.displayDayView = !this.displayDayView
-      }
     },
     preNextDecadeClick(flag) {
       const year = this.currDate.getFullYear()
@@ -175,8 +174,9 @@ export default {
       this.displayMonthView = true
       this.currDate = new Date(year, this.currDate.getMonth(), this.currDate.getDate())
     },
-    daySelect(date, el) {
-      if (el.$el.classList[0] === 'atui-calendar-item-disable') {
+    daySelect(date, event) {
+      let el = event.target
+      if (el.className.split(' ')[0] === 'atui-calendar-item-disable') {
         return false
       } else {
         this.currDate = date
@@ -292,12 +292,15 @@ export default {
 
       for (let i = 1; i <= dayCount; i++) {
         const date = new Date(time.year, time.month, i)
-        const week = date.getDay()
+        // const week = date.getDay()
         let sclass = ''
-        this.disabledDaysOfWeek.forEach((el)=> {
-          if (week === parseInt(el, 10)) sclass = 'atui-calendar-item-disable'
-        })
-
+        // this.disabledDaysOfWeek.forEach((el)=> {
+        //   if (week === parseInt(el, 10)) sclass = 'atui-calendar-item-disable'
+        // })
+        // 开发者指定的禁用日期
+        if(this.disabledDate(date)) {
+          sclass = 'atui-calendar-item-disable'
+        }
       if (i === time.day) {
         if (this.value) {
           const valueDate = this.parse(this.value)

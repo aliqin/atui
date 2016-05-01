@@ -1,23 +1,30 @@
 <template>
-  <div class="datepicker">
-    <input class="form-control datepicker-input" :class="{'with-reset-button': showResetButton}" type="text"
-        v-bind:style="{width:width}"
-        @click="inputClick"
-        v-model="value"/>
-    <icon type="calendar"></icon>
+  <div class="atui-datepicker">
+    <div class="atui-datepicker-toggle" @click="inputClick" >
+      <input class="datepicker-input" type="text" :value="value" :placeholder="placeholder" />
+      <icon type="calendar"></icon>
+    </div>
+    <div class="atui-datepicker-calendar">
+      <calendar :show="showCalendar" @change="selectChange" :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
+    </div>
   </div>
 </template>
 
 <script>
 import EventListener from '../utils/EventListener.js'
-import Icon from 'src/components/Icon/';
+import Calendar from '../Calendar/'
+import Icon from '../Icon/'
+
 
 export default {
   name:'date-picker',
   props: {
     value: {
-      type: String,
-      twoWay: true
+      type: String
+    },
+    placeholder:{
+      type:String,
+      default:'请选择日期'
     },
     format: {
       default: 'yyyy-MMMM-dd'
@@ -25,33 +32,35 @@ export default {
     locale:{
       default : 'zh_CN'
     },
-    disabledDaysOfWeek: {
-      type: Array,
-      default() {
-        return []
-      }
-    },
-    width: {
-      type: String,
-      default: '200px'
-    },
-    showResetButton: {
-      type: Boolean,
-      default: false
+    showCalendar:Boolean,
+    disabledDate:{
+      type:Function,
+      default:function () {}
     }
+  },
+  components: {
+    icon:Icon,
+    calendar:Calendar
   },
   data() {
     return {
-      inputClick () {
-
+      disabledDate(date) {
+        if (!date) {
+          return false;
+        }
+        return date.getTime() >= new Date(2016, 11, 17).getTime();
       }
     }
   },
   methods:{
-
-  },
-  components: {
-    Icon
+    inputClick() {
+      this.showCalendar = !this.showCalendar
+    },
+    selectChange(value) {
+      this.value = value
+      this.showCalendar = false
+    }
   }
+
 }
 </script>
