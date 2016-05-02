@@ -1,43 +1,40 @@
 <template>
 <div class="range-picker">
-  <date-picker placeholder="开始日期"></date-picker>
-  <span class="range-picker-separator"> </span>
-  <date-picker placeholder="结束日期"></date-picker>
-  <div class="range-picker-content">
-    <!-- <date-picker v-show="showEndPicker"></date-picker> -->
-  </div>
+  <date-picker v-ref:startDate :value.sync="startDate" placeholder="开始日期" :disabled-date="disabledStartDate" @change="setDisabledEndDate"></date-picker>
+  <span class="range-picker-separator"> ~ </span>
+  <date-picker v-ref:end-date :value.sync="endDate" placeholder="结束日期" :disabled-date="disabledEndDate"></date-picker>
 </div>
 </template>
 <script>
   import DatePicker from './DatePicker.vue'
-  import coerceBoolean from '../utils/coerceBoolean.js'
   export default {
     props:{
-      trigger:{
-        type: String,
-        default: 'click'
-      },
       open:{
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
+        type: Boolean
+      },
+      startDate:{
+        type:String
+      },
+      endDate:{
+        type:String
+      },
+      format: {
+        default: 'yyyy-MMMM-dd'
       }
     },
     data() {
       return {
-        showStartPicker:false,
-        showEndPicker:false
+
       }
     },
     components: {
       DatePicker
     },
     methods: {
-      triggerStart() {
-        this.showStartPicker = !this.showStartPicker
-      },
-      triggerEnd() {
-        this.showEndPicker = !this.showEndPicker
+      setDisabledEndDate(value) {
+        this.$refs.endDate.disabledDate = function(date){
+          return date.getTime() <= new Date(value).getTime();
+        }
       }
     }
   }

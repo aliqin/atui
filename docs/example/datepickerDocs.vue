@@ -13,7 +13,7 @@
 
 
       <h4>格式化</h4>
-      <v-select :default-value.sync="format" >
+      <v-select :value.sync="format" >
         <v-option value="yyyy,MM,dd">yyyy,MM,dd</v-option>
         <v-option value="yyyy-MM-dd">yyyy-MM-dd</v-option>
         <v-option value="yyyy.MM.dd">yyyy.MM.dd</v-option>
@@ -26,26 +26,14 @@
       <range-picker></range-picker>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<date-picker v-ref:dp :value.sync="value" :disabled-days-of-Week="disabled"
-      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></date-picker>
+<date-picker v-ref:dp :value.sync="value" :format="format.toString()" @change="selectChange"></date-picker>
+<h4>日期范围选择（rangePicker）</h4>
 
-<v-select multiple :default-value.sync="disabled" size=5>
-  <v-option value="0">0</v-option>
-  <v-option value="1">1</v-option>
-  <v-option value="2">2</v-option>
-  <v-option value="3">3</v-option>
-  <v-option value="4">4</v-option>
-  <v-option value="5">5</v-option>
-  <v-option value="6">6</v-option>
-</v-select>
-<v-select  :default-value.sync="format">
-  <v-option value="yyyy,MM,dd">yyyy,MM,dd</v-option>
-  <v-option value="yyyy-MM-dd">yyyy-MM-dd</v-option>
-  <v-option value="yyyy.MM.dd">yyyy.MM.dd</v-option>
-  <v-option value="MMM/dd/yyyy">MMM/dd/yyyy</v-option>
-  <v-option value="MMMM/dd/yyyy">MMMM/dd/yyyy</v-option>
-</v-select>
-    </script></code></pre>
+import {DatePicker,Select} from 'src/'
+const RangePicker = DatePicker.RangePicker
+
+<range-picker></range-picker>
+</script></code></pre>
     <h2>Option</h2>
     <table class="atui-table table-bordered">
       <thead>
@@ -122,9 +110,9 @@
           console.log(val)
         }
       },
-      format(newV) {
-        this.value = this.$refs.dp.stringify(new Date(this.value))
-      }
+      // format(newV) {
+      //   this.value = this.$refs.dp.stringify(new Date(this.value))
+      // }
     },
     methods:{
       selectChange(value) {

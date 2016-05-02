@@ -5,7 +5,7 @@
       <icon type="calendar"></icon>
     </div>
     <div class="atui-datepicker-calendar">
-      <calendar :show="showCalendar" @change="selectChange" :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
+      <calendar :show="show" @change="selectChange" :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
     </div>
   </div>
 </template>
@@ -32,34 +32,41 @@ export default {
     locale:{
       default : 'zh_CN'
     },
-    showCalendar:Boolean,
+    show:Boolean,
     disabledDate:{
       type:Function,
-      default:function () {}
+      default:function (date) {
+        if (!date) {
+          return false;
+        }
+        return date.getTime() >= new Date(2016, 11, 17).getTime()
+      }
     }
   },
   components: {
     icon:Icon,
     calendar:Calendar
   },
-  data() {
-    return {
-      disabledDate(date) {
-        if (!date) {
-          return false;
-        }
-        return date.getTime() >= new Date(2016, 11, 17).getTime();
-      }
-    }
-  },
   methods:{
     inputClick() {
-      this.showCalendar = !this.showCalendar
+      this.show = !this.show
     },
     selectChange(value) {
       this.value = value
-      this.showCalendar = false
+      this.show = false
+      // 冒泡给上一层使用，比如rangePicker
+      return true
     }
+  },
+  ready() {
+    this._closeEvent = EventListener.listen(window, 'click', (e)=> {
+      if (!this.$el.contains(e.target)) {
+        this.show = false
+      }
+    })
+  },
+  beforeDestroy() {
+    if (this._closeEvent) this._closeEvent.remove()
   }
 
 }

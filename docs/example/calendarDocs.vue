@@ -100,10 +100,8 @@
     watch: {
       value(val) {
         console.log(val)
-      },
-      format(newV) {
-        this.value = this.$refs.calendar.stringify(new Date(this.value))
       }
+
     },
     methods:{
       selectChange(value) {
