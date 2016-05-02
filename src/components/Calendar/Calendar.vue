@@ -84,8 +84,7 @@ const localeConfig = {
 export default {
   props: {
     value: {
-      type: String,
-      twoWay: true
+      type: String
     },
     format: {
       default: 'yyyy-MMMM-dd'
@@ -215,7 +214,7 @@ export default {
       return firstYearOfDecade + '-' + lastYearOfDecade
     },
     stringifyDayHeader(date) {
-      return this.monthNames[date.getMonth()] + ' ' + date.getFullYear()
+      return date.getFullYear() + '年' +  this.monthNames[date.getMonth()] + '月'
     },
     parseMonth(date) {
       return this.monthNames[date.getMonth()]
@@ -301,21 +300,21 @@ export default {
         if(this.disabledDate(date)) {
           sclass = 'atui-calendar-item-disable'
         }
-      if (i === time.day) {
-        if (this.value) {
-          const valueDate = this.parse(this.value)
-          if (valueDate) {
-            if (valueDate.getFullYear() === time.year && valueDate.getMonth() === time.month) {
-              sclass = 'atui-calendar-dateRange-item-active'
+        if (i === time.day) {
+          if (this.value) {
+            const valueDate = this.parse(this.value)
+            if (valueDate) {
+              if (valueDate.getFullYear() === time.year && valueDate.getMonth() === time.month) {
+                sclass = 'atui-calendar-dateRange-item-active'
+              }
             }
           }
         }
-      }
-      this.dateRange.push({
-        text: i,
-        date: date,
-        sclass: sclass
-      })
+        this.dateRange.push({
+          text: i,
+          date: date,
+          sclass: sclass
+        })
       }
 
       if (this.dateRange.length < 42) {
@@ -335,12 +334,6 @@ export default {
   ready() {
     this.$dispatch('child-created', this)
     this.currDate = this.parse(this.value) || this.parse(new Date())
-    this._closeEvent = EventListener.listen(window, 'click', (e)=> {
-      if (!this.$el.contains(e.target)) this.close()
-    })
-  },
-  beforeDestroy() {
-    if (this._closeEvent) this._closeEvent.remove()
   }
 }
 </script>
