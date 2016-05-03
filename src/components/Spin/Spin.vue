@@ -1,9 +1,14 @@
 <template>
-<div :class="['spin',size]" v-show="show">
-  <div class="sping-point"></div>
-  <div class="sping-point"></div>
-  <div class="sping-point"></div>
-  <slot></slot>
+<div :class="['atui-spin',size,{sping:sping}]" v-show="show">
+  <div class="atui-sping-point">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="sping-content">
+    <slot></slot>
+  </div>
+
 </div>
 </template>
 <script>
@@ -13,6 +18,9 @@ export default {
     show:{
       type:Boolean
     },
+    sping:{
+      type:Boolean
+    },
     size:{
       type:String,
       default:'default'
@@ -20,20 +28,13 @@ export default {
   },
   methods: {
     show () {
-      this.show = true;
+      this.show = true
     },
     hide () {
-      this.show = false;
+      this.show = false
     }
   },
   created () {
-    let self = this;
-    // window.DAYU = window.DAYU || {};
-    Vue.showLoading = function() {
-        self.show();
-    }
-    Vue.hideLoading = function() {
-        self.hide();
-    }
+
   }
 }
