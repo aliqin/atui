@@ -11,13 +11,13 @@
           </tr>
           <tr>
             <td><v-switch small color="#000"></v-switch></td>
-            <td><v-switch small checked :on-change="changeHandler"></v-switch>
+            <td><v-switch small checked @change="changeHandler"></v-switch>
             </td>
             <td><v-switch small disabled></v-switch></td>
           </tr>
           <tr>
             <td><v-switch></v-switch></td>
-            <td><v-switch checked :on-change="changeHandler"></v-switch></td>
+            <td><v-switch checked @change="changeHandler"></v-switch></td>
             <td><v-switch disabled></v-switch></td>
           </tr>
         </table>
@@ -58,10 +58,10 @@
 <pre>
 <code class="language-markup"><script type="language-mark-up">
 <v-switch small color="#000"></v-switch>
-<v-switch small checked :on-change="changeHandler"></v-switch>
+<v-switch small checked @change="changeHandler"></v-switch>
 <v-switch small disabled></v-switch>
 <v-switch></v-switch>
-<v-switch checked :on-change="changeHandler"></v-switch>
+<v-switch checked @change="changeHandler"></v-switch>
 <v-switch disabled></v-switch>
 <v-switch>
   <span slot="checkedPart">开</span>
@@ -99,6 +99,12 @@
         <td>当前开关是否选中</td>
       </tr>
       <tr>
+        <td>value</td>
+        <td><code>String</code></td>
+        <td></td>
+        <td>switch的值</td>
+      </tr>
+      <tr>
         <td>disabled</td>
         <td><code>Boolean</code></td>
         <td>false</td>
@@ -111,8 +117,8 @@
         <td>switch的颜色</td>
       </tr>
       <tr>
-        <td>on-change</td>
-        <td><code>Function(checked)</code></td>
+        <td>@change</td>
+        <td><code>Function(switcher)</code></td>
         <td></td>
         <td>状态变化后的回调函数，返回参数为当前checked（boolean）</td>
       </tr>
@@ -149,8 +155,8 @@
       vIcon:Icon
     },
     methods: {
-      changeHandler (checked) {
-        this.checked = checked;
+      changeHandler (switcher) {
+        this.checked = switcher.checked;
         alert(checked)
       },
       _clickHandler () {
