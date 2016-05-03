@@ -11,20 +11,16 @@
 	export default {
 		props: {
 			checked: {
-				type: Boolean,
-				default: false
+				type: Boolean
 			},
-			onChange: {
-				type: Function,
-				default: () => {}
-			},
+      value:{
+        type:String
+      },
 			disabled: {
-				type: Boolean,
-				default: false
+				type: Boolean
 			},
 			small: {
-				type: Boolean,
-				default: false
+				type: Boolean
 			},
       color: {
         type: String
@@ -44,10 +40,10 @@
 		methods: {
 			changeHandler () {
 				if(this.disabled) {
-					return;
+					return
 				}
-				this.checked = !this.checked;
-				this.onChange(this.checked);
+				this.checked = !this.checked
+				this.$dispatch('change',this)
 			}
 		}
 	}

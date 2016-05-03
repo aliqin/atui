@@ -2317,20 +2317,16 @@ return webpackJsonp_name_([1],[
 	exports.default = {
 		props: {
 			checked: {
-				type: Boolean,
-				default: false
+				type: Boolean
 			},
-			onChange: {
-				type: Function,
-				default: function _default() {}
+			value: {
+				type: String
 			},
 			disabled: {
-				type: Boolean,
-				default: false
+				type: Boolean
 			},
 			small: {
-				type: Boolean,
-				default: false
+				type: Boolean
 			},
 			color: {
 				type: String
@@ -2352,7 +2348,7 @@ return webpackJsonp_name_([1],[
 					return;
 				}
 				this.checked = !this.checked;
-				this.onChange(this.checked);
+				this.$dispatch('change', this);
 			}
 		}
 	};
