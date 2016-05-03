@@ -6077,37 +6077,13 @@ button.close {
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
  * Licensed under MIT
  */
-.spin,
-.spin > .sping-point {
+.atui-spin,
+.atui-sping-point {
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
-.spin {
-  display: block;
-  font-size: 0;
-  color: #333;
-}
-.spin > .sping-point {
-  display: inline-block;
-  float: none;
+.atui-sping-point > div {
   background-color: #e52e2e;
   border: 0 solid #e52e2e;
-}
-.spin {
-  width: 32px;
-  height: 32px;
-}
-.spin.small {
-  width: 16px;
-  height: 16px;
-}
-.spin.large {
-  width: 64px;
-  height: 64px;
-}
-.spin > .sping-point {
   position: absolute;
   top: 0;
   left: 0;
@@ -6115,39 +6091,60 @@ button.close {
   height: 10px;
   border-radius: 100%;
 }
-.spin > .sping-point:nth-child(1) {
+.atui-sping-point > div:nth-child(1) {
   -webkit-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
   -moz-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
   -o-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
 }
-.spin > .sping-point:nth-child(2) {
+.atui-sping-point > div:nth-child(2) {
   -webkit-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
   -moz-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
   -o-animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-two 2s 0s ease-in-out infinite;
 }
-.spin > .sping-point:nth-child(3) {
+.atui-sping-point > div:nth-child(3) {
   -webkit-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
   -moz-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
   -o-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
   animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
 }
-.spin.small {
+.atui-spin .atui-sping-point {
+  width: 32px;
+  height: 32px;
+}
+.atui-spin .atui-sping-point div {
+  width: 10px;
+  height: 10px;
+}
+.atui-spin.small .atui-sping-point {
   width: 16px;
   height: 16px;
 }
-.spin.small > div {
+.atui-spin.small .atui-sping-point div {
   width: 4px;
   height: 4px;
 }
-.spin.large {
+.atui-spin.large .atui-sping-point {
   width: 64px;
   height: 64px;
 }
-.spin.large > div {
+.atui-spin.large .atui-sping-point div {
   width: 20px;
   height: 20px;
+}
+.atui-spin.sping .sping-content {
+  opacity: .7;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  pointer-events: none;
+}
+.atui-spin.sping .atui-sping-point {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 /*
  * Animations
