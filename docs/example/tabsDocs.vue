@@ -20,7 +20,7 @@
       </tabs>
       <br><br>
       <h4 class="example-title">Tab数量较多的情况</h4>
-      <tabs :base="true">
+      <tabs :base="true" trigger="hover">
         <tab header="系统短信签名">
           <p>
             选项卡一内容
@@ -106,7 +106,7 @@
     ...
   </tab>
 </tabs>
-<tabs :base="true">
+<tabs :base="true" trigger="hover">
   <tab header="系统短信签名">
     <p>
       选项卡一内容
@@ -213,7 +213,12 @@
         <td>3</td>
         <td>当前想要显示出多少个Tab</td>
       </tr>
-
+      <tr>
+        <td>trigger</td>
+        <td><code>String</code></td>
+        <td>click</td>
+        <td>以何种方式触发选中Tab(可选，click，hover)</td>
+      </tr>
     </tbody>
   </table>
   </div>

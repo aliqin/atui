@@ -2160,6 +2160,8 @@ pre code {
 .atui-table td {
   text-align: left;
   vertical-align: middle;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 .atui-table th {
   position: relative;
@@ -2883,6 +2885,9 @@ tbody.collapse.in {
 .dropdown-toggle:focus {
   outline: 0;
 }
+.hover-trigger:hover .dropdown-menu {
+  display: block;
+}
 .dropdown-menu {
   position: absolute;
   top: 105%;
@@ -2904,6 +2909,7 @@ tbody.collapse.in {
 }
 .dropdown-menu > .option,
 .dropdown-menu > li > a {
+  cursor: pointer;
   display: block;
   padding: 3px 20px;
   clear: both;
@@ -2968,6 +2974,7 @@ tbody.collapse.in {
 }
 .select-container .select-toggle {
   min-width: 100px;
+  cursor: pointer;
   text-align: left;
   background: #ffffff;
   border: 1px solid #d9d9d9;
@@ -6529,122 +6536,40 @@ button.close {
     transform: translate(220%, 220%);
   }
 }
-.datepicker {
+.atui-datepicker {
   position: relative;
   display: inline-block;
 }
-input.datepicker-input.with-reset-button {
-  padding-right: 25px;
-}
-div.datepicker > button.close {
-  position: absolute;
-  top: calc(37%);
-  right: 10px;
-}
-div.datepicker > button.close {
-  outline: none;
-  z-index: 2;
-}
-div.datepicker > button.close:focus {
-  opacity: .2;
-}
-.datepicker-popup {
-  position: absolute;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #fff;
-  margin-top: 2px;
-  z-index: 1000;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-}
-.datepicker-inner {
-  width: 218px;
-}
-.datepicker-body {
-  padding: 10px 10px;
-}
-.datepicker-ctrl p,
-.datepicker-ctrl span,
-.datepicker-body span {
-  display: inline-block;
-  width: 28px;
-  line-height: 28px;
+.atui-datepicker-toggle {
+  position: relative;
+  border-radius: 4px;
+  width: 138px;
   height: 28px;
+  line-height: 28px;
+}
+.atui-datepicker-toggle input {
+  border: none;
+  width: 100%;
+  display: inline-block;
+  height: 100%;
+  border: 1px solid #d9d9d9;
+  outline: none;
   border-radius: 4px;
 }
-.datepicker-ctrl p {
-  width: 65%;
+.atui-datepicker-toggle input:focus {
+  border: 1px solid #e52e2e;
+  box-shadow: none;
 }
-.datepicker-ctrl span {
+.atui-datepicker-toggle .iconfont {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 7px;
 }
-.datepicker-body span {
-  text-align: center;
-}
-.datepicker-monthRange span {
-  width: 48px;
-  height: 50px;
-  line-height: 45px;
-}
-.datepicker-item-disable {
-  background-color: white!important;
-  cursor: not-allowed !important;
-}
-.decadeRange span:first-child,
-.decadeRange span:last-child,
-.datepicker-item-disable,
-.datepicker-item-gray {
-  color: #999;
-}
-.datepicker-dateRange-item-active:hover,
-.datepicker-dateRange-item-active {
-  background: #3276b1 !important;
-  color: white!important;
-}
-.datepicker-monthRange {
-  margin-top: 10px;
-}
-.datepicker-monthRange span,
-.datepicker-ctrl span,
-.datepicker-ctrl p,
-.datepicker-dateRange span {
-  cursor: pointer;
-}
-.datepicker-monthRange span:hover,
-.datepicker-ctrl p:hover,
-.datepicker-ctrl i:hover,
-.datepicker-dateRange span:hover,
-.datepicker-dateRange-item-hover {
-  background-color: #eeeeee;
-}
-.datepicker-weekRange span {
-  font-weight: bold;
-}
-.datepicker-label {
-  background-color: #f8f8f8;
-  font-weight: 700;
-  padding: 7px 0;
-  text-align: center;
-}
-.datepicker-ctrl {
-  position: relative;
-  height: 30px;
-  line-height: 30px;
-  font-weight: bold;
-  text-align: center;
-}
-.month-btn {
-  font-weight: bold;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.datepicker-preBtn {
-  left: 2px;
-}
-.datepicker-nextBtn {
-  right: 2px;
+.atui-datepicker-calendar {
+  position: absolute;
+  left: 0;
+  top: 1em;
 }
 .cascader {
   position: relative;
@@ -6727,6 +6652,240 @@ div.datepicker > button.close:focus {
   color: #999;
   position: absolute;
   right: 15px;
+}
+.atui-calendar {
+  position: relative;
+  display: inline-block;
+}
+.atui-calendar-input.with-reset-button {
+  padding-right: 25px;
+}
+.atui-calendar > button.close {
+  position: absolute;
+  top: calc(37%);
+  right: 10px;
+}
+.atui-calendar > button.close {
+  outline: none;
+  z-index: 2;
+}
+.atui-calendar > button.close:focus {
+  opacity: .2;
+}
+.atui-calendar-popup {
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  margin-top: 2px;
+  z-index: 1000;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+.atui-calendar-inner {
+  width: 218px;
+}
+.atui-calendar-body {
+  padding: 10px 10px;
+}
+.atui-calendar-ctrl p,
+.atui-calendar-ctrl span,
+.atui-calendar-body span {
+  display: inline-block;
+  width: 28px;
+  line-height: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+.atui-calendar-ctrl p {
+  width: 65%;
+}
+.atui-calendar-ctrl span {
+  position: absolute;
+}
+.atui-calendar-body span {
+  text-align: center;
+}
+.atui-calendar-monthRange span {
+  width: 48px;
+  height: 50px;
+  line-height: 45px;
+}
+.atui-calendar-item-disable {
+  background-color: white!important;
+  cursor: not-allowed !important;
+}
+.decadeRange span:first-child,
+.decadeRange span:last-child,
+.atui-calendar-item-disable,
+.atui-calendar-item-gray {
+  color: #999;
+}
+.atui-calendar-dateRange-item-active:hover,
+.atui-calendar-dateRange-item-active {
+  background: #3276b1 !important;
+  color: white!important;
+}
+.atui-calendar-monthRange {
+  margin-top: 10px;
+}
+.atui-calendar-monthRange span,
+.atui-calendar-ctrl span,
+.atui-calendar-ctrl p,
+.atui-calendar-dateRange span {
+  cursor: pointer;
+}
+.atui-calendar-monthRange span:hover,
+.atui-calendar-ctrl p:hover,
+.atui-calendar-ctrl i:hover,
+.atui-calendar-dateRange span:hover,
+.atui-calendar-dateRange-item-hover {
+  background-color: #eeeeee;
+}
+.atui-calendar-weekRange span {
+  font-weight: bold;
+}
+.atui-calendar-label {
+  background-color: #f8f8f8;
+  font-weight: 700;
+  padding: 7px 0;
+  text-align: center;
+}
+.atui-calendar-ctrl {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.month-btn {
+  font-weight: bold;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.atui-calendar-preBtn {
+  left: 2px;
+}
+.atui-calendar-nextBtn {
+  right: 2px;
+}
+.atui-calendar {
+  position: relative;
+  display: inline-block;
+}
+input.atui-calendar-input.with-reset-button {
+  padding-right: 25px;
+}
+div.atui-calendar > button.close {
+  position: absolute;
+  top: calc(37%);
+  right: 10px;
+}
+div.atui-calendar > button.close {
+  outline: none;
+  z-index: 2;
+}
+div.atui-calendar > button.close:focus {
+  opacity: .2;
+}
+.atui-calendar-popup {
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  margin-top: 2px;
+  z-index: 1000;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+.atui-calendar-inner {
+  width: 218px;
+}
+.atui-calendar-body {
+  padding: 10px 10px;
+}
+.atui-calendar-ctrl p,
+.atui-calendar-ctrl span,
+.atui-calendar-body span {
+  display: inline-block;
+  width: 28px;
+  line-height: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+.atui-calendar-ctrl p {
+  width: 65%;
+}
+.atui-calendar-ctrl span {
+  position: absolute;
+}
+.atui-calendar-body span {
+  text-align: center;
+}
+.atui-calendar-monthRange span {
+  width: 48px;
+  height: 50px;
+  line-height: 45px;
+}
+.atui-calendar-item-disable {
+  background-color: white!important;
+  cursor: not-allowed !important;
+}
+.decadeRange span:first-child,
+.decadeRange span:last-child,
+.atui-calendar-item-disable,
+.atui-calendar-item-gray {
+  color: #999;
+}
+.atui-calendar-dateRange-item-active:hover,
+.atui-calendar-dateRange-item-active {
+  background: #3276b1 !important;
+  color: white!important;
+}
+.atui-calendar-monthRange {
+  margin-top: 10px;
+}
+.atui-calendar-monthRange span,
+.atui-calendar-ctrl span,
+.atui-calendar-ctrl p,
+.atui-calendar-dateRange span {
+  cursor: pointer;
+}
+.atui-calendar-monthRange span:hover,
+.atui-calendar-ctrl p:hover,
+.atui-calendar-ctrl i:hover,
+.atui-calendar-dateRange span:hover,
+.atui-calendar-dateRange-item-hover {
+  background-color: #eeeeee;
+}
+.atui-calendar-weekRange span {
+  font-weight: bold;
+}
+.atui-calendar-label {
+  background-color: #f8f8f8;
+  font-weight: 700;
+  padding: 7px 0;
+  text-align: center;
+}
+.atui-calendar-ctrl {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.month-btn {
+  font-weight: bold;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.atui-calendar-preBtn {
+  left: 2px;
+}
+.atui-calendar-nextBtn {
+  right: 2px;
 }
 .address-box {
   position: relative;

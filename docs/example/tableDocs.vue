@@ -188,7 +188,10 @@ import {Table,Icon} from 'src/'
       title: '操作',
       key: 'operation',
       render(text, record) {
-        return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
+        if(record) {
+          return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
+        }
+
       }
     }
   ];

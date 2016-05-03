@@ -1,19 +1,20 @@
 <template>
-  <div class="bs-docs-section" id="datepicker">
-    <h1 class="page-header"><a href="#datepicker" class="anchor">DatePicker 日期选择</a></h1>
+  <div class="bs-docs-section" id="calendar">
+    <h1 class="page-header"><a href="#calendar" class="anchor">Calendar 日历</a></h1>
     <div class="bs-example">
       <p>
         <pre>
 选择日期是: {{new Date(value).toString().slice(0, -23)}}
         </pre>
       </p>
-      <date-picker v-ref:dp :value.sync="value"
-      :format="format.toString()" @change="selectChange"></date-picker>
+      <calendar v-ref:calendar :value.sync="value" :disabled-date="disabledDate"
+      :format="format.toString()" :show-reset-button="reset" @change="selectChange"></calendar>
+      <h4>禁用一周的某日</h4>
 
 
 
       <h4>格式化</h4>
-      <v-select :value.sync="format" >
+      <v-select :default-value.sync="format" >
         <v-option value="yyyy,MM,dd">yyyy,MM,dd</v-option>
         <v-option value="yyyy-MM-dd">yyyy-MM-dd</v-option>
         <v-option value="yyyy.MM.dd">yyyy.MM.dd</v-option>
@@ -21,19 +22,11 @@
         <v-option value="MMMM/dd/yyyy">MMMM/dd/yyyy</v-option>
       </v-select>
 
-      <h4>日期范围选择（rangePicker）</h4>
 
-      <range-picker></range-picker>
+
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<date-picker v-ref:dp :value.sync="value" :format="format.toString()" @change="selectChange"></date-picker>
-<h4>日期范围选择（rangePicker）</h4>
-
-import {DatePicker,Select} from 'src/'
-const RangePicker = DatePicker.RangePicker
-
-<range-picker></range-picker>
-</script></code></pre>
+    </script></code></pre>
     <h2>Option</h2>
     <table class="atui-table table-bordered">
       <thead>
@@ -82,37 +75,33 @@ const RangePicker = DatePicker.RangePicker
 </template>
 
 <script>
-  import {DatePicker,Select} from 'src/'
-  const RangePicker = DatePicker.RangePicker
-  const Option = Select.Option;
+  import {Calendar,Select} from 'src/'
+  const Option = Select.Option
 
   export default {
     components: {
-      DatePicker,
-      RangePicker,
+      Calendar,
       vSelect:Select,
       vOption:Option
     },
     data() {
       return {
         disabled: [],
-        value: 'Oct/06/2015',
+        value: '11/06/2015',
         format: ['MMM/dd/yyyy'],
-        reset: true
+        disabledDate(date) {
+          if (!date) {
+            return false;
+          }
+          return date.getTime() >= new Date(2015, 11, 17).getTime();
+        }
       }
     },
     watch: {
-      disabled() {
-        this.$refs.dp.getDateRange()
-      },
-      watch:{
-        value(val) {
-          console.log(val)
-        }
-      },
-      // format(newV) {
-      //   this.value = this.$refs.dp.stringify(new Date(this.value))
-      // }
+      value(val) {
+        console.log(val)
+      }
+
     },
     methods:{
       selectChange(value) {
