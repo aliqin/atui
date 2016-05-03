@@ -117,10 +117,7 @@ export default {
         me.checkedRows = data.filter((record) => {
           if(me.checkedValues) {
             return me.checkedValues.indexOf(record[me.rowKey]) >= 0
-          } else {
-            return []
           }
-
         })
         if(me.checkebleRows) {
           me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
