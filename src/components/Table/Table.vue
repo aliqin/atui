@@ -115,7 +115,12 @@ export default {
         me.compileTbody()
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
-          return me.checkedValues.indexOf(record[me.rowKey]) >= 0
+          if(me.checkedValues) {
+            return me.checkedValues.indexOf(record[me.rowKey]) >= 0
+          } else {
+            return []
+          }
+
         })
         if(me.checkebleRows) {
           me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
