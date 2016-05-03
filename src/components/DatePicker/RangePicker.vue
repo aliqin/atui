@@ -1,7 +1,7 @@
 <template>
 <div class="range-picker">
   <date-picker v-ref:startDate :value.sync="startDate" placeholder="开始日期" :disabled-date="disabledStartDate" @change="setDisabledEndDate"></date-picker>
-  <span class="range-picker-separator"> ~ </span>
+  <span class="range-picker-separator"> - </span>
   <date-picker v-ref:end-date :value.sync="endDate" placeholder="结束日期" :disabled-date="disabledEndDate"></date-picker>
 </div>
 </template>

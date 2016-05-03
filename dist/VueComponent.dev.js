@@ -3738,7 +3738,7 @@ return webpackJsonp_name_([1],[
 	// <template>
 	// <div class="range-picker">
 	//   <date-picker v-ref:startDate :value.sync="startDate" placeholder="开始日期" :disabled-date="disabledStartDate" @change="setDisabledEndDate"></date-picker>
-	//   <span class="range-picker-separator"> ~ </span>
+	//   <span class="range-picker-separator"> - </span>
 	//   <date-picker v-ref:end-date :value.sync="endDate" placeholder="结束日期" :disabled-date="disabledEndDate"></date-picker>
 	// </div>
 	// </template>
@@ -3748,7 +3748,7 @@ return webpackJsonp_name_([1],[
 /* 159 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"range-picker\">\n  <date-picker v-ref:startDate :value.sync=\"startDate\" placeholder=\"开始日期\" :disabled-date=\"disabledStartDate\" @change=\"setDisabledEndDate\"></date-picker>\n  <span class=\"range-picker-separator\"> ~ </span>\n  <date-picker v-ref:end-date :value.sync=\"endDate\" placeholder=\"结束日期\" :disabled-date=\"disabledEndDate\"></date-picker>\n</div>\n";
+	module.exports = "\n<div class=\"range-picker\">\n  <date-picker v-ref:startDate :value.sync=\"startDate\" placeholder=\"开始日期\" :disabled-date=\"disabledStartDate\" @change=\"setDisabledEndDate\"></date-picker>\n  <span class=\"range-picker-separator\"> - </span>\n  <date-picker v-ref:end-date :value.sync=\"endDate\" placeholder=\"结束日期\" :disabled-date=\"disabledEndDate\"></date-picker>\n</div>\n";
 
 /***/ },
 /* 160 */
@@ -5120,7 +5120,11 @@ return webpackJsonp_name_([1],[
 	        me.compileTbody();
 	        // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
 	        me.checkedRows = data.filter(function (record) {
-	          return me.checkedValues.indexOf(record[me.rowKey]) >= 0;
+	          if (me.checkedValues) {
+	            return me.checkedValues.indexOf(record[me.rowKey]) >= 0;
+	          } else {
+	            return [];
+	          }
 	        });
 	        if (me.checkebleRows) {
 	          me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length;
