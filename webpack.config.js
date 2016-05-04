@@ -78,7 +78,10 @@ module.exports = {
         plugins: ['transform-runtime']
     },
     postcss: function () {
-        return [precss, autoprefixer]
+        return {
+            defaults: [precss, autoprefixer],
+            cleaner:  [autoprefixer({ browsers: ['ie >= 9'] })]
+        }
     },
     devtool: 'source-map'
 };

@@ -7,12 +7,13 @@
 // We don't use the `.opacity()` mixin here since it causes a bug with text
 // fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
 
-.fade {
+.fade-transition {
+  transition: opacity .3s ease;
+}
+.fade-enter,
+.fade-leave {
+  height: 0;
   opacity: 0;
-  .transition(opacity .15s linear);
-  &.in {
-    opacity: 1;
-  }
 }
 
 .collapse {
