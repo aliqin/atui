@@ -36,10 +36,7 @@ export default {
     disabledDate:{
       type:Function,
       default:function (date) {
-        if (!date) {
-          return false;
-        }
-        return date.getTime() >= new Date(2016, 11, 17).getTime()
+
       }
     }
   },

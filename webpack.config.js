@@ -5,6 +5,9 @@ var extractTmallwt = new ExtractTextPlugin('tmallwt.css')
 var extractAlitx = new ExtractTextPlugin('alitx.css')
 var extractDoc = new ExtractTextPlugin('docs.css')
 var path = require('path')
+var precss       = require('precss')
+var autoprefixer = require('autoprefixer')
+
 module.exports = {
     entry: './docs/index.js',
     output: {
@@ -49,15 +52,15 @@ module.exports = {
         },
         {
             test: /alidayu\.less$/,
-            loader: extractAlidayu.extract(['css','less'])
+            loader: extractAlidayu.extract(['css','postcss','less'])
         },
         {
             test: /tmallwt\.less$/,
-            loader: extractTmallwt.extract(['css','less'])
+            loader: extractTmallwt.extract(['css','postcss','less'])
         },
         {
             test: /alitx\.less$/,
-            loader: extractAlitx.extract(['css','less'])
+            loader: extractAlitx.extract(['css','postcss','less'])
         }]
     },
     vue: {
@@ -73,6 +76,9 @@ module.exports = {
     babel: {
         presets: ['es2015'],
         plugins: ['transform-runtime']
+    },
+    postcss: function () {
+        return [precss, autoprefixer]
     },
     devtool: 'source-map'
 };

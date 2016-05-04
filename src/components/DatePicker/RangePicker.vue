@@ -1,6 +1,6 @@
 <template>
 <div class="range-picker">
-  <date-picker v-ref:startDate :value.sync="startDate" placeholder="开始日期" :disabled-date="disabledStartDate" @change="setDisabledEndDate"></date-picker>
+  <date-picker v-ref:startDate :value.sync="startDate" placeholder="开始日期" @change="setDisabledEndDate"></date-picker>
   <span class="range-picker-separator"> - </span>
   <date-picker v-ref:end-date :value.sync="endDate" placeholder="结束日期" :disabled-date="disabledEndDate"></date-picker>
 </div>
@@ -32,9 +32,11 @@
     },
     methods: {
       setDisabledEndDate(value) {
-        this.$refs.endDate.disabledDate = function(date){
+        let endDate = this.$refs.endDate
+        endDate.disabledDate = function(date){
           return date.getTime() <= new Date(value).getTime();
         }
+        // endDate.getDateRange()
       }
     }
   }
