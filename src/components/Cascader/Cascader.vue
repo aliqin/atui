@@ -79,10 +79,10 @@
       });
       if(me.defaultValue) {
         me.defaultValue.forEach((value,i) => {
-          let option = me.menus[i].find((option) => {
+          let option = me.menus[i].filter((option) => {
             return option.value === value
           })
-          me.changeOption(i,option)
+          me.changeOption(i,option[0])
         })
       }
       // me.childs++

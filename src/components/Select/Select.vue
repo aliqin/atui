@@ -210,13 +210,3 @@
   }
 </script>
 
-<style scoped>
-.caret .iconfont{
-  display: inline-block;
-  transition: all .3s ease;
-  transform:rotate(0deg);
-}
-.caret.open .iconfont{
-  transform:rotate(180deg);
-}
-</style>
