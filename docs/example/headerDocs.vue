@@ -30,33 +30,6 @@
     </li>
   </ul>
 </template>
-<style lang="less">
-  .navbar-nav .active {
-    background-color: #eee !important;
-  }
-  .themes{
-    position: fixed;
-    right:50px;
-    top:50px;
-    list-style: none;
-    z-index: 9999;
-
-    li{
-      float:left;
-      background:#ff7500;
-      width:12px;
-      height:12px;
-      border-radius:100%;
-      text-indent: -10000px;
-      margin:0 5px;
-      cursor: pointer;
-      &.active{
-        width:15px;
-        height:15px;
-      }
-    }
-  }
-</style>
 <script>
 export default {
   data() {
