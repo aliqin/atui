@@ -53,7 +53,7 @@ import Pagination from './components/Pagination/'
 import phoneNumber from './filters/phoneNumber'
 
 //widgets
-import AddressSelect from './widgets/AddressSelect/'
+// import AddressSelect from './widgets/AddressSelect/'
 
 const VueComponent = {
   Layout,

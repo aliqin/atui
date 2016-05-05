@@ -5,15 +5,12 @@
 </template>
 
 <script>
-import coerceBoolean from '../utils/coerceBoolean.js'
 
   export default {
     name:'accordion',
     props: {
       oneAtATime: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
+        type: Boolean
       }
     },
     methods: {

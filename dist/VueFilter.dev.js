@@ -13,7 +13,7 @@ return webpackJsonp_name_([2],{
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(335);
+	module.exports = __webpack_require__(330);
 
 
 /***/ },
@@ -46,7 +46,7 @@ return webpackJsonp_name_([2],{
 
 /***/ },
 
-/***/ 335:
+/***/ 330:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
