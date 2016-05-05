@@ -15,8 +15,7 @@
             <dl v-for="key in list.provinceList">
               <dt>{{$key}}</dt>
               <dd>
-                <a v-for="prov in key" title="{{prov[1]}}" attr-id="{{prov[0]}}" href="javascript:;" @click="chooseProvince(prov[0], prov[1])" :class="{'active': provinceId == prov[0]}" track-by="prov[0]">
-                  <input v-if="provinceId == prov[0]" value="{{prov[1]}}" type="hidden" v-model="province" />
+                <a v-for="prov in key" :title="prov[1]" :attr-id="prov[0]" href="javascript:;" @click="chooseProvince(prov[0], prov[1])" :class="{'active': provinceId == prov[0]}">
                   {{prov[1]}}
                 </a>
               </dd>
