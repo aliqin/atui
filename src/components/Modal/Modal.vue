@@ -1,13 +1,13 @@
 <template>
   <div role="dialog"
-    v-bind:class="{
+    :class="{
     'modal':true,
     'fade':effect === 'fade',
-    'zoom':effect === 'zoom'
+    'zoom':effect === 'zoom',
     }"
     >
-    <div v-bind:class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
-      v-bind:style="{width: optionalWidth}">
+    <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
+      :style="{width: optionalWidth}" :transition="effect">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
@@ -82,7 +82,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
           el.querySelector('.modal-content').focus()
           el.style.display = 'block'
           setTimeout(()=> el.classList.add('in'), 0)
-          body.classList.add('modal-open')
+          // body.classList.add('modal-open')
           if (scrollBarWidth !== 0) {
             body.style.paddingRight = scrollBarWidth + 'px'
           }
@@ -96,7 +96,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
           el.classList.remove('in')
           setTimeout(()=> {
             el.style.display = 'none'
-            body.classList.remove('modal-open')
+            // body.classList.remove('modal-open')
             body.style.paddingRight = '0'
           }, 300)
         }
