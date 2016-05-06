@@ -1,27 +1,3 @@
-.navbar-nav .active {
-  background-color: #eee !important;
-}
-.themes {
-  position: fixed;
-  right: 50px;
-  top: 50px;
-  list-style: none;
-  z-index: 9999;
-}
-.themes li {
-  float: left;
-  background: #ff7500;
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  text-indent: -10000px;
-  margin: 0 5px;
-  cursor: pointer;
-}
-.themes li.active {
-  width: 15px;
-  height: 15px;
-}
 .fade-transition {
   -webkit-transition: opacity .3s ease;
   transition: opacity .3s ease;
@@ -2631,13 +2607,13 @@ input[type="radio"][disabled]:checked:after {
 .file-upload .upload-rate a:hover {
   text-decoration: none;
 }
-.fade {
-  opacity: 0;
-  -webkit-transition: opacity 0.15s linear;
-  transition: opacity 0.15s linear;
+.fade-transition {
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
 }
-.fade.in {
-  opacity: 1;
+.fade-enter, .fade-leave {
+  height: 0;
+  opacity: 0;
 }
 .collapse {
   display: none;
@@ -2783,7 +2759,9 @@ tbody.collapse.in {
   line-height: 28px;
 }
 .select-container .select-toggle .atui-tag {
-  margin: 0 5px;
+  margin: -4px 5px 0;
+  border-radius: 4px;
+  line-height: 1.5;
 }
 .select-container .multiple .select-toggle {
   cursor: default;
@@ -3774,7 +3752,7 @@ tbody.collapse.in {
 .pagination .pagination-items > li.pagination-item-disabled:hover {
   border-color: #e6e6e6;
   color: #e6e6e6;
-  cursor: default;
+  cursor: not-allowed;
 }
 .pagination .simple-pagination-items {
   float: right;
@@ -3821,7 +3799,7 @@ tbody.collapse.in {
 }
 .pagination .simple-pagination-items > li.pagination-item-disabled:hover {
   color: #e6e6e6;
-  cursor: default;
+  cursor: not-allowed;
 }
 .pagination .mini-pagination-items {
   float: right;
@@ -3876,7 +3854,7 @@ tbody.collapse.in {
 .pagination .mini-pagination-items > li.pagination-item-disabled:hover {
   border-color: #e6e6e6;
   color: #e6e6e6;
-  cursor: default;
+  cursor: not-allowed;
 }
 .pager {
   padding-left: 0;
@@ -4326,8 +4304,8 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-tag {
   display: inline-block;
   vertical-align: middle;
-  min-height: 22px;
-  line-height: 2;
+  min-height: 20px;
+  line-height: 1.6;
   border-radius: 4px;
   padding: 0 8px;
   font-size: 10px;
@@ -4342,11 +4320,11 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
 .atui-tag .tag-text {
   cursor: pointer;
-  color: #999999;
+  color: #999;
   text-decoration: none;
 }
 .atui-tag .tag-close {
-  color: #999999;
+  color: #999;
   opacity: 0.66;
   cursor: pointer;
   display: inline-block;
@@ -4357,10 +4335,10 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   opacity: 1;
 }
 .atui-tag-color .tag-text {
-  color: #ffffff;
+  color: #fff;
 }
 .atui-tag-color .tag-close {
-  color: #ffffff;
+  color: #fff;
   opacity: 0.66;
   cursor: pointer;
 }
@@ -5852,7 +5830,7 @@ button.close {
   font-size: 12px;
   font-size: 8px \9;
   -webkit-transform: scale(0.66666667) rotate(0deg);
-  transform: scale(0.66666667) rotate(0deg);
+          transform: scale(0.66666667) rotate(0deg);
   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
   zoom: 1;
   color: #999;
