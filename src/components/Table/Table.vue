@@ -152,7 +152,8 @@ export default {
     onCheckAll() {
       let me = this
       const changeRows = []
-      const checked = event.target.checked
+      let input = event.srcElement || event.target
+      const checked = input.checked
       if(checked) {
         me.checkebleRows.forEach((record,i) => {
           if(me.checkedRows.indexOf(record) < 0) {
@@ -178,7 +179,8 @@ export default {
     // 选中某一个单选框时触发
     onCheckOne(event,record) {
       const me = this
-      const checked = event.target.checked
+      let input = event.srcElement || event.target
+      const checked = input.checked
       if(checked) {
         if(me.checkedRows.indexOf(record) === -1) {
           me.checkedRows.push(record)
