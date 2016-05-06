@@ -6,7 +6,7 @@ require('prismjs')
 require('./js/showLanguage')
 
 import headerDocs from './example/headerDocs.vue'
-// import gettingStarted from './example/gettingStarted.vue'
+import gettingStarted from './example/gettingStarted.vue'
 
 import gridDocs from './example/gridDocs.vue'
 //  基础类
@@ -60,14 +60,14 @@ import paginationDocs from './example/paginationDocs.vue'
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
 //widgets
-// import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
+import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
 Vue.config.debug = true
 
 new Vue({
   el: '#wrapper',
   components: {
-    // gettingStarted,
+    gettingStarted,
     gridDocs,
     iconDocs,
     container,
@@ -106,7 +106,7 @@ new Vue({
     // menuDocs,
     searchboxDocs,
     phoneNumberDocs,
-    // addressSelectDocs
+    addressSelectDocs
     // addressSelectDocs:function(resolve) {
     //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
     // }

@@ -2699,15 +2699,11 @@ tbody.collapse.in {
   color: #dddddd;
   cursor: not-allowed;
 }
-.open > .dropdown-menu {
-  display: block;
-}
 .caret {
   display: inline-block;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  margin-top: -15px;
   right: 10px;
 }
 .caret .iconfont {
@@ -2717,6 +2713,13 @@ tbody.collapse.in {
   transition: all .3s ease;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+}
+.open > .dropdown-menu {
+  display: block;
+}
+.open .iconfont {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .select-container {
   position: relative;
@@ -5748,8 +5751,7 @@ button.close {
 .atui-datepicker-toggle .iconfont {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  margin-top: -15px;
   right: 7px;
 }
 .atui-datepicker-calendar {
