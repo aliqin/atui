@@ -4,10 +4,11 @@
     'modal':true,
     'fade':effect === 'fade',
     'zoom':effect === 'zoom',
+    'in':in
     }"
     >
     <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
-      :style="{width: optionalWidth}" :transition="effect">
+      :style="{width: optionalWidth}">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
@@ -73,6 +74,11 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         default: false
       }
     },
+    data() {
+      return {
+        in:false
+      }
+    },
     ready() {
       this.$watch('show', (val)=> {
         const el = this.$el
@@ -81,8 +87,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         if (val) {
           el.querySelector('.modal-content').focus()
           el.style.display = 'block'
-          setTimeout(()=> el.classList.add('in'), 0)
-          // body.classList.add('modal-open')
+          this.in = true
           if (scrollBarWidth !== 0) {
             body.style.paddingRight = scrollBarWidth + 'px'
           }
@@ -93,10 +98,9 @@ import coerceBoolean from '../utils/coerceBoolean.js'
           }
         } else {
           if (this._blurModalContentEvent) this._blurModalContentEvent.remove()
-          el.classList.remove('in')
+          this.in = false
           setTimeout(()=> {
             el.style.display = 'none'
-            // body.classList.remove('modal-open')
             body.style.paddingRight = '0'
           }, 300)
         }
