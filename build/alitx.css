@@ -1939,7 +1939,7 @@ pre code {
 .atui-table-container {
   position: relative;
 }
-.atui-table-container .spin {
+.atui-table-container .atui-spin {
   position: absolute;
   top: 50%;
   left: 50%;
