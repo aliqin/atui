@@ -798,7 +798,7 @@
 	          i.active = true;
 	        }
 	      });
-	      document.getElementById('J_ThemeCss').href = '../../build/' + csslink;
+	      document.getElementById('J_ThemeCss').href = '../build/' + csslink;
 	      document.body.className = csslink.replace('.css', '');
 	    }
 	  }
