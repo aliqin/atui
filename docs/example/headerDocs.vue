@@ -13,12 +13,19 @@
       <nav id="bs-navbar" class="collapse navbar-collapse">
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="components.html">
+            组件
+          </a></li>
+          <li><a href="widgets.html">
+            Widgets
+          </a></li>
+          <li><a href="filters.html">
+            filters
+          </a></li>
           <li><a href="http://gitlab.alibaba-inc.com/aliqin/vue-component/">
-            <span class="icon-github-circled"></span>
             GitLab
           </a></li>
           <li><a href="http://ued.aliqin.alibaba.net/webcompon/" target="_blank">
-            <span class="icon-github-circled"></span>
             视觉稿
           </a></li>
         </ul>
@@ -64,7 +71,7 @@ export default {
           i.active = true;
         }
       })
-      document.getElementById('J_ThemeCss').href = 'build/' + csslink
+      document.getElementById('J_ThemeCss').href = '../../build/' + csslink
       document.body.className = csslink.replace('.css','')
     }
   }

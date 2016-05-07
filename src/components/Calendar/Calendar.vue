@@ -27,7 +27,7 @@
           </div>
           <div class="atui-calendar-monthRange">
             <template v-for="m in monthNames">
-              <span v-bind:class="{'atui-calendar-dateRange-item-active':
+              <span :class="{'atui-calendar-dateRange-item-active':
                   (this.monthNames[this.parse(this.value).getMonth()]  === m) &&
                   this.currDate.getFullYear() === this.parse(this.value).getFullYear()}"
                   @click="monthSelect($index)"
