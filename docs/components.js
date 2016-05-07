@@ -59,8 +59,6 @@ import paginationDocs from './example/paginationDocs.vue'
 // filters
 import phoneNumberDocs from './example/filters/phoneNumberDocs.vue'
 
-//widgets
-import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 
 Vue.config.debug = true
 
@@ -106,10 +104,6 @@ new Vue({
     // menuDocs,
     searchboxDocs,
     phoneNumberDocs,
-    addressSelectDocs
-    // addressSelectDocs:function(resolve) {
-    //   require(['./example/widgets/addressSelectDocs.vue'], resolve);
-    // }
   },
   data() {
     return {
@@ -169,18 +163,3 @@ new Vue({
   }
 })
 
-
-
-// import Router from './routers'
-
-// // // debug
-// // Vue.config.debug = true
-
-// // // start app
-// var App = Vue.extend({
-//   components:{
-//     accordion: require('src/components/accordion.vue')
-//   }
-// })
-
-// Router.start(App,'#wrapper')
