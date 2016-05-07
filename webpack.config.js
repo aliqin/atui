@@ -9,11 +9,16 @@ var precss       = require('precss')
 var autoprefixer = require('autoprefixer')
 
 module.exports = {
-    entry: './docs/index.js',
+    entry: {
+      'components-docs': ['./docs/components.js'],
+      'widgets-docs': ['./docs/widgets.js'],
+      'filters-docs': ['./docs/filters.js']
+    },
+
     output: {
         path: './build',
         publicPath: '/build/',
-        filename: 'build-docs.js'
+        filename: '[name].js'
     },
     plugins: [
         extractDoc,
