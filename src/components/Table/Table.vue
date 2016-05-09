@@ -1,11 +1,17 @@
 <template>
-<div :class="{'atui-table-container':true,loading:loading}">
+<div :class="['atui-table-container','atui-table-'+size,loading ? 'loading' :'']">
   <spin size="sm" v-if="loading"></spin>
-  <div class="atui-table-body">
+  <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
+  </table>
+  <div :class="{'atui-table-body':true,'atui-fixed-header':fixedHeader}">
     <table class="atui-table">
+      <colgroup>
+        <col v-if="rowSelection"></col>
+        <col v-for="column in columns" :width="column.width"></col>
+      </colgroup>
       <thead class="table-thead">
         <tr>
-          <th v-if="rowSelection">
+          <th v-if="rowSelection" class="atui-table-selection-column">
               <input v-if="dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll}" @change="onCheckAll"/>
           </th>
           <th v-for="column in columns" :width="column.width">
@@ -28,7 +34,7 @@
       <tbody class="table-tbody">
         <tr v-if="!dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td></tr>
         <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
-            <td v-if="rowSelection">
+            <td v-if="rowSelection" class="atui-table-selection-column">
                  <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
             </td>
             <td v-for="column in columns">
@@ -208,6 +214,15 @@ export default {
       me.filters = {}
       me.filters[column.dataIndex] = [value]
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
+    }
+  },
+  ready() {
+    if(this.fixedHeader) {
+      let header = this.$el.querySelector('.table-thead')
+      let colgroup = this.$el.querySelector('colgroup').cloneNode(true)
+      let fixedTable = this.$el.querySelector('.atui-table-fixed-header')
+      fixedTable.appendChild(colgroup)
+      fixedTable.appendChild(header)
     }
   }
 }
