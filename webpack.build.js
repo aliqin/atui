@@ -1,9 +1,9 @@
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
-// var vueChunk = new webpack.optimize.CommonsChunkPlugin({
-//     name: "Vue",
-//     filename: "vue.dev.js",
-// })
+var vueChunk = new webpack.optimize.CommonsChunkPlugin({
+    name: "Vue",
+    filename: "vue.dev.js",
+})
 // delete config.devtool
 
 config.entry = {
@@ -19,7 +19,7 @@ config.output = {
     libraryTarget: 'umd'
 }
 config.plugins = (config.plugins || []).concat([
-  // vueChunk
+  vueChunk
   // new webpack.ProvidePlugin({
   //     Vue: 'vue',
   // }),
