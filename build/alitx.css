@@ -1944,6 +1944,14 @@ pre code {
   filter: blur(1px);
   pointer-events: none;
 }
+.atui-table-body.atui-fixed-header {
+  height: 260px;
+  overflow: auto;
+}
+.atui-table-selection-column {
+  text-align: center;
+  width: 60px;
+}
 .atui-table {
   width: 100%;
   border-collapse: collapse;
@@ -2012,6 +2020,12 @@ pre code {
 .atui-table .pagination {
   float: right;
   margin-top: 0;
+}
+.atui-table-middle th, .atui-table-middle td {
+  padding: 10px 8px;
+}
+.atui-table-small td {
+  padding: 6px 8px;
 }
 output {
   display: block;
