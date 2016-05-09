@@ -3,13 +3,17 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
     <row>
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading"></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :fixed-header="fixedHeader"></grid>
     </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
     <input type="button" @click="emptyData" value="清空数据"/>
+    <input type="button" @click="changeSize" value="改变大小({{size}})"/>
+    <input type="button" @click="changeFixed" value="切换固定表头"/>
     <pre><code class="language-markup"><script type="language-mark-up">
-import {Table,Icon} from 'src/'
+<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :fixed-header="fixedHeader"></grid>
+
+import {Table,Icon,Layout} from 'src/'
   const columns = [{
     title: '姓名',
     dataIndex: 'name',
@@ -20,15 +24,17 @@ import {Table,Icon} from 'src/'
       text: '姓胡的',
       value: '胡',
     }],
-    sorter: true,
-    onFilter: (value, record) => record.name.indexOf(value) === 0
+    sorter:true,
+    onFilter: (value, record) => record.name.indexOf(value) === 0,
+    width:150
   }, {
     title: '年龄',
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
     render(text, record,index) {
       return '<input type="text" v-model="gridData['+ index +'].age" />'
-    }
+    },
+    width:250
   }, {
     title: '地址',
     dataIndex: 'address',
@@ -40,12 +46,17 @@ import {Table,Icon} from 'src/'
       value: '西湖',
     }],
     filterMultiple: false,
+    width:250,
     onFilter: (value, record) => record.address.indexOf(value) === 0
+
   },{
       title: '操作',
       key: 'operation',
       render(text, record) {
-        return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
+        if(record) {
+          return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
+        }
+
       }
     }
   ];
@@ -70,46 +81,79 @@ import {Table,Icon} from 'src/'
     name: '李秀莲大嘴哥',
     age: 32,
     address: '西湖区湖底公园123号',
+  },
+  {
+    key: '5',
+    name: '刘德华',
+    age: 54,
+    address: '西湖区湖底公园999号',
+  },
+  {
+    key: '6',
+    name: '洪金宝',
+    age: 66,
+    address: '香港弥敦道',
   }];
   const rowSelection = {
     getCheckboxProps(record) {
       return {
-        disabled: record.name === '胡彦祖'    // 配置无法勾选的列 s
+        disabled: record.name === '胡彦祖'    // 配置无法勾选的列
       };
     },
     onChange(selectedRowKeys, selectedRows) {
-      console.log(selectedRowKeys, selectedRows);
+      console.log('rowSelection.onChange',selectedRowKeys, selectedRows);
     },
     onSelect(record, selected, selectedRows) {
-      console.log(record, selected, selectedRows);
+      console.log('rowSelection.onSelect',record, selected, selectedRows);
     },
     onSelectAll(selected, selectedRows, changeRows) {
-      console.log(selected, selectedRows, changeRows);
+      console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);
     }
   };
   export default {
     components: {
       Grid:Table,
-      Icon
+      Icon,
+      Row:Layout.Row
     },
     data() {
       return {
+        size:'default',
+        fixedHeader:false,
+        loading:false,
         gridData:data,
         gridColumns: columns,
-        rowSelection:rowSelection,
-        loading:false
+        rowSelection:rowSelection
       }
     },
     methods:{
       changeData() {
-        this.gridData = data;
+        this.gridData.push({
+          key: Math.random(),
+          name: '李秀莲大嘴哥',
+          age: Math.random(),
+          address: '西湖区湖底公园123号',
+        })
+      },
+      emptyData() {
+        this.gridData = []
       },
       onTableChange(i,j,k) {
-        alert(3)
-        console.log('table-change',i,j,k)
+        console.log('sdfsdfsdfsdf',i,j,k)
+      },
+      changeLoading() {
+        this.loading = !this.loading
+      },
+      changeSize() {
+        this.size = "default"==this.size ? "middle" : "middle" == this.size ? "small" : "default"
+      },
+      changeFixed() {
+        this.fixedHeader = !this.fixedHeader
       }
     }
   }
+
+
 </script></code></pre>
   <h3>Table 选项 </h3>
   <table class="atui-table table-bordered">
@@ -125,8 +169,20 @@ import {Table,Icon} from 'src/'
       <tr>
         <td>data-srouce</td>
         <td><code>Array</code></td>
+        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>
+        <td>要绑定的数据源</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td><code>String</code></td>
         <td>[]</td>
         <td>要绑定的数据源</td>
+      </tr>
+       <tr>
+        <td>fixedHeader</td>
+        <td><code>Boolean</code></td>
+        <td><code>false</code></td>
+        <td>是否固定头部（注意，固定头部必须指定每列宽度）</td>
       </tr>
       <tr>
         <td>row-selection</td>
@@ -164,14 +220,16 @@ import {Table,Icon} from 'src/'
       value: '胡',
     }],
     sorter:true,
-    onFilter: (value, record) => record.name.indexOf(value) === 0
+    onFilter: (value, record) => record.name.indexOf(value) === 0,
+    width:150
   }, {
     title: '年龄',
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
     render(text, record,index) {
       return '<input type="text" v-model="gridData['+ index +'].age" />'
-    }
+    },
+    width:250
   }, {
     title: '地址',
     dataIndex: 'address',
@@ -183,7 +241,9 @@ import {Table,Icon} from 'src/'
       value: '西湖',
     }],
     filterMultiple: false,
+    width:250,
     onFilter: (value, record) => record.address.indexOf(value) === 0
+
   },{
       title: '操作',
       key: 'operation',
@@ -216,6 +276,18 @@ import {Table,Icon} from 'src/'
     name: '李秀莲大嘴哥',
     age: 32,
     address: '西湖区湖底公园123号',
+  },
+  {
+    key: '5',
+    name: '刘德华',
+    age: 54,
+    address: '西湖区湖底公园999号',
+  },
+  {
+    key: '6',
+    name: '洪金宝',
+    age: 66,
+    address: '香港弥敦道',
   }];
   const rowSelection = {
     getCheckboxProps(record) {
@@ -241,6 +313,8 @@ import {Table,Icon} from 'src/'
     },
     data() {
       return {
+        size:'default',
+        fixedHeader:false,
         loading:false,
         gridData:data,
         gridColumns: columns,
@@ -264,6 +338,12 @@ import {Table,Icon} from 'src/'
       },
       changeLoading() {
         this.loading = !this.loading
+      },
+      changeSize() {
+        this.size = "default"==this.size ? "middle" : "middle" == this.size ? "small" : "default"
+      },
+      changeFixed() {
+        this.fixedHeader = !this.fixedHeader
       }
     }
   }
