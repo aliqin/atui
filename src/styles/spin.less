@@ -17,7 +17,9 @@
     height: 10px;
     border-radius: 100%;
 }
-
+.atui-sping-text{
+  color:@primary-color;
+}
 .atui-sping-point > div:nth-child(1) {
     -webkit-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
        -moz-animation: ball-triangle-path-ball-one 2s 0s ease-in-out infinite;
@@ -35,6 +37,11 @@
        -moz-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
          -o-animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
             animation: ball-triangle-path-ball-tree 2s 0s ease-in-out infinite;
+}
+.atui-sping-point > p{
+  width:100%;
+  text-align: center;
+  color:@primary-color;
 }
 .atui-spin .atui-sping-point{
   width:32px;
@@ -64,9 +71,11 @@
   opacity: .7;
   -webkit-filter: blur(1px);
   filter: blur(1px);
+  -webkit-filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=1, MakeShadow=false);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=1, MakeShadow=false);
   pointer-events: none;
 }
-.atui-spin.sping .atui-sping-point{
+.atui-spin.sping .atui-sping-point,.atui-spin.sping .atui-sping-text{
   position: absolute;
   left:50%;
   top:50%;
