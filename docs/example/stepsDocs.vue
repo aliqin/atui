@@ -3,15 +3,22 @@
     <h3 class="page-header"><a href="#steps" class="anchor">Steps 步骤条</a></h3>
     <div class="bs-example">
         <h4 class="example-title">基础型</h4>
-        <v-steps :current="current">
+        <v-steps :current="current" color="#00a0ff">
             <v-step title="已完成" ></v-step>
             <v-step title="进行中"></v-step>
             <v-step title="有一个待运行"></v-step>
             <v-step title="待运行"></v-step>
         </v-steps>
         <br><br>
+        <v-steps :current="current" color="rgb(229, 46, 46)">
+            <v-step title="已完成" ></v-step>
+            <v-step title="进行中"></v-step>
+            <v-step title="有一个待运行"></v-step>
+            <v-step title="待运行"></v-step>
+        </v-steps>
+        <br>
         <h4 class="example-title">带文字描述</h4>
-        <v-steps :current="current" color="#00a0ff">
+        <v-steps :current="current" >
             <v-step title="已完成" description="这里是多信息"></v-step>
             <v-step title="进行中"  description="这里是多信息的耶哦"></v-step>
             <v-step title="有一个待运行" description="描述啊描述啊"></v-step>
@@ -22,13 +29,19 @@
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<v-steps :current="current">
+<v-steps :current="current" color="#00a0ff">
   <v-step title="已完成" ></v-step>
   <v-step title="进行中"></v-step>
   <v-step title="有一个待运行"></v-step>
   <v-step title="待运行"></v-step>
 </v-steps>
-<v-steps :current="current" color="#00a0ff">
+<v-steps :current="current" color="rgb(229, 46, 46)">
+    <v-step title="已完成" ></v-step>
+    <v-step title="进行中"></v-step>
+    <v-step title="有一个待运行"></v-step>
+    <v-step title="待运行"></v-step>
+</v-steps>
+<v-steps :current="current">
   <v-step title="已完成" description="这里是多信息"></v-step>
   <v-step title="进行中"  description="这里是多信息的耶哦"></v-step>
   <v-step title="有一个待运行" description="描述啊描述啊"></v-step>
