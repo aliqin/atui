@@ -7899,6 +7899,10 @@ return webpackJsonp_name_([1],[
 	    trigger: {
 	      type: String,
 	      default: 'click'
+	    },
+	    size: {
+	      type: String,
+	      default: 'default'
 	    }
 	  },
 	
@@ -7924,7 +7928,8 @@ return webpackJsonp_name_([1],[
 	      return {
 	        'nav': true,
 	        'atui-nav-tabs': !this.base,
-	        'atui-nav-base': this.base
+	        'atui-nav-base': this.base,
+	        'atui-nav-small': this.size === 'small'
 	      };
 	    }
 	  },
