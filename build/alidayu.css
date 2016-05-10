@@ -2021,7 +2021,7 @@ pre code {
   float: right;
   margin-top: 0;
 }
-.atui-table-middle th, .atui-table-middle td, .atui-table-small td {
+.atui-table-middle th, .atui-table-middle td, .atui-table-small th {
   padding: 10px 8px;
 }
 .atui-table-small td {
