@@ -16029,6 +16029,7 @@
 	        // this.isCheckedAll = false
 	        var me = this;
 	        me.compileTbody();
+	
 	        // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
 	        me.checkedRows = data.filter(function (record) {
 	          if (me.checkedValues) {
@@ -16051,6 +16052,7 @@
 	        // console.log(me)
 	        // me.scope = me.scope || me.$parent
 	        me._context.$compile(me.$el.getElementsByTagName('table')[0]);
+	        // me.fixedHeaderAction()
 	      });
 	    },
 	    sortAction: function sortAction(column, index, order) {
@@ -16127,16 +16129,19 @@
 	      me.filters = {};
 	      me.filters[column.dataIndex] = [value];
 	      me.$dispatch('table-change', this.pagination, me.filters, me.sorter);
+	    },
+	    fixedHeaderAction: function fixedHeaderAction() {
+	      if (this.fixedHeader) {
+	        var header = this.$el.querySelector('.table-thead');
+	        var colgroup = this.$el.querySelector('colgroup').cloneNode(true);
+	        var fixedTable = this.$el.querySelector('.atui-table-fixed-header');
+	        fixedTable.appendChild(colgroup);
+	        fixedTable.appendChild(header);
+	      }
 	    }
 	  },
-	  ready: function ready() {
-	    if (this.fixedHeader) {
-	      var header = this.$el.querySelector('.table-thead');
-	      var colgroup = this.$el.querySelector('colgroup').cloneNode(true);
-	      var fixedTable = this.$el.querySelector('.atui-table-fixed-header');
-	      fixedTable.appendChild(colgroup);
-	      fixedTable.appendChild(header);
-	    }
+	  attached: function attached() {
+	    this.fixedHeaderAction();
 	  }
 	};
 	// </script>
@@ -22536,15 +22541,14 @@
 	//     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
 	//     <div class="bs-example">
 	//     <row>
-	//       <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :fixed-header="fixedHeader"></grid>
+	//       <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" fixed-header></grid>
 	//     </row>
 	//     </div>
 	//     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
 	//     <input type="button" @click="emptyData" value="清空数据"/>
 	//     <input type="button" @click="changeSize" value="改变大小({{size}})"/>
-	//     <input type="button" @click="changeFixed" value="切换固定表头"/>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :fixed-header="fixedHeader"></grid>
+	// <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" fixed-header></grid>
 	//
 	// import {Table,Icon,Layout} from 'src/'
 	//   const columns = [{
@@ -22841,7 +22845,7 @@
 /* 391 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" :fixed-header=\"fixedHeader\"></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <input type=\"button\" @click=\"emptyData\" value=\"清空数据\"/>\n    <input type=\"button\" @click=\"changeSize\" value=\"改变大小({{size}})\"/>\n    <input type=\"button\" @click=\"changeFixed\" value=\"切换固定表头\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" :fixed-header=\"fixedHeader\"></grid>\n\nimport {Table,Icon,Layout} from 'src/'\n  const columns = [{\n    title: '姓名',\n    dataIndex: 'name',\n    filters: [{\n      text: '姓李的的',\n      value: '李',\n    }, {\n      text: '姓胡的',\n      value: '胡',\n    }],\n    sorter:true,\n    onFilter: (value, record) => record.name.indexOf(value) === 0,\n    width:150\n  }, {\n    title: '年龄',\n    dataIndex: 'age',\n    sorter: (a, b) => a.age - b.age,\n    render(text, record,index) {\n      return '<input type=\"text\" v-model=\"gridData['+ index +'].age\" />'\n    },\n    width:250\n  }, {\n    title: '地址',\n    dataIndex: 'address',\n    filters: [{\n      text: '南湖',\n      value: '南湖',\n    }, {\n      text: '西湖',\n      value: '西湖',\n    }],\n    filterMultiple: false,\n    width:250,\n    onFilter: (value, record) => record.address.indexOf(value) === 0\n\n  },{\n      title: '操作',\n      key: 'operation',\n      render(text, record) {\n        if(record) {\n          return '<icon type=\"info\" /><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n        }\n\n      }\n    }\n  ];\n\n  const data = [{\n    key: '1',\n    name: '胡斌',\n    age: 32,\n    address: '南湖区湖底公园1号',\n  }, {\n    key: '2',\n    name: '胡彦祖',\n    age: 42,\n    address: '西湖区湖底公园12号',\n  }, {\n    key: '3',\n    name: '李大嘴',\n    age: 32,\n    address: '南湖区湖底公园123号',\n  }, {\n    key: '4',\n    name: '李秀莲大嘴哥',\n    age: 32,\n    address: '西湖区湖底公园123号',\n  },\n  {\n    key: '5',\n    name: '刘德华',\n    age: 54,\n    address: '西湖区湖底公园999号',\n  },\n  {\n    key: '6',\n    name: '洪金宝',\n    age: 66,\n    address: '香港弥敦道',\n  }];\n  const rowSelection = {\n    getCheckboxProps(record) {\n      return {\n        disabled: record.name === '胡彦祖'    // 配置无法勾选的列\n      };\n    },\n    onChange(selectedRowKeys, selectedRows) {\n      console.log('rowSelection.onChange',selectedRowKeys, selectedRows);\n    },\n    onSelect(record, selected, selectedRows) {\n      console.log('rowSelection.onSelect',record, selected, selectedRows);\n    },\n    onSelectAll(selected, selectedRows, changeRows) {\n      console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);\n    }\n  };\n  export default {\n    components: {\n      Grid:Table,\n      Icon,\n      Row:Layout.Row\n    },\n    data() {\n      return {\n        size:'default',\n        fixedHeader:false,\n        loading:false,\n        gridData:data,\n        gridColumns: columns,\n        rowSelection:rowSelection\n      }\n    },\n    methods:{\n      changeData() {\n        this.gridData.push({\n          key: Math.random(),\n          name: '李秀莲大嘴哥',\n          age: Math.random(),\n          address: '西湖区湖底公园123号',\n        })\n      },\n      emptyData() {\n        this.gridData = []\n      },\n      onTableChange(i,j,k) {\n        console.log('sdfsdfsdfsdf',i,j,k)\n      },\n      changeLoading() {\n        this.loading = !this.loading\n      },\n      changeSize() {\n        this.size = \"default\"==this.size ? \"middle\" : \"middle\" == this.size ? \"small\" : \"default\"\n      },\n      changeFixed() {\n        this.fixedHeader = !this.fixedHeader\n      }\n    }\n  }\n\n\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td>[]</td>\n        <td>要绑定的数据源</td>\n      </tr>\n       <tr>\n        <td>fixedHeader</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>是否固定头部（注意，固定头部必须指定每列宽度）</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" fixed-header></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <input type=\"button\" @click=\"emptyData\" value=\"清空数据\"/>\n    <input type=\"button\" @click=\"changeSize\" value=\"改变大小({{size}})\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" fixed-header></grid>\n\nimport {Table,Icon,Layout} from 'src/'\n  const columns = [{\n    title: '姓名',\n    dataIndex: 'name',\n    filters: [{\n      text: '姓李的的',\n      value: '李',\n    }, {\n      text: '姓胡的',\n      value: '胡',\n    }],\n    sorter:true,\n    onFilter: (value, record) => record.name.indexOf(value) === 0,\n    width:150\n  }, {\n    title: '年龄',\n    dataIndex: 'age',\n    sorter: (a, b) => a.age - b.age,\n    render(text, record,index) {\n      return '<input type=\"text\" v-model=\"gridData['+ index +'].age\" />'\n    },\n    width:250\n  }, {\n    title: '地址',\n    dataIndex: 'address',\n    filters: [{\n      text: '南湖',\n      value: '南湖',\n    }, {\n      text: '西湖',\n      value: '西湖',\n    }],\n    filterMultiple: false,\n    width:250,\n    onFilter: (value, record) => record.address.indexOf(value) === 0\n\n  },{\n      title: '操作',\n      key: 'operation',\n      render(text, record) {\n        if(record) {\n          return '<icon type=\"info\" /><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n        }\n\n      }\n    }\n  ];\n\n  const data = [{\n    key: '1',\n    name: '胡斌',\n    age: 32,\n    address: '南湖区湖底公园1号',\n  }, {\n    key: '2',\n    name: '胡彦祖',\n    age: 42,\n    address: '西湖区湖底公园12号',\n  }, {\n    key: '3',\n    name: '李大嘴',\n    age: 32,\n    address: '南湖区湖底公园123号',\n  }, {\n    key: '4',\n    name: '李秀莲大嘴哥',\n    age: 32,\n    address: '西湖区湖底公园123号',\n  },\n  {\n    key: '5',\n    name: '刘德华',\n    age: 54,\n    address: '西湖区湖底公园999号',\n  },\n  {\n    key: '6',\n    name: '洪金宝',\n    age: 66,\n    address: '香港弥敦道',\n  }];\n  const rowSelection = {\n    getCheckboxProps(record) {\n      return {\n        disabled: record.name === '胡彦祖'    // 配置无法勾选的列\n      };\n    },\n    onChange(selectedRowKeys, selectedRows) {\n      console.log('rowSelection.onChange',selectedRowKeys, selectedRows);\n    },\n    onSelect(record, selected, selectedRows) {\n      console.log('rowSelection.onSelect',record, selected, selectedRows);\n    },\n    onSelectAll(selected, selectedRows, changeRows) {\n      console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);\n    }\n  };\n  export default {\n    components: {\n      Grid:Table,\n      Icon,\n      Row:Layout.Row\n    },\n    data() {\n      return {\n        size:'default',\n        fixedHeader:false,\n        loading:false,\n        gridData:data,\n        gridColumns: columns,\n        rowSelection:rowSelection\n      }\n    },\n    methods:{\n      changeData() {\n        this.gridData.push({\n          key: Math.random(),\n          name: '李秀莲大嘴哥',\n          age: Math.random(),\n          address: '西湖区湖底公园123号',\n        })\n      },\n      emptyData() {\n        this.gridData = []\n      },\n      onTableChange(i,j,k) {\n        console.log('sdfsdfsdfsdf',i,j,k)\n      },\n      changeLoading() {\n        this.loading = !this.loading\n      },\n      changeSize() {\n        this.size = \"default\"==this.size ? \"middle\" : \"middle\" == this.size ? \"small\" : \"default\"\n      },\n      changeFixed() {\n        this.fixedHeader = !this.fixedHeader\n      }\n    }\n  }\n\n\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td>[]</td>\n        <td>要绑定的数据源</td>\n      </tr>\n       <tr>\n        <td>fixedHeader</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>是否固定头部（注意，固定头部必须指定每列宽度）</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 392 */
