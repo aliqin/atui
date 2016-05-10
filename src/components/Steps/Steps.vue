@@ -1,5 +1,5 @@
 <template>
-	<div class="steps">
+	<div class="atui-steps">
 		<slot></slot>
 	</div>
 </template>

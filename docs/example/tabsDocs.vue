@@ -258,7 +258,7 @@
         <td>以何种方式触发选中Tab(可选，click，hover)</td>
       </tr>
       <tr>
-        <td>on-tab-click</td>
+        <td>@on-tab-click</td>
         <td><code>Function</code></td>
         <td></td>
         <td>tab被点击的回调，回调参数为当前tab的索引值</td>
