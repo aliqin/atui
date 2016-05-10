@@ -7911,7 +7911,8 @@ return webpackJsonp_name_([1],[
 	      navWidth: 0,
 	      prev_tabIndex: 0,
 	      next_tabIndex: 0,
-	      itemsWidth: []
+	      itemsWidth: [],
+	      maxTabIndex: 0
 	    };
 	  },
 	
@@ -7943,8 +7944,12 @@ return webpackJsonp_name_([1],[
 	        case 'left':
 	          /**
 	           * 这里需要计算maxTabIndex, 本身Tab的最大index应该是totalLen-1，但是为了后面的Tab宽度太宽，需要将最大的index增加（this.showLen-1）, 也就是让整个nav再多向左移动这些次，以让每一个Tab的内容都能显示清楚。
+	           *
+	           * 如果能保证每一个tab的内容长度都不会太长并且差不多长，那么此时maxTabIndex可以等于totalLen-1
+	           *
 	           */
 	          var maxTabIndex = totalLen - 1 + (this.showLen - 1);
+	          this.maxTabIndex = maxTabIndex;
 	          if (this.next_tabIndex === maxTabIndex) return;
 	          this.prev_tabIndex++;
 	          this.next_tabIndex = this.prev_tabIndex + this.showLen - 1;
@@ -8003,7 +8008,10 @@ return webpackJsonp_name_([1],[
 	// <template>
 	//   <div class="tabsWrapper">
 	//     <div class="tabs-header">
-	//       <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev"><icon type="prev" size="12"></icon></span>
+	//       <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">
+	//         <icon v-if="prev_tabIndex==0" type="prev" size="12" color="#ccc" style="cursor: not-allowed"></icon>
+	//         <icon v-else type="prev" size="12"></icon>
+	//       </span>
 	//       <ul v-if="trigger=='click'" :class="wrapClasses" role="tablist" style="width: 99999px;">
 	//         <li v-for="r in renderData"
 	//             v-bind:class="{
@@ -8028,7 +8036,9 @@ return webpackJsonp_name_([1],[
 	//             <a href="javascript:void(0);">{{{r.header}}}</a>
 	//         </li>
 	//       </ul>
-	//       <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next"><icon type="next" size="12"></icon>
+	//       <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next">
+	//         <icon v-if="next_tabIndex == maxTabIndex" type="next" size="12" color="#ccc" style="cursor: not-allowed"></icon>
+	//         <icon v-else type="next" size="12"></icon>
 	//       </span>
 	//     </div>
 	//
@@ -8046,7 +8056,7 @@ return webpackJsonp_name_([1],[
 /* 297 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"tabsWrapper\">\n  <div class=\"tabs-header\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3 \" class=\"arrow-prev\" @click=\"prev\"><icon type=\"prev\" size=\"12\"></icon></span>\n    <ul v-if=\"trigger=='click'\" :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          v-bind:class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <ul v-else :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n    <li v-for=\"r in renderData\"\n          v-bind:class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @mouseenter.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" class=\"arrow-next\" @click=\"next\"><icon type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
+	module.exports = "\n<div class=\"tabsWrapper\">\n  <div class=\"tabs-header\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3 \" class=\"arrow-prev\" @click=\"prev\">\n      <icon v-if=\"prev_tabIndex==0\" type=\"prev\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"prev\" size=\"12\"></icon>\n    </span>\n    <ul v-if=\"trigger=='click'\" :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          v-bind:class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <ul v-else :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n    <li v-for=\"r in renderData\"\n          v-bind:class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @mouseenter.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" class=\"arrow-next\" @click=\"next\">\n      <icon v-if=\"next_tabIndex == maxTabIndex\" type=\"next\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
 
 /***/ },
 /* 298 */
