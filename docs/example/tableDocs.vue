@@ -168,17 +168,17 @@ import {Table,Icon,Layout} from 'src/'
       <tr>
         <td>data-srouce</td>
         <td><code>Array</code></td>
-        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>
+        <td></td>
         <td>要绑定的数据源</td>
       </tr>
       <tr>
         <td>size</td>
         <td><code>String</code></td>
-        <td>[]</td>
-        <td>要绑定的数据源</td>
+        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>
+        <td>表格大小</td>
       </tr>
        <tr>
-        <td>fixedHeader</td>
+        <td>fixed-header</td>
         <td><code>Boolean</code></td>
         <td><code>false</code></td>
         <td>是否固定头部（注意，固定头部必须指定每列宽度）</td>
@@ -250,7 +250,6 @@ import {Table,Icon,Layout} from 'src/'
         if(record) {
           return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
         }
-
       }
     }
   ];
