@@ -102,6 +102,7 @@
     methods: {
         handleTabListClick(index, el) {
           if (!el.disabled) this.active = index
+          this.$dispatch('on-tab-click', this.active)
         },
         prev() {
           this._handleMoveX('right')
