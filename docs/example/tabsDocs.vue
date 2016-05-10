@@ -19,6 +19,23 @@
         </tab>
       </tabs>
       <br><br>
+      <h4 class="example-title">迷你型</h4>
+      <tabs :base="true" size="small">
+        <tab header="系统短信签名">
+          <p>
+            选项卡一内容
+          </p>
+        </tab>
+        <tab header="推广短信签名">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="被禁用的" disabled>
+          ...
+        </tab>
+      </tabs>
+      <br><br>
       <h4 class="example-title">Tab数量较多的情况</h4>
       <tabs :base="true" trigger="hover">
         <tab header="系统短信签名">
@@ -101,6 +118,21 @@
   </tab>
   <tab header="推广短信签名">
     ...
+  </tab>
+  <tab header="被禁用的" disabled>
+    ...
+  </tab>
+</tabs>
+<tabs :base="true" size="small">
+  <tab header="系统短信签名">
+    <p>
+      选项卡一内容
+    </p>
+  </tab>
+  <tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
   </tab>
   <tab header="被禁用的" disabled>
     ...
@@ -212,6 +244,12 @@
         <td><code>Number</code></td>
         <td>3</td>
         <td>当前想要显示出多少个Tab</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td><code>String</code></td>
+        <td>'default'</td>
+        <td>大小，提供default和small两种大小</td>
       </tr>
       <tr>
         <td>trigger</td>
