@@ -1,5 +1,5 @@
 <template>
-<span class="badge">
+<span class="atui-badge">
   <slot></slot>
   <sup class="badge-dot" v-if="dot"></sup>
   <template v-else>

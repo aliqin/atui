@@ -1,5 +1,5 @@
 <template>
-  <div class="tabsWrapper">
+  <div class="atui-tabsWrapper">
     <div class="tabs-header">
       <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">
         <icon v-if="prev_tabIndex==0" type="prev" size="12" color="#ccc" style="cursor: not-allowed"></icon>
@@ -89,8 +89,8 @@
       wrapClasses () {
         return {
           'nav': true,
-          'nav-tabs': !this.base,
-          'nav-base': this.base
+          'atui-nav-tabs': !this.base,
+          'atui-nav-base': this.base
         }
       }
     },
