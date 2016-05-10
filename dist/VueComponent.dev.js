@@ -5055,6 +5055,7 @@ return webpackJsonp_name_([1],[
 	        // this.isCheckedAll = false
 	        var me = this;
 	        me.compileTbody();
+	
 	        // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
 	        me.checkedRows = data.filter(function (record) {
 	          if (me.checkedValues) {
@@ -5077,6 +5078,7 @@ return webpackJsonp_name_([1],[
 	        // console.log(me)
 	        // me.scope = me.scope || me.$parent
 	        me._context.$compile(me.$el.getElementsByTagName('table')[0]);
+	        // me.fixedHeaderAction()
 	      });
 	    },
 	    sortAction: function sortAction(column, index, order) {
@@ -5153,16 +5155,19 @@ return webpackJsonp_name_([1],[
 	      me.filters = {};
 	      me.filters[column.dataIndex] = [value];
 	      me.$dispatch('table-change', this.pagination, me.filters, me.sorter);
+	    },
+	    fixedHeaderAction: function fixedHeaderAction() {
+	      if (this.fixedHeader) {
+	        var header = this.$el.querySelector('.table-thead');
+	        var colgroup = this.$el.querySelector('colgroup').cloneNode(true);
+	        var fixedTable = this.$el.querySelector('.atui-table-fixed-header');
+	        fixedTable.appendChild(colgroup);
+	        fixedTable.appendChild(header);
+	      }
 	    }
 	  },
-	  ready: function ready() {
-	    if (this.fixedHeader) {
-	      var header = this.$el.querySelector('.table-thead');
-	      var colgroup = this.$el.querySelector('colgroup').cloneNode(true);
-	      var fixedTable = this.$el.querySelector('.atui-table-fixed-header');
-	      fixedTable.appendChild(colgroup);
-	      fixedTable.appendChild(header);
-	    }
+	  attached: function attached() {
+	    this.fixedHeaderAction();
 	  }
 	};
 	// </script>
