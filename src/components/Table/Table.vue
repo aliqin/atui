@@ -119,6 +119,7 @@ export default {
         // this.isCheckedAll = false
         let me = this
         me.compileTbody()
+
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
           if(me.checkedValues) {
@@ -141,6 +142,7 @@ export default {
         // console.log(me)
         // me.scope = me.scope || me.$parent
         me._context.$compile(me.$el.getElementsByTagName('table')[0])
+        // me.fixedHeaderAction()
       })
     },
     sortAction(column,index,order) {
@@ -214,16 +216,19 @@ export default {
       me.filters = {}
       me.filters[column.dataIndex] = [value]
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
+    },
+    fixedHeaderAction() {
+      if(this.fixedHeader) {
+        let header = this.$el.querySelector('.table-thead')
+        let colgroup = this.$el.querySelector('colgroup').cloneNode(true)
+        let fixedTable = this.$el.querySelector('.atui-table-fixed-header')
+        fixedTable.appendChild(colgroup)
+        fixedTable.appendChild(header)
+      }
     }
   },
-  ready() {
-    if(this.fixedHeader) {
-      let header = this.$el.querySelector('.table-thead')
-      let colgroup = this.$el.querySelector('colgroup').cloneNode(true)
-      let fixedTable = this.$el.querySelector('.atui-table-fixed-header')
-      fixedTable.appendChild(colgroup)
-      fixedTable.appendChild(header)
-    }
+  attached() {
+    this.fixedHeaderAction()
   }
 }
 </script>

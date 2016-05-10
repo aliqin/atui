@@ -3,15 +3,14 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
     <row>
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :fixed-header="fixedHeader"></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" fixed-header></grid>
     </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
     <input type="button" @click="emptyData" value="清空数据"/>
     <input type="button" @click="changeSize" value="改变大小({{size}})"/>
-    <input type="button" @click="changeFixed" value="切换固定表头"/>
     <pre><code class="language-markup"><script type="language-mark-up">
-<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :fixed-header="fixedHeader"></grid>
+<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" fixed-header></grid>
 
 import {Table,Icon,Layout} from 'src/'
   const columns = [{
