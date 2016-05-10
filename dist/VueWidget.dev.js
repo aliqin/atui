@@ -13,7 +13,7 @@ return webpackJsonp_name_([3],{
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(330);
+	module.exports = __webpack_require__(346);
 
 
 /***/ },
@@ -59,12 +59,12 @@ return webpackJsonp_name_([3],{
 
 /***/ },
 
-/***/ 330:
+/***/ 346:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _AddressSelect = __webpack_require__(331);
+	var _AddressSelect = __webpack_require__(347);
 	
 	var _AddressSelect2 = _interopRequireDefault(_AddressSelect);
 	
@@ -81,7 +81,7 @@ return webpackJsonp_name_([3],{
 
 /***/ },
 
-/***/ 331:
+/***/ 347:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -90,7 +90,7 @@ return webpackJsonp_name_([3],{
 	  value: true
 	});
 	
-	var _AddressSelect = __webpack_require__(332);
+	var _AddressSelect = __webpack_require__(348);
 	
 	var _AddressSelect2 = _interopRequireDefault(_AddressSelect);
 
@@ -100,16 +100,16 @@ return webpackJsonp_name_([3],{
 
 /***/ },
 
-/***/ 332:
+/***/ 348:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(333)
+	__vue_script__ = __webpack_require__(349)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/widgets/AddressSelect/AddressSelect.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(335)
+	__vue_template__ = __webpack_require__(351)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -119,7 +119,7 @@ return webpackJsonp_name_([3],{
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/widgets/AddressSelect/AddressSelect.vue"
+	  var id = "/learn/alibaba/vue-component/src/widgets/AddressSelect/AddressSelect.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -129,7 +129,7 @@ return webpackJsonp_name_([3],{
 
 /***/ },
 
-/***/ 333:
+/***/ 349:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -138,7 +138,7 @@ return webpackJsonp_name_([3],{
 	  value: true
 	});
 	
-	var _addr = __webpack_require__(334);
+	var _addr = __webpack_require__(350);
 	
 	var _addr2 = _interopRequireDefault(_addr);
 	
@@ -543,7 +543,7 @@ return webpackJsonp_name_([3],{
 
 /***/ },
 
-/***/ 334:
+/***/ 350:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -556,7 +556,7 @@ return webpackJsonp_name_([3],{
 
 /***/ },
 
-/***/ 335:
+/***/ 351:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"address-box\" :class=\"classObj\" @click.stop=\"showAddrPopFun\" @blur=\"hideAddrPopFun\">\n  <div v-if=\"province\" class=\"ad-select has-select\" v-html=\"selectAddr\"></div>\n  <div v-else class=\"ad-select\">{{placeholder}}</div>\n  <i class=\"ad-drop\" :class=\"{'drop-down': showAddrPop}\"></i>\n  <div class=\"ad-overlay\" v-show=\"showAddrPop\">\n    <div class=\"ad-overlay-container\">\n      <div class=\"tab-list\">\n        <ul>\n          <li v-for=\"tab in tabList\" :class=\"{'active': current == tab.id}\" :style=\"{'width': (100/tabList.length)+'%'}\" @click.stop.stop=\"navChoose(tab.id)\">{{tab.name}}</li>\n        </ul>\n      </div>\n      <div class=\"tab-content\">\n        <div class=\"province-content\" v-show=\"current == 'province'\">\n          <dl v-for=\"key in list.provinceList\">\n            <dt>{{$key}}</dt>\n            <dd>\n              <a v-for=\"prov in key\" :title=\"prov[1]\" :attr-id=\"prov[0]\" href=\"javascript:;\" @click=\"chooseProvince(prov[0], prov[1])\" :class=\"{'active': provinceId == prov[0]}\">\n                <input v-if=\"provinceId == prov[0]\" value=\"{{prov[1]}}\" type=\"hidden\" v-model=\"province\" />\n                {{prov[1]}}\n              </a>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"city-content\" v-show=\"current == 'city'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.countyList\">\n                <a v-if=\"item[2] == provinceId\" title=\"{{item[1]}}\" attr-id=\"{{item[0]}}\" href=\"javascript:;\" @click.stop=\"chooseCity(item[0], item[1])\" :class=\"{'active': cityId == item[0]}\" track-by=\"item[0]\">\n                  <input v-if=\"cityId == item[0]\" value=\"{{item[1]}}\" type=\"hidden\" v-model=\"city\" />\n                  {{item[1]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"county-content\" v-if=\"tabList[2]\" v-show=\"current == 'county'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.countyList\">\n                <a v-if=\"item[2] == cityId\" title=\"{{item[1]}}\" attr-id=\"{{item[0]}}\" href=\"javascript:;\" @click.stop=\"chooseCounty(item[0], item[1])\" :class=\"{'active': countyId == item[0]}\" track-by=\"item[0]\">\n                  <input v-if=\"countyId == item[0]\" value=\"{{item[1]}}\" type=\"hidden\" v-model=\"county\" />\n                  {{item[1]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"street-content\" v-if=\"tabList[3]\" v-show=\"current == 'street'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.streetList\">\n                <a title=\"{{item[0]}}\" attr-id=\"{{$key}}\" parent-id=\"{{item[1]}}\" href=\"javascript:;\" @click.stop=\"chooseStreet($key, item[0])\" :class=\"{'active': streetId == $key}\" track-by=\"$key\">\n                  <input v-if=\"streetId == $key\" value=\"{{item[0]}}\" type=\"hidden\" v-model=\"street\" />\n                  {{item[0]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n";

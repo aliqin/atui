@@ -4,19 +4,19 @@
     <div class="bs-example">
       <h4 class="example-title">基础型</h4>
       <badge :count="6">
-        <a href="javascript:;" class="badge-count-example"></a>
+        <a href="javascript:;" style="width: 42px; height: 42px; background-color: #eee; display: inline-block; border-radius: 6px;"></a>
       </badge>
       <h4 class="example-title">大数字型</h4>
       <badge :count="99">
-        <a href="javascript:;" class="badge-count-example"></a>
+        <a href="javascript:;" style="width: 42px; height: 42px; background-color: #eee; display: inline-block; border-radius: 6px;"></a>
       </badge>
 
       <badge :count="1000" >
-        <a href="javascript:;" class="badge-count-example"></a>
+        <a href="javascript:;" style="width: 42px; height: 42px; background-color: #eee; display: inline-block; border-radius: 6px;"></a>
       </badge>
       <h4 class="example-title">小红点型</h4>
         <badge :dot="true" >
-          <a href="javascript:;" class="badge-count-example"></a>
+          <a href="javascript:;" style="width: 42px; height: 42px; background-color: #eee; display: inline-block; border-radius: 6px;"></a>
         </badge>
 
         <badge :dot="true" >
