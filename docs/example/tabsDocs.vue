@@ -37,7 +37,7 @@
       </tabs>
       <br><br>
       <h4 class="example-title">Tab数量较多的情况</h4>
-      <tabs :base="true" trigger="hover">
+      <tabs :base="true" trigger="hover" >
         <tab header="系统短信签名">
           <p>
             选项卡一内容
@@ -69,7 +69,7 @@
       </tabs>
       <br><br>
       <h4 class="example-title">选项卡型</h4>
-      <tabs >
+      <tabs @on-tab-click="handleOnClick">
         <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
           <p>
             选项卡一内容
@@ -168,7 +168,7 @@
      </p>
   </tab>
 </tabs>
-<tabs >
+<tabs @on-tab-click="handleOnClick">
   <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
     <p>
       选项卡一内容
@@ -257,6 +257,12 @@
         <td>click</td>
         <td>以何种方式触发选中Tab(可选，click，hover)</td>
       </tr>
+      <tr>
+        <td>on-tab-click</td>
+        <td><code>Function</code></td>
+        <td></td>
+        <td>tab被点击的回调，回调参数为当前tab的索引值</td>
+      </tr>
     </tbody>
   </table>
   </div>
@@ -274,6 +280,11 @@
     components: {
       Tabs,
       Tab
+    },
+    methods: {
+      handleOnClick (index) {
+        alert(index)
+      }
     }
   }
 </script>
