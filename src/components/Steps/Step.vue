@@ -7,9 +7,9 @@
 		</div>
 		<div class="step-head">
 			<div class="step-head-inner">
-				<span v-if="status !== 'finish'" class="step-icon" 
+				<span v-if="status !== 'finish'" class="step-icon"
 					:style="{
-						borderColor: status==='process'?color:'#e9e9e9', 
+						borderColor: status==='process'?color:'#e9e9e9',
 						backgroundColor: status==='process'?color:'#fff'}">
 					{{ stepNumber }}
 				</span>
@@ -40,7 +40,7 @@
 		computed: {
 			wrapClasses () {
 				return {
-					'step': true,
+					'atui-step': true,
 					'step-status-process': this.status === 'process',
 					'step-status-finish': this.status === 'finish',
 					'step-status-wait': this.status === 'wait',

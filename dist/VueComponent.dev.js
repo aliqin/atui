@@ -8279,7 +8279,7 @@ return webpackJsonp_name_([1],[
 		value: true
 	});
 	// <template>
-	// 	<div class="steps">
+	// 	<div class="atui-steps">
 	// 		<slot></slot>
 	// 	</div>
 	// </template>
@@ -8391,7 +8391,7 @@ return webpackJsonp_name_([1],[
 /* 306 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"steps\">\n\t<slot></slot>\n</div>\n";
+	module.exports = "\n<div class=\"atui-steps\">\n\t<slot></slot>\n</div>\n";
 
 /***/ },
 /* 307 */
@@ -8450,7 +8450,7 @@ return webpackJsonp_name_([1],[
 		computed: {
 			wrapClasses: function wrapClasses() {
 				return {
-					'step': true,
+					'atui-step': true,
 					'step-status-process': this.status === 'process',
 					'step-status-finish': this.status === 'finish',
 					'step-status-wait': this.status === 'wait',
@@ -8498,7 +8498,7 @@ return webpackJsonp_name_([1],[
 /* 309 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"wrapClasses\" :style=\"{'width': tailWidth}\">\n\t<div v-if=\"!lastStep\" class=\"step-tail\">\n\t\t<i>\n\t\t\t<i :style=\"{ backgroundColor: color }\"></i>\n\t\t</i>\n\t</div>\n\t<div class=\"step-head\">\n\t\t<div class=\"step-head-inner\">\n\t\t\t<span v-if=\"status !== 'finish'\" class=\"step-icon\" \n\t\t\t\t:style=\"{\n\t\t\t\t\tborderColor: status==='process'?color:'#e9e9e9', \n\t\t\t\t\tbackgroundColor: status==='process'?color:'#fff'}\">\n\t\t\t\t{{ stepNumber }}\n\t\t\t</span>\n\t\t\t<span v-else class=\"step-finish-icon\">\n\t\t\t\t<icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n\t\t\t</span>\n\t\t</div>\n\t</div>\n\t<div class=\"step-main\">\n\t\t<div class=\"step-main-title\">{{ title }}</div>\n\t\t<div class=\"step-main-description\">{{ description }}</div>\n\t</div>\n</div>\n";
+	module.exports = "\n<div :class=\"wrapClasses\" :style=\"{'width': tailWidth}\">\n\t<div v-if=\"!lastStep\" class=\"step-tail\">\n\t\t<i>\n\t\t\t<i :style=\"{ backgroundColor: color }\"></i>\n\t\t</i>\n\t</div>\n\t<div class=\"step-head\">\n\t\t<div class=\"step-head-inner\">\n\t\t\t<span v-if=\"status !== 'finish'\" class=\"step-icon\"\n\t\t\t\t:style=\"{\n\t\t\t\t\tborderColor: status==='process'?color:'#e9e9e9',\n\t\t\t\t\tbackgroundColor: status==='process'?color:'#fff'}\">\n\t\t\t\t{{ stepNumber }}\n\t\t\t</span>\n\t\t\t<span v-else class=\"step-finish-icon\">\n\t\t\t\t<icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n\t\t\t</span>\n\t\t</div>\n\t</div>\n\t<div class=\"step-main\">\n\t\t<div class=\"step-main-title\">{{ title }}</div>\n\t\t<div class=\"step-main-description\">{{ description }}</div>\n\t</div>\n</div>\n";
 
 /***/ },
 /* 310 */
