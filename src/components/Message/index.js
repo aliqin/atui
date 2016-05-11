@@ -6,16 +6,16 @@ import Vue from 'vue'
 	Message[type] = function(content,duration,placement) {
     duration = duration || 3000
     placement = placement || 'center'
-    if(!document.getElementsByClassName('vue-message').length) {
+    if(!document.getElementsByClassName('atui-message').length) {
       let box = document.createElement('div')
-      box.className = 'vue-message'
+      box.className = 'atui-message'
       document.body.appendChild(box)
     }
 		let div = document.createElement('div')
-  	document.getElementsByClassName('vue-message')[0].appendChild(div)
+  	document.getElementsByClassName('atui-message')[0].appendChild(div)
     new Vue({
       el:div,
-      template:'<message class="vue-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :placement="placement">{{content}}</message>',
+      template:'<message class="atui-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :transition="transition">{{content}}</message>',
       components:{
         Message:Message
       },
@@ -24,7 +24,8 @@ import Vue from 'vue'
         type:type,
         duration:duration,
         show:true,
-        placement:placement
+        placement:placement,
+        transition:'movedown'
       },
       ready:function() {
         let me = this
@@ -35,9 +36,10 @@ import Vue from 'vue'
         // me.placement = placement || me.placement
         if(me.duration) {
           setTimeout(() => {
-            let notice = document.getElementsByClassName('vue-message-notice')
-            let element = notice[notice.length-1]
-            document.getElementsByClassName('vue-message')[0].removeChild(element)
+            me.transition = 'moveup'
+            // let notice = document.getElementsByClassName('atui-message-notice')
+            // let element = notice[notice.length-1]
+            // document.getElementsByClassName('atui-message')[0].removeChild(element)
           },duration)
         }
       }

@@ -109,12 +109,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(83);
+	module.exports = __webpack_require__(85);
 
 
 /***/ },
 
-/***/ 83:
+/***/ 85:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {/*!
@@ -10040,11 +10040,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	}, 0);
 	
 	module.exports = Vue;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(84)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(86)))
 
 /***/ },
 
-/***/ 84:
+/***/ 86:
 /***/ function(module, exports) {
 
 	// shim for using process in browser

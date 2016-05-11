@@ -1,9 +1,9 @@
 <template>
-<div :class="['atui-table-container','atui-table-'+size,loading ? 'loading' :'']">
+<div :class="['atui-table-container','atui-table-'+size, {loading :loading}]">
   <spin size="sm" v-if="loading"></spin>
   <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
   </table>
-  <div :class="{'atui-table-body':true,'atui-fixed-header':fixedHeader}">
+  <div :class="['atui-table-body',{'atui-fixed-header':fixedHeader}]">
     <table class="atui-table">
       <colgroup>
         <col v-if="rowSelection"></col>
@@ -138,11 +138,8 @@ export default {
     compileTbody() {
       let me = this
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
-      this.$nextTick(() => {
-        // console.log(me)
-        // me.scope = me.scope || me.$parent
+      me.$nextTick(() => {
         me._context.$compile(me.$el.getElementsByTagName('table')[0])
-        // me.fixedHeaderAction()
       })
     },
     sortAction(column,index,order) {

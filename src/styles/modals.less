@@ -63,14 +63,20 @@
 
 // Shell div to position the modal with bottom padding
 .modal-dialog {
-  position: relative;
+  position: absolute;
+  left:50%;
+  top:50%;
   width: auto;
   margin: 10px;
+
 }
 
 // Actual modal
 .modal-content {
-  position: relative;
+  position: absolute;
+  width:100%;
+  right:50%;
+  bottom:50%;
   background-color: @modal-content-bg;
   border: 1px solid @modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
   border: 1px solid @modal-content-border-color;

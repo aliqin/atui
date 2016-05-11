@@ -8,7 +8,7 @@
     }"
     >
     <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
-      :style="{width: optionalWidth}">
+      :style="{width: width, height:height}">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
@@ -47,9 +47,8 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         coerce: coerceBoolean,
         twoWay: true
       },
-      width: {
-        default: null
-      },
+      width: String,
+      height:String,
       callback: {
         type: Function,
         default() {}
@@ -106,16 +105,6 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         }
       }, { immediate: true })
     },
-    computed: {
-      optionalWidth: function() {
-        if( this.width === null ) {
-          return null;
-        } else if( Number.isInteger(this.width) ) {
-          return this.width + "px";
-        }
-        return this.width;
-      },
-    },
     methods: {
       close() {
         this.show = false
@@ -144,7 +133,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
     -moz-transform: scale(0.1);
     -ms-transform: scale(0.1);
     transform: scale(0.1);
-    top: 300px;
+    top: 50%;
     opacity: 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -155,8 +144,8 @@ import coerceBoolean from '../utils/coerceBoolean.js'
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
-    -webkit-transform: translate3d(0, -300px, 0);
-    transform: translate3d(0, -300px, 0);
+    top: 50%;
+    left:50%;
     opacity: 1;
 }
 </style>

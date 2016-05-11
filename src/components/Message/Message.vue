@@ -12,8 +12,8 @@
       'top-right': 	(placement === 'top-right'),
       'center':      (placement === 'center'),
     }"
-    transition="fade"
-    v-bind:style="{width:width}"
+    :transition="transition"
+    :style="{width:width}"
     role="alert">
     <button v-show="dismissable" type="button" class="close" @click="show = false">
       <span>&times;</span>
@@ -58,7 +58,11 @@ import Icon from '../Icon'
       placement: {
         type: String
       },
-      content: String
+      content: String,
+      transition:{
+        type:String,
+        default:'fade'
+      }
     },
     components:{
       Icon
@@ -73,14 +77,3 @@ import Icon from '../Icon'
     }
   }
 </script>
-
-<style lang="less">
-.fade-transition {
-  transition: opacity .3s ease;
-}
-.fade-enter,
-.fade-leave {
-  height: 0;
-  opacity: 0;
-}
-</style>

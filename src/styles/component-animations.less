@@ -2,18 +2,27 @@
 // Component animations
 // --------------------------------------------------
 
-// Heads up!
-//
-// We don't use the `.opacity()` mixin here since it causes a bug with text
-// fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
-
 .fade-transition {
-  transition: opacity .3s ease;
+  transition: opacity .4s ease;
 }
 .fade-enter,
 .fade-leave {
   height: 0;
   opacity: 0;
+}
+
+.movedown-transition {
+  transition: top .3s ease;
+}
+.movedown-enter{
+  top:-100px !important;
+}
+
+.moveup-transition {
+  transition: top .3s ease;
+}
+.moveup-leave{
+  top:-100px !important;
 }
 
 .collapse {
