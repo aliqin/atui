@@ -4238,9 +4238,9 @@ return webpackJsonp_name_([1],[
 	        if (me.duration) {
 	          setTimeout(function () {
 	            me.transition = 'moveup';
-	            // let notice = document.getElementsByClassName('atui-message-notice')
-	            // let element = notice[notice.length-1]
-	            // document.getElementsByClassName('atui-message')[0].removeChild(element)
+	            var notice = document.getElementsByClassName('atui-message-notice');
+	            var element = notice[notice.length - 1];
+	            document.getElementsByClassName('atui-message')[0].removeChild(element);
 	          }, duration);
 	        }
 	      }

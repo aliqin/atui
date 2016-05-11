@@ -37,9 +37,9 @@ import Vue from 'vue'
         if(me.duration) {
           setTimeout(() => {
             me.transition = 'moveup'
-            // let notice = document.getElementsByClassName('atui-message-notice')
-            // let element = notice[notice.length-1]
-            // document.getElementsByClassName('atui-message')[0].removeChild(element)
+            let notice = document.getElementsByClassName('atui-message-notice')
+            let element = notice[notice.length-1]
+            document.getElementsByClassName('atui-message')[0].removeChild(element)
           },duration)
         }
       }
