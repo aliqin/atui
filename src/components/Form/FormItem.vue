@@ -1,6 +1,6 @@
 <template>
 <div class="form-item" :class="classObj">
-  <v-col :span="labelCol">
+  <v-col :span="labelCol" type="sm">
     <label v-if="label" class="form-label">
       <span v-if="isRequired" class="required-icon">*</span>
       {{label}}

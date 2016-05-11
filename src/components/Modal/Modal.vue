@@ -112,12 +112,14 @@ import coerceBoolean from '../utils/coerceBoolean.js'
     },
     compiled () {
       var me = this;
-
       window.addEventListener('keyup', function (ev) {
           if (ev.keyCode === 27) {
               me.show = false;
           }
       });
+    },
+    attached() {
+      this.$appendTo(document.body)
     }
   }
 </script>
