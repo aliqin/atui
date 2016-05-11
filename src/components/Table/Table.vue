@@ -208,8 +208,8 @@ export default {
         me.filterOpened = false
       },100)
 
-      me.checkedRows = []
-      me.isCheckedAll = false
+      // me.checkedRows = []
+      // me.isCheckedAll = false
       me.filters = {}
       me.filters[column.dataIndex] = [value]
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
