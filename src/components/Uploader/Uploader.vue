@@ -174,12 +174,13 @@
 
       if(this.advancedUpload) {
         this.addDragEvt();
-      } else {
-        if (!this.formId) {
-          throw "需要将该组件放置在一个有form-id属性值的form标签中"
-        }
-        this._wrappingForm = document.getElementById(this.formId);
       }
+      // else {
+      //   if (!this.formId) {
+      //     throw "需要将该组件放置在一个有form-id属性值的form标签中"
+      //   }
+      //   this._wrappingForm = document.getElementById(this.formId);
+      // }
     },
     beforeDestroy() {
       const events = ['drag', 'dragstart', 'dragend', 'dragleave', 'drop', 'dragover', 'dragenter'];
@@ -288,14 +289,14 @@
           iframe.style.display = 'none';
 
           document.body.appendChild(iframe);
-          this._wrappingForm.setAttribute('target', iframeName);
+          iframe.setAttribute('target', iframeName);
 
           iframe.addEventListener('load', () => {
             this.parseResponse(iframe.contentDocument.body.innerHTML);
-            this._wrappingForm.removeAttribute('target');
+            iframe.removeAttribute('target');
             iframe.parentNode.removeChild(iframe);
           })
-          this._wrappingForm.submit();
+          iframe.submit();
         } else {
           this.setError('iframe不支持跨域请求')
         }
