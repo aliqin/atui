@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///webpack:///src/components/Message/Message.vue?3940**"],"names":[],"mappings":"AAAA,iBAAiB,oCAAoC,2BAA2B,CAAC,wBAAwB,SAAS,SAAS,C","file":"alitx.css","sourcesContent":[".fade-transition{-webkit-transition:opacity .3s ease;transition:opacity .3s ease}.fade-enter,.fade-leave{height:0;opacity:0}\n\n\n/** WEBPACK FOOTER **\n ** webpack:///src/components/Message/Message.vue\n **/"],"sourceRoot":""}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"alitx.css","sourceRoot":""}
