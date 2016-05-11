@@ -121,31 +121,3 @@ import coerceBoolean from '../utils/coerceBoolean.js'
     }
   }
 </script>
-<style>
-.modal {
-  transition: all 0.3s ease;
-}
-.modal.in {
-  background-color: rgba(0,0,0,0.5);
-}
-.modal.zoom .modal-dialog {
-    -webkit-transform: scale(0.1);
-    -moz-transform: scale(0.1);
-    -ms-transform: scale(0.1);
-    transform: scale(0.1);
-    top: 50%;
-    opacity: 0;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-}
-.modal.zoom.in .modal-dialog {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-    top: 50%;
-    left:50%;
-    opacity: 1;
-}
-</style>
