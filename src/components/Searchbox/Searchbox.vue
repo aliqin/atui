@@ -1,6 +1,7 @@
 <template>
   <div class="search-box">
     <input type="text" class="input" :class="classObj" :placeholder="placeholder" v-model="value" @focus="focusInput" debounce="500" />
+    <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
     <icon type="search" :color="iconColor" size="14"></icon>
     <div v-if="searchList && searchList.length > 0" class="search-list-containter">
       <ul class="list-dropdown" v-show="showPop">
@@ -93,6 +94,9 @@
         this.value = val;
         this.$dispatch('searchbox-value-check', this.searchList[index], this);
         this.blurInput();
+      },
+      clearInput () {
+        this.value = '';
       }
     }
   }
