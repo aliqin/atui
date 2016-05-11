@@ -49,12 +49,6 @@
   // https://github.com/twbs/bootstrap/pull/10951.
   outline: 0;
 
-  // When fading in the modal, animate it to slide down
-  &.fade .modal-dialog {
-    .translate(0, -25%);
-    .transition-transform(~"0.3s ease-out");
-  }
-  &.in .modal-dialog { .translate(0, 0) }
 }
 .modal-open .modal {
   overflow-x: hidden;
@@ -66,17 +60,12 @@
   position: absolute;
   left:50%;
   top:50%;
+  transform:translate(-50%,-50%);
   width: auto;
-  margin: 10px;
-
 }
 
 // Actual modal
 .modal-content {
-  position: absolute;
-  width:100%;
-  right:50%;
-  bottom:50%;
   background-color: @modal-content-bg;
   border: 1px solid @modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
   border: 1px solid @modal-content-border-color;
@@ -147,13 +136,28 @@
   }
 }
 
-// Measure scrollbar width for padding body during modal show/hide
-.modal-scrollbar-measure {
-  position: absolute;
-  top: -9999px;
-  width: 50px;
-  height: 50px;
-  overflow: scroll;
+
+
+.modal {
+  transition: all 0.3s ease;
+}
+.modal.in {
+  background-color: rgba(0,0,0,0.5);
+}
+.modal.zoom .modal-dialog {
+    transform: scale(0.1);
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    opacity: 0;
+    transition: all 0.3s;
+}
+.modal.zoom.in .modal-dialog {
+    transform: scale(1);
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    opacity: 1;
 }
 
 // Scale up the modal
@@ -161,7 +165,6 @@
   // Automatically set modal's width for larger viewports
   .modal-dialog {
     width: @modal-md;
-    margin: 30px auto;
   }
   .modal-content {
     .box-shadow(0 5px 15px rgba(0,0,0,.5));
