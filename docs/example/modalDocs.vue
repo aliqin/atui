@@ -25,7 +25,7 @@
         </div>
       </modal>
       <button class="btn btn-default" @click="showCustomModal = true">Show custom modal</button>
-      <modal :show.sync="showCustomModal" effect="fade" width="90%">
+      <modal :show.sync="showCustomModal" effect="fade" width="90%" height="90%">
         <div slot="modal-header" class="modal-header">
           <h4 class="modal-title"><i>Custom</i> <code>Modal</code> <b>Title</b></h4>
         </div>
