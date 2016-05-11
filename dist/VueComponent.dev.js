@@ -7655,7 +7655,7 @@ return webpackJsonp_name_([1],[
 	      for (; i < len; i++) {
 	        var _itemWidth = Math.ceil(list[i].offsetWidth);
 	        self.navWidth += _itemWidth;
-	        self.itemsWidth.push({ width: _itemWidth, left: self.navWidth - _itemWidth });
+	        self.itemsWidth.push({ width: _itemWidth - 2, left: self.navWidth - _itemWidth });
 	        if (i < showlen) {
 	          self.wrapperWidth += _itemWidth;
 	        }
