@@ -4216,7 +4216,7 @@ return webpackJsonp_name_([1],[
 	    document.getElementsByClassName('atui-message')[0].appendChild(div);
 	    new _vue2.default({
 	      el: div,
-	      template: '<message class="atui-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :transition="transition">{{content}}</message>',
+	      template: '<message class="atui-message-notice" :show.sync="show" :duration="duration" :type="type" width="400px" :transition="transition" :placement="placement">{{content}}</message>',
 	      components: {
 	        Message: _Message2.default
 	      },
