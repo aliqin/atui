@@ -1021,7 +1021,7 @@ return webpackJsonp_name_([1],[
 	//       {{label}}
 	//     </label>
 	//   </v-col>
-	//   <v-col :span="wrapperCol || calcWrapperCol">
+	//   <v-col :span="wrapperCol || calcWrapperCol" type="sm">
 	//     <div class="form-input">
 	//       <slot></slot>
 	//       <template v-if="showIcon">
@@ -1106,7 +1106,7 @@ return webpackJsonp_name_([1],[
 /* 109 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"form-item\" :class=\"classObj\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</div>\n";
+	module.exports = "\n<div class=\"form-item\" :class=\"classObj\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\" type=\"sm\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</div>\n";
 
 /***/ },
 /* 110 */
@@ -2015,12 +2015,13 @@ return webpackJsonp_name_([1],[
 	
 	    if (this.advancedUpload) {
 	      this.addDragEvt();
-	    } else {
-	      if (!this.formId) {
-	        throw "需要将该组件放置在一个有form-id属性值的form标签中";
-	      }
-	      this._wrappingForm = document.getElementById(this.formId);
 	    }
+	    // else {
+	    //   if (!this.formId) {
+	    //     throw "需要将该组件放置在一个有form-id属性值的form标签中"
+	    //   }
+	    //   this._wrappingForm = document.getElementById(this.formId);
+	    // }
 	  },
 	  beforeDestroy: function beforeDestroy() {
 	    var _this = this;
@@ -2152,14 +2153,14 @@ return webpackJsonp_name_([1],[
 	          iframe.style.display = 'none';
 	
 	          document.body.appendChild(iframe);
-	          _this4._wrappingForm.setAttribute('target', iframeName);
+	          iframe.setAttribute('target', iframeName);
 	
 	          iframe.addEventListener('load', function () {
 	            _this4.parseResponse(iframe.contentDocument.body.innerHTML);
-	            _this4._wrappingForm.removeAttribute('target');
+	            iframe.removeAttribute('target');
 	            iframe.parentNode.removeChild(iframe);
 	          });
-	          _this4._wrappingForm.submit();
+	          iframe.submit();
 	        })();
 	      } else {
 	        this.setError('iframe不支持跨域请求');
