@@ -1,8 +1,8 @@
 <template>
 <div :class="['atui-table-container','atui-table-'+size, {loading :loading}]">
   <spin size="sm" v-if="loading"></spin>
-  <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
-  </table>
+  <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
+  </table> -->
   <div :class="['atui-table-body',{'atui-fixed-header':fixedHeader}]">
     <table class="atui-table">
       <colgroup>
@@ -226,7 +226,7 @@ export default {
     }
   },
   attached() {
-    this.fixedHeaderAction()
+    // this.fixedHeaderAction()
   }
 }
 </script>
