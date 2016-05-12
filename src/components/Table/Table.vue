@@ -131,7 +131,8 @@ export default {
         } else {
           me.isCheckedAll = false
         }
-      }
+      },
+      deep:true
     }
   },
   methods: {

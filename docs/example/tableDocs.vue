@@ -226,7 +226,7 @@ import {Table,Icon,Layout} from 'src/'
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
     render(text, record,index) {
-      return '<input type="text" v-model="gridData['+ index +'].age" />'
+      return '<input type="text" v-model="gridData['+ index +'].age"/>'
     },
     width:250
   }, {
