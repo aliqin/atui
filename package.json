@@ -68,7 +68,8 @@
     "build": "webpack --progress --hide-modules --config  webpack.build.js && NODE_ENV=production webpack --progress --hide-modules --config  webpack.build.js",
     "ci": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
     "cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
-    "test": "def ci test"
+    "test": "def ci test",
+    "authors": "git log --format='%aN <%aE>' | sort -u  > AUTHORS.txt"
   },
   "publishConfig": {
     "registry": "http://registry.npm.alibaba-inc.com"
