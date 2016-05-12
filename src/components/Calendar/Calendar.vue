@@ -84,7 +84,10 @@ const localeConfig = {
 export default {
   props: {
     value: {
-      type: String
+      type: String,
+      default () {
+        return new Date().toLocaleDateString()
+      }
     },
     format: {
       default: 'yyyy-MMMM-dd'
@@ -125,6 +128,9 @@ export default {
   },
   watch: {
     currDate() {
+      this.getDateRange()
+    },
+    disabledDate() {
       this.getDateRange()
     }
   },
@@ -175,7 +181,7 @@ export default {
     },
     daySelect(date, event) {
       let el = event.target
-      if (el.className.split(' ')[0] === 'atui-calendar-item-disable') {
+      if (el.className.split(' ').indexOf('atui-calendar-item-disable') >=0 ) {
         return false
       } else {
         this.currDate = date
@@ -297,9 +303,6 @@ export default {
         //   if (week === parseInt(el, 10)) sclass = 'atui-calendar-item-disable'
         // })
         // 开发者指定的禁用日期
-        if(this.disabledDate(date)) {
-          sclass = 'atui-calendar-item-disable'
-        }
         if (i === time.day) {
           if (this.value) {
             const valueDate = this.parse(this.value)
@@ -309,6 +312,9 @@ export default {
               }
             }
           }
+        }
+        if(this.disabledDate(date)) {
+          sclass = 'atui-calendar-item-disable'
         }
         this.dateRange.push({
           text: i,

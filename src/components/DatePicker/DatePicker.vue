@@ -1,11 +1,11 @@
 <template>
   <div class="atui-datepicker">
     <div class="atui-datepicker-toggle" @click="inputClick" >
-      <input class="datepicker-input" type="text" :value="value" :placeholder="placeholder" />
+      <input class="datepicker-input" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" />
       <icon type="calendar"></icon>
     </div>
     <div class="atui-datepicker-calendar">
-      <calendar :show="show" @change="selectChange" :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
+      <calendar :show="show" @change="selectChange" v-ref:calendar :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
     </div>
   </div>
 </template>
@@ -38,7 +38,8 @@ export default {
       default:function (date) {
 
       }
-    }
+    },
+    disabled:Boolean
   },
   components: {
     icon:Icon,
@@ -46,6 +47,9 @@ export default {
   },
   methods:{
     inputClick() {
+      if(this.disabled) {
+        return
+      }
       this.show = !this.show
     },
     selectChange(value) {
@@ -55,6 +59,11 @@ export default {
       return true
     }
   },
+  // watch() {
+  //   disabledDate() {
+  //     this.$ref
+  //   }
+  // }
   ready() {
     this._closeEvent = EventListener.listen(window, 'click', (e)=> {
       if (!this.$el.contains(e.target)) {
