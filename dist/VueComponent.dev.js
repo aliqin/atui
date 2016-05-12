@@ -4804,7 +4804,7 @@ return webpackJsonp_name_([1],[
 	      var checkedKeys = me.checkedRows.map(function (record) {
 	        return record[me.rowKey];
 	      });
-	      if (me.rowSelection.onChange) {
+	      if (me.rowSelection && me.rowSelection.onChange) {
 	        me.rowSelection.onChange(checkedKeys, me.checkedRows);
 	      }
 	      return checkedKeys;
@@ -4889,7 +4889,7 @@ return webpackJsonp_name_([1],[
 	      if (me.rowSelection.onSelectAll) {
 	        me.rowSelection.onSelectAll(checked, me.checkedRows, changeRows);
 	      }
-	      me.$dispatch('table-change', this.pagination, this.filters, this.sorter);
+	      // me.$dispatch('table-change', this.pagination, this.filters, this.sorter)
 	    },
 	
 	    // 选中某一个单选框时触发
