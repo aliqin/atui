@@ -3195,7 +3195,10 @@ return webpackJsonp_name_([1],[
 	exports.default = {
 	  props: {
 	    value: {
-	      type: String
+	      type: String,
+	      default: function _default() {
+	        return new Date().toLocaleDateString();
+	      }
 	    },
 	    format: {
 	      default: 'yyyy-MMMM-dd'
@@ -3237,6 +3240,9 @@ return webpackJsonp_name_([1],[
 	
 	  watch: {
 	    currDate: function currDate() {
+	      this.getDateRange();
+	    },
+	    disabledDate: function disabledDate() {
 	      this.getDateRange();
 	    }
 	  },
@@ -3286,7 +3292,7 @@ return webpackJsonp_name_([1],[
 	    },
 	    daySelect: function daySelect(date, event) {
 	      var el = event.target;
-	      if (el.className.split(' ')[0] === 'atui-calendar-item-disable') {
+	      if (el.className.split(' ').indexOf('atui-calendar-item-disable') >= 0) {
 	        return false;
 	      } else {
 	        this.currDate = date;
@@ -3402,9 +3408,6 @@ return webpackJsonp_name_([1],[
 	        //   if (week === parseInt(el, 10)) sclass = 'atui-calendar-item-disable'
 	        // })
 	        // 开发者指定的禁用日期
-	        if (this.disabledDate(date)) {
-	          sclass = 'atui-calendar-item-disable';
-	        }
 	        if (_i2 === time.day) {
 	          if (this.value) {
 	            var valueDate = this.parse(this.value);
@@ -3414,6 +3417,9 @@ return webpackJsonp_name_([1],[
 	              }
 	            }
 	          }
+	        }
+	        if (this.disabledDate(date)) {
+	          sclass = 'atui-calendar-item-disable';
 	        }
 	        this.dateRange.push({
 	          text: _i2,
@@ -3547,7 +3553,8 @@ return webpackJsonp_name_([1],[
 	    disabledDate: {
 	      type: Function,
 	      default: function _default(date) {}
-	    }
+	    },
+	    disabled: Boolean
 	  },
 	  components: {
 	    icon: _Icon2.default,
@@ -3555,6 +3562,9 @@ return webpackJsonp_name_([1],[
 	  },
 	  methods: {
 	    inputClick: function inputClick() {
+	      if (this.disabled) {
+	        return;
+	      }
 	      this.show = !this.show;
 	    },
 	    selectChange: function selectChange(value) {
@@ -3564,6 +3574,11 @@ return webpackJsonp_name_([1],[
 	      return true;
 	    }
 	  },
+	  // watch() {
+	  //   disabledDate() {
+	  //     this.$ref
+	  //   }
+	  // }
 	  ready: function ready() {
 	    var _this = this;
 	
@@ -3583,11 +3598,11 @@ return webpackJsonp_name_([1],[
 	// <template>
 	//   <div class="atui-datepicker">
 	//     <div class="atui-datepicker-toggle" @click="inputClick" >
-	//       <input class="datepicker-input" type="text" :value="value" :placeholder="placeholder" />
+	//       <input class="datepicker-input" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" />
 	//       <icon type="calendar"></icon>
 	//     </div>
 	//     <div class="atui-datepicker-calendar">
-	//       <calendar :show="show" @change="selectChange" :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
+	//       <calendar :show="show" @change="selectChange" v-ref:calendar :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
 	//     </div>
 	//   </div>
 	// </template>
@@ -3598,7 +3613,7 @@ return webpackJsonp_name_([1],[
 /* 154 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-datepicker\">\n  <div class=\"atui-datepicker-toggle\" @click=\"inputClick\" >\n    <input class=\"datepicker-input\" type=\"text\" :value=\"value\" :placeholder=\"placeholder\" />\n    <icon type=\"calendar\"></icon>\n  </div>\n  <div class=\"atui-datepicker-calendar\">\n    <calendar :show=\"show\" @change=\"selectChange\" :value=\"value\" :format=\"format\" :locale=\"locale\" :disabled-date=\"disabledDate\"></calendar>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"atui-datepicker\">\n  <div class=\"atui-datepicker-toggle\" @click=\"inputClick\" >\n    <input class=\"datepicker-input\" v-bind=\"{disabled:disabled}\" type=\"text\" :value=\"value\" :placeholder=\"placeholder\" />\n    <icon type=\"calendar\"></icon>\n  </div>\n  <div class=\"atui-datepicker-calendar\">\n    <calendar :show=\"show\" @change=\"selectChange\" v-ref:calendar :value=\"value\" :format=\"format\" :locale=\"locale\" :disabled-date=\"disabledDate\"></calendar>\n  </div>\n</div>\n";
 
 /***/ },
 /* 155 */
@@ -3657,7 +3672,8 @@ return webpackJsonp_name_([1],[
 	    },
 	    format: {
 	      default: 'yyyy-MMMM-dd'
-	    }
+	    },
+	    disabled: Boolean
 	  },
 	  data: function data() {
 	    return {};
@@ -3667,12 +3683,24 @@ return webpackJsonp_name_([1],[
 	    DatePicker: _DatePicker2.default
 	  },
 	  methods: {
+	    onStartDateChange: function onStartDateChange(value) {
+	      var me = this;
+	      me.setDisabledEndDate(value);
+	      if (me.endDate && new Date(me.endDate).getTime() > new Date(me.endDate).getTime()) {
+	        me.$dispatch('change', me.startDate, me.endDate);
+	      }
+	    },
+	    onEndDateChange: function onEndDateChange(value) {
+	      var me = this;
+	      if (me.startDate) {
+	        me.$dispatch('change', me.startDate, me.endDate);
+	      }
+	    },
 	    setDisabledEndDate: function setDisabledEndDate(value) {
 	      var endDate = this.$refs.endDate;
 	      endDate.disabledDate = function (date) {
 	        return date.getTime() <= new Date(value).getTime();
 	      };
-	      // endDate.getDateRange()
 	    }
 	  }
 	};
@@ -3681,9 +3709,9 @@ return webpackJsonp_name_([1],[
 	/* generated by vue-loader */
 	// <template>
 	// <div class="range-picker">
-	//   <date-picker v-ref:startDate :value.sync="startDate" placeholder="开始日期" @change="setDisabledEndDate"></date-picker>
+	//   <date-picker v-ref:start-date :value.sync="startDate" :disabled="disabled" placeholder="开始日期" @change="onStartDateChange"></date-picker>
 	//   <span class="range-picker-separator"> - </span>
-	//   <date-picker v-ref:end-date :value.sync="endDate" placeholder="结束日期" :disabled-date="disabledEndDate"></date-picker>
+	//   <date-picker v-ref:end-date :value.sync="endDate" :disabled="disabled" placeholder="结束日期" :disabled-date="disabledEndDate" @change="onEndDateChange"></date-picker>
 	// </div>
 	// </template>
 	// <script>
@@ -3692,7 +3720,7 @@ return webpackJsonp_name_([1],[
 /* 157 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"range-picker\">\n  <date-picker v-ref:startDate :value.sync=\"startDate\" placeholder=\"开始日期\" @change=\"setDisabledEndDate\"></date-picker>\n  <span class=\"range-picker-separator\"> - </span>\n  <date-picker v-ref:end-date :value.sync=\"endDate\" placeholder=\"结束日期\" :disabled-date=\"disabledEndDate\"></date-picker>\n</div>\n";
+	module.exports = "\n<div class=\"range-picker\">\n  <date-picker v-ref:start-date :value.sync=\"startDate\" :disabled=\"disabled\" placeholder=\"开始日期\" @change=\"onStartDateChange\"></date-picker>\n  <span class=\"range-picker-separator\"> - </span>\n  <date-picker v-ref:end-date :value.sync=\"endDate\" :disabled=\"disabled\" placeholder=\"结束日期\" :disabled-date=\"disabledEndDate\" @change=\"onEndDateChange\"></date-picker>\n</div>\n";
 
 /***/ },
 /* 158 */
