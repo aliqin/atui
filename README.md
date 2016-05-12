@@ -40,8 +40,8 @@ new Vue({
 ### 浏览器引用
 
 ```html
-<script src="//g.alicdn.com/aliqin/vue-component/0.0.3/vue.js"></script>
-<script src="//g.alicdn.com/aliqin/vue-component/0.0.3/VueComponent.js"></script>
+<script src="//g.alicdn.com/aliqin/vue-component/0.0.9/vue.dev.js"></script>
+<script src="//g.alicdn.com/aliqin/vue-component/0.0.9/VueComponent.dev.js"></script>
 <script>
   var alert = VueComponent.Alert
   new Vue({
