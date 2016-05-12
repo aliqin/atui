@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
     <row>
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" fixed-header></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" fixed-header v-ref:grid></grid>
     </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
@@ -331,8 +331,18 @@ import {Table,Icon,Layout} from 'src/'
       emptyData() {
         this.gridData = []
       },
-      onTableChange(i,j,k) {
-        console.log('sdfsdfsdfsdf',i,j,k)
+      onTableChange(paging,filter,sorter) {
+        console.log('table-change',paging,filter,sorter)
+        let me = this
+        let data = []
+        // if(filter && filter.length) {
+        //   filter.forEach((item)=>{
+        //     data = me.gridData.filter((record)=>{
+        //       return record[item].indexOf(item)
+        //     })
+        //   })
+        // }
+        this.gridData = this.gridData.reverse()
       },
       changeLoading() {
         this.loading = !this.loading
