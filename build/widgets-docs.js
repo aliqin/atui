@@ -45,19 +45,19 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(457);
+	module.exports = __webpack_require__(452);
 
 
 /***/ },
 
-/***/ 84:
+/***/ 86:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _from = __webpack_require__(85);
+	var _from = __webpack_require__(87);
 	
 	var _from2 = _interopRequireDefault(_from);
 	
@@ -77,30 +77,30 @@
 
 /***/ },
 
-/***/ 85:
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(86), __esModule: true };
-
-/***/ },
-
-/***/ 86:
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(87);
-	__webpack_require__(111);
-	module.exports = __webpack_require__(95).Array.from;
-
-/***/ },
-
 /***/ 87:
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = { "default": __webpack_require__(88), __esModule: true };
+
+/***/ },
+
+/***/ 88:
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(89);
+	__webpack_require__(113);
+	module.exports = __webpack_require__(97).Array.from;
+
+/***/ },
+
+/***/ 89:
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
-	var $at  = __webpack_require__(88)(true);
+	var $at  = __webpack_require__(90)(true);
 	
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(91)(String, 'String', function(iterated){
+	__webpack_require__(93)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -116,11 +116,11 @@
 
 /***/ },
 
-/***/ 88:
+/***/ 90:
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(89)
-	  , defined   = __webpack_require__(90);
+	var toInteger = __webpack_require__(91)
+	  , defined   = __webpack_require__(92);
 	// true  -> String#at
 	// false -> String#codePointAt
 	module.exports = function(TO_STRING){
@@ -139,7 +139,7 @@
 
 /***/ },
 
-/***/ 89:
+/***/ 91:
 /***/ function(module, exports) {
 
 	// 7.1.4 ToInteger
@@ -151,7 +151,7 @@
 
 /***/ },
 
-/***/ 90:
+/***/ 92:
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -162,20 +162,20 @@
 
 /***/ },
 
-/***/ 91:
+/***/ 93:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY        = __webpack_require__(92)
-	  , $export        = __webpack_require__(93)
-	  , redefine       = __webpack_require__(98)
-	  , hide           = __webpack_require__(99)
-	  , has            = __webpack_require__(104)
-	  , Iterators      = __webpack_require__(105)
-	  , $iterCreate    = __webpack_require__(106)
-	  , setToStringTag = __webpack_require__(107)
-	  , getProto       = __webpack_require__(100).getProto
-	  , ITERATOR       = __webpack_require__(108)('iterator')
+	var LIBRARY        = __webpack_require__(94)
+	  , $export        = __webpack_require__(95)
+	  , redefine       = __webpack_require__(100)
+	  , hide           = __webpack_require__(101)
+	  , has            = __webpack_require__(106)
+	  , Iterators      = __webpack_require__(107)
+	  , $iterCreate    = __webpack_require__(108)
+	  , setToStringTag = __webpack_require__(109)
+	  , getProto       = __webpack_require__(102).getProto
+	  , ITERATOR       = __webpack_require__(110)('iterator')
 	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
@@ -234,19 +234,19 @@
 
 /***/ },
 
-/***/ 92:
+/***/ 94:
 /***/ function(module, exports) {
 
 	module.exports = true;
 
 /***/ },
 
-/***/ 93:
+/***/ 95:
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(94)
-	  , core      = __webpack_require__(95)
-	  , ctx       = __webpack_require__(96)
+	var global    = __webpack_require__(96)
+	  , core      = __webpack_require__(97)
+	  , ctx       = __webpack_require__(98)
 	  , PROTOTYPE = 'prototype';
 	
 	var $export = function(type, name, source){
@@ -293,7 +293,7 @@
 
 /***/ },
 
-/***/ 94:
+/***/ 96:
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -303,7 +303,7 @@
 
 /***/ },
 
-/***/ 95:
+/***/ 97:
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '1.2.6'};
@@ -311,11 +311,11 @@
 
 /***/ },
 
-/***/ 96:
+/***/ 98:
 /***/ function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(97);
+	var aFunction = __webpack_require__(99);
 	module.exports = function(fn, that, length){
 	  aFunction(fn);
 	  if(that === undefined)return fn;
@@ -337,7 +337,7 @@
 
 /***/ },
 
-/***/ 97:
+/***/ 99:
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -347,19 +347,19 @@
 
 /***/ },
 
-/***/ 98:
+/***/ 100:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(99);
+	module.exports = __webpack_require__(101);
 
 /***/ },
 
-/***/ 99:
+/***/ 101:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $          = __webpack_require__(100)
-	  , createDesc = __webpack_require__(101);
-	module.exports = __webpack_require__(102) ? function(object, key, value){
+	var $          = __webpack_require__(102)
+	  , createDesc = __webpack_require__(103);
+	module.exports = __webpack_require__(104) ? function(object, key, value){
 	  return $.setDesc(object, key, createDesc(1, value));
 	} : function(object, key, value){
 	  object[key] = value;
@@ -368,7 +368,7 @@
 
 /***/ },
 
-/***/ 100:
+/***/ 102:
 /***/ function(module, exports) {
 
 	var $Object = Object;
@@ -387,7 +387,7 @@
 
 /***/ },
 
-/***/ 101:
+/***/ 103:
 /***/ function(module, exports) {
 
 	module.exports = function(bitmap, value){
@@ -401,17 +401,17 @@
 
 /***/ },
 
-/***/ 102:
+/***/ 104:
 /***/ function(module, exports, __webpack_require__) {
 
 	// Thank's IE8 for his funny defineProperty
-	module.exports = !__webpack_require__(103)(function(){
+	module.exports = !__webpack_require__(105)(function(){
 	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
 	});
 
 /***/ },
 
-/***/ 103:
+/***/ 105:
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -424,7 +424,7 @@
 
 /***/ },
 
-/***/ 104:
+/***/ 106:
 /***/ function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -434,24 +434,24 @@
 
 /***/ },
 
-/***/ 105:
+/***/ 107:
 /***/ function(module, exports) {
 
 	module.exports = {};
 
 /***/ },
 
-/***/ 106:
+/***/ 108:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $              = __webpack_require__(100)
-	  , descriptor     = __webpack_require__(101)
-	  , setToStringTag = __webpack_require__(107)
+	var $              = __webpack_require__(102)
+	  , descriptor     = __webpack_require__(103)
+	  , setToStringTag = __webpack_require__(109)
 	  , IteratorPrototype = {};
 	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(99)(IteratorPrototype, __webpack_require__(108)('iterator'), function(){ return this; });
+	__webpack_require__(101)(IteratorPrototype, __webpack_require__(110)('iterator'), function(){ return this; });
 	
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = $.create(IteratorPrototype, {next: descriptor(1, next)});
@@ -460,12 +460,12 @@
 
 /***/ },
 
-/***/ 107:
+/***/ 109:
 /***/ function(module, exports, __webpack_require__) {
 
-	var def = __webpack_require__(100).setDesc
-	  , has = __webpack_require__(104)
-	  , TAG = __webpack_require__(108)('toStringTag');
+	var def = __webpack_require__(102).setDesc
+	  , has = __webpack_require__(106)
+	  , TAG = __webpack_require__(110)('toStringTag');
 	
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
@@ -473,12 +473,12 @@
 
 /***/ },
 
-/***/ 108:
+/***/ 110:
 /***/ function(module, exports, __webpack_require__) {
 
-	var store  = __webpack_require__(109)('wks')
-	  , uid    = __webpack_require__(110)
-	  , Symbol = __webpack_require__(94).Symbol;
+	var store  = __webpack_require__(111)('wks')
+	  , uid    = __webpack_require__(112)
+	  , Symbol = __webpack_require__(96).Symbol;
 	module.exports = function(name){
 	  return store[name] || (store[name] =
 	    Symbol && Symbol[name] || (Symbol || uid)('Symbol.' + name));
@@ -486,10 +486,10 @@
 
 /***/ },
 
-/***/ 109:
+/***/ 111:
 /***/ function(module, exports, __webpack_require__) {
 
-	var global = __webpack_require__(94)
+	var global = __webpack_require__(96)
 	  , SHARED = '__core-js_shared__'
 	  , store  = global[SHARED] || (global[SHARED] = {});
 	module.exports = function(key){
@@ -498,7 +498,7 @@
 
 /***/ },
 
-/***/ 110:
+/***/ 112:
 /***/ function(module, exports) {
 
 	var id = 0
@@ -509,18 +509,18 @@
 
 /***/ },
 
-/***/ 111:
+/***/ 113:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ctx         = __webpack_require__(96)
-	  , $export     = __webpack_require__(93)
-	  , toObject    = __webpack_require__(112)
-	  , call        = __webpack_require__(113)
-	  , isArrayIter = __webpack_require__(116)
-	  , toLength    = __webpack_require__(117)
-	  , getIterFn   = __webpack_require__(118);
-	$export($export.S + $export.F * !__webpack_require__(121)(function(iter){ Array.from(iter); }), 'Array', {
+	var ctx         = __webpack_require__(98)
+	  , $export     = __webpack_require__(95)
+	  , toObject    = __webpack_require__(114)
+	  , call        = __webpack_require__(115)
+	  , isArrayIter = __webpack_require__(118)
+	  , toLength    = __webpack_require__(119)
+	  , getIterFn   = __webpack_require__(120);
+	$export($export.S + $export.F * !__webpack_require__(123)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -552,22 +552,22 @@
 
 /***/ },
 
-/***/ 112:
+/***/ 114:
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(90);
+	var defined = __webpack_require__(92);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
 
-/***/ 113:
+/***/ 115:
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
-	var anObject = __webpack_require__(114);
+	var anObject = __webpack_require__(116);
 	module.exports = function(iterator, fn, value, entries){
 	  try {
 	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -581,10 +581,10 @@
 
 /***/ },
 
-/***/ 114:
+/***/ 116:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(115);
+	var isObject = __webpack_require__(117);
 	module.exports = function(it){
 	  if(!isObject(it))throw TypeError(it + ' is not an object!');
 	  return it;
@@ -592,7 +592,7 @@
 
 /***/ },
 
-/***/ 115:
+/***/ 117:
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -601,12 +601,12 @@
 
 /***/ },
 
-/***/ 116:
+/***/ 118:
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
-	var Iterators  = __webpack_require__(105)
-	  , ITERATOR   = __webpack_require__(108)('iterator')
+	var Iterators  = __webpack_require__(107)
+	  , ITERATOR   = __webpack_require__(110)('iterator')
 	  , ArrayProto = Array.prototype;
 	
 	module.exports = function(it){
@@ -615,11 +615,11 @@
 
 /***/ },
 
-/***/ 117:
+/***/ 119:
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(89)
+	var toInteger = __webpack_require__(91)
 	  , min       = Math.min;
 	module.exports = function(it){
 	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -627,13 +627,13 @@
 
 /***/ },
 
-/***/ 118:
+/***/ 120:
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(119)
-	  , ITERATOR  = __webpack_require__(108)('iterator')
-	  , Iterators = __webpack_require__(105);
-	module.exports = __webpack_require__(95).getIteratorMethod = function(it){
+	var classof   = __webpack_require__(121)
+	  , ITERATOR  = __webpack_require__(110)('iterator')
+	  , Iterators = __webpack_require__(107);
+	module.exports = __webpack_require__(97).getIteratorMethod = function(it){
 	  if(it != undefined)return it[ITERATOR]
 	    || it['@@iterator']
 	    || Iterators[classof(it)];
@@ -641,12 +641,12 @@
 
 /***/ },
 
-/***/ 119:
+/***/ 121:
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
-	var cof = __webpack_require__(120)
-	  , TAG = __webpack_require__(108)('toStringTag')
+	var cof = __webpack_require__(122)
+	  , TAG = __webpack_require__(110)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
 	
@@ -663,7 +663,7 @@
 
 /***/ },
 
-/***/ 120:
+/***/ 122:
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -674,10 +674,10 @@
 
 /***/ },
 
-/***/ 121:
+/***/ 123:
 /***/ function(module, exports, __webpack_require__) {
 
-	var ITERATOR     = __webpack_require__(108)('iterator')
+	var ITERATOR     = __webpack_require__(110)('iterator')
 	  , SAFE_CLOSING = false;
 	
 	try {
@@ -701,16 +701,16 @@
 
 /***/ },
 
-/***/ 122:
+/***/ 124:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(123)
+	__vue_script__ = __webpack_require__(125)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/headerDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(124)
+	__vue_template__ = __webpack_require__(126)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -720,7 +720,7 @@
 
 /***/ },
 
-/***/ 123:
+/***/ 125:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -809,14 +809,14 @@
 
 /***/ },
 
-/***/ 124:
+/***/ 126:
 /***/ function(module, exports) {
 
 	module.exports = "\n<header class=\"navbar navbar-top bs-docs-nav\" id=\"top\" role=\"banner\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button class=\"navbar-toggle collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#bs-navbar\" aria-controls=\"bs-navbar\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a href=\"\" class=\"navbar-brand\">VueComponent</a>\n    </div>\n    <nav id=\"bs-navbar\" class=\"collapse navbar-collapse\">\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"components.html\">\n          组件\n        </a></li>\n        <li><a href=\"widgets.html\">\n          Widgets\n        </a></li>\n        <li><a href=\"filters.html\">\n          filters\n        </a></li>\n        <li><a href=\"http://gitlab.alibaba-inc.com/aliqin/vue-component/\">\n          GitLab\n        </a></li>\n        <li><a href=\"http://ued.aliqin.alibaba.net/webcompon/\" target=\"_blank\">\n          视觉稿\n        </a></li>\n      </ul>\n    </nav>\n  </div>\n</header>\n<ul class=\"themes\" id=\"J_header\">\n  <li v-for=\"theme in themes\" :class=\"{active:theme.active}\" :style=\"{backgroundColor:theme.color}\" @click=\"changeTheme(theme.csslink,$event)\">\n  </li>\n</ul>\n";
 
 /***/ },
 
-/***/ 130:
+/***/ 132:
 /***/ function(module, exports) {
 
 	/*
@@ -873,7 +873,7 @@
 
 /***/ },
 
-/***/ 131:
+/***/ 133:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -1096,7 +1096,7 @@
 
 /***/ },
 
-/***/ 165:
+/***/ 167:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1137,17 +1137,17 @@
 
 /***/ },
 
-/***/ 257:
+/***/ 252:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(258)
-	__vue_script__ = __webpack_require__(260)
+	__webpack_require__(253)
+	__vue_script__ = __webpack_require__(255)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Affix.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(261)
+	__vue_template__ = __webpack_require__(256)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1157,16 +1157,16 @@
 
 /***/ },
 
-/***/ 258:
+/***/ 253:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(259);
+	var content = __webpack_require__(254);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(131)(content, {});
+	var update = __webpack_require__(133)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1184,10 +1184,10 @@
 
 /***/ },
 
-/***/ 259:
+/***/ 254:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(130)();
+	exports = module.exports = __webpack_require__(132)();
 	// imports
 	
 	
@@ -1199,7 +1199,7 @@
 
 /***/ },
 
-/***/ 260:
+/***/ 255:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1208,7 +1208,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(165);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -1309,39 +1309,39 @@
 
 /***/ },
 
-/***/ 261:
+/***/ 256:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n<div v-bind:class=\"{'vue-affix': affixed}\"\n  v-bind:style=\"styles\">\n  <slot></slot>\n</div>\n</div>\n";
 
 /***/ },
 
-/***/ 336:
+/***/ 331:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 337:
+/***/ 332:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 338:
+/***/ 333:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 400:
+/***/ 395:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(401)
+	__vue_template__ = __webpack_require__(396)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1351,21 +1351,21 @@
 
 /***/ },
 
-/***/ 401:
+/***/ 396:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"container bs-docs-container\">\n  <div class=\"row\">\n      <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
 
-/***/ 453:
+/***/ 448:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 454:
+/***/ 449:
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -2090,7 +2090,7 @@
 
 /***/ },
 
-/***/ 455:
+/***/ 450:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2115,39 +2115,39 @@
 
 /***/ },
 
-/***/ 457:
+/***/ 452:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _toConsumableArray2 = __webpack_require__(84);
+	var _toConsumableArray2 = __webpack_require__(86);
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _headerDocs = __webpack_require__(122);
+	var _headerDocs = __webpack_require__(124);
 	
 	var _headerDocs2 = _interopRequireDefault(_headerDocs);
 	
-	var _Affix = __webpack_require__(257);
+	var _Affix = __webpack_require__(252);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _container = __webpack_require__(400);
+	var _container = __webpack_require__(395);
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _addressSelectDocs = __webpack_require__(458);
+	var _addressSelectDocs = __webpack_require__(453);
 	
 	var _addressSelectDocs2 = _interopRequireDefault(_addressSelectDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(453);
-	__webpack_require__(336);
-	__webpack_require__(337);
-	__webpack_require__(338);
-	__webpack_require__(454);
-	__webpack_require__(455);
+	__webpack_require__(448);
+	__webpack_require__(331);
+	__webpack_require__(332);
+	__webpack_require__(333);
+	__webpack_require__(449);
+	__webpack_require__(450);
 	//widgets
 	
 	
@@ -2230,16 +2230,16 @@
 
 /***/ },
 
-/***/ 458:
+/***/ 453:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(459)
+	__vue_script__ = __webpack_require__(454)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/widgets/addressSelectDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(466)
+	__vue_template__ = __webpack_require__(461)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2249,7 +2249,7 @@
 
 /***/ },
 
-/***/ 459:
+/***/ 454:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2258,7 +2258,7 @@
 	  value: true
 	});
 	
-	var _widgets = __webpack_require__(460);
+	var _widgets = __webpack_require__(455);
 	
 	exports.default = {
 	  data: function data() {
@@ -2407,12 +2407,12 @@
 
 /***/ },
 
-/***/ 460:
+/***/ 455:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _AddressSelect = __webpack_require__(461);
+	var _AddressSelect = __webpack_require__(456);
 	
 	var _AddressSelect2 = _interopRequireDefault(_AddressSelect);
 	
@@ -2429,7 +2429,7 @@
 
 /***/ },
 
-/***/ 461:
+/***/ 456:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2438,7 +2438,7 @@
 	  value: true
 	});
 	
-	var _AddressSelect = __webpack_require__(462);
+	var _AddressSelect = __webpack_require__(457);
 	
 	var _AddressSelect2 = _interopRequireDefault(_AddressSelect);
 
@@ -2448,16 +2448,16 @@
 
 /***/ },
 
-/***/ 462:
+/***/ 457:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(463)
+	__vue_script__ = __webpack_require__(458)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/widgets/AddressSelect/AddressSelect.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(465)
+	__vue_template__ = __webpack_require__(460)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2467,7 +2467,7 @@
 
 /***/ },
 
-/***/ 463:
+/***/ 458:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2476,11 +2476,11 @@
 	  value: true
 	});
 	
-	var _addr = __webpack_require__(464);
+	var _addr = __webpack_require__(459);
 	
 	var _addr2 = _interopRequireDefault(_addr);
 	
-	var _EventListener = __webpack_require__(165);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -2881,7 +2881,7 @@
 
 /***/ },
 
-/***/ 464:
+/***/ 459:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2894,14 +2894,14 @@
 
 /***/ },
 
-/***/ 465:
+/***/ 460:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"address-box\" :class=\"classObj\" @click.stop=\"showAddrPopFun\" @blur=\"hideAddrPopFun\">\n  <div v-if=\"province\" class=\"ad-select has-select\" v-html=\"selectAddr\"></div>\n  <div v-else class=\"ad-select\">{{placeholder}}</div>\n  <i class=\"ad-drop\" :class=\"{'drop-down': showAddrPop}\"></i>\n  <div class=\"ad-overlay\" v-show=\"showAddrPop\">\n    <div class=\"ad-overlay-container\">\n      <div class=\"tab-list\">\n        <ul>\n          <li v-for=\"tab in tabList\" :class=\"{'active': current == tab.id}\" :style=\"{'width': (100/tabList.length)+'%'}\" @click.stop.stop=\"navChoose(tab.id)\">{{tab.name}}</li>\n        </ul>\n      </div>\n      <div class=\"tab-content\">\n        <div class=\"province-content\" v-show=\"current == 'province'\">\n          <dl v-for=\"key in list.provinceList\">\n            <dt>{{$key}}</dt>\n            <dd>\n              <a v-for=\"prov in key\" :title=\"prov[1]\" :attr-id=\"prov[0]\" href=\"javascript:;\" @click=\"chooseProvince(prov[0], prov[1])\" :class=\"{'active': provinceId == prov[0]}\">\n                <input v-if=\"provinceId == prov[0]\" value=\"{{prov[1]}}\" type=\"hidden\" v-model=\"province\" />\n                {{prov[1]}}\n              </a>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"city-content\" v-show=\"current == 'city'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.countyList\">\n                <a v-if=\"item[2] == provinceId\" title=\"{{item[1]}}\" attr-id=\"{{item[0]}}\" href=\"javascript:;\" @click.stop=\"chooseCity(item[0], item[1])\" :class=\"{'active': cityId == item[0]}\" track-by=\"item[0]\">\n                  <input v-if=\"cityId == item[0]\" value=\"{{item[1]}}\" type=\"hidden\" v-model=\"city\" />\n                  {{item[1]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"county-content\" v-if=\"tabList[2]\" v-show=\"current == 'county'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.countyList\">\n                <a v-if=\"item[2] == cityId\" title=\"{{item[1]}}\" attr-id=\"{{item[0]}}\" href=\"javascript:;\" @click.stop=\"chooseCounty(item[0], item[1])\" :class=\"{'active': countyId == item[0]}\" track-by=\"item[0]\">\n                  <input v-if=\"countyId == item[0]\" value=\"{{item[1]}}\" type=\"hidden\" v-model=\"county\" />\n                  {{item[1]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"street-content\" v-if=\"tabList[3]\" v-show=\"current == 'street'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.streetList\">\n                <a title=\"{{item[0]}}\" attr-id=\"{{$key}}\" parent-id=\"{{item[1]}}\" href=\"javascript:;\" @click.stop=\"chooseStreet($key, item[0])\" :class=\"{'active': streetId == $key}\" track-by=\"$key\">\n                  <input v-if=\"streetId == $key\" value=\"{{item[0]}}\" type=\"hidden\" v-model=\"street\" />\n                  {{item[0]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n";
 
 /***/ },
 
-/***/ 466:
+/***/ 461:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"addressselect\">\n    <h3 class=\"page-header\"><a href=\"#addressselect\" class=\"anchor\">AddressSelect 地址选择 </a></h3>\n    <div class=\"bs-example\">\n      <h4>无默认选中</h4>\n      <address-select large level=\"2\" placeholder=\"请选择省市\"></address-select>\n      <br>\n      <address-select small level=\"3\" placeholder=\"请选择省市区\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\"></address-select>\n      <br>\n      <h4>有默认选中</h4>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr1\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr2\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr3\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr4\"></address-select>\n      <br>\n      <button type=\"button\" class=\"btn\" id=\"J_click\">点击</button>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<address-select large level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr1\"></address-select>\n<address-select small level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr2\"></address-select>\n<address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr3\"></address-select>\n<address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr4\"></address-select>\n    </script></code></pre>\n    </script>\n    </code>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>预期值的提示信息</td>\n        </tr>\n        <tr>\n          <td>level</td>\n          <td><code>String</code></td>\n          <td><code>4</code></td>\n          <td>省份-城市-县区-街道四级地址，要显示几级</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>组件尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>组件尺寸，小</td>\n        </tr>\n        <tr>\n          <td>default-addr</td>\n          <td><code>Object</code></td>\n          <td><code>{\n        provinceId: '',\n        cityId: '',\n        countyId: '',\n        streetId: ''\n      }</code></td>\n          <td>默认要选中的省份、城市、县/区、街道对应ID</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";

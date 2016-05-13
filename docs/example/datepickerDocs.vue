@@ -7,10 +7,10 @@
 选择日期是: {{new Date(value).toString().slice(0, -23)}}
         </pre>
       </p>
-      <date-picker v-ref:dp :value.sync="value"
+      <date-picker v-ref:dp
       :format="format.toString()" @change="selectChange"></date-picker>
 
-
+      <date-picker disabled :format="format" @change="selectChange"></date-picker>
 
       <h4>格式化</h4>
       <v-select :value.sync="format" >
@@ -23,7 +23,7 @@
 
       <h4>日期范围选择（rangePicker）</h4>
 
-      <range-picker></range-picker>
+      <range-picker @change="rangePickerChange"></range-picker>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <date-picker v-ref:dp :value.sync="value" :format="format.toString()" @change="selectChange"></date-picker>
@@ -117,6 +117,9 @@ const RangePicker = DatePicker.RangePicker
     methods:{
       selectChange(value) {
         alert(value)
+      },
+      rangePickerChange(start,end) {
+        console.log('rangepicker',start,end)
       }
     }
   }

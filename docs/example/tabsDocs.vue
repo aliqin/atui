@@ -19,8 +19,25 @@
         </tab>
       </tabs>
       <br><br>
+      <h4 class="example-title">迷你型</h4>
+      <tabs :base="true" size="small">
+        <tab header="系统短信签名">
+          <p>
+            选项卡一内容
+          </p>
+        </tab>
+        <tab header="推广短信签名">
+           <p>
+              选项卡二内容
+           </p>
+        </tab>
+        <tab header="被禁用的" disabled>
+          ...
+        </tab>
+      </tabs>
+      <br><br>
       <h4 class="example-title">Tab数量较多的情况</h4>
-      <tabs :base="true" trigger="hover">
+      <tabs :base="true" trigger="hover" >
         <tab header="系统短信签名">
           <p>
             选项卡一内容
@@ -52,7 +69,7 @@
       </tabs>
       <br><br>
       <h4 class="example-title">选项卡型</h4>
-      <tabs >
+      <tabs @on-tab-click="handleOnClick">
         <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
           <p>
             选项卡一内容
@@ -106,6 +123,21 @@
     ...
   </tab>
 </tabs>
+<tabs :base="true" size="small">
+  <tab header="系统短信签名">
+    <p>
+      选项卡一内容
+    </p>
+  </tab>
+  <tab header="推广短信签名">
+     <p>
+        选项卡二内容
+     </p>
+  </tab>
+  <tab header="被禁用的" disabled>
+    ...
+  </tab>
+</tabs>
 <tabs :base="true" trigger="hover">
   <tab header="系统短信签名">
     <p>
@@ -136,7 +168,7 @@
      </p>
   </tab>
 </tabs>
-<tabs >
+<tabs @on-tab-click="handleOnClick">
   <tab header="推广短信签名啊啊啊中啊啊啊啊啊啊啊">
     <p>
       选项卡一内容
@@ -214,10 +246,22 @@
         <td>当前想要显示出多少个Tab</td>
       </tr>
       <tr>
+        <td>size</td>
+        <td><code>String</code></td>
+        <td>'default'</td>
+        <td>大小，提供default和small两种大小</td>
+      </tr>
+      <tr>
         <td>trigger</td>
         <td><code>String</code></td>
         <td>click</td>
         <td>以何种方式触发选中Tab(可选，click，hover)</td>
+      </tr>
+      <tr>
+        <td>@on-tab-click</td>
+        <td><code>Function</code></td>
+        <td></td>
+        <td>tab被点击的回调，回调参数为当前tab的索引值</td>
       </tr>
     </tbody>
   </table>
@@ -236,6 +280,11 @@
     components: {
       Tabs,
       Tab
+    },
+    methods: {
+      handleOnClick (index) {
+        alert(index)
+      }
     }
   }
 </script>
