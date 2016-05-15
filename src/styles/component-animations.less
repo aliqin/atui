@@ -4,6 +4,7 @@
 
 .fade-transition {
   transition: opacity .4s ease;
+  display: block;
 }
 .fade-enter,
 .fade-leave {
@@ -25,19 +26,37 @@
   top:-100px !important;
 }
 
-.collapse {
-  display: none;
-
-  &.in      { display: block; }
-  tr&.in    { display: table-row; }
-  tbody&.in { display: table-row-group; }
+// scale--------------
+.scale-transition,
+.fade-transition {
+  display: block;
+}
+.scale-enter {
+  animation:scale-in 0.15s ease-in;
+}
+.scale-leave {
+  animation:scale-out 0.15s ease-out;
+}
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 
-.collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  .transition-property(~"height, visibility");
-  .transition-duration(.35s);
-  .transition-timing-function(ease);
-}
+// scale--------------
+
