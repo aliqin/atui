@@ -1,7 +1,7 @@
 <template>
   <div class="atui-datepicker">
     <div class="atui-datepicker-toggle" @click="inputClick" >
-      <input class="datepicker-input" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" />
+      <input class="datepicker-input" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
       <icon type="calendar"></icon>
     </div>
     <div class="atui-datepicker-calendar">

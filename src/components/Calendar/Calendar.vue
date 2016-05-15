@@ -287,10 +287,12 @@ export default {
         const prevMonthDayCount = this.getDayCount(preMonth.year, preMonth.month)
         for (let i = 1; i < firstDayWeek; i++) {
           const dayText = prevMonthDayCount - firstDayWeek + i + 1
+          const date = new Date(preMonth.year, preMonth.month, dayText)
+          const sclass = this.disabledDate(date) ? 'atui-calendar-item-disable' : 'atui-calendar-item-gray'
           this.dateRange.push({
             text: dayText,
-            date: new Date(preMonth.year, preMonth.month, dayText),
-            sclass: 'atui-calendar-item-gray'
+            date: date,
+            sclass: sclass
           })
         }
       }
@@ -326,12 +328,13 @@ export default {
       if (this.dateRange.length < 42) {
         const nextMonthNeed = 42 - this.dateRange.length
         const nextMonth = this.getYearMonth(time.year, time.month + 1)
-
         for (let i = 1; i <= nextMonthNeed; i++) {
+          const date = new Date(nextMonth.year, nextMonth.month, i)
+          const sclass = this.disabledDate(date) ? 'atui-calendar-item-disable' : 'atui-calendar-item-gray'
           this.dateRange.push({
             text: i,
-            date: new Date(nextMonth.year, nextMonth.month, i),
-            sclass: 'atui-calendar-item-gray'
+            date: date,
+            sclass: sclass
           })
         }
       }

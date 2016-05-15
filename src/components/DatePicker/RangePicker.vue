@@ -48,7 +48,7 @@
       setDisabledEndDate(value) {
         let endDate = this.$refs.endDate
         endDate.disabledDate = function(date) {
-          return date.getTime() <= new Date(value).getTime();
+          return date.getTime() <= new Date(value).getTime()
         }
       }
     }

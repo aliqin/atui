@@ -53,55 +53,57 @@ const PopoverMixin = {
     resetPos (initial) {
       const popover = this.$els.popover
       const triger  = this.$els.trigger.children[0]
-
+      const offset = triger.getBoundingClientRect()
+      const offsetLeft = document.body.scrollLeft + offset.left
+      const offsetTop = document.body.scrollTop + offset.top
       switch (this.placement) {
         case 'top' :
-          this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2
-          this.position.top = triger.offsetTop  - popover.offsetHeight
+          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2
+          this.position.top = offsetTop  - popover.offsetHeight
           break
         case 'topLeft' :
-          this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4
-          this.position.top = triger.offsetTop  - popover.offsetHeight
+          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4
+          this.position.top = offsetTop  - popover.offsetHeight
           break
         case 'topRight' :
-          this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4
-          this.position.top = triger.offsetTop  - popover.offsetHeight
+          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4
+          this.position.top = offsetTop  - popover.offsetHeight
           break
         case 'left':
-          this.position.left = triger.offsetLeft - popover.offsetWidth
-          this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2
+          this.position.left = offsetLeft - popover.offsetWidth
+          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2
           break
         case 'leftTop':
-          this.position.left = triger.offsetLeft - popover.offsetWidth
-          this.position.top = triger.offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4
+          this.position.left = offsetLeft - popover.offsetWidth
+          this.position.top = offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4
           break
         case 'leftBottom':
-          this.position.left = triger.offsetLeft - popover.offsetWidth
-          this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4
+          this.position.left = offsetLeft - popover.offsetWidth
+          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4
           break
         case 'right':
-          this.position.left = triger.offsetLeft + triger.offsetWidth
-          this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2
+          this.position.left = offsetLeft + triger.offsetWidth
+          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2
           break
         case 'rightTop':
-          this.position.left = triger.offsetLeft + triger.offsetWidth
-          this.position.top = triger.offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4
+          this.position.left = offsetLeft + triger.offsetWidth
+          this.position.top = offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4
           break
         case 'rightBottom':
-          this.position.left = triger.offsetLeft + triger.offsetWidth
+          this.position.left = offsetLeft + triger.offsetWidth
           this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4
           break
         case 'bottom':
-          this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2
-          this.position.top = triger.offsetTop + triger.offsetHeight
+          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2
+          this.position.top = offsetTop + triger.offsetHeight
           break
         case 'bottomLeft':
-          this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4
-          this.position.top = triger.offsetTop + triger.offsetHeight
+          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4
+          this.position.top = offsetTop + triger.offsetHeight
           break
         case 'bottomRight':
-          this.position.left = triger.offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4
-          this.position.top = triger.offsetTop + triger.offsetHeight
+          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4
+          this.position.top = offsetTop + triger.offsetHeight
           break
         default:
           console.log('Wrong placement prop')
@@ -129,7 +131,11 @@ const PopoverMixin = {
       //popover.style.transform = 'translate(' + this.position.left + 'px, ' + this.position.top + 'px)'
     },
   },
-
+  attached() {
+    if(this.$els.popover) {
+      document.body.appendChild(this.$els.popover)
+    }
+  },
   ready() {
     if (!this.$els.popover) return console.error("Couldn't find popover v-el in your component that uses popoverMixin.");
 
