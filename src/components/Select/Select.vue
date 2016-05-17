@@ -1,6 +1,6 @@
 <template>
   <div class="select-container" v-bind:class="{open: show,disabled: disabled,multiple:multiple}">
-    <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" v-bind="{disabled: disabled}"
+    <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
     >
       <template v-if="!multiple">
         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
@@ -27,6 +27,7 @@
   import Icon from '../Icon/'
   import Tag from '../Tag/'
   export default {
+    name:'select',
     props: {
       width:{
         type: Array,
@@ -85,6 +86,7 @@
         searchText: '',
         noResult:false,
         show: false,
+        activeIndex:0,
         selectedOptions:[],
         showPlaceholder:true,
         showNotify: false,
@@ -104,7 +106,7 @@
           setTimeout(() => this.showNotify = false, 1000)
         }
       },
-      selectedOptions() {
+      selectedOptions(val) {
         if(this.multiple) {
           this.value = this.selectedOptions.map((option)=>{
             return option.value
@@ -112,12 +114,10 @@
         } else {
           this.value = this.selectedOptions[0].value
         }
+        this.$dispatch('change',val)
       }
     },
     methods: {
-      select(option) {
-        this.$dispatch('change',option)
-      },
       toggleDropdown() {
         if(this.disabled) {
           this.show = false
@@ -151,22 +151,44 @@
       createTag() {
         if(this.tags) {
           let value = event.target.value
-          console.log(value)
           if(!value || !value.trim().length) {
             return
           }
           if(this.value.indexOf(value) === -1) {
-            this.selectedOptions.push({
+            const option = {
               label:value,
               value:value
-            })
+            }
+            this.selectedOptions.push(option)
           }
           this.searchText = '';
         }
+      },
+      selectDown(event) {
+        // event.preventDefault()
+        // let childs = this.$children
+        // let length = childs.length
+        // this.activeIndex = this.activeIndex > length ? 0 : this.activeIndex + 1
+        // childs.forEach(option => {
+        //   option.active = false
+        // })
+        // // console.log(childs[0])
+        // childs[this.activeIndex].active = true
+      },
+      selectUp(event) {
+        // event.preventDefault()
+        // let childs = this.$children
+        // let length = childs.length
+        // this.activeIndex = this.activeIndex === 0 ? length - 1 : this.activeIndex - 1
+
+        // childs.forEach(option => {
+        //   option.active = false
+        // })
+        // childs[this.activeIndex].active = true
       }
     },
     events:{
-      change(option) {
+      'option-change':function (option) {
         this.showPlaceholder = false
 
         if(this.multiple) {
@@ -180,7 +202,6 @@
             this.selectedOptions = this.selectedOptions.filter((item)=>{
               return item.value !== option.value
             })
-            console.log(this.value)
             this.value.$remove(option.value)
           }
         } else {
@@ -193,11 +214,14 @@
         }
         this.searchText = ''
         // 需要把option的change事件继续冒泡给上一层级调用
-        return true
+        // return true
       }
     },
     ready() {
       let me = this
+      me.options = me.$children.filter(child => {
+        // return child.constructor.
+      })
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!me.$el.contains(e.target)) {
           me.show = false

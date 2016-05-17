@@ -2591,7 +2591,7 @@ return webpackJsonp_name_([1],[
 	
 	// <template>
 	//   <div class="select-container" v-bind:class="{open: show,disabled: disabled,multiple:multiple}">
-	//     <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" v-bind="{disabled: disabled}"
+	//     <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
 	//     >
 	//       <template v-if="!multiple">
 	//         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
@@ -2614,6 +2614,7 @@ return webpackJsonp_name_([1],[
 	//
 	// <script>
 	exports.default = {
+	  name: 'select',
 	  props: {
 	    width: {
 	      type: Array
@@ -2672,6 +2673,7 @@ return webpackJsonp_name_([1],[
 	      searchText: '',
 	      noResult: false,
 	      show: false,
+	      activeIndex: 0,
 	      selectedOptions: [],
 	      showPlaceholder: true,
 	      showNotify: false,
@@ -2696,7 +2698,7 @@ return webpackJsonp_name_([1],[
 	        }, 1000);
 	      }
 	    },
-	    selectedOptions: function selectedOptions() {
+	    selectedOptions: function selectedOptions(val) {
 	      if (this.multiple) {
 	        this.value = this.selectedOptions.map(function (option) {
 	          return option.value;
@@ -2704,12 +2706,10 @@ return webpackJsonp_name_([1],[
 	      } else {
 	        this.value = this.selectedOptions[0].value;
 	      }
+	      this.$dispatch('change', val);
 	    }
 	  },
 	  methods: {
-	    select: function select(option) {
-	      this.$dispatch('change', option);
-	    },
 	    toggleDropdown: function toggleDropdown() {
 	      if (this.disabled) {
 	        this.show = false;
@@ -2743,22 +2743,44 @@ return webpackJsonp_name_([1],[
 	    createTag: function createTag() {
 	      if (this.tags) {
 	        var value = event.target.value;
-	        console.log(value);
 	        if (!value || !value.trim().length) {
 	          return;
 	        }
 	        if (this.value.indexOf(value) === -1) {
-	          this.selectedOptions.push({
+	          var option = {
 	            label: value,
 	            value: value
-	          });
+	          };
+	          this.selectedOptions.push(option);
 	        }
 	        this.searchText = '';
 	      }
+	    },
+	    selectDown: function selectDown(event) {
+	      // event.preventDefault()
+	      // let childs = this.$children
+	      // let length = childs.length
+	      // this.activeIndex = this.activeIndex > length ? 0 : this.activeIndex + 1
+	      // childs.forEach(option => {
+	      //   option.active = false
+	      // })
+	      // // console.log(childs[0])
+	      // childs[this.activeIndex].active = true
+	    },
+	    selectUp: function selectUp(event) {
+	      // event.preventDefault()
+	      // let childs = this.$children
+	      // let length = childs.length
+	      // this.activeIndex = this.activeIndex === 0 ? length - 1 : this.activeIndex - 1
+	
+	      // childs.forEach(option => {
+	      //   option.active = false
+	      // })
+	      // childs[this.activeIndex].active = true
 	    }
 	  },
 	  events: {
-	    change: function change(option) {
+	    'option-change': function optionChange(option) {
 	      this.showPlaceholder = false;
 	
 	      if (this.multiple) {
@@ -2772,7 +2794,6 @@ return webpackJsonp_name_([1],[
 	          this.selectedOptions = this.selectedOptions.filter(function (item) {
 	            return item.value !== option.value;
 	          });
-	          console.log(this.value);
 	          this.value.$remove(option.value);
 	        }
 	      } else {
@@ -2785,11 +2806,14 @@ return webpackJsonp_name_([1],[
 	      }
 	      this.searchText = '';
 	      // 需要把option的change事件继续冒泡给上一层级调用
-	      return true;
+	      // return true
 	    }
 	  },
 	  ready: function ready() {
 	    var me = this;
+	    me.options = me.$children.filter(function (child) {
+	      // return child.constructor.
+	    });
 	    me._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
 	      if (!me.$el.contains(e.target)) {
 	        me.show = false;
@@ -2941,7 +2965,7 @@ return webpackJsonp_name_([1],[
 /* 140 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled,multiple:multiple}\">\n  <div class=\"select-toggle\" tabindex=\"1\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" v-bind=\"{disabled: disabled}\"\n  >\n    <template v-if=\"!multiple\">\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <span class=\"btn-content\">{{ showText }}</span>\n      <span :class=\"{caret:true,open:show}\"><icon type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field class=\"select-search-field\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div class=\"dropdown-menu\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled,multiple:multiple}\">\n  <div class=\"select-toggle\" tabindex=\"1\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" @keydown.up=\"selectUp\" @keydown.down=\"selectDown\" v-bind=\"{disabled: disabled}\"\n  >\n    <template v-if=\"!multiple\">\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <span class=\"btn-content\">{{ showText }}</span>\n      <span :class=\"{caret:true,open:show}\"><icon type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field class=\"select-search-field\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div class=\"dropdown-menu\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 141 */
@@ -2981,7 +3005,7 @@ return webpackJsonp_name_([1],[
 	  value: true
 	});
 	// <template>
-	//   <div v-show="show", :class="{option:true,disabled:disabled,chosen:chosen}" @mousedown.prevent.stop="handleClick">
+	//   <div v-show="show" :class="{option:true,disabled:disabled,active:active,chosen:chosen}" @mousedown.prevent.stop="handleClick">
 	//     <slot></slot>
 	//   </div>
 	// </template>
@@ -2998,8 +3022,10 @@ return webpackJsonp_name_([1],[
 	      type: Boolean
 	    }
 	  },
-	  components: {
-	    // Icon
+	  data: function data() {
+	    return {
+	      active: false
+	    };
 	  },
 	
 	  computed: {
@@ -3025,7 +3051,6 @@ return webpackJsonp_name_([1],[
 	      disabled: this.disabled
 	    };
 	    this.$parent.$data.options.push(option);
-	
 	    if (this.$parent.value == this.value) {
 	      this.$parent.selectedOptions.push(option);
 	    }
@@ -3040,7 +3065,7 @@ return webpackJsonp_name_([1],[
 	        label: this.$el.innerText,
 	        value: this.value
 	      };
-	      this.$dispatch('change', option);
+	      this.$dispatch('option-change', option);
 	    }
 	  }
 	};
@@ -3053,7 +3078,7 @@ return webpackJsonp_name_([1],[
 /* 143 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div v-show=\"show\", :class=\"{option:true,disabled:disabled,chosen:chosen}\" @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div v-show=\"show\" :class=\"{option:true,disabled:disabled,active:active,chosen:chosen}\" @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 144 */

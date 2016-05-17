@@ -15,9 +15,9 @@
       <hr>
       <h4>多选下拉(只能选已有的)</h4>
 
-      <v-select multiple :value.sync="multiple" @change="onSlectChange">
-        <v-option value="Apple">Apple</v-option>
-        <v-option value="Banana">Banana</v-option>
+      <v-select multiple @change="onSlectChange">
+        <v-option value="Apple">苹果</v-option>
+        <v-option value="Banana">香蕉</v-option>
         <v-option value="Cherry">Cherry</v-option>
         <v-option value="Orange">Orange</v-option>
         <v-option value="Grape">Grape</v-option>
@@ -25,10 +25,10 @@
 
       <hr>
       <h4>tags(输入回车时变成一个tag)</h4>
-
-      <v-select tags :value="Banana">
-        <v-option value="Apple">Apple</v-option>
-        <v-option value="Banana">Banana</v-option>
+      选中值 : {{tagValues | json}} <br/>
+      <v-select tags :value="Banana" @change="onTagChange">
+        <v-option value="Apple">苹果</v-option>
+        <v-option value="Banana">香蕉</v-option>
         <v-option value="Cherry">Cherry</v-option>
         <v-option value="Orange">Orange</v-option>
         <v-option value="Grape">Grape</v-option>
@@ -62,7 +62,7 @@
 <hr>
 <h4>多选下拉(只能选已有的)</h4>
 
-<v-select multiple :value.sync="multiple" @change="onSlectChange">
+<v-select multiple @change="onSlectChange">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -163,27 +163,18 @@
     },
     data() {
       return {
-        fruitOptions: [
-          {value:'Apple', label:'Apple'},
-          {value:'Banana', label:'Banana'},
-          {value:'Cherry', label:'Cherry'},
-          {value:'Orange', label:'Orange'},
-          {value:'Grape', label:'Grape'},
-        ],
         placeholder:'请选择一个水果',
-        arr: [],
-        arr2: [],
         single: 'Apple',
-        multiple: [],
-        multipleLimit: [],
-        custom: [],
-        disabled: []
+        tagValues:[]
       }
     },
     methods:{
       onSlectChange(option) {
         this.single = option.value
         console.log(option)
+      },
+      onTagChange(values) {
+        this.tagValues = values
       }
     }
   }
