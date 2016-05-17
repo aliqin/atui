@@ -1,9 +1,49 @@
-//
-// Component animations
-// --------------------------------------------------
+// 往下展开(出现) / 往上收起(消失)
+// 左侧导航条、搜索框、筛选、下拉选项、日期选择框
+
+// 向右移动(开启) / 向左移动(关闭)
+// 开关
+
+// 180度转动 (原地由下向上 / 原地由上向下)
+// 箭头图标
+
+// 参考动效：easeOutQuart
+// http://easings.net/zh-cn#easeOutQuart
+@easeOutQuart:cubic-bezier(0.165, 0.84, 0.44, 1);
+
+// —————————————————————————————————————
+
+// 出现 / 消失 (同一位置)
+// 信息反馈、文字提示、气泡卡片、气泡确认框、按钮的press状态
+
+// 消失 / 出现 (同一位置)
+// 页面切换
+
+// 参考动效：easeOutQuint
+// http://easings.net/zh-cn#easeOutQuint
+@easeOutQuint:cubic-bezier(0.23, 1, 0.32, 1);
+// —————————————————————————————————————
+
+// 左右位移换图
+// 标签切换-基础型(文字+下底线)、走马灯
+
+// 上下位移换图
+// 走马灯
+
+// 参考动效：easeOutCirc
+// http://easings.net/zh-cn#easeOutCirc
+@easeOutCirc:cubic-bezier(0.075, 0.82, 0.165, 1);
+// —————————————————————————————————————
+
+// 左右摇动
+// 按钮(填写信息有误时)
+
+// 参考动效：easeOutElastic
+// http://easings.net/zh-cn#easeOutElastic
+@easeOutElastic:cubic-bezier(0.64, 0.57, 0.67, 1.53);
 
 .fade-transition {
-  transition: opacity .4s ease;
+  transition: opacity .4s @easeOutQuart;
   display: block;
 }
 .fade-enter,
@@ -13,14 +53,14 @@
 }
 
 .movedown-transition {
-  transition: top .3s ease;
+  transition: top .3s @easeOutQuart;
 }
 .movedown-enter{
   top:-100px !important;
 }
 
 .moveup-transition {
-  transition: top .3s ease;
+  transition: top .3s @easeOutQuart;
 }
 .moveup-leave{
   top:-100px !important;

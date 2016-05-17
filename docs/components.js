@@ -84,7 +84,7 @@ new Vue({
     headerDocs,
     accordionDocs,
     calendarDocs,
-    // affixDocs,
+    affixDocs,
     // asideDocs,
     // carouselDocs,
     buttonsDocs,

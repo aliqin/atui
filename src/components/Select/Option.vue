@@ -1,5 +1,5 @@
 <template>
-  <div v-show="show", :class="{option:true,disabled:disabled,chosen:chosen}" @mousedown.prevent.stop="handleClick">
+  <div v-show="show" :class="{option:true,disabled:disabled,active:active,chosen:chosen}" @mousedown.prevent.stop="handleClick">
     <slot></slot>
   </div>
 </template>
@@ -16,10 +16,11 @@
         type: Boolean
       }
     },
-    components:{
-      // Icon
+    data() {
+      return {
+        active:false
+      }
     },
-
     computed: {
       chosen() {
         return this.$parent.selectedOptions.some((item)=>{
@@ -41,7 +42,6 @@
         disabled:this.disabled
       }
       this.$parent.$data.options.push(option)
-
       if(this.$parent.value == this.value){
         this.$parent.selectedOptions.push(option)
       }
@@ -56,7 +56,7 @@
           label:this.$el.innerText,
           value:this.value
         }
-        this.$dispatch('change',option)
+        this.$dispatch('option-change',option)
       }
     }
   }
