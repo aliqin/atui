@@ -1,83 +1,87 @@
 <template>
-<div class="file-upload">
-  <div class="click-upload" v-if="uploadType == 'click'">
-    <div>
+<div class="at-upload" id="upload-{{uploadId}}">
+  <div v-if="uploadType == 'click'">
+    <label>
       <input
         type="file"
-        name="files[]"
-        id="{{id}}"
-        accept="accept"
-        v-bind:multiple="multiple"
-        v-on:change="onChange($event)" />
-      <label for="{{id}}">
-        <span class="btn tertiary small">点击上传</span>
-      </label>
-    </div>
-    <div class="select-files" v-if="fileList.length > 0">
-      <a class="file-item" href="javascript:;" v-for="file in selectFiles">
-        <span>{{file}}</span>
-      </a>
-    </div>
-    <button type="submit" class="btn" v-if="!hideButton && !autoSubmit" v-on:click.prevent="submitForm($event)">Upload</button>
-    <div class="state">
-      <div class="upload-rate" v-show="state == 'uploading'">
-        <span class="rate-control">
-          <span class="rate" :style="{'width': +progress * 0.9 + 'px'}"></span>
-          <span class="rate-tip">
-            {{text.uploading}}
-            <span v-if="advancedUpload">{{progress}}</span>
-          </span>
-        </span>
-        <a class="cancel-upload" href="javascript:;">取消</a>
+        name="{{name}}"
+        accept="{{accept}}"
+        id="{{uploadId}}"
+        :multiple="multiple"
+        @:change="onChange($event)" />
+      <slot>
+        <span class="btn tertiary">点击上传</span>
+      </slot>
+    </label>
+    <div class="at-upload-list">
+      <div class="at-upload-item" v-for="file in fileList">
+        <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
+          <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+          <span>{{file.name}}</span>
+          <icon type="close" class="at-upload-del-info" size="12" @click="delExistFile($index)"></icon>
+        </div>
       </div>
-      <div class="upload-rate" v-show="state == 'success'">
-        <span class="rate-control">
-          <span class="rate" :style="{'width': '90px'}"></span>
-          <span class="rate-tip">上传成功</span>
-        </span>
-        <a class="continu-upload" @click.prevent="restart" href="javascript:;">继续上传？</a>
-      </div>
-      <div class="upload-rate" v-show="state == 'error'">
-        <span>出错了！{{errorMessage}}</span>
-        <a class="continu-upload" @click.prevent="retry" href="javascript:;">请重试</a>
+      <div class="at-upload-item" v-for="file in uploadList">
+        <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
+          <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+          <span>{{file.name}}</span>
+          <icon type="close" class="at-upload-del-info" size="12" @click="delFile($index)"></icon>
+        </div>
+        <div class="at-upload-item-progress" :class="{'hide': progress[$index] == '100%'}">
+          <div class="at-progress at-progress-line at-progress-status-success">
+            <div class="at-progress-inner">
+              <div class="at-progress-bg" :style="{width: progress[$index]}"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div v-if="uploadType == 'drag'" class="drag-upload {{advancedUpload ? 'active' : ''}} {{dragover ? 'is-dragover' : ''}}">
-      <div v-if="state == null || state == 'retry'">
-        <input
-            type="file"
-            name="files[]"
-            id="{{id}}"
-            accept="accept"
-            v-bind:multiple="multiple && advancedUpload"
-            v-on:change="onChange($event)" />
-        <label for="{{id}}">
-          <span v-if="fileList.length == 0 && advancedUpload">将文件拖拽至框中上传或点此上传</span>
-          <p v-if="fileList.length > 0" v-for="file in selectFiles">{{file}}</p>
-        </label>
-        <br>
-        <button type="submit" class="btn" v-if="!hideButton && !autoSubmit" v-on:click.prevent="submitForm($event)">Upload</button>
+  <div v-if="uploadType == 'drag'" class="at-upload-drag">
+    <div class="at-upload-drag-container {{dragover ? 'is-dragover' : ''}}">
+      <input
+          type="file"
+          name="{{name}}"
+          id="{{uploadId}}"
+          accept="{{accept}}"
+          :multiple="multiple"
+          @change="onChange($event)" />
+      <label for="{{uploadId}}" class="at-upload-drag-area">
+        <p class="at-upload-drag-icon"></p>
+        <span v-if="advanceDrag">将文件拖拽至框中上传或点此上传</span>
+        <span v-if="!advanceDrag">当前环境不支持拖拽上传，请点此上传</span>
+        <p v-if="fileList.length > 0" v-for="file in selectFiles">{{file}}</p>
+      </label>
+    </div>
+    <div class="at-upload-list">
+      <div class="at-upload-item" v-for="file in fileList">
+        <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
+          <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+          <span>{{file.name}}</span>
+          <icon type="close" class="at-upload-del-info" size="12" @click="delExistFile($index)"></icon>
+        </div>
       </div>
-      <div class="state" v-if="state != null">
-        <span class="state-uploading animate" v-show="state == 'uploading'">
-          {{text.uploading}}
-          <span v-if="advancedUpload">{{progress}}</span>
-        </span>
-        <span class="state-success animate" v-show="state == 'success'">
-          上传成功
-          <a href="#" v-on:click.prevent="restart" role="button" v-show="multiple">继续上传?</a>
-        </span>
-        <span class="state-error animate" v-show="state == 'error'">
-          出错了!
-          <span>{{errorMessage}}</span>
-          <a href="#" v-on:click.prevent="retry">请重试</a>
-        </span>
+      <div class="at-upload-item" v-for="file in uploadList">
+        <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
+          <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+          <span>{{file.name}}</span>
+          <icon type="close" class="at-upload-del-info" size="12" @click="delFile($index)"></icon>
+        </div>
+        <div class="at-upload-item-progress" :class="{'hide': progress[$index] == '100%'}">
+          <div class="at-progress at-progress-line at-progress-status-success">
+            <div class="at-progress-inner">
+              <div class="at-progress-bg" :style="{width: progress[$index]}"></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </div>
 </template>
 <script>
+  import Icon from '../Icon'
+  import Message from '../Message'
   export default {
     name: 'uploader',
     props: {
@@ -85,275 +89,185 @@
         type: String,
         default: '',
       },
+      name: {
+        type: String,
+        default: 'files',
+      },
       uploadType: {
         type: String,
         default: 'click' //drag拖拽上传，click点击上传
       },
       accept: {
         type: String,
-        default: '',
+        default: "",
       },
-      ajax: {
+      url: {
         type: String,
         default: '',
-      },
-      autoSubmit: {
-        type: Boolean,
-        default: false,
-      },
-      formId: {
-        type: String,
-        default: '',
-      },
-      method: {
-        type: String,
-        default: 'POST',
-      },
-      name: {
-        type: String,
-        default: 'files',
       },
       multiple: {
         type: Boolean,
-        default: false,
+        default: true,
       },
       fileList: {
         default: null,
       },
-      hideButton: {
-        type: Boolean,
-        default: false,
-      },
-      text: {
-        type: Object,
-        default() {
-          return {
-            uploading: '上传中...',
-            retry: '请重试',
-          }
-        }
-      }
+      maxlength: Number
     },
     data () {
       return {
-        state: null,
-        dragover: false,
-        progress: '0%',
-        errorMessage: '',
-        model: null
+        value: '',
+        uploadId: this.id || 'upload' + (new Date()).getTime(),
+        model: null,
+        current: -1,
+        percent: 0,
+        xhr: 'FormData' in window,
+        uploadList: [],
+        progress: [],
+        dragover: false
       }
     },
     computed: {
-      advancedUpload() {
+      advanceDrag () {
         const div = document.createElement('div');
         return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window;
-      },
-      //上传文件名称
-      selectFiles() {
-        let result = [];
-        let len    = this.fileList.length;
-        // this.fileList.forEach(function(val, key) {
-        //   result.push(val.name);
-        // });
-        for(let i = 0; i < len; i++) {
-          result.push(this.fileList[i].name);
-        }
-
-        return result;
       }
     },
-    // events: {
-    //   'submit::file-upload'(id) {
-    //     if (this.id === id) {
-    //       this.submitForm()
-    //     }
-    //   }
-    // },
-    ready() {
-      this._input = this.$el.querySelector('input');
+    components: {
+      Icon,
+      Message
+    },
+    ready () {
+      this._input = document.querySelector('#'+this.uploadId);
+      this.$el = document.querySelector('#upload-'+this.uploadId);
 
-      if(this.advancedUpload) {
-        this.addDragEvt();
-      }
-      // else {
-      //   if (!this.formId) {
-      //     throw "需要将该组件放置在一个有form-id属性值的form标签中"
-      //   }
-      //   this._wrappingForm = document.getElementById(this.formId);
-      // }
+      this.advanceDrag && this.addDragEvt();
     },
     beforeDestroy() {
-      const events = ['drag', 'dragstart', 'dragend', 'dragleave', 'drop', 'dragover', 'dragenter'];
+      let events = ['drag', 'dragstart', 'dragend', 'dragleave', 'drop', 'dragover', 'dragenter']
       events.forEach((event) => {
-        this.$el.removeEventListener(event, () => this._eventHandler());
+        this.$el.removeEventListener(event, () => this._eventHandler())
       })
     },
     methods: {
-      /**
-       * 添加drag事件
-       */
-      addDragEvt () {
-        let events = ['drag', 'dragstart', 'dragend', 'dragleave', 'drop', 'dragover', 'dragenter'];
+      onChange(e) {
+        let files = e.target.files;
 
-        events.forEach((event) => {
-          this.$el.addEventListener(event, (e) => this._eventHandler(e))
-        });
-
-        events = ['dragover', 'dragenter'];
-        events.forEach((event) => (e) => this._eventHandler(e));
-
-        events = ['dragend', 'dragleave', 'drop'];
-        events.forEach((event) => {
-          this.$el.addEventListener(event, (e) => this._eventHandler(e))
-        });
-      },
-      /**
-       * drag事件处理
-       */
-      _eventHandler(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (e.type === 'dragover' || e.type === 'dragenter') {
-          this.dragover = true;
+        if(files) {
+          for(let i in files) {
+            if(typeof(files[i]) == 'object' && files[i].name) {
+              this.progress.push('0%');
+              this.uploadList.push(files[i]);
+            }
+          }
+        } else {
+          //只会取上传的第一个，只能上传一个
+          this.progress = ['0%'];
+          this.uploadList = [{name: this._input.value.replace(/^.*\\/, '')}];
         }
 
-        if (e.type === 'dragend' || e.type === 'dragleave' || e.type === 'drop') {
-          this.dragover = false;
-          if (e.type === 'drop') {
-            this.fileList = e.dataTransfer.files;
-            if (this.autoSubmit) {
-              this.submitForm();
+        if(this.maxlength && this.fileList.length + this.uploadList.length > this.maxlength) {
+            this._input.value = '';
+            this.uploadList = [];
+            this.showMessage('超过上传数量限制，请先删除再进行上传');
+        } else {
+          this.submitForm();
+        }
+      },
+
+      /**
+       * 上传后自动提交
+       */
+      submitForm () {
+        debugger;
+        if(this.uploadList.length > 0) {
+          if (this.url) {
+            if(this.xhr) {
+              this.xhrUpload();
+            } else {
+              this.iframeUpload();
             }
           }
         }
       },
+
+      xhrUpload () {
+        let self = this;
+        let data = new FormData();
+        let i = 0;
+        let len = this.uploadList.length;
+
+        for (i = 0; i < len; i++) {
+          (function(i, file) {
+            if (file.type.match(self.accept)) {
+              data.append(self.name, file, file.name);
+
+              let xhr = new XMLHttpRequest();
+
+              xhr.open('post', self.url, true);
+
+              xhr.onload = () => {
+                self.parseResponse(xhr.responseText, i);
+              }
+
+              xhr.upload.onprogress = (e) => {
+                const loaded = e.loaded ? e.loaded : 0;
+                const total = e.total ? e.total : 1;
+                self.progress[i] = parseInt((loaded / total) * 100, 10) + '%';
+              }
+
+              xhr.onerror = () => {
+                self.setError('上传失败了！');
+              }
+
+              xhr.send(data);
+            }
+
+          })(i, this.uploadList[i]);
+        }
+      },
+
       /**
-       * 上传后自动提交
+       * body中插入form和iframe进行上传
        */
-      submitForm() {
-        if (!this.fileList.length) return;
+      iframeUpload () {
+        let i = 0;
+        let len = this.uploadList.length;
+        if (this.testSameOrigin(this.url)) {
+          for(i = 0; i < len; i++) {
+            let iframeName = 'uploadiframe-' + i + '-' + new Date().getTime();
+            let iframe     = document.createElement('iframe');
+            let form       = document.createElement('form');
+            let input      = document.createElement('input');
 
-        if (this.ajax) {
-          this.state = 'uploading'
-          if (this.advancedUpload) {
-            this.xhrUpload();
-          } else {
-            this.iframeUpload();
+            input.setAttribute('type', 'file');
+            input.setAttribute('value', this.uploadList[i].name);
+            iframe.setAttribute('name', iframeName);
+            iframe.style.display = 'none';
+            form.setAttribute('method', 'post');
+            form.setAttribute('action', this.url);
+            form.setAttribute('target', iframeName);
+            form.setAttribute('data-index', i);
+
+            document.body.appendChild(form);
+            form.appendChild(iframe);
+            form.appendChild(input);
+
+            iframe.addEventListener('load', () => {
+              this.parseResponse(iframe.contentDocument.body.innerHTML, form.getAttribute('data-id'));
+              document.body.removeChild(form);
+            });
+            form.submit();
           }
-        }
-      },
-      xhrUpload() {
-        const ajaxData = new FormData()
-        for (let i = 0; i < this.fileList.length; i++) {
-          const file = this.fileList[i];
-
-          if (this.accept && !file.type.match(this.accept)) {
-            continue;
-          }
-          ajaxData.append(this.name, file, file.name);
-        }
-
-        const xhr = new XMLHttpRequest();
-        // xhr.setRequestHeader('Content-Length')
-        xhr.open(this.method, this.ajax, true);
-
-        xhr.onload = () => {
-          this.state = null;
-          // if (xhr.status >= 200 && xhr.status < 400) {
-          //   this.parseResponse(xhr.responseText);
-          // } else {
-          //   this.parseResponse(xhr.responseText);
-          // }
-          this.parseResponse(xhr.responseText);
-        }
-
-        xhr.upload.onprogress = (e) => {
-          const loaded = e.loaded ? e.loaded : 0;
-          const total = e.total ? e.total : 1;
-          this.progress = parseInt((loaded / total) * 100, 10) + '%';
-        }
-
-        xhr.onerror = () => {
-          this.setError('上传失败了！');
-        }
-
-        xhr.send(ajaxData);
-      },
-      iframeUpload() {
-        if (this.testSameOrigin(this.ajax)) {
-          const iframeName  = 'uploadiframe' + new Date().getTime();
-          const iframe = document.createElement('iframe');
-
-          iframe.setAttribute('name', iframeName);
-          iframe.style.display = 'none';
-
-          document.body.appendChild(iframe);
-          iframe.setAttribute('target', iframeName);
-
-          iframe.addEventListener('load', () => {
-            this.parseResponse(iframe.contentDocument.body.innerHTML);
-            iframe.removeAttribute('target');
-            iframe.parentNode.removeChild(iframe);
-          })
-          iframe.submit();
         } else {
           this.setError('iframe不支持跨域请求')
         }
       },
+
       /**
-       * 处理响应结果
+       * 测试上传地址与当前页面地址是否同域
        */
-      parseResponse(response) {
-        let data = null;
-
-        if(!response) {
-          this.setError('服务器没有响应，或响应数据格式有问题');
-        } else {
-          try {
-            data = JSON.parse(response);
-          } catch (e) {
-            this.setError('服务器响应数据格式有问题');
-          }
-
-          if(data) {
-            if (data.success) {
-              this.state = 'success';
-              this.model = data.data;
-              this.$dispatch('completed::file-upload', {model: this.model});
-            } else if(data.error) {
-              this.setError(data.error);
-            }
-          }
-        }
-      },
-      setError(message) {
-        this.state = 'error';
-        this.errorMessage = message;
-        this.$dispatch('completed::file-upload', {error: this.errorMessage});
-      },
-      retry() {
-        this.state = 'retry';
-        this.trigger(this._input, 'change');
-      },
-      restart() {
-        this.state = null;
-        this.fileList = [];
-      },
-      onChange(e) {
-        if (this.state === 'retry') {
-          this.state = null;
-        }
-        if (this.advancedUpload) {
-          this.fileList = e.target.files;
-          if (this.autoSubmit) {
-            this.submitForm();
-          }
-        } else {
-          this.fileList.push({name: this._input.value.replace(/^.*\\/, '')});
-        }
-      },
-      testSameOrigin(url) {
+      testSameOrigin (url) {
         const loc = window.location;
         const a = document.createElement('a');
         a.href = url;
@@ -361,18 +275,112 @@
                a.port == loc.port &&
                a.protocol == loc.protocol;
       },
-      trigger(el, event, args) {
-        const e = document.createEvent('HTMLEvents');
-        e.initEvent(event, true, false);
 
-        if (args) {
-          for (const prop in args) {
-            e[prop] = args[prop];
+      /**
+       * 处理响应结果
+       */
+      parseResponse (response, index) {
+        let data = null;
+
+        if(!response) {
+          this.setError('服务器没有响应', index);
+        } else {
+          try {
+            data = JSON.parse(response);
+          } catch (e) {
+            this.setError('服务器响应数据格式有问题', index);
+          }
+
+          if(data) {
+            if (data.success) {
+              this.model = data.data;
+              this.$dispatch('completed::file-upload', {
+                model: this.model,
+                file: this.uploadList[index]
+              });
+            } else if(data.error) {
+              this.setError(data.error, index);
+            }
           }
         }
+      },
 
-        try { el.dispatchEvent(e) } catch (e) {}
-      }
+      /**
+       * 设置错误提示
+       */
+      setError (message, index) {
+        this.errorMessage = message;
+        this.$dispatch('completed::file-upload', {
+          error: this.errorMessage,
+          file: index && this.uploadList[index] || null
+        });
+
+        index > -1 && this.uploadList.splice(index, 1);
+      },
+
+      showMessage(msg) {
+        Message.success(msg)
+      },
+
+      filemouseover ($index) {
+        this.current = $index;
+      },
+
+      filemouseout () {
+        this.current = -1;
+      },
+
+      delFile ($index) {
+        this.$dispatch('delete::file-upload', {
+          file: this.uploadList[$index]
+        });
+        this.uploadList.splice($index, 1);
+      },
+
+      delExistFile ($index) {
+        this.$dispatch('delete::file-upload', {
+          file: this.fileList[$index]
+        });
+        this.fileList.splice($index, 1);
+      },
+
+      /**
+       * 添加drag事件
+       */
+      addDragEvt () {
+        let events = ['drag', 'dragstart', 'dragend', 'dragleave', 'drop', 'dragover', 'dragenter'];
+
+        events.forEach((event) => {
+          this.$el.addEventListener(event, (e) => this.dragHandler(e))
+        });
+      },
+
+      /**
+       * drag事件处理
+       */
+      dragHandler (e) {
+        let self = this;
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (e.type === 'dragover' || e.type === 'dragenter') {
+          self.dragover = true;
+        }
+
+        if (e.type === 'dragend' || e.type === 'dragleave' || e.type === 'drop') {
+          self.dragover = false;
+          if (e.type === 'drop') {
+            let files = e.dataTransfer.files || {};
+            for(let i in files) {
+              if(typeof(files[i]) == 'object' && files[i].name) {
+                self.progress.push('0%');
+                self.uploadList.push(files[i]);
+              }
+            }
+            self.submitForm();
+          }
+        }
+      },
     }
   }
 </script>
