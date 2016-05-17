@@ -9,9 +9,6 @@
       </p>
       <calendar v-ref:calendar :value.sync="value" :disabled-date="disabledDate"
       :format="format.toString()" :show-reset-button="reset" @change="selectChange"></calendar>
-      <h4>禁用一周的某日</h4>
-
-
 
       <h4>格式化</h4>
       <v-select :default-value.sync="format" >
