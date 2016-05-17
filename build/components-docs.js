@@ -333,7 +333,7 @@
 	    headerDocs: _headerDocs2.default,
 	    accordionDocs: _accordionDocs2.default,
 	    calendarDocs: _calendarDocs2.default,
-	    // affixDocs,
+	    affixDocs: _affixDocs2.default,
 	    // asideDocs,
 	    // carouselDocs,
 	    buttonsDocs: _buttonsDocs2.default,
@@ -3748,7 +3748,7 @@
 	
 	// <template>
 	//   <div class="select-container" v-bind:class="{open: show,disabled: disabled,multiple:multiple}">
-	//     <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" v-bind="{disabled: disabled}"
+	//     <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
 	//     >
 	//       <template v-if="!multiple">
 	//         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
@@ -3771,6 +3771,7 @@
 	//
 	// <script>
 	exports.default = {
+	  name: 'select',
 	  props: {
 	    width: {
 	      type: Array
@@ -3829,6 +3830,7 @@
 	      searchText: '',
 	      noResult: false,
 	      show: false,
+	      activeIndex: 0,
 	      selectedOptions: [],
 	      showPlaceholder: true,
 	      showNotify: false,
@@ -3853,7 +3855,7 @@
 	        }, 1000);
 	      }
 	    },
-	    selectedOptions: function selectedOptions() {
+	    selectedOptions: function selectedOptions(val) {
 	      if (this.multiple) {
 	        this.value = this.selectedOptions.map(function (option) {
 	          return option.value;
@@ -3861,12 +3863,10 @@
 	      } else {
 	        this.value = this.selectedOptions[0].value;
 	      }
+	      this.$dispatch('change', val);
 	    }
 	  },
 	  methods: {
-	    select: function select(option) {
-	      this.$dispatch('change', option);
-	    },
 	    toggleDropdown: function toggleDropdown() {
 	      if (this.disabled) {
 	        this.show = false;
@@ -3900,22 +3900,44 @@
 	    createTag: function createTag() {
 	      if (this.tags) {
 	        var value = event.target.value;
-	        console.log(value);
 	        if (!value || !value.trim().length) {
 	          return;
 	        }
 	        if (this.value.indexOf(value) === -1) {
-	          this.selectedOptions.push({
+	          var option = {
 	            label: value,
 	            value: value
-	          });
+	          };
+	          this.selectedOptions.push(option);
 	        }
 	        this.searchText = '';
 	      }
+	    },
+	    selectDown: function selectDown(event) {
+	      // event.preventDefault()
+	      // let childs = this.$children
+	      // let length = childs.length
+	      // this.activeIndex = this.activeIndex > length ? 0 : this.activeIndex + 1
+	      // childs.forEach(option => {
+	      //   option.active = false
+	      // })
+	      // // console.log(childs[0])
+	      // childs[this.activeIndex].active = true
+	    },
+	    selectUp: function selectUp(event) {
+	      // event.preventDefault()
+	      // let childs = this.$children
+	      // let length = childs.length
+	      // this.activeIndex = this.activeIndex === 0 ? length - 1 : this.activeIndex - 1
+	
+	      // childs.forEach(option => {
+	      //   option.active = false
+	      // })
+	      // childs[this.activeIndex].active = true
 	    }
 	  },
 	  events: {
-	    change: function change(option) {
+	    'option-change': function optionChange(option) {
 	      this.showPlaceholder = false;
 	
 	      if (this.multiple) {
@@ -3929,7 +3951,6 @@
 	          this.selectedOptions = this.selectedOptions.filter(function (item) {
 	            return item.value !== option.value;
 	          });
-	          console.log(this.value);
 	          this.value.$remove(option.value);
 	        }
 	      } else {
@@ -3942,11 +3963,14 @@
 	      }
 	      this.searchText = '';
 	      // 需要把option的change事件继续冒泡给上一层级调用
-	      return true;
+	      // return true
 	    }
 	  },
 	  ready: function ready() {
 	    var me = this;
+	    me.options = me.$children.filter(function (child) {
+	      // return child.constructor.
+	    });
 	    me._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
 	      if (!me.$el.contains(e.target)) {
 	        me.show = false;
@@ -4088,7 +4112,7 @@
 /* 186 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled,multiple:multiple}\">\n  <div class=\"select-toggle\" tabindex=\"1\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" v-bind=\"{disabled: disabled}\"\n  >\n    <template v-if=\"!multiple\">\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <span class=\"btn-content\">{{ showText }}</span>\n      <span :class=\"{caret:true,open:show}\"><icon type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field class=\"select-search-field\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div class=\"dropdown-menu\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"select-container\" v-bind:class=\"{open: show,disabled: disabled,multiple:multiple}\">\n  <div class=\"select-toggle\" tabindex=\"1\" class=\"dropdown-toggle\" @click=\"toggleDropdown\" @keydown.up=\"selectUp\" @keydown.down=\"selectDown\" v-bind=\"{disabled: disabled}\"\n  >\n    <template v-if=\"!multiple\">\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <span class=\"btn-content\">{{ showText }}</span>\n      <span :class=\"{caret:true,open:show}\"><icon type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field class=\"select-search-field\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div class=\"dropdown-menu\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 187 */
@@ -4118,7 +4142,7 @@
 	  value: true
 	});
 	// <template>
-	//   <div v-show="show", :class="{option:true,disabled:disabled,chosen:chosen}" @mousedown.prevent.stop="handleClick">
+	//   <div v-show="show" :class="{option:true,disabled:disabled,active:active,chosen:chosen}" @mousedown.prevent.stop="handleClick">
 	//     <slot></slot>
 	//   </div>
 	// </template>
@@ -4135,8 +4159,10 @@
 	      type: Boolean
 	    }
 	  },
-	  components: {
-	    // Icon
+	  data: function data() {
+	    return {
+	      active: false
+	    };
 	  },
 	
 	  computed: {
@@ -4162,7 +4188,6 @@
 	      disabled: this.disabled
 	    };
 	    this.$parent.$data.options.push(option);
-	
 	    if (this.$parent.value == this.value) {
 	      this.$parent.selectedOptions.push(option);
 	    }
@@ -4177,7 +4202,7 @@
 	        label: this.$el.innerText,
 	        value: this.value
 	      };
-	      this.$dispatch('change', option);
+	      this.$dispatch('option-change', option);
 	    }
 	  }
 	};
@@ -4190,7 +4215,7 @@
 /* 189 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div v-show=\"show\", :class=\"{option:true,disabled:disabled,chosen:chosen}\" @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div v-show=\"show\" :class=\"{option:true,disabled:disabled,active:active,chosen:chosen}\" @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 190 */
@@ -21056,9 +21081,9 @@
 	//       <hr>
 	//       <h4>多选下拉(只能选已有的)</h4>
 	//
-	//       <v-select multiple :value.sync="multiple" @change="onSlectChange">
-	//         <v-option value="Apple">Apple</v-option>
-	//         <v-option value="Banana">Banana</v-option>
+	//       <v-select multiple @change="onSlectChange">
+	//         <v-option value="Apple">苹果</v-option>
+	//         <v-option value="Banana">香蕉</v-option>
 	//         <v-option value="Cherry">Cherry</v-option>
 	//         <v-option value="Orange">Orange</v-option>
 	//         <v-option value="Grape">Grape</v-option>
@@ -21066,10 +21091,10 @@
 	//
 	//       <hr>
 	//       <h4>tags(输入回车时变成一个tag)</h4>
-	//
-	//       <v-select tags :value="Banana">
-	//         <v-option value="Apple">Apple</v-option>
-	//         <v-option value="Banana">Banana</v-option>
+	//       选中值 : {{tagValues | json}} <br/>
+	//       <v-select tags :value="Banana" @change="onTagChange">
+	//         <v-option value="Apple">苹果</v-option>
+	//         <v-option value="Banana">香蕉</v-option>
 	//         <v-option value="Cherry">Cherry</v-option>
 	//         <v-option value="Orange">Orange</v-option>
 	//         <v-option value="Grape">Grape</v-option>
@@ -21103,7 +21128,7 @@
 	// <hr>
 	// <h4>多选下拉(只能选已有的)</h4>
 	//
-	// <v-select multiple :value.sync="multiple" @change="onSlectChange">
+	// <v-select multiple @change="onSlectChange">
 	//   <v-option value="Apple">Apple</v-option>
 	//   <v-option value="Banana">Banana</v-option>
 	//   <v-option value="Cherry">Cherry</v-option>
@@ -21203,15 +21228,9 @@
 	  },
 	  data: function data() {
 	    return {
-	      fruitOptions: [{ value: 'Apple', label: 'Apple' }, { value: 'Banana', label: 'Banana' }, { value: 'Cherry', label: 'Cherry' }, { value: 'Orange', label: 'Orange' }, { value: 'Grape', label: 'Grape' }],
 	      placeholder: '请选择一个水果',
-	      arr: [],
-	      arr2: [],
 	      single: 'Apple',
-	      multiple: [],
-	      multipleLimit: [],
-	      custom: [],
-	      disabled: []
+	      tagValues: []
 	    };
 	  },
 	
@@ -21219,6 +21238,9 @@
 	    onSlectChange: function onSlectChange(option) {
 	      this.single = option.value;
 	      console.log(option);
+	    },
+	    onTagChange: function onTagChange(values) {
+	      this.tagValues = values;
 	    }
 	  }
 	};
@@ -21230,7 +21252,7 @@
 /* 361 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n        <pre>\n        选中值 : {{single}}\n        </pre>\n      <v-select :value=\"single\" :placeholder=\"placeholder\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉(只能选已有的)</h4>\n\n      <v-select multiple :value.sync=\"multiple\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n\n      <hr>\n      <h4>tags(输入回车时变成一个tag)</h4>\n\n      <v-select tags :value=\"Banana\">\n        <v-option value=\"Apple\">Apple</v-option>\n        <v-option value=\"Banana\">Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr />\n\n\n      <h4>下拉出自定义类容</h4>\n      <v-select placeholder=\"选择类别\" style=\"width:200px;\">\n      <v-option>\n        <tabs>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n        </tabs>\n      </v-option>\n      </v-select>\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<pre>\n  选中值 : {{single}}\n  </pre>\n<v-select :value=\"single\" :placeholder=\"placeholder\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">苹果</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉(只能选已有的)</h4>\n\n<v-select multiple :value.sync=\"multiple\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n\n<hr>\n<h4>tags(输入回车时变成一个tag)</h4>\n\n<v-select tags :value=\"Banana\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr />\n\n\n<h4>下拉出自定义类容</h4>\n<v-select placeholder=\"选择类别\" style=\"width:200px;\">\n<v-option>\n  <tabs>\n    <tab header=\"系统短信签名\"></tab>\n    <tab header=\"系统短信签名\"></tab>\n    <tab header=\"系统短信签名\"></tab>\n  </tabs>\n</v-option>\n</v-select>\n\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n        <pre>\n        选中值 : {{single}}\n        </pre>\n      <v-select :value=\"single\" :placeholder=\"placeholder\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉(只能选已有的)</h4>\n\n      <v-select multiple @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\">香蕉</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n\n      <hr>\n      <h4>tags(输入回车时变成一个tag)</h4>\n      选中值 : {{tagValues | json}} <br/>\n      <v-select tags :value=\"Banana\" @change=\"onTagChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\">香蕉</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr />\n\n\n      <h4>下拉出自定义类容</h4>\n      <v-select placeholder=\"选择类别\" style=\"width:200px;\">\n      <v-option>\n        <tabs>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n          <tab header=\"系统短信签名\"></tab>\n        </tabs>\n      </v-option>\n      </v-select>\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<pre>\n  选中值 : {{single}}\n  </pre>\n<v-select :value=\"single\" :placeholder=\"placeholder\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">苹果</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr>\n<h4>多选下拉(只能选已有的)</h4>\n\n<v-select multiple @change=\"onSlectChange\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n\n<hr>\n<h4>tags(输入回车时变成一个tag)</h4>\n\n<v-select tags :value=\"Banana\">\n  <v-option value=\"Apple\">Apple</v-option>\n  <v-option value=\"Banana\">Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr />\n\n\n<h4>下拉出自定义类容</h4>\n<v-select placeholder=\"选择类别\" style=\"width:200px;\">\n<v-option>\n  <tabs>\n    <tab header=\"系统短信签名\"></tab>\n    <tab header=\"系统短信签名\"></tab>\n    <tab header=\"系统短信签名\"></tab>\n  </tabs>\n</v-option>\n</v-select>\n\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
 
 /***/ },
 /* 362 */

@@ -2608,8 +2608,8 @@ input[type="radio"][disabled]:checked:after {
   text-decoration: none;
 }
 .fade-transition {
-  -webkit-transition: opacity .4s ease;
-  transition: opacity .4s ease;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: block;
 }
 .fade-enter, .fade-leave {
@@ -2617,15 +2617,15 @@ input[type="radio"][disabled]:checked:after {
   opacity: 0;
 }
 .movedown-transition {
-  -webkit-transition: top .3s ease;
-  transition: top .3s ease;
+  -webkit-transition: top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .movedown-enter {
   top: -100px !important;
 }
 .moveup-transition {
-  -webkit-transition: top .3s ease;
-  transition: top .3s ease;
+  -webkit-transition: top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .moveup-leave {
   top: -100px !important;
@@ -2732,7 +2732,7 @@ input[type="radio"][disabled]:checked:after {
   color: #999999;
   white-space: nowrap;
 }
-.dropdown-menu > .option:hover, .dropdown-menu > li > a:hover, .dropdown-menu > .option:focus, .dropdown-menu > li > a:focus {
+.dropdown-menu > .option:hover, .dropdown-menu > li > a:hover, .dropdown-menu > .option:focus, .dropdown-menu > li > a:focus, .dropdown-menu > .option.active, .dropdown-menu > li > a.active {
   text-decoration: none;
   background-color: #fef5f5;
 }
