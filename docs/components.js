@@ -14,7 +14,6 @@ import iconDocs from './example/iconDocs.vue'
 
 // 表单类
 import buttonDocs from './example/buttonDocs.vue'
-import buttonsDocs  from './example/buttonsDocs.vue'
 import inputDocs from './example/inputDocs.vue'
 import uploaderDocs from './example/uploaderDocs.vue'
 import formDocs from './example/formDocs.vue'
@@ -87,7 +86,6 @@ new Vue({
     affixDocs,
     // asideDocs,
     // carouselDocs,
-    buttonsDocs,
     datepickerDocs,
     dropdownDocs,
     modalDocs,
