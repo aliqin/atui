@@ -38,8 +38,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
   export default {
     props: {
       title: {
-        type: String,
-        default: ''
+        type: String
       },
       show: {
         require: true,
@@ -63,14 +62,10 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         default: true
       },
       large: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
+        type: Boolean
       },
       small: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
+        type: Boolean
       }
     },
     data() {

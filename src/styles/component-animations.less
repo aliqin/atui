@@ -43,7 +43,7 @@
 @easeOutElastic:cubic-bezier(0.64, 0.57, 0.67, 1.53);
 
 .fade-transition {
-  transition: opacity .4s @easeOutQuart;
+  transition: opacity .3s @easeOutQuart;
   display: block;
 }
 .fade-enter,
@@ -56,14 +56,10 @@
   transition: top .3s @easeOutQuart;
 }
 .movedown-enter{
-  top:-100px !important;
+  top:-10px !important;
 }
-
-.moveup-transition {
-  transition: top .3s @easeOutQuart;
-}
-.moveup-leave{
-  top:-100px !important;
+.movedown-leave{
+  top:-10px !important;
 }
 
 // scale--------------

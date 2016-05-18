@@ -2,45 +2,45 @@
   <div class="bs-docs-section" id="icon">
     <h3 class="page-header"><a href="#icon" class="anchor">Icon 图标</a></h3>
     <div class="bs-example">
-      <icon type="head">页首</icon>
-      <icon type="tail">页尾</icon>
-      <icon type="clear">清除</icon>
-      <icon type="close">关闭</icon>
-      <icon type="search">搜索</icon>
-      <icon type="up">向上</icon>
-      <icon type="down">向下</icon>
-      <icon type="prev">上一页</icon>
-      <icon type="next">下一页</icon>
-      <icon type="warning" color="red" size="20">警告</icon>
-      <icon type="error">错误</icon>
-      <icon type="info">信息</icon>
-      <icon type="help">帮助</icon>
-      <icon type="success">成功</icon>
-      <icon type="filter">过滤</icon>
-      <icon type="doc">附件</icon>
-      <icon type="calendar">日历</icon>
-      <icon type="tick">对勾</icon>
+      <icon type="head"></icon>页首
+      <icon type="tail"></icon>页尾
+      <icon type="clear"></icon>清除
+      <icon type="close"></icon>关闭
+      <icon type="search"></icon>搜索
+      <icon type="up"></icon>向上
+      <icon type="down"></icon>向下
+      <icon type="prev"></icon>上一页
+      <icon type="next"></icon>下一页
+      <icon type="warning" color="red" size="20"></icon>警告
+      <icon type="error"></icon>错误
+      <icon type="info"></icon>信息
+      <icon type="help"></icon>帮助
+      <icon type="success"></icon>成功
+      <icon type="filter"></icon>过滤
+      <icon type="doc"></icon>附件
+      <icon type="calendar"></icon>日历
+      <icon type="tick"></icon>对勾
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <!--更多icon请看这里 http://iconfont.cn/users/project?pid=77664 -->
-<icon type="head">页首</icon>
-<icon type="tail">页尾</icon>
-<icon type="clear">清除</icon>
-<icon type="close">关闭</icon>
-<icon type="search">搜索</icon>
-<icon type="up">向上</icon>
-<icon type="down">向下</icon>
-<icon type="prev">上一页</icon>
-<icon type="next">下一页</icon>
-<icon type="warning" color="red" size="36">警告</icon>
-<icon type="error">错误</icon>
-<icon type="info">信息</icon>
-<icon type="help">帮助</icon>
-<icon type="success">成功</icon>
-<icon type="filter">过滤</icon>
-<icon type="doc">附件</icon>
-<icon type="calendar">日历</icon>
-<icon type="tick">对勾</icon>
+<icon type="head"></icon>页首
+<icon type="tail"></icon>页尾
+<icon type="clear"></icon>清除
+<icon type="close"></icon>关闭
+<icon type="search"></icon>搜索
+<icon type="up"></icon>向上
+<icon type="down"></icon>向下
+<icon type="prev"></icon>上一页
+<icon type="next"></icon>下一页
+<icon type="warning" color="red" size="20"></icon>警告
+<icon type="error"></icon>错误
+<icon type="info"></icon>信息
+<icon type="help"></icon>帮助
+<icon type="success"></icon>成功
+<icon type="filter"></icon>过滤
+<icon type="doc"></icon>附件
+<icon type="calendar"></icon>日历
+<icon type="tick"></icon>对勾
   </script></code></pre>
   <h2>Options</h2>
   </div>

@@ -38,7 +38,7 @@
                  <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
             </td>
             <td v-for="column in columns">
-                <template v-if="column.render">
+                <template v-if="column.render && record">
                     {{{column.render(record[column.dataIndex],record,rowIndex)}}}
                 </template>
                 <template v-else>
@@ -114,9 +114,6 @@ export default {
   watch: {
     dataSource: {
       handler(data) {
-        // this.checkedRows = []
-        // this.checkedValues = []
-        // this.isCheckedAll = false
         let me = this
         me.compileTbody()
 
@@ -140,7 +137,7 @@ export default {
       let me = this
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
       me.$nextTick(() => {
-        me._context.$compile(me.$el.getElementsByTagName('table')[0])
+        me._context.$compile(me.$el)
       })
     },
     sortAction(column,index,order) {
@@ -208,9 +205,6 @@ export default {
       setTimeout(()=>{
         me.filterOpened = false
       },100)
-
-      // me.checkedRows = []
-      // me.isCheckedAll = false
       me.filters = {}
       me.filters[column.dataIndex] = [value]
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
