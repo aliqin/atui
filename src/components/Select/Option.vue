@@ -32,7 +32,7 @@
         if(searchText.length && this.$parent.multiple) {
           return this.$el.innerText.indexOf(searchText) >=0
         }
-        return true;
+        return true
       }
     },
     ready() {

@@ -1,6 +1,6 @@
 <template>
-  <div class="atui-calendar">
-    <div class="atui-calendar-popup" v-show="show">
+  <div class="atui-calendar" v-show="show">
+    <div class="atui-calendar-popup" v-show="displayDayView">
       <div class="atui-calendar-inner">
         <div class="atui-calendar-body">
           <div class="atui-calendar-ctrl">
@@ -186,7 +186,6 @@ export default {
       } else {
         this.currDate = date
         this.value = this.stringify(this.currDate)
-        this.displayDayView = false
         this.$dispatch('change',this.value)
       }
     },

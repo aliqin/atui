@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="show"
-    v-bind:class="{
+    :class="{
       'alert':		true,
       'alert-success':(type == 'success'),
       'alert-warning':(type == 'warning'),
@@ -46,8 +46,7 @@ import Icon from '../Icon'
       show: {
         type: Boolean,
         coerce: coerceBoolean,
-        default: true,
-        twoWay: true
+        default: true
       },
       duration: {
         type: [String, Number]

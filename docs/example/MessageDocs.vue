@@ -10,7 +10,7 @@
       </button>
       <button class="btn btn-success btn-lg"
         @click="showMessage">
-        代码调用，不需要在页面中写组件标签
+        全局toast，使用message.xx方法
       </button>
       <button class="btn btn-default btn-lg"
         @click="showCenter = !showCenter">
@@ -80,7 +80,7 @@
 </button>
 <button class="btn btn-success btn-lg"
   @click="showMessage">
-  代码调用，不需要在页面中写组件标签
+  全局toast，使用message.xx方法
 </button>
 <button class="btn btn-default btn-lg"
   @click="showCenter = !showCenter">
