@@ -15936,9 +15936,6 @@
 	  watch: {
 	    dataSource: {
 	      handler: function handler(data) {
-	        // this.checkedRows = []
-	        // this.checkedValues = []
-	        // this.isCheckedAll = false
 	        var me = this;
 	        me.compileTbody();
 	
@@ -15963,7 +15960,7 @@
 	      var me = this;
 	      //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
 	      me.$nextTick(function () {
-	        me._context.$compile(me.$el.getElementsByTagName('table')[0]);
+	        me._context.$compile(me.$el);
 	      });
 	    },
 	    sortAction: function sortAction(column, index, order) {
@@ -16034,9 +16031,6 @@
 	      setTimeout(function () {
 	        me.filterOpened = false;
 	      }, 100);
-	
-	      // me.checkedRows = []
-	      // me.isCheckedAll = false
 	      me.filters = {};
 	      me.filters[column.dataIndex] = [value];
 	      me.$dispatch('table-change', this.pagination, me.filters, me.sorter);
@@ -16098,7 +16092,7 @@
 	//                  <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
 	//             </td>
 	//             <td v-for="column in columns">
-	//                 <template v-if="column.render">
+	//                 <template v-if="column.render && record">
 	//                     {{{column.render(record[column.dataIndex],record,rowIndex)}}}
 	//                 </template>
 	//                 <template v-else>
@@ -16327,7 +16321,7 @@
 /* 235 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"['atui-table-container','atui-table-'+size, {loading :loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n  </table> -->\n  <div :class=\"['atui-table-body',{'atui-fixed-header':fixedHeader}]\">\n    <table class=\"atui-table\">\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\" size=\"12\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-if=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">{{noDataTip}}</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n            <td v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
+	module.exports = "\n<div :class=\"['atui-table-container','atui-table-'+size, {loading :loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n  </table> -->\n  <div :class=\"['atui-table-body',{'atui-fixed-header':fixedHeader}]\">\n    <table class=\"atui-table\">\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\" size=\"12\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-if=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">{{noDataTip}}</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n            <td v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render && record\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
 
 /***/ },
 /* 236 */
@@ -22441,7 +22435,9 @@
 	    return a.age - b.age;
 	  },
 	  render: function render(text, record, index) {
-	    return '<input type="text" v-model="gridData[' + index + '].age"/>';
+	    if (record) {
+	      return '<input type="text" v-model="gridData[' + index + '].age"/>';
+	    }
 	  },
 	
 	  width: 250
@@ -22465,9 +22461,9 @@
 	  title: '操作',
 	  key: 'operation',
 	  render: function render(text, record) {
-	    // if(record) {
-	    return '<icon type="info" /><a href="' + record.key + '.html" target="_blank">详情</a>';
-	    // }
+	    if (record) {
+	      return '<icon type="info" /><a href="' + record.key + '.html" target="_blank">详情</a>';
+	    }
 	  }
 	}]; // <template>
 	//   <div class="bs-docs-section" id="table">
@@ -22481,7 +22477,134 @@
 	//     <input type="button" @click="emptyData" value="清空数据"/>
 	//     <input type="button" @click="changeSize" value="改变大小({{size}})"/>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" fixed-header></grid>
+	// <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
+	//
+	// <!--脚本-->
+	// const columns = [{
+	//     title: '姓名',
+	//     dataIndex: 'name',
+	//     filters: [{
+	//       text: '姓李的的',
+	//       value: '李',
+	//     }, {
+	//       text: '姓胡的',
+	//       value: '胡',
+	//     }],
+	//     sorter:true,
+	//     onFilter: (value, record) => record.name.indexOf(value) === 0,
+	//     width:150
+	//   }, {
+	//     title: '年龄',
+	//     dataIndex: 'age',
+	//     sorter: (a, b) => a.age - b.age,
+	//     render(text, record,index) {
+	//       if(record) {
+	//         return '<input type="text" v-model="gridData['+ index +'].age"/>'
+	//       }
+	//     },
+	//     width:250
+	//   }, {
+	//     title: '地址',
+	//     dataIndex: 'address',
+	//     filters: [{
+	//       text: '南湖',
+	//       value: '南湖',
+	//     }, {
+	//       text: '西湖',
+	//       value: '西湖',
+	//     }],
+	//     filterMultiple: false,
+	//     width:250,
+	//     onFilter: (value, record) => record.address.indexOf(value) === 0
+	//
+	//   },{
+	//       title: '操作',
+	//       key: 'operation',
+	//       render(text, record) {
+	//         if(record) {
+	//           return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
+	//         }
+	//       }
+	//     }
+	//   ];
+	//
+	//   const data = [{
+	//     key: '1',
+	//     name: '胡斌',
+	//     age: 32,
+	//     address: '南湖区湖底公园1号',
+	//   }, {
+	//     key: '2',
+	//     name: '胡彦祖',
+	//     age: 42,
+	//     address: '西湖区湖底公园12号',
+	//   }, {
+	//     key: '3',
+	//     name: '李大嘴',
+	//     age: 32,
+	//     address: '南湖区湖底公园123号',
+	//   }, {
+	//     key: '4',
+	//     name: '李秀莲大嘴哥',
+	//     age: 32,
+	//     address: '西湖区湖底公园123号',
+	//   },
+	//   {
+	//     key: '5',
+	//     name: '刘德华',
+	//     age: 54,
+	//     address: '西湖区湖底公园999号',
+	//   },
+	//   {
+	//     key: '6',
+	//     name: '洪金宝',
+	//     age: 66,
+	//     address: '香港弥敦道',
+	//   }];
+	//   // 配置选择数据的选项
+	//   const rowSelection = {
+	//     getCheckboxProps(record) {
+	//       return {
+	//         disabled: record.name === '胡彦祖'    // 配置无法勾选的列
+	//       };
+	//     },
+	//     onChange(selectedRowKeys, selectedRows) {
+	//       console.log('rowSelection.onChange',selectedRowKeys, selectedRows);
+	//     },
+	//     onSelect(record, selected, selectedRows) {
+	//       console.log('rowSelection.onSelect',record, selected, selectedRows);
+	//     },
+	//     onSelectAll(selected, selectedRows, changeRows) {
+	//       console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);
+	//     }
+	//   };
+	//   export default {
+	//     components: {
+	//       Grid:VueComponent.Table,
+	//       Icon,
+	//       Row:Layout.Row
+	//     },
+	//     data() {
+	//       return {
+	//         size:'default',
+	//         fixedHeader:false,
+	//         loading:false,
+	//         gridData:data,
+	//         gridColumns: columns,
+	//         rowSelection:rowSelection
+	//       }
+	//     },
+	//     methods:{
+	//       changeData() {
+	//         this.gridData.push({
+	//           key: Math.random(),
+	//           name: '李秀莲大嘴哥',
+	//           age: Math.random(),
+	//           address: '西湖区湖底公园123号',
+	//         })
+	//       }
+	//     }
+	//   }
 	//
 	// </script></code></pre>
 	//   <h3>Table 选项 </h3>
@@ -22647,7 +22770,7 @@
 /* 384 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" fixed-header v-ref:grid></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <input type=\"button\" @click=\"emptyData\" value=\"清空数据\"/>\n    <input type=\"button\" @click=\"changeSize\" value=\"改变大小({{size}})\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" fixed-header></grid>\n\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>\n        <td>表格大小</td>\n      </tr>\n       <tr>\n        <td>fixed-header</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>是否固定头部（注意，固定头部必须指定每列宽度）</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" fixed-header v-ref:grid></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <input type=\"button\" @click=\"emptyData\" value=\"清空数据\"/>\n    <input type=\"button\" @click=\"changeSize\" value=\"改变大小({{size}})\"/>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\"></grid>\n\n<!--脚本-->\nconst columns = [{\n    title: '姓名',\n    dataIndex: 'name',\n    filters: [{\n      text: '姓李的的',\n      value: '李',\n    }, {\n      text: '姓胡的',\n      value: '胡',\n    }],\n    sorter:true,\n    onFilter: (value, record) => record.name.indexOf(value) === 0,\n    width:150\n  }, {\n    title: '年龄',\n    dataIndex: 'age',\n    sorter: (a, b) => a.age - b.age,\n    render(text, record,index) {\n      if(record) {\n        return '<input type=\"text\" v-model=\"gridData['+ index +'].age\"/>'\n      }\n    },\n    width:250\n  }, {\n    title: '地址',\n    dataIndex: 'address',\n    filters: [{\n      text: '南湖',\n      value: '南湖',\n    }, {\n      text: '西湖',\n      value: '西湖',\n    }],\n    filterMultiple: false,\n    width:250,\n    onFilter: (value, record) => record.address.indexOf(value) === 0\n\n  },{\n      title: '操作',\n      key: 'operation',\n      render(text, record) {\n        if(record) {\n          return '<icon type=\"info\" /><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n        }\n      }\n    }\n  ];\n\n  const data = [{\n    key: '1',\n    name: '胡斌',\n    age: 32,\n    address: '南湖区湖底公园1号',\n  }, {\n    key: '2',\n    name: '胡彦祖',\n    age: 42,\n    address: '西湖区湖底公园12号',\n  }, {\n    key: '3',\n    name: '李大嘴',\n    age: 32,\n    address: '南湖区湖底公园123号',\n  }, {\n    key: '4',\n    name: '李秀莲大嘴哥',\n    age: 32,\n    address: '西湖区湖底公园123号',\n  },\n  {\n    key: '5',\n    name: '刘德华',\n    age: 54,\n    address: '西湖区湖底公园999号',\n  },\n  {\n    key: '6',\n    name: '洪金宝',\n    age: 66,\n    address: '香港弥敦道',\n  }];\n  // 配置选择数据的选项\n  const rowSelection = {\n    getCheckboxProps(record) {\n      return {\n        disabled: record.name === '胡彦祖'    // 配置无法勾选的列\n      };\n    },\n    onChange(selectedRowKeys, selectedRows) {\n      console.log('rowSelection.onChange',selectedRowKeys, selectedRows);\n    },\n    onSelect(record, selected, selectedRows) {\n      console.log('rowSelection.onSelect',record, selected, selectedRows);\n    },\n    onSelectAll(selected, selectedRows, changeRows) {\n      console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);\n    }\n  };\n  export default {\n    components: {\n      Grid:VueComponent.Table,\n      Icon,\n      Row:Layout.Row\n    },\n    data() {\n      return {\n        size:'default',\n        fixedHeader:false,\n        loading:false,\n        gridData:data,\n        gridColumns: columns,\n        rowSelection:rowSelection\n      }\n    },\n    methods:{\n      changeData() {\n        this.gridData.push({\n          key: Math.random(),\n          name: '李秀莲大嘴哥',\n          age: Math.random(),\n          address: '西湖区湖底公园123号',\n        })\n      }\n    }\n  }\n\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>\n        <td>表格大小</td>\n      </tr>\n       <tr>\n        <td>fixed-header</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>是否固定头部（注意，固定头部必须指定每列宽度）</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 385 */
