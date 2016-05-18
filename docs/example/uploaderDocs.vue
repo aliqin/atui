@@ -2,35 +2,46 @@
   <div class="bs-docs-section" id="upload">
     <h3 class="page-header"><a href="#upload" class="anchor">Uploader 文件上传 </a></h3>
     <div class="bs-example">
-      <h4>Uploader 文件上传</h4>
-      <h5>1、点击上传</h5>
-      <form id="upload1" method="post" action="{{ajaxUrl}}">
-        <uploader
-          id="file-upload-click-test"
-          form-id="upload1"
-          upload-type="click"
-          :ajax="ajaxUrl"
-          :multiple="multiple"
-          name="files1"
-          :auto-submit="true"
-          :hide-button="true"
-          :file-list.sync="fileList1">
-        </uploader>
-      </form>
-      <h5>2、支持拖拽上传</h5>
-      <form id="upload2" method="post" action="{{ajaxUrl}}">
-        <uploader
-          id="file-upload-drag-test"
-          form-id="upload2"
-          upload-type="drag"
-          :ajax="ajaxUrl"
-          :multiple="multiple"
-          name="files2"
-          :auto-submit="autoSubmit"
-          :hide-button="hideButton"
-          :file-list.sync="fileList2">
-        </uploader>
-      </form>
+      <h4>普通上传，无上传文件格式要求</h4>
+      <uploader
+        upload-type="click"
+        :url="ajaxUrl"
+        :multiple="multiple"
+        name="files1"
+        :file-list.sync="fileList1">
+      </uploader>
+      <h4>有上传文件格式要求</h4>
+      <h5>此处只能上传png格式图片</h5>
+      <uploader
+        upload-type="click"
+        :url="ajaxUrl"
+        :multiple="multiple"
+        name="files2"
+        accept="image/png"
+        :file-list.sync="fileList1">
+      </uploader>
+      <h4>有上传数量要求</h4>
+      <h5>此处最多只能上传5个文件，包含已经上传的</h5>
+      <uploader
+        upload-type="click"
+        :url="ajaxUrl"
+        :multiple="multiple"
+        name="files3"
+        :maxlength="5"
+        :file-list.sync="fileList1">
+      </uploader>
+      <h4>拖拽上传</h4>
+      <uploader
+        id="file-upload-drag-test"
+        form-id="upload2"
+        upload-type="drag"
+        :url="ajaxUrl"
+        :multiple="multiple"
+        name="files2"
+        :auto-submit="autoSubmit"
+        :hide-button="hideButton"
+        :file-list.sync="fileList1">
+      </uploader>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 upload文件上传
@@ -162,7 +173,11 @@ upload文件上传
     data() {
       return {
         uploadTime: 0,
-        fileList1: [],
+        fileList1: [{
+          name: '已经上传的文件1.txt'
+        }, {
+          name: '已经上传的文件2.txt'
+        }],
         fileList2: [],
         multiple: true,
         hideButton: false,
