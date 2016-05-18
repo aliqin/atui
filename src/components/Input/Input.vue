@@ -224,7 +224,6 @@
         let self = this;
 
         self.rules.forEach((val, index) => {
-          debugger;
           self.rulesItemValid(val, value);
         });
       },

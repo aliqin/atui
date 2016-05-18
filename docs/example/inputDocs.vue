@@ -160,13 +160,15 @@ export default{
 
   data () {
     return {
+      username: '',
+      tel: '',
       form1: {
         nameValidResult: {},
         nameStatus: '',
         nameTips: '',
         telValidResult: {},
         telStatus: '',
-        telTips:'输入手机号码格式错误',
+        telTips:'输入手机号码格式错误'
       }
     }
   }
