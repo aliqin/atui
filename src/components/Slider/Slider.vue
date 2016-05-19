@@ -97,7 +97,7 @@
         }
       },
       sliderId () {
-        return this.id + 'slider' + new Date().getTime()
+        return this.id || ('slider' + new Date().getTime());
       }
     },
 
