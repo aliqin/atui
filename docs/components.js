@@ -18,6 +18,7 @@ import inputDocs from './example/inputDocs.vue'
 import uploaderDocs from './example/uploaderDocs.vue'
 import formDocs from './example/formDocs.vue'
 import switchDocs from './example/switchDocs.vue'
+import sliderDocs from './example/sliderDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import selectDocs from './example/selectDocs.vue'
 import calendarDocs from './example/calendarDocs.vue'
@@ -76,6 +77,7 @@ new Vue({
     uploaderDocs,
     switchDocs,
     formDocs,
+    sliderDocs,
     messageDocs,
     cascaderDocs,
     badgeDocs,

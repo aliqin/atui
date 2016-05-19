@@ -12,7 +12,7 @@ import Button from './components/Button/'
 import Input from './components/Input/'
 import Searchbox from './components/Searchbox/'
 import Uploader from './components/Uploader/'
-// import Form from './components/Form.vue'
+import Slider from './components/Slider/'
 import Switch from './components/Switch/'
 import Dropdown from './components/Dropdown/'
 import Select from './components/Select/'
@@ -61,6 +61,7 @@ const VueComponent = {
   Form,
   Searchbox,
   Uploader,
+  Slider,
   Switch,
   Dropdown,
   Select,
