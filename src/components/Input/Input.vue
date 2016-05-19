@@ -14,10 +14,7 @@
       },
       large: null,
       small: null,
-      value: {
-        type: String,
-        default: ''
-      },
+      value: [String, Number],
       //是否必填
       required: {
         type: Boolean,
@@ -224,7 +221,6 @@
         let self = this;
 
         self.rules.forEach((val, index) => {
-          debugger;
           self.rulesItemValid(val, value);
         });
       },
