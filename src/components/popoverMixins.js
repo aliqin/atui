@@ -14,9 +14,7 @@ const PopoverMixin = {
     title: {
       type: String
     },
-    content: {
-      type: String
-    },
+    content: [String, Number],
     header: {
       type: Boolean,
       coerce: coerceBoolean,
