@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 Vue.directive('scroll-load', {
   bind() {},
   update(value) {

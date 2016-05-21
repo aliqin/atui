@@ -43,7 +43,7 @@ new Vue({
 <script src="//g.alicdn.com/aliqin/vue-component/0.0.9/vue.dev.js"></script>
 <script src="//g.alicdn.com/aliqin/vue-component/0.0.9/VueComponent.dev.js"></script>
 <script>
-  var alert = VueComponent.Alert
+  const {Alert} = VueComponent
   new Vue({
     components: {
       Alert
