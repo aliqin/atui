@@ -12,7 +12,7 @@
       <thead class="table-thead">
         <tr>
           <th v-if="rowSelection" class="atui-table-selection-column">
-              <input v-if="dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll}" @change="onCheckAll"/>
+              <input v-if="dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"/>
           </th>
           <th v-for="column in columns" :width="column.width">
               {{column['title']}}
@@ -84,6 +84,7 @@ export default {
     this.compileTbody()
     return {
       isCheckedAll: false,
+      isDisabledAll:false,
       sorderOrder:[],
       checkedRows: [],
       filterOpened:false,
@@ -103,12 +104,17 @@ export default {
       return checkedKeys
     },
     checkebleRows() {
+      let me = this
       // 过滤出非禁用的项供选择使用
-      return this.dataSource.filter((record) => {
-        if(this.rowSelection) {
-          return !this.rowSelection.getCheckboxProps || !this.rowSelection.getCheckboxProps(record).disabled
+      let records =  me.dataSource.filter((record) => {
+        if(me.rowSelection) {
+          return !me.rowSelection.getCheckboxProps || !me.rowSelection.getCheckboxProps(record).disabled
         }
       })
+      // if(!records.length) {
+      //   me.isDisabledAll = true
+      // }
+      return records
     }
   },
   watch: {
@@ -123,10 +129,8 @@ export default {
             return me.checkedValues.indexOf(record[me.rowKey]) >= 0
           }
         })
-        if(me.checkebleRows) {
+        if(me.checkebleRows.length) {
           me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
-        } else {
-          me.isCheckedAll = false
         }
       },
       deep:true
@@ -138,6 +142,9 @@ export default {
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
       me.$nextTick(() => {
         me._context.$compile(me.$el)
+        if(!me.checkebleRows.length) {
+          me.isDisabledAll = true
+        }
       })
     },
     sortAction(column,index,order) {

@@ -1,10 +1,6 @@
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
-// var vueChunk = new webpack.optimize.CommonsChunkPlugin({
-//     name: "Vue",
-//     filename: "vue.dev.js",
-// })
-// delete config.devtool
+
 
 config.entry = {
     // Vue: ['vue'],
@@ -18,16 +14,7 @@ config.output = {
     library: '[name]',
     libraryTarget: 'umd'
 }
-config.plugins = (config.plugins || []).concat([
-  // vueChunk
-  // new webpack.ProvidePlugin({
-  //     Vue: 'vue',
-  // }),
-  // // new webpack.ProvidePlugin({
-  // //     VueComponent: 'vue-component'
-  // // })
 
-])
 
 if (process.env.NODE_ENV === 'production') {
   // vueChunk.filenameTemplate = 'vue.js'

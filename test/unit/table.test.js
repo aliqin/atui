@@ -17,8 +17,15 @@ const vm = new Vue({
 
 describe('Table', () => {
   it('Table组件基础渲染', () => {
-    expect(vm.$el.textContent).to.contain('我是标题!')
-    expect(vm.$el.textContent).to.contain('我是具体内容.')
+
+  })
+
+  it('Table组件全选反选', () => {
+
+  })
+
+  it('Table数据清空', () => {
+
   })
 })
 
