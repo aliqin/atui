@@ -4,7 +4,7 @@ ghpages.publish(path.join(__dirname, './'), {
   branch: 'demo',
   message: '同步demo',
   // add:true,
-  src:'{docs/**/*,build/**/*,index.html}',
+  src:'{docs/**/*,build/**/*,dist/**/*,index.html}',
   logger: function(message) {
     console.log(message)
   }

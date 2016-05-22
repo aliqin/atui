@@ -236,7 +236,7 @@ const columns = [{
       key: 'operation',
       render(text, record) {
         if(record) {
-          return '<icon type="info" /><a href="'+ record.key+'.html" target="_blank">详情</a>'
+          return '<icon type="info"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
         }
       }
     }
