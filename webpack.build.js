@@ -1,6 +1,13 @@
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
+var version = process.env.VERSION || require('./package.json').version
 
+var banner =
+  '/*!\n' +
+  ' * atui v' + version + '\n' +
+  ' * (c) ' + new Date().getFullYear() + ' alibaba\n' +
+  ' * Released under the MIT License.\n' +
+  ' */'
 
 config.entry = {
     // Vue: ['vue'],
@@ -32,8 +39,10 @@ if (process.env.NODE_ENV === 'production') {
         },
         output: {
             "ascii_only": true
-        }
+        },
+
     }),
+    new webpack.BannerPlugin(banner, {raw:true,entryOnly:true}),
     new webpack.optimize.OccurenceOrderPlugin()
   ])
 }

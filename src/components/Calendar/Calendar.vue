@@ -2,12 +2,12 @@
   <div class="atui-calendar" v-show="show">
     <div class="atui-calendar-popup" v-show="displayDayView">
       <div class="atui-calendar-inner">
+        <div class="atui-calendar-header">
+          <span class="month-btn atui-calendar-preBtn" @click="preNextMonthClick(0)">&lt;</span>
+          <span class="month-btn atui-calendar-nextBtn" @click="preNextMonthClick(1)">&gt;</span>
+          <p @click="switchMonthView">{{stringifyDayHeader(currDate)}}</p>
+        </div>
         <div class="atui-calendar-body">
-          <div class="atui-calendar-ctrl">
-            <span class="month-btn atui-calendar-preBtn" @click="preNextMonthClick(0)">&lt;</span>
-            <span class="month-btn atui-calendar-nextBtn" @click="preNextMonthClick(1)">&gt;</span>
-            <p @click="switchMonthView">{{stringifyDayHeader(currDate)}}</p>
-          </div>
           <div class="atui-calendar-weekRange">
             <span v-for="w in weekRange">{{w}}</span>
           </div>
@@ -15,16 +15,19 @@
             <span v-for="d in dateRange" v-bind:class="d.sclass" @click="daySelect(d.date,$event)">{{d.text}}</span>
           </div>
         </div>
+        <div class="atui-calendar-footer">
+          <a class="atui-calendar-today-btn" role="button" @click="daySelect(new Date,$event)" title="{{stringifyDayHeader(currDate)}}">今天</a>
+        </div>
       </div>
     </div>
     <div class="atui-calendar-popup" v-show="displayMonthView">
       <div class="atui-calendar-inner">
+        <div class="atui-calendar-header">
+          <span class="month-btn atui-calendar-preBtn" @click="preNextYearClick(0)">&lt;</span>
+          <span class="month-btn atui-calendar-nextBtn" @click="preNextYearClick(1)">&gt;</span>
+          <p @click="switchDecadeView">{{stringifyYearHeader(currDate)}}</p>
+        </div>
         <div class="atui-calendar-body">
-          <div class="atui-calendar-ctrl">
-            <span class="month-btn atui-calendar-preBtn" @click="preNextYearClick(0)">&lt;</span>
-            <span class="month-btn atui-calendar-nextBtn" @click="preNextYearClick(1)">&gt;</span>
-            <p @click="switchDecadeView">{{stringifyYearHeader(currDate)}}</p>
-          </div>
           <div class="atui-calendar-monthRange">
             <template v-for="m in monthNames">
               <span :class="{'atui-calendar-dateRange-item-active':
@@ -39,15 +42,15 @@
     </div>
     <div class="atui-calendar-popup" v-show="displayYearView">
       <div class="atui-calendar-inner">
+        <div class="atui-calendar-header">
+          <span class="month-btn atui-calendar-preBtn" @click="preNextDecadeClick(0)">&lt;</span>
+          <span class="month-btn atui-calendar-nextBtn" @click="preNextDecadeClick(1)">&gt;</span>
+          <p>{{stringifyDecadeHeader(currDate)}}</p>
+        </div>
         <div class="atui-calendar-body">
-          <div class="atui-calendar-ctrl">
-            <span class="month-btn atui-calendar-preBtn" @click="preNextDecadeClick(0)">&lt;</span>
-            <span class="month-btn atui-calendar-nextBtn" @click="preNextDecadeClick(1)">&gt;</span>
-            <p>{{stringifyDecadeHeader(currDate)}}</p>
-          </div>
           <div class="atui-calendar-monthRange decadeRange">
             <template v-for="decade in decadeRange">
-              <span v-bind:class="{'atui-calendar-dateRange-item-active':
+              <span :class="{'atui-calendar-dateRange-item-active':
                   this.parse(this.value).getFullYear() === decade.text}"
                   @click.stop="yearSelect(decade.text)"
                 >{{decade.text}}</span>
