@@ -12,7 +12,7 @@
             <span v-for="w in weekRange">{{w}}</span>
           </div>
           <div class="atui-calendar-dateRange">
-            <span v-for="d in dateRange" v-bind:class="d.sclass" @click="daySelect(d.date,$event)">{{d.text}}</span>
+            <span v-for="d in dateRange" :class="d.sclass" @click="daySelect(d.date,$event)">{{d.text}}</span>
           </div>
         </div>
         <div class="atui-calendar-footer">

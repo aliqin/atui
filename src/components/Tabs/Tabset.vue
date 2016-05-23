@@ -7,7 +7,7 @@
       </span>
       <ul v-if="trigger=='click'" :class="wrapClasses" role="tablist" style="width: 99999px;">
         <li v-for="r in renderData"
-            v-bind:class="{
+            :class="{
               'active': ($index === active),
               'disabled': r.disabled
             }"
@@ -19,7 +19,7 @@
       </ul>
       <ul v-else :class="wrapClasses" role="tablist" style="width: 99999px;">
       <li v-for="r in renderData"
-            v-bind:class="{
+            :class="{
               'active': ($index === active),
               'disabled': r.disabled
             }"

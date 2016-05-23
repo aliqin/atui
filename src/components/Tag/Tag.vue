@@ -51,10 +51,6 @@
 
 		components: {
 			vIcon
-		},
-
-		ready () {
-
 		}
 	}
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="select-container" v-bind:class="{open: show,disabled: disabled,multiple:multiple}">
+  <div class="select-container" :class="{open:show,disabled:disabled,multiple:multiple}">
     <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
     >
       <template v-if="!multiple">

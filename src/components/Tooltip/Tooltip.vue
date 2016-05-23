@@ -4,7 +4,7 @@
     </slot>
   </span>
   <div class="tooltip"
-    v-bind:class="{
+    :class="{
     'top':    placement === 'top',
     'top-left':    placement === 'topLeft',
     'top-right':    placement === 'topRight',

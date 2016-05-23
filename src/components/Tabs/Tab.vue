@@ -1,6 +1,6 @@
 <template>
   <div role="tabpanel" class="tab-pane"
-      v-bind:class="{hide:!show}"
+      :class="{hide:!show}"
       v-show="show"
       :transition="transition"
   >
@@ -41,13 +41,11 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         header: this.header,
         disabled: this.disabled
       })
-      
+
     },
     ready() {
-        for (var c in this.$parent.$children)
-        {
-            if (this.$parent.$children[c].$el == this.$el)
-            {
+        for (var c in this.$parent.$children) {
+            if (this.$parent.$children[c].$el == this.$el) {
                 this.index= c;
                 break;
             }

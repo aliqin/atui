@@ -34,8 +34,7 @@
 					'switch-checked'	: this.checked,
 					'switch-disabled'	: this.disabled
 				}
-			},
-
+			}
 		},
 		methods: {
 			changeHandler () {

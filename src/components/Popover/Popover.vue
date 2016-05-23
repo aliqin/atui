@@ -4,12 +4,7 @@
     </slot>
   </span>
   <div class="popover"
-    v-bind:class="{
-    'top':placement === 'top',
-    'left':placement === 'left',
-    'right':placement === 'right',
-    'bottom':placement === 'bottom'
-    }"
+    :class="[placement]"
     v-el:popover
     v-show="show"
     :transition="effect">
