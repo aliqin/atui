@@ -1,6 +1,6 @@
 <template>
   <div role="progressbar"
-    v-bind:class="{
+    :class="{
     'progress-bar' : true,
     'progress-bar-success':type == 'success',
     'progress-bar-warning':type == 'warning',

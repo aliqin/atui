@@ -33,12 +33,10 @@ export default {
     showJumper: Boolean,
     showSizeChanger: Boolean,
     simple: {
-      type: Boolean,
-      default: false
+      type: Boolean
     },
     mini: {
-      type: Boolean,
-      default: false
+      type: Boolean
     },
     defaultSize: {
       type: Number,
