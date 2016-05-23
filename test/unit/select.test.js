@@ -9,7 +9,7 @@ const vm = new Vue({
   },
   template:
       '<div>'+
-      '<v-select :value="single" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">'+
+      '<v-select :value="Cherry" :placeholder="placeholder" style="width:200px;">'+
         '<v-option value="Apple">苹果</v-option>'+
         '<v-option value="Banana" disabled>Banana</v-option>'+
         '<v-option value="Cherry">Cherry</v-option>'+

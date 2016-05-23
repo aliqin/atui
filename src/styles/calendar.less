@@ -1,6 +1,7 @@
 .atui-calendar {
   position: relative;
   display: inline-block;
+  font-size:12px;
 }
 .atui-calendar-input.with-reset-button {
   padding-right: 25px;
@@ -30,21 +31,22 @@
   width: 218px;
 }
 .atui-calendar-body {
-  padding: 10px 10px;
+  padding: 0 10px;
 }
-.atui-calendar-ctrl p,
-.atui-calendar-ctrl span,
+.atui-calendar-header p,
+.atui-calendar-header span,
 .atui-calendar-body span {
   display: inline-block;
   width: 28px;
   line-height: 28px;
   height: 28px;
   border-radius: 4px;
+  font-size: 12px;
 }
-.atui-calendar-ctrl p {
+.atui-calendar-header p {
   width: 65%;
 }
-.atui-calendar-ctrl span {
+.atui-calendar-header span {
   position: absolute;
 }
 .atui-calendar-body span {
@@ -63,28 +65,28 @@
 .decadeRange span:last-child,
 .atui-calendar-item-disable,
 .atui-calendar-item-gray {
-  color: #999;
+  color: #666;
 }
 .atui-calendar-dateRange-item-active:hover,
 .atui-calendar-dateRange-item-active {
-  background: #3276b1 !important;
+  background: @primary-color !important;
   color: white!important;
 }
 .atui-calendar-monthRange {
   margin-top: 10px;
 }
 .atui-calendar-monthRange span,
-.atui-calendar-ctrl span,
-.atui-calendar-ctrl p,
+.atui-calendar-header span,
+.atui-calendar-header p,
 .atui-calendar-dateRange span {
   cursor: pointer;
 }
 .atui-calendar-monthRange span:hover,
-.atui-calendar-ctrl p:hover,
-.atui-calendar-ctrl i:hover,
+.atui-calendar-header p:hover,
+.atui-calendar-header i:hover,
 .atui-calendar-dateRange span:hover,
 .atui-calendar-dateRange-item-hover {
-  background-color: #eeeeee;
+  background-color: tint(@primary-color, 95%);
 }
 .atui-calendar-weekRange span {
   font-weight: bold;
@@ -95,12 +97,23 @@
   padding: 7px 0;
   text-align: center;
 }
-.atui-calendar-ctrl {
+.atui-calendar-header {
   position: relative;
-  height: 30px;
-  line-height: 30px;
+  height: 34px;
+  line-height: 34px;
   font-weight: bold;
   text-align: center;
+  border-bottom:1px solid #d9d9d9;
+}
+.atui-calendar-footer{
+  border-top:1px solid #d9d9d9;
+  text-align: center;
+  height:34px;
+  line-height: 34px;
+  a{
+    font-style: 12px;
+    text-decoration: none;
+  }
 }
 .month-btn {
   font-weight: bold;
