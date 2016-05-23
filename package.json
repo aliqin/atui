@@ -1,6 +1,6 @@
 {
   "name": "@ali/vue-component",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "description": "components built with Vue.js",
   "main": "src/index.js",
   "repository": {

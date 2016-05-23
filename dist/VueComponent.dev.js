@@ -6309,6 +6309,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.compileTbody();
 	    return {
 	      isCheckedAll: false,
+	      isDisabledAll: false,
 	      sorderOrder: [],
 	      checkedRows: [],
 	      filterOpened: false,
@@ -6329,14 +6330,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return checkedKeys;
 	    },
 	    checkebleRows: function checkebleRows() {
-	      var _this = this;
-	
+	      var me = this;
 	      // 过滤出非禁用的项供选择使用
-	      return this.dataSource.filter(function (record) {
-	        if (_this.rowSelection) {
-	          return !_this.rowSelection.getCheckboxProps || !_this.rowSelection.getCheckboxProps(record).disabled;
+	      var records = me.dataSource.filter(function (record) {
+	        if (me.rowSelection) {
+	          return !me.rowSelection.getCheckboxProps || !me.rowSelection.getCheckboxProps(record).disabled;
 	        }
 	      });
+	      // if(!records.length) {
+	      //   me.isDisabledAll = true
+	      // }
+	      return records;
 	    }
 	  },
 	  watch: {
@@ -6351,10 +6355,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return me.checkedValues.indexOf(record[me.rowKey]) >= 0;
 	          }
 	        });
-	        if (me.checkebleRows) {
+	        if (me.checkebleRows.length) {
 	          me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length;
-	        } else {
-	          me.isCheckedAll = false;
 	        }
 	      },
 	
@@ -6367,6 +6369,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
 	      me.$nextTick(function () {
 	        me._context.$compile(me.$el);
+	        if (!me.checkebleRows.length) {
+	          me.isDisabledAll = true;
+	        }
 	      });
 	    },
 	    sortAction: function sortAction(column, index, order) {
@@ -6472,7 +6477,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       <thead class="table-thead">
 	//         <tr>
 	//           <th v-if="rowSelection" class="atui-table-selection-column">
-	//               <input v-if="dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll}" @change="onCheckAll"/>
+	//               <input v-if="dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"/>
 	//           </th>
 	//           <th v-for="column in columns" :width="column.width">
 	//               {{column['title']}}
@@ -6737,7 +6742,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 231 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"['atui-table-container','atui-table-'+size, {loading :loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n  </table> -->\n  <div :class=\"['atui-table-body',{'atui-fixed-header':fixedHeader}]\">\n    <table class=\"atui-table\">\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\" size=\"12\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-if=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">{{noDataTip}}</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n            <td v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render && record\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
+	module.exports = "\n<div :class=\"['atui-table-container','atui-table-'+size, {loading :loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n  </table> -->\n  <div :class=\"['atui-table-body',{'atui-fixed-header':fixedHeader}]\">\n    <table class=\"atui-table\">\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead class=\"table-thead\">\n        <tr>\n          <th v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n              <input v-if=\"dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"/>\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n              {{column['title']}}\n              <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n                <div data-toggle=\"dropdown\">\n                  <icon type=\"filter\" size=\"12\"></icon>\n                </div>\n                <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n                  <li v-for=\"col in column.filters\"><a href=\"javascript:void(0);\" @click=\"onFilter(col.value, column)\">{{col.text}}</a></li>\n                </ul>\n              </dropdown>\n              <div v-if=\"dataSource.length && column.sorter\" class=\"table-sorter\">\n                <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n                <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n              </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody class=\"table-tbody\">\n        <tr v-if=\"!dataSource.length\"><td colspan=\"10000\" style=\"text-align: center;\" class=\"vue-table-empty\">{{noDataTip}}</td></tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n            <td v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n                 <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps(record)\"/>\n            </td>\n            <td v-for=\"column in columns\">\n                <template v-if=\"column.render && record\">\n                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}\n                </template>\n                <template v-else>\n                    {{record[column.dataIndex]}}\n                </template>\n            </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
 
 /***/ },
 /* 232 */
