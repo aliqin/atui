@@ -133,5 +133,6 @@ describe('Table', () => {
       expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(1)
     })
   })
+
 })
 

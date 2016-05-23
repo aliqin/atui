@@ -11,6 +11,8 @@
         <v-option value="Cherry">Cherry</v-option>
         <v-option value="Orange">OrangeText</v-option>
         <v-option value="Grape">Grape</v-option>
+        <v-option value="agg">鸡蛋</v-option>
+        <v-option value="芒果">芒果</v-option>
       </v-select>
       <hr>
       <h4>多选下拉(只能选已有的)</h4>
