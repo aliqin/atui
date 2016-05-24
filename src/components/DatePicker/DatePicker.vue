@@ -27,7 +27,7 @@ export default {
       default:'请选择日期'
     },
     format: {
-      default: 'yyyy-MMMM-dd'
+      default: 'yyyy-MM-dd'
     },
     locale:{
       default : 'zh_CN'
