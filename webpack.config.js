@@ -37,36 +37,30 @@ module.exports = {
       root: path.join(__dirname, 'node_modules')
     },
     module: {
-        loaders: [
-        {
+        loaders: [{
             test: /\.vue$/,
             loader: 'vue'
-        },
-        {
+        },{
             test: /\.js$/,
             exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
             loader: 'babel'
-        },
-        {
+        },{
             test: /\.css$/,
             // loader: "style-loader!css-loader?root=./docs/"
             loader: extractDoc.extract(['css'])
-        },
-        {   test: /\.(png)$/,
+        },{   test: /\.(png)$/,
             loader: 'url-loader?limit=100000'
-        },
-        {
+        },{
             test: /alidayu\.less$/,
             loader: extractAlidayu.extract(['css','postcss','less'])
-        },
-        {
+        },{
             test: /tmallwt\.less$/,
             loader: extractTmallwt.extract(['css','postcss','less'])
-        },
-        {
+        },{
             test: /alitx\.less$/,
             loader: extractAlitx.extract(['css','postcss','less'])
-        }]
+        }],
+        noParse:[/addr.js/]
     },
     vue: {
         loaders: {
@@ -75,7 +69,6 @@ module.exports = {
                     'css?sourceMap!' +
                     'less?sourceMap'
                     ),
-
         }
     },
     babel: {

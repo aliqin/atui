@@ -73,7 +73,7 @@
     "debug": "webpack-dev-server --host 0.0.0.0 --port 9999 --config  webpack.debug.js",
     "deploy": "rm -rf build && NODE_ENV=production webpack --progress --colors --display-chunks && node depoly.js",
     "publish": "",
-    "build": "webpack --progress --config  webpack.build.js && NODE_ENV=production webpack --progress --config  webpack.build.js && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
+    "build": "webpack --progress --config webpack.build.js && NODE_ENV=production webpack --progress --config  webpack.build.js && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
     "ci": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
     "cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- \"test/**/*.test.js\" --harmony --reporter spec ",
     "test": "def ci test",
