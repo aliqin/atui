@@ -49,12 +49,6 @@ import Breadcrumb from './components/Breadcrumb/'
 import Pagination from './components/Pagination/'
 
 
-// filters
-import phoneNumber from './filters/phoneNumber'
-
-//widgets
-// import AddressSelect from './widgets/AddressSelect/'
-
 const VueComponent = {
   Layout,
   Icon,

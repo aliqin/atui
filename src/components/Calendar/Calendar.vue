@@ -3,8 +3,10 @@
     <div class="atui-calendar-popup" v-show="displayDayView">
       <div class="atui-calendar-inner">
         <div class="atui-calendar-header">
-          <span class="month-btn atui-calendar-preBtn" @click="preNextMonthClick(0)">&lt;</span>
-          <span class="month-btn atui-calendar-nextBtn" @click="preNextMonthClick(1)">&gt;</span>
+          <!-- <span class="atui-calendar-prev-year-btn">»</span> -->
+          <span class="month-btn atui-calendar-preBtn" @click="preNextMonthClick(0)">‹</span>
+          <span class="month-btn atui-calendar-nextBtn" @click="preNextMonthClick(1)">›</span>
+          <!-- <span class="atui-calendar-next-year-btn">»</span> -->
           <p @click="switchMonthView">{{stringifyDayHeader(currDate)}}</p>
         </div>
         <div class="atui-calendar-body">
