@@ -175,6 +175,27 @@
   .btn {
     float: left;
     margin-left: -1px;
+    background-color: #fff;
+    color: #666;
+    border-color: #d9d9d9;
+
+    &:hover {
+      background-color: #fff;
+      color: tint(@primary-color, 40%);
+      border-color: tint(@primary-color, 40%);
+
+      &:focus, &:active, &.active {
+        background-color: @primary-color;
+        color: #fff;
+        border-color: @primary-color;
+      }
+    }
+
+    &:focus, &:active, &.active {
+      background-color: @primary-color;
+      color: #fff;
+      border-color: @primary-color;
+    }
 
     &:first-child:not(:last-child) {
       margin-left: 0;
@@ -191,8 +212,24 @@
       border-top-left-radius: 0;
     }
 
-    &:not(:first-child):not(.secondary):not(.tertiary):not(.text):not(.disabled):not([disabled]), &.primary:not(:first-child) {
-      border-left-color: tint(@primary-color, 40%);
+    &[disabled], &.disabled {
+      .disabled();
+
+      &:hover {
+        .disabled();
+
+        &:focus, &:focus {
+          .disabled();
+        }
+      }
+
+      &:focus, &:focus {
+        .disabled();
+      }
     }
+
+    // &:not(:first-child):not(.secondary):not(.tertiary):not(.text):not(.disabled):not([disabled]), &.primary:not(:first-child) {
+    //   border-left-color: tint(@primary-color, 40%);
+    // }
   }
 }

@@ -34,14 +34,14 @@
       <br>
       <h4>按钮组使用</h4>
       <h5>Basic</h5>
-      <button-group>
-        <v-button secondary value="cancel"></v-button>
-        <v-button primary value="ok"></v-button>
+      <button-group @switch="buttonGroupSwitch">
+        <v-button class="active" value="cancel"></v-button>
+        <v-button value="ok"></v-button>
       </button-group>
       <button-group large>
-        <v-button primary value="L"></v-button>
-        <v-button secondary value="M"></v-button>
-        <v-button tertiary value="M"></v-button>
+        <v-button class="active" value="L"></v-button>
+        <v-button value="M"></v-button>
+        <v-button value="M"></v-button>
       </button-group>
       <button-group small>
         <v-button disabled value="L"></v-button>
@@ -185,6 +185,11 @@ export default{
     vButton,
     Icon,
     ButtonGroup
+  },
+  methods: {
+    buttonGroupSwitch (e, index) {
+      alert('当前点击的是按钮组的第'+index+'个按钮');
+    }
   }
 }
 </script>
