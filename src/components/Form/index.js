@@ -1,6 +1,6 @@
-import Form from './Form.vue';
-import FormItem from './FormItem.vue';
+import Form from './Form.vue'
+import FormItem from './FormItem.vue'
 
-Form.FormItem = FormItem;
+Form.FormItem = FormItem
 
-export default Form;
+export default Form
