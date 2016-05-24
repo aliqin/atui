@@ -24,7 +24,7 @@
                   <li v-for="col in column.filters"><a href="javascript:void(0);" @click="onFilter(col.value, column)">{{col.text}}</a></li>
                 </ul>
               </dropdown>
-              <div v-if="dataSource.length && column.sorter" class="table-sorter">
+              <div v-if="dataSource && dataSource.length && column.sorter" class="table-sorter">
                 <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
                 <icon type="down" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
               </div>
