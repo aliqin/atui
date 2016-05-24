@@ -6287,12 +6287,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = {
 	  props: {
 	    pagination: Object,
-	    dataSource: Array,
+	    dataSource: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
 	    noDataTip: {
 	      type: String,
 	      default: '没有任何数据'
 	    },
-	    columns: Array,
+	    columns: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
 	    rowSelection: Object,
 	    rowKey: String,
 	    loading: Boolean,
@@ -6333,16 +6343,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    checkebleRows: function checkebleRows() {
 	      var me = this;
+	      var rows = [];
 	      // 过滤出非禁用的项供选择使用
-	      var records = me.dataSource.filter(function (record) {
-	        if (me.rowSelection) {
-	          return !me.rowSelection.getCheckboxProps || !me.rowSelection.getCheckboxProps(record).disabled;
-	        }
-	      });
-	      // if(!records.length) {
-	      //   me.isDisabledAll = true
-	      // }
-	      return records;
+	      if (me.dataSource && me.dataSource.length) {
+	        rows = me.dataSource.filter(function (record) {
+	          if (me.rowSelection) {
+	            return !me.rowSelection.getCheckboxProps || !me.rowSelection.getCheckboxProps(record).disabled;
+	          }
+	        });
+	      }
+	      return rows;
 	    }
 	  },
 	  watch: {
@@ -6371,9 +6381,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
 	      me.$nextTick(function () {
 	        me._context.$compile(me.$el);
-	        if (!me.checkebleRows.length) {
-	          me.isDisabledAll = true;
-	        }
+	        me.isDisabledAll = !me.checkebleRows.length;
 	      });
 	    },
 	    sortAction: function sortAction(column, index, order) {

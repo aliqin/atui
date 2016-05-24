@@ -60,12 +60,22 @@ import Spin from '../Spin/'
 export default {
   props: {
     pagination:Object,
-    dataSource: Array,
+    dataSource: {
+      type:Array,
+      default() {
+        return []
+      }
+    },
     noDataTip:{
       type:String,
       default:'没有任何数据'
     },
-    columns: Array,
+    columns: {
+      type:Array,
+      default() {
+        return []
+      }
+    },
     rowSelection: Object,
     rowKey: String,
     loading:Boolean,
@@ -105,16 +115,16 @@ export default {
     },
     checkebleRows() {
       let me = this
+      let rows = []
       // 过滤出非禁用的项供选择使用
-      let records =  me.dataSource.filter((record) => {
-        if(me.rowSelection) {
-          return !me.rowSelection.getCheckboxProps || !me.rowSelection.getCheckboxProps(record).disabled
-        }
-      })
-      // if(!records.length) {
-      //   me.isDisabledAll = true
-      // }
-      return records
+      if(me.dataSource && me.dataSource.length) {
+        rows = me.dataSource.filter((record) => {
+          if(me.rowSelection) {
+            return !me.rowSelection.getCheckboxProps || !me.rowSelection.getCheckboxProps(record).disabled
+          }
+        })
+      }
+      return rows
     }
   },
   watch: {
@@ -142,9 +152,7 @@ export default {
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
       me.$nextTick(() => {
         me._context.$compile(me.$el)
-        if(!me.checkebleRows.length) {
-          me.isDisabledAll = true
-        }
+        me.isDisabledAll = !me.checkebleRows.length
       })
     },
     sortAction(column,index,order) {
