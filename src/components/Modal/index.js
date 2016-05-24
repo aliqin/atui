@@ -1,34 +1,34 @@
 import Modal from './Modal.vue'
 import Icon from '../Icon'
-let iconConfig = {
-  'info':{
+const iconConfig = {
+  'info' : {
     icon:'info',
     color:'#30b2f2'
   },
-  'success':{
+  'success' : {
     icon:'success',
     color:'#1dbf38'
   },
-  'error':{
+  'error' : {
     icon:'error',
     color:'#ff5959'
   },
-  'confirm':{
+  'confirm' : {
     icon:'help',
     color:'#b366ff'
   }
 }
 ;['info', 'success', 'error', 'confirm'].forEach((type) => {
   Modal[type] = function(parmas) {
-    let title = parmas.title
-    let content = parmas.content
-    let onOk = parmas.onOk
+    const title = parmas.title
+    const content = parmas.content
+    const onOk = parmas.onOk
     if (!document.getElementsByClassName('atui-modal').length) {
         let box = document.createElement('div')
         box.className = 'atui-modal'
         document.body.appendChild(box)
     }
-    let div = document.createElement('div')
+    const div = document.createElement('div')
     document.getElementsByClassName('atui-modal')[0].appendChild(div)
     new Vue({
       el: div,
