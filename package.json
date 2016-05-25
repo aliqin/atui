@@ -12,7 +12,8 @@
     "src": "src/components"
   },
   "dependencies": {
-    "vue": "^1.0.21"
+    "vue": "^1.0.21",
+    "babel-runtime": "^6.0.0"
   },
   "files": [
     "LICENSE",
@@ -61,7 +62,7 @@
     "url-loader": "~0.5.7",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
-    "vue-loader": "~8.2.0",
+    "vue-loader": "^8.3.0",
     "vue-router": "~0.7.11",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",

@@ -10,6 +10,6 @@ ghpages.publish(path.join(__dirname, './'), {
   }
 }, function(err) {
   console.log(err || '文档部署成功！')
-});
+})
 
 module.exports = {}
