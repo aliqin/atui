@@ -1,0 +1,60 @@
+.atui-time-picker{
+  position: relative;
+  display: inline-block;
+}
+.time-picker {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.atui-time-picker .time-menus{
+  z-index: 10010;
+  font-size: 12px;
+  background: #fff;
+  position: absolute;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.17);
+  white-space: nowrap
+}
+.atui-time-picker .time-menus > ul{
+  display: inline-block;
+  vertical-align: top;
+  min-width: 56px;
+  height: 180px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #e9e9e9;
+  overflow: hidden;
+  &:hover{
+    overflow-y: auto;
+  }
+}
+.atui-time-picker .time-menus > ul > li {
+  padding: 0 0 0 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  height:24px;
+  line-height: 24px;
+  user-select:none;
+  transition: all .3s ease;
+  &.selected,&.selected:hover{
+    background: #d5f1fd;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    color: #ccc;
+  }
+  &.disabled:hover{
+    background: transparent
+  }
+}
+
+.atui-time-picker .time-menus > ul > li:hover {
+    background: #eaf8fe;
+}
+
+
