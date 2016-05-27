@@ -12,7 +12,7 @@
       <thead class="table-thead">
         <tr>
           <th v-if="rowSelection" class="atui-table-selection-column">
-              <input v-if="dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"/>
+              <input v-if="dataSource && dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"/>
           </th>
           <th v-for="column in columns" :width="column.width">
               {{column['title']}}
@@ -35,7 +35,7 @@
         <tr v-if="!dataSource || !dataSource.length"><td colspan="10000" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td></tr>
         <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
             <td v-if="rowSelection" class="atui-table-selection-column">
-                 <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps(record)"/>
+                 <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"/>
             </td>
             <td v-for="column in columns">
                 <template v-if="column.render && record">
