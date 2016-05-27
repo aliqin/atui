@@ -1,6 +1,6 @@
 <template>
   <div class="bs-docs-section" id="slider">
-    <h3 class="page-header"><a href="#slider" class="anchor">slider 滑动型输入器</a></h3>
+    <h3 class="page-header"><a href="#slider" class="anchor">Slider 滑动型输入器</a></h3>
     <div class="bs-example">
       <h4>basic</h4>
       <slider :value="30"></slider>

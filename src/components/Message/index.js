@@ -2,12 +2,12 @@ import Message from './Message.vue'
 // import Vue from 'vue'
 
 
-['info','success','error','warn','loading'].forEach((type,i) =>{
+['info','success','error','warning','loading'].forEach((type,i) =>{
 	Message[type] = function(content,duration,placement) {
     duration = duration || 3000
-    placement = placement || 'center'
+    placement = placement || 'top'
     new Vue({
-      template:'<message class="atui-message-notice" :show="show" :duration="duration" :type="type" width="400px" :transition="transition" :placement="placement">{{content}}</message>',
+      template:'<message class="atui-message-notice" :show="show" :duration="duration" :type="type" :transition="transition" :placement="placement">{{content}}</message>',
       components:{
         Message:Message
       },
