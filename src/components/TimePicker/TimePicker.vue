@@ -71,6 +71,15 @@
       })
     },
     methods: {
+      chooseHour() {
+
+      },
+      chooseMinute() {
+
+      },
+      chooseSecond() {
+
+      },
       toggleMenus() {
         this.isOpen = !this.isOpen
       }

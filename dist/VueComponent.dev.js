@@ -5971,6 +5971,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  methods: {
+	    chooseHour: function chooseHour() {},
+	    chooseMinute: function chooseMinute() {},
+	    chooseSecond: function chooseSecond() {},
 	    toggleMenus: function toggleMenus() {
 	      this.isOpen = !this.isOpen;
 	    }
