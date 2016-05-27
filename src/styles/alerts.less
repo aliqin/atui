@@ -27,7 +27,7 @@
 @alert-help-text:           #666;
 @alert-help-border:         #e1c2ff;
 
-.alert-variant(@background; @border; @text-color) {
+.atui-message-variant(@background; @border; @text-color) {
   background-color: @background;
   border-color: @border;
   color: @text-color;
@@ -35,7 +35,7 @@
   hr {
     border-top-color: darken(@border, 5%);
   }
-  .alert-link {
+  .atui-message-link {
     color: darken(@text-color, 10%);
   }
   .iconfont{
@@ -48,11 +48,9 @@
 // Base styles
 // -------------------------
 
-.alert {
-  padding: @alert-padding;
-  margin-bottom: @line-height-computed;
-  border: 1px solid transparent;
-  border-radius: @alert-border-radius;
+.atui-message {
+  display: inline-block;
+  z-index: @zindex-message;
 
   // Headings for larger alerts
   h4 {
@@ -62,7 +60,7 @@
   }
 
   // Provide class for links that match alerts
-  .alert-link {
+  .atui-message-link {
     font-weight: @alert-link-font-weight;
   }
 
@@ -76,33 +74,29 @@
     margin-top: 5px;
   }
 }
-.alert.top {
+.atui-message.top {
   position: fixed;
+  transform: translateX(-50%);
+  left:50%;
   top: 30px;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  z-index: 2;
 }
-.alert.top-right {
+.atui-message.top-right {
   position: fixed;
   top: 30px;
   right: 50px;
-  z-index: @zindex-message;
 }
-.alert.center {
+.atui-message.center {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,50%);
-  z-index: @zindex-message;
+  transform: translate(-50%,-50%);
 }
 // Dismissible alerts
 //
 // Expand the right padding and account for the close button's positioning.
 
-.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
-.alert-dismissible {
+.atui-message-dismissable, // The misspelled .atui-message-dismissable was deprecated in 3.2.0.
+.atui-message-dismissible {
   padding-right: (@alert-padding + 20);
 
   // Adjust close link position
@@ -117,27 +111,39 @@
 // Alternate styles
 //
 // Generate contextual modifier classes for colorizing the alert.
-
-.alert-success {
-  .alert-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
+.atui-message-content{
+  padding: @alert-padding;
+  margin-bottom: @line-height-computed;
+  border: 1px solid transparent;
+  border-radius: @alert-border-radius;
+}
+.atui-message-success .atui-message-content{
+  .atui-message-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
 }
 
-.alert-info {
-  .alert-variant(@alert-info-bg; @alert-info-border; @alert-info-text);
+.atui-message-info .atui-message-content{
+  .atui-message-variant(@alert-info-bg; @alert-info-border; @alert-info-text);
 }
 
-.alert-warning {
-  .alert-variant(@alert-warning-bg; @alert-warning-border; @alert-warning-text);
+.atui-message-warning .atui-message-content{
+  .atui-message-variant(@alert-warning-bg; @alert-warning-border; @alert-warning-text);
 }
 
-.alert-danger,.alert-error {
-  .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+.atui-message-danger,.atui-message-error {
+  .atui-message-content{
+    .atui-message-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+  }
 }
 
-.alert-help {
-  .alert-variant(@alert-help-bg; @alert-help-border; @alert-help-text);
+.atui-message-help .atui-message-content{
+  .atui-message-variant(@alert-help-bg; @alert-help-border; @alert-help-text);
 }
-.atui-message-notice{
+
+.atui-message-notice {
+  position: fixed;
+}
+.atui-message-notice .atui-message-content{
+  width:auto;
   background:#fff;
   border:1px solid #e6e6e6;
   box-shadow: 0 0 4px rgba(0,0,0,0.17);

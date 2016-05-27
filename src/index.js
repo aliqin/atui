@@ -17,6 +17,7 @@ import Switch from './components/Switch/'
 import Dropdown from './components/Dropdown/'
 import Select from './components/Select/'
 import Calendar from './components/Calendar/'
+import TimePicker from './components/TimePicker/'
 import DatePicker from './components/DatePicker/'
 // import Progressbar from './components/progressbar.vue'
 import Typeahead from './components/Typeahead.vue'
@@ -60,6 +61,7 @@ const VueComponent = {
   Dropdown,
   Select,
   Calendar,
+  TimePicker,
   DatePicker,
   Typeahead,
   Message,

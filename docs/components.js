@@ -24,6 +24,8 @@ import selectDocs from './example/selectDocs.vue'
 import calendarDocs from './example/calendarDocs.vue'
 
 import datepickerDocs from './example/datepickerDocs.vue'
+
+import timepickerDocs from './example/timepickerDocs.vue'
 import searchboxDocs from './example/searchboxDocs.vue'
 // import progressbarDocs from './example/progressbar-docs.vue'
 // import typeaheadDocs from './example/typeaheadDocs.vue'
@@ -89,6 +91,7 @@ new Vue({
     // asideDocs,
     // carouselDocs,
     datepickerDocs,
+    timepickerDocs,
     dropdownDocs,
     modalDocs,
     popoverDocs,
