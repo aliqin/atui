@@ -974,7 +974,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    type: {
 	      type: String,
-	      default: 'lg'
+	      default: 'sm'
 	    }
 	  },
 	  data: function data() {
