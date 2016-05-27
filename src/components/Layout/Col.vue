@@ -11,7 +11,7 @@ export default {
     },
     type:{
       type:String,
-      default:'lg'
+      default:'sm'
     }
   },
   data() {
