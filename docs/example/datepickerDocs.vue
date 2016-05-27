@@ -70,12 +70,6 @@ const RangePicker = DatePicker.RangePicker
           <td>禁用一周的某一天. 按 0 到 6 .
              禁用多天可用<code>逗号</code>分隔</td>
         </tr>
-        <tr>
-          <td>showResetButton</td>
-          <td><code>Boolean</code></td>
-          <td>false</td>
-          <td>是否显示清除日期按钮</td>
-        </tr>
       </tbody>
     </table>
   </div>

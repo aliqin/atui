@@ -213,7 +213,7 @@ const columns = [{
     sorter: (a, b) => a.age - b.age,
     render(text, record,index) {
       if(record) {
-        return '<input type="text" v-model="gridData['+ index +'].age"/>'
+        return '<input v-model="gridData['+ index +'].age"/>'
       }
     },
     width:250
@@ -278,7 +278,7 @@ const columns = [{
   const rowSelection = {
     getCheckboxProps(record) {
       return {
-        disabled: record.name === '胡彦祖'    // 配置无法勾选的列
+        disabled: true   // 配置无法勾选的列
       }
     },
     onChange(selectedRowKeys, selectedRows) {
@@ -323,13 +323,6 @@ const columns = [{
         console.log('table-change',paging,filter,sorter)
         let me = this
         let data = []
-        // if(filter && filter.length) {
-        //   filter.forEach((item)=>{
-        //     data = me.gridData.filter((record)=>{
-        //       return record[item].indexOf(item)
-        //     })
-        //   })
-        // }
         this.gridData = this.gridData.reverse()
       },
       changeLoading() {

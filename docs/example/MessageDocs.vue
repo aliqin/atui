@@ -240,14 +240,8 @@ import {Message} from '@ali/atui'
     },
     methods:{
       showMessage() {
-        Message['success']('成功啦', 3000, 'center')
+        Message['warning']('成功啦', 300000, 'top')
       }
     }
   }
 </script>
-
-<style>
-  .message-icon-float-left {
-    font-size:32px;float:left;margin-right:5px;
-  }
-</style>
