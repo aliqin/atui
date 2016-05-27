@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import getScrollBarWidth from '../utils/getScrollBarWidth.js'
 import EventListener from '../utils/EventListener.js'
 import coerceBoolean from '../utils/coerceBoolean.js'
 
@@ -44,7 +43,6 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         require: true,
         type: Boolean,
         coerce: coerceBoolean,
-        twoWay: true
       },
       width: String,
       height:String,
@@ -77,14 +75,11 @@ import coerceBoolean from '../utils/coerceBoolean.js'
       this.$watch('show', (val)=> {
         const el = this.$el
         const body = document.body
-        const scrollBarWidth =  getScrollBarWidth()
         if (val) {
           el.querySelector('.modal-content').focus()
           el.style.display = 'block'
           this.in = true
-          if (scrollBarWidth !== 0) {
-            body.style.paddingRight = scrollBarWidth + 'px'
-          }
+
           if (this.backdrop) {
             this._blurModalContentEvent = EventListener.listen(this.$el, 'click', (e)=> {
               if (e.target === el) this.show = false
@@ -95,7 +90,6 @@ import coerceBoolean from '../utils/coerceBoolean.js'
           this.in = false
           setTimeout(()=> {
             el.style.display = 'none'
-            body.style.paddingRight = '0'
           }, 300)
         }
       }, { immediate: true })
