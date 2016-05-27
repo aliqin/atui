@@ -46,32 +46,3 @@
     }
   }
 </script>
-
-<style>
-  .tooltip {
-    opacity: .9
-  }
-.fadein-enter {
-  animation:fadein-in 0.3s ease-in;
-}
-.fadein-leave {
-  animation:fadein-out 0.3s ease-out;
-}
-@keyframes fadein-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadein-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-</style>

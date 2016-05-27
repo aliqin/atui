@@ -68,31 +68,33 @@
   display: block;
 }
 .scale-enter {
-  animation:scale-in 0.15s ease-in;
+  animation:scale-in 0.1s @easeOutQuart;
 }
 .scale-leave {
-  animation:scale-out 0.15s ease-out;
+  animation:scale-out 0.1s @easeOutQuart;
 }
 @keyframes scale-in {
   0% {
-    transform: scale(0);
+    transform: scale(0.8);
     opacity: 0;
   }
   100% {
     transform: scale(1);
-    opacity: 1;
+    // opacity: 1;
   }
 }
 @keyframes scale-out {
   0% {
     transform: scale(1);
-    opacity: 1;
+    // opacity: 1;
   }
   100% {
-    transform: scale(0);
+    transform: scale(0.8);
     opacity: 0;
   }
 }
+
+
 
 // scale--------------
 
