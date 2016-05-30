@@ -6537,7 +6537,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     <span class="cascader-picker">
 	//       <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
 	//     </span>
-	//     <div class="cascader-menus" v-show="isOpen">
+	//     <div class="cascader-menus" v-show="show">
 	//       <ul class="cascader-menu" v-for="(index, menu) in menus">
 	//         <li class="cascader-menu-item" :class="{selected:selectedOptions[index] === option,disabled:option.disabled}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
 	//       </ul>
@@ -6580,7 +6580,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      menus: [],
 	      selectedOptions: [],
 	      displayValue: '',
-	      isOpen: false
+	      show: false
 	    };
 	  },
 	
@@ -6629,7 +6629,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var me = this;
 	    me._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
 	      if (!el.contains(e.target)) {
-	        me.isOpen = false;
+	        me.show = false;
 	      }
 	    });
 	  },
@@ -6651,12 +6651,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (event) {
 	          me.$dispatch('change', me.selectedValue, me.selectedOptions);
 	        }
-	        self.isOpen = false;
+	        me.show = false;
 	      }
 	      me.menus = menus;
 	    },
 	    toggleMenus: function toggleMenus() {
-	      this.isOpen = !this.isOpen;
+	      this.show = !this.show;
 	    }
 	  }
 	};
@@ -6668,7 +6668,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 250 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"cascader\">\n  <span class=\"cascader-picker\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n  </span>\n  <div class=\"cascader-menus\" v-show=\"isOpen\">\n    <ul class=\"cascader-menu\" v-for=\"(index, menu) in menus\">\n      <li class=\"cascader-menu-item\" :class=\"{selected:selectedOptions[index] === option,disabled:option.disabled}\" v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"cascader\">\n  <span class=\"cascader-picker\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n  </span>\n  <div class=\"cascader-menus\" v-show=\"show\">\n    <ul class=\"cascader-menu\" v-for=\"(index, menu) in menus\">\n      <li class=\"cascader-menu-item\" :class=\"{selected:selectedOptions[index] === option,disabled:option.disabled}\" v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
 /* 251 */

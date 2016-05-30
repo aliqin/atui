@@ -3,7 +3,7 @@
     <span class="cascader-picker">
       <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
     </span>
-    <div class="cascader-menus" v-show="isOpen">
+    <div class="cascader-menus" v-show="show">
       <ul class="cascader-menu" v-for="(index, menu) in menus">
         <li class="cascader-menu-item" :class="{selected:selectedOptions[index] === option,disabled:option.disabled}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
       </ul>
@@ -49,7 +49,7 @@
         menus:[],
         selectedOptions:[],
         displayValue:'',
-        isOpen:false
+        show:false
       }
     },
     computed:{
@@ -98,7 +98,7 @@
       let me = this
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!el.contains(e.target)) {
-          me.isOpen = false
+          me.show = false
         }
       })
     },
@@ -119,12 +119,12 @@
           if(event) {
             me.$dispatch('change', me.selectedValue, me.selectedOptions)
           }
-          self.isOpen = false
+          me.show = false
         }
         me.menus = menus
       },
       toggleMenus() {
-        this.isOpen = !this.isOpen
+        this.show = !this.show
       }
     }
   }
