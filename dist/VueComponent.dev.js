@@ -6535,7 +6535,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <template>
 	//   <div class="cascader">
 	//     <span class="cascader-picker">
-	//       <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder"></v-input>
+	//       <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
 	//     </span>
 	//     <div class="cascader-menus" v-show="isOpen">
 	//       <ul class="cascader-menu" v-for="(index, menu) in menus">
@@ -6555,9 +6555,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: '请选择'
 	    },
-	    size: {
-	      type: String,
-	      default: 'default'
+	    width: {
+	      type: String
 	    },
 	    displayRender: {
 	      type: Function,
@@ -6669,7 +6668,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 250 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"cascader\">\n  <span class=\"cascader-picker\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div class=\"cascader-menus\" v-show=\"isOpen\">\n    <ul class=\"cascader-menu\" v-for=\"(index, menu) in menus\">\n      <li class=\"cascader-menu-item\" :class=\"{selected:selectedOptions[index] === option,disabled:option.disabled}\" v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"cascader\">\n  <span class=\"cascader-picker\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n  </span>\n  <div class=\"cascader-menus\" v-show=\"isOpen\">\n    <ul class=\"cascader-menu\" v-for=\"(index, menu) in menus\">\n      <li class=\"cascader-menu-item\" :class=\"{selected:selectedOptions[index] === option,disabled:option.disabled}\" v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
 /* 251 */
