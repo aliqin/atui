@@ -3,12 +3,12 @@
     <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
     >
       <template v-if="!multiple">
-        <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
+        <span class="select-placeholder" v-show="!value">{{placeholder}}</span>
         <span class="btn-content">{{ showText }}</span>
         <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
       </template>
       <div v-else>
-        <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
+        <span class="select-placeholder" v-show="!value">{{placeholder}}</span>
         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
       </div>
@@ -106,7 +106,7 @@
           setTimeout(() => this.showNotify = false, 1000)
         }
       },
-      selectedOptions(val) {
+      selectedOptions(options) {
         if(this.multiple) {
           this.value = this.selectedOptions.map((option)=>{
             return option.value
@@ -114,7 +114,9 @@
         } else {
           this.value = this.selectedOptions[0].value
         }
-        this.$dispatch('change',val)
+        if(options.length) {
+          this.$dispatch('change',this.multiple ? options : options[0])
+        }
       }
     },
     methods: {
