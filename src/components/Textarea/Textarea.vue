@@ -1,7 +1,9 @@
 <template>
-<textarea v-bind="{disabled: isDisabled}" maxlength="{{limitWords}}" class="textarea" :class="classObj" name="{{name}}" placeholder="{{placeholder}}" v-model="content"></textarea>
-<p v-if="limitWords" class="words-area" :class="wordClass">{{ curWords }}/{{ limitWords }}</p>
-<p v-if="showWordsCount" class="words-area">{{ countTips }}{{ curWords }}</p>
+<div class="at-textarea">
+  <textarea v-bind="{disabled: isDisabled}" maxlength="{{limitWords}}" class="textarea" :class="classObj" name="{{name}}" placeholder="{{placeholder}}" v-model="content"></textarea>
+  <p v-if="limitWords" class="words-area" :class="wordClass">{{ curWords }}/{{ limitWords }}</p>
+  <p v-if="showWordsCount" class="words-area">{{ countTips }}{{ curWords }}</p>
+</div>
 </template>
 
 <script>
