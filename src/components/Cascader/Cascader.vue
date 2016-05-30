@@ -1,7 +1,7 @@
 <template>
   <div class="cascader">
     <span class="cascader-picker">
-      <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder"></v-input>
+      <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
     </span>
     <div class="cascader-menus" v-show="isOpen">
       <ul class="cascader-menu" v-for="(index, menu) in menus">
@@ -24,9 +24,8 @@
         type:String,
         default:'请选择'
       },
-      size:{
-        type:String,
-        default:'default'
+      width:{
+        type:String
       },
       displayRender:{
         type:Function,
