@@ -278,20 +278,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(360);
-	__webpack_require__(361);
-	__webpack_require__(362);
-	// import Progressbar from './components/progressbar.vue'
-	
-	
-	// 展示类
-	
-	// import Container from './components/Container.vue'
-	
-	
 	// 导航类
 	// import ffix from './components/affix.vue'
 	// import side from './components/aside.vue'
+	
+	
+	// 展示类
 	
 	
 	var VueComponent = {
@@ -329,6 +321,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  Breadcrumb: _Breadcrumb2.default,
 	  Pagination: _Pagination2.default
 	};
+	// import Container from './components/Container.vue'
+	
+	// import Progressbar from './components/progressbar.vue'
+	
 	
 	module.exports = VueComponent;
 
@@ -508,7 +504,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.form-horizontal {}\n.form-vertical {}\n", "", {"version":3,"sources":["/./src/components/Form/Form.vue?50452d57"],"names":[],"mappings":";AAQA,mBAAA;AACA,iBAAA","file":"Form.vue","sourcesContent":["<template>\n  <form class=\"form\" :class=\"classObj\">\n    <v-row>\n      <slot></slot>\n    </v-row>\n  </form>\n</template>\n<style>\n.form-horizontal {}\n.form-vertical {}\n</style>\n<script>\n  import Layout from 'src/components/Layout/';\n  const vRow = Layout.Row;\n  export default {\n    props: {\n      //表单元素排列方式，有纵向和横向两种 horizontal、vertical\n      horizontal: null,\n      vertical: null\n    },\n\n    data () {\n      return {\n        classObj: {\n          'form-horizontal' : typeof(this.horizontal) !== 'undefined',\n          'form-vertical': typeof(this.vertical) !== 'undefined'\n        }\n      }\n    },\n\n    components: {\n      vRow\n    }\n  }\n</script>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.form-horizontal {}\n.form-vertical {}\n", "", {"version":3,"sources":["/./src/components/Form/Form.vue?812a13d8"],"names":[],"mappings":";AAQA,mBAAA;AACA,iBAAA","file":"Form.vue","sourcesContent":["<template>\n  <form class=\"form\" :class=\"classObj\">\n    <v-row>\n      <slot></slot>\n    </v-row>\n  </form>\n</template>\n<style>\n.form-horizontal {}\n.form-vertical {}\n</style>\n<script>\n  import Layout from '../Layout/'\n  const vRow = Layout.Row\n  export default {\n    props: {\n      //表单元素排列方式，有纵向和横向两种 horizontal、vertical\n      horizontal: null,\n      vertical: null\n    },\n\n    data () {\n      return {\n        classObj: {\n          'form-horizontal' : typeof(this.horizontal) !== 'undefined',\n          'form-vertical': typeof(this.vertical) !== 'undefined'\n        }\n      }\n    },\n\n    components: {\n      vRow\n    }\n  }\n</script>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -10485,24 +10481,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"pagination\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"defaultSize\" :show-size-changer=\"showSizeChanger\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
-
-/***/ },
-/* 360 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 361 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 362 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ])

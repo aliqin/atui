@@ -1,10 +1,3 @@
-require('src/styles/themes/alidayu.less')
-require('src/styles/themes/tmallwt.less')
-require('src/styles/themes/alitx.less')
-
-
-
-
 import Icon from './components/Icon/'
 import Form from './components/Form/'
 import Layout from './components/Layout/'

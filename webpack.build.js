@@ -12,7 +12,8 @@ var banner =
 config.entry = {
     VueComponent: ['./src/index.js'],
     VueWidget: ['./src/widgets/index.js'],
-    VueFilter: ['./src/filters/index.js']
+    VueFilter: ['./src/filters/index.js'],
+    style: ['./src/style.js']
 }
 config.output = {
     path: './dist',

@@ -21,8 +21,8 @@
 </div>
 </template>
 <script>
-  import Layout from 'src/components/Layout/';
-  import Icon from 'src/components/Icon/';
+  import Layout from '../Layout/'
+  import Icon from '../Icon/'
   const vCol = Layout.Col;
   export default {
     props: {

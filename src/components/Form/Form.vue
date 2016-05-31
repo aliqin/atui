@@ -10,8 +10,8 @@
 .form-vertical {}
 </style>
 <script>
-  import Layout from 'src/components/Layout/';
-  const vRow = Layout.Row;
+  import Layout from '../Layout/'
+  const vRow = Layout.Row
   export default {
     props: {
       //表单元素排列方式，有纵向和横向两种 horizontal、vertical
