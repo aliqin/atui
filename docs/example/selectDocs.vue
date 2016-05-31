@@ -3,9 +3,24 @@
     <h3 class="page-header"><a href="#select" class="anchor">Select 下拉框</a></h3>
     <div class="bs-example">
         <pre>
-        选中值 : {{single}}
+        选中值 : {{single1}}
         </pre>
-      <v-select :value="single" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
+      <v-select :value.sync="single1" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
+        <v-option value="Apple">苹果</v-option>
+        <v-option value="Banana" disabled>Banana</v-option>
+        <v-option value="Cherry">Cherry</v-option>
+        <v-option value="Orange">OrangeText</v-option>
+        <v-option value="Grape">Grape</v-option>
+        <v-option value="agg">鸡蛋</v-option>
+        <v-option value="芒果">芒果</v-option>
+      </v-select>
+
+      <v-select :value="single">
+        <v-option value="a">终端</v-option>
+        <v-option value="b">线路</v-option>
+        <v-option value="c">号码拦截</v-option>
+      </v-select>
+      <v-select :value.sync="single1" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
         <v-option value="Apple">苹果</v-option>
         <v-option value="Banana" disabled>Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
@@ -166,9 +181,14 @@
     data() {
       return {
         placeholder:'请选择一个水果',
-        single: 'Apple',
+        single: 'c',
+        single1: 'Apple',
         tagValues:[]
       }
+    },
+    ready() {
+      let me = this
+      setTimeout(()=> me.single = 'b',3000)
     },
     methods:{
       onSlectChange(option) {
