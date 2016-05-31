@@ -105,6 +105,7 @@
           this.value.pop()
           setTimeout(() => this.showNotify = false, 1000)
         }
+        this.$broadcast('valueChange',val)
       },
       selectedOptions(options) {
         if(this.multiple) {
@@ -221,9 +222,9 @@
     },
     ready() {
       let me = this
-      me.options = me.$children.filter(child => {
-        // return child.constructor.
-      })
+      // me.options = me.$children.filter(child => {
+      //   console.log(typeof child)
+      // })
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!me.$el.contains(e.target)) {
           me.show = false

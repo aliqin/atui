@@ -5,9 +5,10 @@
 </template>
 
 <script>
-  // import Icon from '../Icon/'
+  // import Icon from '../Icon/
+  // TODO: 子组件不应该知道父组件的内容，所有业务逻辑应该拿到父组件中去
   export default {
-    name:'option',
+    name: 'option',
     props: {
       value: {
         type: String
@@ -45,7 +46,6 @@
       if(this.$parent.value == this.value){
         this.$parent.selectedOptions.push(option)
       }
-
     },
     methods: {
       handleClick() {
@@ -57,6 +57,19 @@
           value:this.value
         }
         this.$dispatch('option-change',option)
+      }
+    },
+    events:{
+      valueChange(val) {
+        if(val == this.value && !this.disabled) {
+          const option = {
+            label:this.$el.innerText,
+            value:this.value,
+            disabled:this.disabled
+          }
+          this.$parent.selectedOptions = [option]
+          this.chosen = true
+        }
       }
     }
   }

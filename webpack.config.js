@@ -55,7 +55,7 @@ module.exports = {
             test: /alitx\.less$/,
             loader: extractAlitx.extract(['css','postcss','less'])
         }],
-        noParse:[/addr.js/]
+        noParse:[/addr.js/,/^vue$/]
     },
     vue: {
         loaders: {
