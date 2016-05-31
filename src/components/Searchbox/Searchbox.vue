@@ -13,8 +13,8 @@
   </div>
 </template>
 <script>
-  import Icon from '../Icon/';
-  import EventListener from 'src/components/utils/EventListener'
+  import Icon from '../Icon/'
+  import EventListener from '../utils/EventListener'
 
   export default {
     props: {

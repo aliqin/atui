@@ -3,7 +3,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var extractAlidayu = new ExtractTextPlugin('alidayu.css')
 var extractTmallwt = new ExtractTextPlugin('tmallwt.css')
 var extractAlitx = new ExtractTextPlugin('alitx.css')
-var extractDoc = new ExtractTextPlugin('docs.css')
+// var extractDoc = new ExtractTextPlugin('docs.css')
 var path = require('path')
 var precss       = require('precss')
 var autoprefixer = require('autoprefixer')
@@ -21,7 +21,6 @@ module.exports = {
         filename: '[name].js'
     },
     plugins: [
-        extractDoc,
         extractAlidayu,
         extractTmallwt,
         extractAlitx
@@ -44,10 +43,6 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
             loader: 'babel'
-        },{
-            test: /\.css$/,
-            // loader: "style-loader!css-loader?root=./docs/"
-            loader: extractDoc.extract(['css'])
         },{   test: /\.(png)$/,
             loader: 'url-loader?limit=100000'
         },{
