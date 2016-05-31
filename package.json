@@ -2,7 +2,7 @@
   "name": "@ali/vue-component",
   "version": "0.0.9",
   "description": "components built with Vue.js",
-  "main": "src/index.js",
+  "main": "dist/VueComponent.js",
   "repository": {
     "type": "git",
     "url": "http://gitlab.alibaba-inc.com/aliqin/vue-component"
