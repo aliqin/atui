@@ -7,6 +7,14 @@ var extractAlitx = new ExtractTextPlugin('alitx.css')
 var path = require('path')
 var precss       = require('precss')
 var autoprefixer = require('autoprefixer')
+var version = process.env.VERSION || require('./package.json').version
+
+var banner =
+  '/*!\n' +
+  ' * atui v' + version + '\n' +
+  ' * (c) ' + new Date().getFullYear() + ' alibaba\n' +
+  ' * Released under the MIT License.\n' +
+  ' */'
 
 module.exports = {
     entry: {
@@ -77,4 +85,28 @@ module.exports = {
         }
     },
     devtool: 'source-map'
+}
+
+
+if (process.env.NODE_ENV === 'production') {
+  delete module.exports.devtool
+  // remove vue依赖的环境判断
+  module.exports.plugins = module.exports.plugins.concat([
+    new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: '"production"'
+        }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+        sourceMap:false,
+        compress: {
+            warnings: true
+        },
+        output: {
+            "ascii_only": true
+        }
+    }),
+    new webpack.BannerPlugin(banner, {raw:true,entryOnly:true}),
+    new webpack.optimize.OccurenceOrderPlugin()
+  ])
 }
