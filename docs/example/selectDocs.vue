@@ -192,7 +192,6 @@
     },
     methods:{
       onSlectChange(option) {
-        this.single = option.value
         console.log(option)
       },
       onTagChange(values) {

@@ -11,7 +11,7 @@ import addressSelectDocs from './example/widgets/addressSelectDocs.vue'
 Vue.config.debug = true
 
 new Vue({
-  el: '#wrapper',
+  el: 'body',
   components: {
     headerDocs,
     affix,
@@ -20,6 +20,7 @@ new Vue({
   },
   data() {
     return {
+      show:false,
       elements:[],
       components: [],
       filters:[],
@@ -32,6 +33,7 @@ new Vue({
     }
   },
   ready() {
+    this.show = true
     // add h1.anchor.innerHTML to sidebar list
     const elements = document.querySelectorAll('.elements .anchor')
     const components = document.querySelectorAll('.components .anchor')

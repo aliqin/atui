@@ -14996,14 +14996,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function value(val) {
 	      var _this = this;
 	
-	      if (this.multiple && val.length > this.limit) {
-	        this.showNotify = true;
-	        this.value.pop();
-	        setTimeout(function () {
-	          return _this.showNotify = false;
-	        }, 1000);
+	      if (this.multiple) {
+	        if (val.length > this.limit) {
+	          this.showNotify = true;
+	          this.value.pop();
+	          setTimeout(function () {
+	            return _this.showNotify = false;
+	          }, 1000);
+	        }
+	      } else {
+	        this.$broadcast('valueChange', val);
 	      }
-	      this.$broadcast('valueChange', val);
 	    },
 	    selectedOptions: function selectedOptions(options) {
 	      if (this.multiple) {
