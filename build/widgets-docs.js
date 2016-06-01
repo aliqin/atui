@@ -45,7 +45,7 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(494);
+	module.exports = __webpack_require__(495);
 
 
 /***/ },
@@ -1637,9 +1637,13 @@
 /***/ },
 
 /***/ 488:
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	'use strict';
+	
+	__webpack_require__(489);
+	__webpack_require__(490);
+	__webpack_require__(491);
 
 /***/ },
 
@@ -1658,6 +1662,13 @@
 /***/ },
 
 /***/ 491:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 492:
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -2382,7 +2393,7 @@
 
 /***/ },
 
-/***/ 492:
+/***/ 493:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2407,7 +2418,7 @@
 
 /***/ },
 
-/***/ 494:
+/***/ 495:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2428,17 +2439,15 @@
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _addressSelectDocs = __webpack_require__(495);
+	var _addressSelectDocs = __webpack_require__(496);
 	
 	var _addressSelectDocs2 = _interopRequireDefault(_addressSelectDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	__webpack_require__(488);
-	__webpack_require__(489);
-	__webpack_require__(490);
-	__webpack_require__(491);
 	__webpack_require__(492);
+	__webpack_require__(493);
 	//widgets
 	
 	
@@ -2521,16 +2530,16 @@
 
 /***/ },
 
-/***/ 495:
+/***/ 496:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(496)
+	__vue_script__ = __webpack_require__(497)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/widgets/addressSelectDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(503)
+	__vue_template__ = __webpack_require__(504)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2540,7 +2549,7 @@
 
 /***/ },
 
-/***/ 496:
+/***/ 497:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2549,7 +2558,7 @@
 	  value: true
 	});
 	
-	var _widgets = __webpack_require__(497);
+	var _widgets = __webpack_require__(498);
 	
 	exports.default = {
 	  data: function data() {
@@ -2698,12 +2707,12 @@
 
 /***/ },
 
-/***/ 497:
+/***/ 498:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _AddressSelect = __webpack_require__(498);
+	var _AddressSelect = __webpack_require__(499);
 	
 	var _AddressSelect2 = _interopRequireDefault(_AddressSelect);
 	
@@ -2720,7 +2729,7 @@
 
 /***/ },
 
-/***/ 498:
+/***/ 499:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2729,7 +2738,7 @@
 	  value: true
 	});
 	
-	var _AddressSelect = __webpack_require__(499);
+	var _AddressSelect = __webpack_require__(500);
 	
 	var _AddressSelect2 = _interopRequireDefault(_AddressSelect);
 
@@ -2739,16 +2748,16 @@
 
 /***/ },
 
-/***/ 499:
+/***/ 500:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(500)
+	__vue_script__ = __webpack_require__(501)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/widgets/AddressSelect/AddressSelect.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(502)
+	__vue_template__ = __webpack_require__(503)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2758,7 +2767,7 @@
 
 /***/ },
 
-/***/ 500:
+/***/ 501:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2767,7 +2776,7 @@
 	  value: true
 	});
 	
-	var _addr = __webpack_require__(501);
+	var _addr = __webpack_require__(502);
 	
 	var _addr2 = _interopRequireDefault(_addr);
 	
@@ -3172,7 +3181,7 @@
 
 /***/ },
 
-/***/ 501:
+/***/ 502:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3185,14 +3194,14 @@
 
 /***/ },
 
-/***/ 502:
+/***/ 503:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"address-box\" :class=\"classObj\" @click.stop=\"showAddrPopFun\" @blur=\"hideAddrPopFun\">\n  <div v-if=\"province\" class=\"ad-select has-select\" v-html=\"selectAddr\"></div>\n  <div v-else class=\"ad-select\">{{placeholder}}</div>\n  <i class=\"ad-drop\" :class=\"{'drop-down': showAddrPop}\"></i>\n  <div class=\"ad-overlay\" v-show=\"showAddrPop\">\n    <div class=\"ad-overlay-container\">\n      <div class=\"tab-list\">\n        <ul>\n          <li v-for=\"tab in tabList\" :class=\"{'active': current == tab.id}\" :style=\"{'width': (100/tabList.length)+'%'}\" @click.stop.stop=\"navChoose(tab.id)\">{{tab.name}}</li>\n        </ul>\n      </div>\n      <div class=\"tab-content\">\n        <div class=\"province-content\" v-show=\"current == 'province'\">\n          <dl v-for=\"key in list.provinceList\">\n            <dt>{{$key}}</dt>\n            <dd>\n              <a v-for=\"prov in key\" :title=\"prov[1]\" :attr-id=\"prov[0]\" href=\"javascript:;\" @click=\"chooseProvince(prov[0], prov[1])\" :class=\"{'active': provinceId == prov[0]}\">\n                <input v-if=\"provinceId == prov[0]\" value=\"{{prov[1]}}\" type=\"hidden\" v-model=\"province\" />\n                {{prov[1]}}\n              </a>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"city-content\" v-show=\"current == 'city'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.countyList\">\n                <a v-if=\"item[2] == provinceId\" title=\"{{item[1]}}\" attr-id=\"{{item[0]}}\" href=\"javascript:;\" @click.stop=\"chooseCity(item[0], item[1])\" :class=\"{'active': cityId == item[0]}\" track-by=\"item[0]\">\n                  <input v-if=\"cityId == item[0]\" value=\"{{item[1]}}\" type=\"hidden\" v-model=\"city\" />\n                  {{item[1]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"county-content\" v-if=\"tabList[2]\" v-show=\"current == 'county'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.countyList\">\n                <a v-if=\"item[2] == cityId\" title=\"{{item[1]}}\" attr-id=\"{{item[0]}}\" href=\"javascript:;\" @click.stop=\"chooseCounty(item[0], item[1])\" :class=\"{'active': countyId == item[0]}\" track-by=\"item[0]\">\n                  <input v-if=\"countyId == item[0]\" value=\"{{item[1]}}\" type=\"hidden\" v-model=\"county\" />\n                  {{item[1]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"street-content\" v-if=\"tabList[3]\" v-show=\"current == 'street'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.streetList\">\n                <a title=\"{{item[0]}}\" attr-id=\"{{$key}}\" parent-id=\"{{item[1]}}\" href=\"javascript:;\" @click.stop=\"chooseStreet($key, item[0])\" :class=\"{'active': streetId == $key}\" track-by=\"$key\">\n                  <input v-if=\"streetId == $key\" value=\"{{item[0]}}\" type=\"hidden\" v-model=\"street\" />\n                  {{item[0]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n";
 
 /***/ },
 
-/***/ 503:
+/***/ 504:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"addressselect\">\n    <h3 class=\"page-header\"><a href=\"#addressselect\" class=\"anchor\">AddressSelect 地址选择 </a></h3>\n    <div class=\"bs-example\">\n      <h4>无默认选中</h4>\n      <address-select large level=\"2\" placeholder=\"请选择省市\"></address-select>\n      <br>\n      <address-select small level=\"3\" placeholder=\"请选择省市区\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\"></address-select>\n      <br>\n      <h4>有默认选中</h4>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr1\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr2\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr3\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr4\"></address-select>\n      <br>\n      <button type=\"button\" class=\"btn\" id=\"J_click\">点击</button>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<address-select large level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr1\"></address-select>\n<address-select small level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr2\"></address-select>\n<address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr3\"></address-select>\n<address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr4\"></address-select>\n    </script></code></pre>\n    </script>\n    </code>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>预期值的提示信息</td>\n        </tr>\n        <tr>\n          <td>level</td>\n          <td><code>String</code></td>\n          <td><code>4</code></td>\n          <td>省份-城市-县区-街道四级地址，要显示几级</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>组件尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>组件尺寸，小</td>\n        </tr>\n        <tr>\n          <td>default-addr</td>\n          <td><code>Object</code></td>\n          <td><code>{\n        provinceId: '',\n        cityId: '',\n        countyId: '',\n        streetId: ''\n      }</code></td>\n          <td>默认要选中的省份、城市、县/区、街道对应ID</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";

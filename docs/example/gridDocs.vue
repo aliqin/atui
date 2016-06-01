@@ -2,7 +2,7 @@
   <div class="bs-docs-section" id="grid">
     <h3 class="page-header"><a href="#grid" class="anchor">Grid 栅格 </a></h3>
     <div class="bs-example">
-      <div class="container grid-demo">
+      <div class="grid-demo">
         <v-row>
           <v-col span="24">col-lg-24</v-col>
         </v-row>
