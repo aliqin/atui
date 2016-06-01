@@ -100,12 +100,15 @@
     },
     watch: {
       value(val) {
-        if (this.multiple && val.length > this.limit) {
-          this.showNotify = true
-          this.value.pop()
-          setTimeout(() => this.showNotify = false, 1000)
+        if (this.multiple) {
+          if(val.length > this.limit) {
+            this.showNotify = true
+            this.value.pop()
+            setTimeout(() => this.showNotify = false, 1000)
+          }
+        } else {
+          this.$broadcast('valueChange',val)
         }
-        this.$broadcast('valueChange',val)
       },
       selectedOptions(options) {
         if(this.multiple) {

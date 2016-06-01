@@ -1,6 +1,4 @@
-require('../src/styles/themes/alidayu.less')
-require('../src/styles/themes/tmallwt.less')
-require('../src/styles/themes/alitx.less')
+require('../src/style.js')
 require('prismjs')
 require('./js/showLanguage')
 
