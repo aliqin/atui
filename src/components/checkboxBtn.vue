@@ -20,7 +20,7 @@
 // 'btn-danger':type == 'danger',
 // 'btn-default':type == 'default',
 // 'btn-primary':type == 'primary',
-import coerceBoolean from '../utils/coerceBoolean.js'
+import coerceBoolean from './utils/coerceBoolean.js'
 
   export default {
     props: {
