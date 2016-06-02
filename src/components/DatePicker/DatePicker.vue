@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import EventListener from '../utils/EventListener.js'
+import EventListener from '../../utils/EventListener.js'
 import Calendar from '../Calendar/'
 import Icon from '../Icon/'
 
@@ -59,11 +59,6 @@ export default {
       return true
     }
   },
-  // watch() {
-  //   disabledDate() {
-  //     this.$ref
-  //   }
-  // }
   ready() {
     this._closeEvent = EventListener.listen(window, 'click', (e)=> {
       if (!this.$el.contains(e.target)) {

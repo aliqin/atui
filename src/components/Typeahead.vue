@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import callAjax from './utils/callAjax.js'
-import coerceBoolean from './utils/coerceBoolean.js'
+import callAjax from '../utils/callAjax.js'
+import coerceBoolean from '../utils/coerceBoolean.js'
 
 const typeahead = {
     created() {
@@ -84,7 +84,7 @@ const typeahead = {
     computed: {
       primitiveData() {
         var _this = this;
-        
+
         if (this.data) {
           return this.data.filter(value=> {
             value = this.matchCase ? value : value.toLowerCase();

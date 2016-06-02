@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  import EventListener from '../utils/EventListener'
-  import coerceBoolean from '../utils/coerceBoolean.js'
+  import EventListener from '../../utils/EventListener'
+  import coerceBoolean from '../../utils/coerceBoolean.js'
   import Icon from '../Icon/'
   import Tag from '../Tag/'
   export default {

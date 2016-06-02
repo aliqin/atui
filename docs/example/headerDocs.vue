@@ -72,7 +72,8 @@ export default {
         }
       })
       document.getElementById('J_ThemeCss').href = '../build/' + csslink
-      document.body.className = csslink.replace('.css','')
+      // document.body.className = csslink.replace('.css','')
+      Vue.util.addClass(document.body,csslink.replace('.css',''))
     }
   }
 }

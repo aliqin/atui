@@ -5,8 +5,8 @@
   </div>
 </template>
 <script>
-  import EventListener from '../utils/EventListener'
-  import coerceBoolean from '../utils/coerceBoolean.js'
+  import EventListener from '../../utils/EventListener'
+  import coerceBoolean from '../../utils/coerceBoolean.js'
 
   export default {
     props:{

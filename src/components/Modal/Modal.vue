@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import EventListener from '../utils/EventListener.js'
-import coerceBoolean from '../utils/coerceBoolean.js'
+import EventListener from '../../utils/EventListener.js'
+import coerceBoolean from '../../utils/coerceBoolean.js'
 
   export default {
     props: {

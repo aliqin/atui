@@ -21,7 +21,7 @@
 
 <script>
   import Tooltip from '../Tooltip/'
-  import EventListener from '../utils/EventListener'
+  import EventListener from '../../utils/EventListener'
 
   export default {
     props: {

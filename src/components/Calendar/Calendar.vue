@@ -33,8 +33,8 @@
           <div class="atui-calendar-monthRange">
             <template v-for="m in monthNames">
               <span :class="{'atui-calendar-dateRange-item-active':
-                  (this.monthNames[this.parse(this.value).getMonth()]  === m) &&
-                  this.currDate.getFullYear() === this.parse(this.value).getFullYear()}"
+                  (monthNames[parse(value).getMonth()]  === m) &&
+                  currDate.getFullYear() === parse(value).getFullYear()}"
                   @click="monthSelect($index)"
                 >{{m.substr(0,3)}}</span>
             </template>
@@ -53,7 +53,7 @@
           <div class="atui-calendar-monthRange decadeRange">
             <template v-for="decade in decadeRange">
               <span :class="{'atui-calendar-dateRange-item-active':
-                  this.parse(this.value).getFullYear() === decade.text}"
+                  parse(value).getFullYear() === decade.text}"
                   @click.stop="yearSelect(decade.text)"
                 >{{decade.text}}</span>
             </template>
@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import EventListener from '../utils/EventListener.js'
+import EventListener from '../../utils/EventListener.js'
 const localeConfig = {
   zh_CN : {
     weekRange: ['日', '一', '二', '三', '四', '五', '六'],

@@ -66,26 +66,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	__webpack_require__(371);
-	__webpack_require__(372);
-	__webpack_require__(373);
+	// require('src/styles/themes/tmallwt.less')
+	// require('src/styles/themes/alitx.less')
 
 /***/ },
 
 /***/ 371:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-
-/***/ 372:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-
-/***/ 373:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
