@@ -20,7 +20,12 @@
         <v-option value="b">线路</v-option>
         <v-option value="c">号码拦截</v-option>
       </v-select>
-      <v-select :value.sync="single1" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
+
+      <v-select tags placeholder="请输入签名">
+
+      </v-select>
+
+      <v-select :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
         <v-option value="Apple">苹果</v-option>
         <v-option value="Banana" disabled>Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
