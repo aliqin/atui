@@ -4,7 +4,7 @@
 
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type="checkbox"] {
@@ -26,8 +26,6 @@ input[type="checkbox"] {
       position: absolute;
       left: 2px;
       top: 1px;
-      width: 10px;
-      height: 10px;
       line-height: 10px;
       background-color: transparent;
       content: '\00ac';
@@ -40,25 +38,21 @@ input[type="checkbox"] {
     }
   }
 
-  &[disabled] {
+  &[disabled],&[disabled]:checked {
     background-color: #f2f2f2;
     border-color: #e6e6e6;
     color: #ccc;
     cursor: not-allowed;
-
-    &:checked {
+    &:after {
       background-color: #f2f2f2;
-      border-color: #e6e6e6;
       color: #ccc;
-
-      &:after {
-        background-color: #f2f2f2;
-        color: #ccc;
-      }
     }
   }
 }
-
+.let-ie-11 input[type="checkbox"] {
+  width:auto;
+  height:auto;
+}
 
 input[type="radio"] {
   position: relative;

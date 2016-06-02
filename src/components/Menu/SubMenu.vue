@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import coerceBoolean from '../utils/coerceBoolean.js'
+import coerceBoolean from '../../utils/coerceBoolean.js'
 
   export default {
     props: {
@@ -18,7 +18,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
       }
     },
     created() {
-      
+
     },
     methods:{
       triggerSub(){

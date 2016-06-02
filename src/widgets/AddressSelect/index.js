@@ -1,3 +1,3 @@
-import AddressSelect from "./AddressSelect.vue";
+import AddressSelect from "./AddressSelect.vue"
 
-export default AddressSelect;
+export default AddressSelect

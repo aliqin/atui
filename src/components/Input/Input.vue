@@ -112,29 +112,29 @@
     watch: {
       value (newVal, oldVal) {
         if(this.validResult) {
-          this.valid(newVal);
+          this.valid(newVal)
         }
       },
 
       results: {
         handler: function (val, oldVal) {
-          let self = this;
-          let tips = '';
-          let status = '';
+          let self = this
+          let tips = ''
+          let status = ''
           for(let key in val) {
-            let obj = val[key];
+            let obj = val[key]
             if(obj) {
-              tips += obj.tips + '  ';
+              tips += obj.tips + '  '
 
               if(obj.validStatus !== 'success') {
-                status = 'error';
+                status = 'error'
               }
             }
           }
 
-          self.validStatus = status;
-          self.tips = tips;
-          self.validResult = self.results;
+          self.validStatus = status
+          self.tips = tips
+          self.validResult = self.results
         },
         deep: true
       }
@@ -143,149 +143,149 @@
     methods: {
       valid (val) {
         if(typeof(this.required) !== "undefined") {
-          this.requiredValid(val);
+          this.requiredValid(val)
         }
 
         if(this.minlength) {
-          this.minlengthValid(val);
+          this.minlengthValid(val)
         }
 
         if(this.rules) {
-          this.rulesValid(val);
+          this.rulesValid(val)
         }
       },
 
       rulesItemValid (rule, value) {
-        let self = this;
+        let self = this
 
         switch(rule) {
           case 'required':
-            self.requiredValid(value);
+            self.requiredValid(value)
           case 'isPhone':
-            self.phoneValid(value);
-            break;
+            self.phoneValid(value)
+            break
           case 'isNumber':
-            self.numberValid(value);
-            break;
+            self.numberValid(value)
+            break
           case 'isTelephone':
-            self.telValid(value);
-            break;
+            self.telValid(value)
+            break
           case 'isEmail':
-            self.emailValid(value);
-            break;
+            self.emailValid(value)
+            break
         }
       },
 
       requiredValid (val) {
-        let self = this;
+        let self = this
 
-        self.results = self.results || {};
+        self.results = self.results || {}
 
         if(!val) {
           self.results.requiredValid = {
             validStatus: 'error',
             tips: self.requiredTips || '输入不能为空'
-          };
+          }
         } else {
           self.results.requiredValid = {
             validStatus: 'success',
             tips: ''
-          };
+          }
         }
       },
 
       minlengthValid (val) {
-        let self = this;
-        let minlength = self.minlength - 0;
+        let self = this
+        let minlength = self.minlength - 0
 
-        self.results = self.results || {};
+        self.results = self.results || {}
 
         if(val) {
-          let  len = val.length;
+          let  len = val.length
 
           if(val.length < minlength) {
             self.results.minlengthValid = {
               validStatus: 'error',
               tips: self.minlengthTips || '输入字符数不能小于' + len
-            };
+            }
           } else {
             self.results.minlengthValid = {
               validStatus: 'success',
               tips: ''
-            };
+            }
           }
         }
       },
 
       rulesValid (value) {
-        let self = this;
+        let self = this
 
         self.rules.forEach((val, index) => {
-          self.rulesItemValid(val, value);
-        });
+          self.rulesItemValid(val, value)
+        })
       },
 
       phoneValid (value) {
-        let rule = /^1\d{10}$/;
+        let rule = /^1\d{10}$/
 
         if (rule.test(value) || value == '') {
           this.results.isPhoneValid = {
             validStatus: 'success',
             tips: ''
-          };
+          }
         } else {
           this.results.isPhoneValid = {
             validStatus: 'error',
             tips: this.isPhoneValidTips || '输入手机号码格式错误'
-          };
+          }
         }
       },
 
       numberValid (value) {
-        let rule = /^\d*$/;
+        let rule = /^\d*$/
 
         if(rule.test(value) || value == '') {
           this.results.isNumberValid = {
             validStatus: 'success',
             tips: ''
-          };
+          }
         } else {
           this.results.isNumberValid = {
             validStatus: 'error',
             tips: this.isPhoneValidTips || '数字验证失败'
-          };
+          }
         }
       },
 
       telValid (value) {
-        let rule = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/;
+        let rule = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/
 
         if(rule.test(value) || value == '') {
           this.results.isTelValid = {
             validStatus: 'success',
             tips: ''
-          };
+          }
         } else {
           this.results.isTelValid = {
             validStatus: 'error',
             tips: this.isPhoneValidTips || '输入固话格式错误，固话请用-'
-          };
+          }
         }
       },
 
       emailValid (value) {
-        let rule = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        let rule = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
 
         if(rule.test(value) || value == '') {
           this.results.isEmailValid = {
             validStatus: 'success',
             tips: ''
-          };
+          }
         } else {
           this.results.isEmailValid = {
             validStatus: 'error',
             tips: this.isPhoneValidTips || '输入email格式错误'
-          };
+          }
         }
       }
     }

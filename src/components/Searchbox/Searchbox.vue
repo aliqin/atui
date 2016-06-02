@@ -14,7 +14,7 @@
 </template>
 <script>
   import Icon from '../Icon/'
-  import EventListener from '../utils/EventListener'
+  import EventListener from '../../utils/EventListener'
 
   export default {
     props: {

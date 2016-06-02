@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-  import EventListener from '../utils/EventListener'
+  import EventListener from '../../utils/EventListener'
   import Input from '../Input'
 
   export default {
@@ -84,14 +84,6 @@
           me.changeOption(i,option[0])
         })
       }
-      // me.childs++
-      // let children = this.options[0].children
-      // // 算出层级，初始化界面的选择框
-      // while(children && children.length) {
-      //   me.childs++
-      //   children = children[0].children
-      // }
-
     },
     ready() {
       const el = this.$el
