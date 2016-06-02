@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import coerceBoolean from '../../utils/coerceBoolean.js'
+import coerceBoolean from '../utils/coerceBoolean.js'
 import Icon from '../Icon'
   export default {
     props: {

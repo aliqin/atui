@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import callAjax from '../utils/callAjax.js'
-import coerceBoolean from '../utils/coerceBoolean.js'
+import callAjax from './utils/callAjax.js'
+import coerceBoolean from './utils/coerceBoolean.js'
 
 const typeahead = {
     created() {

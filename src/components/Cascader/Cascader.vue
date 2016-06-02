@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-  import EventListener from '../../utils/EventListener'
+  import EventListener from '../utils/EventListener'
   import Input from '../Input'
 
   export default {

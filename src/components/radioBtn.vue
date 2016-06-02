@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import coerceBoolean from '../utils/coerceBoolean.js'
+import coerceBoolean from './utils/coerceBoolean.js'
 
   export default {
     name:'radio-btn',

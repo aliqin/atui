@@ -12,7 +12,7 @@
 </div>
 </template>
 <script>
-import isSupportAnimation from '../../utils/cssAnimationSupported'
+import isSupportAnimation from '../utils/cssAnimationSupported'
 export default {
   name: 'spin',
   props:{

@@ -1,5 +1,5 @@
-import EventListener from '../utils/EventListener.js'
-import coerceBoolean from '../utils/coerceBoolean.js'
+import EventListener from './utils/EventListener.js'
+import coerceBoolean from './utils/coerceBoolean.js'
 
 const PopoverMixin = {
   props: {
