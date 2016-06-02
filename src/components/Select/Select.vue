@@ -1,6 +1,6 @@
 <template>
   <div class="select-container" :class="{open:show,disabled:disabled,multiple:multiple}">
-    <div class="select-toggle" tabindex="1" class="dropdown-toggle" @click="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
+    <div :class="['select-toggle',{tags:tags}]" tabindex="1" @mousedown="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
     >
       <template v-if="!multiple">
         <span class="select-placeholder" v-show="!value">{{placeholder}}</span>
@@ -8,12 +8,12 @@
         <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
       </template>
       <div v-else>
-        <span class="select-placeholder" v-show="!value">{{placeholder}}</span>
+        <span class="select-placeholder" v-show="!value.length && showPlaceholder">{{placeholder}}</span>
         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
       </div>
     </div>
-    <div class="dropdown-menu">
+    <div class="dropdown-menu" v-show="options.length > 0">
       <slot></slot>
       <div v-show="noResult" class="no-result">无结果</div>
       <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
@@ -125,6 +125,7 @@
     },
     methods: {
       toggleDropdown() {
+        let me = this
         if(this.disabled) {
           this.show = false
           return
@@ -132,7 +133,7 @@
         this.show = !this.show
         if(this.multiple) {
           this.showPlaceholder = false
-          this.$els.searchField.focus()
+          setTimeout(() => me.$els.searchField.focus(),10)
         }
       },
       closeTag(option) {
