@@ -14441,8 +14441,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var popover = this.$els.popover;
 	      var triger = this.$els.trigger.children[0];
 	      var offset = triger.getBoundingClientRect();
-	      var offsetLeft = document.body.scrollLeft + offset.left;
-	      var offsetTop = document.body.scrollTop + offset.top;
+	      var offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left;
+	      var offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top;
 	      switch (this.placement) {
 	        case 'top':
 	          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2;
@@ -15052,7 +15052,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    closeTag: function closeTag(option) {
 	      this.selectedOptions.$remove(option);
 	    },
-	    deleteTag: function deleteTag() {
+	    deleteTag: function deleteTag(event) {
 	      var input = event.target;
 	      var value = input.value;
 	      if (value.length === 0) {
@@ -15061,14 +15061,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.selectedOptions.$remove(option);
 	      }
 	    },
-	    onInput: function onInput() {
+	    onInput: function onInput(event) {
 	      var input = event.target;
 	      var value = input.value;
 	      var width = value.length * 10;
 	      this.showPlaceholder = false;
 	      input.style.width = width + 10 + 'px';
 	    },
-	    createTag: function createTag() {
+	    createTag: function createTag(event) {
 	      if (this.tags) {
 	        var value = event.target.value;
 	        if (!value || !value.trim().length) {
@@ -17159,7 +17159,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	
 	    // 点击全选框触发
-	    onCheckAll: function onCheckAll() {
+	    onCheckAll: function onCheckAll(event) {
 	      var me = this;
 	      var changeRows = [];
 	      var input = event.srcElement || event.target;
