@@ -71,7 +71,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	window.Vue.filter('phoneNumber', _phoneNumber2.default);
+	Vue.filter('phoneNumber', _phoneNumber2.default);
 	
 	module.exports = {};
 

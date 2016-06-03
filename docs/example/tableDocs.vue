@@ -278,7 +278,7 @@ const columns = [{
   const rowSelection = {
     getCheckboxProps(record) {
       return {
-        disabled: true   // 配置无法勾选的列
+        disabled: record.name === '李大嘴'   // 配置无法勾选的列
       }
     },
     onChange(selectedRowKeys, selectedRows) {
