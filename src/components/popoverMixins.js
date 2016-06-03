@@ -52,8 +52,8 @@ const PopoverMixin = {
       const popover = this.$els.popover
       const triger  = this.$els.trigger.children[0]
       const offset = triger.getBoundingClientRect()
-      const offsetLeft = document.body.scrollLeft + offset.left
-      const offsetTop = document.body.scrollTop + offset.top
+      const offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left
+      const offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top
       switch (this.placement) {
         case 'top' :
           this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2

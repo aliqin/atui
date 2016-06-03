@@ -167,7 +167,7 @@ export default {
       })
     },
     // 点击全选框触发
-    onCheckAll() {
+    onCheckAll(event) {
       let me = this
       const changeRows = []
       let input = event.srcElement || event.target

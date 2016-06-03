@@ -139,7 +139,7 @@
       closeTag(option) {
         this.selectedOptions.$remove(option)
       },
-      deleteTag() {
+      deleteTag(event) {
         let input = event.target
         let value = input.value
         if(value.length === 0) {
@@ -148,14 +148,14 @@
           this.selectedOptions.$remove(option)
         }
       },
-      onInput() {
+      onInput(event) {
         let input = event.target
         let value = input.value
         let width = value.length * 10
         this.showPlaceholder = false
         input.style.width = (width + 10) + 'px'
       },
-      createTag() {
+      createTag(event) {
         if(this.tags) {
           let value = event.target.value
           if(!value || !value.trim().length) {
