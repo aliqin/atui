@@ -33,14 +33,9 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-}
-.dropdown-toggle{
-  cursor: pointer;
-}
-
-// Prevent the focus on the dropdown toggle when closing dropdowns
-.dropdown-toggle:focus {
-  outline: 0;
+  .iconfont{
+    font-size:12px !important;
+  }
 }
 
 // The dropdown menu (ul)
@@ -117,23 +112,6 @@
   }
 }
 
-
-
-.caret {
-  display: inline-block;
-  position: absolute;
-  top:50%;
-  // transform:translateY(-50%);
-  margin-top:-15px;
-  right:10px;
-
-  .iconfont {
-    color: #bfbfbf;
-    display: inline-block;
-    transition: all .3s ease;
-    transform:rotate(0deg);
-  }
-}
 // Open state for the dropdown
 .open {
   // Show the menu

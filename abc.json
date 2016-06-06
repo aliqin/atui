@@ -5,14 +5,14 @@
   },
   "info": {
     "platform": [
-      "mobile"
+      "pc"
     ],
     "project": "app",
     "workflow": "normal"
   },
   "test": {
     "browsers": [
-      "Chrome"
+      "PhantomJS"
     ],
     "autoWatch": false,
     "vue": true
