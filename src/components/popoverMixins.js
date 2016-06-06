@@ -37,9 +37,11 @@ const PopoverMixin = {
 
   methods: {
     toggle() {
+
       this.show = !this.show;
 
       if(this.show) {
+        debugger
         this.resetPos()
       }
     },

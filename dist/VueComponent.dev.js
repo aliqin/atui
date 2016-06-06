@@ -14423,9 +14423,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  methods: {
 	    toggle: function toggle() {
+	
 	      this.show = !this.show;
 	
 	      if (this.show) {
+	        debugger;
 	        this.resetPos();
 	      }
 	    },
