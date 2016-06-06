@@ -198,39 +198,8 @@ content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
   import {Tooltip} from 'src/'
 
   export default {
-    data() {
-      return {
-        title: 'Title',
-        text: 'Lorem ipsum dolor sit amet'
-      }
-    },
     components: {
       Tooltip
     }
   }
 </script>
-
-<style lang="less">
-  .table-demo {
-    position: relative;
-    width: 100%;
-
-    td {
-      text-align: center;
-      width: 33%;
-    }
-  }
-
-  .table-tooltip {
-    td {
-      position: relative;
-      padding: 5px;
-    }
-  }
-
-  .bs-example {
-    p {
-      position: relative;
-    }
-  }
-</style>

@@ -14394,7 +14394,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    effect: {
 	      type: String,
-	      default: 'fadein'
+	      default: 'fade'
 	    },
 	    title: {
 	      type: String
@@ -14416,110 +14416,90 @@ return /******/ (function(modules) { // webpackBootstrap
 	        top: 0,
 	        left: 0
 	      },
-	      show: true
+	      show: false
 	    };
 	  },
 	
 	
 	  methods: {
 	    toggle: function toggle() {
-	
 	      this.show = !this.show;
-	
-	      if (this.show) {
-	        debugger;
-	        this.resetPos();
-	      }
 	    },
 	
 	
 	    /**
 	     * 设置tooltip坐标
-	     * @param initial
 	       */
-	    resetPos: function resetPos(initial) {
-	      var _this = this;
-	
-	      var popover = this.$els.popover;
-	      var triger = this.$els.trigger.children[0];
+	    resetPos: function resetPos() {
+	      var me = this;
+	      var popover = me.$els.popover;
+	      console.log(popover);
+	      if (me.show && popover.offsetWidth == 0) {
+	        setTimeout(function () {
+	          me.resetPos();
+	        });
+	        return;
+	      }
+	      var triger = me.$els.trigger.children[0];
 	      var offset = triger.getBoundingClientRect();
 	      var offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left;
 	      var offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top;
-	      switch (this.placement) {
+	      var offsetWidth = popover.offsetWidth + 10;
+	      var offsetHeight = popover.offsetHeight + 5; // 减去5像素的padding
+	      switch (me.placement) {
 	        case 'top':
-	          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2;
-	          this.position.top = offsetTop - popover.offsetHeight;
+	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2;
+	          me.position.top = offsetTop - offsetHeight;
 	          break;
 	        case 'topLeft':
-	          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4;
-	          this.position.top = offsetTop - popover.offsetHeight;
+	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 + offsetWidth / 4;
+	          me.position.top = offsetTop - offsetHeight;
 	          break;
 	        case 'topRight':
-	          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4;
-	          this.position.top = offsetTop - popover.offsetHeight;
+	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 - offsetWidth / 4;
+	          me.position.top = offsetTop - offsetHeight;
 	          break;
 	        case 'left':
-	          this.position.left = offsetLeft - popover.offsetWidth;
-	          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2;
+	          me.position.left = offsetLeft - offsetWidth;
+	          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2;
 	          break;
 	        case 'leftTop':
-	          this.position.left = offsetLeft - popover.offsetWidth;
-	          this.position.top = offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4;
+	          me.position.left = offsetLeft - offsetWidth;
+	          me.position.top = offsetTop + triger.offsetHeight / 4 - offsetHeight / 2 + offsetHeight / 4;
 	          break;
 	        case 'leftBottom':
-	          this.position.left = offsetLeft - popover.offsetWidth;
-	          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4;
+	          me.position.left = offsetLeft - offsetWidth;
+	          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + triger.offsetHeight / 4;
 	          break;
 	        case 'right':
-	          this.position.left = offsetLeft + triger.offsetWidth;
-	          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2;
+	          me.position.left = offsetLeft + triger.offsetWidth;
+	          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2;
 	          break;
 	        case 'rightTop':
-	          this.position.left = offsetLeft + triger.offsetWidth;
-	          this.position.top = offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4;
+	          me.position.left = offsetLeft + triger.offsetWidth;
+	          me.position.top = offsetTop + triger.offsetHeight / 4 - offsetHeight / 2 + offsetHeight / 4;
 	          break;
 	        case 'rightBottom':
-	          this.position.left = offsetLeft + triger.offsetWidth;
-	          this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4;
+	          me.position.left = offsetLeft + triger.offsetWidth;
+	          me.position.top = triger.offsetTop + triger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + triger.offsetHeight / 4;
 	          break;
 	        case 'bottom':
-	          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2;
-	          this.position.top = offsetTop + triger.offsetHeight;
+	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2;
+	          me.position.top = offsetTop + triger.offsetHeight;
 	          break;
 	        case 'bottomLeft':
-	          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4;
-	          this.position.top = offsetTop + triger.offsetHeight;
+	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 + offsetWidth / 4;
+	          me.position.top = offsetTop + triger.offsetHeight;
 	          break;
 	        case 'bottomRight':
-	          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4;
-	          this.position.top = offsetTop + triger.offsetHeight;
+	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 - offsetWidth / 4;
+	          me.position.top = offsetTop + triger.offsetHeight;
 	          break;
 	        default:
 	          console.log('Wrong placement prop');
 	      }
-	
-	      //如果popover没有大小,则重新设置一次
-	      if (popover.offsetWidth == 0 && popover.offsetHeight == 0) {
-	        setTimeout(function () {
-	          return _this.resetPos(initial);
-	        });
-	        return;
-	      }
-	
-	      popover.style.width = popover.offsetWidth + 'px';
-	      popover.style.height = popover.offsetHeight + 'px';
 	      popover.style.top = this.position.top + 'px';
 	      popover.style.left = this.position.left + 'px';
-	
-	      if (initial) {
-	        popover.style.display = 'none';
-	        this.show = !this.show;
-	      }
-	
-	      //使用transform:translate定位,会影响到transform:scale动画效果
-	      //this.position.top = this.position.top - triger.offsetHeight - 5
-	      //this.position.left -= 5
-	      //popover.style.transform = 'translate(' + this.position.left + 'px, ' + this.position.top + 'px)'
 	    }
 	  },
 	  attached: function attached() {
@@ -14528,7 +14508,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  ready: function ready() {
-	    var _this2 = this;
+	    var _this = this;
 	
 	    if (!this.$els.popover) return console.error("Couldn't find popover v-el in your component that uses popoverMixin.");
 	
@@ -14542,7 +14522,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        me.resetPos();
 	      });
 	      this._mouseleaveEvent = _EventListener2.default.listen(triger, 'mouseleave', function () {
-	        return _this2.show = false;
+	        return _this.show = false;
 	      });
 	    } else if (this.trigger === 'focus') {
 	      this._focusEvent = _EventListener2.default.listen(triger, 'focus', function () {
@@ -14550,13 +14530,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        me.resetPos();
 	      });
 	      this._blurEvent = _EventListener2.default.listen(triger, 'blur', function () {
-	        return _this2.show = false;
+	        return _this.show = false;
 	      });
 	    } else {
-	      this._clickEvent = _EventListener2.default.listen(triger, 'click', this.toggle);
+	      this._clickEvent = _EventListener2.default.listen(triger, 'click', function () {
+	        me.show = !me.show;
+	        me.resetPos();
+	      });
 	    }
-	
-	    this.resetPos(true);
 	  },
 	  beforeDestroy: function beforeDestroy() {
 	    if (this._blurEvent) {
@@ -18802,7 +18783,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     </slot>
 	//   </span>
 	//   <div class="popover"
-	//     :class="[placement]"
+	//     :class="{
+	//     'top':    placement === 'top',
+	//     'top-left':    placement === 'topLeft',
+	//     'top-right':    placement === 'topRight',
+	//     'left':   placement === 'left',
+	//     'left-top':   placement === 'leftTop',
+	//     'left-bottom':   placement === 'leftBottom',
+	//     'right':  placement === 'right',
+	//     'right-top':  placement === 'rightTop',
+	//     'right-bottom':  placement === 'rightBottom',
+	//     'bottom': placement === 'bottom',
+	//     'bottom-left': placement === 'bottomLeft',
+	//     'bottom-right': placement === 'bottomRight'
+	//     }"
 	//     v-el:popover
 	//     v-show="show"
 	//     :transition="effect">
@@ -18820,7 +18814,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 314 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<span v-el:trigger>\n  <slot>\n  </slot>\n</span>\n<div class=\"popover\"\n  :class=\"[placement]\"\n  v-el:popover\n  v-show=\"show\"\n  :transition=\"effect\">\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-show=\"title\">{{title}}</h3>\n    <div class=\"popover-content\">\n      {{{content}}}\n    </div>\n</div>\n";
+	module.exports = "\n<span v-el:trigger>\n  <slot>\n  </slot>\n</span>\n<div class=\"popover\"\n  :class=\"{\n  'top':    placement === 'top',\n  'top-left':    placement === 'topLeft',\n  'top-right':    placement === 'topRight',\n  'left':   placement === 'left',\n  'left-top':   placement === 'leftTop',\n  'left-bottom':   placement === 'leftBottom',\n  'right':  placement === 'right',\n  'right-top':  placement === 'rightTop',\n  'right-bottom':  placement === 'rightBottom',\n  'bottom': placement === 'bottom',\n  'bottom-left': placement === 'bottomLeft',\n  'bottom-right': placement === 'bottomRight'\n  }\"\n  v-el:popover\n  v-show=\"show\"\n  :transition=\"effect\">\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-show=\"title\">{{title}}</h3>\n    <div class=\"popover-content\">\n      {{{content}}}\n    </div>\n</div>\n";
 
 /***/ },
 /* 315 */

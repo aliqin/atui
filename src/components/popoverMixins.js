@@ -9,7 +9,7 @@ const PopoverMixin = {
     },
     effect: {
       type: String,
-      default: 'fadein'
+      default: 'fade'
     },
     title: {
       type: String
@@ -31,105 +31,89 @@ const PopoverMixin = {
         top: 0,
         left: 0
       },
-      show: true
+      show: false
     }
   },
 
   methods: {
     toggle() {
-
-      this.show = !this.show;
-
-      if(this.show) {
-        debugger
-        this.resetPos()
-      }
+      this.show = !this.show
     },
 
     /**
      * 设置tooltip坐标
-     * @param initial
        */
-    resetPos (initial) {
-      const popover = this.$els.popover
-      const triger  = this.$els.trigger.children[0]
+    resetPos () {
+      let me = this
+      const popover = me.$els.popover
+      console.log(popover)
+      if(me.show && popover.offsetWidth == 0) {
+        setTimeout(() => {
+          me.resetPos()
+        })
+        return
+      }
+      const triger  = me.$els.trigger.children[0]
       const offset = triger.getBoundingClientRect()
       const offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left
       const offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top
-      switch (this.placement) {
+      const offsetWidth = popover.offsetWidth + 10
+      const offsetHeight = popover.offsetHeight + 5 // 减去5像素的padding
+      switch (me.placement) {
         case 'top' :
-          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2
-          this.position.top = offsetTop  - popover.offsetHeight
+          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2
+          me.position.top = offsetTop  - offsetHeight
           break
         case 'topLeft' :
-          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4
-          this.position.top = offsetTop  - popover.offsetHeight
+          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 + offsetWidth / 4
+          me.position.top = offsetTop  - offsetHeight
           break
         case 'topRight' :
-          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4
-          this.position.top = offsetTop  - popover.offsetHeight
+          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 - offsetWidth / 4
+          me.position.top = offsetTop  - offsetHeight
           break
         case 'left':
-          this.position.left = offsetLeft - popover.offsetWidth
-          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2
+          me.position.left = offsetLeft - offsetWidth
+          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2
           break
         case 'leftTop':
-          this.position.left = offsetLeft - popover.offsetWidth
-          this.position.top = offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4
+          me.position.left = offsetLeft - offsetWidth
+          me.position.top = offsetTop + triger.offsetHeight / 4 - offsetHeight / 2 + offsetHeight / 4
           break
         case 'leftBottom':
-          this.position.left = offsetLeft - popover.offsetWidth
-          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4
+          me.position.left = offsetLeft - offsetWidth
+          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + triger.offsetHeight / 4
           break
         case 'right':
-          this.position.left = offsetLeft + triger.offsetWidth
-          this.position.top = offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2
+          me.position.left = offsetLeft + triger.offsetWidth
+          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2
           break
         case 'rightTop':
-          this.position.left = offsetLeft + triger.offsetWidth
-          this.position.top = offsetTop + triger.offsetHeight / 4 - popover.offsetHeight / 2 + popover.offsetHeight / 4
+          me.position.left = offsetLeft + triger.offsetWidth
+          me.position.top = offsetTop + triger.offsetHeight / 4 - offsetHeight / 2 + offsetHeight / 4
           break
         case 'rightBottom':
-          this.position.left = offsetLeft + triger.offsetWidth
-          this.position.top = triger.offsetTop + triger.offsetHeight / 2 - popover.offsetHeight / 2 - popover.offsetHeight / 4 + triger.offsetHeight / 4
+          me.position.left = offsetLeft + triger.offsetWidth
+          me.position.top = triger.offsetTop + triger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + triger.offsetHeight / 4
           break
         case 'bottom':
-          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2
-          this.position.top = offsetTop + triger.offsetHeight
+          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2
+          me.position.top = offsetTop + triger.offsetHeight
           break
         case 'bottomLeft':
-          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 + popover.offsetWidth / 4
-          this.position.top = offsetTop + triger.offsetHeight
+          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 + offsetWidth / 4
+          me.position.top = offsetTop + triger.offsetHeight
           break
         case 'bottomRight':
-          this.position.left = offsetLeft - popover.offsetWidth / 2 + triger.offsetWidth / 2 - popover.offsetWidth / 4
-          this.position.top = offsetTop + triger.offsetHeight
+          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 - offsetWidth / 4
+          me.position.top = offsetTop + triger.offsetHeight
           break
         default:
           console.log('Wrong placement prop')
       }
-
-      //如果popover没有大小,则重新设置一次
-      if (popover.offsetWidth == 0 && popover.offsetHeight == 0) {
-        setTimeout(() => this.resetPos(initial))
-        return
-      }
-
-      popover.style.width  = popover.offsetWidth + 'px'
-      popover.style.height = popover.offsetHeight + 'px'
       popover.style.top    = this.position.top + 'px'
       popover.style.left   = this.position.left + 'px'
-
-      if (initial) {
-        popover.style.display = 'none'
-        this.show             = !this.show
-      }
-
-      //使用transform:translate定位,会影响到transform:scale动画效果
-      //this.position.top = this.position.top - triger.offsetHeight - 5
-      //this.position.left -= 5
-      //popover.style.transform = 'translate(' + this.position.left + 'px, ' + this.position.top + 'px)'
-    },
+    }
   },
   attached() {
     if(this.$els.popover) {
@@ -156,10 +140,11 @@ const PopoverMixin = {
       })
       this._blurEvent = EventListener.listen(triger, 'blur', ()=> this.show = false)
     } else {
-      this._clickEvent = EventListener.listen(triger, 'click', this.toggle)
+      this._clickEvent = EventListener.listen(triger, 'click', ()=> {
+        me.show = !me.show
+        me.resetPos()
+      })
     }
-
-    this.resetPos(true)
   },
 
   beforeDestroy() {

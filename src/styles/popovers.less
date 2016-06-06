@@ -30,12 +30,10 @@
   top: 0;
   left: 0;
   z-index: @zindex-popover;
-  display: none;
   max-width: @popover-max-width;
   padding: 1px;
   // Our parent element can be arbitrary since popovers are by default inserted as a sibling of their target element.
   // So reset our font and text properties to avoid inheriting weird values.
-  .reset-text();
   font-size: @font-size-base;
 
   background-color: @popover-bg;
