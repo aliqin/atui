@@ -12,6 +12,10 @@
           <v-input type="tel" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel" :valid-result.sync="form1.telValidResult" :rules="['isNumber','isPhone']" :tips.sync="form1.telTips"></v-input>
         </form-item>
         <form-item required label="性别" label-col="4">
+          <label><input type="radio" name="sexy" checked />男</label>
+          <label><input type="radio" name="sexy" />女</label>
+        </form-item>
+        <form-item required label="性取向" label-col="4">
           <label><input type="checkbox" name="sexy" checked />男</label>
           <label><input type="checkbox" name="sexy" />女</label>
         </form-item>
