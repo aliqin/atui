@@ -96,6 +96,7 @@ var ie_version =  getIEVersion()
 // ie10以及以下，对某些样式支持有问题，需要降级
 document.addEventListener("DOMContentLoaded", function(event) {
   if(ie_version.major === '9' || ie_version.major === '10') {
-    Vue.util.addClass(document.body,'let-ie-11')
+    Vue.util.addClass(document.body,'let-ie11')
+    Vue.util.addClass(document.body,'ie' + ie_version.major)
   }
 })
