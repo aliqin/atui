@@ -211,10 +211,9 @@ const columns = [{
     title: '年龄',
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
-    render(text, record,index) {
-      if(record) {
-        return '<input v-model="gridData['+ index +'].age"/>'
-      }
+    render(text, record, index) {
+      console.log(this)
+      return '<input v-model="gridData['+ index +'].age"/>'
     },
     width:250
   }, {
