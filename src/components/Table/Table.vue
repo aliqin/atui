@@ -39,7 +39,7 @@
             </td>
             <td v-for="column in columns">
                 <template v-if="column.render && record">
-                    {{{column.render(record[column.dataIndex],record,rowIndex)}}}
+                    {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}
                 </template>
                 <template v-else>
                     {{record[column.dataIndex]}}
@@ -169,9 +169,9 @@ export default {
     // 点击全选框触发
     onCheckAll(event) {
       let me = this
-      const changeRows = []
+      let changeRows = []
       let input = event.srcElement || event.target
-      const checked = input.checked
+      let checked = input.checked
       if(checked) {
         me.checkebleRows.forEach((record,i) => {
           if(me.checkedRows.indexOf(record) < 0) {
@@ -192,7 +192,6 @@ export default {
       if( me.rowSelection.onSelectAll ) {
         me.rowSelection.onSelectAll(checked,me.checkedRows,changeRows)
       }
-      // me.$dispatch('table-change', this.pagination, this.filters, this.sorter)
     },
     // 选中某一个单选框时触发
     onCheckOne(event,record) {
