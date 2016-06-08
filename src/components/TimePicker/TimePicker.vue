@@ -3,7 +3,7 @@
     <span class="time-picker">
       <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder"></v-input>
     </span>
-    <div class="time-menus" v-show="isOpen">
+    <div class="time-menus" v-show="isOpen" transition="slide">
       <ul class="time-hours">
         <li class="time-hour" :class="{}" v-for="index in 12" @click="chooseHour">{{index | leftPad}}</li>
       </ul>

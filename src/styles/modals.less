@@ -29,8 +29,7 @@
 }
 
 // Container that the modal scrolls within
-.modal {
-  display: none;
+.atui-modal {
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -44,9 +43,6 @@
 
   // Prevent Chrome on Windows from adding a focus outline. For details, see
   outline: 0;
-  &.fade { opacity:0; }
-  &.in { opacity:1; }
-
 }
 
 
@@ -119,24 +115,6 @@
     margin-left: 0;
   }
 }
-
-
-
-.modal {
-  transition: all 0.3s ease;
-}
-.modal.in {
-  background-color: rgba(0,0,0,0.5);
-}
-.modal.zoom.out .modal-dialog {
-    zoom: 0.1;
-    opacity: 0;
-}
-.modal.zoom.in .modal-dialog {
-    zoom: 1;
-    opacity: 1;
-}
-
 // Scale up the modal
 @media (min-width: @screen-sm-min) {
   // Automatically set modal's width for larger viewports

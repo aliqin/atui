@@ -9,11 +9,11 @@
       </template>
       <div v-else>
         <span class="select-placeholder" v-show="!value.length && showPlaceholder">{{placeholder}}</span>
-        <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
+        <tag v-for="option in selectedOptions" transition="zoom" closable @close="closeTag(option)">{{{option.label}}}</tag>
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
       </div>
     </div>
-    <div class="dropdown-menu" v-show="options.length > 0">
+    <div class="dropdown-menu" v-show="show && options.length > 0" transition="slide">
       <slot></slot>
       <div v-show="noResult" class="no-result">无结果</div>
       <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>

@@ -1,14 +1,9 @@
 <template>
-  <div role="dialog"
-    :class="{
-    'modal':true,
-    'fade':effect === 'fade',
-    'zoom':effect === 'zoom',
-    'in':in
-    }"
+  <div role="dialog" class="atui-modal" v-show="show" transition="fade"
+    @click="clickBack"
     >
     <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
-      :style="{width: width, height:height}">
+      :style="{width: width, height:height}" v-show="show" transition="fade">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
@@ -57,7 +52,7 @@ import coerceBoolean from '../utils/coerceBoolean.js'
       backdrop: {
         type: Boolean,
         coerce: coerceBoolean,
-        default: true
+        default: false
       },
       large: {
         type: Boolean
@@ -71,36 +66,18 @@ import coerceBoolean from '../utils/coerceBoolean.js'
         in:false
       }
     },
-    ready() {
-      this.$watch('show', (val)=> {
-        const el = this.$el
-        const body = document.body
-        if (val) {
-          el.querySelector('.modal-content').focus()
-          el.style.display = 'block'
-          this.in = true
-
-          if (this.backdrop) {
-            this._blurModalContentEvent = EventListener.listen(this.$el, 'click', (e)=> {
-              if (e.target === el) this.show = false
-            })
-          }
-        } else {
-          if (this._blurModalContentEvent) this._blurModalContentEvent.remove()
-          this.in = false
-          setTimeout(()=> {
-            el.style.display = 'none'
-          }, 300)
-        }
-      }, { immediate: true })
-    },
     methods: {
       close() {
         this.show = false
+      },
+      clickBack() {
+        if(this.backdrop) {
+          this.close()
+        }
       }
     },
     compiled () {
-      var me = this;
+      var me = this
       window.addEventListener('keyup', function (ev) {
           if (ev.keyCode === 27) {
               me.show = false;

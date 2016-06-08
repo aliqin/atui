@@ -6,7 +6,7 @@
     <div class="panel-collapse"
       v-el:panel
       v-show="isOpen"
-      transition="collapse"
+      transition="slide"
     >
       <div class="panel-body">
         <slot></slot>
@@ -57,19 +57,3 @@ import coerceBoolean from '../utils/coerceBoolean.js'
     }
   }
 </script>
-
-<style>
-.accordion-toggle {
-  cursor: pointer;
-}
-
-.collapse-transition {
-transition: max-height .5s ease;
-overflow: hidden;
-}
-
-.collapse-enter, .collapse-leave {
-  max-height: 0!important;
-}
-
-</style>

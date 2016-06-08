@@ -3,7 +3,7 @@
     <span class="cascader-picker">
       <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
     </span>
-    <div class="cascader-menus" v-show="show">
+    <div class="cascader-menus" v-show="show" transition="slide">
       <ul class="cascader-menu" v-for="(index, menu) in menus">
         <li class="cascader-menu-item" :class="{selected:selectedOptions[index] === option,disabled:option.disabled}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
       </ul>
