@@ -4,7 +4,7 @@
     <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
     <icon type="search" :color="iconColor" size="14"></icon>
     <div v-if="searchList && searchList.length > 0" class="search-list-containter">
-      <ul class="list-dropdown" v-show="showPop">
+      <ul class="list-dropdown" v-show="showPop" transition="slide">
         <li v-for="item in searchList | filterBy value">
           <a href="javascript:;" @click="checkItem($index, item[textField])" title="{{item[textField]}}">{{item[textField]}}</a>
         </li>

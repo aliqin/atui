@@ -1,5 +1,5 @@
 <template>
-	<div v-if="!closed" :class="wrapClasses" :style="{'background-color': color}">
+	<div v-if="!closed" :class="['atui-tag',{'atui-tag-color': color}]" :style="{'background-color': color}">
 		<a :href="href" class="tag-text" :style="{'fontSize': size+'px'}"><slot></slot></a>
 		<span v-if="closable" class="tag-close" @click="closeHandler">
 			<v-icon type="close" :size="size"></v-icon>
@@ -15,8 +15,7 @@
 				type: String
 			},
 			closable: {
-				type: Boolean,
-				default: false
+				type: Boolean
 			},
 			href: {
 				type: String
@@ -26,29 +25,17 @@
 				default: "12"
 			}
 		},
-
 		data () {
 			return {
 				closed: false
 			}
 		},
-
-		computed: {
-			wrapClasses() {
-				return {
-					'atui-tag':		true,
-					'atui-tag-color': this.color
-				}
-			}
-		},
-
 		methods: {
 			closeHandler (e) {
 				this.closed = true
 				this.$dispatch('close',e)
 			}
 		},
-
 		components: {
 			vIcon
 		}

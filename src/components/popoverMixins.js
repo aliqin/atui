@@ -9,7 +9,7 @@ const PopoverMixin = {
     },
     effect: {
       type: String,
-      default: 'fade'
+      default: 'zoom'
     },
     title: {
       type: String

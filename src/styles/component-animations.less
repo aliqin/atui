@@ -42,59 +42,99 @@
 // http://easings.net/zh-cn#easeOutElastic
 @easeOutElastic:cubic-bezier(0.64, 0.57, 0.67, 1.53);
 
-.fade-transition {
-  transition: opacity .3s @easeOutQuart;
-  display: block;
+
+.fade-enter{
+  animation:fadeIn 0.1s @easeOutQuart;
 }
-.fade-enter,
 .fade-leave {
-  height: 0;
-  opacity: 0;
+  animation:fadeOut 0.1s @easeOutQuart;
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 
 .movedown-transition {
   transition: top .3s @easeOutQuart;
 }
-.movedown-enter{
-  top:-10px !important;
-}
-.movedown-leave{
+.movedown-enter,.movedown-leave{
   top:-10px !important;
 }
 
-// scale--------------
-.scale-transition,
-.fade-transition {
-  display: block;
+
+
+.slide-enter{
+  animation:slideUpIn 0.1s @easeOutQuart;
 }
-.scale-enter {
-  animation:scale-in 0.1s @easeOutQuart;
+.slide-leave{
+  animation:slideUpOut 0.1s @easeOutQuart;
 }
-.scale-leave {
-  animation:scale-out 0.1s @easeOutQuart;
-}
-@keyframes scale-in {
+
+@keyframes slideUpIn {
   0% {
-    transform: scale(0.8);
     opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(.8);
   }
   100% {
-    transform: scale(1);
-    // opacity: 1;
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
   }
 }
-@keyframes scale-out {
+
+@keyframes slideUpOut {
   0% {
-    transform: scale(1);
-    // opacity: 1;
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
   }
   100% {
-    transform: scale(0.8);
     opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(.8);
   }
 }
 
 
+.zoom-enter{
+  animation:zoomIn 0.1s @easeOutQuart;
+}
+.zoom-leave{
+  animation:zoomOut 0.1s @easeOutQuart;
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-// scale--------------
-
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

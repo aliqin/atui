@@ -38,10 +38,6 @@
       trigger: {
         type   : String,
         default: 'hover'
-      },
-      effect : {
-        type   : String,
-        default: 'scale'
       }
     }
   }

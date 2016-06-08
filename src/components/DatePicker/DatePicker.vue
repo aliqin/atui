@@ -1,11 +1,11 @@
 <template>
   <div class="atui-datepicker">
     <div class="atui-datepicker-toggle" @click="inputClick" >
-      <input class="datepicker-input" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
+      <input class="datepicker-input" transition="slide" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
       <icon type="calendar"></icon>
     </div>
     <div class="atui-datepicker-calendar">
-      <calendar :show="show" @change="selectChange" v-ref:calendar :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
+      <calendar :show="show" transition="slide" @change="selectChange" v-ref:calendar :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
     </div>
   </div>
 </template>
