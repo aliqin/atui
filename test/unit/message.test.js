@@ -7,16 +7,19 @@ const vm = new Vue({
       show: true
     }
   },
-  template:
-      '<div><message :show="show"'+
-        ':duration="3000"'+
-        'type="success"'+
-        'width="400px"'+
-        'placement="top-right"'+
-        'dismissable>'+
-        '<strong>我是标题!</strong>'+
-        '<p>我是具体内容.</p>'+
-      '</message></div>',
+  template:`
+      <div>
+        <message :show="show"
+          :duration="3000"
+          type="success"
+          width="400px"
+          placement="top-right"
+          dismissable>
+          <strong>我是标题!</strong>
+          <p>我是具体内容.</p>
+        </message>
+      </div>
+      `,
   components: { Message }
 }).$mount()
 

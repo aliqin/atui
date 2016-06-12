@@ -3,7 +3,6 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var extractAlidayu = new ExtractTextPlugin('alidayu.css')
 var extractTmallwt = new ExtractTextPlugin('tmallwt.css')
 var extractAlitx = new ExtractTextPlugin('alitx.css')
-// var extractDoc = new ExtractTextPlugin('docs.css')
 var path = require('path')
 var precss       = require('precss')
 var autoprefixer = require('autoprefixer')
@@ -28,11 +27,13 @@ module.exports = {
         publicPath: '/build/',
         filename: '[name].js'
     },
+
     plugins: [
         extractAlidayu,
         extractTmallwt,
         extractAlitx
     ],
+
     resolve: {
       root: path.resolve('./'),
       extensions: ['', '.js', '.vue'],
@@ -40,9 +41,11 @@ module.exports = {
         'src': path.resolve(__dirname, './src')
       }
     },
+
     resolveLoader: {
       root: path.join(__dirname, 'node_modules')
     },
+
     module: {
         loaders: [{
             test: /\.vue$/,
@@ -65,6 +68,7 @@ module.exports = {
         }],
         noParse:[/addr.js/,/^vue$/]
     },
+
     vue: {
         loaders: {
             less: ExtractTextPlugin.extract(
@@ -74,23 +78,40 @@ module.exports = {
                     ),
         }
     },
+
     babel: {
         presets: ['es2015'],
         plugins: ['transform-runtime']
     },
+
     postcss: function () {
         return {
             defaults: [precss, autoprefixer],
             cleaner:  [autoprefixer({ browsers: ['ie >= 9'] })]
         }
     },
+
     devtool: 'source-map'
 }
 
 
 if (process.env.NODE_ENV === 'production') {
   delete module.exports.devtool
-  // remove vue依赖的环境判断
+
+  module.exports.entry = {
+      atui: ['./src/index.js'],
+      atuiWidget: ['./src/widgets/index.js'],
+      atuiFilter: ['./src/filters/index.js'],
+      style: ['./src/style.js']
+  }
+
+  module.exports.output = {
+      path: './dist',
+      filename: '[name].js',
+      library: '[name]',
+      libraryTarget: 'umd'
+  }
+
   module.exports.plugins = module.exports.plugins.concat([
     new webpack.DefinePlugin({
         'process.env': {

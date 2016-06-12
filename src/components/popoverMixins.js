@@ -46,7 +46,6 @@ const PopoverMixin = {
     resetPos () {
       let me = this
       const popover = me.$els.popover
-      console.log(popover)
       if(me.show && popover.offsetWidth == 0) {
         setTimeout(() => {
           me.resetPos()

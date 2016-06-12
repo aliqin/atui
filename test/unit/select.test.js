@@ -7,17 +7,19 @@ const vm = new Vue({
       show: true
     }
   },
-  template:
-      '<div>'+
-      '<v-select :value="Cherry" :placeholder="placeholder" style="width:200px;">'+
-        '<v-option value="Apple">苹果</v-option>'+
-        '<v-option value="Banana" disabled>Banana</v-option>'+
-        '<v-option value="Cherry">Cherry</v-option>'+
-        '<v-option value="Orange">OrangeText</v-option>'+
-        '<v-option value="Grape">Grape</v-option>'+
-        '<v-option value="agg">鸡蛋</v-option>'+
-        '<v-option value="芒果">芒果</v-option>'+
-      '</v-select></div>',
+  template:`
+      <div>
+      <v-select :value="Cherry" :placeholder="placeholder" style="width:200px;">
+        <v-option value="Apple">苹果</v-option>
+        <v-option value="Banana" disabled>Banana</v-option>
+        <v-option value="Cherry">Cherry</v-option>
+        <v-option value="Orange">OrangeText</v-option>
+        <v-option value="Grape">Grape</v-option>
+        <v-option value="agg">鸡蛋</v-option>
+        <v-option value="芒果">芒果</v-option>
+      </v-select>
+      </div>
+      `,
   components: { vSelect,vOption:vOption }
 }).$mount()
 

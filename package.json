@@ -1,13 +1,13 @@
 {
-  "name": "@ali/vue-component",
-  "version": "0.0.9",
+  "name": "@ali/atui",
+  "version": "0.0.10",
   "description": "components built with Vue.js",
   "main": "dist/VueComponent.js",
   "repository": {
     "type": "git",
-    "url": "http://gitlab.alibaba-inc.com/aliqin/vue-component"
+    "url": "http://gitlab.alibaba-inc.com/aliqin/atui"
   },
-  "homepage": "http://gitlab.alibaba-inc.com/aliqin/vue-component",
+  "homepage": "http://gitlab.alibaba-inc.com/aliqin/atui",
   "directories": {
     "src": "src/components"
   },
@@ -23,7 +23,7 @@
     "dist"
   ],
   "keywords": [
-    "vue",
+    "atui",
     "vue-component",
     "aliqin"
   ],
@@ -74,7 +74,7 @@
     "debug": "webpack-dev-server --host 0.0.0.0 --port 9999 --config  webpack.debug.js",
     "deploy": "rm -rf build && NODE_ENV=production webpack --progress --colors --display-chunks && node depoly.js",
     "publish": "",
-    "build": "webpack --progress --config webpack.build.js && NODE_ENV=production webpack --progress --config  webpack.build.js && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
+    "build": "NODE_ENV=production webpack --progress && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
     "test": "def ci test",
     "authors": "git log --format='%aN <%aE>' | sort -u  > AUTHORS.txt"
   },

@@ -6,10 +6,13 @@ const options = [{"value":"2016","label":"2016年","children":[{"value":"01","la
 const defaultValue = ['2016', '05']
 
 const vm = new Vue({
-  template:
-      '<div><cascader :options="options" @change="selectChange"'+
-      ':default-value="defaultValue">'+
-      '</cascader></div>',
+  template:`
+      <div>
+        <cascader :options="options" @change="selectChange"
+        :default-value="defaultValue">
+        </cascader>
+      </div>
+      `,
   components: { Cascader },
   data:{
     options:options,

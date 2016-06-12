@@ -20,7 +20,7 @@ const columns = [{
   sorter: (a, b) => a.age - b.age,
   render(text, record,index) {
     if(record) {
-      return '<input type="text" v-model="gridData['+ index +'].age"/>'
+      return '<input type="text"/>'
     }
   },
   width:250
@@ -110,11 +110,12 @@ const vm = new Vue({
       rowSelection:rowSelection
     }
   },
-  template:
-      '<div><grid :data-source="gridData"'+
-      ':columns="gridColumns" :row-selection="rowSelection"'+
-      'row-key="key" @table-change="onTableChange"'+
-      ':loading="loading" :size="size"></grid></div>',
+  template:`
+      <div><grid :data-source="gridData"
+      :columns="gridColumns" :row-selection="rowSelection"
+      row-key="key" @table-change="onTableChange"
+      :loading="loading" :size="size"></grid></div>
+      `,
   components: { Grid }
 }).$mount()
 
