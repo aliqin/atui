@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import {ButtonGroup} from '../../src/components/Button/'
+import {Group} from '../../src/components/Button/'
 
 
 describe('ButtonGroup', () => {

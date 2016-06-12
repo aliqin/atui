@@ -18,7 +18,7 @@ const vm = new Vue({
       </div>
       `,
   components: { Modal }
-}).$mount()
+}).$mount().$appendTo('body')
 
 describe('Modal', () => {
   it('Modal组件是否正常显示', () => {
