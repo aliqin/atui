@@ -1,5 +1,5 @@
 import Message from './Message.vue'
-import Vue from 'vue'
+// import Vue from 'vue'
 
 
 ['info','success','error','warning','loading'].forEach((type,i) =>{
