@@ -227,9 +227,6 @@
     },
     ready() {
       let me = this
-      // me.options = me.$children.filter(child => {
-      //   console.log(typeof child)
-      // })
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!me.$el.contains(e.target)) {
           me.show = false

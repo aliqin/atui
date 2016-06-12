@@ -1,6 +1,6 @@
 <template>
   <div class="search-box">
-    <input type="text" class="input" :class="classObj" :placeholder="placeholder" v-model="value" @focus="focusInput" debounce="500" />
+    <input type="text" class="input" :class="{large:large,small:small}" :placeholder="placeholder" v-model="value" @focus="focusInput" debounce="500" />
     <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
     <icon type="search" :color="iconColor" size="14"></icon>
     <div v-if="searchList && searchList.length > 0" class="search-list-containter">
@@ -31,8 +31,8 @@
         default: ''
       },
       searchList: null,
-      large: null,
-      small: null,
+      large: Boolean,
+      small: Boolean,
       textField: {
         type: String,
         default: 'name'
@@ -48,12 +48,6 @@
       }
     },
     computed: {
-      classObj () {
-        return {
-          'large': typeof(this.large) !== "undefined",
-          'small': typeof(this.small) !== "undefined",
-        }
-      },
       filterLables () {
         let str = this.filterField.map(function(item) {
           return "'"+item+"'";

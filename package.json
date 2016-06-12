@@ -1,6 +1,6 @@
 {
   "name": "@ali/atui",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "components built with Vue.js",
   "main": "dist/VueComponent.js",
   "repository": {
