@@ -1,5 +1,5 @@
 <template>
-  <div class="at-btn-group" :class="btnGroupClassObj" @click="clickBtnGroup">
+  <div class="at-btn-group" :class="{large:large,small:small}" @click="clickBtnGroup">
     <slot></slot>
   </div>
 </template>
@@ -9,14 +9,6 @@
     props: {
       large: null,
       small: null
-    },
-    computed: {
-      btnGroupClassObj () {
-        return {
-          'large': typeof(this.large) !== "undefined",
-          'small': typeof(this.small) !== "undefined"
-        }
-      }
     },
     methods: {
       clickBtnGroup (e) {
