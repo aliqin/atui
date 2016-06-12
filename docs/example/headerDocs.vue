@@ -22,7 +22,7 @@
           <li><a href="filters.html">
             filters
           </a></li>
-          <li><a href="http://gitlab.alibaba-inc.com/aliqin/vue-component/">
+          <li><a href="http://gitlab.alibaba-inc.com/aliqin/atui/">
             GitLab
           </a></li>
           <li><a href="http://ued.aliqin.alibaba.net/webcompon/" target="_blank">
