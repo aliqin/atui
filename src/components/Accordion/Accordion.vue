@@ -5,24 +5,23 @@
 </template>
 
 <script>
-
   export default {
     name:'accordion',
     props: {
       oneAtATime: {
-        type: Boolean
+        type : Boolean
       }
     },
     methods: {
       _mapIndexToChildComponent () {
-        const self = this;
+        const self = this
         self.$children.forEach((item, index) => {
           item.index = index
         })
       }
     },
-    created() {
-      this.$on('isOpenEvent', (child)=> {
+    created () {
+      this.$on('isOpenEvent', (child) => {
         if (this.oneAtATime) {
           this.$children.forEach((item, index) => {
             item.index = index
@@ -34,7 +33,7 @@
       })
     },
     ready () {
-      this._mapIndexToChildComponent();
+      this._mapIndexToChildComponent()
     }
   }
 </script>

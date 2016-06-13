@@ -227,7 +227,7 @@
     },
     ready() {
       let me = this
-      me._closeEvent = EventListener.listen(window, 'click', (e)=> {
+      me._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!me.$el.contains(e.target)) {
           me.show = false
         }

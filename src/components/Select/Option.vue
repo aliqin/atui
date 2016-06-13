@@ -24,7 +24,7 @@
     },
     computed: {
       chosen() {
-        return this.$parent.selectedOptions.some((item)=>{
+        return this.$parent.selectedOptions.some((item) => {
           return item.value == this.value
         })
       },

@@ -100,8 +100,8 @@
     computed: {
       classObj () {
         return {
-          'large': typeof(this.large) !== "undefined",
-          'small': typeof(this.small) !== "undefined",
+          'large': !!this.large,
+          'small': !!this.small,
           'error': this.validStatus == 'error',
           'success': this.validStatus == 'success',
           'warn': this.validStatus == 'warn',

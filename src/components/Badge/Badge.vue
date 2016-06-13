@@ -12,7 +12,7 @@
 
 <script>
   export default {
-    name:'badge',
+    name: 'badge',
     props: {
       count: {
         type: Number

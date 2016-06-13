@@ -15,21 +15,21 @@
 import isSupportAnimation from '../utils/cssAnimationSupported'
 export default {
   name: 'spin',
-  props:{
-    show:{
+  props: {
+    show: {
       type:Boolean
     },
-    sping:{
+    sping: {
       type:Boolean
     },
-    size:{
+    size: {
       type:String,
       default:'default'
     }
   },
   data() {
     return {
-      isSupportAnimation:isSupportAnimation
+      isSupportAnimation: isSupportAnimation
     }
   },
   methods: {

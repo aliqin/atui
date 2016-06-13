@@ -6,12 +6,12 @@ describe('组件库整体检查', () => {
     expect(Object.keys(atui)).to.have.length.above(32)
   })
 
-  for(var i in atui) {
+  for (var i in atui) {
     let component = atui[i]
-    it(i,() => {
+    it(i, () => {
       expect(component).to.be.ok
       // 如果是复合组件，比如Layout
-      if(!component['template']) {
+      if (!component['template']) {
         console.log(Object.keys(component))
       }
     })

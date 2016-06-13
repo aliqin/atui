@@ -15,7 +15,7 @@
 		props: {
       quickGo  : {
         type   : Function,
-        default: function () {
+        default: () => {
         }
       },
       currPage : {
@@ -24,8 +24,8 @@
       totalPage: {
         type: Number
       },
-      mini     : {
-        type   : Boolean,
+      mini: {
+        type: Boolean,
         default: false
       }
     },
@@ -84,7 +84,3 @@
     }
 	}
 </script>
-
-<style lang="less">
-
-</style>

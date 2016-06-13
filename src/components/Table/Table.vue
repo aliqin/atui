@@ -216,7 +216,7 @@ export default {
     onFilter(value, column) {
       let me = this
       me.filterOpened = true
-      setTimeout(()=>{
+      setTimeout(() => {
         me.filterOpened = false
       },100)
       me.filters = {}

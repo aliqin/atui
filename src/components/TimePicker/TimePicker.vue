@@ -47,9 +47,9 @@
     },
     data() {
       return {
-        menus:[],
-        displayValue:'',
-        isOpen:false
+        menus: [],
+        displayValue: '',
+        isOpen: false
       }
     },
     computed:{
@@ -57,11 +57,11 @@
 
       }
     },
-    created() {
+    created () {
       let me = this
 
     },
-    ready() {
+    ready () {
       const el = this.$el
       let me = this
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {

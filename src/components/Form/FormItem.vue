@@ -23,7 +23,7 @@
 <script>
   import Layout from '../Layout/'
   import Icon from '../Icon/'
-  const vCol = Layout.Col;
+  const vCol = Layout.Col
   export default {
     props: {
       label: String,
@@ -63,22 +63,21 @@
           'has-success': this.validStatus == 'success'
         };
 
-        obj['col-lg-'+this.itemCol] = true;
+        obj['col-lg-'+this.itemCol] = true
 
-        return obj;
+        return obj
       },
       isRequired () {
-        return typeof(this.required) !== 'undefined';
+        return !!this.required
       },
       showIcon () {
-        return this.validStatus && typeof(this.hasIcon) !== 'undefined';
+        return this.validStatus && !!this.hasIcon
       },
       calcWrapperCol() {
-        var span = new Number(24 - this.labelCol);
-        return span.toString();
+        var span = new Number(24 - this.labelCol)
+        return span.toString()
       }
     },
-
     components: {
       vCol,
       Icon

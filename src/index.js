@@ -82,21 +82,21 @@ const VueComponent = {
 module.exports = VueComponent
 
 
-function getIEVersion() {
-    var agent = navigator.userAgent
-    var reg = /MSIE\s?(\d+)(?:\.(\d+))?/i
-    var matches = agent.match(reg)
-    if (matches != null) {
-        return { major: matches[1], minor: matches[2] }
-    }
-    return { major: "-1", minor: "-1" }
+function getIEVersion () {
+  var agent = navigator.userAgent
+  var reg = /MSIE\s?(\d+)(?:\.(\d+))?/i
+  var matches = agent.match(reg)
+  if (matches != null) {
+    return { major: matches[1], minor: matches[2] }
+  }
+  return { major: '-1', minor: '-1' }
 }
 
-var ie_version =  getIEVersion()
+var ie_version = getIEVersion()
 // ie10以及以下，对某些样式支持有问题，需要降级
-document.addEventListener("DOMContentLoaded", function(event) {
-  if(ie_version.major === '9' || ie_version.major === '10') {
-    Vue.util.addClass(document.body,'let-ie11')
-    Vue.util.addClass(document.body,'ie' + ie_version.major)
+document.addEventListener('DOMContentLoaded', function (event) {
+  if (ie_version.major === '9' || ie_version.major === '10') {
+    Vue.util.addClass(document.body, 'let-ie11')
+    Vue.util.addClass(document.body, 'ie' + ie_version.major)
   }
 })

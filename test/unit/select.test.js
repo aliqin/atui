@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import vSelect from '../../src/components/Select/'
 const vOption = vSelect.Option
-const vm = new Vue({
-  data() {
+let vm = new Vue({
+  data () {
     return {
       show: true
     }
   },
-  template:`
+  template: `
       <div>
       <v-select :value="Cherry" :placeholder="placeholder" style="width:200px;">
         <v-option value="Apple">苹果</v-option>
@@ -20,7 +20,7 @@ const vm = new Vue({
       </v-select>
       </div>
       `,
-  components: { vSelect,vOption:vOption }
+  components: { vSelect, vOption:vOption }
 }).$mount()
 
 

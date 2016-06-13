@@ -102,8 +102,8 @@ export default {
     },
     disabledDate: {
       type: Function,
-      default() {
-        return function(){}
+      default () {
+        return function() {}
       }
     },
     width: {
@@ -119,7 +119,7 @@ export default {
       default:'month'
     }
   },
-  data() {
+  data () {
     return {
       weekRange: localeConfig[this.locale].weekRange,
       dateRange: [],
@@ -132,18 +132,18 @@ export default {
     }
   },
   watch: {
-    currDate() {
+    currDate () {
       this.getDateRange()
     },
-    disabledDate() {
+    disabledDate () {
       this.getDateRange()
     }
   },
   methods: {
-    close() {
+    close () {
       this.displayDayView = this.displayMonthView = this.displayMonthView = false
     },
-    preNextDecadeClick(flag) {
+    preNextDecadeClick (flag) {
       const year = this.currDate.getFullYear()
       const months = this.currDate.getMonth()
       const date = this.currDate.getDate()
@@ -154,7 +154,7 @@ export default {
         this.currDate = new Date(year + 10, months, date)
       }
     },
-    preNextMonthClick(flag) {
+    preNextMonthClick (flag) {
       const year = this.currDate.getFullYear()
       const month = this.currDate.getMonth()
       const date = this.currDate.getDate()
@@ -168,7 +168,7 @@ export default {
         this.currDate = new Date(nextMonth.year, nextMonth.month, date)
       }
     },
-    preNextYearClick(flag) {
+    preNextYearClick (flag) {
       const year = this.currDate.getFullYear()
       const months = this.currDate.getMonth()
       const date = this.currDate.getDate()
@@ -179,12 +179,12 @@ export default {
         this.currDate = new Date(year + 1, months, date)
       }
     },
-    yearSelect(year) {
+    yearSelect (year) {
       this.displayYearView = false
       this.displayMonthView = true
       this.currDate = new Date(year, this.currDate.getMonth(), this.currDate.getDate())
     },
-    daySelect(date, event) {
+    daySelect (date, event) {
       let el = event.target
       if (el.className.split(' ').indexOf('atui-calendar-item-disable') >=0 ) {
         return false
@@ -194,20 +194,20 @@ export default {
         this.$dispatch('change',this.value)
       }
     },
-    switchMonthView() {
+    switchMonthView () {
       this.displayDayView = false
       this.displayMonthView = true
     },
-    switchDecadeView() {
+    switchDecadeView () {
       this.displayMonthView = false
       this.displayYearView = true
     },
-    monthSelect(index) {
+    monthSelect (index) {
       this.displayMonthView = false
       this.displayDayView = true
       this.currDate = new Date(this.currDate.getFullYear(), index, this.currDate.getDate())
     },
-    getYearMonth(year, month) {
+    getYearMonth (year, month) {
       if (month > 11) {
         year++
           month = 0
@@ -217,22 +217,22 @@ export default {
       }
       return {year: year, month: month}
     },
-    stringifyDecadeHeader(date) {
+    stringifyDecadeHeader (date) {
       const yearStr = date.getFullYear().toString()
       const firstYearOfDecade = yearStr.substring(0, yearStr.length - 1) + 0
       const lastYearOfDecade = parseInt(firstYearOfDecade, 10) + 10
       return firstYearOfDecade + '-' + lastYearOfDecade
     },
-    stringifyDayHeader(date) {
+    stringifyDayHeader (date) {
       return date.getFullYear() + '年' +  this.monthNames[date.getMonth()] + '月'
     },
-    parseMonth(date) {
+    parseMonth (date) {
       return this.monthNames[date.getMonth()]
     },
-    stringifyYearHeader(date) {
+    stringifyYearHeader (date) {
       return date.getFullYear()
     },
-    stringify(date, format = this.format) {
+    stringify (date, format = this.format) {
       const year = date.getFullYear()
       const month = date.getMonth() + 1
       const day = date.getDate()
@@ -248,11 +248,11 @@ export default {
       .replace(/M(?!a)/g, month)
       .replace(/d/g, day)
     },
-    parse(str) {
+    parse (str) {
       const date = new Date(str)
       return isNaN(date.getFullYear()) ? null : date
     },
-    getDayCount(year, month) {
+    getDayCount (year, month) {
       const dict = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
       if (month === 1) {
@@ -264,7 +264,7 @@ export default {
 
       return dict[month]
     },
-    getDateRange() {
+    getDateRange () {
       this.dateRange = []
       this.decadeRange = []
       const time = {
@@ -344,9 +344,9 @@ export default {
       }
     }
   },
-  ready() {
+  ready () {
     this.$dispatch('child-created', this)
-    this.currDate = this.parse(this.value) || this.parse(new Date())
+    this.currDate = this.parse(this.value) || this.parse( new Date() )
   }
 }
 </script>

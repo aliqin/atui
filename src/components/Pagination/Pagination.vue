@@ -88,11 +88,11 @@ export default {
             end = totalPage
         }
         else {
-            if (currPage <= this.prevShow + 1){
+            if (currPage <= this.prevShow + 1) {
                 start = 1
                 end = showLen
             }
-            else if (currPage >= totalPage - this.nextShow){
+            else if (currPage >= totalPage - this.nextShow) {
                 end = totalPage
                 start = totalPage - showLen + 1
             }
@@ -106,10 +106,10 @@ export default {
 
         if(this.simple) {
             //上一页
-            if (currPage != 1){
+            if (currPage != 1) {
                 this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
             } else {
-                this.pageRange.push({className:'disabled', icon: 'prev'});
+                this.pageRange.push({className:'disabled', icon: 'prev'})
             }
 
             this.pageRange.push({num:this.currPage, text:this.currPage, className: 'current'})
@@ -128,11 +128,11 @@ export default {
             if (currPage != 1){
                 this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
             } else {
-                this.pageRange.push({className:'disabled', icon: 'prev'});
+                this.pageRange.push({className:'disabled', icon: 'prev'})
             }
 
             //第一页
-            if (start >= 2){
+            if (start >= 2) {
                 this.pageRange.push({num:1, text:1})
             }
             //省略号
@@ -140,31 +140,31 @@ export default {
                 this.pageRange.push({text:'...', className:'ellipsis'})
             }
             //显示的页码列表
-            for (var i=start; i<=end; i++){
+            for (var i=start; i<=end; i++) {
                 this.pageRange.push({
                     num : i,
                     text : i,
-                    className : (i==currPage) ? 'current' : ''
+                    className : (i == currPage) ? 'current' : ''
                 })
             }
             //省略号
-            if (end < totalPage-1){
+            if (end < totalPage-1) {
                 this.pageRange.push({text:'...', className:'ellipsis'})
             }
             //最后一页
-            if (end <= totalPage-1){
+            if (end <= totalPage-1) {
                 this.pageRange.push({num:totalPage, text:totalPage})
             }
             //下一页
-            if (currPage != totalPage){
+            if (currPage != totalPage) {
                 this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
             } else {
                 this.pageRange.push({className:'disabled', icon: 'next'})
             }
         }
     },
-    pageClick (i){
-        if (!i){
+    pageClick (i) {
+        if (!i) {
             return false
         }
         if (i == this.currPage){
@@ -175,7 +175,7 @@ export default {
         this.getPageRange()
     },
     onChange (pageNum) {
-        this.$dispatch('pagination-page-change', pageNum, this.id);
+        this.$dispatch('pagination-page-change', pageNum, this.id)
     },
     _isValid (page) {
         return typeof page === 'number' && page >= 1 && page !== this.currPage

@@ -1,12 +1,12 @@
 // import Vue from 'vue'
 Vue.directive('scroll-load', {
-  bind() {},
-  update(value) {
+  bind () {},
+  update (value) {
     let timmer
     let me = this
     let el = me.el
     let lock = false
-    this.scrollHandler = function() {
+    this.scrollHandler = function () {
       clearTimeout(timmer)
       timmer = setTimeout(() => {
         if (lock) {
@@ -26,7 +26,7 @@ Vue.directive('scroll-load', {
     }
     window.addEventListener('scroll', this.scrollHandler, false)
   },
-  unbind() {
+  unbind () {
     window.removeEventListener('scroll', this.scrollHandler)
   }
 })

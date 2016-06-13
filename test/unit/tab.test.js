@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Tabs from '../../src/components/Tabs/'
 const {Tab} = Tabs
 
-const vm = new Vue({
-  data() {
+let vm = new Vue({
+  data () {
     return {
       show: true
     }
   },
-  template:`
+  template: `
       <div>
       <tabs :base="true" size="small">
         <tab header="系统短信签名">
@@ -25,7 +25,7 @@ const vm = new Vue({
         </tab>
       </tabs></div>
       `,
-  components: { Tabs,Tab }
+  components: { Tabs, Tab }
 }).$mount()
 
 

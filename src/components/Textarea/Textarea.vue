@@ -1,6 +1,6 @@
 <template>
 <div class="at-textarea">
-  <textarea v-bind="{disabled: isDisabled}" maxlength="{{limitWords}}" class="textarea" :class="classObj" name="{{name}}" placeholder="{{placeholder}}" v-model="content"></textarea>
+  <textarea v-bind="{disabled: isDisabled}" :maxlength="limitWords" class="textarea" :class="classObj" :name="name" :placeholder="placeholder" v-model="content"></textarea>
   <p v-if="limitWords" class="words-area" :class="wordClass">{{ curWords }}/{{ limitWords }}</p>
   <p v-if="showWordsCount" class="words-area">{{ countTips }}{{ curWords }}</p>
 </div>
@@ -12,11 +12,11 @@
       limitWords: Number,
       placeholder: String,
       name: String,
-      disabled: null,
-      error: null,
-      success: null,
+      disabled: Boolean,
+      error: Boolean,
+      success: Boolean,
       content: String,
-      wordsCount: null,
+      wordsCount: Boolean,
       countTips: {
         type: String,
         default: '输入字数：'
@@ -30,15 +30,15 @@
     },
     computed: {
       showWordsCount () {
-        return this.wordsCount == true || this.wordsCount === 'true' || this.wordsCount === '';
+        return this.wordsCount == true || this.wordsCount === 'true' || this.wordsCount === ''
       },
 
       curWords () {
         if (this.content) {
-          return this.content.length;
+          return this.content.length
         }
 
-        return 0;
+        return 0
       },
 
       classObj () {
@@ -56,12 +56,12 @@
     },
     watch: {
       'content' (newVal, oldVal) {
-        let len = newVal.length;
-        this.curWords = len;
+        let len = newVal.length
+        this.curWords = len
         if(len >= this.limitWords - 0) {
-          this.overLimit = true;
+          this.overLimit = true
         } else {
-          this.overLimit = false;
+          this.overLimit = false
         }
       }
     }

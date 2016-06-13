@@ -49,48 +49,48 @@
     },
     computed: {
       filterLables () {
-        let str = this.filterField.map(function(item) {
-          return "'"+item+"'";
-        });
-        return str.join(" ");
+        let str = this.filterField.map((item) => {
+          return "'"+item+"'"
+        })
+        return str.join(" ")
       }
     },
     components: {
       Icon
     },
     ready () {
-      let self = this;
-      const el = this.$el;
+      let self = this
+      const el = this.$el
 
       this._closeEvent = EventListener.listen(window, 'click', (e)=> {
         if (!el.contains(e.target)) {
-          self.blurInput();
+          self.blurInput()
         }
       })
     },
     beforeDestroy() {
-      if (this._closeEvent) this._closeEvent.remove();
+      if (this._closeEvent) this._closeEvent.remove()
     },
     methods: {
       focusInput () {
-        this.iconColor = '#00A0FF';
+        this.iconColor = '#00A0FF'
         if(this.searchList && this.searchList.length > 0) {
-          this.showPop = true;
+          this.showPop = true
         } else {
-          this.showPop = false;
+          this.showPop = false
         }
       },
       blurInput () {
-        this.iconColor = '#BFBFBF';
+        this.iconColor = '#BFBFBF'
         this.showPop = false;
       },
       checkItem (index, val) {
-        this.value = val;
-        this.$dispatch('searchbox-value-check', this.searchList[index], this);
-        this.blurInput();
+        this.value = val
+        this.$dispatch('searchbox-value-check', this.searchList[index], this)
+        this.blurInput()
       },
       clearInput () {
-        this.value = '';
+        this.value = ''
       }
     }
   }
