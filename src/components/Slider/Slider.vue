@@ -26,16 +26,23 @@
   export default {
     props: {
       id: String,
-      value: [String, Number, Array],//默认值/初识位置，也可实时获取最新值
-      disabled: null,//不可用状态
-      min: [String, Number],//区间，最小值
-      max: [String, Number],//区间，最大值
-      marks: Object,//分段式滑块配置
-      included: { //不同标记间的关系，默认为包含关系，false表示是并列关系
+      //默认值/初识位置，也可实时获取最新值
+      value: [String, Number, Array],
+      //不可用状态
+      disabled: null,
+      //区间，最小值
+      min: [String, Number],
+      //区间，最大值
+      max: [String, Number],
+      //分段式滑块配置
+      marks: Object,
+      //不同标记间的关系，默认为包含关系，false表示是并列关系
+      included: {
         type: Boolean,
         default: true
       },
-      step: [String, Number]//每步的步数，如果为0，则只能到marks标记位置
+      //每步的步数，如果为0，则只能到marks标记位置
+      step: [String, Number]
     },
 
     data () {
@@ -57,7 +64,7 @@
       },
 
       valueArray (val) {
-        if(val.length === 1) {
+        if (val.length === 1) {
           this.value = val[0] + ''
         }
       }
@@ -70,16 +77,13 @@
       range () {
         // let min = this.min
         // let max = this.max
-
         this.min = this.min || 0
         this.max = this.max || 100
-
-        if(this.max - this.min < 0) {
-          let mid  = this.min
+        if (this.max - this.min < 0) {
+          let mid = this.min
           this.min = this.max
           this.max = mid
         }
-
         return this.max - this.min
       },
       /**
@@ -104,7 +108,7 @@
     ready () {
       let self = this
 
-      self.wrapper     = self.getWrapperElement(self.sliderId)
+      self.wrapper = self.getWrapperElement(self.sliderId)
       self.sliderWidth = self.wrapper.getBoundingClientRect().width
       self.wrapperLeft = self.wrapper.getBoundingClientRect().left
 
@@ -132,18 +136,18 @@
         let valueArray   = []
         let valuePercent = []
 
-        if(typeData - 0 >= 0) {
+        if (typeData - 0 >= 0) {
           valueArray = value.split(',')
           valueArray.sort()
 
-         //最多只能配置两个数据
-          if(valueArray.length > 2) valueArray.length = 2
+        //最多只能配置两个数据
+        if (valueArray.length > 2) valueArray.length = 2
 
          //取值不能超过区间
-          for(let i = 0; i < valueArray.length; i++) {
-            valueArray[i] = this.valueRange(valueArray[i])
-            valuePercent.push((valueArray[i] - min) * unit)
-          }
+        for(let i = 0; i < valueArray.length; i++) {
+          valueArray[i] = this.valueRange(valueArray[i])
+          valuePercent.push((valueArray[i] - min) * unit)
+        }
         } else {
           console.log('配置数据格式出错，请配置数字、数字型字符串、数字型数组、数字型数组字符串类型')
           valueArray = [0]
@@ -160,11 +164,11 @@
         let min = this.min
         let max = this.max
 
-        if(min && min - 0 >= 0 && value < min) value = min
-        if(!min && value < 0) value = 0
+        if (min && min - 0 >= 0 && value < min) value = min
+        if (!min && value < 0) value = 0
 
-        if(max && max - 0 >= 0 && value > max) value = max
-        if(!max && value > 100) value = 100
+        if (max && max - 0 >= 0 && value > max) value = max
+        if (!max && value > 100) value = 100
 
         return value
       },
@@ -186,40 +190,40 @@
         this.dragging = false
         this.preventEventDefaults(e)
         this.stopEventPropagation(e)
-        if(!this.isDisabled) {
+        if (!this.isDisabled) {
           this.change(e)
           this.dragging = false
         }
       },
 
       change (e) {
-        let sliderWidth  = this.sliderWidth
-        let clickLocal   = e.x + document.body.scrollLeft
-        let wrapperLeft  = this.wrapperLeft
-        let range        = this.range
-        let unit         = this.unit
-        let clickRate    = Math.round((clickLocal - wrapperLeft) / sliderWidth * range * unit)
-        let min          = this.min || 0
-        let max          = this.max || 100
-        let clickValue   = Math.round((clickLocal - wrapperLeft) / sliderWidth * range) + min
-        let valueArray   = this.valueArray
+        let sliderWidth = this.sliderWidth
+        let clickLocal = e.x + document.body.scrollLeft
+        let wrapperLeft = this.wrapperLeft
+        let range = this.range
+        let unit = this.unit
+        let clickRate = Math.round((clickLocal - wrapperLeft) / sliderWidth * range * unit)
+        let min = this.min || 0
+        let max = this.max || 100
+        let clickValue = Math.round((clickLocal - wrapperLeft) / sliderWidth * range) + min
+        let valueArray = this.valueArray
         let valuePercent = this.valuePercent
-        let len          = valueArray.length
+        let len = valueArray.length
 
-        if(clickRate < 0) clickRate = 0
-        if(clickRate > 100) clickRate = 100
-        if(clickValue < min) clickValue = min
-        if(clickValue > max) clickValue = max
+        if (clickRate < 0) clickRate = 0
+        if (clickRate > 100) clickRate = 100
+        if (clickValue < min) clickValue = min
+        if (clickValue > max) clickValue = max
 
-        if(len > 1) {
-          if(clickRate - 0 >= valuePercent[1] - 0) {
+        if (len > 1) {
+          if (clickRate - 0 >= valuePercent[1] - 0) {
             valuePercent[1] = clickRate
             valueArray[1]   = clickValue
-          } else if(clickRate - 0 >= valuePercent[0] - 0) {
-            if(valuePercent[1] - clickRate < clickRate - valuePercent[0]) {
+          } else if (clickRate - 0 >= valuePercent[0] - 0) {
+            if (valuePercent[1] - clickRate < clickRate - valuePercent[0]) {
               valuePercent[1] = clickRate
               valueArray[1] = clickValue
-            } else if(valuePercent[1] - clickRate > clickRate - valuePercent[0]) {
+            } else if (valuePercent[1] - clickRate > clickRate - valuePercent[0]) {
               valuePercent[0] = clickRate
               valueArray[0] = clickValue
             }
@@ -259,7 +263,7 @@
       },
 
       mousedown (e) {
-        if(!this.isDisabled) {
+        if (!this.isDisabled) {
           this.handler = e.target
           this.preventEventDefaults(e)
           this.stopEventPropagation(e)
@@ -268,13 +272,13 @@
       },
 
       mousemove (e) {
-        if(!this.isDisabled && this.dragging) {
+        if (!this.isDisabled && this.dragging) {
           this.change(e)
         }
       },
 
       mouseup (e) {
-        if(this.dragging) {
+        if (this.dragging) {
           this.dragging = false
           this.$dispatch('slider:onAfterChange', this, this.valueArray)
         }

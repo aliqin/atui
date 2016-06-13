@@ -7,6 +7,7 @@ var path = require('path')
 var precss       = require('precss')
 var autoprefixer = require('autoprefixer')
 var version = process.env.VERSION || require('./package.json').version
+var projectRoot = path.resolve(__dirname, '/')
 
 var banner =
   '/*!\n' +
@@ -29,9 +30,11 @@ module.exports = {
     },
 
     plugins: [
-        extractAlidayu,
-        extractTmallwt,
-        extractAlitx
+      extractAlidayu,
+      extractTmallwt,
+      extractAlitx,
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoErrorsPlugin(),
     ],
 
     resolve: {
@@ -44,9 +47,24 @@ module.exports = {
 
     resolveLoader: {
       root: path.join(__dirname, 'node_modules')
+
     },
 
     module: {
+        preLoaders: [
+        {
+            test: /\.vue$/,
+            loader: 'eslint',
+            include: projectRoot,
+            exclude: /node_modules/
+          },
+          {
+            test: /\.js$/,
+            loader: 'eslint',
+            include: projectRoot,
+            exclude: /node_modules/
+          }
+        ],
         loaders: [{
             test: /\.vue$/,
             loader: 'vue'

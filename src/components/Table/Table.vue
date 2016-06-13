@@ -59,20 +59,20 @@ import Dropdown from '../Dropdown/'
 import Spin from '../Spin/'
 export default {
   props: {
-    pagination:Object,
+    pagination: Object,
     dataSource: {
       type: Array,
-      default() {
+      default () {
         return []
       }
     },
     noDataTip: {
       type: String,
-      default:'没有任何数据'
+      default: '没有任何数据'
     },
     columns: {
       type: Array,
-      default() {
+      default () {
         return []
       }
     },
@@ -90,7 +90,7 @@ export default {
     Dropdown,
     Spin
   },
-  data() {
+  data () {
     this.compileTbody()
     return {
       isCheckedAll: false,
@@ -103,12 +103,12 @@ export default {
     }
   },
   computed: {
-    checkedValues() {
+    checkedValues () {
       let me = this
       let checkedKeys = me.checkedRows.map((record) => {
         return record[me.rowKey]
       })
-      if(me.rowSelection && me.rowSelection.onChange) {
+      if (me.rowSelection && me.rowSelection.onChange) {
         me.rowSelection.onChange(checkedKeys,me.checkedRows)
       }
       return checkedKeys
@@ -117,9 +117,9 @@ export default {
       let me = this
       let rows = []
       // 过滤出非禁用的项供选择使用
-      if(me.dataSource && me.dataSource.length) {
+      if (me.dataSource && me.dataSource.length) {
         rows = me.dataSource.filter((record) => {
-          if(me.rowSelection) {
+          if (me.rowSelection) {
             return !me.rowSelection.getCheckboxProps || !me.rowSelection.getCheckboxProps(record).disabled
           }
         })
@@ -135,15 +135,15 @@ export default {
 
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
-          if(me.checkedValues) {
+          if (me.checkedValues) {
             return me.checkedValues.indexOf(record[me.rowKey]) >= 0
           }
         })
-        if(me.checkebleRows.length) {
+        if (me.checkebleRows.length) {
           me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
         }
       },
-      deep:true
+      deep: true
     }
   },
   methods: {
@@ -155,12 +155,12 @@ export default {
         me.isDisabledAll = !me.checkebleRows.length
       })
     },
-    sortAction (column,index,order) {
-      if(typeof column.sorter === 'Function') {
+    sortAction (column, index, order) {
+      if (typeof column.sorter === 'Function') {
         // TODO:客户端排序
       }
       this.sorderOrder[index] = order
-      this.sorderOrder = Object.assign([],this.sorderOrder)
+      this.sorderOrder = Object.assign([], this.sorderOrder)
       this.$dispatch('table-change', this.pagination, this.filters, {
         field:column.dataIndex,
         order:order
@@ -172,9 +172,9 @@ export default {
       let changeRows = []
       let input = event.srcElement || event.target
       let checked = input.checked
-      if(checked) {
-        me.checkebleRows.forEach((record,i) => {
-          if(me.checkedRows.indexOf(record) < 0) {
+      if (checked) {
+        me.checkebleRows.forEach((record, i) => {
+          if (me.checkedRows.indexOf(record) < 0) {
             me.checkedRows.push(record)
             changeRows.push(record)
           }
@@ -182,33 +182,33 @@ export default {
         // 不能使用计算属性，因为会与点击全选的行为相冲突
         me.isCheckedAll = true
       } else {
-        me.checkebleRows.forEach((record,i) => {
-          if(me.checkedRows.indexOf(record) >= 0) {
+        me.checkebleRows.forEach((record, i) => {
+          if (me.checkedRows.indexOf(record) >= 0) {
             changeRows.push(record)
           }
         })
         me.checkedRows = []
       }
-      if( me.rowSelection.onSelectAll ) {
+      if ( me.rowSelection.onSelectAll ) {
         me.rowSelection.onSelectAll(checked,me.checkedRows,changeRows)
       }
     },
     // 选中某一个单选框时触发
-    onCheckOne (event,record) {
+    onCheckOne (event, record) {
       const me = this
       let input = event.srcElement || event.target
       const checked = input.checked
-      if(checked) {
-        if(me.checkedRows.indexOf(record) === -1) {
+      if (checked) {
+        if (me.checkedRows.indexOf(record) === -1) {
           me.checkedRows.push(record)
         }
       } else {
         me.checkedRows = me.checkedRows.filter((item) => {
-          return record[me.rowKey]!= item[me.rowKey]
+          return record[me.rowKey] !== item[me.rowKey]
         })
       }
-      if(me.rowSelection.onSelect) {
-        me.rowSelection.onSelect(record,checked,me.checkedRows)
+      if (me.rowSelection.onSelect) {
+        me.rowSelection.onSelect(record, checked, me.checkedRows)
       }
       me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
     },
@@ -224,7 +224,7 @@ export default {
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
     },
     fixedHeaderAction () {
-      if(this.fixedHeader) {
+      if (this.fixedHeader) {
         let header = this.$el.querySelector('.table-thead')
         let colgroup = this.$el.querySelector('colgroup').cloneNode(true)
         let fixedTable = this.$el.querySelector('.atui-table-fixed-header')

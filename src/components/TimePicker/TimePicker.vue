@@ -34,8 +34,8 @@
         type: Array
       }
     },
-    filters : {
-      leftPad(value) {
+    filters: {
+      leftPad (value) {
         if(+value < 10) {
           return '0' + value
         }
@@ -45,7 +45,7 @@
     components:{
       vInput:Input
     },
-    data() {
+    data () {
       return {
         menus: [],
         displayValue: '',
@@ -53,13 +53,12 @@
       }
     },
     computed: {
-      selectedValue() {
+      selectedValue () {
 
       }
     },
     created () {
-      let me = this
-
+      // let me = this
     },
     ready () {
       const el = this.$el
@@ -71,16 +70,16 @@
       })
     },
     methods: {
-      chooseHour() {
+      chooseHour () {
 
       },
-      chooseMinute() {
+      chooseMinute () {
 
       },
-      chooseSecond() {
+      chooseSecond () {
 
       },
-      toggleMenus() {
+      toggleMenus () {
         this.isOpen = !this.isOpen
       }
     }

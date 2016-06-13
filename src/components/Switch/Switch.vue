@@ -29,10 +29,10 @@
     computed: {
       wrapClasses () {
         return {
-          'switch'      : true,
-          'small'       : this.small,
-          'switch-checked'  : this.checked,
-          'switch-disabled' : this.disabled
+          'switch': true,
+          'small': this.small,
+          'switch-checked': this.checked,
+          'switch-disabled': this.disabled
         }
       }
     },

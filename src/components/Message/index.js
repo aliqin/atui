@@ -1,7 +1,7 @@
 import Message from './Message.vue'
 
 ['info', 'success', 'error', 'warning', 'loading'].forEach((type, i) => {
-	                                                                                                                                                                                                                                                                                                                                                                                                                Message[type] = (content, duration, placement) => {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Message[type] = (content, duration, placement) => {
   duration = duration || 3000
   placement = placement || 'top'
   new Vue({
