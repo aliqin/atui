@@ -1,20 +1,21 @@
 <template>
-<div :class="['atui-table-container','atui-table-'+size, {loading :loading}]">
-  <spin size="sm" v-if="loading"></spin>
-  <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
+  <div :class="['atui-table-container','atui-table-'+size, {loading :loading}]">
+    <spin size="sm" v-if="loading"></spin>
+    <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
   </table> -->
-  <div :class="['atui-table-body',{'atui-fixed-header':fixedHeader}]">
-    <table class="atui-table">
-      <colgroup>
-        <col v-if="rowSelection"></col>
-        <col v-for="column in columns" :width="column.width"></col>
-      </colgroup>
-      <thead class="table-thead">
-        <tr>
-          <th v-if="rowSelection" class="atui-table-selection-column">
-              <input v-if="dataSource && dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"/>
-          </th>
-          <th v-for="column in columns" :width="column.width">
+    <div :class="['atui-table-body',{'atui-fixed-header':fixedHeader}]">
+      <table class="atui-table">
+        <colgroup>
+          <col v-if="rowSelection"></col>
+          <col v-for="column in columns" :width="column.width"></col>
+        </colgroup>
+        <thead class="table-thead">
+          <tr>
+            <th v-if="rowSelection" class="atui-table-selection-column">
+              <input v-if="dataSource && dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"
+              />
+            </th>
+            <th v-for="column in columns" :width="column.width">
               {{column['title']}}
               <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
                 <div data-toggle="dropdown">
@@ -28,29 +29,32 @@
                 <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
                 <icon type="down" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
               </div>
-          </th>
-        </tr>
-      </thead>
-      <tbody class="table-tbody">
-        <tr v-if="!dataSource || !dataSource.length"><td colspan="10" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td></tr>
-        <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
+            </th>
+          </tr>
+        </thead>
+        <tbody class="table-tbody">
+          <tr v-if="!dataSource || !dataSource.length">
+            <td colspan="10" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td>
+          </tr>
+          <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
             <td v-if="rowSelection" class="atui-table-selection-column">
-                 <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"/>
+              <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
+              />
             </td>
             <td v-for="column in columns">
-                <template v-if="column.render && record">
-                    {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}
-                </template>
-                <template v-else>
-                    {{record[column.dataIndex]}}
-                </template>
+              <template v-if="column.render && record">
+                {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}
+              </template>
+              <template v-else>
+                {{record[column.dataIndex]}}
+              </template>
             </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-</div>
+  </div>
 </template>
 
 <script type="text/babel">
@@ -109,7 +113,7 @@ export default {
         return record[me.rowKey]
       })
       if (me.rowSelection && me.rowSelection.onChange) {
-        me.rowSelection.onChange(checkedKeys,me.checkedRows)
+        me.rowSelection.onChange(checkedKeys, me.checkedRows)
       }
       return checkedKeys
     },
@@ -156,14 +160,14 @@ export default {
       })
     },
     sortAction (column, index, order) {
-      if (typeof column.sorter === 'Function') {
+      if (typeof column.sorter === 'function') {
         // TODO:客户端排序
       }
       this.sorderOrder[index] = order
       this.sorderOrder = Object.assign([], this.sorderOrder)
       this.$dispatch('table-change', this.pagination, this.filters, {
-        field:column.dataIndex,
-        order:order
+        field: column.dataIndex,
+        order: order
       })
     },
     // 点击全选框触发
@@ -189,8 +193,8 @@ export default {
         })
         me.checkedRows = []
       }
-      if ( me.rowSelection.onSelectAll ) {
-        me.rowSelection.onSelectAll(checked,me.checkedRows,changeRows)
+      if (me.rowSelection.onSelectAll) {
+        me.rowSelection.onSelectAll(checked, me.checkedRows, changeRows)
       }
     },
     // 选中某一个单选框时触发
@@ -218,7 +222,7 @@ export default {
       me.filterOpened = true
       setTimeout(() => {
         me.filterOpened = false
-      },100)
+      }, 100)
       me.filters = {}
       me.filters[column.dataIndex] = [value]
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)

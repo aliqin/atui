@@ -1,21 +1,21 @@
 import Modal from './Modal.vue'
 import Icon from '../Icon'
 const iconConfig = {
-  'info' : {
-    icon:'info',
-    color:'#30b2f2'
+  'info': {
+    icon: 'info',
+    color: '#30b2f2'
   },
-  'success' : {
-    icon:'success',
-    color:'#1dbf38'
+  'success': {
+    icon: 'success',
+    color: '#1dbf38'
   },
-  'error' : {
-    icon:'error',
-    color:'#ff5959'
+  'error': {
+    icon: 'error',
+    color: '#ff5959'
   },
-  'confirm' : {
-    icon:'help',
-    color:'#b366ff'
+  'confirm': {
+    icon: 'help',
+    color: '#b366ff'
   }
 }
 ;['info', 'success', 'error', 'confirm'].forEach((type) => {
@@ -36,7 +36,7 @@ const iconConfig = {
       </modal>`,
       components: {
         Modal: Modal,
-        Icon:Icon
+        Icon: Icon
       },
       data: {
         title: title,

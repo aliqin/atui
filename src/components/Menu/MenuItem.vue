@@ -9,22 +9,19 @@
 </template>
 
 <script>
-
 export default {
   props: {
     active: Boolean,
     selected: Boolean,
     disabled: Boolean,
     title: String,
-    onSelect : Function
+    onSelect: Function
   },
-
   computed: {
-    
-  },
 
+  },
   methods: {
-    
+
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <input type="{{type}}" class="input" :class="classObj" placeholder="{{placeholder}}" v-model="value" :valid-status.sync="validStatus" maxlength="{{maxlength}}" />
+  <input :type="type" class="input" :class="classObj" :placeholder="placeholder" v-model="value" :valid-status.sync="validStatus" :maxlength="maxlength" />
 </template>
 <script>
   export default {
@@ -12,10 +12,10 @@
         type: String,
         default: ''
       },
-      large: null,
-      small: null,
+      large: Boolean,
+      small: Boolean,
       value: [String, Number],
-      //是否必填
+      // 是否必填
       required: {
         type: Boolean,
         default: false
@@ -24,22 +24,22 @@
       maxlength: String,
       minlength: String,
       minlengthTips: String,
-      //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
+      // 验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
       validStatus: {
         type: String,
         default: ''
       },
-      //验证规则
+      // 验证规则
       rules: {
         type: Array
       },
       validResult: {
         type: Object,
-        default() {
+        default () {
           return {
             requiredValid: {
               validStatus: 'success',
-              tips:''
+              tips: ''
             },
             minlengthValid: {
               validStatus: 'success',
@@ -71,7 +71,7 @@
         results: {
           requiredValid: {
             validStatus: 'success',
-            tips:''
+            tips: ''
           },
           minlengthValid: {
             validStatus: 'success',
@@ -102,31 +102,31 @@
         return {
           'large': !!this.large,
           'small': !!this.small,
-          'error': this.validStatus == 'error',
-          'success': this.validStatus == 'success',
-          'warn': this.validStatus == 'warn',
+          'error': this.validStatus === 'error',
+          'success': this.validStatus === 'success',
+          'warn': this.validStatus === 'warn'
         }
       }
     },
 
     watch: {
       value (newVal, oldVal) {
-        if(this.validResult) {
+        if (this.validResult) {
           this.valid(newVal)
         }
       },
 
       results: {
-        handler: function (val, oldVal) {
+        handler (val, oldVal) {
           let self = this
           let tips = ''
           let status = ''
-          for(let key in val) {
+          for (let key in val) {
             let obj = val[key]
-            if(obj) {
+            if (obj) {
               tips += obj.tips + '  '
 
-              if(obj.validStatus !== 'success') {
+              if (obj.validStatus !== 'success') {
                 status = 'error'
               }
             }
@@ -142,25 +142,24 @@
 
     methods: {
       valid (val) {
-        if(typeof(this.required) !== "undefined") {
+        if (this.required) {
           this.requiredValid(val)
         }
 
-        if(this.minlength) {
+        if (this.minlength) {
           this.minlengthValid(val)
         }
 
-        if(this.rules) {
+        if (this.rules) {
           this.rulesValid(val)
         }
       },
-
       rulesItemValid (rule, value) {
         let self = this
-
-        switch(rule) {
+        switch (rule) {
           case 'required':
             self.requiredValid(value)
+            break
           case 'isPhone':
             self.phoneValid(value)
             break
@@ -181,7 +180,7 @@
 
         self.results = self.results || {}
 
-        if(!val) {
+        if (!val) {
           self.results.requiredValid = {
             validStatus: 'error',
             tips: self.requiredTips || '输入不能为空'
@@ -200,10 +199,10 @@
 
         self.results = self.results || {}
 
-        if(val) {
-          let  len = val.length
+        if (val) {
+          let len = val.length
 
-          if(val.length < minlength) {
+          if (val.length < minlength) {
             self.results.minlengthValid = {
               validStatus: 'error',
               tips: self.minlengthTips || '输入字符数不能小于' + len
@@ -228,7 +227,7 @@
       phoneValid (value) {
         let rule = /^1\d{10}$/
 
-        if (rule.test(value) || value == '') {
+        if (rule.test(value) || value === '') {
           this.results.isPhoneValid = {
             validStatus: 'success',
             tips: ''
@@ -244,7 +243,7 @@
       numberValid (value) {
         let rule = /^\d*$/
 
-        if(rule.test(value) || value == '') {
+        if (rule.test(value) || value === '') {
           this.results.isNumberValid = {
             validStatus: 'success',
             tips: ''
@@ -260,7 +259,7 @@
       telValid (value) {
         let rule = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/
 
-        if(rule.test(value) || value == '') {
+        if (rule.test(value) || value === '') {
           this.results.isTelValid = {
             validStatus: 'success',
             tips: ''
@@ -276,7 +275,7 @@
       emailValid (value) {
         let rule = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
 
-        if(rule.test(value) || value == '') {
+        if (rule.test(value) || value === '') {
           this.results.isEmailValid = {
             validStatus: 'success',
             tips: ''

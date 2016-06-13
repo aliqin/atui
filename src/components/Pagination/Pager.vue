@@ -41,11 +41,11 @@
       }
     },
     computed: {
-      wrapClasses() {
+      wrapClasses () {
         return {
           'pagination-items': !this.mini && !this.simple,
-            'simple-pagination-items': this.simple && !this.mini,
-            'mini-pagination-items': !this.simple && this.mini
+          'simple-pagination-items': this.simple && !this.mini,
+          'mini-pagination-items': !this.simple && this.mini
         }
       }
     },

@@ -26,66 +26,63 @@
 </template>
 
 <script>
-import EventListener from '../utils/EventListener.js'
 import coerceBoolean from '../utils/coerceBoolean.js'
 
-  export default {
-    props: {
-      title: {
-        type: String
-      },
-      show: {
-        require: true,
-        type: Boolean,
-        coerce: coerceBoolean,
-      },
-      width: String,
-      height:String,
-      callback: {
-        type: Function,
-        default() {}
-      },
-      effect: {
-        type: String,
-        default: null
-      },
-      backdrop: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
-      },
-      large: {
-        type: Boolean
-      },
-      small: {
-        type: Boolean
-      }
+export default {
+  props: {
+    title: {
+      type: String
     },
-    data() {
-      return {
-        in:false
-      }
+    show: {
+      require: true,
+      type: Boolean,
+      coerce: coerceBoolean,
     },
-    methods: {
-      close() {
-        this.show = false
-      },
-      clickBack() {
-        if(this.backdrop) {
-          this.close()
-        }
-      }
+    width: String,
+    height: String,
+    callback: {
+      type: Function,
+      default () {}
     },
-    compiled () {
-      var me = this
-      window.addEventListener('keyup', function (ev) {
-          if (ev.keyCode === 27) {
-              me.show = false;
-          }
-      });
+    effect: {
+      type: String,
+      default: null
     },
-    attached() {
-      this.$appendTo(document.body)
+    backdrop: {
+      type: Boolean
+    },
+    large: {
+      type: Boolean
+    },
+    small: {
+      type: Boolean
     }
+  },
+  data() {
+    return {
+      in:false
+    }
+  },
+  methods: {
+    close () {
+      this.show = false
+    },
+    clickBack () {
+      if (this.backdrop) {
+        this.close()
+      }
+    }
+  },
+  compiled () {
+    var me = this
+    window.addEventListener('keyup', (ev) => {
+      if (ev.keyCode === 27) {
+        me.show = false
+      }
+    })
+  },
+  attached () {
+    this.$appendTo(document.body)
   }
+}
 </script>

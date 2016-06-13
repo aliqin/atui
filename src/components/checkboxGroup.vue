@@ -13,7 +13,7 @@
     props: {
       value: {
         type: Array,
-        default() {
+        default () {
           return []
         }
       },

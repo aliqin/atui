@@ -30,15 +30,15 @@
 </template>
 
 <script>
-  import PopoverMixin from '../popoverMixins.js'
+import PopoverMixin from '../popoverMixins.js'
 
-  export default {
-    mixins: [PopoverMixin],
-    props : {
-      trigger: {
-        type   : String,
-        default: 'hover'
-      }
+export default {
+  mixins: [PopoverMixin],
+  props: {
+    trigger: {
+      type: String,
+      default: 'hover'
     }
   }
+}
 </script>

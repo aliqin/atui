@@ -17,17 +17,17 @@ export default {
   name: 'spin',
   props: {
     show: {
-      type:Boolean
+      type: Boolean
     },
     sping: {
-      type:Boolean
+      type: Boolean
     },
     size: {
-      type:String,
-      default:'default'
+      type: String,
+      default: 'default'
     }
   },
-  data() {
+  data () {
     return {
       isSupportAnimation: isSupportAnimation
     }

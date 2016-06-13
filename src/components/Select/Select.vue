@@ -26,13 +26,13 @@
   import Icon from '../Icon/'
   import Tag from '../Tag/'
   export default {
-    name:'select',
+    name: 'select',
     props: {
       width: {
-        type: Array,
+        type: Array
       },
       value: {
-        default:''
+        default: ''
       },
       placeholder: {
         type: String,
@@ -106,19 +106,19 @@
             setTimeout(() => this.showNotify = false, 1000)
           }
         } else {
-          this.$broadcast('valueChange',val)
+          this.$broadcast('valueChange', val)
         }
       },
       selectedOptions (options) {
         if (this.multiple) {
-          this.value = this.selectedOptions.map((option)=>{
+          this.value = this.selectedOptions.map((option) => {
             return option.value
           })
         } else {
           this.value = this.selectedOptions[0].value
         }
         if (options.length) {
-          this.$dispatch('change',this.multiple ? options : options[0])
+          this.$dispatch('change', this.multiple ? options : options[0])
         }
       }
     },
@@ -132,7 +132,7 @@
         this.show = !this.show
         if (this.multiple) {
           this.showPlaceholder = false
-          setTimeout(() => me.$els.searchField.focus(),10)
+          setTimeout(() => me.$els.searchField.focus(), 10)
         }
       },
       closeTag (option) {
@@ -143,7 +143,7 @@
         let value = input.value
         if (value.length === 0) {
           let options = this.selectedOptions
-          let option = options[options.length -1]
+          let option = options[options.length - 1]
           this.selectedOptions.$remove(option)
         }
       },
@@ -162,8 +162,8 @@
           }
           if (this.value.indexOf(value) === -1) {
             const option = {
-              label:value,
-              value:value
+              label: value,
+              value: value
             }
             this.selectedOptions.push(option)
           }
@@ -224,7 +224,7 @@
         // return true
       }
     },
-    ready() {
+    ready () {
       let me = this
       me._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!me.$el.contains(e.target)) {
@@ -232,7 +232,7 @@
         }
       })
     },
-    beforeDestroy() {
+    beforeDestroy () {
       if (this._closeEvent) this._closeEvent.remove()
     }
   }

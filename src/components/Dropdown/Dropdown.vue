@@ -9,28 +9,28 @@
   import coerceBoolean from '../utils/coerceBoolean.js'
 
   export default {
-    props:{
-      trigger:{
+    props: {
+      trigger: {
         type: String,
         default: 'click'
       },
-      open:{
+      open: {
         type: Boolean,
         coerce: coerceBoolean,
         default: false
       }
     },
     methods: {
-      toggleDropdown(e) {
+      toggleDropdown (e) {
         e.preventDefault()
         this.open = !this.open
       }
     },
-    ready() {
+    ready () {
       const me = this
       const el = me.$el
       const toggle = el.querySelector('[data-toggle="dropdown"]')
-      if(!toggle) {
+      if (!toggle) {
         return
       }
       const event = me.trigger === 'click' ? 'click' : 'mouseenter'
@@ -39,14 +39,14 @@
         me.open = true
       })
 
-      if(me.trigger === 'hover') {
-        me.$el.addEventListener('mouseleave',() => {
+      if (me.trigger === 'hover') {
+        me.$el.addEventListener('mouseleave', () => {
           me.timeout = setTimeout(() => {
             me.open = false
-          },300)
+          }, 300)
         })
       }
-      let self = this;
+      let self = this
       this._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!el.contains(e.target)) {
           self.open = false

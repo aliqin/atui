@@ -26,8 +26,8 @@ export default {
   },
   methods: {
     closeHandler (e) {
-     this.closed = true
-     this.$dispatch('close', e)
+      this.closed = true
+      this.$dispatch('close', e)
     }
   },
   components: {

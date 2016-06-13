@@ -16,7 +16,7 @@ export default {
     mapPropsToChildComponent () {
       const self = this
       self.$children.forEach((child, index) => {
-       child.slash = self.slash
+        child.slash = self.slash
       })
     }
   },

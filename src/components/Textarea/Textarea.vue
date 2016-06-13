@@ -25,26 +25,25 @@
     data () {
       return {
         overLimit: false,
-        isDisabled: this.disabled == true || this.disabled === ''
+        isDisabled: this.disabled === true || this.disabled === ''
       }
     },
     computed: {
       showWordsCount () {
-        return this.wordsCount == true || this.wordsCount === 'true' || this.wordsCount === ''
+        return this.wordsCount === true || this.wordsCount === 'true' || this.wordsCount === ''
       },
 
       curWords () {
         if (this.content) {
           return this.content.length
         }
-
         return 0
       },
 
       classObj () {
         return {
           'error': this.error || this.error === '' || this.overLimit,
-          'success': this.success == true || this.success === ''
+          'success': this.success === true || this.success === ''
         }
       },
 
@@ -58,7 +57,7 @@
       'content' (newVal, oldVal) {
         let len = newVal.length
         this.curWords = len
-        if(len >= this.limitWords - 0) {
+        if (len >= this.limitWords - 0) {
           this.overLimit = true
         } else {
           this.overLimit = false

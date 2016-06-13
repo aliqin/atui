@@ -1,7 +1,7 @@
 <template>
-<div class="at-upload" id="upload-{{uploadId}}">
-  <div v-if="uploadType == 'click'">
-    <label>
+  <div class="at-upload" id="upload-{{uploadId}}">
+    <div v-if="uploadType == 'click'">
+      <label>
       <input
         type="file"
         :name="name"
@@ -13,71 +13,65 @@
         <span class="btn tertiary">点击上传</span>
       </slot>
     </label>
-    <div class="at-upload-list">
-      <div class="at-upload-item" v-for="file in fileList">
-        <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
-          <icon type="doc" class="at-upload-file-icon" size="12"></icon>
-          <span>{{file.name}}</span>
-          <icon type="close" class="at-upload-del-info" size="12" @click="delExistFile($index)"></icon>
+      <div class="at-upload-list">
+        <div class="at-upload-item" v-for="file in fileList">
+          <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
+            <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+            <span>{{file.name}}</span>
+            <icon type="close" class="at-upload-del-info" size="12" @click="delExistFile($index)"></icon>
+          </div>
         </div>
-      </div>
-      <div class="at-upload-item" v-for="file in uploadList">
-        <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
-          <icon type="doc" class="at-upload-file-icon" size="12"></icon>
-          <span>{{file.name}}</span>
-          <icon type="close" class="at-upload-del-info" size="12" @click="delFile($index)"></icon>
-        </div>
-        <div class="at-upload-item-progress" :class="{'hide': progress[$index] == '100%'}">
-          <div class="at-progress at-progress-line at-progress-status-success">
-            <div class="at-progress-inner">
-              <div class="at-progress-bg" :style="{width: progress[$index]}"></div>
+        <div class="at-upload-item" v-for="file in uploadList">
+          <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
+            <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+            <span>{{file.name}}</span>
+            <icon type="close" class="at-upload-del-info" size="12" @click="delFile($index)"></icon>
+          </div>
+          <div class="at-upload-item-progress" :class="{'hide': progress[$index] == '100%'}">
+            <div class="at-progress at-progress-line at-progress-status-success">
+              <div class="at-progress-inner">
+                <div class="at-progress-bg" :style="{width: progress[$index]}"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div v-if="uploadType == 'drag'" class="at-upload-drag">
-    <div class="at-upload-drag-container {{dragover ? 'is-dragover' : ''}}">
-      <input
-          type="file"
-          :name="name"
-          :id="uploadId"
-          :accept="accept"
-          :multiple="multiple"
-          @change="onChange($event)" />
-      <label for="{{uploadId}}" class="at-upload-drag-area">
+    <div v-if="uploadType == 'drag'" class="at-upload-drag">
+      <div class="at-upload-drag-container {{dragover ? 'is-dragover' : ''}}">
+        <input type="file" :name="name" :id="uploadId" :accept="accept" :multiple="multiple" @change="onChange($event)" />
+        <label for="{{uploadId}}" class="at-upload-drag-area">
         <p class="at-upload-drag-icon"></p>
         <span v-if="advanceDrag">将文件拖拽至框中上传或点此上传</span>
         <span v-if="!advanceDrag">当前环境不支持拖拽上传，请点此上传</span>
         <p v-if="fileList.length > 0" v-for="file in selectFiles">{{file}}</p>
       </label>
-    </div>
-    <div class="at-upload-list">
-      <div class="at-upload-item" v-for="file in fileList">
-        <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
-          <icon type="doc" class="at-upload-file-icon" size="12"></icon>
-          <span>{{file.name}}</span>
-          <icon type="close" class="at-upload-del-info" size="12" @click="delExistFile($index)"></icon>
-        </div>
       </div>
-      <div class="at-upload-item" v-for="file in uploadList">
-        <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
-          <icon type="doc" class="at-upload-file-icon" size="12"></icon>
-          <span>{{file.name}}</span>
-          <icon type="close" class="at-upload-del-info" size="12" @click="delFile($index)"></icon>
+      <div class="at-upload-list">
+        <div class="at-upload-item" v-for="file in fileList">
+          <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
+            <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+            <span>{{file.name}}</span>
+            <icon type="close" class="at-upload-del-info" size="12" @click="delExistFile($index)"></icon>
+          </div>
         </div>
-        <div class="at-upload-item-progress" :class="{'hide': progress[$index] == '100%'}">
-          <div class="at-progress at-progress-line at-progress-status-success">
-            <div class="at-progress-inner">
-              <div class="at-progress-bg" :style="{width: progress[$index]}"></div>
+        <div class="at-upload-item" v-for="file in uploadList">
+          <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
+            <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+            <span>{{file.name}}</span>
+            <icon type="close" class="at-upload-del-info" size="12" @click="delFile($index)"></icon>
+          </div>
+          <div class="at-upload-item-progress" :class="{'hide': progress[$index] == '100%'}">
+            <div class="at-progress at-progress-line at-progress-status-success">
+              <div class="at-progress-inner">
+                <div class="at-progress-bg" :style="{width: progress[$index]}"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 <script>
   import Icon from '../Icon'
@@ -95,7 +89,7 @@
       },
       uploadType: {
         type: String,
-        default: 'click' //drag拖拽上传，click点击上传
+        default: 'click' // drag拖拽上传，click点击上传
       },
       accept: {
         type: String,
@@ -130,7 +124,7 @@
     computed: {
       advanceDrag () {
         const div = document.createElement('div')
-        return ( ('draggable' in div) || ('ondragstart' in div && 'ondrop' in div) ) && 'FormData' in window && 'FileReader' in window
+        return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window
       }
     },
     components: {
@@ -154,14 +148,14 @@
         let files = e.target.files
 
         if (files) {
-          for(let i in files) {
-            if (typeof(files[i]) == 'object' && files[i].name) {
+          for (let i in files) {
+            if (typeof (files[i]) === 'object' && files[i].name) {
               this.progress.push('0%')
               this.uploadList.push(files[i])
             }
           }
         } else {
-          //只会取上传的第一个，只能上传一个
+          // 只会取上传的第一个，只能上传一个
           this.progress = ['0%']
           this.uploadList = [{name: this._input.value.replace(/^.*\\/, '')}]
         }
@@ -192,7 +186,7 @@
 
       xhrUpload () {
         let self = this
-        let data = new FormData()
+        let data = new window.FormData()
         let i = 0
         let len = this.uploadList.length
 
@@ -233,7 +227,7 @@
         let i = 0
         let len = this.uploadList.length
         if (this.testSameOrigin(this.url)) {
-          for(i = 0; i < len; i++) {
+          for (i = 0; i < len; i++) {
             let iframeName = 'uploadiframe-' + i + '-' + new Date().getTime()
             let iframe = document.createElement('iframe')
             let form = document.createElement('form')
