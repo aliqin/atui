@@ -4,11 +4,11 @@
     <label>
       <input
         type="file"
-        name="{{name}}"
-        accept="{{accept}}"
-        id="{{uploadId}}"
+        :name="name"
+        :accept="accept"
+        :id="uploadId"
         :multiple="multiple"
-        @:change="onChange($event)" />
+        @change="onChange($event)" />
       <slot>
         <span class="btn tertiary">点击上传</span>
       </slot>
@@ -41,9 +41,9 @@
     <div class="at-upload-drag-container {{dragover ? 'is-dragover' : ''}}">
       <input
           type="file"
-          name="{{name}}"
-          id="{{uploadId}}"
-          accept="{{accept}}"
+          :name="name"
+          :id="uploadId"
+          :accept="accept"
           :multiple="multiple"
           @change="onChange($event)" />
       <label for="{{uploadId}}" class="at-upload-drag-area">
@@ -167,11 +167,11 @@
         }
 
         if(this.maxlength && this.fileList.length + this.uploadList.length > this.maxlength) {
-            this._input.value = '';
-            this.uploadList = [];
+            this._input.value = ''
+            this.uploadList = []
             this.showMessage('超过上传数量限制，请先删除再进行上传');
         } else {
-          this.submitForm();
+          this.submitForm()
         }
       },
 
@@ -179,51 +179,50 @@
        * 上传后自动提交
        */
       submitForm () {
-        debugger;
         if(this.uploadList.length > 0) {
           if (this.url) {
             if(this.xhr) {
-              this.xhrUpload();
+              this.xhrUpload()
             } else {
-              this.iframeUpload();
+              this.iframeUpload()
             }
           }
         }
       },
 
       xhrUpload () {
-        let self = this;
-        let data = new FormData();
+        let self = this
+        let data = new FormData()
         let i = 0;
-        let len = this.uploadList.length;
+        let len = this.uploadList.length
 
         for (i = 0; i < len; i++) {
           (function(i, file) {
             if (file.type.match(self.accept)) {
-              data.append(self.name, file, file.name);
+              data.append(self.name, file, file.name)
 
-              let xhr = new XMLHttpRequest();
+              let xhr = new XMLHttpRequest()
 
-              xhr.open('post', self.url, true);
+              xhr.open('post', self.url, true)
 
               xhr.onload = () => {
-                self.parseResponse(xhr.responseText, i);
+                self.parseResponse(xhr.responseText, i)
               }
 
               xhr.upload.onprogress = (e) => {
-                const loaded = e.loaded ? e.loaded : 0;
-                const total = e.total ? e.total : 1;
-                self.progress[i] = parseInt((loaded / total) * 100, 10) + '%';
+                const loaded = e.loaded ? e.loaded : 0
+                const total = e.total ? e.total : 1
+                self.progress[i] = parseInt((loaded / total) * 100, 10) + '%'
               }
 
               xhr.onerror = () => {
-                self.setError('上传失败了！');
+                self.setError('上传失败了！')
               }
 
-              xhr.send(data);
+              xhr.send(data)
             }
 
-          })(i, this.uploadList[i]);
+          })(i, this.uploadList[i])
         }
       },
 
@@ -232,32 +231,32 @@
        */
       iframeUpload () {
         let i = 0;
-        let len = this.uploadList.length;
+        let len = this.uploadList.length
         if (this.testSameOrigin(this.url)) {
           for(i = 0; i < len; i++) {
-            let iframeName = 'uploadiframe-' + i + '-' + new Date().getTime();
-            let iframe     = document.createElement('iframe');
-            let form       = document.createElement('form');
-            let input      = document.createElement('input');
+            let iframeName = 'uploadiframe-' + i + '-' + new Date().getTime()
+            let iframe     = document.createElement('iframe')
+            let form       = document.createElement('form')
+            let input      = document.createElement('input')
 
-            input.setAttribute('type', 'file');
-            input.setAttribute('value', this.uploadList[i].name);
-            iframe.setAttribute('name', iframeName);
-            iframe.style.display = 'none';
-            form.setAttribute('method', 'post');
-            form.setAttribute('action', this.url);
-            form.setAttribute('target', iframeName);
-            form.setAttribute('data-index', i);
+            input.setAttribute('type', 'file')
+            input.setAttribute('value', this.uploadList[i].name)
+            iframe.setAttribute('name', iframeName)
+            iframe.style.display = 'none'
+            form.setAttribute('method', 'post')
+            form.setAttribute('action', this.url)
+            form.setAttribute('target', iframeName)
+            form.setAttribute('data-index', i)
 
-            document.body.appendChild(form);
-            form.appendChild(iframe);
-            form.appendChild(input);
+            document.body.appendChild(form)
+            form.appendChild(iframe)
+            form.appendChild(input)
 
             iframe.addEventListener('load', () => {
-              this.parseResponse(iframe.contentDocument.body.innerHTML, form.getAttribute('data-id'));
-              document.body.removeChild(form);
+              this.parseResponse(iframe.contentDocument.body.innerHTML, form.getAttribute('data-id'))
+              document.body.removeChild(form)
             });
-            form.submit();
+            form.submit()
           }
         } else {
           this.setError('iframe不支持跨域请求')
@@ -268,12 +267,12 @@
        * 测试上传地址与当前页面地址是否同域
        */
       testSameOrigin (url) {
-        const loc = window.location;
-        const a = document.createElement('a');
+        const loc = window.location
+        const a = document.createElement('a')
         a.href = url;
         return a.hostname == loc.hostname &&
                a.port == loc.port &&
-               a.protocol == loc.protocol;
+               a.protocol == loc.protocol
       },
 
       /**
@@ -283,12 +282,12 @@
         let data = null;
 
         if(!response) {
-          this.setError('服务器没有响应', index);
+          this.setError('服务器没有响应', index)
         } else {
           try {
-            data = JSON.parse(response);
+            data = JSON.parse(response)
           } catch (e) {
-            this.setError('服务器响应数据格式有问题', index);
+            this.setError('服务器响应数据格式有问题', index)
           }
 
           if(data) {
@@ -299,7 +298,7 @@
                 file: this.uploadList[index]
               });
             } else if(data.error) {
-              this.setError(data.error, index);
+              this.setError(data.error, index)
             }
           }
         }
@@ -315,7 +314,7 @@
           file: index && this.uploadList[index] || null
         });
 
-        index > -1 && this.uploadList.splice(index, 1);
+        index > -1 && this.uploadList.splice(index, 1)
       },
 
       showMessage(msg) {
@@ -323,7 +322,7 @@
       },
 
       filemouseover ($index) {
-        this.current = $index;
+        this.current = $index
       },
 
       filemouseout () {
@@ -334,7 +333,7 @@
         this.$dispatch('delete::file-upload', {
           file: this.uploadList[$index]
         });
-        this.uploadList.splice($index, 1);
+        this.uploadList.splice($index, 1)
       },
 
       delExistFile ($index) {
@@ -359,28 +358,28 @@
        * drag事件处理
        */
       dragHandler (e) {
-        let self = this;
-        e.preventDefault();
-        e.stopPropagation();
+        let self = this
+        e.preventDefault()
+        e.stopPropagation()
 
         if (e.type === 'dragover' || e.type === 'dragenter') {
           self.dragover = true;
         }
 
         if (e.type === 'dragend' || e.type === 'dragleave' || e.type === 'drop') {
-          self.dragover = false;
+          self.dragover = false
           if (e.type === 'drop') {
-            let files = e.dataTransfer.files || {};
+            let files = e.dataTransfer.files || {}
             for(let i in files) {
               if(typeof(files[i]) == 'object' && files[i].name) {
-                self.progress.push('0%');
-                self.uploadList.push(files[i]);
+                self.progress.push('0%')
+                self.uploadList.push(files[i])
               }
             }
-            self.submitForm();
+            self.submitForm()
           }
         }
-      },
+      }
     }
   }
 </script>

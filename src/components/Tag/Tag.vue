@@ -11,15 +11,9 @@
 	import vIcon from '../Icon/'
 	export default {
 		props: {
-			color: {
-				type: String
-			},
-			closable: {
-				type: Boolean
-			},
-			href: {
-				type: String
-			},
+			color: String,
+			closable: Boolean,
+			href: String,
 			size: {
 				type: String,
 				default: "12"

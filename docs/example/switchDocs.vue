@@ -156,8 +156,7 @@
     },
     methods: {
       changeHandler (switcher) {
-        this.checked = switcher.checked;
-        alert(checked)
+        alert(switcher.checked)
       },
       _clickHandler () {
         this.disabled = !this.disabled
@@ -166,22 +165,3 @@
   }
 </script>
 
-<style lang="less">
-  .example-title {
-    margin: 20px 0;
-  }
-
-  .switchDocs-demo-table {
-    border: none;
-    width: 50%;
-    th {
-      text-align: left;
-    }
-    td {
-      text-align: left;
-      padding: 10px;
-      padding-left: 0;
-
-    }
-  }
-</style>

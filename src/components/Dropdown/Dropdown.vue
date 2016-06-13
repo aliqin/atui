@@ -34,26 +34,26 @@
         return
       }
       const event = me.trigger === 'click' ? 'click' : 'mouseenter'
-      toggle.addEventListener(event, ()=>{
+      toggle.addEventListener(event, () => {
         clearTimeout(me.timeout)
         me.open = true
       })
 
       if(me.trigger === 'hover') {
         me.$el.addEventListener('mouseleave',() => {
-          me.timeout = setTimeout(()=>{
+          me.timeout = setTimeout(() => {
             me.open = false
           },300)
         })
       }
       let self = this;
-      this._closeEvent = EventListener.listen(window, 'click', (e)=> {
+      this._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!el.contains(e.target)) {
           self.open = false
         }
       })
     },
-    beforeDestroy() {
+    beforeDestroy () {
       if (this._closeEvent) this._closeEvent.remove()
     }
   }

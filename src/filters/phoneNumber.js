@@ -1,6 +1,6 @@
 // 13291895654 to 132 9189 5654
 
-export default function(number, searchKey) {
+export default function (number, searchKey) {
   var ret = ''
   number = '' + number
   number = number.replace(/[^\d]/g, '').substr(0, 11)

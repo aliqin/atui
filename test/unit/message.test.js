@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Message from '../../src/components/Message/'
 
-const vm = new Vue({
-  data() {
+let vm = new Vue({
+  data () {
     return {
       show: true
     }
   },
-  template:`
+  template: `
       <div>
         <message :show="show"
           :duration="3000"
@@ -32,7 +32,7 @@ describe('Message', () => {
   it('定时消失', () => {
     setTimeout(() => {
       expect(vm.$el.style.display).to.equal('none')
-    },4000)
+    }, 4000)
   })
 
 })

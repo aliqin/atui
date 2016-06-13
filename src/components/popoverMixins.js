@@ -25,7 +25,7 @@ const PopoverMixin = {
     }
   },
 
-  data() {
+  data () {
     return {
       position: {
         top: 0,
@@ -36,7 +36,7 @@ const PopoverMixin = {
   },
 
   methods: {
-    toggle() {
+    toggle () {
       this.show = !this.show
     },
 
@@ -46,13 +46,13 @@ const PopoverMixin = {
     resetPos () {
       let me = this
       const popover = me.$els.popover
-      if(me.show && popover.offsetWidth == 0) {
+      if (me.show && popover.offsetWidth == 0) {
         setTimeout(() => {
           me.resetPos()
         })
         return
       }
-      const triger  = me.$els.trigger.children[0]
+      const triger = me.$els.trigger.children[0]
       const offset = triger.getBoundingClientRect()
       const offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left
       const offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top
@@ -61,15 +61,15 @@ const PopoverMixin = {
       switch (me.placement) {
         case 'top' :
           me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2
-          me.position.top = offsetTop  - offsetHeight
+          me.position.top = offsetTop - offsetHeight
           break
         case 'topLeft' :
           me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 + offsetWidth / 4
-          me.position.top = offsetTop  - offsetHeight
+          me.position.top = offsetTop - offsetHeight
           break
         case 'topRight' :
           me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 - offsetWidth / 4
-          me.position.top = offsetTop  - offsetHeight
+          me.position.top = offsetTop - offsetHeight
           break
         case 'left':
           me.position.left = offsetLeft - offsetWidth
@@ -110,43 +110,43 @@ const PopoverMixin = {
         default:
           console.log('Wrong placement prop')
       }
-      popover.style.top    = this.position.top + 'px'
-      popover.style.left   = this.position.left + 'px'
+      popover.style.top = this.position.top + 'px'
+      popover.style.left = this.position.left + 'px'
     }
   },
-  attached() {
-    if(this.$els.popover) {
+  attached () {
+    if (this.$els.popover) {
       document.body.appendChild(this.$els.popover)
     }
   },
-  ready() {
-    if (!this.$els.popover) return console.error("Couldn't find popover v-el in your component that uses popoverMixin.");
+  ready () {
+    if (!this.$els.popover) return console.error("Couldn't find popover v-el in your component that uses popoverMixin.")
 
-    const me      = this
+    const me = this
     const popover = this.$els.popover
-    const triger  = this.$els.trigger.children[0]
+    const triger = this.$els.trigger.children[0]
 
     if (this.trigger === 'hover') {
-      this._mouseenterEvent = EventListener.listen(triger, 'mouseenter', ()=> {
+      this._mouseenterEvent = EventListener.listen(triger, 'mouseenter', () => {
         me.show = true
         me.resetPos()
       })
-      this._mouseleaveEvent = EventListener.listen(triger, 'mouseleave', ()=> this.show = false)
+      this._mouseleaveEvent = EventListener.listen(triger, 'mouseleave', () => this.show = false)
     } else if (this.trigger === 'focus') {
-      this._focusEvent = EventListener.listen(triger, 'focus', ()=> {
+      this._focusEvent = EventListener.listen(triger, 'focus', () => {
         me.show = true
         me.resetPos()
       })
-      this._blurEvent = EventListener.listen(triger, 'blur', ()=> this.show = false)
+      this._blurEvent = EventListener.listen(triger, 'blur', () => this.show = false)
     } else {
-      this._clickEvent = EventListener.listen(triger, 'click', ()=> {
+      this._clickEvent = EventListener.listen(triger, 'click', () => {
         me.show = !me.show
         me.resetPos()
       })
     }
   },
 
-  beforeDestroy() {
+  beforeDestroy () {
     if (this._blurEvent) {
       this._blurEvent.remove()
       this._focusEvent.remove()

@@ -35,7 +35,7 @@ export default {
     show:Boolean,
     disabledDate:{
       type:Function,
-      default:function (date) {
+      default: (date) => {
 
       }
     },

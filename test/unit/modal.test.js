@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Modal from '../../src/components/Modal/'
 
-const vm = new Vue({
-  data() {
+let vm = new Vue({
+  data () {
     return {
       show: true
     }
   },
-  template:`
+  template: `
       <div>
         <modal title="Zoom Modal" :show.sync="show" effect="zoom" width="400px">
           <div slot="modal-header"></div>

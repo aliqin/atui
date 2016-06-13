@@ -53,20 +53,20 @@
       }
     },
     computed:{
-      selectedValue() {
+      selectedValue () {
         let me = this
         return me.selectedOptions.map((option) => {
           return option.value
         })
       },
-      selectedLabel() {
+      selectedLabel () {
         let me = this
         return me.selectedOptions.map((option) => {
           return option.label
         })
       }
     },
-    created() {
+    created () {
       let me = this
       me.menus[0] = []
       me.options.forEach((option,i) => {
@@ -85,7 +85,7 @@
         })
       }
     },
-    ready() {
+    ready () {
       const el = this.$el
       let me = this
       me._closeEvent = EventListener.listen(window, 'click', (e)=> {
@@ -95,7 +95,7 @@
       })
     },
     methods: {
-      changeOption(index,option,event) {
+      changeOption (index,option,event) {
         let me = this
         let menus = me.menus.slice(0,index + 1)
         if(option.disabled) {

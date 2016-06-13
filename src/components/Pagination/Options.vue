@@ -11,9 +11,9 @@
 </template>
 
 <script>
-	import vSelect from '../Select/';
+	import vSelect from '../Select/'
 
-  const vOption = vSelect.Option;
+  const vOption = vSelect.Option
 
 	export default {
 		props: {
@@ -24,8 +24,7 @@
 				type: Number
 			},
 			showSizeChanger: {
-				type: Boolean,
-				default: false
+				type: Boolean
 			}
 		},
     components: {

@@ -18,7 +18,6 @@
       horizontal: null,
       vertical: null
     },
-
     data () {
       return {
         classObj: {
@@ -27,7 +26,6 @@
         }
       }
     },
-
     components: {
       vRow
     }

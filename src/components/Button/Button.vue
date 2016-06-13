@@ -11,26 +11,27 @@
         type: String,
         default: 'button'
       },
-      large: null,
-      small: null,
+      large: Boolean,
+      small: Boolean,
       value: {
         type: String,
         default: ''
       },
-      primary: null,
-      secondary: null,
-      tertiary: null,
-      text: null
+      primary: Boolean,
+      secondary: Boolean,
+      tertiary: Boolean,
+      text: Boolean
     },
     computed: {
       btnClassObj () {
+        let { large, small, primary, secondary, tertiary, text } = this
         return {
-          'large': typeof(this.large) !== "undefined",
-          'small': typeof(this.small) !== "undefined",
-          'primary': typeof(this.primary) !== "undefined",
-          'secondary': typeof(this.secondary) !== "undefined",
-          'tertiary': typeof(this.tertiary) !== "undefined",
-          'text': typeof(this.text) !== "undefined"
+          large,
+          small,
+          primary,
+          secondary,
+          tertiary,
+          text
         }
       }
     }

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Tooltip from '../../src/components/Tooltip/'
 
-const vm = new Vue({
-  template:`
+let vm = new Vue({
+  template: `
       <div>
       <tooltip content="我是tooltip" placement="top">
         <button class="btn btn-default ">上边</button>

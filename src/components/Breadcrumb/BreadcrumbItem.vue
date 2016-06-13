@@ -11,10 +11,10 @@
 </template>
 
 <script>
-	export default {
-		props: {
-			href: String,
-			slash: String
-		}
-	}
+export default {
+  props: {
+    href: String,
+    slash: String
+  }
+}
 </script>
