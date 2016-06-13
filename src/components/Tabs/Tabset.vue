@@ -73,17 +73,17 @@
       }
     },
 
-    data() {
+    data () {
       return {
         renderData: [],
         index: 2,
         translateX: 0,
         wrapperWidth: 0,
         navWidth: 0,
-        prev_tabIndex:0,
-        next_tabIndex:0,
+        prev_tabIndex: 0,
+        next_tabIndex: 0,
         itemsWidth: [],
-        maxTabIndex:0
+        maxTabIndex: 0
       }
     },
     components: {
@@ -104,13 +104,13 @@
           if (!el.disabled) this.active = index
           this.$dispatch('on-tab-click', this.active)
         },
-        prev() {
+        prev () {
           this._handleMoveX('right')
         },
-        next() {
+        next () {
           this._handleMoveX('left')
         },
-        _handleMoveX(direction) {
+        _handleMoveX (direction) {
           const totalLen = this.renderData.length
           switch(direction) {
             case 'left':
@@ -122,32 +122,32 @@
                */
               let maxTabIndex = totalLen - 1 + (this.showLen - 1)
               this.maxTabIndex = maxTabIndex
-              if(this.next_tabIndex === maxTabIndex)return
+              if(this.next_tabIndex === maxTabIndex) return
               this.prev_tabIndex++
               this.next_tabIndex = this.prev_tabIndex + this.showLen - 1
-            break;
+            break
 
             case 'right':
-              if(this.prev_tabIndex === 0)return
+              if(this.prev_tabIndex === 0) return
               this.next_tabIndex--
               this.prev_tabIndex = this.next_tabIndex - (this.showLen - 1)
-            break;
+            break
           }
-          this.$el.querySelector('.nav').style.transform="translateX(-" + this.itemsWidth[this.prev_tabIndex].left + 'px)';
+          this.$el.querySelector('.nav').style.transform="translateX(-" + this.itemsWidth[this.prev_tabIndex].left + 'px)'
         },
         _handleTabWidth() {
           const self = this
-          const dom  = self.$el
-          const nav  = dom.querySelector('.nav')
+          const dom = self.$el
+          const nav = dom.querySelector('.nav')
           const tabsHeader = dom.querySelector('.tabs-header')
           const list = nav.children
-          const showlen  = this.showLen
-          const len  = list.length
+          const showlen = this.showLen
+          const len = list.length
           self.next_tabIndex = showlen - 1
 
-          let i = 0;
+          let i = 0
           for(; i < len; i++) {
-            const _itemWidth = Math.ceil(list[i].offsetWidth);
+            const _itemWidth = Math.ceil(list[i].offsetWidth)
             self.navWidth += _itemWidth
             self.itemsWidth.push({width:_itemWidth, left: self.navWidth-_itemWidth})
             if(i < showlen) {
@@ -174,5 +174,4 @@
         },30)
     }
   }
-
 </script>

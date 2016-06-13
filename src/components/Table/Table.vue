@@ -61,28 +61,28 @@ export default {
   props: {
     pagination:Object,
     dataSource: {
-      type:Array,
+      type: Array,
       default() {
         return []
       }
     },
-    noDataTip:{
-      type:String,
+    noDataTip: {
+      type: String,
       default:'没有任何数据'
     },
     columns: {
-      type:Array,
+      type: Array,
       default() {
         return []
       }
     },
     rowSelection: Object,
     rowKey: String,
-    loading:Boolean,
-    fixedHeader:Boolean,
-    size:{
-      type:String,
-      default:'default'
+    loading: Boolean,
+    fixedHeader: Boolean,
+    size: {
+      type: String,
+      default: 'default'
     }
   },
   components: {
@@ -94,12 +94,12 @@ export default {
     this.compileTbody()
     return {
       isCheckedAll: false,
-      isDisabledAll:false,
-      sorderOrder:[],
+      isDisabledAll: false,
+      sorderOrder: [],
       checkedRows: [],
-      filterOpened:false,
-      filters:null,
-      sorter:null
+      filterOpened: false,
+      filters: null,
+      sorter: null
     }
   },
   computed: {
@@ -113,7 +113,7 @@ export default {
       }
       return checkedKeys
     },
-    checkebleRows() {
+    checkebleRows () {
       let me = this
       let rows = []
       // 过滤出非禁用的项供选择使用
@@ -129,7 +129,7 @@ export default {
   },
   watch: {
     dataSource: {
-      handler(data) {
+      handler (data) {
         let me = this
         me.compileTbody()
 
@@ -147,7 +147,7 @@ export default {
     }
   },
   methods: {
-    compileTbody() {
+    compileTbody () {
       let me = this
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成
       me.$nextTick(() => {
@@ -155,7 +155,7 @@ export default {
         me.isDisabledAll = !me.checkebleRows.length
       })
     },
-    sortAction(column,index,order) {
+    sortAction (column,index,order) {
       if(typeof column.sorter === 'Function') {
         // TODO:客户端排序
       }
@@ -167,7 +167,7 @@ export default {
       })
     },
     // 点击全选框触发
-    onCheckAll(event) {
+    onCheckAll (event) {
       let me = this
       let changeRows = []
       let input = event.srcElement || event.target
@@ -194,7 +194,7 @@ export default {
       }
     },
     // 选中某一个单选框时触发
-    onCheckOne(event,record) {
+    onCheckOne (event,record) {
       const me = this
       let input = event.srcElement || event.target
       const checked = input.checked
@@ -213,7 +213,7 @@ export default {
       me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
     },
     // filter时触发
-    onFilter(value, column) {
+    onFilter (value, column) {
       let me = this
       me.filterOpened = true
       setTimeout(() => {
@@ -223,7 +223,7 @@ export default {
       me.filters[column.dataIndex] = [value]
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
     },
-    fixedHeaderAction() {
+    fixedHeaderAction () {
       if(this.fixedHeader) {
         let header = this.$el.querySelector('.table-thead')
         let colgroup = this.$el.querySelector('colgroup').cloneNode(true)
@@ -233,7 +233,7 @@ export default {
       }
     }
   },
-  attached() {
+  attached () {
     // this.fixedHeaderAction()
   }
 }

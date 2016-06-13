@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Grid from '../../src/components/Table/'
-
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -11,9 +10,9 @@ const columns = [{
     text: '姓胡的',
     value: '胡'
   }],
-  sorter:true,
+  sorter: true,
   onFilter: (value, record) => record.name.indexOf(value) === 0,
-  width:150
+  width: 150
 }, {
   title: '年龄',
   dataIndex: 'age',
@@ -23,7 +22,7 @@ const columns = [{
       return '<input type="text"/>'
     }
   },
-  width:250
+  width: 250
 }, {
   title: '地址',
   dataIndex: 'address',
@@ -35,9 +34,8 @@ const columns = [{
     value: '西湖'
   }],
   filterMultiple: false,
-  width:250,
+  width: 250,
   onFilter: (value, record) => record.address.indexOf(value) === 0
-
 }, {
   title: '操作',
   key: 'operation',
@@ -46,9 +44,7 @@ const columns = [{
       return '<icon type="info"></icon><a href="' + record.key + '.html" target="_blank">详情</a>'
     }
   }
-}
-]
-
+}]
 const data = [{
   key: '1',
   name: '胡斌',
@@ -69,23 +65,21 @@ const data = [{
   name: '李秀莲大嘴哥',
   age: 32,
   address: '西湖区湖底公园123号'
-},
-  {
-    key: '5',
-    name: '刘德华',
-    age: 54,
-    address: '西湖区湖底公园999号'
-  },
-  {
-    key: '6',
-    name: '洪金宝',
-    age: 66,
-    address: '香港弥敦道'
-  }]
+}, {
+  key: '5',
+  name: '刘德华',
+  age: 54,
+  address: '西湖区湖底公园999号'
+}, {
+  key: '6',
+  name: '洪金宝',
+  age: 66,
+  address: '香港弥敦道'
+}]
 const rowSelection = {
   getCheckboxProps (record) {
     return {
-      disabled: record.name === '胡彦祖'    // 配置无法勾选的列
+      disabled: record.name === '胡彦祖' // 配置无法勾选的列
     }
   },
   onChange (selectedRowKeys, selectedRows) {
@@ -98,16 +92,15 @@ const rowSelection = {
     console.log('rowSelection.onSelectAll', selected, selectedRows, changeRows)
   }
 }
-
 let vm = new Vue({
   data () {
     return {
-      size:'default',
-      fixedHeader:false,
-      loading:false,
-      gridData:data,
+      size: 'default',
+      fixedHeader: false,
+      loading: false,
+      gridData: data,
       gridColumns: columns,
-      rowSelection:rowSelection
+      rowSelection: rowSelection
     }
   },
   template: `
@@ -116,24 +109,20 @@ let vm = new Vue({
       row-key="key" @table-change="onTableChange"
       :loading="loading" :size="size"></grid></div>
       `,
-  components: { Grid }
+  components: {
+    Grid
+  }
 }).$mount()
-
 describe('Table', () => {
   it('Table组件基础渲染', () => {
     expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(6)
   })
-
-  // it('Table组件全选反选', () => {
-
-  // })
-
+        // it('Table组件全选反选', () => {
+        // })
   it('Table数据清空', () => {
     vm.gridData = []
     vm.$nextTick(() => {
       expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(1)
     })
   })
-
 })
-

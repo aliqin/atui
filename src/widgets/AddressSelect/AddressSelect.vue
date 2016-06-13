@@ -132,7 +132,7 @@ export default {
   },
   watch: {
     defaultAddr (newVal, oldVal) {
-      if(newVal.provinceId !== oldVal.provinceId) {
+      if (newVal.provinceId !== oldVal.provinceId) {
         this.province = ''
         this.city = ''
         this.county = ''
@@ -168,15 +168,15 @@ export default {
     selectAddr () {
       let text = this.province
       let space = '<span>/</span>'
-      if(this.city) {
+      if (this.city) {
         text = text + space + this.city
       }
 
-      if(this.county) {
+      if (this.county) {
         text = text + space + this.county
       }
 
-      if(this.street) {
+      if (this.street) {
         text = text + space + this.street
       }
 
@@ -187,13 +187,13 @@ export default {
     let self = this
     const el = this.$el
 
-    this._closeEvent = EventListener.listen(window, 'click', (e)=> {
+    this._closeEvent = EventListener.listen(window, 'click', (e) => {
       if (!el.contains(e.target)) {
         self.hideAddrPopFun()
       }
     })
 
-    if(this.provinceId && this.cityId && this.countyId) {
+    if (this.provinceId && this.cityId && this.countyId) {
       this.getStreet()
     }
 
@@ -215,28 +215,28 @@ export default {
     defaultTab () {
       let level = this.level
 
-      if(this.streetId || this.countyId) {
-        if(level > 3) {
+      if (this.streetId || this.countyId) {
+        if (level > 3) {
           this.current = 'street'
-        } else if(level > 2) {
+        } else if (level > 2) {
           this.current = 'county'
-        } else if(level > 1) {
+        } else if (level > 1) {
           this.current = 'city'
         }
         return
       }
 
-      if(this.cityId) {
-        if(level > 2) {
+      if (this.cityId) {
+        if (level > 2) {
           this.current = 'county'
-        } else if(level > 1) {
+        } else if (level > 1) {
           this.current = 'city'
         }
         return
       }
 
-      if(this.provinceId) {
-        if(level > 1) {
+      if (this.provinceId) {
+        if (level > 1) {
           this.current = 'city'
         }
         return
@@ -257,7 +257,7 @@ export default {
         time: 10000,
         callback: 'callback',
         success: function(res) {
-          if(res && res.success) {
+          if (res && res.success) {
             self.list.streetList = res.result || {}
           }
         },
@@ -271,45 +271,45 @@ export default {
      * 实现jsonp调用
      */
     jsonp (options) {
-        options = options || {}
+      options = options || {}
 
-        //创建 script 标签并加入到页面中
-        var callbackName = ('jsonp_' + Math.random()).replace('.', '')
-        var oHead = document.getElementsByTagName('head')[0]
-        options.data[options.callback] = callbackName
-        var params = this.formatParams(options.data)
-        var oS = document.createElement('script')
-        oHead.appendChild(oS)
+      //创建 script 标签并加入到页面中
+      var callbackName = ('jsonp_' + Math.random()).replace('.', '')
+      var oHead = document.getElementsByTagName('head')[0]
+      options.data[options.callback] = callbackName
+      var params = this.formatParams(options.data)
+      var oS = document.createElement('script')
+      oHead.appendChild(oS)
 
-        //创建jsonp回调函数
-        window[callbackName] = function (json) {
-            oHead.removeChild(oS)
-            clearTimeout(oS.timer)
-            window[callbackName] = null
-            options.success && options.success(json)
-        }
+      //创建jsonp回调函数
+      window[callbackName] = (json) => {
+        oHead.removeChild(oS)
+        clearTimeout(oS.timer)
+        window[callbackName] = null
+        options.success && options.success(json)
+      }
 
-        //发送请求
-        oS.src = options.url + '?' + params
+      //发送请求
+      oS.src = options.url + '?' + params
 
-        //超时处理
-        if (options.time) {
-            oS.timer = setTimeout(function () {
-                window[callbackName] = null
-                oHead.removeChild(oS)
-                options.fail && options.fail({ message: '超时' })
-            }, options.time)
-        }
+      //超时处理
+      if (options.time) {
+        oS.timer = setTimeout(() => {
+          window[callbackName] = null
+          oHead.removeChild(oS)
+          options.fail && options.fail({ message: '超时' })
+        }, options.time)
+      }
     },
     /**
      * 格式化jsonp参数
      */
     formatParams (data) {
-        var arr = []
-        for (var name in data) {
-            arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]))
-        }
-        return arr.join('&')
+      var arr = []
+      for (var name in data) {
+        arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]))
+      }
+      return arr.join('&')
     },
     /**
      * 切换省市区街道导航
@@ -331,7 +331,7 @@ export default {
       var tabLen = this.tabList.length
       this.city = city
       this.cityId = cityId
-      if(tabLen > 2) {
+      if (tabLen > 2) {
         this.current = this.tabList[2].id
       } else {
         this.hideAddrPopFun()
@@ -346,7 +346,7 @@ export default {
       var tabLen = this.tabList.length
       this.county = county
       this.countyId = countyId
-      if(tabLen > 3) {
+      if (tabLen > 3) {
         this.current = this.tabList[3].id
       } else {
         this.hideAddrPopFun()

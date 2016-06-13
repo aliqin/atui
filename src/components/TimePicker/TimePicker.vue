@@ -21,16 +21,16 @@
   import Input from '../Input'
 
   export default {
-    props:{
-      placeholder:{
-        type:String,
-        default:'请选择'
+    props: {
+      placeholder: {
+        type: String,
+        default: '请选择'
       },
-      size:{
-        type:String,
-        default:'default'
+      size: {
+        type: String,
+        default: 'default'
       },
-      defaultValue:{
+      defaultValue: {
         type: Array
       }
     },
@@ -52,7 +52,7 @@
         isOpen: false
       }
     },
-    computed:{
+    computed: {
       selectedValue() {
 
       }
@@ -64,7 +64,7 @@
     ready () {
       const el = this.$el
       let me = this
-      me._closeEvent = EventListener.listen(window, 'click', (e)=> {
+      me._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!el.contains(e.target)) {
           me.isOpen = false
         }

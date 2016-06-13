@@ -23,13 +23,12 @@
 
 <script>
   import EventListener from '../utils/EventListener'
-  import coerceBoolean from '../utils/coerceBoolean.js'
   import Icon from '../Icon/'
   import Tag from '../Tag/'
   export default {
     name:'select',
     props: {
-      width:{
+      width: {
         type: Array,
       },
       value: {
@@ -39,8 +38,8 @@
         type: String,
         default: '请选择'
       },
-      tags:{
-        type:Boolean
+      tags: {
+        type: Boolean
       },
       multiple: {
         type: Boolean
@@ -56,52 +55,52 @@
         type: Boolean
       }
     },
-    components:{
+    components: {
       Icon,
       Tag
     },
-    created() {
+    created () {
       let me = this
-      if(me.tags) {
+      if (me.tags) {
         me.multiple = true
       }
-      if(!me.value) {
+      if (!me.value) {
         me.value = me.multiple ? [] : ''
       }
-      if(me.multiple && !Array.isArray(me.value)) {
+      if (me.multiple && !Array.isArray(me.value)) {
         me.value = [me.value]
       }
-      if(!me.multiple && Array.isArray(me.value)) {
+      if (!me.multiple && Array.isArray(me.value)) {
         me.value = me.value.slice(0, 1)
       }
       if (me.multiple && me.value.length > me.limit) {
         me.value = me.value.slice(0, me.limit)
       }
-      if(me.value.length) {
+      if (me.value.length) {
         me.showPlaceholder = false
       }
     },
-    data() {
+    data () {
       return {
         searchText: '',
-        noResult:false,
+        noResult: false,
         show: false,
-        activeIndex:0,
-        selectedOptions:[],
-        showPlaceholder:true,
+        activeIndex: 0,
+        selectedOptions: [],
+        showPlaceholder: true,
         showNotify: false,
-        options:[]
+        options: []
       }
     },
     computed: {
-      showText() {
+      showText () {
         return this.selectedOptions && this.selectedOptions[0] && this.selectedOptions[0].label
       }
     },
     watch: {
-      value(val) {
+      value (val) {
         if (this.multiple) {
-          if(val.length > this.limit) {
+          if (val.length > this.limit) {
             this.showNotify = true
             this.value.pop()
             setTimeout(() => this.showNotify = false, 1000)
@@ -110,58 +109,58 @@
           this.$broadcast('valueChange',val)
         }
       },
-      selectedOptions(options) {
-        if(this.multiple) {
+      selectedOptions (options) {
+        if (this.multiple) {
           this.value = this.selectedOptions.map((option)=>{
             return option.value
           })
         } else {
           this.value = this.selectedOptions[0].value
         }
-        if(options.length) {
+        if (options.length) {
           this.$dispatch('change',this.multiple ? options : options[0])
         }
       }
     },
     methods: {
-      toggleDropdown() {
+      toggleDropdown () {
         let me = this
-        if(this.disabled) {
+        if (this.disabled) {
           this.show = false
           return
         }
         this.show = !this.show
-        if(this.multiple) {
+        if (this.multiple) {
           this.showPlaceholder = false
           setTimeout(() => me.$els.searchField.focus(),10)
         }
       },
-      closeTag(option) {
+      closeTag (option) {
         this.selectedOptions.$remove(option)
       },
-      deleteTag(event) {
+      deleteTag (event) {
         let input = event.target
         let value = input.value
-        if(value.length === 0) {
+        if (value.length === 0) {
           let options = this.selectedOptions
           let option = options[options.length -1]
           this.selectedOptions.$remove(option)
         }
       },
-      onInput(event) {
+      onInput (event) {
         let input = event.target
         let value = input.value
         let width = value.length * 10
         this.showPlaceholder = false
         input.style.width = (width + 10) + 'px'
       },
-      createTag(event) {
-        if(this.tags) {
+      createTag (event) {
+        if (this.tags) {
           let value = event.target.value
-          if(!value || !value.trim().length) {
+          if (!value || !value.trim().length) {
             return
           }
-          if(this.value.indexOf(value) === -1) {
+          if (this.value.indexOf(value) === -1) {
             const option = {
               label:value,
               value:value
@@ -172,7 +171,7 @@
           event.target.style.width = '10px'
         }
       },
-      selectDown(event) {
+      selectDown (event) {
         // event.preventDefault()
         // let childs = this.$children
         // let length = childs.length
@@ -183,7 +182,7 @@
         // // console.log(childs[0])
         // childs[this.activeIndex].active = true
       },
-      selectUp(event) {
+      selectUp (event) {
         // event.preventDefault()
         // let childs = this.$children
         // let length = childs.length
@@ -195,19 +194,19 @@
         // childs[this.activeIndex].active = true
       }
     },
-    events:{
-      'option-change':function (option) {
+    events: {
+      'option-change': (option) => {
         this.showPlaceholder = false
 
-        if(this.multiple) {
-          let isSelected = this.selectedOptions.some((item)=>{
+        if (this.multiple) {
+          let isSelected = this.selectedOptions.some((item) => {
             return item.value === option.value
           })
-          if(!isSelected) {
+          if (!isSelected) {
             this.selectedOptions.push(option)
             this.value.push(option.value)
           } else {
-            this.selectedOptions = this.selectedOptions.filter((item)=>{
+            this.selectedOptions = this.selectedOptions.filter((item) => {
               return item.value !== option.value
             })
             this.value.$remove(option.value)

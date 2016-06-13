@@ -15,44 +15,44 @@
   import Input from '../Input'
 
   export default {
-    props:{
-      options:{
+    props: {
+      options: {
         type: Array,
         required:true
       },
-      placeholder:{
+      placeholder: {
         type:String,
         default:'请选择'
       },
-      width:{
+      width: {
         type:String
       },
-      displayRender:{
+      displayRender: {
         type:Function,
         default (label) {
           return label.join(' / ')
         }
       },
-      expandTrigger:{
+      expandTrigger: {
         type:String,
         default:'click'
       },
-      defaultValue:{
+      defaultValue: {
         type: Array
       }
     },
-    components:{
+    components: {
       vInput:Input
     },
     data() {
       return {
-        menus:[],
-        selectedOptions:[],
+        menus: [],
+        selectedOptions: [],
         displayValue:'',
-        show:false
+        show: false
       }
     },
-    computed:{
+    computed: {
       selectedValue () {
         let me = this
         return me.selectedOptions.map((option) => {

@@ -11,22 +11,22 @@
 </template>
 
 <script>
-	import vSelect from '../Select/'
+  import vSelect from '../Select/'
 
   const vOption = vSelect.Option
 
-	export default {
-		props: {
-			total: {
-				type: Number
-			},
-			defaultSize: {
-				type: Number
-			},
-			showSizeChanger: {
-				type: Boolean
-			}
-		},
+  export default {
+    props: {
+      total: {
+        type: Number
+      },
+      defaultSize: {
+        type: Number
+      },
+      showSizeChanger: {
+        type: Boolean
+      }
+    },
     components: {
       vSelect, vOption
     },
@@ -37,5 +37,5 @@
         return true
       }
     }
-	}
+  }
 </script>
