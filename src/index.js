@@ -14,8 +14,6 @@ import TimePicker from './components/TimePicker/'
 import DatePicker from './components/DatePicker/'
 // import Progressbar from './components/progressbar.vue'
 // import Typeahead from './components/Typeahead.vue'
-
-
 // 展示类
 import Cascader from './components/Cascader/'
 import Message from './components/Message/'
@@ -30,8 +28,6 @@ import Textarea from './components/Textarea/'
 import Tag from './components/Tag/'
 import Tooltip from './components/Tooltip/'
 import Accordion from './components/Accordion/'
-
-
 // 导航类
 // import ffix from './components/affix.vue'
 // import side from './components/aside.vue'
@@ -41,8 +37,6 @@ import Steps from './components/Steps/'
 import Menu from './components/Menu/'
 import Breadcrumb from './components/Breadcrumb/'
 import Pagination from './components/Pagination/'
-
-
 const VueComponent = {
   Layout,
   Icon,
@@ -91,11 +85,11 @@ function getIEVersion () {
   return { major: '-1', minor: '-1' }
 }
 
-var ie_version = getIEVersion()
+var ieVersion = getIEVersion()
 // ie10以及以下，对某些样式支持有问题，需要降级
 document.addEventListener('DOMContentLoaded', function (event) {
-  if (ie_version.major === '9' || ie_version.major === '10') {
+  if (ieVersion.major === '9' || ieVersion.major === '10') {
     Vue.util.addClass(document.body, 'let-ie11')
-    Vue.util.addClass(document.body, 'ie' + ie_version.major)
+    Vue.util.addClass(document.body, 'ie' + ieVersion.major)
   }
 })

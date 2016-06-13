@@ -16,18 +16,18 @@ export default {
     href: String,
     size: {
       type: String,
-      default: "12"
+      default: '12'
     }
   },
   data () {
     return {
-     closed: false
+      closed: false
     }
   },
   methods: {
     closeHandler (e) {
      this.closed = true
-     this.$dispatch('close',e)
+     this.$dispatch('close', e)
     }
   },
   components: {

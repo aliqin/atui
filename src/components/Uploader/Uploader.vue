@@ -87,11 +87,11 @@
     props: {
       id: {
         type: String,
-        default: '',
+        default: ''
       },
       name: {
         type: String,
-        default: 'files',
+        default: 'files'
       },
       uploadType: {
         type: String,
@@ -99,18 +99,18 @@
       },
       accept: {
         type: String,
-        default: "",
+        default: ''
       },
       url: {
         type: String,
-        default: '',
+        default: ''
       },
       multiple: {
         type: Boolean,
-        default: true,
+        default: true
       },
       fileList: {
-        default: null,
+        default: null
       },
       maxlength: Number
     },
@@ -130,7 +130,7 @@
     computed: {
       advanceDrag () {
         const div = document.createElement('div')
-        return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window
+        return ( ('draggable' in div) || ('ondragstart' in div && 'ondrop' in div) ) && 'FormData' in window && 'FileReader' in window
       }
     },
     components: {
@@ -138,19 +138,19 @@
       Message
     },
     ready () {
-      this._input = document.querySelector('#'+this.uploadId)
-      this.$el = document.querySelector('#upload-'+this.uploadId)
+      this._input = document.querySelector('#' + this.uploadId)
+      this.$el = document.querySelector('#upload-' + this.uploadId)
 
       this.advanceDrag && this.addDragEvt()
     },
-    beforeDestroy() {
+    beforeDestroy () {
       let events = ['drag', 'dragstart', 'dragend', 'dragleave', 'drop', 'dragover', 'dragenter']
       events.forEach((event) => {
         this.$el.removeEventListener(event, () => this._eventHandler())
       })
     },
     methods: {
-      onChange(e) {
+      onChange (e) {
         let files = e.target.files
 
         if (files) {
@@ -197,7 +197,7 @@
         let len = this.uploadList.length
 
         for (i = 0; i < len; i++) {
-          (function(i, file) {
+          (function (i, file) {
             if (file.type.match(self.accept)) {
               data.append(self.name, file, file.name)
 
@@ -270,9 +270,9 @@
         const loc = window.location
         const a = document.createElement('a')
         a.href = url
-        return a.hostname == loc.hostname &&
-               a.port == loc.port &&
-               a.protocol == loc.protocol
+        return a.hostname === loc.hostname &&
+               a.port === loc.port &&
+               a.protocol === loc.protocol
       },
 
       /**
@@ -370,7 +370,7 @@
           self.dragover = false
           if (e.type === 'drop') {
             let files = e.dataTransfer.files || {}
-            for(let i in files) {
+            for (let i in files) {
               if (typeof(files[i]) == 'object' && files[i].name) {
                 self.progress.push('0%')
                 self.uploadList.push(files[i])
@@ -381,4 +381,5 @@
         }
       }
     }
-  }</script>
+  }
+  </script>
