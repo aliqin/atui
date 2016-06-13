@@ -13,7 +13,7 @@ import Calendar from './components/Calendar/'
 import TimePicker from './components/TimePicker/'
 import DatePicker from './components/DatePicker/'
 // import Progressbar from './components/progressbar.vue'
-import Typeahead from './components/Typeahead.vue'
+// import Typeahead from './components/Typeahead.vue'
 
 
 // 展示类
@@ -56,7 +56,6 @@ const VueComponent = {
   Calendar,
   TimePicker,
   DatePicker,
-  Typeahead,
   Message,
   Cascader,
   Modal,

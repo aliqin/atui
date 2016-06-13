@@ -1,18 +1,18 @@
 <template>
-	<div v-if="quickGo" class="pagination-jump">
-	    <div class="input-jumper-wrap">
-		    跳至
-		    <input type="text" :value="_current" @change="_handleChange($event)" :class="_inputWrapClasses"/>
-		    页
-	    </div>
-	  	<button type="button" @click="_go" :class="_btnWrapClasses">
-		跳转</button>
+  <div v-if="quickGo" class="pagination-jump">
+      <div class="input-jumper-wrap">
+        跳至
+        <input type="text" :value="_current" @change="_handleChange($event)" :class="_inputWrapClasses"/>
+        页
+      </div>
+      <button type="button" @click="_go" :class="_btnWrapClasses">
+    跳转</button>
   </div>
 </template>
 
 <script>
-	export default {
-		props: {
+  export default {
+    props: {
       quickGo  : {
         type   : Function,
         default: () => {
@@ -82,5 +82,5 @@
 
       }
     }
-	}
+  }
 </script>

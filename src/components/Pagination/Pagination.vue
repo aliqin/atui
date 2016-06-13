@@ -27,7 +27,7 @@ export default {
     },
     totalPage: Number,
     total: Number,
-    currPage : {
+    currPage: {
       type: Number
     },
     showJumper: Boolean,
@@ -45,140 +45,140 @@ export default {
   },
   data () {
     return {
-      pageRange : [],
-      prevShow : 1,
-      nextShow : 1
+      pageRange: [],
+      prevShow: 1,
+      nextShow: 1
     }
   },
-  watch : {
+  watch: {
     totalPage () {
-        this.getPageRange()
+      this.getPageRange()
     },
 
     currPage () {
-        this.getPageRange()
-        this.onChange(this.currPage)
+      this.getPageRange()
+      this.onChange(this.currPage)
     },
     prevShow () {
-        this.getPageRange()
+      this.getPageRange()
     },
     nextShow () {
-        this.getPageRange()
+      this.getPageRange()
     }
   },
   components: {
     jumper,pager,Options
   },
-  methods : {
+  methods: {
     _changePageSize(value) {
 
     },
     getPageRange () {
-        var start = 0
-        var end = 0
-        var showLen = this.prevShow + this.nextShow + 1
-        var totalPage = Math.max(this.totalPage, 1)
-        var currPage = this.currPage
+      var start = 0
+      var end = 0
+      var showLen = this.prevShow + this.nextShow + 1
+      var totalPage = Math.max(this.totalPage, 1)
+      var currPage = this.currPage
 
-        if (totalPage <= 1){
-            start = end = 1
+      if (totalPage <= 1) {
+        start = end = 1
+      }
+      else if (totalPage <= showLen) {
+        start = 1
+        end = totalPage
+      }
+      else {
+        if (currPage <= this.prevShow + 1) {
+          start = 1
+          end = showLen
         }
-        else if (totalPage <= showLen){
-            start = 1
-            end = totalPage
+        else if (currPage >= totalPage - this.nextShow) {
+          end = totalPage
+          start = totalPage - showLen + 1
         }
         else {
-            if (currPage <= this.prevShow + 1) {
-                start = 1
-                end = showLen
-            }
-            else if (currPage >= totalPage - this.nextShow) {
-                end = totalPage
-                start = totalPage - showLen + 1
-            }
-            else {
-                start = currPage - this.prevShow
-                end = currPage + this.nextShow
-            }
+          start = currPage - this.prevShow
+          end = currPage + this.nextShow
         }
+      }
 
-        this.pageRange = []
+      this.pageRange = []
 
-        if(this.simple) {
-            //上一页
-            if (currPage != 1) {
-                this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
-            } else {
-                this.pageRange.push({className:'disabled', icon: 'prev'})
-            }
-
-            this.pageRange.push({num:this.currPage, text:this.currPage, className: 'current'})
-            this.pageRange.push({text:'/', className: 'slash'})
-            this.pageRange.push({text:totalPage})
-
-            // 下一页
-            if (currPage != totalPage){
-                this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
-            } else {
-                this.pageRange.push({className:'disabled', icon: 'next'})
-            }
-
+      if(this.simple) {
+        //上一页
+        if (currPage != 1) {
+          this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
         } else {
-            //上一页
-            if (currPage != 1){
-                this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
-            } else {
-                this.pageRange.push({className:'disabled', icon: 'prev'})
-            }
-
-            //第一页
-            if (start >= 2) {
-                this.pageRange.push({num:1, text:1})
-            }
-            //省略号
-            if (start > 2){
-                this.pageRange.push({text:'...', className:'ellipsis'})
-            }
-            //显示的页码列表
-            for (var i=start; i<=end; i++) {
-                this.pageRange.push({
-                    num : i,
-                    text : i,
-                    className : (i == currPage) ? 'current' : ''
-                })
-            }
-            //省略号
-            if (end < totalPage-1) {
-                this.pageRange.push({text:'...', className:'ellipsis'})
-            }
-            //最后一页
-            if (end <= totalPage-1) {
-                this.pageRange.push({num:totalPage, text:totalPage})
-            }
-            //下一页
-            if (currPage != totalPage) {
-                this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
-            } else {
-                this.pageRange.push({className:'disabled', icon: 'next'})
-            }
+          this.pageRange.push({className:'disabled', icon: 'prev'})
         }
+
+        this.pageRange.push({num:this.currPage, text:this.currPage, className: 'current'})
+        this.pageRange.push({text:'/', className: 'slash'})
+        this.pageRange.push({text:totalPage})
+
+        // 下一页
+        if (currPage != totalPage) {
+          this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
+        } else {
+          this.pageRange.push({className:'disabled', icon: 'next'})
+        }
+
+      } else {
+        //上一页
+        if (currPage != 1) {
+          this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
+        } else {
+          this.pageRange.push({className:'disabled', icon: 'prev'})
+        }
+
+        //第一页
+        if (start >= 2) {
+          this.pageRange.push({num:1, text:1})
+        }
+        //省略号
+        if (start > 2) {
+          this.pageRange.push({text:'...', className:'ellipsis'})
+        }
+        //显示的页码列表
+        for (var i=start; i <= end; i++) {
+          this.pageRange.push({
+            num: i,
+            text: i,
+            className : (i == currPage) ? 'current' : ''
+          })
+        }
+        //省略号
+        if (end < totalPage-1) {
+          this.pageRange.push({text:'...', className:'ellipsis'})
+        }
+        //最后一页
+        if (end <= totalPage - 1) {
+          this.pageRange.push({num:totalPage, text:totalPage})
+        }
+        //下一页
+        if (currPage != totalPage) {
+          this.pageRange.push({num:currPage + 1, text: '>', className: 'next'})
+        } else {
+          this.pageRange.push({className: 'disabled', icon: 'next'})
+        }
+      }
     },
     pageClick (i) {
-        if (!i) {
-            return false
-        }
-        if (i == this.currPage){
-            return false
-        }
+      if (!i) {
+        return false
+      }
+      if (i == this.currPage) {
+        return false
+      }
 
-        this.currPage = i
-        this.getPageRange()
+      this.currPage = i
+      this.getPageRange()
     },
     onChange (pageNum) {
-        this.$dispatch('pagination-page-change', pageNum, this.id)
+      this.$dispatch('pagination-page-change', pageNum, this.id)
     },
     _isValid (page) {
-        return typeof page === 'number' && page >= 1 && page !== this.currPage
+      return typeof page === 'number' && page >= 1 && page !== this.currPage
     },
     _handleChange (page) {
       let _page = page

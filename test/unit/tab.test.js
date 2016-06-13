@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Tabs from '../../src/components/Tabs/'
-const {Tab} = Tabs
-
+const {
+    Tab
+} = Tabs
 let vm = new Vue({
   data () {
     return {
@@ -25,10 +26,11 @@ let vm = new Vue({
         </tab>
       </tabs></div>
       `,
-  components: { Tabs, Tab }
+  components: {
+    Tabs,
+    Tab
+  }
 }).$mount()
-
-
 describe('Tabs', () => {
   it('Tabs组件基础渲染', () => {
     expect(vm.$el.querySelectorAll('.tabs-header ul li').length).to.equal(3)
