@@ -8,42 +8,42 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      checked: {
-        type: Boolean
-      },
-      value:{
-        type:String
-      },
-      disabled: {
-        type: Boolean
-      },
-      small: {
-        type: Boolean
-      },
-      color: {
-        type: String
-      }
+export default {
+  props: {
+    checked: {
+      type: Boolean
     },
-    computed: {
-      wrapClasses () {
-        return {
-          'switch': true,
-          'small': this.small,
-          'switch-checked': this.checked,
-          'switch-disabled': this.disabled
-        }
-      }
+    value: {
+      type:String
     },
-    methods: {
-      changeHandler () {
-        if(this.disabled) {
-          return
-        }
-        this.checked = !this.checked
-        this.$dispatch('change',this)
+    disabled: {
+      type: Boolean
+    },
+    small: {
+      type: Boolean
+    },
+    color: {
+      type: String
+    }
+  },
+  computed: {
+    wrapClasses () {
+      return {
+        'switch': true,
+        'small': this.small,
+        'switch-checked': this.checked,
+        'switch-disabled': this.disabled
       }
     }
+  },
+  methods: {
+    changeHandler () {
+      if (this.disabled) {
+        return
+      }
+      this.checked = !this.checked
+      this.$dispatch('change', this)
+    }
   }
+}
 </script>

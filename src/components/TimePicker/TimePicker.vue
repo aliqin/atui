@@ -36,14 +36,14 @@
     },
     filters: {
       leftPad (value) {
-        if(+value < 10) {
+        if (+value < 10) {
           return '0' + value
         }
         return value
       }
     },
-    components:{
-      vInput:Input
+    components: {
+      vInput: Input
     },
     data () {
       return {

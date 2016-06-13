@@ -14,61 +14,56 @@
 import EventListener from '../utils/EventListener.js'
 import Calendar from '../Calendar/'
 import Icon from '../Icon/'
-
-
 export default {
-  name:'date-picker',
+  name: 'date-picker',
   props: {
     value: {
       type: String
     },
-    placeholder:{
-      type:String,
-      default:'请选择日期'
+    placeholder: {
+      type: String,
+      default: '请选择日期'
     },
     format: {
       default: 'yyyy-MM-dd'
     },
-    locale:{
-      default : 'zh_CN'
+    locale: {
+      default: 'zh_CN'
     },
-    show:Boolean,
-    disabledDate:{
-      type:Function,
-      default: (date) => {
-
-      }
+    show: Boolean,
+    disabledDate: {
+      type: Function,
+      default: (date) => {}
     },
-    disabled:Boolean
+    disabled: Boolean
   },
   components: {
-    icon:Icon,
-    calendar:Calendar
+    icon: Icon,
+    calendar: Calendar
   },
-  methods:{
-    inputClick() {
-      if(this.disabled) {
+  methods: {
+    inputClick () {
+      if (this.disabled) {
         return
       }
       this.show = !this.show
     },
-    selectChange(value) {
+    selectChange (value) {
       this.value = value
       this.show = false
       // 冒泡给上一层使用，比如rangePicker
       return true
     }
   },
-  ready() {
-    this._closeEvent = EventListener.listen(window, 'click', (e)=> {
+  ready () {
+    this._closeEvent = EventListener.listen(window, 'click', (e) => {
       if (!this.$el.contains(e.target)) {
         this.show = false
       }
     })
   },
-  beforeDestroy() {
+  beforeDestroy () {
     if (this._closeEvent) this._closeEvent.remove()
   }
-
 }
 </script>

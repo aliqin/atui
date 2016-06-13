@@ -6,17 +6,17 @@
 export default {
   props: {
     span:{
-      type:String,
-      default:'1'
+      type: String,
+      default: '1'
     },
     type:{
-      type:String,
-      default:'md'
+      type: String,
+      default: 'md'
     }
   },
-  data() {
+  data () {
     return {
-      className:['col',this.type,this.span].join('-')
+      className: ['col', this.type, this.span].join('-')
     }
   }
 }

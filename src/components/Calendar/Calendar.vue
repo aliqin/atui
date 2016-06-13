@@ -65,20 +65,19 @@
 </template>
 
 <script>
-import EventListener from '../utils/EventListener.js'
 const localeConfig = {
-  zh_CN : {
+  zh_CN: {
     weekRange: ['日', '一', '二', '三', '四', '五', '六'],
-    monthNames : [
+    monthNames: [
       '1', '2', '3',
       '4', '5', '6',
       '7', '8', '9',
       '10', '11', '12'
     ]
   },
-  en_US : {
+  en_US: {
     weekRange: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-    monthNames : [
+    monthNames: [
       'January', 'February', 'March',
       'April', 'May', 'June',
       'July', 'August', 'September',
@@ -97,26 +96,26 @@ export default {
     format: {
       default: 'yyyy-MMMM-dd'
     },
-    locale:{
-      default : 'zh_CN'
+    locale: {
+      default: 'zh_CN'
     },
     disabledDate: {
       type: Function,
       default () {
-        return function() {}
+        return () => {}
       }
     },
     width: {
       type: String,
       default: '100%'
     },
-    show:{
-      type:Boolean,
-      default:true
+    show: {
+      type: Boolean,
+      default: true
     },
-    mode:{
-      type:String,
-      default:'month'
+    mode: {
+      type: String,
+      default: 'month'
     }
   },
   data () {
@@ -124,7 +123,7 @@ export default {
       weekRange: localeConfig[this.locale].weekRange,
       dateRange: [],
       decadeRange: [],
-      currDate: new Date,
+      currDate: new Date(),
       displayDayView: true,
       displayMonthView: false,
       displayYearView: false,
@@ -158,8 +157,6 @@ export default {
       const year = this.currDate.getFullYear()
       const month = this.currDate.getMonth()
       const date = this.currDate.getDate()
-
-
       if (flag === 0) {
         const preMonth = this.getYearMonth(year, month - 1)
         this.currDate = new Date(preMonth.year, preMonth.month, date)
@@ -186,12 +183,12 @@ export default {
     },
     daySelect (date, event) {
       let el = event.target
-      if (el.className.split(' ').indexOf('atui-calendar-item-disable') >=0 ) {
+      if (el.className.split(' ').indexOf('atui-calendar-item-disable') >= 0) {
         return false
       } else {
         this.currDate = date
         this.value = this.stringify(this.currDate)
-        this.$dispatch('change',this.value)
+        this.$dispatch('change', this.value)
       }
     },
     switchMonthView () {
@@ -210,10 +207,10 @@ export default {
     getYearMonth (year, month) {
       if (month > 11) {
         year++
-          month = 0
+        month = 0
       } else if (month < 0) {
         year--
-          month = 11
+        month = 11
       }
       return {year: year, month: month}
     },
@@ -224,7 +221,7 @@ export default {
       return firstYearOfDecade + '-' + lastYearOfDecade
     },
     stringifyDayHeader (date) {
-      return date.getFullYear() + '年' +  this.monthNames[date.getMonth()] + '月'
+      return date.getFullYear() + '年' + this.monthNames[date.getMonth()] + '月'
     },
     parseMonth (date) {
       return this.monthNames[date.getMonth()]
@@ -254,14 +251,12 @@ export default {
     },
     getDayCount (year, month) {
       const dict = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
       if (month === 1) {
-        if ( (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0) ) {
+        if ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)) {
           return 29
         }
         return 28
       }
-
       return dict[month]
     },
     getDateRange () {
@@ -279,7 +274,6 @@ export default {
           text: firstYearOfDecade + i
         })
       }
-
       const currMonthFirstDay = new Date(time.year, time.month, 1)
       let firstDayWeek = currMonthFirstDay.getDay() + 1
       if (firstDayWeek === 0) {
@@ -319,7 +313,7 @@ export default {
             }
           }
         }
-        if(this.disabledDate(date)) {
+        if (this.disabledDate(date)) {
           sclass = 'atui-calendar-item-disable'
         }
         this.dateRange.push({
@@ -346,7 +340,7 @@ export default {
   },
   ready () {
     this.$dispatch('child-created', this)
-    this.currDate = this.parse(this.value) || this.parse( new Date() )
+    this.currDate = this.parse(this.value) || this.parse(new Date())
   }
 }
 </script>

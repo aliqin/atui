@@ -6,10 +6,10 @@
 
 <script>
   export default {
-    name:'accordion',
+    name: 'accordion',
     props: {
       oneAtATime: {
-        type : Boolean
+        type: Boolean
       }
     },
     methods: {
@@ -25,7 +25,7 @@
         if (this.oneAtATime) {
           this.$children.forEach((item, index) => {
             item.index = index
-            if (child !== item ) {
+            if (child !== item) {
               item.isOpen = false
             }
           })

@@ -5,20 +5,19 @@
 
 <script>
 export default {
-  name:'icon',
+  name: 'icon',
   props: {
     type: {
       type: String,
       require: true
     },
-    size:{
-    	type:String,
-    	default:'14'
+    size: {
+      type: String,
+      default: '14'
     },
-    color:{
-    	type:String
+    color: {
+      type: String
     }
   }
 }
-
 </script>

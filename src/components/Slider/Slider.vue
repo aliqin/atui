@@ -26,22 +26,22 @@
   export default {
     props: {
       id: String,
-      //默认值/初识位置，也可实时获取最新值
+      // 默认值/初识位置，也可实时获取最新值
       value: [String, Number, Array],
-      //不可用状态
+      // 不可用状态
       disabled: null,
-      //区间，最小值
+      // 区间，最小值
       min: [String, Number],
-      //区间，最大值
+      // 区间，最大值
       max: [String, Number],
-      //分段式滑块配置
+      // 分段式滑块配置
       marks: Object,
-      //不同标记间的关系，默认为包含关系，false表示是并列关系
+      // 不同标记间的关系，默认为包含关系，false表示是并列关系
       included: {
         type: Boolean,
         default: true
       },
-      //每步的步数，如果为0，则只能到marks标记位置
+      // 每步的步数，如果为0，则只能到marks标记位置
       step: [String, Number]
     },
 
@@ -93,11 +93,11 @@
         return Math.round(100 / this.range)
       },
       isDisabled () {
-        return typeof(this.disabled) !== "undefined"
+        return this.disabled
       },
       sliderClass () {
         return {
-          'at-slider-disabled': typeof(this.disabled) !== "undefined"
+          'at-slider-disabled': this.disabled
         }
       },
       sliderId () {
@@ -129,35 +129,32 @@
        * 且最多只能配置两个取值数据
        */
       valueToArray () {
-        let value        = this.value.toString().replace(/[\]\[]/g, '')
-        let typeData     = value.replace(/,/g, '')
-        let unit         = this.unit
-        let min          = this.min || 0
-        let valueArray   = []
+        let value = this.value.toString().replace(/[\]\[]/g, '')
+        let typeData = value.replace(/,/g, '')
+        let unit = this.unit
+        let min = this.min || 0
+        let valueArray = []
         let valuePercent = []
 
         if (typeData - 0 >= 0) {
           valueArray = value.split(',')
           valueArray.sort()
 
-        //最多只能配置两个数据
-        if (valueArray.length > 2) valueArray.length = 2
+          // 最多只能配置两个数据
+          if (valueArray.length > 2) valueArray.length = 2
 
-         //取值不能超过区间
-        for(let i = 0; i < valueArray.length; i++) {
-          valueArray[i] = this.valueRange(valueArray[i])
-          valuePercent.push((valueArray[i] - min) * unit)
-        }
+          // 取值不能超过区间
+          for (let i = 0; i < valueArray.length; i++) {
+            valueArray[i] = this.valueRange(valueArray[i])
+            valuePercent.push((valueArray[i] - min) * unit)
+          }
         } else {
           console.log('配置数据格式出错，请配置数字、数字型字符串、数字型数组、数字型数组字符串类型')
           valueArray = [0]
           valuePercent = [0]
         }
-
         this.valuePercent = valuePercent
-
         return valueArray
-
       },
 
       valueRange (value) {
@@ -218,7 +215,7 @@
         if (len > 1) {
           if (clickRate - 0 >= valuePercent[1] - 0) {
             valuePercent[1] = clickRate
-            valueArray[1]   = clickValue
+            valueArray[1] = clickValue
           } else if (clickRate - 0 >= valuePercent[0] - 0) {
             if (valuePercent[1] - clickRate < clickRate - valuePercent[0]) {
               valuePercent[1] = clickRate

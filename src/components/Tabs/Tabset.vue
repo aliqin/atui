@@ -44,134 +44,133 @@
 </template>
 
 <script>
-  import Icon from '../Icon/'
-  export default {
-    props: {
-      effect: {
-        type: String,
-        default: 'fadein'
-      },
-      active: {
-        type: Number,
-        default: 0
-      },
-      showLen: {
-        type: Number,
-        default: 3
-      },
-      base: {
-        type: Boolean,
-        default: false
-      },
-      trigger: {
-        type: String,
-        default: 'click'
-      },
-      size: {
-        type: String,
-        default: 'default'
-      }
+import Icon from '../Icon/'
+export default {
+  props: {
+    effect: {
+      type: String,
+      default: 'fadein'
     },
-
-    data () {
-      return {
-        renderData: [],
-        index: 2,
-        translateX: 0,
-        wrapperWidth: 0,
-        navWidth: 0,
-        prev_tabIndex: 0,
-        next_tabIndex: 0,
-        itemsWidth: [],
-        maxTabIndex: 0
-      }
+    active: {
+      type: Number,
+      default: 0
     },
-    components: {
-      Icon
+    showLen: {
+      type: Number,
+      default: 3
     },
-    computed: {
-      wrapClasses () {
-        return {
-          'nav': true,
-          'atui-nav-tabs': !this.base,
-          'atui-nav-base': this.base,
-          'atui-nav-small': this.size === 'small'
-        }
-      }
+    base: {
+      type: Boolean,
+      default: false
     },
-    methods: {
-      handleTabListClick(index, el) {
-        if (!el.disabled) this.active = index
-        this.$dispatch('on-tab-click', this.active)
-      },
-      prev () {
-        this._handleMoveX('right')
-      },
-      next () {
-        this._handleMoveX('left')
-      },
-      _handleMoveX (direction) {
-        const totalLen = this.renderData.length
-        switch (direction) {
-          case 'left':
-            /**
-             * 这里需要计算maxTabIndex, 本身Tab的最大index应该是totalLen-1，但是为了后面的Tab宽度太宽，需要将最大的index增加（this.showLen-1）, 也就是让整个nav再多向左移动这些次，以让每一个Tab的内容都能显示清楚。
-             *
-             * 如果能保证每一个tab的内容长度都不会太长并且差不多长，那么此时maxTabIndex可以等于totalLen-1
-             *
-             */
-            let maxTabIndex = totalLen - 1 + (this.showLen - 1)
-            this.maxTabIndex = maxTabIndex
-            if(this.next_tabIndex === maxTabIndex) return
-            this.prev_tabIndex++
-            this.next_tabIndex = this.prev_tabIndex + this.showLen - 1
-          break
-
-          case 'right':
-            if(this.prev_tabIndex === 0) return
-            this.next_tabIndex--
-            this.prev_tabIndex = this.next_tabIndex - (this.showLen - 1)
-          break
-        }
-        this.$el.querySelector('.nav').style.transform = 'translateX(-" + this.itemsWidth[this.prev_tabIndex].left + "px)'
-      },
-      _handleTabWidth() {
-        const self = this
-        const dom = self.$el
-        const nav = dom.querySelector('.nav')
-        const tabsHeader = dom.querySelector('.tabs-header')
-        const list = nav.children
-        const showlen = this.showLen
-        const len = list.length
-        self.next_tabIndex = showlen - 1
-
-        let i = 0
-        for (; i < len; i++) {
-          const _itemWidth = Math.ceil(list[i].offsetWidth)
-          self.navWidth += _itemWidth
-          self.itemsWidth.push({ width: _itemWidth, left: self.navWidth - _itemWidth })
-          if (i < showlen) {
-            self.wrapperWidth += _itemWidth
-          }
-        }
-        tabsHeader.style.width = self.wrapperWidth + 'px'
-        self.$el.style.visibility = 'visible'
-      }
+    trigger: {
+      type: String,
+      default: 'click'
     },
-
-    compiled () {
-      this.$el.style.visibility = 'hidden'
-    },
-
-    ready () {
-      const self = this
-      /**
-       * 动态去设置容器tabsWrapper的宽度以及内部nav的宽度，以便让它不溢出，类似于轮播图。
-       * 这里需要用setTimeout函数，否则获取不到dom节点。
-       */
-      setTimeout( () => {
-        self._handleTabWidth()
-      },30)
+    size: {
+      type: String,
+      default: 'default'
     }
+  },
+
+  data () {
+    return {
+      renderData: [],
+      index: 2,
+      translateX: 0,
+      wrapperWidth: 0,
+      navWidth: 0,
+      prev_tabIndex: 0,
+      next_tabIndex: 0,
+      itemsWidth: [],
+      maxTabIndex: 0
+    }
+  },
+  components: {
+    Icon
+  },
+  computed: {
+    wrapClasses () {
+      return {
+        'nav': true,
+        'atui-nav-tabs': !this.base,
+        'atui-nav-base': this.base,
+        'atui-nav-small': this.size === 'small'
+      }
+    }
+  },
+  methods: {
+    handleTabListClick (index, el) {
+      if (!el.disabled) this.active = index
+      this.$dispatch('on-tab-click', this.active)
+    },
+    prev () {
+      this._handleMoveX('right')
+    },
+    next () {
+      this._handleMoveX('left')
+    },
+    _handleMoveX (direction) {
+      const totalLen = this.renderData.length
+      switch (direction) {
+        case 'left':
+          /**
+           * 这里需要计算maxTabIndex, 本身Tab的最大index应该是totalLen-1，但是为了后面的Tab宽度太宽，需要将最大的index增加（this.showLen-1）, 也就是让整个nav再多向左移动这些次，以让每一个Tab的内容都能显示清楚。
+           *
+           * 如果能保证每一个tab的内容长度都不会太长并且差不多长，那么此时maxTabIndex可以等于totalLen-1
+           *
+           */
+          let maxTabIndex = totalLen - 1 + (this.showLen - 1)
+          this.maxTabIndex = maxTabIndex
+          if (this.next_tabIndex === maxTabIndex) return
+          this.prev_tabIndex++
+          this.next_tabIndex = this.prev_tabIndex + this.showLen - 1
+          break
+        case 'right':
+          if (this.prev_tabIndex === 0) return
+          this.next_tabIndex--
+          this.prev_tabIndex = this.next_tabIndex - (this.showLen - 1)
+          break
+      }
+      this.$el.querySelector('.nav').style.transform = 'translateX(-" + this.itemsWidth[this.prev_tabIndex].left + "px)'
+    },
+    _handleTabWidth () {
+      const self = this
+      const dom = self.$el
+      const nav = dom.querySelector('.nav')
+      const tabsHeader = dom.querySelector('.tabs-header')
+      const list = nav.children
+      const showlen = this.showLen
+      const len = list.length
+      self.next_tabIndex = showlen - 1
+
+      let i = 0
+      for (; i < len; i++) {
+        const _itemWidth = Math.ceil(list[i].offsetWidth)
+        self.navWidth += _itemWidth
+        self.itemsWidth.push({ width: _itemWidth, left: self.navWidth - _itemWidth })
+        if (i < showlen) {
+          self.wrapperWidth += _itemWidth
+        }
+      }
+      tabsHeader.style.width = self.wrapperWidth + 'px'
+      self.$el.style.visibility = 'visible'
+    }
+  },
+
+  compiled () {
+    this.$el.style.visibility = 'hidden'
+  },
+
+  ready () {
+    const self = this
+    /**
+     * 动态去设置容器tabsWrapper的宽度以及内部nav的宽度，以便让它不溢出，类似于轮播图。
+     * 这里需要用setTimeout函数，否则获取不到dom节点。
+     */
+    setTimeout( () => {
+      self._handleTabWidth()
+    }, 30)
   }
+}
 </script>

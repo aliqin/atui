@@ -12,42 +12,42 @@
       showTime:{
         type: Boolean
       },
-      startDate:{
+      startDate: {
         type:String
       },
-      endDate:{
+      endDate: {
         type:String
       },
       format: {
         default: 'yyyy-MM-dd'
       },
-      disabled:Boolean
+      disabled: Boolean
     },
     components: {
       DatePicker
     },
     methods: {
-      onStartDateChange(value) {
+      onStartDateChange (value) {
         let me = this
         me.setDisabledEndDate(value)
-        if(me.endDate) {
+        if (me.endDate) {
           me.$dispatch('change', me.startDate, me.endDate)
         }
       },
-      onEndDateChange(value) {
+      onEndDateChange (value) {
         let me = this
         me.setDisabledStartDate(value)
-        if(me.startDate) {
+        if (me.startDate) {
           me.$dispatch('change', me.startDate, me.endDate)
         }
       },
-      setDisabledEndDate(value) {
+      setDisabledEndDate (value) {
         let endDate = this.$refs.endDate
         endDate.disabledDate = (date) => {
           return date.getTime() <= new Date(value).getTime()
         }
       },
-      setDisabledStartDate(value) {
+      setDisabledStartDate (value) {
         let startDate = this.$refs.startDate
         startDate.disabledDate = (date) => {
           return date.getTime() >= new Date(value).getTime()

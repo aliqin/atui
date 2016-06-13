@@ -67,10 +67,12 @@ export default {
     }
   },
   components: {
-    jumper,pager,Options
+    jumper,
+    pager,
+    Options
   },
   methods: {
-    _changePageSize(value) {
+    _changePageSize (value) {
 
     },
     getPageRange () {
@@ -82,21 +84,17 @@ export default {
 
       if (totalPage <= 1) {
         start = end = 1
-      }
-      else if (totalPage <= showLen) {
+      } else if (totalPage <= showLen) {
         start = 1
         end = totalPage
-      }
-      else {
+      } else {
         if (currPage <= this.prevShow + 1) {
           start = 1
           end = showLen
-        }
-        else if (currPage >= totalPage - this.nextShow) {
+        } else if (currPage >= totalPage - this.nextShow) {
           end = totalPage
           start = totalPage - showLen + 1
-        }
-        else {
+        } else {
           start = currPage - this.prevShow
           end = currPage + this.nextShow
         }
@@ -104,60 +102,60 @@ export default {
 
       this.pageRange = []
 
-      if(this.simple) {
-        //上一页
-        if (currPage != 1) {
-          this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
+      if (this.simple) {
+        // 上一页
+        if (currPage !== 1) {
+          this.pageRange.push({num: currPage - 1, text: '<', className: 'prev'})
         } else {
-          this.pageRange.push({className:'disabled', icon: 'prev'})
+          this.pageRange.push({className: 'disabled', icon: 'prev'})
         }
 
-        this.pageRange.push({num:this.currPage, text:this.currPage, className: 'current'})
-        this.pageRange.push({text:'/', className: 'slash'})
-        this.pageRange.push({text:totalPage})
+        this.pageRange.push({num: this.currPage, text: this.currPage, className: 'current'})
+        this.pageRange.push({text: '/', className: 'slash'})
+        this.pageRange.push({text: totalPage})
 
         // 下一页
-        if (currPage != totalPage) {
-          this.pageRange.push({num:currPage+1, text:'>', className: 'next'})
+        if (currPage !== totalPage) {
+          this.pageRange.push({num: currPage+1, text: '>', className: 'next'})
         } else {
-          this.pageRange.push({className:'disabled', icon: 'next'})
+          this.pageRange.push({className: 'disabled', icon: 'next'})
         }
 
       } else {
-        //上一页
-        if (currPage != 1) {
-          this.pageRange.push({num:currPage-1, text:'<', className: 'prev'})
+        // 上一页
+        if (currPage !== 1) {
+          this.pageRange.push({num: currPage - 1, text: '<', className: 'prev'})
         } else {
-          this.pageRange.push({className:'disabled', icon: 'prev'})
+          this.pageRange.push({className: 'disabled', icon: 'prev'})
         }
 
-        //第一页
+        // 第一页
         if (start >= 2) {
-          this.pageRange.push({num:1, text:1})
+          this.pageRange.push({num: 1, text: 1})
         }
-        //省略号
+        // 省略号
         if (start > 2) {
-          this.pageRange.push({text:'...', className:'ellipsis'})
+          this.pageRange.push({text: '...', className: 'ellipsis'})
         }
-        //显示的页码列表
-        for (var i=start; i <= end; i++) {
+        // 显示的页码列表
+        for (var i = start; i <= end; i++) {
           this.pageRange.push({
             num: i,
             text: i,
-            className : (i == currPage) ? 'current' : ''
+            className: (i === currPage) ? 'current' : ''
           })
         }
-        //省略号
-        if (end < totalPage-1) {
-          this.pageRange.push({text:'...', className:'ellipsis'})
+        // 省略号
+        if (end < totalPage - 1) {
+          this.pageRange.push({text: '...', className: 'ellipsis'})
         }
-        //最后一页
+        // 最后一页
         if (end <= totalPage - 1) {
           this.pageRange.push({num:totalPage, text:totalPage})
         }
-        //下一页
-        if (currPage != totalPage) {
-          this.pageRange.push({num:currPage + 1, text: '>', className: 'next'})
+        // 下一页
+        if (currPage !== totalPage) {
+          this.pageRange.push({num: currPage + 1, text: '>', className: 'next'})
         } else {
           this.pageRange.push({className: 'disabled', icon: 'next'})
         }
@@ -167,7 +165,7 @@ export default {
       if (!i) {
         return false
       }
-      if (i == this.currPage) {
+      if (i === this.currPage) {
         return false
       }
 
@@ -191,15 +189,13 @@ export default {
         this.currPage = page
         this._current = page
         this.onChange(_page)
-
         return _page
       }
-
       return this.currPage
     }
   },
   ready () {
-      this.getPageRange()
+    this.getPageRange()
   }
 }
 </script>

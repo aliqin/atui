@@ -9,8 +9,8 @@
      <div class="step-head-inner">
       <span v-if="status !== 'finish'" class="step-icon"
         :style="{
-         borderColor: status==='process'?color:'#e9e9e9',
-         backgroundColor: status==='process'?color:'#fff'}">
+         borderColor: status==='process'?color: '#e9e9e9',
+         backgroundColor: status==='process'?color: '#fff'}">
         {{ stepNumber }}
       </span>
       <span v-else class="step-finish-icon">
@@ -49,7 +49,7 @@ export default {
     }
   },
   components: {
-   Icon
+    Icon
   }
 }
 </script>

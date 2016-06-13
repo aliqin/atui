@@ -77,7 +77,7 @@ export default {
     placeholder: String,
     defaultAddr: {
       type: Object,
-      default(){
+      default () {
         return {
           provinceId: '',
           cityId: '',
@@ -86,8 +86,8 @@ export default {
         }
       }
     },
-    large: null,
-    small: null
+    large: Boolean,
+    small: Boolean
   },
   data () {
     return {
@@ -121,8 +121,8 @@ export default {
       county: '',
       street: '',
       classObj: {
-        'large': typeof(this.large) !== 'undefined',
-        'small': typeof(this.small) !== 'undefined'
+        'large': this.large,
+        'small': this.small
       },
       provinceId: this.defaultAddr.provinceId,
       cityId: this.defaultAddr.cityId,
@@ -138,10 +138,10 @@ export default {
         this.county = ''
         this.street = ''
         this.provinceId = this.defaultAddr.provinceId || ''
-        this.cityId     = this.defaultAddr.cityId || ''
-        this.countyId   = this.defaultAddr.countyId || ''
+        this.cityId = this.defaultAddr.cityId || ''
+        this.countyId = this.defaultAddr.countyId || ''
         this.getStreet()
-        this.streetId   = this.defaultAddr.streetId || ''
+        this.streetId = this.defaultAddr.streetId || ''
       }
     }
   },
@@ -160,9 +160,7 @@ export default {
     // },
     tabList () {
       let level = this.level - 0
-      level = typeof(level) == 'number' ? level : 4
-
-
+      level = typeof(level) === 'number' ? level : 4
       return this.allTab.slice(0, level)
     },
     selectAddr () {
@@ -199,7 +197,7 @@ export default {
 
     this.defaultTab()
   },
-  beforeDestroy() {
+  beforeDestroy () {
     if (this._closeEvent) this._closeEvent.remove()
   },
   methods: {
@@ -256,12 +254,12 @@ export default {
         },
         time: 10000,
         callback: 'callback',
-        success: function(res) {
+        success (res) {
           if (res && res.success) {
             self.list.streetList = res.result || {}
           }
         },
-        fail: function(res) {
+        fail (res) {
           throw new Error(res.msg)
         }
       })
@@ -273,7 +271,7 @@ export default {
     jsonp (options) {
       options = options || {}
 
-      //创建 script 标签并加入到页面中
+      // 创建 script 标签并加入到页面中
       var callbackName = ('jsonp_' + Math.random()).replace('.', '')
       var oHead = document.getElementsByTagName('head')[0]
       options.data[options.callback] = callbackName
@@ -281,7 +279,7 @@ export default {
       var oS = document.createElement('script')
       oHead.appendChild(oS)
 
-      //创建jsonp回调函数
+      // 创建jsonp回调函数
       window[callbackName] = (json) => {
         oHead.removeChild(oS)
         clearTimeout(oS.timer)
@@ -289,10 +287,10 @@ export default {
         options.success && options.success(json)
       }
 
-      //发送请求
+      // 发送请求
       oS.src = options.url + '?' + params
 
-      //超时处理
+      // 超时处理
       if (options.time) {
         oS.timer = setTimeout(() => {
           window[callbackName] = null

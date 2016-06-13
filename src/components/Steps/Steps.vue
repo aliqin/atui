@@ -13,7 +13,7 @@
       },
       color: {
         type: String,
-        default: "#ff7500"
+        default: '#ff7500'
       }
     },
     watch: {
@@ -55,15 +55,15 @@
 
         let i = 0
         for (; i <= len - 1; i++) {
-            const _item = this.$el.children[i].children
-            this.itemsWidth[i] = Math.ceil(_item[0].offsetWidth + _item[1].children[0].offsetWidth)
+          const _item = this.$el.children[i].children
+          this.itemsWidth[i] = Math.ceil(_item[0].offsetWidth + _item[1].children[0].offsetWidth)
         }
         this.itemsWidth[i] = Math.ceil(this.$el.children[len].offsetWidth)
         // div.steps的宽度
         this.previousStepsWidth = Math.floor(this.$el.offsetWidth)
         this._update()
 
-        //this.$el.children[len].style.position = 'absolute'
+        // this.$el.children[len].style.position = 'absolute'
 
         // 算出tailWidth, 动态更新子组件
         this.$children.forEach((child, index) => {

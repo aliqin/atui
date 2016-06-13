@@ -39,19 +39,19 @@
         type: String,
         default: ''
       },
-      //是否必填
+      // 是否必填
       required: null,
-      //提示信息，如不设置，会根据验证规则自动生成
+      // 提示信息，如不设置，会根据验证规则自动生成
       tips: {
         type: String,
         default: ''
       },
-      //验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
+      // 验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
       validStatus: {
         type: String,
         default: ''
       },
-      //配合validateStatus属性使用，是否展示校验状态图标
+      // 配合validateStatus属性使用，是否展示校验状态图标
       hasIcon: null
     },
 
@@ -59,12 +59,10 @@
       classObj () {
         let obj = {
           'form-item-with-help': this.validStatus,
-          'has-error': this.validStatus == 'error',
-          'has-success': this.validStatus == 'success'
-        };
-
-        obj['col-lg-'+this.itemCol] = true
-
+          'has-error': this.validStatus === 'error',
+          'has-success': this.validStatus === 'success'
+        }
+        obj['col-lg-' + this.itemCol] = true
         return obj
       },
       isRequired () {
@@ -73,8 +71,8 @@
       showIcon () {
         return this.validStatus && !!this.hasIcon
       },
-      calcWrapperCol() {
-        var span = new Number(24 - this.labelCol)
+      calcWrapperCol () {
+        var span = 24 - parseInt(this.labelCol)
         return span.toString()
       }
     },

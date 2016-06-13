@@ -8,22 +8,22 @@
 <script>
 import coerceBoolean from '../utils/coerceBoolean.js'
 
-  export default {
-    props: {
-      title:String,
-      isOpen: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: true
-      }
-    },
-    created() {
+export default {
+  props: {
+    title: String,
+    isOpen: {
+      type: Boolean,
+      coerce: coerceBoolean,
+      default: true
+    }
+  },
+  created () {
 
-    },
-    methods:{
-      triggerSub(){
-        this.isOpen = !this.isOpen
-      }
+  },
+  methods: {
+    triggerSub () {
+      this.isOpen = !this.isOpen
     }
   }
+}
 </script>

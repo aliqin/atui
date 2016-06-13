@@ -13,59 +13,59 @@
       value: {
         type: String
       },
-      disabled:{
+      disabled: {
         type: Boolean
       }
     },
-    data() {
+    data () {
       return {
-        active:false
+        active: false
       }
     },
     computed: {
-      chosen() {
+      chosen () {
         return this.$parent.selectedOptions.some((item) => {
-          return item.value == this.value
+          return item.value === this.value
         })
       },
-      show() {
+      show () {
         let searchText = this.$parent.searchText.trim()
-        if(searchText.length && this.$parent.multiple) {
-          return this.$el.innerText.indexOf(searchText) >=0
+        if (searchText.length && this.$parent.multiple) {
+          return this.$el.innerText.indexOf(searchText) >= 0
         }
         return true
       }
     },
-    ready() {
+    ready () {
       let option = {
-        label:this.$el.innerText,
-        value:this.value,
-        disabled:this.disabled
+        label: this.$el.innerText,
+        value: this.value,
+        disabled: this.disabled
       }
       this.$parent.$data.options.push(option)
-      if(this.$parent.value == this.value){
+      if (this.$parent.value === this.value) {
         this.$parent.selectedOptions.push(option)
       }
     },
     methods: {
-      handleClick() {
-        if(this.disabled) {
-          return;
+      handleClick () {
+        if (this.disabled) {
+          return
         }
         let option = {
-          label:this.$el.innerText,
-          value:this.value
+          label: this.$el.innerText,
+          value: this.value
         }
-        this.$dispatch('option-change',option)
+        this.$dispatch('option-change', option)
       }
     },
-    events:{
-      valueChange(val) {
-        if(val == this.value && !this.disabled) {
+    events: {
+      valueChange (val) {
+        if (val === this.value && !this.disabled) {
           const option = {
-            label:this.$el.innerText,
-            value:this.value,
-            disabled:this.disabled
+            label: this.$el.innerText,
+            value: this.value,
+            disabled: this.disabled
           }
           this.$parent.selectedOptions = [option]
           this.chosen = true

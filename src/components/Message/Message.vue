@@ -30,51 +30,47 @@
 <script>
 import coerceBoolean from '../utils/coerceBoolean.js'
 import Icon from '../Icon'
-  export default {
-    props: {
-      type: {
-        type: String
-      },
-      dismissable: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false,
-      },
-      showIcon: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: true,
-      },
-      show: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: true
-      },
-      duration: {
-        type: [String, Number]
-      },
-      width: {
-        type: String
-      },
-      placement: {
-        type: String
-      },
-      content: String,
-      transition:{
-        type:String,
-        default:'fade'
-      }
+export default {
+  props: {
+    type: {
+      type: String
     },
-    components:{
-      Icon
+    dismissable: {
+      type: Boolean
     },
-    watch: {
-      show(val) {
-        if (this._timeout) clearTimeout(this._timeout)
-        if (val && Boolean(this.duration)) {
-          this._timeout = setTimeout(() => this.show = false, this.duration)
-        }
+    showIcon: {
+      type: Boolean
+    },
+    show: {
+      type: Boolean,
+      coerce: coerceBoolean,
+      default: true
+    },
+    duration: {
+      type: [String, Number]
+    },
+    width: {
+      type: String
+    },
+    placement: {
+      type: String
+    },
+    content: String,
+    transition: {
+      type: String,
+      default: 'fade'
+    }
+  },
+  components: {
+    Icon
+  },
+  watch: {
+    show (val) {
+      if (this._timeout) clearTimeout(this._timeout)
+      if (val && Boolean(this.duration)) {
+        this._timeout = setTimeout(() => this.show = false, this.duration)
       }
     }
   }
+}
 </script>

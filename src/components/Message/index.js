@@ -1,7 +1,6 @@
 import Message from './Message.vue'
 
-['info', 'success', 'error', 'warning', 'loading'].forEach((type, i) => {
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Message[type] = (content, duration, placement) => {
+['info', 'success', 'error', 'warning', 'loading'].forEach((type, i) => { Message[type] = (content, duration, placement) => {
   duration = duration || 3000
   placement = placement || 'top'
   new Vue({
@@ -15,8 +14,8 @@ import Message from './Message.vue'
       {{content}}
       </message>
       `,
-    components:{
-      Message:Message
+    components: {
+      Message: Message
     },
     data:{
       content: content,
@@ -35,7 +34,7 @@ import Message from './Message.vue'
       }
     }
   }).$mount().$appendTo('body')
-	}
+}
 })
 
 export default Message

@@ -50,9 +50,9 @@
     computed: {
       filterLables () {
         let str = this.filterField.map((item) => {
-          return "'"+item+"'"
+          return '' + item
         })
-        return str.join(" ")
+        return str.join(' ')
       }
     },
     components: {
@@ -62,19 +62,19 @@
       let self = this
       const el = this.$el
 
-      this._closeEvent = EventListener.listen(window, 'click', (e)=> {
+      this._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!el.contains(e.target)) {
           self.blurInput()
         }
       })
     },
-    beforeDestroy() {
+    beforeDestroy () {
       if (this._closeEvent) this._closeEvent.remove()
     },
     methods: {
       focusInput () {
         this.iconColor = '#00A0FF'
-        if(this.searchList && this.searchList.length > 0) {
+        if (this.searchList && this.searchList.length > 0) {
           this.showPop = true
         } else {
           this.showPop = false
@@ -82,7 +82,7 @@
       },
       blurInput () {
         this.iconColor = '#BFBFBF'
-        this.showPop = false;
+        this.showPop = false
       },
       checkItem (index, val) {
         this.value = val

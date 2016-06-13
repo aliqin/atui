@@ -46,7 +46,7 @@ const PopoverMixin = {
     resetPos () {
       let me = this
       const popover = me.$els.popover
-      if (me.show && popover.offsetWidth == 0) {
+      if (me.show && popover.offsetWidth === 0) {
         setTimeout(() => {
           me.resetPos()
         })
@@ -123,7 +123,7 @@ const PopoverMixin = {
     if (!this.$els.popover) return console.error("Couldn't find popover v-el in your component that uses popoverMixin.")
 
     const me = this
-    const popover = this.$els.popover
+    // const popover = this.$els.popover
     const triger = this.$els.trigger.children[0]
 
     if (this.trigger === 'hover') {

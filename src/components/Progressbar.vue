@@ -10,37 +10,37 @@
     'active':animated
     }"
     v-bind:style="{width: now + '%'}">
-    {{label ? now + '%':'' }}
+    {{label ? now + '%': '' }}
   </div>
 </template>
 
 <script>
 import coerceBoolean from './utils/coerceBoolean.js'
 
-  export default {
-    props: {
-      now: {
-        type: Number,
-        require: true
-      },
-      label: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
-      },
-      type: {
-        type: String
-      },
-      striped: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
-      },
-      animated: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
-      }
+export default {
+  props: {
+    now: {
+      type: Number,
+      require: true
+    },
+    label: {
+      type: Boolean,
+      coerce: coerceBoolean,
+      default: false
+    },
+    type: {
+      type: String
+    },
+    striped: {
+      type: Boolean,
+      coerce: coerceBoolean,
+      default: false
+    },
+    animated: {
+      type: Boolean,
+      coerce: coerceBoolean,
+      default: false
     }
   }
+}
 </script>
