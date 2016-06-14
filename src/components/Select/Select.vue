@@ -36,6 +36,12 @@
       },
       tags: Boolean,
       multiple: Boolean,
+      selectedOptions: {
+        type: Array,
+        default () {
+          return []
+        }
+      },
       search: {
         type: Boolean
       },
@@ -68,7 +74,7 @@
       if (me.multiple && me.value.length > me.limit) {
         me.value = me.value.slice(0, me.limit)
       }
-      if (me.value.length) {
+      if (me.value.length || me.selectedOptions.length) {
         me.showPlaceholder = false
       }
     },
@@ -78,7 +84,6 @@
         noResult: false,
         show: false,
         activeIndex: 0,
-        selectedOptions: [],
         showPlaceholder: true,
         showNotify: false,
         options: []
