@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import EventListener from '../utils/EventListener'
   import Icon from '../Icon/'
   import Tag from '../Tag/'
