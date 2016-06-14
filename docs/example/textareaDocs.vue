@@ -115,6 +115,8 @@
 
         if(len < 2) {
           this.validStatus = 'error';
+        } else {
+          this.validStatus = '';
         }
       }
     }
