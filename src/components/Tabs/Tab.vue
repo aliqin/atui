@@ -1,6 +1,5 @@
 <template>
   <div role="tabpanel" class="tab-pane"
-      :class="{hide:!show}"
       v-show="show"
       :transition="transition"
   >
@@ -45,16 +44,10 @@ export default {
   ready () {
     for (var c in this.$parent.$children) {
       if (this.$parent.$children[c].$el === this.$el) {
-        this.index = c
+        this.index = +c
         break
       }
     }
   }
 }
 </script>
-
-<style scoped>
-  .tab-content > .tab-pane {
-    display: block;
-  }
-</style>
