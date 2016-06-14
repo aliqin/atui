@@ -23,7 +23,6 @@ let vm = new Vue({
 
 describe('Pagination', () => {
   it('Pagination组件是否正常显示', () => {
-    console.log(vm.$el.innerHTML)
     expect(vm.$el.querySelectorAll('.pagination-items').length).to.equal(1)
   })
 
