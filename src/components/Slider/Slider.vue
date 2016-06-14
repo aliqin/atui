@@ -108,11 +108,13 @@
     ready () {
       let self = this
 
-      self.wrapper = self.getWrapperElement(self.sliderId)
-      self.sliderWidth = self.wrapper.getBoundingClientRect().width
-      self.wrapperLeft = self.wrapper.getBoundingClientRect().left
+      setTimeout(() => {
+        self.wrapper = self.getWrapperElement(self.sliderId)
+        self.sliderWidth = self.wrapper.getBoundingClientRect().width
+        self.wrapperLeft = self.wrapper.getBoundingClientRect().left
 
-      self.valueArray = this.valueToArray()
+        self.valueArray = this.valueToArray()
+      }, 0)
 
       EventListener.listen(document, 'mousemove', (e) => {
         self.mousemove(e)
