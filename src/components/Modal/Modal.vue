@@ -25,7 +25,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import coerceBoolean from '../utils/coerceBoolean.js'
 
 export default {

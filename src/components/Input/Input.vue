@@ -12,6 +12,9 @@
         type: String,
         default: ''
       },
+      error: Boolean,
+      success: Boolean,
+      warn: Boolean,
       large: Boolean,
       small: Boolean,
       value: [String, Number],
@@ -102,9 +105,9 @@
         return {
           'large': this.large,
           'small': this.small,
-          'error': this.validStatus === 'error',
-          'success': this.validStatus === 'success',
-          'warn': this.validStatus === 'warn'
+          'error': this.error || this.validStatus === 'error',
+          'success': this.success || this.validStatus === 'success',
+          'warn': this.warn || this.validStatus === 'warn'
         }
       }
     },

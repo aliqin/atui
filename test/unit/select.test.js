@@ -52,9 +52,18 @@ describe('Select', () => {
   })
 
   it('option-change事件处理方法调用', () => {
+    // For basic usage
     expect(vm.$children[0].selectedOptions.length).to.equal(0)
     vm.$children[0].$emit('option-change', {'label': '苹果', 'value': 'Apple'})
     expect(vm.$children[0].selectedOptions.length).to.equal(1)
     expect(vm.$children[0].value).to.equal('Apple')
+    expect(vm.$children[0].show).to.false
+    expect(vm.$children[0].searchText).to.equal('')
+
+    // For multiple select tag
+    expect(vm.$children[1].selectedOptions.length).to.equal(0)
+    vm.$children[1].$emit('option-change', {'label': 'Orange', 'value': 'Orange'})
+    expect(vm.$children[1].selectedOptions.length).to.equal(1)
+    expect(vm.$children[1].value.indexOf('Orange')).to.not.equal(-1)
   })
 })
