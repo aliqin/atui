@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import {Group} from '../../src/components/Button/'
-
+import Button from '../../src/components/Button/'
+let Group =Button.Group
 let vm = new Vue({
   template: `
       <div>
@@ -14,7 +14,7 @@ let vm = new Vue({
         </button-group>
       </div>
       `,
-  components: { buttonGroup: Group },
+  components: { vButton: Button, buttonGroup: Group },
   data: {
 
   }
@@ -22,7 +22,7 @@ let vm = new Vue({
 
 describe('ButtonGroup', () => {
   it('ButtonGroup组件是否正常显示', () => {
-    expect(vm.$el.querySelectAll('button').length).to.equal(2)
+    expect(vm.$el.querySelectorAll('button').length).to.equal(2)
   })
 
   it('事件回调', () => {

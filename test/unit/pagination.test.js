@@ -6,8 +6,8 @@ let vm = new Vue({
   template: `
       <div>
         <pagination
-        total-page.sync="100"
-        curr-page.sync="5"
+        :total-page.sync="total"
+        :curr-page.sync="current"
         total="1000"
         show-jumper
         show-size-changer>
@@ -16,13 +16,15 @@ let vm = new Vue({
       `,
   components: { Pagination },
   data: {
-
+    total: 100,
+    current: 5
   }
 }).$mount()
 
 describe('Pagination', () => {
   it('Pagination组件是否正常显示', () => {
-    expect(vm.$el.querySelectAll('.pagination-items').length).to.equal(1)
+    console.log(vm.$el.innerHTML)
+    expect(vm.$el.querySelectorAll('.pagination-items').length).to.equal(1)
   })
 
   it('事件回调', () => {

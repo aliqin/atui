@@ -48,7 +48,7 @@
       <hr>
       <h4>tags(输入回车时变成一个tag)</h4>
       选中值 : {{tagValues | json}} <br/>
-      <v-select tags :value="Banana" @change="onTagChange">
+      <v-select tags value="Banana" @change="onTagChange">
         <v-option value="Apple">苹果</v-option>
         <v-option value="Banana">香蕉</v-option>
         <v-option value="Cherry">Cherry</v-option>

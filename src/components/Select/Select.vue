@@ -9,7 +9,7 @@
       </template>
       <div v-else>
         <span class="select-placeholder" v-show="!value.length && showPlaceholder">{{placeholder}}</span>
-        <tag v-for="option in selectedOptions" transition="zoom" closable @close="closeTag(option)">{{{option.label}}}</tag>
+        <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
       </div>
     </div>
@@ -28,23 +28,15 @@
   export default {
     name: 'select',
     props: {
-      width: {
-        type: Array
-      },
-      value: {
-        default: ''
-      },
+      width: String,
+      value: [String, Array],
       placeholder: {
         type: String,
         default: '请选择'
       },
-      tags: {
-        type: Boolean
-      },
-      multiple: {
-        type: Boolean
-      },
-      search: { // Allow searching (only works when options are provided)
+      tags: Boolean,
+      multiple: Boolean,
+      search: {
         type: Boolean
       },
       limit: {
@@ -195,7 +187,7 @@
       }
     },
     events: {
-      'option-change': (option) => {
+      'option-change': function (option) {
         this.showPlaceholder = false
 
         if (this.multiple) {

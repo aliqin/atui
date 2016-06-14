@@ -64,6 +64,11 @@ export default {
   components: {
     Icon
   },
+  created () {
+    if (this.type) {
+      this.showIcon = true
+    }
+  },
   watch: {
     show (val) {
       if (this._timeout) clearTimeout(this._timeout)
