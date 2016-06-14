@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="" class="navbar-brand">VueComponent</a>
+        <a href="" class="navbar-brand">ATUI</a>
       </div>
       <nav id="bs-navbar" class="collapse navbar-collapse">
         </ul>
@@ -22,7 +22,7 @@
           <li><a href="filters.html">
             filters
           </a></li>
-          <li><a href="http://gitlab.alibaba-inc.com/aliqin/vue-component/">
+          <li><a href="http://gitlab.alibaba-inc.com/aliqin/atui/">
             GitLab
           </a></li>
           <li><a href="http://ued.aliqin.alibaba.net/webcompon/" target="_blank">

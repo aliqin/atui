@@ -3,25 +3,25 @@
     <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>
     <div class="bs-example">
       <h4 class="example-title">完全版</h4>
-      <pagination class="customclass" :total-page.sync="totalPage",
-                  :curr-page.sync="currPage",
-                  :total="total",
-                  :show-jumper="true",
-                  :default-size="defaultSize",
-                  :show-size-changer="true">
+      <pagination class="customclass" :total-page.sync="totalPage"
+                  :curr-page.sync="currPage"
+                  :total="total"
+                  show-jumper
+                  :default-size="defaultSize"
+                  show-size-changer>
       </pagination>
       <h4 class="example-title">迷你版</h4>
-      <pagination :total-page.sync="totalPage",
-                  :curr-page.sync="currPage",
-                  :total="total",
-                  :show-jumper="true",
-                  :mini="true">
+      <pagination :total-page.sync="totalPage"
+                  :curr-page.sync="currPage"
+                  :total="total"
+                  show-jumper
+                  mini>
       </pagination>
       <h4 class="example-title">精简版</h4>
-      <pagination :total-page.sync="totalPage",
-                  :curr-page.sync="currPage",
-                  :total="total",
-                  :simple="true"
+      <pagination :total-page.sync="totalPage"
+                  :curr-page.sync="currPage"
+                  :total="total"
+                  simple
                   class="custom">
       </pagination>
 
