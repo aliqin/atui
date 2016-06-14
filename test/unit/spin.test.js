@@ -9,19 +9,18 @@ let vm = new Vue({
       </div>
       `,
   components: { Spin },
-  data:{
+  data: {
 
   }
 }).$mount()
 
 describe('Spin', () => {
   it('Spin组件是否正常显示', () => {
-
+    expect(vm.$el.querySelectAll('.atui-spin').length).to.equal(1)
   })
 
   it('事件回调', () => {
 
   })
-
 })
 

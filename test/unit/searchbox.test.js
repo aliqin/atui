@@ -9,18 +9,17 @@ let vm = new Vue({
       </div>
       `,
   components: { Searchbox },
-  data:{
+  data: {
 
   }
 }).$mount()
 
 describe('Searchbox', () => {
   it('SearchBox组件是否正常显示', () => {
-
+    expect(vm.$el.querySelectAll('.search-box').length).to.equal(1)
   })
 
   it('事件回调', () => {
 
   })
-
 })

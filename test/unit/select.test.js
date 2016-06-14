@@ -9,8 +9,8 @@ describe('Select', () => {
         show: true
       }
     },
-    template:
-    `<div>
+    template: `
+    <div>
     <v-select :value="Cherry" :placeholder="placeholder" style="width:200px;" class="j-basic">
     <v-option value="Apple">苹果</v-option>
     <v-option value="Banana" disabled>Banana</v-option>
@@ -28,7 +28,7 @@ describe('Select', () => {
         <v-option value="Grape">Grape</v-option>
     </v-select>
     </div>`,
-    components: { vSelect, vOption:vOption }
+    components: { vSelect, vOption }
   }).$mount()
 
   it('Select组件基础渲染', () => {

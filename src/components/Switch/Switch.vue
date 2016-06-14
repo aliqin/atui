@@ -14,7 +14,7 @@ export default {
       type: Boolean
     },
     value: {
-      type:String
+      type: String
     },
     disabled: {
       type: Boolean

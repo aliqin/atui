@@ -111,6 +111,10 @@ let vm = new Vue({
   }
 }).$mount()
 describe('Cascader', () => {
-  it('Cascader组件是否正常显示', () => {})
-  it('事件回调', () => {})
+  it('Cascader组件是否正常显示', () => {
+    expect(vm.$el.querySelectAll('.cascader-picker').length).to.equal(1)
+  })
+  it('事件回调', () => {
+
+  })
 })

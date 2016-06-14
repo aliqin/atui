@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Modal from '../../src/components/Modal/'
 
-let vm = new Vue({
+new Vue({
   data () {
     return {
       show: true
@@ -28,5 +28,4 @@ describe('Modal', () => {
   it('事件回调', () => {
 
   })
-
 })

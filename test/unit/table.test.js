@@ -117,8 +117,6 @@ describe('Table', () => {
   it('Table组件基础渲染', () => {
     expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(6)
   })
-        // it('Table组件全选反选', () => {
-        // })
   it('Table数据清空', () => {
     vm.gridData = []
     vm.$nextTick(() => {

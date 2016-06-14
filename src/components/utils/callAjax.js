@@ -1,5 +1,5 @@
 export default (url, callback) => {
-  var httpRequest = new XMLHttpRequest()
+  var httpRequest = new window.XMLHttpRequest()
   httpRequest.onreadystatechange = function () {
     if (httpRequest.readyState === 4) {
       if (httpRequest.status === 200) {

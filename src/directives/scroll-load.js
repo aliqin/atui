@@ -16,7 +16,7 @@ Vue.directive('scroll-load', {
         let elOffset = el.getBoundingClientRect()
         let scrollTop = document.documentElement.scrollTop
         let elBottomOffset = elOffset.top + elH - scrollTop
-        if (elBottomOffset < (screen.height + 50)) {
+        if (elBottomOffset < (window.screen.height + 50)) {
           lock = true
           me.vm[me.expression](() => {
             lock = false

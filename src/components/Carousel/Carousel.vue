@@ -77,7 +77,7 @@ export default {
       const prevSelectedEl = this.slider[prev]
       const selectedEl = this.slider[selected]
       const transitionendFn = () => {
-        [...this.slider].forEach((el) => el.className = 'item')
+        [...this.slider].forEach((el) => { el.className = 'item' })
         selectedEl.classList.add('active')
         this.isAnimating = false
       }
@@ -104,7 +104,7 @@ export default {
     let intervalID = null
     const el = this.$el
     function intervalManager (flag, func, time) {
-      flag ? intervalID =  setInterval (func, time) : clearInterval (intervalID)
+      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)
     }
     if (this.interval) {
       intervalManager(true, this.nextClick, this.interval)

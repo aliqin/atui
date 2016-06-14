@@ -8,15 +8,15 @@
 <script>
   import DatePicker from './DatePicker.vue'
   export default {
-    props:{
-      showTime:{
+    props: {
+      showTime: {
         type: Boolean
       },
       startDate: {
-        type:String
+        type: String
       },
       endDate: {
-        type:String
+        type: String
       },
       format: {
         default: 'yyyy-MM-dd'

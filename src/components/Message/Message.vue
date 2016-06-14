@@ -68,7 +68,7 @@ export default {
     show (val) {
       if (this._timeout) clearTimeout(this._timeout)
       if (val && Boolean(this.duration)) {
-        this._timeout = setTimeout(() => this.show = false, this.duration)
+        this._timeout = setTimeout(() => { this.show = false }, this.duration)
       }
     }
   }

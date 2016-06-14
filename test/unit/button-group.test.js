@@ -15,18 +15,17 @@ let vm = new Vue({
       </div>
       `,
   components: { buttonGroup: Group },
-  data:{
+  data: {
 
   }
 }).$mount()
 
 describe('ButtonGroup', () => {
   it('ButtonGroup组件是否正常显示', () => {
-
+    expect(vm.$el.querySelectAll('button').length).to.equal(2)
   })
 
   it('事件回调', () => {
 
   })
-
 })
