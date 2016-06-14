@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Tooltip from '../../src/components/Tooltip/'
 
-let vm = new Vue({
+new Vue({
   template: `
       <div>
       <tooltip content="我是tooltip" placement="top">
@@ -16,5 +16,4 @@ describe('Tooltip', () => {
   it('Tooltip组件是否正常显示', () => {
     expect(document.body.querySelectorAll('.tooltip-arrow').length).above(0)
   })
-
 })

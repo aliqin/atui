@@ -116,11 +116,10 @@ export default {
 
         // 下一页
         if (currPage !== totalPage) {
-          this.pageRange.push({num: currPage+1, text: '>', className: 'next'})
+          this.pageRange.push({num: currPage + 1, text: '>', className: 'next'})
         } else {
           this.pageRange.push({className: 'disabled', icon: 'next'})
         }
-
       } else {
         // 上一页
         if (currPage !== 1) {
@@ -128,7 +127,6 @@ export default {
         } else {
           this.pageRange.push({className: 'disabled', icon: 'prev'})
         }
-
         // 第一页
         if (start >= 2) {
           this.pageRange.push({num: 1, text: 1})
@@ -151,7 +149,7 @@ export default {
         }
         // 最后一页
         if (end <= totalPage - 1) {
-          this.pageRange.push({num:totalPage, text:totalPage})
+          this.pageRange.push({num: totalPage, text: totalPage})
         }
         // 下一页
         if (currPage !== totalPage) {

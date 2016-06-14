@@ -34,6 +34,5 @@ describe('Message', () => {
       expect(vm.$el.style.display).to.equal('none')
     }, 4000)
   })
-
 })
 

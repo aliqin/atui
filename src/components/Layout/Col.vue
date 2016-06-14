@@ -5,11 +5,11 @@
 <script>
 export default {
   props: {
-    span:{
+    span: {
       type: String,
       default: '1'
     },
-    type:{
+    type: {
       type: String,
       default: 'md'
     }

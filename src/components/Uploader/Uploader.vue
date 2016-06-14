@@ -215,7 +215,6 @@
 
               xhr.send(data)
             }
-
           })(i, this.uploadList[i])
         }
       },
@@ -311,7 +310,7 @@
         index > -1 && this.uploadList.splice(index, 1)
       },
 
-      showMessage(msg) {
+      showMessage (msg) {
         Message.success(msg)
       },
 
@@ -365,7 +364,7 @@
           if (e.type === 'drop') {
             let files = e.dataTransfer.files || {}
             for (let i in files) {
-              if (typeof(files[i]) == 'object' && files[i].name) {
+              if (files[i] && files[i].name) {
                 self.progress.push('0%')
                 self.uploadList.push(files[i])
               }

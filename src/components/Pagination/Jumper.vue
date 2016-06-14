@@ -32,13 +32,13 @@ export default {
     this._current = this.currPage
   },
   computed: {
-    _inputWrapClasses() {
+    _inputWrapClasses () {
       return {
         'input-jumper': !this.mini,
         'mini-input-jumper': this.mini
       }
     },
-    _btnWrapClasses() {
+    _btnWrapClasses () {
       return {
         'btn': true,
         'tertiary': true,
@@ -67,7 +67,7 @@ export default {
       }
       let val = Number(this._current)
       if (isNaN(val)) {
-        val = this.currPage;
+        val = this.currPage
       }
       const c = this.quickGo(val)
       this.currPage = c

@@ -103,7 +103,7 @@
           if (val.length > this.limit) {
             this.showNotify = true
             this.value.pop()
-            setTimeout(() => this.showNotify = false, 1000)
+            setTimeout(() => { this.showNotify = false }, 1000)
           }
         } else {
           this.$broadcast('valueChange', val)

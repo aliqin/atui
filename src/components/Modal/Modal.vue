@@ -36,7 +36,7 @@ export default {
     show: {
       require: true,
       type: Boolean,
-      coerce: coerceBoolean,
+      coerce: coerceBoolean
     },
     width: String,
     height: String,
@@ -56,11 +56,6 @@ export default {
     },
     small: {
       type: Boolean
-    }
-  },
-  data() {
-    return {
-      in:false
     }
   },
   methods: {

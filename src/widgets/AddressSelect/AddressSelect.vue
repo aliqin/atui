@@ -160,7 +160,7 @@ export default {
     // },
     tabList () {
       let level = this.level - 0
-      level = typeof(level) === 'number' ? level : 4
+      level = typeof level === 'number' ? level : 4
       return this.allTab.slice(0, level)
     },
     selectAddr () {
@@ -263,7 +263,6 @@ export default {
           throw new Error(res.msg)
         }
       })
-
     },
     /**
      * 实现jsonp调用
@@ -323,7 +322,7 @@ export default {
       this.$dispatch('select-province', {
         provinceName: this.province,
         provinceId: this.provinceId
-      } ,this)
+      }, this)
     },
     chooseCity (cityId, city) {
       var tabLen = this.tabList.length
@@ -338,7 +337,7 @@ export default {
       this.$dispatch('select-city', {
         cityName: this.city,
         cityId: this.cityId
-      } ,this)
+      }, this)
     },
     chooseCounty (countyId, county) {
       var tabLen = this.tabList.length
@@ -353,7 +352,7 @@ export default {
       this.$dispatch('select-county', {
         countyName: this.county,
         countyId: this.countyId
-      } ,this)
+      }, this)
     },
     chooseStreet (streetId, street) {
       this.street = street
@@ -362,7 +361,7 @@ export default {
       this.$dispatch('select-street', {
         streetName: this.street,
         streetId: this.streetId
-      } ,this)
+      }, this)
     },
     changeProvinceId () {
       this.cityId = ''

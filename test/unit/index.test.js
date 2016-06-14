@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import atui from '../../src/'
 
 describe('组件库整体检查', () => {

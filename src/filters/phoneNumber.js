@@ -6,7 +6,7 @@ export default function (number, searchKey) {
   number = number.replace(/[^\d]/g, '').substr(0, 11)
   // var keyIndex = number.indexOf(searchKey)
   for (var i = 0; i < number.length; i++) {
-    if (3 === i || 7 === i) {
+    if (i === 3 || i === 7) {
       ret += ' '
     }
     ret += number[i]

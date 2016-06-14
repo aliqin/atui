@@ -10,18 +10,17 @@ let vm = new Vue({
       </div>
       `,
   components: { Dropdown },
-  data:{
+  data: {
 
   }
 }).$mount()
 
 describe('Dropdown', () => {
   it('Dropdown组件是否正常显示', () => {
-
+    expect(vm.$el.querySelectAll('.dropdown').length).to.equal(1)
   })
 
   it('事件回调', () => {
 
   })
-
 })

@@ -9,18 +9,17 @@ let vm = new Vue({
       </div>
       `,
   components: { DatePicker },
-  data:{
+  data: {
 
   }
 }).$mount()
 
 describe('DatePicker', () => {
   it('DatePicker组件是否正常显示', () => {
-
+    expect(vm.$el.querySelectAll('.atui-datepicker').length).to.equal(1)
   })
 
   it('事件回调', () => {
 
   })
-
 })

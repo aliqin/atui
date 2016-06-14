@@ -168,7 +168,7 @@ export default {
      * 动态去设置容器tabsWrapper的宽度以及内部nav的宽度，以便让它不溢出，类似于轮播图。
      * 这里需要用setTimeout函数，否则获取不到dom节点。
      */
-    setTimeout( () => {
+    setTimeout(() => {
       self._handleTabWidth()
     }, 30)
   }
