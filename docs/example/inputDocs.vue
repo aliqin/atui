@@ -19,11 +19,11 @@
     </div>
     <br>
     <div>
-      <v-input error type="text" placeholder="error输入框－默认尺寸"></v-input>
+      <v-input valid-status="error" type="text" placeholder="error输入框－默认尺寸"></v-input>
     </div>
     <br>
     <div>
-      <v-input success type="text" placeholder="success输入框－默认尺寸"></v-input>
+      <v-input valid-status="success" type="text" placeholder="success输入框－默认尺寸"></v-input>
     </div>
     <h4>带有验证功能的输入框</h4>
     <v-form action="aaa.do" method="post">

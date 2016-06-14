@@ -100,8 +100,8 @@
     computed: {
       classObj () {
         return {
-          'large': !!this.large,
-          'small': !!this.small,
+          'large': this.large,
+          'small': this.small,
           'error': this.validStatus === 'error',
           'success': this.validStatus === 'success',
           'warn': this.validStatus === 'warn'
