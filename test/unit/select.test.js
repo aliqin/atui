@@ -36,6 +36,10 @@ describe('Select', () => {
     expect(vm.$el.querySelectorAll('.j-basic span').length).to.equal(3)
   })
 
+  it('Select组件多选使用', () => {
+    expect(vm.$el.querySelectorAll('.j-multiple .select-search-field').length).to.equal(1)
+  })
+
   it('mousedown事件的处理方法调用', () => {
     vm.$children[0].disabled = true
     expect(vm.$children[0].show).to.false
@@ -47,7 +51,10 @@ describe('Select', () => {
     expect(vm.$children[0].show).to.true
   })
 
-  it('Select组件多选使用', () => {
-    expect(vm.$el.querySelectorAll('.j-multiple .select-search-field').length).to.equal(1)
+  it('option-change事件处理方法调用', () => {
+    expect(vm.$children[0].selectedOptions.length).to.equal(0)
+    vm.$children[0].$emit('option-change', {'label': '苹果', 'value': 'Apple'})
+    expect(vm.$children[0].selectedOptions.length).to.equal(1)
+    expect(vm.$children[0].value).to.equal('Apple')
   })
 })
