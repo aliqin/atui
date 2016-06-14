@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Button from '../../src/components/Button/'
-let Group =Button.Group
+let Group = Button.Group
 let vm = new Vue({
   template: `
       <div>

@@ -145,7 +145,7 @@ if (process.env.NODE_ENV === 'production') {
             "ascii_only": true
         }
     }),
-    new webpack.BannerPlugin(banner, {raw:true,entryOnly:true}),
+    new webpack.BannerPlugin(banner, {raw:true, entryOnly:true}),
     new webpack.optimize.OccurenceOrderPlugin()
   ])
 }
