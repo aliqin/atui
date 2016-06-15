@@ -50,7 +50,13 @@ describe('Modal', () => {
   })
 
   it('确定按键点击回调方法', () => {
+<<<<<<< Upstream, based on origin/daily/0.0.11
     let event = new window.MouseEvent('click')
+=======
+    // let event = new MouseEvent('click') // 新规范的用法,目前phantomJS暂不支持
+    let event = document.createEvent('MouseEvents')
+    event.initMouseEvent('click')
+>>>>>>> 0813671 modal组件单元测试事件触发模拟phantomJS兼容
     let $btn = document.body.querySelectorAll('.btn-default')[0]
     $btn.dispatchEvent(event)
     vm.modalCallback.should.be.calledOn($btn)

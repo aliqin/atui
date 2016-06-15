@@ -12,7 +12,7 @@
   },
   "test": {
     "browsers": [
-      "Chrome"
+      "PhantomJS"
     ],
     "autoWatch": false,
     "vue": true
