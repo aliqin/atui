@@ -1,4 +1,3 @@
-<!--suppress ALL-->
 <template>
   <div class="select-container" :class="{open:show,disabled:disabled,multiple:multiple}">
     <div :class="['select-toggle',{tags:tags}]" tabindex="1" @mousedown="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
