@@ -3024,12 +3024,6 @@ input[type="radio"][disabled]:checked:after {
     border-bottom-color: #fff;
   }
 }
-.tab-content > .tab-pane {
-  display: none;
-}
-.tab-content > .active {
-  display: block;
-}
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
   border-top-right-radius: 0;
@@ -7022,4 +7016,4 @@ button.close {
   }
 }
 
-/*# sourceMappingURL=tmallwt.css.map*/
+/*# sourceMappingURL=tmall-red.css.map*/

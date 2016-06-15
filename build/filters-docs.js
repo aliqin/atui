@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "72186b487aa7066e4ed5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0375032e2661cdc560ed"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -573,7 +573,7 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(483);
+	module.exports = __webpack_require__(481);
 
 
 /***/ },
@@ -1584,10 +1584,10 @@
 	//             组件
 	//           </a></li>
 	//           <li><a href="widgets.html">
-	//             Widgets
+	//             widgets(业务组件)
 	//           </a></li>
 	//           <li><a href="filters.html">
-	//             filters
+	//             filters(数据过滤器)
 	//           </a></li>
 	//           <li><a href="http://gitlab.alibaba-inc.com/aliqin/atui/">
 	//             GitLab
@@ -1600,7 +1600,7 @@
 	//     </div>
 	//   </header>
 	//   <ul class="themes" id="J_header">
-	//     <li v-for="theme in themes" :class="{active:theme.active}" :style="{backgroundColor:theme.color}" @click="changeTheme(theme.csslink,$event)">
+	//     <li v-for="theme in themes" :class="{active:theme.active}" :style="{backgroundColor:theme.color}" @click="changeTheme(theme.csslink,$event)" :title="theme.name">
 	//     </li>
 	//   </ul>
 	// </template>
@@ -1609,18 +1609,18 @@
 	  data: function data() {
 	    return {
 	      themes: [{
-	        name: '大鱼',
-	        csslink: 'alidayu.css',
+	        name: '大于蓝',
+	        csslink: 'greater-blue.css',
 	        active: true,
 	        color: '#00aaff'
 	      }, {
-	        name: '天猫网厅',
-	        csslink: 'tmallwt.css',
+	        name: '天猫红',
+	        csslink: 'tmall-red.css',
 	        active: false,
 	        color: '#e52e2e'
 	      }, {
-	        name: '阿里通信',
-	        csslink: 'alitx.css',
+	        name: '淘宝橙',
+	        csslink: 'tao-orange.css',
 	        active: false,
 	        color: '#ff7500'
 	      }]
@@ -1650,7 +1650,7 @@
 /***/ 139:
 /***/ function(module, exports) {
 
-	module.exports = "\n<header class=\"navbar navbar-top bs-docs-nav\" id=\"top\" role=\"banner\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button class=\"navbar-toggle collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#bs-navbar\" aria-controls=\"bs-navbar\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a href=\"\" class=\"navbar-brand\">ATUI</a>\n    </div>\n    <nav id=\"bs-navbar\" class=\"collapse navbar-collapse\">\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"components.html\">\n          组件\n        </a></li>\n        <li><a href=\"widgets.html\">\n          Widgets\n        </a></li>\n        <li><a href=\"filters.html\">\n          filters\n        </a></li>\n        <li><a href=\"http://gitlab.alibaba-inc.com/aliqin/atui/\">\n          GitLab\n        </a></li>\n        <li><a href=\"http://ued.aliqin.alibaba.net/webcompon/\" target=\"_blank\">\n          视觉稿\n        </a></li>\n      </ul>\n    </nav>\n  </div>\n</header>\n<ul class=\"themes\" id=\"J_header\">\n  <li v-for=\"theme in themes\" :class=\"{active:theme.active}\" :style=\"{backgroundColor:theme.color}\" @click=\"changeTheme(theme.csslink,$event)\">\n  </li>\n</ul>\n";
+	module.exports = "\n<header class=\"navbar navbar-top bs-docs-nav\" id=\"top\" role=\"banner\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button class=\"navbar-toggle collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#bs-navbar\" aria-controls=\"bs-navbar\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a href=\"\" class=\"navbar-brand\">ATUI</a>\n    </div>\n    <nav id=\"bs-navbar\" class=\"collapse navbar-collapse\">\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"components.html\">\n          组件\n        </a></li>\n        <li><a href=\"widgets.html\">\n          widgets(业务组件)\n        </a></li>\n        <li><a href=\"filters.html\">\n          filters(数据过滤器)\n        </a></li>\n        <li><a href=\"http://gitlab.alibaba-inc.com/aliqin/atui/\">\n          GitLab\n        </a></li>\n        <li><a href=\"http://ued.aliqin.alibaba.net/webcompon/\" target=\"_blank\">\n          视觉稿\n        </a></li>\n      </ul>\n    </nav>\n  </div>\n</header>\n<ul class=\"themes\" id=\"J_header\">\n  <li v-for=\"theme in themes\" :class=\"{active:theme.active}\" :style=\"{backgroundColor:theme.color}\" @click=\"changeTheme(theme.csslink,$event)\" :title=\"theme.name\">\n  </li>\n</ul>\n";
 
 /***/ },
 
@@ -12497,11 +12497,11 @@
 
 /***/ },
 
-/***/ 424:
+/***/ 422:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(425)
+	__vue_template__ = __webpack_require__(423)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12521,23 +12521,23 @@
 
 /***/ },
 
-/***/ 425:
+/***/ 423:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"container bs-docs-container\">\n  <div class=\"row\">\n      <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
 
-/***/ 472:
+/***/ 470:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(473)
+	__vue_script__ = __webpack_require__(471)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(476)
+	__vue_template__ = __webpack_require__(474)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12557,7 +12557,7 @@
 
 /***/ },
 
-/***/ 473:
+/***/ 471:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12566,7 +12566,7 @@
 	  value: true
 	});
 	
-	__webpack_require__(474);
+	__webpack_require__(472);
 	
 	exports.default = {
 	  data: function data() {
@@ -12596,12 +12596,12 @@
 
 /***/ },
 
-/***/ 474:
+/***/ 472:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _phoneNumber = __webpack_require__(475);
+	var _phoneNumber = __webpack_require__(473);
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -12613,7 +12613,7 @@
 
 /***/ },
 
-/***/ 475:
+/***/ 473:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12641,21 +12641,35 @@
 
 /***/ },
 
-/***/ 476:
+/***/ 474:
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phonenumber\">\n    <h3 class=\"page-header\"><a href=\"#phonenumber\" class=\"anchor\">手机号码格式化 phonenumber</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phoneNumber}}</div>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"text\" v-model=\"number\" />\n<div>{{number | phoneNumber}}</div>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
 
-/***/ 477:
+/***/ 475:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
+	__webpack_require__(476);
+	__webpack_require__(477);
 	__webpack_require__(478);
-	__webpack_require__(479);
-	__webpack_require__(480);
+
+/***/ },
+
+/***/ 476:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 477:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
@@ -12667,20 +12681,6 @@
 /***/ },
 
 /***/ 479:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-
-/***/ 480:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-
-/***/ 481:
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -13405,7 +13405,7 @@
 
 /***/ },
 
-/***/ 482:
+/***/ 480:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -13430,7 +13430,7 @@
 
 /***/ },
 
-/***/ 483:
+/***/ 481:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13447,19 +13447,19 @@
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _container = __webpack_require__(424);
+	var _container = __webpack_require__(422);
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _phoneNumberDocs = __webpack_require__(472);
+	var _phoneNumberDocs = __webpack_require__(470);
 	
 	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(477);
-	__webpack_require__(481);
-	__webpack_require__(482);
+	__webpack_require__(475);
+	__webpack_require__(479);
+	__webpack_require__(480);
 	
 	// filters
 	
