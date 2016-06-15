@@ -50,7 +50,7 @@ describe('Modal', () => {
   })
 
   it('确定按键点击回调方法', () => {
-    let event = new MouseEvent('click')
+    let event = new window.MouseEvent('click')
     let $btn = document.body.querySelectorAll('.btn-default')[0]
     $btn.dispatchEvent(event)
     vm.modalCallback.should.be.calledOn($btn)

@@ -203,6 +203,7 @@
         console.log(option)
       },
       onTagChange(values) {
+        console.log('sdfsdf',values)
         this.tagValues = values
       }
     }

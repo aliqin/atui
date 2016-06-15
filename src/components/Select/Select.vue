@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
   import EventListener from '../utils/EventListener'
   import Icon from '../Icon/'
   import Tag from '../Tag/'
@@ -115,9 +115,7 @@
         } else {
           this.value = this.selectedOptions[0].value
         }
-        if (options.length) {
-          this.$dispatch('change', this.multiple ? options : options[0])
-        }
+        this.$dispatch('change', this.multiple ? options : options[0])
       }
     },
     methods: {
