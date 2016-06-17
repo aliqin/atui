@@ -96,8 +96,13 @@
     },
     watch: {
       value (val) {
+        if (!val) {
+          this.showPlaceholder = true
+          return
+        }
+        this.showPlaceholder = false
         if (this.multiple) {
-          if (val && val.length > this.limit) {
+          if (val.length > this.limit) {
             this.showNotify = true
             this.value.pop()
             setTimeout(() => { this.showNotify = false }, 1000)
