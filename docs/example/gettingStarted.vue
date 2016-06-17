@@ -5,11 +5,11 @@
     <pre><code class="language-javascript">
 $ tnpm install @ali/vue-component --save-dev
 
-// css引入 alidayu or alitx or tmallwt
-import '@ali/vue-component/dist/alidayu.css'
+// css引入 greater-blue | tao-orange | or tmall-red (推荐)
+import '@ali/vue-component/dist/greater-blue.css'
 
 // 或less引入
-import '@ali/vue-component/style/themes/alidayu.less'
+import '@ali/vue-component/style/themes/greater-blue.css'
 
 // 引入组件
 import { Alert } from '@ali/vue-component'
@@ -26,7 +26,7 @@ new Vue({
     <h3>浏览器引用</h3>
     <pre><code class="language-markup">
 &lt;script src=&quot;path/to/vue.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;path/to/vue-component.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;path/to/atui.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
   var alert = VueComponent.alert
 &lt;/script&gt;

@@ -1,11 +1,11 @@
 <template>
   <div class="atui-time-picker">
     <span class="time-picker">
-      <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder"></v-input>
+      <v-input readonly @click="toggleMenus" :value="value" :placeholder="placeholder"></v-input>
     </span>
     <div class="time-menus" v-show="isOpen" transition="slide">
       <ul class="time-hours">
-        <li class="time-hour" :class="{}" v-for="index in 12" @click="chooseHour">{{index | leftPad}}</li>
+        <li class="time-hour" :class="{}" v-for="index in 12" @click="chooseHour(index)">{{index | leftPad}}</li>
       </ul>
       <ul class="time-minute">
         <li v-for="index in 59" @click="chooseMinute">{{index | leftPad}}</li>
@@ -19,6 +19,7 @@
 <script>
   import EventListener from '../utils/EventListener'
   import Input from '../Input'
+  // import Selection from './selection'
 
   export default {
     props: {
@@ -30,8 +31,8 @@
         type: String,
         default: 'default'
       },
-      defaultValue: {
-        type: Array
+      value: {
+        type: [Date, String]
       }
     },
     filters: {
@@ -48,8 +49,17 @@
     data () {
       return {
         menus: [],
-        displayValue: '',
+        value: '',
         isOpen: false
+      }
+    },
+    watch: {
+      value (val) {
+        if (val) {
+          this.placeholder = ''
+        } else {
+          this.placeholder = this.originPlaceHolder
+        }
       }
     },
     computed: {
@@ -58,7 +68,7 @@
       }
     },
     created () {
-      // let me = this
+      this.originPlaceHolder = this.placeholder
     },
     ready () {
       const el = this.$el
@@ -70,8 +80,8 @@
       })
     },
     methods: {
-      chooseHour () {
-
+      chooseHour (index) {
+        // this.value =
       },
       chooseMinute () {
 

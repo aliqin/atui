@@ -566,15 +566,15 @@ h1[id] {
 }
 .themes li{
   float:left;
-  background:#ff7500;
-  width:12px;
-  height:12px;
+  width:14px;
+  height:14px;
   border-radius:100%;
-  text-indent: -10000px;
   margin:0 5px;
   cursor: pointer;
+  color:#fff;
+  font-size: 12px;
+  transition: all .3s ease;
 }
-.themes li .active{
-  width:15px;
-  height:15px;
+.themes li.active{
+  transform:scale(1.5);
 }

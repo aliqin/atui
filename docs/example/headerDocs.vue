@@ -17,10 +17,10 @@
             组件
           </a></li>
           <li><a href="widgets.html">
-            Widgets
+            widgets(业务组件)
           </a></li>
           <li><a href="filters.html">
-            filters
+            filters(数据过滤器)
           </a></li>
           <li><a href="http://gitlab.alibaba-inc.com/aliqin/atui/">
             GitLab
@@ -33,7 +33,7 @@
     </div>
   </header>
   <ul class="themes" id="J_header">
-    <li v-for="theme in themes" :class="{active:theme.active}" :style="{backgroundColor:theme.color}" @click="changeTheme(theme.csslink,$event)">
+    <li v-for="theme in themes" :class="{active:theme.active}" :style="{backgroundColor:theme.color}" @click="changeTheme(theme.csslink,$event)" :title="theme.name">
     </li>
   </ul>
 </template>
@@ -43,20 +43,20 @@ export default {
     return {
       themes:[
       {
-          name : '大鱼',
-          csslink:'alidayu.css',
+          name : '大于蓝',
+          csslink:'greater-blue.css',
           active:true,
           color:'#00aaff'
       },
       {
-          name : '天猫网厅',
-          csslink:'tmallwt.css',
+          name : '天猫红',
+          csslink:'tmall-red.css',
           active:false,
           color:'#e52e2e'
       },
       {
-          name : '阿里通信',
-          csslink:'alitx.css',
+          name : '淘宝橙',
+          csslink:'tao-orange.css',
           active:false,
           color:'#ff7500'
       },

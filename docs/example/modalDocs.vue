@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#modal" class="anchor">Modal 对话框</a></h3>
     <div class="bs-example">
       <button class="btn btn-default" @click="showModal = true">显示弹窗</button>
-      <modal title="Modal title" :show.sync="showModal" style="position:absolute">
+      <modal title="Modal title" :show.sync="showModal">
         <div slot="modal-header" class="modal-header">
           <h4 class="modal-title">Modal <b>我绝对定位了</b></h4>
         </div>
@@ -55,8 +55,8 @@
         </div>
       </modal>
 
-      <button @click="showConfirm">使用程序直接弹出confirm</button>
-      <button @click="showError">使用程序直接弹出error</button>
+      <button class="btn btn-danger" @click="showConfirm">使用程序直接弹出confirm</button>
+      <button class="btn btn-danger" @click="showError">使用程序直接弹出error</button>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <button class="btn btn-default"
@@ -187,7 +187,7 @@
           title: '您是否确认要删除这项内容',
           content: '一些解释',
           onOk() {
-            console.log('确定');
+            console.log('确定')
           },
           onCancel() {}
         });
@@ -197,7 +197,7 @@
           title: '出错了',
           content: '是不是忘记吃药了？',
           onOk() {
-            console.log('确定');
+            console.log('确定')
           },
           onCancel() {}
         });
