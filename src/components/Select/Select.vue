@@ -8,7 +8,7 @@
         <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
       </template>
       <div v-else>
-        <span class="select-placeholder" v-show="!value.length && showPlaceholder">{{placeholder}}</span>
+        <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
       </div>
@@ -97,7 +97,7 @@
     watch: {
       value (val) {
         if (this.multiple) {
-          if (val.length > this.limit) {
+          if (val && val.length > this.limit) {
             this.showNotify = true
             this.value.pop()
             setTimeout(() => { this.showNotify = false }, 1000)

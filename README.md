@@ -18,11 +18,11 @@ $ npm install @ali/atui --save-dev
 ```js
 $ tnpm install @ali/atui --save-dev
 
-// css引入 alidayu or alitx or tmallwt
-import '@ali/atui/dist/alidayu.css'
+// css引入 greater-blue | tao-orange | or tmall-red (推荐)
+import '@ali/atui/dist/greater-blue.css'
 
 // 或less引入
-import '@ali/atui/style/themes/alidayu.less'
+import '@ali/atui/style/themes/greater-blue.less'
 
 // 引入组件
 import { Alert } from '@ali/atui'
@@ -44,7 +44,7 @@ new Vue({
 <!--开发时建议引入vue.dev.js，发布时引用vue.js即可-->
 <script src="//g.alicdn.com/aliqin/atui/0.0.10/atui.js"></script>
 <script>
-  const {Alert} = atui
+  const { Alert } = atui
   new Vue({
     components: {
       Alert
