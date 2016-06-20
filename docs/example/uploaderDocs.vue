@@ -1,6 +1,6 @@
 <template>
-  <div class="bs-docs-section" id="upload">
-    <h3 class="page-header"><a href="#upload" class="anchor">Uploader 文件上传 </a></h3>
+  <div class="bs-docs-section" id="uploader">
+    <h3 class="page-header"><a href="#uploader" class="anchor">Uploader 文件上传 </a></h3>
     <div class="bs-example">
       <h4>普通上传，无上传文件格式要求</h4>
       <uploader

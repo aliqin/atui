@@ -33,8 +33,7 @@ module.exports = {
       extractAlidayu,
       extractTmallwt,
       extractAlitx,
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin()
+      new webpack.HotModuleReplacementPlugin()
     ],
 
     resolve: {
@@ -47,7 +46,6 @@ module.exports = {
 
     resolveLoader: {
       root: path.join(__dirname, 'node_modules')
-
     },
 
     module: {
@@ -146,6 +144,7 @@ if (process.env.NODE_ENV === 'production') {
         }
     }),
     new webpack.BannerPlugin(banner, {raw:true, entryOnly:true}),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin()
   ])
 }
