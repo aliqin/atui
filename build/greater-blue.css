@@ -5741,21 +5741,24 @@ button.close {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
   white-space: nowrap;
 }
-.atui-time-picker .time-menus > ul {
+.atui-time-picker .time-menus > .time-picker-panel {
   display: inline-block;
   vertical-align: top;
   min-width: 56px;
   height: 180px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  font-size: 12px;
   border-right: 1px solid #e9e9e9;
   overflow: hidden;
 }
-.atui-time-picker .time-menus > ul:hover {
+.atui-time-picker .time-menus > .time-picker-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.atui-time-picker .time-menus > .time-picker-panel:hover {
   overflow-y: auto;
 }
-.atui-time-picker .time-menus > ul > li {
+.atui-time-picker .time-picker-panel > ul > li {
   padding: 0 0 0 16px;
   cursor: pointer;
   white-space: nowrap;
@@ -5768,15 +5771,16 @@ button.close {
           user-select: none;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
+  width: 100%;
 }
-.atui-time-picker .time-menus > ul > li.selected, .atui-time-picker .time-menus > ul > li.selected:hover {
+.atui-time-picker .time-picker-panel > ul > li:hover, .atui-time-picker .time-picker-panel > ul > li.selected, .atui-time-picker .time-picker-panel > ul > li.selected:hover {
   background: #d5f1fd;
 }
-.atui-time-picker .time-menus > ul > li.disabled {
+.atui-time-picker .time-picker-panel > ul > li.disabled {
   cursor: not-allowed;
   color: #ccc;
 }
-.atui-time-picker .time-menus > ul > li.disabled:hover {
+.atui-time-picker .time-picker-panel > ul > li.disabled:hover {
   background: transparent;
 }
 .atui-time-picker .time-menus > ul > li:hover {

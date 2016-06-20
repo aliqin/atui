@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0375032e2661cdc560ed"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "351331e92404716b67e4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -573,7 +573,7 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(481);
+	module.exports = __webpack_require__(482);
 
 
 /***/ },
@@ -12308,17 +12308,17 @@
 
 /***/ },
 
-/***/ 297:
+/***/ 298:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(298)
-	__vue_script__ = __webpack_require__(300)
+	__webpack_require__(299)
+	__vue_script__ = __webpack_require__(301)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Affix.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(301)
+	__vue_template__ = __webpack_require__(302)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12338,13 +12338,13 @@
 
 /***/ },
 
-/***/ 298:
+/***/ 299:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(299);
+	var content = __webpack_require__(300);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(149)(content, {});
@@ -12353,8 +12353,8 @@
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(299, function() {
-				var newContent = __webpack_require__(299);
+			module.hot.accept(300, function() {
+				var newContent = __webpack_require__(300);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -12365,7 +12365,7 @@
 
 /***/ },
 
-/***/ 299:
+/***/ 300:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(148)();
@@ -12380,7 +12380,7 @@
 
 /***/ },
 
-/***/ 300:
+/***/ 301:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12490,18 +12490,18 @@
 
 /***/ },
 
-/***/ 301:
+/***/ 302:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
 
-/***/ 422:
+/***/ 423:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(423)
+	__vue_template__ = __webpack_require__(424)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12521,23 +12521,23 @@
 
 /***/ },
 
-/***/ 423:
+/***/ 424:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"container bs-docs-container\">\n  <div class=\"row\">\n      <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
 
-/***/ 470:
+/***/ 471:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(471)
+	__vue_script__ = __webpack_require__(472)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(474)
+	__vue_template__ = __webpack_require__(475)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12557,7 +12557,7 @@
 
 /***/ },
 
-/***/ 471:
+/***/ 472:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12566,7 +12566,7 @@
 	  value: true
 	});
 	
-	__webpack_require__(472);
+	__webpack_require__(473);
 	
 	exports.default = {
 	  data: function data() {
@@ -12596,12 +12596,12 @@
 
 /***/ },
 
-/***/ 472:
+/***/ 473:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _phoneNumber = __webpack_require__(473);
+	var _phoneNumber = __webpack_require__(474);
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -12613,7 +12613,7 @@
 
 /***/ },
 
-/***/ 473:
+/***/ 474:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12641,28 +12641,21 @@
 
 /***/ },
 
-/***/ 474:
+/***/ 475:
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phonenumber\">\n    <h3 class=\"page-header\"><a href=\"#phonenumber\" class=\"anchor\">手机号码格式化 phonenumber</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phoneNumber}}</div>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"text\" v-model=\"number\" />\n<div>{{number | phoneNumber}}</div>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
 
-/***/ 475:
+/***/ 476:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(476);
 	__webpack_require__(477);
 	__webpack_require__(478);
-
-/***/ },
-
-/***/ 476:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
+	__webpack_require__(479);
 
 /***/ },
 
@@ -12681,6 +12674,13 @@
 /***/ },
 
 /***/ 479:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 480:
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -13405,7 +13405,7 @@
 
 /***/ },
 
-/***/ 480:
+/***/ 481:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -13430,7 +13430,7 @@
 
 /***/ },
 
-/***/ 481:
+/***/ 482:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13443,23 +13443,23 @@
 	
 	var _headerDocs2 = _interopRequireDefault(_headerDocs);
 	
-	var _Affix = __webpack_require__(297);
+	var _Affix = __webpack_require__(298);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _container = __webpack_require__(422);
+	var _container = __webpack_require__(423);
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _phoneNumberDocs = __webpack_require__(470);
+	var _phoneNumberDocs = __webpack_require__(471);
 	
 	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(475);
-	__webpack_require__(479);
+	__webpack_require__(476);
 	__webpack_require__(480);
+	__webpack_require__(481);
 	
 	// filters
 	

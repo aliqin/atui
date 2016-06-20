@@ -68,10 +68,9 @@
         }
       }
     },
-    methods:{
-
-      timePickerChange(h,m,s) {
-        console.log('rangepicker',start,end)
+    methods: {
+      timePickerChange(date,timeString) {
+        console.log('rangepicker',date, timeString)
       }
     }
   }
