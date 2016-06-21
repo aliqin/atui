@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "351331e92404716b67e4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "74e17310d7db2085f2e3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -17491,7 +17491,6 @@
 	  }
 	  var difference = to - element.scrollTop;
 	  var perTick = difference / duration * 10;
-	
 	  requestAnimationFrame(function () {
 	    element.scrollTop = element.scrollTop + perTick;
 	    if (element.scrollTop === to) return;
@@ -17499,30 +17498,29 @@
 	  });
 	}; // <template>
 	//   <div class="atui-time-picker">
-	//     <span class="time-picker">
+	//     <span class="atui-time-picker-toggler">
 	//       <v-input v-el:picker-toggler readonly @click="toggleMenus" :value="showValue" :placeholder="placeholder"></v-input>
 	//     </span>
-	//     <div class="time-menus" v-show="isOpen" transition="slide">
+	//     <div v-el:picker-menus class="atui-time-picker-menus" v-show="show" transition="slide">
 	//       <div class="time-picker-panel">
 	//         <ul class="time-hours" @mouseover="selection('H')">
-	//           <li v-for="index in 12" :class="{selected: selectedH === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
+	//           <li v-for="index in 24" v-if="disabledHours().indexOf(index) < 0" :class="{selected: selectedH === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
 	//         </ul>
 	//       </div>
 	//       <div class="time-picker-panel">
 	//         <ul class="time-minute" @mouseover="selection('M')">
-	//           <li v-for="index in 59" :class="{selected: selectedM === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
+	//           <li v-for="index in 59" v-if="disabledMinutes().indexOf(index) < 0" :class="{selected: selectedM === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
 	//         </ul>
 	//       </div>
 	//       <div class="time-picker-panel" @mouseover="selection('S')">
 	//         <ul class="time-seconds">
-	//           <li v-for="index in 59" :class="{selected: selectedS === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
+	//           <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0" :class="{selected: selectedS === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
 	//         </ul>
 	//       </div>
 	//     </div>
 	//   </div>
 	// </template>
 	// <script>
-	
 	
 	exports.default = {
 	  props: {
@@ -17539,9 +17537,24 @@
 	      type: [Date, String]
 	    },
 	    hideDisabledOptions: Boolean,
-	    disabledHours: Function,
-	    disabledMinutes: Function,
-	    disabledSeconds: Function
+	    disabledHours: {
+	      type: Function,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    disabledMinutes: {
+	      type: Function,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    disabledSeconds: {
+	      type: Function,
+	      default: function _default() {
+	        return [];
+	      }
+	    }
 	  },
 	  filters: {
 	    leftPad: function leftPad(value) {
@@ -17554,7 +17567,7 @@
 	  data: function data() {
 	    var now = new Date();
 	    return {
-	      isOpen: false,
+	      show: false,
 	      hour: now.getHours(),
 	      minute: now.getMinutes(),
 	      second: now.getSeconds(),
@@ -17587,12 +17600,16 @@
 	  created: function created() {
 	    this.originPlaceHolder = this.placeholder;
 	  },
+	  attached: function attached() {
+	    document.body.appendChild(this.$els.pickerMenus);
+	  },
 	  ready: function ready() {
-	    var el = this.$el;
 	    var me = this;
+	    var menus = me.$els.pickerMenus;
+	    var toggler = me.$els.pickerToggler;
 	    me._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
-	      if (!el.contains(e.target)) {
-	        me.isOpen = false;
+	      if (!menus.contains(e.target) && !toggler.contains(e.target)) {
+	        me.show = false;
 	      }
 	    });
 	  },
@@ -17637,7 +17654,15 @@
 	      this.selectChoosed(index, event);
 	    },
 	    toggleMenus: function toggleMenus() {
-	      this.isOpen = !this.isOpen;
+	      var me = this;
+	      me.show = !me.show;
+	      if (me.show) {
+	        var toggler = me.$els.pickerToggler;
+	        var menus = me.$els.pickerMenus;
+	        var offset = toggler.getBoundingClientRect();
+	        menus.style.top = offset.top + document.body.scrollTop + document.documentElement.scrollTop + toggler.offsetHeight + 'px';
+	        menus.style.left = offset.left + 'px';
+	      }
 	    }
 	  }
 	};
@@ -17677,7 +17702,7 @@
 /* 256 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-time-picker\">\n  <span class=\"time-picker\">\n    <v-input v-el:picker-toggler readonly @click=\"toggleMenus\" :value=\"showValue\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div class=\"time-menus\" v-show=\"isOpen\" transition=\"slide\">\n    <div class=\"time-picker-panel\">\n      <ul class=\"time-hours\" @mouseover=\"selection('H')\">\n        <li v-for=\"index in 12\" :class=\"{selected: selectedH === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div class=\"time-picker-panel\">\n      <ul class=\"time-minute\" @mouseover=\"selection('M')\">\n        <li v-for=\"index in 59\" :class=\"{selected: selectedM === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div class=\"time-picker-panel\" @mouseover=\"selection('S')\">\n      <ul class=\"time-seconds\">\n        <li v-for=\"index in 59\" :class=\"{selected: selectedS === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"atui-time-picker\">\n  <span class=\"atui-time-picker-toggler\">\n    <v-input v-el:picker-toggler readonly @click=\"toggleMenus\" :value=\"showValue\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div v-el:picker-menus class=\"atui-time-picker-menus\" v-show=\"show\" transition=\"slide\">\n    <div class=\"time-picker-panel\">\n      <ul class=\"time-hours\" @mouseover=\"selection('H')\">\n        <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: selectedH === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div class=\"time-picker-panel\">\n      <ul class=\"time-minute\" @mouseover=\"selection('M')\">\n        <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: selectedM === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div class=\"time-picker-panel\" @mouseover=\"selection('S')\">\n      <ul class=\"time-seconds\">\n        <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: selectedS === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 257 */
@@ -23976,30 +24001,31 @@
 	  value: true
 	});
 	
+	var _toConsumableArray2 = __webpack_require__(83);
+	
+	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+	
 	var _src = __webpack_require__(151);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
 	  components: {
 	    TimePicker: _src.TimePicker
 	  },
-	  data: function data() {
-	    return {};
-	  },
-	
-	  watch: {
-	    disabled: function disabled() {
-	      this.$refs.dp.getDateRange();
-	    },
-	
-	    watch: {
-	      value: function value(val) {
-	        console.log(val);
-	      }
-	    }
-	  },
 	  methods: {
+	    disabledMinutes: function disabledMinutes() {
+	      return [].concat((0, _toConsumableArray3.default)(Array(60).keys())).filter(function (value) {
+	        return value % 10 !== 0;
+	      });
+	    },
+	    disabledSeconds: function disabledSeconds() {
+	      return [].concat((0, _toConsumableArray3.default)(Array(60).keys())).filter(function (value) {
+	        return value % 30 !== 0;
+	      });
+	    },
 	    timePickerChange: function timePickerChange(date, timeString) {
-	      console.log('rangepicker', date, timeString);
+	      console.log('timepicker', date, timeString);
 	    }
 	  }
 	};
@@ -24012,9 +24038,29 @@
 	//     <div class="bs-example">
 	//       <h4>时间范围选择（timePicker）</h4>
 	//       <time-picker @change="timePickerChange"></time-picker>
+	//        <h4>隐藏部分时间的选择</h4>
+	//       <time-picker @change="timePickerChange" :disabled-minutes="disabledMinutes" :disabled-seconds="disabledSeconds"></time-picker>
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	//
+	// <time-picker @change="timePickerChange"></time-picker>
+	// <time-picker @change="timePickerChange" :disabled-minutes="disabledMinutes" :disabled-seconds="disabledSeconds"></time-picker>
+	// // script
+	// export default {
+	//   components: {
+	//     TimePicker
+	//   },
+	//   methods: {
+	//     disabledMinutes () {
+	//       return [...Array(60).keys()].filter(value => value % 10 !== 0)
+	//     },
+	//     disabledSeconds () {
+	//       return [...Array(60).keys()].filter(value => value % 30 !== 0)
+	//     },
+	//     timePickerChange(date,timeString) {
+	//       console.log('timepicker',date, timeString)
+	//     }
+	//   }
+	// }
 	// </script></code></pre>
 	//     <h2>Option</h2>
 	//     <table class="atui-table table-bordered">
@@ -24059,7 +24105,7 @@
 /* 400 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"timepicker\">\n    <h3 class=\"page-header\"><a href=\"#timepicker\" class=\"anchor\">TimePicker 时间选择</a></h3>\n    <div class=\"bs-example\">\n      <h4>时间范围选择（timePicker）</h4>\n      <time-picker @change=\"timePickerChange\"></time-picker>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n\n</script></code></pre>\n    <h2>Option</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"timepicker\">\n    <h3 class=\"page-header\"><a href=\"#timepicker\" class=\"anchor\">TimePicker 时间选择</a></h3>\n    <div class=\"bs-example\">\n      <h4>时间范围选择（timePicker）</h4>\n      <time-picker @change=\"timePickerChange\"></time-picker>\n       <h4>隐藏部分时间的选择</h4>\n      <time-picker @change=\"timePickerChange\" :disabled-minutes=\"disabledMinutes\" :disabled-seconds=\"disabledSeconds\"></time-picker>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<time-picker @change=\"timePickerChange\"></time-picker>\n<time-picker @change=\"timePickerChange\" :disabled-minutes=\"disabledMinutes\" :disabled-seconds=\"disabledSeconds\"></time-picker>\n// script\nexport default {\n  components: {\n    TimePicker\n  },\n  methods: {\n    disabledMinutes () {\n      return [...Array(60).keys()].filter(value => value % 10 !== 0)\n    },\n    disabledSeconds () {\n      return [...Array(60).keys()].filter(value => value % 30 !== 0)\n    },\n    timePickerChange(date,timeString) {\n      console.log('timepicker',date, timeString)\n    }\n  }\n}\n</script></code></pre>\n    <h2>Option</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 401 */
