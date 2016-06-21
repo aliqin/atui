@@ -1,6 +1,6 @@
 <template>
     <div v-if="showSizeChanger" class="pagination-selector">
-        <v-select :value="defaultSize" placeholder="" >
+        <v-select :value="''+defaultSize">
             <v-option value="10">10 条/页</v-option>
             <v-option value="20">20 条/页</v-option>
             <v-option value="30">30 条/页</v-option>

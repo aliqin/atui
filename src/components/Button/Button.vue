@@ -1,5 +1,5 @@
 <template>
-  <button type="{{type}}" class="btn" :class="btnClassObj">
+  <button :type="type" class="btn" :class="btnClassObj">
     <slot>{{value}}</slot>
   </button>
 </template>

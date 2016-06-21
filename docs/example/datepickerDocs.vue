@@ -91,7 +91,7 @@ const RangePicker = DatePicker.RangePicker
       return {
         disabled: [],
         value: 'Oct/06/2015',
-        format: ['MMM/dd/yyyy'],
+        format: 'MMM/dd/yyyy',
         reset: true
       }
     },

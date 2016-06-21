@@ -16,7 +16,7 @@
               <dt>{{$key}}</dt>
               <dd>
                 <a v-for="prov in key" :title="prov[1]" :attr-id="prov[0]" href="javascript:" @click="chooseProvince(prov[0], prov[1])" :class="{'active': provinceId == prov[0]}">
-                  <input v-if="provinceId == prov[0]" value="{{prov[1]}}" type="hidden" v-model="province" />
+                  <input v-if="provinceId == prov[0]" :value="prov[1]" type="hidden" v-model="province" />
                   {{prov[1]}}
                 </a>
               </dd>
@@ -26,8 +26,8 @@
             <dl>
               <dd>
                 <template v-for="item in list.countyList">
-                  <a v-if="item[2] == provinceId" title="{{item[1]}}" attr-id="{{item[0]}}" href="javascript:" @click.stop="chooseCity(item[0], item[1])" :class="{'active': cityId == item[0]}" track-by="item[0]">
-                    <input v-if="cityId == item[0]" value="{{item[1]}}" type="hidden" v-model="city" />
+                  <a v-if="item[2] == provinceId" :title="item[1]" attr-id="item[0]}}" href="javascript:" @click.stop="chooseCity(item[0], item[1])" :class="{'active': cityId == item[0]}" track-by="item[0]">
+                    <input v-if="cityId == item[0]" :value="item[1]" type="hidden" v-model="city" />
                     {{item[1]}}
                   </a>
                 </template>
@@ -38,8 +38,8 @@
             <dl>
               <dd>
                 <template v-for="item in list.countyList">
-                  <a v-if="item[2] == cityId" title="{{item[1]}}" attr-id="{{item[0]}}" href="javascript:" @click.stop="chooseCounty(item[0], item[1])" :class="{'active': countyId == item[0]}" track-by="item[0]">
-                    <input v-if="countyId == item[0]" value="{{item[1]}}" type="hidden" v-model="county" />
+                  <a v-if="item[2] == cityId" :title="item[1]" :attr-id="item[0]" href="javascript:" @click.stop="chooseCounty(item[0], item[1])" :class="{'active': countyId == item[0]}" track-by="item[0]">
+                    <input v-if="countyId == item[0]" :value="item[1]" type="hidden" v-model="county" />
                     {{item[1]}}
                   </a>
                 </template>
@@ -50,8 +50,8 @@
             <dl>
               <dd>
                 <template v-for="item in list.streetList">
-                  <a title="{{item[0]}}" attr-id="{{$key}}" parent-id="{{item[1]}}" href="javascript:" @click.stop="chooseStreet($key, item[0])" :class="{'active': streetId == $key}" track-by="$key">
-                    <input v-if="streetId == $key" value="{{item[0]}}" type="hidden" v-model="street" />
+                  <a :title="item[0]}}" :attr-id="$key" :parent-id="item[1]" href="javascript:" @click.stop="chooseStreet($key, item[0])" :class="{'active': streetId == $key}" track-by="$key">
+                    <input v-if="streetId == $key" value="item[0]}}" type="hidden" v-model="street" />
                     {{item[0]}}
                   </a>
                 </template>

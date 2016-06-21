@@ -40,7 +40,7 @@
     <div v-if="uploadType == 'drag'" class="at-upload-drag">
       <div class="at-upload-drag-container {{dragover ? 'is-dragover' : ''}}">
         <input type="file" :name="name" :id="uploadId" :accept="accept" :multiple="multiple" @change="onChange($event)" />
-        <label for="{{uploadId}}" class="at-upload-drag-area">
+        <label :for="uploadId" class="at-upload-drag-area">
         <p class="at-upload-drag-icon"></p>
         <span v-if="advanceDrag">将文件拖拽至框中上传或点此上传</span>
         <span v-if="!advanceDrag">当前环境不支持拖拽上传，请点此上传</span>

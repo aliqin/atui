@@ -6,7 +6,7 @@
     <div v-if="searchList && searchList.length > 0" class="search-list-containter">
       <ul class="list-dropdown" v-show="showPop" transition="slide">
         <li v-for="item in searchList | filterBy value">
-          <a href="javascript:;" @click="checkItem($index, item[textField])" title="{{item[textField]}}">{{item[textField]}}</a>
+          <a href="javascript:;" @click="checkItem($index, item[textField])" :title="item[textField]">{{item[textField]}}</a>
         </li>
       </ul>
     </div>
