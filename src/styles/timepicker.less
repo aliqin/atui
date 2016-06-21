@@ -1,60 +1,79 @@
 .atui-time-picker{
   position: relative;
   display: inline-block;
+  &-toggler{
+    position: relative;
+    display: inline-block;
+    width:138px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
 }
-.time-picker {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  vertical-align: middle;
-}
-.atui-time-picker .time-menus{
+.atui-time-picker-menus{
   z-index: 10010;
-  font-size: 12px;
-  background: #fff;
   position: absolute;
+  outline: none;
   border: 1px solid #d9d9d9;
-  border-radius: 6px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.17);
-  white-space: nowrap
-}
-.atui-time-picker .time-menus > ul{
-  display: inline-block;
-  vertical-align: top;
-  min-width: 56px;
-  height: 180px;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  border-right: 1px solid #e9e9e9;
+  font-size: 12px;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px hsla(0,0%,39%,.2);
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  line-height: 1.5;
   overflow: hidden;
+}
+.atui-time-picker-menus .time-picker-panel{
+  float: left;
+  font-size: 12px;
+  border: 1px solid #e9e9e9;
+  border-width: 0 1px;
+  margin-left: -1px;
+  box-sizing: border-box;
+  width: 56px;
+  overflow: hidden;
+  position: relative;
   &:hover{
     overflow-y: auto;
   }
-}
-.atui-time-picker .time-menus > ul > li {
-  padding: 0 0 0 16px;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  height:24px;
-  line-height: 24px;
-  user-select:none;
-  transition: all .3s ease;
-  &.selected,&.selected:hover{
-    background: #d5f1fd;
-  }
-  &.disabled {
-    cursor: not-allowed;
-    color: #ccc;
-  }
-  &.disabled:hover{
-    background: transparent
+  &:last-child{
+    border-right: 0;
   }
 }
-
-.atui-time-picker .time-menus > ul > li:hover {
-    background: #eaf8fe;
+.atui-time-picker-menus .time-picker-panel > ul{
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 144px;
+  & > li {
+    padding: 0 0 0 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    height:24px;
+    line-height: 24px;
+    user-select:none;
+    box-sizing: content-box;
+    transition: all .3s ease;
+    width:100%;
+    &:hover{
+      background: #eaf8fe;
+    }
+    &.selected,&.selected:hover{
+      background: #d5f1fd;
+    }
+    &.disabled {
+      cursor: not-allowed;
+      color: #ccc;
+    }
+    &.disabled:hover{
+      background: transparent
+    }
+  }
 }
 
 
