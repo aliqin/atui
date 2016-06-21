@@ -15,7 +15,10 @@
       disabled: Boolean,
       error: Boolean,
       success: Boolean,
-      content: String,
+      content: {
+        type: String,
+        default: ''
+      },
       wordsCount: Boolean,
       countTips: {
         type: String,
@@ -54,7 +57,7 @@
       }
     },
     watch: {
-      'content' (newVal, oldVal) {
+      content (newVal, oldVal) {
         let len = newVal.length
         this.curWords = len
         if (len >= this.limitWords - 0) {
