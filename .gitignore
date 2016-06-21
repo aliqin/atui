@@ -1,6 +1,6 @@
 .DS_Store
 .project
-coverage/
+#coverage/
 node_modules
 npm-debug.log
 static

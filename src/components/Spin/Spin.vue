@@ -1,5 +1,5 @@
 <template>
-<div :class="['atui-spin',size,{sping:sping}]" v-show="show">
+<div :class="['atui-spin',size,{sping: sping}]" v-show="show">
   <div v-if="isSupportAnimation" class="atui-sping-point">
       <div></div>
       <div></div>
@@ -16,12 +16,8 @@ import isSupportAnimation from '../utils/cssAnimationSupported'
 export default {
   name: 'spin',
   props: {
-    show: {
-      type: Boolean
-    },
-    sping: {
-      type: Boolean
-    },
+    show: Boolean,
+    sping: Boolean,
     size: {
       type: String,
       default: 'default'
