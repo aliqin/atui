@@ -112,7 +112,7 @@ module.exports = {
 
 
 if (process.env.NODE_ENV === 'production') {
-  delete module.exports.devtool
+  // delete module.exports.devtool
 
   module.exports.entry = {
       atui: ['./src/index.js'],
