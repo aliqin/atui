@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="atui-calendar-footer">
-          <a class="atui-calendar-today-btn" role="button" @click="daySelect(new Date,$event)" title="{{stringifyDayHeader(currDate)}}">今天</a>
+          <a class="atui-calendar-today-btn" role="button" @click="daySelect(new Date(),$event)" :title="stringifyDayHeader(currDate)">今天</a>
         </div>
       </div>
     </div>

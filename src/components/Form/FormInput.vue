@@ -1,6 +1,9 @@
 <template>
   <textarea v-if="type=='textarea'"></textarea>
-  <input v-else type="{{type}}" value="{{defaultValue}}" placeholder="{{placeholder}}" class="{{defaultClass}} {{validStatus}}" />
+  <input v-else :type="type"
+  :value="defaultValue"
+  :placeholder="placeholder"
+  :class="[defaultClass,validStatus]" />
   <div v-if="validStatus" class="status-info {{validStatus}}">{{ tip }}</div>
 </template>
 <style lang="less">

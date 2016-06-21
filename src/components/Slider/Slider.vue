@@ -1,12 +1,12 @@
 <template>
-  <div class="at-slider" id="{{sliderId}}" :class="sliderClass" @click="clickFun">
+  <div class="at-slider" :id="sliderId" :class="sliderClass" @click="clickFun">
     <template v-for="item in valuePercent">
       <tooltip :content="valueArray[$index]" placement="top">
         <div class="at-slider-handle" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
       </tooltip>
     </template>
     <template v-if="valuePercent.length == 1">
-      <tooltip content="{{valueArray[0]}}" placement="top">
+      <tooltip :content="valueArray[0]" placement="top">
         <div class="at-slider-track" :style="{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}"></div>
         </tooltip>
     </template>
