@@ -40,7 +40,7 @@
         default: ''
       },
       // 是否必填
-      required: null,
+      required: Boolean,
       // 提示信息，如不设置，会根据验证规则自动生成
       tips: {
         type: String,
@@ -52,7 +52,7 @@
         default: ''
       },
       // 配合validateStatus属性使用，是否展示校验状态图标
-      hasIcon: null
+      hasIcon: Boolean
     },
 
     computed: {
