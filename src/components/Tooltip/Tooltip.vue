@@ -24,7 +24,7 @@
     role="tooltip">
     <div class="tooltip-arrow" v-el:arrow></div>
     <div class="tooltip-inner">
-      {{{content}}}
+      {{content}}
     </div>
   </div>
 </template>
