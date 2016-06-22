@@ -1,9 +1,9 @@
 <template>
-  <span v-el:trigger>
+  <div class="atui-tooltip-trigger" v-el:trigger>
     <slot>
     </slot>
-  </span>
-  <div class="tooltip"
+  </div>
+  <div class="atui-tooltip"
     :class="{
     'top':    placement === 'top',
     'top-left':    placement === 'topLeft',

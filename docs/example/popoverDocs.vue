@@ -2,16 +2,16 @@
   <div class="bs-docs-section" id="popover">
     <h3 class="page-header"><a href="#popover" class="anchor">Popover 气泡</a></h3>
     <div class="bs-example">
-      <popover effect="fade" :header="true" title="我是标题" content="我是内容，我是内容，我是内容" placement="top">
+      <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="top">
         <button class="btn ">Popover on top</button>
       </popover>
-      <popover effect="fade" :header="true" title="我是标题" content="我是内容，我是内容，我是内容" placement="left">
+      <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="left">
         <button class="btn">Popover on left</button>
       </popover>
-      <popover effect="fade" :header="true" title="我是标题" content="我是内容，我是内容，我是内容" placement="right">
+      <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="right">
         <button class="btn">Popover on right</button>
       </popover>
-      <popover effect="fade" placement="bottom" :header="true" title="我是标题" content="我是内容，我是内容，我是内容">
+      <popover effect="fade" placement="bottom" header title="我是标题" content="我是内容，我是内容，我是内容">
         <button class="btn">Popover on bottom</button>
       </popover>
       <hr>

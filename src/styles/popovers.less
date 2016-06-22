@@ -24,8 +24,10 @@
 @popover-arrow-outer-color:           fadein(@popover-border-color, 5%);
 //** Popover outer arrow fallback color
 @popover-arrow-outer-fallback-color:  darken(@popover-fallback-border-color, 20%);
-
-.popover {
+.atui-popover-trigger{
+  display: inline-block;
+}
+.atui-popover {
   position: absolute;
   top: 0;
   left: 0;
@@ -67,7 +69,8 @@
 //
 // .arrow is outer, .arrow:after is inner
 
-.popover > .arrow {
+.atui-popover > .arrow {
+  border-width: @popover-arrow-outer-width;
   &,
   &:after {
     position: absolute;
@@ -76,17 +79,12 @@
     height: 0;
     border-color: transparent;
     border-style: solid;
+    border-width: @popover-arrow-width;
+    content: "";
   }
 }
-.popover > .arrow {
-  border-width: @popover-arrow-outer-width;
-}
-.popover > .arrow:after {
-  border-width: @popover-arrow-width;
-  content: "";
-}
 
-.popover {
+.atui-popover {
   &.top > .arrow {
     left: 50%;
     margin-left: -@popover-arrow-outer-width;
