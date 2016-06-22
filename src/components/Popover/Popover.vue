@@ -24,7 +24,7 @@
       <div class="arrow"></div>
       <h3 class="popover-title" v-show="title">{{title}}</h3>
       <div class="popover-content">
-        {{{content}}}
+        {{content}}
       </div>
   </div>
 </template>
