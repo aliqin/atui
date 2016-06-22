@@ -4,11 +4,11 @@
     <div class="bs-example">
       <p>
         <pre>
-选择日期是: {{new Date(value).toString().slice(0, -23)}}
+选择日期是: {{value}}
         </pre>
       </p>
       <date-picker v-ref:dp
-      :format="format.toString()" @change="selectChange"></date-picker>
+      :format="format.toString()" :disabled-date="disabledDate" @change="selectChange"></date-picker>
 
       <date-picker disabled :format="format" @change="selectChange"></date-picker>
 
@@ -26,13 +26,49 @@
       <range-picker @change="rangePickerChange"></range-picker>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<date-picker v-ref:dp :value.sync="value" :format="format.toString()" @change="selectChange"></date-picker>
+<date-picker v-ref:dp
+:format="format.toString()"
+:disabled-date="disabledDate"
+@change="selectChange">
+</date-picker>
+
 <h4>日期范围选择（rangePicker）</h4>
-
-import {DatePicker,Select} from 'src/'
-const RangePicker = DatePicker.RangePicker
-
 <range-picker></range-picker>
+
+// script
+import {DatePicker, Select} from 'atui'
+const RangePicker = DatePicker.RangePicker
+const Option = Select.Option;
+
+export default {
+  components: {
+    DatePicker,
+    RangePicker,
+    vSelect:Select,
+    vOption:Option
+  },
+  data() {
+    return {
+      disabled: [],
+      value: 'Oct/06/2015',
+      format: 'MMM/dd/yyyy',
+      reset: true
+    }
+  },
+  methods:{
+    selectChange(value) {
+      this.value = value
+    },
+    disabledDate(date) {
+      return date.getTime() <= new Date().getTime()
+    },
+    rangePickerChange(start,end) {
+      console.log('rangepicker',start,end)
+    }
+  }
+}
+
+
 </script></code></pre>
     <h2>Option</h2>
     <table class="atui-table table-bordered">
@@ -64,11 +100,10 @@ const RangePicker = DatePicker.RangePicker
           <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>
         </tr>
         <tr>
-          <td>disabledDaysOfWeek</td>
-          <td><code>Array</code></td>
+          <td>disabledDate</td>
+          <td><code>Function</code></td>
           <td></td>
-          <td>禁用一周的某一天. 按 0 到 6 .
-             禁用多天可用<code>逗号</code>分隔</td>
+          <td>禁用某些时间</td>
         </tr>
       </tbody>
     </table>
@@ -95,22 +130,12 @@ const RangePicker = DatePicker.RangePicker
         reset: true
       }
     },
-    watch: {
-      disabled() {
-        this.$refs.dp.getDateRange()
-      },
-      watch:{
-        value(val) {
-          console.log(val)
-        }
-      },
-      // format(newV) {
-      //   this.value = this.$refs.dp.stringify(new Date(this.value))
-      // }
-    },
     methods:{
       selectChange(value) {
-        alert(value)
+        this.value = value
+      },
+      disabledDate(date) {
+        return date.getTime() <= new Date().getTime()
       },
       rangePickerChange(start,end) {
         console.log('rangepicker',start,end)
