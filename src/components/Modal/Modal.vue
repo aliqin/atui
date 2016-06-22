@@ -26,8 +26,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-import coerceBoolean from '../utils/coerceBoolean.js'
-
 export default {
   props: {
     title: {
@@ -35,8 +33,7 @@ export default {
     },
     show: {
       require: true,
-      type: Boolean,
-      coerce: coerceBoolean
+      type: Boolean
     },
     width: String,
     height: String,

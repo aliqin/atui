@@ -1,9 +1,9 @@
 <template>
-  <span v-el:trigger>
+  <div class="atui-popover-trigger" v-el:trigger>
     <slot>
     </slot>
-  </span>
-  <div class="popover"
+  </div>
+  <div class="atui-popover"
     :class="{
     'top':    placement === 'top',
     'top-left':    placement === 'topLeft',
