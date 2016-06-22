@@ -48,7 +48,7 @@
         type: String,
         default: '请选择时间'
       },
-      defaultValue: String,
+      // defaultValue: [Date, String],
       size: {
         type: String,
         default: 'default'
@@ -117,6 +117,16 @@
       }
     },
     created () {
+      if (this.value && this.value.constructor === Date) {
+        this.hour = this.value.getHours()
+        this.minute = this.value.getMinutes()
+        this.second = this.value.getSeconds()
+      } else if (this.value && typeof this.value === 'string') {
+        const arr = this.value.split(':')
+        this.hour = +arr[0]
+        this.minute = +arr[1]
+        this.second = +arr[2]
+      }
       this.originPlaceHolder = this.placeholder
     },
     attached () {

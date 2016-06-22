@@ -3,17 +3,22 @@
     <h3 class="page-header"><a href="#timepicker" class="anchor">TimePicker 时间选择</a></h3>
     <div class="bs-example">
       <h4>时间范围选择（timePicker）</h4>
-      <time-picker @change="timePickerChange"></time-picker>
+      <time-picker @change="timePickerChange" value="11:11:11"></time-picker>
        <h4>隐藏部分时间的选择</h4>
       <time-picker @change="timePickerChange" :disabled-minutes="disabledMinutes" :disabled-seconds="disabledSeconds"></time-picker>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<time-picker @change="timePickerChange"></time-picker>
+<time-picker @change="timePickerChange" value="11:11:11"></time-picker>
 <time-picker @change="timePickerChange" :disabled-minutes="disabledMinutes" :disabled-seconds="disabledSeconds"></time-picker>
 // script
 export default {
   components: {
     TimePicker
+  },
+  data() {
+    return {
+      defaultTime: new Date().set
+    }
   },
   methods: {
     disabledMinutes () {
@@ -45,21 +50,6 @@ export default {
           <td></td>
           <td>输入框里的默认值</td>
         </tr>
-        <tr>
-          <td>Width</td>
-          <td><code>String</code></td>
-          <td>200px</td>
-          <td>输入框的宽度</td>
-        </tr>
-
-        <tr>
-          <td>disabledDaysOfWeek</td>
-          <td><code>Array</code></td>
-          <td></td>
-          <td>禁用一周的某一天. 按 0 到 6 .
-             禁用多天可用<code>逗号</code>分隔</td>
-        </tr>
-
       </tbody>
     </table>
   </div>
@@ -70,6 +60,11 @@ export default {
   export default {
     components: {
       TimePicker
+    },
+    data() {
+      return {
+        defaultTime: new Date(11,11,11)
+      }
     },
     methods: {
       disabledMinutes () {
