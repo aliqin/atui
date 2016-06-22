@@ -5,18 +5,18 @@
     </span>
     <div v-el:picker-menus class="atui-time-picker-menus" v-show="show" transition="slide">
       <div class="time-picker-panel">
-        <ul class="time-hours" @mouseover="selection('H')">
-          <li v-for="index in 24" v-if="disabledHours().indexOf(index) < 0" :class="{selected: selectedH === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
+        <ul v-el:h class="time-hours" @mouseover="selection('H')">
+          <li v-for="index in 24" v-if="disabledHours().indexOf(index) < 0" :class="{selected: hour === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
         </ul>
       </div>
       <div class="time-picker-panel">
-        <ul class="time-minute" @mouseover="selection('M')">
-          <li v-for="index in 59" v-if="disabledMinutes().indexOf(index) < 0" :class="{selected: selectedM === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
+        <ul v-el:m class="time-minute" @mouseover="selection('M')">
+          <li v-for="index in 59" v-if="disabledMinutes().indexOf(index) < 0" :class="{selected: minute === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
         </ul>
       </div>
       <div class="time-picker-panel" @mouseover="selection('S')">
-        <ul class="time-seconds">
-          <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0" :class="{selected: selectedS === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
+        <ul v-el:s class="time-seconds">
+          <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0" :class="{selected: second === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
         </ul>
       </div>
     </div>
@@ -90,10 +90,7 @@
         show: false,
         hour: now.getHours(),
         minute: now.getMinutes(),
-        second: now.getSeconds(),
-        selectedH: null,
-        selectedM: null,
-        selectedS: null
+        second: now.getSeconds()
       }
     },
     watch: {
@@ -103,6 +100,15 @@
         } else {
           this.placeholder = this.originPlaceHolder
         }
+      },
+      hour (index) {
+        this.selectChoosed('h', index)
+      },
+      minute (index) {
+        this.selectChoosed('m', index)
+      },
+      second (index) {
+        this.selectChoosed('s', index)
       }
     },
     computed: {
@@ -127,7 +133,7 @@
         this.minute = +arr[1]
         this.second = +arr[2]
       }
-      this.originPlaceHolder = this.placeholder
+      // this.originPlaceHolder = this.placeholder
     },
     attached () {
       document.body.appendChild(this.$els.pickerMenus)
@@ -136,6 +142,7 @@
       let me = this
       let menus = me.$els.pickerMenus
       let toggler = me.$els.pickerToggler
+
       me._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!menus.contains(e.target) && !toggler.contains(e.target)) {
           me.show = false
@@ -162,24 +169,21 @@
         end = start + 2
         Selection(this.$els.pickerToggler, start, end)
       },
-      selectChoosed (index, event) {
-        const target = event.target.parentNode.parentNode
-        scrollTo(target, index * event.target.offsetHeight, 100)
+      selectChoosed (type, index, duration) {
+        let me = this
+        let target = me.$els[type]
+        if (target) {
+          scrollTo(target.parentNode, index * target.children[0].offsetHeight, duration || 100)
+        }
       },
-      chooseHour (index, event) {
+      chooseHour (index) {
         this.hour = index
-        this.selectedH = index
-        this.selectChoosed(index, event)
       },
-      chooseMinute (index, event) {
+      chooseMinute (index) {
         this.minute = index
-        this.selectedM = index
-        this.selectChoosed(index, event)
       },
-      chooseSecond (index, event) {
+      chooseSecond (index) {
         this.second = index
-        this.selectedS = index
-        this.selectChoosed(index, event)
       },
       toggleMenus () {
         let me = this
@@ -190,6 +194,11 @@
           const offset = toggler.getBoundingClientRect()
           menus.style.top = offset.top + document.body.scrollTop + document.documentElement.scrollTop + toggler.offsetHeight + 'px'
           menus.style.left = offset.left + 'px'
+          me.$nextTick(() => {
+            me.selectChoosed('h', me.hour, 1)
+            me.selectChoosed('m', me.minute, 1)
+            me.selectChoosed('s', me.second, 1)
+          })
         }
       }
     }
