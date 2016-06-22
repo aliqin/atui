@@ -74,11 +74,7 @@
     methods: {
       focusInput () {
         this.iconColor = '#00A0FF'
-        if (this.searchList && this.searchList.length > 0) {
-          this.showPop = true
-        } else {
-          this.showPop = false
-        }
+        this.showPop = true
       },
       blurInput () {
         this.iconColor = '#BFBFBF'
