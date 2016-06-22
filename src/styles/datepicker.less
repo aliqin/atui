@@ -1,44 +1,46 @@
 .atui-datepicker{
   position: relative;
   display: inline-block;
-}
-.atui-datepicker-toggle{
-  position: relative;
-  border-radius:4px;
-  width:138px;
-  height:30px;
-  line-height: 30px;
-  input{
-    border:none;
-    width:100%;
-    display: inline-block;
+
+  &-toggle {
+    position: relative;
+    border-radius:4px;
+    width:138px;
     height:30px;
     line-height: 30px;
-    font-size: 12px;
-    border:1px solid #d9d9d9;
-    outline: none;
-    border-radius:4px;
-    padding-left:7px;
+    input{
+      border:none;
+      width:100%;
+      display: inline-block;
+      height:30px;
+      line-height: 30px;
+      font-size: 12px;
+      border:1px solid #d9d9d9;
+      outline: none;
+      border-radius:4px;
+      padding-left:7px;
+    }
+    &[disabled]{
+      background-color: #f7f7f7;
+      opacity: 1;
+      cursor: not-allowed;
+      color: #ccc;
+    }
+    input:focus{
+      border:1px solid @primary-color;
+      box-shadow: none;
+    }
+    .iconfont{
+      position: absolute;
+      top:50%;
+      // transform:translateY(-50%);
+      margin-top:-14px;
+      right:7px;
+    }
   }
-  &[disabled]{
-    background-color: #f7f7f7;
-    opacity: 1;
-    cursor: not-allowed;
-    color: #ccc;
-  }
-  input:focus{
-    border:1px solid @primary-color;
-    box-shadow: none;
-  }
-  .iconfont{
+
+  &-calendar{
     position: absolute;
-    top:50%;
-    // transform:translateY(-50%);
-    margin-top:-14px;
-    right:7px;
+    z-index: @zindex-dropdown;
   }
-}
-.atui-datepicker-calendar{
-  position: absolute;
-  z-index: @zindex-dropdown;
 }
