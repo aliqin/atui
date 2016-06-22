@@ -1,6 +1,13 @@
 # atui
 阿里通信基于Vue.js的组件库.
 
+[![ci status][ci-image]][ci-url] [![line coverage][line-coverage-image]][ci-url] [![branch coverage][branch-coverage-image]][ci-url]
+
+[ci-image]: http://cise.alibaba-inc.com/task/296115/status.svg
+[ci-url]: http://cise.alibaba-inc.com/task/296115
+[line-coverage-image]: http://cise.alibaba-inc.com/task/296115/ut_line_coverage.svg
+[branch-coverage-image]: http://cise.alibaba-inc.com/task/296115/ut_branch_coverage.svg
+
 <p align="center"></a></p>
 
 * [Vue.js](http://vuejs.org/) (基于Vue.js `^v1.x.x 版本以上`).
