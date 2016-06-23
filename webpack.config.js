@@ -29,7 +29,7 @@ module.exports = {
       extractAlidayu,
       extractTmallwt,
       extractAlitx,
-      new webpack.HotModuleReplacementPlugin()
+      // new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
       root: path.resolve('./'),
@@ -58,7 +58,7 @@ module.exports = {
             loader: 'vue'
         },{
             test: /\.js$/,
-            exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+            exclude: /node_modules/,
             loader: 'babel'
         },{   test: /\.(png)$/,
             loader: 'url-loader?limit=100000'
