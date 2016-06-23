@@ -12,16 +12,11 @@ export default {
       default: '/'
     }
   },
-  methods: {
-    mapPropsToChildComponent () {
-      const self = this
-      self.$children.forEach((child, index) => {
-        child.slash = self.slash
-      })
-    }
-  },
   ready () {
-    this.mapPropsToChildComponent()
+    const me = this
+    me.$children.forEach((child) => {
+      child.slash = me.slash
+    })
   }
 }
 </script>
