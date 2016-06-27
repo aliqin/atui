@@ -21,8 +21,7 @@
 
 @modal-lg:                    900px;
 @modal-md:                    600px;
-@modal-sm:                    300px;
-
+@modal-sm:                    400px;
 // Kill the scroll on the body
 .modal-open {
   overflow: hidden;
@@ -116,31 +115,36 @@
 }
 
 .atui-confirm{
+  .iconfont{
+    position: relative;
+    top:5px;
+  }
   &-title{
     font-size: 14px;
   }
   &-content{
-    margin-left: 37px;
+    margin-left: 50px;
     font-size: 12px;
     color: #666;
     margin-top: 8px;
   }
 }
 
-// // Scale up the modal
-// @media (min-width: @screen-sm-min) {
-//   // Automatically set modal's width for larger viewports
-//   .modal-dialog {
-//     width: @modal-md;
-//   }
-//   .modal-content {
-//     .box-shadow(0 5px 15px rgba(0,0,0,.5));
-//   }
+// Scale up the modal
+@media (min-width: @screen-sm-min) {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    width: @modal-md;
+  }
+  .modal-content {
+    .box-shadow(0 5px 15px rgba(0,0,0,.5));
+  }
 
-//   // Modal sizes
-//   .modal-sm { width: @modal-sm; }
-// }
+  // Modal sizes
+  .modal-sm { width: @modal-sm; }
+}
 
-// @media (min-width: @screen-md-min) {
-//   .modal-lg { width: @modal-lg; }
-// }
+@media (min-width: @screen-md-min) {
+  .modal-lg { width: @modal-lg; }
+}
+
