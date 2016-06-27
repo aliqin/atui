@@ -1,0 +1,48 @@
+/**
+ * Created by jiangyi on 16/6/27.
+ */
+
+import Vue from 'vue'
+import Accordion from '../../src/components/Accordion'
+
+const {Panel} = Accordion
+
+describe('Accordion组件单元测试', () => {
+  let vm = new Vue({
+    data () {
+      return {
+        oneAtATime: false
+      }
+    },
+    components: {
+      Accordion,
+      Panel
+    },
+    replace: false,
+    template: `
+      <accordion :one-at-a-time="oneAtATime">
+        <panel :is-open="true">
+          <div slot="panel-header" class="custom-class">Panel #1</div>
+          内容一
+        </panel>
+        <panel>
+          <div slot="panel-header" class="custom-class">Panel #2</div>
+          内容二
+        </panel>
+        <panel>
+          <div slot="panel-header" class="custom-class">Panel #3</div>
+          内容三
+        </panel>
+        <panel>
+          <div slot="panel-header" class="custom-class">Panel #4</div>
+          内容四
+        </panel>
+      </accordion>
+    `
+  }).$mount()
+
+  it('基本功能渲染', () => {
+    expect(vm.$el.querySelectorAll('.panel-group').length).to.be.equal(1)
+    expect(vm.$el.querySelectorAll('.panel').length).to.be.equal(4)
+  })
+})
