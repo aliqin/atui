@@ -34,7 +34,7 @@ import Message from './Message.vue'
           }, duration)
         }
       }
-    }).$mount().$appendTo('body')
+    }).$mount().$appendTo(document.body)
   }
 })
 
