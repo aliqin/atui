@@ -176,11 +176,10 @@
       showConfirm() {
         confirm({
           title: '您是否确认要删除这项内容',
-          content: '一些解释',
+          content: '<ul><li>一些解释</li><li>一些解释</li><li>一些解释</li></ul>',
           onOk() {
-            console.log('确定')
-          },
-          onCancel() {}
+            console.log('确定了')
+          }
         });
       },
       showError() {

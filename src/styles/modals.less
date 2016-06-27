@@ -41,12 +41,10 @@
   background-color:rgba(0, 0, 0, 0.5);
   box-shadow:0px 2px 4px 0px rgba(0,0,0,0.10);
 
-  // Prevent Chrome on Windows from adding a focus outline. For details, see
   outline: 0;
 }
 
 
-// Shell div to position the modal with bottom padding
 .modal-dialog {
   position: absolute;
   left:50%;
@@ -115,6 +113,19 @@
     margin-left: 0;
   }
 }
+
+.atui-confirm{
+  &-title{
+    font-size: 14px;
+  }
+  &-content{
+    margin-left: 37px;
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+  }
+}
+
 // Scale up the modal
 @media (min-width: @screen-sm-min) {
   // Automatically set modal's width for larger viewports

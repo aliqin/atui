@@ -6,6 +6,7 @@ var extractAlitx = new ExtractTextPlugin('tao-orange.css')
 var path = require('path')
 var precss       = require('precss')
 var autoprefixer = require('autoprefixer')
+var styleLintPlugin = require('stylelint-webpack-plugin')
 var version = process.env.VERSION || require('./package.json').version
 var projectRoot = path.resolve(__dirname, 'src/')
 var banner =
@@ -29,6 +30,7 @@ module.exports = {
       extractAlidayu,
       extractTmallwt,
       extractAlitx,
+      // new styleLintPlugin()
       // new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
