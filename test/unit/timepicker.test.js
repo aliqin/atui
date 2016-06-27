@@ -4,8 +4,8 @@ import TimePicker from '../../src/components/TimePicker/'
 new Vue({
   template: `
       <div>
-      <timePicker>
-      </timePicker>
+      <time-picker>
+      </time-picker>
       </div>
       `,
   components: { TimePicker }
