@@ -25,15 +25,15 @@ const iconConfig = {
     const onOk = parmas.onOk
     new Vue({
       template: `
-        <modal class="atui-modal atui-modal-${type}" :show="show" small :callback="callback">
+        <modal class="atui-modal atui-confirm atui-confirm-${type}" :show="show" small :callback="callback">
           <div v-if="title" slot="modal-header"></div>
           <div slot="modal-body" class="modal-body">
-            <icon :type="type" size="24" :color="color"></icon>
+            <icon :type="type" size="36" :color="color"></icon>
             <span class="atui-confirm-title">{{title}}</span>
             <div class="atui-confirm-content">{{{content}}}</div>
           </div>
           <div v-if="type!==\'help\'" slot="modal-footer" class="modal-footer">
-            <button type="button" class="btn btn-default" @click="this.show=false">知道了</button>
+            <button type="button" class="btn btn-default" @click="callback">知道了</button>
           </div>
         </modal>`,
       components: {
