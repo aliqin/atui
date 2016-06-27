@@ -99,7 +99,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  // delete module.exports.devtool
+  delete module.exports.devtool
   module.exports.entry = {
       atui: ['./src/index.js'],
       atuiWidget: ['./src/widgets/index.js'],
@@ -119,7 +119,7 @@ if (process.env.NODE_ENV === 'production') {
         }
     }),
     new webpack.optimize.UglifyJsPlugin({
-        sourceMap:false,
+        // sourceMap:false,
         compress: {
             warnings: true
         },
