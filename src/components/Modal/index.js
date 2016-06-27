@@ -25,15 +25,17 @@ const iconConfig = {
     const onOk = parmas.onOk
     new Vue({
       template: `
-      <modal class="atui-modal" :show="show" small backdrop="false" :callback="callback">
-        <div v-if="title" slot="modal-header"></div>
-        <div slot="modal-body" class="modal-body">
-          <icon :type="type" size="24" :color="color"></icon>{{title}}<br/>{{content}}
-        </div>
-        <div v-if="type!==\'help\'" slot="modal-footer" class="modal-footer">
-          <button type="button" class="btn btn-default" @click="this.show=false">知道了</button>
-        </div>
-      </modal>`,
+        <modal class="atui-modal atui-modal-${type}" :show="show" small :callback="callback">
+          <div v-if="title" slot="modal-header"></div>
+          <div slot="modal-body" class="modal-body">
+            <icon :type="type" size="24" :color="color"></icon>
+            <span class="atui-confirm-title">{{title}}</span>
+            <div class="atui-confirm-content">{{{content}}}</div>
+          </div>
+          <div v-if="type!==\'help\'" slot="modal-footer" class="modal-footer">
+            <button type="button" class="btn btn-default" @click="this.show=false">知道了</button>
+          </div>
+        </modal>`,
       components: {
         Modal: Modal,
         Icon: Icon
@@ -49,10 +51,12 @@ const iconConfig = {
         callback () {
           onOk && onOk()
           this.show = false
-          this.$destroy(true)
+          // this.$destroy(true)
+          // console.log(this.$el)
+          // document.body.removeChild(this.$el)
         }
       }
-    }).$mount().$appendTo('body')
+    }).$mount().$appendTo(document.body)
   }
 })
 export default Modal

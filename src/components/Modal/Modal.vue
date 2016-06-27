@@ -3,12 +3,12 @@
     @click="clickBack"
     >
     <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
-      :style="{width: width, height:height}" v-show="show" transition="fade">
+      :style="{width: width, height: height}" v-show="show" transition="fade">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
             <button type="button" class="close" @click="close"><span>&times;</span></button>
-            <h4 class="modal-title" >{{title}}</h4>
+            <h4 class="modal-title">{{title}}</h4>
           </div>
         </slot>
         <slot name="modal-body">
