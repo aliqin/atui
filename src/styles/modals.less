@@ -50,6 +50,7 @@
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
+  min-width: 400px;
 }
 .ie9 .modal-dialog{
   position: static;
@@ -126,20 +127,20 @@
   }
 }
 
-// Scale up the modal
-@media (min-width: @screen-sm-min) {
-  // Automatically set modal's width for larger viewports
-  .modal-dialog {
-    width: @modal-md;
-  }
-  .modal-content {
-    .box-shadow(0 5px 15px rgba(0,0,0,.5));
-  }
+// // Scale up the modal
+// @media (min-width: @screen-sm-min) {
+//   // Automatically set modal's width for larger viewports
+//   .modal-dialog {
+//     width: @modal-md;
+//   }
+//   .modal-content {
+//     .box-shadow(0 5px 15px rgba(0,0,0,.5));
+//   }
 
-  // Modal sizes
-  .modal-sm { width: @modal-sm; }
-}
+//   // Modal sizes
+//   .modal-sm { width: @modal-sm; }
+// }
 
-@media (min-width: @screen-md-min) {
-  .modal-lg { width: @modal-lg; }
-}
+// @media (min-width: @screen-md-min) {
+//   .modal-lg { width: @modal-lg; }
+// }
