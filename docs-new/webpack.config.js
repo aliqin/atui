@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var extractDocs = new ExtractTextPlugin('docs.css')
 var extractAlidayu = new ExtractTextPlugin('greater-blue.css')
 var extractTmallwt = new ExtractTextPlugin('tmall-red.css')
 var extractAlitx = new ExtractTextPlugin('tao-orange.css')
@@ -18,12 +19,11 @@ var banner =
   ' */'
 module.exports = {
     entry: {
-      'components-docs': ['./docs/components.js'],
-      'widgets-docs': ['./docs/widgets.js'],
-      'filters-docs': ['./docs/filters.js']
+      'app': ['./docs-new/main.js'],
+      'atui': ['./src/index.js']
     },
     output: {
-        path: './build',
+        path: '/build',
         publicPath: '/build/',
         filename: '[name].js'
     },
@@ -35,7 +35,10 @@ module.exports = {
     ],
     resolve: {
       root: path.resolve('./'),
-      extensions: ['', '.js', '.vue']
+      extensions: ['', '.js', '.vue'],
+      alias: {
+        'atui': path.resolve(__dirname, '../src')
+      }
     },
     resolveLoader: {
       root: path.join(__dirname, 'node_modules')
@@ -61,6 +64,9 @@ module.exports = {
             loader: 'babel'
         },{   test: /\.(png)$/,
             loader: 'url-loader?limit=100000'
+        },{
+            test: /docs-new\/style\/\.less$/,
+            loader: extractDocs.extract(['css','postcss','less'])
         },{
             test: /alidayu\.less$/,
             loader: extractAlidayu.extract(['css','postcss','less'])
@@ -94,5 +100,3 @@ module.exports = {
     },
     devtool: 'source-map'
 }
-
-

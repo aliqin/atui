@@ -8,5 +8,11 @@
 </div>
 </template>
 <script>
-
+import docsNav from './widget/docs-nav.vue'
+export default {
+  name: 'components',
+  components: {
+    docsNav
+  }
+}
 </script>
