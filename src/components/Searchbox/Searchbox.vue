@@ -44,7 +44,8 @@
     data () {
       return {
         iconColor: '#BFBFBF',
-        showPop: false
+        showPop: false,
+        isCheck: false
       }
     },
     computed: {
@@ -71,6 +72,13 @@
     beforeDestroy () {
       if (this._closeEvent) this._closeEvent.remove()
     },
+    watch: {
+      value (val) {
+        !this.isCheck && this.$dispatch('searchbox-value-change', val, this)
+
+        this.isCheck = false
+      }
+    },
     methods: {
       focusInput () {
         this.iconColor = '#00A0FF'
@@ -82,6 +90,7 @@
       },
       checkItem (index, val) {
         this.value = val
+        this.isCheck = true
         this.$dispatch('searchbox-value-check', this.searchList[index], this)
         this.blurInput()
       },
