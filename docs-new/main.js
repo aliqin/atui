@@ -3,13 +3,11 @@ var VueRouter = require('vue-router')
 var App = require('./app.vue')
 var routerMap = require('./router')
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
-Vue.config.debug = true;
-
-
+Vue.config.debug = true
 var router = new VueRouter()
 
 routerMap(router)
 
-router.start(App, 'app')
+router.start(App, '#app')

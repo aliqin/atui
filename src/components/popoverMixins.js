@@ -155,7 +155,7 @@ const PopoverMixin = {
     }
     if (this._clickEvent) this._clickEvent.remove()
     if (this.$els.popover) {
-      document.body.removeChild(this.$els.popover)
+      this.$els.popover.parentNode.removeChild(this.$els.popover)
     }
   }
 }

@@ -70,6 +70,7 @@
   },
   "scripts": {
     "docs": "webpack-dev-server --inline --host 0.0.0.0",
+    "docs-new": "webpack-dev-server --config docs-new/webpack.config.js --inline --host 0.0.0.0",
     "lint": "eslint --fix --ext .js,.vue src test/unit test/e2e",
     "debug": "webpack-dev-server --host 0.0.0.0 --port 9999 --config  webpack.debug.js",
     "deploy": "rm -rf build && webpack --progress --colors --display-chunks && node depoly.js",

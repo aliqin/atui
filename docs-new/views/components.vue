@@ -3,12 +3,16 @@
 </style>
 <template>
 <v-row>
-  <v-col span="4">col-lg-23</v-col>
-  <v-col span="20">1</v-col>
+  <v-col span="4">
+组件列表
+  </v-col>
+  <v-col span="20">
+    <router-view></router-view>
+  </v-col>
 </v-row>
 </template>
 <script>
-import { Layout } from atui
+import { Layout } from 'atui'
 export default {
   name: 'components',
   components: {
