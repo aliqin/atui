@@ -1781,6 +1781,23 @@ pre code {
     margin-left: 0%;
   }
 }
+.atui-table {
+  position: relative;
+}
+.atui-table .atui-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.atui-table.loading tbody {
+  opacity: .7;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+  pointer-events: none;
+}
 .atui-table table {
   width: 100%;
   border-collapse: collapse;
@@ -1848,23 +1865,6 @@ pre code {
 .atui-table .pagination {
   float: right;
   margin-top: 0;
-}
-.atui-table-container {
-  position: relative;
-}
-.atui-table-container-spin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-.atui-table-container.loading tbody {
-  opacity: .7;
-  -webkit-filter: blur(1px);
-          filter: blur(1px);
-  pointer-events: none;
 }
 .atui-table-selection-column {
   text-align: center;
