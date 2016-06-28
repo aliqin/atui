@@ -1,15 +1,15 @@
 <template>
-  <div :class="['atui-table-container','atui-table-'+size, {loading :loading}]">
+  <div :class="['atui-table','atui-table-'+size, {loading :loading}]">
     <spin size="sm" v-if="loading"></spin>
     <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
   </table> -->
-    <div :class="['atui-table-body',{'atui-fixed-header':fixedHeader}]">
-      <table class="atui-table">
+    <div :class="['atui-table-container',{'atui-fixed-header':fixedHeader}]">
+      <table>
         <colgroup>
           <col v-if="rowSelection"></col>
           <col v-for="column in columns" :width="column.width"></col>
         </colgroup>
-        <thead class="table-thead">
+        <thead>
           <tr>
             <th v-if="rowSelection" class="atui-table-selection-column">
               <input v-if="dataSource && dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"
@@ -18,12 +18,23 @@
             <th v-for="column in columns" :width="column.width">
               {{column['title']}}
               <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
-                <div data-toggle="dropdown">
+                <div data-toggle="dropdown" @click="filterOpened = true">
                   <icon type="filter" size="12"></icon>
                 </div>
-                <ul name="dropdown-menu" class="dropdown-menu">
-                  <li v-for="col in column.filters"><a href="javascript:void(0);" @click="onFilter(col.value, column)">{{col.text}}</a></li>
-                </ul>
+                <div name="dropdown-menu" v-show="filterOpened" transition="slide" class="dropdown-menu atui-table-filter-dropdown">
+                  <ul>
+                    <li v-for="filter in column.filters">
+                    <label>
+                      <input type="checkbox" :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
+                    </label>
+                    </li>
+                  </ul>
+                  <div class="atui-table-filter-dropdown-btns">
+                    <a class="atui-table-filter-dropdown-link confirm" @click="onFilter">确定</a>
+                    <a class="atui-table-filter-dropdown-link clear" @click="resetFilter(column.dataIndex)">重置</a>
+                  </div>
+                </div>
+
               </dropdown>
               <div v-if="dataSource && dataSource.length && column.sorter" class="table-sorter">
                 <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
@@ -32,7 +43,7 @@
             </th>
           </tr>
         </thead>
-        <tbody class="table-tbody">
+        <tbody>
           <tr v-if="!dataSource || !dataSource.length">
             <td colspan="10" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td>
           </tr>
@@ -96,13 +107,20 @@ export default {
   },
   data () {
     this.compileTbody()
+    const filters = {}
+    this.columns.forEach((item) => {
+      if (item.filters) {
+        // 如果有filter的情况，则把filter保存为一个空对象，filter时的chechbox需要用到双向绑定
+        filters[item.dataIndex] = []
+      }
+    })
     return {
       isCheckedAll: false,
       isDisabledAll: false,
       sorderOrder: [],
       checkedRows: [],
       filterOpened: false,
-      filters: null,
+      filters: filters,
       sorter: {}
     }
   },
@@ -136,7 +154,6 @@ export default {
       handler (data) {
         let me = this
         me.compileTbody()
-
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
           if (me.checkedValues) {
@@ -217,15 +234,17 @@ export default {
       me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
     },
     // filter时触发
-    onFilter (value, column) {
+    onFilter () {
       let me = this
       me.filterOpened = true
       setTimeout(() => {
         me.filterOpened = false
       }, 100)
-      me.filters = me.filters || {}
-      me.filters[column.dataIndex] = [value]
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
+    },
+    resetFilter (name) {
+      this.filters[name] = []
+      this.onFilter()
     },
     fixedHeaderAction () {
       if (this.fixedHeader) {

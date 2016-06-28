@@ -1,31 +1,9 @@
 
-.atui-table-container{
-  position: relative;
-  .atui-spin{
-    position: absolute;
-    top:50%;
-    left:50%;
-    z-index: 1;
-    transform:translate(-50%,-50%);
-  }
-}
-.atui-table-container.loading .atui-table-body{
-  opacity: .7;
-  -webkit-filter: blur(1px);
-  filter: blur(1px);
-  pointer-events: none;
-}
-.atui-table-body.atui-fixed-header{
-  height:260px;
-  overflow: auto;
-}
-.atui-table-selection-column{
-  text-align: center;
-  width: 60px;
-}
 .atui-table {
-  width: 100%;
-  border-collapse: collapse;
+  table{
+    width: 100%;
+    border-collapse: collapse;
+  }
   thead {
     background-color: #F7F7F7;
   }
@@ -54,7 +32,7 @@
         color:@primary-color;
       }
     }
-    .table-sorter{
+    .table-sorter {
       position: relative;
       display: inline-block;
       vertical-align: middle;
@@ -93,13 +71,74 @@
     margin-top: 0;
   }
 
-}
 
+  &-container{
+    position: relative;
+    &-spin{
+      position: absolute;
+      top:50%;
+      left:50%;
+      z-index: 1;
+      transform:translate(-50%,-50%);
+    }
+  }
 
-.atui-table-middle th, .atui-table-middle td, .atui-table-small th {
+  &-container.loading tbody{
+    opacity: .7;
+    filter: blur(1px);
+    pointer-events: none;
+  }
+
+  &-selection-column{
+    text-align: center;
+    width: 60px;
+  }
+
+  &-middle th, &-middle td, &-small th {
     padding: 10px 8px;
+  }
+
+  &-body.atui-fixed-header{
+    height: 260px;
+    overflow: auto;
+  }
+
+
+  &-small td{
+    padding: 6px 8px;
+  }
+
+  &-filter-dropdown{
+    margin-left: -8px;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0 1px 6px hsla(0,0%,39%,.2);
+    ul{
+      list-style: none;
+      min-width: 96px;
+      padding:0;
+    }
+    li{
+      padding: 5px 10px;
+      &:hover{
+        background-color: @tr-hover-color
+      }
+    }
+  }
+
+  &-filter-dropdown-btns {
+    overflow: hidden;
+    padding: 7px 15px;
+    border-top: 1px solid #e9e9e9;
+  }
+  &-filter-dropdown-link {
+    float: left;
+    &.clear{
+      float:right;
+    }
+  }
 }
 
-.atui-table-small td{
-    padding: 6px 8px;
-}
+
+
