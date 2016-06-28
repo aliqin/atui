@@ -1,5 +1,18 @@
 
 .atui-table {
+  position: relative;
+  .atui-spin{
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 1;
+    transform:translate(-50%,-50%);
+  }
+  &.loading tbody{
+    opacity: .7;
+    filter: blur(1px);
+    pointer-events: none;
+  }
   table{
     width: 100%;
     border-collapse: collapse;
@@ -69,24 +82,6 @@
   .pagination {
     float: right;
     margin-top: 0;
-  }
-
-
-  &-container{
-    position: relative;
-    &-spin{
-      position: absolute;
-      top:50%;
-      left:50%;
-      z-index: 1;
-      transform:translate(-50%,-50%);
-    }
-  }
-
-  &-container.loading tbody{
-    opacity: .7;
-    filter: blur(1px);
-    pointer-events: none;
   }
 
   &-selection-column{
