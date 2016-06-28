@@ -24,7 +24,6 @@ const columns = [{
       value: '胡',
     }],
     sorter:true,
-    onFilter: (value, record) => record.name.indexOf(value) === 0,
     width:150
   }, {
     title: '年龄',
@@ -205,7 +204,6 @@ const columns = [{
       value: '胡',
     }],
     sorter:true,
-    onFilter: (value, record) => record.name.indexOf(value) === 0,
     width:150
   }, {
     title: '年龄',
@@ -226,8 +224,7 @@ const columns = [{
       value: '西湖',
     }],
     filterMultiple: false,
-    width:250,
-    onFilter: (value, record) => record.address.indexOf(value) === 0
+    width:250
 
   },{
       title: '操作',
@@ -320,8 +317,7 @@ const columns = [{
       onTableChange(paging,filter,sorter) {
         console.log('table-change',paging,filter,sorter)
         let me = this
-        let data = []
-        this.gridData = this.gridData.reverse()
+        me.gridData = me.gridData.reverse()
       },
       changeLoading() {
         this.loading = !this.loading
