@@ -1,3 +1,4 @@
+<!--suppress ALL-->
 <template>
   <div :class="['atui-table','atui-table-'+size, {loading :loading}]">
     <spin size="sm" v-if="loading"></spin>

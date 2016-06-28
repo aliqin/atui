@@ -9,10 +9,6 @@ describe('组件库整体检查', () => {
     let component = atui[i]
     it(i, () => {
       expect(component).to.be.ok
-      // 如果是复合组件，比如Layout
-      if (!component['template']) {
-        console.log(Object.keys(component))
-      }
     })
   }
 })
