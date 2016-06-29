@@ -26,13 +26,13 @@
                   <ul>
                     <li v-for="filter in column.filters">
                     <label>
-                      <input type="checkbox" :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
+                      <input :type="column.filterMultiple === false ? 'radio' : 'checkbox' " :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
                     </label>
                     </li>
                   </ul>
                   <div class="atui-table-filter-dropdown-btns">
-                    <a class="atui-table-filter-dropdown-link confirm" @click="onFilter">确定</a>
-                    <a class="atui-table-filter-dropdown-link clear" @click="resetFilter(column.dataIndex)">重置</a>
+                    <a class="atui-table-filter-dropdown-link confirm" @click="onFilter(column)">确定</a>
+                    <a class="atui-table-filter-dropdown-link clear" @click="resetFilter(column)">重置</a>
                   </div>
                 </div>
 
@@ -235,16 +235,22 @@ export default {
       me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
     },
     // filter时触发
-    onFilter () {
+    onFilter (column) {
       let me = this
       me.filterOpened = true
       setTimeout(() => {
         me.filterOpened = false
       }, 100)
+      if (column.filterMultiple === false) {
+        /* vue的v-model会把radio的值转换成一个字符串，这里为了参数格式与checkbox相同
+        则再转换成数组 */
+        let value = me.filters[column.dataIndex]
+        me.filters[column.dataIndex] = [value]
+      }
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
     },
-    resetFilter (name) {
-      this.filters[name] = []
+    resetFilter (column) {
+      this.filters[column.dataIndex] = []
       this.onFilter()
     },
     fixedHeaderAction () {
