@@ -245,9 +245,7 @@ export default {
         /* vue的v-model会把radio的值转换成一个字符串，这里为了参数格式与checkbox相同
         则再转换成数组 */
         let value = me.filters[column.dataIndex]
-        if (value.length) {
-          me.filters[column.dataIndex] = [value]
-        }
+        me.filters[column.dataIndex] = [value]
       }
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
     },
