@@ -70,16 +70,17 @@
         setTimeout(function () {
           let ele = document.getElementById(self.preId)
           let style = window.getComputedStyle ? window.getComputedStyle(ele, '') : ele.currentStyle
-          let border = style.borderWidth.replace('px', '') - 0
+          let borderTopWidth = style.borderTopWidth.replace('px', '') - 0
+          let borderBottomWidth = style.borderBottomWidth.replace('px', '') - 0
           let paddingTop = style.paddingTop.replace('px', '') - 0
           let paddingBottom = style.paddingBottom.replace('px', '') - 0
           let lineHeight = style.lineHeight.replace('px', '') - 0
           if (self.maxRows) {
-            ele.style.maxHeight = self.maxRows * lineHeight + border + paddingTop + paddingBottom + 'px'
+            ele.style.maxHeight = self.maxRows * lineHeight + borderTopWidth + borderBottomWidth + paddingTop + paddingBottom + 'px'
           }
 
           if (self.minRows) {
-            ele.style.minHeight = self.minRows * lineHeight + border + paddingTop + paddingBottom + 'px'
+            ele.style.minHeight = self.minRows * lineHeight + borderTopWidth + borderBottomWidth + paddingTop + paddingBottom + 'px'
           }
         }, 0)
       }
