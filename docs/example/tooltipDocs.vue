@@ -84,7 +84,7 @@
             </tooltip>
           </td>
           <td>
-            <tooltip placement="bottomRight"
+            <tooltip v-ref:bottom-right placement="bottomRight"
                      content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
               <button class="btn btn-default ">下右</button>
             </tooltip>
@@ -92,7 +92,7 @@
           <td></td>
         </tr>
       </table>
-
+<button @click="del"></button>
 
       <h4>Triger</h4>
       <p>
@@ -200,6 +200,11 @@ content="Lorem ipsum dolor sit amet" placement="topLeft" trigger="focus">
   export default {
     components: {
       Tooltip
+    },
+    methods:{
+      del() {
+        this.$refs.bottomRight.$destroy()
+      }
     }
   }
 </script>
