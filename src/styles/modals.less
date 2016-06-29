@@ -22,12 +22,11 @@
 @modal-lg:                    900px;
 @modal-md:                    600px;
 @modal-sm:                    400px;
-// Kill the scroll on the body
+
 .modal-open {
   overflow: hidden;
 }
 
-// Container that the modal scrolls within
 .atui-modal {
   overflow: hidden;
   position: fixed;
@@ -39,7 +38,6 @@
   -webkit-overflow-scrolling: touch;
   background-color:rgba(0, 0, 0, 0.5);
   box-shadow:0px 2px 4px 0px rgba(0,0,0,0.10);
-
   outline: 0;
 }
 
@@ -55,62 +53,42 @@
   position: static;
   margin:50px auto;
 }
-// Actual modal
 .modal-content {
   background-color: @modal-content-bg;
   border: 1px solid @modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
   border: 1px solid @modal-content-border-color;
   border-radius: @border-radius-large;
   background-clip: padding-box;
-  // Remove focus outline from opened modal
   outline: 0;
 }
 
-
-// Modal header
-// Top section of the modal w/ title and dismiss
 .modal-header {
   padding: @modal-title-padding;
   border-bottom: 1px solid @modal-header-border-color;
   &:extend(.clearfix all);
 }
-// Close icon
 .modal-header .close {
   margin-top: -2px;
 }
 
-// Title text within header
 .modal-title {
   margin: 0;
   line-height: @modal-title-line-height;
 }
 
-// Modal body
-// Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   position: relative;
   padding: @modal-inner-padding;
+  word-wrap: break-word;
 }
 
-// Footer (for actions)
 .modal-footer {
   padding: @modal-inner-padding;
-  text-align: right; // right align buttons
-  // border-top: 1px solid @modal-footer-border-color;
-  &:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
-
-  // Properly space out buttons
+  text-align: right;
+  &:extend(.clearfix all);
   .btn + .btn {
     margin-left: 5px;
     margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
-  }
-  // but override that for button groups
-  .btn-group .btn + .btn {
-    margin-left: -1px;
-  }
-  // and override it for block buttons as well
-  .btn-block + .btn-block {
-    margin-left: 0;
   }
 }
 
@@ -130,17 +108,13 @@
   }
 }
 
-// Scale up the modal
 @media (min-width: @screen-sm-min) {
-  // Automatically set modal's width for larger viewports
   .modal-dialog {
     width: @modal-md;
   }
   .modal-content {
     .box-shadow(0 5px 15px rgba(0,0,0,.5));
   }
-
-  // Modal sizes
   .modal-sm { width: @modal-sm; }
 }
 

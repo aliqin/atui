@@ -241,17 +241,19 @@ export default {
       setTimeout(() => {
         me.filterOpened = false
       }, 100)
-      if (column.filterMultiple === false) {
+      if (column.hasOwnProperty('filterMultiple') && column.filterMultiple === false) {
         /* vue的v-model会把radio的值转换成一个字符串，这里为了参数格式与checkbox相同
         则再转换成数组 */
         let value = me.filters[column.dataIndex]
-        me.filters[column.dataIndex] = [value]
+        if (value.length) {
+          me.filters[column.dataIndex] = [value]
+        }
       }
       me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
     },
     resetFilter (column) {
       this.filters[column.dataIndex] = []
-      this.onFilter()
+      this.onFilter(column)
     },
     fixedHeaderAction () {
       if (this.fixedHeader) {
