@@ -68,13 +68,13 @@ module.exports = {
         },{   test: /\.(png)$/,
             loader: 'url-loader?limit=100000'
         },{
-            test: /alidayu\.less$/,
+            test: /greater-blue\.less$/,
             loader: extractAlidayu.extract(['css','postcss','less'])
         },{
-            test: /tmallwt\.less$/,
+            test: /tmall-red\.less$/,
             loader: extractTmallwt.extract(['css','postcss','less'])
         },{
-            test: /alitx\.less$/,
+            test: /tao-orange\.less$/,
             loader: extractAlitx.extract(['css','postcss','less'])
         }],
         noParse:[/addr.js/,/^vue$/]
