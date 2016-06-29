@@ -26,9 +26,26 @@
     <div>
       <v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
     </div>
+    <h4>高度自适应的文本域</h4>
+    <div>
+      <v-textarea placeholder="高度无限增大" autosize></v-textarea>
+    </div>
+    <div>
+      <v-textarea placeholder="有最大高度" autosize max-rows="10"></v-textarea>
+    </div>
+    <div>
+      <v-textarea placeholder="有最小高度" autosize min-rows="5"></v-textarea>
+    </div>
+    <div>
+      <v-textarea placeholder="有最大和最小高度" autosize min-rows="5" max-rows="10"></v-textarea>
+    </div>
 <pre><code class="language-markup"><script type="language-mark-up">
 <v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
 <v-textarea placeholder="请输入描述信息" :words-count="true" count-tips="您输入的字数是："></v-textarea>
+<v-textarea placeholder="高度无限增大" autosize></v-textarea>
+<v-textarea placeholder="有最大高度" autosize max-rows="10"></v-textarea>
+<v-textarea placeholder="有最小高度" autosize min-rows="5"></v-textarea>
+<v-textarea placeholder="有最大和最小高度" autosize min-rows="5" max-rows="10"></v-textarea>
 </script></code></pre>
     <h4>参数</h4>
     <table class="atui-table table-bordered">

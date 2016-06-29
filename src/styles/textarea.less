@@ -21,8 +21,16 @@
 }
 
 .at-textarea {
+  position:relative;
   display: inline-block;
   width: 100%;
+
+  pre{
+    display:block;
+    margin:0;
+    visibility:hidden;
+    overflow:hidden;
+  }
 }
 
 .textarea {
@@ -36,6 +44,14 @@
   border: 1px solid #bfbfbf;
   border-radius: 4px;
   outline: none;
+
+  &.autosize {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    min-height:auto;
+  }
 
   &:hover {
     border-color: #999;
