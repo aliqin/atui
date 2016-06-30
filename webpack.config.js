@@ -13,7 +13,7 @@ var git = require('git-rev-sync')
 var version = git.branch().replace('daily/','')
 
 var banner =
-  '/*!\n' +
+  '\n/*!\n' +
   ' * atui v' + version + '\n' +
   ' * (c) ' + new Date().getFullYear() + ' alibaba\n' +
   ' * Released under the MIT License.\n' +
