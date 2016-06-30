@@ -19,86 +19,86 @@ var banner =
   ' * Released under the MIT License.\n' +
   ' */'
 module.exports = {
-    entry: {
-      'components-docs': ['./docs/components.js'],
-      'widgets-docs': ['./docs/widgets.js'],
-      'filters-docs': ['./docs/filters.js']
-    },
-    output: {
-        path: './build',
-        publicPath: '/build/',
-        filename: '[name].js'
-    },
-    plugins: [
-      extractAlidayu,
-      extractTmallwt,
-      extractAlitx,
-      // new styleLintPlugin()
-      // new webpack.HotModuleReplacementPlugin()
-    ],
-    resolve: {
-      root: path.resolve('./'),
-      extensions: ['', '.js', '.vue'],
-      alias: {
-        'src': path.resolve(__dirname, './src')
-      }
-    },
-    resolveLoader: {
-      root: path.join(__dirname, 'node_modules')
-    },
-    module: {
-        preLoaders: [{
+  entry: {
+    'components-docs': ['./docs/components.js'],
+    'widgets-docs': ['./docs/widgets.js'],
+    'filters-docs': ['./docs/filters.js']
+  },
+  output: {
+      path: './build',
+      publicPath: '/build/',
+      filename: '[name].js'
+  },
+  plugins: [
+    extractAlidayu,
+    extractTmallwt,
+    extractAlitx,
+    // new styleLintPlugin()
+    // new webpack.HotModuleReplacementPlugin()
+  ],
+  resolve: {
+    root: path.resolve('./'),
+    extensions: ['', '.js', '.vue'],
+    alias: {
+      'src': path.resolve(__dirname, './src')
+    }
+  },
+  resolveLoader: {
+    root: path.join(__dirname, 'node_modules')
+  },
+  module: {
+      preLoaders: [{
+        test: /\.vue$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      },{
+        test: /\.js$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      }],
+      loaders: [{
           test: /\.vue$/,
-          loader: 'eslint',
-          include: projectRoot,
-          exclude: /node_modules/
-        },{
+          loader: 'vue'
+      },{
           test: /\.js$/,
-          loader: 'eslint',
-          include: projectRoot,
-          exclude: /node_modules/
-        }],
-        loaders: [{
-            test: /\.vue$/,
-            loader: 'vue'
-        },{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel'
-        },{   test: /\.(png)$/,
-            loader: 'url-loader?limit=100000'
-        },{
-            test: /greater-blue\.less$/,
-            loader: extractAlidayu.extract(['css','postcss','less'])
-        },{
-            test: /tmall-red\.less$/,
-            loader: extractTmallwt.extract(['css','postcss','less'])
-        },{
-            test: /tao-orange\.less$/,
-            loader: extractAlitx.extract(['css','postcss','less'])
-        }],
-        noParse:[/addr.js/,/^vue$/]
-    },
-    vue: {
-        loaders: {
-            less: ExtractTextPlugin.extract(
-                    // activate source maps via loader query
-                    'css?sourceMap!' +
-                    'less?sourceMap'
-                    ),
-        }
-    },
-    babel: {
-        presets: ['es2015'],
-        plugins: ['transform-runtime']
-    },
-    postcss: function () {
-        return {
-            defaults: [precss, autoprefixer],
-            cleaner:  [autoprefixer({ browsers: ['ie >= 9'] })]
-        }
-    },
-    devtool: 'source-map'
+          exclude: /node_modules/,
+          loader: 'babel'
+      },{   test: /\.(png)$/,
+          loader: 'url-loader?limit=100000'
+      },{
+          test: /greater-blue\.less$/,
+          loader: extractAlidayu.extract(['css','postcss','less'])
+      },{
+          test: /tmall-red\.less$/,
+          loader: extractTmallwt.extract(['css','postcss','less'])
+      },{
+          test: /tao-orange\.less$/,
+          loader: extractAlitx.extract(['css','postcss','less'])
+      }],
+      noParse:[/addr.js/,/^vue$/]
+  },
+  vue: {
+      loaders: {
+          less: ExtractTextPlugin.extract(
+                  // activate source maps via loader query
+                  'css?sourceMap!' +
+                  'less?sourceMap'
+                  ),
+      }
+  },
+  babel: {
+      presets: ['es2015'],
+      plugins: ['transform-runtime']
+  },
+  postcss: function () {
+      return {
+          defaults: [precss, autoprefixer],
+          cleaner:  [autoprefixer({ browsers: ['ie >= 9'] })]
+      }
+  },
+  devtool: 'source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
