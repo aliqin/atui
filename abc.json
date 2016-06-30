@@ -15,6 +15,7 @@
       "PhantomJS"
     ],
     "autoWatch": false,
-    "vue": true
+    "vue": true,
+    "testdir": "src"
   }
 }

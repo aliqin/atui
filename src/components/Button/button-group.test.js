@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Button from '../../src/components/Button/'
+import Button from '../Button/'
 let Group = Button.Group
 let vm = new Vue({
   template: `

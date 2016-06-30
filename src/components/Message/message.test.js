@@ -1,6 +1,7 @@
 import Vue from 'vue'
-import Message from '../../src/components/Message/'
+import Message from '../Message/'
 
+// 目前message测试用例,拉底了Coverage summary的统计数据
 let vm = new Vue({
   data () {
     return {

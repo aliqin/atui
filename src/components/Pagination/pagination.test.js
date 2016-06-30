@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Pagination from '../../src/components/Pagination/'
+import Pagination from '../Pagination/'
 
 
 let vm = new Vue({

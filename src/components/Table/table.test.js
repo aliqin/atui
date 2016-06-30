@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Grid from '../../src/components/Table/'
+import Grid from '../Table/'
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
@@ -113,6 +113,8 @@ let vm = new Vue({
     Grid
   }
 }).$mount()
+
+// table组件测试用例,拉低了coverage summary统计数据
 describe('Table', () => {
   it('Table组件基础渲染', () => {
     expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(6)

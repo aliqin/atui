@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Searchbox from '../../src/components/Searchbox/'
+import Searchbox from '../Searchbox/'
 
 let vm = new Vue({
   template: `
