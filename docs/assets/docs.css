@@ -1,6 +1,7 @@
 
 body {
   position: relative; /* For scrollspy */
+  font-size: 12px;
 }
 
 /*body {
