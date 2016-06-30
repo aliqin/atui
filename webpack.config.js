@@ -69,13 +69,13 @@ module.exports = {
             loader: 'url-loader?limit=100000'
         },{
             test: /greater-blue\.less$/,
-            loader: extractAlidayu.extract(['css','postcss','less'])
+            loader: extractAlidayu.extract(['css','postcss','csslint?failOnWarning=false','less'])
         },{
             test: /tmall-red\.less$/,
-            loader: extractTmallwt.extract(['css','postcss','less'])
+            loader: extractTmallwt.extract(['css','postcss','csslint?failOnWarning=false','less'])
         },{
             test: /tao-orange\.less$/,
-            loader: extractAlitx.extract(['css','postcss','less'])
+            loader: extractAlitx.extract(['css','postcss','csslint?failOnWarning=false','less'])
         }],
         noParse:[/addr.js/,/^vue$/]
     },
