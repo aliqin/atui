@@ -1,7 +1,7 @@
 <template>
   <div class="atui-time-picker">
     <span class="atui-time-picker-toggler">
-      <v-input v-el:picker-toggler readonly @click="toggleMenus" :value="showValue" :placeholder="placeholder"></v-input>
+      <v-input v-el:picker-toggler readonly @click="toggleMenus" :value="value" :placeholder="placeholder"></v-input>
     </span>
     <div v-el:picker-menus class="atui-time-picker-menus" v-show="show" transition="slide">
       <div class="time-picker-panel">
@@ -97,6 +97,11 @@
       value (val) {
         if (val) {
           this.placeholder = ''
+          const time = new Date()
+          time.setHours(this.hour)
+          time.setMinutes(this.minute)
+          time.setSeconds(this.second)
+          this.$dispatch('change', time, this.value)
         } else {
           this.placeholder = this.originPlaceHolder
         }
@@ -111,17 +116,6 @@
         this.selectChoosed('s', index)
       }
     },
-    computed: {
-      showValue () {
-        const showValue = this.leftPad(this.hour) + ':' + this.leftPad(this.minute) + ':' + this.leftPad(this.second)
-        const time = new Date()
-        time.setHours(this.hour)
-        time.setMinutes(this.minute)
-        time.setSeconds(this.second)
-        this.$dispatch('change', time, showValue)
-        return showValue
-      }
-    },
     created () {
       if (this.value && this.value.constructor === Date) {
         this.hour = this.value.getHours()
@@ -132,8 +126,9 @@
         this.hour = +arr[0]
         this.minute = +arr[1]
         this.second = +arr[2]
+      } else {
+        this.value = this.leftPad(this.hour) + ':' + this.leftPad(this.minute) + ':' + this.leftPad(this.second)
       }
-      // this.originPlaceHolder = this.placeholder
     },
     attached () {
       document.body.appendChild(this.$els.pickerMenus)
@@ -142,7 +137,6 @@
       let me = this
       let menus = me.$els.pickerMenus
       let toggler = me.$els.pickerToggler
-
       me._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!menus.contains(e.target) && !toggler.contains(e.target)) {
           me.show = false
@@ -175,6 +169,7 @@
         if (target) {
           scrollTo(target.parentNode, index * target.children[0].offsetHeight, duration || 100)
         }
+        this.value = this.leftPad(this.hour) + ':' + this.leftPad(this.minute) + ':' + this.leftPad(this.second)
       },
       chooseHour (index) {
         this.hour = index
