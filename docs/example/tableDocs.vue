@@ -9,6 +9,12 @@
     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
     <input type="button" @click="emptyData" value="清空数据"/>
     <input type="button" @click="changeSize" value="改变大小({{size}})"/>
+
+    <modal title="Fade Modal" :show.sync="show" effect="fade" width="800px">
+        <div slot="modal-body" class="modal-body">
+          <v-textarea  :content.sync='textarea'></v-textarea>
+        </div>
+      </modal>
     <pre><code class="language-markup"><script type="language-mark-up">
 <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
 
@@ -189,7 +195,7 @@ export default {
 </template>
 
 <script>
-  import {Table,Icon,Layout} from 'src/'
+  import {Table,Icon,Layout,Tooltip, Modal,Textarea as vTextarea} from 'src/'
   const columns = [{
     title: '姓名',
     dataIndex: 'name',
@@ -207,7 +213,10 @@ export default {
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
     render(text, record, index) {
-      return '<input v-model="gridData['+ index +'].age"/>'
+      return '<tooltip content="talk is cheap show me the code" placement="topLeft">'+
+                '<div>'+ record.name +'</div>'
+                // '<input v-if="gridData['+ index +']" v-model="gridData['+ index +'].age"/>'+
+              '</tooltip>'
     },
     width:250
   }, {
@@ -228,7 +237,9 @@ export default {
       key: 'operation',
       render(text, record) {
         if(record) {
-          return '<icon type="info"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
+          return '<tooltip content="talk is cheap show me the code" placement="topLeft">'+
+                '<icon type="info"></icon><a @click="this.show=true" target="_blank">详情</a>'+
+              '</tooltip>'
         }
       }
     }
@@ -287,7 +298,10 @@ export default {
     components: {
       Grid:Table,
       Icon,
-      Row:Layout.Row
+      Row:Layout.Row,
+      Tooltip,
+      Modal,
+      vTextarea
     },
     data() {
       return {
@@ -295,6 +309,8 @@ export default {
         fixedHeader:false,
         loading:false,
         gridData:data,
+        show:false,
+        textarea:'',
         gridColumns: columns,
         rowSelection:rowSelection
       }
