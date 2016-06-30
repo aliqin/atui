@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Dropdown from '../../src/components/Dropdown/'
+import Dropdown from '../Dropdown/'
 
 
 let vm = new Vue({

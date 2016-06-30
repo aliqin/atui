@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Modal from '../../src/components/Modal/'
+import Modal from '../Modal/'
 
 describe('Modal', () => {
   let vm = new Vue({

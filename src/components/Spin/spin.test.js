@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Spin from '../../src/components/Spin/'
+import Spin from '../Spin/'
 
 let vm = new Vue({
   template: `

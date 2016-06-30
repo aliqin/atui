@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Cascader from '../../src/components/Cascader/'
+import Cascader from '../Cascader/'
 const options = [{
   'value': '2016',
   'label': '2016年',
