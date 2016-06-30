@@ -25,9 +25,9 @@ module.exports = {
     'filters-docs': ['./docs/filters.js']
   },
   output: {
-      path: './build',
-      publicPath: '/build/',
-      filename: '[name].js'
+    path: './build',
+    publicPath: '/build/',
+    filename: '[name].js'
   },
   plugins: [
     extractAlidayu,
@@ -47,56 +47,56 @@ module.exports = {
     root: path.join(__dirname, 'node_modules')
   },
   module: {
-      preLoaders: [{
+    preLoaders: [{
+      test: /\.vue$/,
+      loader: 'eslint',
+      include: projectRoot,
+      exclude: /node_modules/
+    },{
+      test: /\.js$/,
+      loader: 'eslint',
+      include: projectRoot,
+      exclude: /node_modules/
+    }],
+    loaders: [{
         test: /\.vue$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
-      },{
+        loader: 'vue'
+    },{
         test: /\.js$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
-      }],
-      loaders: [{
-          test: /\.vue$/,
-          loader: 'vue'
-      },{
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'babel'
-      },{   test: /\.(png)$/,
-          loader: 'url-loader?limit=100000'
-      },{
-          test: /greater-blue\.less$/,
-          loader: extractAlidayu.extract(['css','postcss','less'])
-      },{
-          test: /tmall-red\.less$/,
-          loader: extractTmallwt.extract(['css','postcss','less'])
-      },{
-          test: /tao-orange\.less$/,
-          loader: extractAlitx.extract(['css','postcss','less'])
-      }],
-      noParse:[/addr.js/,/^vue$/]
+        exclude: /node_modules/,
+        loader: 'babel'
+    },{   test: /\.(png)$/,
+        loader: 'url-loader?limit=100000'
+    },{
+        test: /greater-blue\.less$/,
+        loader: extractAlidayu.extract(['css','postcss','less'])
+    },{
+        test: /tmall-red\.less$/,
+        loader: extractTmallwt.extract(['css','postcss','less'])
+    },{
+        test: /tao-orange\.less$/,
+        loader: extractAlitx.extract(['css','postcss','less'])
+    }],
+    noParse:[/addr.js/,/^vue$/]
   },
   vue: {
-      loaders: {
-          less: ExtractTextPlugin.extract(
-                  // activate source maps via loader query
-                  'css?sourceMap!' +
-                  'less?sourceMap'
-                  ),
-      }
+    loaders: {
+      less: ExtractTextPlugin.extract(
+              // activate source maps via loader query
+              'css?sourceMap!' +
+              'less?sourceMap'
+              ),
+    }
   },
   babel: {
-      presets: ['es2015'],
-      plugins: ['transform-runtime']
+    presets: ['es2015'],
+    plugins: ['transform-runtime']
   },
   postcss: function () {
-      return {
-          defaults: [precss, autoprefixer],
-          cleaner:  [autoprefixer({ browsers: ['ie >= 9'] })]
-      }
+    return {
+      defaults: [precss, autoprefixer],
+      cleaner:  [autoprefixer({ browsers: ['ie >= 9'] })]
+    }
   },
   devtool: 'source-map'
 }
