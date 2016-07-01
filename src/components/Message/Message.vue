@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="show"
-    :class="{
+    :class="[{
       'atui-message':		true,
       'atui-message-success':(type == 'success'),
       'atui-message-warning':(type == 'warning'),
@@ -11,7 +11,8 @@
       'top': 			(placement === 'top'),
       'top-right': 	(placement === 'top-right'),
       'center':      (placement === 'center'),
-    }"
+      'arrow': !!arrow
+    },!!arrow ? 'arrow-' + arrow : '']"
     :transition="transition"
     :style="{width:width}"
     role="alert">
@@ -57,7 +58,8 @@ export default {
     transition: {
       type: String,
       default: 'fade'
-    }
+    },
+    arrow: String
   },
   components: {
     Icon
