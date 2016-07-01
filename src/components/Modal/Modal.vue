@@ -2,8 +2,8 @@
   <div role="dialog" class="atui-modal" v-show="show" transition="fade"
     @click="clickBack"
     >
-    <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
-      :style="{width: width, height: height}" v-show="show" transition="fade">
+    <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small, width: width}" role="document"
+      v-show="show" transition="fade">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
@@ -11,9 +11,11 @@
             <h4 class="modal-title">{{title}}</h4>
           </div>
         </slot>
-        <slot name="modal-body">
-          <div class="modal-body"></div>
-        </slot>
+        <div class="modal-body" :style="{height: height}">
+          <slot name="modal-body">
+
+          </slot>
+        </div>
         <slot name="modal-footer">
           <div class="modal-footer">
             <button type="button" class="btn btn-default" @click="callback">确定</button>
