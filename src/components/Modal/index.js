@@ -27,7 +27,7 @@ const iconConfig = {
       template: `
         <modal class="atui-modal atui-confirm atui-confirm-${type}" :show="show" small :callback="callback">
           <div v-if="title" slot="modal-header"></div>
-          <div slot="modal-body" class="modal-body">
+          <div slot="modal-body">
             <icon :type="type" size="36" :color="color"></icon>
             <span class="atui-confirm-title">{{title}}</span>
             <div class="atui-confirm-content">{{{content}}}</div>
