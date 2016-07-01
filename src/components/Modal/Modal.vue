@@ -11,9 +11,8 @@
             <h4 class="modal-title">{{title}}</h4>
           </div>
         </slot>
-        <div class="modal-body" :style="{height: height}">
+        <div class="modal-body" :style="{height: height,maxHeight: '500px'}">
           <slot name="modal-body">
-
           </slot>
         </div>
         <slot name="modal-footer">
