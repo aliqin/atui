@@ -21,19 +21,19 @@
         点击在顶部显示或隐藏
       </button>
       <hr>
-      <message type="success" >
+      <message type="success" arrow="left">
         成功提示的文案
       </message>
 
-      <message type="info" >
+      <message type="info" arrow="right">
         消息提示的文案
       </message>
 
-      <message type="error" dismissable>
+      <message type="error" dismissable arrow="bottom">
         错误提示的文案,可关闭
       </message>
 
-      <message type="warning" dismissable>
+      <message type="warning" dismissable arrow="top">
         警告提示的文案,可关闭
       </message>
 
@@ -91,19 +91,19 @@
   点击在顶部显示或隐藏
 </button>
 <hr>
-<message type="success" >
+<message type="success" arrow="left">
   成功提示的文案
 </message>
 
-<message type="info" >
+<message type="info" arrow="right">
   消息提示的文案
 </message>
 
-<message type="error" dismissable>
+<message type="error" dismissable arrow="bottom">
   错误提示的文案,可关闭
 </message>
 
-<message type="warning" dismissable>
+<message type="warning" dismissable arrow="top">
   警告提示的文案,可关闭
 </message>
 
@@ -204,9 +204,19 @@ import {Message} from '@ali/atui'
           <td>自动关闭时间. 设置为 <code>0</code>或负数将不自动关闭.</td>
         </tr>
         <tr>
+          <td>height</td>
+          <td><code>String</code></td>
+          <td>高度</td>
+        </tr>
+        <tr>
           <td>width</td>
           <td><code>String</code></td>
-          <td></td>
+          <td>宽度</td>
+        </tr>
+        <tr>
+          <td>arrow</td>
+          <td><code>String</code>one of <code>top、left、right、bottom</code></td>
+          <td>宽度</td>
         </tr>
         <tr>
           <td>placement</td>
