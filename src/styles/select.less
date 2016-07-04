@@ -2,29 +2,29 @@
   position: relative;
   display: inline-block;
 
-  &.disabled{
+  &.disabled {
     background: #f2f2f2;
     color: #ccc;
     border-color: #e6e6e6;
     cursor: not-allowed;
   }
 
-  .select-toggle{
+  .select-toggle {
     min-width: 100px;
-    cursor:pointer;
+    cursor: pointer;
     text-align: left;
-    background:#fff;
-    border:1px solid #d9d9d9;
-    border-radius:4px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
     font-size: 12px;
-    padding:0 10px;
-    min-height:30px;
+    padding: 0 10px;
+    min-height: 30px;
     line-height: 30px;
     overflow: hidden;
 
-    &:focus{
-      border:1px solid @primary-color;
-      box-shadow:0px 0px 0px 2px fade(@primary-color, 30%);
+    &:focus {
+      border: 1px solid @primary-color;
+      box-shadow: 0px 0px 0px 2px fade(@primary-color, 30%);
       outline: none;
     }
 
@@ -37,9 +37,9 @@
       height: 28px;
       line-height: 28px;
     }
-    .atui-tag{
-      margin:-4px 5px 0;
-      border-radius:4px;
+    .atui-tag {
+      margin: -4px 5px 0;
+      border-radius: 4px;
       line-height: 1.5;
     }
 
@@ -47,8 +47,8 @@
   .multiple .select-toggle {
     cursor: default;
   }
-  .select-placeholder{
-    color:#ccc;
+  .select-placeholder {
+    color: #ccc;
     position: absolute;
     top: 50%;
     left: 9px;
@@ -58,25 +58,25 @@
     margin-top: -10px;
     cursor: default;
   }
-  .select-search-field{
-    width:10px;
-    height:20px;
+  .select-search-field {
+    width: 10px;
+    height: 20px;
     outline: 0;
-    border:none;
+    border: 0;
   }
-  .tags:focus{
-    border-color:none;
-    box-shadow:none;
+  .tags:focus {
+    border-color: transparent;
+    box-shadow: none;
   }
 }
 
 .caret {
   display: inline-block;
   position: absolute;
-  top:50%;
+  top: 50%;
   // transform:translateY(-50%);
-  margin-top:-15px;
-  right:10px;
+  margin-top: -15px;
+  right: 10px;
 
   .iconfont {
     color: #bfbfbf;
