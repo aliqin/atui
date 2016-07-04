@@ -1,52 +1,87 @@
-.vue-menu{
-	background:#36394d;
-	width:200px;
-	padding:0;
-}
-.vue-menu li,.vue-sub-menu-title{
-	padding:0;
-	padding-left: 36px;
-	list-style: none;
-	box-shadow:inset 0px -1px 0px 0px #474b66;
-	color:#c8c8c8;
-	line-height: 50px;
-}
-.vue-menu li:hover{
-	background:#242633;
-	color:#66c6ff;
-}
-.vue-sub-menu{
-	padding:0;
-	li{
-		padding-left: 46px;
-	}
-}
-.vue-sub-menu-title {
-	position: relative;
+@menu-prefix-cls: atui-menu;
+
+.@{menu-prefix-cls}{
+	outline: none;
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  z-index: @zindex-dropdown;
+  background: #fff;
+  line-height: 46px;
+  
+  &-item-group-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-item-group-title {
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 8px 16px;
+  }
+
+  &-item,
+  &-submenu,
+  &-submenu-title {
+    margin: 0;
+    padding: 0 20px;
+    position: relative;
     display: block;
     white-space: nowrap;
-	cursor: pointer;
-	&::after{
-		font-family: "anticon" !important;
-		font-style: normal;
-		vertical-align: baseline;
-		text-align: center;
-		text-transform: none;
-		text-rendering: auto;
-		position: absolute;
-		-webkit-transition: -webkit-transform .3s ease;
-		transition: -webkit-transform .3s ease;
-		transition: transform .3s ease;
-		transition: transform .3s ease, -webkit-transform .3s ease;
-		content: "\E603";
-		right: 16px;
-		top: 0;
-		display: inline-block;
-		font-size: 12px;
-		font-size: 8px \9;
-		-webkit-transform: scale(.66666667) rotate(0deg);
-		transform: scale(.66666667) rotate(0deg);
-		-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
-		zoom: 1;
-	}
+    transform: translateZ(0);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &-submenu &-sub {
+    cursor: initial;
+  }
+
+  &-item > a {
+    display: block;
+    &:before {
+      position: absolute;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+    }
+  }
+
+  &-item:hover,
+  &-item-active,
+  &-submenu-active,
+  &-submenu-title:hover {
+    background-color: tint(@primary-color, 90%);
+  }
+
+  &-horizontal &-item,
+  &-horizontal &-submenu {
+    margin-top: -1px;
+  }
+
+  &-horizontal > &-item:hover,
+  &-horizontal > &-item-active,
+  &-horizontal > &-submenu &-submenu-title:hover {
+    background-color: transparent;
+  }
+
+  &-item-selected {
+    color: @primary-color;
+    // fix chrome render bug
+    transform: translateZ(0);
+    > a,
+    > a:hover {
+      color: @primary-color;
+    }
+  }
+  &-horizontal li{
+    float:left;
+  }
 }
+

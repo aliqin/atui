@@ -1,9 +1,5 @@
 <template>
-<li
-  role="menuitem"
-  :style="style"
-  :title="title"
-  @click="onSelect">
+<li role="menuitem" :class="['atui-menu-item',{'atui-menu-item-disabled':disabled}]">
   <slot></slot>
 </li>
 </template>
@@ -11,17 +7,7 @@
 <script>
 export default {
   props: {
-    active: Boolean,
-    selected: Boolean,
-    disabled: Boolean,
-    title: String,
-    onSelect: Function
-  },
-  computed: {
-
-  },
-  methods: {
-
+    disabled: Boolean
   }
 }
 </script>
