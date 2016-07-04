@@ -1,15 +1,16 @@
-.atui-time-picker{
+.atui-time-picker {
   position: relative;
   display: inline-block;
-  &-toggler{
+  &-toggler {
     position: relative;
     display: inline-block;
-    width:138px;
+    width: 138px;
     cursor: pointer;
     vertical-align: middle;
   }
 }
-.atui-time-picker-menus{
+
+.atui-time-picker-menus {
   z-index: 10010;
   position: absolute;
   outline: none;
@@ -19,13 +20,14 @@
   text-align: left;
   background-color: #fff;
   border-radius: 6px;
-  box-shadow: 0 1px 6px hsla(0,0%,39%,.2);
+  box-shadow: 0 1px 6px hsla(0, 0%, 39%, .2);
   background-clip: padding-box;
   border: 1px solid #ccc;
   line-height: 1.5;
   overflow: hidden;
 }
-.atui-time-picker-menus .time-picker-panel{
+
+.atui-time-picker-menus .time-picker-panel {
   float: left;
   font-size: 12px;
   border: 1px solid #e9e9e9;
@@ -35,14 +37,15 @@
   width: 56px;
   overflow: hidden;
   position: relative;
-  &:hover{
+  &:hover {
     overflow-y: auto;
   }
-  &:last-child{
+  &:last-child {
     border-right: 0;
   }
 }
-.atui-time-picker-menus .time-picker-panel > ul{
+
+.atui-time-picker-menus .time-picker-panel > ul {
   list-style: none;
   box-sizing: border-box;
   margin: 0;
@@ -54,26 +57,24 @@
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
-    height:24px;
+    height: 24px;
     line-height: 24px;
-    user-select:none;
+    user-select: none;
     box-sizing: content-box;
     transition: all .3s ease;
-    width:100%;
-    &:hover{
+    width: 100%;
+    &:hover {
       background: #eaf8fe;
     }
-    &.selected,&.selected:hover{
+    &.selected, &.selected:hover {
       background: #d5f1fd;
     }
     &.disabled {
       cursor: not-allowed;
       color: #ccc;
     }
-    &.disabled:hover{
-      background: transparent
+    &.disabled:hover {
+      background: transparent;
     }
   }
 }
-
-

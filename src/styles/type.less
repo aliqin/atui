@@ -4,25 +4,25 @@
 //** Horizontal offset for forms and lists.
 @component-offset-horizontal: 180px;
 //** Text muted color
-@text-muted:                  @gray-light;
+@text-muted: @gray-light;
 //** Abbreviations and acronyms border color
-@abbr-border-color:           @gray-light;
+@abbr-border-color: @gray-light;
 //** Headings small color
-@headings-small-color:        @gray-light;
+@headings-small-color: @gray-light;
 //** Blockquote small color
-@blockquote-small-color:      @gray-light;
+@blockquote-small-color: @gray-light;
 //** Blockquote font size
-@blockquote-font-size:        (@font-size-base * 1.25);
+@blockquote-font-size: (@font-size-base * 1.25);
 //** Blockquote border color
-@blockquote-border-color:     @gray-lighter;
+@blockquote-border-color: @gray-lighter;
 //** Page header border color
-@page-header-border-color:    @gray-lighter;
+@page-header-border-color: @gray-lighter;
 //** Width of horizontal description list titles
-@dl-horizontal-offset:        @component-offset-horizontal;
+@dl-horizontal-offset: @component-offset-horizontal;
 //** Point at which .dl-horizontal becomes horizontal
-@dl-horizontal-breakpoint:    @grid-float-breakpoint;
+@dl-horizontal-breakpoint: @grid-float-breakpoint;
 //** Horizontal line color.
-@hr-border:                   @gray-lighter;
+@hr-border: @gray-lighter;
 
 // Headings
 // -------------------------
@@ -65,7 +65,6 @@
 //   }
 // }
 
-
 // Body text
 // -------------------------
 
@@ -84,7 +83,6 @@ p {
   }
 }
 
-
 // Emphasis & misc
 // -------------------------
 
@@ -101,33 +99,60 @@ mark,
 }
 
 // Alignment
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-.text-justify        { text-align: justify; }
-.text-nowrap         { white-space: nowrap; }
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
 
 // Transformation
-.text-lowercase      { text-transform: lowercase; }
-.text-uppercase      { text-transform: uppercase; }
-.text-capitalize     { text-transform: capitalize; }
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
 
 // Contextual colors
 .text-muted {
   color: @text-muted;
 }
+
 .text-primary {
   .text-emphasis-variant(@brand-primary);
 }
+
 .text-success {
   .text-emphasis-variant(@state-success-text);
 }
+
 .text-info {
   .text-emphasis-variant(@state-info-text);
 }
+
 .text-warning {
   .text-emphasis-variant(@state-warning-text);
 }
+
 .text-danger {
   .text-emphasis-variant(@state-danger-text);
 }
@@ -141,19 +166,22 @@ mark,
   color: #fff;
   .bg-variant(@brand-primary);
 }
+
 .bg-success {
   .bg-variant(@state-success-bg);
 }
+
 .bg-info {
   .bg-variant(@state-info-bg);
 }
+
 .bg-warning {
   .bg-variant(@state-warning-bg);
 }
+
 .bg-danger {
   .bg-variant(@state-danger-bg);
 }
-
 
 // Page header
 // -------------------------
@@ -163,7 +191,6 @@ mark,
   margin: (@line-height-computed * 2) 0 @line-height-computed;
   border-bottom: 1px solid @page-header-border-color;
 }
-
 
 // Lists
 // -------------------------
@@ -204,13 +231,16 @@ dl {
   margin-top: 0; // Remove browser default
   margin-bottom: @line-height-computed;
 }
+
 dt,
 dd {
   line-height: @line-height-base;
 }
+
 dt {
   font-weight: bold;
 }
+
 dd {
   margin-left: 0; // Undo browser default
 }
@@ -233,23 +263,24 @@ dd {
       text-align: right;
       .text-overflow();
     }
+
     dd {
       margin-left: @dl-horizontal-offset;
     }
   }
 }
 
-
 // Misc
 // -------------------------
 
 // Abbreviations and acronyms
 abbr[title],
-// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
+  // Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted @abbr-border-color;
 }
+
 .initialism {
   font-size: 90%;
   .text-uppercase();
@@ -301,7 +332,9 @@ blockquote.pull-right {
   footer,
   small,
   .small {
-    &:before { content: ''; }
+    &:before {
+      content: '';
+    }
     &:after {
       content: '\00A0 \2014'; // nbsp, em dash
     }
