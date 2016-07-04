@@ -1,5 +1,5 @@
 /**
- * Created by jiangyi on 16/6/27.
+ * Created by jiangyi on 16/7/1.
  */
 
 import Vue from 'vue'
@@ -46,3 +46,4 @@ describe('Accordion组件单元测试', () => {
     expect(vm.$el.querySelectorAll('.panel').length).to.be.equal(4)
   })
 })
+
