@@ -1,4 +1,4 @@
-.cascader{
+.cascader {
   position: relative;
   display: inline-block;
 }
@@ -15,7 +15,7 @@
     position: absolute;
     border: 1px solid #d9d9d9;
     border-radius: 6px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.17);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
     white-space: nowrap
   }
   .cascader-menu {
@@ -42,15 +42,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
     transition: all .3s ease;
-    &:hover,&:focus {
+    &:hover, &:focus {
       background-color: tint(@primary-color, 95%);
     }
-    &.selected{
+    &.selected {
       &,
       &:hover,
       &:focus {
         outline: 0;
-        color:#fff;
+        color: #fff;
         background-color: tint(@primary-color, 40%);
       }
     }
@@ -59,13 +59,13 @@
       cursor: not-allowed;
       color: #ccc;
     }
-    &.disabled:hover{
+    &.disabled:hover {
       background: transparent;
     }
 }
 
 .cascader-menu-item-expand {
-    position: relative
+    position: relative;
 }
 
 .cascader-menu-item-expand:after {
@@ -75,7 +75,8 @@
     font-size: 12px;
     transform: scale(.66666667) rotate(0deg);
     -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
-    zoom:1;color: #999;
+    zoom: 1;
+    color: #999;
     position: absolute;
     right: 15px
 }

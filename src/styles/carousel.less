@@ -1,7 +1,7 @@
 //
 // Carousel
 // --------------------------------------------------
-@carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
+@carousel-text-shadow:                        0 1px 2px rgba(0, 0, 0, .6);
 
 @carousel-control-color:                      #fff;
 @carousel-control-width:                      15%;
@@ -106,7 +106,7 @@
   left: 0;
   bottom: 0;
   width: @carousel-control-width;
-  opacity:@carousel-control-opacity;
+  opacity: @carousel-control-opacity;
   font-size: @carousel-control-font-size;
   color: @carousel-control-color;
   text-align: center;
@@ -117,12 +117,12 @@
 
   // Set gradients for backgrounds
   &.left {
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.5); @end-color: rgba(0,0,0,.0001));
+    #gradient > .horizontal(@start-color: rgba(0, 0, 0, .5); @end-color: rgba(0, 0, 0, .0001));
   }
   &.right {
     left: auto;
     right: 0;
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.5));
+    #gradient > .horizontal(@start-color: rgba(0, 0, 0, .0001); @end-color: rgba(0, 0, 0, .5));
   }
 
   // Hover/focus state
@@ -131,7 +131,7 @@
     outline: 0;
     color: @carousel-control-color;
     text-decoration: none;
-    opacity:.9;
+    opacity: .9;
   }
 
   // Toggles
@@ -157,7 +157,7 @@
   }
   .icon-prev,
   .icon-next {
-    width:  20px;
+    width: 20px;
     height: 20px;
     line-height: 1;
     font-family: serif;
@@ -194,7 +194,7 @@
 
   li {
     display: inline-block;
-    width:  10px;
+    width: 10px;
     height: 10px;
     margin: 1px;
     text-indent: -999px;
@@ -212,11 +212,11 @@
     // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
     // set alpha transparency for the best results possible.
     background-color: #000 \9; // IE8
-    background-color: rgba(0,0,0,0); // IE9
+    background-color: rgba(0, 0, 0, 0); // IE9
   }
   .active {
     margin: 0;
-    width:  12px;
+    width: 12px;
     height: 12px;
     background-color: @carousel-indicator-active-bg;
   }
