@@ -1,28 +1,22 @@
 <template>
-  <div class="vue-sub-menu-title" @click="triggerSub">{{title}}</div>
-  <ul class="vue-sub-menu panel-collapse collapse-transition" v-show="isOpen">
+  <div class="atui-menu-submenu-title" @click="triggerSub">{{title}}</div>
+  <ul class="atui-menu-sub" v-show="show" transition="slide">
     <slot></slot>
   </ul>
 </template>
 
 <script>
-import coerceBoolean from '../utils/coerceBoolean.js'
-
 export default {
   props: {
     title: String,
-    isOpen: {
+    show: {
       type: Boolean,
-      coerce: coerceBoolean,
-      default: true
+      default: false
     }
-  },
-  created () {
-
   },
   methods: {
     triggerSub () {
-      this.isOpen = !this.isOpen
+      this.show = !this.show
     }
   }
 }
