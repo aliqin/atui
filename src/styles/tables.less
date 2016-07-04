@@ -10,13 +10,14 @@
     z-index: 1;
     transform:translate(-50%,-50%);
   }
-  &.loading tbody{
+  &.loading table{
     opacity: .7;
     filter: blur(1px);
     pointer-events: none;
   }
   table{
     width: 100%;
+    transition: all .3s cubic-bezier(.78,.14,.15,.86);
     border-collapse: collapse;
   }
   thead {
