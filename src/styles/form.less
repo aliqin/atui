@@ -36,7 +36,7 @@ input[type="checkbox"] {
     }
   }
 
-  &[disabled],&[disabled]:checked {
+  &[disabled], &[disabled]:checked {
     background-color: #f2f2f2;
     border-color: #e6e6e6;
     color: #ccc;
@@ -48,11 +48,11 @@ input[type="checkbox"] {
   }
 }
 // ie11以下不支持appearance,故要还原成默认样式
-.let-ie11 input[type="checkbox"],.let-ie11 input[type="radio"] {
-  width:auto;
-  height:auto;
-  padding:0;
-  border:none;
+.let-ie11 input[type="checkbox"], .let-ie11 input[type="radio"] {
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
 }
 
 input[type="radio"] {
@@ -118,13 +118,13 @@ input[type="radio"] {
 
   .has-success {
     .status-icon, .status-info {
-      color: #1DBF38;
+      color: #1dbf38;
     }
   }
 
   .has-error {
     .status-icon, .status-info {
-      color: #FF5959;
+      color: #ff5959;
     }
   }
 
@@ -145,7 +145,7 @@ input[type="radio"] {
   .form-input {
     position: relative;
     padding-right: 30px;
-    & > label{
+    & > label {
       display: inline-block;
       padding: 7px 0;
     }
