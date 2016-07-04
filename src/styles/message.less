@@ -1,0 +1,205 @@
+//
+// Alerts
+// --------------------------------------------------
+@message-padding:               10px;
+@message-border-radius:         4px;
+@message-link-font-weight:      bold;
+
+@message-success-bg:            #f4fcf5;
+@message-success-text:          #666;
+@message-success-border:        #a5e5af;
+
+
+@message-info-bg:               #f5fbfe;
+@message-info-text:             #666;
+@message-info-border:           #ace0fa;
+
+@message-warning-bg:            #fff9f2;
+@message-warning-text:          #666;
+@message-warning-border:        #ffd399;
+
+@message-danger-bg:             #fff7f7;
+@message-danger-text:           #666;
+@message-danger-border:         #ffbdbd;
+
+
+@message-help-bg:             #fbf7ff;
+@message-help-text:           #666;
+@message-help-border:         #e1c2ff;
+
+.message-variant(@background; @border; @text-color) {
+  .atui-message-content {
+    background-color: @background;
+    border-color: @border;
+    color: @text-color;
+  }
+  &.arrow::before {
+    border-color: @border;
+    background-color: @background;
+  }
+
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+
+  .atui-message-link {
+    color: darken(@text-color, 10%);
+  }
+
+  .iconfont {
+    color: @border;
+    display: inline-block;
+    margin-right: 3px;
+  }
+
+}
+
+// Base styles
+// -------------------------
+
+.atui-message {
+  z-index: @zindex-message;
+  position: relative;
+  h4 {
+    margin-top: 0;
+    color: inherit;
+  }
+  &-link {
+    font-weight: @message-link-font-weight;
+  }
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+
+  > p + p {
+    margin-top: 5px;
+  }
+
+  &.top {
+    position: fixed;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 30px;
+  }
+
+  &.top-right {
+    position: fixed;
+    top: 30px;
+    right: 50px;
+  }
+  &.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-dismissable,
+  &-dismissible {
+    padding-right: (@message-padding + 20);
+    .close {
+      position: relative;
+      top: -2px;
+      right: -21px;
+      color: inherit;
+    }
+  }
+  &-content {
+    padding: @message-padding;
+    margin-bottom: @line-height-computed;
+    border: 1px solid transparent;
+    border-radius: @message-border-radius;
+    position: relative;
+  }
+
+  &.arrow:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-right: 0;
+    border-top: 0;
+  }
+
+  &-success {
+    .message-variant(@message-success-bg; @message-success-border; @message-success-text);
+  }
+
+
+  &-info {
+    .message-variant(@message-info-bg; @message-info-border; @message-info-text);
+  }
+
+  &-warning {
+    .message-variant(@message-warning-bg; @message-warning-border; @message-warning-text);
+  }
+
+  &-danger {
+    .message-variant(@message-danger-bg; @message-danger-border; @message-danger-text);
+  }
+
+  &-error {
+    .message-variant(@message-danger-bg; @message-danger-border; @message-danger-text);
+  }
+
+  &-help {
+    .message-variant(@message-help-bg; @message-help-border; @message-help-text);
+  }
+
+  &-notice {
+    position: fixed;
+  }
+
+  &-notice &-content {
+    padding-right: @message-padding * 2;
+    width: auto;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+    border-radius: 4px;
+  }
+}
+
+.atui-message.arrow-left::before {
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
+}
+.atui-message.arrow-top::before {
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  transform: rotate(135deg);
+}
+.atui-message.arrow-right::before {
+  right: -5px;
+  top: 50%;
+  margin-top: -5px;
+  transform: rotate(225deg);
+}
+.atui-message.arrow-bottom::before {
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  transform: rotate(315deg);
+}
+
+.ie9 .atui-message.arrow {
+  // 使用了tranform:rotate来实现箭头，所以ie9不支持
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
