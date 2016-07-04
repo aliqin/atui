@@ -6,7 +6,7 @@
 //** Popover maximum width
 @popover-max-width:                   276px;
 //** Popover border color
-@popover-border-color:                rgba(0,0,0,.2);
+@popover-border-color:                rgba(0, 0, 0, .2);
 //** Popover fallback border color
 @popover-fallback-border-color:       #ccc;
 
@@ -24,7 +24,7 @@
 @popover-arrow-outer-color:           fadein(@popover-border-color, 5%);
 //** Popover outer arrow fallback color
 @popover-arrow-outer-fallback-color:  darken(@popover-fallback-border-color, 20%);
-.atui-popover-trigger{
+.atui-popover-trigger {
   display: inline-block;
 }
 .atui-popover {
@@ -43,13 +43,21 @@
   border: 1px solid @popover-fallback-border-color;
   border: 1px solid @popover-border-color;
   border-radius: @border-radius-large;
-  .box-shadow(0 5px 10px rgba(0,0,0,.2));
+  .box-shadow(0 5px 10px rgba(0, 0, 0, .2));
 
   // Offset the popover to account for the popover arrow
-  &.top     { margin-top: -@popover-arrow-width; }
-  &.right   { margin-left: @popover-arrow-width; }
-  &.bottom  { margin-top: @popover-arrow-width; }
-  &.left    { margin-left: -@popover-arrow-width; }
+  &.top {
+    margin-top: -@popover-arrow-width;
+  }
+  &.right {
+    margin-left: @popover-arrow-width;
+  }
+  &.bottom {
+    margin-top: @popover-arrow-width;
+  }
+  &.left {
+    margin-left: -@popover-arrow-width;
+  }
 }
 
 .popover-title {

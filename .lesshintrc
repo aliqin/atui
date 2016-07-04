@@ -11,6 +11,9 @@
   "importPath": false,
   "finalNewline": false,
   "urlFormat": "absolute",
+  "idSelector": {
+    "exclude": ["gradient"]
+  },
   "excludedFiles": [
     "src/styles/mixins/grid-framework.less"
   ]

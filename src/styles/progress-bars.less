@@ -24,14 +24,22 @@
 
 // WebKit
 @-webkit-keyframes progress-bar-stripes {
-  from  { background-position: 40px 0; }
-  to    { background-position: 0 0; }
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
 
 // Spec and IE10+
 @keyframes progress-bar-stripes {
-  from  { background-position: 40px 0; }
-  to    { background-position: 0 0; }
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
 
 
@@ -45,7 +53,7 @@
   margin-bottom: @line-height-computed;
   background-color: @progress-bg;
   border-radius: @progress-border-radius;
-  .box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+  .box-shadow(inset 0 1px 2px rgba(0, 0, 0, .1));
 }
 
 // Bar of progress
@@ -58,7 +66,7 @@
   color: @progress-bar-color;
   text-align: center;
   background-color: @progress-bar-bg;
-  .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  .box-shadow(inset 0 -1px 0 rgba(0, 0, 0, .15));
   .transition(width .6s ease);
 }
 
