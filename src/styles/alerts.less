@@ -28,12 +28,12 @@
 @message-help-border:         #e1c2ff;
 
 .message-variant(@background; @border; @text-color) {
-  .atui-message-content{
+  .atui-message-content {
     background-color: @background;
     border-color: @border;
     color: @text-color;
   }
-  &.arrow::before{
+  &.arrow::before {
     border-color: @border;
     background-color: @background;
   }
@@ -46,8 +46,8 @@
     color: darken(@text-color, 10%);
   }
 
-  .iconfont{
-    color:@border;
+  .iconfont {
+    color: @border;
     display: inline-block;
     margin-right: 3px;
   }
@@ -79,7 +79,7 @@
   &.top {
     position: fixed;
     transform: translateX(-50%);
-    left:50%;
+    left: 50%;
     top: 30px;
   }
 
@@ -92,7 +92,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 
   &-dismissable,
@@ -114,12 +114,12 @@
   }
 
   &.arrow:before {
-    content:'';
+    content: '';
     position: absolute;
-    z-index:2;
-    transform:rotate(45deg);
-    width:10px;
-    height:10px;
+    z-index: 2;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
     border-width: 1px;
     border-style: solid;
     border-right: 0;
@@ -155,41 +155,41 @@
     position: fixed;
   }
 
-  &-notice &-content{
+  &-notice &-content {
     padding-right: @message-padding * 2;
-    width:auto;
-    background:#fff;
-    border:1px solid #e6e6e6;
-    box-shadow: 0 0 4px rgba(0,0,0,0.17);
-    border-radius:4px;
+    width: auto;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+    border-radius: 4px;
   }
 }
 
-.atui-message.arrow-left::before{
-  left:-5px;
-  top:50%;
-  margin-top:-5px;
+.atui-message.arrow-left::before {
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
 }
-.atui-message.arrow-top::before{
-  top:-5px;
-  left:50%;
-  margin-left:-5px;
-  transform:rotate(135deg);
+.atui-message.arrow-top::before {
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  transform: rotate(135deg);
 }
-.atui-message.arrow-right::before{
+.atui-message.arrow-right::before {
   right: -5px;
   top: 50%;
   margin-top: -5px;
-  transform:rotate(225deg);
+  transform: rotate(225deg);
 }
-.atui-message.arrow-bottom::before{
-  bottom:-5px;
-  left:50%;
-  margin-left:-5px;
-  transform:rotate(315deg);
+.atui-message.arrow-bottom::before {
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  transform: rotate(315deg);
 }
 
-.ie9 .atui-message.arrow{ 
+.ie9 .atui-message.arrow {
   // 使用了tranform:rotate来实现箭头，所以ie9不支持
   display: none;
 }
