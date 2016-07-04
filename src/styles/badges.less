@@ -1,22 +1,11 @@
 //
 // Badges
-// --------------------------------------------------
 
-@font-size-small:             ceil((@font-size-base * 0.85)); // ~12px
-@badge-font-weight:           bold;
-@badge-color:                 #fff;
-@badge-line-height:           1;
-@badge-border-radius:         10px;
-//** Linked badge text color on hover
 @badge-link-hover-color:      #fff;
-@brand-primary:               #4cace2;
-//** Global textual link color.
-@link-color:                  @brand-primary;
-@badge-active-color:          @link-color;
+
 @badge-active-bg:             #fff;
 
 // self
-@badge-bg:         #fff;
 @badge-count-bg:   #ff6666;
 @badge-dot-bg:     @badge-count-bg;
 @badge-count-text: #fff;
@@ -27,7 +16,7 @@
   display: inline-block;
   min-width: 10px;
   padding: 3px 7px;
-  line-height: @badge-line-height;
+  line-height: 1;
   vertical-align: middle;
   white-space: nowrap;
   text-align: center;
@@ -88,31 +77,12 @@
   }
 
   // Hover state, but only for links
-  a& {
+  a{
     &:hover,
     &:focus {
       color: @badge-link-hover-color;
       text-decoration: none;
       cursor: pointer;
     }
-  }
-
-  // Account for badges in navs
-  .list-group-item.active > &,
-  .nav-pills > .active > a > & {
-    color: @badge-active-color;
-    background-color: @badge-active-bg;
-  }
-
-  .list-group-item > & {
-    float: right;
-  }
-
-  .list-group-item > & + & {
-    margin-right: 5px;
-  }
-
-  .nav-pills > li > a > & {
-    margin-left: 3px;
   }
 }
