@@ -1,38 +1,51 @@
-
 //** Tooltip max width
-@tooltip-max-width:           200px;
+@tooltip-max-width: 200px;
 //** Tooltip text color
-@tooltip-color:               #fff;
+@tooltip-color: #fff;
 //** Tooltip background color
-@tooltip-bg:                  #000;
-@tooltip-opacity:             .9;
+@tooltip-bg: #000;
+@tooltip-opacity: .9;
 
 //** Tooltip arrow width
-@tooltip-arrow-width:         5px;
+@tooltip-arrow-width: 5px;
 //** Tooltip arrow color
-@tooltip-arrow-color:         @tooltip-bg;
+@tooltip-arrow-color: @tooltip-bg;
 
-
-.atui-tooltip-trigger{
+.atui-tooltip-trigger {
   display: inline-block;
 }
+
 // Base class
 .atui-tooltip {
   position: absolute;
   z-index: @zindex-tooltip;
   display: block;
-  margin:0;
+  margin: 0;
   // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
   // So reset our font and text properties to avoid inheriting weird values.
   font-size: @font-size-small;
 
-  opacity:0.8;
+  opacity: 0.8;
 
-  &.in     { opacity:@tooltip-opacity; }
-  &.top, &.top-left, &.top-right  { margin-top:  -3px; padding: @tooltip-arrow-width 0; }
-  &.right, &.right-top, &.right-bottom  { margin-left:  3px; padding: 0 @tooltip-arrow-width; }
-  &.bottom, &.bottom-left, &.bottom-right { margin-top:   3px; padding: @tooltip-arrow-width 0; }
-  &.left, &.left-top, &.left-bottom { margin-left: -3px; padding: 0 @tooltip-arrow-width; }
+  &.in {
+    opacity: @tooltip-opacity;
+  }
+  &.top, &.top-left, &.top-right {
+    margin-top: -3px;
+    padding: @tooltip-arrow-width 0;
+  }
+  &.right, &.right-top, &.right-bottom {
+    margin-left: 3px;
+    padding: 0 @tooltip-arrow-width;
+  }
+  &.bottom, &.bottom-left, &.bottom-right {
+    margin-top: 3px;
+    padding: @tooltip-arrow-width 0;
+  }
+  &.left, &.left-top, &.left-bottom {
+    margin-left: -3px;
+    padding: 0 @tooltip-arrow-width;
+  }
 }
 
 // Wrapper for the tooltip content
@@ -54,6 +67,7 @@
   border-color: transparent;
   border-style: solid;
 }
+
 .atui-tooltip {
   &.top .tooltip-arrow {
     bottom: 0;
@@ -141,5 +155,4 @@
     border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
     border-bottom-color: @tooltip-arrow-color;
   }
-
 }

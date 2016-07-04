@@ -1,11 +1,12 @@
 .active() {
   border-color: @primary-color;
-  box-shadow:0px 0px 0px 2px fade(@primary-color, 30%);
+  box-shadow: 0px 0px 0px 2px fade(@primary-color, 30%);
 }
 
 .error() {
   border-color: @brand-error;
-  box-shadow: 0px 0px 0px 2px fade(@brand-error, 30%);}
+  box-shadow: 0px 0px 0px 2px fade(@brand-error, 30%);
+}
 
 .success() {
   border-color: @brand-success;
@@ -17,21 +18,21 @@
   color: #ccc;
   border-color: #e6e6e6;
   box-shadow: none;
-  cursor: not-allowed!important;
+  cursor: not-allowed !important;
 }
 
 .at-textarea {
-  position:relative;
+  position: relative;
   display: inline-block;
   width: 100%;
 
-  pre{
-    display:block;
-    margin:0;
+  pre {
+    display: block;
+    margin: 0;
     padding: 8px 10px;
     font-size: 12px;
-    visibility:hidden;
-    overflow:hidden;
+    visibility: hidden;
+    overflow: hidden;
   }
 }
 
@@ -48,11 +49,11 @@
   outline: none;
 
   &.autosize {
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    min-height:auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-height: auto;
   }
 
   &:hover {
