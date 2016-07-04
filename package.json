@@ -55,6 +55,7 @@
     "json-loader": "^0.5.4",
     "less": "~2.6.1",
     "less-loader": "^2.2.0",
+    "lesshint": "^1.5.2",
     "marked": "~0.3.5",
     "mocha": "~2.4.4",
     "postcss-loader": "^0.9.1",
@@ -74,7 +75,9 @@
   "scripts": {
     "docs": "webpack-dev-server --inline --host 0.0.0.0",
     "docs-new": "webpack-dev-server --config docs-new/webpack.config.js --inline --host 0.0.0.0",
-    "lint": "eslint --fix --ext .js,.vue src test/unit test/e2e",
+    "lint": "npm run eslint && npm run lesshint",
+    "eslint": "eslint --fix --ext .js,.vue src test/unit test/e2e",
+    "lesshint": "lesshint src/styles -r scripts/lesshint-report.js",
     "debug": "webpack-dev-server --host 0.0.0.0 --port 9999 --config  webpack.debug.js",
     "deploy": "rm -rf build && webpack --progress --colors --display-chunks && node depoly.js",
     "publish-npm": "npm run authors && tnpm publish",
