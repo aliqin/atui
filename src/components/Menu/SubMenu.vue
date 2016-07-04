@@ -1,6 +1,6 @@
 <template>
-  <div class="atui-sub-menu-title" @click="triggerSub">{{title}}</div>
-  <ul class="atui-sub-menu" v-show="show" transition="slide">
+  <div class="atui-menu-submenu-title" @click="triggerSub">{{title}}</div>
+  <ul class="atui-menu-sub" v-show="show" transition="slide">
     <slot></slot>
   </ul>
 </template>
@@ -11,11 +11,8 @@ export default {
     title: String,
     show: {
       type: Boolean,
-      default: true
+      default: false
     }
-  },
-  created () {
-
   },
   methods: {
     triggerSub () {
