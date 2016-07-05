@@ -1,11 +1,11 @@
 <template>
 <div :class="['atui-spin',size,{sping: sping}]" v-show="show">
-  <div v-if="isSupportAnimation" class="atui-sping-point">
+  <div v-if="isSupportAnimation || !tip" class="atui-sping-point">
       <div></div>
       <div></div>
       <div></div>
   </div>
-  <p v-else class="atui-sping-text">加载中...</p>
+  <p v-else class="atui-sping-text">{{ tip || '加载中...' }}</p>
   <div class="sping-content">
     <slot></slot>
   </div>
@@ -18,6 +18,7 @@ export default {
   props: {
     show: Boolean,
     sping: Boolean,
+    tip: String,
     size: {
       type: String,
       default: 'default'
