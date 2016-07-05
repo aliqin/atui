@@ -1,14 +1,14 @@
 <template>
-<div class="panel panel-default">
-    <div class="panel-heading" @click="toggleIsOpen()">
+<div :class="[prefixCls + '-panel', prefixCls + '-panel-default']">
+    <div :class="[prefixCls + '-panel-heading']" @click="toggleIsOpen()">
       <slot name="panel-header"></slot>
     </div>
-    <div class="panel-collapse"
+    <div :class="[prefixCls + '-panel-collapse']"
       v-el:panel
       v-show="isOpen"
       transition="slide"
     >
-      <div class="panel-body">
+      <div :class="[prefixCls + '-panel-body']">
         <slot></slot>
       </div>
     </div>
@@ -37,7 +37,8 @@ export default {
   },
   data () {
     return {
-      height: 0
+      height: 0,
+      prefixCls: 'atui'
     }
   },
   methods: {
