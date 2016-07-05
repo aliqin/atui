@@ -34,6 +34,7 @@ import Accordion from './components/Accordion/'
 import Popover from './components/Popover/'
 import Tabs from './components/Tabs/'
 import Steps from './components/Steps/'
+import Tree from './components/Tree/'
 import Menu from './components/Menu/'
 import Breadcrumb from './components/Breadcrumb/'
 import Pagination from './components/Pagination/'
@@ -67,6 +68,7 @@ const VueComponent = {
   Popover,
   Tabs,
   Steps,
+  Tree,
   Menu,
   Breadcrumb,
   Pagination
