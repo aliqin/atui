@@ -216,7 +216,7 @@ import {Message} from '@ali/atui'
         <tr>
           <td>arrow</td>
           <td><code>String</code>one of <code>top、left、right、bottom</code></td>
-          <td>宽度</td>
+          <td>剪头的方向，如果没有传则不显示箭头，默认不显示</td>
         </tr>
         <tr>
           <td>placement</td>
