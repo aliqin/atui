@@ -1,6 +1,9 @@
-//
+@import "themes/common";
+
 // Panels
 // --------------------------------------------------
+@prefix-cls-panel: e("@{prefix-cls}-panel");
+
 @panel-bg:                    #fff;
 @panel-body-padding:          15px;
 @panel-heading-padding:       10px 15px;
@@ -36,7 +39,7 @@
 @panel-danger-heading-bg:     @state-danger-bg;
 
 // Base class
-.panel {
+.@{prefix-cls-panel} {
   margin-bottom: @line-height-computed;
   background-color: @panel-bg;
   border: 1px solid transparent;
@@ -45,13 +48,13 @@
 }
 
 // Panel contents
-.panel-body {
+.@{prefix-cls-panel}-body {
   padding: @panel-body-padding;
   &:extend(.clearfix all);
 }
 
 // Optional heading
-.panel-heading {
+.@{prefix-cls-panel}-heading {
   // padding: @panel-heading-padding;
   border-bottom: 1px solid transparent;
   .border-top-radius((@panel-border-radius - 1));
@@ -91,9 +94,9 @@
 // By default, space out list group content from panel headings to account for
 // any kind of custom content between the two.
 
-.panel {
+.@{prefix-cls-panel} {
   > .list-group,
-  > .panel-collapse > .list-group {
+  > .@{prefix-cls-panel}-collapse > .list-group {
     margin-bottom: 0;
 
     .list-group-item {
@@ -117,14 +120,14 @@
       }
     }
   }
-  > .panel-heading + .panel-collapse > .list-group {
+  > .@{prefix-cls-panel}-heading + .@{prefix-cls-panel}-collapse > .list-group {
     .list-group-item:first-child {
       .border-top-radius(0);
     }
   }
 }
 // Collapse space between when there's no additional content.
-.panel-heading + .list-group {
+.@{prefix-cls-panel}-heading + .list-group {
   .list-group-item:first-child {
     border-top-width: 0;
   }
@@ -135,13 +138,13 @@
 
 // Tables in panels
 //
-// Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
+// Place a non-bordered `.table` within a panel (not within a `.@{prefix-cls-panel}-body`) and
 // watch it go full width.
 
-.panel {
+.@{prefix-cls-panel} {
   > .table,
   > .table-responsive > .table,
-  > .panel-collapse > .table {
+  > .@{prefix-cls-panel}-collapse > .table {
     margin-bottom: 0;
 
     caption {
@@ -193,10 +196,10 @@
       }
     }
   }
-  > .panel-body + .table,
-  > .panel-body + .table-responsive,
-  > .table + .panel-body,
-  > .table-responsive + .panel-body {
+  > .@{prefix-cls-panel}-body + .table,
+  > .@{prefix-cls-panel}-body + .table-responsive,
+  > .table + .@{prefix-cls-panel}-body,
+  > .table-responsive + .@{prefix-cls-panel}-body {
     border-top: 1px solid #666;
   }
   > .table > tbody:first-child > tr:first-child th,
@@ -248,34 +251,34 @@
 
 // Collapsable panels (aka, accordion)
 //
-// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// Wrap a series of panels in `.@{prefix-cls-panel}-group` to turn them into an accordion with
 // the help of our collapse JavaScript plugin.
 
-.panel-group {
+.@{prefix-cls-panel}-group {
   margin-bottom: @line-height-computed;
 
   // Tighten up margin so it's only between panels
-  .panel {
+  .@{prefix-cls-panel} {
     margin-bottom: 0;
     border-radius: @panel-border-radius;
 
-    + .panel {
+    + .@{prefix-cls-panel} {
       margin-top: 5px;
     }
   }
 
-  .panel-heading {
+  .@{prefix-cls-panel}-heading {
     border-bottom: 0;
 
-    + .panel-collapse > .panel-body,
-    + .panel-collapse > .list-group {
+    + .@{prefix-cls-panel}-collapse > .@{prefix-cls-panel}-body,
+    + .@{prefix-cls-panel}-collapse > .list-group {
       border-top: 1px solid @panel-inner-border;
     }
   }
 
   .panel-footer {
     border-top: 0;
-    + .panel-collapse .panel-body {
+    + .@{prefix-cls-panel}-collapse .@{prefix-cls-panel}-body {
       border-bottom: 1px solid @panel-inner-border;
     }
   }
@@ -283,21 +286,21 @@
 
 
 // Contextual variations
-.panel-default {
+.@{prefix-cls-panel}-default {
   .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border);
 }
-.panel-primary {
+.@{prefix-cls-panel}-primary {
   .panel-variant(@panel-primary-border; @panel-primary-text; @panel-primary-heading-bg; @panel-primary-border);
 }
-.panel-success {
+.@{prefix-cls-panel}-success {
   .panel-variant(@panel-success-border; @panel-success-text; @panel-success-heading-bg; @panel-success-border);
 }
-.panel-info {
+.@{prefix-cls-panel}-info {
   .panel-variant(@panel-info-border; @panel-info-text; @panel-info-heading-bg; @panel-info-border);
 }
-.panel-warning {
+.@{prefix-cls-panel}-warning {
   .panel-variant(@panel-warning-border; @panel-warning-text; @panel-warning-heading-bg; @panel-warning-border);
 }
-.panel-danger {
+.@{prefix-cls-panel}-danger {
   .panel-variant(@panel-danger-border; @panel-danger-text; @panel-danger-heading-bg; @panel-danger-border);
 }

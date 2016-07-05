@@ -1,5 +1,5 @@
 <template>
-  <div class="panel-group">
+  <div :class="[prefixCls + '-panel-group']">
     <slot></slot>
   </div>
 </template>
@@ -10,6 +10,11 @@
     props: {
       oneAtATime: {
         type: Boolean
+      }
+    },
+    data () {
+      return {
+        prefixCls: 'atui'
       }
     },
     methods: {
