@@ -2,66 +2,66 @@
   position: relative;
   display: inline-block;
 }
-  .cascader-picker {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    vertical-align: middle;
-  }
-  .cascader-menus {
-    z-index: @zindex-dropdown;
-    font-size: 12px;
-    background: #fff;
-    position: absolute;
-    border: 1px solid #d9d9d9;
-    border-radius: 6px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
-    white-space: nowrap
-  }
-  .cascader-menu {
-    display: inline-block;
-    vertical-align: top;
-    min-width: 111px;
-    height: 180px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-right: 1px solid #d9d9d9;
-    overflow: auto
+.cascader-picker {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.cascader-menus {
+  z-index: @zindex-dropdown;
+  font-size: 12px;
+  background: #fff;
+  position: absolute;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+  white-space: nowrap
+}
+.cascader-menu {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 111px;
+  height: 180px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #d9d9d9;
+  overflow: auto
 }
 
 .cascader-menu:last-child {
-    border-right-color: transparent;
-    margin-right: -1px
+  border-right-color: transparent;
+  margin-right: -1px
 }
 
 .cascader-menu-item {
-    padding: 7px 16px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: all .3s ease;
-    &:hover, &:focus {
-      background-color: tint(@primary-color, 95%);
+  padding: 7px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all .3s ease;
+  &:hover, &:focus {
+    background-color: tint(@primary-color, 95%);
+  }
+  &.selected {
+    &,
+    &:hover,
+    &:focus {
+      outline: 0;
+      color: #fff;
+      background-color: tint(@primary-color, 40%);
     }
-    &.selected {
-      &,
-      &:hover,
-      &:focus {
-        outline: 0;
-        color: #fff;
-        background-color: tint(@primary-color, 40%);
-      }
-    }
+  }
 
-    &.disabled {
-      cursor: not-allowed;
-      color: #ccc;
-    }
-    &.disabled:hover {
-      background: transparent;
-    }
+  &.disabled {
+    cursor: not-allowed;
+    color: #ccc;
+  }
+  &.disabled:hover {
+    background: transparent;
+  }
 }
 
 .cascader-menu-item-expand {
