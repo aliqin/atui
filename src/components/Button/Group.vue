@@ -1,5 +1,6 @@
 <template>
-  <div class="at-btn-group" :class="{large:large,small:small}" @click="clickBtnGroup">
+  <div :class="btnClassObj"
+       @click="clickBtnGroup">
     <slot></slot>
   </div>
 </template>
@@ -9,6 +10,11 @@
     props: {
       large: Boolean,
       small: Boolean
+    },
+    data () {
+      return {
+        prefixCls: 'atui'
+      }
     },
     methods: {
       clickBtnGroup (e) {
@@ -30,6 +36,19 @@
         }
         this.$dispatch('switch', this, index)
       }
+    },
+    computed: {
+      btnClassObj () {
+        let { prefixCls, large, small } = this
+        let btnClass = {}
+
+        btnClass[prefixCls + '-btn-group'] = true
+        btnClass[prefixCls + '-btn-large'] = large
+        btnClass[prefixCls + '-btn-small'] = small
+
+        return btnClass
+      }
     }
+
   }
 </script>

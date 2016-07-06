@@ -1,4 +1,10 @@
-.btn {
+@import "themes/common";
+
+// Button
+// --------------------------------------------------
+@prefix-cls-btn: e("@{prefix-cls}-btn");
+
+.@{prefix-cls-btn} {
   display: inline-block;
   padding: 6px 20px;
   background-color: @primary-color;
@@ -25,16 +31,16 @@
 
 // Size of the button
 // ----------------------------------------------------
-.btn {
-  &.default {
+.@{prefix-cls-btn} {
+  &.@{prefix-cls-btn}-default {
     padding: 6px 20px;
   }
 
-  &.large {
+  &.@{prefix-cls-btn}-large {
     padding: 8px 20px;
   }
 
-  &.small {
+  &.@{prefix-cls-btn}-small {
     padding: 2px 10px;
   }
 }
@@ -48,8 +54,8 @@
   cursor: not-allowed;
 }
 
-.btn {
-  &.primary {
+.@{prefix-cls-btn} {
+  &.@{prefix-cls-btn}-primary {
     background-color: @primary-color;
     color: #fff;
 
@@ -66,7 +72,7 @@
     }
   }
 
-  &.secondary {
+  &.@{prefix-cls-btn}-secondary {
     background-color: #fff;
     color: @primary-color;
     border-color: tint(@primary-color, 40%);
@@ -90,7 +96,7 @@
     }
   }
 
-  &.tertiary {
+  &.@{prefix-cls-btn}-tertiary {
     background-color: #fff;
     color: #666;
     border-color: #d9d9d9;
@@ -114,7 +120,7 @@
     }
   }
 
-  &.text {
+  &.@{prefix-cls-btn}-text {
     background-color: transparent;
     color: #666;
 
@@ -130,7 +136,7 @@
   }
 }
 
-.btn[disabled], .btn.disabled {
+.@{prefix-cls-btn}[disabled], .@{prefix-cls-btn}.disabled {
   .disabled();
 
   &:hover {
@@ -148,31 +154,31 @@
 
 
 // button group
-.at-btn-group {
+.@{prefix-cls-btn}-group {
   position: relative;
   display: inline-block;
   vertical-align: middle;
   .clearfix();
 
-  &.default {
-    .btn {
+  &.@{prefix-cls-btn}-default {
+    .@{prefix-cls-btn} {
       padding: 6px 20px;
     }
   }
 
-  &.large {
-    .btn {
+  &.@{prefix-cls-btn}-large {
+    .@{prefix-cls-btn} {
       padding: 8px 20px;
     }
   }
 
-  &.small {
-    .btn {
+  &.@{prefix-cls-btn}-small {
+    .@{prefix-cls-btn} {
       padding: 2px 10px;
     }
   }
 
-  .btn {
+  .@{prefix-cls-btn} {
     float: left;
     margin-left: -1px;
     background-color: #fff;
