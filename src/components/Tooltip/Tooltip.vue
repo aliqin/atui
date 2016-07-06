@@ -33,22 +33,21 @@ export default {
   computed: {
     tooltipClassObj () {
       let { prefixCls, placement } = this
-      let tooltipClass = {
-        'top': placement === 'top',
-        'top-left': placement === 'topLeft',
-        'top-right': placement === 'topRight',
-        'left': placement === 'left',
-        'left-top': placement === 'leftTop',
-        'left-bottom': placement === 'leftBottom',
-        'right': placement === 'right',
-        'right-top': placement === 'rightTop',
-        'right-bottom': placement === 'rightBottom',
-        'bottom': placement === 'bottom',
-        'bottom-left': placement === 'bottomLeft',
-        'bottom-right': placement === 'bottomRight'
-      }
+      let tooltipClass = {}
 
       tooltipClass[prefixCls + '-tooltip'] = true
+      tooltipClass[prefixCls + '-tooltip-top'] = placement === 'top'
+      tooltipClass[prefixCls + '-tooltip-top-left'] = placement === 'topLeft'
+      tooltipClass[prefixCls + '-tooltip-top-right'] = placement === 'topRight'
+      tooltipClass[prefixCls + '-tooltip-left'] = placement === 'left'
+      tooltipClass[prefixCls + '-tooltip-left-top'] = placement === 'leftTop'
+      tooltipClass[prefixCls + '-tooltip-left-bottom'] = placement === 'leftBottom'
+      tooltipClass[prefixCls + '-tooltip-right'] = placement === 'right'
+      tooltipClass[prefixCls + '-tooltip-right-top'] = placement === 'rightTop'
+      tooltipClass[prefixCls + '-tooltip-right-bottom'] = placement === 'rightBottom'
+      tooltipClass[prefixCls + '-tooltip-bottom'] = placement === 'bottom'
+      tooltipClass[prefixCls + '-tooltip-bottom-left'] = placement === 'bottomLeft'
+      tooltipClass[prefixCls + '-tooltip-bottom-right'] = placement === 'bottomRight'
 
       return tooltipClass
     }
