@@ -1,9 +1,9 @@
 <template>
-<span class="atui-badge">
+<span :class="[prefixCls + '-badge']">
   <slot></slot>
-  <sup class="badge-dot" v-if="dot"></sup>
+  <sup :class="[prefixCls + '-badge-dot']" v-if="dot"></sup>
   <template v-else>
-    <sup v-if='count > 0' class="badge-count">
+    <sup v-if='count > 0' :class="[prefixCls + '-badge-count']">
       {{count | short}}
     </sup>
   </template>
@@ -19,6 +19,11 @@
       },
       dot: {
         type: Boolean
+      }
+    },
+    data () {
+      return {
+        prefixCls: 'atui'
       }
     },
     filters: {
