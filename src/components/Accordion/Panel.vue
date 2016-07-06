@@ -15,8 +15,9 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
 import coerceBoolean from '../utils/coerceBoolean.js'
+
 export default {
   props: {
     isOpen: {
@@ -33,12 +34,15 @@ export default {
     },
     index: {
       type: Number
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   data () {
     return {
-      height: 0,
-      prefixCls: 'atui'
+      height: 0
     }
   },
   methods: {

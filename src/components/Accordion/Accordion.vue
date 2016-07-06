@@ -10,11 +10,10 @@
     props: {
       oneAtATime: {
         type: Boolean
-      }
-    },
-    data () {
-      return {
-        prefixCls: 'atui'
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     methods: {

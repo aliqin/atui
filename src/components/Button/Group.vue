@@ -9,11 +9,10 @@
   export default {
     props: {
       large: Boolean,
-      small: Boolean
-    },
-    data () {
-      return {
-        prefixCls: 'atui'
+      small: Boolean,
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     methods: {

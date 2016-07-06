@@ -10,7 +10,7 @@
 </span>
 </template>
 
-<script>
+<script type="text/babel">
   export default {
     name: 'badge',
     props: {
@@ -19,11 +19,10 @@
       },
       dot: {
         type: Boolean
-      }
-    },
-    data () {
-      return {
-        prefixCls: 'atui'
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     filters: {

@@ -4,17 +4,16 @@
 </div>
 </template>
 
-<script>
+<script type="text/babel">
 export default {
   props: {
     slash: {
       type: String,
       default: '/'
-    }
-  },
-  data () {
-    return {
-      prefixCls: 'atui'
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   ready () {

@@ -20,11 +20,10 @@
       primary: Boolean,
       secondary: Boolean,
       tertiary: Boolean,
-      text: Boolean
-    },
-    data () {
-      return {
-        prefixCls: 'atui'
+      text: Boolean,
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     computed: {
