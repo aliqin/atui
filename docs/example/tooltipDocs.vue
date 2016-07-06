@@ -92,7 +92,6 @@
           <td></td>
         </tr>
       </table>
-<button @click="del"></button>
 
       <h4>Triger</h4>
       <p>

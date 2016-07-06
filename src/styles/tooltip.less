@@ -36,19 +36,19 @@
   &.in {
     opacity: @tooltip-opacity;
   }
-  &.top, &.top-left, &.top-right {
+  &.@{prefix-cls-tooltip}-top, &.@{prefix-cls-tooltip}-top-left, &.@{prefix-cls-tooltip}-top-right {
     margin-top: -3px;
     padding: @tooltip-arrow-width 0;
   }
-  &.right, &.right-top, &.right-bottom {
+  &.@{prefix-cls-tooltip}-right, &.@{prefix-cls-tooltip}-right-top, &.@{prefix-cls-tooltip}-right-bottom {
     margin-left: 3px;
     padding: 0 @tooltip-arrow-width;
   }
-  &.bottom, &.bottom-left, &.bottom-right {
+  &.@{prefix-cls-tooltip}-bottom, &.@{prefix-cls-tooltip}-bottom-left, &.@{prefix-cls-tooltip}-bottom-right {
     margin-top: 3px;
     padding: @tooltip-arrow-width 0;
   }
-  &.left, &.left-top, &.left-bottom {
+  &.@{prefix-cls-tooltip}-left, &.@{prefix-cls-tooltip}-left-top, &.@{prefix-cls-tooltip}-left-bottom {
     margin-left: -3px;
     padding: 0 @tooltip-arrow-width;
   }
@@ -75,42 +75,42 @@
 }
 
 .@{prefix-cls-tooltip} {
-  &.top .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-top .@{prefix-cls-tooltip}-arrow {
     bottom: 0;
     left: 50%;
     margin-left: -@tooltip-arrow-width;
     border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
     border-top-color: @tooltip-arrow-color;
   }
-  &.top-left .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-top-left .@{prefix-cls-tooltip}-arrow {
     bottom: 0;
     left: 25%;
     margin-left: -@tooltip-arrow-width;
     border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
     border-top-color: @tooltip-arrow-color;
   }
-  &.top-right .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-top-right .@{prefix-cls-tooltip}-arrow {
     bottom: 0;
     left: 75%;
     margin-left: -@tooltip-arrow-width;
     border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
     border-top-color: @tooltip-arrow-color;
   }
-  &.right .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-right .@{prefix-cls-tooltip}-arrow {
     top: 50%;
     left: 0;
     margin-top: -@tooltip-arrow-width;
     border-width: @tooltip-arrow-width @tooltip-arrow-width @tooltip-arrow-width 0;
     border-right-color: @tooltip-arrow-color;
   }
-  &.right-top .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-right-top .@{prefix-cls-tooltip}-arrow {
     top: 25%;
     left: 0;
     margin-top: -@tooltip-arrow-width;
     border-width: @tooltip-arrow-width @tooltip-arrow-width @tooltip-arrow-width 0;
     border-right-color: @tooltip-arrow-color;
   }
-  &.right-bottom .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-right-bottom .@{prefix-cls-tooltip}-arrow {
     top: 75%;
     left: 0;
     margin-top: -@tooltip-arrow-width;
@@ -118,21 +118,21 @@
     border-right-color: @tooltip-arrow-color;
   }
 
-  &.left .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-left .@{prefix-cls-tooltip}-arrow {
     top: 50%;
     right: 0;
     margin-top: -@tooltip-arrow-width;
     border-width: @tooltip-arrow-width 0 @tooltip-arrow-width @tooltip-arrow-width;
     border-left-color: @tooltip-arrow-color;
   }
-  &.left-top .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-left-top .@{prefix-cls-tooltip}-arrow {
     top: 25%;
     right: 0;
     margin-top: -@tooltip-arrow-width;
     border-width: @tooltip-arrow-width 0 @tooltip-arrow-width @tooltip-arrow-width;
     border-left-color: @tooltip-arrow-color;
   }
-  &.left-bottom .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-left-bottom .@{prefix-cls-tooltip}-arrow {
     top: 75%;
     right: 0;
     margin-top: -@tooltip-arrow-width;
@@ -140,21 +140,21 @@
     border-left-color: @tooltip-arrow-color;
   }
 
-  &.bottom .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-bottom .@{prefix-cls-tooltip}-arrow {
     top: 0;
     left: 50%;
     margin-left: -@tooltip-arrow-width;
     border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
     border-bottom-color: @tooltip-arrow-color;
   }
-  &.bottom-left .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-bottom-left .@{prefix-cls-tooltip}-arrow {
     top: 0;
     left: 25%;
     margin-left: -@tooltip-arrow-width;
     border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
     border-bottom-color: @tooltip-arrow-color;
   }
-  &.bottom-right .@{prefix-cls-tooltip}-arrow {
+  &.@{prefix-cls-tooltip}-bottom-right .@{prefix-cls-tooltip}-arrow {
     top: 0;
     left: 75%;
     margin-left: -@tooltip-arrow-width;
