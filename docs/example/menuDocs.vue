@@ -34,7 +34,7 @@
 <v-menu>
   <sub-menu title="导航一">
     <menu-item-group title="分组1">
-      <menu-item>选项1</menu-item>
+      <menu-item><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
       <menu-item>选项2</menu-item>
     </menu-item-group>
     <menu-item-group title="分组2">
@@ -59,7 +59,7 @@
 </v-menu>
 
 <!--script-->
-import {Menu} from 'src/'
+import {Menu} from atui
 const { SubMenu, MenuItem, MenuItemGroup} = Menu
 export default {
   components: {
