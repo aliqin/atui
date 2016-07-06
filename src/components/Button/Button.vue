@@ -1,5 +1,5 @@
 <template>
-  <button :type="type" class="btn" :class="btnClassObj">
+  <button :type="type" :class="btnClassObj">
     <slot>{{value}}</slot>
   </button>
 </template>
@@ -22,17 +22,25 @@
       tertiary: Boolean,
       text: Boolean
     },
+    data () {
+      return {
+        prefixCls: 'atui'
+      }
+    },
     computed: {
       btnClassObj () {
-        let { large, small, primary, secondary, tertiary, text } = this
-        return {
-          large,
-          small,
-          primary,
-          secondary,
-          tertiary,
-          text
-        }
+        let { prefixCls, large, small, primary, secondary, tertiary, text } = this
+        let btnClass = {}
+
+        btnClass[prefixCls + '-btn'] = true
+        btnClass[prefixCls + '-btn-large'] = large
+        btnClass[prefixCls + '-btn-small'] = small
+        btnClass[prefixCls + '-btn-primary'] = primary
+        btnClass[prefixCls + '-btn-secondary'] = secondary
+        btnClass[prefixCls + '-btn-tertiary'] = tertiary
+        btnClass[prefixCls + '-btn-text'] = text
+
+        return btnClass
       }
     }
   }
