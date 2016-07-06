@@ -82,7 +82,7 @@
     "deploy": "rm -rf build && webpack --progress --colors --display-chunks && node depoly.js",
     "publish-npm": "npm run authors && tnpm publish",
     "build": "npm run lint && NODE_ENV=production webpack --progress && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
-    "test": "npm run lint && def ci test",
+    "test": "npm run lint && citest run",
     "authors": "git log --format='%aN <%aE>' | sort -u  > AUTHORS.txt"
   },
   "publishConfig": {
