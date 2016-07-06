@@ -1,8 +1,10 @@
-//
+@import "themes/common";
+
 // Badges
+// --------------------------------------------------
+@prefix-cls-badge: e("@{prefix-cls}-badge");
 
 @badge-link-hover-color:      #fff;
-
 @badge-active-bg:             #fff;
 
 // self
@@ -11,7 +13,7 @@
 @badge-count-text: #fff;
 
 // Base class
-.atui-badge {
+.@{prefix-cls-badge} {
   position: relative;
   display: inline-block;
   min-width: 10px;
@@ -22,7 +24,7 @@
   text-align: center;
   box-sizing: border-box;
 
-  .badge-count {
+  .@{prefix-cls-badge}-count {
     position: absolute;
     top: -5px;
     right: -4px;
@@ -44,7 +46,7 @@
     box-shadow: 0 0 0 1px #fff;
   }
 
-  .badge-dot {
+  .@{prefix-cls-badge}-dot {
     position: absolute;
     top: -1px;
     right: -2px;
