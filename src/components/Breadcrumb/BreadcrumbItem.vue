@@ -13,15 +13,14 @@
 	</span>
 </template>
 
-<script>
+<script type="text/babel">
 export default {
   props: {
     href: String,
-    slash: String
-  },
-  data () {
-    return {
-      prefixCls: 'atui'
+    slash: String,
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   }
 }
