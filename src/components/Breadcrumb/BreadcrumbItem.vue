@@ -1,12 +1,15 @@
 <template>
-	<span class="breadcrumb">
-		<a v-if="href" :href="href" class="breadcrumb-link">
+	<span :class="[prefixCls + '-breadcrumb']">
+		<a v-if="href"
+       :href="href"
+       :class="[prefixCls + '-breadcrumb-link']">
 			<slot></slot>
 		</a>
-		<span v-else class="breadcrumb-link">
+		<span v-else
+          :class="[prefixCls + '-breadcrumb-link']">
 			<slot></slot>
 		</span>
-		<span class="breadcrumb-slash">{{ slash }}</span>
+		<span :class="[prefixCls + '-breadcrumb-slash']">{{ slash }}</span>
 	</span>
 </template>
 
@@ -15,6 +18,11 @@ export default {
   props: {
     href: String,
     slash: String
+  },
+  data () {
+    return {
+      prefixCls: 'atui'
+    }
   }
 }
 </script>

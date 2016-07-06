@@ -1,15 +1,19 @@
-//
+@import "themes/common";
+
 // Breadcrumbs
 // --------------------------------------------------
+@prefix-cls-breadcrumb: e("@{prefix-cls}-breadcrumb");
+@prefix-cls-breadcrumbs: e("@{prefix-cls}-breadcrumbs");
+
 @breadcrumb-link-color:       #999999;
 @breadcrumb-last-link-color:    #666;
 @breadcrumb-slash-color:      #ccc;
 
-.breadcrumbs {
-  .breadcrumb {
+.@{prefix-cls-breadcrumbs} {
+  .@{prefix-cls-breadcrumb} {
     padding: 0;
     background-color: #fff;
-    .breadcrumb-link {
+    .@{prefix-cls-breadcrumb}-link {
       padding: 0 22px;
       color: @breadcrumb-link-color;
       font-size: 12px;
@@ -17,16 +21,16 @@
     }
   }
 
-  .breadcrumb:last-child .breadcrumb-link {
+  .@{prefix-cls-breadcrumb}:last-child .@{prefix-cls-breadcrumb}-link {
     color: @breadcrumb-last-link-color;
   }
 
-  .breadcrumb-slash {
+  .@{prefix-cls-breadcrumb}-slash {
     color: @breadcrumb-slash-color;
     font-size: 12px;
   }
 
-  span:last-child .breadcrumb-slash {
+  span:last-child .@{prefix-cls-breadcrumb}-slash {
     display: none;
   }
 }

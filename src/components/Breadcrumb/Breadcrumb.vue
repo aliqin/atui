@@ -1,5 +1,5 @@
 <template>
-<div class="breadcrumbs">
+<div :class="[prefixCls + '-breadcrumbs']">
   <slot></slot>
 </div>
 </template>
@@ -10,6 +10,11 @@ export default {
     slash: {
       type: String,
       default: '/'
+    }
+  },
+  data () {
+    return {
+      prefixCls: 'atui'
     }
   },
   ready () {
