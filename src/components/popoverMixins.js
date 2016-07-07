@@ -20,6 +20,10 @@ const PopoverMixin = {
     },
     placement: {
       type: String
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
 
@@ -30,6 +34,29 @@ const PopoverMixin = {
         left: 0
       },
       show: false
+    }
+  },
+
+  computed: {
+    popoverClassObj () {
+      let { prefixCls, placement } = this
+      let popoverClassObj = {}
+
+      popoverClassObj[prefixCls + '-popover'] = true
+      popoverClassObj[prefixCls + '-popover-top'] = placement === 'top'
+      popoverClassObj[prefixCls + '-popover-top-left'] = placement === 'topLeft'
+      popoverClassObj[prefixCls + '-popover-top-right'] = placement === 'topRight'
+      popoverClassObj[prefixCls + '-popover-left'] = placement === 'left'
+      popoverClassObj[prefixCls + '-popover-left-top'] = placement === 'leftTop'
+      popoverClassObj[prefixCls + '-popover-left-bottom'] = placement === 'leftBottom'
+      popoverClassObj[prefixCls + '-popover-right'] = placement === 'right'
+      popoverClassObj[prefixCls + '-popover-right-top'] = placement === 'rightTop'
+      popoverClassObj[prefixCls + '-popover-right-bottom'] = placement === 'rightBottom'
+      popoverClassObj[prefixCls + '-popover-bottom'] = placement === 'bottom'
+      popoverClassObj[prefixCls + '-popover-bottom-left'] = placement === 'bottomLeft'
+      popoverClassObj[prefixCls + '-popover-bottom-right'] = placement === 'bottomRight'
+
+      return popoverClassObj
     }
   },
 
@@ -44,18 +71,21 @@ const PopoverMixin = {
     resetPos () {
       let me = this
       const popover = me.$els.popover
+
       if (me.show && popover.offsetWidth === 0) {
         setTimeout(() => {
           me.resetPos()
         })
         return
       }
+
       const triger = me.$els.trigger.children[0]
       const offset = triger.getBoundingClientRect()
       const offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left
       const offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top
-      const offsetWidth = popover.offsetWidth + 10
-      const offsetHeight = popover.offsetHeight + 5 // 减去5像素的padding
+      const offsetWidth = popover.offsetWidth
+      const offsetHeight = popover.offsetHeight
+
       switch (me.placement) {
         case 'top' :
           me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2
