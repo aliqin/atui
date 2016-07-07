@@ -1039,7 +1039,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/docs/example/headerDocs.vue"
+	  var id = "_v-4f676aa8/headerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1378,7 +1378,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Icon/Icon.vue"
+	  var id = "_v-0593cfca/Icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1472,7 +1472,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Form/Form.vue"
+	  var id = "_v-ae0a52ac/Form.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1515,7 +1515,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n.form-horizontal {}\n.form-vertical {}\n", "", {"version":3,"sources":["/./src/components/Form/Form.vue?15bc0358"],"names":[],"mappings":";AAQA,mBAAA;AACA,iBAAA","file":"Form.vue","sourcesContent":["<template>\n  <form class=\"form\" :class=\"classObj\">\n    <v-row>\n      <slot></slot>\n    </v-row>\n  </form>\n</template>\n<style>\n.form-horizontal {}\n.form-vertical {}\n</style>\n<script>\nimport Layout from '../Layout/'\nconst vRow = Layout.Row\nexport default {\n  props: {\n    // 表单元素排列方式，有纵向和横向两种 horizontal、vertical\n    horizontal: Boolean,\n    vertical: Boolean\n  },\n  data () {\n    return {\n      classObj: {\n        'form-horizontal': this.horizontal,\n        'form-vertical': this.vertical\n      }\n    }\n  },\n  components: {\n    vRow\n  }\n}\n</script>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n.form-horizontal {}\n.form-vertical {}\n", "", {"version":3,"sources":["/./src/components/Form/Form.vue?15bc0358"],"names":[],"mappings":";;;;;;;;AAQA,mBAAA;AACA,iBAAA","file":"Form.vue","sourcesContent":["<template>\n  <form class=\"form\" :class=\"classObj\">\n    <v-row>\n      <slot></slot>\n    </v-row>\n  </form>\n</template>\n<style>\n.form-horizontal {}\n.form-vertical {}\n</style>\n<script>\nimport Layout from '../Layout/'\nconst vRow = Layout.Row\nexport default {\n  props: {\n    // 表单元素排列方式，有纵向和横向两种 horizontal、vertical\n    horizontal: Boolean,\n    vertical: Boolean\n  },\n  data () {\n    return {\n      classObj: {\n        'form-horizontal': this.horizontal,\n        'form-vertical': this.vertical\n      }\n    }\n  },\n  components: {\n    vRow\n  }\n}\n</script>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -1887,7 +1887,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Layout/Row.vue"
+	  var id = "_v-0ead8cec/Row.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1921,7 +1921,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Layout/Col.vue"
+	  var id = "_v-42de83a0/Col.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1996,7 +1996,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Form/FormItem.vue"
+	  var id = "_v-45aec946/FormItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2160,7 +2160,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Button/Button.vue"
+	  var id = "_v-8f4c62ac/Button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2178,7 +2178,7 @@
 	  value: true
 	});
 	// <template>
-	//   <button :type="type" class="btn" :class="btnClassObj">
+	//   <button :type="type" :class="btnClassObj">
 	//     <slot>{{value}}</slot>
 	//   </button>
 	// </template>
@@ -2199,10 +2199,15 @@
 	    primary: Boolean,
 	    secondary: Boolean,
 	    tertiary: Boolean,
-	    text: Boolean
+	    text: Boolean,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	  computed: {
 	    btnClassObj: function btnClassObj() {
+	      var prefixCls = this.prefixCls;
 	      var large = this.large;
 	      var small = this.small;
 	      var primary = this.primary;
@@ -2210,14 +2215,17 @@
 	      var tertiary = this.tertiary;
 	      var text = this.text;
 	
-	      return {
-	        large: large,
-	        small: small,
-	        primary: primary,
-	        secondary: secondary,
-	        tertiary: tertiary,
-	        text: text
-	      };
+	      var btnClass = {};
+	
+	      btnClass[prefixCls + '-btn'] = true;
+	      btnClass[prefixCls + '-btn-large'] = large;
+	      btnClass[prefixCls + '-btn-small'] = small;
+	      btnClass[prefixCls + '-btn-primary'] = primary;
+	      btnClass[prefixCls + '-btn-secondary'] = secondary;
+	      btnClass[prefixCls + '-btn-tertiary'] = tertiary;
+	      btnClass[prefixCls + '-btn-text'] = text;
+	
+	      return btnClass;
 	    }
 	  }
 	};
@@ -2229,7 +2237,7 @@
 /* 158 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<button :type=\"type\" class=\"btn\" :class=\"btnClassObj\">\n  <slot>{{value}}</slot>\n</button>\n";
+	module.exports = "\n<button :type=\"type\" :class=\"btnClassObj\">\n  <slot>{{value}}</slot>\n</button>\n";
 
 /***/ },
 /* 159 */
@@ -2251,7 +2259,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Button/Group.vue"
+	  var id = "_v-32c99092/Group.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2269,7 +2277,8 @@
 	  value: true
 	});
 	// <template>
-	//   <div class="at-btn-group" :class="{large:large,small:small}" @click="clickBtnGroup">
+	//   <div :class="btnClassObj"
+	//        @click="clickBtnGroup">
 	//     <slot></slot>
 	//   </div>
 	// </template>
@@ -2278,7 +2287,11 @@
 	exports.default = {
 	  props: {
 	    large: Boolean,
-	    small: Boolean
+	    small: Boolean,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	  methods: {
 	    clickBtnGroup: function clickBtnGroup(e) {
@@ -2300,7 +2313,23 @@
 	      }
 	      this.$dispatch('switch', this, index);
 	    }
+	  },
+	  computed: {
+	    btnClassObj: function btnClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var large = this.large;
+	      var small = this.small;
+	
+	      var btnClass = {};
+	
+	      btnClass[prefixCls + '-btn-group'] = true;
+	      btnClass[prefixCls + '-btn-large'] = large;
+	      btnClass[prefixCls + '-btn-small'] = small;
+	
+	      return btnClass;
+	    }
 	  }
+	
 	};
 	// </script>
 
@@ -2310,7 +2339,7 @@
 /* 161 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"at-btn-group\" :class=\"{large:large,small:small}\" @click=\"clickBtnGroup\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div :class=\"btnClassObj\"\n     @click=\"clickBtnGroup\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 162 */
@@ -2350,7 +2379,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Input/Input.vue"
+	  var id = "_v-f2504680/Input.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2705,7 +2734,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Searchbox/Searchbox.vue"
+	  var id = "_v-48509eb2/Searchbox.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2921,7 +2950,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Uploader/Uploader.vue"
+	  var id = "_v-caa1f52c/Uploader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3994,7 +4023,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Message/Message.vue"
+	  var id = "_v-32374efa/Message.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4156,7 +4185,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Slider/Slider.vue"
+	  var id = "_v-256ecbca/Slider.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4508,7 +4537,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tooltip/Tooltip.vue"
+	  var id = "_v-269476f2/Tooltip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4538,6 +4567,34 @@
 	    trigger: {
 	      type: String,
 	      default: 'hover'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
+	  },
+	  computed: {
+	    tooltipClassObj: function tooltipClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var placement = this.placement;
+	
+	      var tooltipClass = {};
+	
+	      tooltipClass[prefixCls + '-tooltip'] = true;
+	      tooltipClass[prefixCls + '-tooltip-top'] = placement === 'top';
+	      tooltipClass[prefixCls + '-tooltip-top-left'] = placement === 'topLeft';
+	      tooltipClass[prefixCls + '-tooltip-top-right'] = placement === 'topRight';
+	      tooltipClass[prefixCls + '-tooltip-left'] = placement === 'left';
+	      tooltipClass[prefixCls + '-tooltip-left-top'] = placement === 'leftTop';
+	      tooltipClass[prefixCls + '-tooltip-left-bottom'] = placement === 'leftBottom';
+	      tooltipClass[prefixCls + '-tooltip-right'] = placement === 'right';
+	      tooltipClass[prefixCls + '-tooltip-right-top'] = placement === 'rightTop';
+	      tooltipClass[prefixCls + '-tooltip-right-bottom'] = placement === 'rightBottom';
+	      tooltipClass[prefixCls + '-tooltip-bottom'] = placement === 'bottom';
+	      tooltipClass[prefixCls + '-tooltip-bottom-left'] = placement === 'bottomLeft';
+	      tooltipClass[prefixCls + '-tooltip-bottom-right'] = placement === 'bottomRight';
+	
+	      return tooltipClass;
 	    }
 	  }
 	};
@@ -4545,31 +4602,17 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div class="atui-tooltip-trigger" v-el:trigger>
+	//   <div :class="[prefixCls + '-tooltip-trigger']" v-el:trigger>
 	//     <slot>
 	//     </slot>
 	//   </div>
-	//   <div class="atui-tooltip"
-	//     :class="{
-	//     'top':    placement === 'top',
-	//     'top-left':    placement === 'topLeft',
-	//     'top-right':    placement === 'topRight',
-	//     'left':   placement === 'left',
-	//     'left-top':   placement === 'leftTop',
-	//     'left-bottom':   placement === 'leftBottom',
-	//     'right':  placement === 'right',
-	//     'right-top':  placement === 'rightTop',
-	//     'right-bottom':  placement === 'rightBottom',
-	//     'bottom': placement === 'bottom',
-	//     'bottom-left': placement === 'bottomLeft',
-	//     'bottom-right': placement === 'bottomRight'
-	//     }"
+	//   <div :class="tooltipClassObj"
 	//     v-el:popover
 	//     v-show="show"
 	//     :transition="effect"
 	//     role="tooltip">
-	//     <div class="tooltip-arrow" v-el:arrow></div>
-	//     <div class="tooltip-inner">
+	//     <div :class="[prefixCls + '-tooltip-arrow']" v-el:arrow></div>
+	//     <div :class="[prefixCls + '-tooltip-inner']">
 	//       {{{content}}}
 	//     </div>
 	//   </div>
@@ -4686,7 +4729,7 @@
 	          break;
 	        case 'rightBottom':
 	          me.position.left = offsetLeft + triger.offsetWidth;
-	          me.position.top = triger.offsetTop + triger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + triger.offsetHeight / 4;
+	          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + triger.offsetHeight / 4;
 	          break;
 	        case 'bottom':
 	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2;
@@ -4766,7 +4809,7 @@
 /* 210 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-tooltip-trigger\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div class=\"atui-tooltip\"\n  :class=\"{\n  'top':    placement === 'top',\n  'top-left':    placement === 'topLeft',\n  'top-right':    placement === 'topRight',\n  'left':   placement === 'left',\n  'left-top':   placement === 'leftTop',\n  'left-bottom':   placement === 'leftBottom',\n  'right':  placement === 'right',\n  'right-top':  placement === 'rightTop',\n  'right-bottom':  placement === 'rightBottom',\n  'bottom': placement === 'bottom',\n  'bottom-left': placement === 'bottomLeft',\n  'bottom-right': placement === 'bottomRight'\n  }\"\n  v-el:popover\n  v-show=\"show\"\n  :transition=\"effect\"\n  role=\"tooltip\">\n  <div class=\"tooltip-arrow\" v-el:arrow></div>\n  <div class=\"tooltip-inner\">\n    {{{content}}}\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-tooltip-trigger']\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div :class=\"tooltipClassObj\"\n  v-el:popover\n  v-show=\"show\"\n  :transition=\"effect\"\n  role=\"tooltip\">\n  <div :class=\"[prefixCls + '-tooltip-arrow']\" v-el:arrow></div>\n  <div :class=\"[prefixCls + '-tooltip-inner']\">\n    {{{content}}}\n  </div>\n</div>\n";
 
 /***/ },
 /* 211 */
@@ -4812,7 +4855,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Switch/Switch.vue"
+	  var id = "_v-73f7486a/Switch.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4925,7 +4968,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Dropdown/Dropdown.vue"
+	  var id = "_v-3a8e066c/Dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5079,7 +5122,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Select/Select.vue"
+	  var id = "_v-779c376a/Select.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5396,7 +5439,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tag/Tag.vue"
+	  var id = "_v-e5a02ec0/Tag.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5495,7 +5538,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Select/Option.vue"
+	  var id = "_v-2c2f2663/Option.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5640,7 +5683,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Calendar/Calendar.vue"
+	  var id = "_v-59fd6f6a/Calendar.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6035,7 +6078,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/TimePicker/TimePicker.vue"
+	  var id = "_v-1bb2958a/TimePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6348,7 +6391,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/DatePicker/DatePicker.vue"
+	  var id = "_v-b839922c/DatePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6477,7 +6520,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/DatePicker/RangePicker.vue"
+	  var id = "_v-085f50e6/RangePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6536,15 +6579,27 @@
 	      }
 	    },
 	    setDisabledEndDate: function setDisabledEndDate(value) {
+	      // value: "2016-07-07"
 	      var endDate = this.$refs.endDate;
 	      endDate.disabledDate = function (date) {
-	        return date.getTime() <= new Date(value).getTime();
+	        // date: "Thu Jul 07 2016 00:00:00 GMT+0800 (CST)"
+	        // new Date(value) 得到的值是早上8点0分0秒 如：2016-07-07 08:00:00
+	        // new Date(date) 得到的值是零晨0点0分0秒 如：2016-07-07 00:00:00
+	        // 通过对比发现，相同的年月日进行getTime()，下面代码一定返回true，即选择时间段结束时间的当天会被 disabled
+	        // return date.getTime() <= new Date(value).getTime()
+	
+	        // 改造代码
+	        return date.getTime() < new Date(value + ' 00:00:00').getTime();
 	      };
 	    },
 	    setDisabledStartDate: function setDisabledStartDate(value) {
 	      var startDate = this.$refs.startDate;
 	      startDate.disabledDate = function (date) {
-	        return date.getTime() >= new Date(value).getTime();
+	        // 注释代码，原因同上
+	        // return date.getTime() >= new Date(value).getTime()
+	
+	        // 改造代码
+	        return date.getTime() > new Date(value + ' 00:00:00').getTime();
 	      };
 	    }
 	  }
@@ -6605,7 +6660,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Cascader/Cascader.vue"
+	  var id = "_v-052d0f6a/Cascader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6806,8 +6861,9 @@
 	    var title = parmas.title;
 	    var content = parmas.content;
 	    var onOk = parmas.onOk;
+	
 	    new Vue({
-	      template: '\n        <modal class="atui-modal atui-confirm atui-confirm-' + type + '" :show="show" small :callback="callback">\n          <div v-if="title" slot="modal-header"></div>\n          <div slot="modal-body">\n            <icon :type="type" size="36" :color="color"></icon>\n            <span class="atui-confirm-title">{{title}}</span>\n            <div class="atui-confirm-content">{{{content}}}</div>\n          </div>\n          <div v-if="type!==\'help\'" slot="modal-footer" class="modal-footer">\n            <button type="button" class="btn btn-default" @click="callback">知道了</button>\n          </div>\n        </modal>',
+	      template: '\n        <modal :class="[prefixCls + \'-modal\', prefixCls + \'-confirm\', prefixCls + \'-confirm-\' + type]" :show="show" small :callback="callback">\n          <div v-if="title" slot="modal-header"></div>\n          <div slot="modal-body">\n            <icon :type="type" size="36" :color="color"></icon>\n            <span :class="[prefixCls + \'-confirm-title\']">{{title}}</span>\n            <div :class="[prefixCls + \'-confirm-content\']">{{{content}}}</div>\n          </div>\n          <div v-if="type!==\'help\'" slot="modal-footer" :class="[prefixCls + \'-modal-footer\']">\n            <button type="button" :class="[prefixCls + \'-btn\', prefixCls + \'-btn-default\']" @click="callback">知道了</button>\n          </div>\n        </modal>',
 	      components: {
 	        Modal: _Modal2.default,
 	        Icon: _Icon2.default
@@ -6817,7 +6873,8 @@
 	        content: content,
 	        type: iconConfig[type].icon,
 	        color: iconConfig[type].color,
-	        show: true
+	        show: true,
+	        prefixCls: 'atui'
 	      },
 	      methods: {
 	        callback: function callback() {
@@ -6831,6 +6888,7 @@
 	    }).$mount().$appendTo(document.body);
 	  };
 	});
+	
 	exports.default = _Modal2.default;
 
 /***/ },
@@ -6853,7 +6911,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Modal/Modal.vue"
+	  var id = "_v-7c8ef946/Modal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6871,26 +6929,29 @@
 	  value: true
 	});
 	// <template>
-	//   <div role="dialog" class="atui-modal" v-show="show" transition="fade"
+	//   <div role="dialog" :class="[prefixCls + '-modal']" v-show="show" transition="fade"
 	//     @click="clickBack"
 	//     >
-	//     <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small, width: width}" role="document"
-	//       v-show="show" transition="fade">
-	//       <div class="modal-content">
+	//     <div v-show="show"
+	//          :class="dialogClassObj"
+	//          :style="{width: width}"
+	//          role="document"
+	//          transition="fade">
+	//       <div :class="[prefixCls + '-modal-content']">
 	//         <slot name="modal-header">
-	//           <div class="modal-header">
-	//             <button type="button" class="close" @click="close"><span>&times;</span></button>
-	//             <h4 class="modal-title">{{title}}</h4>
+	//           <div :class="[prefixCls + '-modal-header']">
+	//             <button type="button" :class="[prefixCls + '-close']" @click="close"><span>&times;</span></button>
+	//             <h4 :class="[prefixCls + '-modal-title']">{{title}}</h4>
 	//           </div>
 	//         </slot>
-	//         <div class="modal-body" :style="{height: height,maxHeight: '500px'}">
+	//         <div :class="[prefixCls + '-modal-body']" :style="{height: height, maxHeight: '500px'}">
 	//           <slot name="modal-body">
 	//           </slot>
 	//         </div>
 	//         <slot name="modal-footer">
-	//           <div class="modal-footer">
-	//             <button type="button" class="btn btn-default" @click="callback">确定</button>
-	//             <button type="button" class="btn tertiary" @click="close">取消</button>
+	//           <div :class="[prefixCls + '-modal-footer']">
+	//             <button type="button" :class="[prefixCls + '-btn', prefixCls + '-btn-default']" @click="callback">确定</button>
+	//             <button type="button" :class="[prefixCls + '-btn', prefixCls + '-btn-tertiary']" @click="close">取消</button>
 	//           </div>
 	//         </slot>
 	//       </div>
@@ -6926,6 +6987,10 @@
 	    },
 	    small: {
 	      type: Boolean
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  methods: {
@@ -6948,6 +7013,22 @@
 	  },
 	  attached: function attached() {
 	    this.$appendTo(document.body);
+	  },
+	
+	  computed: {
+	    dialogClassObj: function dialogClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var large = this.large;
+	      var small = this.small;
+	
+	      var dialogClass = {};
+	
+	      dialogClass[prefixCls + '-modal-dialog'] = true;
+	      dialogClass[prefixCls + '-modal-lg'] = large;
+	      dialogClass[prefixCls + '-modal-sm'] = small;
+	
+	      return dialogClass;
+	    }
 	  }
 	};
 	// </script>
@@ -6958,7 +7039,7 @@
 /* 255 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div role=\"dialog\" class=\"atui-modal\" v-show=\"show\" transition=\"fade\"\n  @click=\"clickBack\"\n  >\n  <div :class=\"{'modal-dialog':true,'modal-lg':large,'modal-sm':small, width: width}\" role=\"document\"\n    v-show=\"show\" transition=\"fade\">\n    <div class=\"modal-content\">\n      <slot name=\"modal-header\">\n        <div class=\"modal-header\">\n          <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n          <h4 class=\"modal-title\">{{title}}</h4>\n        </div>\n      </slot>\n      <div class=\"modal-body\" :style=\"{height: height,maxHeight: '500px'}\">\n        <slot name=\"modal-body\">\n        </slot>\n      </div>\n      <slot name=\"modal-footer\">\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"callback\">确定</button>\n          <button type=\"button\" class=\"btn tertiary\" @click=\"close\">取消</button>\n        </div>\n      </slot>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n<div role=\"dialog\" :class=\"[prefixCls + '-modal']\" v-show=\"show\" transition=\"fade\"\n  @click=\"clickBack\"\n  >\n  <div v-show=\"show\"\n       :class=\"dialogClassObj\"\n       :style=\"{width: width}\"\n       role=\"document\"\n       transition=\"fade\">\n    <div :class=\"[prefixCls + '-modal-content']\">\n      <slot name=\"modal-header\">\n        <div :class=\"[prefixCls + '-modal-header']\">\n          <button type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"close\"><span>&times;</span></button>\n          <h4 :class=\"[prefixCls + '-modal-title']\">{{title}}</h4>\n        </div>\n      </slot>\n      <div :class=\"[prefixCls + '-modal-body']\" :style=\"{height: height, maxHeight: '500px'}\">\n        <slot name=\"modal-body\">\n        </slot>\n      </div>\n      <slot name=\"modal-footer\">\n        <div :class=\"[prefixCls + '-modal-footer']\">\n          <button type=\"button\" :class=\"[prefixCls + '-btn', prefixCls + '-btn-default']\" @click=\"callback\">确定</button>\n          <button type=\"button\" :class=\"[prefixCls + '-btn', prefixCls + '-btn-tertiary']\" @click=\"close\">取消</button>\n        </div>\n      </slot>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 256 */
@@ -6998,7 +7079,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Table/Table.vue"
+	  var id = "_v-04edcdc8/Table.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7407,7 +7488,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Spin/Spin.vue"
+	  var id = "_v-1cca152c/Spin.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7512,7 +7593,7 @@
 /* 268 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"['atui-table','atui-table-'+size, {loading :loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"['atui-table-container',{'atui-fixed-header':fixedHeader}]\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{column['title']}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" class=\"dropdown-menu atui-table-filter-dropdown\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div class=\"atui-table-filter-dropdown-btns\">\n                  <a class=\"atui-table-filter-dropdown-link confirm\" @click=\"onFilter(column)\">确定</a>\n                  <a class=\"atui-table-filter-dropdown-link clear\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" class=\"table-sorter\">\n              <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n              <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"30\" style=\"text-align: center;\" class=\"vue-table-empty\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
+	module.exports = "\n\n<div :class=\"['atui-table','atui-table-'+size, {loading :loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"['atui-table-container',{'atui-fixed-header':fixedHeader}]\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{column['title']}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" class=\"dropdown-menu atui-table-filter-dropdown\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div class=\"atui-table-filter-dropdown-btns\">\n                  <a class=\"atui-table-filter-dropdown-link confirm\" @click=\"onFilter(column)\">确定</a>\n                  <a class=\"atui-table-filter-dropdown-link clear\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" class=\"table-sorter\">\n              <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n              <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"30\" style=\"text-align: center;\" class=\"vue-table-empty\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
 
 /***/ },
 /* 269 */
@@ -7552,7 +7633,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Badge/Badge.vue"
+	  var id = "_v-5e8294b2/Badge.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7570,18 +7651,18 @@
 	  value: true
 	});
 	// <template>
-	// <span class="atui-badge">
+	// <span :class="[prefixCls + '-badge']">
 	//   <slot></slot>
-	//   <sup class="badge-dot" v-if="dot"></sup>
+	//   <sup :class="[prefixCls + '-badge-dot']" v-if="dot"></sup>
 	//   <template v-else>
-	//     <sup v-if='count > 0' class="badge-count">
+	//     <sup v-if='count > 0' :class="[prefixCls + '-badge-count']">
 	//       {{count | short}}
 	//     </sup>
 	//   </template>
 	// </span>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 	exports.default = {
 	  name: 'badge',
 	  props: {
@@ -7590,6 +7671,10 @@
 	    },
 	    dot: {
 	      type: Boolean
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  filters: {
@@ -7606,7 +7691,7 @@
 /* 272 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<span class=\"atui-badge\">\n  <slot></slot>\n  <sup class=\"badge-dot\" v-if=\"dot\"></sup>\n  <template v-else>\n    <sup v-if='count > 0' class=\"badge-count\">\n      {{count | short}}\n    </sup>\n  </template>\n</span>\n";
+	module.exports = "\n<span :class=\"[prefixCls + '-badge']\">\n  <slot></slot>\n  <sup :class=\"[prefixCls + '-badge-dot']\" v-if=\"dot\"></sup>\n  <template v-else>\n    <sup v-if='count > 0' :class=\"[prefixCls + '-badge-count']\">\n      {{count | short}}\n    </sup>\n  </template>\n</span>\n";
 
 /***/ },
 /* 273 */
@@ -7653,7 +7738,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Carousel/Carousel.vue"
+	  var id = "_v-44b7d4ac/Carousel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7677,8 +7762,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-44b7d4ac&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-44b7d4ac&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -7696,7 +7781,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n.carousel-control[_v-276df37b] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?134eb1a3"],"names":[],"mappings":";AAsHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../utils/EventListener.js'\nimport coerceBoolean from '../utils/coerceBoolean.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-44b7d4ac] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?134eb1a3"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAsHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../utils/EventListener.js'\nimport coerceBoolean from '../utils/coerceBoolean.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -7863,7 +7948,7 @@
 /* 278 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
+	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-44b7d4ac=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-44b7d4ac=\"\">\n    <indicator _v-44b7d4ac=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-44b7d4ac=\"\">\n    <slot _v-44b7d4ac=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-44b7d4ac=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-44b7d4ac=\"\"></span>\n    <span class=\"sr-only\" _v-44b7d4ac=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-44b7d4ac=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-44b7d4ac=\"\"></span>\n    <span class=\"sr-only\" _v-44b7d4ac=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
 /* 279 */
@@ -7885,7 +7970,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Carousel/Slide.vue"
+	  var id = "_v-5a00a952/Slide.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7967,7 +8052,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Affix.vue"
+	  var id = "_v-32700baa/Affix.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8010,7 +8095,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n.vue-affix {\n  position: fixed;\n}\n", "", {"version":3,"sources":["/./src/components/Affix.vue?fd7fe4a2"],"names":[],"mappings":";AAqFA;EACA,gBAAA;CACA","file":"Affix.vue","sourcesContent":["<template>\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n</template>\n\n<script>\nimport EventListener from './utils/EventListener.js'\nexport default {\n  props: {\n    offset: {\n      type: Number,\n      default: 0\n    }\n  },\n  data () {\n    return {\n      affixed: false,\n      styles: {}\n    }\n  },\n  methods: {\n    scrolling () {\n      const scrollTop = this.getScroll(window, true)\n      const elementOffset = this.getOffset(this.$el)\n      if (!this.affixed && scrollTop > elementOffset.top) {\n        this.affixed = true\n        this.styles = {\n          top: this.offset + 'px',\n          left: elementOffset.left + 'px',\n          width: this.$el.offsetWidth + 'px'\n        }\n      }\n      if (this.affixed && scrollTop < elementOffset.top) {\n        this.affixed = false\n        this.styles = {}\n      }\n    },\n    // from https://github.com/ant-design/ant-design/blob/master/components/affix/index.jsx#L20\n    getScroll (w, top) {\n      let ret = w['page' + (top ? 'Y' : 'X') + 'Offset']\n      const method = 'scroll' + (top ? 'Top' : 'Left')\n      if (typeof ret !== 'number') {\n        const d = w.document\n        // ie6,7,8 standard mode\n        ret = d.documentElement[method]\n        if (typeof ret !== 'number') {\n          // quirks mode\n          ret = d.body[method]\n        }\n      }\n      return ret\n    },\n    getOffset (element) {\n      const rect = element.getBoundingClientRect()\n      const body = document.body\n      const clientTop = element.clientTop || body.clientTop || 0\n      const clientLeft = element.clientLeft || body.clientLeft || 0\n      const scrollTop = this.getScroll(window, true)\n      const scrollLeft = this.getScroll(window)\n      return {\n        top: rect.top + scrollTop - clientTop,\n        left: rect.left + scrollLeft - clientLeft\n      }\n    }\n  },\n  ready () {\n    this._scrollEvent = EventListener.listen(window, 'scroll', this.scrolling)\n    this._resizeEvent = EventListener.listen(window, 'resize', this.scrolling)\n  },\n  beforeDestroy () {\n    if (this._scrollEvent) {\n      this._scrollEvent.remove()\n    }\n    if (this._resizeEvent) {\n      this._resizeEvent.remove()\n    }\n  }\n}\n</script>\n\n<style>\n  .vue-affix {\n    position: fixed;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.vue-affix {\n  position: fixed;\n}\n", "", {"version":3,"sources":["/./src/components/Affix.vue?fd7fe4a2"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAqFA;EACA,gBAAA;CACA","file":"Affix.vue","sourcesContent":["<template>\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n</template>\n\n<script>\nimport EventListener from './utils/EventListener.js'\nexport default {\n  props: {\n    offset: {\n      type: Number,\n      default: 0\n    }\n  },\n  data () {\n    return {\n      affixed: false,\n      styles: {}\n    }\n  },\n  methods: {\n    scrolling () {\n      const scrollTop = this.getScroll(window, true)\n      const elementOffset = this.getOffset(this.$el)\n      if (!this.affixed && scrollTop > elementOffset.top) {\n        this.affixed = true\n        this.styles = {\n          top: this.offset + 'px',\n          left: elementOffset.left + 'px',\n          width: this.$el.offsetWidth + 'px'\n        }\n      }\n      if (this.affixed && scrollTop < elementOffset.top) {\n        this.affixed = false\n        this.styles = {}\n      }\n    },\n    // from https://github.com/ant-design/ant-design/blob/master/components/affix/index.jsx#L20\n    getScroll (w, top) {\n      let ret = w['page' + (top ? 'Y' : 'X') + 'Offset']\n      const method = 'scroll' + (top ? 'Top' : 'Left')\n      if (typeof ret !== 'number') {\n        const d = w.document\n        // ie6,7,8 standard mode\n        ret = d.documentElement[method]\n        if (typeof ret !== 'number') {\n          // quirks mode\n          ret = d.body[method]\n        }\n      }\n      return ret\n    },\n    getOffset (element) {\n      const rect = element.getBoundingClientRect()\n      const body = document.body\n      const clientTop = element.clientTop || body.clientTop || 0\n      const clientLeft = element.clientLeft || body.clientLeft || 0\n      const scrollTop = this.getScroll(window, true)\n      const scrollLeft = this.getScroll(window)\n      return {\n        top: rect.top + scrollTop - clientTop,\n        left: rect.left + scrollLeft - clientLeft\n      }\n    }\n  },\n  ready () {\n    this._scrollEvent = EventListener.listen(window, 'scroll', this.scrolling)\n    this._resizeEvent = EventListener.listen(window, 'resize', this.scrolling)\n  },\n  beforeDestroy () {\n    if (this._scrollEvent) {\n      this._scrollEvent.remove()\n    }\n    if (this._resizeEvent) {\n      this._resizeEvent.remove()\n    }\n  }\n}\n</script>\n\n<style>\n  .vue-affix {\n    position: fixed;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -8168,7 +8253,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Textarea/Textarea.vue"
+	  var id = "_v-3a216aea/Textarea.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8341,7 +8426,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Accordion/Accordion.vue"
+	  var id = "_v-0d6bbbbc/Accordion.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8370,14 +8455,12 @@
 	  props: {
 	    oneAtATime: {
 	      type: Boolean
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
-	  data: function data() {
-	    return {
-	      prefixCls: 'atui'
-	    };
-	  },
-	
 	  methods: {
 	    _mapIndexToChildComponent: function _mapIndexToChildComponent() {
 	      var self = this;
@@ -8434,7 +8517,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Accordion/Panel.vue"
+	  var id = "_v-30169078/Panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8474,12 +8557,15 @@
 	    },
 	    index: {
 	      type: Number
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
 	    return {
-	      height: 0,
-	      prefixCls: 'atui'
+	      height: 0
 	    };
 	  },
 	
@@ -8518,7 +8604,7 @@
 	//   </div>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 
 /***/ },
 /* 297 */
@@ -8564,7 +8650,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Popover/Popover.vue"
+	  var id = "_v-6c0adf94/Popover.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8677,7 +8763,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tabs/Tabset.vue"
+	  var id = "_v-eea1a8ce/Tabset.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8905,7 +8991,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tabs/Tab.vue"
+	  var id = "_v-0a641d4e/Tab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9026,7 +9112,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Steps/Steps.vue"
+	  var id = "_v-45170cba/Steps.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9157,7 +9243,7 @@
 /* 312 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-steps\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n\n<div class=\"atui-steps\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 313 */
@@ -9179,7 +9265,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Steps/Step.vue"
+	  var id = "_v-f38574ee/Step.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9310,7 +9396,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tree/Tree.vue"
+	  var id = "_v-6096222c/Tree.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9385,7 +9471,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tree/TreeNode.vue"
+	  var id = "_v-695db70c/TreeNode.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9540,7 +9626,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Menu/Menu.vue"
+	  var id = "_v-1fc0e0ec/Menu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9602,7 +9688,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Menu/SubMenu.vue"
+	  var id = "_v-4c0896e4/SubMenu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9671,7 +9757,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Menu/MenuItem.vue"
+	  var id = "_v-1f85e43d/MenuItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9730,7 +9816,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Menu/MenuItemGroup.vue"
+	  var id = "_v-03f37ef2/MenuItemGroup.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9816,7 +9902,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Breadcrumb/Breadcrumb.vue"
+	  var id = "_v-948c4eec/Breadcrumb.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9834,17 +9920,21 @@
 	  value: true
 	});
 	// <template>
-	// <div class="breadcrumbs">
+	// <div :class="[prefixCls + '-breadcrumbs']">
 	//   <slot></slot>
 	// </div>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    slash: {
 	      type: String,
 	      default: '/'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  ready: function ready() {
@@ -9862,7 +9952,7 @@
 /* 339 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"breadcrumbs\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-breadcrumbs']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 340 */
@@ -9884,7 +9974,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Breadcrumb/BreadcrumbItem.vue"
+	  var id = "_v-e658a586/BreadcrumbItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9896,28 +9986,35 @@
 /* 341 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	// <template>
-	// 	<span class="breadcrumb">
-	// 		<a v-if="href" :href="href" class="breadcrumb-link">
+	// 	<span :class="[prefixCls + '-breadcrumb']">
+	// 		<a v-if="href"
+	//        :href="href"
+	//        :class="[prefixCls + '-breadcrumb-link']">
 	// 			<slot></slot>
 	// 		</a>
-	// 		<span v-else class="breadcrumb-link">
+	// 		<span v-else
+	//           :class="[prefixCls + '-breadcrumb-link']">
 	// 			<slot></slot>
 	// 		</span>
-	// 		<span class="breadcrumb-slash">{{ slash }}</span>
+	// 		<span :class="[prefixCls + '-breadcrumb-slash']">{{ slash }}</span>
 	// 	</span>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    href: String,
-	    slash: String
+	    slash: String,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  }
 	};
 	// </script>
@@ -9928,7 +10025,7 @@
 /* 342 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<span class=\"breadcrumb\">\n\t<a v-if=\"href\" :href=\"href\" class=\"breadcrumb-link\">\n\t\t<slot></slot>\n\t</a>\n\t<span v-else class=\"breadcrumb-link\">\n\t\t<slot></slot>\n\t</span>\n\t<span class=\"breadcrumb-slash\">{{ slash }}</span>\n</span>\n";
+	module.exports = "\n\t<span :class=\"[prefixCls + '-breadcrumb']\">\n\t\t<a v-if=\"href\"\n       :href=\"href\"\n       :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</a>\n\t\t<span v-else\n          :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</span>\n\t\t<span :class=\"[prefixCls + '-breadcrumb-slash']\">{{ slash }}</span>\n\t</span>\n";
 
 /***/ },
 /* 343 */
@@ -9974,7 +10071,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Pagination/Pagination.vue"
+	  var id = "_v-3989342a/Pagination.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10223,7 +10320,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Pagination/Jumper.vue"
+	  var id = "_v-36a5c52a/Jumper.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10349,7 +10446,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Pagination/Pager.vue"
+	  var id = "_v-1a6c323a/Pager.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10457,7 +10554,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Pagination/Options.vue"
+	  var id = "_v-188c363e/Options.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10623,7 +10720,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/docs/example/container.vue"
+	  var id = "_v-b697801e/container.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10822,19 +10919,19 @@
 			insertBefore: function (inside, before, insert, root) {
 				root = root || _.languages;
 				var grammar = root[inside];
-				
+	
 				if (arguments.length == 2) {
 					insert = arguments[1];
-					
+	
 					for (var newToken in insert) {
 						if (insert.hasOwnProperty(newToken)) {
 							grammar[newToken] = insert[newToken];
 						}
 					}
-					
+	
 					return grammar;
 				}
-				
+	
 				var ret = {};
 	
 				for (var token in grammar) {
@@ -10854,7 +10951,7 @@
 						ret[token] = grammar[token];
 					}
 				}
-				
+	
 				// Update references in other language definitions
 				_.languages.DFS(_.languages, function(key, value) {
 					if (value === root[inside] && key != inside) {
@@ -10885,12 +10982,19 @@
 			}
 		},
 		plugins: {},
-		
+	
 		highlightAll: function(async, callback) {
-			var elements = document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');
+			var env = {
+				callback: callback,
+				selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+			};
+	
+			_.hooks.run("before-highlightall", env);
+	
+			var elements = env.elements || document.querySelectorAll(env.selector);
 	
 			for (var i=0, element; element = elements[i++];) {
-				_.highlightElement(element, async === true, callback);
+				_.highlightElement(element, async === true, env.callback);
 			}
 		},
 	
@@ -10903,7 +11007,7 @@
 			}
 	
 			if (parent) {
-				language = (parent.className.match(lang) || [,''])[1];
+				language = (parent.className.match(lang) || [,''])[1].toLowerCase();
 				grammar = _.languages[language];
 			}
 	
@@ -10926,7 +11030,9 @@
 				code: code
 			};
 	
-			if (!code || !grammar) {
+			_.hooks.run('before-sanity-check', env);
+	
+			if (!env.code || !env.grammar) {
 				_.hooks.run('complete', env);
 				return;
 			}
@@ -11000,6 +11106,7 @@
 					var pattern = patterns[j],
 						inside = pattern.inside,
 						lookbehind = !!pattern.lookbehind,
+						greedy = !!pattern.greedy,
 						lookbehindLength = 0,
 						alias = pattern.alias;
 	
@@ -11020,36 +11127,76 @@
 	
 						pattern.lastIndex = 0;
 	
-						var match = pattern.exec(str);
+						var match = pattern.exec(str),
+						    delNum = 1;
 	
-						if (match) {
-							if(lookbehind) {
-								lookbehindLength = match[1].length;
+						// Greedy patterns can override/remove up to two previously matched tokens
+						if (!match && greedy && i != strarr.length - 1) {
+							// Reconstruct the original text using the next two tokens
+							var nextToken = strarr[i + 1].matchedStr || strarr[i + 1],
+							    combStr = str + nextToken;
+	
+							if (i < strarr.length - 2) {
+								combStr += strarr[i + 2].matchedStr || strarr[i + 2];
 							}
 	
-							var from = match.index - 1 + lookbehindLength,
-								match = match[0].slice(lookbehindLength),
-								len = match.length,
-								to = from + len,
-								before = str.slice(0, from + 1),
-								after = str.slice(to + 1);
-	
-							var args = [i, 1];
-	
-							if (before) {
-								args.push(before);
+							// Try the pattern again on the reconstructed text
+							pattern.lastIndex = 0;
+							match = pattern.exec(combStr);
+							if (!match) {
+								continue;
 							}
 	
-							var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias);
-	
-							args.push(wrapped);
-	
-							if (after) {
-								args.push(after);
+							var from = match.index + (lookbehind ? match[1].length : 0);
+							// To be a valid candidate, the new match has to start inside of str
+							if (from >= str.length) {
+								continue;
 							}
+							var to = match.index + match[0].length,
+							    len = str.length + nextToken.length;
 	
-							Array.prototype.splice.apply(strarr, args);
+							// Number of tokens to delete and replace with the new match
+							delNum = 3;
+	
+							if (to <= len) {
+								if (strarr[i + 1].greedy) {
+									continue;
+								}
+								delNum = 2;
+								combStr = combStr.slice(0, len);
+							}
+							str = combStr;
 						}
+	
+						if (!match) {
+							continue;
+						}
+	
+						if(lookbehind) {
+							lookbehindLength = match[1].length;
+						}
+	
+						var from = match.index + lookbehindLength,
+						    match = match[0].slice(lookbehindLength),
+						    to = from + match.length,
+						    before = str.slice(0, from),
+						    after = str.slice(to);
+	
+						var args = [i, delNum];
+	
+						if (before) {
+							args.push(before);
+						}
+	
+						var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);
+	
+						args.push(wrapped);
+	
+						if (after) {
+							args.push(after);
+						}
+	
+						Array.prototype.splice.apply(strarr, args);
 					}
 				}
 			}
@@ -11082,10 +11229,13 @@
 		}
 	};
 	
-	var Token = _.Token = function(type, content, alias) {
+	var Token = _.Token = function(type, content, alias, matchedStr, greedy) {
 		this.type = type;
 		this.content = content;
 		this.alias = alias;
+		// Copy of the full string this token was created from
+		this.matchedStr = matchedStr || null;
+		this.greedy = !!greedy;
 	};
 	
 	Token.stringify = function(o, language, parent) {
@@ -11158,7 +11308,12 @@
 		_.filename = script.src;
 	
 		if (document.addEventListener && !script.hasAttribute('data-manual')) {
-			document.addEventListener('DOMContentLoaded', _.highlightAll);
+			if(document.readyState !== "loading") {
+				requestAnimationFrame(_.highlightAll, 0);
+			}
+			else {
+				document.addEventListener('DOMContentLoaded', _.highlightAll);
+			}
 		}
 	}
 	
@@ -11296,7 +11451,10 @@
 				lookbehind: true
 			}
 		],
-		'string': /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+		'string': {
+			pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+			greedy: true
+		},
 		'class-name': {
 			pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,
 			lookbehind: true,
@@ -11327,13 +11485,15 @@
 	Prism.languages.insertBefore('javascript', 'keyword', {
 		'regex': {
 			pattern: /(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
-			lookbehind: true
+			lookbehind: true,
+			greedy: true
 		}
 	});
 	
-	Prism.languages.insertBefore('javascript', 'class-name', {
+	Prism.languages.insertBefore('javascript', 'string', {
 		'template-string': {
-			pattern: /`(?:\\`|\\?[^`])*`/,
+			pattern: /`(?:\\\\|\\?[^\\])*?`/,
+			greedy: true,
 			inside: {
 				'interpolation': {
 					pattern: /\$\{[^}]+\}/,
@@ -11376,13 +11536,14 @@
 	
 			var Extensions = {
 				'js': 'javascript',
-				'html': 'markup',
-				'svg': 'markup',
-				'xml': 'markup',
 				'py': 'python',
 				'rb': 'ruby',
 				'ps1': 'powershell',
-				'psm1': 'powershell'
+				'psm1': 'powershell',
+				'sh': 'bash',
+				'bat': 'batch',
+				'h': 'c',
+				'tex': 'latex'
 			};
 	
 			if(Array.prototype.forEach) { // Check to prevent error in IE8
@@ -11604,7 +11765,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/docs/example/widgets/addressSelectDocs.vue"
+	  var id = "_v-52ee910a/addressSelectDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11828,7 +11989,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/widgets/AddressSelect/AddressSelect.vue"
+	  var id = "_v-d30278a6/AddressSelect.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
