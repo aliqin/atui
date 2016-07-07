@@ -1,24 +1,27 @@
 <template>
-  <div role="dialog" class="atui-modal" v-show="show" transition="fade"
+  <div role="dialog" :class="[prefixCls + '-modal']" v-show="show" transition="fade"
     @click="clickBack"
     >
-    <div :class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small, width: width}" role="document"
-      v-show="show" transition="fade">
-      <div class="modal-content">
+    <div v-show="show"
+         :class="dialogClassObj"
+         :style="{width: width}"
+         role="document"
+         transition="fade">
+      <div :class="[prefixCls + '-modal-content']">
         <slot name="modal-header">
-          <div class="modal-header">
-            <button type="button" class="close" @click="close"><span>&times;</span></button>
-            <h4 class="modal-title">{{title}}</h4>
+          <div :class="[prefixCls + '-modal-header']">
+            <button type="button" :class="[prefixCls + '-close']" @click="close"><span>&times;</span></button>
+            <h4 :class="[prefixCls + '-modal-title']">{{title}}</h4>
           </div>
         </slot>
-        <div class="modal-body" :style="{height: height,maxHeight: '500px'}">
+        <div :class="[prefixCls + '-modal-body']" :style="{height: height, maxHeight: '500px'}">
           <slot name="modal-body">
           </slot>
         </div>
         <slot name="modal-footer">
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" @click="callback">确定</button>
-            <button type="button" class="btn tertiary" @click="close">取消</button>
+          <div :class="[prefixCls + '-modal-footer']">
+            <button type="button" :class="[prefixCls + '-btn', prefixCls + '-btn-default']" @click="callback">确定</button>
+            <button type="button" :class="[prefixCls + '-btn', prefixCls + '-btn-tertiary']" @click="close">取消</button>
           </div>
         </slot>
       </div>
@@ -54,6 +57,10 @@ export default {
     },
     small: {
       type: Boolean
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   methods: {
@@ -76,6 +83,18 @@ export default {
   },
   attached () {
     this.$appendTo(document.body)
+  },
+  computed: {
+    dialogClassObj () {
+      let { prefixCls, large, small } = this
+      let dialogClass = {}
+
+      dialogClass[prefixCls + '-modal-dialog'] = true
+      dialogClass[prefixCls + '-modal-lg'] = large
+      dialogClass[prefixCls + '-modal-sm'] = small
+
+      return dialogClass
+    }
   }
 }
 </script>

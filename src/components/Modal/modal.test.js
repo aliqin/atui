@@ -19,7 +19,7 @@ describe('Modal', () => {
         </modal>
         <modal title="modal2" :show.sync="show" width="400px" backdrop :callback="modalCallback">
           <div slot="modal-header"></div>
-          <div slot="modal-body" class="modal-body">
+          <div slot="modal-body" class="atui-modal-body">
             This is modal2 body content
           </div>
         </modal>
@@ -53,7 +53,7 @@ describe('Modal', () => {
     // let event = new MouseEvent('click') // 新规范的用法,目前phantomJS暂不支持
     let event = document.createEvent('MouseEvents')
     event.initMouseEvent('click')
-    let $btn = document.body.querySelectorAll('.btn-default')[0]
+    let $btn = document.body.querySelectorAll('.atui-btn-default')[0]
     $btn.dispatchEvent(event)
     vm.modalCallback.should.be.calledOn($btn)
   })
