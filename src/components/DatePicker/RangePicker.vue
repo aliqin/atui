@@ -41,16 +41,26 @@
           me.$dispatch('change', me.startDate, me.endDate)
         }
       },
-      setDisabledEndDate (value) {
+      setDisabledEndDate (value) { // value: "2016-07-07"
         let endDate = this.$refs.endDate
-        endDate.disabledDate = (date) => {
-          return date.getTime() <= new Date(value).getTime()
+        endDate.disabledDate = (date) => { // date: "Thu Jul 07 2016 00:00:00 GMT+0800 (CST)"
+          // new Date(value) 得到的值是早上8点0分0秒 如：2016-07-07 08:00:00
+          // new Date(date) 得到的值是零晨0点0分0秒 如：2016-07-07 00:00:00
+          // 通过对比发现，相同的年月日进行getTime()，下面代码一定返回true，即选择时间段结束时间的当天会被 disabled
+          // return date.getTime() <= new Date(value).getTime()
+
+          // 改造代码
+          return date.getTime() < new Date(value + ' 00:00:00').getTime()
         }
       },
       setDisabledStartDate (value) {
         let startDate = this.$refs.startDate
         startDate.disabledDate = (date) => {
-          return date.getTime() >= new Date(value).getTime()
+          // 注释代码，原因同上
+          // return date.getTime() >= new Date(value).getTime()
+
+          // 改造代码
+          return date.getTime() > new Date(value + ' 00:00:00').getTime()
         }
       }
     }
