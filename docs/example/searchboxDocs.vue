@@ -75,12 +75,14 @@ export default{
       ]
     }
   },
+  watch: {
+    defaultVal (newVal, oldVal) {
+      Message.info(newVal);
+    }
+  },
   events: {
     'searchbox-value-check' (data, searchboxVue) {
       console.log(data);
-    },
-    'searchbox-value-change' (val, searchboxVue) {
-      Message.info(val);
     }
   }
 }

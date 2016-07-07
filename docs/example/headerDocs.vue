@@ -1,19 +1,36 @@
 <template>
   <header class="navbar navbar-top bs-docs-nav" id="top" role="banner">
-    <v-row class="container">
-      <v-col span="5">
-        <h1><a href="components.html">ATUI</a></h1>
-      </v-col>
-      <v-col span="25">
-        <v-menu mode="horizontal">
-          <menu-item><a href="components.html">组件</a></menu-item>
-          <menu-item><a href="widgets.html">widgets(业务组件)</a></menu-item>
-          <menu-item><a href="filters.html">filters(数据过滤器)</a></menu-item>
-          <menu-item><a href="http://gitlab.alibaba-inc.com/aliqin/atui/">GitLab</a></menu-item>
-          <menu-item><a href="http://ued.aliqin.alibaba.net/webcompon/">视觉稿</a></menu-item>
-        </v-menu>
-      </v-col>
-    </v-row>
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="" class="navbar-brand">ATUI</a>
+      </div>
+      <nav id="bs-navbar" class="collapse navbar-collapse">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="components.html">
+            组件
+          </a></li>
+          <li><a href="widgets.html">
+            widgets(业务组件)
+          </a></li>
+          <li><a href="filters.html">
+            filters(数据过滤器)
+          </a></li>
+          <li><a href="http://gitlab.alibaba-inc.com/aliqin/atui/">
+            GitLab
+          </a></li>
+          <li><a href="http://ued.aliqin.alibaba.net/webcompon/" target="_blank">
+            视觉稿
+          </a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <ul class="themes" id="J_header">
     <li v-for="theme in themes" :class="{active:theme.active}" :style="{backgroundColor:theme.color}" @click="changeTheme(theme.csslink,$event)" :title="theme.name">
@@ -21,10 +38,6 @@
   </ul>
 </template>
 <script>
-import { Layout, Menu } from 'src/'
-const { SubMenu, MenuItem } = Menu
-const vRow = Layout.Row
-const vCol = Layout.Col
 export default {
   data() {
     return {
@@ -49,9 +62,8 @@ export default {
       },
       ]
     }
-  },
-  methods:{
-    changeTheme(csslink, event) {
+  },methods:{
+    changeTheme(csslink,event) {
       event.preventDefault();
       this.themes.forEach((i)=>{
         i.active = false;
@@ -63,13 +75,6 @@ export default {
       // document.body.className = csslink.replace('.css','')
       Vue.util.addClass(document.body,csslink.replace('.css',''))
     }
-  },
-  components: {
-    vRow,
-    vCol,
-    vMenu: Menu,
-    SubMenu,
-    MenuItem
   }
 }
 </script>

@@ -50,8 +50,7 @@ import asideDocs from './example/asideDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import stepsDocs from './example/stepsDocs.vue'
-import menuDocs from './example/menuDocs.vue'
-import treeDocs from './example/treeDocs.vue'
+// import menuDocs from './example/menuDocs.vue'
 import breadcrumbDocs from './example/breadcrumbDocs.vue'
 import paginationDocs from './example/paginationDocs.vue'
 
@@ -97,12 +96,12 @@ new Vue({
     selectDocs,
     tabsDocs,
     tableDocs,
-    treeDocs,
     stepsDocs,
     breadcrumbDocs,
     paginationDocs,
     tooltipDocs,
-    menuDocs,
+    // typeaheadDocs,
+    // menuDocs,
     searchboxDocs,
     phoneNumberDocs,
   },
