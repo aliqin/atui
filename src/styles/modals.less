@@ -1,4 +1,8 @@
-//== Modals
+@import "themes/common";
+
+// Modals
+// --------------------------------------------------
+@prefix-cls-modal: e("@{prefix-cls}-modal");
 
 // z-index;
 @zindex-modal-background:  1040;
@@ -23,11 +27,11 @@
 @modal-md:                    600px;
 @modal-sm:                    400px;
 
-.modal-open {
+.@{prefix-cls-modal}-open {
   overflow: hidden;
 }
 
-.atui-modal {
+.@{prefix-cls-modal} {
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -42,18 +46,18 @@
 }
 
 
-.modal-dialog {
+.@{prefix-cls-modal}-dialog {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   min-width: 400px;
 }
-.ie9 .modal-dialog {
+.ie9 .@{prefix-cls-modal}-dialog {
   position: static;
   margin: 50px auto;
 }
-.modal-content {
+.@{prefix-cls-modal}-content {
   background-color: @modal-content-bg;
   border: 1px solid @modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
   border: 1px solid @modal-content-border-color;
@@ -62,32 +66,32 @@
   outline: 0;
 }
 
-.modal-header {
+.@{prefix-cls-modal}-header {
   padding: @modal-title-padding;
   border-bottom: 1px solid @modal-header-border-color;
   &:extend(.clearfix all);
 }
-.modal-header .close {
+.@{prefix-cls-modal}-header .close {
   margin-top: -2px;
 }
 
-.modal-title {
+.@{prefix-cls-modal}-title {
   margin: 0;
   line-height: @modal-title-line-height;
 }
 
-.modal-body {
+.@{prefix-cls-modal}-body {
   position: relative;
   padding: @modal-inner-padding;
   word-wrap: break-word;
   max-height: 100%;
   overflow: auto;
-  .modal-body {
+  .@{prefix-cls-modal}-body {
     padding: 0;
   }
 }
 
-.modal-footer {
+.@{prefix-cls-modal}-footer {
   padding: @modal-inner-padding;
   text-align: right;
   &:extend(.clearfix all);
@@ -97,7 +101,7 @@
   }
 }
 
-.atui-confirm {
+.@{prefix-cls}-confirm {
   .iconfont {
     position: relative;
     top: 5px;
@@ -114,20 +118,19 @@
 }
 
 @media (min-width: @screen-sm-min) {
-  .modal-dialog {
+  .@{prefix-cls-modal}-dialog {
     width: @modal-md;
   }
-  .modal-content {
+  .@{prefix-cls-modal}-content {
     .box-shadow(0 5px 15px rgba(0, 0, 0, .5));
   }
-  .modal-sm {
+  .@{prefix-cls-modal}-sm {
     width: @modal-sm;
   }
 }
 
 @media (min-width: @screen-md-min) {
-  .modal-lg {
+  .@{prefix-cls-modal}-lg {
     width: @modal-lg;
   }
 }
-

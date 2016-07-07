@@ -1,11 +1,14 @@
-//
+@import "themes/common";
+
 // Close icons
 // --------------------------------------------------
+@prefix-cls-close: e("@{prefix-cls}-close");
+
 @close-font-weight:           bold;
 @close-color:                 #000;
 @close-text-shadow:           0 1px 0 #fff;
 
-.close {
+.@{prefix-cls-close} {
   float: right;
   font-size: (@font-size-base * 1.5);
   font-weight: @close-font-weight;
