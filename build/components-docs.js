@@ -1341,7 +1341,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4f676aa8/headerDocs.vue"
+	  var id = "_v-1e3562cc/headerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1680,7 +1680,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0593cfca/Icon.vue"
+	  var id = "_v-d85b2bd0/Icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1774,7 +1774,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-ae0a52ac/Form.vue"
+	  var id = "_v-373970f8/Form.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2189,7 +2189,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0ead8cec/Row.vue"
+	  var id = "_v-323de8fc/Row.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2223,7 +2223,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-42de83a0/Col.vue"
+	  var id = "_v-18256da2/Col.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2298,7 +2298,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-45aec946/FormItem.vue"
+	  var id = "_v-ca5542aa/FormItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2462,7 +2462,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-8f4c62ac/Button.vue"
+	  var id = "_v-760691f8/Button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2561,7 +2561,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-32c99092/Group.vue"
+	  var id = "_v-0dc1d2a9/Group.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2681,7 +2681,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-f2504680/Input.vue"
+	  var id = "_v-7fd91b8e/Input.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3036,7 +3036,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-48509eb2/Searchbox.vue"
+	  var id = "_v-db75a100/Searchbox.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3252,7 +3252,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-caa1f52c/Uploader.vue"
+	  var id = "_v-628d71b8/Uploader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4325,7 +4325,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-32374efa/Message.vue"
+	  var id = "_v-37c076c8/Message.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4378,7 +4378,11 @@
 	      type: String,
 	      default: 'fade'
 	    },
-	    arrow: String
+	    arrow: String,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	  components: {
 	    Icon: _Icon2.default
@@ -4400,6 +4404,29 @@
 	        }, this.duration);
 	      }
 	    }
+	  },
+	  computed: {
+	    messageClassObj: function messageClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var type = this.type;
+	      var arrow = this.arrow;
+	      var placement = this.placement;
+	
+	      var messageClass = {};
+	
+	      messageClass[prefixCls + '-message'] = true;
+	      messageClass[prefixCls + '-message-success'] = type === 'success';
+	      messageClass[prefixCls + '-message-warning'] = type === 'warning';
+	      messageClass[prefixCls + '-message-info'] = type === 'info';
+	      messageClass[prefixCls + '-message-error'] = type === 'error';
+	      messageClass[prefixCls + '-message-help'] = type === 'help';
+	      messageClass[prefixCls + '-message-top'] = placement === 'top';
+	      messageClass[prefixCls + '-message-top-right'] = placement === 'top-right';
+	      messageClass[prefixCls + '-message-center'] = placement === 'center';
+	      messageClass[prefixCls + '-arrow-' + arrow] = !!arrow;
+	
+	      return messageClass;
+	    }
 	  }
 	};
 	// </script>
@@ -4408,23 +4435,12 @@
 	// <template>
 	//   <div
 	//     v-show="show"
-	//     :class="[{
-	//       'atui-message':		true,
-	//       'atui-message-success':(type == 'success'),
-	//       'atui-message-warning':(type == 'warning'),
-	//       'atui-message-info':	(type == 'info'),
-	//       'atui-message-error':	(type == 'error' || type == 'danger'),
-	//       'atui-message-help': (type == 'help'),
-	//       'top': 			(placement === 'top'),
-	//       'top-right': 	(placement === 'top-right'),
-	//       'center':      (placement === 'center'),
-	//       'arrow': !!arrow
-	//     },!!arrow ? 'arrow-' + arrow : '']"
+	//     :class="messageClassObj"
 	//     :transition="transition"
 	//     :style="{width:width}"
 	//     role="alert">
-	//     <div class="atui-message-content">
-	//       <button v-show="dismissable" type="button" class="close" @click="show = false">
+	//     <div :class="[prefixCls + '-message-content']">
+	//       <button v-show="dismissable" type="button" :class="[prefixCls + '-close']" @click="show = false">
 	//       <span>&times;</span>
 	//       </button>
 	//       <icon v-if="showIcon" :type="type"></icon>
@@ -4435,13 +4451,13 @@
 	//   </div>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 
 /***/ },
 /* 201 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div\n  v-show=\"show\"\n  :class=\"[{\n    'atui-message':\t\ttrue,\n    'atui-message-success':(type == 'success'),\n    'atui-message-warning':(type == 'warning'),\n    'atui-message-info':\t(type == 'info'),\n    'atui-message-error':\t(type == 'error' || type == 'danger'),\n    'atui-message-help': (type == 'help'),\n    'top': \t\t\t(placement === 'top'),\n    'top-right': \t(placement === 'top-right'),\n    'center':      (placement === 'center'),\n    'arrow': !!arrow\n  },!!arrow ? 'arrow-' + arrow : '']\"\n  :transition=\"transition\"\n  :style=\"{width:width}\"\n  role=\"alert\">\n  <div class=\"atui-message-content\">\n    <button v-show=\"dismissable\" type=\"button\" class=\"close\" @click=\"show = false\">\n    <span>&times;</span>\n    </button>\n    <icon v-if=\"showIcon\" :type=\"type\"></icon>\n    <slot>\n      {{content}}\n    </slot>\n  </div>\n</div>\n";
+	module.exports = "\n<div\n  v-show=\"show\"\n  :class=\"messageClassObj\"\n  :transition=\"transition\"\n  :style=\"{width:width}\"\n  role=\"alert\">\n  <div :class=\"[prefixCls + '-message-content']\">\n    <button v-show=\"dismissable\" type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"show = false\">\n    <span>&times;</span>\n    </button>\n    <icon v-if=\"showIcon\" :type=\"type\"></icon>\n    <slot>\n      {{content}}\n    </slot>\n  </div>\n</div>\n";
 
 /***/ },
 /* 202 */
@@ -4487,7 +4503,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-256ecbca/Slider.vue"
+	  var id = "_v-39c8e1d0/Slider.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4839,7 +4855,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-269476f2/Tooltip.vue"
+	  var id = "_v-2c1d9ec0/Tooltip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4958,6 +4974,10 @@
 	    },
 	    placement: {
 	      type: String
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	
@@ -4972,6 +4992,31 @@
 	  },
 	
 	
+	  computed: {
+	    popoverClassObj: function popoverClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var placement = this.placement;
+	
+	      var popoverClassObj = {};
+	
+	      popoverClassObj[prefixCls + '-popover'] = true;
+	      popoverClassObj[prefixCls + '-popover-top'] = placement === 'top';
+	      popoverClassObj[prefixCls + '-popover-top-left'] = placement === 'topLeft';
+	      popoverClassObj[prefixCls + '-popover-top-right'] = placement === 'topRight';
+	      popoverClassObj[prefixCls + '-popover-left'] = placement === 'left';
+	      popoverClassObj[prefixCls + '-popover-left-top'] = placement === 'leftTop';
+	      popoverClassObj[prefixCls + '-popover-left-bottom'] = placement === 'leftBottom';
+	      popoverClassObj[prefixCls + '-popover-right'] = placement === 'right';
+	      popoverClassObj[prefixCls + '-popover-right-top'] = placement === 'rightTop';
+	      popoverClassObj[prefixCls + '-popover-right-bottom'] = placement === 'rightBottom';
+	      popoverClassObj[prefixCls + '-popover-bottom'] = placement === 'bottom';
+	      popoverClassObj[prefixCls + '-popover-bottom-left'] = placement === 'bottomLeft';
+	      popoverClassObj[prefixCls + '-popover-bottom-right'] = placement === 'bottomRight';
+	
+	      return popoverClassObj;
+	    }
+	  },
+	
 	  methods: {
 	    toggle: function toggle() {
 	      this.show = !this.show;
@@ -4984,18 +5029,21 @@
 	    resetPos: function resetPos() {
 	      var me = this;
 	      var popover = me.$els.popover;
+	
 	      if (me.show && popover.offsetWidth === 0) {
 	        setTimeout(function () {
 	          me.resetPos();
 	        });
 	        return;
 	      }
+	
 	      var triger = me.$els.trigger.children[0];
 	      var offset = triger.getBoundingClientRect();
 	      var offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left;
 	      var offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top;
-	      var offsetWidth = popover.offsetWidth + 10;
-	      var offsetHeight = popover.offsetHeight + 5; // 减去5像素的padding
+	      var offsetWidth = popover.offsetWidth;
+	      var offsetHeight = popover.offsetHeight;
+	
 	      switch (me.placement) {
 	        case 'top':
 	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2;
@@ -5157,7 +5205,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-73f7486a/Switch.vue"
+	  var id = "_v-31a40bb8/Switch.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5270,7 +5318,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3a8e066c/Dropdown.vue"
+	  var id = "_v-aad12dd0/Dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5424,7 +5472,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-779c376a/Select.vue"
+	  var id = "_v-3548fab8/Select.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5741,7 +5789,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e5a02ec0/Tag.vue"
+	  var id = "_v-2f4cbe6e/Tag.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5840,7 +5888,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c2f2663/Option.vue"
+	  var id = "_v-2c482c9e/Option.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5985,7 +6033,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-59fd6f6a/Calendar.vue"
+	  var id = "_v-21dbdbb8/Calendar.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6380,7 +6428,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1bb2958a/TimePicker.vue"
+	  var id = "_v-8a73aa50/TimePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6693,7 +6741,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-b839922c/DatePicker.vue"
+	  var id = "_v-42f6cc38/DatePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6822,7 +6870,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-085f50e6/RangePicker.vue"
+	  var id = "_v-3f2f6bff/RangePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6962,7 +7010,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-052d0f6a/Cascader.vue"
+	  var id = "_v-65e90890/Cascader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7213,7 +7261,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7c8ef946/Modal.vue"
+	  var id = "_v-75903814/Modal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7381,7 +7429,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-04edcdc8/Table.vue"
+	  var id = "_v-0421e6d4/Table.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7790,7 +7838,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1cca152c/Spin.vue"
+	  var id = "_v-7fd98fb8/Spin.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7935,7 +7983,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5e8294b2/Badge.vue"
+	  var id = "_v-5783d380/Badge.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8040,7 +8088,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-44b7d4ac/Carousel.vue"
+	  var id = "_v-b4fafc10/Carousel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8064,8 +8112,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-44b7d4ac&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-44b7d4ac&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -8083,7 +8131,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-44b7d4ac] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?134eb1a3"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAsHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../utils/EventListener.js'\nimport coerceBoolean from '../utils/coerceBoolean.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-b4fafc10] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?134eb1a3"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAsHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../utils/EventListener.js'\nimport coerceBoolean from '../utils/coerceBoolean.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -8250,7 +8298,7 @@
 /* 278 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-44b7d4ac=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-44b7d4ac=\"\">\n    <indicator _v-44b7d4ac=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-44b7d4ac=\"\">\n    <slot _v-44b7d4ac=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-44b7d4ac=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-44b7d4ac=\"\"></span>\n    <span class=\"sr-only\" _v-44b7d4ac=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-44b7d4ac=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-44b7d4ac=\"\"></span>\n    <span class=\"sr-only\" _v-44b7d4ac=\"\">Next</span>\n  </a>\n</div>\n";
+	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-b4fafc10=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-b4fafc10=\"\">\n    <indicator _v-b4fafc10=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-b4fafc10=\"\">\n    <slot _v-b4fafc10=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
 /* 279 */
@@ -8272,7 +8320,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5a00a952/Slide.vue"
+	  var id = "_v-6a295c6e/Slide.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8354,7 +8402,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-32700baa/Affix.vue"
+	  var id = "_v-0e1beb79/Affix.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8555,7 +8603,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3a216aea/Textarea.vue"
+	  var id = "_v-01ffd738/Textarea.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8728,7 +8776,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0d6bbbbc/Accordion.vue"
+	  var id = "_v-57604c8a/Accordion.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8819,7 +8867,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-30169078/Panel.vue"
+	  var id = "_v-359fb846/Panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8952,7 +9000,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6c0adf94/Popover.vue"
+	  var id = "_v-60f88ff8/Popover.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8983,31 +9031,17 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div class="atui-popover-trigger" v-el:trigger>
+	//   <div :class="[prefixCls + '-popover-trigger']" v-el:trigger>
 	//     <slot>
 	//     </slot>
 	//   </div>
-	//   <div class="atui-popover"
-	//     :class="{
-	//     'top':    placement === 'top',
-	//     'top-left':    placement === 'topLeft',
-	//     'top-right':    placement === 'topRight',
-	//     'left':   placement === 'left',
-	//     'left-top':   placement === 'leftTop',
-	//     'left-bottom':   placement === 'leftBottom',
-	//     'right':  placement === 'right',
-	//     'right-top':  placement === 'rightTop',
-	//     'right-bottom':  placement === 'rightBottom',
-	//     'bottom': placement === 'bottom',
-	//     'bottom-left': placement === 'bottomLeft',
-	//     'bottom-right': placement === 'bottomRight'
-	//     }"
-	//     v-el:popover
-	//     v-show="show"
-	//     :transition="effect">
-	//       <div class="arrow"></div>
-	//       <h3 class="popover-title" v-show="title">{{title}}</h3>
-	//       <div class="popover-content">
+	//   <div v-el:popover
+	//        v-show="show"
+	//        :class="popoverClassObj"
+	//        :transition="effect">
+	//       <div :class="[prefixCls + '-popover-arrow']"></div>
+	//       <h3 :class="[prefixCls + '-popover-title']" v-show="title">{{title}}</h3>
+	//       <div :class="[prefixCls + '-popover-content']">
 	//         {{content}}
 	//       </div>
 	//   </div>
@@ -9019,7 +9053,7 @@
 /* 301 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-popover-trigger\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div class=\"atui-popover\"\n  :class=\"{\n  'top':    placement === 'top',\n  'top-left':    placement === 'topLeft',\n  'top-right':    placement === 'topRight',\n  'left':   placement === 'left',\n  'left-top':   placement === 'leftTop',\n  'left-bottom':   placement === 'leftBottom',\n  'right':  placement === 'right',\n  'right-top':  placement === 'rightTop',\n  'right-bottom':  placement === 'rightBottom',\n  'bottom': placement === 'bottom',\n  'bottom-left': placement === 'bottomLeft',\n  'bottom-right': placement === 'bottomRight'\n  }\"\n  v-el:popover\n  v-show=\"show\"\n  :transition=\"effect\">\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-show=\"title\">{{title}}</h3>\n    <div class=\"popover-content\">\n      {{content}}\n    </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-popover-trigger']\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div v-el:popover\n     v-show=\"show\"\n     :class=\"popoverClassObj\"\n     :transition=\"effect\">\n    <div :class=\"[prefixCls + '-popover-arrow']\"></div>\n    <h3 :class=\"[prefixCls + '-popover-title']\" v-show=\"title\">{{title}}</h3>\n    <div :class=\"[prefixCls + '-popover-content']\">\n      {{content}}\n    </div>\n</div>\n";
 
 /***/ },
 /* 302 */
@@ -9065,7 +9099,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-eea1a8ce/Tabset.vue"
+	  var id = "_v-fc9f2b32/Tabset.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9293,7 +9327,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0a641d4e/Tab.vue"
+	  var id = "_v-c768556a/Tab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9414,7 +9448,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-45170cba/Steps.vue"
+	  var id = "_v-3e184b88/Steps.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9567,7 +9601,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-f38574ee/Step.vue"
+	  var id = "_v-805c160a/Step.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9698,7 +9732,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6096222c/Tree.vue"
+	  var id = "_v-5df38938/Tree.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9773,7 +9807,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-695db70c/TreeNode.vue"
+	  var id = "_v-270a7a5a/TreeNode.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9928,7 +9962,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1fc0e0ec/Menu.vue"
+	  var id = "_v-7e5e29d8/Menu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9990,7 +10024,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4c0896e4/SubMenu.vue"
+	  var id = "_v-732f31d6/SubMenu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10059,7 +10093,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1f85e43d/MenuItem.vue"
+	  var id = "_v-459ab0ea/MenuItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10118,7 +10152,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-03f37ef2/MenuItemGroup.vue"
+	  var id = "_v-37e29c64/MenuItemGroup.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10204,7 +10238,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-948c4eec/Breadcrumb.vue"
+	  var id = "_v-54cd6dd8/Breadcrumb.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10276,7 +10310,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e658a586/BreadcrumbItem.vue"
+	  var id = "_v-bb4028ea/BreadcrumbItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10373,7 +10407,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3989342a/Pagination.vue"
+	  var id = "_v-4ec66d10/Pagination.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10622,7 +10656,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-36a5c52a/Jumper.vue"
+	  var id = "_v-a6e8ec8e/Jumper.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10748,7 +10782,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1a6c323a/Pager.vue"
+	  var id = "_v-c3348e56/Pager.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10856,7 +10890,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-188c363e/Options.vue"
+	  var id = "_v-4c7b53b0/Options.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10955,7 +10989,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2a5a665d/gettingStarted.vue"
+	  var id = "_v-5181014f/gettingStarted.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10990,7 +11024,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0478d73e/gridDocs.vue"
+	  var id = "_v-7e24665a/gridDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11242,7 +11276,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4fb53ad8/iconDocs.vue"
+	  var id = "_v-c960c9f4/iconDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11391,7 +11425,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-06ac3a4d/buttonDocs.vue"
+	  var id = "_v-afabc382/buttonDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11635,7 +11669,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-fd8a0ad6/inputDocs.vue"
+	  var id = "_v-2357d063/inputDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11860,7 +11894,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-417beb89/uploaderDocs.vue"
+	  var id = "_v-7b109afb/uploaderDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12107,7 +12141,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0460b7df/formDocs.vue"
+	  var id = "_v-70ea1f5e/formDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12421,7 +12455,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-bc82af62/switchDocs.vue"
+	  var id = "_v-433c8c41/switchDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12636,7 +12670,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-71dd2608/sliderDocs.vue"
+	  var id = "_v-688f50ee/sliderDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12809,7 +12843,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-30bf83a8/dropdownDocs.vue"
+	  var id = "_v-2134ed9e/dropdownDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12993,7 +13027,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2d6bde17/selectDocs.vue"
+	  var id = "_v-622c7bee/selectDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13253,7 +13287,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-63207859/calendarDocs.vue"
+	  var id = "_v-c695b06a/calendarDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13410,7 +13444,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-f8005a52/datepickerDocs.vue"
+	  var id = "_v-a9b3246e/datepickerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13604,7 +13638,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-276fd3b6/timepickerDocs.vue"
+	  var id = "_v-4e966ea8/timepickerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13744,7 +13778,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-59d7b624/searchboxDocs.vue"
+	  var id = "_v-67d53888/searchboxDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13867,7 +13901,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5c47c05c/messageDocs.vue"
+	  var id = "_v-601aba20/messageDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13914,19 +13948,19 @@
 	//       <a href="#message" class="anchor">Message 警告提示</a>
 	//     </h3>
 	//     <div class="bs-example" >
-	//       <button class="btn btn-success btn-lg"
+	//       <button class="atui-btn atui-btn-success atui-btn-lg"
 	//         @click="showRight = !showRight">
 	//         点击在右边显示或隐藏
 	//       </button>
-	//       <button class="btn btn-success btn-lg"
+	//       <button class="atui-btn atui-btn-success atui-btn-lg"
 	//         @click="showMessage">
 	//         全局toast，使用message.xx方法
 	//       </button>
-	//       <button class="btn btn-default btn-lg"
+	//       <button class="atui-btn atui-btn-default atui-btn-lg"
 	//         @click="showCenter = !showCenter">
 	//         点击在中间显示或隐藏
 	//       </button>
-	//       <button class="btn btn-error btn-lg"
+	//       <button class="atui-btn atui-btn-error atui-btn-lg"
 	//         @click="showTop = !showTop">
 	//         点击在顶部显示或隐藏
 	//       </button>
@@ -13984,19 +14018,19 @@
 	//     </div>
 	//
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// <button class="btn btn-success btn-lg"
+	// <button class="atui-btn atui-btn-success atui-btn-lg"
 	//   @click="showRight = !showRight">
 	//   点击在右边显示或隐藏
 	// </button>
-	// <button class="btn btn-success btn-lg"
+	// <button class="atui-btn atui-btn-success atui-btn-lg"
 	//   @click="showMessage">
 	//   全局toast，使用message.xx方法
 	// </button>
-	// <button class="btn btn-default btn-lg"
+	// <button class="atui-btn atui-btn-default atui-btn-lg"
 	//   @click="showCenter = !showCenter">
 	//   点击在中间显示或隐藏
 	// </button>
-	// <button class="btn btn-error btn-lg"
+	// <button class="atui-btn atui-btn-error atui-btn-lg"
 	//   @click="showTop = !showTop">
 	//   点击在顶部显示或隐藏
 	// </button>
@@ -14151,7 +14185,7 @@
 /* 407 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"message\">\n    <h3 class=\"page-header\">\n      <a href=\"#message\" class=\"anchor\">Message 警告提示</a>\n    </h3>\n    <div class=\"bs-example\" >\n      <button class=\"btn btn-success btn-lg\"\n        @click=\"showRight = !showRight\">\n        点击在右边显示或隐藏\n      </button>\n      <button class=\"btn btn-success btn-lg\"\n        @click=\"showMessage\">\n        全局toast，使用message.xx方法\n      </button>\n      <button class=\"btn btn-default btn-lg\"\n        @click=\"showCenter = !showCenter\">\n        点击在中间显示或隐藏\n      </button>\n      <button class=\"btn btn-error btn-lg\"\n        @click=\"showTop = !showTop\">\n        点击在顶部显示或隐藏\n      </button>\n      <hr>\n      <message type=\"success\" arrow=\"left\">\n        成功提示的文案\n      </message>\n\n      <message type=\"info\" arrow=\"right\">\n        消息提示的文案\n      </message>\n\n      <message type=\"error\" dismissable arrow=\"bottom\">\n        错误提示的文案,可关闭\n      </message>\n\n      <message type=\"warning\" dismissable arrow=\"top\">\n        警告提示的文案,可关闭\n      </message>\n\n      <message type=\"help\" dismissable>\n        帮助提示文案,可关闭\n      </message>\n\n      <message\n        :show.sync=\"showRight\"\n        :duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"top-right\"\n        dismissable\n      >\n        在右边显示的警告\n      </message>\n\n      <message\n        :show.sync=\"showCenter\"\n        duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"center\"\n        dismissable>\n        在中间显示的警告\n      </message>\n\n      <message\n        :show.sync=\"showTop\"\n        :duration=\"3000\"\n        type=\"error\"\n        width=\"400px\"\n        placement=\"top\"\n        dismissable>\n        在顶部显示的警告\n      </message>\n    </div>\n\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button class=\"btn btn-success btn-lg\"\n  @click=\"showRight = !showRight\">\n  点击在右边显示或隐藏\n</button>\n<button class=\"btn btn-success btn-lg\"\n  @click=\"showMessage\">\n  全局toast，使用message.xx方法\n</button>\n<button class=\"btn btn-default btn-lg\"\n  @click=\"showCenter = !showCenter\">\n  点击在中间显示或隐藏\n</button>\n<button class=\"btn btn-error btn-lg\"\n  @click=\"showTop = !showTop\">\n  点击在顶部显示或隐藏\n</button>\n<hr>\n<message type=\"success\" arrow=\"left\">\n  成功提示的文案\n</message>\n\n<message type=\"info\" arrow=\"right\">\n  消息提示的文案\n</message>\n\n<message type=\"error\" dismissable arrow=\"bottom\">\n  错误提示的文案,可关闭\n</message>\n\n<message type=\"warning\" dismissable arrow=\"top\">\n  警告提示的文案,可关闭\n</message>\n\n<message type=\"help\" dismissable>\n  帮助提示文案,可关闭\n</message>\n\n<message\n  :show.sync=\"showRight\"\n  :duration=\"3000\"\n  type=\"success\"\n  width=\"400px\"\n  placement=\"top-right\"\n  dismissable\n>\n  在右边显示的警告\n</message>\n\n<message\n  :show.sync=\"showCenter\"\n  duration=\"3000\"\n  type=\"success\"\n  width=\"400px\"\n  placement=\"center\"\n  dismissable>\n  在中间显示的警告\n</message>\n\n<message\n  :show.sync=\"showTop\"\n  :duration=\"3000\"\n  type=\"error\"\n  width=\"400px\"\n  placement=\"top\"\n  dismissable>\n  在顶部显示的警告\n</message>\n\nimport {Message} from '@ali/atui'\n  export default {\n    data() {\n      return {\n        showRight: false,\n        showTop: false,\n        showCenter:false\n      }\n    },\n    components: {\n      Message,\n    },\n    methods:{\n      showMessage() {\n        Message.success('成功啦')\n      }\n    }\n  }\n</script></code></pre>\n\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>show</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示</td>\n        </tr>\n        <tr>\n          <td>dismissable</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否显示关闭按钮</td>\n        </tr>\n        <tr>\n          <td>type</td>\n          <td><code>String</code>, one of\n          <code>success</code>\n          <code>info</code>\n          <code>warning</code>\n          <code>danger</code>\n          <code>help</code>\n          </td>\n          <td><code>success</code></td>\n          <td>组件样式</td>\n        </tr>\n        <tr>\n          <td>duration</td>\n          <td><code>Number</code></td>\n          <td><code>0</code></td>\n          <td>自动关闭时间. 设置为 <code>0</code>或负数将不自动关闭.</td>\n        </tr>\n        <tr>\n          <td>height</td>\n          <td><code>String</code></td>\n          <td>高度</td>\n        </tr>\n        <tr>\n          <td>width</td>\n          <td><code>String</code></td>\n          <td>宽度</td>\n        </tr>\n        <tr>\n          <td>arrow</td>\n          <td><code>String</code>one of <code>top、left、right、bottom</code></td>\n          <td>剪头的方向，如果没有传则不显示箭头，默认不显示</td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code>. one of <code>top</code>, <code>top-right</code></td>\n          <td></td>\n          <td>组件的位置</td>\n        </tr>\n        <tr>\n          <td>showIcon</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示相应的ICON</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"message\">\n    <h3 class=\"page-header\">\n      <a href=\"#message\" class=\"anchor\">Message 警告提示</a>\n    </h3>\n    <div class=\"bs-example\" >\n      <button class=\"atui-btn atui-btn-success atui-btn-lg\"\n        @click=\"showRight = !showRight\">\n        点击在右边显示或隐藏\n      </button>\n      <button class=\"atui-btn atui-btn-success atui-btn-lg\"\n        @click=\"showMessage\">\n        全局toast，使用message.xx方法\n      </button>\n      <button class=\"atui-btn atui-btn-default atui-btn-lg\"\n        @click=\"showCenter = !showCenter\">\n        点击在中间显示或隐藏\n      </button>\n      <button class=\"atui-btn atui-btn-error atui-btn-lg\"\n        @click=\"showTop = !showTop\">\n        点击在顶部显示或隐藏\n      </button>\n      <hr>\n      <message type=\"success\" arrow=\"left\">\n        成功提示的文案\n      </message>\n\n      <message type=\"info\" arrow=\"right\">\n        消息提示的文案\n      </message>\n\n      <message type=\"error\" dismissable arrow=\"bottom\">\n        错误提示的文案,可关闭\n      </message>\n\n      <message type=\"warning\" dismissable arrow=\"top\">\n        警告提示的文案,可关闭\n      </message>\n\n      <message type=\"help\" dismissable>\n        帮助提示文案,可关闭\n      </message>\n\n      <message\n        :show.sync=\"showRight\"\n        :duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"top-right\"\n        dismissable\n      >\n        在右边显示的警告\n      </message>\n\n      <message\n        :show.sync=\"showCenter\"\n        duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"center\"\n        dismissable>\n        在中间显示的警告\n      </message>\n\n      <message\n        :show.sync=\"showTop\"\n        :duration=\"3000\"\n        type=\"error\"\n        width=\"400px\"\n        placement=\"top\"\n        dismissable>\n        在顶部显示的警告\n      </message>\n    </div>\n\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button class=\"atui-btn atui-btn-success atui-btn-lg\"\n  @click=\"showRight = !showRight\">\n  点击在右边显示或隐藏\n</button>\n<button class=\"atui-btn atui-btn-success atui-btn-lg\"\n  @click=\"showMessage\">\n  全局toast，使用message.xx方法\n</button>\n<button class=\"atui-btn atui-btn-default atui-btn-lg\"\n  @click=\"showCenter = !showCenter\">\n  点击在中间显示或隐藏\n</button>\n<button class=\"atui-btn atui-btn-error atui-btn-lg\"\n  @click=\"showTop = !showTop\">\n  点击在顶部显示或隐藏\n</button>\n<hr>\n<message type=\"success\" arrow=\"left\">\n  成功提示的文案\n</message>\n\n<message type=\"info\" arrow=\"right\">\n  消息提示的文案\n</message>\n\n<message type=\"error\" dismissable arrow=\"bottom\">\n  错误提示的文案,可关闭\n</message>\n\n<message type=\"warning\" dismissable arrow=\"top\">\n  警告提示的文案,可关闭\n</message>\n\n<message type=\"help\" dismissable>\n  帮助提示文案,可关闭\n</message>\n\n<message\n  :show.sync=\"showRight\"\n  :duration=\"3000\"\n  type=\"success\"\n  width=\"400px\"\n  placement=\"top-right\"\n  dismissable\n>\n  在右边显示的警告\n</message>\n\n<message\n  :show.sync=\"showCenter\"\n  duration=\"3000\"\n  type=\"success\"\n  width=\"400px\"\n  placement=\"center\"\n  dismissable>\n  在中间显示的警告\n</message>\n\n<message\n  :show.sync=\"showTop\"\n  :duration=\"3000\"\n  type=\"error\"\n  width=\"400px\"\n  placement=\"top\"\n  dismissable>\n  在顶部显示的警告\n</message>\n\nimport {Message} from '@ali/atui'\n  export default {\n    data() {\n      return {\n        showRight: false,\n        showTop: false,\n        showCenter:false\n      }\n    },\n    components: {\n      Message,\n    },\n    methods:{\n      showMessage() {\n        Message.success('成功啦')\n      }\n    }\n  }\n</script></code></pre>\n\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>show</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示</td>\n        </tr>\n        <tr>\n          <td>dismissable</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否显示关闭按钮</td>\n        </tr>\n        <tr>\n          <td>type</td>\n          <td><code>String</code>, one of\n          <code>success</code>\n          <code>info</code>\n          <code>warning</code>\n          <code>danger</code>\n          <code>help</code>\n          </td>\n          <td><code>success</code></td>\n          <td>组件样式</td>\n        </tr>\n        <tr>\n          <td>duration</td>\n          <td><code>Number</code></td>\n          <td><code>0</code></td>\n          <td>自动关闭时间. 设置为 <code>0</code>或负数将不自动关闭.</td>\n        </tr>\n        <tr>\n          <td>height</td>\n          <td><code>String</code></td>\n          <td>高度</td>\n        </tr>\n        <tr>\n          <td>width</td>\n          <td><code>String</code></td>\n          <td>宽度</td>\n        </tr>\n        <tr>\n          <td>arrow</td>\n          <td><code>String</code>one of <code>top、left、right、bottom</code></td>\n          <td>剪头的方向，如果没有传则不显示箭头，默认不显示</td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code>. one of <code>top</code>, <code>top-right</code></td>\n          <td></td>\n          <td>组件的位置</td>\n        </tr>\n        <tr>\n          <td>showIcon</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示相应的ICON</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 408 */
@@ -14173,7 +14207,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-204b4d59/cascaderDocs.vue"
+	  var id = "_v-59dffccb/cascaderDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14334,7 +14368,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-df3feb10/modalDocs.vue"
+	  var id = "_v-327ce046/modalDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14586,7 +14620,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1c84cace/tableDocs.vue"
+	  var id = "_v-d84b1f32/tableDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14979,7 +15013,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-de3d5524/badgeDocs.vue"
+	  var id = "_v-32fe2b3c/badgeDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15134,7 +15168,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-463e9c7b/carouselDocs.vue"
+	  var id = "_v-7fd34bed/carouselDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15268,7 +15302,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-b697801e/container.vue"
+	  var id = "_v-46d115bf/container.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15302,7 +15336,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0a0b7546/spinDocs.vue"
+	  var id = "_v-83b70462/spinDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15400,7 +15434,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0e677855/textareaDocs.vue"
+	  var id = "_v-47fc27c7/textareaDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15590,7 +15624,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3abf0865/tagDocs.vue"
+	  var id = "_v-6212f9b3/tagDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15738,7 +15772,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7e1b33ce/tooltipDocs.vue"
+	  var id = "_v-0c59ce1c/tooltipDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15995,7 +16029,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-d6d0c3da/accordionDocs.vue"
+	  var id = "_v-e4ce463e/accordionDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16203,7 +16237,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4771e2ca/affixDocs.vue"
+	  var id = "_v-7e63e469/affixDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16362,7 +16396,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-38771a03/asideDocs.vue"
+	  var id = "_v-4ad8205e/asideDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16523,7 +16557,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-c51bff20/popoverDocs.vue"
+	  var id = "_v-2bb09abe/popoverDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16556,36 +16590,36 @@
 	//     <h3 class="page-header"><a href="#popover" class="anchor">Popover 气泡</a></h3>
 	//     <div class="bs-example">
 	//       <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="top">
-	//         <button class="btn ">Popover on top</button>
+	//         <button class="atui-btn ">Popover on top</button>
 	//       </popover>
 	//       <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="left">
-	//         <button class="btn">Popover on left</button>
+	//         <button class="atui-btn">Popover on left</button>
 	//       </popover>
 	//       <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="right">
-	//         <button class="btn">Popover on right</button>
+	//         <button class="atui-btn">Popover on right</button>
 	//       </popover>
-	//       <popover effect="fade" placement="bottom" header title="我是标题" content="我是内容，我是内容，我是内容">
-	//         <button class="btn">Popover on bottom</button>
+	//       <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="bottom">
+	//         <button class="atui-btn">Popover on bottom</button>
 	//       </popover>
 	//       <hr>
 	//       <h4>No title</h4>
-	//       <popover effect="fade"  title="我是标题" content="我是内容，我是内容，我是内容" placement="top">
-	//         <button class="btn">Popover on top</button>
+	//       <popover effect="fade" content="我是内容，我是内容，我是内容" placement="top">
+	//         <button class="atui-btn">Popover on top</button>
 	//       </popover>
-	//       <popover effect="fade"  title="我是标题" content="我是内容，我是内容，我是内容" placement="left">
-	//         <button class="btn">Popover on left</button>
+	//       <popover effect="fade" content="我是内容，我是内容，我是内容" placement="left">
+	//         <button class="atui-btn">Popover on left</button>
 	//       </popover>
-	//       <popover effect="fade"  title="我是标题" content="我是内容，我是内容，我是内容" placement="right">
-	//         <button class="btn">Popover on right</button>
+	//       <popover effect="fade" content="我是内容，我是内容，我是内容" placement="right">
+	//         <button class="atui-btn">Popover on right</button>
 	//       </popover>
-	//       <popover effect="fade" placement="bottom"  title="我是标题" content="我是内容，我是内容，我是内容">
-	//         <button class="btn">Popover on bottom</button>
+	//       <popover effect="fade" content="我是内容，我是内容，我是内容" placement="bottom">
+	//         <button class="atui-btn">Popover on bottom</button>
 	//       </popover>
 	//       <hr>
 	//       <h4>Triger</h4>
 	//       <p>
 	//         <popover effect="scale"  title="我是标题" content="我是内容，我是内容，我是内容" placement="top" trigger="hover">
-	//             <button class="btn">Mouseenter</button>
+	//             <button class="atui-btn">Mouseenter</button>
 	//         </popover>
 	//       </p>
 	//       <popover effect="scale"
@@ -16594,12 +16628,42 @@
 	//       </popover>
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// <popover
-	//   effect="fade"
-	//   placement="bottom"
-	//   title="我是标题"
-	//   content="我是内容，我是内容，我是内容">
-	//   <button class="btn">Popover on bottom</button>
+	// <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="top">
+	//   <button class="atui-btn ">Popover on top</button>
+	// </popover>
+	// <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="left">
+	//   <button class="atui-btn">Popover on left</button>
+	// </popover>
+	// <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="right">
+	//   <button class="atui-btn">Popover on right</button>
+	// </popover>
+	// <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="bottom">
+	//   <button class="atui-btn">Popover on bottom</button>
+	// </popover>
+	// <hr>
+	// <h4>No title</h4>
+	// <popover effect="fade" content="我是内容，我是内容，我是内容" placement="top">
+	//   <button class="atui-btn">Popover on top</button>
+	// </popover>
+	// <popover effect="fade" content="我是内容，我是内容，我是内容" placement="left">
+	//   <button class="atui-btn">Popover on left</button>
+	// </popover>
+	// <popover effect="fade" content="我是内容，我是内容，我是内容" placement="right">
+	//   <button class="atui-btn">Popover on right</button>
+	// </popover>
+	// <popover effect="fade" content="我是内容，我是内容，我是内容" placement="bottom">
+	//   <button class="atui-btn">Popover on bottom</button>
+	// </popover>
+	// <hr>
+	// <h4>Triger</h4>
+	// <p>
+	//   <popover effect="scale"  title="我是标题" content="我是内容，我是内容，我是内容" placement="top" trigger="hover">
+	//       <button class="atui-btn">Mouseenter</button>
+	//   </popover>
+	// </p>
+	// <popover effect="scale"
+	// title="我是标题" content="我是内容，我是内容，我是内容" placement="bottom" trigger="focus">
+	//   <input type="text" class="form-control" placeholder="Focus">
 	// </popover>
 	// </script></code></pre>
 	//   <h2>Options</h2>
@@ -16665,7 +16729,7 @@
 /* 454 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"popover\">\n    <h3 class=\"page-header\"><a href=\"#popover\" class=\"anchor\">Popover 气泡</a></h3>\n    <div class=\"bs-example\">\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"btn \">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" placement=\"bottom\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\">\n        <button class=\"btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>No title</h4>\n      <popover effect=\"fade\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"btn\">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" placement=\"bottom\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\">\n        <button class=\"btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>Triger</h4>\n      <p>\n        <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n            <button class=\"btn\">Mouseenter</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\"\n      title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </popover>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<popover\n  effect=\"fade\"\n  placement=\"bottom\"\n  title=\"我是标题\"\n  content=\"我是内容，我是内容，我是内容\">\n  <button class=\"btn\">Popover on bottom</button>\n</popover>\n</script></code></pre>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code>, one of <code>click</code>\n        <code>focus</code>\n        <code>hover</code></td>\n        <td><code>click</code></td>\n        <td>How the popover is triggered.</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code>, one of <code>scale</code> <code>fade</code></td>\n        <td><code>fade</code></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>header</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the header.</td>\n      </tr>\n      <tr>\n        <td>placement</td>\n        <td><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></td>\n        <td></td>\n        <td>How to position the popover.</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"popover\">\n    <h3 class=\"page-header\"><a href=\"#popover\" class=\"anchor\">Popover 气泡</a></h3>\n    <div class=\"bs-example\">\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn \">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>No title</h4>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn\">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>Triger</h4>\n      <p>\n        <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n            <button class=\"atui-btn\">Mouseenter</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\"\n      title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </popover>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn \">Popover on top</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>No title</h4>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn\">Popover on top</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>Triger</h4>\n<p>\n  <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n      <button class=\"atui-btn\">Mouseenter</button>\n  </popover>\n</p>\n<popover effect=\"scale\"\ntitle=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n</popover>\n</script></code></pre>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code>, one of <code>click</code>\n        <code>focus</code>\n        <code>hover</code></td>\n        <td><code>click</code></td>\n        <td>How the popover is triggered.</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code>, one of <code>scale</code> <code>fade</code></td>\n        <td><code>fade</code></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>header</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the header.</td>\n      </tr>\n      <tr>\n        <td>placement</td>\n        <td><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></td>\n        <td></td>\n        <td>How to position the popover.</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 455 */
@@ -16688,7 +16752,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-feccf6ce/tabsDocs.vue"
+	  var id = "_v-43c3bd0b/tabsDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17072,7 +17136,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-40fbc8f2/stepsDocs.vue"
+	  var id = "_v-39cec280/stepsDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17274,7 +17338,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3a4af57a/menuDocs.vue"
+	  var id = "_v-0515a428/menuDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17425,7 +17489,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-24e7a4b9/treeDocs.vue"
+	  var id = "_v-2fdc45aa/treeDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17515,7 +17579,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c0ece1e/breadcrumbDocs.vue"
+	  var id = "_v-53356910/breadcrumbDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17673,7 +17737,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-08d74eb5/paginationDocs.vue"
+	  var id = "_v-2ffde9a7/paginationDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17876,7 +17940,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-15647a0e/phoneNumberDocs.vue"
+	  var id = "_v-970fe148/phoneNumberDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {

@@ -2947,19 +2947,19 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-message > p + p {
   margin-top: 5px;
 }
-.atui-message.top {
+.atui-message.atui-message-top {
   position: fixed;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   left: 50%;
   top: 30px;
 }
-.atui-message.top-right {
+.atui-message.atui-message-top-right {
   position: fixed;
   top: 30px;
   right: 50px;
 }
-.atui-message.center {
+.atui-message.atui-message-center {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -2969,7 +2969,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-message-dismissable, .atui-message-dismissible {
   padding-right: 30px;
 }
-.atui-message-dismissable .close, .atui-message-dismissible .close {
+.atui-message-dismissable .atui-close, .atui-message-dismissible .atui-close {
   position: relative;
   top: -2px;
   right: -21px;
@@ -2982,7 +2982,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   border-radius: 4px;
   position: relative;
 }
-.atui-message.arrow:before {
+.atui-message.atui-message-arrow:before {
   content: '';
   position: absolute;
   z-index: 2;
@@ -3000,7 +3000,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   border-color: #a5e5af;
   color: #666;
 }
-.atui-message-success.arrow::before {
+.atui-message-success.atui-message-arrow::before {
   border-color: #a5e5af;
   background-color: #f4fcf5;
 }
@@ -3020,7 +3020,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   border-color: #ace0fa;
   color: #666;
 }
-.atui-message-info.arrow::before {
+.atui-message-info.atui-message-arrow::before {
   border-color: #ace0fa;
   background-color: #f5fbfe;
 }
@@ -3040,7 +3040,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   border-color: #ffd399;
   color: #666;
 }
-.atui-message-warning.arrow::before {
+.atui-message-warning.atui-message-arrow::before {
   border-color: #ffd399;
   background-color: #fff9f2;
 }
@@ -3060,7 +3060,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   border-color: #ffbdbd;
   color: #666;
 }
-.atui-message-danger.arrow::before {
+.atui-message-danger.atui-message-arrow::before {
   border-color: #ffbdbd;
   background-color: #fff7f7;
 }
@@ -3080,7 +3080,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   border-color: #ffbdbd;
   color: #666;
 }
-.atui-message-error.arrow::before {
+.atui-message-error.atui-message-arrow::before {
   border-color: #ffbdbd;
   background-color: #fff7f7;
 }
@@ -3100,7 +3100,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   border-color: #e1c2ff;
   color: #666;
 }
-.atui-message-help.arrow::before {
+.atui-message-help.atui-message-arrow::before {
   border-color: #e1c2ff;
   background-color: #fbf7ff;
 }
@@ -3126,33 +3126,33 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
   border-radius: 4px;
 }
-.atui-message.arrow-left::before {
+.atui-message.atui-message-arrow-left::before {
   left: -5px;
   top: 50%;
   margin-top: -5px;
 }
-.atui-message.arrow-top::before {
+.atui-message.atui-message-arrow-top::before {
   top: -5px;
   left: 50%;
   margin-left: -5px;
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
 }
-.atui-message.arrow-right::before {
+.atui-message.atui-message-arrow-right::before {
   right: -5px;
   top: 50%;
   margin-top: -5px;
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
 }
-.atui-message.arrow-bottom::before {
+.atui-message.atui-message-arrow-bottom::before {
   bottom: -5px;
   left: 50%;
   margin-left: -5px;
   -webkit-transform: rotate(315deg);
           transform: rotate(315deg);
 }
-.ie9 .atui-message.arrow {
+.ie9 .atui-message.atui-message-arrow {
   display: none;
 }
 .atui-tag {
@@ -5643,19 +5643,19 @@ button.atui-close {
   border-radius: 6px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-.atui-popover.top {
+.atui-popover.atui-popover-top {
   margin-top: -10px;
 }
-.atui-popover.right {
+.atui-popover.atui-popover-right {
   margin-left: 10px;
 }
-.atui-popover.bottom {
+.atui-popover.atui-popover-bottom {
   margin-top: 10px;
 }
-.atui-popover.left {
+.atui-popover.atui-popover-left {
   margin-left: -10px;
 }
-.popover-title {
+.atui-popover-title {
   margin: 0;
   padding: 8px 14px;
   font-size: 14px;
@@ -5663,13 +5663,13 @@ button.atui-close {
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0;
 }
-.popover-content {
+.atui-popover-content {
   padding: 9px 14px;
 }
-.atui-popover > .arrow {
+.atui-popover > .atui-popover-arrow {
   border-width: 11px;
 }
-.atui-popover > .arrow, .atui-popover > .arrow:after {
+.atui-popover > .atui-popover-arrow, .atui-popover > .atui-popover-arrow:after {
   position: absolute;
   display: block;
   width: 0;
@@ -5679,22 +5679,22 @@ button.atui-close {
   border-width: 10px;
   content: "";
 }
-.atui-popover.top > .arrow {
+.atui-popover.atui-popover-top > .atui-popover-arrow {
   left: 50%;
+  bottom: -11px;
   margin-left: -11px;
   border-bottom-width: 0;
   border-top-color: #999999;
   border-top-color: rgba(0, 0, 0, 0.25);
-  bottom: -11px;
 }
-.atui-popover.top > .arrow:after {
+.atui-popover.atui-popover-top > .atui-popover-arrow:after {
   content: " ";
   bottom: 1px;
   margin-left: -10px;
   border-bottom-width: 0;
   border-top-color: #fff;
 }
-.atui-popover.right > .arrow {
+.atui-popover.atui-popover-right > .atui-popover-arrow {
   top: 50%;
   left: -11px;
   margin-top: -11px;
@@ -5702,29 +5702,29 @@ button.atui-close {
   border-right-color: #999999;
   border-right-color: rgba(0, 0, 0, 0.25);
 }
-.atui-popover.right > .arrow:after {
+.atui-popover.atui-popover-right > .atui-popover-arrow:after {
   content: " ";
   left: 1px;
   bottom: -10px;
   border-left-width: 0;
   border-right-color: #fff;
 }
-.atui-popover.bottom > .arrow {
+.atui-popover.atui-popover-bottom > .atui-popover-arrow {
   left: 50%;
+  top: -11px;
   margin-left: -11px;
   border-top-width: 0;
   border-bottom-color: #999999;
   border-bottom-color: rgba(0, 0, 0, 0.25);
-  top: -11px;
 }
-.atui-popover.bottom > .arrow:after {
+.atui-popover.atui-popover-bottom > .atui-popover-arrow:after {
   content: " ";
   top: 1px;
   margin-left: -10px;
   border-top-width: 0;
   border-bottom-color: #fff;
 }
-.atui-popover.left > .arrow {
+.atui-popover.atui-popover-left > .atui-popover-arrow {
   top: 50%;
   right: -11px;
   margin-top: -11px;
@@ -5732,7 +5732,7 @@ button.atui-close {
   border-left-color: #999999;
   border-left-color: rgba(0, 0, 0, 0.25);
 }
-.atui-popover.left > .arrow:after {
+.atui-popover.atui-popover-left > .atui-popover-arrow:after {
   content: " ";
   right: 1px;
   border-right-width: 0;
