@@ -1,29 +1,15 @@
 <template>
-  <div class="atui-popover-trigger" v-el:trigger>
+  <div :class="[prefixCls + '-popover-trigger']" v-el:trigger>
     <slot>
     </slot>
   </div>
-  <div class="atui-popover"
-    :class="{
-    'top':    placement === 'top',
-    'top-left':    placement === 'topLeft',
-    'top-right':    placement === 'topRight',
-    'left':   placement === 'left',
-    'left-top':   placement === 'leftTop',
-    'left-bottom':   placement === 'leftBottom',
-    'right':  placement === 'right',
-    'right-top':  placement === 'rightTop',
-    'right-bottom':  placement === 'rightBottom',
-    'bottom': placement === 'bottom',
-    'bottom-left': placement === 'bottomLeft',
-    'bottom-right': placement === 'bottomRight'
-    }"
-    v-el:popover
-    v-show="show"
-    :transition="effect">
-      <div class="arrow"></div>
-      <h3 class="popover-title" v-show="title">{{title}}</h3>
-      <div class="popover-content">
+  <div v-el:popover
+       v-show="show"
+       :class="popoverClassObj"
+       :transition="effect">
+      <div :class="[prefixCls + '-popover-arrow']"></div>
+      <h3 :class="[prefixCls + '-popover-title']" v-show="title">{{title}}</h3>
+      <div :class="[prefixCls + '-popover-content']">
         {{content}}
       </div>
   </div>
@@ -31,6 +17,7 @@
 
 <script>
 import PopoverMixin from '../popoverMixins.js'
+
 export default {
   mixins: [PopoverMixin]
 }
