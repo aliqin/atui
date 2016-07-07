@@ -1,23 +1,12 @@
 <template>
   <div
     v-show="show"
-    :class="[{
-      'atui-message':		true,
-      'atui-message-success':(type == 'success'),
-      'atui-message-warning':(type == 'warning'),
-      'atui-message-info':	(type == 'info'),
-      'atui-message-error':	(type == 'error' || type == 'danger'),
-      'atui-message-help': (type == 'help'),
-      'top': 			(placement === 'top'),
-      'top-right': 	(placement === 'top-right'),
-      'center':      (placement === 'center'),
-      'arrow': !!arrow
-    },!!arrow ? 'arrow-' + arrow : '']"
+    :class="messageClassObj"
     :transition="transition"
     :style="{width:width}"
     role="alert">
-    <div class="atui-message-content">
-      <button v-show="dismissable" type="button" class="close" @click="show = false">
+    <div :class="[prefixCls + '-message-content']">
+      <button v-show="dismissable" type="button" :class="[prefixCls + '-close']" @click="show = false">
       <span>&times;</span>
       </button>
       <icon v-if="showIcon" :type="type"></icon>
@@ -28,8 +17,9 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
 import Icon from '../Icon'
+
 export default {
   props: {
     type: {
@@ -59,7 +49,11 @@ export default {
       type: String,
       default: 'fade'
     },
-    arrow: String
+    arrow: String,
+    prefixCls: {
+      type: String,
+      default: 'atui'
+    }
   },
   components: {
     Icon
@@ -75,6 +69,25 @@ export default {
       if (val && Boolean(this.duration)) {
         this._timeout = setTimeout(() => { this.show = false }, this.duration)
       }
+    }
+  },
+  computed: {
+    messageClassObj () {
+      let { prefixCls, type, arrow, placement } = this
+      let messageClass = {}
+
+      messageClass[prefixCls + '-message'] = true
+      messageClass[prefixCls + '-message-success'] = type === 'success'
+      messageClass[prefixCls + '-message-warning'] = type === 'warning'
+      messageClass[prefixCls + '-message-info'] = type === 'info'
+      messageClass[prefixCls + '-message-error'] = type === 'error'
+      messageClass[prefixCls + '-message-help'] = type === 'help'
+      messageClass[prefixCls + '-message-top'] = placement === 'top'
+      messageClass[prefixCls + '-message-top-right'] = placement === 'top-right'
+      messageClass[prefixCls + '-message-center'] = placement === 'center'
+      messageClass[prefixCls + '-arrow-' + arrow] = !!arrow
+
+      return messageClass
     }
   }
 }
