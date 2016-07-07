@@ -1,6 +1,9 @@
-//
-// Alerts
+@import "themes/common";
+
+// Message
 // --------------------------------------------------
+@prefix-cls-message: e("@{prefix-cls}-message");
+
 @message-padding:               10px;
 @message-border-radius:         4px;
 @message-link-font-weight:      bold;
@@ -28,12 +31,12 @@
 @message-help-border:         #e1c2ff;
 
 .message-variant(@background; @border; @text-color) {
-  .atui-message-content {
+  .@{prefix-cls-message}-content {
     background-color: @background;
     border-color: @border;
     color: @text-color;
   }
-  &.arrow::before {
+  &.@{prefix-cls-message}-arrow::before {
     border-color: @border;
     background-color: @background;
   }
@@ -42,7 +45,7 @@
     border-top-color: darken(@border, 5%);
   }
 
-  .atui-message-link {
+  .@{prefix-cls-message}-link {
     color: darken(@text-color, 10%);
   }
 
@@ -56,8 +59,7 @@
 
 // Base styles
 // -------------------------
-
-.atui-message {
+.@{prefix-cls-message} {
   z-index: @zindex-message;
   position: relative;
   h4 {
@@ -76,19 +78,19 @@
     margin-top: 5px;
   }
 
-  &.top {
+  &.@{prefix-cls-message}-top {
     position: fixed;
     transform: translateX(-50%);
     left: 50%;
     top: 30px;
   }
 
-  &.top-right {
+  &.@{prefix-cls-message}-top-right {
     position: fixed;
     top: 30px;
     right: 50px;
   }
-  &.center {
+  &.@{prefix-cls-message}-center {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -98,7 +100,7 @@
   &-dismissable,
   &-dismissible {
     padding-right: (@message-padding + 20);
-    .close {
+    .@{prefix-cls}-close {
       position: relative;
       top: -2px;
       right: -21px;
@@ -113,7 +115,7 @@
     position: relative;
   }
 
-  &.arrow:before {
+  &.@{prefix-cls-message}-arrow:before {
     content: '';
     position: absolute;
     z-index: 2;
@@ -165,31 +167,31 @@
   }
 }
 
-.atui-message.arrow-left::before {
+.@{prefix-cls-message}.@{prefix-cls-message}-arrow-left::before {
   left: -5px;
   top: 50%;
   margin-top: -5px;
 }
-.atui-message.arrow-top::before {
+.@{prefix-cls-message}.@{prefix-cls-message}-arrow-top::before {
   top: -5px;
   left: 50%;
   margin-left: -5px;
   transform: rotate(135deg);
 }
-.atui-message.arrow-right::before {
+.@{prefix-cls-message}.@{prefix-cls-message}-arrow-right::before {
   right: -5px;
   top: 50%;
   margin-top: -5px;
   transform: rotate(225deg);
 }
-.atui-message.arrow-bottom::before {
+.@{prefix-cls-message}.@{prefix-cls-message}-arrow-bottom::before {
   bottom: -5px;
   left: 50%;
   margin-left: -5px;
   transform: rotate(315deg);
 }
 
-.ie9 .atui-message.arrow {
+.ie9 .@{prefix-cls-message}.@{prefix-cls-message}-arrow {
   // 使用了tranform:rotate来实现箭头，所以ie9不支持
   display: none;
 }

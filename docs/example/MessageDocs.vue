@@ -4,19 +4,19 @@
       <a href="#message" class="anchor">Message 警告提示</a>
     </h3>
     <div class="bs-example" >
-      <button class="btn btn-success btn-lg"
+      <button class="atui-btn atui-btn-success atui-btn-lg"
         @click="showRight = !showRight">
         点击在右边显示或隐藏
       </button>
-      <button class="btn btn-success btn-lg"
+      <button class="atui-btn atui-btn-success atui-btn-lg"
         @click="showMessage">
         全局toast，使用message.xx方法
       </button>
-      <button class="btn btn-default btn-lg"
+      <button class="atui-btn atui-btn-default atui-btn-lg"
         @click="showCenter = !showCenter">
         点击在中间显示或隐藏
       </button>
-      <button class="btn btn-error btn-lg"
+      <button class="atui-btn atui-btn-error atui-btn-lg"
         @click="showTop = !showTop">
         点击在顶部显示或隐藏
       </button>
@@ -74,19 +74,19 @@
     </div>
 
     <pre><code class="language-markup"><script type="language-mark-up">
-<button class="btn btn-success btn-lg"
+<button class="atui-btn atui-btn-success atui-btn-lg"
   @click="showRight = !showRight">
   点击在右边显示或隐藏
 </button>
-<button class="btn btn-success btn-lg"
+<button class="atui-btn atui-btn-success atui-btn-lg"
   @click="showMessage">
   全局toast，使用message.xx方法
 </button>
-<button class="btn btn-default btn-lg"
+<button class="atui-btn atui-btn-default atui-btn-lg"
   @click="showCenter = !showCenter">
   点击在中间显示或隐藏
 </button>
-<button class="btn btn-error btn-lg"
+<button class="atui-btn atui-btn-error atui-btn-lg"
   @click="showTop = !showTop">
   点击在顶部显示或隐藏
 </button>
