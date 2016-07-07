@@ -10380,7 +10380,7 @@
 	    },
 	    _btnWrapClasses: function _btnWrapClasses() {
 	      return {
-	        'btn': true,
+	        'atui-btn': true,
 	        'tertiary': true,
 	        'default': !this.mini,
 	        'small': this.mini
