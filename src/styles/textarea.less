@@ -4,22 +4,22 @@
 // --------------------------------------------------
 @prefix-cls-textarea: e("@{prefix-cls}-textarea");
 
-.@{prefix-cls-textarea}-active {
+.active() {
   border-color: @primary-color;
   box-shadow: 0px 0px 0px 2px fade(@primary-color, 30%);
 }
 
-.@{prefix-cls-textarea}-error {
+.error() {
   border-color: @brand-error;
   box-shadow: 0px 0px 0px 2px fade(@brand-error, 30%);
 }
 
-.@{prefix-cls-textarea}-success {
+.success() {
   border-color: @brand-success;
   box-shadow: 0px 0px 0px 2px fade(@brand-success, 30%);
 }
 
-.@{prefix-cls-textarea}-disabled {
+.disabled() {
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -54,12 +54,12 @@
   border-radius: 4px;
   outline: none;
 
-  &.autosize {
+  &.@{prefix-cls-textarea}-autosize {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    min-height: auto;
+    min-height: initial;
   }
 
   &:hover {
@@ -74,7 +74,7 @@
     .active();
   }
 
-  &.error {
+  &.@{prefix-cls-textarea}-error {
     .error();
 
     &:hover {
@@ -90,7 +90,7 @@
     }
   }
 
-  &.success {
+  &.@{prefix-cls-textarea}-success {
     .success();
 
     &:hover {
