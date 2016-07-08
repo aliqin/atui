@@ -1,11 +1,15 @@
-// input=type
+@import "themes/common";
+
+// Input
 // --------------------------------------------------
+@prefix-cls-input: e("@{prefix-cls}-input");
+
 .active() {
   border-color: @primary-color;
   box-shadow: 0px 0px 0px 2px fade(@primary-color, 30%);
 }
 
-.input {
+.@{prefix-cls-input} {
   width: 100%;
   padding: 5px 10px;
   background: #fff;
@@ -31,12 +35,12 @@
 
 // Size of input
 // --------------------------------------------------
-.input {
-  &.large {
+.@{prefix-cls-input} {
+  &.@{prefix-cls-input}-large {
     padding: 8px 10px;
   }
 
-  &.small {
+  &.@{prefix-cls-input}-small {
     padding: 2px 10px;
   }
 }
@@ -61,7 +65,7 @@
   box-shadow: 0px 0px 0px 2px fade(@brand-success, 30%);
 }
 
-input[disabled], .input.disabled {
+input[disabled], .@{prefix-cls-input}.@{prefix-cls-input}-disabled {
   .disabled();
 
   &:hover {
@@ -77,8 +81,8 @@ input[disabled], .input.disabled {
   }
 }
 
-.input {
-  &.error {
+.@{prefix-cls-input} {
+  &.@{prefix-cls-input}-error {
     .error();
 
     &:hover {
@@ -94,7 +98,7 @@ input[disabled], .input.disabled {
     }
   }
 
-  &.success {
+  &.@{prefix-cls-input}-success {
     .success();
 
     &:hover {

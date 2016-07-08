@@ -1,10 +1,18 @@
 <template>
-  <div class="search-box">
-    <input type="text" class="input" :class="{large:large,small:small}" :placeholder="placeholder" v-model="value" @focus="focusInput" debounce="500" />
+  <div :class="[prefixCls + '-searchbox']">
+    <input type="text"
+           :class="inputClassObj"
+           :placeholder="placeholder"
+           v-model="value"
+           @focus="focusInput"
+           debounce="500" />
     <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
     <icon type="search" :color="iconColor" size="14"></icon>
-    <div v-if="searchList && searchList.length > 0" class="search-list-containter">
-      <ul class="list-dropdown" v-show="showPop" transition="slide">
+    <div v-if="searchList && searchList.length > 0"
+         :class="[prefixCls + '-searchbox-list-containter']">
+      <ul v-show="showPop"
+          :class="[prefixCls + '-searchbox-list-dropdown']"
+          transition="slide">
         <li v-for="item in searchList | filterBy value">
           <a href="javascript:;" @click="checkItem($index, item[textField])" :title="item[textField]">{{item[textField]}}</a>
         </li>
@@ -12,7 +20,7 @@
     </div>
   </div>
 </template>
-<script>
+<script type="text/babel">
   import Icon from '../Icon/'
   import EventListener from '../utils/EventListener'
 
@@ -39,6 +47,10 @@
       },
       filterField: {
         type: Array
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     data () {
@@ -54,6 +66,18 @@
           return '' + item
         })
         return str.join(' ')
+      },
+
+      inputClassObj () {
+        let { prefixCls, large, small } = this
+        let classObj = {}
+
+        classObj[prefixCls + '-searchbox-input'] = true
+        classObj[prefixCls + '-input'] = true
+        classObj[prefixCls + '-input-large'] = large
+        classObj[prefixCls + '-input-small'] = small
+
+        return classObj
       }
     },
     components: {
