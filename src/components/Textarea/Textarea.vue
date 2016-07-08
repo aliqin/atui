@@ -1,11 +1,18 @@
 <template>
-<div class="at-textarea">
+<div :class="[prefixCls + '-textarea-box']">
   <template v-if="autosize">
     <pre :id="preId"><span>{{content}}</span><br></pre>
   </template>
-  <textarea v-bind="{disabled: isDisabled}" :maxlength="limitWords" class="textarea" :class="classObj" :name="name" :placeholder="placeholder" v-model="content"></textarea>
-  <p v-if="limitWords" class="words-area" :class="wordClass">{{ curWords }}/{{ limitWords }}</p>
-  <p v-if="showWordsCount" class="words-area">{{ countTips }}{{ curWords }}</p>
+  <textarea v-bind="{disabled: isDisabled}"
+            :maxlength="limitWords"
+            :class="textareaClassObj"
+            :name="name"
+            :placeholder="placeholder"
+            v-model="content"></textarea>
+  <p v-if="limitWords"
+     :class="wordClassObj">{{ curWords }}/{{ limitWords }}</p>
+  <p v-if="showWordsCount"
+     :class="[prefixCls + '-textarea-words-area']">{{ countTips }}{{ curWords }}</p>
 </div>
 </template>
 
@@ -29,7 +36,11 @@
       },
       autosize: Boolean,
       maxRows: [String, Number],
-      minRows: [String, Number]
+      minRows: [String, Number],
+      prefixCls: {
+        type: String,
+        default: 'atui'
+      }
     },
     data () {
       return {
@@ -50,18 +61,26 @@
         return 0
       },
 
-      classObj () {
-        return {
-          'error': this.error || this.error === '' || this.overLimit,
-          'success': this.success === true || this.success === '',
-          'autosize': this.autosize
-        }
+      textareaClassObj () {
+        let { prefixCls, success, error, autosize, overLimit } = this
+        let classObj = {}
+
+        classObj[prefixCls + '-textarea'] = true
+        classObj[prefixCls + '-textarea-success'] = (success === true || success === '')
+        classObj[prefixCls + '-textarea-error'] = (error || error === '' || overLimit)
+        classObj[prefixCls + '-textarea-autosize'] = autosize
+
+        return classObj
       },
 
-      wordClass () {
-        return {
-          'words-error': this.error || this.error === '' || this.overLimit
-        }
+      wordClassObj () {
+        let { prefixCls, error, overLimit } = this
+        let classObj = {}
+
+        classObj[prefixCls + '-words-area'] = true
+        classObj[prefixCls + '-words-error'] = (error || error === '' || overLimit)
+
+        return classObj
       }
     },
     ready () {

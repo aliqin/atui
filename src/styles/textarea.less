@@ -1,19 +1,25 @@
-.active() {
+@import "themes/common";
+
+// Textarea
+// --------------------------------------------------
+@prefix-cls-textarea: e("@{prefix-cls}-textarea");
+
+.@{prefix-cls-textarea}-active {
   border-color: @primary-color;
   box-shadow: 0px 0px 0px 2px fade(@primary-color, 30%);
 }
 
-.error() {
+.@{prefix-cls-textarea}-error {
   border-color: @brand-error;
   box-shadow: 0px 0px 0px 2px fade(@brand-error, 30%);
 }
 
-.success() {
+.@{prefix-cls-textarea}-success {
   border-color: @brand-success;
   box-shadow: 0px 0px 0px 2px fade(@brand-success, 30%);
 }
 
-.disabled() {
+.@{prefix-cls-textarea}-disabled {
   background: #f2f2f2;
   color: #ccc;
   border-color: #e6e6e6;
@@ -21,7 +27,7 @@
   cursor: not-allowed !important;
 }
 
-.at-textarea {
+.@{prefix-cls-textarea}-box {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -36,7 +42,7 @@
   }
 }
 
-.textarea {
+.@{prefix-cls-textarea} {
   width: 100%;
   min-width: 370px;
   min-height: 78px;
@@ -101,7 +107,7 @@
   }
 }
 
-textarea[disabled], .textarea.disabled {
+textarea[disabled], .@{prefix-cls-textarea}.disabled {
   .disabled();
 
   &:hover {
@@ -117,11 +123,11 @@ textarea[disabled], .textarea.disabled {
   }
 }
 
-.words-area {
+.@{prefix-cls-textarea}-words-area {
   color: #999;
   font-size: 12px;
 
-  &.words-error {
+  &.@{prefix-cls-textarea}-words-error {
     color: @brand-error;
   }
 }
