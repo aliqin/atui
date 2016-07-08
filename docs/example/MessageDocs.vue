@@ -4,36 +4,36 @@
       <a href="#message" class="anchor">Message 警告提示</a>
     </h3>
     <div class="bs-example" >
-      <button class="btn btn-success btn-lg"
+      <button class="atui-btn atui-btn-success atui-btn-lg"
         @click="showRight = !showRight">
         点击在右边显示或隐藏
       </button>
-      <button class="btn btn-success btn-lg"
+      <button class="atui-btn atui-btn-success atui-btn-lg"
         @click="showMessage">
         全局toast，使用message.xx方法
       </button>
-      <button class="btn btn-default btn-lg"
+      <button class="atui-btn atui-btn-default atui-btn-lg"
         @click="showCenter = !showCenter">
         点击在中间显示或隐藏
       </button>
-      <button class="btn btn-error btn-lg"
+      <button class="atui-btn atui-btn-error atui-btn-lg"
         @click="showTop = !showTop">
         点击在顶部显示或隐藏
       </button>
       <hr>
-      <message type="success" >
+      <message type="success" arrow="left">
         成功提示的文案
       </message>
 
-      <message type="info" >
+      <message type="info" arrow="right">
         消息提示的文案
       </message>
 
-      <message type="error" dismissable>
+      <message type="error" dismissable arrow="bottom">
         错误提示的文案,可关闭
       </message>
 
-      <message type="warning" dismissable>
+      <message type="warning" dismissable arrow="top">
         警告提示的文案,可关闭
       </message>
 
@@ -74,36 +74,36 @@
     </div>
 
     <pre><code class="language-markup"><script type="language-mark-up">
-<button class="btn btn-success btn-lg"
+<button class="atui-btn atui-btn-success atui-btn-lg"
   @click="showRight = !showRight">
   点击在右边显示或隐藏
 </button>
-<button class="btn btn-success btn-lg"
+<button class="atui-btn atui-btn-success atui-btn-lg"
   @click="showMessage">
   全局toast，使用message.xx方法
 </button>
-<button class="btn btn-default btn-lg"
+<button class="atui-btn atui-btn-default atui-btn-lg"
   @click="showCenter = !showCenter">
   点击在中间显示或隐藏
 </button>
-<button class="btn btn-error btn-lg"
+<button class="atui-btn atui-btn-error atui-btn-lg"
   @click="showTop = !showTop">
   点击在顶部显示或隐藏
 </button>
 <hr>
-<message type="success" >
+<message type="success" arrow="left">
   成功提示的文案
 </message>
 
-<message type="info" >
+<message type="info" arrow="right">
   消息提示的文案
 </message>
 
-<message type="error" dismissable>
+<message type="error" dismissable arrow="bottom">
   错误提示的文案,可关闭
 </message>
 
-<message type="warning" dismissable>
+<message type="warning" dismissable arrow="top">
   警告提示的文案,可关闭
 </message>
 
@@ -204,9 +204,19 @@ import {Message} from '@ali/atui'
           <td>自动关闭时间. 设置为 <code>0</code>或负数将不自动关闭.</td>
         </tr>
         <tr>
+          <td>height</td>
+          <td><code>String</code></td>
+          <td>高度</td>
+        </tr>
+        <tr>
           <td>width</td>
           <td><code>String</code></td>
-          <td></td>
+          <td>宽度</td>
+        </tr>
+        <tr>
+          <td>arrow</td>
+          <td><code>String</code>one of <code>top、left、right、bottom</code></td>
+          <td>剪头的方向，如果没有传则不显示箭头，默认不显示</td>
         </tr>
         <tr>
           <td>placement</td>

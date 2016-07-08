@@ -26,9 +26,57 @@
     <div>
       <v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
     </div>
+    <h4>高度自适应的文本域</h4>
+    <div>
+      <v-textarea placeholder="高度无限增大" autosize></v-textarea>
+    </div>
+    <div>
+      <v-textarea placeholder="有最大高度" autosize max-rows="10"></v-textarea>
+    </div>
+    <div>
+      <v-textarea placeholder="有最小高度" autosize min-rows="5"></v-textarea>
+    </div>
+    <div>
+      <v-textarea placeholder="有最大和最小高度" autosize min-rows="5" max-rows="10"></v-textarea>
+    </div>
 <pre><code class="language-markup"><script type="language-mark-up">
-<v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
-<v-textarea placeholder="请输入描述信息" :words-count="true" count-tips="您输入的字数是："></v-textarea>
+<h4>基础文本域</h4>
+<div>
+  <v-textarea placeholder="请输入描述信息"></v-textarea>
+</div>
+<div>
+  <v-textarea disabled content="文本框被禁用了"></v-textarea>
+</div>
+<div>
+  <v-textarea error content="信息错误了"></v-textarea>
+</div>
+<h4>统计输入字数文本域</h4>
+<div>
+  <v-textarea placeholder="请输入描述信息，有字数统计" :words-count="true"></v-textarea>
+</div>
+<div>
+  <v-textarea placeholder="请输入描述信息" :words-count="true" count-tips="您输入的字数是："></v-textarea>
+</div>
+<h4>有字数限制文本域</h4>
+<div>
+  <v-textarea :limit-words="50" placeholder="这里只能输入50个字" :error="validStatus == 'error'" name="ruohuan" v-ref:textarea-limit :content.sync="content"></v-textarea>
+</div>
+<div>
+  <v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
+</div>
+<h4>高度自适应的文本域</h4>
+<div>
+  <v-textarea placeholder="高度无限增大" autosize></v-textarea>
+</div>
+<div>
+  <v-textarea placeholder="有最大高度" autosize max-rows="10"></v-textarea>
+</div>
+<div>
+  <v-textarea placeholder="有最小高度" autosize min-rows="5"></v-textarea>
+</div>
+<div>
+  <v-textarea placeholder="有最大和最小高度" autosize min-rows="5" max-rows="10"></v-textarea>
+</div>
 </script></code></pre>
     <h4>参数</h4>
     <table class="atui-table table-bordered">
