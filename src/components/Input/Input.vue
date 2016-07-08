@@ -1,5 +1,10 @@
 <template>
-  <input :type="type" class="input" :class="classObj" :placeholder="placeholder" v-model="value" :valid-status.sync="validStatus" :maxlength="maxlength" />
+  <input :type="type"
+         :class="inputClassObj"
+         :placeholder="placeholder"
+         v-model="value"
+         :valid-status.sync="validStatus"
+         :maxlength="maxlength" />
 </template>
 <script>
   export default {
@@ -66,6 +71,10 @@
       tips: {
         type: String,
         default: ''
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
 
@@ -101,14 +110,18 @@
     },
 
     computed: {
-      classObj () {
-        return {
-          'large': this.large,
-          'small': this.small,
-          'error': this.error || this.validStatus === 'error',
-          'success': this.success || this.validStatus === 'success',
-          'warn': this.warn || this.validStatus === 'warn'
-        }
+      inputClassObj () {
+        let { prefixCls, large, small, error, success, warn, validStatus } = this
+        let classObj = {}
+
+        classObj[prefixCls + '-input'] = true
+        classObj[prefixCls + '-input-large'] = large
+        classObj[prefixCls + '-input-small'] = small
+        classObj[prefixCls + '-input-error'] = (error || validStatus === 'error')
+        classObj[prefixCls + '-input-success'] = (success || validStatus === 'success')
+        classObj[prefixCls + '-input-warn'] = (warn || validStatus === 'warn')
+
+        return classObj
       }
     },
 

@@ -50,6 +50,7 @@
 
 <script>
 import {Searchbox, Message} from 'src/'
+
 export default{
   components: {
     Searchbox,
@@ -77,10 +78,12 @@ export default{
   },
   events: {
     'searchbox-value-check' (data, searchboxVue) {
-      console.log(data);
+      console.log(data)
     },
     'searchbox-value-change' (val, searchboxVue) {
-      Message.info(val);
+      if(val) {
+        Message.info(val);
+      }
     }
   }
 }

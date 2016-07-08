@@ -1,7 +1,13 @@
-.search-box {
+@import "themes/common";
+
+// Textarea
+// --------------------------------------------------
+@prefix-cls-searchbox: e("@{prefix-cls}-searchbox");
+
+.@{prefix-cls-searchbox} {
   position: relative;
 
-  input {
+  .@{prefix-cls-searchbox}-input {
     padding-right: 25px;
   }
 
@@ -17,7 +23,7 @@
     right: 30px;
   }
 
-  .search-list-containter {
+  .@{prefix-cls-searchbox}-list-containter {
     position: absolute;
     top: 100%;
     left: 0;
@@ -26,7 +32,7 @@
     z-index: 9999;
   }
 
-  .list-dropdown {
+  .@{prefix-cls-searchbox}-list-dropdown {
     height: 193px;
     padding: 0;
     margin: 0;
