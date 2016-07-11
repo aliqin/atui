@@ -3,23 +3,20 @@
     <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>
     <div class="bs-example">
       <h4 class="example-title">完全版</h4>
-      <pagination class="customclass" :total-page.sync="totalPage"
-                  :curr-page.sync="currPage"
+      <pagination :curr-page="currPage"
                   :total="total"
                   show-jumper
-                  :default-size="defaultSize"
+                  :page-size="pageSize"
                   show-size-changer>
       </pagination>
       <h4 class="example-title">迷你版</h4>
-      <pagination :total-page.sync="totalPage"
-                  :curr-page.sync="currPage"
+      <pagination :curr-page="currPage"
                   :total="total"
                   show-jumper
                   mini>
       </pagination>
       <h4 class="example-title">精简版</h4>
-      <pagination :total-page.sync="totalPage"
-                  :curr-page.sync="currPage"
+      <pagination :curr-page="currPage"
                   :total="total"
                   simple
                   class="custom">
@@ -112,12 +109,11 @@
   export default {
     data () {
       return {
-        totalPage: 100,
         currPage: 10,
         showJumper: true,
         total: 100,
         showSizeChanger: true,
-        defaultSize:20
+        pageSize:20
       }
     },
     components: {
@@ -133,10 +129,9 @@
     },
     methods:{
       changeTotalPage() {
-        this.totalPage = 50
         this.currPage = 20
         this.total = 1000
-        this.defaultSize = 30
+        this.pageSize = 30
       }
     },
     ready () {
