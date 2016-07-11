@@ -1,11 +1,13 @@
-/**
- * slider组件样式
- * @author: ruohuan
- * @email: ruohuan.zhh@alibaba-inc.com
- * @background-attachment:  2016/5/18
- */
+@import "themes/common";
 
-.at-slider {
+// Slider
+// --------------------------------------------------
+// @author: ruohuan
+// @email: ruohuan.zhh@alibaba-inc.com
+// @background-attachment:  2016/5/18
+@prefix-cls-slider: e("@{prefix-cls}-slider");
+
+.@{prefix-cls-slider} {
   position: relative;
   margin: 10px 8px;
   height: 12px;
@@ -20,42 +22,42 @@
   &:hover {
     background-color: #e1e1e1;
 
-    .at-slider-handle {
+    .@{prefix-cls-slider}-handle {
       border-color: tint(@primary-color, 40%);
     }
 
-    .at-slider-track {
+    .@{prefix-cls-slider}-track {
       background-color: tint(@primary-color, 40%);
     }
   }
 
-  &.at-slider-disabled {
+  &.@{prefix-cls-slider}-disabled {
 
-    .at-slider-handle {
+    .@{prefix-cls-slider}-handle {
       border-color: #ccc;
       cursor: not-allowed;
     }
 
-    .at-slider-track {
+    .@{prefix-cls-slider}-track {
       background-color: #ccc;
     }
 
     &:hover {
       background-color: #e9e9e9;
 
-      .at-slider-handle {
+      .@{prefix-cls-slider}-handle {
         border-color: #ccc;
         cursor: not-allowed;
       }
 
-      .at-slider-track {
+      .@{prefix-cls-slider}-track {
         background-color: #ccc;
       }
     }
   }
 }
 
-.at-slider-handle {
+.@{prefix-cls-slider}-handle {
   position: absolute;
   left: 0;
   top: 0;
@@ -71,7 +73,7 @@
   transition: border-color .3s ease;
 }
 
-.at-slider-track {
+.@{prefix-cls-slider}-track {
   position: absolute;
   left: 0;
   top: 0;
@@ -83,7 +85,7 @@
   transition: background-color .3s ease;
 }
 
-.at-slider-step {
+.@{prefix-cls-slider}-step {
   position: absolute;
   width: 100%;
   height: 4px;
@@ -91,7 +93,7 @@
   z-index: 1;
 }
 
-.at-slider-mark {
+.@{prefix-cls-slider}-mark {
   position: absolute;
   top: 10px;
   left: 0;
