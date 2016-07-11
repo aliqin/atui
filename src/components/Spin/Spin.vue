@@ -1,18 +1,20 @@
 <template>
-<div :class="['atui-spin',size,{sping: sping}]" v-show="show">
-  <div v-if="isSupportAnimation || !tip" class="atui-sping-point">
+<div :class="spinClassObj" v-show="show">
+  <div v-if="isSupportAnimation || !tip" :class="[prefixCls + '-sping-point']">
       <div></div>
       <div></div>
       <div></div>
   </div>
-  <p v-else class="atui-sping-text">{{ tip || '加载中...' }}</p>
-  <div class="sping-content">
+  <p v-else :class="[prefixCls + '-sping-text']">{{ tip || '加载中...' }}</p>
+  <div :class="[prefixCls + '-sping-content']">
     <slot></slot>
   </div>
 </div>
 </template>
+
 <script>
 import isSupportAnimation from '../utils/cssAnimationSupported'
+
 export default {
   name: 'spin',
   props: {
@@ -22,6 +24,10 @@ export default {
     size: {
       type: String,
       default: 'default'
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   data () {
@@ -35,6 +41,18 @@ export default {
     },
     hide () {
       this.show = false
+    }
+  },
+  computed: {
+    spinClassObj () {
+      let { prefixCls, size, sping } = this
+      let classObj = {}
+
+      classObj[prefixCls + '-spin'] = true
+      classObj[prefixCls + '-spin-' + size] = true
+      classObj[prefixCls + '-sping'] = sping
+
+      return classObj
     }
   }
 }
