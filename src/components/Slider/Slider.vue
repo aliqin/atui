@@ -1,25 +1,24 @@
 <template>
-  <div class="at-slider" :id="sliderId" :class="sliderClass" @click="clickFun">
+  <div :id="sliderId" :class="sliderClassObj" @click="clickFun">
     <template v-for="item in valuePercent">
       <tooltip :content="valueArray[$index]" placement="top">
-        <div class="at-slider-handle" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
+        <div :class="[prefixCls + '-slider-handle']" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
       </tooltip>
     </template>
     <template v-if="valuePercent.length == 1">
       <tooltip :content="valueArray[0]" placement="top">
-        <div class="at-slider-track" :style="{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}"></div>
+        <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}"></div>
         </tooltip>
     </template>
     <template v-if="valuePercent.length > 1">
-      <div class="at-slider-track" :style="{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}"></div>
+      <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}"></div>
     </template>
-    <div class="at-slider-step"></div>
-    <div class="at-slider-mark"></div>
+    <div :class="[prefixCls + '-slider-step']"></div>
+    <div :class="[prefixCls + '-slider-mark']"></div>
   </div>
-
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import Tooltip from '../Tooltip/'
   import EventListener from '../utils/EventListener'
 
@@ -42,7 +41,11 @@
         default: true
       },
       // 每步的步数，如果为0，则只能到marks标记位置
-      step: [String, Number]
+      step: [String, Number],
+      prefixCls: {
+        type: String,
+        default: 'atui'
+      }
     },
 
     data () {
@@ -95,10 +98,14 @@
       isDisabled () {
         return this.disabled
       },
-      sliderClass () {
-        return {
-          'at-slider-disabled': this.disabled
-        }
+      sliderClassObj () {
+        let { prefixCls, disabled } = this
+        let classObj = {}
+
+        classObj[prefixCls + '-slider'] = true
+        classObj[prefixCls + '-slider-disabled'] = disabled
+
+        return classObj
       },
       sliderId () {
         return this.id || ('slider' + new Date().getTime())
@@ -284,5 +291,4 @@
       }
     }
   }
-  </script>
-
+</script>
