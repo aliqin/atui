@@ -1,5 +1,5 @@
 <template>
-<div :class="className"><slot></slot></div>
+<div :class="[prefixCls + '-col-' + type + '-' + span]"><slot></slot></div>
 </template>
 
 <script>
@@ -12,11 +12,10 @@ export default {
     type: {
       type: String,
       default: 'md'
-    }
-  },
-  data () {
-    return {
-      className: ['col', this.type, this.span].join('-')
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   }
 }

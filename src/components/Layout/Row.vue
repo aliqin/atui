@@ -1,3 +1,14 @@
 <template>
-<div class="row"><slot></slot></div>
+<div :class="[prefixCls + '-row']"><slot></slot></div>
 </template>
+
+<script>
+  export default {
+    props: {
+      prefixCls: {
+        type: String,
+        default: 'atui'
+      }
+    }
+  }
+</script>
