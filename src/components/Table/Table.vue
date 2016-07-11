@@ -46,10 +46,10 @@
         </thead>
         <tbody>
           <tr v-if="!dataSource || !dataSource.length">
-            <td colspan="30" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td>
+            <td colspan="20" style="text-align: center;" :class="[prefixCls + 'table-empty']">{{noDataTip}}</td>
           </tr>
           <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
-            <td v-if="rowSelection" class="atui-table-selection-column">
+            <td v-if="rowSelection" :class="[prefixCls + 'table-selection-column']">
               <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
               />
             </td>
