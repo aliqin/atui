@@ -1,14 +1,23 @@
 <template>
-  <div v-if="!closed" :class="['atui-tag',{'atui-tag-color': color}]" :style="{'background-color': color}">
-   <a :href="href" class="tag-text" :style="{'fontSize': size+'px'}"><slot></slot></a>
-   <span v-if="closable" class="tag-close" @click="closeHandler">
+  <div v-if="!closed"
+       :class="[prefixCls + '-tag', color && (prefixCls + '-tag-color')]"
+       :style="{'background-color': color}">
+    <a :href="href"
+       :class="[prefixCls + '-tag-text']"
+       :style="{'fontSize': size+'px'}">
+      <slot></slot>
+    </a>
+    <span v-if="closable"
+         :class="[prefixCls + '-tag-close']"
+         @click="closeHandler">
      <v-icon type="close" :size="size"></v-icon>
-   </span>
+    </span>
   </div>
 </template>
 
 <script>
 import vIcon from '../Icon/'
+
 export default {
   props: {
     color: String,
@@ -17,6 +26,10 @@ export default {
     size: {
       type: String,
       default: '12'
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   data () {
@@ -35,6 +48,3 @@ export default {
   }
 }
 </script>
-
-
-
