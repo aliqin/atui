@@ -1,6 +1,9 @@
-//
+@import "themes/common";
+
 // Switch
 // --------------------------------------------------
+@prefix-cls-switch: e("@{prefix-cls}-switch");
+
 @switch-default-bg			: #bfbfbf;
 @switch-checked-bg 			: @primary-color;
 @switch-circle-bg			: #fff;
@@ -8,7 +11,7 @@
 @switch-disabled-bg 		: #f2f2f2;
 @switch-text-color			: #fff;
 
-.switch {
+.@{prefix-cls-switch} {
 	position: relative;
 	display: inline-block;
 	width: 44px;
@@ -24,7 +27,7 @@
 	transition: all .15s linear;
 	user-select: none;
 
-	.switch-content {
+	.@{prefix-cls-switch}-content {
 		position: absolute;
 		left: 24px;
 		color: @switch-text-color;
@@ -47,11 +50,11 @@
 		transition: left .15s linear;
 	}
 
-	&.switch-checked {
+	&.@{prefix-cls-switch}-checked {
 		background-color: @switch-checked-bg;
 		border: 1px solid @switch-checked-bg;
 
-		.switch-content {
+		.@{prefix-cls-switch}-content {
 			left: 6px;
 		}
 
@@ -60,7 +63,7 @@
 		}
 	}
 
-	&.switch-disabled {
+	&.@{prefix-cls-switch}-disabled {
 		background-color: @switch-disabled-bg;
 		border: 1px solid @switch-disabled-bg;
 		cursor: no-drop;
@@ -72,7 +75,7 @@
 
 	// 小型的switch开关
 	// ------------------------ start ---------------------
-	&.small {
+	&.@{prefix-cls-switch}-small {
 		width: 26px;
 		height: 14px;
 		line-height: 12px;
@@ -90,11 +93,11 @@
 			cursor: pointer;
 		}
 
-		&.switch-checked {
+		&.@{prefix-cls-switch}-checked {
 			background-color: @switch-checked-bg;
 			border: 1px solid @switch-checked-bg;
 
-			.switch-content {
+			.@{prefix-cls-switch}-content {
 				left: 6px;
 			}
 
@@ -103,7 +106,7 @@
 			}
 		}
 
-		&.switch-disabled {
+		&.@{prefix-cls-switch}-disabled {
 			background-color: @switch-disabled-bg;
 			border: 1px solid @switch-disabled-bg;
 			cursor: no-drop;
