@@ -1,5 +1,5 @@
 <template>
-<i :class="['iconfont','icon-' + type]" :style="{ fontSize: size + 'px',color:color }">
+<i :class="[prefixCls + '-iconfont', prefixCls + '-icon-' + type]" :style="{ fontSize: size + 'px',color:color }">
 </i>
 </template>
 
@@ -17,6 +17,10 @@ export default {
     },
     color: {
       type: String
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   }
 }

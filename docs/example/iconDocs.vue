@@ -54,7 +54,7 @@
 </script>
 
 <style>
-  #icon .iconfont {
+  #icon .atui-iconfont {
     display: inline-block;
     margin:8px;
   }
