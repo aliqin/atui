@@ -1,16 +1,15 @@
 <template>
   <li>
-    <span v-if="isFolder" :class="['atui-tree-switcher',{'atui-tree-switcher-open':open}]">
-      <icon type="jiantou"></icon>
-    </span>
     <a :title="model.name" @click="toggle">
-      <span class="atui-tree-title">
+      <span v-if="isFolder" :class="[prefixCls + '-tree-switcher', open && prefixCls + '-tree-switcher-open']">
+        <icon type="jiantou"></icon>
+      </span>
+      <span :class="[prefixCls + '-tree-title']">
         {{model.name}}
       </span>
     </a>
-    <ul v-show="open" v-if="isFolder" transition="slide" :class="{'ant-tree-child-tree-open': open}">
+    <ul v-show="open" v-if="isFolder" transition="slide" :class="[open && prefixCls + '-tree-child-tree-open']">
       <tree-node
-        class="item"
         v-for="model in model.children"
         :model="model">
       </tree-node>
@@ -28,6 +27,10 @@ export default {
     },
     model: {
       type: Object
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   data () {

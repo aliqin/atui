@@ -15,15 +15,14 @@ export default {
     },
     dataSource: {
       type: Object
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   components: {
     TreeNode
-  },
-  data () {
-    return {
-      prefixCls: 'atui'
-    }
   }
 }
 </script>
