@@ -1,6 +1,8 @@
 <template>
-  <span :class="wrapClasses" @click="changeHandler" :style="{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}">
-    <span class="switch-content">
+  <span :class="switchClassObj"
+        :style="{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}"
+        @click="changeHandler">
+    <span :class="[prefixCls + '-switch-content']">
       <slot v-if="checked && !small" name="checkedPart"></slot>
       <slot v-if="!checked && !small" name="unCheckedPart"></slot>
     </span>
@@ -24,16 +26,23 @@ export default {
     },
     color: {
       type: String
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   computed: {
-    wrapClasses () {
-      return {
-        'switch': true,
-        'small': this.small,
-        'switch-checked': this.checked,
-        'switch-disabled': this.disabled
-      }
+    switchClassObj () {
+      let { prefixCls, small, checked, disabled } = this
+      let classObj = {}
+
+      classObj[prefixCls + '-switch'] = true
+      classObj[prefixCls + '-switch-small'] = small
+      classObj[prefixCls + '-switch-checked'] = checked
+      classObj[prefixCls + '-switch-disabled'] = disabled
+
+      return classObj
     }
   },
   methods: {
