@@ -1,14 +1,14 @@
-//
-// tags
+@import "themes/common";
+
+// Tag
 // --------------------------------------------------
+@prefix-cls-tag: e("@{prefix-cls}-tag");
 
 @tag-default-text : #999;
 @tag-text : #fff;
-
 @tag-default-bg : #f2f2f2;
 
-
-.atui-tag {
+.@{prefix-cls-tag} {
   display: inline-block;
   vertical-align: middle;
   min-height: 20px;
@@ -25,13 +25,13 @@
     opacity: 1;
   }
 
-  .tag-text {
+  .@{prefix-cls-tag}-text {
     cursor: pointer;
     color: @tag-default-text;
     text-decoration: none;
   }
 
-  .tag-close {
+  .@{prefix-cls-tag}-close {
     color: @tag-default-text;
     opacity: 0.66;
     cursor: pointer;
@@ -46,10 +46,10 @@
     }
   }
   &-color {
-    .tag-text {
+    .@{prefix-cls-tag}-text {
       color: @tag-text;
     }
-    .tag-close {
+    .@{prefix-cls-tag}-close {
       color: @tag-text;
       opacity: 0.66;
       cursor: pointer;
