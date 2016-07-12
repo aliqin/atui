@@ -1,5 +1,5 @@
 <template>
-  <div class="pagination">
+  <div :class="[prefixCls + '-pagination']">
   <template v-if="totalPage > 1">
     <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
     <jumper
@@ -12,10 +12,12 @@
   </template>
   </div>
 </template>
+
 <script>
 import jumper from './Jumper.vue'
 import pager from './Pager.vue'
 import Options from './Options.vue'
+
 export default {
   props: {
     id: {
@@ -37,6 +39,10 @@ export default {
     },
     mini: {
       type: Boolean
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   data () {
@@ -80,6 +86,7 @@ export default {
       let me = this
       let showLen = me.prevShow + me.nextShow + 1
       let totalPage = me.totalPage = Math.ceil(me.total / me.pageSize)
+      let prefixCls = me.prefixCls
 
       let currPage = me.currPage
 
@@ -106,27 +113,27 @@ export default {
       if (me.simple) {
         // 上一页
         if (currPage !== 1) {
-          me.pageRange.push({num: currPage - 1, text: '<', className: 'prev'})
+          me.pageRange.push({num: currPage - 1, text: '<', className: prefixCls + '-pagination-item-prev'})
         } else {
-          me.pageRange.push({className: 'disabled', icon: 'prev'})
+          me.pageRange.push({className: prefixCls + '-pagination-item-disabled', icon: 'prev'})
         }
 
-        me.pageRange.push({num: me.currPage, text: me.currPage, className: 'current'})
-        me.pageRange.push({text: '/', className: 'slash'})
+        me.pageRange.push({num: me.currPage, text: me.currPage, className: prefixCls + '-pagination-item-current'})
+        me.pageRange.push({text: '/', className: prefixCls + '-pagination-item-slash'})
         me.pageRange.push({text: totalPage})
 
         // 下一页
         if (currPage !== totalPage) {
-          me.pageRange.push({num: currPage + 1, text: '>', className: 'next'})
+          me.pageRange.push({num: currPage + 1, text: '>', className: prefixCls + '-pagination-item-next'})
         } else {
-          me.pageRange.push({className: 'disabled', icon: 'next'})
+          me.pageRange.push({className: prefixCls + '-pagination-item-disabled', icon: 'next'})
         }
       } else {
         // 上一页
         if (currPage !== 1) {
-          me.pageRange.push({num: currPage - 1, text: '<', className: 'prev'})
+          me.pageRange.push({num: currPage - 1, text: '<', className: prefixCls + '-pagination-item-prev'})
         } else {
-          me.pageRange.push({className: 'disabled', icon: 'prev'})
+          me.pageRange.push({className: prefixCls + '-pagination-item-disabled', icon: 'prev'})
         }
         // 第一页
         if (start >= 2) {
@@ -134,19 +141,19 @@ export default {
         }
         // 省略号
         if (start > 2) {
-          me.pageRange.push({text: '...', className: 'ellipsis'})
+          me.pageRange.push({text: '...', className: prefixCls + '-pagination-item-ellipsis'})
         }
         // 显示的页码列表
         for (let i = start; i <= end; i++) {
           me.pageRange.push({
             num: i,
             text: i,
-            className: (i === currPage) ? 'current' : ''
+            className: (i === currPage) ? prefixCls + '-pagination-item-current' : ''
           })
         }
         // 省略号
         if (end < totalPage - 1) {
-          me.pageRange.push({text: '...', className: 'ellipsis'})
+          me.pageRange.push({text: '...', className: prefixCls + '-pagination-item-ellipsis'})
         }
         // 最后一页
         if (end <= totalPage - 1) {
@@ -154,9 +161,9 @@ export default {
         }
         // 下一页
         if (currPage !== totalPage) {
-          me.pageRange.push({num: currPage + 1, text: '>', className: 'next'})
+          me.pageRange.push({num: currPage + 1, text: '>', className: prefixCls + '-pagination-item-next'})
         } else {
-          me.pageRange.push({className: 'disabled', icon: 'next'})
+          me.pageRange.push({className: prefixCls + '-pagination-item-disabled', icon: 'next'})
         }
       }
     },

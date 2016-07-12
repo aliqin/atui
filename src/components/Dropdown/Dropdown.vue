@@ -37,8 +37,6 @@
       const toggle = el.querySelector('[data-toggle="dropdown"]')
       let self = this
 
-      console.log('me.$el', me.$el)
-
       if (!toggle) {
         return
       }
