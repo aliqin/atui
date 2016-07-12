@@ -1,4 +1,6 @@
-.atui-datepicker {
+@prefix-cls-datepicker: e("@{prefix-cls}-datepicker");
+
+.@{prefix-cls-datepicker} {
   position: relative;
   display: inline-block;
 
@@ -30,13 +32,14 @@
       border: 1px solid @primary-color;
       box-shadow: none;
     }
-    .iconfont {
-      position: absolute;
-      top: 50%;
-      // transform:translateY(-50%);
-      margin-top: -14px;
-      right: 7px;
-    }
+  }
+
+  .@{prefix-cls}-iconfont {
+    position: absolute;
+    top: 50%;
+    // transform:translateY(-50%);
+    margin-top: -14px;
+    right: 7px;
   }
 
   &-calendar {

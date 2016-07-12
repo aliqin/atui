@@ -52,6 +52,9 @@ export default {
     },
     pageSize () {
       this.getPageRange()
+      this.$nextTick(() => {
+        this.$dispatch('pagination-size-change', this.currPage, this.pageSize)
+      })
     },
     currPage () {
       this.getPageRange()
