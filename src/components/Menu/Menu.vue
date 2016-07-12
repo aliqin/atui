@@ -18,7 +18,6 @@ export default {
   },
   ready () {
     let me = this
-    console.log(me.$el.querySelectorAll('.' + me.prefixCls + '-menu-item'))
     me.$el.querySelectorAll('.' + me.prefixCls + '-menu-item').forEach((item) => {
       item.addEventListener('click', () => {
         let className = me.prefixCls + '-menu-selected'
