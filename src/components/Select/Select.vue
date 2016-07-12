@@ -1,11 +1,11 @@
 <template>
-  <div class="select-container" :class="{open:show,disabled:disabled,multiple:multiple}">
+  <div class="select-container" :class="{'atui-dropdown-open':show,disabled:disabled,multiple:multiple}">
     <div :class="['select-toggle',{tags:tags}]" tabindex="1" @mousedown="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
     >
       <template v-if="!multiple">
         <span class="select-placeholder" v-show="!value">{{placeholder}}</span>
         <span class="btn-content">{{ showText }}</span>
-        <span :class="{caret:true,open:show}"><icon type="down" size="12"></icon></span>
+        <span :class="[{caret:true,'open':show}]"><icon :class="['atui-dropdown-icon',]" type="down" size="12"></icon></span>
       </template>
       <div v-else>
         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
@@ -13,7 +13,7 @@
         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
       </div>
     </div>
-    <div class="dropdown-menu" v-show="show && options.length > 0" transition="slide">
+    <div class="atui-dropdown-menu" v-show="show && options.length > 0" transition="slide">
       <slot></slot>
       <div v-show="noResult" class="no-result">无结果</div>
       <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>

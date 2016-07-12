@@ -22,7 +22,7 @@
                 <div data-toggle="dropdown" @click="filterOpened = true">
                   <icon type="filter" size="12"></icon>
                 </div>
-                <div name="dropdown-menu" v-show="filterOpened" transition="slide" class="dropdown-menu atui-table-filter-dropdown">
+                <div name="dropdown-menu" v-show="filterOpened" transition="slide" class="atui-dropdown-menu atui-table-filter-dropdown">
                   <ul>
                     <li v-for="filter in column.filters">
                     <label>
@@ -274,6 +274,7 @@ export default {
     changePage (pageNum) {
       let pager = this.$refs.pager
       this.dataSource = this.originDataSource.slice((pageNum - 1) * pager.pageSize, pageNum * pager.pageSize)
+      this.pagination.onChange && this.pagination.onChange(pageNum)
     },
     fixedHeaderAction () {
       if (this.fixedHeader) {
