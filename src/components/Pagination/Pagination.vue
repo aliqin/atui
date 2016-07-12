@@ -1,7 +1,7 @@
 <template>
   <div class="pagination">
   <template v-if="totalPage > 1">
-    <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
+    <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger"></options>
     <jumper
         :quick-go="showJumper ? _handleChange.bind(this) : null"
         :curr-page="currPage"
