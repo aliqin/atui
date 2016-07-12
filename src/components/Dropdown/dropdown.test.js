@@ -17,7 +17,7 @@ let vm = new Vue({
 
 describe('Dropdown', () => {
   it('Dropdown组件是否正常显示', () => {
-    expect(vm.$el.querySelectorAll('.dropdown').length).to.equal(1)
+    expect(vm.$el.querySelectorAll('.atui-dropdown').length).to.equal(1)
   })
 
   it('事件回调', () => {

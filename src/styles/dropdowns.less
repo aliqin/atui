@@ -1,39 +1,38 @@
-//
-// Dropdown menus
+@import "themes/common";
+
+// Dropdown
 // --------------------------------------------------
-//
+@prefix-cls-dropdown: e("@{prefix-cls}-dropdown");
+
 @dropdown-bg:                    #fff;
 @dropdown-border:                tint(@primary-color, 40%);
 @dropdown-fallback-border:       #ccc;
 @dropdown-divider-bg:            #d9d9d9;
 
-
 @dropdown-link-color:            @gray-dark;
 @dropdown-link-hover-bg:         tint(@primary-color, 95%);
-
 @dropdown-link-active-bg:        tint(@primary-color, 40%);
-
 @dropdown-link-disabled-color:   @gray-light;
 
 @dropdown-header-color:          @gray-light;
-
 @dropdown-caret-color:           #bfbfbf;
 
-.dropdown {
+.@{prefix-cls-dropdown} {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  .iconfont {
+
+  .@{prefix-cls}-iconfont {
     font-size: 12px !important;
   }
 }
 
 .hover-trigger:hover {
-  .dropdown-menu {
+  .@{prefix-cls-dropdown}-menu {
     display: block;
   }
 }
-.dropdown-menu {
+.@{prefix-cls-dropdown}-menu {
   position: absolute;
   top: 105%;
   left: 0;
@@ -60,6 +59,7 @@
     line-height: @line-height-base;
     color: @dropdown-link-color;
     white-space: nowrap;
+
     &:hover, &:focus, &.active {
       text-decoration: none;
       background-color: @dropdown-link-hover-bg;
@@ -68,10 +68,8 @@
 }
 
 // Active state
-.dropdown-menu > .chosen {
-  &,
-  &:hover,
-  &:focus {
+.@{prefix-cls-dropdown}-menu > .chosen {
+  &, &:hover, &:focus {
     text-decoration: none;
     outline: 0;
     color: #fff;
@@ -81,7 +79,7 @@
 
 
 
-.dropdown-menu > .disabled {
+.@{prefix-cls-dropdown}-menu > .disabled {
   &,
   // Nuke hover/focus effects
   &:hover,
@@ -96,13 +94,16 @@
 }
 
 // Open state for the dropdown
-.open {
+.@{prefix-cls-dropdown}-open {
   // Show the menu
-  > .dropdown-menu {
+  > .@{prefix-cls-dropdown}-menu {
     display: block;
   }
-  .iconfont {
+  .@{prefix-cls}-iconfont {
     transform: rotate(180deg);
   }
 }
 
+.@{prefix-cls-dropdown}-divider {
+  border-bottom: 1px solid @dropdown-divider-bg;
+}
