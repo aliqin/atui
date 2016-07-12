@@ -1,7 +1,7 @@
 <template>
   <div class="pagination">
   <template v-if="totalPage > 1">
-    <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger"></options>
+    <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
     <jumper
         :quick-go="showJumper ? _handleChange.bind(this) : null"
         :curr-page="currPage"
@@ -18,9 +18,6 @@ import pager from './Pager.vue'
 import Options from './Options.vue'
 export default {
   props: {
-    id: {
-      type: String
-    },
     pageSize: {
       type: Number,
       default: 10
@@ -32,12 +29,8 @@ export default {
     },
     showJumper: Boolean,
     showSizeChanger: Boolean,
-    simple: {
-      type: Boolean
-    },
-    mini: {
-      type: Boolean
-    }
+    simple: Boolean,
+    mini: Boolean
   },
   data () {
     return {
@@ -71,8 +64,8 @@ export default {
     Options
   },
   methods: {
-    changePageSize (value) {
-      this.pageSize = value
+    changePageSize (option) {
+      this.pageSize = +option.value
     },
     getPageRange () {
       let start = 0
@@ -172,7 +165,7 @@ export default {
       this.getPageRange()
     },
     onChange (pageNum) {
-      this.$dispatch('pagination-page-change', pageNum, this.id)
+      this.$dispatch('pagination-page-change', pageNum)
     },
     _isValid (page) {
       return typeof page === 'number' && page >= 1 && page !== this.currPage
