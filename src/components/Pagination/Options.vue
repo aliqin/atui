@@ -34,7 +34,6 @@
     components: {
       vSelect, vOption
     },
-
     methods: {
       change (data) {
         this.$dispatch('pagination-size-change', data)

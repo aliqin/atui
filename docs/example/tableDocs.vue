@@ -3,7 +3,11 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
     <row>
+      <h4>带分页</h4>
       <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :pagination="pagination" v-ref:grid></grid>
+
+      <h4>不带分页</h4>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
     </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
@@ -16,7 +20,11 @@
         </div>
       </modal>
     <pre><code class="language-markup"><script type="language-mark-up">
-<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :pagination="pagination"></grid>
+<h4>带分页</h4>
+<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :pagination="pagination" v-ref:grid></grid>
+
+<h4>不带分页</h4>
+<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
 
 <!--脚本-->
 const columns = [{
