@@ -25,6 +25,7 @@
   import EventListener from '../utils/EventListener'
   import Icon from '../Icon/'
   import Tag from '../Tag/'
+
   export default {
     name: 'select',
     props: {

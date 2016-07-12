@@ -1,16 +1,16 @@
 <template>
-  <div v-if="quickGo" class="pagination-jump">
-      <div class="input-jumper-wrap">
+  <div v-if="quickGo" :class="[prefixCls + '-pagination-jump']">
+      <div :class="[prefixCls + '-pagination-jumper-wrap']">
         跳至
-        <input type="text" :value="_current" @change="_handleChange($event)" :class="_inputWrapClasses"/>
+        <input type="text" :value="_current" @change="_handleChange($event)" :class="inputClassObj"/>
         页
       </div>
-      <button type="button" @click="_go" :class="_btnWrapClasses">
+      <button type="button" @click="_go" :class="btnClassObj">
     跳转</button>
   </div>
 </template>
 
-<script>
+<script type="text/babel">
 export default {
   props: {
     quickGo: {
@@ -26,25 +26,35 @@ export default {
     mini: {
       type: Boolean,
       default: false
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   compiled () {
     this._current = this.currPage
   },
   computed: {
-    _inputWrapClasses () {
-      return {
-        'input-jumper': !this.mini,
-        'mini-input-jumper': this.mini
-      }
+    inputClassObj () {
+      let { prefixCls, mini } = this
+      let classObj = {}
+
+      classObj[prefixCls + '-pagination-input-jumper'] = !mini
+      classObj[prefixCls + '-pagination-mini-input'] = mini
+
+      return classObj
     },
-    _btnWrapClasses () {
-      return {
-        'atui-btn': true,
-        'tertiary': true,
-        'default': !this.mini,
-        'small': this.mini
-      }
+    btnClassObj () {
+      let { prefixCls, mini } = this
+      let classObj = {}
+
+      classObj[prefixCls + '-btn'] = true
+      classObj[prefixCls + '-btn-tertiary'] = true
+      classObj[prefixCls + '-btn-default'] = !mini
+      classObj[prefixCls + '-btn-small'] = mini
+
+      return classObj
     }
   },
   data () {

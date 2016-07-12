@@ -20,7 +20,7 @@ let vm = new Vue({
 
 describe('Pagination', () => {
   it('Pagination组件是否正常显示', () => {
-    expect(vm.$el.querySelectorAll('.pagination-items').length).to.equal(1)
+    expect(vm.$el.querySelectorAll('.atui-pagination-items').length).to.equal(1)
   })
 
   it('事件回调', () => {
