@@ -274,6 +274,7 @@ export default {
     changePage (pageNum) {
       let pager = this.$refs.pager
       this.dataSource = this.originDataSource.slice((pageNum - 1) * pager.pageSize, pageNum * pager.pageSize)
+      this.pagination.onChange && this.pagination.onChange(pageNum)
     },
     fixedHeaderAction () {
       if (this.fixedHeader) {
