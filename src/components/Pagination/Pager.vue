@@ -1,8 +1,8 @@
 <template>
     <ul :class="wrapClasses">
         <li v-for="page in pageRange" @click="pageClick(page.num)" :class="{
-        'current':(page.className==='current'),
-    'pagination-item':true,
+        'current':(page.className === 'current'),
+        'pagination-item':true,
         'pagination-item-prev':(page.className==='prev'),
         'pagination-item-next':(page.className==='next'),
         'pagination-item-disabled':(page.className==='disabled'),
