@@ -1,26 +1,29 @@
 <template>
-  <div :class="wrapClasses" :style="{'width': tailWidth}">
-   <div v-if="!lastStep" class="step-tail">
+  <div :class="stepClassObj" :style="{'width': tailWidth}">
+   <div v-if="!lastStep"
+        :class="[prefixCls + '-step-tail']">
      <i>
       <i :style="{ backgroundColor: color }"></i>
      </i>
    </div>
-   <div class="step-head">
-     <div class="step-head-inner">
-      <span v-if="status !== 'finish'" class="step-icon"
+   <div :class="[prefixCls + '-step-head']">
+     <div :class="[prefixCls + '-step-head-inner']">
+      <span v-if="status !== 'finish'"
+            :class="[prefixCls + '-step-icon']"
         :style="{
          borderColor: status==='process'?color: '#e9e9e9',
          backgroundColor: status==='process'?color: '#fff'}">
         {{ stepNumber }}
       </span>
-      <span v-else class="step-finish-icon">
+      <span v-else
+            :class="[prefixCls + '-step-finish-icon']">
         <icon type="success" size="28" :color="color"></icon>
       </span>
      </div>
    </div>
-   <div class="step-main">
-     <div class="step-main-title">{{ title }}</div>
-     <div class="step-main-description">{{ description }}</div>
+   <div :class="[prefixCls + '-step-main']">
+     <div :class="[prefixCls + '-step-main-title']">{{ title }}</div>
+     <div :class="[prefixCls + '-step-main-description']">{{ description }}</div>
    </div>
   </div>
 </template>
@@ -35,17 +38,24 @@ export default {
     stepNumber: Number,
     lastStep: Boolean,
     tailWidth: String,
-    color: String
+    color: String,
+    prefixCls: {
+      type: String,
+      default: 'atui'
+    }
   },
   computed: {
-    wrapClasses () {
-      return {
-        'atui-step': true,
-        'step-status-process': this.status === 'process',
-        'step-status-finish': this.status === 'finish',
-        'step-status-wait': this.status === 'wait',
-        'step-item-last': this.lastStep
-      }
+    stepClassObj () {
+      let { prefixCls, status, lastStep } = this
+      let classObj = {}
+
+      classObj[prefixCls + '-step'] = true
+      classObj[prefixCls + '-step-status-process'] = status === 'process'
+      classObj[prefixCls + '-step-status-finish'] = status === 'finish'
+      classObj[prefixCls + '-step-status-wait'] = status === 'wait'
+      classObj[prefixCls + '-step-item-last'] = lastStep
+
+      return classObj
     }
   },
   components: {
