@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(489);
+	module.exports = __webpack_require__(492);
 
 
 /***/ },
@@ -1029,7 +1029,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/headerDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(356)
+	__vue_template__ = __webpack_require__(359)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1039,7 +1039,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1e3562cc/headerDocs.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/docs/example/headerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1153,123 +1153,123 @@
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
-	var _Button = __webpack_require__(155);
+	var _Button = __webpack_require__(156);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _Input = __webpack_require__(162);
+	var _Input = __webpack_require__(163);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Searchbox = __webpack_require__(166);
+	var _Searchbox = __webpack_require__(167);
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 	
-	var _Uploader = __webpack_require__(171);
+	var _Uploader = __webpack_require__(172);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 	
-	var _Slider = __webpack_require__(203);
+	var _Slider = __webpack_require__(204);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 	
-	var _Switch = __webpack_require__(212);
+	var _Switch = __webpack_require__(213);
 	
 	var _Switch2 = _interopRequireDefault(_Switch);
 	
-	var _Dropdown = __webpack_require__(216);
+	var _Dropdown = __webpack_require__(217);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Select = __webpack_require__(221);
+	var _Select = __webpack_require__(222);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Calendar = __webpack_require__(232);
+	var _Calendar = __webpack_require__(233);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 	
-	var _TimePicker = __webpack_require__(236);
+	var _TimePicker = __webpack_require__(237);
 	
 	var _TimePicker2 = _interopRequireDefault(_TimePicker);
 	
-	var _DatePicker = __webpack_require__(241);
+	var _DatePicker = __webpack_require__(242);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
-	var _Cascader = __webpack_require__(248);
+	var _Cascader = __webpack_require__(249);
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 	
-	var _Message = __webpack_require__(198);
+	var _Message = __webpack_require__(199);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
-	var _Modal = __webpack_require__(252);
+	var _Modal = __webpack_require__(253);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Table = __webpack_require__(256);
+	var _Table = __webpack_require__(257);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 	
-	var _Badge = __webpack_require__(269);
+	var _Badge = __webpack_require__(285);
 	
 	var _Badge2 = _interopRequireDefault(_Badge);
 	
-	var _Carousel = __webpack_require__(273);
+	var _Carousel = __webpack_require__(289);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Affix = __webpack_require__(282);
+	var _Affix = __webpack_require__(298);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _Spin = __webpack_require__(263);
+	var _Spin = __webpack_require__(266);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 	
-	var _Textarea = __webpack_require__(287);
+	var _Textarea = __webpack_require__(303);
 	
 	var _Textarea2 = _interopRequireDefault(_Textarea);
 	
-	var _Tag = __webpack_require__(224);
+	var _Tag = __webpack_require__(225);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
-	var _Tooltip = __webpack_require__(206);
+	var _Tooltip = __webpack_require__(207);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Accordion = __webpack_require__(291);
+	var _Accordion = __webpack_require__(307);
 	
 	var _Accordion2 = _interopRequireDefault(_Accordion);
 	
-	var _Popover = __webpack_require__(298);
+	var _Popover = __webpack_require__(314);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Tabs = __webpack_require__(302);
+	var _Tabs = __webpack_require__(318);
 	
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 	
-	var _Steps = __webpack_require__(309);
+	var _Steps = __webpack_require__(325);
 	
 	var _Steps2 = _interopRequireDefault(_Steps);
 	
-	var _Tree = __webpack_require__(316);
+	var _Tree = __webpack_require__(332);
 	
 	var _Tree2 = _interopRequireDefault(_Tree);
 	
-	var _Menu = __webpack_require__(323);
+	var _Menu = __webpack_require__(339);
 	
 	var _Menu2 = _interopRequireDefault(_Menu);
 	
-	var _Breadcrumb = __webpack_require__(336);
+	var _Breadcrumb = __webpack_require__(352);
 	
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 	
-	var _Pagination = __webpack_require__(343);
+	var _Pagination = __webpack_require__(271);
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
@@ -1378,7 +1378,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-d85b2bd0/Icon.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Icon/Icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1396,7 +1396,7 @@
 	  value: true
 	});
 	// <template>
-	// <i :class="['iconfont','icon-' + type]" :style="{ fontSize: size + 'px',color:color }">
+	// <i :class="[prefixCls + '-iconfont', prefixCls + '-icon-' + type]" :style="{ fontSize: size + 'px',color:color }">
 	// </i>
 	// </template>
 	//
@@ -1414,6 +1414,10 @@
 	    },
 	    color: {
 	      type: String
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  }
 	};
@@ -1425,7 +1429,7 @@
 /* 137 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<i :class=\"['iconfont','icon-' + type]\" :style=\"{ fontSize: size + 'px',color:color }\">\n</i>\n";
+	module.exports = "\n<i :class=\"[prefixCls + '-iconfont', prefixCls + '-icon-' + type]\" :style=\"{ fontSize: size + 'px',color:color }\">\n</i>\n";
 
 /***/ },
 /* 138 */
@@ -1441,7 +1445,7 @@
 	
 	var _Form2 = _interopRequireDefault(_Form);
 	
-	var _FormItem = __webpack_require__(152);
+	var _FormItem = __webpack_require__(153);
 	
 	var _FormItem2 = _interopRequireDefault(_FormItem);
 	
@@ -1462,7 +1466,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Form/Form.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(151)
+	__vue_template__ = __webpack_require__(152)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1472,7 +1476,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-373970f8/Form.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Form/Form.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1515,7 +1519,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n.form-horizontal {}\n.form-vertical {}\n", "", {"version":3,"sources":["/./src/components/Form/Form.vue?15bc0358"],"names":[],"mappings":";;;;;;;;AAQA,mBAAA;AACA,iBAAA","file":"Form.vue","sourcesContent":["<template>\n  <form class=\"form\" :class=\"classObj\">\n    <v-row>\n      <slot></slot>\n    </v-row>\n  </form>\n</template>\n<style>\n.form-horizontal {}\n.form-vertical {}\n</style>\n<script>\nimport Layout from '../Layout/'\nconst vRow = Layout.Row\nexport default {\n  props: {\n    // 表单元素排列方式，有纵向和横向两种 horizontal、vertical\n    horizontal: Boolean,\n    vertical: Boolean\n  },\n  data () {\n    return {\n      classObj: {\n        'form-horizontal': this.horizontal,\n        'form-vertical': this.vertical\n      }\n    }\n  },\n  components: {\n    vRow\n  }\n}\n</script>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.form-horizontal {}\n.form-vertical {}\n", "", {"version":3,"sources":["/./src/components/Form/Form.vue?15bc0358"],"names":[],"mappings":";AAQA,mBAAA;AACA,iBAAA","file":"Form.vue","sourcesContent":["<template>\n  <form class=\"form\" :class=\"classObj\">\n    <v-row>\n      <slot></slot>\n    </v-row>\n  </form>\n</template>\n<style>\n.form-horizontal {}\n.form-vertical {}\n</style>\n<script>\nimport Layout from '../Layout/'\nconst vRow = Layout.Row\nexport default {\n  props: {\n    // 表单元素排列方式，有纵向和横向两种 horizontal、vertical\n    horizontal: Boolean,\n    vertical: Boolean\n  },\n  data () {\n    return {\n      classObj: {\n        'form-horizontal': this.horizontal,\n        'form-vertical': this.vertical\n      }\n    }\n  },\n  components: {\n    vRow\n  }\n}\n</script>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -1864,7 +1868,7 @@
 	
 	var _Row2 = _interopRequireDefault(_Row);
 	
-	var _Col = __webpack_require__(148);
+	var _Col = __webpack_require__(149);
 	
 	var _Col2 = _interopRequireDefault(_Col);
 	
@@ -1877,7 +1881,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(147)
+	__vue_script__ = __webpack_require__(147)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Layout/Row.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(148)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1887,7 +1896,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-323de8fc/Row.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Layout/Row.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1899,19 +1908,45 @@
 /* 147 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"row\"><slot></slot></div>\n";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	// <div :class="[prefixCls + '-row']"><slot></slot></div>
+	// </template>
+	//
+	// <script>
+	exports.default = {
+	  props: {
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
 
 /***/ },
 /* 148 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"[prefixCls + '-row']\"><slot></slot></div>\n";
+
+/***/ },
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(149)
+	__vue_script__ = __webpack_require__(150)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Layout/Col.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(150)
+	__vue_template__ = __webpack_require__(151)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1921,7 +1956,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-18256da2/Col.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Layout/Col.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1930,7 +1965,7 @@
 	})()}
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1939,7 +1974,7 @@
 	  value: true
 	});
 	// <template>
-	// <div :class="className"><slot></slot></div>
+	// <div :class="[prefixCls + '-col-' + type + '-' + span]"><slot></slot></div>
 	// </template>
 	//
 	// <script>
@@ -1952,12 +1987,11 @@
 	    type: {
 	      type: String,
 	      default: 'md'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
-	  },
-	  data: function data() {
-	    return {
-	      className: ['col', this.type, this.span].join('-')
-	    };
 	  }
 	};
 	// </script>
@@ -1965,28 +1999,28 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"className\"><slot></slot></div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-col-' + type + '-' + span]\"><slot></slot></div>\n";
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<form class=\"form\" :class=\"classObj\">\n  <v-row>\n    <slot></slot>\n  </v-row>\n</form>\n";
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(153)
+	__vue_script__ = __webpack_require__(154)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Form/FormItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(154)
+	__vue_template__ = __webpack_require__(155)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1996,7 +2030,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-ca5542aa/FormItem.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Form/FormItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2005,7 +2039,7 @@
 	})()}
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2111,13 +2145,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"form-item\" :class=\"classObj\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\" type=\"sm\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</div>\n";
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2126,11 +2160,11 @@
 	  value: true
 	});
 	
-	var _Button = __webpack_require__(156);
+	var _Button = __webpack_require__(157);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _Group = __webpack_require__(159);
+	var _Group = __webpack_require__(160);
 	
 	var _Group2 = _interopRequireDefault(_Group);
 	
@@ -2141,16 +2175,16 @@
 	exports.default = _Button2.default;
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(157)
+	__vue_script__ = __webpack_require__(158)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Button/Button.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(158)
+	__vue_template__ = __webpack_require__(159)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2160,7 +2194,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-760691f8/Button.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Button/Button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2169,7 +2203,7 @@
 	})()}
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2234,22 +2268,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<button :type=\"type\" :class=\"btnClassObj\">\n  <slot>{{value}}</slot>\n</button>\n";
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(160)
+	__vue_script__ = __webpack_require__(161)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Button/Group.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(161)
+	__vue_template__ = __webpack_require__(162)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2259,7 +2293,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0dc1d2a9/Group.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Button/Group.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2268,7 +2302,7 @@
 	})()}
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2336,13 +2370,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"btnClassObj\"\n     @click=\"clickBtnGroup\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2351,7 +2385,7 @@
 	  value: true
 	});
 	
-	var _Input = __webpack_require__(163);
+	var _Input = __webpack_require__(164);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -2360,16 +2394,16 @@
 	exports.default = _Input2.default;
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(164)
+	__vue_script__ = __webpack_require__(165)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Input/Input.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(165)
+	__vue_template__ = __webpack_require__(166)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2379,7 +2413,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7fd91b8e/Input.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Input/Input.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2388,7 +2422,7 @@
 	})()}
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2397,7 +2431,12 @@
 	  value: true
 	});
 	// <template>
-	//   <input :type="type" class="input" :class="classObj" :placeholder="placeholder" v-model="value" :valid-status.sync="validStatus" :maxlength="maxlength" />
+	//   <input :type="type"
+	//          :class="inputClassObj"
+	//          :placeholder="placeholder"
+	//          v-model="value"
+	//          :valid-status.sync="validStatus"
+	//          :maxlength="maxlength" />
 	// </template>
 	// <script>
 	exports.default = {
@@ -2464,6 +2503,10 @@
 	    tips: {
 	      type: String,
 	      default: ''
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	
@@ -2500,14 +2543,25 @@
 	
 	
 	  computed: {
-	    classObj: function classObj() {
-	      return {
-	        'large': this.large,
-	        'small': this.small,
-	        'error': this.error || this.validStatus === 'error',
-	        'success': this.success || this.validStatus === 'success',
-	        'warn': this.warn || this.validStatus === 'warn'
-	      };
+	    inputClassObj: function inputClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var large = this.large;
+	      var small = this.small;
+	      var error = this.error;
+	      var success = this.success;
+	      var warn = this.warn;
+	      var validStatus = this.validStatus;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-input'] = true;
+	      classObj[prefixCls + '-input-large'] = large;
+	      classObj[prefixCls + '-input-small'] = small;
+	      classObj[prefixCls + '-input-error'] = error || validStatus === 'error';
+	      classObj[prefixCls + '-input-success'] = success || validStatus === 'success';
+	      classObj[prefixCls + '-input-warn'] = warn || validStatus === 'warn';
+	
+	      return classObj;
 	    }
 	  },
 	
@@ -2691,13 +2745,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<input :type=\"type\" class=\"input\" :class=\"classObj\" :placeholder=\"placeholder\" v-model=\"value\" :valid-status.sync=\"validStatus\" :maxlength=\"maxlength\" />\n";
+	module.exports = "\n<input :type=\"type\"\n       :class=\"inputClassObj\"\n       :placeholder=\"placeholder\"\n       v-model=\"value\"\n       :valid-status.sync=\"validStatus\"\n       :maxlength=\"maxlength\" />\n";
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2706,7 +2760,7 @@
 	  value: true
 	});
 	
-	var _Searchbox = __webpack_require__(167);
+	var _Searchbox = __webpack_require__(168);
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 
@@ -2715,16 +2769,16 @@
 	exports.default = _Searchbox2.default;
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(168)
+	__vue_script__ = __webpack_require__(169)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Searchbox/Searchbox.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(170)
+	__vue_template__ = __webpack_require__(171)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2734,7 +2788,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-db75a100/Searchbox.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Searchbox/Searchbox.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2743,7 +2797,7 @@
 	})()}
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2756,19 +2810,27 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div class="search-box">
-	//     <input type="text" class="input" :class="{large:large,small:small}" :placeholder="placeholder" v-model="value" @focus="focusInput" debounce="500" />
+	//   <div :class="[prefixCls + '-searchbox']">
+	//     <input type="text"
+	//            :class="inputClassObj"
+	//            :placeholder="placeholder"
+	//            v-model="value"
+	//            @focus="focusInput"
+	//            debounce="500" />
 	//     <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
 	//     <icon type="search" :color="iconColor" size="14"></icon>
-	//     <div v-if="searchList && searchList.length > 0" class="search-list-containter">
-	//       <ul class="list-dropdown" v-show="showPop" transition="slide">
+	//     <div v-if="searchList && searchList.length > 0"
+	//          :class="[prefixCls + '-searchbox-list-containter']">
+	//       <ul v-show="showPop"
+	//           :class="[prefixCls + '-searchbox-list-dropdown']"
+	//           transition="slide">
 	//         <li v-for="item in searchList | filterBy value">
 	//           <a href="javascript:;" @click="checkItem($index, item[textField])" :title="item[textField]">{{item[textField]}}</a>
 	//         </li>
@@ -2776,7 +2838,7 @@
 	//     </div>
 	//   </div>
 	// </template>
-	// <script>
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    placeholder: {
@@ -2800,6 +2862,10 @@
 	    },
 	    filterField: {
 	      type: Array
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
@@ -2816,6 +2882,20 @@
 	        return '' + item;
 	      });
 	      return str.join(' ');
+	    },
+	    inputClassObj: function inputClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var large = this.large;
+	      var small = this.small;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-searchbox-input'] = true;
+	      classObj[prefixCls + '-input'] = true;
+	      classObj[prefixCls + '-input-large'] = large;
+	      classObj[prefixCls + '-input-small'] = small;
+	
+	      return classObj;
 	    }
 	  },
 	  components: {
@@ -2867,7 +2947,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2907,13 +2987,13 @@
 	exports.default = EventListener;
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"search-box\">\n  <input type=\"text\" class=\"input\" :class=\"{large:large,small:small}\" :placeholder=\"placeholder\" v-model=\"value\" @focus=\"focusInput\" debounce=\"500\" />\n  <icon type=\"clear\" v-show=\"value\" color=\"#bfbfbf\" size=\"14\" @click=\"clearInput\"></icon>\n  <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n  <div v-if=\"searchList && searchList.length > 0\" class=\"search-list-containter\">\n    <ul class=\"list-dropdown\" v-show=\"showPop\" transition=\"slide\">\n      <li v-for=\"item in searchList | filterBy value\">\n        <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" :title=\"item[textField]\">{{item[textField]}}</a>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-searchbox']\">\n  <input type=\"text\"\n         :class=\"inputClassObj\"\n         :placeholder=\"placeholder\"\n         v-model=\"value\"\n         @focus=\"focusInput\"\n         debounce=\"500\" />\n  <icon type=\"clear\" v-show=\"value\" color=\"#bfbfbf\" size=\"14\" @click=\"clearInput\"></icon>\n  <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n  <div v-if=\"searchList && searchList.length > 0\"\n       :class=\"[prefixCls + '-searchbox-list-containter']\">\n    <ul v-show=\"showPop\"\n        :class=\"[prefixCls + '-searchbox-list-dropdown']\"\n        transition=\"slide\">\n      <li v-for=\"item in searchList | filterBy value\">\n        <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" :title=\"item[textField]\">{{item[textField]}}</a>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2922,7 +3002,7 @@
 	  value: true
 	});
 	
-	var _Uploader = __webpack_require__(172);
+	var _Uploader = __webpack_require__(173);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 
@@ -2931,16 +3011,16 @@
 	exports.default = _Uploader2.default;
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(173)
+	__vue_script__ = __webpack_require__(174)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Uploader/Uploader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(202)
+	__vue_template__ = __webpack_require__(203)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2950,7 +3030,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-628d71b8/Uploader.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Uploader/Uploader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2959,7 +3039,7 @@
 	})()}
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2968,7 +3048,7 @@
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(174);
+	var _typeof2 = __webpack_require__(175);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -2976,7 +3056,7 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Message = __webpack_require__(198);
+	var _Message = __webpack_require__(199);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -3379,18 +3459,18 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _iterator = __webpack_require__(175);
+	var _iterator = __webpack_require__(176);
 	
 	var _iterator2 = _interopRequireDefault(_iterator);
 	
-	var _symbol = __webpack_require__(182);
+	var _symbol = __webpack_require__(183);
 	
 	var _symbol2 = _interopRequireDefault(_symbol);
 	
@@ -3405,24 +3485,24 @@
 	};
 
 /***/ },
-/* 175 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(176), __esModule: true };
-
-/***/ },
 /* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(80);
-	__webpack_require__(177);
-	module.exports = __webpack_require__(181).f('iterator');
+	module.exports = { "default": __webpack_require__(177), __esModule: true };
 
 /***/ },
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(80);
 	__webpack_require__(178);
+	module.exports = __webpack_require__(182).f('iterator');
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(179);
 	var global        = __webpack_require__(87)
 	  , hide          = __webpack_require__(91)
 	  , Iterators     = __webpack_require__(103)
@@ -3437,12 +3517,12 @@
 	}
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(179)
-	  , step             = __webpack_require__(180)
+	var addToUnscopables = __webpack_require__(180)
+	  , step             = __webpack_require__(181)
 	  , Iterators        = __webpack_require__(103)
 	  , toIObject        = __webpack_require__(109);
 	
@@ -3476,13 +3556,13 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -3490,29 +3570,29 @@
 	};
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports.f = __webpack_require__(121);
 
 /***/ },
-/* 182 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(183), __esModule: true };
-
-/***/ },
 /* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(184);
-	__webpack_require__(195);
-	__webpack_require__(196);
-	__webpack_require__(197);
-	module.exports = __webpack_require__(88).Symbol;
+	module.exports = { "default": __webpack_require__(184), __esModule: true };
 
 /***/ },
 /* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(185);
+	__webpack_require__(196);
+	__webpack_require__(197);
+	__webpack_require__(198);
+	module.exports = __webpack_require__(88).Symbol;
+
+/***/ },
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3522,24 +3602,24 @@
 	  , DESCRIPTORS    = __webpack_require__(96)
 	  , $export        = __webpack_require__(86)
 	  , redefine       = __webpack_require__(101)
-	  , META           = __webpack_require__(185).KEY
+	  , META           = __webpack_require__(186).KEY
 	  , $fails         = __webpack_require__(97)
 	  , shared         = __webpack_require__(116)
 	  , setToStringTag = __webpack_require__(120)
 	  , uid            = __webpack_require__(117)
 	  , wks            = __webpack_require__(121)
-	  , wksExt         = __webpack_require__(181)
-	  , wksDefine      = __webpack_require__(186)
-	  , keyOf          = __webpack_require__(187)
-	  , enumKeys       = __webpack_require__(188)
-	  , isArray        = __webpack_require__(191)
+	  , wksExt         = __webpack_require__(182)
+	  , wksDefine      = __webpack_require__(187)
+	  , keyOf          = __webpack_require__(188)
+	  , enumKeys       = __webpack_require__(189)
+	  , isArray        = __webpack_require__(192)
 	  , anObject       = __webpack_require__(93)
 	  , toIObject      = __webpack_require__(109)
 	  , toPrimitive    = __webpack_require__(99)
 	  , createDesc     = __webpack_require__(100)
 	  , _create        = __webpack_require__(105)
-	  , gOPNExt        = __webpack_require__(192)
-	  , $GOPD          = __webpack_require__(194)
+	  , gOPNExt        = __webpack_require__(193)
+	  , $GOPD          = __webpack_require__(195)
 	  , $DP            = __webpack_require__(92)
 	  , $keys          = __webpack_require__(107)
 	  , gOPD           = $GOPD.f
@@ -3664,9 +3744,9 @@
 	
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f   = $defineProperty;
-	  __webpack_require__(193).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(190).f  = $propertyIsEnumerable;
-	  __webpack_require__(189).f = $getOwnPropertySymbols;
+	  __webpack_require__(194).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(191).f  = $propertyIsEnumerable;
+	  __webpack_require__(190).f = $getOwnPropertySymbols;
 	
 	  if(DESCRIPTORS && !__webpack_require__(85)){
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -3752,7 +3832,7 @@
 	setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var META     = __webpack_require__(117)('meta')
@@ -3810,13 +3890,13 @@
 	};
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global         = __webpack_require__(87)
 	  , core           = __webpack_require__(88)
 	  , LIBRARY        = __webpack_require__(85)
-	  , wksExt         = __webpack_require__(181)
+	  , wksExt         = __webpack_require__(182)
 	  , defineProperty = __webpack_require__(92).f;
 	module.exports = function(name){
 	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -3824,7 +3904,7 @@
 	};
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var getKeys   = __webpack_require__(107)
@@ -3839,13 +3919,13 @@
 	};
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
 	var getKeys = __webpack_require__(107)
-	  , gOPS    = __webpack_require__(189)
-	  , pIE     = __webpack_require__(190);
+	  , gOPS    = __webpack_require__(190)
+	  , pIE     = __webpack_require__(191);
 	module.exports = function(it){
 	  var result     = getKeys(it)
 	    , getSymbols = gOPS.f;
@@ -3859,19 +3939,19 @@
 	};
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 /***/ },
-/* 191 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -3881,12 +3961,12 @@
 	};
 
 /***/ },
-/* 192 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 	var toIObject = __webpack_require__(109)
-	  , gOPN      = __webpack_require__(193).f
+	  , gOPN      = __webpack_require__(194).f
 	  , toString  = {}.toString;
 	
 	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -3906,7 +3986,7 @@
 
 
 /***/ },
-/* 193 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
@@ -3918,10 +3998,10 @@
 	};
 
 /***/ },
-/* 194 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var pIE            = __webpack_require__(190)
+	var pIE            = __webpack_require__(191)
 	  , createDesc     = __webpack_require__(100)
 	  , toIObject      = __webpack_require__(109)
 	  , toPrimitive    = __webpack_require__(99)
@@ -3939,25 +4019,25 @@
 	};
 
 /***/ },
-/* 195 */
+/* 196 */
 /***/ function(module, exports) {
 
 
 
 /***/ },
-/* 196 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(186)('asyncIterator');
-
-/***/ },
 /* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(186)('observable');
+	__webpack_require__(187)('asyncIterator');
 
 /***/ },
 /* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(187)('observable');
+
+/***/ },
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3966,7 +4046,7 @@
 	  value: true
 	});
 	
-	var _Message = __webpack_require__(199);
+	var _Message = __webpack_require__(200);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -4004,16 +4084,16 @@
 	exports.default = _Message2.default;
 
 /***/ },
-/* 199 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(200)
+	__vue_script__ = __webpack_require__(201)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Message/Message.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(201)
+	__vue_template__ = __webpack_require__(202)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4023,7 +4103,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-37c076c8/Message.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Message/Message.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4032,7 +4112,7 @@
 	})()}
 
 /***/ },
-/* 200 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4152,19 +4232,19 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div\n  v-show=\"show\"\n  :class=\"messageClassObj\"\n  :transition=\"transition\"\n  :style=\"{width:width}\"\n  role=\"alert\">\n  <div :class=\"[prefixCls + '-message-content']\">\n    <button v-show=\"dismissable\" type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"show = false\">\n    <span>&times;</span>\n    </button>\n    <icon v-if=\"showIcon\" :type=\"type\"></icon>\n    <slot>\n      {{content}}\n    </slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"at-upload\" id=\"upload-{{uploadId}}\">\n  <div v-if=\"uploadType == 'click'\">\n    <label>\n    <input\n      type=\"file\"\n      :name=\"name\"\n      :accept=\"accept\"\n      :id=\"uploadId\"\n      :multiple=\"multiple\"\n      @change=\"onChange($event)\" />\n    <slot>\n      <span class=\"btn tertiary\">点击上传</span>\n    </slot>\n  </label>\n    <div class=\"at-upload-list\">\n      <div class=\"at-upload-item\" v-for=\"file in fileList\">\n        <div class=\"at-upload-item-info\" :class=\"{'active': current == $index}\" @mouseover=\"filemouseover($index)\" @mouseout=\"filemouseout\">\n          <icon type=\"doc\" class=\"at-upload-file-icon\" size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\" class=\"at-upload-del-info\" size=\"12\" @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div class=\"at-upload-item\" v-for=\"file in uploadList\">\n        <div class=\"at-upload-item-info\" :class=\"{'active': current == $index}\" @mouseover=\"filemouseover($index)\" @mouseout=\"filemouseout\">\n          <icon type=\"doc\" class=\"at-upload-file-icon\" size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\" class=\"at-upload-del-info\" size=\"12\" @click=\"delFile($index)\"></icon>\n        </div>\n        <div class=\"at-upload-item-progress\" :class=\"{'hide': progress[$index] == '100%'}\">\n          <div class=\"at-progress at-progress-line at-progress-status-success\">\n            <div class=\"at-progress-inner\">\n              <div class=\"at-progress-bg\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div v-if=\"uploadType == 'drag'\" class=\"at-upload-drag\">\n    <div class=\"at-upload-drag-container {{dragover ? 'is-dragover' : ''}}\">\n      <input type=\"file\" :name=\"name\" :id=\"uploadId\" :accept=\"accept\" :multiple=\"multiple\" @change=\"onChange($event)\" />\n      <label :for=\"uploadId\" class=\"at-upload-drag-area\">\n      <p class=\"at-upload-drag-icon\"></p>\n      <span v-if=\"advanceDrag\">将文件拖拽至框中上传或点此上传</span>\n      <span v-if=\"!advanceDrag\">当前环境不支持拖拽上传，请点此上传</span>\n      <p v-if=\"fileList.length > 0\" v-for=\"file in selectFiles\">{{file}}</p>\n    </label>\n    </div>\n    <div class=\"at-upload-list\">\n      <div class=\"at-upload-item\" v-for=\"file in fileList\">\n        <div class=\"at-upload-item-info\" :class=\"{'active': current == $index}\" @mouseover=\"filemouseover($index)\" @mouseout=\"filemouseout\">\n          <icon type=\"doc\" class=\"at-upload-file-icon\" size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\" class=\"at-upload-del-info\" size=\"12\" @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div class=\"at-upload-item\" v-for=\"file in uploadList\">\n        <div class=\"at-upload-item-info\" :class=\"{'active': current == $index}\" @mouseover=\"filemouseover($index)\" @mouseout=\"filemouseout\">\n          <icon type=\"doc\" class=\"at-upload-file-icon\" size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\" class=\"at-upload-del-info\" size=\"12\" @click=\"delFile($index)\"></icon>\n        </div>\n        <div class=\"at-upload-item-progress\" :class=\"{'hide': progress[$index] == '100%'}\">\n          <div class=\"at-progress at-progress-line at-progress-status-success\">\n            <div class=\"at-progress-inner\">\n              <div class=\"at-progress-bg\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4173,7 +4253,7 @@
 	  value: true
 	});
 	
-	var _Slider = __webpack_require__(204);
+	var _Slider = __webpack_require__(205);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 
@@ -4182,16 +4262,16 @@
 	exports.default = _Slider2.default;
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(205)
+	__vue_script__ = __webpack_require__(206)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Slider/Slider.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(211)
+	__vue_template__ = __webpack_require__(212)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4201,7 +4281,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-39c8e1d0/Slider.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Slider/Slider.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4210,7 +4290,7 @@
 	})()}
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4219,38 +4299,37 @@
 	  value: true
 	});
 	
-	var _Tooltip = __webpack_require__(206);
+	var _Tooltip = __webpack_require__(207);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div class="at-slider" :id="sliderId" :class="sliderClass" @click="clickFun">
+	//   <div :id="sliderId" :class="sliderClassObj" @click="clickFun">
 	//     <template v-for="item in valuePercent">
 	//       <tooltip :content="valueArray[$index]" placement="top">
-	//         <div class="at-slider-handle" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
+	//         <div :class="[prefixCls + '-slider-handle']" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
 	//       </tooltip>
 	//     </template>
 	//     <template v-if="valuePercent.length == 1">
 	//       <tooltip :content="valueArray[0]" placement="top">
-	//         <div class="at-slider-track" :style="{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}"></div>
+	//         <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}"></div>
 	//         </tooltip>
 	//     </template>
 	//     <template v-if="valuePercent.length > 1">
-	//       <div class="at-slider-track" :style="{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}"></div>
+	//       <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}"></div>
 	//     </template>
-	//     <div class="at-slider-step"></div>
-	//     <div class="at-slider-mark"></div>
+	//     <div :class="[prefixCls + '-slider-step']"></div>
+	//     <div :class="[prefixCls + '-slider-mark']"></div>
 	//   </div>
-	//
 	// </template>
 	//
-	// <script>
+	// <script type="text/ecmascript-6">
 	exports.default = {
 	  props: {
 	    id: String,
@@ -4270,7 +4349,11 @@
 	      default: true
 	    },
 	    // 每步的步数，如果为0，则只能到marks标记位置
-	    step: [String, Number]
+	    step: [String, Number],
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	
 	  data: function data() {
@@ -4325,10 +4408,16 @@
 	    isDisabled: function isDisabled() {
 	      return this.disabled;
 	    },
-	    sliderClass: function sliderClass() {
-	      return {
-	        'at-slider-disabled': this.disabled
-	      };
+	    sliderClassObj: function sliderClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var disabled = this.disabled;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-slider'] = true;
+	      classObj[prefixCls + '-slider-disabled'] = disabled;
+	
+	      return classObj;
 	    },
 	    sliderId: function sliderId() {
 	      return this.id || 'slider' + new Date().getTime();
@@ -4511,12 +4600,11 @@
 	  }
 	};
 	// </script>
-	//
 
 	/* generated by vue-loader */
 
 /***/ },
-/* 206 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4525,7 +4613,7 @@
 	  value: true
 	});
 	
-	var _Tooltip = __webpack_require__(207);
+	var _Tooltip = __webpack_require__(208);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 
@@ -4534,16 +4622,16 @@
 	exports.default = _Tooltip2.default;
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(208)
+	__vue_script__ = __webpack_require__(209)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tooltip/Tooltip.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(210)
+	__vue_template__ = __webpack_require__(211)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4553,7 +4641,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c1d9ec0/Tooltip.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tooltip/Tooltip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4562,7 +4650,7 @@
 	})()}
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4571,7 +4659,7 @@
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(209);
+	var _popoverMixins = __webpack_require__(210);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -4637,7 +4725,7 @@
 	// <script>
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4646,7 +4734,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -4854,19 +4942,19 @@
 	exports.default = PopoverMixin;
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-tooltip-trigger']\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div :class=\"tooltipClassObj\"\n  v-el:popover\n  v-show=\"show\"\n  :transition=\"effect\"\n  role=\"tooltip\">\n  <div :class=\"[prefixCls + '-tooltip-arrow']\" v-el:arrow></div>\n  <div :class=\"[prefixCls + '-tooltip-inner']\">\n    {{{content}}}\n  </div>\n</div>\n";
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"at-slider\" :id=\"sliderId\" :class=\"sliderClass\" @click=\"clickFun\">\n  <template v-for=\"item in valuePercent\">\n    <tooltip :content=\"valueArray[$index]\" placement=\"top\">\n      <div class=\"at-slider-handle\" :style=\"{'left': item+'%'}\" @mousedown=\"mousedown\"></div>\n    </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length == 1\">\n    <tooltip :content=\"valueArray[0]\" placement=\"top\">\n      <div class=\"at-slider-track\" :style=\"{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}\"></div>\n      </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length > 1\">\n    <div class=\"at-slider-track\" :style=\"{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}\"></div>\n  </template>\n  <div class=\"at-slider-step\"></div>\n  <div class=\"at-slider-mark\"></div>\n</div>\n\n";
+	module.exports = "\n<div :id=\"sliderId\" :class=\"sliderClassObj\" @click=\"clickFun\">\n  <template v-for=\"item in valuePercent\">\n    <tooltip :content=\"valueArray[$index]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-handle']\" :style=\"{'left': item+'%'}\" @mousedown=\"mousedown\"></div>\n    </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length == 1\">\n    <tooltip :content=\"valueArray[0]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}\"></div>\n      </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length > 1\">\n    <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}\"></div>\n  </template>\n  <div :class=\"[prefixCls + '-slider-step']\"></div>\n  <div :class=\"[prefixCls + '-slider-mark']\"></div>\n</div>\n";
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4875,7 +4963,7 @@
 	  value: true
 	});
 	
-	var _Switch = __webpack_require__(213);
+	var _Switch = __webpack_require__(214);
 	
 	var _Switch2 = _interopRequireDefault(_Switch);
 
@@ -4884,16 +4972,16 @@
 	exports.default = _Switch2.default;
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(214)
+	__vue_script__ = __webpack_require__(215)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Switch/Switch.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(215)
+	__vue_template__ = __webpack_require__(216)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4903,7 +4991,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-31a40bb8/Switch.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Switch/Switch.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4912,7 +5000,7 @@
 	})()}
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -4921,8 +5009,10 @@
 	  value: true
 	});
 	// <template>
-	//   <span :class="wrapClasses" @click="changeHandler" :style="{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}">
-	//     <span class="switch-content">
+	//   <span :class="switchClassObj"
+	//         :style="{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}"
+	//         @click="changeHandler">
+	//     <span :class="[prefixCls + '-switch-content']">
 	//       <slot v-if="checked && !small" name="checkedPart"></slot>
 	//       <slot v-if="!checked && !small" name="unCheckedPart"></slot>
 	//     </span>
@@ -4946,16 +5036,27 @@
 	    },
 	    color: {
 	      type: String
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  computed: {
-	    wrapClasses: function wrapClasses() {
-	      return {
-	        'switch': true,
-	        'small': this.small,
-	        'switch-checked': this.checked,
-	        'switch-disabled': this.disabled
-	      };
+	    switchClassObj: function switchClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var small = this.small;
+	      var checked = this.checked;
+	      var disabled = this.disabled;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-switch'] = true;
+	      classObj[prefixCls + '-switch-small'] = small;
+	      classObj[prefixCls + '-switch-checked'] = checked;
+	      classObj[prefixCls + '-switch-disabled'] = disabled;
+	
+	      return classObj;
 	    }
 	  },
 	  methods: {
@@ -4973,13 +5074,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<span :class=\"wrapClasses\" @click=\"changeHandler\" :style=\"{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}\">\n  <span class=\"switch-content\">\n    <slot v-if=\"checked && !small\" name=\"checkedPart\"></slot>\n    <slot v-if=\"!checked && !small\" name=\"unCheckedPart\"></slot>\n  </span>\n</span>\n";
+	module.exports = "\n<span :class=\"switchClassObj\"\n      :style=\"{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}\"\n      @click=\"changeHandler\">\n  <span :class=\"[prefixCls + '-switch-content']\">\n    <slot v-if=\"checked && !small\" name=\"checkedPart\"></slot>\n    <slot v-if=\"!checked && !small\" name=\"unCheckedPart\"></slot>\n  </span>\n</span>\n";
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4988,7 +5089,7 @@
 	  value: true
 	});
 	
-	var _Dropdown = __webpack_require__(217);
+	var _Dropdown = __webpack_require__(218);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
@@ -4997,16 +5098,16 @@
 	exports.default = _Dropdown2.default;
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(218)
+	__vue_script__ = __webpack_require__(219)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Dropdown/Dropdown.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(220)
+	__vue_template__ = __webpack_require__(221)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5016,7 +5117,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-aad12dd0/Dropdown.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Dropdown/Dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5025,7 +5126,7 @@
 	})()}
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5034,11 +5135,11 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _coerceBoolean = __webpack_require__(219);
+	var _coerceBoolean = __webpack_require__(220);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -5105,7 +5206,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -5121,13 +5222,13 @@
 	};
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"{dropdown:true,open:open}\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5136,11 +5237,11 @@
 	  value: true
 	});
 	
-	var _Select = __webpack_require__(222);
+	var _Select = __webpack_require__(223);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Option = __webpack_require__(229);
+	var _Option = __webpack_require__(230);
 	
 	var _Option2 = _interopRequireDefault(_Option);
 	
@@ -5151,16 +5252,16 @@
 	exports.default = _Select2.default;
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(223)
+	__vue_script__ = __webpack_require__(224)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Select/Select.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(228)
+	__vue_template__ = __webpack_require__(229)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5170,7 +5271,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3548fab8/Select.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Select/Select.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5179,7 +5280,7 @@
 	})()}
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5188,7 +5289,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -5196,7 +5297,7 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Tag = __webpack_require__(224);
+	var _Tag = __webpack_require__(225);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
@@ -5450,7 +5551,7 @@
 	// <script>
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5459,7 +5560,7 @@
 	  value: true
 	});
 	
-	var _Tag = __webpack_require__(225);
+	var _Tag = __webpack_require__(226);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 
@@ -5468,16 +5569,16 @@
 	exports.default = _Tag2.default;
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(226)
+	__vue_script__ = __webpack_require__(227)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tag/Tag.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(227)
+	__vue_template__ = __webpack_require__(228)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5487,7 +5588,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2f4cbe6e/Tag.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tag/Tag.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5496,7 +5597,7 @@
 	})()}
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5519,6 +5620,10 @@
 	    size: {
 	      type: String,
 	      default: '12'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
@@ -5538,45 +5643,50 @@
 	  }
 	};
 	// </script>
-	//
-	//
-	//
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div v-if="!closed" :class="['atui-tag',{'atui-tag-color': color}]" :style="{'background-color': color}">
-	//    <a :href="href" class="tag-text" :style="{'fontSize': size+'px'}"><slot></slot></a>
-	//    <span v-if="closable" class="tag-close" @click="closeHandler">
+	//   <div v-if="!closed"
+	//        :class="[prefixCls + '-tag', color && (prefixCls + '-tag-color')]"
+	//        :style="{'background-color': color}">
+	//     <a :href="href"
+	//        :class="[prefixCls + '-tag-text']"
+	//        :style="{'fontSize': size+'px'}">
+	//       <slot></slot>
+	//     </a>
+	//     <span v-if="closable"
+	//          :class="[prefixCls + '-tag-close']"
+	//          @click="closeHandler">
 	//      <v-icon type="close" :size="size"></v-icon>
-	//    </span>
+	//     </span>
 	//   </div>
 	// </template>
 	//
 	// <script>
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div v-if=\"!closed\" :class=\"['atui-tag',{'atui-tag-color': color}]\" :style=\"{'background-color': color}\">\n <a :href=\"href\" class=\"tag-text\" :style=\"{'fontSize': size+'px'}\"><slot></slot></a>\n <span v-if=\"closable\" class=\"tag-close\" @click=\"closeHandler\">\n   <v-icon type=\"close\" :size=\"size\"></v-icon>\n </span>\n</div>\n";
+	module.exports = "\n<div v-if=\"!closed\"\n     :class=\"[prefixCls + '-tag', color && (prefixCls + '-tag-color')]\"\n     :style=\"{'background-color': color}\">\n  <a :href=\"href\"\n     :class=\"[prefixCls + '-tag-text']\"\n     :style=\"{'fontSize': size+'px'}\">\n    <slot></slot>\n  </a>\n  <span v-if=\"closable\"\n       :class=\"[prefixCls + '-tag-close']\"\n       @click=\"closeHandler\">\n   <v-icon type=\"close\" :size=\"size\"></v-icon>\n  </span>\n</div>\n";
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"select-container\" :class=\"{open:show,disabled:disabled,multiple:multiple}\">\n  <div :class=\"['select-toggle',{tags:tags}]\" tabindex=\"1\" @mousedown=\"toggleDropdown\" @keydown.up=\"selectUp\" @keydown.down=\"selectDown\" v-bind=\"{disabled: disabled}\"\n  >\n    <template v-if=\"!multiple\">\n      <span class=\"select-placeholder\" v-show=\"!value\">{{placeholder}}</span>\n      <span class=\"btn-content\">{{ showText }}</span>\n      <span :class=\"{caret:true,open:show}\"><icon type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field class=\"select-search-field\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div class=\"dropdown-menu\" v-show=\"show && options.length > 0\" transition=\"slide\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(230)
+	__vue_script__ = __webpack_require__(231)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Select/Option.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(231)
+	__vue_template__ = __webpack_require__(232)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5586,7 +5696,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c482c9e/Option.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Select/Option.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5595,7 +5705,7 @@
 	})()}
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -5688,13 +5798,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-show=\"show\" :class=\"{option:true,disabled:disabled,active:active,chosen:chosen}\" @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5703,7 +5813,7 @@
 	  value: true
 	});
 	
-	var _Calendar = __webpack_require__(233);
+	var _Calendar = __webpack_require__(234);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 
@@ -5712,16 +5822,16 @@
 	exports.default = _Calendar2.default;
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(234)
+	__vue_script__ = __webpack_require__(235)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Calendar/Calendar.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(235)
+	__vue_template__ = __webpack_require__(236)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5731,7 +5841,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-21dbdbb8/Calendar.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Calendar/Calendar.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5740,7 +5850,7 @@
 	})()}
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -6083,13 +6193,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"atui-calendar\" v-show=\"show\">\n  <div class=\"atui-calendar-popup\" v-show=\"displayDayView\">\n    <div class=\"atui-calendar-inner\">\n      <div class=\"atui-calendar-header\">\n        <!-- <span class=\"atui-calendar-prev-year-btn\">»</span> -->\n        <span class=\"month-btn atui-calendar-preBtn\" @click=\"preNextMonthClick(0)\">‹</span>\n        <span class=\"month-btn atui-calendar-nextBtn\" @click=\"preNextMonthClick(1)\">›</span>\n        <!-- <span class=\"atui-calendar-next-year-btn\">»</span> -->\n        <p @click=\"switchMonthView\">{{stringifyDayHeader(currDate)}}</p>\n      </div>\n      <div class=\"atui-calendar-body\">\n        <div class=\"atui-calendar-weekRange\">\n          <span v-for=\"w in weekRange\">{{w}}</span>\n        </div>\n        <div class=\"atui-calendar-dateRange\">\n          <span v-for=\"d in dateRange\" :class=\"d.sclass\" @click=\"daySelect(d.date,$event)\">{{d.text}}</span>\n        </div>\n      </div>\n      <div class=\"atui-calendar-footer\">\n        <a class=\"atui-calendar-today-btn\" role=\"button\" @click=\"daySelect(new Date(),$event)\" :title=\"stringifyDayHeader(currDate)\">今天</a>\n      </div>\n    </div>\n  </div>\n  <div class=\"atui-calendar-popup\" v-show=\"displayMonthView\">\n    <div class=\"atui-calendar-inner\">\n      <div class=\"atui-calendar-header\">\n        <span class=\"month-btn atui-calendar-preBtn\" @click=\"preNextYearClick(0)\">&lt;</span>\n        <span class=\"month-btn atui-calendar-nextBtn\" @click=\"preNextYearClick(1)\">&gt;</span>\n        <p @click=\"switchDecadeView\">{{stringifyYearHeader(currDate)}}</p>\n      </div>\n      <div class=\"atui-calendar-body\">\n        <div class=\"atui-calendar-monthRange\">\n          <template v-for=\"m in monthNames\">\n            <span :class=\"{'atui-calendar-dateRange-item-active':\n                (monthNames[parse(value).getMonth()]  === m) &&\n                currDate.getFullYear() === parse(value).getFullYear()}\"\n                @click=\"monthSelect($index)\"\n              >{{m.substr(0,3)}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"atui-calendar-popup\" v-show=\"displayYearView\">\n    <div class=\"atui-calendar-inner\">\n      <div class=\"atui-calendar-header\">\n        <span class=\"month-btn atui-calendar-preBtn\" @click=\"preNextDecadeClick(0)\">&lt;</span>\n        <span class=\"month-btn atui-calendar-nextBtn\" @click=\"preNextDecadeClick(1)\">&gt;</span>\n        <p>{{stringifyDecadeHeader(currDate)}}</p>\n      </div>\n      <div class=\"atui-calendar-body\">\n        <div class=\"atui-calendar-monthRange decadeRange\">\n          <template v-for=\"decade in decadeRange\">\n            <span :class=\"{'atui-calendar-dateRange-item-active':\n                parse(value).getFullYear() === decade.text}\"\n                @click.stop=\"yearSelect(decade.text)\"\n              >{{decade.text}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6098,7 +6208,7 @@
 	  value: true
 	});
 	
-	var _TimePicker = __webpack_require__(237);
+	var _TimePicker = __webpack_require__(238);
 	
 	var _TimePicker2 = _interopRequireDefault(_TimePicker);
 
@@ -6107,16 +6217,16 @@
 	exports.default = _TimePicker2.default;
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(238)
+	__vue_script__ = __webpack_require__(239)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/TimePicker/TimePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(240)
+	__vue_template__ = __webpack_require__(241)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6126,7 +6236,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-8a73aa50/TimePicker.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/TimePicker/TimePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6135,7 +6245,7 @@
 	})()}
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6144,15 +6254,15 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Input = __webpack_require__(162);
+	var _Input = __webpack_require__(163);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _selection = __webpack_require__(239);
+	var _selection = __webpack_require__(240);
 	
 	var _selection2 = _interopRequireDefault(_selection);
 	
@@ -6362,7 +6472,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -6390,13 +6500,13 @@
 	}
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"atui-time-picker\">\n  <span class=\"atui-time-picker-toggler\">\n    <v-input v-el:picker-toggler readonly @click=\"toggleMenus\" :value=\"value\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div v-el:picker-menus class=\"atui-time-picker-menus\" v-show=\"show\" transition=\"slide\">\n    <div class=\"time-picker-panel\">\n      <ul v-el:h class=\"time-hours\" @mouseover=\"selection('H')\">\n        <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: hour === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div class=\"time-picker-panel\">\n      <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n        <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: minute === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div class=\"time-picker-panel\" @mouseover=\"selection('S')\">\n      <ul v-el:s class=\"time-seconds\">\n        <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: second === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6405,11 +6515,11 @@
 	  value: true
 	});
 	
-	var _DatePicker = __webpack_require__(242);
+	var _DatePicker = __webpack_require__(243);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
-	var _RangePicker = __webpack_require__(245);
+	var _RangePicker = __webpack_require__(246);
 	
 	var _RangePicker2 = _interopRequireDefault(_RangePicker);
 	
@@ -6420,16 +6530,16 @@
 	exports.default = _DatePicker2.default;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(243)
+	__vue_script__ = __webpack_require__(244)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/DatePicker/DatePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(244)
+	__vue_template__ = __webpack_require__(245)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6439,7 +6549,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-42f6cc38/DatePicker.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/DatePicker/DatePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6448,7 +6558,7 @@
 	})()}
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6457,11 +6567,11 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Calendar = __webpack_require__(232);
+	var _Calendar = __webpack_require__(233);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 	
@@ -6543,22 +6653,22 @@
 	// <script>
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"atui-datepicker\">\n  <div class=\"atui-datepicker-toggle\" @click=\"inputClick\" >\n    <input class=\"datepicker-input\" transition=\"slide\" v-bind=\"{disabled:disabled}\" type=\"text\" :value=\"value\" :placeholder=\"placeholder\" readonly/>\n    <icon type=\"calendar\"></icon>\n  </div>\n  <div class=\"atui-datepicker-calendar\">\n    <calendar :show=\"show\" transition=\"slide\" @change=\"selectChange\" v-ref:calendar :value=\"value\" :format=\"format\" :locale=\"locale\" :disabled-date=\"disabledDate\"></calendar>\n  </div>\n</div>\n";
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(246)
+	__vue_script__ = __webpack_require__(247)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/DatePicker/RangePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(247)
+	__vue_template__ = __webpack_require__(248)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6568,7 +6678,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3f2f6bff/RangePicker.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/DatePicker/RangePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6577,7 +6687,7 @@
 	})()}
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6586,7 +6696,7 @@
 	  value: true
 	});
 	
-	var _DatePicker = __webpack_require__(242);
+	var _DatePicker = __webpack_require__(243);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
@@ -6665,13 +6775,13 @@
 	// <script>
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"range-picker\">\n  <date-picker v-ref:start-date :value.sync=\"startDate\" :disabled=\"disabled\" :format=\"format\" placeholder=\"开始日期\" @change=\"onStartDateChange\"></date-picker>\n  <span class=\"range-picker-separator\"> - </span>\n  <date-picker v-ref:end-date :value.sync=\"endDate\" :disabled=\"disabled\" :format=\"format\" placeholder=\"结束日期\" :disabled-date=\"disabledEndDate\" @change=\"onEndDateChange\"></date-picker>\n</div>\n";
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6680,7 +6790,7 @@
 	  value: true
 	});
 	
-	var _Cascader = __webpack_require__(249);
+	var _Cascader = __webpack_require__(250);
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 
@@ -6689,16 +6799,16 @@
 	exports.default = _Cascader2.default;
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(250)
+	__vue_script__ = __webpack_require__(251)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Cascader/Cascader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(251)
+	__vue_template__ = __webpack_require__(252)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6708,7 +6818,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-65e90890/Cascader.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Cascader/Cascader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6717,7 +6827,7 @@
 	})()}
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6726,11 +6836,11 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Input = __webpack_require__(162);
+	var _Input = __webpack_require__(163);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
@@ -6862,13 +6972,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"cascader\">\n  <span class=\"cascader-picker\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n  </span>\n  <div class=\"cascader-menus\" v-show=\"show\" transition=\"slide\">\n    <ul class=\"cascader-menu\" v-for=\"(index, menu) in menus\">\n      <li class=\"cascader-menu-item\" :class=\"{selected:selectedOptions[index] === option,disabled:option.disabled}\" v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6877,7 +6987,7 @@
 	  value: true
 	});
 	
-	var _Modal = __webpack_require__(253);
+	var _Modal = __webpack_require__(254);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
@@ -6940,16 +7050,16 @@
 	exports.default = _Modal2.default;
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(254)
+	__vue_script__ = __webpack_require__(255)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Modal/Modal.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(255)
+	__vue_template__ = __webpack_require__(256)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6959,7 +7069,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-75903814/Modal.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Modal/Modal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6968,7 +7078,7 @@
 	})()}
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7084,13 +7194,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div role=\"dialog\" :class=\"[prefixCls + '-modal']\" v-show=\"show\" transition=\"fade\"\n  @click=\"clickBack\"\n  >\n  <div v-show=\"show\"\n       :class=\"dialogClassObj\"\n       :style=\"{width: width}\"\n       role=\"document\"\n       transition=\"fade\">\n    <div :class=\"[prefixCls + '-modal-content']\">\n      <slot name=\"modal-header\">\n        <div :class=\"[prefixCls + '-modal-header']\">\n          <button type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"close\"><span>&times;</span></button>\n          <h4 :class=\"[prefixCls + '-modal-title']\">{{title}}</h4>\n        </div>\n      </slot>\n      <div :class=\"[prefixCls + '-modal-body']\" :style=\"{height: height, maxHeight: '500px'}\">\n        <slot name=\"modal-body\">\n        </slot>\n      </div>\n      <slot name=\"modal-footer\">\n        <div :class=\"[prefixCls + '-modal-footer']\">\n          <button type=\"button\" :class=\"[prefixCls + '-btn', prefixCls + '-btn-default']\" @click=\"callback\">确定</button>\n          <button type=\"button\" :class=\"[prefixCls + '-btn', prefixCls + '-btn-tertiary']\" @click=\"close\">取消</button>\n        </div>\n      </slot>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7099,7 +7209,7 @@
 	  value: true
 	});
 	
-	var _Table = __webpack_require__(257);
+	var _Table = __webpack_require__(258);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -7108,16 +7218,16 @@
 	exports.default = _Table2.default;
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(258)
+	__vue_script__ = __webpack_require__(259)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Table/Table.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(268)
+	__vue_template__ = __webpack_require__(284)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7127,7 +7237,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0421e6d4/Table.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Table/Table.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7136,7 +7246,7 @@
 	})()}
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7145,24 +7255,107 @@
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(259);
+	var _assign = __webpack_require__(260);
 	
 	var _assign2 = _interopRequireDefault(_assign);
+	
+	var _concat = __webpack_require__(264);
+	
+	var _concat2 = _interopRequireDefault(_concat);
 	
 	var _Icon = __webpack_require__(134);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Dropdown = __webpack_require__(216);
+	var _Dropdown = __webpack_require__(217);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Spin = __webpack_require__(263);
+	var _Spin = __webpack_require__(266);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 	
+	var _Pagination = __webpack_require__(271);
+	
+	var _Pagination2 = _interopRequireDefault(_Pagination);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <!--suppress ALL-->
+	// <template>
+	//   <div :class="[prefixCls + '-table',prefixCls + '-table-'+ size, {loading: loading}]">
+	//     <spin size="sm" v-if="loading"></spin>
+	//     <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
+	//   </table> -->
+	//     <div :class="[prefixCls + '-table-container',fixedHeader ? prefixCls + '-fixed-header': '']">
+	//       <table>
+	//         <colgroup>
+	//           <col v-if="rowSelection"></col>
+	//           <col v-for="column in columns" :width="column.width"></col>
+	//         </colgroup>
+	//         <thead>
+	//           <tr>
+	//             <th v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
+	//               <input v-if="dataSource && dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"
+	//               />
+	//             </th>
+	//             <th v-for="column in columns" :width="column.width">
+	//               {{column['title']}}
+	//               <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
+	//                 <div data-toggle="dropdown" @click="filterOpened = true">
+	//                   <icon type="filter" size="12"></icon>
+	//                 </div>
+	//                 <div name="dropdown-menu" v-show="filterOpened" transition="slide" class="dropdown-menu atui-table-filter-dropdown">
+	//                   <ul>
+	//                     <li v-for="filter in column.filters">
+	//                     <label>
+	//                       <input :type="column.filterMultiple === false ? 'radio' : 'checkbox' " :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
+	//                     </label>
+	//                     </li>
+	//                   </ul>
+	//                   <div :class="[prefixCls + '-table-filter-dropdown-btns']">
+	//                     <a :class="[prefixCls + '-table-filter-dropdown-link confirm']" @click="onFilter(column)">确定</a>
+	//                     <a :class="[prefixCls + '-table-filter-dropdown-link','clear']" @click="resetFilter(column)">重置</a>
+	//                   </div>
+	//                 </div>
+	//
+	//               </dropdown>
+	//               <div v-if="dataSource && dataSource.length && column.sorter" class="table-sorter">
+	//                 <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
+	//                 <icon type="down" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
+	//               </div>
+	//             </th>
+	//           </tr>
+	//         </thead>
+	//         <tbody>
+	//           <tr v-if="!dataSource || !dataSource.length">
+	//             <td colspan="20" style="text-align: center;" :class="[prefixCls + 'table-empty']">{{noDataTip}}</td>
+	//           </tr>
+	//           <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
+	//             <td v-if="rowSelection" :class="[prefixCls + 'table-selection-column']">
+	//               <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
+	//               />
+	//             </td>
+	//             <td v-for="column in columns">
+	//               <template v-if="column.render && record">
+	//                 {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}
+	//               </template>
+	//               <template v-else>
+	//                 {{record[column.dataIndex]}}
+	//               </template>
+	//             </td>
+	//           </tr>
+	//         </tbody>
+	//       </table>
+	//     </div>
+	//
+	//     <div v-if="pagination" :class="[prefixCls + '-table-pagination']">
+	//       <pagination :total="pagination.total" v-ref:pager :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage"></pagination>
+	//     </div>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    pagination: Object,
@@ -7189,12 +7382,17 @@
 	    size: {
 	      type: String,
 	      default: 'default'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  components: {
 	    Icon: _Icon2.default,
 	    Dropdown: _Dropdown2.default,
-	    Spin: _Spin2.default
+	    Spin: _Spin2.default,
+	    Pagination: _Pagination2.default
 	  },
 	  data: function data() {
 	    this.compileTbody();
@@ -7214,6 +7412,13 @@
 	      filters: filters,
 	      sorter: {}
 	    };
+	  },
+	  compiled: function compiled() {
+	    if (this.pagination) {
+	      this.originDataSource = (0, _concat2.default)(this.dataSource, []);
+	      var pager = this.$refs.pager;
+	      this.dataSource = this.originDataSource.slice(pager.currPage || 0, pager.pageSize);
+	    }
 	  },
 	
 	  computed: {
@@ -7245,6 +7450,7 @@
 	    dataSource: {
 	      handler: function handler(data) {
 	        var me = this;
+	
 	        me.compileTbody();
 	        // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
 	        me.checkedRows = data.filter(function (record) {
@@ -7348,6 +7554,10 @@
 	      this.filters[column.dataIndex] = [];
 	      this.onFilter(column);
 	    },
+	    changePage: function changePage(pageNum) {
+	      var pager = this.$refs.pager;
+	      this.dataSource = this.originDataSource.slice((pageNum - 1) * pager.pageSize, pageNum * pager.pageSize);
+	    },
 	    fixedHeaderAction: function fixedHeaderAction() {
 	      if (this.fixedHeader) {
 	        var header = this.$el.querySelector('.table-thead');
@@ -7365,110 +7575,38 @@
 	// </script>
 
 	/* generated by vue-loader */
-	// <!--suppress ALL-->
-	// <template>
-	//   <div :class="['atui-table','atui-table-'+size, {loading :loading}]">
-	//     <spin size="sm" v-if="loading"></spin>
-	//     <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
-	//   </table> -->
-	//     <div :class="['atui-table-container',{'atui-fixed-header':fixedHeader}]">
-	//       <table>
-	//         <colgroup>
-	//           <col v-if="rowSelection"></col>
-	//           <col v-for="column in columns" :width="column.width"></col>
-	//         </colgroup>
-	//         <thead>
-	//           <tr>
-	//             <th v-if="rowSelection" class="atui-table-selection-column">
-	//               <input v-if="dataSource && dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"
-	//               />
-	//             </th>
-	//             <th v-for="column in columns" :width="column.width">
-	//               {{column['title']}}
-	//               <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
-	//                 <div data-toggle="dropdown" @click="filterOpened = true">
-	//                   <icon type="filter" size="12"></icon>
-	//                 </div>
-	//                 <div name="dropdown-menu" v-show="filterOpened" transition="slide" class="dropdown-menu atui-table-filter-dropdown">
-	//                   <ul>
-	//                     <li v-for="filter in column.filters">
-	//                     <label>
-	//                       <input :type="column.filterMultiple === false ? 'radio' : 'checkbox' " :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
-	//                     </label>
-	//                     </li>
-	//                   </ul>
-	//                   <div class="atui-table-filter-dropdown-btns">
-	//                     <a class="atui-table-filter-dropdown-link confirm" @click="onFilter(column)">确定</a>
-	//                     <a class="atui-table-filter-dropdown-link clear" @click="resetFilter(column)">重置</a>
-	//                   </div>
-	//                 </div>
-	//
-	//               </dropdown>
-	//               <div v-if="dataSource && dataSource.length && column.sorter" class="table-sorter">
-	//                 <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
-	//                 <icon type="down" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
-	//               </div>
-	//             </th>
-	//           </tr>
-	//         </thead>
-	//         <tbody>
-	//           <tr v-if="!dataSource || !dataSource.length">
-	//             <td colspan="30" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td>
-	//           </tr>
-	//           <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
-	//             <td v-if="rowSelection" class="atui-table-selection-column">
-	//               <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
-	//               />
-	//             </td>
-	//             <td v-for="column in columns">
-	//               <template v-if="column.render && record">
-	//                 {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}
-	//               </template>
-	//               <template v-else>
-	//                 {{record[column.dataIndex]}}
-	//               </template>
-	//             </td>
-	//           </tr>
-	//         </tbody>
-	//       </table>
-	//     </div>
-	//
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
-
-/***/ },
-/* 259 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(260), __esModule: true };
 
 /***/ },
 /* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(261);
-	module.exports = __webpack_require__(88).Object.assign;
+	module.exports = { "default": __webpack_require__(261), __esModule: true };
 
 /***/ },
 /* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(86);
-	
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(262)});
+	__webpack_require__(262);
+	module.exports = __webpack_require__(88).Object.assign;
 
 /***/ },
 /* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(86);
+	
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(263)});
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var getKeys  = __webpack_require__(107)
-	  , gOPS     = __webpack_require__(189)
-	  , pIE      = __webpack_require__(190)
+	  , gOPS     = __webpack_require__(190)
+	  , pIE      = __webpack_require__(191)
 	  , toObject = __webpack_require__(123)
 	  , IObject  = __webpack_require__(110)
 	  , $assign  = Object.assign;
@@ -7499,7 +7637,22 @@
 	} : $assign;
 
 /***/ },
-/* 263 */
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(265), __esModule: true };
+
+/***/ },
+/* 265 */
+/***/ function(module, exports) {
+
+	// for a legacy code and future fixes
+	module.exports = function(){
+	  return Function.call.apply(Array.prototype.concat, arguments);
+	};
+
+/***/ },
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7508,7 +7661,7 @@
 	  value: true
 	});
 	
-	var _Spin = __webpack_require__(264);
+	var _Spin = __webpack_require__(267);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 
@@ -7517,16 +7670,16 @@
 	exports.default = _Spin2.default;
 
 /***/ },
-/* 264 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(265)
+	__vue_script__ = __webpack_require__(268)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Spin/Spin.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(267)
+	__vue_template__ = __webpack_require__(270)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7536,7 +7689,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7fd98fb8/Spin.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Spin/Spin.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7545,7 +7698,7 @@
 	})()}
 
 /***/ },
-/* 265 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7554,7 +7707,7 @@
 	  value: true
 	});
 	
-	var _cssAnimationSupported = __webpack_require__(266);
+	var _cssAnimationSupported = __webpack_require__(269);
 	
 	var _cssAnimationSupported2 = _interopRequireDefault(_cssAnimationSupported);
 	
@@ -7569,6 +7722,10 @@
 	    size: {
 	      type: String,
 	      default: 'default'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
@@ -7584,27 +7741,43 @@
 	    hide: function hide() {
 	      this.show = false;
 	    }
+	  },
+	  computed: {
+	    spinClassObj: function spinClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var size = this.size;
+	      var sping = this.sping;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-spin'] = true;
+	      classObj[prefixCls + '-spin-' + size] = true;
+	      classObj[prefixCls + '-sping'] = sping;
+	
+	      return classObj;
+	    }
 	  }
 	};
 	
 	/* generated by vue-loader */
 	// <template>
-	// <div :class="['atui-spin',size,{sping: sping}]" v-show="show">
-	//   <div v-if="isSupportAnimation || !tip" class="atui-sping-point">
+	// <div :class="spinClassObj" v-show="show">
+	//   <div v-if="isSupportAnimation || !tip" :class="[prefixCls + '-sping-point']">
 	//       <div></div>
 	//       <div></div>
 	//       <div></div>
 	//   </div>
-	//   <p v-else class="atui-sping-text">{{ tip || '加载中...' }}</p>
-	//   <div class="sping-content">
+	//   <p v-else :class="[prefixCls + '-sping-text']">{{ tip || '加载中...' }}</p>
+	//   <div :class="[prefixCls + '-sping-content']">
 	//     <slot></slot>
 	//   </div>
 	// </div>
 	// </template>
+	//
 	// <script>
 
 /***/ },
-/* 266 */
+/* 269 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7632,19 +7805,13 @@
 	exports.default = animation;
 
 /***/ },
-/* 267 */
+/* 270 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"['atui-spin',size,{sping: sping}]\" v-show=\"show\">\n  <div v-if=\"isSupportAnimation || !tip\" class=\"atui-sping-point\">\n      <div></div>\n      <div></div>\n      <div></div>\n  </div>\n  <p v-else class=\"atui-sping-text\">{{ tip || '加载中...' }}</p>\n  <div class=\"sping-content\">\n    <slot></slot>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"spinClassObj\" v-show=\"show\">\n  <div v-if=\"isSupportAnimation || !tip\" :class=\"[prefixCls + '-sping-point']\">\n      <div></div>\n      <div></div>\n      <div></div>\n  </div>\n  <p v-else :class=\"[prefixCls + '-sping-text']\">{{ tip || '加载中...' }}</p>\n  <div :class=\"[prefixCls + '-sping-content']\">\n    <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 268 */
-/***/ function(module, exports) {
-
-	module.exports = "\n\n<div :class=\"['atui-table','atui-table-'+size, {loading :loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"['atui-table-container',{'atui-fixed-header':fixedHeader}]\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{column['title']}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" class=\"dropdown-menu atui-table-filter-dropdown\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div class=\"atui-table-filter-dropdown-btns\">\n                  <a class=\"atui-table-filter-dropdown-link confirm\" @click=\"onFilter(column)\">确定</a>\n                  <a class=\"atui-table-filter-dropdown-link clear\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" class=\"table-sorter\">\n              <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n              <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"30\" style=\"text-align: center;\" class=\"vue-table-empty\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" class=\"atui-table-selection-column\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n";
-
-/***/ },
-/* 269 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7653,25 +7820,31 @@
 	  value: true
 	});
 	
-	var _Badge = __webpack_require__(270);
+	var _Pagination = __webpack_require__(272);
 	
-	var _Badge2 = _interopRequireDefault(_Badge);
-
+	var _Pagination2 = _interopRequireDefault(_Pagination);
+	
+	var _Jumper = __webpack_require__(274);
+	
+	var _Jumper2 = _interopRequireDefault(_Jumper);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _Badge2.default;
+	
+	_Pagination2.default.Jumper = _Jumper2.default;
+	
+	exports.default = _Pagination2.default;
 
 /***/ },
-/* 270 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(271)
+	__vue_script__ = __webpack_require__(273)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Badge/Badge.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(272)
+	  console.warn("[vue-loader] src/components/Pagination/Pagination.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(283)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7681,7 +7854,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5783d380/Badge.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Pagination/Pagination.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7690,7 +7863,615 @@
 	})()}
 
 /***/ },
-/* 271 */
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Jumper = __webpack_require__(274);
+	
+	var _Jumper2 = _interopRequireDefault(_Jumper);
+	
+	var _Pager = __webpack_require__(277);
+	
+	var _Pager2 = _interopRequireDefault(_Pager);
+	
+	var _Options = __webpack_require__(280);
+	
+	var _Options2 = _interopRequireDefault(_Options);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  props: {
+	    id: {
+	      type: String
+	    },
+	    pageSize: {
+	      type: Number,
+	      default: 10
+	    },
+	    total: Number,
+	    currPage: {
+	      type: Number,
+	      default: 1
+	    },
+	    showJumper: Boolean,
+	    showSizeChanger: Boolean,
+	    simple: {
+	      type: Boolean
+	    },
+	    mini: {
+	      type: Boolean
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      pageRange: [],
+	      totalPage: Math.ceil(this.total / this.pageSize),
+	      prevShow: 1,
+	      nextShow: 1
+	    };
+	  },
+	
+	  watch: {
+	    total: function total() {
+	      this.getPageRange();
+	    },
+	    pageSize: function pageSize() {
+	      this.getPageRange();
+	    },
+	    currPage: function currPage() {
+	      this.getPageRange();
+	      this.onChange(this.currPage);
+	    },
+	    prevShow: function prevShow() {
+	      this.getPageRange();
+	    },
+	    nextShow: function nextShow() {
+	      this.getPageRange();
+	    }
+	  },
+	  components: {
+	    jumper: _Jumper2.default,
+	    pager: _Pager2.default,
+	    Options: _Options2.default
+	  },
+	  methods: {
+	    changePageSize: function changePageSize(value) {
+	      this.pageSize = value;
+	    },
+	    getPageRange: function getPageRange() {
+	      var start = 0;
+	      var end = 0;
+	      var me = this;
+	      var showLen = me.prevShow + me.nextShow + 1;
+	      var totalPage = me.totalPage = Math.ceil(me.total / me.pageSize);
+	
+	      var currPage = me.currPage;
+	
+	      if (totalPage <= 1) {
+	        start = end = 1;
+	      } else if (me.totalPage <= showLen) {
+	        start = 1;
+	        end = totalPage;
+	      } else {
+	        if (currPage <= me.prevShow + 1) {
+	          start = 1;
+	          end = showLen;
+	        } else if (currPage >= totalPage - me.nextShow) {
+	          end = totalPage;
+	          start = totalPage - showLen + 1;
+	        } else {
+	          start = currPage - me.prevShow;
+	          end = currPage + me.nextShow;
+	        }
+	      }
+	
+	      me.pageRange = [];
+	
+	      if (me.simple) {
+	        // 上一页
+	        if (currPage !== 1) {
+	          me.pageRange.push({ num: currPage - 1, text: '<', className: 'prev' });
+	        } else {
+	          me.pageRange.push({ className: 'disabled', icon: 'prev' });
+	        }
+	
+	        me.pageRange.push({ num: me.currPage, text: me.currPage, className: 'current' });
+	        me.pageRange.push({ text: '/', className: 'slash' });
+	        me.pageRange.push({ text: totalPage });
+	
+	        // 下一页
+	        if (currPage !== totalPage) {
+	          me.pageRange.push({ num: currPage + 1, text: '>', className: 'next' });
+	        } else {
+	          me.pageRange.push({ className: 'disabled', icon: 'next' });
+	        }
+	      } else {
+	        // 上一页
+	        if (currPage !== 1) {
+	          me.pageRange.push({ num: currPage - 1, text: '<', className: 'prev' });
+	        } else {
+	          me.pageRange.push({ className: 'disabled', icon: 'prev' });
+	        }
+	        // 第一页
+	        if (start >= 2) {
+	          me.pageRange.push({ num: 1, text: 1 });
+	        }
+	        // 省略号
+	        if (start > 2) {
+	          me.pageRange.push({ text: '...', className: 'ellipsis' });
+	        }
+	        // 显示的页码列表
+	        for (var i = start; i <= end; i++) {
+	          me.pageRange.push({
+	            num: i,
+	            text: i,
+	            className: i === currPage ? 'current' : ''
+	          });
+	        }
+	        // 省略号
+	        if (end < totalPage - 1) {
+	          me.pageRange.push({ text: '...', className: 'ellipsis' });
+	        }
+	        // 最后一页
+	        if (end <= totalPage - 1) {
+	          me.pageRange.push({ num: totalPage, text: totalPage });
+	        }
+	        // 下一页
+	        if (currPage !== totalPage) {
+	          me.pageRange.push({ num: currPage + 1, text: '>', className: 'next' });
+	        } else {
+	          me.pageRange.push({ className: 'disabled', icon: 'next' });
+	        }
+	      }
+	    },
+	    pageClick: function pageClick(i) {
+	      if (!i) {
+	        return false;
+	      }
+	      if (i === this.currPage) {
+	        return false;
+	      }
+	
+	      this.currPage = i;
+	      this.getPageRange();
+	    },
+	    onChange: function onChange(pageNum) {
+	      this.$dispatch('pagination-page-change', pageNum, this.id);
+	    },
+	    _isValid: function _isValid(page) {
+	      return typeof page === 'number' && page >= 1 && page !== this.currPage;
+	    },
+	    _handleChange: function _handleChange(page) {
+	      var _page = page;
+	
+	      if (this._isValid(_page)) {
+	        if (_page > this.totalPage) {
+	          _page = this.totalPage;
+	        }
+	
+	        this.currPage = page;
+	        this._current = page;
+	        this.onChange(_page);
+	        return _page;
+	      }
+	      return this.currPage;
+	    }
+	  },
+	  ready: function ready() {
+	    this.getPageRange();
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div class="pagination">
+	//   <template v-if="totalPage > 1">
+	//     <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
+	//     <jumper
+	//         :quick-go="showJumper ? _handleChange.bind(this) : null"
+	//         :curr-page="currPage"
+	//         :total-page="totalPage"
+	//         :mini="mini"
+	//     ></jumper>
+	//     <pager :page-range="pageRange" :simple="simple"  :mini="mini" :page-click="pageClick"></pager>
+	//   </template>
+	//   </div>
+	// </template>
+	// <script>
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(275)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Pagination/Jumper.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(276)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Pagination/Jumper.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 275 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//   <div v-if="quickGo" class="pagination-jump">
+	//       <div class="input-jumper-wrap">
+	//         跳至
+	//         <input type="text" :value="_current" @change="_handleChange($event)" :class="_inputWrapClasses"/>
+	//         页
+	//       </div>
+	//       <button type="button" @click="_go" :class="_btnWrapClasses">
+	//     跳转</button>
+	//   </div>
+	// </template>
+	//
+	// <script>
+	exports.default = {
+	  props: {
+	    quickGo: {
+	      type: Function,
+	      default: function _default() {}
+	    },
+	    currPage: {
+	      type: Number
+	    },
+	    totalPage: {
+	      type: Number
+	    },
+	    mini: {
+	      type: Boolean,
+	      default: false
+	    }
+	  },
+	  compiled: function compiled() {
+	    this._current = this.currPage;
+	  },
+	
+	  computed: {
+	    _inputWrapClasses: function _inputWrapClasses() {
+	      return {
+	        'input-jumper': !this.mini,
+	        'mini-input-jumper': this.mini
+	      };
+	    },
+	    _btnWrapClasses: function _btnWrapClasses() {
+	      return {
+	        'atui-btn': true,
+	        'tertiary': true,
+	        'default': !this.mini,
+	        'small': this.mini
+	      };
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      _current: null
+	    };
+	  },
+	
+	  methods: {
+	    _handleChange: function _handleChange(e) {
+	      var val = e.target.value;
+	      if (Number(val) > this.totalPage) {
+	        this._current = this.totalPage;
+	        return;
+	      }
+	      this._current = e.target.value;
+	    },
+	    _go: function _go(e) {
+	      if (this._current === '') {
+	        return;
+	      }
+	      var val = Number(this._current);
+	      if (isNaN(val)) {
+	        val = this.currPage;
+	      }
+	      var c = this.quickGo(val);
+	      this.currPage = c;
+	      this._current = c;
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 276 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div v-if=\"quickGo\" class=\"pagination-jump\">\n    <div class=\"input-jumper-wrap\">\n      跳至\n      <input type=\"text\" :value=\"_current\" @change=\"_handleChange($event)\" :class=\"_inputWrapClasses\"/>\n      页\n    </div>\n    <button type=\"button\" @click=\"_go\" :class=\"_btnWrapClasses\">\n  跳转</button>\n</div>\n";
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(278)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Pagination/Pager.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(279)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Pagination/Pager.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Icon = __webpack_require__(134);
+	
+	var _Icon2 = _interopRequireDefault(_Icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  props: {
+	    simple: {
+	      type: Boolean,
+	      default: false
+	    },
+	    mini: {
+	      type: Boolean,
+	      default: false
+	    },
+	    pageRange: {
+	      type: Array,
+	      default: []
+	    },
+	    pageClick: {
+	      type: Function,
+	      default: function _default() {}
+	    }
+	  },
+	  computed: {
+	    wrapClasses: function wrapClasses() {
+	      return {
+	        'pagination-items': !this.mini && !this.simple,
+	        'simple-pagination-items': this.simple && !this.mini,
+	        'mini-pagination-items': !this.simple && this.mini
+	      };
+	    }
+	  },
+	  components: {
+	    Icon: _Icon2.default
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+	// <template>
+	//     <ul :class="wrapClasses">
+	//         <li v-for="page in pageRange" @click="pageClick(page.num)" :class="{
+	//         'current':(page.className === 'current'),
+	//         'pagination-item':true,
+	//         'pagination-item-prev':(page.className==='prev'),
+	//         'pagination-item-next':(page.className==='next'),
+	//         'pagination-item-disabled':(page.className==='disabled'),
+	//         'pagination-item-ellipsis':(page.className==='ellipsis'),
+	//         'pagination-item-slash':(page.className==='slash')}" >
+	//         <span v-if="page.className!='prev' && page.className!='next'">
+	//           {{page.text}}
+	//         </span>
+	//         <icon v-if="page.className==='prev'" type="prev" size="12" color="#666" ></icon>
+	//         <icon v-if="page.className==='next'" type="next" size="12" color="#666"></icon>
+	//         <icon v-if="page.className==='disabled' && page.icon==='prev'" type="prev" size="12" color="#e6e6e6"></icon>
+	//       <icon v-if="page.className==='disabled' && page.icon==='next'" type="next" size="12" color="#e6e6e6"></icon>
+	//         </li>
+	//     </ul>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 279 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<ul :class=\"wrapClasses\">\n    <li v-for=\"page in pageRange\" @click=\"pageClick(page.num)\" :class=\"{\n    'current':(page.className === 'current'),\n    'pagination-item':true,\n    'pagination-item-prev':(page.className==='prev'),\n    'pagination-item-next':(page.className==='next'),\n    'pagination-item-disabled':(page.className==='disabled'),\n    'pagination-item-ellipsis':(page.className==='ellipsis'),\n    'pagination-item-slash':(page.className==='slash')}\" >\n    <span v-if=\"page.className!='prev' && page.className!='next'\">\n      {{page.text}}\n    </span>\n    <icon v-if=\"page.className==='prev'\" type=\"prev\" size=\"12\" color=\"#666\" ></icon>\n    <icon v-if=\"page.className==='next'\" type=\"next\" size=\"12\" color=\"#666\"></icon>\n    <icon v-if=\"page.className==='disabled' && page.icon==='prev'\" type=\"prev\" size=\"12\" color=\"#e6e6e6\"></icon>\n  <icon v-if=\"page.className==='disabled' && page.icon==='next'\" type=\"next\" size=\"12\" color=\"#e6e6e6\"></icon>\n    </li>\n</ul>\n";
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(281)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Pagination/Options.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(282)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Pagination/Options.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Select = __webpack_require__(222);
+	
+	var _Select2 = _interopRequireDefault(_Select);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var vOption = _Select2.default.Option; // <template>
+	//     <div v-if="showSizeChanger" class="pagination-selector">
+	//         <v-select :value="''+defaultSize" @change="change">
+	//             <v-option value="10">10 条/页</v-option>
+	//             <v-option value="20">20 条/页</v-option>
+	//             <v-option value="30">30 条/页</v-option>
+	//             <v-option value="40">40 条/页</v-option>
+	//         </v-select>
+	//         <div class="pagination-totalpage">共{{ total }}条数据</div>
+	//     </div>
+	// </template>
+	//
+	// <script>
+	
+	
+	exports.default = {
+	  props: {
+	    total: {
+	      type: Number
+	    },
+	    defaultSize: {
+	      type: Number
+	    },
+	    showSizeChanger: {
+	      type: Boolean
+	    }
+	  },
+	  components: {
+	    vSelect: _Select2.default, vOption: vOption
+	  },
+	
+	  methods: {
+	    change: function change(data) {
+	      this.$dispatch('pagination-size-change', data);
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 282 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div v-if=\"showSizeChanger\" class=\"pagination-selector\">\n    <v-select :value=\"''+defaultSize\" @change=\"change\">\n        <v-option value=\"10\">10 条/页</v-option>\n        <v-option value=\"20\">20 条/页</v-option>\n        <v-option value=\"30\">30 条/页</v-option>\n        <v-option value=\"40\">40 条/页</v-option>\n    </v-select>\n    <div class=\"pagination-totalpage\">共{{ total }}条数据</div>\n</div>\n";
+
+/***/ },
+/* 283 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"pagination\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"pageSize\" :show-size-changer=\"showSizeChanger\" @pagination-size-change=\"changePageSize\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
+
+/***/ },
+/* 284 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"[prefixCls + '-table',prefixCls + '-table-'+ size, {loading: loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container',fixedHeader ? prefixCls + '-fixed-header': '']\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{column['title']}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" class=\"dropdown-menu atui-table-filter-dropdown\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link','clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" class=\"table-sorter\">\n              <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n              <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + 'table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + 'table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <div v-if=\"pagination\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination :total=\"pagination.total\" v-ref:pager :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\"></pagination>\n  </div>\n</div>\n";
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Badge = __webpack_require__(286);
+	
+	var _Badge2 = _interopRequireDefault(_Badge);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Badge2.default;
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(287)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Badge/Badge.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(288)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Badge/Badge.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 287 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7736,13 +8517,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 272 */
+/* 288 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span :class=\"[prefixCls + '-badge']\">\n  <slot></slot>\n  <sup :class=\"[prefixCls + '-badge-dot']\" v-if=\"dot\"></sup>\n  <template v-else>\n    <sup v-if='count > 0' :class=\"[prefixCls + '-badge-count']\">\n      {{count | short}}\n    </sup>\n  </template>\n</span>\n";
 
 /***/ },
-/* 273 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7751,11 +8532,11 @@
 	  value: true
 	});
 	
-	var _Carousel = __webpack_require__(274);
+	var _Carousel = __webpack_require__(290);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Slide = __webpack_require__(279);
+	var _Slide = __webpack_require__(295);
 	
 	var _Slide2 = _interopRequireDefault(_Slide);
 	
@@ -7766,17 +8547,17 @@
 	exports.default = _Carousel2.default;
 
 /***/ },
-/* 274 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(275)
-	__vue_script__ = __webpack_require__(277)
+	__webpack_require__(291)
+	__vue_script__ = __webpack_require__(293)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Carousel/Carousel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(278)
+	__vue_template__ = __webpack_require__(294)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7786,7 +8567,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-b4fafc10/Carousel.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Carousel/Carousel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7795,13 +8576,13 @@
 	})()}
 
 /***/ },
-/* 275 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(276);
+	var content = __webpack_require__(292);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(143)(content, {});
@@ -7810,8 +8591,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -7821,7 +8602,7 @@
 	}
 
 /***/ },
-/* 276 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(142)();
@@ -7829,13 +8610,13 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-b4fafc10] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?134eb1a3"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAsHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../utils/EventListener.js'\nimport coerceBoolean from '../utils/coerceBoolean.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.carousel-control[_v-276df37b] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?134eb1a3"],"names":[],"mappings":";AAsHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../utils/EventListener.js'\nimport coerceBoolean from '../utils/coerceBoolean.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 277 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7848,11 +8629,11 @@
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _coerceBoolean = __webpack_require__(219);
+	var _coerceBoolean = __webpack_require__(220);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -7993,22 +8774,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 278 */
+/* 294 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-b4fafc10=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-b4fafc10=\"\">\n    <indicator _v-b4fafc10=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-b4fafc10=\"\">\n    <slot _v-b4fafc10=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Next</span>\n  </a>\n</div>\n";
+	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
-/* 279 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(280)
+	__vue_script__ = __webpack_require__(296)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Carousel/Slide.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(281)
+	__vue_template__ = __webpack_require__(297)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8018,7 +8799,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6a295c6e/Slide.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Carousel/Slide.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8027,7 +8808,7 @@
 	})()}
 
 /***/ },
-/* 280 */
+/* 296 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8074,23 +8855,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 281 */
+/* 297 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"item\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 282 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(283)
-	__vue_script__ = __webpack_require__(285)
+	__webpack_require__(299)
+	__vue_script__ = __webpack_require__(301)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Affix.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(286)
+	__vue_template__ = __webpack_require__(302)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8100,7 +8881,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0e1beb79/Affix.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Affix.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8109,13 +8890,13 @@
 	})()}
 
 /***/ },
-/* 283 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(284);
+	var content = __webpack_require__(300);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(143)(content, {});
@@ -8135,7 +8916,7 @@
 	}
 
 /***/ },
-/* 284 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(142)();
@@ -8143,13 +8924,13 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.vue-affix {\n  position: fixed;\n}\n", "", {"version":3,"sources":["/./src/components/Affix.vue?fd7fe4a2"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAqFA;EACA,gBAAA;CACA","file":"Affix.vue","sourcesContent":["<template>\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n</template>\n\n<script>\nimport EventListener from './utils/EventListener.js'\nexport default {\n  props: {\n    offset: {\n      type: Number,\n      default: 0\n    }\n  },\n  data () {\n    return {\n      affixed: false,\n      styles: {}\n    }\n  },\n  methods: {\n    scrolling () {\n      const scrollTop = this.getScroll(window, true)\n      const elementOffset = this.getOffset(this.$el)\n      if (!this.affixed && scrollTop > elementOffset.top) {\n        this.affixed = true\n        this.styles = {\n          top: this.offset + 'px',\n          left: elementOffset.left + 'px',\n          width: this.$el.offsetWidth + 'px'\n        }\n      }\n      if (this.affixed && scrollTop < elementOffset.top) {\n        this.affixed = false\n        this.styles = {}\n      }\n    },\n    // from https://github.com/ant-design/ant-design/blob/master/components/affix/index.jsx#L20\n    getScroll (w, top) {\n      let ret = w['page' + (top ? 'Y' : 'X') + 'Offset']\n      const method = 'scroll' + (top ? 'Top' : 'Left')\n      if (typeof ret !== 'number') {\n        const d = w.document\n        // ie6,7,8 standard mode\n        ret = d.documentElement[method]\n        if (typeof ret !== 'number') {\n          // quirks mode\n          ret = d.body[method]\n        }\n      }\n      return ret\n    },\n    getOffset (element) {\n      const rect = element.getBoundingClientRect()\n      const body = document.body\n      const clientTop = element.clientTop || body.clientTop || 0\n      const clientLeft = element.clientLeft || body.clientLeft || 0\n      const scrollTop = this.getScroll(window, true)\n      const scrollLeft = this.getScroll(window)\n      return {\n        top: rect.top + scrollTop - clientTop,\n        left: rect.left + scrollLeft - clientLeft\n      }\n    }\n  },\n  ready () {\n    this._scrollEvent = EventListener.listen(window, 'scroll', this.scrolling)\n    this._resizeEvent = EventListener.listen(window, 'resize', this.scrolling)\n  },\n  beforeDestroy () {\n    if (this._scrollEvent) {\n      this._scrollEvent.remove()\n    }\n    if (this._resizeEvent) {\n      this._resizeEvent.remove()\n    }\n  }\n}\n</script>\n\n<style>\n  .vue-affix {\n    position: fixed;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.vue-affix {\n  position: fixed;\n}\n", "", {"version":3,"sources":["/./src/components/Affix.vue?fd7fe4a2"],"names":[],"mappings":";AAqFA;EACA,gBAAA;CACA","file":"Affix.vue","sourcesContent":["<template>\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n</template>\n\n<script>\nimport EventListener from './utils/EventListener.js'\nexport default {\n  props: {\n    offset: {\n      type: Number,\n      default: 0\n    }\n  },\n  data () {\n    return {\n      affixed: false,\n      styles: {}\n    }\n  },\n  methods: {\n    scrolling () {\n      const scrollTop = this.getScroll(window, true)\n      const elementOffset = this.getOffset(this.$el)\n      if (!this.affixed && scrollTop > elementOffset.top) {\n        this.affixed = true\n        this.styles = {\n          top: this.offset + 'px',\n          left: elementOffset.left + 'px',\n          width: this.$el.offsetWidth + 'px'\n        }\n      }\n      if (this.affixed && scrollTop < elementOffset.top) {\n        this.affixed = false\n        this.styles = {}\n      }\n    },\n    // from https://github.com/ant-design/ant-design/blob/master/components/affix/index.jsx#L20\n    getScroll (w, top) {\n      let ret = w['page' + (top ? 'Y' : 'X') + 'Offset']\n      const method = 'scroll' + (top ? 'Top' : 'Left')\n      if (typeof ret !== 'number') {\n        const d = w.document\n        // ie6,7,8 standard mode\n        ret = d.documentElement[method]\n        if (typeof ret !== 'number') {\n          // quirks mode\n          ret = d.body[method]\n        }\n      }\n      return ret\n    },\n    getOffset (element) {\n      const rect = element.getBoundingClientRect()\n      const body = document.body\n      const clientTop = element.clientTop || body.clientTop || 0\n      const clientLeft = element.clientLeft || body.clientLeft || 0\n      const scrollTop = this.getScroll(window, true)\n      const scrollLeft = this.getScroll(window)\n      return {\n        top: rect.top + scrollTop - clientTop,\n        left: rect.left + scrollLeft - clientLeft\n      }\n    }\n  },\n  ready () {\n    this._scrollEvent = EventListener.listen(window, 'scroll', this.scrolling)\n    this._resizeEvent = EventListener.listen(window, 'resize', this.scrolling)\n  },\n  beforeDestroy () {\n    if (this._scrollEvent) {\n      this._scrollEvent.remove()\n    }\n    if (this._resizeEvent) {\n      this._resizeEvent.remove()\n    }\n  }\n}\n</script>\n\n<style>\n  .vue-affix {\n    position: fixed;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 285 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8158,7 +8939,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(169);
+	var _EventListener = __webpack_require__(170);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -8258,13 +9039,13 @@
 	// <script>
 
 /***/ },
-/* 286 */
+/* 302 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 287 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8273,7 +9054,7 @@
 	  value: true
 	});
 	
-	var _Textarea = __webpack_require__(288);
+	var _Textarea = __webpack_require__(304);
 	
 	var _Textarea2 = _interopRequireDefault(_Textarea);
 
@@ -8282,16 +9063,16 @@
 	exports.default = _Textarea2.default;
 
 /***/ },
-/* 288 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(289)
+	__vue_script__ = __webpack_require__(305)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Textarea/Textarea.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(290)
+	__vue_template__ = __webpack_require__(306)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8301,7 +9082,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-01ffd738/Textarea.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Textarea/Textarea.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8310,7 +9091,7 @@
 	})()}
 
 /***/ },
-/* 289 */
+/* 305 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8452,13 +9233,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 290 */
+/* 306 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-textarea-box']\">\n  <template v-if=\"autosize\">\n    <pre :id=\"preId\"><span>{{content}}</span><br></pre>\n  </template>\n  <textarea v-bind=\"{disabled: isDisabled}\"\n            :maxlength=\"limitWords\"\n            :class=\"textareaClassObj\"\n            :name=\"name\"\n            :placeholder=\"placeholder\"\n            v-model=\"content\"></textarea>\n  <p v-if=\"limitWords\"\n     :class=\"wordClassObj\">{{ curWords }}/{{ limitWords }}</p>\n  <p v-if=\"showWordsCount\"\n     :class=\"[prefixCls + '-textarea-words-area']\">{{ countTips }}{{ curWords }}</p>\n</div>\n";
 
 /***/ },
-/* 291 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8467,11 +9248,11 @@
 	  value: true
 	});
 	
-	var _Accordion = __webpack_require__(292);
+	var _Accordion = __webpack_require__(308);
 	
 	var _Accordion2 = _interopRequireDefault(_Accordion);
 	
-	var _Panel = __webpack_require__(295);
+	var _Panel = __webpack_require__(311);
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
@@ -8482,16 +9263,16 @@
 	exports.default = _Accordion2.default;
 
 /***/ },
-/* 292 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(293)
+	__vue_script__ = __webpack_require__(309)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Accordion/Accordion.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(294)
+	__vue_template__ = __webpack_require__(310)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8501,7 +9282,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-57604c8a/Accordion.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Accordion/Accordion.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8510,7 +9291,7 @@
 	})()}
 
 /***/ },
-/* 293 */
+/* 309 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8567,22 +9348,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 294 */
+/* 310 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-panel-group']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 295 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(296)
+	__vue_script__ = __webpack_require__(312)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Accordion/Panel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(297)
+	__vue_template__ = __webpack_require__(313)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8592,7 +9373,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-359fb846/Panel.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Accordion/Panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8601,7 +9382,7 @@
 	})()}
 
 /***/ },
-/* 296 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8610,7 +9391,7 @@
 	  value: true
 	});
 	
-	var _coerceBoolean = __webpack_require__(219);
+	var _coerceBoolean = __webpack_require__(220);
 	
 	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
 	
@@ -8682,13 +9463,13 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 297 */
+/* 313 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-panel', prefixCls + '-panel-default']\">\n    <div :class=\"[prefixCls + '-panel-heading']\" @click=\"toggleIsOpen()\">\n      <slot name=\"panel-header\"></slot>\n    </div>\n    <div :class=\"[prefixCls + '-panel-collapse']\"\n      v-el:panel\n      v-show=\"isOpen\"\n      transition=\"slide\"\n    >\n      <div :class=\"[prefixCls + '-panel-body']\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
-/* 298 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8697,7 +9478,7 @@
 	  value: true
 	});
 	
-	var _Popover = __webpack_require__(299);
+	var _Popover = __webpack_require__(315);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 
@@ -8706,16 +9487,16 @@
 	exports.default = _Popover2.default;
 
 /***/ },
-/* 299 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(300)
+	__vue_script__ = __webpack_require__(316)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Popover/Popover.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(301)
+	__vue_template__ = __webpack_require__(317)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8725,7 +9506,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-60f88ff8/Popover.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Popover/Popover.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8734,7 +9515,7 @@
 	})()}
 
 /***/ },
-/* 300 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8743,7 +9524,7 @@
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(209);
+	var _popoverMixins = __webpack_require__(210);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -8775,13 +9556,13 @@
 	// <script>
 
 /***/ },
-/* 301 */
+/* 317 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-popover-trigger']\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div v-el:popover\n     v-show=\"show\"\n     :class=\"popoverClassObj\"\n     :transition=\"effect\">\n    <div :class=\"[prefixCls + '-popover-arrow']\"></div>\n    <h3 :class=\"[prefixCls + '-popover-title']\" v-show=\"title\">{{title}}</h3>\n    <div :class=\"[prefixCls + '-popover-content']\">\n      {{content}}\n    </div>\n</div>\n";
 
 /***/ },
-/* 302 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8790,11 +9571,11 @@
 	  value: true
 	});
 	
-	var _Tabset = __webpack_require__(303);
+	var _Tabset = __webpack_require__(319);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _Tab = __webpack_require__(306);
+	var _Tab = __webpack_require__(322);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
@@ -8805,16 +9586,16 @@
 	exports.default = _Tabset2.default;
 
 /***/ },
-/* 303 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(304)
+	__vue_script__ = __webpack_require__(320)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tabs/Tabset.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(305)
+	__vue_template__ = __webpack_require__(321)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8824,7 +9605,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-fc9f2b32/Tabset.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tabs/Tabset.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8833,7 +9614,7 @@
 	})()}
 
 /***/ },
-/* 304 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9027,22 +9808,22 @@
 	// <script>
 
 /***/ },
-/* 305 */
+/* 321 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"atui-tabsWrapper\">\n  <div class=\"tabs-header\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3 \" class=\"arrow-prev\" @click=\"prev\">\n      <icon v-if=\"prev_tabIndex==0\" type=\"prev\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"prev\" size=\"12\"></icon>\n    </span>\n    <ul v-if=\"trigger=='click'\" :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          :class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <ul v-else :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n    <li v-for=\"r in renderData\"\n          :class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @mouseenter.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" class=\"arrow-next\" @click=\"next\">\n      <icon v-if=\"next_tabIndex == maxTabIndex\" type=\"next\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
 
 /***/ },
-/* 306 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(307)
+	__vue_script__ = __webpack_require__(323)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tabs/Tab.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(308)
+	__vue_template__ = __webpack_require__(324)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9052,7 +9833,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-c768556a/Tab.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tabs/Tab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9061,7 +9842,7 @@
 	})()}
 
 /***/ },
-/* 307 */
+/* 323 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -9124,13 +9905,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 308 */
+/* 324 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div role=\"tabpanel\" class=\"tab-pane\"\n    v-show=\"show\"\n    :transition=\"transition\"\n>\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 309 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9139,11 +9920,11 @@
 	  value: true
 	});
 	
-	var _Steps = __webpack_require__(310);
+	var _Steps = __webpack_require__(326);
 	
 	var _Steps2 = _interopRequireDefault(_Steps);
 	
-	var _Step = __webpack_require__(313);
+	var _Step = __webpack_require__(329);
 	
 	var _Step2 = _interopRequireDefault(_Step);
 	
@@ -9154,16 +9935,16 @@
 	exports.default = _Steps2.default;
 
 /***/ },
-/* 310 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(311)
+	__vue_script__ = __webpack_require__(327)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Steps/Steps.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(312)
+	__vue_template__ = __webpack_require__(328)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9173,7 +9954,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3e184b88/Steps.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Steps/Steps.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9182,7 +9963,7 @@
 	})()}
 
 /***/ },
-/* 311 */
+/* 327 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9301,22 +10082,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 312 */
+/* 328 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n<div class=\"atui-steps\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div class=\"atui-steps\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 313 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(314)
+	__vue_script__ = __webpack_require__(330)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Steps/Step.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(315)
+	__vue_template__ = __webpack_require__(331)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9326,7 +10107,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-805c160a/Step.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Steps/Step.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9335,7 +10116,7 @@
 	})()}
 
 /***/ },
-/* 314 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9408,13 +10189,13 @@
 	// <script>
 
 /***/ },
-/* 315 */
+/* 331 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"wrapClasses\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\" class=\"step-tail\">\n   <i>\n    <i :style=\"{ backgroundColor: color }\"></i>\n   </i>\n </div>\n <div class=\"step-head\">\n   <div class=\"step-head-inner\">\n    <span v-if=\"status !== 'finish'\" class=\"step-icon\"\n      :style=\"{\n       borderColor: status==='process'?color: '#e9e9e9',\n       backgroundColor: status==='process'?color: '#fff'}\">\n      {{ stepNumber }}\n    </span>\n    <span v-else class=\"step-finish-icon\">\n      <icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n    </span>\n   </div>\n </div>\n <div class=\"step-main\">\n   <div class=\"step-main-title\">{{ title }}</div>\n   <div class=\"step-main-description\">{{ description }}</div>\n </div>\n</div>\n";
 
 /***/ },
-/* 316 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9423,11 +10204,11 @@
 	  value: true
 	});
 	
-	var _Tree = __webpack_require__(317);
+	var _Tree = __webpack_require__(333);
 	
 	var _Tree2 = _interopRequireDefault(_Tree);
 	
-	var _TreeNode = __webpack_require__(319);
+	var _TreeNode = __webpack_require__(335);
 	
 	var _TreeNode2 = _interopRequireDefault(_TreeNode);
 	
@@ -9438,16 +10219,16 @@
 	exports.default = _Tree2.default;
 
 /***/ },
-/* 317 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(318)
+	__vue_script__ = __webpack_require__(334)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tree/Tree.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(322)
+	__vue_template__ = __webpack_require__(338)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9457,7 +10238,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5df38938/Tree.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tree/Tree.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9466,7 +10247,7 @@
 	})()}
 
 /***/ },
-/* 318 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9475,7 +10256,7 @@
 	  value: true
 	});
 	
-	var _TreeNode = __webpack_require__(319);
+	var _TreeNode = __webpack_require__(335);
 	
 	var _TreeNode2 = _interopRequireDefault(_TreeNode);
 	
@@ -9488,15 +10269,14 @@
 	    },
 	    dataSource: {
 	      type: Object
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  components: {
 	    TreeNode: _TreeNode2.default
-	  },
-	  data: function data() {
-	    return {
-	      prefixCls: 'atui'
-	    };
 	  }
 	};
 	// </script>
@@ -9513,16 +10293,16 @@
 	// <script>
 
 /***/ },
-/* 319 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(320)
+	__vue_script__ = __webpack_require__(336)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tree/TreeNode.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(321)
+	__vue_template__ = __webpack_require__(337)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9532,7 +10312,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-270a7a5a/TreeNode.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Tree/TreeNode.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9541,7 +10321,7 @@
 	})()}
 
 /***/ },
-/* 320 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9564,6 +10344,10 @@
 	    },
 	    model: {
 	      type: Object
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
@@ -9598,17 +10382,16 @@
 	/* generated by vue-loader */
 	// <template>
 	//   <li>
-	//     <span v-if="isFolder" :class="['atui-tree-switcher',{'atui-tree-switcher-open':open}]">
-	//       <icon type="jiantou"></icon>
-	//     </span>
 	//     <a :title="model.name" @click="toggle">
-	//       <span class="atui-tree-title">
+	//       <span v-if="isFolder" :class="[prefixCls + '-tree-switcher', open && prefixCls + '-tree-switcher-open']">
+	//         <icon type="jiantou"></icon>
+	//       </span>
+	//       <span :class="[prefixCls + '-tree-title']">
 	//         {{model.name}}
 	//       </span>
 	//     </a>
-	//     <ul v-show="open" v-if="isFolder" transition="slide" :class="{'ant-tree-child-tree-open': open}">
+	//     <ul v-show="open" v-if="isFolder" transition="slide" :class="[open && prefixCls + '-tree-child-tree-open']">
 	//       <tree-node
-	//         class="item"
 	//         v-for="model in model.children"
 	//         :model="model">
 	//       </tree-node>
@@ -9619,19 +10402,19 @@
 	// <script>
 
 /***/ },
-/* 321 */
+/* 337 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li>\n  <span v-if=\"isFolder\" :class=\"['atui-tree-switcher',{'atui-tree-switcher-open':open}]\">\n    <icon type=\"jiantou\"></icon>\n  </span>\n  <a :title=\"model.name\" @click=\"toggle\">\n    <span class=\"atui-tree-title\">\n      {{model.name}}\n    </span>\n  </a>\n  <ul v-show=\"open\" v-if=\"isFolder\" transition=\"slide\" :class=\"{'ant-tree-child-tree-open': open}\">\n    <tree-node\n      class=\"item\"\n      v-for=\"model in model.children\"\n      :model=\"model\">\n    </tree-node>\n  </ul>\n</li>\n";
+	module.exports = "\n<li>\n  <a :title=\"model.name\" @click=\"toggle\">\n    <span v-if=\"isFolder\" :class=\"[prefixCls + '-tree-switcher', open && prefixCls + '-tree-switcher-open']\">\n      <icon type=\"jiantou\"></icon>\n    </span>\n    <span :class=\"[prefixCls + '-tree-title']\">\n      {{model.name}}\n    </span>\n  </a>\n  <ul v-show=\"open\" v-if=\"isFolder\" transition=\"slide\" :class=\"[open && prefixCls + '-tree-child-tree-open']\">\n    <tree-node\n      v-for=\"model in model.children\"\n      :model=\"model\">\n    </tree-node>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 322 */
+/* 338 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"[prefixCls + '-tree']\">\n  <tree-node\n    :model=\"dataSource\">\n  </tree-node>\n</ul>\n";
 
 /***/ },
-/* 323 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9640,19 +10423,19 @@
 	  value: true
 	});
 	
-	var _Menu = __webpack_require__(324);
+	var _Menu = __webpack_require__(340);
 	
 	var _Menu2 = _interopRequireDefault(_Menu);
 	
-	var _SubMenu = __webpack_require__(327);
+	var _SubMenu = __webpack_require__(343);
 	
 	var _SubMenu2 = _interopRequireDefault(_SubMenu);
 	
-	var _MenuItem = __webpack_require__(330);
+	var _MenuItem = __webpack_require__(346);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
-	var _MenuItemGroup = __webpack_require__(333);
+	var _MenuItemGroup = __webpack_require__(349);
 	
 	var _MenuItemGroup2 = _interopRequireDefault(_MenuItemGroup);
 	
@@ -9668,16 +10451,16 @@
 	exports.default = _Menu2.default;
 
 /***/ },
-/* 324 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(325)
+	__vue_script__ = __webpack_require__(341)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/Menu.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(326)
+	__vue_template__ = __webpack_require__(342)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9687,7 +10470,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7e5e29d8/Menu.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Menu/Menu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9696,7 +10479,7 @@
 	})()}
 
 /***/ },
-/* 325 */
+/* 341 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9724,22 +10507,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 326 */
+/* 342 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"['atui-menu','atui-menu-'+ mode]\">\n  <slot></slot>\n</ul>\n";
 
 /***/ },
-/* 327 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(328)
+	__vue_script__ = __webpack_require__(344)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/SubMenu.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(329)
+	__vue_template__ = __webpack_require__(345)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9749,7 +10532,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-732f31d6/SubMenu.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Menu/SubMenu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9758,7 +10541,7 @@
 	})()}
 
 /***/ },
-/* 328 */
+/* 344 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -9793,22 +10576,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 329 */
+/* 345 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"atui-menu-submenu-title\" @click=\"triggerSub\">{{title}}</div>\n<ul class=\"atui-menu-sub\" v-show=\"show\" transition=\"slide\">\n  <slot></slot>\n</ul>\n";
 
 /***/ },
-/* 330 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(331)
+	__vue_script__ = __webpack_require__(347)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/MenuItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(332)
+	__vue_template__ = __webpack_require__(348)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9818,7 +10601,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-459ab0ea/MenuItem.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Menu/MenuItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9827,7 +10610,7 @@
 	})()}
 
 /***/ },
-/* 331 */
+/* 347 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -9852,22 +10635,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 332 */
+/* 348 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li role=\"menuitem\" :class=\"['atui-menu-item',{'atui-menu-item-disabled':disabled}]\">\n  <slot></slot>\n</li>\n";
 
 /***/ },
-/* 333 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(334)
+	__vue_script__ = __webpack_require__(350)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/MenuItemGroup.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(335)
+	__vue_template__ = __webpack_require__(351)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9877,7 +10660,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-37e29c64/MenuItemGroup.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Menu/MenuItemGroup.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9886,7 +10669,7 @@
 	})()}
 
 /***/ },
-/* 334 */
+/* 350 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -9914,13 +10697,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 335 */
+/* 351 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li class=\"atui-menu-item-group\">\n  <div class=\"atui-menu-item-group-title\">{{title}}</div>\n  <ul class=\"atui-menu-item-group-list\">\n    <slot></slot>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 336 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9929,11 +10712,11 @@
 	  value: true
 	});
 	
-	var _Breadcrumb = __webpack_require__(337);
+	var _Breadcrumb = __webpack_require__(353);
 	
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 	
-	var _BreadcrumbItem = __webpack_require__(340);
+	var _BreadcrumbItem = __webpack_require__(356);
 	
 	var _BreadcrumbItem2 = _interopRequireDefault(_BreadcrumbItem);
 	
@@ -9944,16 +10727,16 @@
 	exports.default = _Breadcrumb2.default;
 
 /***/ },
-/* 337 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(338)
+	__vue_script__ = __webpack_require__(354)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Breadcrumb/Breadcrumb.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(339)
+	__vue_template__ = __webpack_require__(355)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9963,7 +10746,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-54cd6dd8/Breadcrumb.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Breadcrumb/Breadcrumb.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9972,7 +10755,7 @@
 	})()}
 
 /***/ },
-/* 338 */
+/* 354 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10010,22 +10793,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 339 */
+/* 355 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-breadcrumbs']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 340 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(341)
+	__vue_script__ = __webpack_require__(357)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Breadcrumb/BreadcrumbItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(342)
+	__vue_template__ = __webpack_require__(358)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10035,7 +10818,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-bb4028ea/BreadcrumbItem.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Breadcrumb/BreadcrumbItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10044,7 +10827,7 @@
 	})()}
 
 /***/ },
-/* 341 */
+/* 357 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10083,626 +10866,18 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 342 */
+/* 358 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\t<span :class=\"[prefixCls + '-breadcrumb']\">\n\t\t<a v-if=\"href\"\n       :href=\"href\"\n       :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</a>\n\t\t<span v-else\n          :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</span>\n\t\t<span :class=\"[prefixCls + '-breadcrumb-slash']\">{{ slash }}</span>\n\t</span>\n";
 
 /***/ },
-/* 343 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Pagination = __webpack_require__(344);
-	
-	var _Pagination2 = _interopRequireDefault(_Pagination);
-	
-	var _Jumper = __webpack_require__(346);
-	
-	var _Jumper2 = _interopRequireDefault(_Jumper);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	_Pagination2.default.Jumper = _Jumper2.default;
-	
-	exports.default = _Pagination2.default;
-
-/***/ },
-/* 344 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(345)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Pagination/Pagination.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(355)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-4ec66d10/Pagination.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 345 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Jumper = __webpack_require__(346);
-	
-	var _Jumper2 = _interopRequireDefault(_Jumper);
-	
-	var _Pager = __webpack_require__(349);
-	
-	var _Pager2 = _interopRequireDefault(_Pager);
-	
-	var _Options = __webpack_require__(352);
-	
-	var _Options2 = _interopRequireDefault(_Options);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  props: {
-	    id: {
-	      type: String
-	    },
-	    pageSize: {
-	      type: Number,
-	      default: 10
-	    },
-	    totalPage: Number,
-	    total: Number,
-	    currPage: {
-	      type: Number
-	    },
-	    showJumper: Boolean,
-	    showSizeChanger: Boolean,
-	    simple: {
-	      type: Boolean
-	    },
-	    mini: {
-	      type: Boolean
-	    },
-	    defaultSize: {
-	      type: Number,
-	      default: 10
-	    }
-	  },
-	  data: function data() {
-	    return {
-	      pageRange: [],
-	      prevShow: 1,
-	      nextShow: 1
-	    };
-	  },
-	
-	  watch: {
-	    totalPage: function totalPage() {
-	      this.getPageRange();
-	    },
-	    currPage: function currPage() {
-	      this.getPageRange();
-	      this.onChange(this.currPage);
-	    },
-	    prevShow: function prevShow() {
-	      this.getPageRange();
-	    },
-	    nextShow: function nextShow() {
-	      this.getPageRange();
-	    }
-	  },
-	  components: {
-	    jumper: _Jumper2.default,
-	    pager: _Pager2.default,
-	    Options: _Options2.default
-	  },
-	  methods: {
-	    _changePageSize: function _changePageSize(value) {},
-	    getPageRange: function getPageRange() {
-	      var start = 0;
-	      var end = 0;
-	      var showLen = this.prevShow + this.nextShow + 1;
-	      var totalPage = Math.max(this.totalPage, 1);
-	      var currPage = this.currPage;
-	
-	      if (totalPage <= 1) {
-	        start = end = 1;
-	      } else if (totalPage <= showLen) {
-	        start = 1;
-	        end = totalPage;
-	      } else {
-	        if (currPage <= this.prevShow + 1) {
-	          start = 1;
-	          end = showLen;
-	        } else if (currPage >= totalPage - this.nextShow) {
-	          end = totalPage;
-	          start = totalPage - showLen + 1;
-	        } else {
-	          start = currPage - this.prevShow;
-	          end = currPage + this.nextShow;
-	        }
-	      }
-	
-	      this.pageRange = [];
-	
-	      if (this.simple) {
-	        // 上一页
-	        if (currPage !== 1) {
-	          this.pageRange.push({ num: currPage - 1, text: '<', className: 'prev' });
-	        } else {
-	          this.pageRange.push({ className: 'disabled', icon: 'prev' });
-	        }
-	
-	        this.pageRange.push({ num: this.currPage, text: this.currPage, className: 'current' });
-	        this.pageRange.push({ text: '/', className: 'slash' });
-	        this.pageRange.push({ text: totalPage });
-	
-	        // 下一页
-	        if (currPage !== totalPage) {
-	          this.pageRange.push({ num: currPage + 1, text: '>', className: 'next' });
-	        } else {
-	          this.pageRange.push({ className: 'disabled', icon: 'next' });
-	        }
-	      } else {
-	        // 上一页
-	        if (currPage !== 1) {
-	          this.pageRange.push({ num: currPage - 1, text: '<', className: 'prev' });
-	        } else {
-	          this.pageRange.push({ className: 'disabled', icon: 'prev' });
-	        }
-	        // 第一页
-	        if (start >= 2) {
-	          this.pageRange.push({ num: 1, text: 1 });
-	        }
-	        // 省略号
-	        if (start > 2) {
-	          this.pageRange.push({ text: '...', className: 'ellipsis' });
-	        }
-	        // 显示的页码列表
-	        for (var i = start; i <= end; i++) {
-	          this.pageRange.push({
-	            num: i,
-	            text: i,
-	            className: i === currPage ? 'current' : ''
-	          });
-	        }
-	        // 省略号
-	        if (end < totalPage - 1) {
-	          this.pageRange.push({ text: '...', className: 'ellipsis' });
-	        }
-	        // 最后一页
-	        if (end <= totalPage - 1) {
-	          this.pageRange.push({ num: totalPage, text: totalPage });
-	        }
-	        // 下一页
-	        if (currPage !== totalPage) {
-	          this.pageRange.push({ num: currPage + 1, text: '>', className: 'next' });
-	        } else {
-	          this.pageRange.push({ className: 'disabled', icon: 'next' });
-	        }
-	      }
-	    },
-	    pageClick: function pageClick(i) {
-	      if (!i) {
-	        return false;
-	      }
-	      if (i === this.currPage) {
-	        return false;
-	      }
-	
-	      this.currPage = i;
-	      this.getPageRange();
-	    },
-	    onChange: function onChange(pageNum) {
-	      this.$dispatch('pagination-page-change', pageNum, this.id);
-	    },
-	    _isValid: function _isValid(page) {
-	      return typeof page === 'number' && page >= 1 && page !== this.currPage;
-	    },
-	    _handleChange: function _handleChange(page) {
-	      var _page = page;
-	
-	      if (this._isValid(_page)) {
-	        if (_page > this.totalPage) {
-	          _page = this.totalPage;
-	        }
-	
-	        this.currPage = page;
-	        this._current = page;
-	        this.onChange(_page);
-	        return _page;
-	      }
-	      return this.currPage;
-	    }
-	  },
-	  ready: function ready() {
-	    this.getPageRange();
-	  }
-	};
-	// </script>
-
-	/* generated by vue-loader */
-	// <template>
-	//   <div class="pagination">
-	//   <template v-if="totalPage > 1">
-	//     <options :total="total" :default-size="defaultSize" :show-size-changer="showSizeChanger"></options>
-	//     <jumper
-	//         :quick-go="showJumper ? _handleChange.bind(this) : null"
-	//         :curr-page="currPage"
-	//         :total-page="totalPage"
-	//         :mini="mini"
-	//     ></jumper>
-	//     <pager :page-range="pageRange" :simple="simple"  :mini="mini" :page-click="pageClick"></pager>
-	//   </template>
-	//   </div>
-	// </template>
-	// <script>
-
-/***/ },
-/* 346 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(347)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Pagination/Jumper.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(348)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-a6e8ec8e/Jumper.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 347 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	// <template>
-	//   <div v-if="quickGo" class="pagination-jump">
-	//       <div class="input-jumper-wrap">
-	//         跳至
-	//         <input type="text" :value="_current" @change="_handleChange($event)" :class="_inputWrapClasses"/>
-	//         页
-	//       </div>
-	//       <button type="button" @click="_go" :class="_btnWrapClasses">
-	//     跳转</button>
-	//   </div>
-	// </template>
-	//
-	// <script>
-	exports.default = {
-	  props: {
-	    quickGo: {
-	      type: Function,
-	      default: function _default() {}
-	    },
-	    currPage: {
-	      type: Number
-	    },
-	    totalPage: {
-	      type: Number
-	    },
-	    mini: {
-	      type: Boolean,
-	      default: false
-	    }
-	  },
-	  compiled: function compiled() {
-	    this._current = this.currPage;
-	  },
-	
-	  computed: {
-	    _inputWrapClasses: function _inputWrapClasses() {
-	      return {
-	        'input-jumper': !this.mini,
-	        'mini-input-jumper': this.mini
-	      };
-	    },
-	    _btnWrapClasses: function _btnWrapClasses() {
-	      return {
-	        'atui-btn': true,
-	        'tertiary': true,
-	        'default': !this.mini,
-	        'small': this.mini
-	      };
-	    }
-	  },
-	  data: function data() {
-	    return {
-	      _current: null
-	    };
-	  },
-	
-	  methods: {
-	    _handleChange: function _handleChange(e) {
-	      var val = e.target.value;
-	      if (Number(val) > this.totalPage) {
-	        this._current = this.totalPage;
-	        return;
-	      }
-	      this._current = e.target.value;
-	    },
-	    _go: function _go(e) {
-	      if (this._current === '') {
-	        return;
-	      }
-	      var val = Number(this._current);
-	      if (isNaN(val)) {
-	        val = this.currPage;
-	      }
-	      var c = this.quickGo(val);
-	      this.currPage = c;
-	      this._current = c;
-	    }
-	  }
-	};
-	// </script>
-
-	/* generated by vue-loader */
-
-/***/ },
-/* 348 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div v-if=\"quickGo\" class=\"pagination-jump\">\n    <div class=\"input-jumper-wrap\">\n      跳至\n      <input type=\"text\" :value=\"_current\" @change=\"_handleChange($event)\" :class=\"_inputWrapClasses\"/>\n      页\n    </div>\n    <button type=\"button\" @click=\"_go\" :class=\"_btnWrapClasses\">\n  跳转</button>\n</div>\n";
-
-/***/ },
-/* 349 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(350)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Pagination/Pager.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(351)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-c3348e56/Pager.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 350 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Icon = __webpack_require__(134);
-	
-	var _Icon2 = _interopRequireDefault(_Icon);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  props: {
-	    simple: {
-	      type: Boolean,
-	      default: false
-	    },
-	    mini: {
-	      type: Boolean,
-	      default: false
-	    },
-	    pageRange: {
-	      type: Array,
-	      default: []
-	    },
-	    pageClick: {
-	      type: Function,
-	      default: function _default() {}
-	    }
-	  },
-	  computed: {
-	    wrapClasses: function wrapClasses() {
-	      return {
-	        'pagination-items': !this.mini && !this.simple,
-	        'simple-pagination-items': this.simple && !this.mini,
-	        'mini-pagination-items': !this.simple && this.mini
-	      };
-	    }
-	  },
-	  components: {
-	    Icon: _Icon2.default
-	  }
-	};
-	// </script>
-
-	/* generated by vue-loader */
-	// <template>
-	//     <ul :class="wrapClasses">
-	//         <li v-for="page in pageRange" @click="pageClick(page.num)" :class="{
-	//         'current':(page.className==='current'),
-	//     'pagination-item':true,
-	//         'pagination-item-prev':(page.className==='prev'),
-	//         'pagination-item-next':(page.className==='next'),
-	//         'pagination-item-disabled':(page.className==='disabled'),
-	//         'pagination-item-ellipsis':(page.className==='ellipsis'),
-	//         'pagination-item-slash':(page.className==='slash')}" >
-	//         <span v-if="page.className!='prev' && page.className!='next'">
-	//           {{page.text}}
-	//         </span>
-	//         <icon v-if="page.className==='prev'" type="prev" size="12" color="#666" ></icon>
-	//         <icon v-if="page.className==='next'" type="next" size="12" color="#666"></icon>
-	//         <icon v-if="page.className==='disabled' && page.icon==='prev'" type="prev" size="12" color="#e6e6e6"></icon>
-	//       <icon v-if="page.className==='disabled' && page.icon==='next'" type="next" size="12" color="#e6e6e6"></icon>
-	//         </li>
-	//     </ul>
-	// </template>
-	//
-	// <script>
-
-/***/ },
-/* 351 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<ul :class=\"wrapClasses\">\n    <li v-for=\"page in pageRange\" @click=\"pageClick(page.num)\" :class=\"{\n    'current':(page.className==='current'),\n'pagination-item':true,\n    'pagination-item-prev':(page.className==='prev'),\n    'pagination-item-next':(page.className==='next'),\n    'pagination-item-disabled':(page.className==='disabled'),\n    'pagination-item-ellipsis':(page.className==='ellipsis'),\n    'pagination-item-slash':(page.className==='slash')}\" >\n    <span v-if=\"page.className!='prev' && page.className!='next'\">\n      {{page.text}}\n    </span>\n    <icon v-if=\"page.className==='prev'\" type=\"prev\" size=\"12\" color=\"#666\" ></icon>\n    <icon v-if=\"page.className==='next'\" type=\"next\" size=\"12\" color=\"#666\"></icon>\n    <icon v-if=\"page.className==='disabled' && page.icon==='prev'\" type=\"prev\" size=\"12\" color=\"#e6e6e6\"></icon>\n  <icon v-if=\"page.className==='disabled' && page.icon==='next'\" type=\"next\" size=\"12\" color=\"#e6e6e6\"></icon>\n    </li>\n</ul>\n";
-
-/***/ },
-/* 352 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(353)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Pagination/Options.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(354)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-4c7b53b0/Options.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 353 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Select = __webpack_require__(221);
-	
-	var _Select2 = _interopRequireDefault(_Select);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var vOption = _Select2.default.Option; // <template>
-	//     <div v-if="showSizeChanger" class="pagination-selector">
-	//         <v-select :value="''+defaultSize">
-	//             <v-option value="10">10 条/页</v-option>
-	//             <v-option value="20">20 条/页</v-option>
-	//             <v-option value="30">30 条/页</v-option>
-	//             <v-option value="40">40 条/页</v-option>
-	//         </v-select>
-	//         <div class="pagination-totalpage">共{{ total }}条数据</div>
-	//     </div>
-	// </template>
-	//
-	// <script>
-	
-	
-	exports.default = {
-	  props: {
-	    total: {
-	      type: Number
-	    },
-	    defaultSize: {
-	      type: Number
-	    },
-	    showSizeChanger: {
-	      type: Boolean
-	    }
-	  },
-	  components: {
-	    vSelect: _Select2.default, vOption: vOption
-	  },
-	
-	  events: {
-	    change: function change(data) {
-	      this.$dispatch('pagination-size-change', data);
-	      return true;
-	    }
-	  }
-	};
-	// </script>
-
-	/* generated by vue-loader */
-
-/***/ },
-/* 354 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div v-if=\"showSizeChanger\" class=\"pagination-selector\">\n    <v-select :value=\"''+defaultSize\">\n        <v-option value=\"10\">10 条/页</v-option>\n        <v-option value=\"20\">20 条/页</v-option>\n        <v-option value=\"30\">30 条/页</v-option>\n        <v-option value=\"40\">40 条/页</v-option>\n    </v-select>\n    <div class=\"pagination-totalpage\">共{{ total }}条数据</div>\n</div>\n";
-
-/***/ },
-/* 355 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"pagination\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"defaultSize\" :show-size-changer=\"showSizeChanger\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
-
-/***/ },
-/* 356 */
+/* 359 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<header class=\"navbar navbar-top bs-docs-nav\" id=\"top\" role=\"banner\">\n  <v-row class=\"container\">\n    <v-col span=\"5\">\n      <h1><a href=\"components.html\">ATUI</a></h1>\n    </v-col>\n    <v-col span=\"25\">\n      <v-menu mode=\"horizontal\">\n        <menu-item><a href=\"components.html\">组件</a></menu-item>\n        <menu-item><a href=\"widgets.html\">widgets(业务组件)</a></menu-item>\n        <menu-item><a href=\"filters.html\">filters(数据过滤器)</a></menu-item>\n        <menu-item><a href=\"http://gitlab.alibaba-inc.com/aliqin/atui/\">GitLab</a></menu-item>\n        <menu-item><a href=\"http://ued.aliqin.alibaba.net/webcompon/\">视觉稿</a></menu-item>\n      </v-menu>\n    </v-col>\n  </v-row>\n</header>\n<ul class=\"themes\" id=\"J_header\">\n  <li v-for=\"theme in themes\" :class=\"{active:theme.active}\" :style=\"{backgroundColor:theme.color}\" @click=\"changeTheme(theme.csslink,$event)\" :title=\"theme.name\">\n  </li>\n</ul>\n";
 
 /***/ },
-/* 357 */,
-/* 358 */,
-/* 359 */,
 /* 360 */,
 /* 361 */,
 /* 362 */,
@@ -10767,11 +10942,14 @@
 /* 421 */,
 /* 422 */,
 /* 423 */,
-/* 424 */
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(425)
+	__vue_template__ = __webpack_require__(428)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10781,7 +10959,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-46d115bf/container.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/docs/example/container.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10790,15 +10968,12 @@
 	})()}
 
 /***/ },
-/* 425 */
+/* 428 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"container bs-docs-container\">\n  <div class=\"row\">\n      <slot></slot>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"container bs-docs-container\">\n  <div class=\"atui-row\">\n      <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 426 */,
-/* 427 */,
-/* 428 */,
 /* 429 */,
 /* 430 */,
 /* 431 */,
@@ -10848,16 +11023,19 @@
 /* 475 */,
 /* 476 */,
 /* 477 */,
-/* 478 */
+/* 478 */,
+/* 479 */,
+/* 480 */,
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(479)
+	__vue_script__ = __webpack_require__(482)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(482)
+	__vue_template__ = __webpack_require__(485)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10867,7 +11045,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-970fe148/phoneNumberDocs.vue"
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/docs/example/filters/phoneNumberDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10876,7 +11054,7 @@
 	})()}
 
 /***/ },
-/* 479 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10885,7 +11063,7 @@
 	  value: true
 	});
 	
-	__webpack_require__(480);
+	__webpack_require__(483);
 	
 	exports.default = {
 	  data: function data() {
@@ -10914,12 +11092,12 @@
 	// <script>
 
 /***/ },
-/* 480 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _phoneNumber = __webpack_require__(481);
+	var _phoneNumber = __webpack_require__(484);
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -10930,7 +11108,7 @@
 	module.exports = {};
 
 /***/ },
-/* 481 */
+/* 484 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10957,41 +11135,41 @@
 	};
 
 /***/ },
-/* 482 */
+/* 485 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phonenumber\">\n    <h3 class=\"page-header\"><a href=\"#phonenumber\" class=\"anchor\">手机号码格式化 phonenumber</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phoneNumber}}</div>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"text\" v-model=\"number\" />\n<div>{{number | phoneNumber}}</div>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
-/* 483 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(484);
-	__webpack_require__(485);
-	__webpack_require__(486);
-
-/***/ },
-/* 484 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 485 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 486 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
+	__webpack_require__(487);
+	__webpack_require__(488);
+	__webpack_require__(489);
 
 /***/ },
 /* 487 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 488 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 489 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 490 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -11090,19 +11268,19 @@
 			insertBefore: function (inside, before, insert, root) {
 				root = root || _.languages;
 				var grammar = root[inside];
-	
+				
 				if (arguments.length == 2) {
 					insert = arguments[1];
-	
+					
 					for (var newToken in insert) {
 						if (insert.hasOwnProperty(newToken)) {
 							grammar[newToken] = insert[newToken];
 						}
 					}
-	
+					
 					return grammar;
 				}
-	
+				
 				var ret = {};
 	
 				for (var token in grammar) {
@@ -11122,7 +11300,7 @@
 						ret[token] = grammar[token];
 					}
 				}
-	
+				
 				// Update references in other language definitions
 				_.languages.DFS(_.languages, function(key, value) {
 					if (value === root[inside] && key != inside) {
@@ -11153,19 +11331,12 @@
 			}
 		},
 		plugins: {},
-	
+		
 		highlightAll: function(async, callback) {
-			var env = {
-				callback: callback,
-				selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
-			};
-	
-			_.hooks.run("before-highlightall", env);
-	
-			var elements = env.elements || document.querySelectorAll(env.selector);
+			var elements = document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');
 	
 			for (var i=0, element; element = elements[i++];) {
-				_.highlightElement(element, async === true, env.callback);
+				_.highlightElement(element, async === true, callback);
 			}
 		},
 	
@@ -11178,7 +11349,7 @@
 			}
 	
 			if (parent) {
-				language = (parent.className.match(lang) || [,''])[1].toLowerCase();
+				language = (parent.className.match(lang) || [,''])[1];
 				grammar = _.languages[language];
 			}
 	
@@ -11201,9 +11372,7 @@
 				code: code
 			};
 	
-			_.hooks.run('before-sanity-check', env);
-	
-			if (!env.code || !env.grammar) {
+			if (!code || !grammar) {
 				_.hooks.run('complete', env);
 				return;
 			}
@@ -11277,7 +11446,6 @@
 					var pattern = patterns[j],
 						inside = pattern.inside,
 						lookbehind = !!pattern.lookbehind,
-						greedy = !!pattern.greedy,
 						lookbehindLength = 0,
 						alias = pattern.alias;
 	
@@ -11298,76 +11466,36 @@
 	
 						pattern.lastIndex = 0;
 	
-						var match = pattern.exec(str),
-						    delNum = 1;
+						var match = pattern.exec(str);
 	
-						// Greedy patterns can override/remove up to two previously matched tokens
-						if (!match && greedy && i != strarr.length - 1) {
-							// Reconstruct the original text using the next two tokens
-							var nextToken = strarr[i + 1].matchedStr || strarr[i + 1],
-							    combStr = str + nextToken;
-	
-							if (i < strarr.length - 2) {
-								combStr += strarr[i + 2].matchedStr || strarr[i + 2];
+						if (match) {
+							if(lookbehind) {
+								lookbehindLength = match[1].length;
 							}
 	
-							// Try the pattern again on the reconstructed text
-							pattern.lastIndex = 0;
-							match = pattern.exec(combStr);
-							if (!match) {
-								continue;
+							var from = match.index - 1 + lookbehindLength,
+								match = match[0].slice(lookbehindLength),
+								len = match.length,
+								to = from + len,
+								before = str.slice(0, from + 1),
+								after = str.slice(to + 1);
+	
+							var args = [i, 1];
+	
+							if (before) {
+								args.push(before);
 							}
 	
-							var from = match.index + (lookbehind ? match[1].length : 0);
-							// To be a valid candidate, the new match has to start inside of str
-							if (from >= str.length) {
-								continue;
+							var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias);
+	
+							args.push(wrapped);
+	
+							if (after) {
+								args.push(after);
 							}
-							var to = match.index + match[0].length,
-							    len = str.length + nextToken.length;
 	
-							// Number of tokens to delete and replace with the new match
-							delNum = 3;
-	
-							if (to <= len) {
-								if (strarr[i + 1].greedy) {
-									continue;
-								}
-								delNum = 2;
-								combStr = combStr.slice(0, len);
-							}
-							str = combStr;
+							Array.prototype.splice.apply(strarr, args);
 						}
-	
-						if (!match) {
-							continue;
-						}
-	
-						if(lookbehind) {
-							lookbehindLength = match[1].length;
-						}
-	
-						var from = match.index + lookbehindLength,
-						    match = match[0].slice(lookbehindLength),
-						    to = from + match.length,
-						    before = str.slice(0, from),
-						    after = str.slice(to);
-	
-						var args = [i, delNum];
-	
-						if (before) {
-							args.push(before);
-						}
-	
-						var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);
-	
-						args.push(wrapped);
-	
-						if (after) {
-							args.push(after);
-						}
-	
-						Array.prototype.splice.apply(strarr, args);
 					}
 				}
 			}
@@ -11400,13 +11528,10 @@
 		}
 	};
 	
-	var Token = _.Token = function(type, content, alias, matchedStr, greedy) {
+	var Token = _.Token = function(type, content, alias) {
 		this.type = type;
 		this.content = content;
 		this.alias = alias;
-		// Copy of the full string this token was created from
-		this.matchedStr = matchedStr || null;
-		this.greedy = !!greedy;
 	};
 	
 	Token.stringify = function(o, language, parent) {
@@ -11479,12 +11604,7 @@
 		_.filename = script.src;
 	
 		if (document.addEventListener && !script.hasAttribute('data-manual')) {
-			if(document.readyState !== "loading") {
-				requestAnimationFrame(_.highlightAll, 0);
-			}
-			else {
-				document.addEventListener('DOMContentLoaded', _.highlightAll);
-			}
+			document.addEventListener('DOMContentLoaded', _.highlightAll);
 		}
 	}
 	
@@ -11622,10 +11742,7 @@
 				lookbehind: true
 			}
 		],
-		'string': {
-			pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
-			greedy: true
-		},
+		'string': /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
 		'class-name': {
 			pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,
 			lookbehind: true,
@@ -11656,15 +11773,13 @@
 	Prism.languages.insertBefore('javascript', 'keyword', {
 		'regex': {
 			pattern: /(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
-			lookbehind: true,
-			greedy: true
+			lookbehind: true
 		}
 	});
 	
-	Prism.languages.insertBefore('javascript', 'string', {
+	Prism.languages.insertBefore('javascript', 'class-name', {
 		'template-string': {
-			pattern: /`(?:\\\\|\\?[^\\])*?`/,
-			greedy: true,
+			pattern: /`(?:\\`|\\?[^`])*`/,
 			inside: {
 				'interpolation': {
 					pattern: /\$\{[^}]+\}/,
@@ -11707,14 +11822,13 @@
 	
 			var Extensions = {
 				'js': 'javascript',
+				'html': 'markup',
+				'svg': 'markup',
+				'xml': 'markup',
 				'py': 'python',
 				'rb': 'ruby',
 				'ps1': 'powershell',
-				'psm1': 'powershell',
-				'sh': 'bash',
-				'bat': 'batch',
-				'h': 'c',
-				'tex': 'latex'
+				'psm1': 'powershell'
 			};
 	
 			if(Array.prototype.forEach) { // Check to prevent error in IE8
@@ -11779,7 +11893,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 488 */
+/* 491 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11803,7 +11917,7 @@
 	})();
 
 /***/ },
-/* 489 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11816,23 +11930,23 @@
 	
 	var _headerDocs2 = _interopRequireDefault(_headerDocs);
 	
-	var _Affix = __webpack_require__(282);
+	var _Affix = __webpack_require__(298);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _container = __webpack_require__(424);
+	var _container = __webpack_require__(427);
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _phoneNumberDocs = __webpack_require__(478);
+	var _phoneNumberDocs = __webpack_require__(481);
 	
 	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(483);
-	__webpack_require__(487);
-	__webpack_require__(488);
+	__webpack_require__(486);
+	__webpack_require__(490);
+	__webpack_require__(491);
 	
 	// filters
 	
