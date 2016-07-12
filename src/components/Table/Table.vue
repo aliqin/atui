@@ -1,10 +1,10 @@
 <!--suppress ALL-->
 <template>
-  <div :class="['atui-table','atui-table-'+size, {loading :loading}]">
+  <div :class="[prefixCls + '-table',prefixCls + '-table-'+ size, {loading: loading}]">
     <spin size="sm" v-if="loading"></spin>
     <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
   </table> -->
-    <div :class="['atui-table-container',{'atui-fixed-header':fixedHeader}]">
+    <div :class="[prefixCls + '-table-container',fixedHeader ? prefixCls + '-fixed-header': '']">
       <table>
         <colgroup>
           <col v-if="rowSelection"></col>
@@ -12,7 +12,7 @@
         </colgroup>
         <thead>
           <tr>
-            <th v-if="rowSelection" class="atui-table-selection-column">
+            <th v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
               <input v-if="dataSource && dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"
               />
             </th>
@@ -30,9 +30,9 @@
                     </label>
                     </li>
                   </ul>
-                  <div class="atui-table-filter-dropdown-btns">
-                    <a class="atui-table-filter-dropdown-link confirm" @click="onFilter(column)">确定</a>
-                    <a class="atui-table-filter-dropdown-link clear" @click="resetFilter(column)">重置</a>
+                  <div :class="[prefixCls + '-table-filter-dropdown-btns']">
+                    <a :class="[prefixCls + '-table-filter-dropdown-link confirm']" @click="onFilter(column)">确定</a>
+                    <a :class="[prefixCls + '-table-filter-dropdown-link','clear']" @click="resetFilter(column)">重置</a>
                   </div>
                 </div>
 
@@ -46,10 +46,10 @@
         </thead>
         <tbody>
           <tr v-if="!dataSource || !dataSource.length">
-            <td colspan="30" style="text-align: center;" class="vue-table-empty">{{noDataTip}}</td>
+            <td colspan="20" style="text-align: center;" :class="[prefixCls + 'table-empty']">{{noDataTip}}</td>
           </tr>
           <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
-            <td v-if="rowSelection" class="atui-table-selection-column">
+            <td v-if="rowSelection" :class="[prefixCls + 'table-selection-column']">
               <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
               />
             </td>
@@ -66,6 +66,9 @@
       </table>
     </div>
 
+    <div v-if="pagination" :class="[prefixCls + '-table-pagination']">
+      <pagination :total="pagination.total" v-ref:pager :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage"></pagination>
+    </div>
   </div>
 </template>
 
@@ -73,6 +76,8 @@
 import Icon from '../Icon/'
 import Dropdown from '../Dropdown/'
 import Spin from '../Spin/'
+import Pagination from '../Pagination/'
+
 export default {
   props: {
     pagination: Object,
@@ -99,12 +104,17 @@ export default {
     size: {
       type: String,
       default: 'default'
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   components: {
     Icon,
     Dropdown,
-    Spin
+    Spin,
+    Pagination
   },
   data () {
     this.compileTbody()
@@ -123,6 +133,13 @@ export default {
       filterOpened: false,
       filters: filters,
       sorter: {}
+    }
+  },
+  compiled () {
+    if (this.pagination) {
+      this.originDataSource = Array.concat(this.dataSource, [])
+      let pager = this.$refs.pager
+      this.dataSource = this.originDataSource.slice(pager.currPage || 0, pager.pageSize)
     }
   },
   computed: {
@@ -154,6 +171,7 @@ export default {
     dataSource: {
       handler (data) {
         let me = this
+
         me.compileTbody()
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
@@ -252,6 +270,10 @@ export default {
     resetFilter (column) {
       this.filters[column.dataIndex] = []
       this.onFilter(column)
+    },
+    changePage (pageNum) {
+      let pager = this.$refs.pager
+      this.dataSource = this.originDataSource.slice((pageNum - 1) * pager.pageSize, pageNum * pager.pageSize)
     },
     fixedHeaderAction () {
       if (this.fixedHeader) {

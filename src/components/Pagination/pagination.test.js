@@ -5,18 +5,15 @@ import Pagination from '../Pagination/'
 let vm = new Vue({
   template: `
       <div>
-        <pagination
-        :total-page.sync="total"
-        :curr-page.sync="current"
-        total="1000"
+        <pagination :curr-page="currPage"
+        :total="1000"
         show-jumper
+        :page-size="10"
         show-size-changer>
-        </pagination>
       </div>
       `,
   components: { Pagination },
   data: {
-    total: 100,
     current: 5
   }
 }).$mount()
