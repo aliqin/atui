@@ -5146,12 +5146,13 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div :class="{dropdown:true,open:open}">
+	//   <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
 	//     <slot></slot>
 	//     <slot name="dropdown-menu"></slot>
 	//   </div>
 	// </template>
-	// <script>
+	//
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    trigger: {
@@ -5162,6 +5163,10 @@
 	      type: Boolean,
 	      coerce: _coerceBoolean2.default,
 	      default: false
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  methods: {
@@ -5174,10 +5179,16 @@
 	    var me = this;
 	    var el = me.$el;
 	    var toggle = el.querySelector('[data-toggle="dropdown"]');
+	    var self = this;
+	
+	    console.log('me.$el', me.$el);
+	
 	    if (!toggle) {
 	      return;
 	    }
+	
 	    var event = me.trigger === 'click' ? 'click' : 'mouseenter';
+	
 	    toggle.addEventListener(event, function () {
 	      clearTimeout(me.timeout);
 	      me.open = true;
@@ -5189,8 +5200,15 @@
 	          me.open = false;
 	        }, 300);
 	      });
+	
+	      me.$el.addEventListener('mouseenter', function () {
+	        if (me.timeout) {
+	          clearTimeout(me.timeout);
+	          me.timeout = null;
+	        }
+	      });
 	    }
-	    var self = this;
+	
 	    this._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
 	      if (!el.contains(e.target)) {
 	        self.open = false;
@@ -5225,7 +5243,7 @@
 /* 221 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"{dropdown:true,open:open}\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
 
 /***/ },
 /* 222 */
@@ -8074,7 +8092,7 @@
 	// <template>
 	//   <div class="pagination">
 	//   <template v-if="totalPage > 1">
-	//     <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
+	//     <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger"></options>
 	//     <jumper
 	//         :quick-go="showJumper ? _handleChange.bind(this) : null"
 	//         :curr-page="currPage"
@@ -8416,7 +8434,7 @@
 /* 283 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"pagination\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"pageSize\" :show-size-changer=\"showSizeChanger\" @pagination-size-change=\"changePageSize\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
+	module.exports = "\n<div class=\"pagination\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"pageSize\" :show-size-changer=\"showSizeChanger\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
 
 /***/ },
 /* 284 */
@@ -9971,9 +9989,8 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <!--suppress ALL-->
 	// <template>
-	//   <div class="atui-steps">
+	//   <div :class="[prefixCls + '-steps']">
 	//     <slot></slot>
 	//   </div>
 	// </template>
@@ -9988,6 +10005,10 @@
 	    color: {
 	      type: String,
 	      default: '#ff7500'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  watch: {
@@ -10085,7 +10106,7 @@
 /* 328 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-steps\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-steps']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 329 */
@@ -10139,17 +10160,27 @@
 	    stepNumber: Number,
 	    lastStep: Boolean,
 	    tailWidth: String,
-	    color: String
+	    color: String,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	  computed: {
-	    wrapClasses: function wrapClasses() {
-	      return {
-	        'atui-step': true,
-	        'step-status-process': this.status === 'process',
-	        'step-status-finish': this.status === 'finish',
-	        'step-status-wait': this.status === 'wait',
-	        'step-item-last': this.lastStep
-	      };
+	    stepClassObj: function stepClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var status = this.status;
+	      var lastStep = this.lastStep;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-step'] = true;
+	      classObj[prefixCls + '-step-status-process'] = status === 'process';
+	      classObj[prefixCls + '-step-status-finish'] = status === 'finish';
+	      classObj[prefixCls + '-step-status-wait'] = status === 'wait';
+	      classObj[prefixCls + '-step-item-last'] = lastStep;
+	
+	      return classObj;
 	    }
 	  },
 	  components: {
@@ -10160,28 +10191,31 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div :class="wrapClasses" :style="{'width': tailWidth}">
-	//    <div v-if="!lastStep" class="step-tail">
+	//   <div :class="stepClassObj" :style="{'width': tailWidth}">
+	//    <div v-if="!lastStep"
+	//         :class="[prefixCls + '-step-tail']">
 	//      <i>
 	//       <i :style="{ backgroundColor: color }"></i>
 	//      </i>
 	//    </div>
-	//    <div class="step-head">
-	//      <div class="step-head-inner">
-	//       <span v-if="status !== 'finish'" class="step-icon"
+	//    <div :class="[prefixCls + '-step-head']">
+	//      <div :class="[prefixCls + '-step-head-inner']">
+	//       <span v-if="status !== 'finish'"
+	//             :class="[prefixCls + '-step-icon']"
 	//         :style="{
 	//          borderColor: status==='process'?color: '#e9e9e9',
 	//          backgroundColor: status==='process'?color: '#fff'}">
 	//         {{ stepNumber }}
 	//       </span>
-	//       <span v-else class="step-finish-icon">
+	//       <span v-else
+	//             :class="[prefixCls + '-step-finish-icon']">
 	//         <icon type="success" size="28" :color="color"></icon>
 	//       </span>
 	//      </div>
 	//    </div>
-	//    <div class="step-main">
-	//      <div class="step-main-title">{{ title }}</div>
-	//      <div class="step-main-description">{{ description }}</div>
+	//    <div :class="[prefixCls + '-step-main']">
+	//      <div :class="[prefixCls + '-step-main-title']">{{ title }}</div>
+	//      <div :class="[prefixCls + '-step-main-description']">{{ description }}</div>
 	//    </div>
 	//   </div>
 	// </template>
@@ -10192,7 +10226,7 @@
 /* 331 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"wrapClasses\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\" class=\"step-tail\">\n   <i>\n    <i :style=\"{ backgroundColor: color }\"></i>\n   </i>\n </div>\n <div class=\"step-head\">\n   <div class=\"step-head-inner\">\n    <span v-if=\"status !== 'finish'\" class=\"step-icon\"\n      :style=\"{\n       borderColor: status==='process'?color: '#e9e9e9',\n       backgroundColor: status==='process'?color: '#fff'}\">\n      {{ stepNumber }}\n    </span>\n    <span v-else class=\"step-finish-icon\">\n      <icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n    </span>\n   </div>\n </div>\n <div class=\"step-main\">\n   <div class=\"step-main-title\">{{ title }}</div>\n   <div class=\"step-main-description\">{{ description }}</div>\n </div>\n</div>\n";
+	module.exports = "\n<div :class=\"stepClassObj\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\"\n      :class=\"[prefixCls + '-step-tail']\">\n   <i>\n    <i :style=\"{ backgroundColor: color }\"></i>\n   </i>\n </div>\n <div :class=\"[prefixCls + '-step-head']\">\n   <div :class=\"[prefixCls + '-step-head-inner']\">\n    <span v-if=\"status !== 'finish'\"\n          :class=\"[prefixCls + '-step-icon']\"\n      :style=\"{\n       borderColor: status==='process'?color: '#e9e9e9',\n       backgroundColor: status==='process'?color: '#fff'}\">\n      {{ stepNumber }}\n    </span>\n    <span v-else\n          :class=\"[prefixCls + '-step-finish-icon']\">\n      <icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n    </span>\n   </div>\n </div>\n <div :class=\"[prefixCls + '-step-main']\">\n   <div :class=\"[prefixCls + '-step-main-title']\">{{ title }}</div>\n   <div :class=\"[prefixCls + '-step-main-description']\">{{ description }}</div>\n </div>\n</div>\n";
 
 /***/ },
 /* 332 */
@@ -10518,6 +10552,9 @@
 	        Vue.util.addClass(item, className);
 	      }, false);
 	    });
+	  },
+	  beforeDestroy: function beforeDestroy() {
+	    // TOTO
 	  }
 	};
 	// </script>
@@ -10604,7 +10641,7 @@
 	//   <li :class="['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]">
 	//     <div class="atui-menu-submenu-title" @click="triggerSub">
 	//       {{title}}
-	//       <icon type="up" :class="['atui-menu-icon']"></icon>
+	//       <icon type="down" :class="['atui-menu-icon']"></icon>
 	//     </div>
 	//     <ul :class="['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]" v-show="show" transition="slide">
 	//       <slot></slot>
@@ -10618,7 +10655,7 @@
 /* 345 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li :class=\"['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]\">\n  <div class=\"atui-menu-submenu-title\" @click=\"triggerSub\">\n    {{title}}\n    <icon type=\"up\" :class=\"['atui-menu-icon']\"></icon>\n  </div>\n  <ul :class=\"['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]\" v-show=\"show\" transition=\"slide\">\n    <slot></slot>\n  </ul>\n</li>\n";
+	module.exports = "\n<li :class=\"['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]\">\n  <div class=\"atui-menu-submenu-title\" @click=\"triggerSub\">\n    {{title}}\n    <icon type=\"down\" :class=\"['atui-menu-icon']\"></icon>\n  </div>\n  <ul :class=\"['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]\" v-show=\"show\" transition=\"slide\">\n    <slot></slot>\n  </ul>\n</li>\n";
 
 /***/ },
 /* 346 */

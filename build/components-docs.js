@@ -5448,12 +5448,13 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div :class="{dropdown:true,open:open}">
+	//   <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
 	//     <slot></slot>
 	//     <slot name="dropdown-menu"></slot>
 	//   </div>
 	// </template>
-	// <script>
+	//
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    trigger: {
@@ -5464,6 +5465,10 @@
 	      type: Boolean,
 	      coerce: _coerceBoolean2.default,
 	      default: false
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  methods: {
@@ -5476,10 +5481,16 @@
 	    var me = this;
 	    var el = me.$el;
 	    var toggle = el.querySelector('[data-toggle="dropdown"]');
+	    var self = this;
+	
+	    console.log('me.$el', me.$el);
+	
 	    if (!toggle) {
 	      return;
 	    }
+	
 	    var event = me.trigger === 'click' ? 'click' : 'mouseenter';
+	
 	    toggle.addEventListener(event, function () {
 	      clearTimeout(me.timeout);
 	      me.open = true;
@@ -5491,8 +5502,15 @@
 	          me.open = false;
 	        }, 300);
 	      });
+	
+	      me.$el.addEventListener('mouseenter', function () {
+	        if (me.timeout) {
+	          clearTimeout(me.timeout);
+	          me.timeout = null;
+	        }
+	      });
 	    }
-	    var self = this;
+	
 	    this._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
 	      if (!el.contains(e.target)) {
 	        self.open = false;
@@ -5527,7 +5545,7 @@
 /* 221 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"{dropdown:true,open:open}\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
 
 /***/ },
 /* 222 */
@@ -8376,7 +8394,7 @@
 	// <template>
 	//   <div class="pagination">
 	//   <template v-if="totalPage > 1">
-	//     <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
+	//     <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger"></options>
 	//     <jumper
 	//         :quick-go="showJumper ? _handleChange.bind(this) : null"
 	//         :curr-page="currPage"
@@ -8718,7 +8736,7 @@
 /* 283 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"pagination\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"pageSize\" :show-size-changer=\"showSizeChanger\" @pagination-size-change=\"changePageSize\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
+	module.exports = "\n<div class=\"pagination\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"pageSize\" :show-size-changer=\"showSizeChanger\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
 
 /***/ },
 /* 284 */
@@ -10273,9 +10291,8 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <!--suppress ALL-->
 	// <template>
-	//   <div class="atui-steps">
+	//   <div :class="[prefixCls + '-steps']">
 	//     <slot></slot>
 	//   </div>
 	// </template>
@@ -10290,6 +10307,10 @@
 	    color: {
 	      type: String,
 	      default: '#ff7500'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  watch: {
@@ -10387,7 +10408,7 @@
 /* 328 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-steps\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-steps']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 329 */
@@ -10441,17 +10462,27 @@
 	    stepNumber: Number,
 	    lastStep: Boolean,
 	    tailWidth: String,
-	    color: String
+	    color: String,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	  computed: {
-	    wrapClasses: function wrapClasses() {
-	      return {
-	        'atui-step': true,
-	        'step-status-process': this.status === 'process',
-	        'step-status-finish': this.status === 'finish',
-	        'step-status-wait': this.status === 'wait',
-	        'step-item-last': this.lastStep
-	      };
+	    stepClassObj: function stepClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var status = this.status;
+	      var lastStep = this.lastStep;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-step'] = true;
+	      classObj[prefixCls + '-step-status-process'] = status === 'process';
+	      classObj[prefixCls + '-step-status-finish'] = status === 'finish';
+	      classObj[prefixCls + '-step-status-wait'] = status === 'wait';
+	      classObj[prefixCls + '-step-item-last'] = lastStep;
+	
+	      return classObj;
 	    }
 	  },
 	  components: {
@@ -10462,28 +10493,31 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div :class="wrapClasses" :style="{'width': tailWidth}">
-	//    <div v-if="!lastStep" class="step-tail">
+	//   <div :class="stepClassObj" :style="{'width': tailWidth}">
+	//    <div v-if="!lastStep"
+	//         :class="[prefixCls + '-step-tail']">
 	//      <i>
 	//       <i :style="{ backgroundColor: color }"></i>
 	//      </i>
 	//    </div>
-	//    <div class="step-head">
-	//      <div class="step-head-inner">
-	//       <span v-if="status !== 'finish'" class="step-icon"
+	//    <div :class="[prefixCls + '-step-head']">
+	//      <div :class="[prefixCls + '-step-head-inner']">
+	//       <span v-if="status !== 'finish'"
+	//             :class="[prefixCls + '-step-icon']"
 	//         :style="{
 	//          borderColor: status==='process'?color: '#e9e9e9',
 	//          backgroundColor: status==='process'?color: '#fff'}">
 	//         {{ stepNumber }}
 	//       </span>
-	//       <span v-else class="step-finish-icon">
+	//       <span v-else
+	//             :class="[prefixCls + '-step-finish-icon']">
 	//         <icon type="success" size="28" :color="color"></icon>
 	//       </span>
 	//      </div>
 	//    </div>
-	//    <div class="step-main">
-	//      <div class="step-main-title">{{ title }}</div>
-	//      <div class="step-main-description">{{ description }}</div>
+	//    <div :class="[prefixCls + '-step-main']">
+	//      <div :class="[prefixCls + '-step-main-title']">{{ title }}</div>
+	//      <div :class="[prefixCls + '-step-main-description']">{{ description }}</div>
 	//    </div>
 	//   </div>
 	// </template>
@@ -10494,7 +10528,7 @@
 /* 331 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"wrapClasses\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\" class=\"step-tail\">\n   <i>\n    <i :style=\"{ backgroundColor: color }\"></i>\n   </i>\n </div>\n <div class=\"step-head\">\n   <div class=\"step-head-inner\">\n    <span v-if=\"status !== 'finish'\" class=\"step-icon\"\n      :style=\"{\n       borderColor: status==='process'?color: '#e9e9e9',\n       backgroundColor: status==='process'?color: '#fff'}\">\n      {{ stepNumber }}\n    </span>\n    <span v-else class=\"step-finish-icon\">\n      <icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n    </span>\n   </div>\n </div>\n <div class=\"step-main\">\n   <div class=\"step-main-title\">{{ title }}</div>\n   <div class=\"step-main-description\">{{ description }}</div>\n </div>\n</div>\n";
+	module.exports = "\n<div :class=\"stepClassObj\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\"\n      :class=\"[prefixCls + '-step-tail']\">\n   <i>\n    <i :style=\"{ backgroundColor: color }\"></i>\n   </i>\n </div>\n <div :class=\"[prefixCls + '-step-head']\">\n   <div :class=\"[prefixCls + '-step-head-inner']\">\n    <span v-if=\"status !== 'finish'\"\n          :class=\"[prefixCls + '-step-icon']\"\n      :style=\"{\n       borderColor: status==='process'?color: '#e9e9e9',\n       backgroundColor: status==='process'?color: '#fff'}\">\n      {{ stepNumber }}\n    </span>\n    <span v-else\n          :class=\"[prefixCls + '-step-finish-icon']\">\n      <icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n    </span>\n   </div>\n </div>\n <div :class=\"[prefixCls + '-step-main']\">\n   <div :class=\"[prefixCls + '-step-main-title']\">{{ title }}</div>\n   <div :class=\"[prefixCls + '-step-main-description']\">{{ description }}</div>\n </div>\n</div>\n";
 
 /***/ },
 /* 332 */
@@ -10820,6 +10854,9 @@
 	        Vue.util.addClass(item, className);
 	      }, false);
 	    });
+	  },
+	  beforeDestroy: function beforeDestroy() {
+	    // TOTO
 	  }
 	};
 	// </script>
@@ -10906,7 +10943,7 @@
 	//   <li :class="['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]">
 	//     <div class="atui-menu-submenu-title" @click="triggerSub">
 	//       {{title}}
-	//       <icon type="up" :class="['atui-menu-icon']"></icon>
+	//       <icon type="down" :class="['atui-menu-icon']"></icon>
 	//     </div>
 	//     <ul :class="['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]" v-show="show" transition="slide">
 	//       <slot></slot>
@@ -10920,7 +10957,7 @@
 /* 345 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li :class=\"['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]\">\n  <div class=\"atui-menu-submenu-title\" @click=\"triggerSub\">\n    {{title}}\n    <icon type=\"up\" :class=\"['atui-menu-icon']\"></icon>\n  </div>\n  <ul :class=\"['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]\" v-show=\"show\" transition=\"slide\">\n    <slot></slot>\n  </ul>\n</li>\n";
+	module.exports = "\n<li :class=\"['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]\">\n  <div class=\"atui-menu-submenu-title\" @click=\"triggerSub\">\n    {{title}}\n    <icon type=\"down\" :class=\"['atui-menu-icon']\"></icon>\n  </div>\n  <ul :class=\"['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]\" v-show=\"show\" transition=\"slide\">\n    <slot></slot>\n  </ul>\n</li>\n";
 
 /***/ },
 /* 346 */
@@ -13159,35 +13196,35 @@
 	//         <div data-toggle="dropdown">
 	//           点击显示菜单 <icon type="down"></icon>
 	//         </div>
-	//         <ul name="dropdown-menu" class="dropdown-menu">
+	//         <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//           <li><a>选项一</a></li>
 	//           <li><a>选项二</a></li>
 	//           <li><a>选项三</a></li>
-	//           <li role="separator" class="divider"></li>
+	//           <li role="separator" class="atui-dropdown-divider"></li>
 	//           <li><a href="#">其它</a></li>
 	//         </ul>
 	//       </dropdown>
 	//       <dropdown>
-	//         <button type="button" class="btn" data-toggle="dropdown">
+	//         <button type="button" class="atui-btn" data-toggle="dropdown">
 	//           点击显示菜单 <icon type="down"></icon>
 	//         </button>
-	//         <ul name="dropdown-menu" class="dropdown-menu">
+	//         <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//           <li><a>选项一</a></li>
 	//           <li><a>选项二</a></li>
 	//           <li><a>选项三</a></li>
-	//           <li role="separator" class="divider"></li>
+	//           <li role="separator" class="atui-dropdown-divider"></li>
 	//           <li><a href="#">其它</a></li>
 	//         </ul>
 	//       </dropdown>
 	//       <dropdown>
-	//         <button type="button" class="btn btn-primary" data-toggle="dropdown">
+	//         <button type="button" class="atui-btn atui-btn-primary" data-toggle="dropdown">
 	//           点击显示菜单 <icon type="down"></icon>
 	//         </button>
-	//         <ul name="dropdown-menu" class="dropdown-menu">
+	//         <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//           <li><a href="#">选项一</a></li>
 	//           <li><a href="#">选项二</a></li>
 	//           <li><a href="#">选项三</a></li>
-	//           <li role="separator" class="divider"></li>
+	//           <li role="separator" class="atui-dropdown-divider"></li>
 	//           <li><a href="#">其它</a></li>
 	//         </ul>
 	//       </dropdown>
@@ -13195,11 +13232,11 @@
 	//         <a href="#" data-toggle="dropdown">
 	//           鼠标移上来显示 <icon type="down"></icon>
 	//         </a>
-	//         <ul name="dropdown-menu" class="dropdown-menu">
+	//         <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//           <li><a href="#">选项一</a></li>
 	//           <li><a href="#">选项二</a></li>
 	//           <li><a href="#">选项三</a></li>
-	//           <li role="separator" class="divider"></li>
+	//           <li role="separator" class="atui-dropdown-divider"></li>
 	//           <li><a href="#">其它</a></li>
 	//         </ul>
 	//       </dropdown>
@@ -13209,35 +13246,35 @@
 	//   <div data-toggle="dropdown">
 	//     点击显示菜单 <icon type="down"></icon>
 	//   </div>
-	//   <ul name="dropdown-menu" class="dropdown-menu">
+	//   <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//     <li><a>选项一</a></li>
 	//     <li><a>选项二</a></li>
 	//     <li><a>选项三</a></li>
-	//     <li role="separator" class="divider"></li>
+	//     <li role="separator" class="atui-dropdown-divider"></li>
 	//     <li><a href="#">其它</a></li>
 	//   </ul>
 	// </dropdown>
 	// <dropdown>
-	//   <button type="button" class="btn" data-toggle="dropdown">
+	//   <button type="button" class="atui-btn" data-toggle="dropdown">
 	//     点击显示菜单 <icon type="down"></icon>
 	//   </button>
-	//   <ul name="dropdown-menu" class="dropdown-menu">
+	//   <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//     <li><a>选项一</a></li>
 	//     <li><a>选项二</a></li>
 	//     <li><a>选项三</a></li>
-	//     <li role="separator" class="divider"></li>
+	//     <li role="separator" class="atui-dropdown-divider"></li>
 	//     <li><a href="#">其它</a></li>
 	//   </ul>
 	// </dropdown>
 	// <dropdown>
-	//   <button type="button" class="btn btn-primary" data-toggle="dropdown">
+	//   <button type="button" class="atui-btn atui-btn-primary" data-toggle="dropdown">
 	//     点击显示菜单 <icon type="down"></icon>
 	//   </button>
-	//   <ul name="dropdown-menu" class="dropdown-menu">
+	//   <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//     <li><a href="#">选项一</a></li>
 	//     <li><a href="#">选项二</a></li>
 	//     <li><a href="#">选项三</a></li>
-	//     <li role="separator" class="divider"></li>
+	//     <li role="separator" class="atui-dropdown-divider"></li>
 	//     <li><a href="#">其它</a></li>
 	//   </ul>
 	// </dropdown>
@@ -13245,11 +13282,11 @@
 	//   <a href="#" data-toggle="dropdown">
 	//     鼠标移上来显示 <icon type="down"></icon>
 	//   </a>
-	//   <ul name="dropdown-menu" class="dropdown-menu">
+	//   <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//     <li><a href="#">选项一</a></li>
 	//     <li><a href="#">选项二</a></li>
 	//     <li><a href="#">选项三</a></li>
-	//     <li role="separator" class="divider"></li>
+	//     <li role="separator" class="atui-dropdown-divider"></li>
 	//     <li><a href="#">其它</a></li>
 	//   </ul>
 	// </dropdown>
@@ -13284,7 +13321,7 @@
 /* 392 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"dropdown\">\n    <h3 class=\"page-header\"><a href=\"#dropdown\" class=\"anchor\">Dropdown 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <dropdown>\n        <div data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </div>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"btn\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown trigger=\"hover\">\n        <a href=\"#\" data-toggle=\"dropdown\">\n          鼠标移上来显示 <icon type=\"down\"></icon>\n        </a>\n        <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<dropdown>\n  <div data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </div>\n  <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"btn\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown trigger=\"hover\">\n  <a href=\"#\" data-toggle=\"dropdown\">\n    鼠标移上来显示 <icon type=\"down\"></icon>\n  </a>\n  <ul name=\"dropdown-menu\" class=\"dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n</script></code></pre>\n\n\n<h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code> one of <code>click</code> <code>hover</code></td>\n          <td>触发类型</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"dropdown\">\n    <h3 class=\"page-header\"><a href=\"#dropdown\" class=\"anchor\">Dropdown 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <dropdown>\n        <div data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </div>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"atui-btn\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"atui-btn atui-btn-primary\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown trigger=\"hover\">\n        <a href=\"#\" data-toggle=\"dropdown\">\n          鼠标移上来显示 <icon type=\"down\"></icon>\n        </a>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<dropdown>\n  <div data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </div>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"atui-btn\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"atui-btn atui-btn-primary\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown trigger=\"hover\">\n  <a href=\"#\" data-toggle=\"dropdown\">\n    鼠标移上来显示 <icon type=\"down\"></icon>\n  </a>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n</script></code></pre>\n\n\n<h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code> one of <code>click</code> <code>hover</code></td>\n          <td>触发类型</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 393 */
@@ -17469,7 +17506,7 @@
 	//             <v-step title="待运行" description="这里是多信息的描述啊"></v-step>
 	//         </v-steps>
 	//         <br>
-	//         <button type="button" class="btn default primary" @click="_next">next</button>
+	//         <button type="button" class="atui-btn atui-btn-default atui-btn-primary" @click="_next">next</button>
 	//     </div>
 	// <pre>
 	// <code class="language-markup"><script type="language-mark-up">
@@ -17596,7 +17633,7 @@
 /* 466 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"steps\">\n    <h3 class=\"page-header\"><a href=\"#steps\" class=\"anchor\">Steps 步骤条</a></h3>\n    <div class=\"bs-example\">\n        <h4 class=\"example-title\">基础型</h4>\n        <v-steps :current=\"current\" color=\"#00a0ff\">\n            <v-step title=\"已完成\" ></v-step>\n            <v-step title=\"进行中\"></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br><br>\n        <v-steps :current=\"current\" color=\"rgb(229, 46, 46)\">\n            <v-step title=\"已完成\" ></v-step>\n            <v-step title=\"进行中\"></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br>\n        <h4 class=\"example-title\">带文字描述</h4>\n        <v-steps :current=\"current\" >\n            <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n            <v-step title=\"进行中\"  description=\"这里是多信息的耶哦\"></v-step>\n            <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n            <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n        </v-steps>\n        <br>\n        <button type=\"button\" class=\"btn default primary\" @click=\"_next\">next</button>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-steps :current=\"current\" color=\"#00a0ff\">\n  <v-step title=\"已完成\" ></v-step>\n  <v-step title=\"进行中\"></v-step>\n  <v-step title=\"有一个待运行\"></v-step>\n  <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\" color=\"rgb(229, 46, 46)\">\n    <v-step title=\"已完成\" ></v-step>\n    <v-step title=\"进行中\"></v-step>\n    <v-step title=\"有一个待运行\"></v-step>\n    <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\">\n  <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n  <v-step title=\"进行中\"  description=\"这里是多信息的耶哦\"></v-step>\n  <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n  <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n</v-steps>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <h4 style=\"margin: 20px 0;\">vSteps</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>current</td>\n        <td>Number</td>\n        <td>0</td>\n        <td>当前正在执行的步骤数，可以通过status属性覆盖状态</td>\n      </tr>\n      <tr>\n        <td>color</td>\n        <td>String</td>\n        <td></td>\n        <td>指定步骤条的样式颜色</td>\n      </tr>\n    </tbody>\n  </table>\n  <h4 style=\"margin: 20px 0;\">vSteps vStep</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>title</td>\n        <td>String</td>\n        <td>无</td>\n        <td>标题</td>\n      </tr>\n      <tr>\n        <td>description</td>\n        <td>String</td>\n        <td>无</td>\n        <td>步骤的详情描述</td>\n      </tr>\n      <tr>\n        <td>status</td>\n        <td>String</td>\n        <td>无</td>\n        <td>执行step的状态，当不设置此属性时，父组件Steps会自动根据current来设置对应status,（可选值wait, process, finish）</td>\n      </tr>\n    </tbody>\n  </table>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"steps\">\n    <h3 class=\"page-header\"><a href=\"#steps\" class=\"anchor\">Steps 步骤条</a></h3>\n    <div class=\"bs-example\">\n        <h4 class=\"example-title\">基础型</h4>\n        <v-steps :current=\"current\" color=\"#00a0ff\">\n            <v-step title=\"已完成\" ></v-step>\n            <v-step title=\"进行中\"></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br><br>\n        <v-steps :current=\"current\" color=\"rgb(229, 46, 46)\">\n            <v-step title=\"已完成\" ></v-step>\n            <v-step title=\"进行中\"></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br>\n        <h4 class=\"example-title\">带文字描述</h4>\n        <v-steps :current=\"current\" >\n            <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n            <v-step title=\"进行中\"  description=\"这里是多信息的耶哦\"></v-step>\n            <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n            <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n        </v-steps>\n        <br>\n        <button type=\"button\" class=\"atui-btn atui-btn-default atui-btn-primary\" @click=\"_next\">next</button>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-steps :current=\"current\" color=\"#00a0ff\">\n  <v-step title=\"已完成\" ></v-step>\n  <v-step title=\"进行中\"></v-step>\n  <v-step title=\"有一个待运行\"></v-step>\n  <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\" color=\"rgb(229, 46, 46)\">\n    <v-step title=\"已完成\" ></v-step>\n    <v-step title=\"进行中\"></v-step>\n    <v-step title=\"有一个待运行\"></v-step>\n    <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\">\n  <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n  <v-step title=\"进行中\"  description=\"这里是多信息的耶哦\"></v-step>\n  <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n  <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n</v-steps>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <h4 style=\"margin: 20px 0;\">vSteps</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>current</td>\n        <td>Number</td>\n        <td>0</td>\n        <td>当前正在执行的步骤数，可以通过status属性覆盖状态</td>\n      </tr>\n      <tr>\n        <td>color</td>\n        <td>String</td>\n        <td></td>\n        <td>指定步骤条的样式颜色</td>\n      </tr>\n    </tbody>\n  </table>\n  <h4 style=\"margin: 20px 0;\">vSteps vStep</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>title</td>\n        <td>String</td>\n        <td>无</td>\n        <td>标题</td>\n      </tr>\n      <tr>\n        <td>description</td>\n        <td>String</td>\n        <td>无</td>\n        <td>步骤的详情描述</td>\n      </tr>\n      <tr>\n        <td>status</td>\n        <td>String</td>\n        <td>无</td>\n        <td>执行step的状态，当不设置此属性时，父组件Steps会自动根据current来设置对应status,（可选值wait, process, finish）</td>\n      </tr>\n    </tbody>\n  </table>\n";
 
 /***/ },
 /* 467 */
