@@ -1,10 +1,11 @@
 <template>
-  <div :class="{dropdown:true,open:open}">
+  <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
     <slot></slot>
     <slot name="dropdown-menu"></slot>
   </div>
 </template>
-<script>
+
+<script type="text/babel">
   import EventListener from '../utils/EventListener'
   import coerceBoolean from '../utils/coerceBoolean.js'
 
@@ -18,6 +19,10 @@
         type: Boolean,
         coerce: coerceBoolean,
         default: false
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     methods: {
@@ -30,10 +35,16 @@
       const me = this
       const el = me.$el
       const toggle = el.querySelector('[data-toggle="dropdown"]')
+      let self = this
+
+      console.log('me.$el', me.$el)
+
       if (!toggle) {
         return
       }
+
       const event = me.trigger === 'click' ? 'click' : 'mouseenter'
+
       toggle.addEventListener(event, () => {
         clearTimeout(me.timeout)
         me.open = true
@@ -45,8 +56,15 @@
             me.open = false
           }, 300)
         })
+
+        me.$el.addEventListener('mouseenter', () => {
+          if (me.timeout) {
+            clearTimeout(me.timeout)
+            me.timeout = null
+          }
+        })
       }
-      let self = this
+
       this._closeEvent = EventListener.listen(window, 'click', (e) => {
         if (!el.contains(e.target)) {
           self.open = false
