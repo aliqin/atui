@@ -1,10 +1,15 @@
+@import "themes/common";
 
-.atui-step {
+// Step
+// --------------------------------------------------
+@prefix-cls-step: e("@{prefix-cls}-step");
+
+.@{prefix-cls-step} {
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
 
-	.step-tail {
+	.@{prefix-cls-step}-tail {
 		position: absolute;
 		left: 0;
 		top: 13px;
@@ -40,15 +45,15 @@
 	    }
 	}
 
-	.step-head, .step-main {
+	.@{prefix-cls-step}-head, .@{prefix-cls-step}-main {
 		position: relative;
 		display: inline-block;
 		vertical-align: top;
 	}
 
-	.step-head {
+	.@{prefix-cls-step}-head {
 		background-color: #fff;
-		.step-head-inner {
+		.@{prefix-cls-step}-head-inner {
 			display: block;
 			width: 26px;
 			height: 26px;
@@ -59,7 +64,7 @@
 			margin-right: 8px;
 			// border: 1px solid @process-tail-color;
 			transition: background-color 0.3s ease, border-color 0.3s ease;
-			> .step-icon {
+			> .@{prefix-cls-step}-icon {
 					display: inline-block;
 					width: 26px;
 					height: 26px;
@@ -72,7 +77,7 @@
 			    text-align: center;
 			}
 
-			.step-finish-icon {
+			.@{prefix-cls-step}-finish-icon {
 				display: inline-block;
 				width: 26px;
 				height: 26px;
@@ -83,43 +88,43 @@
 		}
 	}
 
-	.step-main {
+	.@{prefix-cls-step}-main {
 		margin-top: 3px;
 		margin-left: -5px;
     color: #999;
-		.step-main-title {
+		.@{prefix-cls-step}-main-title {
 			display: inline-block;
 			padding-right: 10px;
 			margin-bottom: 4px;
 			background-color: #fff;
 			font-size: 16px;
 		}
-		.step-main-description {
+		.@{prefix-cls-step}-main-description {
 			max-width: 100px;
 			font-size: 12px;
 		}
 	}
 
-	&.step-status-process {
-		.step-head-inner {
-			> .step-icon {
+	&.@{prefix-cls-step}-status-process {
+		.@{prefix-cls-step}-head-inner {
+			> .@{prefix-cls-step}-icon {
 				color: #fff;
 				border-color: @process-icon-color;
 				background-color: @process-icon-bg-color;
 			}
 		}
-    .step-main {
+    .@{prefix-cls-step}-main {
       color: #333;
     }
 	}
 
-	&.step-status-finish {
-		.step-head-inner {
-			> .step-icon {
+	&.@{prefix-cls-step}-status-finish {
+		.@{prefix-cls-step}-head-inner {
+			> .@{prefix-cls-step}-icon {
 				color: @finish-icon-color;
 			}
 		}
-		.step-tail {
+		.@{prefix-cls-step}-tail {
 			> i {
 				background: @process-tail-color;
 				// &:after {
@@ -142,18 +147,18 @@
     }
 	}
 
-	&.step-status-wait {
-		.step-head-inner {
-			> .step-icon {
+	&.@{prefix-cls-step}-status-wait {
+		.@{prefix-cls-step}-head-inner {
+			> .@{prefix-cls-step}-icon {
 				color: @wait-icon-color;
 			}
 		}
 	}
 
 	// 最后一个项目，将其title的padding设置为0
-	&.step-item-last {
-		.step-main {
-			.step-main-title {
+	&.@{prefix-cls-step}-item-last {
+		.@{prefix-cls-step}-main {
+			.@{prefix-cls-step}-main-title {
 				padding: 0;
 			}
 		}

@@ -1,6 +1,5 @@
-<!--suppress ALL-->
 <template>
-  <div class="atui-steps">
+  <div :class="[prefixCls + '-steps']">
     <slot></slot>
   </div>
 </template>
@@ -15,6 +14,10 @@
       color: {
         type: String,
         default: '#ff7500'
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     watch: {
