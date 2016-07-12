@@ -4197,10 +4197,11 @@ button.atui-close {
   outline: none;
   margin-bottom: 0;
   padding-left: 0;
+  list-style: none;
   z-index: 1080;
+  color: #666;
   background: #fff;
   line-height: 46px;
-  list-style: none;
 }
 .atui-menu-hidden {
   display: none;
@@ -4214,9 +4215,6 @@ button.atui-close {
   font-size: 12px;
   line-height: 1.5;
   padding: 8px 16px;
-}
-.atui-menu-sub {
-  list-style: none;
 }
 .atui-menu-item, .atui-menu-submenu, .atui-menu-submenu-title {
   -webkit-transform: translateZ(0);
@@ -4328,14 +4326,13 @@ button.atui-close {
 }
 .atui-menu-submenu {
   position: relative;
+  list-style: none;
 }
 .atui-menu-submenu > .atui-menu {
   background-color: #fff;
   border-radius: 4px;
 }
-.atui-menu-submenu-vertical > .atui-menu-submenu-title:after {
-  font-family: "anticon" !important;
-  font-style: normal;
+.atui-menu-submenu-vertical .atui-menu-icon {
   vertical-align: baseline;
   text-align: center;
   text-transform: none;
@@ -4345,14 +4342,22 @@ button.atui-close {
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease, -webkit-transform .3s ease;
-  content: "\E603";
   right: 16px;
-  -webkit-transform: rotate(270deg) scale(0.75);
-          transform: rotate(270deg) scale(0.75);
-}
-.atui-menu-submenu-open.atui-menu-submenu-inline > .atui-menu-submenu-title:after {
   -webkit-transform: rotate(180deg) scale(0.75);
           transform: rotate(180deg) scale(0.75);
+}
+.atui-menu-submenu-inline .atui-menu-icon {
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: none;
+  text-rendering: auto;
+  position: absolute;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  right: 16px;
+  top: 0;
 }
 .atui-menu-horizontal {
   border: 0;
@@ -4379,7 +4384,6 @@ button.atui-close {
 }
 .atui-menu-horizontal > .atui-menu-item > a:hover, .atui-menu-horizontal > .atui-menu-submenu > a:hover {
   color: #e52e2e;
-  text-decoration: none;
 }
 .atui-menu-horizontal:after {
   content: " ";
@@ -4419,6 +4423,55 @@ button.atui-close {
 }
 .atui-menu-sub.atui-menu-inline .atui-menu-item-group-title {
   padding-left: 32px;
+}
+.atui-menu-dark, .atui-menu-dark .atui-menu-sub {
+  color: #999;
+  background: #404040;
+}
+.atui-menu-dark .atui-menu-inline.atui-menu-sub {
+  background: #333;
+}
+.atui-menu-dark.atui-menu-horizontal {
+  border-bottom-color: #404040;
+}
+.atui-menu-dark.atui-menu-horizontal > .atui-menu-item, .atui-menu-dark.atui-menu-horizontal > .atui-menu-submenu {
+  border-color: #404040;
+  border-bottom: 0;
+  top: 0;
+}
+.atui-menu-dark.atui-menu-horizontal > .atui-menu-item:hover, .atui-menu-dark.atui-menu-horizontal > .atui-menu-item-active, .atui-menu-dark.atui-menu-horizontal > .atui-menu-item-selected, .atui-menu-dark.atui-menu-horizontal > .atui-menu-submenu:hover, .atui-menu-dark.atui-menu-horizontal > .atui-menu-submenu .atui-menu-submenu-title:hover, .atui-menu-dark.atui-menu-horizontal > .atui-menu-item:hover > a, .atui-menu-dark.atui-menu-horizontal > .atui-menu-item-active > a, .atui-menu-dark.atui-menu-horizontal > .atui-menu-item-selected > a, .atui-menu-dark.atui-menu-horizontal > .atui-menu-submenu:hover > a, .atui-menu-dark.atui-menu-horizontal > .atui-menu-submenu .atui-menu-submenu-title:hover > a {
+  color: #fff;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+.atui-menu-dark .atui-menu-item > a {
+  color: #999;
+}
+.atui-menu-dark .atui-menu-item > a:hover {
+  color: #fff;
+}
+.atui-menu-dark.atui-menu-inline, .atui-menu-dark.atui-menu-vertical {
+  border-right: 0;
+}
+.atui-menu-dark.atui-menu-inline .atui-menu-item, .atui-menu-dark.atui-menu-vertical .atui-menu-item {
+  border-right: 0;
+  margin-left: 0;
+  left: 0;
+}
+.atui-menu-dark.atui-menu-inline .atui-menu-item-selected {
+  border-right: 0;
+  background-color: #e52e2e;
+  color: #fff;
+}
+.atui-menu-dark.atui-menu-inline .atui-menu-item-selected > a, .atui-menu-dark.atui-menu-inline .atui-menu-item-selected > a:hover {
+  color: #fff;
+}
+.atui-menu-dark.atui-menu-vertical .atui-menu-item-selected > a, .atui-menu-dark.atui-menu-vertical .atui-menu-item-selected > a:hover {
+  color: #e52e2e;
+}
+.atui-menu-dark .atui-menu-item:hover, .atui-menu-dark .atui-menu-item-active, .atui-menu-dark .atui-menu-submenu-active, .atui-menu-dark .atui-menu-submenu-title:hover {
+  background-color: transparent;
+  color: #e52e2e;
 }
 .atui-tree {
   margin: 0;
