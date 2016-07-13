@@ -1,5 +1,7 @@
 <template>
-<div :class="[prefixCls + '-col-' + type + '-' + span]"><slot></slot></div>
+<div :class="[prefixCls + '-col-' + type + '-' + span]">
+  <slot></slot>
+</div>
 </template>
 
 <script>

@@ -50,8 +50,15 @@ export default {
     total () {
       this.getPageRange()
     },
-    pageSize () {
+    pageSize (pageSize) {
+      this.totalPage = Math.ceil(this.total / pageSize)
+      if (this.currPage > this.totalPage) {
+        this.currPage = this.totalPage
+      }
       this.getPageRange()
+      this.$nextTick(() => {
+        this.$dispatch('pagination-size-change', this.currPage, pageSize)
+      })
     },
     currPage () {
       this.getPageRange()
