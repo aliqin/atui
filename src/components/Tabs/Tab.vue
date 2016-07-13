@@ -1,5 +1,5 @@
 <template>
-  <div role="tabpanel" class="tab-pane"
+  <div role="tabpanel" :class="[prefixCls + 'tab-pane']"
       v-show="show"
       :transition="transition"
   >
@@ -16,6 +16,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   data () {

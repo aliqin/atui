@@ -1,6 +1,8 @@
-//
 // Navs
 // --------------------------------------------------
+@prefix-cls-nav: e("@{prefix-cls}-nav");
+@prefix-cls-tab: e("@{prefix-cls}-tab");
+
 @nav-link-padding:                          13px 30px;
 @nav-link-hover-bg:                         @gray-lighter;
 @nav-link-default-color:                    @primary-color;
@@ -35,7 +37,7 @@
 
 // Base class
 // --------------------------------------------------
-.nav {
+.@{prefix-cls-nav} {
   margin-bottom: 0;
   padding-left: 0; // Override default ul/ol
   list-style: none;
@@ -60,7 +62,7 @@
     }
 
     // Disabled state sets text to gray and nukes hover/tab effects
-    &.disabled > a {
+    &.@{prefix-cls-nav}-disabled > a {
       color: @nav-disabled-link-color;
 
       &:hover,
@@ -85,10 +87,10 @@
 
   // Nav dividers (deprecated with v3.0.1)
   //
-  // This should have been removed in v3 with the dropping of `.nav-list`, but
+  // This should have been removed in v3 with the dropping of `.@{prefix-cls-nav}-list`, but
   // we missed it. We don't currently support this anywhere, but in the interest
   // of maintaining backward compatibility in case you use it, it's deprecated.
-  .nav-divider {
+  .@{prefix-cls-nav}-divider {
     .nav-divider();
   }
 
@@ -103,9 +105,8 @@
 
 // Tabs
 // -------------------------
-
-.atui-tabsWrapper {
-    .tabs-header {
+.@{prefix-cls-tab}-wrapper {
+    .@{prefix-cls-tab}-header {
       position: relative;
       display: inline-block;
       vertical-align: middle;
@@ -115,7 +116,7 @@
       box-sizing: content-box;
     }
 
-    .arrow-next ,.arrow-prev {
+    .@{prefix-cls-tab}-arrow-next ,.@{prefix-cls-tab}-arrow-prev {
       position: absolute;
       top: -2px;
       z-index: 10;
@@ -128,19 +129,18 @@
       background-color: #fff;
     }
 
-    .arrow-prev {
+    .@{prefix-cls-tab}-arrow-prev {
       left: 0;
     }
 
-    .arrow-next {
+    .@{prefix-cls-tab}-arrow-next {
       right: 0;
     }
 
-
-.atui-nav-tabs {
+.@{prefix-cls-nav}-tab {
   border-bottom: 1px solid @nav-tabs-border-color;
 
-  &.atui-nav-small {
+  &.@{prefix-cls-nav}-small {
     font-size: 12px;
   }
 
@@ -161,7 +161,7 @@
     }
 
     // Active state, and its :hover to override normal :hover
-    &.active > a {
+    &.@{prefix-cls-nav}-active > a {
       &,
       &:hover,
       &:focus {
@@ -174,7 +174,7 @@
     }
   }
   // pulling this in mainly for less shorthand
-  &.nav-justified {
+  &.@{prefix-cls-nav}-justified {
     .nav-justified();
     .nav-tabs-justified();
   }
@@ -182,10 +182,10 @@
 
 // Base
 // -------------------------
-.atui-nav-base {
+.@{prefix-cls-nav}-base {
   border-bottom: 1px solid @nav-tabs-border-color;
 
-  &.atui-nav-small {
+  &.@{prefix-cls-nav}-small {
     font-size: 12px;
   }
 
@@ -207,7 +207,7 @@
       }
     }
 
-    &.disabled > a {
+    &.@{prefix-cls-nav}-disabled > a {
       color: @nav-disabled-link-color;
 
       &:hover,
@@ -221,7 +221,7 @@
     }
 
     // Active state, and its :hover to override normal :hover
-    &.active > a {
+    &.@{prefix-cls-nav}-active > a {
       &,
       &:hover,
       &:focus {
@@ -237,7 +237,7 @@
 
   }
   // pulling this in mainly for less shorthand
-  &.nav-justified {
+  &.@{prefix-cls-nav}-justified {
     .nav-justified();
     .nav-tabs-justified();
   }
@@ -247,7 +247,7 @@
 
 // Pills
 // -------------------------
-.nav-pills {
+.@{prefix-cls-nav}-pills {
   > li {
     float: left;
 
@@ -273,7 +273,7 @@
 
 
 // Stacked pills
-.nav-stacked {
+.@{prefix-cls-nav}-stacked {
   > li {
     float: none;
     + li {
@@ -290,7 +290,7 @@
 // Justified nav links
 // -------------------------
 
-.nav-justified {
+.nav-justified() {
   width: 100%;
 
   > li {
@@ -319,12 +319,12 @@
 
 // Move borders to anchors instead of bottom of list
 //
-// Mixin for adding on top the shared `.nav-justified` styles for our tabs
-.nav-tabs-justified {
+// Mixin for adding on top the shared `.@{prefix-cls-nav}-justified` styles for our tabs
+.nav-tabs-justified() {
   border-bottom: 0;
 
   > li > a {
-    // Override margin from .nav-tabs
+    // Override margin from .@{prefix-cls-nav}-tabs
     margin-right: 0;
     border-radius: @border-radius-base;
   }
@@ -352,7 +352,7 @@
 // -------------------------
 
 // Specific dropdowns
-.nav-tabs .dropdown-menu {
+.@{prefix-cls-nav}-tabs .@{prefix-cls}-dropdown-menu {
   // make dropdown border overlap tab border
   margin-top: -1px;
   // Remove the top rounded corners here since there is a hard edge above the menu

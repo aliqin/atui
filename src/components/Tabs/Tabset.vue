@@ -1,35 +1,29 @@
 <template>
-  <div class="atui-tabsWrapper">
-    <div class="tabs-header">
-      <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">
+  <div :class="[prefixCls + '-tab-wrapper']">
+    <div :class="[prefixCls + '-tab-header']">
+      <span v-if="renderData.length > showLen && showLen >= 3" :class="[prefixCls + '-tab-arrow-prev']" @click="prev">
         <icon v-if="prev_tabIndex==0" type="prev" size="12" color="#ccc" style="cursor: not-allowed"></icon>
         <icon v-else type="prev" size="12"></icon>
       </span>
-      <ul v-if="trigger=='click'" :class="wrapClasses" role="tablist" style="width: 99999px;">
+      <ul v-if="trigger=='click'" :class="listClassObj" role="tablist" style="width: 99999px;">
         <li v-for="r in renderData"
-            :class="{
-              'active': ($index === active),
-              'disabled': r.disabled
-            }"
+            :class="[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]"
             @click.prevent="handleTabListClick($index, r)"
             :disabled="r.disabled"
         >
             <a href="javascript:void(0);">{{{r.header}}}</a>
         </li>
       </ul>
-      <ul v-else :class="wrapClasses" role="tablist" style="width: 99999px;">
+      <ul v-else :class="listClassObj" role="tablist" style="width: 99999px;">
       <li v-for="r in renderData"
-            :class="{
-              'active': ($index === active),
-              'disabled': r.disabled
-            }"
+            :class="[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]"
             @mouseenter.prevent="handleTabListClick($index, r)"
             :disabled="r.disabled"
         >
             <a href="javascript:void(0);">{{{r.header}}}</a>
         </li>
       </ul>
-      <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next">
+      <span v-if="renderData.length > showLen && showLen >= 3" :class="[prefixCls + '-tab-arrow-next']" @click="next">
         <icon v-if="next_tabIndex == maxTabIndex" type="next" size="12" color="#ccc" style="cursor: not-allowed"></icon>
         <icon v-else type="next" size="12"></icon>
       </span>
@@ -43,8 +37,9 @@
 
 </template>
 
-<script>
+<script type="text/babel">
 import Icon from '../Icon/'
+
 export default {
   props: {
     effect: {
@@ -70,6 +65,10 @@ export default {
     size: {
       type: String,
       default: 'default'
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
 
@@ -90,13 +89,16 @@ export default {
     Icon
   },
   computed: {
-    wrapClasses () {
-      return {
-        'nav': true,
-        'atui-nav-tabs': !this.base,
-        'atui-nav-base': this.base,
-        'atui-nav-small': this.size === 'small'
-      }
+    listClassObj () {
+      let { prefixCls, base, size } = this
+      let classObj = {}
+
+      classObj[prefixCls + '-nav'] = true
+      classObj[prefixCls + '-nav-tab'] = !base
+      classObj[prefixCls + '-nav-base'] = base
+      classObj[prefixCls + '-nav-small'] = size === 'small'
+
+      return classObj
     }
   },
   methods: {
@@ -112,6 +114,8 @@ export default {
     },
     _handleMoveX (direction) {
       const totalLen = this.renderData.length
+      const prefixCls = this.prefixCls
+
       switch (direction) {
         case 'left':
           /**
@@ -132,13 +136,14 @@ export default {
           this.prev_tabIndex = this.next_tabIndex - (this.showLen - 1)
           break
       }
-      this.$el.querySelector('.nav').style.transform = 'translateX(-" + this.itemsWidth[this.prev_tabIndex].left + "px)'
+      this.$el.querySelector('.' + prefixCls + '-nav').style.transform = 'translateX(-" + this.itemsWidth[this.prev_tabIndex].left + "px)'
     },
     _handleTabWidth () {
       const self = this
       const dom = self.$el
-      const nav = dom.querySelector('.nav')
-      const tabsHeader = dom.querySelector('.tabs-header')
+      const prefixCls = self.prefixCls
+      const nav = dom.querySelector('.' + prefixCls + '-nav')
+      const tabsHeader = dom.querySelector('.' + prefixCls + '-tab-header')
       const list = nav.children
       const showlen = this.showLen
       const len = list.length
