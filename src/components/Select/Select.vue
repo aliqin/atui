@@ -1,19 +1,25 @@
 <template>
-  <div class="select-container" :class="{'atui-dropdown-open':show,disabled:disabled,multiple:multiple}">
-    <div :class="['select-toggle',{tags:tags}]" tabindex="1" @mousedown="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
-    >
+  <div :class="selectClassObj">
+    <div :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
+         tabindex="1"
+         @mousedown="toggleDropdown"
+         @keydown.up="selectUp"
+         @keydown.down="selectDown"
+         v-bind="{disabled: disabled}">
       <template v-if="!multiple">
-        <span class="select-placeholder" v-show="!value">{{placeholder}}</span>
-        <span class="btn-content">{{ showText }}</span>
-        <span :class="[{caret:true,'open':show}]"><icon :class="['atui-dropdown-icon',]" type="down" size="12"></icon></span>
+        <span v-show="!value"
+              :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>
+        <span :class="[prefixCls + '-select-btn-content']">{{ showText }}</span>
+        <span :class="[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]">
+          <icon :class="[prefixCls + '-dropdown-icon']" type="down" size="12"></icon></span>
       </template>
       <div v-else>
-        <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
+        <span :class="[prefixCls + '-select-placeholder']" v-show="showPlaceholder">{{placeholder}}</span>
         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
-        <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
+        <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
       </div>
     </div>
-    <div class="atui-dropdown-menu" v-show="show && options.length > 0" transition="slide">
+    <div :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0" transition="slide">
       <slot></slot>
       <div v-show="noResult" class="no-result">无结果</div>
       <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
@@ -21,7 +27,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
   import EventListener from '../utils/EventListener'
   import Icon from '../Icon/'
   import Tag from '../Tag/'
@@ -52,6 +58,10 @@
       },
       disabled: {
         type: Boolean
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     components: {
@@ -93,6 +103,17 @@
     computed: {
       showText () {
         return this.selectedOptions && this.selectedOptions[0] && this.selectedOptions[0].label
+      },
+      selectClassObj () {
+        let { prefixCls, show, disabled, multiple } = this
+        let classObj = {}
+
+        classObj[prefixCls + '-select-container'] = true
+        classObj[prefixCls + '-dropdown-open'] = show
+        classObj[prefixCls + '-select-disabled'] = disabled
+        classObj[prefixCls + '-select-multiple'] = multiple
+
+        return classObj
       }
     },
     watch: {

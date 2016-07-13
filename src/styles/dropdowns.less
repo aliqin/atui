@@ -1,5 +1,3 @@
-@import "themes/common";
-
 // Dropdown
 // --------------------------------------------------
 @prefix-cls-dropdown: e("@{prefix-cls}-dropdown");
@@ -51,7 +49,7 @@
   border: 1px solid #bfbfbf;
   border-radius: 4px;
 
-  > .option, > li > a {
+  > .@{prefix-cls-dropdown}-option, > li > a {
     cursor: pointer;
     display: block;
     padding: 3px 20px;
@@ -61,7 +59,7 @@
     color: @dropdown-link-color;
     white-space: nowrap;
 
-    &:hover, &:focus, &.active {
+    &:hover, &:focus, &.@{prefix-cls-dropdown}-option-active {
       text-decoration: none;
       background-color: @dropdown-link-hover-bg;
     }
@@ -69,7 +67,7 @@
 }
 
 // Active state
-.@{prefix-cls-dropdown}-menu > .chosen {
+.@{prefix-cls-dropdown}-menu > .@{prefix-cls-dropdown}-option-chosen {
   &, &:hover, &:focus {
     text-decoration: none;
     outline: 0;
@@ -80,7 +78,7 @@
 
 
 
-.@{prefix-cls-dropdown}-menu > .disabled {
+.@{prefix-cls-dropdown}-menu > .@{prefix-cls-dropdown}-option-disabled {
   &,
   // Nuke hover/focus effects
   &:hover,

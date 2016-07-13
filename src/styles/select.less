@@ -1,15 +1,19 @@
-.select-container {
+// Select
+// --------------------------------------------------
+@prefix-cls-select: e("@{prefix-cls}-select");
+
+.@{prefix-cls-select}-container {
   position: relative;
   display: inline-block;
 
-  &.disabled {
+  &.@{prefix-cls-select}-disabled {
     background: #f2f2f2;
     color: #ccc;
     border-color: #e6e6e6;
     cursor: not-allowed;
   }
 
-  .select-toggle {
+  .@{prefix-cls-select}-toggle {
     min-width: 100px;
     cursor: pointer;
     text-align: left;
@@ -44,10 +48,10 @@
     }
 
   }
-  .multiple .select-toggle {
+  .@{prefix-cls-select}-multiple .@{prefix-cls-select}-toggle {
     cursor: default;
   }
-  .select-placeholder {
+  .@{prefix-cls-select}-placeholder {
     color: #ccc;
     position: absolute;
     top: 50%;
@@ -58,19 +62,19 @@
     margin-top: -10px;
     cursor: default;
   }
-  .select-search-field {
+  .@{prefix-cls-select}-search-field {
     width: 10px;
     height: 20px;
     outline: 0;
     border: 0;
   }
-  .tags:focus {
+  .@{prefix-cls-select}-tags:focus {
     border-color: transparent;
     box-shadow: none;
   }
 }
 
-.caret {
+.@{prefix-cls-select}-caret {
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -78,7 +82,7 @@
   margin-top: -15px;
   right: 10px;
 
-  .iconfont {
+  .@{prefix-cls}-iconfont {
     color: #bfbfbf;
     display: inline-block;
     transition: all .3s ease;
