@@ -170,6 +170,11 @@ export default {
     dataSource: {
       handler (data) {
         let me = this
+        // if (me.pagination) {
+        //   me.originDataSource = Array.concat(this.dataSource, [])
+        //   let pager = me.$refs.pager
+        //   me.dataSource = me.originDataSource.slice(pager.currPage || 0, pager.pageSize)
+        // }
         me.compileTbody()
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
