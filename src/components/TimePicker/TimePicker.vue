@@ -1,20 +1,20 @@
 <template>
-  <div class="atui-time-picker">
-    <span class="atui-time-picker-toggler">
+  <div :class="[prefixCls + '-time-picker']">
+    <span :class="[prefixCls + '-time-picker-toggler']">
       <v-input v-el:picker-toggler readonly @click="toggleMenus" :value="value" :placeholder="placeholder"></v-input>
     </span>
-    <div v-el:picker-menus class="atui-time-picker-menus" v-show="show" transition="slide">
-      <div class="time-picker-panel">
-        <ul v-el:h class="time-hours" @mouseover="selection('H')">
+    <div v-el:picker-menus :class="[prefixCls + '-time-picker-menus']" v-show="show" transition="slide">
+      <div :class="[prefixCls + '-time-picker-panel']">
+        <ul v-el:h :class="time-hours" @mouseover="selection('H')">
           <li v-for="index in 24" v-if="disabledHours().indexOf(index) < 0" :class="{selected: hour === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
         </ul>
       </div>
-      <div class="time-picker-panel">
+      <div :class="[prefixCls + '-time-picker-panel']">
         <ul v-el:m class="time-minute" @mouseover="selection('M')">
           <li v-for="index in 59" v-if="disabledMinutes().indexOf(index) < 0" :class="{selected: minute === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
         </ul>
       </div>
-      <div class="time-picker-panel" @mouseover="selection('S')">
+      <div :class="[prefixCls + '-time-picker-panel']" @mouseover="selection('S')">
         <ul v-el:s class="time-seconds">
           <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0" :class="{selected: second === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
         </ul>
@@ -22,10 +22,11 @@
     </div>
   </div>
 </template>
-<script>
+<script type="text/babel">
   import EventListener from '../utils/EventListener'
   import Input from '../Input'
   import Selection from './selection'
+
   const scrollTo = (element, to, duration) => {
     const requestAnimationFrame = window.requestAnimationFrame || function () {
       return setTimeout(arguments[0], 10)
@@ -74,6 +75,10 @@
         default () {
           return []
         }
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     filters: {
