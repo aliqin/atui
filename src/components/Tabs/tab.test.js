@@ -33,6 +33,6 @@ let vm = new Vue({
 }).$mount()
 describe('Tabs', () => {
   it('Tabs组件基础渲染', () => {
-    expect(vm.$el.querySelectorAll('.tabs-header ul li').length).to.equal(3)
+    expect(vm.$el.querySelectorAll('.atui-tab-header ul li').length).to.equal(3)
   })
 })
