@@ -3,10 +3,10 @@
 
 [![ci status][ci-image]][ci-url] [![line coverage][line-coverage-image]][ci-url] [![branch coverage][branch-coverage-image]][ci-url]
 
-[ci-image]: http://cise.alibaba-inc.com/task/317013/status.svg
-[ci-url]: http://cise.alibaba-inc.com/task/317013
-[line-coverage-image]: http://cise.alibaba-inc.com/task/317013/ut_line_coverage.svg
-[branch-coverage-image]: http://cise.alibaba-inc.com/task/317013/ut_branch_coverage.svg
+[ci-image]: http://cise.alibaba-inc.com/task/295950/status.svg
+[ci-url]: http://cise.alibaba-inc.com/task/335097
+[line-coverage-image]: http://cise.alibaba-inc.com/task/335097/ut_line_coverage.svg
+[branch-coverage-image]: http://cise.alibaba-inc.com/task/335097/ut_branch_coverage.svg
 
 <p align="center"></a></p>
 
