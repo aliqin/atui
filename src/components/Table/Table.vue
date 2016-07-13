@@ -79,7 +79,7 @@ import Pagination from '../Pagination/'
 
 export default {
   props: {
-    pagination: [Object, Boolean],
+    pagination: Object,
     dataSource: {
       type: Array,
       default () {
