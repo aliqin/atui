@@ -17,7 +17,7 @@
               />
             </th>
             <th v-for="column in columns" :width="column.width">
-              {{column['title']}}
+              {{{column['title']}}}
               <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
                 <div data-toggle="dropdown" @click="filterOpened = true">
                   <icon type="filter" size="12"></icon>
@@ -38,8 +38,8 @@
 
               </dropdown>
               <div v-if="dataSource && dataSource.length && column.sorter" class="table-sorter">
-                <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
-                <icon type="down" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
+                <icon type="caretup" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
+                <icon type="caretdown" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
               </div>
             </th>
           </tr>
