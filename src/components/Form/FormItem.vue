@@ -1,5 +1,5 @@
 <template>
-<div class="form-item" :class="classObj">
+<v-col :span="itemCol" :class="['form-item', classObj]">
   <v-col :span="labelCol" type="sm">
     <label v-if="label" class="form-label">
       <span v-if="isRequired" class="required-icon">*</span>
@@ -18,7 +18,7 @@
     </div>
     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
   </v-col>
-</div>
+</v-col>
 </template>
 <script>
   import Layout from '../Layout/'
@@ -52,7 +52,11 @@
         default: ''
       },
       // 配合validateStatus属性使用，是否展示校验状态图标
-      hasIcon: Boolean
+      hasIcon: Boolean,
+      prefixCls: {
+        type: String,
+        default: 'atui'
+      }
     },
 
     computed: {
@@ -62,7 +66,6 @@
           'has-error': this.validStatus === 'error',
           'has-success': this.validStatus === 'success'
         }
-        obj['col-lg-' + this.itemCol] = true
         return obj
       },
       isRequired () {
