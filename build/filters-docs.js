@@ -1974,7 +1974,9 @@
 	  value: true
 	});
 	// <template>
-	// <div :class="[prefixCls + '-col-' + type + '-' + span]"><slot></slot></div>
+	// <div :class="[prefixCls + '-col-' + type + '-' + span]">
+	//   <slot></slot>
+	// </div>
 	// </template>
 	//
 	// <script>
@@ -2002,7 +2004,7 @@
 /* 151 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-col-' + type + '-' + span]\"><slot></slot></div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-col-' + type + '-' + span]\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 152 */
@@ -2059,7 +2061,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	// <div class="form-item" :class="classObj">
+	// <v-col :span="itemCol" :class="['form-item', classObj]">
 	//   <v-col :span="labelCol" type="sm">
 	//     <label v-if="label" class="form-label">
 	//       <span v-if="isRequired" class="required-icon">*</span>
@@ -2078,7 +2080,7 @@
 	//     </div>
 	//     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
 	//   </v-col>
-	// </div>
+	// </v-col>
 	// </template>
 	// <script>
 	
@@ -2111,7 +2113,11 @@
 	      default: ''
 	    },
 	    // 配合validateStatus属性使用，是否展示校验状态图标
-	    hasIcon: Boolean
+	    hasIcon: Boolean,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	
 	  computed: {
@@ -2121,7 +2127,6 @@
 	        'has-error': this.validStatus === 'error',
 	        'has-success': this.validStatus === 'success'
 	      };
-	      obj['col-lg-' + this.itemCol] = true;
 	      return obj;
 	    },
 	    isRequired: function isRequired() {
@@ -2148,7 +2153,7 @@
 /* 155 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"form-item\" :class=\"classObj\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\" type=\"sm\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</div>\n";
+	module.exports = "\n<v-col :span=\"itemCol\" :class=\"['form-item', classObj]\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\" type=\"sm\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</v-col>\n";
 
 /***/ },
 /* 156 */
@@ -7373,7 +7378,7 @@
 	// <script type="text/babel">
 	exports.default = {
 	  props: {
-	    pagination: [Object, Boolean],
+	    pagination: Object,
 	    dataSource: {
 	      type: Array,
 	      default: function _default() {
@@ -10592,7 +10597,10 @@
 	  },
 	  ready: function ready() {
 	    var me = this;
-	    me.$el.querySelectorAll('.' + me.prefixCls + '-menu-item').forEach(function (item) {
+	    var items = me.$el.querySelectorAll('.' + me.prefixCls + '-menu-item');
+	
+	    var _loop = function _loop(i) {
+	      var item = items[i];
 	      item.addEventListener('click', function () {
 	        var className = me.prefixCls + '-menu-selected';
 	        var selectedItem = me.$el.querySelector('.' + className);
@@ -10601,10 +10609,14 @@
 	        }
 	        Vue.util.addClass(item, className);
 	      }, false);
-	    });
+	    };
+	
+	    for (var i = 0; i < items.length; i++) {
+	      _loop(i);
+	    }
 	  },
 	  beforeDestroy: function beforeDestroy() {
-	    // TOTO
+	    // TOTO GC
 	  }
 	};
 	// </script>
