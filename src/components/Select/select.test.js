@@ -32,12 +32,12 @@ describe('Select', () => {
   }).$mount()
 
   it('Select组件基础渲染', () => {
-    expect(vm.$el.querySelectorAll('.j-basic .option').length).to.equal(7)
+    expect(vm.$el.querySelectorAll('.j-basic .atui-dropdown-option').length).to.equal(7)
     expect(vm.$el.querySelectorAll('.j-basic span').length).to.equal(3)
   })
 
   it('Select组件多选使用', () => {
-    expect(vm.$el.querySelectorAll('.j-multiple .select-search-field').length).to.equal(1)
+    expect(vm.$el.querySelectorAll('.j-multiple .atui-select-search-field').length).to.equal(1)
   })
 
   it('mousedown事件的处理方法调用', () => {
