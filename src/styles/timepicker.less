@@ -1,4 +1,8 @@
-.atui-time-picker {
+// TimePicker
+// --------------------------------------------------
+@prefix-cls-time-picker: e("@{prefix-cls}-time-picker");
+
+.@{prefix-cls-time-picker} {
   position: relative;
   display: inline-block;
   &-toggler {
@@ -10,7 +14,7 @@
   }
 }
 
-.atui-time-picker-menus {
+.@{prefix-cls-time-picker}-menus {
   z-index: 10010;
   position: absolute;
   outline: none;
@@ -27,7 +31,7 @@
   overflow: hidden;
 }
 
-.atui-time-picker-menus .time-picker-panel {
+.@{prefix-cls-time-picker}-menus .@{prefix-cls-time-picker}-panel {
   float: left;
   font-size: 12px;
   border: 1px solid #e9e9e9;
@@ -45,7 +49,7 @@
   }
 }
 
-.atui-time-picker-menus .time-picker-panel > ul {
+.@{prefix-cls-time-picker}-menus .@{prefix-cls-time-picker}-panel > ul {
   list-style: none;
   box-sizing: border-box;
   margin: 0;
