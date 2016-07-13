@@ -1560,7 +1560,7 @@ pre code {
   padding: 12px 15px;
   color: #666;
 }
-.atui-table th .iconfont {
+.atui-table th .atui-iconfont {
   cursor: pointer;
 }
 .atui-table th .icon-filter {
@@ -1650,6 +1650,11 @@ pre code {
 }
 .atui-table-filter-dropdown-link.clear {
   float: right;
+}
+.atui-table:after {
+  clear: both;
+  content: '';
+  display: block;
 }
 .fade-enter {
   -webkit-animation: fadeIn 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -2077,11 +2082,12 @@ input[type="radio"][disabled]:checked:after {
   display: inline-block;
   vertical-align: middle;
 }
-.atui-dropdown .atui-iconfont {
+.atui-dropdown .atui-icon {
   font-size: 12px !important;
 }
 .hover-trigger:hover .atui-dropdown-menu {
   display: block;
+  margin: 0;
 }
 .atui-dropdown-menu {
   position: absolute;
@@ -2131,7 +2137,7 @@ input[type="radio"][disabled]:checked:after {
 .atui-dropdown-open > .atui-dropdown-menu {
   display: block;
 }
-.atui-dropdown-open .atui-iconfont {
+.atui-dropdown-open .atui-dropdown-icon {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -2209,7 +2215,7 @@ input[type="radio"][disabled]:checked:after {
   margin-top: -15px;
   right: 10px;
 }
-.caret .iconfont {
+.caret .atui-iconfont {
   color: #bfbfbf;
   display: inline-block;
   -webkit-transition: all .3s ease;
@@ -2514,36 +2520,36 @@ input[type="radio"][disabled]:checked:after {
 .atui-breadcrumbs span:last-child .atui-breadcrumb-slash {
   display: none;
 }
-.pagination {
+.atui-pagination {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
 }
-.pagination .pagination-selector {
+.atui-pagination .atui-pagination-selector {
   float: left;
   display: inline-block;
   vertical-align: middle;
   margin: 0 30px 0 0;
 }
-.pagination .pagination-selector .pagination-totalpage {
+.atui-pagination .atui-pagination-selector .atui-pagination-totalpage {
   display: inline-block;
   height: 34px;
   line-height: 34px;
   vertical-align: top;
 }
-.pagination .pagination-jump {
+.atui-pagination .atui-pagination-jump {
   float: right;
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
   font-size: 12px;
 }
-.pagination .pagination-jump .input-jumper-wrap {
+.atui-pagination .atui-pagination-jump .atui-pagination-jumper-wrap {
   display: inline-block;
   vertical-align: middle;
   padding-top: 1px;
 }
-.pagination .pagination-jump .input-jumper-wrap .input-jumper {
+.atui-pagination .atui-pagination-jump .atui-pagination-jumper-wrap .atui-pagination-input-jumper {
   width: 38px;
   border: 1px solid #d9d9d9;
   background: #fff;
@@ -2551,19 +2557,19 @@ input[type="radio"][disabled]:checked:after {
   height: 28px;
   outline: none;
 }
-.pagination .pagination-jump .input-jumper-wrap .mini-input-jumper {
+.atui-pagination .atui-pagination-jump .atui-pagination-jumper-wrap .atui-pagination-mini-input {
   width: 28px;
   height: 21px;
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   outline: none;
 }
-.pagination .pagination-items {
+.atui-pagination .atui-pagination-items {
   float: right;
   padding: 0;
   margin-top: 2px;
 }
-.pagination .pagination-items > li.pagination-item {
+.atui-pagination .atui-pagination-items > li.atui-pagination-item {
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
   -webkit-user-select: none;
@@ -2585,20 +2591,20 @@ input[type="radio"][disabled]:checked:after {
   font-size: 12px;
   min-width: 28px;
 }
-.pagination .pagination-items > li.pagination-item:hover {
+.atui-pagination .atui-pagination-items > li.atui-pagination-item:hover {
   border: 1px solid #ffac66;
   color: #ffac66;
   text-decoration: none;
 }
-.pagination .pagination-items > li.pagination-item.current {
+.atui-pagination .atui-pagination-items > li.atui-pagination-item.atui-pagination-item-current {
   background-color: #ff7500;
   border: 1px solid #ff7500;
   color: #fff;
 }
-.pagination .pagination-items > li.pagination-item-prev, .pagination .pagination-items > li.pagination-item-next {
+.atui-pagination .atui-pagination-items > li.atui-pagination-item-prev, .atui-pagination .atui-pagination-items > li.atui-pagination-item-next {
   line-height: 2.2;
 }
-.pagination .pagination-items > li.pagination-item-ellipsis {
+.atui-pagination .atui-pagination-items > li.atui-pagination-item-ellipsis {
   border: 0;
   line-height: .8;
   padding: 0;
@@ -2606,24 +2612,24 @@ input[type="radio"][disabled]:checked:after {
   color: #999;
   font-size: 20px;
 }
-.pagination .pagination-items > li.pagination-item-ellipsis:hover {
+.atui-pagination .atui-pagination-items > li.atui-pagination-item-ellipsis:hover {
   border: 0;
 }
-.pagination .pagination-items > li.pagination-item-disabled {
+.atui-pagination .atui-pagination-items > li.atui-pagination-item-disabled {
   border-color: #e6e6e6;
   color: #e6e6e6;
 }
-.pagination .pagination-items > li.pagination-item-disabled:hover {
+.atui-pagination .atui-pagination-items > li.atui-pagination-item-disabled:hover {
   border-color: #e6e6e6;
   color: #e6e6e6;
   cursor: not-allowed;
 }
-.pagination .simple-pagination-items {
+.atui-pagination .atui-pagination-items-simple {
   float: right;
   padding: 0;
   margin-top: 2px;
 }
-.pagination .simple-pagination-items > li.pagination-item {
+.atui-pagination .atui-pagination-items-simple > li.atui-pagination-item {
   cursor: pointer;
   height: 30px;
   line-height: 30px;
@@ -2640,37 +2646,37 @@ input[type="radio"][disabled]:checked:after {
   font-size: 12px;
   min-width: 28px;
 }
-.pagination .simple-pagination-items > li.pagination-item:hover {
+.atui-pagination .atui-pagination-items-simple > li.atui-pagination-item:hover {
   color: #ffac66;
   text-decoration: none;
 }
-.pagination .simple-pagination-items > li.pagination-item.current {
+.atui-pagination .atui-pagination-items-simple > li.atui-pagination-item.current {
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   color: #666;
 }
-.pagination .simple-pagination-items > li.pagination-item-prev, .pagination .simple-pagination-items > li.pagination-item-next {
+.atui-pagination .atui-pagination-items-simple > li.atui-pagination-item-prev, .atui-pagination .atui-pagination-items-simple > li.atui-pagination-item-next {
   line-height: 2.2;
 }
-.pagination .simple-pagination-items > li.pagination-item-prev {
+.atui-pagination .atui-pagination-items-simple > li.atui-pagination-item-prev {
   margin-right: 6px;
 }
-.pagination .simple-pagination-items > li.pagination-item-slash {
+.atui-pagination .atui-pagination-items-simple > li.atui-pagination-item-slash {
   margin-left: 9px;
 }
-.pagination .simple-pagination-items > li.pagination-item-disabled {
+.atui-pagination .atui-pagination-items-simple > li.atui-pagination-item-disabled {
   color: #e6e6e6;
 }
-.pagination .simple-pagination-items > li.pagination-item-disabled:hover {
+.atui-pagination .atui-pagination-items-simple > li.atui-pagination-item-disabled:hover {
   color: #e6e6e6;
   cursor: not-allowed;
 }
-.pagination .mini-pagination-items {
+.atui-pagination .atui-pagination-items-mini {
   float: right;
   padding: 0;
   margin-top: 2px;
 }
-.pagination .mini-pagination-items > li.pagination-item {
+.atui-pagination .atui-pagination-items-mini > li.atui-pagination-item {
   cursor: pointer;
   height: 22px;
   line-height: 20px;
@@ -2689,33 +2695,33 @@ input[type="radio"][disabled]:checked:after {
   font-size: 12px;
   min-width: 23px;
 }
-.pagination .mini-pagination-items > li.pagination-item:hover {
+.atui-pagination .atui-pagination-items-mini > li.atui-pagination-item:hover {
   color: #ffac66;
   text-decoration: none;
 }
-.pagination .mini-pagination-items > li.pagination-item.current {
+.atui-pagination .atui-pagination-items-mini > li.atui-pagination-item.atui-pagination-item-current {
   background-color: #ff7500;
   border: 1px solid #ff7500;
   color: #fff;
 }
-.pagination .mini-pagination-items > li.pagination-item-prev, .pagination .mini-pagination-items > li.pagination-item-next {
+.atui-pagination .atui-pagination-items-mini > li.atui-pagination-item-prev, .atui-pagination .atui-pagination-items-mini > li.atui-pagination-item-next {
   line-height: 1.6;
 }
-.pagination .mini-pagination-items > li.pagination-item-ellipsis {
+.atui-pagination .atui-pagination-items-mini > li.atui-pagination-item-ellipsis {
   border: 0;
   line-height: 1.2;
   padding: 0;
   margin: 0;
   color: #999;
 }
-.pagination .mini-pagination-items > li.pagination-item-ellipsis:hover {
+.atui-pagination .atui-pagination-items-mini > li.atui-pagination-item-ellipsis:hover {
   border: 0;
 }
-.pagination .mini-pagination-items > li.pagination-item-disabled {
+.atui-pagination .atui-pagination-items-mini > li.atui-pagination-item-disabled {
   border-color: #e6e6e6;
   color: #e6e6e6;
 }
-.pagination .mini-pagination-items > li.pagination-item-disabled:hover {
+.atui-pagination .atui-pagination-items-mini > li.atui-pagination-item-disabled:hover {
   border-color: #e6e6e6;
   color: #e6e6e6;
   cursor: not-allowed;
@@ -3013,7 +3019,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-message-success .atui-message-link {
   color: #4d4d4d;
 }
-.atui-message-success .iconfont {
+.atui-message-success .atui-iconfont {
   color: #a5e5af;
   display: inline-block;
   margin-right: 3px;
@@ -3033,7 +3039,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-message-info .atui-message-link {
   color: #4d4d4d;
 }
-.atui-message-info .iconfont {
+.atui-message-info .atui-iconfont {
   color: #ace0fa;
   display: inline-block;
   margin-right: 3px;
@@ -3053,7 +3059,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-message-warning .atui-message-link {
   color: #4d4d4d;
 }
-.atui-message-warning .iconfont {
+.atui-message-warning .atui-iconfont {
   color: #ffd399;
   display: inline-block;
   margin-right: 3px;
@@ -3073,7 +3079,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-message-danger .atui-message-link {
   color: #4d4d4d;
 }
-.atui-message-danger .iconfont {
+.atui-message-danger .atui-iconfont {
   color: #ffbdbd;
   display: inline-block;
   margin-right: 3px;
@@ -3093,7 +3099,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-message-error .atui-message-link {
   color: #4d4d4d;
 }
-.atui-message-error .iconfont {
+.atui-message-error .atui-iconfont {
   color: #ffbdbd;
   display: inline-block;
   margin-right: 3px;
@@ -3113,7 +3119,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 .atui-message-help .atui-message-link {
   color: #4d4d4d;
 }
-.atui-message-help .iconfont {
+.atui-message-help .atui-iconfont {
   color: #e1c2ff;
   display: inline-block;
   margin-right: 3px;
@@ -4600,12 +4606,12 @@ button.atui-close {
 .atui-searchbox .atui-searchbox-input {
   padding-right: 25px;
 }
-.atui-searchbox .icon-search {
+.atui-searchbox .atui-icon-search {
   position: absolute;
   right: 8px;
   top: 6px;
 }
-.atui-searchbox .icon-clear {
+.atui-searchbox .atui-icon-clear {
   position: absolute;
   top: 6px;
   right: 30px;
@@ -5018,7 +5024,7 @@ button.atui-close {
   border: 1px solid #ff7500;
   box-shadow: none;
 }
-.atui-datepicker-toggle .iconfont {
+.atui-datepicker .atui-iconfont {
   position: absolute;
   top: 50%;
   margin-top: -14px;
@@ -5174,6 +5180,7 @@ button.atui-close {
 }
 .atui-calendar-monthRange span, .atui-calendar-header span, .atui-calendar-header p, .atui-calendar-dateRange span {
   cursor: pointer;
+  margin: 0;
 }
 .atui-calendar-monthRange span:hover, .atui-calendar-header p:hover, .atui-calendar-header i:hover, .atui-calendar-dateRange span:hover, .atui-calendar-dateRange-item-hover {
   background-color: #fff8f2;
@@ -5530,7 +5537,7 @@ button.atui-close {
   margin-left: 5px;
   margin-bottom: 0;
 }
-.atui-confirm .iconfont {
+.atui-confirm .atui-iconfont {
   position: relative;
   top: 5px;
 }
@@ -6031,21 +6038,6 @@ button.atui-close {
 }
 .affix {
   position: fixed;
-}
-@font-face {
-  font-family: 'iconfont';
-  src: url('//at.alicdn.com/t/font_1458875830_3228507.eot');
-  /* IE9*/
-  src: url('//at.alicdn.com/t/font_1458875830_3228507.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/font_1458875830_3228507.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/font_1458875830_3228507.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/font_1458875830_3228507.svg#iconfont') format('svg');
-  /* iOS 4.1- */
-}
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 14px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
 }
 @-ms-viewport {
   width: device-width;
