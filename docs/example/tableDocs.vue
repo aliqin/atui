@@ -255,9 +255,8 @@ export default {
       console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);
     }
   }
+
   const pagination = {
-    total: data.length,
-    showSizeChanger: true,
     onShowSizeChange(current, pageSize) {
       console.log('Current: ', current, '; PageSize: ', pageSize);
     },

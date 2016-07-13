@@ -65,9 +65,8 @@
         </tbody>
       </table>
     </div>
-
     <div v-if="pagination" :class="[prefixCls + '-table-pagination']">
-      <pagination :total="pagination.total" v-ref:pager :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage"></pagination>
+      <pagination v-ref:pager :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
     </div>
   </div>
 </template>
@@ -139,6 +138,7 @@ export default {
     if (this.pagination) {
       this.originDataSource = Array.concat(this.dataSource, [])
       let pager = this.$refs.pager
+      pager.total = this.dataSource.length
       this.dataSource = this.originDataSource.slice(pager.currPage || 0, pager.pageSize)
     }
   },
@@ -171,7 +171,11 @@ export default {
     dataSource: {
       handler (data) {
         let me = this
-
+        // if (me.pagination) {
+        //   me.originDataSource = Array.concat(this.dataSource, [])
+        //   let pager = me.$refs.pager
+        //   me.dataSource = me.originDataSource.slice(pager.currPage || 0, pager.pageSize)
+        // }
         me.compileTbody()
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
@@ -273,8 +277,19 @@ export default {
     },
     changePage (pageNum) {
       let pager = this.$refs.pager
-      this.dataSource = this.originDataSource.slice((pageNum - 1) * pager.pageSize, pageNum * pager.pageSize)
+      this.dataSource = this.originDataSource.slice(
+        (pageNum - 1) * pager.pageSize,
+        pageNum * pager.pageSize
+      )
       this.pagination.onChange && this.pagination.onChange(pageNum)
+    },
+    changeSize (current, pageSize) {
+      let pager = this.$refs.pager
+      this.dataSource = this.originDataSource.slice(
+        (current - 1) * pager.pageSize,
+        current * pager.pageSize
+      )
+      this.pagination.onShowSizeChange && this.pagination.onShowSizeChange(current, pageSize)
     },
     fixedHeaderAction () {
       if (this.fixedHeader) {
