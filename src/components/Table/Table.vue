@@ -66,7 +66,7 @@
       </table>
     </div>
     <div v-if="pagination" :class="[prefixCls + '-table-pagination']">
-      <pagination :total="pagination.total" v-ref:pager :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
+      <pagination v-ref:pager :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
     </div>
   </div>
 </template>
@@ -79,7 +79,7 @@ import Pagination from '../Pagination/'
 
 export default {
   props: {
-    pagination: Object,
+    pagination: [Object, Boolean],
     dataSource: {
       type: Array,
       default () {
@@ -138,6 +138,7 @@ export default {
     if (this.pagination) {
       this.originDataSource = Array.concat(this.dataSource, [])
       let pager = this.$refs.pager
+      pager.total = this.dataSource.length
       this.dataSource = this.originDataSource.slice(pager.currPage || 0, pager.pageSize)
     }
   },
