@@ -1,6 +1,8 @@
-@table-prefix-cls: atui-table;
+// Table
+// --------------------------------------------------
+@prefix-cls-table: e("@{prefix-cls}-table");
 
-.@{table-prefix-cls} {
+.@{prefix-cls-table} {
   position: relative;
   width: 100%;
   .atui-spin {
@@ -10,7 +12,7 @@
     z-index: 1;
     transform: translate(-50%, -50%);
   }
-  &.loading table {
+  &.@{prefix-cls-table}-loading table {
     opacity: .7;
     filter: blur(1px);
     pointer-events: none;
@@ -48,7 +50,7 @@
         color: @primary-color;
       }
     }
-    .table-sorter {
+    .@{prefix-cls-table}-sorter {
       position: relative;
       display: inline-block;
       vertical-align: middle;
@@ -60,7 +62,7 @@
         transform: scale(.6) rotate(0deg);
         -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
       }
-      .active {
+      .@{prefix-cls-table}-active {
         color: @primary-color;
       }
     }
@@ -135,7 +137,7 @@
   }
   &-filter-dropdown-link {
     float: left;
-    &.clear {
+    &.@{prefix-cls-table}-clear {
       float: right;
     }
   }
@@ -146,6 +148,3 @@
     display: block;
   }
 }
-
-
-
