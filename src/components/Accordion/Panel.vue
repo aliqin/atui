@@ -16,14 +16,10 @@
 </template>
 
 <script type="text/babel">
-import coerceBoolean from '../utils/coerceBoolean.js'
-
 export default {
   props: {
     isOpen: {
-      type: Boolean,
-      coerce: coerceBoolean,
-      default: false
+      type: Boolean
     },
     header: {
       type: String

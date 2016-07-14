@@ -22,7 +22,7 @@
 </template>
 <script type="text/babel">
   import Icon from '../Icon/'
-  import EventListener from '../utils/EventListener'
+  import EventListener from '../_utils/EventListener'
 
   export default {
     props: {

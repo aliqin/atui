@@ -23,7 +23,7 @@
   </div>
 </template>
 <script type="text/babel">
-  import EventListener from '../utils/EventListener'
+  import EventListener from '../_utils/EventListener'
   import Input from '../Input'
   import Selection from './selection'
 

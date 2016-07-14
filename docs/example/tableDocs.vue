@@ -61,7 +61,7 @@ const columns = [{
   width:250
 
 },{
-    title: '操作',
+    title: '操作 <tooltip content="提示" placement="topRight"><icon type="help"></icon></tooltip>',
     key: 'operation',
     render(text, record) {
       if(record) {

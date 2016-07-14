@@ -6,8 +6,7 @@
 </template>
 
 <script type="text/babel">
-  import EventListener from '../utils/EventListener'
-  import coerceBoolean from '../utils/coerceBoolean.js'
+  import EventListener from '../_utils/EventListener'
 
   export default {
     props: {
@@ -16,9 +15,7 @@
         default: 'click'
       },
       open: {
-        type: Boolean,
-        coerce: coerceBoolean,
-        default: false
+        type: Boolean
       },
       prefixCls: {
         type: String,

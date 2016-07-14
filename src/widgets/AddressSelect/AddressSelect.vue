@@ -67,7 +67,7 @@
 
 <script>
 import nation from './addr.js'
-import EventListener from 'src/components/utils/EventListener'
+import EventListener from 'src/components/_utils/EventListener'
 export default {
   props: {
     level: {

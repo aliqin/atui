@@ -20,7 +20,7 @@
 
 <script type="text/ecmascript-6">
   import Tooltip from '../Tooltip/'
-  import EventListener from '../utils/EventListener'
+  import EventListener from '../_utils/EventListener'
 
   export default {
     props: {

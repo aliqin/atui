@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import isSupportAnimation from '../utils/cssAnimationSupported'
+import isSupportAnimation from '../_utils/cssAnimationSupported'
 
 export default {
   name: 'spin',
