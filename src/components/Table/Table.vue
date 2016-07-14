@@ -1,10 +1,9 @@
-<!--suppress ALL-->
 <template>
-  <div :class="[prefixCls + '-table',prefixCls + '-table-'+ size, {loading: loading}]">
+  <div :class="[prefixCls + '-table', prefixCls + '-table-'+ size, loading && (prefixCls + '-table-loading')]">
     <spin size="sm" v-if="loading"></spin>
     <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
   </table> -->
-    <div :class="[prefixCls + '-table-container',fixedHeader ? prefixCls + '-fixed-header': '']">
+    <div :class="[prefixCls + '-table-container', fixedHeader && (prefixCls + '-table-fixed-header')]">
       <table>
         <colgroup>
           <col v-if="rowSelection"></col>
@@ -22,7 +21,7 @@
                 <div data-toggle="dropdown" @click="filterOpened = true">
                   <icon type="filter" size="12"></icon>
                 </div>
-                <div name="dropdown-menu" v-show="filterOpened" transition="slide" class="atui-dropdown-menu atui-table-filter-dropdown">
+                <div name="dropdown-menu" v-show="filterOpened" transition="slide" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
                   <ul>
                     <li v-for="filter in column.filters">
                     <label>
@@ -32,24 +31,24 @@
                   </ul>
                   <div :class="[prefixCls + '-table-filter-dropdown-btns']">
                     <a :class="[prefixCls + '-table-filter-dropdown-link confirm']" @click="onFilter(column)">确定</a>
-                    <a :class="[prefixCls + '-table-filter-dropdown-link','clear']" @click="resetFilter(column)">重置</a>
+                    <a :class="[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']" @click="resetFilter(column)">重置</a>
                   </div>
                 </div>
 
               </dropdown>
-              <div v-if="dataSource && dataSource.length && column.sorter" class="table-sorter">
-                <icon type="caretup" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
-                <icon type="caretdown" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
+              <div v-if="dataSource && dataSource.length && column.sorter" :class="[prefixCls + '-table-sorter']">
+                <icon type="caretup" size="10" @click="sortAction(column,$index,'ascend')" :class="[sorderOrder[$index] == 'ascend' && (prefixCls + '-table-active')]"></icon>
+                <icon type="caretdown" size="10" @click="sortAction(column,$index,'descend')" :class="[sorderOrder[$index] == 'descend' && (prefixCls + '-table-active')]"></icon>
               </div>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="!dataSource || !dataSource.length">
-            <td colspan="20" style="text-align: center;" :class="[prefixCls + 'table-empty']">{{noDataTip}}</td>
+            <td colspan="20" style="text-align: center;" :class="[prefixCls + '-table-empty']">{{noDataTip}}</td>
           </tr>
           <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
-            <td v-if="rowSelection" :class="[prefixCls + 'table-selection-column']">
+            <td v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
               <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
               />
             </td>
