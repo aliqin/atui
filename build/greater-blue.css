@@ -1583,13 +1583,13 @@ pre code {
   display: inline-block;
   vertical-align: middle;
   width: 10px;
-  height: 20px;
-  line-height: 9px;
+  height: 16px;
+  line-height: 7px;
 }
 .atui-table th .table-sorter i {
   display: inline-block;
-  -webkit-transform: scale(0.7) rotate(0deg);
-          transform: scale(0.7) rotate(0deg);
+  -webkit-transform: scale(0.6) rotate(0deg);
+          transform: scale(0.6) rotate(0deg);
   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
 }
 .atui-table th .table-sorter .active {

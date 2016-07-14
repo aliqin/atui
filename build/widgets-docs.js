@@ -8013,7 +8013,6 @@
 	      default: 10
 	    },
 	    total: Number,
-	    totalPage: Number,
 	    currPage: {
 	      type: Number,
 	      default: 1
