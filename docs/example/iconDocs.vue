@@ -2,6 +2,8 @@
   <div class="bs-docs-section" id="icon">
     <h3 class="page-header"><a href="#icon" class="anchor">Icon 图标</a></h3>
     <div class="bs-example">
+      <icon type="arrowup"></icon>箭头
+      <icon type="arrowdown"></icon>箭头
       <icon type="head"></icon>页首
       <icon type="tail"></icon>页尾
       <icon type="clear"></icon>清除
@@ -23,6 +25,8 @@
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
 <!--更多icon请看这里 http://iconfont.cn/users/project?pid=77664 -->
+<icon type="arrowup"></icon>箭头
+<icon type="arrowdown"></icon>箭头
 <icon type="head"></icon>页首
 <icon type="tail"></icon>页尾
 <icon type="clear"></icon>清除

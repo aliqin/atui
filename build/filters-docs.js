@@ -3068,72 +3068,107 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div class="at-upload" id="upload-{{uploadId}}">
+	//   <div :class="[prefixCls + '-upload']" id="upload-{{uploadId}}">
 	//     <div v-if="uploadType == 'click'">
 	//       <label>
-	//       <input
-	//         type="file"
-	//         :name="name"
-	//         :accept="accept"
-	//         :id="uploadId"
-	//         :multiple="multiple"
-	//         @change="onChange($event)" />
-	//       <slot>
-	//         <span class="btn tertiary">点击上传</span>
-	//       </slot>
-	//     </label>
-	//       <div class="at-upload-list">
-	//         <div class="at-upload-item" v-for="file in fileList">
-	//           <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
-	//             <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+	//         <input
+	//           type="file"
+	//           :name="name"
+	//           :accept="accept"
+	//           :id="uploadId"
+	//           :multiple="multiple"
+	//           @change="onChange($event)" />
+	//         <slot>
+	//           <span :class="[prefixCls + '-btn', prefixCls + '-btn-tertiary']">点击上传</span>
+	//         </slot>
+	//       </label>
+	//       <div :class="[prefixCls + '-upload-list']">
+	//         <div :class="[prefixCls + '-upload-item']" v-for="file in fileList">
+	//           <div :class="[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]"
+	//                @mouseover="filemouseover($index)"
+	//                @mouseout="filemouseout">
+	//             <icon type="doc"
+	//                   :class="[prefixCls + '-upload-file-icon']"
+	//                   size="12"></icon>
 	//             <span>{{file.name}}</span>
-	//             <icon type="close" class="at-upload-del-info" size="12" @click="delExistFile($index)"></icon>
+	//             <icon type="close"
+	//                   :class="[prefixCls + '-upload-del-info']"
+	//                   size="12"
+	//                   @click="delExistFile($index)"></icon>
 	//           </div>
 	//         </div>
-	//         <div class="at-upload-item" v-for="file in uploadList">
-	//           <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
-	//             <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+	//         <div :class="[prefixCls + '-upload-item']" v-for="file in uploadList">
+	//           <div :class="[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]"
+	//                @mouseover="filemouseover($index)"
+	//                @mouseout="filemouseout">
+	//             <icon type="doc"
+	//                   :class="[prefixCls + '-upload-file-icon']"
+	//                   size="12"></icon>
 	//             <span>{{file.name}}</span>
-	//             <icon type="close" class="at-upload-del-info" size="12" @click="delFile($index)"></icon>
+	//             <icon type="close"
+	//                   :class="[prefixCls + '-upload-del-info']"
+	//                   size="12"
+	//                   @click="delFile($index)"></icon>
 	//           </div>
-	//           <div class="at-upload-item-progress" :class="{'hide': progress[$index] == '100%'}">
-	//             <div class="at-progress at-progress-line at-progress-status-success">
-	//               <div class="at-progress-inner">
-	//                 <div class="at-progress-bg" :style="{width: progress[$index]}"></div>
+	//           <div :class="[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]">
+	//             <div :class="[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']">
+	//               <div :class="[prefixCls + '-upload-progress-inner']">
+	//                 <div :class="[prefixCls + '-upload-progress-bg']" :style="{width: progress[$index]}"></div>
 	//               </div>
 	//             </div>
 	//           </div>
 	//         </div>
 	//       </div>
 	//     </div>
-	//     <div v-if="uploadType == 'drag'" class="at-upload-drag">
-	//       <div class="at-upload-drag-container {{dragover ? 'is-dragover' : ''}}">
-	//         <input type="file" :name="name" :id="uploadId" :accept="accept" :multiple="multiple" @change="onChange($event)" />
-	//         <label :for="uploadId" class="at-upload-drag-area">
-	//         <p class="at-upload-drag-icon"></p>
+	//     <div v-if="uploadType == 'drag'"
+	//          :class="[prefixCls + '-upload-drag']">
+	//       <div :class="[prefixCls + '-upload-drag-container', dragover && (prefixCls + '-is-dragover')]">
+	//         <input type="file"
+	//                :name="name"
+	//                :id="uploadId"
+	//                :accept="accept"
+	//                :multiple="multiple"
+	//                @change="onChange($event)" />
+	//         <label :for="uploadId"
+	//                :class="[prefixCls + '-upload-drag-area']">
+	//         <p :class="[prefixCls + '-upload-drag-icon']"></p>
 	//         <span v-if="advanceDrag">将文件拖拽至框中上传或点此上传</span>
 	//         <span v-if="!advanceDrag">当前环境不支持拖拽上传，请点此上传</span>
 	//         <p v-if="fileList.length > 0" v-for="file in selectFiles">{{file}}</p>
 	//       </label>
 	//       </div>
-	//       <div class="at-upload-list">
-	//         <div class="at-upload-item" v-for="file in fileList">
-	//           <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
-	//             <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+	//       <div :class="[prefixCls + '-upload-list']">
+	//         <div :class="[prefixCls + '-upload-item']" v-for="file in fileList">
+	//           <div :class="[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]"
+	//                @mouseover="filemouseover($index)"
+	//                @mouseout="filemouseout">
+	//             <icon type="doc"
+	//                   :class="[prefixCls + '-upload-file-icon']"
+	//                   size="12"></icon>
 	//             <span>{{file.name}}</span>
-	//             <icon type="close" class="at-upload-del-info" size="12" @click="delExistFile($index)"></icon>
+	//             <icon type="close"
+	//                   class="[prefixCls + '-upload-del-info']"
+	//                   size="12"
+	//                   @click="delExistFile($index)"></icon>
 	//           </div>
 	//         </div>
-	//         <div class="at-upload-item" v-for="file in uploadList">
-	//           <div class="at-upload-item-info" :class="{'active': current == $index}" @mouseover="filemouseover($index)" @mouseout="filemouseout">
-	//             <icon type="doc" class="at-upload-file-icon" size="12"></icon>
+	//         <div :class="[prefixCls + '-upload-item']" v-for="file in uploadList">
+	//           <div :class="[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]"
+	//                @mouseover="filemouseover($index)"
+	//                @mouseout="filemouseout">
+	//             <icon type="doc"
+	//                   :class="[prefixCls + '-upload-file-icon']"
+	//                   size="12"></icon>
 	//             <span>{{file.name}}</span>
-	//             <icon type="close" class="at-upload-del-info" size="12" @click="delFile($index)"></icon>
+	//             <icon type="close"
+	//                   :class="[prefixCls + '-upload-del-info']"
+	//                   size="12"
+	//                   @click="delFile($index)"></icon>
 	//           </div>
-	//           <div class="at-upload-item-progress" :class="{'hide': progress[$index] == '100%'}">
-	//             <div class="at-progress at-progress-line at-progress-status-success">
-	//               <div class="at-progress-inner">
-	//                 <div class="at-progress-bg" :style="{width: progress[$index]}"></div>
+	//           <div :class="[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]">
+	//             <div :class="[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']">
+	//               <div :class="[prefixCls + '-upload-progress-inner']">
+	//                 <div :class="[prefixCls + '-upload-progress-bg']" :style="{width: progress[$index]}"></div>
 	//               </div>
 	//             </div>
 	//           </div>
@@ -3173,7 +3208,11 @@
 	    fileList: {
 	      default: null
 	    },
-	    maxlength: Number
+	    maxlength: Number,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	  data: function data() {
 	    return {
@@ -4246,7 +4285,7 @@
 /* 203 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"at-upload\" id=\"upload-{{uploadId}}\">\n  <div v-if=\"uploadType == 'click'\">\n    <label>\n    <input\n      type=\"file\"\n      :name=\"name\"\n      :accept=\"accept\"\n      :id=\"uploadId\"\n      :multiple=\"multiple\"\n      @change=\"onChange($event)\" />\n    <slot>\n      <span class=\"btn tertiary\">点击上传</span>\n    </slot>\n  </label>\n    <div class=\"at-upload-list\">\n      <div class=\"at-upload-item\" v-for=\"file in fileList\">\n        <div class=\"at-upload-item-info\" :class=\"{'active': current == $index}\" @mouseover=\"filemouseover($index)\" @mouseout=\"filemouseout\">\n          <icon type=\"doc\" class=\"at-upload-file-icon\" size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\" class=\"at-upload-del-info\" size=\"12\" @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div class=\"at-upload-item\" v-for=\"file in uploadList\">\n        <div class=\"at-upload-item-info\" :class=\"{'active': current == $index}\" @mouseover=\"filemouseover($index)\" @mouseout=\"filemouseout\">\n          <icon type=\"doc\" class=\"at-upload-file-icon\" size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\" class=\"at-upload-del-info\" size=\"12\" @click=\"delFile($index)\"></icon>\n        </div>\n        <div class=\"at-upload-item-progress\" :class=\"{'hide': progress[$index] == '100%'}\">\n          <div class=\"at-progress at-progress-line at-progress-status-success\">\n            <div class=\"at-progress-inner\">\n              <div class=\"at-progress-bg\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div v-if=\"uploadType == 'drag'\" class=\"at-upload-drag\">\n    <div class=\"at-upload-drag-container {{dragover ? 'is-dragover' : ''}}\">\n      <input type=\"file\" :name=\"name\" :id=\"uploadId\" :accept=\"accept\" :multiple=\"multiple\" @change=\"onChange($event)\" />\n      <label :for=\"uploadId\" class=\"at-upload-drag-area\">\n      <p class=\"at-upload-drag-icon\"></p>\n      <span v-if=\"advanceDrag\">将文件拖拽至框中上传或点此上传</span>\n      <span v-if=\"!advanceDrag\">当前环境不支持拖拽上传，请点此上传</span>\n      <p v-if=\"fileList.length > 0\" v-for=\"file in selectFiles\">{{file}}</p>\n    </label>\n    </div>\n    <div class=\"at-upload-list\">\n      <div class=\"at-upload-item\" v-for=\"file in fileList\">\n        <div class=\"at-upload-item-info\" :class=\"{'active': current == $index}\" @mouseover=\"filemouseover($index)\" @mouseout=\"filemouseout\">\n          <icon type=\"doc\" class=\"at-upload-file-icon\" size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\" class=\"at-upload-del-info\" size=\"12\" @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div class=\"at-upload-item\" v-for=\"file in uploadList\">\n        <div class=\"at-upload-item-info\" :class=\"{'active': current == $index}\" @mouseover=\"filemouseover($index)\" @mouseout=\"filemouseout\">\n          <icon type=\"doc\" class=\"at-upload-file-icon\" size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\" class=\"at-upload-del-info\" size=\"12\" @click=\"delFile($index)\"></icon>\n        </div>\n        <div class=\"at-upload-item-progress\" :class=\"{'hide': progress[$index] == '100%'}\">\n          <div class=\"at-progress at-progress-line at-progress-status-success\">\n            <div class=\"at-progress-inner\">\n              <div class=\"at-progress-bg\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-upload']\" id=\"upload-{{uploadId}}\">\n  <div v-if=\"uploadType == 'click'\">\n    <label>\n      <input\n        type=\"file\"\n        :name=\"name\"\n        :accept=\"accept\"\n        :id=\"uploadId\"\n        :multiple=\"multiple\"\n        @change=\"onChange($event)\" />\n      <slot>\n        <span :class=\"[prefixCls + '-btn', prefixCls + '-btn-tertiary']\">点击上传</span>\n      </slot>\n    </label>\n    <div :class=\"[prefixCls + '-upload-list']\">\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in fileList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in uploadList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delFile($index)\"></icon>\n        </div>\n        <div :class=\"[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]\">\n          <div :class=\"[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']\">\n            <div :class=\"[prefixCls + '-upload-progress-inner']\">\n              <div :class=\"[prefixCls + '-upload-progress-bg']\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div v-if=\"uploadType == 'drag'\"\n       :class=\"[prefixCls + '-upload-drag']\">\n    <div :class=\"[prefixCls + '-upload-drag-container', dragover && (prefixCls + '-is-dragover')]\">\n      <input type=\"file\"\n             :name=\"name\"\n             :id=\"uploadId\"\n             :accept=\"accept\"\n             :multiple=\"multiple\"\n             @change=\"onChange($event)\" />\n      <label :for=\"uploadId\"\n             :class=\"[prefixCls + '-upload-drag-area']\">\n      <p :class=\"[prefixCls + '-upload-drag-icon']\"></p>\n      <span v-if=\"advanceDrag\">将文件拖拽至框中上传或点此上传</span>\n      <span v-if=\"!advanceDrag\">当前环境不支持拖拽上传，请点此上传</span>\n      <p v-if=\"fileList.length > 0\" v-for=\"file in selectFiles\">{{file}}</p>\n    </label>\n    </div>\n    <div :class=\"[prefixCls + '-upload-list']\">\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in fileList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in uploadList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delFile($index)\"></icon>\n        </div>\n        <div :class=\"[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]\">\n          <div :class=\"[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']\">\n            <div :class=\"[prefixCls + '-upload-progress-inner']\">\n              <div :class=\"[prefixCls + '-upload-progress-bg']\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 204 */
@@ -5350,6 +5389,10 @@
 	    },
 	    disabled: {
 	      type: Boolean
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  components: {
@@ -5392,6 +5435,21 @@
 	  computed: {
 	    showText: function showText() {
 	      return this.selectedOptions && this.selectedOptions[0] && this.selectedOptions[0].label;
+	    },
+	    selectClassObj: function selectClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var show = this.show;
+	      var disabled = this.disabled;
+	      var multiple = this.multiple;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-select-container'] = true;
+	      classObj[prefixCls + '-dropdown-open'] = show;
+	      classObj[prefixCls + '-select-disabled'] = disabled;
+	      classObj[prefixCls + '-select-multiple'] = multiple;
+	
+	      return classObj;
 	    }
 	  },
 	  watch: {
@@ -5547,21 +5605,27 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div class="select-container" :class="{'atui-dropdown-open':show,disabled:disabled,multiple:multiple}">
-	//     <div :class="['select-toggle',{tags:tags}]" tabindex="1" @mousedown="toggleDropdown" @keydown.up="selectUp" @keydown.down="selectDown" v-bind="{disabled: disabled}"
-	//     >
+	//   <div :class="selectClassObj">
+	//     <div :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
+	//          tabindex="1"
+	//          @mousedown="toggleDropdown"
+	//          @keydown.up="selectUp"
+	//          @keydown.down="selectDown"
+	//          v-bind="{disabled: disabled}">
 	//       <template v-if="!multiple">
-	//         <span class="select-placeholder" v-show="!value">{{placeholder}}</span>
-	//         <span class="btn-content">{{ showText }}</span>
-	//         <span :class="[{caret:true,'open':show}]"><icon :class="['atui-dropdown-icon',]" type="down" size="12"></icon></span>
+	//         <span v-show="!value"
+	//               :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>
+	//         <span :class="[prefixCls + '-select-btn-content']">{{ showText }}</span>
+	//         <span :class="[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]">
+	//           <icon :class="[prefixCls + '-dropdown-icon']" type="down" size="12"></icon></span>
 	//       </template>
 	//       <div v-else>
-	//         <span class="select-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
+	//         <span :class="[prefixCls + '-select-placeholder']" v-show="showPlaceholder">{{placeholder}}</span>
 	//         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
-	//         <input type="text" v-el:search-field class="select-search-field" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
+	//         <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
 	//       </div>
 	//     </div>
-	//     <div class="atui-dropdown-menu" v-show="show && options.length > 0" transition="slide">
+	//     <div :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0" transition="slide">
 	//       <slot></slot>
 	//       <div v-show="noResult" class="no-result">无结果</div>
 	//       <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
@@ -5569,7 +5633,7 @@
 	//   </div>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 
 /***/ },
 /* 225 */
@@ -5695,7 +5759,7 @@
 /* 229 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"select-container\" :class=\"{'atui-dropdown-open':show,disabled:disabled,multiple:multiple}\">\n  <div :class=\"['select-toggle',{tags:tags}]\" tabindex=\"1\" @mousedown=\"toggleDropdown\" @keydown.up=\"selectUp\" @keydown.down=\"selectDown\" v-bind=\"{disabled: disabled}\"\n  >\n    <template v-if=\"!multiple\">\n      <span class=\"select-placeholder\" v-show=\"!value\">{{placeholder}}</span>\n      <span class=\"btn-content\">{{ showText }}</span>\n      <span :class=\"[{caret:true,'open':show}]\"><icon :class=\"['atui-dropdown-icon',]\" type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span class=\"select-placeholder\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field class=\"select-search-field\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div class=\"atui-dropdown-menu\" v-show=\"show && options.length > 0\" transition=\"slide\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"selectClassObj\">\n  <div :class=\"[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]\"\n       tabindex=\"1\"\n       @mousedown=\"toggleDropdown\"\n       @keydown.up=\"selectUp\"\n       @keydown.down=\"selectDown\"\n       v-bind=\"{disabled: disabled}\">\n    <template v-if=\"!multiple\">\n      <span v-show=\"!value\"\n            :class=\"[prefixCls + '-select-placeholder']\">{{placeholder}}</span>\n      <span :class=\"[prefixCls + '-select-btn-content']\">{{ showText }}</span>\n      <span :class=\"[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]\">\n        <icon :class=\"[prefixCls + '-dropdown-icon']\" type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span :class=\"[prefixCls + '-select-placeholder']\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field :class=\"[prefixCls + '-select-search-field']\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div :class=\"[prefixCls + '-dropdown-menu']\" v-show=\"show && options.length > 0\" transition=\"slide\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 230 */
@@ -5735,7 +5799,9 @@
 	  value: true
 	});
 	// <template>
-	//   <div v-show="show" :class="{option:true,disabled:disabled,active:active,chosen:chosen}" @mousedown.prevent.stop="handleClick">
+	//   <div v-show="show"
+	//        :class="optionClassObj"
+	//        @mousedown.prevent.stop="handleClick">
 	//     <slot></slot>
 	//   </div>
 	// </template>
@@ -5751,6 +5817,10 @@
 	    },
 	    disabled: {
 	      type: Boolean
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
@@ -5773,6 +5843,21 @@
 	        return this.$el.innerText.indexOf(searchText) >= 0;
 	      }
 	      return true;
+	    },
+	    optionClassObj: function optionClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var active = this.active;
+	      var disabled = this.disabled;
+	      var chosen = this.chosen;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-dropdown-option'] = true;
+	      classObj[prefixCls + '-dropdown-option-disabled'] = disabled;
+	      classObj[prefixCls + '-dropdown-option-active'] = active;
+	      classObj[prefixCls + '-dropdown-option-chosen'] = chosen;
+	
+	      return classObj;
 	    }
 	  },
 	  ready: function ready() {
@@ -5822,7 +5907,7 @@
 /* 232 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div v-show=\"show\" :class=\"{option:true,disabled:disabled,active:active,chosen:chosen}\" @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div v-show=\"show\"\n     :class=\"optionClassObj\"\n     @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 233 */
@@ -6305,22 +6390,22 @@
 	    scrollTo(element, to, duration - 10);
 	  });
 	}; // <template>
-	//   <div class="atui-time-picker">
-	//     <span class="atui-time-picker-toggler">
+	//   <div :class="[prefixCls + '-time-picker']">
+	//     <span :class="[prefixCls + '-time-picker-toggler']">
 	//       <v-input v-el:picker-toggler readonly @click="toggleMenus" :value="value" :placeholder="placeholder"></v-input>
 	//     </span>
-	//     <div v-el:picker-menus class="atui-time-picker-menus" v-show="show" transition="slide">
-	//       <div class="time-picker-panel">
-	//         <ul v-el:h class="time-hours" @mouseover="selection('H')">
+	//     <div v-el:picker-menus :class="[prefixCls + '-time-picker-menus']" v-show="show" transition="slide">
+	//       <div :class="[prefixCls + '-time-picker-panel']">
+	//         <ul v-el:h :class="time-hours" @mouseover="selection('H')">
 	//           <li v-for="index in 24" v-if="disabledHours().indexOf(index) < 0" :class="{selected: hour === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
 	//         </ul>
 	//       </div>
-	//       <div class="time-picker-panel">
+	//       <div :class="[prefixCls + '-time-picker-panel']">
 	//         <ul v-el:m class="time-minute" @mouseover="selection('M')">
 	//           <li v-for="index in 59" v-if="disabledMinutes().indexOf(index) < 0" :class="{selected: minute === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
 	//         </ul>
 	//       </div>
-	//       <div class="time-picker-panel" @mouseover="selection('S')">
+	//       <div :class="[prefixCls + '-time-picker-panel']" @mouseover="selection('S')">
 	//         <ul v-el:s class="time-seconds">
 	//           <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0" :class="{selected: second === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
 	//         </ul>
@@ -6328,7 +6413,7 @@
 	//     </div>
 	//   </div>
 	// </template>
-	// <script>
+	// <script type="text/babel">
 	
 	exports.default = {
 	  props: {
@@ -6362,6 +6447,10 @@
 	      default: function _default() {
 	        return [];
 	      }
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  filters: {
@@ -6524,7 +6613,7 @@
 /* 241 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-time-picker\">\n  <span class=\"atui-time-picker-toggler\">\n    <v-input v-el:picker-toggler readonly @click=\"toggleMenus\" :value=\"value\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div v-el:picker-menus class=\"atui-time-picker-menus\" v-show=\"show\" transition=\"slide\">\n    <div class=\"time-picker-panel\">\n      <ul v-el:h class=\"time-hours\" @mouseover=\"selection('H')\">\n        <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: hour === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div class=\"time-picker-panel\">\n      <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n        <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: minute === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div class=\"time-picker-panel\" @mouseover=\"selection('S')\">\n      <ul v-el:s class=\"time-seconds\">\n        <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: second === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-time-picker']\">\n  <span :class=\"[prefixCls + '-time-picker-toggler']\">\n    <v-input v-el:picker-toggler readonly @click=\"toggleMenus\" :value=\"value\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div v-el:picker-menus :class=\"[prefixCls + '-time-picker-menus']\" v-show=\"show\" transition=\"slide\">\n    <div :class=\"[prefixCls + '-time-picker-panel']\">\n      <ul v-el:h :class=\"time-hours\" @mouseover=\"selection('H')\">\n        <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: hour === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div :class=\"[prefixCls + '-time-picker-panel']\">\n      <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n        <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: minute === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div :class=\"[prefixCls + '-time-picker-panel']\" @mouseover=\"selection('S')\">\n      <ul v-el:s class=\"time-seconds\">\n        <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: second === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 242 */
@@ -7321,7 +7410,7 @@
 	//               />
 	//             </th>
 	//             <th v-for="column in columns" :width="column.width">
-	//               {{column['title']}}
+	//               {{{column['title']}}}
 	//               <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
 	//                 <div data-toggle="dropdown" @click="filterOpened = true">
 	//                   <icon type="filter" size="12"></icon>
@@ -7342,8 +7431,8 @@
 	//
 	//               </dropdown>
 	//               <div v-if="dataSource && dataSource.length && column.sorter" class="table-sorter">
-	//                 <icon type="up" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
-	//                 <icon type="down" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
+	//                 <icon type="caretup" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
+	//                 <icon type="caretdown" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
 	//               </div>
 	//             </th>
 	//           </tr>
@@ -7924,6 +8013,7 @@
 	      default: 10
 	    },
 	    total: Number,
+	    totalPage: Number,
 	    currPage: {
 	      type: Number,
 	      default: 1
@@ -7947,7 +8037,8 @@
 	  },
 	
 	  watch: {
-	    total: function total() {
+	    total: function total(val) {
+	      // this.totalPage = Math.ceil(val / this.pageSize)
 	      this.getPageRange();
 	    },
 	    pageSize: function pageSize(_pageSize) {
@@ -8496,7 +8587,7 @@
 /* 284 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-table',prefixCls + '-table-'+ size, {loading: loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container',fixedHeader ? prefixCls + '-fixed-header': '']\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{column['title']}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" class=\"atui-dropdown-menu atui-table-filter-dropdown\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link','clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" class=\"table-sorter\">\n              <icon type=\"up\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n              <icon type=\"down\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + 'table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + 'table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-if=\"pagination\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination v-ref:pager :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\" @pagination-size-change=\"changeSize\"></pagination>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-table',prefixCls + '-table-'+ size, {loading: loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container',fixedHeader ? prefixCls + '-fixed-header': '']\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{{column['title']}}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" class=\"atui-dropdown-menu atui-table-filter-dropdown\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link','clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" class=\"table-sorter\">\n              <icon type=\"caretup\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n              <icon type=\"caretdown\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + 'table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + 'table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-if=\"pagination\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination v-ref:pager :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\" @pagination-size-change=\"changeSize\"></pagination>\n  </div>\n</div>\n";
 
 /***/ },
 /* 285 */
@@ -9728,6 +9819,10 @@
 	    size: {
 	      type: String,
 	      default: 'default'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	
@@ -9749,13 +9844,19 @@
 	    Icon: _Icon2.default
 	  },
 	  computed: {
-	    wrapClasses: function wrapClasses() {
-	      return {
-	        'nav': true,
-	        'atui-nav-tabs': !this.base,
-	        'atui-nav-base': this.base,
-	        'atui-nav-small': this.size === 'small'
-	      };
+	    listClassObj: function listClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var base = this.base;
+	      var size = this.size;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-nav'] = true;
+	      classObj[prefixCls + '-nav-tab'] = !base;
+	      classObj[prefixCls + '-nav-base'] = base;
+	      classObj[prefixCls + '-nav-small'] = size === 'small';
+	
+	      return classObj;
 	    }
 	  },
 	  methods: {
@@ -9771,6 +9872,8 @@
 	    },
 	    _handleMoveX: function _handleMoveX(direction) {
 	      var totalLen = this.renderData.length;
+	      var prefixCls = this.prefixCls;
+	
 	      switch (direction) {
 	        case 'left':
 	          /**
@@ -9791,13 +9894,14 @@
 	          this.prev_tabIndex = this.next_tabIndex - (this.showLen - 1);
 	          break;
 	      }
-	      this.$el.querySelector('.nav').style.transform = 'translateX(-" + this.itemsWidth[this.prev_tabIndex].left + "px)';
+	      this.$el.querySelector('.' + prefixCls + '-nav').style.transform = 'translateX(-" + this.itemsWidth[this.prev_tabIndex].left + "px)';
 	    },
 	    _handleTabWidth: function _handleTabWidth() {
 	      var self = this;
 	      var dom = self.$el;
-	      var nav = dom.querySelector('.nav');
-	      var tabsHeader = dom.querySelector('.tabs-header');
+	      var prefixCls = self.prefixCls;
+	      var nav = dom.querySelector('.' + prefixCls + '-nav');
+	      var tabsHeader = dom.querySelector('.' + prefixCls + '-tab-header');
 	      var list = nav.children;
 	      var showlen = this.showLen;
 	      var len = list.length;
@@ -9835,37 +9939,31 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div class="atui-tabsWrapper">
-	//     <div class="tabs-header">
-	//       <span v-if="renderData.length > showLen && showLen >= 3 " class="arrow-prev" @click="prev">
+	//   <div :class="[prefixCls + '-tab-wrapper']">
+	//     <div :class="[prefixCls + '-tab-header']">
+	//       <span v-if="renderData.length > showLen && showLen >= 3" :class="[prefixCls + '-tab-arrow-prev']" @click="prev">
 	//         <icon v-if="prev_tabIndex==0" type="prev" size="12" color="#ccc" style="cursor: not-allowed"></icon>
 	//         <icon v-else type="prev" size="12"></icon>
 	//       </span>
-	//       <ul v-if="trigger=='click'" :class="wrapClasses" role="tablist" style="width: 99999px;">
+	//       <ul v-if="trigger=='click'" :class="listClassObj" role="tablist" style="width: 99999px;">
 	//         <li v-for="r in renderData"
-	//             :class="{
-	//               'active': ($index === active),
-	//               'disabled': r.disabled
-	//             }"
+	//             :class="[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]"
 	//             @click.prevent="handleTabListClick($index, r)"
 	//             :disabled="r.disabled"
 	//         >
 	//             <a href="javascript:void(0);">{{{r.header}}}</a>
 	//         </li>
 	//       </ul>
-	//       <ul v-else :class="wrapClasses" role="tablist" style="width: 99999px;">
+	//       <ul v-else :class="listClassObj" role="tablist" style="width: 99999px;">
 	//       <li v-for="r in renderData"
-	//             :class="{
-	//               'active': ($index === active),
-	//               'disabled': r.disabled
-	//             }"
+	//             :class="[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]"
 	//             @mouseenter.prevent="handleTabListClick($index, r)"
 	//             :disabled="r.disabled"
 	//         >
 	//             <a href="javascript:void(0);">{{{r.header}}}</a>
 	//         </li>
 	//       </ul>
-	//       <span v-if="renderData.length > showLen && showLen >= 3" class="arrow-next" @click="next">
+	//       <span v-if="renderData.length > showLen && showLen >= 3" :class="[prefixCls + '-tab-arrow-next']" @click="next">
 	//         <icon v-if="next_tabIndex == maxTabIndex" type="next" size="12" color="#ccc" style="cursor: not-allowed"></icon>
 	//         <icon v-else type="next" size="12"></icon>
 	//       </span>
@@ -9879,13 +9977,13 @@
 	//
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 
 /***/ },
 /* 321 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-tabsWrapper\">\n  <div class=\"tabs-header\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3 \" class=\"arrow-prev\" @click=\"prev\">\n      <icon v-if=\"prev_tabIndex==0\" type=\"prev\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"prev\" size=\"12\"></icon>\n    </span>\n    <ul v-if=\"trigger=='click'\" :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          :class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <ul v-else :class=\"wrapClasses\" role=\"tablist\" style=\"width: 99999px;\">\n    <li v-for=\"r in renderData\"\n          :class=\"{\n            'active': ($index === active),\n            'disabled': r.disabled\n          }\"\n          @mouseenter.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" class=\"arrow-next\" @click=\"next\">\n      <icon v-if=\"next_tabIndex == maxTabIndex\" type=\"next\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-tab-wrapper']\">\n  <div :class=\"[prefixCls + '-tab-header']\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" :class=\"[prefixCls + '-tab-arrow-prev']\" @click=\"prev\">\n      <icon v-if=\"prev_tabIndex==0\" type=\"prev\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"prev\" size=\"12\"></icon>\n    </span>\n    <ul v-if=\"trigger=='click'\" :class=\"listClassObj\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          :class=\"[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <ul v-else :class=\"listClassObj\" role=\"tablist\" style=\"width: 99999px;\">\n    <li v-for=\"r in renderData\"\n          :class=\"[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]\"\n          @mouseenter.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" :class=\"[prefixCls + '-tab-arrow-next']\" @click=\"next\">\n      <icon v-if=\"next_tabIndex == maxTabIndex\" type=\"next\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
 
 /***/ },
 /* 322 */
@@ -9919,13 +10017,13 @@
 /* 323 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	// <template>
-	//   <div role="tabpanel" class="tab-pane"
+	//   <div role="tabpanel" :class="[prefixCls + 'tab-pane']"
 	//       v-show="show"
 	//       :transition="transition"
 	//   >
@@ -9942,6 +10040,10 @@
 	    disabled: {
 	      type: Boolean,
 	      default: false
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
@@ -9982,7 +10084,7 @@
 /* 324 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div role=\"tabpanel\" class=\"tab-pane\"\n    v-show=\"show\"\n    :transition=\"transition\"\n>\n  <slot></slot>\n</div>\n";
+	module.exports = "\n<div role=\"tabpanel\" :class=\"[prefixCls + 'tab-pane']\"\n    v-show=\"show\"\n    :transition=\"transition\"\n>\n  <slot></slot>\n</div>\n";
 
 /***/ },
 /* 325 */
