@@ -27,9 +27,25 @@
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :show-jumper="true" :show-size-changer="true"></pagination>
-<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :show-jumper="true" :mini="true"></pagination>
-<pagination :total-page.sync="totalPage",:curr-page.sync="currPage",:total="total",:simple="true" class="custom"></pagination>
+<h4 class="example-title">完全版</h4>
+<pagination :curr-page="currPage"
+            :total="total"
+            show-jumper
+            :page-size="pageSize"
+            show-size-changer>
+</pagination>
+<h4 class="example-title">迷你版</h4>
+<pagination :curr-page="currPage"
+            :total="total"
+            show-jumper
+            mini>
+</pagination>
+<h4 class="example-title">精简版</h4>
+<pagination :curr-page="currPage"
+            :total="total"
+            simple
+            class="custom">
+</pagination>
 </script></code></pre>
   </div>
   <h2>Options</h2>
