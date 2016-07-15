@@ -2,7 +2,7 @@
   <li>
     <a :title="model.name" @click="toggle">
       <span v-if="isFolder" :class="[prefixCls + '-tree-switcher', open && prefixCls + '-tree-switcher-open']">
-        <icon type="jiantou"></icon>
+        <icon type="caretup"></icon>
       </span>
       <span :class="[prefixCls + '-tree-title']">
         {{model.name}}

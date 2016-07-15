@@ -2,8 +2,8 @@
   <div class="bs-docs-section" id="icon">
     <h3 class="page-header"><a href="#icon" class="anchor">Icon 图标</a></h3>
     <div class="bs-example">
-      <icon type="arrowup"></icon>箭头
-      <icon type="arrowdown"></icon>箭头
+      <icon type="caretup"></icon>箭头
+      <icon type="caretdown"></icon>箭头
       <icon type="head"></icon>页首
       <icon type="tail"></icon>页尾
       <icon type="clear"></icon>清除
