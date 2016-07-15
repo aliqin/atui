@@ -1537,7 +1537,7 @@ pre code {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.atui-table.loading table {
+.atui-table.atui-table-loading table {
   opacity: .7;
   -webkit-filter: blur(1px);
           filter: blur(1px);
@@ -1578,7 +1578,7 @@ pre code {
 .atui-table th .icon-filter:active {
   color: #0096e0;
 }
-.atui-table th .table-sorter {
+.atui-table th .atui-table-sorter {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -1586,13 +1586,13 @@ pre code {
   height: 16px;
   line-height: 7px;
 }
-.atui-table th .table-sorter i {
+.atui-table th .atui-table-sorter i {
   display: inline-block;
   -webkit-transform: scale(0.6) rotate(0deg);
           transform: scale(0.6) rotate(0deg);
   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
 }
-.atui-table th .table-sorter .active {
+.atui-table th .atui-table-sorter .atui-table-active {
   color: #0096e0;
 }
 .atui-table tbody tr:hover {
@@ -1657,7 +1657,7 @@ pre code {
 .atui-table-filter-dropdown-link {
   float: left;
 }
-.atui-table-filter-dropdown-link.clear {
+.atui-table-filter-dropdown-link.atui-table-clear {
   float: right;
 }
 .atui-table:after {
@@ -1837,6 +1837,14 @@ pre code {
     -webkit-transform: scale(0);
             transform: scale(0);
   }
+}
+.collapse-transition {
+  -webkit-transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease;
+  overflow: hidden;
+}
+.collapse-enter, .collapse-leave {
+  max-height: 0!important;
 }
 input[type="checkbox"], input[type="radio"] {
   -webkit-appearance: none;
@@ -4251,7 +4259,7 @@ button.atui-close {
 }
 .atui-menu-inline .atui-menu-selected, .atui-menu-inline .atui-menu-item-selected {
   color: #0096e0;
-  border-right: 2px solid #0096e0;
+  border-right: 3px solid #0096e0;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
 }
@@ -4320,8 +4328,8 @@ button.atui-close {
   transition: transform .3s ease;
   transition: transform .3s ease, -webkit-transform .3s ease;
   right: 16px;
-  -webkit-transform: rotate(180deg) scale(0.75);
-          transform: rotate(180deg) scale(0.75);
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
 }
 .atui-menu-submenu-inline .atui-menu-icon {
   vertical-align: baseline;
@@ -4333,14 +4341,14 @@ button.atui-close {
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease, -webkit-transform .3s ease;
-  -webkit-transform: rotate(180deg) scale(0.75);
-          transform: rotate(180deg) scale(0.75);
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
   right: 16px;
   top: 0;
 }
 .atui-menu-submenu-open.atui-menu-submenu-inline .atui-menu-icon {
-  -webkit-transform: rotate(0deg) scale(0.75);
-          transform: rotate(0deg) scale(0.75);
+  -webkit-transform: rotate(180deg) scale(0.75);
+          transform: rotate(180deg) scale(0.75);
 }
 .atui-menu-horizontal {
   border: 0;
@@ -5001,17 +5009,17 @@ button.atui-close {
   position: absolute;
   z-index: 1080;
 }
-.cascader {
+.atui-cascader {
   position: relative;
   display: inline-block;
 }
-.cascader-picker {
+.atui-cascader-picker {
   position: relative;
   display: inline-block;
   cursor: pointer;
   vertical-align: middle;
 }
-.cascader-menus {
+.atui-cascader-menus {
   z-index: 1080;
   font-size: 12px;
   background: #fff;
@@ -5021,7 +5029,7 @@ button.atui-close {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
   white-space: nowrap;
 }
-.cascader-menu {
+.atui-cascader-menu {
   display: inline-block;
   vertical-align: top;
   min-width: 111px;
@@ -5032,11 +5040,11 @@ button.atui-close {
   border-right: 1px solid #d9d9d9;
   overflow: auto;
 }
-.cascader-menu:last-child {
+.atui-cascader-menu:last-child {
   border-right-color: transparent;
   margin-right: -1px;
 }
-.cascader-menu-item {
+.atui-cascader-menu-item {
   padding: 7px 16px;
   cursor: pointer;
   white-space: nowrap;
@@ -5045,25 +5053,25 @@ button.atui-close {
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
-.cascader-menu-item:hover, .cascader-menu-item:focus {
+.atui-cascader-menu-item:hover, .atui-cascader-menu-item:focus {
   background-color: #f2fafd;
 }
-.cascader-menu-item.selected, .cascader-menu-item.selected:hover, .cascader-menu-item.selected:focus {
+.atui-cascader-menu-item.atui-cascader-selected, .atui-cascader-menu-item.atui-cascader-selected:hover, .atui-cascader-menu-item.atui-cascader-selected:focus {
   outline: 0;
   color: #fff;
   background-color: #66c0ec;
 }
-.cascader-menu-item.disabled {
+.atui-cascader-menu-item.atui-cascader-disabled {
   cursor: not-allowed;
   color: #ccc;
 }
-.cascader-menu-item.disabled:hover {
+.atui-cascader-menu-item.atui-cascader-disabled:hover {
   background: transparent;
 }
-.cascader-menu-item-expand {
+.atui-cascader-menu-item-expand {
   position: relative;
 }
-.cascader-menu-item-expand:after {
+.atui-cascader-menu-item-expand:after {
   content: '\E600';
   font-family: 'anticon';
   display: inline-block;
@@ -5179,7 +5187,7 @@ button.atui-close {
   font-style: 12px;
   text-decoration: none;
 }
-.month-btn {
+.atui-calendar-month-btn {
   font-weight: bold;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -5187,7 +5195,7 @@ button.atui-close {
           user-select: none;
   font-size: 16px;
 }
-.month-btn:hover {
+.atui-calendar-month-btn:hover {
   color: #0096e0;
 }
 .atui-calendar-preBtn {

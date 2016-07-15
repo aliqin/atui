@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(493);
+	module.exports = __webpack_require__(492);
 
 
 /***/ },
@@ -1029,7 +1029,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/headerDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(359)
+	__vue_template__ = __webpack_require__(358)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1181,23 +1181,23 @@
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Select = __webpack_require__(222);
+	var _Select = __webpack_require__(221);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Calendar = __webpack_require__(233);
+	var _Calendar = __webpack_require__(232);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 	
-	var _TimePicker = __webpack_require__(237);
+	var _TimePicker = __webpack_require__(236);
 	
 	var _TimePicker2 = _interopRequireDefault(_TimePicker);
 	
-	var _DatePicker = __webpack_require__(242);
+	var _DatePicker = __webpack_require__(241);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
-	var _Cascader = __webpack_require__(249);
+	var _Cascader = __webpack_require__(248);
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 	
@@ -1205,35 +1205,35 @@
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
-	var _Modal = __webpack_require__(253);
+	var _Modal = __webpack_require__(252);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Table = __webpack_require__(257);
+	var _Table = __webpack_require__(256);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 	
-	var _Badge = __webpack_require__(285);
+	var _Badge = __webpack_require__(284);
 	
 	var _Badge2 = _interopRequireDefault(_Badge);
 	
-	var _Carousel = __webpack_require__(289);
+	var _Carousel = __webpack_require__(288);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Affix = __webpack_require__(298);
+	var _Affix = __webpack_require__(297);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _Spin = __webpack_require__(266);
+	var _Spin = __webpack_require__(265);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 	
-	var _Textarea = __webpack_require__(303);
+	var _Textarea = __webpack_require__(302);
 	
 	var _Textarea2 = _interopRequireDefault(_Textarea);
 	
-	var _Tag = __webpack_require__(225);
+	var _Tag = __webpack_require__(224);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
@@ -1241,35 +1241,35 @@
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Accordion = __webpack_require__(307);
+	var _Accordion = __webpack_require__(306);
 	
 	var _Accordion2 = _interopRequireDefault(_Accordion);
 	
-	var _Popover = __webpack_require__(314);
+	var _Popover = __webpack_require__(313);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Tabs = __webpack_require__(318);
+	var _Tabs = __webpack_require__(317);
 	
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 	
-	var _Steps = __webpack_require__(325);
+	var _Steps = __webpack_require__(324);
 	
 	var _Steps2 = _interopRequireDefault(_Steps);
 	
-	var _Tree = __webpack_require__(332);
+	var _Tree = __webpack_require__(331);
 	
 	var _Tree2 = _interopRequireDefault(_Tree);
 	
-	var _Menu = __webpack_require__(339);
+	var _Menu = __webpack_require__(338);
 	
 	var _Menu2 = _interopRequireDefault(_Menu);
 	
-	var _Breadcrumb = __webpack_require__(352);
+	var _Breadcrumb = __webpack_require__(351);
 	
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 	
-	var _Pagination = __webpack_require__(271);
+	var _Pagination = __webpack_require__(270);
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
@@ -5151,7 +5151,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Dropdown/Dropdown.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(221)
+	__vue_template__ = __webpack_require__(220)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5183,20 +5183,8 @@
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _coerceBoolean = __webpack_require__(220);
-	
-	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
-	//   <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
-	//     <slot></slot>
-	//     <slot name="dropdown-menu"></slot>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    trigger: {
@@ -5204,9 +5192,7 @@
 	      default: 'click'
 	    },
 	    open: {
-	      type: Boolean,
-	      coerce: _coerceBoolean2.default,
-	      default: false
+	      type: Boolean
 	    },
 	    prefixCls: {
 	      type: String,
@@ -5264,31 +5250,23 @@
 	// </script>
 
 	/* generated by vue-loader */
+	// <template>
+	//   <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
+	//     <slot></slot>
+	//     <slot name="dropdown-menu"></slot>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
 
 /***/ },
 /* 220 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	// Attempt to convert a string value to a Boolean. Otherwise, return the value
-	// without modification so Vue can throw a warning.
-	
-	exports.default = function (val) {
-	  return typeof val !== 'string' ? val : val === 'true' ? true : val === 'false' ? false : val === 'null' ? false : val === 'undefined' ? false : val;
-	};
-
-/***/ },
-/* 221 */
-/***/ function(module, exports) {
-
 	module.exports = "\n<div :class=\"[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
 
 /***/ },
-/* 222 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5297,11 +5275,11 @@
 	  value: true
 	});
 	
-	var _Select = __webpack_require__(223);
+	var _Select = __webpack_require__(222);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Option = __webpack_require__(230);
+	var _Option = __webpack_require__(229);
 	
 	var _Option2 = _interopRequireDefault(_Option);
 	
@@ -5312,16 +5290,16 @@
 	exports.default = _Select2.default;
 
 /***/ },
-/* 223 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(224)
+	__vue_script__ = __webpack_require__(223)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Select/Select.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(229)
+	__vue_template__ = __webpack_require__(228)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5340,7 +5318,7 @@
 	})()}
 
 /***/ },
-/* 224 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5357,7 +5335,7 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Tag = __webpack_require__(225);
+	var _Tag = __webpack_require__(224);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
@@ -5636,7 +5614,7 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 225 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5645,7 +5623,7 @@
 	  value: true
 	});
 	
-	var _Tag = __webpack_require__(226);
+	var _Tag = __webpack_require__(225);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 
@@ -5654,16 +5632,16 @@
 	exports.default = _Tag2.default;
 
 /***/ },
-/* 226 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(227)
+	__vue_script__ = __webpack_require__(226)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tag/Tag.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(228)
+	__vue_template__ = __webpack_require__(227)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5682,7 +5660,7 @@
 	})()}
 
 /***/ },
-/* 227 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5750,28 +5728,28 @@
 	// <script>
 
 /***/ },
-/* 228 */
+/* 227 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-if=\"!closed\"\n     :class=\"[prefixCls + '-tag', color && (prefixCls + '-tag-color')]\"\n     :style=\"{'background-color': color}\">\n  <a :href=\"href\"\n     :class=\"[prefixCls + '-tag-text']\"\n     :style=\"{'fontSize': size+'px'}\">\n    <slot></slot>\n  </a>\n  <span v-if=\"closable\"\n       :class=\"[prefixCls + '-tag-close']\"\n       @click=\"closeHandler\">\n   <v-icon type=\"close\" :size=\"size\"></v-icon>\n  </span>\n</div>\n";
 
 /***/ },
-/* 229 */
+/* 228 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"selectClassObj\">\n  <div :class=\"[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]\"\n       tabindex=\"1\"\n       @mousedown=\"toggleDropdown\"\n       @keydown.up=\"selectUp\"\n       @keydown.down=\"selectDown\"\n       v-bind=\"{disabled: disabled}\">\n    <template v-if=\"!multiple\">\n      <span v-show=\"!value\"\n            :class=\"[prefixCls + '-select-placeholder']\">{{placeholder}}</span>\n      <span :class=\"[prefixCls + '-select-btn-content']\">{{ showText }}</span>\n      <span :class=\"[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]\">\n        <icon :class=\"[prefixCls + '-dropdown-icon']\" type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span :class=\"[prefixCls + '-select-placeholder']\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field :class=\"[prefixCls + '-select-search-field']\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div :class=\"[prefixCls + '-dropdown-menu']\" v-show=\"show && options.length > 0\" transition=\"slide\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 230 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(231)
+	__vue_script__ = __webpack_require__(230)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Select/Option.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(232)
+	__vue_template__ = __webpack_require__(231)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5790,7 +5768,7 @@
 	})()}
 
 /***/ },
-/* 231 */
+/* 230 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -5904,13 +5882,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 232 */
+/* 231 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-show=\"show\"\n     :class=\"optionClassObj\"\n     @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 233 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5919,7 +5897,7 @@
 	  value: true
 	});
 	
-	var _Calendar = __webpack_require__(234);
+	var _Calendar = __webpack_require__(233);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 
@@ -5928,16 +5906,16 @@
 	exports.default = _Calendar2.default;
 
 /***/ },
-/* 234 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(235)
+	__vue_script__ = __webpack_require__(234)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Calendar/Calendar.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(236)
+	__vue_template__ = __webpack_require__(235)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5956,7 +5934,7 @@
 	})()}
 
 /***/ },
-/* 235 */
+/* 234 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -5965,42 +5943,41 @@
 	  value: true
 	});
 	// <template>
-	//   <div class="atui-calendar" v-show="show">
-	//     <div class="atui-calendar-popup" v-show="displayDayView">
-	//       <div class="atui-calendar-inner">
-	//         <div class="atui-calendar-header">
+	//   <div :class="[prefixCls + '-calendar']" v-show="show">
+	//     <div :class="[prefixCls + '-calendar-popup']" v-show="displayDayView">
+	//       <div :class="[prefixCls + '-calendar-inner']">
+	//         <div :class="[prefixCls + '-calendar-header']">
 	//           <!-- <span class="atui-calendar-prev-year-btn">»</span> -->
-	//           <span class="month-btn atui-calendar-preBtn" @click="preNextMonthClick(0)">‹</span>
-	//           <span class="month-btn atui-calendar-nextBtn" @click="preNextMonthClick(1)">›</span>
+	//           <span :class="[prefixCls + '-calendar-month-btn', prefixCls + '-calendar-preBtn']" @click="preNextMonthClick(0)">‹</span>
+	//           <span :class="[prefixCls + '-calendar-month-btn', prefixCls + '-calendar-nextBtn']" @click="preNextMonthClick(1)">›</span>
 	//           <!-- <span class="atui-calendar-next-year-btn">»</span> -->
 	//           <p @click="switchMonthView">{{stringifyDayHeader(currDate)}}</p>
 	//         </div>
-	//         <div class="atui-calendar-body">
-	//           <div class="atui-calendar-weekRange">
+	//         <div :class="[prefixCls + '-calendar-body']">
+	//           <div :class="[prefixCls + '-calendar-weekRange']">
 	//             <span v-for="w in weekRange">{{w}}</span>
 	//           </div>
-	//           <div class="atui-calendar-dateRange">
+	//           <div :class="[prefixCls + '-calendar-dateRange']">
 	//             <span v-for="d in dateRange" :class="d.sclass" @click="daySelect(d.date,$event)">{{d.text}}</span>
 	//           </div>
 	//         </div>
-	//         <div class="atui-calendar-footer">
-	//           <a class="atui-calendar-today-btn" role="button" @click="daySelect(new Date(),$event)" :title="stringifyDayHeader(currDate)">今天</a>
+	//         <div :class="[prefixCls + '-calendar-footer']">
+	//           <a :class="[prefixCls + '-calendar-today-btn']" role="button" @click="daySelect(new Date(),$event)" :title="stringifyDayHeader(currDate)">今天</a>
 	//         </div>
 	//       </div>
 	//     </div>
-	//     <div class="atui-calendar-popup" v-show="displayMonthView">
-	//       <div class="atui-calendar-inner">
-	//         <div class="atui-calendar-header">
-	//           <span class="month-btn atui-calendar-preBtn" @click="preNextYearClick(0)">&lt;</span>
-	//           <span class="month-btn atui-calendar-nextBtn" @click="preNextYearClick(1)">&gt;</span>
+	//     <div :class="[prefixCls + '-calendar-popup']" v-show="displayMonthView">
+	//       <div :class="[prefixCls + '-calendar-inner']">
+	//         <div :class="[prefixCls + '-calendar-header']">
+	//           <span :class="['month-btn', prefixCls + '-calendar-preBtn']" @click="preNextYearClick(0)">&lt;</span>
+	//           <span :class="['month-btn', prefixCls + '-calendar-nextBtn']" @click="preNextYearClick(1)">&gt;</span>
 	//           <p @click="switchDecadeView">{{stringifyYearHeader(currDate)}}</p>
 	//         </div>
-	//         <div class="atui-calendar-body">
-	//           <div class="atui-calendar-monthRange">
+	//         <div :class="[prefixCls + '-calendar-body']">
+	//           <div :class="[prefixCls + '-calendar-monthRange']">
 	//             <template v-for="m in monthNames">
-	//               <span :class="{'atui-calendar-dateRange-item-active':
-	//                   (monthNames[parse(value).getMonth()]  === m) &&
-	//                   currDate.getFullYear() === parse(value).getFullYear()}"
+	//               <span :class="[(monthNames[parse(value).getMonth()]  === m) &&
+	//                   currDate.getFullYear() === parse(value).getFullYear() && prefixCls + '-calendar-dateRange-item-active']"
 	//                   @click="monthSelect($index)"
 	//                 >{{m.substr(0,3)}}</span>
 	//             </template>
@@ -6008,18 +5985,17 @@
 	//         </div>
 	//       </div>
 	//     </div>
-	//     <div class="atui-calendar-popup" v-show="displayYearView">
-	//       <div class="atui-calendar-inner">
-	//         <div class="atui-calendar-header">
-	//           <span class="month-btn atui-calendar-preBtn" @click="preNextDecadeClick(0)">&lt;</span>
-	//           <span class="month-btn atui-calendar-nextBtn" @click="preNextDecadeClick(1)">&gt;</span>
+	//     <div :class="[prefixCls + '-calendar-popup']" v-show="displayYearView">
+	//       <div :class="[prefixCls + '-calendar-inner']">
+	//         <div :class="[prefixCls + '-calendar-header']">
+	//           <span :class="['month-btn', prefixCls + '-calendar-preBtn']" @click="preNextDecadeClick(0)">&lt;</span>
+	//           <span :class="['month-btn', prefixCls + '-calendar-nextBtn']" @click="preNextDecadeClick(1)">&gt;</span>
 	//           <p>{{stringifyDecadeHeader(currDate)}}</p>
 	//         </div>
-	//         <div class="atui-calendar-body">
-	//           <div class="atui-calendar-monthRange decadeRange">
+	//         <div :class="[prefixCls + '-calendar-body']">
+	//           <div :class="[prefixCls + '-calendar-monthRange decadeRange']">
 	//             <template v-for="decade in decadeRange">
-	//               <span :class="{'atui-calendar-dateRange-item-active':
-	//                   parse(value).getFullYear() === decade.text}"
+	//               <span :class="[parse(value).getFullYear() === decade.text && prefixCls + '-calendar-dateRange-item-active']"
 	//                   @click.stop="yearSelect(decade.text)"
 	//                 >{{decade.text}}</span>
 	//             </template>
@@ -6030,7 +6006,7 @@
 	//   </div>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 	var localeConfig = {
 	  zh_CN: {
 	    weekRange: ['日', '一', '二', '三', '四', '五', '六'],
@@ -6041,6 +6017,7 @@
 	    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 	  }
 	};
+	
 	exports.default = {
 	  props: {
 	    value: {
@@ -6072,6 +6049,10 @@
 	    mode: {
 	      type: String,
 	      default: 'month'
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
@@ -6140,7 +6121,9 @@
 	    },
 	    daySelect: function daySelect(date, event) {
 	      var el = event.target;
-	      if (el.className.split(' ').indexOf('atui-calendar-item-disable') >= 0) {
+	      var prefixCls = this.prefixCls;
+	
+	      if (el.className.split(' ').indexOf(prefixCls + '-calendar-item-disable') >= 0) {
 	        return false;
 	      } else {
 	        this.currDate = date;
@@ -6299,13 +6282,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 236 */
+/* 235 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"atui-calendar\" v-show=\"show\">\n  <div class=\"atui-calendar-popup\" v-show=\"displayDayView\">\n    <div class=\"atui-calendar-inner\">\n      <div class=\"atui-calendar-header\">\n        <!-- <span class=\"atui-calendar-prev-year-btn\">»</span> -->\n        <span class=\"month-btn atui-calendar-preBtn\" @click=\"preNextMonthClick(0)\">‹</span>\n        <span class=\"month-btn atui-calendar-nextBtn\" @click=\"preNextMonthClick(1)\">›</span>\n        <!-- <span class=\"atui-calendar-next-year-btn\">»</span> -->\n        <p @click=\"switchMonthView\">{{stringifyDayHeader(currDate)}}</p>\n      </div>\n      <div class=\"atui-calendar-body\">\n        <div class=\"atui-calendar-weekRange\">\n          <span v-for=\"w in weekRange\">{{w}}</span>\n        </div>\n        <div class=\"atui-calendar-dateRange\">\n          <span v-for=\"d in dateRange\" :class=\"d.sclass\" @click=\"daySelect(d.date,$event)\">{{d.text}}</span>\n        </div>\n      </div>\n      <div class=\"atui-calendar-footer\">\n        <a class=\"atui-calendar-today-btn\" role=\"button\" @click=\"daySelect(new Date(),$event)\" :title=\"stringifyDayHeader(currDate)\">今天</a>\n      </div>\n    </div>\n  </div>\n  <div class=\"atui-calendar-popup\" v-show=\"displayMonthView\">\n    <div class=\"atui-calendar-inner\">\n      <div class=\"atui-calendar-header\">\n        <span class=\"month-btn atui-calendar-preBtn\" @click=\"preNextYearClick(0)\">&lt;</span>\n        <span class=\"month-btn atui-calendar-nextBtn\" @click=\"preNextYearClick(1)\">&gt;</span>\n        <p @click=\"switchDecadeView\">{{stringifyYearHeader(currDate)}}</p>\n      </div>\n      <div class=\"atui-calendar-body\">\n        <div class=\"atui-calendar-monthRange\">\n          <template v-for=\"m in monthNames\">\n            <span :class=\"{'atui-calendar-dateRange-item-active':\n                (monthNames[parse(value).getMonth()]  === m) &&\n                currDate.getFullYear() === parse(value).getFullYear()}\"\n                @click=\"monthSelect($index)\"\n              >{{m.substr(0,3)}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"atui-calendar-popup\" v-show=\"displayYearView\">\n    <div class=\"atui-calendar-inner\">\n      <div class=\"atui-calendar-header\">\n        <span class=\"month-btn atui-calendar-preBtn\" @click=\"preNextDecadeClick(0)\">&lt;</span>\n        <span class=\"month-btn atui-calendar-nextBtn\" @click=\"preNextDecadeClick(1)\">&gt;</span>\n        <p>{{stringifyDecadeHeader(currDate)}}</p>\n      </div>\n      <div class=\"atui-calendar-body\">\n        <div class=\"atui-calendar-monthRange decadeRange\">\n          <template v-for=\"decade in decadeRange\">\n            <span :class=\"{'atui-calendar-dateRange-item-active':\n                parse(value).getFullYear() === decade.text}\"\n                @click.stop=\"yearSelect(decade.text)\"\n              >{{decade.text}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-calendar']\" v-show=\"show\">\n  <div :class=\"[prefixCls + '-calendar-popup']\" v-show=\"displayDayView\">\n    <div :class=\"[prefixCls + '-calendar-inner']\">\n      <div :class=\"[prefixCls + '-calendar-header']\">\n        <!-- <span class=\"atui-calendar-prev-year-btn\">»</span> -->\n        <span :class=\"[prefixCls + '-calendar-month-btn', prefixCls + '-calendar-preBtn']\" @click=\"preNextMonthClick(0)\">‹</span>\n        <span :class=\"[prefixCls + '-calendar-month-btn', prefixCls + '-calendar-nextBtn']\" @click=\"preNextMonthClick(1)\">›</span>\n        <!-- <span class=\"atui-calendar-next-year-btn\">»</span> -->\n        <p @click=\"switchMonthView\">{{stringifyDayHeader(currDate)}}</p>\n      </div>\n      <div :class=\"[prefixCls + '-calendar-body']\">\n        <div :class=\"[prefixCls + '-calendar-weekRange']\">\n          <span v-for=\"w in weekRange\">{{w}}</span>\n        </div>\n        <div :class=\"[prefixCls + '-calendar-dateRange']\">\n          <span v-for=\"d in dateRange\" :class=\"d.sclass\" @click=\"daySelect(d.date,$event)\">{{d.text}}</span>\n        </div>\n      </div>\n      <div :class=\"[prefixCls + '-calendar-footer']\">\n        <a :class=\"[prefixCls + '-calendar-today-btn']\" role=\"button\" @click=\"daySelect(new Date(),$event)\" :title=\"stringifyDayHeader(currDate)\">今天</a>\n      </div>\n    </div>\n  </div>\n  <div :class=\"[prefixCls + '-calendar-popup']\" v-show=\"displayMonthView\">\n    <div :class=\"[prefixCls + '-calendar-inner']\">\n      <div :class=\"[prefixCls + '-calendar-header']\">\n        <span :class=\"['month-btn', prefixCls + '-calendar-preBtn']\" @click=\"preNextYearClick(0)\">&lt;</span>\n        <span :class=\"['month-btn', prefixCls + '-calendar-nextBtn']\" @click=\"preNextYearClick(1)\">&gt;</span>\n        <p @click=\"switchDecadeView\">{{stringifyYearHeader(currDate)}}</p>\n      </div>\n      <div :class=\"[prefixCls + '-calendar-body']\">\n        <div :class=\"[prefixCls + '-calendar-monthRange']\">\n          <template v-for=\"m in monthNames\">\n            <span :class=\"[(monthNames[parse(value).getMonth()]  === m) &&\n                currDate.getFullYear() === parse(value).getFullYear() && prefixCls + '-calendar-dateRange-item-active']\"\n                @click=\"monthSelect($index)\"\n              >{{m.substr(0,3)}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div :class=\"[prefixCls + '-calendar-popup']\" v-show=\"displayYearView\">\n    <div :class=\"[prefixCls + '-calendar-inner']\">\n      <div :class=\"[prefixCls + '-calendar-header']\">\n        <span :class=\"['month-btn', prefixCls + '-calendar-preBtn']\" @click=\"preNextDecadeClick(0)\">&lt;</span>\n        <span :class=\"['month-btn', prefixCls + '-calendar-nextBtn']\" @click=\"preNextDecadeClick(1)\">&gt;</span>\n        <p>{{stringifyDecadeHeader(currDate)}}</p>\n      </div>\n      <div :class=\"[prefixCls + '-calendar-body']\">\n        <div :class=\"[prefixCls + '-calendar-monthRange decadeRange']\">\n          <template v-for=\"decade in decadeRange\">\n            <span :class=\"[parse(value).getFullYear() === decade.text && prefixCls + '-calendar-dateRange-item-active']\"\n                @click.stop=\"yearSelect(decade.text)\"\n              >{{decade.text}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 237 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6314,7 +6297,7 @@
 	  value: true
 	});
 	
-	var _TimePicker = __webpack_require__(238);
+	var _TimePicker = __webpack_require__(237);
 	
 	var _TimePicker2 = _interopRequireDefault(_TimePicker);
 
@@ -6323,16 +6306,16 @@
 	exports.default = _TimePicker2.default;
 
 /***/ },
-/* 238 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(239)
+	__vue_script__ = __webpack_require__(238)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/TimePicker/TimePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(241)
+	__vue_template__ = __webpack_require__(240)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6351,7 +6334,7 @@
 	})()}
 
 /***/ },
-/* 239 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6368,7 +6351,7 @@
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _selection = __webpack_require__(240);
+	var _selection = __webpack_require__(239);
 	
 	var _selection2 = _interopRequireDefault(_selection);
 	
@@ -6582,7 +6565,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 240 */
+/* 239 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -6610,13 +6593,13 @@
 	}
 
 /***/ },
-/* 241 */
+/* 240 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-time-picker']\">\n  <span :class=\"[prefixCls + '-time-picker-toggler']\">\n    <v-input v-el:picker-toggler readonly @click=\"toggleMenus\" :value=\"value\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div v-el:picker-menus :class=\"[prefixCls + '-time-picker-menus']\" v-show=\"show\" transition=\"slide\">\n    <div :class=\"[prefixCls + '-time-picker-panel']\">\n      <ul v-el:h :class=\"time-hours\" @mouseover=\"selection('H')\">\n        <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: hour === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div :class=\"[prefixCls + '-time-picker-panel']\">\n      <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n        <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: minute === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div :class=\"[prefixCls + '-time-picker-panel']\" @mouseover=\"selection('S')\">\n      <ul v-el:s class=\"time-seconds\">\n        <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: second === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 242 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6625,11 +6608,11 @@
 	  value: true
 	});
 	
-	var _DatePicker = __webpack_require__(243);
+	var _DatePicker = __webpack_require__(242);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
-	var _RangePicker = __webpack_require__(246);
+	var _RangePicker = __webpack_require__(245);
 	
 	var _RangePicker2 = _interopRequireDefault(_RangePicker);
 	
@@ -6640,16 +6623,16 @@
 	exports.default = _DatePicker2.default;
 
 /***/ },
-/* 243 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(244)
+	__vue_script__ = __webpack_require__(243)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/DatePicker/DatePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(245)
+	__vue_template__ = __webpack_require__(244)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6668,7 +6651,7 @@
 	})()}
 
 /***/ },
-/* 244 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6681,7 +6664,7 @@
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Calendar = __webpack_require__(233);
+	var _Calendar = __webpack_require__(232);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 	
@@ -6712,7 +6695,11 @@
 	      type: Function,
 	      default: function _default(date) {}
 	    },
-	    disabled: Boolean
+	    disabled: Boolean,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	  components: {
 	    icon: _Icon2.default,
@@ -6749,36 +6736,36 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <div class="atui-datepicker">
-	//     <div class="atui-datepicker-toggle" @click="inputClick" >
-	//       <input class="datepicker-input" transition="slide" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
+	//   <div :class="[prefixCls + '-datepicker']">
+	//     <div :class="[prefixCls + '-datepicker-toggle']" @click="inputClick" >
+	//       <input :class="[prefixCls + '-datepicker-input']" transition="slide" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
 	//       <icon type="calendar"></icon>
 	//     </div>
-	//     <div class="atui-datepicker-calendar">
+	//     <div :class="[prefixCls + '-datepicker-calendar']">
 	//       <calendar :show="show" transition="slide" @change="selectChange" v-ref:calendar :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
 	//     </div>
 	//   </div>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
+
+/***/ },
+/* 244 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"[prefixCls + '-datepicker']\">\n  <div :class=\"[prefixCls + '-datepicker-toggle']\" @click=\"inputClick\" >\n    <input :class=\"[prefixCls + '-datepicker-input']\" transition=\"slide\" v-bind=\"{disabled:disabled}\" type=\"text\" :value=\"value\" :placeholder=\"placeholder\" readonly/>\n    <icon type=\"calendar\"></icon>\n  </div>\n  <div :class=\"[prefixCls + '-datepicker-calendar']\">\n    <calendar :show=\"show\" transition=\"slide\" @change=\"selectChange\" v-ref:calendar :value=\"value\" :format=\"format\" :locale=\"locale\" :disabled-date=\"disabledDate\"></calendar>\n  </div>\n</div>\n";
 
 /***/ },
 /* 245 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"atui-datepicker\">\n  <div class=\"atui-datepicker-toggle\" @click=\"inputClick\" >\n    <input class=\"datepicker-input\" transition=\"slide\" v-bind=\"{disabled:disabled}\" type=\"text\" :value=\"value\" :placeholder=\"placeholder\" readonly/>\n    <icon type=\"calendar\"></icon>\n  </div>\n  <div class=\"atui-datepicker-calendar\">\n    <calendar :show=\"show\" transition=\"slide\" @change=\"selectChange\" v-ref:calendar :value=\"value\" :format=\"format\" :locale=\"locale\" :disabled-date=\"disabledDate\"></calendar>\n  </div>\n</div>\n";
-
-/***/ },
-/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(247)
+	__vue_script__ = __webpack_require__(246)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/DatePicker/RangePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(248)
+	__vue_template__ = __webpack_require__(247)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6797,7 +6784,7 @@
 	})()}
 
 /***/ },
-/* 247 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6806,7 +6793,7 @@
 	  value: true
 	});
 	
-	var _DatePicker = __webpack_require__(243);
+	var _DatePicker = __webpack_require__(242);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
@@ -6826,7 +6813,11 @@
 	    format: {
 	      default: 'yyyy-MM-dd'
 	    },
-	    disabled: Boolean
+	    disabled: Boolean,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
 	  components: {
 	    DatePicker: _DatePicker2.default
@@ -6876,22 +6867,22 @@
 
 	/* generated by vue-loader */
 	// <template>
-	// <div class="range-picker">
+	// <div :class="[prefixCls + '-datepicker-rangepicker']">
 	//   <date-picker v-ref:start-date :value.sync="startDate" :disabled="disabled" :format="format" placeholder="开始日期" @change="onStartDateChange"></date-picker>
-	//   <span class="range-picker-separator"> - </span>
+	//   <span :class="[prefixCls + '-datepicker-rangepicker-separator']"> - </span>
 	//   <date-picker v-ref:end-date :value.sync="endDate" :disabled="disabled" :format="format" placeholder="结束日期" :disabled-date="disabledEndDate" @change="onEndDateChange"></date-picker>
 	// </div>
 	// </template>
 	// <script>
 
 /***/ },
-/* 248 */
+/* 247 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"range-picker\">\n  <date-picker v-ref:start-date :value.sync=\"startDate\" :disabled=\"disabled\" :format=\"format\" placeholder=\"开始日期\" @change=\"onStartDateChange\"></date-picker>\n  <span class=\"range-picker-separator\"> - </span>\n  <date-picker v-ref:end-date :value.sync=\"endDate\" :disabled=\"disabled\" :format=\"format\" placeholder=\"结束日期\" :disabled-date=\"disabledEndDate\" @change=\"onEndDateChange\"></date-picker>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-datepicker-rangepicker']\">\n  <date-picker v-ref:start-date :value.sync=\"startDate\" :disabled=\"disabled\" :format=\"format\" placeholder=\"开始日期\" @change=\"onStartDateChange\"></date-picker>\n  <span :class=\"[prefixCls + '-datepicker-rangepicker-separator']\"> - </span>\n  <date-picker v-ref:end-date :value.sync=\"endDate\" :disabled=\"disabled\" :format=\"format\" placeholder=\"结束日期\" :disabled-date=\"disabledEndDate\" @change=\"onEndDateChange\"></date-picker>\n</div>\n";
 
 /***/ },
-/* 249 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6900,7 +6891,7 @@
 	  value: true
 	});
 	
-	var _Cascader = __webpack_require__(250);
+	var _Cascader = __webpack_require__(249);
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 
@@ -6909,16 +6900,16 @@
 	exports.default = _Cascader2.default;
 
 /***/ },
-/* 250 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(251)
+	__vue_script__ = __webpack_require__(250)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Cascader/Cascader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(252)
+	__vue_template__ = __webpack_require__(251)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6937,7 +6928,7 @@
 	})()}
 
 /***/ },
-/* 251 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6957,18 +6948,20 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div class="cascader">
-	//     <span class="cascader-picker">
+	//   <div :class="[prefixCls + '-cascader']">
+	//     <span :class="[prefixCls + '-cascader-picker']">
 	//       <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
 	//     </span>
-	//     <div class="cascader-menus" v-show="show" transition="slide">
-	//       <ul class="cascader-menu" v-for="(index, menu) in menus">
-	//         <li class="cascader-menu-item" :class="{selected:selectedOptions[index] === option,disabled:option.disabled}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
+	//     <div :class="[prefixCls + '-cascader-menus']" v-show="show" transition="slide">
+	//       <ul :class="[prefixCls + '-cascader-menu']" v-for="(index, menu) in menus">
+	//         <li :class="[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]"
+	//             v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
 	//       </ul>
 	//     </div>
 	//   </div>
 	// </template>
-	// <script>
+	//
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    options: {
@@ -6994,6 +6987,10 @@
 	    },
 	    defaultValue: {
 	      type: Array
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
 	  },
 	  components: {
@@ -7082,13 +7079,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 252 */
+/* 251 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"cascader\">\n  <span class=\"cascader-picker\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n  </span>\n  <div class=\"cascader-menus\" v-show=\"show\" transition=\"slide\">\n    <ul class=\"cascader-menu\" v-for=\"(index, menu) in menus\">\n      <li class=\"cascader-menu-item\" :class=\"{selected:selectedOptions[index] === option,disabled:option.disabled}\" v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-cascader']\">\n  <span :class=\"[prefixCls + '-cascader-picker']\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n  </span>\n  <div :class=\"[prefixCls + '-cascader-menus']\" v-show=\"show\" transition=\"slide\">\n    <ul :class=\"[prefixCls + '-cascader-menu']\" v-for=\"(index, menu) in menus\">\n      <li :class=\"[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]\"\n          v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 253 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7097,7 +7094,7 @@
 	  value: true
 	});
 	
-	var _Modal = __webpack_require__(254);
+	var _Modal = __webpack_require__(253);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
@@ -7160,16 +7157,16 @@
 	exports.default = _Modal2.default;
 
 /***/ },
-/* 254 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(255)
+	__vue_script__ = __webpack_require__(254)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Modal/Modal.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(256)
+	__vue_template__ = __webpack_require__(255)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7188,7 +7185,7 @@
 	})()}
 
 /***/ },
-/* 255 */
+/* 254 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7304,13 +7301,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 256 */
+/* 255 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div role=\"dialog\" :class=\"[prefixCls + '-modal']\" v-show=\"show\" transition=\"fade\"\n  @click=\"clickBack\"\n  >\n  <div v-show=\"show\"\n       :class=\"dialogClassObj\"\n       :style=\"{width: width}\"\n       role=\"document\"\n       transition=\"fade\">\n    <div :class=\"[prefixCls + '-modal-content']\">\n      <slot name=\"modal-header\">\n        <div :class=\"[prefixCls + '-modal-header']\">\n          <button type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"close\"><span>&times;</span></button>\n          <h4 :class=\"[prefixCls + '-modal-title']\">{{title}}</h4>\n        </div>\n      </slot>\n      <div :class=\"[prefixCls + '-modal-body']\" :style=\"{height: height, maxHeight: '500px'}\">\n        <slot name=\"modal-body\">\n        </slot>\n      </div>\n      <slot name=\"modal-footer\">\n        <div :class=\"[prefixCls + '-modal-footer']\">\n          <button type=\"button\" :class=\"[prefixCls + '-btn', prefixCls + '-btn-default']\" @click=\"callback\">确定</button>\n          <button type=\"button\" :class=\"[prefixCls + '-btn', prefixCls + '-btn-tertiary']\" @click=\"close\">取消</button>\n        </div>\n      </slot>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 257 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7319,7 +7316,7 @@
 	  value: true
 	});
 	
-	var _Table = __webpack_require__(258);
+	var _Table = __webpack_require__(257);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -7328,16 +7325,16 @@
 	exports.default = _Table2.default;
 
 /***/ },
-/* 258 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(259)
+	__vue_script__ = __webpack_require__(258)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Table/Table.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(284)
+	__vue_template__ = __webpack_require__(283)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7356,7 +7353,7 @@
 	})()}
 
 /***/ },
-/* 259 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7365,11 +7362,11 @@
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(260);
+	var _assign = __webpack_require__(259);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _concat = __webpack_require__(264);
+	var _concat = __webpack_require__(263);
 	
 	var _concat2 = _interopRequireDefault(_concat);
 	
@@ -7381,23 +7378,22 @@
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Spin = __webpack_require__(266);
+	var _Spin = __webpack_require__(265);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 	
-	var _Pagination = __webpack_require__(271);
+	var _Pagination = __webpack_require__(270);
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <!--suppress ALL-->
 	// <template>
-	//   <div :class="[prefixCls + '-table',prefixCls + '-table-'+ size, {loading: loading}]">
+	//   <div :class="[prefixCls + '-table', prefixCls + '-table-'+ size, loading && (prefixCls + '-table-loading')]">
 	//     <spin size="sm" v-if="loading"></spin>
 	//     <!-- <table :class="['atui-table-fixed-header','atui-table']" v-if="fixedHeader">
 	//   </table> -->
-	//     <div :class="[prefixCls + '-table-container',fixedHeader ? prefixCls + '-fixed-header': '']">
+	//     <div :class="[prefixCls + '-table-container', fixedHeader && (prefixCls + '-table-fixed-header')]">
 	//       <table>
 	//         <colgroup>
 	//           <col v-if="rowSelection"></col>
@@ -7415,7 +7411,7 @@
 	//                 <div data-toggle="dropdown" @click="filterOpened = true">
 	//                   <icon type="filter" size="12"></icon>
 	//                 </div>
-	//                 <div name="dropdown-menu" v-show="filterOpened" transition="slide" class="atui-dropdown-menu atui-table-filter-dropdown">
+	//                 <div name="dropdown-menu" v-show="filterOpened" transition="slide" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
 	//                   <ul>
 	//                     <li v-for="filter in column.filters">
 	//                     <label>
@@ -7425,24 +7421,24 @@
 	//                   </ul>
 	//                   <div :class="[prefixCls + '-table-filter-dropdown-btns']">
 	//                     <a :class="[prefixCls + '-table-filter-dropdown-link confirm']" @click="onFilter(column)">确定</a>
-	//                     <a :class="[prefixCls + '-table-filter-dropdown-link','clear']" @click="resetFilter(column)">重置</a>
+	//                     <a :class="[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']" @click="resetFilter(column)">重置</a>
 	//                   </div>
 	//                 </div>
 	//
 	//               </dropdown>
-	//               <div v-if="dataSource && dataSource.length && column.sorter" class="table-sorter">
-	//                 <icon type="caretup" size="10" @click="sortAction(column,$index,'ascend')" :class="{active:sorderOrder[$index] == 'ascend'}"></icon>
-	//                 <icon type="caretdown" size="10" @click="sortAction(column,$index,'descend')" :class="{active:sorderOrder[$index] == 'descend'}"></icon>
+	//               <div v-if="dataSource && dataSource.length && column.sorter" :class="[prefixCls + '-table-sorter']">
+	//                 <icon type="caretup" size="10" @click="sortAction(column,$index,'ascend')" :class="[sorderOrder[$index] == 'ascend' && (prefixCls + '-table-active')]"></icon>
+	//                 <icon type="caretdown" size="10" @click="sortAction(column,$index,'descend')" :class="[sorderOrder[$index] == 'descend' && (prefixCls + '-table-active')]"></icon>
 	//               </div>
 	//             </th>
 	//           </tr>
 	//         </thead>
 	//         <tbody>
 	//           <tr v-if="!dataSource || !dataSource.length">
-	//             <td colspan="20" style="text-align: center;" :class="[prefixCls + 'table-empty']">{{noDataTip}}</td>
+	//             <td colspan="20" style="text-align: center;" :class="[prefixCls + '-table-empty']">{{noDataTip}}</td>
 	//           </tr>
 	//           <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
-	//             <td v-if="rowSelection" :class="[prefixCls + 'table-selection-column']">
+	//             <td v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
 	//               <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
 	//               />
 	//             </td>
@@ -7697,29 +7693,29 @@
 	/* generated by vue-loader */
 
 /***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(260), __esModule: true };
+
+/***/ },
 /* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(261), __esModule: true };
+	__webpack_require__(261);
+	module.exports = __webpack_require__(88).Object.assign;
 
 /***/ },
 /* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(262);
-	module.exports = __webpack_require__(88).Object.assign;
-
-/***/ },
-/* 262 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// 19.1.3.1 Object.assign(target, source)
 	var $export = __webpack_require__(86);
 	
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(263)});
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(262)});
 
 /***/ },
-/* 263 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7757,13 +7753,13 @@
 	} : $assign;
 
 /***/ },
-/* 264 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(265), __esModule: true };
+	module.exports = { "default": __webpack_require__(264), __esModule: true };
 
 /***/ },
-/* 265 */
+/* 264 */
 /***/ function(module, exports) {
 
 	// for a legacy code and future fixes
@@ -7772,7 +7768,7 @@
 	};
 
 /***/ },
-/* 266 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7781,7 +7777,7 @@
 	  value: true
 	});
 	
-	var _Spin = __webpack_require__(267);
+	var _Spin = __webpack_require__(266);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 
@@ -7790,16 +7786,16 @@
 	exports.default = _Spin2.default;
 
 /***/ },
-/* 267 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(268)
+	__vue_script__ = __webpack_require__(267)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Spin/Spin.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(270)
+	__vue_template__ = __webpack_require__(269)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7818,7 +7814,7 @@
 	})()}
 
 /***/ },
-/* 268 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7827,7 +7823,7 @@
 	  value: true
 	});
 	
-	var _cssAnimationSupported = __webpack_require__(269);
+	var _cssAnimationSupported = __webpack_require__(268);
 	
 	var _cssAnimationSupported2 = _interopRequireDefault(_cssAnimationSupported);
 	
@@ -7897,7 +7893,7 @@
 	// <script>
 
 /***/ },
-/* 269 */
+/* 268 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7925,13 +7921,13 @@
 	exports.default = animation;
 
 /***/ },
-/* 270 */
+/* 269 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"spinClassObj\" v-show=\"show\">\n  <div v-if=\"isSupportAnimation || !tip\" :class=\"[prefixCls + '-sping-point']\">\n      <div></div>\n      <div></div>\n      <div></div>\n  </div>\n  <p v-else :class=\"[prefixCls + '-sping-text']\">{{ tip || '加载中...' }}</p>\n  <div :class=\"[prefixCls + '-sping-content']\">\n    <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 271 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7940,11 +7936,11 @@
 	  value: true
 	});
 	
-	var _Pagination = __webpack_require__(272);
+	var _Pagination = __webpack_require__(271);
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
-	var _Jumper = __webpack_require__(274);
+	var _Jumper = __webpack_require__(273);
 	
 	var _Jumper2 = _interopRequireDefault(_Jumper);
 	
@@ -7955,16 +7951,16 @@
 	exports.default = _Pagination2.default;
 
 /***/ },
-/* 272 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(273)
+	__vue_script__ = __webpack_require__(272)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Pagination/Pagination.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(283)
+	__vue_template__ = __webpack_require__(282)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7983,7 +7979,7 @@
 	})()}
 
 /***/ },
-/* 273 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7992,15 +7988,15 @@
 	  value: true
 	});
 	
-	var _Jumper = __webpack_require__(274);
+	var _Jumper = __webpack_require__(273);
 	
 	var _Jumper2 = _interopRequireDefault(_Jumper);
 	
-	var _Pager = __webpack_require__(277);
+	var _Pager = __webpack_require__(276);
 	
 	var _Pager2 = _interopRequireDefault(_Pager);
 	
-	var _Options = __webpack_require__(280);
+	var _Options = __webpack_require__(279);
 	
 	var _Options2 = _interopRequireDefault(_Options);
 	
@@ -8036,8 +8032,7 @@
 	  },
 	
 	  watch: {
-	    total: function total(val) {
-	      // this.totalPage = Math.ceil(val / this.pageSize)
+	    total: function total() {
 	      this.getPageRange();
 	    },
 	    pageSize: function pageSize(_pageSize) {
@@ -8217,16 +8212,16 @@
 	// <script>
 
 /***/ },
-/* 274 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(275)
+	__vue_script__ = __webpack_require__(274)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Pagination/Jumper.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(276)
+	__vue_template__ = __webpack_require__(275)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8245,7 +8240,7 @@
 	})()}
 
 /***/ },
-/* 275 */
+/* 274 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8351,22 +8346,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 276 */
+/* 275 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-if=\"quickGo\" :class=\"[prefixCls + '-pagination-jump']\">\n    <div :class=\"[prefixCls + '-pagination-jumper-wrap']\">\n      跳至\n      <input type=\"text\" :value=\"_current\" @change=\"_handleChange($event)\" :class=\"inputClassObj\"/>\n      页\n    </div>\n    <button type=\"button\" @click=\"_go\" :class=\"btnClassObj\">\n  跳转</button>\n</div>\n";
 
 /***/ },
-/* 277 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(278)
+	__vue_script__ = __webpack_require__(277)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Pagination/Pager.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(279)
+	__vue_template__ = __webpack_require__(278)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8385,7 +8380,7 @@
 	})()}
 
 /***/ },
-/* 278 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8477,22 +8472,22 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 279 */
+/* 278 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"pagerClassObj\">\n  <li v-for=\"page in pageRange\"\n      @click=\"pageClick(page.num)\"\n      :class=\"[prefixCls + '-pagination-item', page.className]\" >\n    <span v-if=\"page.className != prefixCls + '-pagination-item-prev' && page.className != prefixCls + '-pagination-item-next'\">\n      {{page.text}}\n    </span>\n    <icon v-if=\"page.className === prefixCls + '-pagination-item-prev'\"\n          type=\"prev\"\n          size=\"12\"\n          color=\"#666\" ></icon>\n    <icon v-if=\"page.className === prefixCls + '-pagination-item-next'\"\n          type=\"next\"\n          size=\"12\"\n          color=\"#666\"></icon>\n    <icon v-if=\"page.className === prefixCls + '-pagination-item-disabled' && page.icon === 'prev'\"\n          type=\"prev\"\n          size=\"12\"\n          color=\"#e6e6e6\"></icon>\n    <icon v-if=\"page.className === prefixCls + '-pagination-item-disabled' && page.icon==='next'\"\n          type=\"next\"\n          size=\"12\"\n          color=\"#e6e6e6\"></icon>\n  </li>\n</ul>\n";
 
 /***/ },
-/* 280 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(281)
+	__vue_script__ = __webpack_require__(280)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Pagination/Options.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(282)
+	__vue_template__ = __webpack_require__(281)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8511,7 +8506,7 @@
 	})()}
 
 /***/ },
-/* 281 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8520,7 +8515,7 @@
 	  value: true
 	});
 	
-	var _Select = __webpack_require__(222);
+	var _Select = __webpack_require__(221);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
@@ -8571,25 +8566,25 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 282 */
+/* 281 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-if=\"showSizeChanger\" :class=\"[prefixCls + '-pagination-selector']\">\n    <v-select :value=\"'' + defaultSize\" @change=\"change\">\n        <v-option value=\"10\">10 条/页</v-option>\n        <v-option value=\"20\">20 条/页</v-option>\n        <v-option value=\"30\">30 条/页</v-option>\n        <v-option value=\"40\">40 条/页</v-option>\n    </v-select>\n    <div :class=\"[prefixCls + '-pagination-totalpage']\">共{{ total }}条数据</div>\n</div>\n";
 
 /***/ },
-/* 283 */
+/* 282 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-pagination']\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"pageSize\" :show-size-changer=\"showSizeChanger\" @pagination-size-change=\"changePageSize\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
 
 /***/ },
-/* 284 */
+/* 283 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-table',prefixCls + '-table-'+ size, {loading: loading}]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container',fixedHeader ? prefixCls + '-fixed-header': '']\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{{column['title']}}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" class=\"atui-dropdown-menu atui-table-filter-dropdown\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link','clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" class=\"table-sorter\">\n              <icon type=\"caretup\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"{active:sorderOrder[$index] == 'ascend'}\"></icon>\n              <icon type=\"caretdown\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"{active:sorderOrder[$index] == 'descend'}\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + 'table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + 'table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-if=\"pagination\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination v-ref:pager :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\" @pagination-size-change=\"changeSize\"></pagination>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-table', prefixCls + '-table-'+ size, loading && (prefixCls + '-table-loading')]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container', fixedHeader && (prefixCls + '-table-fixed-header')]\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{{column['title']}}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" :class=\"[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" :class=\"[prefixCls + '-table-sorter']\">\n              <icon type=\"caretup\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"[sorderOrder[$index] == 'ascend' && (prefixCls + '-table-active')]\"></icon>\n              <icon type=\"caretdown\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"[sorderOrder[$index] == 'descend' && (prefixCls + '-table-active')]\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + '-table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-if=\"pagination\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination v-ref:pager :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\" @pagination-size-change=\"changeSize\"></pagination>\n  </div>\n</div>\n";
 
 /***/ },
-/* 285 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8598,7 +8593,7 @@
 	  value: true
 	});
 	
-	var _Badge = __webpack_require__(286);
+	var _Badge = __webpack_require__(285);
 	
 	var _Badge2 = _interopRequireDefault(_Badge);
 
@@ -8607,16 +8602,16 @@
 	exports.default = _Badge2.default;
 
 /***/ },
-/* 286 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(287)
+	__vue_script__ = __webpack_require__(286)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Badge/Badge.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(288)
+	__vue_template__ = __webpack_require__(287)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8635,7 +8630,7 @@
 	})()}
 
 /***/ },
-/* 287 */
+/* 286 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8681,13 +8676,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 288 */
+/* 287 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span :class=\"[prefixCls + '-badge']\">\n  <slot></slot>\n  <sup :class=\"[prefixCls + '-badge-dot']\" v-if=\"dot\"></sup>\n  <template v-else>\n    <sup v-if='count > 0' :class=\"[prefixCls + '-badge-count']\">\n      {{count | short}}\n    </sup>\n  </template>\n</span>\n";
 
 /***/ },
-/* 289 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8696,11 +8691,11 @@
 	  value: true
 	});
 	
-	var _Carousel = __webpack_require__(290);
+	var _Carousel = __webpack_require__(289);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Slide = __webpack_require__(295);
+	var _Slide = __webpack_require__(294);
 	
 	var _Slide2 = _interopRequireDefault(_Slide);
 	
@@ -8711,17 +8706,17 @@
 	exports.default = _Carousel2.default;
 
 /***/ },
-/* 290 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(291)
-	__vue_script__ = __webpack_require__(293)
+	__webpack_require__(290)
+	__vue_script__ = __webpack_require__(292)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Carousel/Carousel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(294)
+	__vue_template__ = __webpack_require__(293)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8740,13 +8735,13 @@
 	})()}
 
 /***/ },
-/* 291 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(292);
+	var content = __webpack_require__(291);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(143)(content, {});
@@ -8766,7 +8761,7 @@
 	}
 
 /***/ },
-/* 292 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(142)();
@@ -8774,13 +8769,13 @@
 	
 	
 	// module
-	exports.push([module.id, "\n.carousel-control[_v-276df37b] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?134eb1a3"],"names":[],"mappings":";AAsHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../utils/EventListener.js'\nimport coerceBoolean from '../utils/coerceBoolean.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      coerce: coerceBoolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.carousel-control[_v-276df37b] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?57215cc9"],"names":[],"mappings":";AAmHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../_utils/EventListener.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 293 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8797,45 +8792,16 @@
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _coerceBoolean = __webpack_require__(220);
-	
-	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
-	// <div class="carousel slide" data-ride="carousel">
-	//   <!-- Indicators -->
-	//   <ol class="carousel-indicators" v-show="indicators">
-	//     <indicator></indicator>
-	//   </ol>
-	//   <!-- Wrapper for slides -->
-	//   <div class="carousel-inner" role="listbox">
-	//     <slot></slot>
-	//   </div>
-	//   <!-- Controls -->
-	//   <a v-show="controls" class="left carousel-control" @click="prevClick">
-	//     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	//     <span class="sr-only">Previous</span>
-	//   </a>
-	//   <a v-show="controls" class="right carousel-control" @click="nextClick">
-	//     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	//     <span class="sr-only">Next</span>
-	//   </a>
-	// </div>
-	// </template>
-	//
-	// <script>
 	exports.default = {
 	  props: {
 	    indicators: {
 	      type: Boolean,
-	      coerce: _coerceBoolean2.default,
 	      default: true
 	    },
 	    controls: {
 	      type: Boolean,
-	      coerce: _coerceBoolean2.default,
 	      default: true
 	    },
 	    interval: {
@@ -8936,24 +8902,47 @@
 	// </style>
 
 	/* generated by vue-loader */
+	// <template>
+	// <div class="carousel slide" data-ride="carousel">
+	//   <!-- Indicators -->
+	//   <ol class="carousel-indicators" v-show="indicators">
+	//     <indicator></indicator>
+	//   </ol>
+	//   <!-- Wrapper for slides -->
+	//   <div class="carousel-inner" role="listbox">
+	//     <slot></slot>
+	//   </div>
+	//   <!-- Controls -->
+	//   <a v-show="controls" class="left carousel-control" @click="prevClick">
+	//     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	//     <span class="sr-only">Previous</span>
+	//   </a>
+	//   <a v-show="controls" class="right carousel-control" @click="nextClick">
+	//     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	//     <span class="sr-only">Next</span>
+	//   </a>
+	// </div>
+	// </template>
+	//
+	// <script>
 
 /***/ },
-/* 294 */
+/* 293 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
-/* 295 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(296)
+	__vue_script__ = __webpack_require__(295)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Carousel/Slide.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(297)
+	__vue_template__ = __webpack_require__(296)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8972,7 +8961,7 @@
 	})()}
 
 /***/ },
-/* 296 */
+/* 295 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9019,23 +9008,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 297 */
+/* 296 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"item\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 298 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(299)
-	__vue_script__ = __webpack_require__(301)
+	__webpack_require__(298)
+	__vue_script__ = __webpack_require__(300)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Affix.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(302)
+	__vue_template__ = __webpack_require__(301)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9054,13 +9043,13 @@
 	})()}
 
 /***/ },
-/* 299 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(300);
+	var content = __webpack_require__(299);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(143)(content, {});
@@ -9080,7 +9069,7 @@
 	}
 
 /***/ },
-/* 300 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(142)();
@@ -9088,13 +9077,13 @@
 	
 	
 	// module
-	exports.push([module.id, "\n.vue-affix {\n  position: fixed;\n}\n", "", {"version":3,"sources":["/./src/components/Affix.vue?fd7fe4a2"],"names":[],"mappings":";AAqFA;EACA,gBAAA;CACA","file":"Affix.vue","sourcesContent":["<template>\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n</template>\n\n<script>\nimport EventListener from './utils/EventListener.js'\nexport default {\n  props: {\n    offset: {\n      type: Number,\n      default: 0\n    }\n  },\n  data () {\n    return {\n      affixed: false,\n      styles: {}\n    }\n  },\n  methods: {\n    scrolling () {\n      const scrollTop = this.getScroll(window, true)\n      const elementOffset = this.getOffset(this.$el)\n      if (!this.affixed && scrollTop > elementOffset.top) {\n        this.affixed = true\n        this.styles = {\n          top: this.offset + 'px',\n          left: elementOffset.left + 'px',\n          width: this.$el.offsetWidth + 'px'\n        }\n      }\n      if (this.affixed && scrollTop < elementOffset.top) {\n        this.affixed = false\n        this.styles = {}\n      }\n    },\n    // from https://github.com/ant-design/ant-design/blob/master/components/affix/index.jsx#L20\n    getScroll (w, top) {\n      let ret = w['page' + (top ? 'Y' : 'X') + 'Offset']\n      const method = 'scroll' + (top ? 'Top' : 'Left')\n      if (typeof ret !== 'number') {\n        const d = w.document\n        // ie6,7,8 standard mode\n        ret = d.documentElement[method]\n        if (typeof ret !== 'number') {\n          // quirks mode\n          ret = d.body[method]\n        }\n      }\n      return ret\n    },\n    getOffset (element) {\n      const rect = element.getBoundingClientRect()\n      const body = document.body\n      const clientTop = element.clientTop || body.clientTop || 0\n      const clientLeft = element.clientLeft || body.clientLeft || 0\n      const scrollTop = this.getScroll(window, true)\n      const scrollLeft = this.getScroll(window)\n      return {\n        top: rect.top + scrollTop - clientTop,\n        left: rect.left + scrollLeft - clientLeft\n      }\n    }\n  },\n  ready () {\n    this._scrollEvent = EventListener.listen(window, 'scroll', this.scrolling)\n    this._resizeEvent = EventListener.listen(window, 'resize', this.scrolling)\n  },\n  beforeDestroy () {\n    if (this._scrollEvent) {\n      this._scrollEvent.remove()\n    }\n    if (this._resizeEvent) {\n      this._resizeEvent.remove()\n    }\n  }\n}\n</script>\n\n<style>\n  .vue-affix {\n    position: fixed;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.vue-affix {\n  position: fixed;\n}\n", "", {"version":3,"sources":["/./src/components/Affix.vue?b52e3304"],"names":[],"mappings":";AAqFA;EACA,gBAAA;CACA","file":"Affix.vue","sourcesContent":["<template>\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n</template>\n\n<script>\nimport EventListener from './_utils/EventListener.js'\nexport default {\n  props: {\n    offset: {\n      type: Number,\n      default: 0\n    }\n  },\n  data () {\n    return {\n      affixed: false,\n      styles: {}\n    }\n  },\n  methods: {\n    scrolling () {\n      const scrollTop = this.getScroll(window, true)\n      const elementOffset = this.getOffset(this.$el)\n      if (!this.affixed && scrollTop > elementOffset.top) {\n        this.affixed = true\n        this.styles = {\n          top: this.offset + 'px',\n          left: elementOffset.left + 'px',\n          width: this.$el.offsetWidth + 'px'\n        }\n      }\n      if (this.affixed && scrollTop < elementOffset.top) {\n        this.affixed = false\n        this.styles = {}\n      }\n    },\n    // from https://github.com/ant-design/ant-design/blob/master/components/affix/index.jsx#L20\n    getScroll (w, top) {\n      let ret = w['page' + (top ? 'Y' : 'X') + 'Offset']\n      const method = 'scroll' + (top ? 'Top' : 'Left')\n      if (typeof ret !== 'number') {\n        const d = w.document\n        // ie6,7,8 standard mode\n        ret = d.documentElement[method]\n        if (typeof ret !== 'number') {\n          // quirks mode\n          ret = d.body[method]\n        }\n      }\n      return ret\n    },\n    getOffset (element) {\n      const rect = element.getBoundingClientRect()\n      const body = document.body\n      const clientTop = element.clientTop || body.clientTop || 0\n      const clientLeft = element.clientLeft || body.clientLeft || 0\n      const scrollTop = this.getScroll(window, true)\n      const scrollLeft = this.getScroll(window)\n      return {\n        top: rect.top + scrollTop - clientTop,\n        left: rect.left + scrollLeft - clientLeft\n      }\n    }\n  },\n  ready () {\n    this._scrollEvent = EventListener.listen(window, 'scroll', this.scrolling)\n    this._resizeEvent = EventListener.listen(window, 'resize', this.scrolling)\n  },\n  beforeDestroy () {\n    if (this._scrollEvent) {\n      this._scrollEvent.remove()\n    }\n    if (this._resizeEvent) {\n      this._resizeEvent.remove()\n    }\n  }\n}\n</script>\n\n<style>\n  .vue-affix {\n    position: fixed;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 301 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9203,13 +9192,13 @@
 	// <script>
 
 /***/ },
-/* 302 */
+/* 301 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 303 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9218,7 +9207,7 @@
 	  value: true
 	});
 	
-	var _Textarea = __webpack_require__(304);
+	var _Textarea = __webpack_require__(303);
 	
 	var _Textarea2 = _interopRequireDefault(_Textarea);
 
@@ -9227,16 +9216,16 @@
 	exports.default = _Textarea2.default;
 
 /***/ },
-/* 304 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(305)
+	__vue_script__ = __webpack_require__(304)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Textarea/Textarea.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(306)
+	__vue_template__ = __webpack_require__(305)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9255,7 +9244,7 @@
 	})()}
 
 /***/ },
-/* 305 */
+/* 304 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9397,13 +9386,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 306 */
+/* 305 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-textarea-box']\">\n  <template v-if=\"autosize\">\n    <pre :id=\"preId\"><span>{{content}}</span><br></pre>\n  </template>\n  <textarea v-bind=\"{disabled: isDisabled}\"\n            :maxlength=\"limitWords\"\n            :class=\"textareaClassObj\"\n            :name=\"name\"\n            :placeholder=\"placeholder\"\n            v-model=\"content\"></textarea>\n  <p v-if=\"limitWords\"\n     :class=\"wordClassObj\">{{ curWords }}/{{ limitWords }}</p>\n  <p v-if=\"showWordsCount\"\n     :class=\"[prefixCls + '-textarea-words-area']\">{{ countTips }}{{ curWords }}</p>\n</div>\n";
 
 /***/ },
-/* 307 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9412,11 +9401,11 @@
 	  value: true
 	});
 	
-	var _Accordion = __webpack_require__(308);
+	var _Accordion = __webpack_require__(307);
 	
 	var _Accordion2 = _interopRequireDefault(_Accordion);
 	
-	var _Panel = __webpack_require__(311);
+	var _Panel = __webpack_require__(310);
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
@@ -9427,16 +9416,16 @@
 	exports.default = _Accordion2.default;
 
 /***/ },
-/* 308 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(309)
+	__vue_script__ = __webpack_require__(308)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Accordion/Accordion.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(310)
+	__vue_template__ = __webpack_require__(309)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9455,7 +9444,7 @@
 	})()}
 
 /***/ },
-/* 309 */
+/* 308 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9512,22 +9501,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 310 */
+/* 309 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-panel-group']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 311 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(312)
+	__vue_script__ = __webpack_require__(311)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Accordion/Panel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(313)
+	__vue_template__ = __webpack_require__(312)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9546,27 +9535,36 @@
 	})()}
 
 /***/ },
-/* 312 */
-/***/ function(module, exports, __webpack_require__) {
+/* 311 */
+/***/ function(module, exports) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
-	var _coerceBoolean = __webpack_require__(220);
-	
-	var _coerceBoolean2 = _interopRequireDefault(_coerceBoolean);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
+	// <template>
+	// <div :class="[prefixCls + '-panel', prefixCls + '-panel-default']">
+	//     <div :class="[prefixCls + '-panel-heading']" @click="toggleIsOpen()">
+	//       <slot name="panel-header"></slot>
+	//     </div>
+	//     <div :class="[prefixCls + '-panel-collapse']"
+	//       v-el:panel
+	//       v-show="isOpen"
+	//       transition="collapse"
+	//     >
+	//       <div :class="[prefixCls + '-panel-body']">
+	//         <slot></slot>
+	//       </div>
+	//     </div>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    isOpen: {
-	      type: Boolean,
-	      coerce: _coerceBoolean2.default,
-	      default: false
+	      type: Boolean
 	    },
 	    header: {
 	      type: String
@@ -9607,33 +9605,15 @@
 	// </script>
 
 	/* generated by vue-loader */
-	// <template>
-	// <div :class="[prefixCls + '-panel', prefixCls + '-panel-default']">
-	//     <div :class="[prefixCls + '-panel-heading']" @click="toggleIsOpen()">
-	//       <slot name="panel-header"></slot>
-	//     </div>
-	//     <div :class="[prefixCls + '-panel-collapse']"
-	//       v-el:panel
-	//       v-show="isOpen"
-	//       transition="slide"
-	//     >
-	//       <div :class="[prefixCls + '-panel-body']">
-	//         <slot></slot>
-	//       </div>
-	//     </div>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
+
+/***/ },
+/* 312 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"[prefixCls + '-panel', prefixCls + '-panel-default']\">\n    <div :class=\"[prefixCls + '-panel-heading']\" @click=\"toggleIsOpen()\">\n      <slot name=\"panel-header\"></slot>\n    </div>\n    <div :class=\"[prefixCls + '-panel-collapse']\"\n      v-el:panel\n      v-show=\"isOpen\"\n      transition=\"collapse\"\n    >\n      <div :class=\"[prefixCls + '-panel-body']\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
 /* 313 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div :class=\"[prefixCls + '-panel', prefixCls + '-panel-default']\">\n    <div :class=\"[prefixCls + '-panel-heading']\" @click=\"toggleIsOpen()\">\n      <slot name=\"panel-header\"></slot>\n    </div>\n    <div :class=\"[prefixCls + '-panel-collapse']\"\n      v-el:panel\n      v-show=\"isOpen\"\n      transition=\"slide\"\n    >\n      <div :class=\"[prefixCls + '-panel-body']\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>\n";
-
-/***/ },
-/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9642,7 +9622,7 @@
 	  value: true
 	});
 	
-	var _Popover = __webpack_require__(315);
+	var _Popover = __webpack_require__(314);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 
@@ -9651,16 +9631,16 @@
 	exports.default = _Popover2.default;
 
 /***/ },
-/* 315 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(316)
+	__vue_script__ = __webpack_require__(315)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Popover/Popover.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(317)
+	__vue_template__ = __webpack_require__(316)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9679,7 +9659,7 @@
 	})()}
 
 /***/ },
-/* 316 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9720,13 +9700,13 @@
 	// <script>
 
 /***/ },
-/* 317 */
+/* 316 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-popover-trigger']\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div v-el:popover\n     v-show=\"show\"\n     :class=\"popoverClassObj\"\n     :transition=\"effect\">\n    <div :class=\"[prefixCls + '-popover-arrow']\"></div>\n    <h3 :class=\"[prefixCls + '-popover-title']\" v-show=\"title\">{{title}}</h3>\n    <div :class=\"[prefixCls + '-popover-content']\">\n      {{content}}\n    </div>\n</div>\n";
 
 /***/ },
-/* 318 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9735,11 +9715,11 @@
 	  value: true
 	});
 	
-	var _Tabset = __webpack_require__(319);
+	var _Tabset = __webpack_require__(318);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _Tab = __webpack_require__(322);
+	var _Tab = __webpack_require__(321);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
@@ -9750,16 +9730,16 @@
 	exports.default = _Tabset2.default;
 
 /***/ },
-/* 319 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(320)
+	__vue_script__ = __webpack_require__(319)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tabs/Tabset.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(321)
+	__vue_template__ = __webpack_require__(320)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9778,7 +9758,7 @@
 	})()}
 
 /***/ },
-/* 320 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9979,22 +9959,22 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 321 */
+/* 320 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-tab-wrapper']\">\n  <div :class=\"[prefixCls + '-tab-header']\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" :class=\"[prefixCls + '-tab-arrow-prev']\" @click=\"prev\">\n      <icon v-if=\"prev_tabIndex==0\" type=\"prev\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"prev\" size=\"12\"></icon>\n    </span>\n    <ul v-if=\"trigger=='click'\" :class=\"listClassObj\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          :class=\"[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <ul v-else :class=\"listClassObj\" role=\"tablist\" style=\"width: 99999px;\">\n    <li v-for=\"r in renderData\"\n          :class=\"[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]\"\n          @mouseenter.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" :class=\"[prefixCls + '-tab-arrow-next']\" @click=\"next\">\n      <icon v-if=\"next_tabIndex == maxTabIndex\" type=\"next\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
 
 /***/ },
-/* 322 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(323)
+	__vue_script__ = __webpack_require__(322)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tabs/Tab.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(324)
+	__vue_template__ = __webpack_require__(323)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10013,7 +9993,7 @@
 	})()}
 
 /***/ },
-/* 323 */
+/* 322 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10080,13 +10060,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 324 */
+/* 323 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div role=\"tabpanel\" :class=\"[prefixCls + 'tab-pane']\"\n    v-show=\"show\"\n    :transition=\"transition\"\n>\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 325 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10095,11 +10075,11 @@
 	  value: true
 	});
 	
-	var _Steps = __webpack_require__(326);
+	var _Steps = __webpack_require__(325);
 	
 	var _Steps2 = _interopRequireDefault(_Steps);
 	
-	var _Step = __webpack_require__(329);
+	var _Step = __webpack_require__(328);
 	
 	var _Step2 = _interopRequireDefault(_Step);
 	
@@ -10110,16 +10090,16 @@
 	exports.default = _Steps2.default;
 
 /***/ },
-/* 326 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(327)
+	__vue_script__ = __webpack_require__(326)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Steps/Steps.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(328)
+	__vue_template__ = __webpack_require__(327)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10138,7 +10118,7 @@
 	})()}
 
 /***/ },
-/* 327 */
+/* 326 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10260,22 +10240,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 328 */
+/* 327 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-steps']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 329 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(330)
+	__vue_script__ = __webpack_require__(329)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Steps/Step.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(331)
+	__vue_template__ = __webpack_require__(330)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10294,7 +10274,7 @@
 	})()}
 
 /***/ },
-/* 330 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10380,13 +10360,13 @@
 	// <script>
 
 /***/ },
-/* 331 */
+/* 330 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"stepClassObj\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\"\n      :class=\"[prefixCls + '-step-tail']\">\n   <i>\n    <i :style=\"{ backgroundColor: color }\"></i>\n   </i>\n </div>\n <div :class=\"[prefixCls + '-step-head']\">\n   <div :class=\"[prefixCls + '-step-head-inner']\">\n    <span v-if=\"status !== 'finish'\"\n          :class=\"[prefixCls + '-step-icon']\"\n      :style=\"{\n       borderColor: status==='process'?color: '#e9e9e9',\n       backgroundColor: status==='process'?color: '#fff'}\">\n      {{ stepNumber }}\n    </span>\n    <span v-else\n          :class=\"[prefixCls + '-step-finish-icon']\">\n      <icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n    </span>\n   </div>\n </div>\n <div :class=\"[prefixCls + '-step-main']\">\n   <div :class=\"[prefixCls + '-step-main-title']\">{{ title }}</div>\n   <div :class=\"[prefixCls + '-step-main-description']\">{{ description }}</div>\n </div>\n</div>\n";
 
 /***/ },
-/* 332 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10395,11 +10375,11 @@
 	  value: true
 	});
 	
-	var _Tree = __webpack_require__(333);
+	var _Tree = __webpack_require__(332);
 	
 	var _Tree2 = _interopRequireDefault(_Tree);
 	
-	var _TreeNode = __webpack_require__(335);
+	var _TreeNode = __webpack_require__(334);
 	
 	var _TreeNode2 = _interopRequireDefault(_TreeNode);
 	
@@ -10410,16 +10390,16 @@
 	exports.default = _Tree2.default;
 
 /***/ },
-/* 333 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(334)
+	__vue_script__ = __webpack_require__(333)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tree/Tree.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(338)
+	__vue_template__ = __webpack_require__(337)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10438,7 +10418,7 @@
 	})()}
 
 /***/ },
-/* 334 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10447,7 +10427,7 @@
 	  value: true
 	});
 	
-	var _TreeNode = __webpack_require__(335);
+	var _TreeNode = __webpack_require__(334);
 	
 	var _TreeNode2 = _interopRequireDefault(_TreeNode);
 	
@@ -10484,16 +10464,16 @@
 	// <script>
 
 /***/ },
-/* 335 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(336)
+	__vue_script__ = __webpack_require__(335)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tree/TreeNode.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(337)
+	__vue_template__ = __webpack_require__(336)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10512,7 +10492,7 @@
 	})()}
 
 /***/ },
-/* 336 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10575,7 +10555,7 @@
 	//   <li>
 	//     <a :title="model.name" @click="toggle">
 	//       <span v-if="isFolder" :class="[prefixCls + '-tree-switcher', open && prefixCls + '-tree-switcher-open']">
-	//         <icon type="jiantou"></icon>
+	//         <icon type="caretup"></icon>
 	//       </span>
 	//       <span :class="[prefixCls + '-tree-title']">
 	//         {{model.name}}
@@ -10593,19 +10573,19 @@
 	// <script>
 
 /***/ },
-/* 337 */
+/* 336 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li>\n  <a :title=\"model.name\" @click=\"toggle\">\n    <span v-if=\"isFolder\" :class=\"[prefixCls + '-tree-switcher', open && prefixCls + '-tree-switcher-open']\">\n      <icon type=\"jiantou\"></icon>\n    </span>\n    <span :class=\"[prefixCls + '-tree-title']\">\n      {{model.name}}\n    </span>\n  </a>\n  <ul v-show=\"open\" v-if=\"isFolder\" transition=\"slide\" :class=\"[open && prefixCls + '-tree-child-tree-open']\">\n    <tree-node\n      v-for=\"model in model.children\"\n      :model=\"model\">\n    </tree-node>\n  </ul>\n</li>\n";
+	module.exports = "\n<li>\n  <a :title=\"model.name\" @click=\"toggle\">\n    <span v-if=\"isFolder\" :class=\"[prefixCls + '-tree-switcher', open && prefixCls + '-tree-switcher-open']\">\n      <icon type=\"caretup\"></icon>\n    </span>\n    <span :class=\"[prefixCls + '-tree-title']\">\n      {{model.name}}\n    </span>\n  </a>\n  <ul v-show=\"open\" v-if=\"isFolder\" transition=\"slide\" :class=\"[open && prefixCls + '-tree-child-tree-open']\">\n    <tree-node\n      v-for=\"model in model.children\"\n      :model=\"model\">\n    </tree-node>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 338 */
+/* 337 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"[prefixCls + '-tree']\">\n  <tree-node\n    :model=\"dataSource\">\n  </tree-node>\n</ul>\n";
 
 /***/ },
-/* 339 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10614,19 +10594,19 @@
 	  value: true
 	});
 	
-	var _Menu = __webpack_require__(340);
+	var _Menu = __webpack_require__(339);
 	
 	var _Menu2 = _interopRequireDefault(_Menu);
 	
-	var _SubMenu = __webpack_require__(343);
+	var _SubMenu = __webpack_require__(342);
 	
 	var _SubMenu2 = _interopRequireDefault(_SubMenu);
 	
-	var _MenuItem = __webpack_require__(346);
+	var _MenuItem = __webpack_require__(345);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
-	var _MenuItemGroup = __webpack_require__(349);
+	var _MenuItemGroup = __webpack_require__(348);
 	
 	var _MenuItemGroup2 = _interopRequireDefault(_MenuItemGroup);
 	
@@ -10642,16 +10622,16 @@
 	exports.default = _Menu2.default;
 
 /***/ },
-/* 340 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(341)
+	__vue_script__ = __webpack_require__(340)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/Menu.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(342)
+	__vue_template__ = __webpack_require__(341)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10670,7 +10650,7 @@
 	})()}
 
 /***/ },
-/* 341 */
+/* 340 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10679,12 +10659,12 @@
 	  value: true
 	});
 	// <template>
-	//   <ul :class="['atui-menu','atui-menu-root','atui-menu-'+ mode]">
+	//   <ul :class="[prefixCls + '-menu', prefixCls + '-menu-root', prefixCls + '-menu-'+ mode]">
 	//     <slot></slot>
 	//   </ul>
 	// </template>
 	//
-	// <script>
+	// <script type="text/babel">
 	exports.default = {
 	  props: {
 	    mode: {
@@ -10694,30 +10674,23 @@
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
-	    }
+	    },
+	    selectedKey: String
 	  },
 	  ready: function ready() {
 	    var me = this;
-	    var items = me.$el.querySelectorAll('.' + me.prefixCls + '-menu-item');
-	
-	    var _loop = function _loop(i) {
-	      var item = items[i];
-	      item.addEventListener('click', function () {
-	        var className = me.prefixCls + '-menu-selected';
-	        var selectedItem = me.$el.querySelector('.' + className);
-	        if (selectedItem) {
-	          Vue.util.removeClass(me.$el.querySelector('.' + className), className);
-	        }
-	        Vue.util.addClass(item, className);
-	      }, false);
-	    };
-	
-	    for (var i = 0; i < items.length; i++) {
-	      _loop(i);
+	    if (me.selectedKey) {
+	      this.$broadcast('searchItem', me.selectedKey);
 	    }
 	  },
-	  beforeDestroy: function beforeDestroy() {
-	    // TOTO GC
+	
+	  events: {
+	    itemClicked: function itemClicked(item, key) {
+	      this.selectedKey = key;
+	      this.$broadcast('searchItem', key);
+	      // 触发事件给调用上级组件
+	      this.$dispatch('click', item, key);
+	    }
 	  }
 	};
 	// </script>
@@ -10725,22 +10698,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 342 */
+/* 341 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<ul :class=\"['atui-menu','atui-menu-root','atui-menu-'+ mode]\">\n  <slot></slot>\n</ul>\n";
+	module.exports = "\n<ul :class=\"[prefixCls + '-menu', prefixCls + '-menu-root', prefixCls + '-menu-'+ mode]\">\n  <slot></slot>\n</ul>\n";
 
 /***/ },
-/* 343 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(344)
+	__vue_script__ = __webpack_require__(343)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/SubMenu.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(345)
+	__vue_template__ = __webpack_require__(344)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10759,7 +10732,7 @@
 	})()}
 
 /***/ },
-/* 344 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10777,10 +10750,14 @@
 	exports.default = {
 	  props: {
 	    title: String,
-	    show: {
-	      type: Boolean,
-	      default: false
-	    }
+	    show: Boolean,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    },
+	    type: Boolean,
+	    disabled: Boolean,
+	    key: String
 	  },
 	  components: {
 	    Icon: _Icon2.default
@@ -10801,12 +10778,12 @@
 
 	/* generated by vue-loader */
 	// <template>
-	//   <li :class="['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]">
-	//     <div class="atui-menu-submenu-title" @click="triggerSub">
+	//   <li :class="[prefixCls + '-menu-submenu', prefixCls + '-menu-submenu-' + mode, show && (prefixCls + '-menu-submenu-open')]">
+	//     <div :class="[prefixCls + '-menu-submenu-title']" @click="triggerSub">
 	//       {{title}}
-	//       <icon type="down" :class="['atui-menu-icon']"></icon>
+	//       <icon type="down" :class="[prefixCls + '-menu-icon']"></icon>
 	//     </div>
-	//     <ul :class="['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]" v-show="show" transition="slide">
+	//     <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="show" transition="collapse">
 	//       <slot></slot>
 	//     </ul>
 	//   </li>
@@ -10815,22 +10792,22 @@
 	// <script>
 
 /***/ },
-/* 345 */
+/* 344 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li :class=\"['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]\">\n  <div class=\"atui-menu-submenu-title\" @click=\"triggerSub\">\n    {{title}}\n    <icon type=\"down\" :class=\"['atui-menu-icon']\"></icon>\n  </div>\n  <ul :class=\"['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]\" v-show=\"show\" transition=\"slide\">\n    <slot></slot>\n  </ul>\n</li>\n";
+	module.exports = "\n<li :class=\"[prefixCls + '-menu-submenu', prefixCls + '-menu-submenu-' + mode, show && (prefixCls + '-menu-submenu-open')]\">\n  <div :class=\"[prefixCls + '-menu-submenu-title']\" @click=\"triggerSub\">\n    {{title}}\n    <icon type=\"down\" :class=\"[prefixCls + '-menu-icon']\"></icon>\n  </div>\n  <ul :class=\"[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]\" v-show=\"show\" transition=\"collapse\">\n    <slot></slot>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 346 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(347)
+	__vue_script__ = __webpack_require__(346)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/MenuItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(348)
+	__vue_template__ = __webpack_require__(347)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10849,17 +10826,17 @@
 	})()}
 
 /***/ },
-/* 347 */
+/* 346 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	// <template>
 	// <li role="menuitem"
-	//   :class="['atui-menu-item',{'atui-menu-item-disabled':disabled}]"
+	//   :class="[prefixCls + '-menu-item', disabled && (prefixCls + '-menu-item-disabled') , selected && (prefixCls + '-menu-item-selected')]"
 	//   style="padding-left:48px"
 	//   @click="selectItem($event)"
 	// >
@@ -10870,10 +10847,25 @@
 	// <script>
 	exports.default = {
 	  props: {
-	    disabled: Boolean
+	    disabled: Boolean,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    },
+	    key: String,
+	    selected: Boolean
 	  },
 	  methods: {
-	    selectItem: function selectItem(event) {}
+	    selectItem: function selectItem() {
+	      this.$dispatch('itemClicked', this, this.key);
+	    }
+	  },
+	  events: {
+	    // Menu 父组件传达查找子组件命令，指定选中状态
+	
+	    searchItem: function searchItem(key) {
+	      this.selected = this.key === key;
+	    }
 	  }
 	};
 	// </script>
@@ -10881,22 +10873,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 348 */
+/* 347 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li role=\"menuitem\"\n  :class=\"['atui-menu-item',{'atui-menu-item-disabled':disabled}]\"\n  style=\"padding-left:48px\"\n  @click=\"selectItem($event)\"\n>\n  <slot></slot>\n</li>\n";
+	module.exports = "\n<li role=\"menuitem\"\n  :class=\"[prefixCls + '-menu-item', disabled && (prefixCls + '-menu-item-disabled') , selected && (prefixCls + '-menu-item-selected')]\"\n  style=\"padding-left:48px\"\n  @click=\"selectItem($event)\"\n>\n  <slot></slot>\n</li>\n";
 
 /***/ },
-/* 349 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(350)
+	__vue_script__ = __webpack_require__(349)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/MenuItemGroup.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(351)
+	__vue_template__ = __webpack_require__(350)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10915,18 +10907,18 @@
 	})()}
 
 /***/ },
-/* 350 */
+/* 349 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	// <template>
-	//   <li class="atui-menu-item-group">
-	//     <div class="atui-menu-item-group-title">{{title}}</div>
-	//     <ul class="atui-menu-item-group-list">
+	//   <li :class="[prefixCls + '-menu-item-group']">
+	//     <div :class="[prefixCls + '-menu-item-group-title']">{{title}}</div>
+	//     <ul :class="[prefixCls + '-menu-item-group-list']">
 	//       <slot></slot>
 	//     </ul>
 	//   </li>
@@ -10935,7 +10927,11 @@
 	// <script>
 	exports.default = {
 	  props: {
-	    title: String
+	    title: String,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  }
 	};
 	// </script>
@@ -10943,13 +10939,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 351 */
+/* 350 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li class=\"atui-menu-item-group\">\n  <div class=\"atui-menu-item-group-title\">{{title}}</div>\n  <ul class=\"atui-menu-item-group-list\">\n    <slot></slot>\n  </ul>\n</li>\n";
+	module.exports = "\n<li :class=\"[prefixCls + '-menu-item-group']\">\n  <div :class=\"[prefixCls + '-menu-item-group-title']\">{{title}}</div>\n  <ul :class=\"[prefixCls + '-menu-item-group-list']\">\n    <slot></slot>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 352 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10958,11 +10954,11 @@
 	  value: true
 	});
 	
-	var _Breadcrumb = __webpack_require__(353);
+	var _Breadcrumb = __webpack_require__(352);
 	
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 	
-	var _BreadcrumbItem = __webpack_require__(356);
+	var _BreadcrumbItem = __webpack_require__(355);
 	
 	var _BreadcrumbItem2 = _interopRequireDefault(_BreadcrumbItem);
 	
@@ -10973,16 +10969,16 @@
 	exports.default = _Breadcrumb2.default;
 
 /***/ },
-/* 353 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(354)
+	__vue_script__ = __webpack_require__(353)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Breadcrumb/Breadcrumb.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(355)
+	__vue_template__ = __webpack_require__(354)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11001,7 +10997,7 @@
 	})()}
 
 /***/ },
-/* 354 */
+/* 353 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11039,22 +11035,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 355 */
+/* 354 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-breadcrumbs']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 356 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(357)
+	__vue_script__ = __webpack_require__(356)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Breadcrumb/BreadcrumbItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(358)
+	__vue_template__ = __webpack_require__(357)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11073,7 +11069,7 @@
 	})()}
 
 /***/ },
-/* 357 */
+/* 356 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11112,18 +11108,19 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 358 */
+/* 357 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\t<span :class=\"[prefixCls + '-breadcrumb']\">\n\t\t<a v-if=\"href\"\n       :href=\"href\"\n       :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</a>\n\t\t<span v-else\n          :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</span>\n\t\t<span :class=\"[prefixCls + '-breadcrumb-slash']\">{{ slash }}</span>\n\t</span>\n";
 
 /***/ },
-/* 359 */
+/* 358 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<header class=\"navbar navbar-top bs-docs-nav\" id=\"top\" role=\"banner\">\n  <v-row class=\"container\">\n    <v-col span=\"5\">\n      <h1><a href=\"components.html\">ATUI</a></h1>\n    </v-col>\n    <v-col span=\"25\">\n      <v-menu mode=\"horizontal\">\n        <menu-item><a href=\"components.html\">组件</a></menu-item>\n        <menu-item><a href=\"widgets.html\">widgets(业务组件)</a></menu-item>\n        <menu-item><a href=\"filters.html\">filters(数据过滤器)</a></menu-item>\n        <menu-item><a href=\"http://gitlab.alibaba-inc.com/aliqin/atui/\">GitLab</a></menu-item>\n        <menu-item><a href=\"http://ued.aliqin.alibaba.net/webcompon/\">视觉稿</a></menu-item>\n      </v-menu>\n    </v-col>\n  </v-row>\n</header>\n<ul class=\"themes\" id=\"J_header\">\n  <li v-for=\"theme in themes\" :class=\"{active:theme.active}\" :style=\"{backgroundColor:theme.color}\" @click=\"changeTheme(theme.csslink,$event)\" :title=\"theme.name\">\n  </li>\n</ul>\n";
 
 /***/ },
+/* 359 */,
 /* 360 */,
 /* 361 */,
 /* 362 */,
@@ -11190,12 +11187,11 @@
 /* 423 */,
 /* 424 */,
 /* 425 */,
-/* 426 */,
-/* 427 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(428)
+	__vue_template__ = __webpack_require__(427)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11214,12 +11210,13 @@
 	})()}
 
 /***/ },
-/* 428 */
+/* 427 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"container bs-docs-container\">\n  <div class=\"atui-row\">\n      <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
+/* 428 */,
 /* 429 */,
 /* 430 */,
 /* 431 */,
@@ -11276,15 +11273,20 @@
 /* 482 */,
 /* 483 */,
 /* 484 */,
-/* 485 */,
-/* 486 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
+	__webpack_require__(486);
 	__webpack_require__(487);
 	__webpack_require__(488);
-	__webpack_require__(489);
+
+/***/ },
+/* 486 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 /* 487 */
@@ -11300,12 +11302,6 @@
 
 /***/ },
 /* 489 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 490 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -12029,7 +12025,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 491 */
+/* 490 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12053,8 +12049,8 @@
 	})();
 
 /***/ },
-/* 492 */,
-/* 493 */
+/* 491 */,
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12067,23 +12063,23 @@
 	
 	var _headerDocs2 = _interopRequireDefault(_headerDocs);
 	
-	var _Affix = __webpack_require__(298);
+	var _Affix = __webpack_require__(297);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _container = __webpack_require__(427);
+	var _container = __webpack_require__(426);
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _addressSelectDocs = __webpack_require__(494);
+	var _addressSelectDocs = __webpack_require__(493);
 	
 	var _addressSelectDocs2 = _interopRequireDefault(_addressSelectDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(486);
+	__webpack_require__(485);
+	__webpack_require__(489);
 	__webpack_require__(490);
-	__webpack_require__(491);
 	//widgets
 	
 	
@@ -12167,16 +12163,16 @@
 	});
 
 /***/ },
-/* 494 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(495)
+	__vue_script__ = __webpack_require__(494)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/widgets/addressSelectDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(502)
+	__vue_template__ = __webpack_require__(501)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12195,7 +12191,7 @@
 	})()}
 
 /***/ },
-/* 495 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12204,7 +12200,7 @@
 	  value: true
 	});
 	
-	var _widgets = __webpack_require__(496);
+	var _widgets = __webpack_require__(495);
 	
 	exports.default = {
 	  data: function data() {
@@ -12352,12 +12348,12 @@
 	// <script>
 
 /***/ },
-/* 496 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _AddressSelect = __webpack_require__(497);
+	var _AddressSelect = __webpack_require__(496);
 	
 	var _AddressSelect2 = _interopRequireDefault(_AddressSelect);
 	
@@ -12373,7 +12369,7 @@
 	module.exports = VueWidget;
 
 /***/ },
-/* 497 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12382,7 +12378,7 @@
 	  value: true
 	});
 	
-	var _AddressSelect = __webpack_require__(498);
+	var _AddressSelect = __webpack_require__(497);
 	
 	var _AddressSelect2 = _interopRequireDefault(_AddressSelect);
 
@@ -12391,16 +12387,16 @@
 	exports.default = _AddressSelect2.default;
 
 /***/ },
-/* 498 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(499)
+	__vue_script__ = __webpack_require__(498)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/widgets/AddressSelect/AddressSelect.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(501)
+	__vue_template__ = __webpack_require__(500)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12419,7 +12415,7 @@
 	})()}
 
 /***/ },
-/* 499 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12428,7 +12424,7 @@
 	  value: true
 	});
 	
-	var _addr = __webpack_require__(500);
+	var _addr = __webpack_require__(499);
 	
 	var _addr2 = _interopRequireDefault(_addr);
 	
@@ -12831,19 +12827,19 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 500 */
+/* 499 */
 /***/ function(module, exports) {
 
 	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var province={'A-G':[['340000','安徽'],['110000','北京'],['500000','重庆'],['350000','福建'],['620000','甘肃'],['440000','广东'],['450000','广西'],['520000','贵州']],'H-K':[['460000','海南'],['130000','河北'],['230000','黑龙江'],['410000','河南'],['420000','湖北'],['430000','湖南'],['320000','江苏'],['360000','江西'],['220000','吉林']],'L-S':[['210000','辽宁'],['150000','内蒙古'],['640000','宁夏'],['630000','青海'],['370000','山东'],['310000','上海'],['140000','山西'],['610000','陕西'],['510000','四川']],'T-Z':[['120000','天津'],['650000','新疆'],['540000','西藏'],['530000','云南'],['330000','浙江']]};var county=[['110100','北京','110000','0'],['110101','东城','110100','0'],['110102','西城','110100','0'],['110105','朝阳','110100','0'],['110106','丰台','110100','0'],['110107','石景山','110100','0'],['110108','海淀','110100','0'],['110109','门头沟','110100','0'],['110111','房山','110100','0'],['110112','通州','110100','0'],['110113','顺义','110100','0'],['110114','昌平','110100','0'],['110115','大兴','110100','0'],['110116','怀柔','110100','0'],['110117','平谷','110100','0'],['110228','密云','110100','0'],['110229','延庆','110100','0'],['120100','天津','120000','0'],['120101','和平','120100','0'],['120102','河东','120100','0'],['120103','河西','120100','0'],['120104','南开','120100','0'],['120105','河北','120100','0'],['120106','红桥','120100','0'],['120110','东丽','120100','0'],['120111','西青','120100','0'],['120112','津南','120100','0'],['120113','北辰','120100','0'],['120114','武清','120100','0'],['120115','宝坻','120100','0'],['120116','滨海','120100','0'],['120221','宁河','120100','0'],['120223','静海','120100','0'],['120225','蓟县','120100','0'],['130100','石家庄','130000','0'],['130102','长安','130100','0'],['130103','桥东','130100','0'],['130104','桥西','130100','0'],['130105','新华','130100','0'],['130107','井陉矿','130100','0'],['130108','裕华','130100','0'],['130121','井陉','130100','0'],['130123','正定','130100','0'],['130124','栾城','130100','0'],['130125','行唐','130100','0'],['130126','灵寿','130100','0'],['130127','高邑','130100','0'],['130128','深泽','130100','0'],['130129','赞皇','130100','0'],['130130','无极','130100','0'],['130131','平山','130100','0'],['130132','元氏','130100','0'],['130133','赵县','130100','0'],['130181','辛集','130100','0'],['130182','藁城','130100','0'],['130183','晋州','130100','0'],['130184','新乐','130100','0'],['130185','鹿泉','130100','0'],['130200','唐山','130000','0'],['130202','路南','130200','0'],['130203','路北','130200','0'],['130204','古冶','130200','0'],['130205','开平','130200','0'],['130207','丰南','130200','0'],['130208','丰润','130200','0'],['130223','滦县','130200','0'],['130224','滦南','130200','0'],['130225','乐亭','130200','0'],['130227','迁西','130200','0'],['130229','玉田','130200','0'],['130230','曹妃甸','130200','0'],['130281','遵化','130200','0'],['130283','迁安','130200','0'],['130300','秦皇岛','130000','0'],['130302','海港','130300','0'],['130303','山海关','130300','0'],['130304','北戴河','130300','0'],['130321','青龙','130300','0'],['130322','昌黎','130300','0'],['130323','抚宁','130300','0'],['130324','卢龙','130300','0'],['130400','邯郸','130000','0'],['130402','邯山','130400','0'],['130403','丛台','130400','0'],['130404','复兴','130400','0'],['130406','峰峰矿','130400','0'],['130421','邯郸','130400','0'],['130423','临漳','130400','0'],['130424','成安','130400','0'],['130425','大名','130400','0'],['130426','涉县','130400','0'],['130427','磁县','130400','0'],['130428','肥乡','130400','0'],['130429','永年','130400','0'],['130430','邱县','130400','0'],['130431','鸡泽','130400','0'],['130432','广平','130400','0'],['130433','馆陶','130400','0'],['130434','魏县','130400','0'],['130435','曲周','130400','0'],['130481','武安','130400','0'],['130500','邢台','130000','0'],['130502','桥东','130500','0'],['130503','桥西','130500','0'],['130521','邢台','130500','0'],['130522','临城','130500','0'],['130523','内丘','130500','0'],['130524','柏乡','130500','0'],['130525','隆尧','130500','0'],['130526','任县','130500','0'],['130527','南和','130500','0'],['130528','宁晋','130500','0'],['130529','巨鹿','130500','0'],['130530','新河','130500','0'],['130531','广宗','130500','0'],['130532','平乡','130500','0'],['130533','威县','130500','0'],['130534','清河','130500','0'],['130535','临西','130500','0'],['130581','南宫','130500','0'],['130582','沙河','130500','0'],['130600','保定','130000','0'],['130602','新市','130600','0'],['130603','北市','130600','0'],['130604','南市','130600','0'],['130621','满城','130600','0'],['130622','清苑','130600','0'],['130623','涞水','130600','0'],['130624','阜平','130600','0'],['130625','徐水','130600','0'],['130626','定兴','130600','0'],['130627','唐县','130600','0'],['130628','高阳','130600','0'],['130629','容城','130600','0'],['130630','涞源','130600','0'],['130631','望都','130600','0'],['130632','安新','130600','0'],['130633','易县','130600','0'],['130634','曲阳','130600','0'],['130635','蠡县','130600','0'],['130636','顺平','130600','0'],['130637','博野','130600','0'],['130638','雄县','130600','0'],['130681','涿州','130600','0'],['130682','定州','130600','0'],['130683','安国','130600','0'],['130684','高碑店','130600','0'],['130700','张家口','130000','0'],['130702','桥东','130700','0'],['130703','桥西','130700','0'],['130705','宣化区','130700','0'],['130706','下花园','130700','0'],['130721','宣化县','130700','0'],['130722','张北','130700','0'],['130723','康保','130700','0'],['130724','沽源','130700','0'],['130725','尚义','130700','0'],['130726','蔚县','130700','0'],['130727','阳原','130700','0'],['130728','怀安','130700','0'],['130729','万全','130700','0'],['130730','怀来','130700','0'],['130731','涿鹿','130700','0'],['130732','赤城','130700','0'],['130733','崇礼','130700','0'],['130800','承德','130000','0'],['130802','双桥','130800','0'],['130803','双滦','130800','0'],['130804','鹰手营子矿','130800','0'],['130821','承德','130800','0'],['130822','兴隆','130800','0'],['130823','平泉','130800','0'],['130824','滦平','130800','0'],['130825','隆化','130800','0'],['130826','丰宁','130800','0'],['130827','宽城','130800','0'],['130828','围场','130800','0'],['130900','沧州','130000','0'],['130902','新华','130900','0'],['130903','运河','130900','0'],['130921','沧县','130900','0'],['130922','青县','130900','0'],['130923','东光','130900','0'],['130924','海兴','130900','0'],['130925','盐山','130900','0'],['130926','肃宁','130900','0'],['130927','南皮','130900','0'],['130928','吴桥','130900','0'],['130929','献县','130900','0'],['130930','孟村','130900','0'],['130981','泊头','130900','0'],['130982','任丘','130900','0'],['130983','黄骅','130900','0'],['130984','河间','130900','0'],['131000','廊坊','130000','0'],['131002','安次','131000','0'],['131003','广阳','131000','0'],['131022','固安','131000','0'],['131023','永清','131000','0'],['131024','香河','131000','0'],['131025','大城','131000','0'],['131026','文安','131000','0'],['131028','大厂','131000','0'],['131081','霸州','131000','0'],['131082','三河','131000','0'],['131100','衡水','130000','0'],['131102','桃城','131100','0'],['131121','枣强','131100','0'],['131122','武邑','131100','0'],['131123','武强','131100','0'],['131124','饶阳','131100','0'],['131125','安平','131100','0'],['131126','故城','131100','0'],['131127','景县','131100','0'],['131128','阜城','131100','0'],['131181','冀州','131100','0'],['131182','深州','131100','0'],['140100','太原','140000','0'],['140105','小店','140100','0'],['140106','迎泽','140100','0'],['140107','杏花岭','140100','0'],['140108','尖草坪','140100','0'],['140109','万柏林','140100','0'],['140110','晋源','140100','0'],['140121','清徐','140100','0'],['140122','阳曲','140100','0'],['140123','娄烦','140100','0'],['140181','古交','140100','0'],['140200','大同','140000','0'],['140202','城区','140200','0'],['140203','矿区','140200','0'],['140211','南郊','140200','0'],['140212','新荣','140200','0'],['140221','阳高','140200','0'],['140222','天镇','140200','0'],['140223','广灵','140200','0'],['140224','灵丘','140200','0'],['140225','浑源','140200','0'],['140226','左云','140200','0'],['140227','大同','140200','0'],['140300','阳泉','140000','0'],['140302','城区','140300','0'],['140303','矿区','140300','0'],['140311','郊区','140300','0'],['140321','平定','140300','0'],['140322','盂县','140300','0'],['140400','长治','140000','0'],['140421','长治','140400','0'],['140423','襄垣','140400','0'],['140424','屯留','140400','0'],['140425','平顺','140400','0'],['140426','黎城','140400','0'],['140427','壶关','140400','0'],['140428','长子','140400','0'],['140429','武乡','140400','0'],['140430','沁县','140400','0'],['140431','沁源','140400','0'],['140481','潞城','140400','0'],['140482','城区','140400','0'],['140483','郊区','140400','0'],['140500','晋城','140000','0'],['140502','城区','140500','0'],['140521','沁水','140500','0'],['140522','阳城','140500','0'],['140524','陵川','140500','0'],['140525','泽州','140500','0'],['140581','高平','140500','0'],['140600','朔州','140000','0'],['140602','朔城','140600','0'],['140603','平鲁','140600','0'],['140621','山阴','140600','0'],['140622','应县','140600','0'],['140623','右玉','140600','0'],['140624','怀仁','140600','0'],['140700','晋中','140000','0'],['140702','榆次','140700','0'],['140721','榆社','140700','0'],['140722','左权','140700','0'],['140723','和顺','140700','0'],['140724','昔阳','140700','0'],['140725','寿阳','140700','0'],['140726','太谷','140700','0'],['140727','祁县','140700','0'],['140728','平遥','140700','0'],['140729','灵石','140700','0'],['140781','介休','140700','0'],['140800','运城','140000','0'],['140802','盐湖','140800','0'],['140821','临猗','140800','0'],['140822','万荣','140800','0'],['140823','闻喜','140800','0'],['140824','稷山','140800','0'],['140825','新绛','140800','0'],['140826','绛县','140800','0'],['140827','垣曲','140800','0'],['140828','夏县','140800','0'],['140829','平陆','140800','0'],['140830','芮城','140800','0'],['140881','永济','140800','0'],['140882','河津','140800','0'],['140900','忻州','140000','0'],['140902','忻府','140900','0'],['140921','定襄','140900','0'],['140922','五台','140900','0'],['140923','代县','140900','0'],['140924','繁峙','140900','0'],['140925','宁武','140900','0'],['140926','静乐','140900','0'],['140927','神池','140900','0'],['140928','五寨','140900','0'],['140929','岢岚','140900','0'],['140930','河曲','140900','0'],['140931','保德','140900','0'],['140932','偏关','140900','0'],['140981','原平','140900','0'],['141000','临汾','140000','0'],['141002','尧都','141000','0'],['141021','曲沃','141000','0'],['141022','翼城','141000','0'],['141023','襄汾','141000','0'],['141024','洪洞','141000','0'],['141025','古县','141000','0'],['141026','安泽','141000','0'],['141027','浮山','141000','0'],['141028','吉县','141000','0'],['141029','乡宁','141000','0'],['141030','大宁','141000','0'],['141031','隰县','141000','0'],['141032','永和','141000','0'],['141033','蒲县','141000','0'],['141034','汾西','141000','0'],['141081','侯马','141000','0'],['141082','霍州','141000','0'],['141100','吕梁','140000','0'],['141102','离石','141100','0'],['141121','文水','141100','0'],['141122','交城','141100','0'],['141123','兴县','141100','0'],['141124','临县','141100','0'],['141125','柳林','141100','0'],['141126','石楼','141100','0'],['141127','岚县','141100','0'],['141128','方山','141100','0'],['141129','中阳','141100','0'],['141130','交口','141100','0'],['141181','孝义','141100','0'],['141182','汾阳','141100','0'],['150100','呼和浩特','150000','0'],['150102','新城','150100','0'],['150103','回民','150100','0'],['150104','玉泉','150100','0'],['150105','赛罕','150100','0'],['150121','土默特左','150100','0'],['150122','托克托','150100','0'],['150123','和林格尔','150100','0'],['150124','清水河','150100','0'],['150125','武川','150100','0'],['150200','包头','150000','0'],['150202','东河','150200','0'],['150203','昆都仑','150200','0'],['150204','青山','150200','0'],['150205','石拐','150200','0'],['150206','白云矿区','150200','0'],['150207','九原','150200','0'],['150221','土默特右','150200','0'],['150222','固阳','150200','0'],['150223','达尔罕茂明安联合','150200','0'],['150300','乌海','150000','0'],['150302','海勃湾','150300','0'],['150303','海南','150300','0'],['150304','乌达','150300','0'],['150400','赤峰','150000','0'],['150402','红山','150400','0'],['150403','元宝山','150400','0'],['150404','松山','150400','0'],['150421','阿鲁科尔沁','150400','0'],['150422','巴林左','150400','0'],['150423','巴林右','150400','0'],['150424','林西','150400','0'],['150425','克什克腾','150400','0'],['150426','翁牛特','150400','0'],['150428','喀喇沁','150400','0'],['150429','宁城','150400','0'],['150430','敖汉','150400','0'],['150500','通辽','150000','0'],['150502','科尔沁','150500','0'],['150521','科尔沁左翼中','150500','0'],['150522','科尔沁左翼后','150500','0'],['150523','开鲁','150500','0'],['150524','库伦','150500','0'],['150525','奈曼','150500','0'],['150526','扎鲁特','150500','0'],['150581','霍林郭勒','150500','0'],['150600','鄂尔多斯','150000','0'],['150602','东胜','150600','0'],['150621','达拉特','150600','0'],['150622','准格尔','150600','0'],['150623','鄂托克前','150600','0'],['150624','鄂托克','150600','0'],['150625','杭锦','150600','0'],['150626','乌审','150600','0'],['150627','伊金霍洛','150600','0'],['150700','呼伦贝尔','150000','0'],['150702','海拉尔','150700','0'],['150703','扎赉诺尔','150700','0'],['150721','阿荣','150700','0'],['150722','莫力达瓦','150700','0'],['150723','鄂伦春','150700','0'],['150724','鄂温克','150700','0'],['150725','陈巴尔虎','150700','0'],['150726','新巴尔虎左','150700','0'],['150727','新巴尔虎右','150700','0'],['150781','满洲里','150700','0'],['150782','牙克石','150700','0'],['150783','扎兰屯','150700','0'],['150784','额尔古纳','150700','0'],['150785','根河','150700','0'],['150800','巴彦淖尔','150000','0'],['150802','临河','150800','0'],['150821','五原','150800','0'],['150822','磴口','150800','0'],['150823','乌拉特前','150800','0'],['150824','乌拉特中','150800','0'],['150825','乌拉特后','150800','0'],['150826','杭锦后','150800','0'],['150900','乌兰察布','150000','0'],['150902','集宁','150900','0'],['150921','卓资','150900','0'],['150922','化德','150900','0'],['150923','商都','150900','0'],['150924','兴和','150900','0'],['150925','凉城','150900','0'],['150926','察哈尔右翼前','150900','0'],['150927','察哈尔右翼中','150900','0'],['150928','察哈尔右翼后','150900','0'],['150929','四子王','150900','0'],['150981','丰镇','150900','0'],['152200','兴安','150000','0'],['152201','乌兰浩特','152200','0'],['152202','阿尔山','152200','0'],['152221','科尔沁右翼前','152200','0'],['152222','科尔沁右翼中','152200','0'],['152223','扎赉特','152200','0'],['152224','突泉','152200','0'],['152500','锡林郭勒','150000','0'],['152501','二连浩特','152500','0'],['152502','锡林浩特','152500','0'],['152522','阿巴嘎','152500','0'],['152523','苏尼特左','152500','0'],['152524','苏尼特右','152500','0'],['152525','东乌珠穆沁','152500','0'],['152526','西乌珠穆沁','152500','0'],['152527','太仆寺','152500','0'],['152528','镶黄','152500','0'],['152529','正镶白','152500','0'],['152530','正蓝','152500','0'],['152531','多伦','152500','0'],['152900','阿拉善','150000','0'],['152921','阿拉善左','152900','0'],['152922','阿拉善右','152900','0'],['152923','额济纳','152900','0'],['210100','沈阳','210000','0'],['210102','和平','210100','0'],['210103','沈河','210100','0'],['210104','大东','210100','0'],['210105','皇姑','210100','0'],['210106','铁西','210100','0'],['210111','苏家屯','210100','0'],['210112','浑南','210100','0'],['210113','新城子','210100','0'],['210114','于洪','210100','0'],['210122','辽中','210100','0'],['210123','康平','210100','0'],['210124','法库','210100','0'],['210181','新民','210100','0'],['210184','沈北','210100','0'],['210200','大连','210000','0'],['210202','中山','210200','0'],['210203','西岗','210200','0'],['210204','沙河口','210200','0'],['210211','甘井子','210200','0'],['210212','旅顺口','210200','0'],['210213','金州','210200','0'],['210224','长海','210200','0'],['210281','瓦房店','210200','0'],['210282','普兰店','210200','0'],['210283','庄河','210200','0'],['210300','鞍山','210000','0'],['210302','铁东','210300','0'],['210303','铁西','210300','0'],['210304','立山','210300','0'],['210311','千山','210300','0'],['210321','台安','210300','0'],['210323','岫岩','210300','0'],['210381','海城','210300','0'],['210400','抚顺','210000','0'],['210402','新抚','210400','0'],['210403','东洲','210400','0'],['210404','望花','210400','0'],['210411','顺城','210400','0'],['210421','抚顺','210400','0'],['210422','新宾','210400','0'],['210423','清原','210400','0'],['210500','本溪','210000','0'],['210502','平山','210500','0'],['210503','溪湖','210500','0'],['210504','明山','210500','0'],['210505','南芬','210500','0'],['210521','本溪','210500','0'],['210522','桓仁','210500','0'],['210600','丹东','210000','0'],['210602','元宝','210600','0'],['210603','振兴','210600','0'],['210604','振安','210600','0'],['210624','宽甸','210600','0'],['210681','东港','210600','0'],['210682','凤城','210600','0'],['210700','锦州','210000','0'],['210702','古塔','210700','0'],['210703','凌河','210700','0'],['210711','太和','210700','0'],['210726','黑山','210700','0'],['210727','义县','210700','0'],['210781','凌海','210700','0'],['210782','北镇','210700','0'],['210800','营口','210000','0'],['210802','站前','210800','0'],['210803','西市','210800','0'],['210804','鲅鱼圈','210800','0'],['210811','老边','210800','0'],['210881','盖州','210800','0'],['210882','大石桥','210800','0'],['210900','阜新','210000','0'],['210902','海州','210900','0'],['210903','新邱','210900','0'],['210904','太平','210900','0'],['210905','清河门','210900','0'],['210911','细河','210900','0'],['210921','阜新','210900','0'],['210922','彰武','210900','0'],['211000','辽阳','210000','0'],['211002','白塔','211000','0'],['211003','文圣','211000','0'],['211004','宏伟','211000','0'],['211005','弓长岭','211000','0'],['211011','太子河','211000','0'],['211021','辽阳','211000','0'],['211081','灯塔','211000','0'],['211100','盘锦','210000','0'],['211102','双台子','211100','0'],['211103','兴隆台','211100','0'],['211121','大洼','211100','0'],['211122','盘山','211100','0'],['211200','铁岭','210000','0'],['211202','银州','211200','0'],['211204','清河','211200','0'],['211221','铁岭','211200','0'],['211223','西丰','211200','0'],['211224','昌图','211200','0'],['211281','调兵山','211200','0'],['211282','开原','211200','0'],['211300','朝阳','210000','0'],['211302','双塔','211300','0'],['211303','龙城','211300','0'],['211321','朝阳','211300','0'],['211322','建平','211300','0'],['211324','喀左','211300','0'],['211381','北票','211300','0'],['211382','凌源','211300','0'],['211400','葫芦岛','210000','0'],['211402','连山','211400','0'],['211403','龙港','211400','0'],['211404','南票','211400','0'],['211421','绥中','211400','0'],['211422','建昌','211400','0'],['211481','兴城','211400','0'],['220100','长春','220000','0'],['220102','南关','220100','0'],['220103','宽城','220100','0'],['220104','朝阳','220100','0'],['220105','二道','220100','0'],['220106','绿园','220100','0'],['220112','双阳','220100','0'],['220122','农安','220100','0'],['220181','九台','220100','0'],['220182','榆树','220100','0'],['220183','德惠','220100','0'],['220200','吉林','220000','0'],['220202','昌邑','220200','0'],['220203','龙潭','220200','0'],['220204','船营','220200','0'],['220211','丰满','220200','0'],['220221','永吉','220200','0'],['220281','蛟河','220200','0'],['220282','桦甸','220200','0'],['220283','舒兰','220200','0'],['220284','磐石','220200','0'],['220300','四平','220000','0'],['220302','铁西','220300','0'],['220303','铁东','220300','0'],['220322','梨树','220300','0'],['220323','伊通','220300','0'],['220381','公主岭','220300','0'],['220382','双辽','220300','0'],['220400','辽源','220000','0'],['220402','龙山','220400','0'],['220403','西安','220400','0'],['220421','东丰','220400','0'],['220422','东辽','220400','0'],['220500','通化','220000','0'],['220502','东昌','220500','0'],['220503','二道江','220500','0'],['220521','通化','220500','0'],['220523','辉南','220500','0'],['220524','柳河','220500','0'],['220581','梅河口','220500','0'],['220582','集安','220500','0'],['220600','白山','220000','0'],['220602','浑江','220600','0'],['220621','抚松','220600','0'],['220622','靖宇','220600','0'],['220623','长白','220600','0'],['220625','江源','220600','0'],['220681','临江','220600','0'],['220700','松原','220000','0'],['220702','宁江','220700','0'],['220721','前郭','220700','0'],['220722','长岭','220700','0'],['220723','乾安','220700','0'],['220724','扶余','220700','0'],['220800','白城','220000','0'],['220802','洮北','220800','0'],['220821','镇赉','220800','0'],['220822','通榆','220800','0'],['220881','洮南','220800','0'],['220882','大安','220800','0'],['222400','延边朝鲜族','220000','0'],['222401','延吉','222400','0'],['222402','图们','222400','0'],['222403','敦化','222400','0'],['222404','珲春','222400','0'],['222405','龙井','222400','0'],['222406','和龙','222400','0'],['222424','汪清','222400','0'],['222426','安图','222400','0'],['230100','哈尔滨','230000','0'],['230102','道里','230100','0'],['230103','南岗','230100','0'],['230104','道外','230100','0'],['230106','香坊','230100','0'],['230108','平房','230100','0'],['230109','松北','230100','0'],['230111','呼兰','230100','0'],['230123','依兰','230100','0'],['230124','方正','230100','0'],['230125','宾县','230100','0'],['230126','巴彦','230100','0'],['230127','木兰','230100','0'],['230128','通河','230100','0'],['230129','延寿','230100','0'],['230181','阿城','230100','0'],['230182','双城','230100','0'],['230183','尚志','230100','0'],['230184','五常','230100','0'],['230200','齐齐哈尔','230000','0'],['230202','龙沙','230200','0'],['230203','建华','230200','0'],['230204','铁锋','230200','0'],['230205','昂昂溪','230200','0'],['230206','富拉尔基','230200','0'],['230207','碾子山','230200','0'],['230208','梅里斯达斡尔族','230200','0'],['230221','龙江','230200','0'],['230223','依安','230200','0'],['230224','泰来','230200','0'],['230225','甘南','230200','0'],['230227','富裕','230200','0'],['230229','克山','230200','0'],['230230','克东','230200','0'],['230231','拜泉','230200','0'],['230281','讷河','230200','0'],['230300','鸡西','230000','0'],['230302','鸡冠','230300','0'],['230303','恒山','230300','0'],['230304','滴道','230300','0'],['230305','梨树','230300','0'],['230306','城子河','230300','0'],['230307','麻山','230300','0'],['230321','鸡东','230300','0'],['230381','虎林','230300','0'],['230382','密山','230300','0'],['230400','鹤岗','230000','0'],['230402','向阳','230400','0'],['230403','工农','230400','0'],['230404','南山','230400','0'],['230405','兴安','230400','0'],['230406','东山','230400','0'],['230407','兴山','230400','0'],['230421','萝北','230400','0'],['230422','绥滨','230400','0'],['230500','双鸭山','230000','0'],['230502','尖山','230500','0'],['230503','岭东','230500','0'],['230505','四方台','230500','0'],['230506','宝山','230500','0'],['230521','集贤','230500','0'],['230522','友谊','230500','0'],['230523','宝清','230500','0'],['230524','饶河','230500','0'],['230600','大庆','230000','0'],['230602','萨尔图','230600','0'],['230603','龙凤','230600','0'],['230604','让胡路','230600','0'],['230605','红岗','230600','0'],['230606','大同','230600','0'],['230621','肇州','230600','0'],['230622','肇源','230600','0'],['230623','林甸','230600','0'],['230624','杜尔伯特','230600','0'],['230700','伊春','230000','0'],['230702','伊春','230700','0'],['230703','南岔','230700','0'],['230704','友好','230700','0'],['230705','西林','230700','0'],['230706','翠峦','230700','0'],['230707','新青','230700','0'],['230708','美溪','230700','0'],['230709','金山屯','230700','0'],['230710','五营','230700','0'],['230711','乌马河','230700','0'],['230712','汤旺河','230700','0'],['230713','带岭','230700','0'],['230714','乌伊岭','230700','0'],['230715','红星','230700','0'],['230716','上甘岭','230700','0'],['230722','嘉荫','230700','0'],['230781','铁力','230700','0'],['230800','佳木斯','230000','0'],['230803','向阳','230800','0'],['230804','前进','230800','0'],['230805','东风','230800','0'],['230811','郊区','230800','0'],['230822','桦南','230800','0'],['230826','桦川','230800','0'],['230828','汤原','230800','0'],['230833','抚远','230800','0'],['230881','同江','230800','0'],['230882','富锦','230800','0'],['230900','七台河','230000','0'],['230902','新兴','230900','0'],['230903','桃山','230900','0'],['230904','茄子河','230900','0'],['230921','勃利','230900','0'],['231000','牡丹江','230000','0'],['231002','东安','231000','0'],['231003','阳明','231000','0'],['231004','爱民','231000','0'],['231005','西安','231000','0'],['231024','东宁','231000','0'],['231025','林口','231000','0'],['231081','绥芬河','231000','0'],['231083','海林','231000','0'],['231084','宁安','231000','0'],['231085','穆棱','231000','0'],['231100','黑河','230000','0'],['231102','爱辉','231100','0'],['231121','嫩江','231100','0'],['231123','逊克','231100','0'],['231124','孙吴','231100','0'],['231181','北安','231100','0'],['231182','五大连池','231100','0'],['231200','绥化','230000','0'],['231202','北林','231200','0'],['231221','望奎','231200','0'],['231222','兰西','231200','0'],['231223','青冈','231200','0'],['231224','庆安','231200','0'],['231225','明水','231200','0'],['231226','绥棱','231200','0'],['231281','安达','231200','0'],['231282','肇东','231200','0'],['231283','海伦','231200','0'],['232700','大兴安岭','230000','0'],['232702','松岭','232700','0'],['232703','新林','232700','0'],['232704','呼中','232700','0'],['232721','呼玛','232700','0'],['232722','塔河','232700','0'],['232723','漠河','232700','0'],['232724','加格达奇','232700','0'],['310100','上海','310000','0'],['310101','黄浦','310100','0'],['310104','徐汇','310100','0'],['310105','长宁','310100','0'],['310106','静安','310100','0'],['310107','普陀','310100','0'],['310108','闸北','310100','0'],['310109','虹口','310100','0'],['310110','杨浦','310100','0'],['310112','闵行','310100','0'],['310113','宝山','310100','0'],['310114','嘉定','310100','0'],['310115','浦东','310100','0'],['310116','金山','310100','0'],['310117','松江','310100','0'],['310118','青浦','310100','0'],['310120','奉贤','310100','0'],['310230','崇明','310100','0'],['320100','南京','320000','0'],['320102','玄武','320100','0'],['320104','秦淮','320100','0'],['320105','建邺','320100','0'],['320106','鼓楼','320100','0'],['320111','浦口','320100','0'],['320113','栖霞','320100','0'],['320114','雨花台','320100','0'],['320115','江宁','320100','0'],['320116','六合','320100','0'],['320124','溧水','320100','0'],['320125','高淳','320100','0'],['320200','无锡','320000','0'],['320202','崇安','320200','0'],['320203','南长','320200','0'],['320204','北塘','320200','0'],['320205','锡山','320200','0'],['320206','惠山','320200','0'],['320211','滨湖','320200','0'],['320281','江阴','320200','0'],['320282','宜兴','320200','0'],['320300','徐州','320000','0'],['320302','鼓楼','320300','0'],['320303','云龙','320300','0'],['320305','贾汪','320300','0'],['320311','泉山','320300','0'],['320321','丰县','320300','0'],['320322','沛县','320300','0'],['320323','铜山','320300','0'],['320324','睢宁','320300','0'],['320381','新沂','320300','0'],['320382','邳州','320300','0'],['320400','常州','320000','0'],['320402','天宁','320400','0'],['320404','钟楼','320400','0'],['320405','戚墅堰','320400','0'],['320411','新北','320400','0'],['320412','武进','320400','0'],['320481','溧阳','320400','0'],['320482','金坛','320400','0'],['320500','苏州','320000','0'],['320505','虎丘','320500','0'],['320506','吴中','320500','0'],['320507','相城','320500','0'],['320508','姑苏','320500','0'],['320581','常熟','320500','0'],['320582','张家港','320500','0'],['320583','昆山','320500','0'],['320584','吴江','320500','0'],['320585','太仓','320500','0'],['320600','南通','320000','0'],['320602','崇川','320600','0'],['320611','港闸','320600','0'],['320612','通州','320600','0'],['320621','海安','320600','0'],['320623','如东','320600','0'],['320681','启东','320600','0'],['320682','如皋','320600','0'],['320684','海门','320600','0'],['320700','连云港','320000','0'],['320703','连云','320700','0'],['320705','新浦','320700','0'],['320706','海州','320700','0'],['320721','赣榆','320700','0'],['320722','东海','320700','0'],['320723','灌云','320700','0'],['320724','灌南','320700','0'],['320800','淮安','320000','0'],['320802','清河','320800','0'],['320803','淮安','320800','0'],['320804','淮阴','320800','0'],['320811','清浦','320800','0'],['320826','涟水','320800','0'],['320829','洪泽','320800','0'],['320830','盱眙','320800','0'],['320831','金湖','320800','0'],['320900','盐城','320000','0'],['320902','亭湖','320900','0'],['320903','盐都','320900','0'],['320921','响水','320900','0'],['320922','滨海','320900','0'],['320923','阜宁','320900','0'],['320924','射阳','320900','0'],['320925','建湖','320900','0'],['320981','东台','320900','0'],['320982','大丰','320900','0'],['321000','扬州','320000','0'],['321002','广陵','321000','0'],['321003','邗江','321000','0'],['321023','宝应','321000','0'],['321081','仪征','321000','0'],['321084','高邮','321000','0'],['321088','江都','321000','0'],['321100','镇江','320000','0'],['321102','京口','321100','0'],['321111','润州','321100','0'],['321112','丹徒','321100','0'],['321181','丹阳','321100','0'],['321182','扬中','321100','0'],['321183','句容','321100','0'],['321200','泰州','320000','0'],['321202','海陵','321200','0'],['321203','高港','321200','0'],['321281','兴化','321200','0'],['321282','靖江','321200','0'],['321283','泰兴','321200','0'],['321284','姜堰','321200','0'],['321300','宿迁','320000','0'],['321302','宿城','321300','0'],['321311','宿豫','321300','0'],['321322','沭阳','321300','0'],['321323','泗阳','321300','0'],['321324','泗洪','321300','0'],['330100','杭州','330000','0'],['330102','上城','330100','0'],['330103','下城','330100','0'],['330104','江干','330100','0'],['330105','拱墅','330100','0'],['330106','西湖','330100','0'],['330108','滨江','330100','0'],['330109','萧山','330100','0'],['330110','余杭','330100','0'],['330122','桐庐','330100','0'],['330127','淳安','330100','0'],['330182','建德','330100','0'],['330183','富阳','330100','0'],['330185','临安','330100','0'],['330200','宁波','330000','0'],['330203','海曙','330200','0'],['330204','江东','330200','0'],['330205','江北','330200','0'],['330206','北仑','330200','0'],['330211','镇海','330200','0'],['330212','鄞州','330200','0'],['330225','象山','330200','0'],['330226','宁海','330200','0'],['330281','余姚','330200','0'],['330282','慈溪','330200','0'],['330283','奉化','330200','0'],['330300','温州','330000','0'],['330302','鹿城','330300','0'],['330303','龙湾','330300','0'],['330304','瓯海','330300','0'],['330322','洞头','330300','0'],['330324','永嘉','330300','0'],['330326','平阳','330300','0'],['330327','苍南','330300','0'],['330328','文成','330300','0'],['330329','泰顺','330300','0'],['330381','瑞安','330300','0'],['330382','乐清','330300','0'],['330400','嘉兴','330000','0'],['330402','南湖','330400','0'],['330411','秀洲','330400','0'],['330421','嘉善','330400','0'],['330424','海盐','330400','0'],['330481','海宁','330400','0'],['330482','平湖','330400','0'],['330483','桐乡','330400','0'],['330500','湖州','330000','0'],['330502','吴兴','330500','0'],['330503','南浔','330500','0'],['330521','德清','330500','0'],['330522','长兴','330500','0'],['330523','安吉','330500','0'],['330600','绍兴','330000','0'],['330602','越城','330600','0'],['330621','柯桥','330600','0'],['330624','新昌','330600','0'],['330681','诸暨','330600','0'],['330682','上虞','330600','0'],['330683','嵊州','330600','0'],['330700','金华','330000','0'],['330702','婺城','330700','0'],['330703','金东','330700','0'],['330723','武义','330700','0'],['330726','浦江','330700','0'],['330727','磐安','330700','0'],['330781','兰溪','330700','0'],['330782','义乌','330700','0'],['330783','东阳','330700','0'],['330784','永康','330700','0'],['330800','衢州','330000','0'],['330802','柯城','330800','0'],['330803','衢江','330800','0'],['330822','常山','330800','0'],['330824','开化','330800','0'],['330825','龙游','330800','0'],['330881','江山','330800','0'],['330900','舟山','330000','0'],['330902','定海','330900','0'],['330903','普陀','330900','0'],['330921','岱山','330900','0'],['330922','嵊泗','330900','0'],['331000','台州','330000','0'],['331002','椒江','331000','0'],['331003','黄岩','331000','0'],['331004','路桥','331000','0'],['331021','玉环','331000','0'],['331022','三门','331000','0'],['331023','天台','331000','0'],['331024','仙居','331000','0'],['331081','温岭','331000','0'],['331082','临海','331000','0'],['331100','丽水','330000','0'],['331102','莲都','331100','0'],['331121','青田','331100','0'],['331122','缙云','331100','0'],['331123','遂昌','331100','0'],['331124','松阳','331100','0'],['331125','云和','331100','0'],['331126','庆元','331100','0'],['331127','景宁','331100','0'],['331181','龙泉','331100','0'],['340100','合肥','340000','0'],['340102','瑶海','340100','0'],['340103','庐阳','340100','0'],['340104','蜀山','340100','0'],['340111','包河','340100','0'],['340121','长丰','340100','0'],['340122','肥东','340100','0'],['340123','肥西','340100','0'],['340200','芜湖','340000','0'],['340202','镜湖','340200','0'],['340203','弋江','340200','0'],['340207','鸠江','340200','0'],['340208','三山','340200','0'],['340221','芜湖','340200','0'],['340222','繁昌','340200','0'],['340223','南陵','340200','0'],['340300','蚌埠','340000','0'],['340302','龙子湖','340300','0'],['340303','蚌山','340300','0'],['340304','禹会','340300','0'],['340311','淮上','340300','0'],['340321','怀远','340300','0'],['340322','五河','340300','0'],['340323','固镇','340300','0'],['340400','淮南','340000','0'],['340402','大通','340400','0'],['340403','田家庵','340400','0'],['340404','谢家集','340400','0'],['340405','八公山','340400','0'],['340406','潘集','340400','0'],['340421','凤台','340400','0'],['340500','马鞍山','340000','0'],['340503','花山','340500','0'],['340504','雨山','340500','0'],['340506','博望','340500','0'],['340521','当涂','340500','0'],['340600','淮北','340000','0'],['340602','杜集','340600','0'],['340603','相山','340600','0'],['340604','烈山','340600','0'],['340621','濉溪','340600','0'],['340700','铜陵','340000','0'],['340702','铜官山','340700','0'],['340703','狮子山','340700','0'],['340711','郊区','340700','0'],['340721','铜陵','340700','0'],['340800','安庆','340000','0'],['340802','迎江','340800','0'],['340803','大观','340800','0'],['340811','宜秀','340800','0'],['340822','怀宁','340800','0'],['340823','枞阳','340800','0'],['340824','潜山','340800','0'],['340825','太湖','340800','0'],['340826','宿松','340800','0'],['340827','望江','340800','0'],['340828','岳西','340800','0'],['340881','桐城','340800','0'],['341000','黄山','340000','0'],['341002','屯溪','341000','0'],['341003','黄山','341000','0'],['341004','徽州','341000','0'],['341021','歙县','341000','0'],['341022','休宁','341000','0'],['341023','黟县','341000','0'],['341024','祁门','341000','0'],['341100','滁州','340000','0'],['341102','琅琊','341100','0'],['341103','南谯','341100','0'],['341122','来安','341100','0'],['341124','全椒','341100','0'],['341125','定远','341100','0'],['341126','凤阳','341100','0'],['341181','天长','341100','0'],['341182','明光','341100','0'],['341200','阜阳','340000','0'],['341202','颍州','341200','0'],['341203','颍东','341200','0'],['341204','颍泉','341200','0'],['341221','临泉','341200','0'],['341222','太和','341200','0'],['341225','阜南','341200','0'],['341226','颍上','341200','0'],['341282','界首','341200','0'],['341300','宿州','340000','0'],['341302','埇桥','341300','0'],['341321','砀山','341300','0'],['341322','萧县','341300','0'],['341323','灵璧','341300','0'],['341324','泗县','341300','0'],['341400','巢湖','340100','0'],['341421','庐江','340100','0'],['341422','无为','340200','0'],['341423','含山','340500','0'],['341424','和县','340500','0'],['341500','六安','340000','0'],['341502','金安','341500','0'],['341503','裕安','341500','0'],['341521','寿县','341500','0'],['341522','霍邱','341500','0'],['341523','舒城','341500','0'],['341524','金寨','341500','0'],['341525','霍山','341500','0'],['341600','亳州','340000','0'],['341602','谯城','341600','0'],['341621','涡阳','341600','0'],['341622','蒙城','341600','0'],['341623','利辛','341600','0'],['341700','池州','340000','0'],['341702','贵池','341700','0'],['341721','东至','341700','0'],['341722','石台','341700','0'],['341723','青阳','341700','0'],['341800','宣城','340000','0'],['341802','宣州','341800','0'],['341821','郎溪','341800','0'],['341822','广德','341800','0'],['341823','泾县','341800','0'],['341824','绩溪','341800','0'],['341825','旌德','341800','0'],['341881','宁国','341800','0'],['350100','福州','350000','0'],['350102','鼓楼','350100','0'],['350103','台江','350100','0'],['350104','仓山','350100','0'],['350105','马尾','350100','0'],['350111','晋安','350100','0'],['350121','闽侯','350100','0'],['350122','连江','350100','0'],['350123','罗源','350100','0'],['350124','闽清','350100','0'],['350125','永泰','350100','0'],['350128','平潭','350100','0'],['350181','福清','350100','0'],['350182','长乐','350100','0'],['350200','厦门','350000','0'],['350203','思明','350200','0'],['350205','海沧','350200','0'],['350206','湖里','350200','0'],['350211','集美','350200','0'],['350212','同安','350200','0'],['350213','翔安','350200','0'],['350300','莆田','350000','0'],['350302','城厢','350300','0'],['350303','涵江','350300','0'],['350304','荔城','350300','0'],['350305','秀屿','350300','0'],['350322','仙游','350300','0'],['350400','三明','350000','0'],['350402','梅列','350400','0'],['350403','三元','350400','0'],['350421','明溪','350400','0'],['350423','清流','350400','0'],['350424','宁化','350400','0'],['350425','大田','350400','0'],['350426','尤溪','350400','0'],['350427','沙县','350400','0'],['350428','将乐','350400','0'],['350429','泰宁','350400','0'],['350430','建宁','350400','0'],['350481','永安','350400','0'],['350500','泉州','350000','0'],['350502','鲤城','350500','0'],['350503','丰泽','350500','0'],['350504','洛江','350500','0'],['350505','泉港','350500','0'],['350521','惠安','350500','0'],['350524','安溪','350500','0'],['350525','永春','350500','0'],['350526','德化','350500','0'],['350527','金门','350500','0'],['350581','石狮','350500','0'],['350582','晋江','350500','0'],['350583','南安','350500','0'],['350600','漳州','350000','0'],['350602','芗城','350600','0'],['350603','龙文','350600','0'],['350622','云霄','350600','0'],['350623','漳浦','350600','0'],['350624','诏安','350600','0'],['350625','长泰','350600','0'],['350626','东山','350600','0'],['350627','南靖','350600','0'],['350628','平和','350600','0'],['350629','华安','350600','0'],['350681','龙海','350600','0'],['350700','南平','350000','0'],['350702','延平','350700','0'],['350721','顺昌','350700','0'],['350722','浦城','350700','0'],['350723','光泽','350700','0'],['350724','松溪','350700','0'],['350725','政和','350700','0'],['350781','邵武','350700','0'],['350782','武夷山','350700','0'],['350783','建瓯','350700','0'],['350784','建阳','350700','0'],['350800','龙岩','350000','0'],['350802','新罗','350800','0'],['350821','长汀','350800','0'],['350822','永定','350800','0'],['350823','上杭','350800','0'],['350824','武平','350800','0'],['350825','连城','350800','0'],['350881','漳平','350800','0'],['350900','宁德','350000','0'],['350902','蕉城','350900','0'],['350921','霞浦','350900','0'],['350922','古田','350900','0'],['350923','屏南','350900','0'],['350924','寿宁','350900','0'],['350925','周宁','350900','0'],['350926','柘荣','350900','0'],['350981','福安','350900','0'],['350982','福鼎','350900','0'],['360100','南昌','360000','0'],['360102','东湖','360100','0'],['360103','西湖','360100','0'],['360104','青云谱','360100','0'],['360105','湾里','360100','0'],['360111','青山湖','360100','0'],['360121','南昌','360100','0'],['360122','新建','360100','0'],['360123','安义','360100','0'],['360124','进贤','360100','0'],['360200','景德镇','360000','0'],['360202','昌江','360200','0'],['360203','珠山','360200','0'],['360222','浮梁','360200','0'],['360281','乐平','360200','0'],['360300','萍乡','360000','0'],['360302','安源','360300','0'],['360313','湘东','360300','0'],['360321','莲花','360300','0'],['360322','上栗','360300','0'],['360323','芦溪','360300','0'],['360400','九江','360000','0'],['360402','庐山','360400','0'],['360403','浔阳','360400','0'],['360421','九江','360400','0'],['360423','武宁','360400','0'],['360424','修水','360400','0'],['360425','永修','360400','0'],['360426','德安','360400','0'],['360427','星子','360400','0'],['360428','都昌','360400','0'],['360429','湖口','360400','0'],['360430','彭泽','360400','0'],['360481','瑞昌','360400','0'],['360483','共青城','360400','0'],['360500','新余','360000','0'],['360502','渝水','360500','0'],['360521','分宜','360500','0'],['360600','鹰潭','360000','0'],['360602','月湖','360600','0'],['360622','余江','360600','0'],['360681','贵溪','360600','0'],['360700','赣州','360000','0'],['360702','章贡','360700','0'],['360721','赣县','360700','0'],['360722','信丰','360700','0'],['360723','大余','360700','0'],['360724','上犹','360700','0'],['360725','崇义','360700','0'],['360726','安远','360700','0'],['360727','龙南','360700','0'],['360728','定南','360700','0'],['360729','全南','360700','0'],['360730','宁都','360700','0'],['360731','于都','360700','0'],['360732','兴国','360700','0'],['360733','会昌','360700','0'],['360734','寻乌','360700','0'],['360735','石城','360700','0'],['360781','瑞金','360700','0'],['360782','南康','360700','0'],['360800','吉安','360000','0'],['360802','吉州','360800','0'],['360803','青原','360800','0'],['360821','吉安','360800','0'],['360822','吉水','360800','0'],['360823','峡江','360800','0'],['360824','新干','360800','0'],['360825','永丰','360800','0'],['360826','泰和','360800','0'],['360827','遂川','360800','0'],['360828','万安','360800','0'],['360829','安福','360800','0'],['360830','永新','360800','0'],['360881','井冈山','360800','0'],['360900','宜春','360000','0'],['360902','袁州','360900','0'],['360921','奉新','360900','0'],['360922','万载','360900','0'],['360923','上高','360900','0'],['360924','宜丰','360900','0'],['360925','靖安','360900','0'],['360926','铜鼓','360900','0'],['360981','丰城','360900','0'],['360982','樟树','360900','0'],['360983','高安','360900','0'],['361000','抚州','360000','0'],['361002','临川','361000','0'],['361021','南城','361000','0'],['361022','黎川','361000','0'],['361023','南丰','361000','0'],['361024','崇仁','361000','0'],['361025','乐安','361000','0'],['361026','宜黄','361000','0'],['361027','金溪','361000','0'],['361028','资溪','361000','0'],['361029','东乡','361000','0'],['361030','广昌','361000','0'],['361100','上饶','360000','0'],['361102','信州','361100','0'],['361121','上饶','361100','0'],['361122','广丰','361100','0'],['361123','玉山','361100','0'],['361124','铅山','361100','0'],['361125','横峰','361100','0'],['361126','弋阳','361100','0'],['361127','余干','361100','0'],['361128','鄱阳','361100','0'],['361129','万年','361100','0'],['361130','婺源','361100','0'],['361181','德兴','361100','0'],['370100','济南','370000','0'],['370102','历下','370100','0'],['370103','市中','370100','0'],['370104','槐荫','370100','0'],['370105','天桥','370100','0'],['370112','历城','370100','0'],['370113','长清','370100','0'],['370124','平阴','370100','0'],['370125','济阳','370100','0'],['370126','商河','370100','0'],['370181','章丘','370100','0'],['370200','青岛','370000','0'],['370202','市南','370200','0'],['370203','市北','370200','0'],['370211','黄岛','370200','0'],['370212','崂山','370200','0'],['370213','李沧','370200','0'],['370214','城阳','370200','0'],['370281','胶州','370200','0'],['370282','即墨','370200','0'],['370283','平度','370200','0'],['370285','莱西','370200','0'],['370300','淄博','370000','0'],['370302','淄川','370300','0'],['370303','张店','370300','0'],['370304','博山','370300','0'],['370305','临淄','370300','0'],['370306','周村','370300','0'],['370321','桓台','370300','0'],['370322','高青','370300','0'],['370323','沂源','370300','0'],['370400','枣庄','370000','0'],['370402','市中','370400','0'],['370403','薛城','370400','0'],['370404','峄城','370400','0'],['370405','台儿庄','370400','0'],['370406','山亭','370400','0'],['370481','滕州','370400','0'],['370500','东营','370000','0'],['370502','东营','370500','0'],['370503','河口','370500','0'],['370521','垦利','370500','0'],['370522','利津','370500','0'],['370523','广饶','370500','0'],['370600','烟台','370000','0'],['370602','芝罘','370600','0'],['370611','福山','370600','0'],['370612','牟平','370600','0'],['370613','莱山','370600','0'],['370634','长岛','370600','0'],['370681','龙口','370600','0'],['370682','莱阳','370600','0'],['370683','莱州','370600','0'],['370684','蓬莱','370600','0'],['370685','招远','370600','0'],['370686','栖霞','370600','0'],['370687','海阳','370600','0'],['370700','潍坊','370000','0'],['370702','潍城','370700','0'],['370703','寒亭','370700','0'],['370704','坊子','370700','0'],['370705','奎文','370700','0'],['370724','临朐','370700','0'],['370725','昌乐','370700','0'],['370781','青州','370700','0'],['370782','诸城','370700','0'],['370783','寿光','370700','0'],['370784','安丘','370700','0'],['370785','高密','370700','0'],['370786','昌邑','370700','0'],['370800','济宁','370000','0'],['370802','市中','370800','0'],['370811','任城','370800','0'],['370826','微山','370800','0'],['370827','鱼台','370800','0'],['370828','金乡','370800','0'],['370829','嘉祥','370800','0'],['370830','汶上','370800','0'],['370831','泗水','370800','0'],['370832','梁山','370800','0'],['370881','曲阜','370800','0'],['370882','兖州','370800','0'],['370883','邹城','370800','0'],['370900','泰安','370000','0'],['370902','泰山','370900','0'],['370903','岱岳','370900','0'],['370921','宁阳','370900','0'],['370923','东平','370900','0'],['370982','新泰','370900','0'],['370983','肥城','370900','0'],['371000','威海','370000','0'],['371002','环翠','371000','0'],['371081','文登','371000','0'],['371082','荣成','371000','0'],['371083','乳山','371000','0'],['371100','日照','370000','0'],['371102','东港','371100','0'],['371103','岚山','371100','0'],['371121','五莲','371100','0'],['371122','莒县','371100','0'],['371200','莱芜','370000','0'],['371202','莱城','371200','0'],['371203','钢城','371200','0'],['371300','临沂','370000','0'],['371302','兰山','371300','0'],['371311','罗庄','371300','0'],['371312','河东','371300','0'],['371321','沂南','371300','0'],['371322','郯城','371300','0'],['371323','沂水','371300','0'],['371324','兰陵','371300','0'],['371325','费县','371300','0'],['371326','平邑','371300','0'],['371327','莒南','371300','0'],['371328','蒙阴','371300','0'],['371329','临沭','371300','0'],['371400','德州','370000','0'],['371402','德城','371400','0'],['371421','陵城','371400','0'],['371422','宁津','371400','0'],['371423','庆云','371400','0'],['371424','临邑','371400','0'],['371425','齐河','371400','0'],['371426','平原','371400','0'],['371427','夏津','371400','0'],['371428','武城','371400','0'],['371481','乐陵','371400','0'],['371482','禹城','371400','0'],['371500','聊城','370000','0'],['371502','东昌府','371500','0'],['371521','阳谷','371500','0'],['371522','莘县','371500','0'],['371523','茌平','371500','0'],['371524','东阿','371500','0'],['371525','冠县','371500','0'],['371526','高唐','371500','0'],['371581','临清','371500','0'],['371600','滨州','370000','0'],['371602','滨城','371600','0'],['371621','惠民','371600','0'],['371622','阳信','371600','0'],['371623','无棣','371600','0'],['371624','沾化','371600','0'],['371625','博兴','371600','0'],['371626','邹平','371600','0'],['371700','菏泽','370000','0'],['371702','牡丹','371700','0'],['371721','曹县','371700','0'],['371722','单县','371700','0'],['371723','成武','371700','0'],['371724','巨野','371700','0'],['371725','郓城','371700','0'],['371726','鄄城','371700','0'],['371727','定陶','371700','0'],['371728','东明','371700','0'],['410100','郑州','410000','0'],['410102','中原','410100','0'],['410103','二七','410100','0'],['410104','管城回族','410100','0'],['410105','金水','410100','0'],['410106','上街','410100','0'],['410108','惠济','410100','0'],['410122','中牟','410100','0'],['410181','巩义','410100','0'],['410182','荥阳','410100','0'],['410183','新密','410100','0'],['410184','新郑','410100','0'],['410185','登封','410100','0'],['410200','开封','410000','0'],['410202','龙亭','410200','0'],['410203','顺河回族','410200','0'],['410204','鼓楼','410200','0'],['410205','禹王台','410200','0'],['410211','金明','410200','0'],['410221','杞县','410200','0'],['410222','通许','410200','0'],['410223','尉氏','410200','0'],['410224','祥符','410200','0'],['410225','兰考','410200','0'],['410300','洛阳','410000','0'],['410302','老城','410300','0'],['410303','西工','410300','0'],['410304','瀍河回族','410300','0'],['410305','涧西','410300','0'],['410306','吉利','410300','0'],['410307','洛龙','410300','0'],['410322','孟津','410300','0'],['410323','新安','410300','0'],['410324','栾川','410300','0'],['410325','嵩县','410300','0'],['410326','汝阳','410300','0'],['410327','宜阳','410300','0'],['410328','洛宁','410300','0'],['410329','伊川','410300','0'],['410381','偃师','410300','0'],['410400','平顶山','410000','0'],['410402','新华','410400','0'],['410403','卫东','410400','0'],['410404','石龙','410400','0'],['410411','湛河','410400','0'],['410421','宝丰','410400','0'],['410422','叶县','410400','0'],['410423','鲁山','410400','0'],['410425','郏县','410400','0'],['410481','舞钢','410400','0'],['410482','汝州','410400','0'],['410500','安阳','410000','0'],['410502','文峰','410500','0'],['410503','北关','410500','0'],['410505','殷都','410500','0'],['410506','龙安','410500','0'],['410522','安阳','410500','0'],['410523','汤阴','410500','0'],['410526','滑县','410500','0'],['410527','内黄','410500','0'],['410581','林州','410500','0'],['410600','鹤壁','410000','0'],['410602','鹤山','410600','0'],['410603','山城','410600','0'],['410611','淇滨','410600','0'],['410621','浚县','410600','0'],['410622','淇县','410600','0'],['410700','新乡','410000','0'],['410702','红旗','410700','0'],['410703','卫滨','410700','0'],['410704','凤泉','410700','0'],['410711','牧野','410700','0'],['410721','新乡','410700','0'],['410724','获嘉','410700','0'],['410725','原阳','410700','0'],['410726','延津','410700','0'],['410727','封丘','410700','0'],['410728','长垣','410700','0'],['410781','卫辉','410700','0'],['410782','辉县','410700','0'],['410800','焦作','410000','0'],['410802','解放','410800','0'],['410803','中站','410800','0'],['410804','马村','410800','0'],['410811','山阳','410800','0'],['410821','修武','410800','0'],['410822','博爱','410800','0'],['410823','武陟','410800','0'],['410825','温县','410800','0'],['410881','济源','410000','0'],['410882','沁阳','410800','0'],['410883','孟州','410800','0'],['410900','濮阳','410000','0'],['410902','华龙','410900','0'],['410922','清丰','410900','0'],['410923','南乐','410900','0'],['410926','范县','410900','0'],['410927','台前','410900','0'],['410928','濮阳','410900','0'],['411000','许昌','410000','0'],['411002','魏都','411000','0'],['411023','许昌','411000','0'],['411024','鄢陵','411000','0'],['411025','襄城','411000','0'],['411081','禹州','411000','0'],['411082','长葛','411000','0'],['411100','漯河','410000','0'],['411102','源汇','411100','0'],['411103','郾城','411100','0'],['411104','召陵','411100','0'],['411121','舞阳','411100','0'],['411122','临颍','411100','0'],['411200','三门峡','410000','0'],['411202','湖滨','411200','0'],['411221','渑池','411200','0'],['411222','陕州','411200','0'],['411224','卢氏','411200','0'],['411281','义马','411200','0'],['411282','灵宝','411200','0'],['411300','南阳','410000','0'],['411302','宛城','411300','0'],['411303','卧龙','411300','0'],['411321','南召','411300','0'],['411322','方城','411300','0'],['411323','西峡','411300','0'],['411324','镇平','411300','0'],['411325','内乡','411300','0'],['411326','淅川','411300','0'],['411327','社旗县','411300','0'],['411328','唐河','411300','0'],['411329','新野','411300','0'],['411330','桐柏','411300','0'],['411381','邓州','411300','0'],['411400','商丘','410000','0'],['411402','梁园','411400','0'],['411403','睢阳','411400','0'],['411421','民权','411400','0'],['411422','睢县','411400','0'],['411423','宁陵','411400','0'],['411424','柘城','411400','0'],['411425','虞城','411400','0'],['411426','夏邑','411400','0'],['411481','永城','411400','0'],['411500','信阳','410000','0'],['411502','浉河','411500','0'],['411503','平桥','411500','0'],['411521','罗山','411500','0'],['411522','光山','411500','0'],['411523','新县','411500','0'],['411524','商城','411500','0'],['411525','固始','411500','0'],['411526','潢川','411500','0'],['411527','淮滨','411500','0'],['411528','息县','411500','0'],['411600','周口','410000','0'],['411602','川汇','411600','0'],['411621','扶沟','411600','0'],['411622','西华','411600','0'],['411623','商水','411600','0'],['411624','沈丘','411600','0'],['411625','郸城','411600','0'],['411626','淮阳','411600','0'],['411627','太康','411600','0'],['411628','鹿邑','411600','0'],['411681','项城','411600','0'],['411700','驻马店','410000','0'],['411702','驿城','411700','0'],['411721','西平','411700','0'],['411722','上蔡','411700','0'],['411723','平舆','411700','0'],['411724','正阳','411700','0'],['411725','确山','411700','0'],['411726','泌阳','411700','0'],['411727','汝南','411700','0'],['411728','遂平','411700','0'],['411729','新蔡','411700','0'],['420100','武汉','420000','0'],['420102','江岸','420100','0'],['420103','江汉','420100','0'],['420104','硚口','420100','0'],['420105','汉阳','420100','0'],['420106','武昌','420100','0'],['420107','青山','420100','0'],['420111','洪山','420100','0'],['420112','东西湖','420100','0'],['420113','汉南','420100','0'],['420114','蔡甸','420100','0'],['420115','江夏','420100','0'],['420116','黄陂','420100','0'],['420117','新洲','420100','0'],['420200','黄石','420000','0'],['420202','黄石港','420200','0'],['420203','西塞山','420200','0'],['420204','下陆','420200','0'],['420205','铁山','420200','0'],['420222','阳新','420200','0'],['420281','大冶','420200','0'],['420300','十堰','420000','0'],['420302','茅箭','420300','0'],['420303','张湾','420300','0'],['420321','郧阳','420300','0'],['420322','郧西','420300','0'],['420323','竹山','420300','0'],['420324','竹溪','420300','0'],['420325','房县','420300','0'],['420381','丹江口','420300','0'],['420500','宜昌','420000','0'],['420502','西陵','420500','0'],['420503','伍家岗','420500','0'],['420504','点军','420500','0'],['420505','猇亭','420500','0'],['420506','夷陵','420500','0'],['420525','远安','420500','0'],['420526','兴山','420500','0'],['420527','秭归','420500','0'],['420528','长阳','420500','0'],['420529','五峰','420500','0'],['420581','宜都','420500','0'],['420582','当阳','420500','0'],['420583','枝江','420500','0'],['420600','襄阳','420000','0'],['420602','襄城','420600','0'],['420606','樊城','420600','0'],['420607','襄州','420600','0'],['420624','南漳','420600','0'],['420625','谷城','420600','0'],['420626','保康','420600','0'],['420682','老河口','420600','0'],['420683','枣阳','420600','0'],['420684','宜城','420600','0'],['420700','鄂州','420000','0'],['420702','梁子湖','420700','0'],['420703','华容','420700','0'],['420704','鄂城','420700','0'],['420800','荆门','420000','0'],['420802','东宝','420800','0'],['420804','掇刀','420800','0'],['420821','京山','420800','0'],['420822','沙洋','420800','0'],['420881','钟祥','420800','0'],['420900','孝感','420000','0'],['420902','孝南','420900','0'],['420921','孝昌','420900','0'],['420922','大悟','420900','0'],['420923','云梦','420900','0'],['420981','应城','420900','0'],['420982','安陆','420900','0'],['420984','汉川','420900','0'],['421000','荆州','420000','0'],['421002','沙市','421000','0'],['421003','荆州','421000','0'],['421022','公安','421000','0'],['421023','监利','421000','0'],['421024','江陵','421000','0'],['421081','石首','421000','0'],['421083','洪湖','421000','0'],['421087','松滋','421000','0'],['421100','黄冈','420000','0'],['421102','黄州','421100','0'],['421121','团风','421100','0'],['421122','红安','421100','0'],['421123','罗田','421100','0'],['421124','英山','421100','0'],['421125','浠水','421100','0'],['421126','蕲春','421100','0'],['421127','黄梅','421100','0'],['421181','麻城','421100','0'],['421182','武穴','421100','0'],['421200','咸宁','420000','0'],['421202','咸安','421200','0'],['421221','嘉鱼','421200','0'],['421222','通城','421200','0'],['421223','崇阳','421200','0'],['421224','通山','421200','0'],['421281','赤壁','421200','0'],['421300','随州','420000','0'],['421302','曾都','421300','0'],['421321','随县','421300','0'],['421381','广水','421300','0'],['422800','恩施','420000','0'],['422801','恩施','422800','0'],['422802','利川','422800','0'],['422822','建始','422800','0'],['422823','巴东','422800','0'],['422825','宣恩','422800','0'],['422826','咸丰','422800','0'],['422827','来凤','422800','0'],['422828','鹤峰','422800','0'],['429004','仙桃','420000','0'],['429005','潜江','420000','0'],['429006','天门','420000','0'],['429021','神农架','420000','0'],['430100','长沙','430000','0'],['430102','芙蓉','430100','0'],['430103','天心','430100','0'],['430104','岳麓','430100','0'],['430105','开福','430100','0'],['430111','雨花','430100','0'],['430121','长沙','430100','0'],['430122','望城','430100','0'],['430124','宁乡','430100','0'],['430181','浏阳','430100','0'],['430200','株洲','430000','0'],['430202','荷塘','430200','0'],['430203','芦淞','430200','0'],['430204','石峰','430200','0'],['430211','天元','430200','0'],['430221','株洲','430200','0'],['430223','攸县','430200','0'],['430224','茶陵','430200','0'],['430225','炎陵','430200','0'],['430281','醴陵','430200','0'],['430300','湘潭','430000','0'],['430302','雨湖','430300','0'],['430304','岳塘','430300','0'],['430321','湘潭','430300','0'],['430381','湘乡','430300','0'],['430382','韶山','430300','0'],['430400','衡阳','430000','0'],['430405','珠晖','430400','0'],['430406','雁峰','430400','0'],['430407','石鼓','430400','0'],['430408','蒸湘','430400','0'],['430412','南岳','430400','0'],['430421','衡阳','430400','0'],['430422','衡南','430400','0'],['430423','衡山','430400','0'],['430424','衡东','430400','0'],['430426','祁东','430400','0'],['430481','耒阳','430400','0'],['430482','常宁','430400','0'],['430500','邵阳','430000','0'],['430502','双清','430500','0'],['430503','大祥','430500','0'],['430511','北塔','430500','0'],['430521','邵东','430500','0'],['430522','新邵','430500','0'],['430523','邵阳','430500','0'],['430524','隆回','430500','0'],['430525','洞口','430500','0'],['430527','绥宁','430500','0'],['430528','新宁','430500','0'],['430529','城步','430500','0'],['430581','武冈','430500','0'],['430600','岳阳','430000','0'],['430602','岳阳楼','430600','0'],['430603','云溪','430600','0'],['430611','君山','430600','0'],['430621','岳阳','430600','0'],['430623','华容','430600','0'],['430624','湘阴','430600','0'],['430626','平江','430600','0'],['430681','汨罗','430600','0'],['430682','临湘','430600','0'],['430700','常德','430000','0'],['430702','武陵','430700','0'],['430703','鼎城','430700','0'],['430721','安乡','430700','0'],['430722','汉寿','430700','0'],['430723','澧县','430700','0'],['430724','临澧','430700','0'],['430725','桃源','430700','0'],['430726','石门','430700','0'],['430781','津市','430700','0'],['430800','张家界','430000','0'],['430802','永定','430800','0'],['430811','武陵源','430800','0'],['430821','慈利','430800','0'],['430822','桑植','430800','0'],['430900','益阳','430000','0'],['430902','资阳','430900','0'],['430903','赫山','430900','0'],['430921','南县','430900','0'],['430922','桃江','430900','0'],['430923','安化','430900','0'],['430981','沅江','430900','0'],['431000','郴州','430000','0'],['431002','北湖','431000','0'],['431003','苏仙','431000','0'],['431021','桂阳','431000','0'],['431022','宜章','431000','0'],['431023','永兴','431000','0'],['431024','嘉禾','431000','0'],['431025','临武','431000','0'],['431026','汝城','431000','0'],['431027','桂东','431000','0'],['431028','安仁','431000','0'],['431081','资兴','431000','0'],['431100','永州','430000','0'],['431102','零陵','431100','0'],['431103','冷水滩','431100','0'],['431121','祁阳','431100','0'],['431122','东安','431100','0'],['431123','双牌','431100','0'],['431124','道县','431100','0'],['431125','江永','431100','0'],['431126','宁远','431100','0'],['431127','蓝山','431100','0'],['431128','新田','431100','0'],['431129','江华','431100','0'],['431200','怀化','430000','0'],['431202','鹤城','431200','0'],['431221','中方','431200','0'],['431222','沅陵','431200','0'],['431223','辰溪','431200','0'],['431224','溆浦','431200','0'],['431225','会同','431200','0'],['431226','麻阳','431200','0'],['431227','新晃','431200','0'],['431228','芷江','431200','0'],['431229','靖州','431200','0'],['431230','通道','431200','0'],['431281','洪江','431200','0'],['431300','娄底','430000','0'],['431302','娄星','431300','0'],['431321','双峰','431300','0'],['431322','新化','431300','0'],['431381','冷水江','431300','0'],['431382','涟源','431300','0'],['433100','湘西','430000','0'],['433101','吉首','433100','0'],['433122','泸溪','433100','0'],['433123','凤凰','433100','0'],['433124','花垣','433100','0'],['433125','保靖','433100','0'],['433126','古丈','433100','0'],['433127','永顺','433100','0'],['433130','龙山','433100','0'],['440100','广州','440000','0'],['440103','荔湾','440100','0'],['440104','越秀','440100','0'],['440105','海珠','440100','0'],['440106','天河','440100','0'],['440111','白云','440100','0'],['440112','黄埔','440100','0'],['440113','番禺','440100','0'],['440114','花都','440100','0'],['440115','南沙','440100','0'],['440116','萝岗','440100','0'],['440183','增城','440100','0'],['440184','从化','440100','0'],['440200','韶关','440000','0'],['440203','武江','440200','0'],['440204','浈江','440200','0'],['440205','曲江','440200','0'],['440222','始兴','440200','0'],['440224','仁化','440200','0'],['440229','翁源','440200','0'],['440232','乳源','440200','0'],['440233','新丰','440200','0'],['440281','乐昌','440200','0'],['440282','南雄','440200','0'],['440300','深圳','440000','0'],['440303','罗湖','440300','0'],['440304','福田','440300','0'],['440305','南山','440300','0'],['440306','宝安','440300','0'],['440307','龙岗','440300','0'],['440308','盐田','440300','0'],['440400','珠海','440000','0'],['440402','香洲','440400','0'],['440403','斗门','440400','0'],['440404','金湾','440400','0'],['440500','汕头','440000','0'],['440507','龙湖','440500','0'],['440511','金平','440500','0'],['440512','濠江','440500','0'],['440513','潮阳','440500','0'],['440514','潮南','440500','0'],['440515','澄海','440500','0'],['440523','南澳','440500','0'],['440600','佛山','440000','0'],['440604','禅城','440600','0'],['440605','南海','440600','0'],['440606','顺德','440600','0'],['440607','三水','440600','0'],['440608','高明','440600','0'],['440700','江门','440000','0'],['440703','蓬江','440700','0'],['440704','江海','440700','0'],['440705','新会','440700','0'],['440781','台山','440700','0'],['440783','开平','440700','0'],['440784','鹤山','440700','0'],['440785','恩平','440700','0'],['440800','湛江','440000','0'],['440802','赤坎','440800','0'],['440803','霞山','440800','0'],['440804','坡头','440800','0'],['440811','麻章','440800','0'],['440823','遂溪','440800','0'],['440825','徐闻','440800','0'],['440881','廉江','440800','0'],['440882','雷州','440800','0'],['440883','吴川','440800','0'],['440900','茂名','440000','0'],['440902','茂南','440900','0'],['440903','电白','440900','0'],['440981','高州','440900','0'],['440982','化州','440900','0'],['440983','信宜','440900','0'],['441200','肇庆','440000','0'],['441202','端州','441200','0'],['441203','鼎湖','441200','0'],['441223','广宁','441200','0'],['441224','怀集','441200','0'],['441225','封开','441200','0'],['441226','德庆','441200','0'],['441283','高要','441200','0'],['441284','四会','441200','0'],['441300','惠州','440000','0'],['441302','惠城','441300','0'],['441303','惠阳','441300','0'],['441322','博罗','441300','0'],['441323','惠东','441300','0'],['441324','龙门','441300','0'],['441400','梅州','440000','0'],['441402','梅江','441400','0'],['441421','梅县','441400','0'],['441422','大埔','441400','0'],['441423','丰顺','441400','0'],['441424','五华','441400','0'],['441426','平远','441400','0'],['441427','蕉岭','441400','0'],['441481','兴宁','441400','0'],['441500','汕尾','440000','0'],['441502','城区','441500','0'],['441521','海丰','441500','0'],['441523','陆河','441500','0'],['441581','陆丰','441500','0'],['441600','河源','440000','0'],['441602','源城','441600','0'],['441621','紫金','441600','0'],['441622','龙川','441600','0'],['441623','连平','441600','0'],['441624','和平','441600','0'],['441625','东源','441600','0'],['441700','阳江','440000','0'],['441702','江城','441700','0'],['441721','阳西','441700','0'],['441723','阳东','441700','0'],['441781','阳春','441700','0'],['441800','清远','440000','0'],['441802','清城','441800','0'],['441821','佛冈','441800','0'],['441823','阳山','441800','0'],['441825','连山','441800','0'],['441826','连南','441800','0'],['441827','清新','441800','0'],['441881','英德','441800','0'],['441882','连州','441800','0'],['441900','东莞','440000','0'],['442000','中山','440000','0'],['445100','潮州','440000','0'],['445102','湘桥','445100','0'],['445121','潮安','445100','0'],['445122','饶平','445100','0'],['445200','揭阳','440000','0'],['445202','榕城','445200','0'],['445221','揭东','445200','0'],['445222','揭西','445200','0'],['445224','惠来','445200','0'],['445281','普宁','445200','0'],['445300','云浮','440000','0'],['445302','云城','445300','0'],['445321','新兴','445300','0'],['445322','郁南','445300','0'],['445323','云安','445300','0'],['445381','罗定','445300','0'],['450100','南宁','450000','0'],['450102','兴宁','450100','0'],['450103','青秀','450100','0'],['450105','江南','450100','0'],['450107','西乡塘','450100','0'],['450108','良庆','450100','0'],['450109','邕宁','450100','0'],['450122','武鸣','450100','0'],['450123','隆安','450100','0'],['450124','马山','450100','0'],['450125','上林','450100','0'],['450126','宾阳','450100','0'],['450127','横县','450100','0'],['450200','柳州','450000','0'],['450202','城中','450200','0'],['450203','鱼峰','450200','0'],['450204','柳南','450200','0'],['450205','柳北','450200','0'],['450221','柳江','450200','0'],['450222','柳城','450200','0'],['450223','鹿寨','450200','0'],['450224','融安','450200','0'],['450225','融水','450200','0'],['450226','三江','450200','0'],['450300','桂林','450000','0'],['450302','秀峰','450300','0'],['450303','叠彩','450300','0'],['450304','象山','450300','0'],['450305','七星','450300','0'],['450311','雁山','450300','0'],['450321','阳朔','450300','0'],['450322','临桂','450300','0'],['450323','灵川','450300','0'],['450324','全州','450300','0'],['450325','兴安','450300','0'],['450326','永福','450300','0'],['450327','灌阳','450300','0'],['450328','龙胜','450300','0'],['450329','资源','450300','0'],['450330','平乐','450300','0'],['450331','荔浦','450300','0'],['450332','恭城','450300','0'],['450400','梧州','450000','0'],['450403','万秀','450400','0'],['450405','长洲','450400','0'],['450406','龙圩','450400','0'],['450421','苍梧','450400','0'],['450422','藤县','450400','0'],['450423','蒙山','450400','0'],['450481','岑溪','450400','0'],['450500','北海','450000','0'],['450502','海城','450500','0'],['450503','银海','450500','0'],['450512','铁山港','450500','0'],['450521','合浦','450500','0'],['450600','防城港','450000','0'],['450602','港口','450600','0'],['450603','防城','450600','0'],['450621','上思','450600','0'],['450681','东兴','450600','0'],['450700','钦州','450000','0'],['450702','钦南','450700','0'],['450703','钦北','450700','0'],['450721','灵山','450700','0'],['450722','浦北','450700','0'],['450800','贵港','450000','0'],['450802','港北','450800','0'],['450803','港南','450800','0'],['450804','覃塘','450800','0'],['450821','平南','450800','0'],['450881','桂平','450800','0'],['450900','玉林','450000','0'],['450902','玉州','450900','0'],['450903','福绵','450900','0'],['450921','容县','450900','0'],['450922','陆川','450900','0'],['450923','博白','450900','0'],['450924','兴业','450900','0'],['450981','北流','450900','0'],['451000','百色','450000','0'],['451002','右江','451000','0'],['451021','田阳','451000','0'],['451022','田东','451000','0'],['451023','平果','451000','0'],['451024','德保','451000','0'],['451025','靖西','451000','0'],['451026','那坡','451000','0'],['451027','凌云','451000','0'],['451028','乐业','451000','0'],['451029','田林','451000','0'],['451030','西林','451000','0'],['451031','隆林','451000','0'],['451100','贺州','450000','0'],['451102','八步','451100','0'],['451119','平桂','451100','0'],['451121','昭平','451100','0'],['451122','钟山','451100','0'],['451123','富川','451100','0'],['451200','河池','450000','0'],['451202','金城江','451200','0'],['451221','南丹','451200','0'],['451222','天峨','451200','0'],['451223','凤山','451200','0'],['451224','东兰','451200','0'],['451225','罗城','451200','0'],['451226','环江','451200','0'],['451227','巴马','451200','0'],['451228','都安','451200','0'],['451229','大化','451200','0'],['451281','宜州','451200','0'],['451300','来宾','450000','0'],['451302','兴宾','451300','0'],['451321','忻城','451300','0'],['451322','象州','451300','0'],['451323','武宣','451300','0'],['451324','金秀','451300','0'],['451381','合山','451300','0'],['451400','崇左','450000','0'],['451402','江州','451400','0'],['451421','扶绥','451400','0'],['451422','宁明','451400','0'],['451423','龙州','451400','0'],['451424','大新','451400','0'],['451425','天等','451400','0'],['451481','凭祥','451400','0'],['460100','海口','460000','0'],['460105','秀英','460100','0'],['460106','龙华','460100','0'],['460107','琼山','460100','0'],['460108','美兰','460100','0'],['460200','三亚','460000','0'],['460300','三沙','460000','0'],['460321','西沙','460300','0'],['460322','南沙','460300','0'],['460323','中沙','460300','0'],['469001','五指山','460000','0'],['469002','琼海','460000','0'],['469003','儋州','460000','0'],['469005','文昌','460000','0'],['469006','万宁','460000','0'],['469007','东方','460000','0'],['469025','定安','460000','0'],['469026','屯昌','460000','0'],['469027','澄迈','460000','0'],['469028','临高','460000','0'],['469030','白沙','460000','0'],['469031','昌江','460000','0'],['469033','乐东','460000','0'],['469034','陵水','460000','0'],['469035','保亭','460000','0'],['469036','琼中','460000','0'],['500100','重庆','500000','0'],['500101','万州','500100','0'],['500102','涪陵','500100','0'],['500103','渝中','500100','0'],['500104','大渡口','500100','0'],['500105','江北','500100','0'],['500106','沙坪坝','500100','0'],['500107','九龙坡','500100','0'],['500108','南岸','500100','0'],['500109','北碚','500100','0'],['500110','万盛','500100','0'],['500111','双桥','500100','0'],['500112','渝北','500100','0'],['500113','巴南','500100','0'],['500114','黔江','500100','0'],['500115','长寿','500100','0'],['500222','綦江','500100','0'],['500223','潼南','500100','0'],['500224','铜梁','500100','0'],['500225','大足','500100','0'],['500226','荣昌','500100','0'],['500227','璧山','500100','0'],['500228','梁平','500100','0'],['500229','城口','500100','0'],['500230','丰都','500100','0'],['500231','垫江','500100','0'],['500232','武隆','500100','0'],['500233','忠县','500100','0'],['500234','开县','500100','0'],['500235','云阳','500100','0'],['500236','奉节','500100','0'],['500237','巫山','500100','0'],['500238','巫溪','500100','0'],['500240','石柱','500100','0'],['500241','秀山','500100','0'],['500242','酉阳','500100','0'],['500243','彭水','500100','0'],['500381','江津','500100','0'],['500382','合川','500100','0'],['500383','永川','500100','0'],['500384','南川','500100','0'],['510100','成都','510000','0'],['510104','锦江','510100','0'],['510105','青羊','510100','0'],['510106','金牛','510100','0'],['510107','武侯','510100','0'],['510108','成华','510100','0'],['510112','龙泉驿','510100','0'],['510113','青白江','510100','0'],['510114','新都','510100','0'],['510115','温江','510100','0'],['510121','金堂','510100','0'],['510122','双流','510100','0'],['510124','郫县','510100','0'],['510129','大邑','510100','0'],['510131','蒲江','510100','0'],['510132','新津','510100','0'],['510181','都江堰','510100','0'],['510182','彭州','510100','0'],['510183','邛崃','510100','0'],['510184','崇州','510100','0'],['510300','自贡','510000','0'],['510302','自流井','510300','0'],['510303','贡井','510300','0'],['510304','大安','510300','0'],['510311','沿滩','510300','0'],['510321','荣县','510300','0'],['510322','富顺','510300','0'],['510400','攀枝花','510000','0'],['510402','东区','510400','0'],['510403','西区','510400','0'],['510411','仁和','510400','0'],['510421','米易','510400','0'],['510422','盐边','510400','0'],['510500','泸州','510000','0'],['510502','江阳','510500','0'],['510503','纳溪','510500','0'],['510504','龙马潭','510500','0'],['510521','泸县','510500','0'],['510522','合江','510500','0'],['510524','叙永','510500','0'],['510525','古蔺','510500','0'],['510600','德阳','510000','0'],['510603','旌阳','510600','0'],['510623','中江','510600','0'],['510626','罗江','510600','0'],['510681','广汉','510600','0'],['510682','什邡','510600','0'],['510683','绵竹','510600','0'],['510700','绵阳','510000','0'],['510703','涪城','510700','0'],['510704','游仙','510700','0'],['510722','三台','510700','0'],['510723','盐亭','510700','0'],['510724','安县','510700','0'],['510725','梓潼','510700','0'],['510726','北川','510700','0'],['510727','平武','510700','0'],['510781','江油','510700','0'],['510800','广元','510000','0'],['510802','利州','510800','0'],['510811','昭化','510800','0'],['510812','朝天','510800','0'],['510821','旺苍','510800','0'],['510822','青川','510800','0'],['510823','剑阁','510800','0'],['510824','苍溪','510800','0'],['510900','遂宁','510000','0'],['510903','船山','510900','0'],['510904','安居','510900','0'],['510921','蓬溪','510900','0'],['510922','射洪','510900','0'],['510923','大英','510900','0'],['511000','内江','510000','0'],['511002','市中','511000','0'],['511011','东兴','511000','0'],['511024','威远','511000','0'],['511025','资中','511000','0'],['511028','隆昌','511000','0'],['511100','乐山','510000','0'],['511102','市中','511100','0'],['511111','沙湾','511100','0'],['511112','五通桥','511100','0'],['511113','金口河','511100','0'],['511123','犍为','511100','0'],['511124','井研','511100','0'],['511126','夹江','511100','0'],['511129','沐川','511100','0'],['511132','峨边','511100','0'],['511133','马边','511100','0'],['511181','峨眉山','511100','0'],['511300','南充','510000','0'],['511302','顺庆','511300','0'],['511303','高坪','511300','0'],['511304','嘉陵','511300','0'],['511321','南部','511300','0'],['511322','营山','511300','0'],['511323','蓬安','511300','0'],['511324','仪陇','511300','0'],['511325','西充','511300','0'],['511381','阆中','511300','0'],['511400','眉山','510000','0'],['511402','东坡','511400','0'],['511421','仁寿','511400','0'],['511422','彭山','511400','0'],['511423','洪雅','511400','0'],['511424','丹棱','511400','0'],['511425','青神','511400','0'],['511500','宜宾','510000','0'],['511502','翠屏','511500','0'],['511521','宜宾','511500','0'],['511522','南溪','511500','0'],['511523','江安','511500','0'],['511524','长宁','511500','0'],['511525','高县','511500','0'],['511526','珙县','511500','0'],['511527','筠连','511500','0'],['511528','兴文','511500','0'],['511529','屏山','511500','0'],['511600','广安','510000','0'],['511602','广安','511600','0'],['511603','前锋','511600','0'],['511621','岳池','511600','0'],['511622','武胜','511600','0'],['511623','邻水','511600','0'],['511681','华蓥','511600','0'],['511700','达州','510000','0'],['511702','通川','511700','0'],['511721','达川','511700','0'],['511722','宣汉','511700','0'],['511723','开江','511700','0'],['511724','大竹','511700','0'],['511725','渠县','511700','0'],['511781','万源','511700','0'],['511800','雅安','510000','0'],['511802','雨城','511800','0'],['511821','名山','511800','0'],['511822','荥经','511800','0'],['511823','汉源','511800','0'],['511824','石棉','511800','0'],['511825','天全','511800','0'],['511826','芦山','511800','0'],['511827','宝兴','511800','0'],['511900','巴中','510000','0'],['511902','巴州','511900','0'],['511903','恩阳','511900','0'],['511921','通江','511900','0'],['511922','南江','511900','0'],['511923','平昌','511900','0'],['512000','资阳','510000','0'],['512002','雁江','512000','0'],['512021','安岳','512000','0'],['512022','乐至','512000','0'],['512081','简阳','512000','0'],['513200','阿坝','510000','0'],['513221','汶川','513200','0'],['513222','理县','513200','0'],['513223','茂县','513200','0'],['513224','松潘','513200','0'],['513225','九寨沟','513200','0'],['513226','金川','513200','0'],['513227','小金','513200','0'],['513228','黑水','513200','0'],['513229','马尔康','513200','0'],['513230','壤塘','513200','0'],['513231','阿坝','513200','0'],['513232','若尔盖','513200','0'],['513233','红原','513200','0'],['513300','甘孜','510000','0'],['513321','康定','513300','0'],['513322','泸定','513300','0'],['513323','丹巴','513300','0'],['513324','九龙','513300','0'],['513325','雅江','513300','0'],['513326','道孚','513300','0'],['513327','炉霍','513300','0'],['513328','甘孜','513300','0'],['513329','新龙','513300','0'],['513330','德格','513300','0'],['513331','白玉','513300','0'],['513332','石渠','513300','0'],['513333','色达','513300','0'],['513334','理塘','513300','0'],['513335','巴塘','513300','0'],['513336','乡城','513300','0'],['513337','稻城','513300','0'],['513338','得荣','513300','0'],['513400','凉山','510000','0'],['513401','西昌','513400','0'],['513422','木里','513400','0'],['513423','盐源','513400','0'],['513424','德昌','513400','0'],['513425','会理','513400','0'],['513426','会东','513400','0'],['513427','宁南','513400','0'],['513428','普格','513400','0'],['513429','布拖','513400','0'],['513430','金阳','513400','0'],['513431','昭觉','513400','0'],['513432','喜德','513400','0'],['513433','冕宁','513400','0'],['513434','越西','513400','0'],['513435','甘洛','513400','0'],['513436','美姑','513400','0'],['513437','雷波','513400','0'],['520100','贵阳','520000','0'],['520102','南明','520100','0'],['520103','云岩','520100','0'],['520111','花溪','520100','0'],['520112','乌当','520100','0'],['520113','白云','520100','0'],['520121','开阳','520100','0'],['520122','息烽','520100','0'],['520123','修文','520100','0'],['520151','观山湖','520100','0'],['520181','清镇','520100','0'],['520200','六盘水','520000','0'],['520201','钟山','520200','0'],['520203','六枝特','520200','0'],['520221','水城','520200','0'],['520222','盘县','520200','0'],['520300','遵义','520000','0'],['520302','红花岗','520300','0'],['520303','汇川','520300','0'],['520321','遵义','520300','0'],['520322','桐梓','520300','0'],['520323','绥阳','520300','0'],['520324','正安','520300','0'],['520325','道真','520300','0'],['520326','务川','520300','0'],['520327','凤冈','520300','0'],['520328','湄潭','520300','0'],['520329','余庆','520300','0'],['520330','习水','520300','0'],['520381','赤水','520300','0'],['520382','仁怀','520300','0'],['520400','安顺','520000','0'],['520402','西秀','520400','0'],['520421','平坝','520400','0'],['520422','普定','520400','0'],['520423','镇宁','520400','0'],['520424','关岭','520400','0'],['520425','紫云','520400','0'],['522200','铜仁','520000','0'],['522201','碧江','522200','0'],['522222','江口','522200','0'],['522223','玉屏','522200','0'],['522224','石阡','522200','0'],['522225','思南','522200','0'],['522226','印江','522200','0'],['522227','德江','522200','0'],['522228','沿河','522200','0'],['522229','松桃','522200','0'],['522230','万山','522200','0'],['522300','黔西南','520000','0'],['522301','兴义','522300','0'],['522322','兴仁','522300','0'],['522323','普安','522300','0'],['522324','晴隆','522300','0'],['522325','贞丰','522300','0'],['522326','望谟','522300','0'],['522327','册亨','522300','0'],['522328','安龙','522300','0'],['522400','毕节','520000','0'],['522401','七星关','522400','0'],['522422','大方','522400','0'],['522423','黔西','522400','0'],['522424','金沙','522400','0'],['522425','织金','522400','0'],['522426','纳雍','522400','0'],['522427','威宁','522400','0'],['522428','赫章','522400','0'],['522600','黔东南','520000','0'],['522601','凯里','522600','0'],['522622','黄平','522600','0'],['522623','施秉','522600','0'],['522624','三穗','522600','0'],['522625','镇远','522600','0'],['522626','岑巩','522600','0'],['522627','天柱','522600','0'],['522628','锦屏','522600','0'],['522629','剑河','522600','0'],['522630','台江','522600','0'],['522631','黎平','522600','0'],['522632','榕江','522600','0'],['522633','从江','522600','0'],['522634','雷山','522600','0'],['522635','麻江','522600','0'],['522636','丹寨','522600','0'],['522700','黔南','520000','0'],['522701','都匀','522700','0'],['522702','福泉','522700','0'],['522722','荔波','522700','0'],['522723','贵定','522700','0'],['522725','瓮安','522700','0'],['522726','独山','522700','0'],['522727','平塘','522700','0'],['522728','罗甸','522700','0'],['522729','长顺','522700','0'],['522730','龙里','522700','0'],['522731','惠水','522700','0'],['522732','三都','522700','0'],['530100','昆明','530000','0'],['530102','五华','530100','0'],['530103','盘龙','530100','0'],['530111','官渡','530100','0'],['530112','西山','530100','0'],['530113','东川','530100','0'],['530121','呈贡','530100','0'],['530122','晋宁','530100','0'],['530124','富民','530100','0'],['530125','宜良','530100','0'],['530126','石林','530100','0'],['530127','嵩明','530100','0'],['530128','禄劝','530100','0'],['530129','寻甸','530100','0'],['530181','安宁','530100','0'],['530300','曲靖','530000','0'],['530302','麒麟','530300','0'],['530321','马龙','530300','0'],['530322','陆良','530300','0'],['530323','师宗','530300','0'],['530324','罗平','530300','0'],['530325','富源','530300','0'],['530326','会泽','530300','0'],['530328','沾益','530300','0'],['530381','宣威','530300','0'],['530400','玉溪','530000','0'],['530402','红塔','530400','0'],['530421','江川','530400','0'],['530422','澄江','530400','0'],['530423','通海','530400','0'],['530424','华宁','530400','0'],['530425','易门','530400','0'],['530426','峨山','530400','0'],['530427','新平','530400','0'],['530428','元江','530400','0'],['530500','保山','530000','0'],['530502','隆阳','530500','0'],['530521','施甸','530500','0'],['530522','腾冲','530500','0'],['530523','龙陵','530500','0'],['530524','昌宁','530500','0'],['530600','昭通','530000','0'],['530602','昭阳','530600','0'],['530621','鲁甸','530600','0'],['530622','巧家','530600','0'],['530623','盐津','530600','0'],['530624','大关','530600','0'],['530625','永善','530600','0'],['530626','绥江','530600','0'],['530627','镇雄','530600','0'],['530628','彝良','530600','0'],['530629','威信','530600','0'],['530630','水富','530600','0'],['530700','丽江','530000','0'],['530702','古城','530700','0'],['530721','玉龙','530700','0'],['530722','永胜','530700','0'],['530723','华坪','530700','0'],['530724','宁蒗','530700','0'],['530800','普洱','530000','0'],['530802','思茅','530800','0'],['530821','宁洱','530800','0'],['530822','墨江','530800','0'],['530823','景东','530800','0'],['530824','景谷','530800','0'],['530825','镇沅','530800','0'],['530826','江城','530800','0'],['530827','孟连','530800','0'],['530828','澜沧','530800','0'],['530829','西盟','530800','0'],['530900','临沧','530000','0'],['530902','临翔','530900','0'],['530921','凤庆','530900','0'],['530922','云县','530900','0'],['530923','永德','530900','0'],['530924','镇康','530900','0'],['530925','双江','530900','0'],['530926','耿马','530900','0'],['530927','沧源','530900','0'],['532300','楚雄','530000','0'],['532301','楚雄','532300','0'],['532322','双柏','532300','0'],['532323','牟定','532300','0'],['532324','南华','532300','0'],['532325','姚安','532300','0'],['532326','大姚','532300','0'],['532327','永仁','532300','0'],['532328','元谋','532300','0'],['532329','武定','532300','0'],['532331','禄丰','532300','0'],['532500','红河','530000','0'],['532501','个旧','532500','0'],['532502','开远','532500','0'],['532522','蒙自','532500','0'],['532523','屏边','532500','0'],['532524','建水','532500','0'],['532525','石屏','532500','0'],['532526','弥勒','532500','0'],['532527','泸西','532500','0'],['532528','元阳','532500','0'],['532529','红河','532500','0'],['532530','金平','532500','0'],['532531','绿春','532500','0'],['532532','河口','532500','0'],['532600','文山','530000','0'],['532621','文山','532600','0'],['532622','砚山','532600','0'],['532623','西畴','532600','0'],['532624','麻栗坡','532600','0'],['532625','马关','532600','0'],['532626','丘北','532600','0'],['532627','广南','532600','0'],['532628','富宁','532600','0'],['532800','西双版纳','530000','0'],['532801','景洪','532800','0'],['532822','勐海','532800','0'],['532823','勐腊','532800','0'],['532900','大理','530000','0'],['532901','大理','532900','0'],['532922','漾濞','532900','0'],['532923','祥云','532900','0'],['532924','宾川','532900','0'],['532925','弥渡','532900','0'],['532926','南涧','532900','0'],['532927','巍山','532900','0'],['532928','永平','532900','0'],['532929','云龙','532900','0'],['532930','洱源','532900','0'],['532931','剑川','532900','0'],['532932','鹤庆','532900','0'],['533100','德宏','530000','0'],['533102','瑞丽','533100','0'],['533103','芒市','533100','0'],['533122','梁河','533100','0'],['533123','盈江','533100','0'],['533124','陇川','533100','0'],['533300','怒江','530000','0'],['533321','泸水','533300','0'],['533323','福贡','533300','0'],['533324','贡山','533300','0'],['533325','兰坪','533300','0'],['533400','迪庆','530000','0'],['533421','香格里拉','533400','0'],['533422','德钦','533400','0'],['533423','维西','533400','0'],['540100','拉萨','540000','0'],['540102','城关','540100','0'],['540121','林周','540100','0'],['540122','当雄','540100','0'],['540123','尼木','540100','0'],['540124','曲水','540100','0'],['540125','堆龙德庆','540100','0'],['540126','达孜','540100','0'],['540127','墨竹工卡','540100','0'],['542100','昌都','540000','0'],['542121','卡若','542100','0'],['542122','江达','542100','0'],['542123','贡觉','542100','0'],['542124','类乌齐','542100','0'],['542125','丁青','542100','0'],['542126','察雅','542100','0'],['542127','八宿','542100','0'],['542128','左贡','542100','0'],['542129','芒康','542100','0'],['542132','洛隆','542100','0'],['542133','边坝','542100','0'],['542200','山南','540000','0'],['542221','乃东','542200','0'],['542222','扎囊','542200','0'],['542223','贡嘎','542200','0'],['542224','桑日','542200','0'],['542225','琼结','542200','0'],['542226','曲松','542200','0'],['542227','措美','542200','0'],['542228','洛扎','542200','0'],['542229','加查','542200','0'],['542231','隆子','542200','0'],['542232','错那','542200','0'],['542233','浪卡子','542200','0'],['542300','日喀则','540000','0'],['542301','桑珠孜','542300','0'],['542322','南木林','542300','0'],['542323','江孜','542300','0'],['542324','定日','542300','0'],['542325','萨迦','542300','0'],['542326','拉孜','542300','0'],['542327','昂仁','542300','0'],['542328','谢通门','542300','0'],['542329','白朗','542300','0'],['542330','仁布','542300','0'],['542331','康马','542300','0'],['542332','定结','542300','0'],['542333','仲巴','542300','0'],['542334','亚东','542300','0'],['542335','吉隆','542300','0'],['542336','聂拉木','542300','0'],['542337','萨嘎','542300','0'],['542338','岗巴','542300','0'],['542400','那曲','540000','0'],['542421','那曲','542400','0'],['542422','嘉黎','542400','0'],['542423','比如','542400','0'],['542424','聂荣','542400','0'],['542425','安多','542400','0'],['542426','申扎','542400','0'],['542427','索县','542400','0'],['542428','班戈','542400','0'],['542429','巴青','542400','0'],['542430','尼玛','542400','0'],['542432','双湖','542400','0'],['542500','阿里','540000','0'],['542521','普兰','542500','0'],['542522','札达','542500','0'],['542523','噶尔','542500','0'],['542524','日土','542500','0'],['542525','革吉','542500','0'],['542526','改则','542500','0'],['542527','措勤','542500','0'],['542600','林芝','540000','0'],['542621','巴宜','542600','0'],['542622','工布江达','542600','0'],['542623','米林','542600','0'],['542624','墨脱','542600','0'],['542625','波密','542600','0'],['542626','察隅','542600','0'],['542627','朗县','542600','0'],['610100','西安','610000','0'],['610102','新城','610100','0'],['610103','碑林','610100','0'],['610104','莲湖','610100','0'],['610111','灞桥','610100','0'],['610112','未央','610100','0'],['610113','雁塔','610100','0'],['610114','阎良','610100','0'],['610115','临潼','610100','0'],['610116','长安','610100','0'],['610122','蓝田','610100','0'],['610124','周至','610100','0'],['610125','户县','610100','0'],['610126','高陵','610100','0'],['610200','铜川','610000','0'],['610202','王益','610200','0'],['610203','印台','610200','0'],['610204','耀州','610200','0'],['610222','宜君','610200','0'],['610300','宝鸡','610000','0'],['610302','渭滨','610300','0'],['610303','金台','610300','0'],['610304','陈仓','610300','0'],['610322','凤翔','610300','0'],['610323','岐山','610300','0'],['610324','扶风','610300','0'],['610326','眉县','610300','0'],['610327','陇县','610300','0'],['610328','千阳','610300','0'],['610329','麟游','610300','0'],['610330','凤县','610300','0'],['610331','太白','610300','0'],['610400','咸阳','610000','0'],['610402','秦都','610400','0'],['610403','杨陵','610400','0'],['610404','渭城','610400','0'],['610422','三原','610400','0'],['610423','泾阳','610400','0'],['610424','乾县','610400','0'],['610425','礼泉','610400','0'],['610426','永寿','610400','0'],['610427','彬县','610400','0'],['610428','长武','610400','0'],['610429','旬邑','610400','0'],['610430','淳化','610400','0'],['610431','武功','610400','0'],['610481','兴平','610400','0'],['610500','渭南','610000','0'],['610502','临渭','610500','0'],['610521','华县','610500','0'],['610522','潼关','610500','0'],['610523','大荔','610500','0'],['610524','合阳','610500','0'],['610525','澄城','610500','0'],['610526','蒲城','610500','0'],['610527','白水','610500','0'],['610528','富平','610500','0'],['610581','韩城','610500','0'],['610582','华阴','610500','0'],['610600','延安','610000','0'],['610602','宝塔','610600','0'],['610621','延长','610600','0'],['610622','延川','610600','0'],['610623','子长','610600','0'],['610624','安塞','610600','0'],['610625','志丹','610600','0'],['610626','吴起','610600','0'],['610627','甘泉','610600','0'],['610628','富县','610600','0'],['610629','洛川','610600','0'],['610630','宜川','610600','0'],['610631','黄龙','610600','0'],['610632','黄陵','610600','0'],['610700','汉中','610000','0'],['610702','汉台','610700','0'],['610721','南郑','610700','0'],['610722','城固','610700','0'],['610723','洋县','610700','0'],['610724','西乡','610700','0'],['610725','勉县','610700','0'],['610726','宁强','610700','0'],['610727','略阳','610700','0'],['610728','镇巴','610700','0'],['610729','留坝','610700','0'],['610730','佛坪','610700','0'],['610800','榆林','610000','0'],['610802','榆阳','610800','0'],['610821','神木','610800','0'],['610822','府谷','610800','0'],['610823','横山','610800','0'],['610824','靖边','610800','0'],['610825','定边','610800','0'],['610826','绥德','610800','0'],['610827','米脂','610800','0'],['610828','佳县','610800','0'],['610829','吴堡','610800','0'],['610830','清涧','610800','0'],['610831','子洲','610800','0'],['610900','安康','610000','0'],['610902','汉滨','610900','0'],['610921','汉阴','610900','0'],['610922','石泉','610900','0'],['610923','宁陕','610900','0'],['610924','紫阳','610900','0'],['610925','岚皋','610900','0'],['610926','平利','610900','0'],['610927','镇坪','610900','0'],['610928','旬阳','610900','0'],['610929','白河','610900','0'],['611000','商洛','610000','0'],['611002','商州','611000','0'],['611021','洛南','611000','0'],['611022','丹凤','611000','0'],['611023','商南','611000','0'],['611024','山阳','611000','0'],['611025','镇安','611000','0'],['611026','柞水','611000','0'],['620100','兰州','620000','0'],['620102','城关','620100','0'],['620103','七里河','620100','0'],['620104','西固','620100','0'],['620105','安宁','620100','0'],['620111','红古','620100','0'],['620121','永登','620100','0'],['620122','皋兰','620100','0'],['620123','榆中','620100','0'],['620200','嘉峪关','620000','0'],['620300','金昌','620000','0'],['620302','金川','620300','0'],['620321','永昌','620300','0'],['620400','白银','620000','0'],['620402','白银','620400','0'],['620403','平川','620400','0'],['620421','靖远','620400','0'],['620422','会宁','620400','0'],['620423','景泰','620400','0'],['620500','天水','620000','0'],['620502','秦州','620500','0'],['620503','麦积','620500','0'],['620521','清水','620500','0'],['620522','秦安','620500','0'],['620523','甘谷','620500','0'],['620524','武山','620500','0'],['620525','张家川','620500','0'],['620600','武威','620000','0'],['620602','凉州','620600','0'],['620621','民勤','620600','0'],['620622','古浪','620600','0'],['620623','天祝','620600','0'],['620700','张掖','620000','0'],['620702','甘州','620700','0'],['620721','肃南','620700','0'],['620722','民乐','620700','0'],['620723','临泽','620700','0'],['620724','高台','620700','0'],['620725','山丹','620700','0'],['620800','平凉','620000','0'],['620802','崆峒','620800','0'],['620821','泾川','620800','0'],['620822','灵台','620800','0'],['620823','崇信','620800','0'],['620824','华亭','620800','0'],['620825','庄浪','620800','0'],['620826','静宁','620800','0'],['620900','酒泉','620000','0'],['620902','肃州','620900','0'],['620921','金塔','620900','0'],['620922','瓜州','620900','0'],['620923','肃北','620900','0'],['620924','阿克塞','620900','0'],['620981','玉门','620900','0'],['620982','敦煌','620900','0'],['621000','庆阳','620000','0'],['621002','西峰','621000','0'],['621021','庆城','621000','0'],['621022','环县','621000','0'],['621023','华池','621000','0'],['621024','合水','621000','0'],['621025','正宁','621000','0'],['621026','宁县','621000','0'],['621027','镇原','621000','0'],['621100','定西','620000','0'],['621102','安定','621100','0'],['621121','通渭','621100','0'],['621122','陇西','621100','0'],['621123','渭源','621100','0'],['621124','临洮','621100','0'],['621125','漳县','621100','0'],['621126','岷县','621100','0'],['621200','陇南','620000','0'],['621202','武都','621200','0'],['621221','成县','621200','0'],['621222','文县','621200','0'],['621223','宕昌','621200','0'],['621224','康县','621200','0'],['621225','西和','621200','0'],['621226','礼县','621200','0'],['621227','徽县','621200','0'],['621228','两当','621200','0'],['622900','临夏','620000','0'],['622901','临夏市','622900','0'],['622921','临夏县','622900','0'],['622922','康乐','622900','0'],['622923','永靖','622900','0'],['622924','广河','622900','0'],['622925','和政','622900','0'],['622926','东乡','622900','0'],['622927','积石山','622900','0'],['623000','甘南','620000','0'],['623001','合作','623000','0'],['623021','临潭','623000','0'],['623022','卓尼','623000','0'],['623023','舟曲','623000','0'],['623024','迭部','623000','0'],['623025','玛曲','623000','0'],['623026','碌曲','623000','0'],['623027','夏河','623000','0'],['630100','西宁','630000','0'],['630102','城东','630100','0'],['630103','城中','630100','0'],['630104','城西','630100','0'],['630105','城北','630100','0'],['630121','大通','630100','0'],['630122','湟中','630100','0'],['630123','湟源','630100','0'],['632100','海东','630000','0'],['632121','平安','632100','0'],['632122','民和','632100','0'],['632123','乐都','632100','0'],['632126','互助','632100','0'],['632127','化隆','632100','0'],['632128','循化','632100','0'],['632200','海北','630000','0'],['632221','门源','632200','0'],['632222','祁连','632200','0'],['632223','海晏','632200','0'],['632224','刚察','632200','0'],['632300','黄南','630000','0'],['632321','同仁','632300','0'],['632322','尖扎','632300','0'],['632323','泽库','632300','0'],['632324','河南','632300','0'],['632500','海南藏族','630000','0'],['632521','共和','632500','0'],['632522','同德','632500','0'],['632523','贵德','632500','0'],['632524','兴海','632500','0'],['632525','贵南','632500','0'],['632600','果洛','630000','0'],['632621','玛沁','632600','0'],['632622','班玛','632600','0'],['632623','甘德','632600','0'],['632624','达日','632600','0'],['632625','久治','632600','0'],['632626','玛多','632600','0'],['632700','玉树','630000','0'],['632721','玉树','632700','0'],['632722','杂多','632700','0'],['632723','称多','632700','0'],['632724','治多','632700','0'],['632725','囊谦','632700','0'],['632726','曲麻莱','632700','0'],['632800','海西','630000','0'],['632801','格尔木','632800','0'],['632802','德令哈','632800','0'],['632821','乌兰','632800','0'],['632822','都兰','632800','0'],['632823','天峻','632800','0'],['640100','银川','640000','0'],['640104','兴庆','640100','0'],['640105','西夏','640100','0'],['640106','金凤','640100','0'],['640121','永宁','640100','0'],['640122','贺兰','640100','0'],['640181','灵武','640100','0'],['640200','石嘴山','640000','0'],['640202','大武口','640200','0'],['640205','惠农','640200','0'],['640221','平罗','640200','0'],['640300','吴忠','640000','0'],['640302','利通','640300','0'],['640303','红寺堡','640300','0'],['640323','盐池','640300','0'],['640324','同心','640300','0'],['640381','青铜峡','640300','0'],['640400','固原','640000','0'],['640402','原州','640400','0'],['640422','西吉','640400','0'],['640423','隆德','640400','0'],['640424','泾源','640400','0'],['640425','彭阳','640400','0'],['640500','中卫','640000','0'],['640502','沙坡头','640500','0'],['640521','中宁','640500','0'],['640522','海原','640500','0'],['650100','乌鲁木齐','650000','0'],['650102','天山','650100','0'],['650103','沙依巴克','650100','0'],['650104','新市','650100','0'],['650105','水磨沟','650100','0'],['650106','头屯河','650100','0'],['650107','达坂城','650100','0'],['650109','米东','650100','0'],['650121','乌鲁木齐','650100','0'],['650200','克拉玛依','650000','0'],['650202','独山子','650200','0'],['650203','克拉玛依','650200','0'],['650204','白碱滩','650200','0'],['650205','乌尔禾','650200','0'],['652100','吐鲁番','650000','0'],['652101','高昌','652100','0'],['652122','鄯善','652100','0'],['652123','托克逊','652100','0'],['652200','哈密','650000','0'],['652201','哈密','652200','0'],['652222','巴里坤','652200','0'],['652223','伊吾','652200','0'],['652300','昌吉','650000','0'],['652301','昌吉','652300','0'],['652302','阜康','652300','0'],['652323','呼图壁','652300','0'],['652324','玛纳斯','652300','0'],['652325','奇台','652300','0'],['652327','吉木萨尔','652300','0'],['652328','木垒','652300','0'],['652700','博尔塔拉','650000','0'],['652701','博乐','652700','0'],['652702','阿拉山口','652700','0'],['652722','精河','652700','0'],['652723','温泉','652700','0'],['652800','巴音郭楞','650000','0'],['652801','库尔勒','652800','0'],['652822','轮台','652800','0'],['652823','尉犁','652800','0'],['652824','若羌','652800','0'],['652825','且末','652800','0'],['652826','焉耆','652800','0'],['652827','和静','652800','0'],['652828','和硕','652800','0'],['652829','博湖','652800','0'],['652900','阿克苏','650000','0'],['652901','阿克苏','652900','0'],['652922','温宿','652900','0'],['652923','库车','652900','0'],['652924','沙雅','652900','0'],['652925','新和','652900','0'],['652926','拜城','652900','0'],['652927','乌什','652900','0'],['652928','阿瓦提','652900','0'],['652929','柯坪','652900','0'],['653000','克孜勒苏柯尔克孜','650000','0'],['653001','阿图什','653000','0'],['653022','阿克陶','653000','0'],['653023','阿合奇','653000','0'],['653024','乌恰','653000','0'],['653100','喀什','650000','0'],['653101','喀什','653100','0'],['653121','疏附','653100','0'],['653122','疏勒','653100','0'],['653123','英吉沙','653100','0'],['653124','泽普','653100','0'],['653125','莎车','653100','0'],['653126','叶城','653100','0'],['653127','麦盖提','653100','0'],['653128','岳普湖','653100','0'],['653129','伽师','653100','0'],['653130','巴楚','653100','0'],['653131','塔什库尔干','653100','0'],['653200','和田','650000','0'],['653201','和田市','653200','0'],['653221','和田县','653200','0'],['653222','墨玉','653200','0'],['653223','皮山','653200','0'],['653224','洛浦','653200','0'],['653225','策勒','653200','0'],['653226','于田','653200','0'],['653227','民丰','653200','0'],['654000','伊犁','650000','0'],['654002','伊宁市','654000','0'],['654003','奎屯','654000','0'],['654021','伊宁县','654000','0'],['654022','察布查尔','654000','0'],['654023','霍城','654000','0'],['654024','巩留','654000','0'],['654025','新源','654000','0'],['654026','昭苏','654000','0'],['654027','特克斯','654000','0'],['654028','尼勒克','654000','0'],['654200','塔城','650000','0'],['654201','塔城','654200','0'],['654202','乌苏','654200','0'],['654221','额敏','654200','0'],['654223','沙湾','654200','0'],['654224','托里','654200','0'],['654225','裕民','654200','0'],['654226','和布克赛尔','654200','0'],['654300','阿勒泰','650000','0'],['654301','阿勒泰','654300','0'],['654321','布尔津','654300','0'],['654322','富蕴','654300','0'],['654323','福海','654300','0'],['654324','哈巴河','654300','0'],['654325','青河','654300','0'],['654326','吉木乃','654300','0'],['659001','石河子','650000','0'],['659002','阿拉尔','650000','0'],['659003','图木舒克','650000','0'],['659004','五家渠','650000','0'],['542301','日喀则市 (桑珠孜区)','542300','1'],['210112','东陵区 (浑南区)','210100','1'],['440903','茂港区 (电白区)','440900','1'],['371324','苍山县 (兰陵县)','371300','1'],['330621','绍兴县 (柯桥区)','330600','1'],['420321','郧县 (郧阳区)','420300','1'],['410224','开封县 (祥符区)','410200','1'],['542121','昌都县 (卡若区)','542100','1'],['371421','陵县 (陵城区)','371400','1'],['411222','陕县 (陕州区)','411200','1'],['542621','林芝县 (巴宜区)','542600','1'],['652101','吐鲁番市 (高昌区)','652100','1'],['510107','高新区 (武侯区)','510100','1'],['510124','高新西区 (郫县)','510100','1'],['320508','工业园区 (姑苏区)','320500','1'],['320505','高新区 (虎丘区)','320500','1'],['330212,330204','高新区 (鄞州区，江东区)','330200','1'],['330204','高新区 (江东区)','330200','2'],['330212','高新区 (鄞州区)','330200','2'],['370214','高新区 (城阳区)','370200','1'],['210213','经济开发区 (金州区)','210200','1'],['340104','高新区 (蜀山区)','340100','1'],['610113,610116','高新区 (雁塔区，长安区)','610100','1'],['610113','高新区 (雁塔区)','610100','2'],['610116','高新区 (长安区)','610100','2'],['410102','高新区 (中原区)','410100','1'],['410104','经济开发区 (管城回族区)','410100','1'],['410105','郑东新区 (金水区)','410100','1'],['220104','高新区 (朝阳区)','220100','1'],['220105','经济开发区 (二道区)','220100','1'],['220106','汽车产业开发区 (绿园区)','220100','1'],['620121','兰州新区 (永登县)','620100','1'],['370705','高新区 (奎文区)','370700','1'],['130108','高新区 (裕华区)','130100','1'],['210211,210212','高新区 (甘井子区，旅顺口区)','210200','1'],['210211','高新区 (甘井子区)','210200','2'],['210212','高新区 (旅顺口区)','210200','2'],['370102,370112','高新区 (历下区，历城区)','370100','1'],['370102','高新区 (历下区)','370100','2'],['370112','高新区 (历城区)','370100','2'],['120116','塘沽区 (滨海新区)','120100','1'],['120116','汉沽区 (滨海新区)','120100','1'],['120116','大港区 (滨海新区)','120100','1'],['210112','浑南新区 (浑南区)','210100','1'],['310101','卢湾区 (黄浦区)','310100','1'],['320104','白下区 (秦淮区)','320100','1'],['320106','下关区 (鼓楼区)','320100','1'],['320323','九里区 (铜山区)','320300','1'],['321003','维扬区 (邗江区)','321000','1'],['340503','金家庄区 (花山区)','340500','1'],['341400','居巢区 (巢湖市)','340100','1'],['370203','四方区 (市北区)','370200','1'],['370211','胶南市 (黄岛区)','370200','1'],['450403','蝶山区 (万秀区)','450400','1'],['520111','小河区 (花溪区)','520100','1'],['320508','沧浪区 (姑苏区)','320500','1'],['320508','平江区 (姑苏区)','320500','1'],['320508','金阊区 (姑苏区)','320500','1'],['451402','江洲区 (江州区)','451400','1'],['510811','元坝区 (昭化区)','510800','1'],['500222','万盛区 (綦江区)','500100','1'],['500225','双桥区 (大足区)','500100','1'],['210184','新城子区 (沈北新区)','210100','1'],['440307','坪山新区 (龙岗区)','440300','1'],['440307','大鹏新区 (龙岗区)','440300','1'],['440306','光明新区 (宝安区)','440300','1'],['440306','龙华新区 (宝安区)','440300','1'],['652701','双河市 (博乐市)','652700','1'],['652801','铁门关市 (库尔勒市)','652800','1'],['654323','北屯市 (福海县)','654300','1'],['320211','新区 (滨湖区)','320200','1'],['420111,420115','东湖高新区 (洪山区，江夏区)','420100','1'],['420111','东湖高新区 (洪山区)','420100','2'],['420115','东湖高新区 (江夏区)','420100','2'],['420114,420105','经济技术开发区 (蔡甸区，汉阳区)','420100','1'],['420114','经济技术开发区 (蔡甸区)','420100','2'],['420105','经济技术开发区 (汉阳区)','420100','2'],['320602','南通经济技术开发区 (崇川区)','320600','1']];exports.default={province:province,county:county};
 
 /***/ },
-/* 501 */
+/* 500 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"address-box\" :class=\"classObj\" @click.stop=\"showAddrPopFun\" @blur=\"hideAddrPopFun\">\n  <div v-if=\"province\" class=\"ad-select has-select\" v-html=\"selectAddr\"></div>\n  <div v-else class=\"ad-select\">{{placeholder}}</div>\n  <i class=\"ad-drop\" :class=\"{'drop-down': showAddrPop}\"></i>\n  <div class=\"ad-overlay\" v-show=\"showAddrPop\">\n    <div class=\"ad-overlay-container\">\n      <div class=\"tab-list\">\n        <ul>\n          <li v-for=\"tab in tabList\" :class=\"{'active': current == tab.id}\" :style=\"{'width': (100/tabList.length)+'%'}\" @click.stop.stop=\"navChoose(tab.id)\">{{tab.name}}</li>\n        </ul>\n      </div>\n      <div class=\"tab-content\">\n        <div class=\"province-content\" v-show=\"current == 'province'\">\n          <dl v-for=\"key in list.provinceList\">\n            <dt>{{$key}}</dt>\n            <dd>\n              <a v-for=\"prov in key\" :title=\"prov[1]\" :attr-id=\"prov[0]\" href=\"javascript:\" @click=\"chooseProvince(prov[0], prov[1])\" :class=\"{'active': provinceId == prov[0]}\">\n                <input v-if=\"provinceId == prov[0]\" :value=\"prov[1]\" type=\"hidden\" v-model=\"province\" />\n                {{prov[1]}}\n              </a>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"city-content\" v-show=\"current == 'city'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.countyList\">\n                <a v-if=\"item[2] == provinceId\" :title=\"item[1]\" attr-id=\"item[0]}}\" href=\"javascript:\" @click.stop=\"chooseCity(item[0], item[1])\" :class=\"{'active': cityId == item[0]}\" track-by=\"item[0]\">\n                  <input v-if=\"cityId == item[0]\" :value=\"item[1]\" type=\"hidden\" v-model=\"city\" />\n                  {{item[1]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"county-content\" v-if=\"tabList[2]\" v-show=\"current == 'county'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.countyList\">\n                <a v-if=\"item[2] == cityId\" :title=\"item[1]\" :attr-id=\"item[0]\" href=\"javascript:\" @click.stop=\"chooseCounty(item[0], item[1])\" :class=\"{'active': countyId == item[0]}\" track-by=\"item[0]\">\n                  <input v-if=\"countyId == item[0]\" :value=\"item[1]\" type=\"hidden\" v-model=\"county\" />\n                  {{item[1]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n        <div class=\"street-content\" v-if=\"tabList[3]\" v-show=\"current == 'street'\">\n          <dl>\n            <dd>\n              <template v-for=\"item in list.streetList\">\n                <a :title=\"item[0]}}\" :attr-id=\"$key\" :parent-id=\"item[1]\" href=\"javascript:\" @click.stop=\"chooseStreet($key, item[0])\" :class=\"{'active': streetId == $key}\" track-by=\"$key\">\n                  <input v-if=\"streetId == $key\" value=\"item[0]}}\" type=\"hidden\" v-model=\"street\" />\n                  {{item[0]}}\n                </a>\n              </template>\n            </dd>\n          </dl>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n";
 
 /***/ },
-/* 502 */
+/* 501 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"addressselect\">\n    <h3 class=\"page-header\"><a href=\"#addressselect\" class=\"anchor\">AddressSelect 地址选择 </a></h3>\n    <div class=\"bs-example\">\n      <h4>无默认选中</h4>\n      <address-select large level=\"2\" placeholder=\"请选择省市\"></address-select>\n      <br>\n      <address-select small level=\"3\" placeholder=\"请选择省市区\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\"></address-select>\n      <br>\n      <h4>有默认选中</h4>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr1\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr2\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr3\"></address-select>\n      <br>\n      <address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr=\"defaultAddr4\"></address-select>\n      <br>\n      <button type=\"button\" class=\"btn\" id=\"J_click\">点击</button>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<address-select large level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr1\"></address-select>\n<address-select small level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr2\"></address-select>\n<address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr3\"></address-select>\n<address-select level=\"4\" placeholder=\"请选择省市区街道\" :default-addr.sync=\"defaultAddr4\"></address-select>\n    </script></code></pre>\n    </script>\n    </code>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>预期值的提示信息</td>\n        </tr>\n        <tr>\n          <td>level</td>\n          <td><code>String</code></td>\n          <td><code>4</code></td>\n          <td>省份-城市-县区-街道四级地址，要显示几级</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>组件尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>组件尺寸，小</td>\n        </tr>\n        <tr>\n          <td>default-addr</td>\n          <td><code>Object</code></td>\n          <td><code>{\n        provinceId: '',\n        cityId: '',\n        countyId: '',\n        streetId: ''\n      }</code></td>\n          <td>默认要选中的省份、城市、县/区、街道对应ID</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
