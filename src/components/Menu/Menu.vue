@@ -14,28 +14,24 @@ export default {
     prefixCls: {
       type: String,
       default: 'atui'
-    }
+    },
+    openOne: Boolean,
+    defaultOpenKeys: Array,
+    selectedKey: String
   },
   ready () {
     let me = this
-    let items = me.$el.querySelectorAll('.' + me.prefixCls + '-menu-item')
-
-    for (let i = 0; i < items.length; i++) {
-      let item = items[i]
-      item.addEventListener('click', () => {
-        let className = me.prefixCls + '-menu-selected'
-        let selectedItem = me.$el.querySelector('.' + className)
-
-        if (selectedItem) {
-          Vue.util.removeClass(me.$el.querySelector('.' + className), className)
-        }
-
-        Vue.util.addClass(item, className)
-      }, false)
+    if (me.selectedKey) {
+      this.$broadcast('searchItem', me.selectedKey)
     }
   },
-  beforeDestroy () {
-    // TOTO GC
+  events: {
+    itemClicked (item, key) {
+      this.selectedKey = key
+      this.$broadcast('searchItem', key)
+      // 触发事件给调用上级组件
+      this.$dispatch('click', item, key)
+    }
   }
 }
 </script>
