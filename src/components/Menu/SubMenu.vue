@@ -4,7 +4,7 @@
       {{title}}
       <icon type="down" :class="[prefixCls + '-menu-icon']"></icon>
     </div>
-    <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="show" transition="slide">
+    <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="show" transition="collapse">
       <slot></slot>
     </ul>
   </li>
@@ -16,14 +16,14 @@ import Icon from '../Icon'
 export default {
   props: {
     title: String,
-    show: {
-      type: Boolean,
-      default: false
-    },
+    show: Boolean,
     prefixCls: {
       type: String,
       default: 'atui'
-    }
+    },
+    type: Boolean,
+    disabled: Boolean,
+    key: String
   },
   components: {
     Icon
@@ -33,9 +33,32 @@ export default {
       mode: this.$parent.mode
     }
   },
+  watch: {
+    show (val) {
+      if (val) {
+        let me = this
+        if (!me.$parent.openOne) {
+          return
+        }
+        let sibling = me.$parent.$children
+        sibling.forEach((item) => {
+          if (me !== item) {
+            item.show = false
+          }
+        })
+      }
+    }
+  },
   methods: {
     triggerSub () {
-      this.show = !this.show
+      let me = this
+      me.show = !me.show
+    }
+  },
+  events: {
+    // 当子menu选中时，自动打开父菜单
+    open () {
+      this.show = true
     }
   }
 }

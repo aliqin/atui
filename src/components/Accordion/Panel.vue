@@ -6,7 +6,7 @@
     <div :class="[prefixCls + '-panel-collapse']"
       v-el:panel
       v-show="isOpen"
-      transition="slide"
+      transition="collapse"
     >
       <div :class="[prefixCls + '-panel-body']">
         <slot></slot>

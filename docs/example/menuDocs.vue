@@ -2,59 +2,59 @@
   <div class="bs-docs-section" id="menu">
     <h3 class="page-header"><a href="#menu" class="anchor">Menu 菜单</a></h3>
     <div class="bs-example">
-    <v-menu style="width:240px;"
-      >
+    初始选中的key是{{selectedKey}}
+    <v-menu style="width:240px;" :selected-key="selectedKey">
       <sub-menu title="导航一">
         <menu-item-group title="分组1">
-          <menu-item><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
-          <menu-item>选项2</menu-item>
+          <menu-item key="1"><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
+          <menu-item key="2">选项2</menu-item>
         </menu-item-group>
         <menu-item-group title="分组2">
-          <menu-item>选项3</menu-item>
-          <menu-item>选项4</menu-item>
+          <menu-item key="3">选项3</menu-item>
+          <menu-item key="4">选项4</menu-item>
         </menu-item-group>
       </sub-menu>
       <sub-menu title="导航二">
-        <menu-item>选项5</menu-item>
-        <menu-item>选项6</menu-item>
+        <menu-item key="5">选项5</menu-item>
+        <menu-item key="6">选项6</menu-item>
         <sub-menu title="三级导航">
-          <menu-item>选项7</menu-item>
-          <menu-item>选项8</menu-item>
+          <menu-item key="7">选项7</menu-item>
+          <menu-item key="8">选项8</menu-item>
         </sub-menu>
       </sub-menu>
       <sub-menu title="导航三">
-        <menu-item>选项9</menu-item>
-        <menu-item>选项10</menu-item>
-        <menu-item>选项11</menu-item>
-        <menu-item>选项12</menu-item>
+        <menu-item key="9">选项9</menu-item>
+        <menu-item key="10">选项10</menu-item>
+        <menu-item key="11">选项11</menu-item>
+        <menu-item key="12">选项12</menu-item>
       </sub-menu>
     </v-menu>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<v-menu>
+<v-menu style="width:240px;" :selected-key="selectedKey">
   <sub-menu title="导航一">
     <menu-item-group title="分组1">
-      <menu-item><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
-      <menu-item>选项2</menu-item>
+      <menu-item key="1"><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
+      <menu-item key="2">选项2</menu-item>
     </menu-item-group>
     <menu-item-group title="分组2">
-      <menu-item>选项3</menu-item>
-      <menu-item>选项4</menu-item>
+      <menu-item key="3">选项3</menu-item>
+      <menu-item key="4">选项4</menu-item>
     </menu-item-group>
   </sub-menu>
   <sub-menu title="导航二">
-    <menu-item>选项5</menu-item>
-    <menu-item>选项6</menu-item>
+    <menu-item key="5">选项5</menu-item>
+    <menu-item key="6">选项6</menu-item>
     <sub-menu title="三级导航">
-      <menu-item>选项7</menu-item>
-      <menu-item>选项8</menu-item>
+      <menu-item key="7">选项7</menu-item>
+      <menu-item key="8">选项8</menu-item>
     </sub-menu>
   </sub-menu>
   <sub-menu title="导航三">
-    <menu-item>选项9</menu-item>
-    <menu-item>选项10</menu-item>
-    <menu-item>选项11</menu-item>
-    <menu-item>选项12</menu-item>
+    <menu-item key="9">选项9</menu-item>
+    <menu-item key="10">选项10</menu-item>
+    <menu-item key="11">选项11</menu-item>
+    <menu-item key="12">选项12</menu-item>
   </sub-menu>
 </v-menu>
 
@@ -68,6 +68,11 @@ export default {
     MenuItemGroup,
     MenuItem
   },
+  data() {
+    return {
+      selectedKey: '6'
+    }
+  }
 }
   </script></code></pre>
 
@@ -81,6 +86,18 @@ export default {
         <th>Description</th>
       </tr>
     </thead>
+    <tr>
+      <th>openOne</th>
+      <th>Boolean</th>
+      <th>false</th>
+      <th>始终只打开一个菜单</th>
+    </tr>
+    <tr>
+      <th>selectedKey</th>
+      <th>String</th>
+      <th></th>
+      <th>选中的MenuItem的Key</th>
+    </tr>
     <tbody>
     </tbody>
   </table>
@@ -97,5 +114,10 @@ export default {
       MenuItemGroup,
       MenuItem
     },
+    data() {
+      return {
+        selectedKey: '6'
+      }
+    }
   }
 </script>
