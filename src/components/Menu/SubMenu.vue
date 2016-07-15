@@ -4,7 +4,7 @@
       {{title}}
       <icon type="down" :class="[prefixCls + '-menu-icon']"></icon>
     </div>
-    <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="show" transition="slide">
+    <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="show" transition="collapse">
       <slot></slot>
     </ul>
   </li>
@@ -16,14 +16,14 @@ import Icon from '../Icon'
 export default {
   props: {
     title: String,
-    show: {
-      type: Boolean,
-      default: false
-    },
+    show: Boolean,
     prefixCls: {
       type: String,
       default: 'atui'
-    }
+    },
+    type: Boolean,
+    disabled: Boolean,
+    key: String
   },
   components: {
     Icon
