@@ -31,7 +31,7 @@
     </v-menu>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<v-menu style="width:240px;" selected-key="6">
+<v-menu style="width:240px;" :selected-key="selectedKey">
   <sub-menu title="导航一">
     <menu-item-group title="分组1">
       <menu-item key="1"><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
@@ -42,7 +42,7 @@
       <menu-item key="4">选项4</menu-item>
     </menu-item-group>
   </sub-menu>
-  <sub-menu title="导航二" disabled>
+  <sub-menu title="导航二">
     <menu-item key="5">选项5</menu-item>
     <menu-item key="6">选项6</menu-item>
     <sub-menu title="三级导航">
@@ -86,6 +86,18 @@ export default {
         <th>Description</th>
       </tr>
     </thead>
+    <tr>
+      <th>openOne</th>
+      <th>Boolean</th>
+      <th>false</th>
+      <th>始终只打开一个菜单</th>
+    </tr>
+    <tr>
+      <th>selectedKey</th>
+      <th>String</th>
+      <th></th>
+      <th>选中的MenuItem的Key</th>
+    </tr>
     <tbody>
     </tbody>
   </table>

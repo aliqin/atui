@@ -28,6 +28,9 @@ export default {
     // Menu 父组件传达查找子组件命令，指定选中状态
     searchItem (key) {
       this.selected = this.key === key
+      if (this.selected) {
+        this.$dispatch('open', this, this.key)
+      }
     }
   }
 }
