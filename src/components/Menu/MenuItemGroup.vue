@@ -1,7 +1,7 @@
 <template>
-  <li class="atui-menu-item-group">
-    <div class="atui-menu-item-group-title">{{title}}</div>
-    <ul class="atui-menu-item-group-list">
+  <li :class="[prefixCls + '-menu-item-group']">
+    <div :class="[prefixCls + '-menu-item-group-title']">{{title}}</div>
+    <ul :class="[prefixCls + '-menu-item-group-list']">
       <slot></slot>
     </ul>
   </li>
@@ -10,7 +10,11 @@
 <script>
 export default {
   props: {
-    title: String
+    title: String,
+    prefixCls: {
+      type: String,
+      default: 'atui'
+    }
   }
 }
 </script>

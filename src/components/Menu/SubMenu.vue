@@ -1,10 +1,10 @@
 <template>
-  <li :class="['atui-menu-submenu', 'atui-menu-submenu-' + mode, show ? 'atui-menu-submenu-open' : '' ]">
-    <div class="atui-menu-submenu-title" @click="triggerSub">
+  <li :class="[prefixCls + '-menu-submenu', prefixCls + '-menu-submenu-' + mode, show && (prefixCls + '-menu-submenu-open')]">
+    <div :class="[prefixCls + '-menu-submenu-title']" @click="triggerSub">
       {{title}}
-      <icon type="down" :class="['atui-menu-icon']"></icon>
+      <icon type="down" :class="[prefixCls + '-menu-icon']"></icon>
     </div>
-    <ul :class="['atui-menu', 'atui-menu-sub', 'atui-menu-'+ mode]" v-show="show" transition="slide">
+    <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="show" transition="slide">
       <slot></slot>
     </ul>
   </li>
@@ -12,12 +12,17 @@
 
 <script>
 import Icon from '../Icon'
+
 export default {
   props: {
     title: String,
     show: {
       type: Boolean,
       default: false
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   components: {
