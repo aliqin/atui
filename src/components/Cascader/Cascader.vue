@@ -1,16 +1,18 @@
 <template>
-  <div class="cascader">
-    <span class="cascader-picker">
+  <div :class="[prefixCls + '-cascader']">
+    <span :class="[prefixCls + '-cascader-picker']">
       <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
     </span>
-    <div class="cascader-menus" v-show="show" transition="slide">
-      <ul class="cascader-menu" v-for="(index, menu) in menus">
-        <li class="cascader-menu-item" :class="{selected:selectedOptions[index] === option,disabled:option.disabled}" v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
+    <div :class="[prefixCls + '-cascader-menus']" v-show="show" transition="slide">
+      <ul :class="[prefixCls + '-cascader-menu']" v-for="(index, menu) in menus">
+        <li :class="[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]"
+            v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
       </ul>
     </div>
   </div>
 </template>
-<script>
+
+<script type="text/babel">
   import EventListener from '../_utils/EventListener'
   import Input from '../Input'
 
@@ -39,6 +41,10 @@
       },
       defaultValue: {
         type: Array
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
       }
     },
     components: {

@@ -1,14 +1,18 @@
-.cascader {
+// Cascader
+// --------------------------------------------------
+@prefix-cls-cascader: e("@{prefix-cls}-cascader");
+
+.@{prefix-cls-cascader} {
   position: relative;
   display: inline-block;
 }
-.cascader-picker {
+.@{prefix-cls-cascader}-picker {
   position: relative;
   display: inline-block;
   cursor: pointer;
   vertical-align: middle;
 }
-.cascader-menus {
+.@{prefix-cls-cascader}-menus {
   z-index: @zindex-dropdown;
   font-size: 12px;
   background: #fff;
@@ -18,7 +22,7 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
   white-space: nowrap
 }
-.cascader-menu {
+.@{prefix-cls-cascader}-menu {
   display: inline-block;
   vertical-align: top;
   min-width: 111px;
@@ -30,12 +34,12 @@
   overflow: auto
 }
 
-.cascader-menu:last-child {
+.@{prefix-cls-cascader}-menu:last-child {
   border-right-color: transparent;
   margin-right: -1px
 }
 
-.cascader-menu-item {
+.@{prefix-cls-cascader}-menu-item {
   padding: 7px 16px;
   cursor: pointer;
   white-space: nowrap;
@@ -45,7 +49,7 @@
   &:hover, &:focus {
     background-color: tint(@primary-color, 95%);
   }
-  &.selected {
+  &.@{prefix-cls-cascader}-selected {
     &,
     &:hover,
     &:focus {
@@ -55,20 +59,20 @@
     }
   }
 
-  &.disabled {
+  &.@{prefix-cls-cascader}-disabled {
     cursor: not-allowed;
     color: #ccc;
   }
-  &.disabled:hover {
+  &.@{prefix-cls-cascader}-disabled:hover {
     background: transparent;
   }
 }
 
-.cascader-menu-item-expand {
+.@{prefix-cls-cascader}-menu-item-expand {
     position: relative;
 }
 
-.cascader-menu-item-expand:after {
+.@{prefix-cls-cascader}-menu-item-expand:after {
     content: '\E600';
     font-family: 'anticon';
     display: inline-block;
