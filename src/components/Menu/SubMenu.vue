@@ -33,9 +33,32 @@ export default {
       mode: this.$parent.mode
     }
   },
+  watch: {
+    show (val) {
+      if (val) {
+        let me = this
+        if (!me.$parent.openOne) {
+          return
+        }
+        let sibling = me.$parent.$children
+        sibling.forEach((item) => {
+          if (me !== item) {
+            item.show = false
+          }
+        })
+      }
+    }
+  },
   methods: {
     triggerSub () {
-      this.show = !this.show
+      let me = this
+      me.show = !me.show
+    }
+  },
+  events: {
+    // 当子menu选中时，自动打开父菜单
+    open () {
+      this.show = true
     }
   }
 }
