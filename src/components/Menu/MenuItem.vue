@@ -1,6 +1,6 @@
 <template>
 <li role="menuitem"
-  :class="['atui-menu-item',{'atui-menu-item-disabled':disabled}]"
+  :class="[prefixCls + '-menu-item', disabled && (prefixCls + '-menu-item-disabled')]"
   style="padding-left:48px"
   @click="selectItem($event)"
 >
@@ -11,7 +11,11 @@
 <script>
 export default {
   props: {
-    disabled: Boolean
+    disabled: Boolean,
+    prefixCls: {
+      type: String,
+      default: 'atui'
+    }
   },
   methods: {
     selectItem (event) {
