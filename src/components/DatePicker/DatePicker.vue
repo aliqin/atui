@@ -1,19 +1,20 @@
 <template>
-  <div class="atui-datepicker">
-    <div class="atui-datepicker-toggle" @click="inputClick" >
-      <input class="datepicker-input" transition="slide" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
+  <div :class="[prefixCls + '-datepicker']">
+    <div :class="[prefixCls + '-datepicker-toggle']" @click="inputClick" >
+      <input :class="[prefixCls + '-datepicker-input']" transition="slide" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
       <icon type="calendar"></icon>
     </div>
-    <div class="atui-datepicker-calendar">
+    <div :class="[prefixCls + '-datepicker-calendar']">
       <calendar :show="show" transition="slide" @change="selectChange" v-ref:calendar :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
     </div>
   </div>
 </template>
 
-<script>
+<script type="text/babel">
 import EventListener from '../_utils/EventListener.js'
 import Calendar from '../Calendar/'
 import Icon from '../Icon/'
+
 export default {
   name: 'date-picker',
   props: {
@@ -35,7 +36,11 @@ export default {
       type: Function,
       default: (date) => {}
     },
-    disabled: Boolean
+    disabled: Boolean,
+    prefixCls: {
+      type: String,
+      default: 'atui'
+    }
   },
   components: {
     icon: Icon,
