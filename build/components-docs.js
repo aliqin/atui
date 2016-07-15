@@ -10977,6 +10977,8 @@
 	      type: String,
 	      default: 'atui'
 	    },
+	    openOne: Boolean,
+	    defaultOpenKeys: Array,
 	    selectedKey: String
 	  },
 	  ready: function ready() {
@@ -11043,6 +11045,10 @@
 	  value: true
 	});
 	
+	var _typeof2 = __webpack_require__(175);
+	
+	var _typeof3 = _interopRequireDefault(_typeof2);
+	
 	var _Icon = __webpack_require__(134);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
@@ -11070,9 +11076,41 @@
 	    };
 	  },
 	
+	  watch: {
+	    show: function show(val) {
+	      var _this = this;
+	
+	      if (val) {
+	        var _ret = function () {
+	          var me = _this;
+	          if (!me.$parent.openOne) {
+	            return {
+	              v: void 0
+	            };
+	          }
+	          var sibling = me.$parent.$children;
+	          sibling.forEach(function (item) {
+	            if (me !== item) {
+	              item.show = false;
+	            }
+	          });
+	        }();
+	
+	        if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
+	      }
+	    }
+	  },
 	  methods: {
 	    triggerSub: function triggerSub() {
-	      this.show = !this.show;
+	      var me = this;
+	      me.show = !me.show;
+	    }
+	  },
+	  events: {
+	    // 当子menu选中时，自动打开父菜单
+	
+	    open: function open() {
+	      this.show = true;
 	    }
 	  }
 	};
@@ -11167,6 +11205,9 @@
 	
 	    searchItem: function searchItem(key) {
 	      this.selected = this.key === key;
+	      if (this.selected) {
+	        this.$dispatch('open', this, this.key);
+	      }
 	    }
 	  }
 	};
@@ -17957,6 +17998,18 @@
 	//         <th>Description</th>
 	//       </tr>
 	//     </thead>
+	//     <tr>
+	//       <th>openOne</th>
+	//       <th>Boolean</th>
+	//       <th>false</th>
+	//       <th>始终只打开一个菜单</th>
+	//     </tr>
+	//     <tr>
+	//       <th>selectedKey</th>
+	//       <th>String</th>
+	//       <th></th>
+	//       <th>选中的MenuItem的Key</th>
+	//     </tr>
 	//     <tbody>
 	//     </tbody>
 	//   </table>
@@ -17988,7 +18041,7 @@
 /* 468 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"menu\">\n    <h3 class=\"page-header\"><a href=\"#menu\" class=\"anchor\">Menu 菜单</a></h3>\n    <div class=\"bs-example\">\n    初始选中的key是{{selectedKey}}\n    <v-menu style=\"width:240px;\" :selected-key=\"selectedKey\">\n      <sub-menu title=\"导航一\">\n        <menu-item-group title=\"分组1\">\n          <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n          <menu-item key=\"2\">选项2</menu-item>\n        </menu-item-group>\n        <menu-item-group title=\"分组2\">\n          <menu-item key=\"3\">选项3</menu-item>\n          <menu-item key=\"4\">选项4</menu-item>\n        </menu-item-group>\n      </sub-menu>\n      <sub-menu title=\"导航二\">\n        <menu-item key=\"5\">选项5</menu-item>\n        <menu-item key=\"6\">选项6</menu-item>\n        <sub-menu title=\"三级导航\">\n          <menu-item key=\"7\">选项7</menu-item>\n          <menu-item key=\"8\">选项8</menu-item>\n        </sub-menu>\n      </sub-menu>\n      <sub-menu title=\"导航三\">\n        <menu-item key=\"9\">选项9</menu-item>\n        <menu-item key=\"10\">选项10</menu-item>\n        <menu-item key=\"11\">选项11</menu-item>\n        <menu-item key=\"12\">选项12</menu-item>\n      </sub-menu>\n    </v-menu>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-menu style=\"width:240px;\" :selected-key=\"selectedKey\">\n  <sub-menu title=\"导航一\">\n    <menu-item-group title=\"分组1\">\n      <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n      <menu-item key=\"2\">选项2</menu-item>\n    </menu-item-group>\n    <menu-item-group title=\"分组2\">\n      <menu-item key=\"3\">选项3</menu-item>\n      <menu-item key=\"4\">选项4</menu-item>\n    </menu-item-group>\n  </sub-menu>\n  <sub-menu title=\"导航二\">\n    <menu-item key=\"5\">选项5</menu-item>\n    <menu-item key=\"6\">选项6</menu-item>\n    <sub-menu title=\"三级导航\">\n      <menu-item key=\"7\">选项7</menu-item>\n      <menu-item key=\"8\">选项8</menu-item>\n    </sub-menu>\n  </sub-menu>\n  <sub-menu title=\"导航三\">\n    <menu-item key=\"9\">选项9</menu-item>\n    <menu-item key=\"10\">选项10</menu-item>\n    <menu-item key=\"11\">选项11</menu-item>\n    <menu-item key=\"12\">选项12</menu-item>\n  </sub-menu>\n</v-menu>\n\n<!--script-->\nimport {Menu} from atui\nconst { SubMenu, MenuItem, MenuItemGroup} = Menu\nexport default {\n  components: {\n    vMenu: Menu,\n    SubMenu,\n    MenuItemGroup,\n    MenuItem\n  },\n  data() {\n    return {\n      selectedKey: '6'\n    }\n  }\n}\n  </script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"menu\">\n    <h3 class=\"page-header\"><a href=\"#menu\" class=\"anchor\">Menu 菜单</a></h3>\n    <div class=\"bs-example\">\n    初始选中的key是{{selectedKey}}\n    <v-menu style=\"width:240px;\" :selected-key=\"selectedKey\">\n      <sub-menu title=\"导航一\">\n        <menu-item-group title=\"分组1\">\n          <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n          <menu-item key=\"2\">选项2</menu-item>\n        </menu-item-group>\n        <menu-item-group title=\"分组2\">\n          <menu-item key=\"3\">选项3</menu-item>\n          <menu-item key=\"4\">选项4</menu-item>\n        </menu-item-group>\n      </sub-menu>\n      <sub-menu title=\"导航二\">\n        <menu-item key=\"5\">选项5</menu-item>\n        <menu-item key=\"6\">选项6</menu-item>\n        <sub-menu title=\"三级导航\">\n          <menu-item key=\"7\">选项7</menu-item>\n          <menu-item key=\"8\">选项8</menu-item>\n        </sub-menu>\n      </sub-menu>\n      <sub-menu title=\"导航三\">\n        <menu-item key=\"9\">选项9</menu-item>\n        <menu-item key=\"10\">选项10</menu-item>\n        <menu-item key=\"11\">选项11</menu-item>\n        <menu-item key=\"12\">选项12</menu-item>\n      </sub-menu>\n    </v-menu>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-menu style=\"width:240px;\" :selected-key=\"selectedKey\">\n  <sub-menu title=\"导航一\">\n    <menu-item-group title=\"分组1\">\n      <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n      <menu-item key=\"2\">选项2</menu-item>\n    </menu-item-group>\n    <menu-item-group title=\"分组2\">\n      <menu-item key=\"3\">选项3</menu-item>\n      <menu-item key=\"4\">选项4</menu-item>\n    </menu-item-group>\n  </sub-menu>\n  <sub-menu title=\"导航二\">\n    <menu-item key=\"5\">选项5</menu-item>\n    <menu-item key=\"6\">选项6</menu-item>\n    <sub-menu title=\"三级导航\">\n      <menu-item key=\"7\">选项7</menu-item>\n      <menu-item key=\"8\">选项8</menu-item>\n    </sub-menu>\n  </sub-menu>\n  <sub-menu title=\"导航三\">\n    <menu-item key=\"9\">选项9</menu-item>\n    <menu-item key=\"10\">选项10</menu-item>\n    <menu-item key=\"11\">选项11</menu-item>\n    <menu-item key=\"12\">选项12</menu-item>\n  </sub-menu>\n</v-menu>\n\n<!--script-->\nimport {Menu} from atui\nconst { SubMenu, MenuItem, MenuItemGroup} = Menu\nexport default {\n  components: {\n    vMenu: Menu,\n    SubMenu,\n    MenuItemGroup,\n    MenuItem\n  },\n  data() {\n    return {\n      selectedKey: '6'\n    }\n  }\n}\n  </script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tr>\n      <th>openOne</th>\n      <th>Boolean</th>\n      <th>false</th>\n      <th>始终只打开一个菜单</th>\n    </tr>\n    <tr>\n      <th>selectedKey</th>\n      <th>String</th>\n      <th></th>\n      <th>选中的MenuItem的Key</th>\n    </tr>\n    <tbody>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 469 */

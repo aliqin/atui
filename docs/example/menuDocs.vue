@@ -86,6 +86,18 @@ export default {
         <th>Description</th>
       </tr>
     </thead>
+    <tr>
+      <th>openOne</th>
+      <th>Boolean</th>
+      <th>false</th>
+      <th>始终只打开一个菜单</th>
+    </tr>
+    <tr>
+      <th>selectedKey</th>
+      <th>String</th>
+      <th></th>
+      <th>选中的MenuItem的Key</th>
+    </tr>
     <tbody>
     </tbody>
   </table>

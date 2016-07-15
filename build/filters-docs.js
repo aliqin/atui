@@ -10675,6 +10675,8 @@
 	      type: String,
 	      default: 'atui'
 	    },
+	    openOne: Boolean,
+	    defaultOpenKeys: Array,
 	    selectedKey: String
 	  },
 	  ready: function ready() {
@@ -10741,6 +10743,10 @@
 	  value: true
 	});
 	
+	var _typeof2 = __webpack_require__(175);
+	
+	var _typeof3 = _interopRequireDefault(_typeof2);
+	
 	var _Icon = __webpack_require__(134);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
@@ -10768,9 +10774,41 @@
 	    };
 	  },
 	
+	  watch: {
+	    show: function show(val) {
+	      var _this = this;
+	
+	      if (val) {
+	        var _ret = function () {
+	          var me = _this;
+	          if (!me.$parent.openOne) {
+	            return {
+	              v: void 0
+	            };
+	          }
+	          var sibling = me.$parent.$children;
+	          sibling.forEach(function (item) {
+	            if (me !== item) {
+	              item.show = false;
+	            }
+	          });
+	        }();
+	
+	        if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
+	      }
+	    }
+	  },
 	  methods: {
 	    triggerSub: function triggerSub() {
-	      this.show = !this.show;
+	      var me = this;
+	      me.show = !me.show;
+	    }
+	  },
+	  events: {
+	    // 当子menu选中时，自动打开父菜单
+	
+	    open: function open() {
+	      this.show = true;
 	    }
 	  }
 	};
@@ -10865,6 +10903,9 @@
 	
 	    searchItem: function searchItem(key) {
 	      this.selected = this.key === key;
+	      if (this.selected) {
+	        this.$dispatch('open', this, this.key);
+	      }
 	    }
 	  }
 	};
