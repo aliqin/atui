@@ -1,5 +1,8 @@
-// form组件样式
+// Form
+// --------------------------------------------------
 // created by ruohuan
+@prefix-cls-form: e("@{prefix-cls}-form");
+
 input[type="checkbox"],
 input[type="radio"] {
   appearance: none;
@@ -48,6 +51,7 @@ input[type="checkbox"] {
     }
   }
 }
+
 // ie11以下不支持appearance,故要还原成默认样式
 .let-ie11 input[type="checkbox"], .let-ie11 input[type="radio"] {
   width: auto;
@@ -97,44 +101,44 @@ input[type="radio"] {
   }
 }
 
-.form {
+.@{prefix-cls-form} {
   font-size: 12px;
 
-  .form-item {
+  .@{prefix-cls-form}-item {
     .clearfix();
     margin-bottom: 20px;
     color: #666;
 
-    &.form-item-with-help {
+    &.@{prefix-cls-form}-with-help {
       margin-bottom: 0;
     }
   }
 
-  .status-icon {
+  .@{prefix-cls-form}-status-icon {
     position: absolute;
     top: 50%;
     right: 8px;
     transform: translateY(-50%);
   }
 
-  .has-success {
-    .status-icon, .status-info {
+  .@{prefix-cls-form}-has-success {
+    .@{prefix-cls-form}-status-icon, .@{prefix-cls-form}-status-info {
       color: #1dbf38;
     }
   }
 
-  .has-error {
-    .status-icon, .status-info {
+  .@{prefix-cls-form}-has-error {
+    .@{prefix-cls-form}-status-icon, .@{prefix-cls-form}-status-info {
       color: #ff5959;
     }
   }
 
-  .required-icon {
+  .@{prefix-cls-form}-required-icon {
     padding: 0 5px;
     color: #ff7500;
   }
 
-  .form-label {
+  .@{prefix-cls-form}-label {
     display: block;
     width: 100%;
     padding: 7px 0;
@@ -143,7 +147,7 @@ input[type="radio"] {
     vertical-align: middle;
   }
 
-  .form-input {
+  .@{prefix-cls-form}-input {
     position: relative;
     padding-right: 30px;
     & > label {
@@ -152,7 +156,15 @@ input[type="radio"] {
     }
   }
 
-  .status-info {
+  .@{prefix-cls-form}-status-info {
     line-height: 20px;
   }
+}
+
+.@{prefix-cls-form}-horizontal {
+  //todo
+}
+
+.@{prefix-cls-form}-vertical {
+  //todo
 }

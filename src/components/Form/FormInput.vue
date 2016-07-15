@@ -3,8 +3,8 @@
   <input v-else :type="type"
   :value="defaultValue"
   :placeholder="placeholder"
-  :class="[defaultClass,validStatus]" />
-  <div v-if="validStatus" class="status-info {{validStatus}}">{{ tip }}</div>
+  :class="formInputClassObj" />
+  <div v-if="validStatus" :class="[prefixCls + '-form-status-info', validStatus]">{{ tip }}</div>
 </template>
 <style lang="less">
 .status-info {
@@ -35,15 +35,15 @@
       }
     },
     computed: {
-      defaultClass () {
-        let type = this.type
-        if (type === 'textarea') {
-          return 'textarea'
-        } else if (type === 'radio' || type === 'checkbox') {
-          return ''
-        } else if (type !== 'select') {
-          return 'input'
-        }
+      formInputClassObj () {
+        let { type, validStatus } = this
+        let classObj = {}
+
+        classObj[validStatus] = true
+        classObj['textarea'] = type === 'textarea'
+        classObj['form-input'] = type !== 'select'
+
+        return classObj
       }
     }
   }
