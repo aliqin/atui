@@ -1,12 +1,13 @@
 <template>
-<div class="range-picker">
+<div :class="[prefixCls + '-datepicker-rangepicker']">
   <date-picker v-ref:start-date :value.sync="startDate" :disabled="disabled" :format="format" placeholder="开始日期" @change="onStartDateChange"></date-picker>
-  <span class="range-picker-separator"> - </span>
+  <span :class="[prefixCls + '-datepicker-rangepicker-separator']"> - </span>
   <date-picker v-ref:end-date :value.sync="endDate" :disabled="disabled" :format="format" placeholder="结束日期" :disabled-date="disabledEndDate" @change="onEndDateChange"></date-picker>
 </div>
 </template>
 <script>
   import DatePicker from './DatePicker.vue'
+
   export default {
     props: {
       showTime: {
@@ -21,7 +22,11 @@
       format: {
         default: 'yyyy-MM-dd'
       },
-      disabled: Boolean
+      disabled: Boolean,
+      prefixCls: {
+        type: String,
+        default: 'atui'
+      }
     },
     components: {
       DatePicker
