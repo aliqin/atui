@@ -25,7 +25,7 @@ describe('Form组件单元测试', () => {
   }).$mount()
 
   it('基础功能渲染', () => {
-    expect(vm.$el.querySelectorAll('.form').length).to.be.equal(1)
-    expect(vm.$el.querySelectorAll('.form-item').length).to.be.equal(1)
+    expect(vm.$el.querySelectorAll('.atui-form').length).to.be.equal(1)
+    expect(vm.$el.querySelectorAll('.atui-form-item').length).to.be.equal(1)
   })
 })

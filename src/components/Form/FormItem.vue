@@ -1,29 +1,31 @@
 <template>
-<v-col :span="itemCol" :class="['form-item', classObj]">
+<v-col :span="itemCol" :class="formItemClassObj">
   <v-col :span="labelCol" type="sm">
-    <label v-if="label" class="form-label">
-      <span v-if="isRequired" class="required-icon">*</span>
+    <label v-if="label" :class="[prefixCls + '-form-label']">
+      <span v-if="isRequired" :class="[prefixCls + '-form-required-icon']">*</span>
       {{label}}
     </label>
   </v-col>
   <v-col :span="wrapperCol || calcWrapperCol" type="sm">
-    <div class="form-input">
+    <div :class="[prefixCls + '-form-input']">
       <slot></slot>
       <template v-if="showIcon">
-        <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
-        <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
-        <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
-        <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'warn'" type="waring"></icon>
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'error'" type="error"></icon>
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'success'" type="success"></icon>
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
       </template>
     </div>
-    <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
+    <div v-if="tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
   </v-col>
 </v-col>
 </template>
 <script>
   import Layout from '../Layout/'
   import Icon from '../Icon/'
+
   const vCol = Layout.Col
+
   export default {
     props: {
       label: String,
@@ -60,13 +62,16 @@
     },
 
     computed: {
-      classObj () {
-        let obj = {
-          'form-item-with-help': this.validStatus,
-          'has-error': this.validStatus === 'error',
-          'has-success': this.validStatus === 'success'
-        }
-        return obj
+      formItemClassObj () {
+        let { prefixCls, validStatus } = this
+        let classObj = {}
+
+        classObj[prefixCls + '-form-item'] = true
+        classObj[prefixCls + '-form-with-help'] = validStatus
+        classObj[prefixCls + '-form-has-error'] = validStatus === 'error'
+        classObj[prefixCls + '-form-has-success'] = validStatus === 'success'
+
+        return classObj
       },
       isRequired () {
         return !!this.required
