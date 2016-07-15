@@ -1,40 +1,39 @@
 <template>
-  <div class="atui-calendar" v-show="show">
-    <div class="atui-calendar-popup" v-show="displayDayView">
-      <div class="atui-calendar-inner">
-        <div class="atui-calendar-header">
+  <div :class="[prefixCls + '-calendar']" v-show="show">
+    <div :class="[prefixCls + '-calendar-popup']" v-show="displayDayView">
+      <div :class="[prefixCls + '-calendar-inner']">
+        <div :class="[prefixCls + '-calendar-header']">
           <!-- <span class="atui-calendar-prev-year-btn">»</span> -->
-          <span class="month-btn atui-calendar-preBtn" @click="preNextMonthClick(0)">‹</span>
-          <span class="month-btn atui-calendar-nextBtn" @click="preNextMonthClick(1)">›</span>
+          <span :class="[prefixCls + '-calendar-month-btn', prefixCls + '-calendar-preBtn']" @click="preNextMonthClick(0)">‹</span>
+          <span :class="[prefixCls + '-calendar-month-btn', prefixCls + '-calendar-nextBtn']" @click="preNextMonthClick(1)">›</span>
           <!-- <span class="atui-calendar-next-year-btn">»</span> -->
           <p @click="switchMonthView">{{stringifyDayHeader(currDate)}}</p>
         </div>
-        <div class="atui-calendar-body">
-          <div class="atui-calendar-weekRange">
+        <div :class="[prefixCls + '-calendar-body']">
+          <div :class="[prefixCls + '-calendar-weekRange']">
             <span v-for="w in weekRange">{{w}}</span>
           </div>
-          <div class="atui-calendar-dateRange">
+          <div :class="[prefixCls + '-calendar-dateRange']">
             <span v-for="d in dateRange" :class="d.sclass" @click="daySelect(d.date,$event)">{{d.text}}</span>
           </div>
         </div>
-        <div class="atui-calendar-footer">
-          <a class="atui-calendar-today-btn" role="button" @click="daySelect(new Date(),$event)" :title="stringifyDayHeader(currDate)">今天</a>
+        <div :class="[prefixCls + '-calendar-footer']">
+          <a :class="[prefixCls + '-calendar-today-btn']" role="button" @click="daySelect(new Date(),$event)" :title="stringifyDayHeader(currDate)">今天</a>
         </div>
       </div>
     </div>
-    <div class="atui-calendar-popup" v-show="displayMonthView">
-      <div class="atui-calendar-inner">
-        <div class="atui-calendar-header">
-          <span class="month-btn atui-calendar-preBtn" @click="preNextYearClick(0)">&lt;</span>
-          <span class="month-btn atui-calendar-nextBtn" @click="preNextYearClick(1)">&gt;</span>
+    <div :class="[prefixCls + '-calendar-popup']" v-show="displayMonthView">
+      <div :class="[prefixCls + '-calendar-inner']">
+        <div :class="[prefixCls + '-calendar-header']">
+          <span :class="['month-btn', prefixCls + '-calendar-preBtn']" @click="preNextYearClick(0)">&lt;</span>
+          <span :class="['month-btn', prefixCls + '-calendar-nextBtn']" @click="preNextYearClick(1)">&gt;</span>
           <p @click="switchDecadeView">{{stringifyYearHeader(currDate)}}</p>
         </div>
-        <div class="atui-calendar-body">
-          <div class="atui-calendar-monthRange">
+        <div :class="[prefixCls + '-calendar-body']">
+          <div :class="[prefixCls + '-calendar-monthRange']">
             <template v-for="m in monthNames">
-              <span :class="{'atui-calendar-dateRange-item-active':
-                  (monthNames[parse(value).getMonth()]  === m) &&
-                  currDate.getFullYear() === parse(value).getFullYear()}"
+              <span :class="[(monthNames[parse(value).getMonth()]  === m) &&
+                  currDate.getFullYear() === parse(value).getFullYear() && prefixCls + '-calendar-dateRange-item-active']"
                   @click="monthSelect($index)"
                 >{{m.substr(0,3)}}</span>
             </template>
@@ -42,18 +41,17 @@
         </div>
       </div>
     </div>
-    <div class="atui-calendar-popup" v-show="displayYearView">
-      <div class="atui-calendar-inner">
-        <div class="atui-calendar-header">
-          <span class="month-btn atui-calendar-preBtn" @click="preNextDecadeClick(0)">&lt;</span>
-          <span class="month-btn atui-calendar-nextBtn" @click="preNextDecadeClick(1)">&gt;</span>
+    <div :class="[prefixCls + '-calendar-popup']" v-show="displayYearView">
+      <div :class="[prefixCls + '-calendar-inner']">
+        <div :class="[prefixCls + '-calendar-header']">
+          <span :class="['month-btn', prefixCls + '-calendar-preBtn']" @click="preNextDecadeClick(0)">&lt;</span>
+          <span :class="['month-btn', prefixCls + '-calendar-nextBtn']" @click="preNextDecadeClick(1)">&gt;</span>
           <p>{{stringifyDecadeHeader(currDate)}}</p>
         </div>
-        <div class="atui-calendar-body">
-          <div class="atui-calendar-monthRange decadeRange">
+        <div :class="[prefixCls + '-calendar-body']">
+          <div :class="[prefixCls + '-calendar-monthRange decadeRange']">
             <template v-for="decade in decadeRange">
-              <span :class="{'atui-calendar-dateRange-item-active':
-                  parse(value).getFullYear() === decade.text}"
+              <span :class="[parse(value).getFullYear() === decade.text && prefixCls + '-calendar-dateRange-item-active']"
                   @click.stop="yearSelect(decade.text)"
                 >{{decade.text}}</span>
             </template>
@@ -64,7 +62,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
 const localeConfig = {
   zh_CN: {
     weekRange: ['日', '一', '二', '三', '四', '五', '六'],
@@ -85,6 +83,7 @@ const localeConfig = {
     ]
   }
 }
+
 export default {
   props: {
     value: {
@@ -116,6 +115,10 @@ export default {
     mode: {
       type: String,
       default: 'month'
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   data () {
@@ -183,7 +186,9 @@ export default {
     },
     daySelect (date, event) {
       let el = event.target
-      if (el.className.split(' ').indexOf('atui-calendar-item-disable') >= 0) {
+      let prefixCls = this.prefixCls
+
+      if (el.className.split(' ').indexOf(prefixCls + '-calendar-item-disable') >= 0) {
         return false
       } else {
         this.currDate = date

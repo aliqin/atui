@@ -1,24 +1,28 @@
-.atui-calendar {
+// Calendar
+// --------------------------------------------------
+@prefix-cls-calendar: e("@{prefix-cls}-calendar");
+
+.@{prefix-cls-calendar} {
   position: relative;
   display: inline-block;
   font-size: 12px;
 }
-.atui-calendar-input.with-reset-button {
+.@{prefix-cls-calendar}-input.with-reset-button {
   padding-right: 25px;
 }
-.atui-calendar > button.close {
+.@{prefix-cls-calendar} > button.close {
   position: absolute;
   top: calc(37%);
   right: 10px;
 }
-.atui-calendar > button.close {
+.@{prefix-cls-calendar} > button.close {
   outline: none;
   z-index: 2;
 }
-.atui-calendar > button.close:focus {
+.@{prefix-cls-calendar} > button.close:focus {
   opacity: .2;
 }
-.atui-calendar-popup {
+.@{prefix-cls-calendar}-popup {
   // position: absolute;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -27,77 +31,77 @@
   z-index: 1000;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
-.atui-calendar-inner {
+.@{prefix-cls-calendar}-inner {
   width: 218px;
 }
-.atui-calendar-body {
+.@{prefix-cls-calendar}-body {
   padding: 0 10px;
 }
-.atui-calendar-header p,
-.atui-calendar-header span,
-.atui-calendar-body span {
+.@{prefix-cls-calendar}-header p,
+.@{prefix-cls-calendar}-header span,
+.@{prefix-cls-calendar}-body span {
   display: inline-block;
   width: 28px;
   line-height: 28px;
   height: 28px;
   border-radius: 4px;
 }
-.atui-calendar-header p {
+.@{prefix-cls-calendar}-header p {
   width: 65%;
 }
-.atui-calendar-header span {
+.@{prefix-cls-calendar}-header span {
   position: absolute;
 }
-.atui-calendar-body span {
+.@{prefix-cls-calendar}-body span {
   text-align: center;
 }
-.atui-calendar-monthRange span {
+.@{prefix-cls-calendar}-monthRange span {
   width: 48px;
   height: 50px;
   line-height: 45px;
 }
-.atui-calendar-item-disable {
+.@{prefix-cls-calendar}-item-disable {
   background-color: white!important;
   cursor: not-allowed !important;
 }
 .decadeRange span:first-child,
 .decadeRange span:last-child,
-.atui-calendar-item-disable,
-.atui-calendar-item-gray {
+.@{prefix-cls-calendar}-item-disable,
+.@{prefix-cls-calendar}-item-gray {
   color: #999;
 }
-.atui-calendar-dateRange-item-active:hover,
-.atui-calendar-dateRange-item-active {
+.@{prefix-cls-calendar}-dateRange-item-active:hover,
+.@{prefix-cls-calendar}-dateRange-item-active {
   background: @primary-color !important;
   color: white!important;
 }
-.atui-calendar-monthRange {
+.@{prefix-cls-calendar}-monthRange {
   margin-top: 10px;
 }
-.atui-calendar-monthRange span,
-.atui-calendar-header span,
-.atui-calendar-header p,
-.atui-calendar-dateRange span {
+.@{prefix-cls-calendar}-monthRange span,
+.@{prefix-cls-calendar}-header span,
+.@{prefix-cls-calendar}-header p,
+.@{prefix-cls-calendar}-dateRange span {
   cursor: pointer;
   margin: 0;
 }
-.atui-calendar-monthRange span:hover,
-.atui-calendar-header p:hover,
-.atui-calendar-header i:hover,
-.atui-calendar-dateRange span:hover,
-.atui-calendar-dateRange-item-hover {
+.@{prefix-cls-calendar}-monthRange span:hover,
+.@{prefix-cls-calendar}-header p:hover,
+.@{prefix-cls-calendar}-header i:hover,
+.@{prefix-cls-calendar}-dateRange span:hover,
+.@{prefix-cls-calendar}-dateRange-item-hover {
   background-color: tint(@primary-color, 95%);
 }
-.atui-calendar-weekRange span {
+.@{prefix-cls-calendar}-weekRange span {
   font-weight: bold;
 }
-.atui-calendar-label {
+.@{prefix-cls-calendar}-label {
   background-color: #f8f8f8;
   font-weight: 700;
   padding: 7px 0;
   text-align: center;
 }
-.atui-calendar-header {
+.@{prefix-cls-calendar}-header {
   position: relative;
   height: 34px;
   line-height: 34px;
@@ -105,7 +109,7 @@
   text-align: center;
   border-bottom: 1px solid #d9d9d9;
 }
-.atui-calendar-footer {
+.@{prefix-cls-calendar}-footer {
   border-top: 1px solid #d9d9d9;
   text-align: center;
   height: 34px;
@@ -115,7 +119,7 @@
     text-decoration: none;
   }
 }
-.month-btn {
+.@{prefix-cls-calendar}-month-btn {
   font-weight: bold;
   user-select: none;
   font-size: 16px;
@@ -123,9 +127,9 @@
     color: @primary-color;
   }
 }
-.atui-calendar-preBtn {
+.@{prefix-cls-calendar}-preBtn {
   left: 2px;
 }
-.atui-calendar-nextBtn {
+.@{prefix-cls-calendar}-nextBtn {
   right: 2px;
 }
