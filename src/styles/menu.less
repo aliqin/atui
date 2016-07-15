@@ -1,9 +1,8 @@
-// Switch
-// --------------------------------------------------
-@prefix-cls-menu: e("@{prefix-cls}-menu");
+
+@menu-prefix-cls: atui-menu;
 
 // default theme
-.@{prefix-cls-menu} {
+.@{menu-prefix-cls} {
   outline: none;
   margin-bottom: 0;
   padding-left: 0; // Override default ul/ol
@@ -88,7 +87,7 @@
   &-inline,
   &-vertical {
     border-right: 1px solid #e9e9e9;
-    .@{prefix-cls-menu}-item {
+    .@{menu-prefix-cls}-item {
       border-right: 1px solid #e9e9e9;
       margin-left: -1px;
       left: 1px;
@@ -99,16 +98,16 @@
 
   &-vertical &-sub {
     border-right: 0;
-    .@{prefix-cls-menu}-item {
+    .@{menu-prefix-cls}-item {
       border-right: 0;
     }
   }
 
   &-inline {
-    .@{prefix-cls-menu}-selected,
-    .@{prefix-cls-menu}-item-selected {
+    .@{menu-prefix-cls}-selected,
+    .@{menu-prefix-cls}-item-selected {
       color: @primary-color;
-      border-right: 2px solid @primary-color;
+      border-right: 3px solid @primary-color;
       transform: translateZ(0);
     }
   }
@@ -144,8 +143,8 @@
     white-space: nowrap;
 
     // Disabled state sets text to gray and nukes hover/tab effects
-    &.@{prefix-cls-menu}-item-disabled,
-    &.@{prefix-cls-menu}-submenu-disabled {
+    &.@{menu-prefix-cls}-item-disabled,
+    &.@{menu-prefix-cls}-submenu-disabled {
       color: #999 !important;
       cursor: not-allowed;
       > a {
@@ -172,12 +171,12 @@
   &-submenu {
     position: relative;
     list-style: none;
-    > .@{prefix-cls-menu} {
+    > .@{menu-prefix-cls} {
       background-color: #fff;
       border-radius: 4px;
     }
 
-    &-vertical  .@{prefix-cls-menu}-icon {
+    &-vertical  .@{menu-prefix-cls}-icon {
       vertical-align: baseline;
       text-align: center;
       text-transform: none;
@@ -185,24 +184,24 @@
       position: absolute;
       transition: transform .3s ease;
       right: 16px;
-      transform: rotate(180deg) scale(0.75);
+      transform: scale(0.75);
     }
 
-    &-inline  .@{prefix-cls-menu}-icon {
+    &-inline  .@{menu-prefix-cls}-icon {
       vertical-align: baseline;
       text-align: center;
       text-transform: none;
       text-rendering: auto;
       position: absolute;
       transition: transform .3s ease;
-      transform: rotate(180deg) scale(0.75);
+      transform: scale(0.75);
       right: 16px;
       top: 0;
     }
 
     &-open {
-      &.@{prefix-cls-menu}-submenu-inline .@{prefix-cls-menu}-icon {
-        transform: rotate(0deg) scale(0.75);
+      &.@{menu-prefix-cls}-submenu-inline .@{menu-prefix-cls}-icon {
+        transform: rotate(180deg) scale(0.75);
       }
     }
   }
@@ -213,8 +212,8 @@
     box-shadow: none;
     z-index: 0;
 
-    > .@{prefix-cls-menu}-item,
-    > .@{prefix-cls-menu}-submenu {
+    > .@{menu-prefix-cls}-item,
+    > .@{menu-prefix-cls}-submenu {
       position: relative;
       top: 1px;
       float: left;
@@ -249,8 +248,8 @@
   &-vertical,
   &-inline,
   &-item-group-list {
-    & > .@{prefix-cls-menu}-item,
-    & > .@{prefix-cls-menu}-submenu > .@{prefix-cls-menu}-submenu-title {
+    & > .@{menu-prefix-cls}-item,
+    & > .@{menu-prefix-cls}-submenu > .@{menu-prefix-cls}-submenu-title {
       padding: 0px 16px 0 28px;
       font-size: 12px;
       line-height: 42px;
@@ -261,8 +260,8 @@
   &-vertical&-sub {
     padding: 0;
     transform-origin: 0 0;
-    & > .@{prefix-cls-menu}-item,
-    & > .@{prefix-cls-menu}-submenu {
+    & > .@{menu-prefix-cls}-item,
+    & > .@{menu-prefix-cls}-submenu {
       transform-origin: 0 0;
     }
   }
@@ -277,15 +276,15 @@
     border: 0;
     box-shadow: none;
     border-radius: 0;
-    & > .@{prefix-cls-menu}-item,
-    & > .@{prefix-cls-menu}-submenu > .@{prefix-cls-menu}-submenu-title {
+    & > .@{menu-prefix-cls}-item,
+    & > .@{menu-prefix-cls}-submenu > .@{menu-prefix-cls}-submenu-title {
       line-height: 42px;
       height: 42px;
       list-style-type: disc;
       list-style-position: inside;
     }
 
-    & .@{prefix-cls-menu}-item-group-title {
+    & .@{menu-prefix-cls}-item-group-title {
       padding-left: 32px;
     }
   }
@@ -293,7 +292,7 @@
 
 
 // dark theme
-.@{prefix-cls-menu} {
+.@{menu-prefix-cls} {
   &-dark,
   &-dark &-sub {
     color: #999;

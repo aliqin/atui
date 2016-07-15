@@ -138,3 +138,11 @@
     transform: scale(0);
   }
 }
+
+.collapse-transition {
+  transition: max-height .5s ease;
+  overflow: hidden;
+}
+.collapse-enter, .collapse-leave {
+  max-height: 0!important;
+}
