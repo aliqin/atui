@@ -129,8 +129,6 @@
             this.value.pop()
             setTimeout(() => { this.showNotify = false }, 1000)
           }
-        } else {
-          this.$broadcast('valueChange', val)
         }
       },
       selectedOptions (options) {

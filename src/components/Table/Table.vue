@@ -289,19 +289,16 @@ export default {
         current * pager.pageSize
       )
       this.pagination.onShowSizeChange && this.pagination.onShowSizeChange(current, pageSize)
-    },
-    fixedHeaderAction () {
-      if (this.fixedHeader) {
-        let header = this.$el.querySelector('.table-thead')
-        let colgroup = this.$el.querySelector('colgroup').cloneNode(true)
-        let fixedTable = this.$el.querySelector('.atui-table-fixed-header')
-        fixedTable.appendChild(colgroup)
-        fixedTable.appendChild(header)
-      }
     }
-  },
-  attached () {
-    // this.fixedHeaderAction()
+    // fixedHeaderAction () {
+    //   if (this.fixedHeader) {
+    //     let header = this.$el.querySelector('.table-thead')
+    //     let colgroup = this.$el.querySelector('colgroup').cloneNode(true)
+    //     let fixedTable = this.$el.querySelector('.atui-table-fixed-header')
+    //     fixedTable.appendChild(colgroup)
+    //     fixedTable.appendChild(header)
+    //   }
+    // }
   }
 }
 </script>
