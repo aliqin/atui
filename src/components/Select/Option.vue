@@ -75,19 +75,6 @@
         }
         this.$dispatch('option-change', option)
       }
-    },
-    events: {
-      valueChange (val) {
-        if (val === this.value && !this.disabled) {
-          const option = {
-            label: this.$el.innerText,
-            value: this.value,
-            disabled: this.disabled
-          }
-          this.$parent.selectedOptions = [option]
-          this.chosen = true
-        }
-      }
     }
   }
 </script>
