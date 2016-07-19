@@ -129,6 +129,8 @@
             this.value.pop()
             setTimeout(() => { this.showNotify = false }, 1000)
           }
+        } else {
+          this.$broadcast('valueChange', val)
         }
       },
       selectedOptions (options) {
@@ -232,7 +234,7 @@
             this.value.$remove(option.value)
           }
         } else {
-          this.selectedOptions = [option]
+          // this.selectedOptions = [option]
           this.value = option.value
         }
 
