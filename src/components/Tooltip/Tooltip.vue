@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-el="http://www.w3.org/1999/xhtml">
   <div :class="[prefixCls + '-tooltip-trigger']" v-el:trigger>
     <slot>
     </slot>
