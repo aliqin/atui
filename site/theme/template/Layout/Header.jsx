@@ -163,21 +163,21 @@ export default class Header extends React.Component {
                   <FormattedMessage id="app.header.menu.practice" />
                 </Link>
               </Menu.Item>
-              <Menu.Item key="docs/pattern">
+              {/*<Menu.Item key="docs/pattern">
                 <Link to="/docs/pattern/navigation">
                   <FormattedMessage id="app.header.menu.pattern" />
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item key="docs/react">
                 <Link to="/docs/react/introduce">
                   <FormattedMessage id="app.header.menu.react" />
                 </Link>
               </Menu.Item>
-              <Menu.Item key="docs/spec">
+              {/*<Menu.Item key="docs/spec">
                 <Link to="/docs/spec/introduce">
                   <FormattedMessage id="app.header.menu.spec" />
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item key="docs/resource">
                 <Link to="/docs/resource/download">
                   <FormattedMessage id="app.header.menu.resource" />

@@ -48,8 +48,8 @@ var columns = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
-  sorter: (a, b) => a.age - b.age,
-  render(text, record, index) {
+  sorter: function(a, b) { return a.age - b.age },
+  render: function(text, record, index) {
     return '<input v-model="gridData['+ index +'].age"/>'
   },
   width:250
@@ -69,7 +69,7 @@ var columns = [{
 },{
     title: '操作',
     key: 'operation',
-    render(text, record) {
+    render: function(text, record) {
       if(record) {
         return '<icon type="info"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
       }
