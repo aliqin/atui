@@ -31,3 +31,5 @@ english: Breadcrumb
 | separator | 分隔符自定义                      | String or Element |         | '/'    |
 | linkRender | 自定义链接函数，和 react-router 配置使用 | Function(href, name, paths) | | - |
 | nameRender | 自定义文字函数，和 react-router 配置使用 | Function(breadcrumbName, route, params) | | - |
+
+
