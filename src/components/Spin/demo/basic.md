@@ -24,51 +24,28 @@ Primary button and default button can be used without other button, but ghost bu
 
 
 ````jsx
-<cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
+<h4>小的加载</h4>
+<spin show size="small"></spin>
+<h4>普通加载</h4>
+<spin show></spin>
+<h4>大的加载</h4>
+<spin show size="large"></spin>
+<h4>隐藏的大的加载(默认不加show就不显示)</h4>
+<spin size="large"></spin>
+<h4>包裹要loading的元素</h4>
+<spin sping>
+  <div>
+    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+  </div>
+</spin>
 ````
 
 ````vue-script
-var options = [{
-    value: 'zhejiang',
-    label: '浙江',
-    children: [{
-      value: 'hangzhou',
-      label: '杭州',
-      children: [{
-        value: 'xihu',
-        label: '西湖',
-      }],
-    }],
-  }, {
-    value: 'jiangsu',
-    label: '江苏',
-    children: [{
-      value: 'nanjing',
-      label: '南京',
-      children: [{
-        value: 'zhonghuamen',
-        label: '中华门',
-      }],
-    }],
-  }];
-
-var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
-
 new Vue({
     el: 'body',
     components: {
-        cascader: atui.Cascader
-    },
-    data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+        spin: atui.Spin
     }
-  },
-  methods: {
-    selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
-  }
 })
 ````

@@ -24,51 +24,31 @@ Primary button and default button can be used without other button, but ghost bu
 
 
 ````jsx
-<cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
+basic
+<slider :value="30"></slider>
+<slider :value="[20,50]"></slider>
+<slider :value="[20,50]" disabled></slider>
+带有输入框的滑块
+<v-row>
+  <v-col span="14">
+    <slider :value.sync="sliderValue"></slider>
+  </v-col>
+  <v-col span="10">
+    <v-input type="text" :value.sync="sliderValue"></v-input>
+  </v-col>
+</v-row>
+有取值区间的滑块
+<slider :value="1" :min="1" :max="21"></slider>
 ````
 
 ````vue-script
-var options = [{
-    value: 'zhejiang',
-    label: '浙江',
-    children: [{
-      value: 'hangzhou',
-      label: '杭州',
-      children: [{
-        value: 'xihu',
-        label: '西湖',
-      }],
-    }],
-  }, {
-    value: 'jiangsu',
-    label: '江苏',
-    children: [{
-      value: 'nanjing',
-      label: '南京',
-      children: [{
-        value: 'zhonghuamen',
-        label: '中华门',
-      }],
-    }],
-  }];
-
-var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
-
 new Vue({
     el: 'body',
     components: {
-        cascader: atui.Cascader
-    },
-    data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+        slider: atui.Slider,
+        vRow: atui.Layout.Row,
+        vCol: atui.Layout.Col,
+        vInput: atui.Input
     }
-  },
-  methods: {
-    selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
-  }
 })
 ````

@@ -70,7 +70,27 @@
     "vue-router": "~0.7.13",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0"
+    "webpack-dev-server": "^1.12.0",
+
+
+    "antd": "^1.6.3",
+    "antd-tools": "^0.10.0",
+    "bisheng": "^0.7.1",
+    "bisheng-plugin-atui": "0.1.1",
+    "bisheng-plugin-description": "^0.1.1",
+    "bisheng-plugin-toc": "0.2.0",
+    "classnames": "~2.2.0",
+    "dora-plugin-upload": "^0.3.1",
+    "enquire.js": "^2.1.1",
+    "react-document-title": "^2.0.1",
+    "rc-scroll-anim": "^0.3.0",
+    "react-github-button": "^0.1.1",
+    "react-copy-to-clipboard": "^4.0.1",
+    "rc-queue-anim": "~0.11.12",
+    "rc-tween-one": "~0.6.20",
+    "intl": "^1.2.4",
+    "intl-locales-supported": "^1.0.0",
+    "react-intl": "^2.0.1"
   },
   "scripts": {
     "docs": "webpack-dev-server --inline --host 0.0.0.0",
@@ -83,7 +103,9 @@
     "publish-npm": "npm run authors && tnpm publish",
     "build": "npm run lint && NODE_ENV=production webpack --progress && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
     "test": "npm run lint && citest run",
-    "authors": "git log --format='%aN <%aE>' | sort -u  > AUTHORS.txt"
+    "authors": "git log --format='%aN <%aE>' | sort -u  > AUTHORS.txt",
+    "start": "bisheng start -c ./site/bisheng.config.js",
+    "site": "bisheng build -c ./site/bisheng.config.js"
   },
   "publishConfig": {
     "registry": "http://registry.npm.alibaba-inc.com"

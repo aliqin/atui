@@ -24,51 +24,19 @@ Primary button and default button can be used without other button, but ghost bu
 
 
 ````jsx
-<cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
+<v-textarea disabled :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
+<v-textarea placeholder="请输入描述信息" :words-count="true" count-tips="您输入的字数是："></v-textarea>
+<v-textarea placeholder="高度无限增大" autosize></v-textarea>
+<v-textarea placeholder="有最大高度" autosize max-rows="10"></v-textarea>
+<v-textarea placeholder="有最小高度" autosize min-rows="5"></v-textarea>
+<v-textarea placeholder="有最大和最小高度" autosize min-rows="5" max-rows="10"></v-textarea>
 ````
 
 ````vue-script
-var options = [{
-    value: 'zhejiang',
-    label: '浙江',
-    children: [{
-      value: 'hangzhou',
-      label: '杭州',
-      children: [{
-        value: 'xihu',
-        label: '西湖',
-      }],
-    }],
-  }, {
-    value: 'jiangsu',
-    label: '江苏',
-    children: [{
-      value: 'nanjing',
-      label: '南京',
-      children: [{
-        value: 'zhonghuamen',
-        label: '中华门',
-      }],
-    }],
-  }];
-
-var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
-
 new Vue({
     el: 'body',
     components: {
-        cascader: atui.Cascader
-    },
-    data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+        vTextarea: atui.Textarea
     }
-  },
-  methods: {
-    selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
-  }
 })
 ````

@@ -24,51 +24,19 @@ Primary button and default button can be used without other button, but ghost bu
 
 
 ````jsx
-<cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
+<searchbox placeholder="请输入关键词搜索" :value.sync="defaultVal" :search-list="searchList" text-field="name"></searchbox>
 ````
 
 ````vue-script
-var options = [{
-    value: 'zhejiang',
-    label: '浙江',
-    children: [{
-      value: 'hangzhou',
-      label: '杭州',
-      children: [{
-        value: 'xihu',
-        label: '西湖',
-      }],
-    }],
-  }, {
-    value: 'jiangsu',
-    label: '江苏',
-    children: [{
-      value: 'nanjing',
-      label: '南京',
-      children: [{
-        value: 'zhonghuamen',
-        label: '中华门',
-      }],
-    }],
-  }];
-
-var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
-
 new Vue({
     el: 'body',
     components: {
-        cascader: atui.Cascader
+        searchbox: atui.Searchbox
     },
     data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+        return {
+            defaultVal: '大米'
+        }
     }
-  },
-  methods: {
-    selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
-  }
 })
 ````

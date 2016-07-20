@@ -24,51 +24,20 @@ Primary button and default button can be used without other button, but ghost bu
 
 
 ````jsx
-<cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
+<popover
+  effect="fade"
+  placement="bottom"
+  title="我是标题"
+  content="我是内容，我是内容，我是内容">
+  <button class="btn">Popover on bottom</button>
+</popover>
 ````
 
 ````vue-script
-var options = [{
-    value: 'zhejiang',
-    label: '浙江',
-    children: [{
-      value: 'hangzhou',
-      label: '杭州',
-      children: [{
-        value: 'xihu',
-        label: '西湖',
-      }],
-    }],
-  }, {
-    value: 'jiangsu',
-    label: '江苏',
-    children: [{
-      value: 'nanjing',
-      label: '南京',
-      children: [{
-        value: 'zhonghuamen',
-        label: '中华门',
-      }],
-    }],
-  }];
-
-var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
-
 new Vue({
     el: 'body',
     components: {
-        cascader: atui.Cascader
-    },
-    data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+        popover: atui.Popover
     }
-  },
-  methods: {
-    selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
-  }
 })
 ````

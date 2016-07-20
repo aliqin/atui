@@ -24,51 +24,42 @@ Primary button and default button can be used without other button, but ghost bu
 
 
 ````jsx
-<cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
+<v-menu>
+  <sub-menu title="导航一">
+    <menu-item-group title="分组1">
+      <menu-item><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
+      <menu-item>选项2</menu-item>
+    </menu-item-group>
+    <menu-item-group title="分组2">
+      <menu-item>选项3</menu-item>
+      <menu-item>选项4</menu-item>
+    </menu-item-group>
+  </sub-menu>
+  <sub-menu title="导航二">
+    <menu-item>选项5</menu-item>
+    <menu-item>选项6</menu-item>
+    <sub-menu title="三级导航">
+      <menu-item>选项7</menu-item>
+      <menu-item>选项8</menu-item>
+    </sub-menu>
+  </sub-menu>
+  <sub-menu title="导航三">
+    <menu-item>选项9</menu-item>
+    <menu-item>选项10</menu-item>
+    <menu-item>选项11</menu-item>
+    <menu-item>选项12</menu-item>
+  </sub-menu>
+</v-menu>
 ````
 
 ````vue-script
-var options = [{
-    value: 'zhejiang',
-    label: '浙江',
-    children: [{
-      value: 'hangzhou',
-      label: '杭州',
-      children: [{
-        value: 'xihu',
-        label: '西湖',
-      }],
-    }],
-  }, {
-    value: 'jiangsu',
-    label: '江苏',
-    children: [{
-      value: 'nanjing',
-      label: '南京',
-      children: [{
-        value: 'zhonghuamen',
-        label: '中华门',
-      }],
-    }],
-  }];
-
-var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
-
 new Vue({
     el: 'body',
     components: {
-        cascader: atui.Cascader
-    },
-    data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+        vMenu: atui.Menu,
+        menuItem: atui.Menu.MenuItem,
+        menuItemGroup: atui.Menu.MenuItemGroup,
+        subMenu: atui.Menu.SubMenu
     }
-  },
-  methods: {
-    selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
-  }
 })
 ````

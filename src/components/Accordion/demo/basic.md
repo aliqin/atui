@@ -24,51 +24,34 @@ Primary button and default button can be used without other button, but ghost bu
 
 
 ````jsx
-<cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
+<input type="checkbox" v-model="checked">
+<label for="checked">Open only one at a time.</label>
+<accordion :one-at-atime="checked">
+  <panel :is-open="true">
+    <div slot="panel-header" class="custom-class">Panel #1</div>
+    内容一
+  </panel>
+  <panel>
+    <div slot="panel-header" class="custom-class">Panel #2</div>
+    内容二
+  </panel>
+  <panel>
+    <div slot="panel-header" class="custom-class">Panel #3</div>
+    内容三
+  </panel>
+  <panel>
+    <div slot="panel-header" class="custom-class">Panel #4</div>
+    内容四
+  </panel>
+</accordion>
 ````
 
 ````vue-script
-var options = [{
-    value: 'zhejiang',
-    label: '浙江',
-    children: [{
-      value: 'hangzhou',
-      label: '杭州',
-      children: [{
-        value: 'xihu',
-        label: '西湖',
-      }],
-    }],
-  }, {
-    value: 'jiangsu',
-    label: '江苏',
-    children: [{
-      value: 'nanjing',
-      label: '南京',
-      children: [{
-        value: 'zhonghuamen',
-        label: '中华门',
-      }],
-    }],
-  }];
-
-var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
-
 new Vue({
     el: 'body',
     components: {
-        cascader: atui.Cascader
-    },
-    data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+        accordion: atui.Accordion,
+        panel: atui.Accordion.Panel
     }
-  },
-  methods: {
-    selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
-  }
 })
 ````

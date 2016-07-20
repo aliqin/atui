@@ -24,51 +24,35 @@ Primary button and default button can be used without other button, but ghost bu
 
 
 ````jsx
-<cascader :options="options" @change="selectChange" :default-value="defaultValue"></cascader>
+<v-switch small color="#000"></v-switch>
+<v-switch small checked @change="changeHandler"></v-switch>
+<v-switch small disabled></v-switch>
+<v-switch></v-switch>
+<v-switch checked @change="changeHandler"></v-switch>
+<v-switch disabled></v-switch>
+<v-switch>
+  <span slot="checkedPart">开</span>
+  <span slot="unCheckedPart">关</span>
+</v-switch>
+<v-switch :disabled="disabled" checked>
+  <span slot="checkedPart">开</span>
+  <span slot="unCheckedPart">关</span>
+</v-switch>
+<v-switch :disabled="disabled">
+  <span slot="checkedPart">开</span>
+  <span slot="unCheckedPart">关</span>
+</v-switch>
+<v-switch>
+  <span slot="checkedPart"><v-icon type="tick" size="16"></v-icon></span>
+  <span slot="unCheckedPart"><v-icon type="close" size="12"></v-icon></span>
+</v-switch>
 ````
 
 ````vue-script
-var options = [{
-    value: 'zhejiang',
-    label: '浙江',
-    children: [{
-      value: 'hangzhou',
-      label: '杭州',
-      children: [{
-        value: 'xihu',
-        label: '西湖',
-      }],
-    }],
-  }, {
-    value: 'jiangsu',
-    label: '江苏',
-    children: [{
-      value: 'nanjing',
-      label: '南京',
-      children: [{
-        value: 'zhonghuamen',
-        label: '中华门',
-      }],
-    }],
-  }];
-
-var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
-
 new Vue({
     el: 'body',
     components: {
-        cascader: atui.Cascader
-    },
-    data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+        vSwitch: atui.Switch
     }
-  },
-  methods: {
-    selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
-  }
 })
 ````
