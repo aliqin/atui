@@ -1,9 +1,9 @@
 ---
 order: 0
-english: Ant Design of React
+english: Atui
 ---
 
-这里是 Ant Design 的 React 实现，开发和服务于企业级后台产品。
+由阿里通信前端团队打造基于VUE的前端组件库
 
 <div class="pic-plus">
   <img width="150" src="https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg">
