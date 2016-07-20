@@ -1,0 +1,15 @@
+// Trigger
+// --------------------------------------------------
+@prefix-cls-trigger: e("@{prefix-cls}-trigger");
+@prefix-cls-popup: e("@{prefix-cls}-popup");
+
+.@{prefix-cls-trigger}, .@{prefix-cls-trigger}-cont {
+  display: inline-block;
+}
+
+.@{prefix-cls-popup} {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: @zindex-popup;
+}

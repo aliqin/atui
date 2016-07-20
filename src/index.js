@@ -27,6 +27,7 @@ import Spin from './components/Spin/'
 import Textarea from './components/Textarea/'
 import Tag from './components/Tag/'
 import Tooltip from './components/Tooltip/'
+import Trigger from './components/Trigger/'
 import Accordion from './components/Accordion/'
 // 导航类
 // import ffix from './components/affix.vue'
@@ -38,6 +39,7 @@ import Tree from './components/Tree/'
 import Menu from './components/Menu/'
 import Breadcrumb from './components/Breadcrumb/'
 import Pagination from './components/Pagination/'
+
 const VueComponent = {
   Layout,
   Icon,
@@ -64,6 +66,7 @@ const VueComponent = {
   Button,
   Tag,
   Tooltip,
+  Trigger,
   Accordion,
   Popover,
   Tabs,
@@ -75,6 +78,7 @@ const VueComponent = {
 }
 
 module.exports = VueComponent
+
 // ie10以及以下，对某些样式支持有问题，需要降级
 function getIEVersion () {
   var agent = navigator.userAgent
@@ -85,7 +89,9 @@ function getIEVersion () {
   }
   return { major: '-1', minor: '-1' }
 }
-var ieVersion = getIEVersion()
+
+let ieVersion = getIEVersion()
+
 document.addEventListener('DOMContentLoaded', function (event) {
   if (ieVersion.major === '9' || ieVersion.major === '10') {
     Vue.util.addClass(document.body, 'let-ie11')
