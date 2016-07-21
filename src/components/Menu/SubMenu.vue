@@ -60,6 +60,17 @@ export default {
     open () {
       this.show = true
     }
+  },
+  transitions: {
+    collapse: {
+      afterEnter (el) {
+        el.style.maxHeight = ''
+      },
+      beforeLeave (el) {
+        el.style.maxHeight = el.offsetHeight + 'px'
+        return el.offsetHeight
+      }
+    }
   }
 }
 </script>
