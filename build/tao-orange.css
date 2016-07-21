@@ -38,24 +38,6 @@
   h2, h3 {
     page-break-after: avoid;
   }
-  .navbar {
-    display: none;
-  }
-  .btn > .caret, .dropup > .btn > .caret {
-    border-top-color: #000 !important;
-  }
-  .label {
-    border: 1px solid #000;
-  }
-  .table {
-    border-collapse: collapse !important;
-  }
-  .table td, .table th {
-    background-color: #fff !important;
-  }
-  .table-bordered th, .table-bordered td {
-    border: 1px solid #ddd !important;
-  }
 }
 @font-face {
   font-family: atui-iconfont;
@@ -1839,8 +1821,8 @@ pre code {
   }
 }
 .collapse-transition {
-  -webkit-transition: max-height 0.5s ease;
-  transition: max-height 0.5s ease;
+  -webkit-transition: max-height 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: max-height 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
   overflow: hidden;
 }
 .collapse-enter, .collapse-leave {
@@ -1933,48 +1915,48 @@ input[type="radio"][disabled]:checked {
 input[type="radio"][disabled]:checked:after {
   background-color: #ccc;
 }
-.form {
+.atui-form {
   font-size: 12px;
 }
-.form .form-item {
+.atui-form .atui-form-item {
   margin-bottom: 20px;
   color: #666;
 }
-.form .form-item:before, .form .form-item:after {
+.atui-form .atui-form-item:before, .atui-form .atui-form-item:after {
   content: " ";
   display: table;
 }
-.form .form-item:after {
+.atui-form .atui-form-item:after {
   clear: both;
 }
-.form .form-item:before, .form .form-item:after {
+.atui-form .atui-form-item:before, .atui-form .atui-form-item:after {
   content: " ";
   display: table;
 }
-.form .form-item:after {
+.atui-form .atui-form-item:after {
   clear: both;
 }
-.form .form-item.form-item-with-help {
+.atui-form .atui-form-item.atui-form-with-help {
   margin-bottom: 0;
 }
-.form .status-icon {
+.atui-form .atui-form-status-icon {
   position: absolute;
   top: 50%;
   right: 8px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.form .has-success .status-icon, .form .has-success .status-info {
+.atui-form .atui-form-has-success .atui-form-status-icon, .atui-form .atui-form-has-success .atui-form-status-info {
   color: #1dbf38;
 }
-.form .has-error .status-icon, .form .has-error .status-info {
+.atui-form .atui-form-has-error .atui-form-status-icon, .atui-form .atui-form-has-error .atui-form-status-info {
   color: #ff5959;
 }
-.form .required-icon {
+.atui-form .atui-form-required-icon {
   padding: 0 5px;
   color: #ff7500;
 }
-.form .form-label {
+.atui-form .atui-form-label {
   display: block;
   width: 100%;
   padding: 7px 0;
@@ -1982,16 +1964,19 @@ input[type="radio"][disabled]:checked:after {
   text-align: right;
   vertical-align: middle;
 }
-.form .form-input {
+.atui-form .atui-form-input {
   position: relative;
   padding-right: 30px;
 }
-.form .form-input > label {
+.atui-form .atui-form-input > label {
   display: inline-block;
   padding: 7px 0;
 }
-.form .status-info {
+.atui-form .atui-form-status-info {
   line-height: 20px;
+}
+.atui-form-horizontal .atui-form-item {
+  display: inline-block;
 }
 .atui-upload {
   display: inline-block;
@@ -2289,8 +2274,6 @@ input[type="radio"][disabled]:checked:after {
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
-  padding-left: 20px;
-  padding-right: 20px;
   box-sizing: content-box;
 }
 .atui-tab-wrapper .atui-tab-arrow-next, .atui-tab-wrapper .atui-tab-arrow-prev {
@@ -2526,6 +2509,7 @@ input[type="radio"][disabled]:checked:after {
 }
 .atui-pagination .atui-pagination-jump .atui-pagination-jumper-wrap .atui-pagination-input-jumper {
   width: 38px;
+  text-align: center;
   border: 1px solid #d9d9d9;
   background: #fff;
   border-radius: 4px;
@@ -4550,12 +4534,12 @@ button.atui-close {
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease, -webkit-transform .3s ease;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-transform: rotate(90deg) scale(0.6);
+          transform: rotate(90deg) scale(0.6);
 }
 .atui-tree li span.atui-tree-switcher-open {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: rotate(180deg) scale(0.6);
+          transform: rotate(180deg) scale(0.6);
 }
 .atui-tree-child-tree {
   display: none;
@@ -4954,10 +4938,11 @@ button.atui-close {
   width: 100%;
 }
 .atui-time-picker-menus .atui-time-picker-panel > ul > li:hover {
-  background: #eaf8fe;
+  background: #fff8f2;
 }
 .atui-time-picker-menus .atui-time-picker-panel > ul > li.selected, .atui-time-picker-menus .atui-time-picker-panel > ul > li.selected:hover {
-  background: #d5f1fd;
+  color: #fff;
+  background: #ffac66;
 }
 .atui-time-picker-menus .atui-time-picker-panel > ul > li.disabled {
   cursor: not-allowed;
@@ -5541,11 +5526,10 @@ button.atui-close {
     width: 900px;
   }
 }
-.atui-tooltip-trigger {
+.atui-tooltip-cont {
   display: inline-block;
 }
 .atui-tooltip {
-  position: absolute;
   z-index: 1070;
   display: block;
   margin: 0;
@@ -5603,8 +5587,8 @@ button.atui-close {
 }
 .atui-tooltip.atui-tooltip-top-right .atui-tooltip-arrow {
   bottom: 0;
-  left: 75%;
-  margin-left: -5px;
+  right: 25%;
+  margin-right: -5px;
   border-width: 5px 5px 0;
   border-top-color: #000;
 }
@@ -5623,9 +5607,9 @@ button.atui-close {
   border-right-color: #000;
 }
 .atui-tooltip.atui-tooltip-right-bottom .atui-tooltip-arrow {
-  top: 75%;
+  bottom: 25%;
   left: 0;
-  margin-top: -5px;
+  margin-bottom: -5px;
   border-width: 5px 5px 5px 0;
   border-right-color: #000;
 }
@@ -5644,9 +5628,9 @@ button.atui-close {
   border-left-color: #000;
 }
 .atui-tooltip.atui-tooltip-left-bottom .atui-tooltip-arrow {
-  top: 75%;
+  bottom: 25%;
   right: 0;
-  margin-top: -5px;
+  margin-bottom: -5px;
   border-width: 5px 0 5px 5px;
   border-left-color: #000;
 }
@@ -5666,19 +5650,15 @@ button.atui-close {
 }
 .atui-tooltip.atui-tooltip-bottom-right .atui-tooltip-arrow {
   top: 0;
-  left: 75%;
-  margin-left: -5px;
+  right: 25%;
+  margin-right: -5px;
   border-width: 0 5px 5px;
   border-bottom-color: #000;
 }
-.atui-popover-trigger {
+.atui-popover-cont, .atui-popover-slot {
   display: inline-block;
 }
 .atui-popover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1060;
   max-width: 276px;
   padding: 1px;
   font-size: 14px;
@@ -5784,6 +5764,15 @@ button.atui-close {
   border-right-width: 0;
   border-left-color: #fff;
   bottom: -10px;
+}
+.atui-trigger, .atui-trigger-cont {
+  display: inline-block;
+}
+.atui-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
 }
 .carousel {
   position: relative;

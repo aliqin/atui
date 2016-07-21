@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(76);
+	module.exports = __webpack_require__(77);
 
 
 /***/ },
@@ -123,176 +123,181 @@
 /* 73 */,
 /* 74 */,
 /* 75 */,
-/* 76 */
+/* 76 */,
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _toConsumableArray2 = __webpack_require__(77);
+	var _toConsumableArray2 = __webpack_require__(78);
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _headerDocs = __webpack_require__(131);
+	var _headerDocs = __webpack_require__(132);
 	
 	var _headerDocs2 = _interopRequireDefault(_headerDocs);
 	
-	var _gettingStarted = __webpack_require__(359);
+	var _gettingStarted = __webpack_require__(362);
 	
 	var _gettingStarted2 = _interopRequireDefault(_gettingStarted);
 	
-	var _gridDocs = __webpack_require__(361);
+	var _gridDocs = __webpack_require__(364);
 	
 	var _gridDocs2 = _interopRequireDefault(_gridDocs);
 	
-	var _iconDocs = __webpack_require__(366);
+	var _iconDocs = __webpack_require__(369);
 	
 	var _iconDocs2 = _interopRequireDefault(_iconDocs);
 	
-	var _buttonDocs = __webpack_require__(371);
+	var _buttonDocs = __webpack_require__(374);
 	
 	var _buttonDocs2 = _interopRequireDefault(_buttonDocs);
 	
-	var _inputDocs = __webpack_require__(374);
+	var _inputDocs = __webpack_require__(377);
 	
 	var _inputDocs2 = _interopRequireDefault(_inputDocs);
 	
-	var _uploaderDocs = __webpack_require__(377);
+	var _uploaderDocs = __webpack_require__(380);
 	
 	var _uploaderDocs2 = _interopRequireDefault(_uploaderDocs);
 	
-	var _formDocs = __webpack_require__(380);
+	var _formDocs = __webpack_require__(383);
 	
 	var _formDocs2 = _interopRequireDefault(_formDocs);
 	
-	var _switchDocs = __webpack_require__(383);
+	var _switchDocs = __webpack_require__(386);
 	
 	var _switchDocs2 = _interopRequireDefault(_switchDocs);
 	
-	var _sliderDocs = __webpack_require__(386);
+	var _sliderDocs = __webpack_require__(389);
 	
 	var _sliderDocs2 = _interopRequireDefault(_sliderDocs);
 	
-	var _dropdownDocs = __webpack_require__(389);
+	var _dropdownDocs = __webpack_require__(392);
 	
 	var _dropdownDocs2 = _interopRequireDefault(_dropdownDocs);
 	
-	var _selectDocs = __webpack_require__(392);
+	var _selectDocs = __webpack_require__(395);
 	
 	var _selectDocs2 = _interopRequireDefault(_selectDocs);
 	
-	var _calendarDocs = __webpack_require__(395);
+	var _calendarDocs = __webpack_require__(398);
 	
 	var _calendarDocs2 = _interopRequireDefault(_calendarDocs);
 	
-	var _datepickerDocs = __webpack_require__(398);
+	var _datepickerDocs = __webpack_require__(401);
 	
 	var _datepickerDocs2 = _interopRequireDefault(_datepickerDocs);
 	
-	var _timepickerDocs = __webpack_require__(401);
+	var _timepickerDocs = __webpack_require__(404);
 	
 	var _timepickerDocs2 = _interopRequireDefault(_timepickerDocs);
 	
-	var _searchboxDocs = __webpack_require__(404);
+	var _searchboxDocs = __webpack_require__(407);
 	
 	var _searchboxDocs2 = _interopRequireDefault(_searchboxDocs);
 	
-	var _messageDocs = __webpack_require__(407);
+	var _messageDocs = __webpack_require__(410);
 	
 	var _messageDocs2 = _interopRequireDefault(_messageDocs);
 	
-	var _cascaderDocs = __webpack_require__(410);
+	var _cascaderDocs = __webpack_require__(413);
 	
 	var _cascaderDocs2 = _interopRequireDefault(_cascaderDocs);
 	
-	var _modalDocs = __webpack_require__(413);
+	var _modalDocs = __webpack_require__(416);
 	
 	var _modalDocs2 = _interopRequireDefault(_modalDocs);
 	
-	var _tableDocs = __webpack_require__(416);
+	var _tableDocs = __webpack_require__(419);
 	
 	var _tableDocs2 = _interopRequireDefault(_tableDocs);
 	
-	var _badgeDocs = __webpack_require__(419);
+	var _badgeDocs = __webpack_require__(422);
 	
 	var _badgeDocs2 = _interopRequireDefault(_badgeDocs);
 	
-	var _carouselDocs = __webpack_require__(423);
+	var _carouselDocs = __webpack_require__(426);
 	
 	var _carouselDocs2 = _interopRequireDefault(_carouselDocs);
 	
-	var _Affix = __webpack_require__(297);
+	var _Affix = __webpack_require__(300);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _container = __webpack_require__(426);
+	var _container = __webpack_require__(429);
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _spinDocs = __webpack_require__(428);
+	var _spinDocs = __webpack_require__(431);
 	
 	var _spinDocs2 = _interopRequireDefault(_spinDocs);
 	
-	var _textareaDocs = __webpack_require__(431);
+	var _textareaDocs = __webpack_require__(434);
 	
 	var _textareaDocs2 = _interopRequireDefault(_textareaDocs);
 	
-	var _tagDocs = __webpack_require__(434);
+	var _tagDocs = __webpack_require__(437);
 	
 	var _tagDocs2 = _interopRequireDefault(_tagDocs);
 	
-	var _tooltipDocs = __webpack_require__(438);
+	var _tooltipDocs = __webpack_require__(441);
 	
 	var _tooltipDocs2 = _interopRequireDefault(_tooltipDocs);
 	
-	var _accordionDocs = __webpack_require__(441);
+	var _triggerDocs = __webpack_require__(444);
+	
+	var _triggerDocs2 = _interopRequireDefault(_triggerDocs);
+	
+	var _accordionDocs = __webpack_require__(447);
 	
 	var _accordionDocs2 = _interopRequireDefault(_accordionDocs);
 	
-	var _affixDocs = __webpack_require__(446);
+	var _affixDocs = __webpack_require__(452);
 	
 	var _affixDocs2 = _interopRequireDefault(_affixDocs);
 	
-	var _asideDocs = __webpack_require__(451);
+	var _asideDocs = __webpack_require__(457);
 	
 	var _asideDocs2 = _interopRequireDefault(_asideDocs);
 	
-	var _popoverDocs = __webpack_require__(454);
+	var _popoverDocs = __webpack_require__(460);
 	
 	var _popoverDocs2 = _interopRequireDefault(_popoverDocs);
 	
-	var _tabsDocs = __webpack_require__(457);
+	var _tabsDocs = __webpack_require__(463);
 	
 	var _tabsDocs2 = _interopRequireDefault(_tabsDocs);
 	
-	var _stepsDocs = __webpack_require__(462);
+	var _stepsDocs = __webpack_require__(468);
 	
 	var _stepsDocs2 = _interopRequireDefault(_stepsDocs);
 	
-	var _menuDocs = __webpack_require__(466);
+	var _menuDocs = __webpack_require__(472);
 	
 	var _menuDocs2 = _interopRequireDefault(_menuDocs);
 	
-	var _treeDocs = __webpack_require__(469);
+	var _treeDocs = __webpack_require__(475);
 	
 	var _treeDocs2 = _interopRequireDefault(_treeDocs);
 	
-	var _breadcrumbDocs = __webpack_require__(472);
+	var _breadcrumbDocs = __webpack_require__(478);
 	
 	var _breadcrumbDocs2 = _interopRequireDefault(_breadcrumbDocs);
 	
-	var _paginationDocs = __webpack_require__(476);
+	var _paginationDocs = __webpack_require__(482);
 	
 	var _paginationDocs2 = _interopRequireDefault(_paginationDocs);
 	
-	var _phoneNumberDocs = __webpack_require__(480);
+	var _phoneNumberDocs = __webpack_require__(486);
 	
 	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(485);
-	__webpack_require__(489);
-	__webpack_require__(490);
+	__webpack_require__(491);
+	__webpack_require__(495);
+	__webpack_require__(496);
 	//  基础类
 	
 	
@@ -352,6 +357,7 @@
 	    breadcrumbDocs: _breadcrumbDocs2.default,
 	    paginationDocs: _paginationDocs2.default,
 	    tooltipDocs: _tooltipDocs2.default,
+	    triggerDocs: _triggerDocs2.default,
 	    menuDocs: _menuDocs2.default,
 	    searchboxDocs: _searchboxDocs2.default,
 	    phoneNumberDocs: _phoneNumberDocs2.default
@@ -426,14 +432,14 @@
 	});
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _from = __webpack_require__(78);
+	var _from = __webpack_require__(79);
 	
 	var _from2 = _interopRequireDefault(_from);
 	
@@ -452,28 +458,28 @@
 	};
 
 /***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(79), __esModule: true };
-
-/***/ },
 /* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(80);
-	__webpack_require__(124);
-	module.exports = __webpack_require__(88).Array.from;
+	module.exports = { "default": __webpack_require__(80), __esModule: true };
 
 /***/ },
 /* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(81);
+	__webpack_require__(125);
+	module.exports = __webpack_require__(89).Array.from;
+
+/***/ },
+/* 81 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
-	var $at  = __webpack_require__(81)(true);
+	var $at  = __webpack_require__(82)(true);
 	
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(84)(String, 'String', function(iterated){
+	__webpack_require__(85)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -488,11 +494,11 @@
 	});
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(82)
-	  , defined   = __webpack_require__(83);
+	var toInteger = __webpack_require__(83)
+	  , defined   = __webpack_require__(84);
 	// true  -> String#at
 	// false -> String#codePointAt
 	module.exports = function(TO_STRING){
@@ -510,7 +516,7 @@
 	};
 
 /***/ },
-/* 82 */
+/* 83 */
 /***/ function(module, exports) {
 
 	// 7.1.4 ToInteger
@@ -521,7 +527,7 @@
 	};
 
 /***/ },
-/* 83 */
+/* 84 */
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -531,20 +537,20 @@
 	};
 
 /***/ },
-/* 84 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY        = __webpack_require__(85)
-	  , $export        = __webpack_require__(86)
-	  , redefine       = __webpack_require__(101)
-	  , hide           = __webpack_require__(91)
-	  , has            = __webpack_require__(102)
-	  , Iterators      = __webpack_require__(103)
-	  , $iterCreate    = __webpack_require__(104)
-	  , setToStringTag = __webpack_require__(120)
-	  , getPrototypeOf = __webpack_require__(122)
-	  , ITERATOR       = __webpack_require__(121)('iterator')
+	var LIBRARY        = __webpack_require__(86)
+	  , $export        = __webpack_require__(87)
+	  , redefine       = __webpack_require__(102)
+	  , hide           = __webpack_require__(92)
+	  , has            = __webpack_require__(103)
+	  , Iterators      = __webpack_require__(104)
+	  , $iterCreate    = __webpack_require__(105)
+	  , setToStringTag = __webpack_require__(121)
+	  , getPrototypeOf = __webpack_require__(123)
+	  , ITERATOR       = __webpack_require__(122)('iterator')
 	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
@@ -606,19 +612,19 @@
 	};
 
 /***/ },
-/* 85 */
+/* 86 */
 /***/ function(module, exports) {
 
 	module.exports = true;
 
 /***/ },
-/* 86 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(87)
-	  , core      = __webpack_require__(88)
-	  , ctx       = __webpack_require__(89)
-	  , hide      = __webpack_require__(91)
+	var global    = __webpack_require__(88)
+	  , core      = __webpack_require__(89)
+	  , ctx       = __webpack_require__(90)
+	  , hide      = __webpack_require__(92)
 	  , PROTOTYPE = 'prototype';
 	
 	var $export = function(type, name, source){
@@ -678,7 +684,7 @@
 	module.exports = $export;
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -687,18 +693,18 @@
 	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '2.4.0'};
 	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(90);
+	var aFunction = __webpack_require__(91);
 	module.exports = function(fn, that, length){
 	  aFunction(fn);
 	  if(that === undefined)return fn;
@@ -719,7 +725,7 @@
 	};
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -728,12 +734,12 @@
 	};
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dP         = __webpack_require__(92)
-	  , createDesc = __webpack_require__(100);
-	module.exports = __webpack_require__(96) ? function(object, key, value){
+	var dP         = __webpack_require__(93)
+	  , createDesc = __webpack_require__(101);
+	module.exports = __webpack_require__(97) ? function(object, key, value){
 	  return dP.f(object, key, createDesc(1, value));
 	} : function(object, key, value){
 	  object[key] = value;
@@ -741,15 +747,15 @@
 	};
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var anObject       = __webpack_require__(93)
-	  , IE8_DOM_DEFINE = __webpack_require__(95)
-	  , toPrimitive    = __webpack_require__(99)
+	var anObject       = __webpack_require__(94)
+	  , IE8_DOM_DEFINE = __webpack_require__(96)
+	  , toPrimitive    = __webpack_require__(100)
 	  , dP             = Object.defineProperty;
 	
-	exports.f = __webpack_require__(96) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+	exports.f = __webpack_require__(97) ? Object.defineProperty : function defineProperty(O, P, Attributes){
 	  anObject(O);
 	  P = toPrimitive(P, true);
 	  anObject(Attributes);
@@ -762,17 +768,17 @@
 	};
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(94);
+	var isObject = __webpack_require__(95);
 	module.exports = function(it){
 	  if(!isObject(it))throw TypeError(it + ' is not an object!');
 	  return it;
 	};
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -780,24 +786,24 @@
 	};
 
 /***/ },
-/* 95 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = !__webpack_require__(96) && !__webpack_require__(97)(function(){
-	  return Object.defineProperty(__webpack_require__(98)('div'), 'a', {get: function(){ return 7; }}).a != 7;
-	});
-
-/***/ },
 /* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// Thank's IE8 for his funny defineProperty
-	module.exports = !__webpack_require__(97)(function(){
-	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	module.exports = !__webpack_require__(97) && !__webpack_require__(98)(function(){
+	  return Object.defineProperty(__webpack_require__(99)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 	});
 
 /***/ },
 /* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Thank's IE8 for his funny defineProperty
+	module.exports = !__webpack_require__(98)(function(){
+	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	});
+
+/***/ },
+/* 98 */
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -809,11 +815,11 @@
 	};
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(94)
-	  , document = __webpack_require__(87).document
+	var isObject = __webpack_require__(95)
+	  , document = __webpack_require__(88).document
 	  // in old IE typeof document.createElement is 'object'
 	  , is = isObject(document) && isObject(document.createElement);
 	module.exports = function(it){
@@ -821,11 +827,11 @@
 	};
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.1 ToPrimitive(input [, PreferredType])
-	var isObject = __webpack_require__(94);
+	var isObject = __webpack_require__(95);
 	// instead of the ES6 spec version, we didn't implement @@toPrimitive case
 	// and the second argument - flag - preferred type is a string
 	module.exports = function(it, S){
@@ -838,7 +844,7 @@
 	};
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports) {
 
 	module.exports = function(bitmap, value){
@@ -851,13 +857,13 @@
 	};
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(91);
+	module.exports = __webpack_require__(92);
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -866,23 +872,23 @@
 	};
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports) {
 
 	module.exports = {};
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var create         = __webpack_require__(105)
-	  , descriptor     = __webpack_require__(100)
-	  , setToStringTag = __webpack_require__(120)
+	var create         = __webpack_require__(106)
+	  , descriptor     = __webpack_require__(101)
+	  , setToStringTag = __webpack_require__(121)
 	  , IteratorPrototype = {};
 	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(91)(IteratorPrototype, __webpack_require__(121)('iterator'), function(){ return this; });
+	__webpack_require__(92)(IteratorPrototype, __webpack_require__(122)('iterator'), function(){ return this; });
 	
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
@@ -890,26 +896,26 @@
 	};
 
 /***/ },
-/* 105 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-	var anObject    = __webpack_require__(93)
-	  , dPs         = __webpack_require__(106)
-	  , enumBugKeys = __webpack_require__(118)
-	  , IE_PROTO    = __webpack_require__(115)('IE_PROTO')
+	var anObject    = __webpack_require__(94)
+	  , dPs         = __webpack_require__(107)
+	  , enumBugKeys = __webpack_require__(119)
+	  , IE_PROTO    = __webpack_require__(116)('IE_PROTO')
 	  , Empty       = function(){ /* empty */ }
 	  , PROTOTYPE   = 'prototype';
 	
 	// Create object with fake `null` prototype: use iframe Object with cleared prototype
 	var createDict = function(){
 	  // Thrash, waste and sodomy: IE GC bug
-	  var iframe = __webpack_require__(98)('iframe')
+	  var iframe = __webpack_require__(99)('iframe')
 	    , i      = enumBugKeys.length
 	    , gt     = '>'
 	    , iframeDocument;
 	  iframe.style.display = 'none';
-	  __webpack_require__(119).appendChild(iframe);
+	  __webpack_require__(120).appendChild(iframe);
 	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
 	  // createDict = iframe.contentWindow.Object;
 	  // html.removeChild(iframe);
@@ -935,14 +941,14 @@
 	};
 
 /***/ },
-/* 106 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dP       = __webpack_require__(92)
-	  , anObject = __webpack_require__(93)
-	  , getKeys  = __webpack_require__(107);
+	var dP       = __webpack_require__(93)
+	  , anObject = __webpack_require__(94)
+	  , getKeys  = __webpack_require__(108);
 	
-	module.exports = __webpack_require__(96) ? Object.defineProperties : function defineProperties(O, Properties){
+	module.exports = __webpack_require__(97) ? Object.defineProperties : function defineProperties(O, Properties){
 	  anObject(O);
 	  var keys   = getKeys(Properties)
 	    , length = keys.length
@@ -953,25 +959,25 @@
 	};
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-	var $keys       = __webpack_require__(108)
-	  , enumBugKeys = __webpack_require__(118);
+	var $keys       = __webpack_require__(109)
+	  , enumBugKeys = __webpack_require__(119);
 	
 	module.exports = Object.keys || function keys(O){
 	  return $keys(O, enumBugKeys);
 	};
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var has          = __webpack_require__(102)
-	  , toIObject    = __webpack_require__(109)
-	  , arrayIndexOf = __webpack_require__(112)(false)
-	  , IE_PROTO     = __webpack_require__(115)('IE_PROTO');
+	var has          = __webpack_require__(103)
+	  , toIObject    = __webpack_require__(110)
+	  , arrayIndexOf = __webpack_require__(113)(false)
+	  , IE_PROTO     = __webpack_require__(116)('IE_PROTO');
 	
 	module.exports = function(object, names){
 	  var O      = toIObject(object)
@@ -987,28 +993,28 @@
 	};
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(110)
-	  , defined = __webpack_require__(83);
+	var IObject = __webpack_require__(111)
+	  , defined = __webpack_require__(84);
 	module.exports = function(it){
 	  return IObject(defined(it));
 	};
 
 /***/ },
-/* 110 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(111);
+	var cof = __webpack_require__(112);
 	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 	  return cof(it) == 'String' ? it.split('') : Object(it);
 	};
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -1018,14 +1024,14 @@
 	};
 
 /***/ },
-/* 112 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// false -> Array#indexOf
 	// true  -> Array#includes
-	var toIObject = __webpack_require__(109)
-	  , toLength  = __webpack_require__(113)
-	  , toIndex   = __webpack_require__(114);
+	var toIObject = __webpack_require__(110)
+	  , toLength  = __webpack_require__(114)
+	  , toIndex   = __webpack_require__(115);
 	module.exports = function(IS_INCLUDES){
 	  return function($this, el, fromIndex){
 	    var O      = toIObject($this)
@@ -1044,21 +1050,21 @@
 	};
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(82)
+	var toInteger = __webpack_require__(83)
 	  , min       = Math.min;
 	module.exports = function(it){
 	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 	};
 
 /***/ },
-/* 114 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(82)
+	var toInteger = __webpack_require__(83)
 	  , max       = Math.max
 	  , min       = Math.min;
 	module.exports = function(index, length){
@@ -1067,20 +1073,20 @@
 	};
 
 /***/ },
-/* 115 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var shared = __webpack_require__(116)('keys')
-	  , uid    = __webpack_require__(117);
+	var shared = __webpack_require__(117)('keys')
+	  , uid    = __webpack_require__(118);
 	module.exports = function(key){
 	  return shared[key] || (shared[key] = uid(key));
 	};
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global = __webpack_require__(87)
+	var global = __webpack_require__(88)
 	  , SHARED = '__core-js_shared__'
 	  , store  = global[SHARED] || (global[SHARED] = {});
 	module.exports = function(key){
@@ -1088,7 +1094,7 @@
 	};
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports) {
 
 	var id = 0
@@ -1098,7 +1104,7 @@
 	};
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports) {
 
 	// IE 8- don't enum bug keys
@@ -1107,30 +1113,30 @@
 	).split(',');
 
 /***/ },
-/* 119 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(87).document && document.documentElement;
-
-/***/ },
 /* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var def = __webpack_require__(92).f
-	  , has = __webpack_require__(102)
-	  , TAG = __webpack_require__(121)('toStringTag');
+	module.exports = __webpack_require__(88).document && document.documentElement;
+
+/***/ },
+/* 121 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var def = __webpack_require__(93).f
+	  , has = __webpack_require__(103)
+	  , TAG = __webpack_require__(122)('toStringTag');
 	
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var store      = __webpack_require__(116)('wks')
-	  , uid        = __webpack_require__(117)
-	  , Symbol     = __webpack_require__(87).Symbol
+	var store      = __webpack_require__(117)('wks')
+	  , uid        = __webpack_require__(118)
+	  , Symbol     = __webpack_require__(88).Symbol
 	  , USE_SYMBOL = typeof Symbol == 'function';
 	
 	var $exports = module.exports = function(name){
@@ -1141,13 +1147,13 @@
 	$exports.store = store;
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-	var has         = __webpack_require__(102)
-	  , toObject    = __webpack_require__(123)
-	  , IE_PROTO    = __webpack_require__(115)('IE_PROTO')
+	var has         = __webpack_require__(103)
+	  , toObject    = __webpack_require__(124)
+	  , IE_PROTO    = __webpack_require__(116)('IE_PROTO')
 	  , ObjectProto = Object.prototype;
 	
 	module.exports = Object.getPrototypeOf || function(O){
@@ -1159,30 +1165,30 @@
 	};
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(83);
+	var defined = __webpack_require__(84);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ctx            = __webpack_require__(89)
-	  , $export        = __webpack_require__(86)
-	  , toObject       = __webpack_require__(123)
-	  , call           = __webpack_require__(125)
-	  , isArrayIter    = __webpack_require__(126)
-	  , toLength       = __webpack_require__(113)
-	  , createProperty = __webpack_require__(127)
-	  , getIterFn      = __webpack_require__(128);
+	var ctx            = __webpack_require__(90)
+	  , $export        = __webpack_require__(87)
+	  , toObject       = __webpack_require__(124)
+	  , call           = __webpack_require__(126)
+	  , isArrayIter    = __webpack_require__(127)
+	  , toLength       = __webpack_require__(114)
+	  , createProperty = __webpack_require__(128)
+	  , getIterFn      = __webpack_require__(129);
 	
-	$export($export.S + $export.F * !__webpack_require__(130)(function(iter){ Array.from(iter); }), 'Array', {
+	$export($export.S + $export.F * !__webpack_require__(131)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -1212,11 +1218,11 @@
 
 
 /***/ },
-/* 125 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
-	var anObject = __webpack_require__(93);
+	var anObject = __webpack_require__(94);
 	module.exports = function(iterator, fn, value, entries){
 	  try {
 	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -1229,12 +1235,12 @@
 	};
 
 /***/ },
-/* 126 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
-	var Iterators  = __webpack_require__(103)
-	  , ITERATOR   = __webpack_require__(121)('iterator')
+	var Iterators  = __webpack_require__(104)
+	  , ITERATOR   = __webpack_require__(122)('iterator')
 	  , ArrayProto = Array.prototype;
 	
 	module.exports = function(it){
@@ -1242,12 +1248,12 @@
 	};
 
 /***/ },
-/* 127 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $defineProperty = __webpack_require__(92)
-	  , createDesc      = __webpack_require__(100);
+	var $defineProperty = __webpack_require__(93)
+	  , createDesc      = __webpack_require__(101);
 	
 	module.exports = function(object, index, value){
 	  if(index in object)$defineProperty.f(object, index, createDesc(0, value));
@@ -1255,25 +1261,25 @@
 	};
 
 /***/ },
-/* 128 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(129)
-	  , ITERATOR  = __webpack_require__(121)('iterator')
-	  , Iterators = __webpack_require__(103);
-	module.exports = __webpack_require__(88).getIteratorMethod = function(it){
+	var classof   = __webpack_require__(130)
+	  , ITERATOR  = __webpack_require__(122)('iterator')
+	  , Iterators = __webpack_require__(104);
+	module.exports = __webpack_require__(89).getIteratorMethod = function(it){
 	  if(it != undefined)return it[ITERATOR]
 	    || it['@@iterator']
 	    || Iterators[classof(it)];
 	};
 
 /***/ },
-/* 129 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
-	var cof = __webpack_require__(111)
-	  , TAG = __webpack_require__(121)('toStringTag')
+	var cof = __webpack_require__(112)
+	  , TAG = __webpack_require__(122)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
 	
@@ -1296,10 +1302,10 @@
 	};
 
 /***/ },
-/* 130 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ITERATOR     = __webpack_require__(121)('iterator')
+	var ITERATOR     = __webpack_require__(122)('iterator')
 	  , SAFE_CLOSING = false;
 	
 	try {
@@ -1322,16 +1328,16 @@
 	};
 
 /***/ },
-/* 131 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(132)
+	__vue_script__ = __webpack_require__(133)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/headerDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(358)
+	__vue_template__ = __webpack_require__(361)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1350,7 +1356,7 @@
 	})()}
 
 /***/ },
-/* 132 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1359,7 +1365,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var SubMenu = _src.Menu.SubMenu; // <template>
 	//   <header class="navbar navbar-top bs-docs-nav" id="top" role="banner">
@@ -1438,146 +1444,153 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Form = __webpack_require__(138);
+	var _Form = __webpack_require__(139);
 	
 	var _Form2 = _interopRequireDefault(_Form);
 	
-	var _Layout = __webpack_require__(145);
+	var _Layout = __webpack_require__(142);
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
-	var _Button = __webpack_require__(156);
+	var _Button = __webpack_require__(153);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _Input = __webpack_require__(163);
+	var _Input = __webpack_require__(160);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Searchbox = __webpack_require__(167);
+	var _Searchbox = __webpack_require__(164);
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 	
-	var _Uploader = __webpack_require__(172);
+	var _Uploader = __webpack_require__(169);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 	
-	var _Slider = __webpack_require__(204);
+	var _Slider = __webpack_require__(201);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 	
-	var _Switch = __webpack_require__(213);
+	var _Switch = __webpack_require__(214);
 	
 	var _Switch2 = _interopRequireDefault(_Switch);
 	
-	var _Dropdown = __webpack_require__(217);
+	var _Dropdown = __webpack_require__(218);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Select = __webpack_require__(221);
+	var _Select = __webpack_require__(222);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Calendar = __webpack_require__(232);
+	var _Calendar = __webpack_require__(233);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 	
-	var _TimePicker = __webpack_require__(236);
+	var _TimePicker = __webpack_require__(237);
 	
 	var _TimePicker2 = _interopRequireDefault(_TimePicker);
 	
-	var _DatePicker = __webpack_require__(241);
+	var _DatePicker = __webpack_require__(242);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
-	var _Cascader = __webpack_require__(248);
+	var _Cascader = __webpack_require__(249);
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 	
-	var _Message = __webpack_require__(199);
+	var _Message = __webpack_require__(196);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
-	var _Modal = __webpack_require__(252);
+	var _Modal = __webpack_require__(253);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Table = __webpack_require__(256);
+	var _Table = __webpack_require__(257);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 	
-	var _Badge = __webpack_require__(284);
+	var _Badge = __webpack_require__(285);
 	
 	var _Badge2 = _interopRequireDefault(_Badge);
 	
-	var _Carousel = __webpack_require__(288);
+	var _Carousel = __webpack_require__(289);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Affix = __webpack_require__(297);
+	var _Affix = __webpack_require__(300);
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _Spin = __webpack_require__(265);
+	var _Spin = __webpack_require__(266);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 	
-	var _Textarea = __webpack_require__(302);
+	var _Textarea = __webpack_require__(305);
 	
 	var _Textarea2 = _interopRequireDefault(_Textarea);
 	
-	var _Tag = __webpack_require__(224);
+	var _Tag = __webpack_require__(225);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
-	var _Tooltip = __webpack_require__(207);
+	var _Tooltip = __webpack_require__(204);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Accordion = __webpack_require__(306);
+	var _Trigger = __webpack_require__(208);
+	
+	var _Trigger2 = _interopRequireDefault(_Trigger);
+	
+	var _Accordion = __webpack_require__(309);
 	
 	var _Accordion2 = _interopRequireDefault(_Accordion);
 	
-	var _Popover = __webpack_require__(313);
+	var _Popover = __webpack_require__(316);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Tabs = __webpack_require__(317);
+	var _Tabs = __webpack_require__(320);
 	
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 	
-	var _Steps = __webpack_require__(324);
+	var _Steps = __webpack_require__(327);
 	
 	var _Steps2 = _interopRequireDefault(_Steps);
 	
-	var _Tree = __webpack_require__(331);
+	var _Tree = __webpack_require__(334);
 	
 	var _Tree2 = _interopRequireDefault(_Tree);
 	
-	var _Menu = __webpack_require__(338);
+	var _Menu = __webpack_require__(341);
 	
 	var _Menu2 = _interopRequireDefault(_Menu);
 	
-	var _Breadcrumb = __webpack_require__(351);
+	var _Breadcrumb = __webpack_require__(354);
 	
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 	
-	var _Pagination = __webpack_require__(270);
+	var _Pagination = __webpack_require__(271);
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// import Container from './components/Container.vue'
+	// import Progressbar from './components/progressbar.vue'
+	// import Typeahead from './components/Typeahead.vue'
+	// 展示类
+	
 	
 	var VueComponent = {
 	  Layout: _Layout2.default,
@@ -1605,6 +1618,7 @@
 	  Button: _Button2.default,
 	  Tag: _Tag2.default,
 	  Tooltip: _Tooltip2.default,
+	  Trigger: _Trigger2.default,
 	  Accordion: _Accordion2.default,
 	  Popover: _Popover2.default,
 	  Tabs: _Tabs2.default,
@@ -1618,12 +1632,11 @@
 	// import ffix from './components/affix.vue'
 	// import side from './components/aside.vue'
 	
-	// import Progressbar from './components/progressbar.vue'
-	// import Typeahead from './components/Typeahead.vue'
-	// 展示类
+	// import Container from './components/Container.vue'
 	
 	
 	module.exports = VueComponent;
+	
 	// ie10以及以下，对某些样式支持有问题，需要降级
 	function getIEVersion() {
 	  var agent = navigator.userAgent;
@@ -1634,7 +1647,9 @@
 	  }
 	  return { major: '-1', minor: '-1' };
 	}
+	
 	var ieVersion = getIEVersion();
+	
 	document.addEventListener('DOMContentLoaded', function (event) {
 	  if (ieVersion.major === '9' || ieVersion.major === '10') {
 	    Vue.util.addClass(document.body, 'let-ie11');
@@ -1643,7 +1658,7 @@
 	});
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1652,7 +1667,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(135);
+	var _Icon = __webpack_require__(136);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -1661,16 +1676,16 @@
 	exports.default = _Icon2.default;
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(136)
+	__vue_script__ = __webpack_require__(137)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Icon/Icon.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(137)
+	__vue_template__ = __webpack_require__(138)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1689,7 +1704,7 @@
 	})()}
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1728,13 +1743,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 137 */
+/* 138 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<i :class=\"[prefixCls + '-iconfont', prefixCls + '-icon-' + type]\" :style=\"{ fontSize: size + 'px',color:color }\">\n</i>\n";
 
 /***/ },
-/* 138 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1743,11 +1758,11 @@
 	  value: true
 	});
 	
-	var _Form = __webpack_require__(139);
+	var _Form = __webpack_require__(140);
 	
 	var _Form2 = _interopRequireDefault(_Form);
 	
-	var _FormItem = __webpack_require__(153);
+	var _FormItem = __webpack_require__(150);
 	
 	var _FormItem2 = _interopRequireDefault(_FormItem);
 	
@@ -1758,17 +1773,16 @@
 	exports.default = _Form2.default;
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(140)
-	__vue_script__ = __webpack_require__(144)
+	__vue_script__ = __webpack_require__(141)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Form/Form.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(152)
+	__vue_template__ = __webpack_require__(149)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1787,325 +1801,7 @@
 	})()}
 
 /***/ },
-/* 140 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(141);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(143)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Form.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Form.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
 /* 141 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(142)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n.form-horizontal {}\n.form-vertical {}\n", "", {"version":3,"sources":["/./src/components/Form/Form.vue?15bc0358"],"names":[],"mappings":";AAQA,mBAAA;AACA,iBAAA","file":"Form.vue","sourcesContent":["<template>\n  <form class=\"form\" :class=\"classObj\">\n    <v-row>\n      <slot></slot>\n    </v-row>\n  </form>\n</template>\n<style>\n.form-horizontal {}\n.form-vertical {}\n</style>\n<script>\nimport Layout from '../Layout/'\nconst vRow = Layout.Row\nexport default {\n  props: {\n    // 表单元素排列方式，有纵向和横向两种 horizontal、vertical\n    horizontal: Boolean,\n    vertical: Boolean\n  },\n  data () {\n    return {\n      classObj: {\n        'form-horizontal': this.horizontal,\n        'form-vertical': this.vertical\n      }\n    }\n  },\n  components: {\n    vRow\n  }\n}\n</script>\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 142 */
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-	
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-	
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
-/* 143 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-	
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-	
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-	
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-	
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-	
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-	
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-	
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-	
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-	
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-	
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-	
-		update(obj);
-	
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-	
-	var replaceText = (function () {
-		var textStore = [];
-	
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-	
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-	
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-	
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-		var sourceMap = obj.sourceMap;
-	
-		if (media) {
-			styleElement.setAttribute("media", media);
-		}
-	
-		if (sourceMap) {
-			// https://developer.chrome.com/devtools/docs/javascript-debugging
-			// this makes source maps inside style tags work properly in Chrome
-			css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */';
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-	
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-
-
-/***/ },
-/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2114,40 +1810,48 @@
 	  value: true
 	});
 	
-	var _Layout = __webpack_require__(145);
+	var _Layout = __webpack_require__(142);
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var vRow = _Layout2.default.Row; // <template>
-	//   <form class="form" :class="classObj">
+	//   <form :class="formClassObj">
 	//     <v-row>
 	//       <slot></slot>
 	//     </v-row>
 	//   </form>
 	// </template>
-	// <style>
-	// .form-horizontal {}
-	// .form-vertical {}
-	// </style>
-	// <script>
+	//
+	// <script type="text/babel">
+	
 	
 	exports.default = {
 	  props: {
 	    // 表单元素排列方式，有纵向和横向两种 horizontal、vertical
 	    horizontal: Boolean,
-	    vertical: Boolean
+	    vertical: Boolean,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
 	  },
-	  data: function data() {
-	    return {
-	      classObj: {
-	        'form-horizontal': this.horizontal,
-	        'form-vertical': this.vertical
-	      }
-	    };
-	  },
+	  computed: {
+	    formClassObj: function formClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var horizontal = this.horizontal;
+	      var vertical = this.vertical;
 	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-form'] = true;
+	      classObj[prefixCls + '-form-horizontal'] = horizontal;
+	      classObj[prefixCls + '-form-vertical'] = vertical;
+	
+	      return classObj;
+	    }
+	  },
 	  components: {
 	    vRow: vRow
 	  }
@@ -2157,7 +1861,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 145 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2166,11 +1870,11 @@
 	  value: true
 	});
 	
-	var _Row = __webpack_require__(146);
+	var _Row = __webpack_require__(143);
 	
 	var _Row2 = _interopRequireDefault(_Row);
 	
-	var _Col = __webpack_require__(149);
+	var _Col = __webpack_require__(146);
 	
 	var _Col2 = _interopRequireDefault(_Col);
 	
@@ -2179,16 +1883,16 @@
 	exports.default = { Row: _Row2.default, Col: _Col2.default };
 
 /***/ },
-/* 146 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(147)
+	__vue_script__ = __webpack_require__(144)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Layout/Row.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(148)
+	__vue_template__ = __webpack_require__(145)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2207,7 +1911,7 @@
 	})()}
 
 /***/ },
-/* 147 */
+/* 144 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2233,22 +1937,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 148 */
+/* 145 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-row']\"><slot></slot></div>\n";
 
 /***/ },
-/* 149 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(150)
+	__vue_script__ = __webpack_require__(147)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Layout/Col.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(151)
+	__vue_template__ = __webpack_require__(148)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2267,7 +1971,7 @@
 	})()}
 
 /***/ },
-/* 150 */
+/* 147 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2303,28 +2007,28 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 151 */
+/* 148 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-col-' + type + '-' + span]\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 152 */
+/* 149 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<form class=\"form\" :class=\"classObj\">\n  <v-row>\n    <slot></slot>\n  </v-row>\n</form>\n";
+	module.exports = "\n<form :class=\"formClassObj\">\n  <v-row>\n    <slot></slot>\n  </v-row>\n</form>\n";
 
 /***/ },
-/* 153 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(154)
+	__vue_script__ = __webpack_require__(151)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Form/FormItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(155)
+	__vue_template__ = __webpack_require__(152)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2343,7 +2047,7 @@
 	})()}
 
 /***/ },
-/* 154 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2352,41 +2056,43 @@
 	  value: true
 	});
 	
-	var _Layout = __webpack_require__(145);
+	var _Layout = __webpack_require__(142);
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	// <v-col :span="itemCol" :class="['form-item', classObj]">
+	// <v-col :span="itemCol" :class="formItemClassObj">
 	//   <v-col :span="labelCol" type="sm">
-	//     <label v-if="label" class="form-label">
-	//       <span v-if="isRequired" class="required-icon">*</span>
+	//     <label v-if="label" :class="[prefixCls + '-form-label']">
+	//       <span v-if="isRequired" :class="[prefixCls + '-form-required-icon']">*</span>
 	//       {{label}}
 	//     </label>
 	//   </v-col>
 	//   <v-col :span="wrapperCol || calcWrapperCol" type="sm">
-	//     <div class="form-input">
+	//     <div :class="[prefixCls + '-form-input']">
 	//       <slot></slot>
 	//       <template v-if="showIcon">
-	//         <icon class="status-icon" v-if="validStatus == 'warn'" type="waring"></icon>
-	//         <icon class="status-icon" v-if="validStatus == 'error'" type="error"></icon>
-	//         <icon class="status-icon" v-if="validStatus == 'success'" type="success"></icon>
-	//         <icon class="status-icon" v-if="validStatus == 'help'" type="help"></icon>
+	//         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'warn'" type="waring"></icon>
+	//         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'error'" type="error"></icon>
+	//         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'success'" type="success"></icon>
+	//         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
 	//       </template>
 	//     </div>
-	//     <div v-if="tips && validStatus" class="status-info">{{tips}}</div>
+	//     <div v-if="tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
 	//   </v-col>
 	// </v-col>
 	// </template>
 	// <script>
 	
+	
 	var vCol = _Layout2.default.Col;
+	
 	exports.default = {
 	  props: {
 	    label: String,
@@ -2423,13 +2129,18 @@
 	  },
 	
 	  computed: {
-	    classObj: function classObj() {
-	      var obj = {
-	        'form-item-with-help': this.validStatus,
-	        'has-error': this.validStatus === 'error',
-	        'has-success': this.validStatus === 'success'
-	      };
-	      return obj;
+	    formItemClassObj: function formItemClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var validStatus = this.validStatus;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-form-item'] = true;
+	      classObj[prefixCls + '-form-with-help'] = validStatus;
+	      classObj[prefixCls + '-form-has-error'] = validStatus === 'error';
+	      classObj[prefixCls + '-form-has-success'] = validStatus === 'success';
+	
+	      return classObj;
 	    },
 	    isRequired: function isRequired() {
 	      return !!this.required;
@@ -2452,13 +2163,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 155 */
+/* 152 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<v-col :span=\"itemCol\" :class=\"['form-item', classObj]\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" class=\"form-label\">\n      <span v-if=\"isRequired\" class=\"required-icon\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\" type=\"sm\">\n    <div class=\"form-input\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon class=\"status-icon\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon class=\"status-icon\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" class=\"status-info\">{{tips}}</div>\n  </v-col>\n</v-col>\n";
+	module.exports = "\n<v-col :span=\"itemCol\" :class=\"formItemClassObj\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" :class=\"[prefixCls + '-form-label']\">\n      <span v-if=\"isRequired\" :class=\"[prefixCls + '-form-required-icon']\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\" type=\"sm\">\n    <div :class=\"[prefixCls + '-form-input']\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" :class=\"[prefixCls + '-form-status-info']\">{{tips}}</div>\n  </v-col>\n</v-col>\n";
 
 /***/ },
-/* 156 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2467,11 +2178,11 @@
 	  value: true
 	});
 	
-	var _Button = __webpack_require__(157);
+	var _Button = __webpack_require__(154);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _Group = __webpack_require__(160);
+	var _Group = __webpack_require__(157);
 	
 	var _Group2 = _interopRequireDefault(_Group);
 	
@@ -2482,16 +2193,16 @@
 	exports.default = _Button2.default;
 
 /***/ },
-/* 157 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(158)
+	__vue_script__ = __webpack_require__(155)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Button/Button.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(159)
+	__vue_template__ = __webpack_require__(156)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2510,7 +2221,7 @@
 	})()}
 
 /***/ },
-/* 158 */
+/* 155 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2575,22 +2286,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 159 */
+/* 156 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<button :type=\"type\" :class=\"btnClassObj\">\n  <slot>{{value}}</slot>\n</button>\n";
 
 /***/ },
-/* 160 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(161)
+	__vue_script__ = __webpack_require__(158)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Button/Group.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(162)
+	__vue_template__ = __webpack_require__(159)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2609,7 +2320,7 @@
 	})()}
 
 /***/ },
-/* 161 */
+/* 158 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2677,13 +2388,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 162 */
+/* 159 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"btnClassObj\"\n     @click=\"clickBtnGroup\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 163 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2692,7 +2403,7 @@
 	  value: true
 	});
 	
-	var _Input = __webpack_require__(164);
+	var _Input = __webpack_require__(161);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -2701,16 +2412,16 @@
 	exports.default = _Input2.default;
 
 /***/ },
-/* 164 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(165)
+	__vue_script__ = __webpack_require__(162)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Input/Input.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(166)
+	__vue_template__ = __webpack_require__(163)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2729,7 +2440,7 @@
 	})()}
 
 /***/ },
-/* 165 */
+/* 162 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3052,13 +2763,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 166 */
+/* 163 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<input :type=\"type\"\n       :class=\"inputClassObj\"\n       :placeholder=\"placeholder\"\n       v-model=\"value\"\n       :valid-status.sync=\"validStatus\"\n       :maxlength=\"maxlength\" />\n";
 
 /***/ },
-/* 167 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3067,7 +2778,7 @@
 	  value: true
 	});
 	
-	var _Searchbox = __webpack_require__(168);
+	var _Searchbox = __webpack_require__(165);
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 
@@ -3076,16 +2787,16 @@
 	exports.default = _Searchbox2.default;
 
 /***/ },
-/* 168 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(169)
+	__vue_script__ = __webpack_require__(166)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Searchbox/Searchbox.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(171)
+	__vue_template__ = __webpack_require__(168)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -3104,7 +2815,7 @@
 	})()}
 
 /***/ },
-/* 169 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3113,11 +2824,11 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -3254,7 +2965,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 170 */
+/* 167 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3294,13 +3005,13 @@
 	exports.default = EventListener;
 
 /***/ },
-/* 171 */
+/* 168 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-searchbox']\">\n  <input type=\"text\"\n         :class=\"inputClassObj\"\n         :placeholder=\"placeholder\"\n         v-model=\"value\"\n         @focus=\"focusInput\"\n         debounce=\"500\" />\n  <icon type=\"clear\" v-show=\"value\" color=\"#bfbfbf\" size=\"14\" @click=\"clearInput\"></icon>\n  <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n  <div v-if=\"searchList && searchList.length > 0\"\n       :class=\"[prefixCls + '-searchbox-list-containter']\">\n    <ul v-show=\"showPop\"\n        :class=\"[prefixCls + '-searchbox-list-dropdown']\"\n        transition=\"slide\">\n      <li v-for=\"item in searchList | filterBy value\">\n        <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" :title=\"item[textField]\">{{item[textField]}}</a>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 172 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3309,7 +3020,7 @@
 	  value: true
 	});
 	
-	var _Uploader = __webpack_require__(173);
+	var _Uploader = __webpack_require__(170);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 
@@ -3318,16 +3029,16 @@
 	exports.default = _Uploader2.default;
 
 /***/ },
-/* 173 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(174)
+	__vue_script__ = __webpack_require__(171)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Uploader/Uploader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(203)
+	__vue_template__ = __webpack_require__(200)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -3346,7 +3057,7 @@
 	})()}
 
 /***/ },
-/* 174 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3355,15 +3066,15 @@
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(175);
+	var _typeof2 = __webpack_require__(172);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Message = __webpack_require__(199);
+	var _Message = __webpack_require__(196);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -3805,18 +3516,18 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 175 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _iterator = __webpack_require__(176);
+	var _iterator = __webpack_require__(173);
 	
 	var _iterator2 = _interopRequireDefault(_iterator);
 	
-	var _symbol = __webpack_require__(183);
+	var _symbol = __webpack_require__(180);
 	
 	var _symbol2 = _interopRequireDefault(_symbol);
 	
@@ -3831,28 +3542,28 @@
 	};
 
 /***/ },
-/* 176 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(177), __esModule: true };
+	module.exports = { "default": __webpack_require__(174), __esModule: true };
 
 /***/ },
-/* 177 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(80);
-	__webpack_require__(178);
-	module.exports = __webpack_require__(182).f('iterator');
+	__webpack_require__(81);
+	__webpack_require__(175);
+	module.exports = __webpack_require__(179).f('iterator');
 
 /***/ },
-/* 178 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(179);
-	var global        = __webpack_require__(87)
-	  , hide          = __webpack_require__(91)
-	  , Iterators     = __webpack_require__(103)
-	  , TO_STRING_TAG = __webpack_require__(121)('toStringTag');
+	__webpack_require__(176);
+	var global        = __webpack_require__(88)
+	  , hide          = __webpack_require__(92)
+	  , Iterators     = __webpack_require__(104)
+	  , TO_STRING_TAG = __webpack_require__(122)('toStringTag');
 	
 	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
 	  var NAME       = collections[i]
@@ -3863,20 +3574,20 @@
 	}
 
 /***/ },
-/* 179 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(180)
-	  , step             = __webpack_require__(181)
-	  , Iterators        = __webpack_require__(103)
-	  , toIObject        = __webpack_require__(109);
+	var addToUnscopables = __webpack_require__(177)
+	  , step             = __webpack_require__(178)
+	  , Iterators        = __webpack_require__(104)
+	  , toIObject        = __webpack_require__(110);
 	
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
 	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(84)(Array, 'Array', function(iterated, kind){
+	module.exports = __webpack_require__(85)(Array, 'Array', function(iterated, kind){
 	  this._t = toIObject(iterated); // target
 	  this._i = 0;                   // next index
 	  this._k = kind;                // kind
@@ -3902,13 +3613,13 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 180 */
+/* 177 */
 /***/ function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ },
-/* 181 */
+/* 178 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -3916,58 +3627,58 @@
 	};
 
 /***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports.f = __webpack_require__(122);
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(181), __esModule: true };
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(182);
+	__webpack_require__(193);
+	__webpack_require__(194);
+	__webpack_require__(195);
+	module.exports = __webpack_require__(89).Symbol;
+
+/***/ },
 /* 182 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports.f = __webpack_require__(121);
-
-/***/ },
-/* 183 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(184), __esModule: true };
-
-/***/ },
-/* 184 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(185);
-	__webpack_require__(196);
-	__webpack_require__(197);
-	__webpack_require__(198);
-	module.exports = __webpack_require__(88).Symbol;
-
-/***/ },
-/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// ECMAScript 6 symbols shim
-	var global         = __webpack_require__(87)
-	  , has            = __webpack_require__(102)
-	  , DESCRIPTORS    = __webpack_require__(96)
-	  , $export        = __webpack_require__(86)
-	  , redefine       = __webpack_require__(101)
-	  , META           = __webpack_require__(186).KEY
-	  , $fails         = __webpack_require__(97)
-	  , shared         = __webpack_require__(116)
-	  , setToStringTag = __webpack_require__(120)
-	  , uid            = __webpack_require__(117)
-	  , wks            = __webpack_require__(121)
-	  , wksExt         = __webpack_require__(182)
-	  , wksDefine      = __webpack_require__(187)
-	  , keyOf          = __webpack_require__(188)
-	  , enumKeys       = __webpack_require__(189)
-	  , isArray        = __webpack_require__(192)
-	  , anObject       = __webpack_require__(93)
-	  , toIObject      = __webpack_require__(109)
-	  , toPrimitive    = __webpack_require__(99)
-	  , createDesc     = __webpack_require__(100)
-	  , _create        = __webpack_require__(105)
-	  , gOPNExt        = __webpack_require__(193)
-	  , $GOPD          = __webpack_require__(195)
-	  , $DP            = __webpack_require__(92)
-	  , $keys          = __webpack_require__(107)
+	var global         = __webpack_require__(88)
+	  , has            = __webpack_require__(103)
+	  , DESCRIPTORS    = __webpack_require__(97)
+	  , $export        = __webpack_require__(87)
+	  , redefine       = __webpack_require__(102)
+	  , META           = __webpack_require__(183).KEY
+	  , $fails         = __webpack_require__(98)
+	  , shared         = __webpack_require__(117)
+	  , setToStringTag = __webpack_require__(121)
+	  , uid            = __webpack_require__(118)
+	  , wks            = __webpack_require__(122)
+	  , wksExt         = __webpack_require__(179)
+	  , wksDefine      = __webpack_require__(184)
+	  , keyOf          = __webpack_require__(185)
+	  , enumKeys       = __webpack_require__(186)
+	  , isArray        = __webpack_require__(189)
+	  , anObject       = __webpack_require__(94)
+	  , toIObject      = __webpack_require__(110)
+	  , toPrimitive    = __webpack_require__(100)
+	  , createDesc     = __webpack_require__(101)
+	  , _create        = __webpack_require__(106)
+	  , gOPNExt        = __webpack_require__(190)
+	  , $GOPD          = __webpack_require__(192)
+	  , $DP            = __webpack_require__(93)
+	  , $keys          = __webpack_require__(108)
 	  , gOPD           = $GOPD.f
 	  , dP             = $DP.f
 	  , gOPN           = gOPNExt.f
@@ -4090,11 +3801,11 @@
 	
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f   = $defineProperty;
-	  __webpack_require__(194).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(191).f  = $propertyIsEnumerable;
-	  __webpack_require__(190).f = $getOwnPropertySymbols;
+	  __webpack_require__(191).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(188).f  = $propertyIsEnumerable;
+	  __webpack_require__(187).f = $getOwnPropertySymbols;
 	
-	  if(DESCRIPTORS && !__webpack_require__(85)){
+	  if(DESCRIPTORS && !__webpack_require__(86)){
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
 	  }
 	
@@ -4169,7 +3880,7 @@
 	});
 	
 	// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-	$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(91)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+	$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(92)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 	// 19.4.3.5 Symbol.prototype[@@toStringTag]
 	setToStringTag($Symbol, 'Symbol');
 	// 20.2.1.9 Math[@@toStringTag]
@@ -4178,18 +3889,18 @@
 	setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-/* 186 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var META     = __webpack_require__(117)('meta')
-	  , isObject = __webpack_require__(94)
-	  , has      = __webpack_require__(102)
-	  , setDesc  = __webpack_require__(92).f
+	var META     = __webpack_require__(118)('meta')
+	  , isObject = __webpack_require__(95)
+	  , has      = __webpack_require__(103)
+	  , setDesc  = __webpack_require__(93).f
 	  , id       = 0;
 	var isExtensible = Object.isExtensible || function(){
 	  return true;
 	};
-	var FREEZE = !__webpack_require__(97)(function(){
+	var FREEZE = !__webpack_require__(98)(function(){
 	  return isExtensible(Object.preventExtensions({}));
 	});
 	var setMeta = function(it){
@@ -4236,25 +3947,25 @@
 	};
 
 /***/ },
-/* 187 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global         = __webpack_require__(87)
-	  , core           = __webpack_require__(88)
-	  , LIBRARY        = __webpack_require__(85)
-	  , wksExt         = __webpack_require__(182)
-	  , defineProperty = __webpack_require__(92).f;
+	var global         = __webpack_require__(88)
+	  , core           = __webpack_require__(89)
+	  , LIBRARY        = __webpack_require__(86)
+	  , wksExt         = __webpack_require__(179)
+	  , defineProperty = __webpack_require__(93).f;
 	module.exports = function(name){
 	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
 	  if(name.charAt(0) != '_' && !(name in $Symbol))defineProperty($Symbol, name, {value: wksExt.f(name)});
 	};
 
 /***/ },
-/* 188 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var getKeys   = __webpack_require__(107)
-	  , toIObject = __webpack_require__(109);
+	var getKeys   = __webpack_require__(108)
+	  , toIObject = __webpack_require__(110);
 	module.exports = function(object, el){
 	  var O      = toIObject(object)
 	    , keys   = getKeys(O)
@@ -4265,13 +3976,13 @@
 	};
 
 /***/ },
-/* 189 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
-	var getKeys = __webpack_require__(107)
-	  , gOPS    = __webpack_require__(190)
-	  , pIE     = __webpack_require__(191);
+	var getKeys = __webpack_require__(108)
+	  , gOPS    = __webpack_require__(187)
+	  , pIE     = __webpack_require__(188);
 	module.exports = function(it){
 	  var result     = getKeys(it)
 	    , getSymbols = gOPS.f;
@@ -4285,34 +3996,34 @@
 	};
 
 /***/ },
-/* 190 */
+/* 187 */
 /***/ function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 /***/ },
-/* 191 */
+/* 188 */
 /***/ function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 /***/ },
-/* 192 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
-	var cof = __webpack_require__(111);
+	var cof = __webpack_require__(112);
 	module.exports = Array.isArray || function isArray(arg){
 	  return cof(arg) == 'Array';
 	};
 
 /***/ },
-/* 193 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-	var toIObject = __webpack_require__(109)
-	  , gOPN      = __webpack_require__(194).f
+	var toIObject = __webpack_require__(110)
+	  , gOPN      = __webpack_require__(191).f
 	  , toString  = {}.toString;
 	
 	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -4332,30 +4043,30 @@
 
 
 /***/ },
-/* 194 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-	var $keys      = __webpack_require__(108)
-	  , hiddenKeys = __webpack_require__(118).concat('length', 'prototype');
+	var $keys      = __webpack_require__(109)
+	  , hiddenKeys = __webpack_require__(119).concat('length', 'prototype');
 	
 	exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
 	  return $keys(O, hiddenKeys);
 	};
 
 /***/ },
-/* 195 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var pIE            = __webpack_require__(191)
-	  , createDesc     = __webpack_require__(100)
-	  , toIObject      = __webpack_require__(109)
-	  , toPrimitive    = __webpack_require__(99)
-	  , has            = __webpack_require__(102)
-	  , IE8_DOM_DEFINE = __webpack_require__(95)
+	var pIE            = __webpack_require__(188)
+	  , createDesc     = __webpack_require__(101)
+	  , toIObject      = __webpack_require__(110)
+	  , toPrimitive    = __webpack_require__(100)
+	  , has            = __webpack_require__(103)
+	  , IE8_DOM_DEFINE = __webpack_require__(96)
 	  , gOPD           = Object.getOwnPropertyDescriptor;
 	
-	exports.f = __webpack_require__(96) ? gOPD : function getOwnPropertyDescriptor(O, P){
+	exports.f = __webpack_require__(97) ? gOPD : function getOwnPropertyDescriptor(O, P){
 	  O = toIObject(O);
 	  P = toPrimitive(P, true);
 	  if(IE8_DOM_DEFINE)try {
@@ -4365,25 +4076,25 @@
 	};
 
 /***/ },
-/* 196 */
+/* 193 */
 /***/ function(module, exports) {
 
 
 
 /***/ },
-/* 197 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(187)('asyncIterator');
+	__webpack_require__(184)('asyncIterator');
 
 /***/ },
-/* 198 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(187)('observable');
+	__webpack_require__(184)('observable');
 
 /***/ },
-/* 199 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4392,7 +4103,7 @@
 	  value: true
 	});
 	
-	var _Message = __webpack_require__(200);
+	var _Message = __webpack_require__(197);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -4430,16 +4141,16 @@
 	exports.default = _Message2.default;
 
 /***/ },
-/* 200 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(201)
+	__vue_script__ = __webpack_require__(198)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Message/Message.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(202)
+	__vue_template__ = __webpack_require__(199)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4458,7 +4169,7 @@
 	})()}
 
 /***/ },
-/* 201 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4467,7 +4178,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -4578,19 +4289,19 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 202 */
+/* 199 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div\n  v-show=\"show\"\n  :class=\"messageClassObj\"\n  :transition=\"transition\"\n  :style=\"{width:width}\"\n  role=\"alert\">\n  <div :class=\"[prefixCls + '-message-content']\">\n    <button v-show=\"dismissable\" type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"show = false\">\n    <span>&times;</span>\n    </button>\n    <icon v-if=\"showIcon\" :type=\"type\"></icon>\n    <slot>\n      {{content}}\n    </slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 203 */
+/* 200 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-upload']\" id=\"upload-{{uploadId}}\">\n  <div v-if=\"uploadType == 'click'\">\n    <label>\n      <input\n        type=\"file\"\n        :name=\"name\"\n        :accept=\"accept\"\n        :id=\"uploadId\"\n        :multiple=\"multiple\"\n        @change=\"onChange($event)\" />\n      <slot>\n        <span :class=\"[prefixCls + '-btn', prefixCls + '-btn-tertiary']\">点击上传</span>\n      </slot>\n    </label>\n    <div :class=\"[prefixCls + '-upload-list']\">\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in fileList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in uploadList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delFile($index)\"></icon>\n        </div>\n        <div :class=\"[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]\">\n          <div :class=\"[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']\">\n            <div :class=\"[prefixCls + '-upload-progress-inner']\">\n              <div :class=\"[prefixCls + '-upload-progress-bg']\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div v-if=\"uploadType == 'drag'\"\n       :class=\"[prefixCls + '-upload-drag']\">\n    <div :class=\"[prefixCls + '-upload-drag-container', dragover && (prefixCls + '-is-dragover')]\">\n      <input type=\"file\"\n             :name=\"name\"\n             :id=\"uploadId\"\n             :accept=\"accept\"\n             :multiple=\"multiple\"\n             @change=\"onChange($event)\" />\n      <label :for=\"uploadId\"\n             :class=\"[prefixCls + '-upload-drag-area']\">\n      <p :class=\"[prefixCls + '-upload-drag-icon']\"></p>\n      <span v-if=\"advanceDrag\">将文件拖拽至框中上传或点此上传</span>\n      <span v-if=\"!advanceDrag\">当前环境不支持拖拽上传，请点此上传</span>\n      <p v-if=\"fileList.length > 0\" v-for=\"file in selectFiles\">{{file}}</p>\n    </label>\n    </div>\n    <div :class=\"[prefixCls + '-upload-list']\">\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in fileList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in uploadList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delFile($index)\"></icon>\n        </div>\n        <div :class=\"[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]\">\n          <div :class=\"[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']\">\n            <div :class=\"[prefixCls + '-upload-progress-inner']\">\n              <div :class=\"[prefixCls + '-upload-progress-bg']\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 204 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4599,7 +4310,7 @@
 	  value: true
 	});
 	
-	var _Slider = __webpack_require__(205);
+	var _Slider = __webpack_require__(202);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 
@@ -4608,16 +4319,16 @@
 	exports.default = _Slider2.default;
 
 /***/ },
-/* 205 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(206)
+	__vue_script__ = __webpack_require__(203)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Slider/Slider.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(212)
+	__vue_template__ = __webpack_require__(213)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4636,7 +4347,7 @@
 	})()}
 
 /***/ },
-/* 206 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4645,11 +4356,11 @@
 	  value: true
 	});
 	
-	var _Tooltip = __webpack_require__(207);
+	var _Tooltip = __webpack_require__(204);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -4950,7 +4661,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 207 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4959,7 +4670,7 @@
 	  value: true
 	});
 	
-	var _Tooltip = __webpack_require__(208);
+	var _Tooltip = __webpack_require__(205);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 
@@ -4968,16 +4679,16 @@
 	exports.default = _Tooltip2.default;
 
 /***/ },
-/* 208 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(209)
+	__vue_script__ = __webpack_require__(206)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tooltip/Tooltip.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(211)
+	__vue_template__ = __webpack_require__(212)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -4996,7 +4707,7 @@
 	})()}
 
 /***/ },
-/* 209 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5005,70 +4716,156 @@
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(210);
+	var _GlobalMixin = __webpack_require__(207);
 	
-	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
+	
+	var _Trigger = __webpack_require__(208);
+	
+	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//   <div :class="[prefixCls + '-popover-cont']">
+	//     <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls">
+	//       <slot slot="trigger"></slot>
+	//       <slot slot="popup" name="popup" role="tooltip">
+	//         <div :class="[prefixCls + '-tooltip-arrow']"></div>
+	//         <div :class="[prefixCls + '-tooltip-inner']">
+	//           {{{content}}}
+	//         </div>
+	//       </slot>
+	//     </trigger>
+	//   </div>
+	// </template>
+	//
+	// <script>
 	exports.default = {
-	  mixins: [_popoverMixins2.default],
+	  mixins: [_GlobalMixin2.default],
+	
+	  components: {
+	    Trigger: _Trigger2.default
+	  },
+	
 	  props: {
 	    trigger: {
 	      type: String,
 	      default: 'hover'
+	
 	    },
-	    prefixCls: {
+	    effect: {
+	      type: String
+	    },
+	    placement: {
 	      type: String,
-	      default: 'atui'
+	      default: 'top'
+	    },
+	    content: [String, Number],
+	    popupCls: {
+	      type: String,
+	      default: 'tooltip'
 	    }
 	  },
-	  computed: {
-	    tooltipClassObj: function tooltipClassObj() {
+	
+	  events: {
+	    'trigger-reset-pos': function triggerResetPos(data) {
 	      var prefixCls = this.prefixCls;
-	      var placement = this.placement;
+	      var popupCls = this.popupCls;
+	      var $trigger = data.$trigger;
+	      var $popup = data.$popup;
+	      var placement = data.placement;
 	
-	      var tooltipClass = {};
+	      var $arrow = $popup.querySelector('.' + prefixCls + '-' + popupCls + '-arrow');
+	      var triggerOffset = $trigger.getBoundingClientRect();
 	
-	      tooltipClass[prefixCls + '-tooltip'] = true;
-	      tooltipClass[prefixCls + '-tooltip-top'] = placement === 'top';
-	      tooltipClass[prefixCls + '-tooltip-top-left'] = placement === 'topLeft';
-	      tooltipClass[prefixCls + '-tooltip-top-right'] = placement === 'topRight';
-	      tooltipClass[prefixCls + '-tooltip-left'] = placement === 'left';
-	      tooltipClass[prefixCls + '-tooltip-left-top'] = placement === 'leftTop';
-	      tooltipClass[prefixCls + '-tooltip-left-bottom'] = placement === 'leftBottom';
-	      tooltipClass[prefixCls + '-tooltip-right'] = placement === 'right';
-	      tooltipClass[prefixCls + '-tooltip-right-top'] = placement === 'rightTop';
-	      tooltipClass[prefixCls + '-tooltip-right-bottom'] = placement === 'rightBottom';
-	      tooltipClass[prefixCls + '-tooltip-bottom'] = placement === 'bottom';
-	      tooltipClass[prefixCls + '-tooltip-bottom-left'] = placement === 'bottomLeft';
-	      tooltipClass[prefixCls + '-tooltip-bottom-right'] = placement === 'bottomRight';
-	
-	      return tooltipClass;
+	      // 修正箭头坐标
+	      if (placement.endsWith('Left')) {
+	        $arrow.style.left = triggerOffset.width / 2 + 'px';
+	      } else if (placement.endsWith('Right')) {
+	        $arrow.style.right = triggerOffset.width / 2 + 'px';
+	      } else if (placement.endsWith('Top')) {
+	        $arrow.style.top = triggerOffset.height / 2 + 'px';
+	      } else if (placement.endsWith('Bottom')) {
+	        $arrow.style.bottom = triggerOffset.height / 2 + 'px';
+	      }
 	    }
 	  }
 	};
 	// </script>
 
 	/* generated by vue-loader */
-	// <template>
-	//   <div :class="[prefixCls + '-tooltip-trigger']" v-el:trigger>
-	//     <slot>
-	//     </slot>
-	//   </div>
-	//   <div :class="tooltipClassObj"
-	//     v-el:popover
-	//     v-show="show"
-	//     :transition="effect"
-	//     role="tooltip">
-	//     <div :class="[prefixCls + '-tooltip-arrow']" v-el:arrow></div>
-	//     <div :class="[prefixCls + '-tooltip-inner']">
-	//       {{{content}}}
-	//     </div>
-	//   </div>
-	// </template>
-	//
-	// <script>
+
+/***/ },
+/* 207 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * Global Mixin
+	 * @description 全局mixin
+	 */
+	
+	var GlobalMixin = {
+	  props: {
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
+	  }
+	};
+	
+	exports.default = GlobalMixin;
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Trigger = __webpack_require__(209);
+	
+	var _Trigger2 = _interopRequireDefault(_Trigger);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Trigger2.default;
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(210)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Trigger/Trigger.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(211)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/src/components/Trigger/Trigger.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
 
 /***/ },
 /* 210 */
@@ -5080,13 +4877,49 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(170);
+	var _GlobalMixin = __webpack_require__(207);
+	
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
+	
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var PopoverMixin = {
+	// <template xmlns:v-el="http://www.w3.org/1999/xhtml">
+	//   <div :class="[prefixCls + '-trigger-cont']">
+	//     <div v-if="trigger === 'click'"
+	//         v-el:trigger
+	//          :class="[prefixCls + '-trigger']"
+	//          @click="clickHandler">
+	//       <slot name="trigger">trigger slot is not set</slot>
+	//     </div>
+	//     <div v-if="trigger === 'hover'"
+	//          v-el:trigger
+	//          :class="[prefixCls + '-trigger']"
+	//          @mouseenter="hoverHandler"
+	//          @mouseleave="hoverHandler">
+	//       <slot name="trigger">trigger slot is not set</slot>
+	//     </div>
+	//     <div v-if="trigger === 'focus'"
+	//          v-el:trigger
+	//          :class="[prefixCls + '-trigger']">
+	//       <slot name="trigger">trigger slot is not set</slot>
+	//     </div>
+	//     <div v-el:popup
+	//          v-show="show"
+	//          :class="popupClassObj"
+	//          :transition="effect">
+	//       <slot name="popup">popup slot is not set</slot>
+	//     </div>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
+	exports.default = {
+	  mixins: [_GlobalMixin2.default],
+	
 	  props: {
 	    trigger: {
 	      type: String,
@@ -5096,20 +4929,17 @@
 	      type: String,
 	      default: 'zoom'
 	    },
-	    title: {
-	      type: String
+	    placement: {
+	      type: String,
+	      default: 'bottom'
 	    },
-	    content: [String, Number],
-	    header: {
+	    popupCls: {
+	      type: String,
+	      default: 'popup'
+	    },
+	    popupAlwaysInView: {
 	      type: Boolean,
 	      default: true
-	    },
-	    placement: {
-	      type: String
-	    },
-	    prefixCls: {
-	      type: String,
-	      default: 'atui'
 	    }
 	  },
 	
@@ -5125,29 +4955,52 @@
 	
 	
 	  computed: {
-	    popoverClassObj: function popoverClassObj() {
+	    popupClassObj: function popupClassObj() {
 	      var prefixCls = this.prefixCls;
+	      var popupCls = this.popupCls;
 	      var placement = this.placement;
 	
-	      var popoverClassObj = {};
+	      var classObj = {};
 	
-	      popoverClassObj[prefixCls + '-popover'] = true;
-	      popoverClassObj[prefixCls + '-popover-top'] = placement === 'top';
-	      popoverClassObj[prefixCls + '-popover-top-left'] = placement === 'topLeft';
-	      popoverClassObj[prefixCls + '-popover-top-right'] = placement === 'topRight';
-	      popoverClassObj[prefixCls + '-popover-left'] = placement === 'left';
-	      popoverClassObj[prefixCls + '-popover-left-top'] = placement === 'leftTop';
-	      popoverClassObj[prefixCls + '-popover-left-bottom'] = placement === 'leftBottom';
-	      popoverClassObj[prefixCls + '-popover-right'] = placement === 'right';
-	      popoverClassObj[prefixCls + '-popover-right-top'] = placement === 'rightTop';
-	      popoverClassObj[prefixCls + '-popover-right-bottom'] = placement === 'rightBottom';
-	      popoverClassObj[prefixCls + '-popover-bottom'] = placement === 'bottom';
-	      popoverClassObj[prefixCls + '-popover-bottom-left'] = placement === 'bottomLeft';
-	      popoverClassObj[prefixCls + '-popover-bottom-right'] = placement === 'bottomRight';
+	      classObj[prefixCls + '-popup'] = true;
+	      classObj[prefixCls + '-' + popupCls] = true;
+	      classObj[prefixCls + '-' + popupCls + '-top'] = placement === 'top';
+	      classObj[prefixCls + '-' + popupCls + '-top-left'] = placement === 'topLeft';
+	      classObj[prefixCls + '-' + popupCls + '-top-right'] = placement === 'topRight';
+	      classObj[prefixCls + '-' + popupCls + '-left'] = placement === 'left';
+	      classObj[prefixCls + '-' + popupCls + '-left-top'] = placement === 'leftTop';
+	      classObj[prefixCls + '-' + popupCls + '-left-bottom'] = placement === 'leftBottom';
+	      classObj[prefixCls + '-' + popupCls + '-right'] = placement === 'right';
+	      classObj[prefixCls + '-' + popupCls + '-right-top'] = placement === 'rightTop';
+	      classObj[prefixCls + '-' + popupCls + '-right-bottom'] = placement === 'rightBottom';
+	      classObj[prefixCls + '-' + popupCls + '-bottom'] = placement === 'bottom';
+	      classObj[prefixCls + '-' + popupCls + '-bottom-left'] = placement === 'bottomLeft';
+	      classObj[prefixCls + '-' + popupCls + '-bottom-right'] = placement === 'bottomRight';
 	
-	      return popoverClassObj;
+	      return classObj;
 	    }
 	  },
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var $trigger = this.$els.trigger.children[0];
+	    var me = this;
+	    var trigger = this.trigger;
+	
+	
+	    if (trigger === 'focus') {
+	      this._focusEvent = _EventListener2.default.listen($trigger, 'focus', function () {
+	        me.show = true;
+	        me.resetPos();
+	      });
+	
+	      this._blurEvent = _EventListener2.default.listen($trigger, 'blur', function () {
+	        _this.show = false;
+	      });
+	    }
+	  },
+	
 	
 	  methods: {
 	    toggle: function toggle() {
@@ -5156,151 +5009,177 @@
 	
 	
 	    /**
+	     * 设置弹窗视图内可见优先
+	     */
+	    enablePopupInView: function enablePopupInView() {
+	      var placement = this.placement;
+	
+	
+	      if (placement.startsWith('top')) {} else if (placement.startsWith('bottom')) {}
+	    },
+	
+	
+	    /**
 	     * 设置tooltip坐标
-	       */
+	     */
 	    resetPos: function resetPos() {
 	      var me = this;
-	      var popover = me.$els.popover;
+	      var placement = this.placement;
 	
-	      if (me.show && popover.offsetWidth === 0) {
+	      var $popup = me.$els.popup;
+	
+	      // 坐标修正
+	      if (me.show && $popup.offsetWidth === 0) {
 	        setTimeout(function () {
 	          me.resetPos();
-	        });
+	        }, 0);
 	        return;
 	      }
 	
-	      var triger = me.$els.trigger.children[0];
-	      var offset = triger.getBoundingClientRect();
+	      var $trigger = me.$els.trigger.children[0];
+	      var offset = $trigger.getBoundingClientRect();
 	      var offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left;
 	      var offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top;
-	      var offsetWidth = popover.offsetWidth;
-	      var offsetHeight = popover.offsetHeight;
+	      var offsetWidth = offset.width;
+	      var offsetHeight = offset.height;
+	      var popupOffsetWidth = $popup.offsetWidth;
+	      var popupOffsetHeight = $popup.offsetHeight;
 	
-	      switch (me.placement) {
+	      switch (placement) {
 	        case 'top':
-	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2;
-	          me.position.top = offsetTop - offsetHeight;
+	          me.position.left = offsetLeft - popupOffsetWidth / 2 + offsetWidth / 2;
+	          me.position.top = offsetTop - popupOffsetHeight;
 	          break;
 	        case 'topLeft':
-	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 + offsetWidth / 4;
-	          me.position.top = offsetTop - offsetHeight;
+	          me.position.left = offsetLeft;
+	          me.position.top = offsetTop - popupOffsetHeight;
 	          break;
 	        case 'topRight':
-	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 - offsetWidth / 4;
-	          me.position.top = offsetTop - offsetHeight;
+	          me.position.left = offsetLeft + offsetWidth - popupOffsetWidth;
+	          me.position.top = offsetTop - popupOffsetHeight;
 	          break;
 	        case 'left':
-	          me.position.left = offsetLeft - offsetWidth;
-	          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2;
+	          me.position.left = offsetLeft - popupOffsetWidth;
+	          me.position.top = offsetTop + offsetHeight / 2 - popupOffsetHeight / 2;
 	          break;
 	        case 'leftTop':
-	          me.position.left = offsetLeft - offsetWidth;
-	          me.position.top = offsetTop + triger.offsetHeight / 4 - offsetHeight / 2 + offsetHeight / 4;
+	          me.position.left = offsetLeft - popupOffsetWidth;
+	          me.position.top = offsetTop;
 	          break;
 	        case 'leftBottom':
-	          me.position.left = offsetLeft - offsetWidth;
-	          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + triger.offsetHeight / 4;
+	          me.position.left = offsetLeft - popupOffsetWidth;
+	          me.position.top = offsetTop + offsetHeight - popupOffsetHeight;
 	          break;
 	        case 'right':
-	          me.position.left = offsetLeft + triger.offsetWidth;
-	          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2;
+	          me.position.left = offsetLeft + offsetWidth;
+	          me.position.top = offsetTop + offsetHeight / 2 - popupOffsetHeight / 2;
 	          break;
 	        case 'rightTop':
-	          me.position.left = offsetLeft + triger.offsetWidth;
-	          me.position.top = offsetTop + triger.offsetHeight / 4 - offsetHeight / 2 + offsetHeight / 4;
+	          me.position.left = offsetLeft + offsetWidth;
+	          me.position.top = offsetTop;
 	          break;
 	        case 'rightBottom':
-	          me.position.left = offsetLeft + triger.offsetWidth;
-	          me.position.top = offsetTop + triger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + triger.offsetHeight / 4;
+	          me.position.left = offsetLeft + offsetWidth;
+	          me.position.top = offsetTop + offsetHeight - popupOffsetHeight;
 	          break;
 	        case 'bottom':
-	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2;
-	          me.position.top = offsetTop + triger.offsetHeight;
+	          me.position.left = offsetLeft - popupOffsetWidth / 2 + offsetWidth / 2;
+	          me.position.top = offsetTop + offsetHeight;
 	          break;
 	        case 'bottomLeft':
-	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 + offsetWidth / 4;
-	          me.position.top = offsetTop + triger.offsetHeight;
+	          me.position.left = offsetLeft;
+	          me.position.top = offsetTop + offsetHeight;
 	          break;
 	        case 'bottomRight':
-	          me.position.left = offsetLeft - offsetWidth / 2 + triger.offsetWidth / 2 - offsetWidth / 4;
-	          me.position.top = offsetTop + triger.offsetHeight;
+	          me.position.left = offsetLeft + offsetWidth - popupOffsetWidth;
+	          me.position.top = offsetTop + offsetHeight;
 	          break;
 	        default:
 	          console.log('Wrong placement prop');
 	      }
-	      popover.style.top = this.position.top + 'px';
-	      popover.style.left = this.position.left + 'px';
+	
+	      $popup.style.top = this.position.top + 'px';
+	      $popup.style.left = this.position.left + 'px';
+	
+	      // 向父组件派发事件
+	      this.$dispatch('trigger-reset-pos', {
+	        $trigger: $trigger,
+	        $popup: $popup,
+	        placement: placement
+	      });
+	    },
+	    clickHandler: function clickHandler(ev) {
+	      this.show = !this.show;
+	      this.resetPos();
+	    },
+	    hoverHandler: function hoverHandler(ev) {
+	      var type = ev.type;
+	
+	
+	      if (type === 'mouseenter') {
+	        this.show = true;
+	        this.resetPos();
+	      } else {
+	        this.show = false;
+	      }
+	    },
+	    focusHandler: function focusHandler(ev) {
+	      var type = ev.type;
+	
+	
+	      console.log('ev', ev);
+	
+	      if (type === 'focus') {
+	        this.show = true;
+	        this.resetPos();
+	      } else {
+	        this.show = false;
+	      }
 	    }
 	  },
+	
 	  attached: function attached() {
-	    if (this.$els.popover) {
-	      document.body.appendChild(this.$els.popover);
-	    }
-	  },
-	  ready: function ready() {
-	    var _this = this;
-	
-	    if (!this.$els.popover) return console.error("Couldn't find popover v-el in your component that uses popoverMixin.");
-	
-	    var me = this;
-	    // const popover = this.$els.popover
-	    var triger = this.$els.trigger.children[0];
-	
-	    if (this.trigger === 'hover') {
-	      this._mouseenterEvent = _EventListener2.default.listen(triger, 'mouseenter', function () {
-	        me.show = true;
-	        me.resetPos();
-	      });
-	      this._mouseleaveEvent = _EventListener2.default.listen(triger, 'mouseleave', function () {
-	        _this.show = false;
-	      });
-	    } else if (this.trigger === 'focus') {
-	      this._focusEvent = _EventListener2.default.listen(triger, 'focus', function () {
-	        me.show = true;
-	        me.resetPos();
-	      });
-	      this._blurEvent = _EventListener2.default.listen(triger, 'blur', function () {
-	        _this.show = false;
-	      });
-	    } else {
-	      this._clickEvent = _EventListener2.default.listen(triger, 'click', function () {
-	        me.show = !me.show;
-	        me.resetPos();
-	      });
+	    if (this.$els.popup) {
+	      document.body.appendChild(this.$els.popup);
 	    }
 	  },
 	  beforeDestroy: function beforeDestroy() {
+	    var $popup = this.$els.popup;
+	
+	    if ($popup && $popup.nodeType) {
+	      $popup.parentNode.removeChild($popup);
+	    }
+	
 	    if (this._blurEvent) {
 	      this._blurEvent.remove();
 	      this._focusEvent.remove();
 	    }
-	    if (this._mouseenterEvent) {
-	      this._mouseenterEvent.remove();
-	      this._mouseleaveEvent.remove();
-	    }
-	    if (this._clickEvent) this._clickEvent.remove();
-	    if (this.$els.popover && this.$els.popover.nodeType) {
-	      this.$els.popover.parentNode.removeChild(this.$els.popover);
-	    }
 	  }
 	};
-	
-	exports.default = PopoverMixin;
+	// </script>
+
+	/* generated by vue-loader */
 
 /***/ },
 /* 211 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-tooltip-trigger']\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div :class=\"tooltipClassObj\"\n  v-el:popover\n  v-show=\"show\"\n  :transition=\"effect\"\n  role=\"tooltip\">\n  <div :class=\"[prefixCls + '-tooltip-arrow']\" v-el:arrow></div>\n  <div :class=\"[prefixCls + '-tooltip-inner']\">\n    {{{content}}}\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n      v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
 
 /***/ },
 /* 212 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :id=\"sliderId\" :class=\"sliderClassObj\" @click=\"clickFun\">\n  <template v-for=\"item in valuePercent\">\n    <tooltip :content=\"valueArray[$index]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-handle']\" :style=\"{'left': item+'%'}\" @mousedown=\"mousedown\"></div>\n    </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length == 1\">\n    <tooltip :content=\"valueArray[0]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}\"></div>\n      </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length > 1\">\n    <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}\"></div>\n  </template>\n  <div :class=\"[prefixCls + '-slider-step']\"></div>\n  <div :class=\"[prefixCls + '-slider-mark']\"></div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-popover-cont']\">\n  <trigger :trigger=\"trigger\" :effect=\"effect\" :placement=\"placement\" :popup-cls=\"popupCls\">\n    <slot slot=\"trigger\"></slot>\n    <slot slot=\"popup\" name=\"popup\" role=\"tooltip\">\n      <div :class=\"[prefixCls + '-tooltip-arrow']\"></div>\n      <div :class=\"[prefixCls + '-tooltip-inner']\">\n        {{{content}}}\n      </div>\n    </slot>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 213 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :id=\"sliderId\" :class=\"sliderClassObj\" @click=\"clickFun\">\n  <template v-for=\"item in valuePercent\">\n    <tooltip :content=\"valueArray[$index]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-handle']\" :style=\"{'left': item+'%'}\" @mousedown=\"mousedown\"></div>\n    </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length == 1\">\n    <tooltip :content=\"valueArray[0]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}\"></div>\n      </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length > 1\">\n    <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}\"></div>\n  </template>\n  <div :class=\"[prefixCls + '-slider-step']\"></div>\n  <div :class=\"[prefixCls + '-slider-mark']\"></div>\n</div>\n";
+
+/***/ },
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5309,7 +5188,7 @@
 	  value: true
 	});
 	
-	var _Switch = __webpack_require__(214);
+	var _Switch = __webpack_require__(215);
 	
 	var _Switch2 = _interopRequireDefault(_Switch);
 
@@ -5318,16 +5197,16 @@
 	exports.default = _Switch2.default;
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(215)
+	__vue_script__ = __webpack_require__(216)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Switch/Switch.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(216)
+	__vue_template__ = __webpack_require__(217)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5346,7 +5225,7 @@
 	})()}
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -5420,13 +5299,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span :class=\"switchClassObj\"\n      :style=\"{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}\"\n      @click=\"changeHandler\">\n  <span :class=\"[prefixCls + '-switch-content']\">\n    <slot v-if=\"checked && !small\" name=\"checkedPart\"></slot>\n    <slot v-if=\"!checked && !small\" name=\"unCheckedPart\"></slot>\n  </span>\n</span>\n";
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5435,7 +5314,7 @@
 	  value: true
 	});
 	
-	var _Dropdown = __webpack_require__(218);
+	var _Dropdown = __webpack_require__(219);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
@@ -5444,16 +5323,16 @@
 	exports.default = _Dropdown2.default;
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(219)
+	__vue_script__ = __webpack_require__(220)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Dropdown/Dropdown.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(220)
+	__vue_template__ = __webpack_require__(221)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5472,7 +5351,7 @@
 	})()}
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5481,7 +5360,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -5562,13 +5441,13 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5577,11 +5456,11 @@
 	  value: true
 	});
 	
-	var _Select = __webpack_require__(222);
+	var _Select = __webpack_require__(223);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Option = __webpack_require__(229);
+	var _Option = __webpack_require__(230);
 	
 	var _Option2 = _interopRequireDefault(_Option);
 	
@@ -5592,16 +5471,16 @@
 	exports.default = _Select2.default;
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(223)
+	__vue_script__ = __webpack_require__(224)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Select/Select.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(228)
+	__vue_template__ = __webpack_require__(229)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5620,7 +5499,7 @@
 	})()}
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5629,15 +5508,15 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Tag = __webpack_require__(224);
+	var _Tag = __webpack_require__(225);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
@@ -5856,7 +5735,7 @@
 	          this.value.$remove(option.value);
 	        }
 	      } else {
-	        this.selectedOptions = [option];
+	        // this.selectedOptions = [option]
 	        this.value = option.value;
 	      }
 	
@@ -5916,7 +5795,7 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5925,7 +5804,7 @@
 	  value: true
 	});
 	
-	var _Tag = __webpack_require__(225);
+	var _Tag = __webpack_require__(226);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 
@@ -5934,16 +5813,16 @@
 	exports.default = _Tag2.default;
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(226)
+	__vue_script__ = __webpack_require__(227)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tag/Tag.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(227)
+	__vue_template__ = __webpack_require__(228)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -5962,7 +5841,7 @@
 	})()}
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5971,7 +5850,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -6030,28 +5909,28 @@
 	// <script>
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-if=\"!closed\"\n     :class=\"[prefixCls + '-tag', color && (prefixCls + '-tag-color')]\"\n     :style=\"{'background-color': color}\">\n  <a :href=\"href\"\n     :class=\"[prefixCls + '-tag-text']\"\n     :style=\"{'fontSize': size+'px'}\">\n    <slot></slot>\n  </a>\n  <span v-if=\"closable\"\n       :class=\"[prefixCls + '-tag-close']\"\n       @click=\"closeHandler\">\n   <v-icon type=\"close\" :size=\"size\"></v-icon>\n  </span>\n</div>\n";
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"selectClassObj\">\n  <div :class=\"[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]\"\n       tabindex=\"1\"\n       @mousedown=\"toggleDropdown\"\n       @keydown.up=\"selectUp\"\n       @keydown.down=\"selectDown\"\n       v-bind=\"{disabled: disabled}\">\n    <template v-if=\"!multiple\">\n      <span v-show=\"!value\"\n            :class=\"[prefixCls + '-select-placeholder']\">{{placeholder}}</span>\n      <span :class=\"[prefixCls + '-select-btn-content']\">{{ showText }}</span>\n      <span :class=\"[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]\">\n        <icon :class=\"[prefixCls + '-dropdown-icon']\" type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span :class=\"[prefixCls + '-select-placeholder']\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field :class=\"[prefixCls + '-select-search-field']\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div :class=\"[prefixCls + '-dropdown-menu']\" v-show=\"show && options.length > 0\" transition=\"slide\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(230)
+	__vue_script__ = __webpack_require__(231)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Select/Option.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(231)
+	__vue_template__ = __webpack_require__(232)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6070,7 +5949,7 @@
 	})()}
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -6184,13 +6063,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-show=\"show\"\n     :class=\"optionClassObj\"\n     @mousedown.prevent.stop=\"handleClick\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6199,7 +6078,7 @@
 	  value: true
 	});
 	
-	var _Calendar = __webpack_require__(233);
+	var _Calendar = __webpack_require__(234);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 
@@ -6208,16 +6087,16 @@
 	exports.default = _Calendar2.default;
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(234)
+	__vue_script__ = __webpack_require__(235)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Calendar/Calendar.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(235)
+	__vue_template__ = __webpack_require__(236)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6236,7 +6115,7 @@
 	})()}
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -6584,13 +6463,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-calendar']\" v-show=\"show\">\n  <div :class=\"[prefixCls + '-calendar-popup']\" v-show=\"displayDayView\">\n    <div :class=\"[prefixCls + '-calendar-inner']\">\n      <div :class=\"[prefixCls + '-calendar-header']\">\n        <!-- <span class=\"atui-calendar-prev-year-btn\">»</span> -->\n        <span :class=\"[prefixCls + '-calendar-month-btn', prefixCls + '-calendar-preBtn']\" @click=\"preNextMonthClick(0)\">‹</span>\n        <span :class=\"[prefixCls + '-calendar-month-btn', prefixCls + '-calendar-nextBtn']\" @click=\"preNextMonthClick(1)\">›</span>\n        <!-- <span class=\"atui-calendar-next-year-btn\">»</span> -->\n        <p @click=\"switchMonthView\">{{stringifyDayHeader(currDate)}}</p>\n      </div>\n      <div :class=\"[prefixCls + '-calendar-body']\">\n        <div :class=\"[prefixCls + '-calendar-weekRange']\">\n          <span v-for=\"w in weekRange\">{{w}}</span>\n        </div>\n        <div :class=\"[prefixCls + '-calendar-dateRange']\">\n          <span v-for=\"d in dateRange\" :class=\"d.sclass\" @click=\"daySelect(d.date,$event)\">{{d.text}}</span>\n        </div>\n      </div>\n      <div :class=\"[prefixCls + '-calendar-footer']\">\n        <a :class=\"[prefixCls + '-calendar-today-btn']\" role=\"button\" @click=\"daySelect(new Date(),$event)\" :title=\"stringifyDayHeader(currDate)\">今天</a>\n      </div>\n    </div>\n  </div>\n  <div :class=\"[prefixCls + '-calendar-popup']\" v-show=\"displayMonthView\">\n    <div :class=\"[prefixCls + '-calendar-inner']\">\n      <div :class=\"[prefixCls + '-calendar-header']\">\n        <span :class=\"['month-btn', prefixCls + '-calendar-preBtn']\" @click=\"preNextYearClick(0)\">&lt;</span>\n        <span :class=\"['month-btn', prefixCls + '-calendar-nextBtn']\" @click=\"preNextYearClick(1)\">&gt;</span>\n        <p @click=\"switchDecadeView\">{{stringifyYearHeader(currDate)}}</p>\n      </div>\n      <div :class=\"[prefixCls + '-calendar-body']\">\n        <div :class=\"[prefixCls + '-calendar-monthRange']\">\n          <template v-for=\"m in monthNames\">\n            <span :class=\"[(monthNames[parse(value).getMonth()]  === m) &&\n                currDate.getFullYear() === parse(value).getFullYear() && prefixCls + '-calendar-dateRange-item-active']\"\n                @click=\"monthSelect($index)\"\n              >{{m.substr(0,3)}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div :class=\"[prefixCls + '-calendar-popup']\" v-show=\"displayYearView\">\n    <div :class=\"[prefixCls + '-calendar-inner']\">\n      <div :class=\"[prefixCls + '-calendar-header']\">\n        <span :class=\"['month-btn', prefixCls + '-calendar-preBtn']\" @click=\"preNextDecadeClick(0)\">&lt;</span>\n        <span :class=\"['month-btn', prefixCls + '-calendar-nextBtn']\" @click=\"preNextDecadeClick(1)\">&gt;</span>\n        <p>{{stringifyDecadeHeader(currDate)}}</p>\n      </div>\n      <div :class=\"[prefixCls + '-calendar-body']\">\n        <div :class=\"[prefixCls + '-calendar-monthRange decadeRange']\">\n          <template v-for=\"decade in decadeRange\">\n            <span :class=\"[parse(value).getFullYear() === decade.text && prefixCls + '-calendar-dateRange-item-active']\"\n                @click.stop=\"yearSelect(decade.text)\"\n              >{{decade.text}}</span>\n          </template>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6599,7 +6478,7 @@
 	  value: true
 	});
 	
-	var _TimePicker = __webpack_require__(237);
+	var _TimePicker = __webpack_require__(238);
 	
 	var _TimePicker2 = _interopRequireDefault(_TimePicker);
 
@@ -6608,16 +6487,16 @@
 	exports.default = _TimePicker2.default;
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(238)
+	__vue_script__ = __webpack_require__(239)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/TimePicker/TimePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(240)
+	__vue_template__ = __webpack_require__(241)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6636,7 +6515,7 @@
 	})()}
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6645,15 +6524,15 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Input = __webpack_require__(163);
+	var _Input = __webpack_require__(160);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _selection = __webpack_require__(239);
+	var _selection = __webpack_require__(240);
 	
 	var _selection2 = _interopRequireDefault(_selection);
 	
@@ -6867,7 +6746,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -6895,13 +6774,13 @@
 	}
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-time-picker']\">\n  <span :class=\"[prefixCls + '-time-picker-toggler']\">\n    <v-input v-el:picker-toggler readonly @click=\"toggleMenus\" :value=\"value\" :placeholder=\"placeholder\"></v-input>\n  </span>\n  <div v-el:picker-menus :class=\"[prefixCls + '-time-picker-menus']\" v-show=\"show\" transition=\"slide\">\n    <div :class=\"[prefixCls + '-time-picker-panel']\">\n      <ul v-el:h :class=\"time-hours\" @mouseover=\"selection('H')\">\n        <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: hour === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div :class=\"[prefixCls + '-time-picker-panel']\">\n      <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n        <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: minute === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n    <div :class=\"[prefixCls + '-time-picker-panel']\" @mouseover=\"selection('S')\">\n      <ul v-el:s class=\"time-seconds\">\n        <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: second === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6910,11 +6789,11 @@
 	  value: true
 	});
 	
-	var _DatePicker = __webpack_require__(242);
+	var _DatePicker = __webpack_require__(243);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
-	var _RangePicker = __webpack_require__(245);
+	var _RangePicker = __webpack_require__(246);
 	
 	var _RangePicker2 = _interopRequireDefault(_RangePicker);
 	
@@ -6925,16 +6804,16 @@
 	exports.default = _DatePicker2.default;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(243)
+	__vue_script__ = __webpack_require__(244)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/DatePicker/DatePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(244)
+	__vue_template__ = __webpack_require__(245)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -6953,7 +6832,7 @@
 	})()}
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6962,15 +6841,15 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Calendar = __webpack_require__(232);
+	var _Calendar = __webpack_require__(233);
 	
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -7052,22 +6931,22 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-datepicker']\">\n  <div :class=\"[prefixCls + '-datepicker-toggle']\" @click=\"inputClick\" >\n    <input :class=\"[prefixCls + '-datepicker-input']\" transition=\"slide\" v-bind=\"{disabled:disabled}\" type=\"text\" :value=\"value\" :placeholder=\"placeholder\" readonly/>\n    <icon type=\"calendar\"></icon>\n  </div>\n  <div :class=\"[prefixCls + '-datepicker-calendar']\">\n    <calendar :show=\"show\" transition=\"slide\" @change=\"selectChange\" v-ref:calendar :value=\"value\" :format=\"format\" :locale=\"locale\" :disabled-date=\"disabledDate\"></calendar>\n  </div>\n</div>\n";
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(246)
+	__vue_script__ = __webpack_require__(247)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/DatePicker/RangePicker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(247)
+	__vue_template__ = __webpack_require__(248)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7086,7 +6965,7 @@
 	})()}
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7095,7 +6974,7 @@
 	  value: true
 	});
 	
-	var _DatePicker = __webpack_require__(242);
+	var _DatePicker = __webpack_require__(243);
 	
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 	
@@ -7178,13 +7057,13 @@
 	// <script>
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-datepicker-rangepicker']\">\n  <date-picker v-ref:start-date :value.sync=\"startDate\" :disabled=\"disabled\" :format=\"format\" placeholder=\"开始日期\" @change=\"onStartDateChange\"></date-picker>\n  <span :class=\"[prefixCls + '-datepicker-rangepicker-separator']\"> - </span>\n  <date-picker v-ref:end-date :value.sync=\"endDate\" :disabled=\"disabled\" :format=\"format\" placeholder=\"结束日期\" :disabled-date=\"disabledEndDate\" @change=\"onEndDateChange\"></date-picker>\n</div>\n";
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7193,7 +7072,7 @@
 	  value: true
 	});
 	
-	var _Cascader = __webpack_require__(249);
+	var _Cascader = __webpack_require__(250);
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 
@@ -7202,16 +7081,16 @@
 	exports.default = _Cascader2.default;
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(250)
+	__vue_script__ = __webpack_require__(251)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Cascader/Cascader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(251)
+	__vue_template__ = __webpack_require__(252)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7230,7 +7109,7 @@
 	})()}
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7239,11 +7118,11 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
-	var _Input = __webpack_require__(163);
+	var _Input = __webpack_require__(160);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
@@ -7381,13 +7260,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-cascader']\">\n  <span :class=\"[prefixCls + '-cascader-picker']\">\n    <v-input readonly @click=\"toggleMenus\" :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n  </span>\n  <div :class=\"[prefixCls + '-cascader-menus']\" v-show=\"show\" transition=\"slide\">\n    <ul :class=\"[prefixCls + '-cascader-menu']\" v-for=\"(index, menu) in menus\">\n      <li :class=\"[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]\"\n          v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7396,11 +7275,11 @@
 	  value: true
 	});
 	
-	var _Modal = __webpack_require__(253);
+	var _Modal = __webpack_require__(254);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -7459,16 +7338,16 @@
 	exports.default = _Modal2.default;
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(254)
+	__vue_script__ = __webpack_require__(255)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Modal/Modal.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(255)
+	__vue_template__ = __webpack_require__(256)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7487,7 +7366,7 @@
 	})()}
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7603,13 +7482,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div role=\"dialog\" :class=\"[prefixCls + '-modal']\" v-show=\"show\" transition=\"fade\"\n  @click=\"clickBack\"\n  >\n  <div v-show=\"show\"\n       :class=\"dialogClassObj\"\n       :style=\"{width: width}\"\n       role=\"document\"\n       transition=\"fade\">\n    <div :class=\"[prefixCls + '-modal-content']\">\n      <slot name=\"modal-header\">\n        <div :class=\"[prefixCls + '-modal-header']\">\n          <button type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"close\"><span>&times;</span></button>\n          <h4 :class=\"[prefixCls + '-modal-title']\">{{title}}</h4>\n        </div>\n      </slot>\n      <div :class=\"[prefixCls + '-modal-body']\" :style=\"{height: height, maxHeight: '500px'}\">\n        <slot name=\"modal-body\">\n        </slot>\n      </div>\n      <slot name=\"modal-footer\">\n        <div :class=\"[prefixCls + '-modal-footer']\">\n          <button type=\"button\" :class=\"[prefixCls + '-btn', prefixCls + '-btn-default']\" @click=\"callback\">确定</button>\n          <button type=\"button\" :class=\"[prefixCls + '-btn', prefixCls + '-btn-tertiary']\" @click=\"close\">取消</button>\n        </div>\n      </slot>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7618,7 +7497,7 @@
 	  value: true
 	});
 	
-	var _Table = __webpack_require__(257);
+	var _Table = __webpack_require__(258);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -7627,16 +7506,16 @@
 	exports.default = _Table2.default;
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(258)
+	__vue_script__ = __webpack_require__(259)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Table/Table.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(283)
+	__vue_template__ = __webpack_require__(284)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -7655,7 +7534,7 @@
 	})()}
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7664,27 +7543,27 @@
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(259);
+	var _assign = __webpack_require__(260);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _concat = __webpack_require__(263);
+	var _concat = __webpack_require__(264);
 	
 	var _concat2 = _interopRequireDefault(_concat);
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Dropdown = __webpack_require__(217);
+	var _Dropdown = __webpack_require__(218);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Spin = __webpack_require__(265);
+	var _Spin = __webpack_require__(266);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 	
-	var _Pagination = __webpack_require__(270);
+	var _Pagination = __webpack_require__(271);
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
@@ -7756,8 +7635,8 @@
 	//         </tbody>
 	//       </table>
 	//     </div>
-	//     <div v-if="pagination" :class="[prefixCls + '-table-pagination']">
-	//       <pagination v-ref:pager :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
+	//     <div v-show="pagination && pagination.total > 0" :class="[prefixCls + '-table-pagination']">
+	//       <pagination v-ref:pager :total="pagination.total" :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
 	//     </div>
 	//   </div>
 	// </template>
@@ -7765,7 +7644,15 @@
 	// <script type="text/babel">
 	exports.default = {
 	  props: {
-	    pagination: Object,
+	    pagination: {
+	      type: Object,
+	      default: function _default() {
+	        return {
+	          total: 0,
+	          currPage: 1
+	        };
+	      }
+	    },
 	    dataSource: {
 	      type: Array,
 	      default: function _default() {
@@ -7811,6 +7698,7 @@
 	      }
 	    });
 	    return {
+	      originDataSource: (0, _concat2.default)(this.dataSource, []),
 	      isCheckedAll: false,
 	      isDisabledAll: false,
 	      sorderOrder: [],
@@ -7821,10 +7709,8 @@
 	    };
 	  },
 	  compiled: function compiled() {
-	    if (this.pagination) {
-	      this.originDataSource = (0, _concat2.default)(this.dataSource, []);
+	    if (this.pagination.total > 0) {
 	      var pager = this.$refs.pager;
-	      pager.total = this.dataSource.length;
 	      this.dataSource = this.originDataSource.slice(pager.currPage || 0, pager.pageSize);
 	    }
 	  },
@@ -7856,13 +7742,9 @@
 	  },
 	  watch: {
 	    dataSource: {
-	      handler: function handler(data) {
+	      handler: function handler(data, oldData) {
 	        var me = this;
-	        // if (me.pagination) {
-	        //   me.originDataSource = Array.concat(this.dataSource, [])
-	        //   let pager = me.$refs.pager
-	        //   me.dataSource = me.originDataSource.slice(pager.currPage || 0, pager.pageSize)
-	        // }
+	
 	        me.compileTbody();
 	        // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
 	        me.checkedRows = data.filter(function (record) {
@@ -7967,27 +7849,31 @@
 	      this.onFilter(column);
 	    },
 	    changePage: function changePage(pageNum) {
-	      var pager = this.$refs.pager;
-	      this.dataSource = this.originDataSource.slice((pageNum - 1) * pager.pageSize, pageNum * pager.pageSize);
+	      var me = this;
+	      var pager = me.$refs.pager;
+	      // 如果原始originDataSource有多余数据，证明是客户端分页
+	      if (me.originDataSource.length > pageNum * pager.pageSize) {
+	        me.dataSource = me.originDataSource.slice((pageNum - 1) * pager.pageSize, pageNum * pager.pageSize);
+	      }
 	      this.pagination.onChange && this.pagination.onChange(pageNum);
+	      me.pagination.currPage = pageNum;
+	      me.$dispatch('table-change', this.pagination, me.filters, me.sorter);
 	    },
 	    changeSize: function changeSize(current, pageSize) {
 	      var pager = this.$refs.pager;
 	      this.dataSource = this.originDataSource.slice((current - 1) * pager.pageSize, current * pager.pageSize);
 	      this.pagination.onShowSizeChange && this.pagination.onShowSizeChange(current, pageSize);
-	    },
-	    fixedHeaderAction: function fixedHeaderAction() {
-	      if (this.fixedHeader) {
-	        var header = this.$el.querySelector('.table-thead');
-	        var colgroup = this.$el.querySelector('colgroup').cloneNode(true);
-	        var fixedTable = this.$el.querySelector('.atui-table-fixed-header');
-	        fixedTable.appendChild(colgroup);
-	        fixedTable.appendChild(header);
-	      }
 	    }
-	  },
-	  attached: function attached() {
-	    // this.fixedHeaderAction()
+	    // fixedHeaderAction () {
+	    //   if (this.fixedHeader) {
+	    //     let header = this.$el.querySelector('.table-thead')
+	    //     let colgroup = this.$el.querySelector('colgroup').cloneNode(true)
+	    //     let fixedTable = this.$el.querySelector('.atui-table-fixed-header')
+	    //     fixedTable.appendChild(colgroup)
+	    //     fixedTable.appendChild(header)
+	    //   }
+	    // }
+	
 	  }
 	};
 	// </script>
@@ -7995,42 +7881,42 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 259 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(260), __esModule: true };
-
-/***/ },
 /* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(261);
-	module.exports = __webpack_require__(88).Object.assign;
+	module.exports = { "default": __webpack_require__(261), __esModule: true };
 
 /***/ },
 /* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(86);
-	
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(262)});
+	__webpack_require__(262);
+	module.exports = __webpack_require__(89).Object.assign;
 
 /***/ },
 /* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(87);
+	
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(263)});
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
-	var getKeys  = __webpack_require__(107)
-	  , gOPS     = __webpack_require__(190)
-	  , pIE      = __webpack_require__(191)
-	  , toObject = __webpack_require__(123)
-	  , IObject  = __webpack_require__(110)
+	var getKeys  = __webpack_require__(108)
+	  , gOPS     = __webpack_require__(187)
+	  , pIE      = __webpack_require__(188)
+	  , toObject = __webpack_require__(124)
+	  , IObject  = __webpack_require__(111)
 	  , $assign  = Object.assign;
 	
 	// should work with symbols and should have deterministic property order (V8 bug)
-	module.exports = !$assign || __webpack_require__(97)(function(){
+	module.exports = !$assign || __webpack_require__(98)(function(){
 	  var A = {}
 	    , B = {}
 	    , S = Symbol()
@@ -8055,13 +7941,13 @@
 	} : $assign;
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(264), __esModule: true };
+	module.exports = { "default": __webpack_require__(265), __esModule: true };
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports) {
 
 	// for a legacy code and future fixes
@@ -8070,7 +7956,7 @@
 	};
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8079,7 +7965,7 @@
 	  value: true
 	});
 	
-	var _Spin = __webpack_require__(266);
+	var _Spin = __webpack_require__(267);
 	
 	var _Spin2 = _interopRequireDefault(_Spin);
 
@@ -8088,16 +7974,16 @@
 	exports.default = _Spin2.default;
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(267)
+	__vue_script__ = __webpack_require__(268)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Spin/Spin.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(269)
+	__vue_template__ = __webpack_require__(270)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8116,7 +8002,7 @@
 	})()}
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8125,7 +8011,7 @@
 	  value: true
 	});
 	
-	var _cssAnimationSupported = __webpack_require__(268);
+	var _cssAnimationSupported = __webpack_require__(269);
 	
 	var _cssAnimationSupported2 = _interopRequireDefault(_cssAnimationSupported);
 	
@@ -8195,7 +8081,7 @@
 	// <script>
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8223,13 +8109,13 @@
 	exports.default = animation;
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"spinClassObj\" v-show=\"show\">\n  <div v-if=\"isSupportAnimation || !tip\" :class=\"[prefixCls + '-sping-point']\">\n      <div></div>\n      <div></div>\n      <div></div>\n  </div>\n  <p v-else :class=\"[prefixCls + '-sping-text']\">{{ tip || '加载中...' }}</p>\n  <div :class=\"[prefixCls + '-sping-content']\">\n    <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8238,11 +8124,11 @@
 	  value: true
 	});
 	
-	var _Pagination = __webpack_require__(271);
+	var _Pagination = __webpack_require__(272);
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
-	var _Jumper = __webpack_require__(273);
+	var _Jumper = __webpack_require__(274);
 	
 	var _Jumper2 = _interopRequireDefault(_Jumper);
 	
@@ -8253,16 +8139,16 @@
 	exports.default = _Pagination2.default;
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(272)
+	__vue_script__ = __webpack_require__(273)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Pagination/Pagination.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(282)
+	__vue_template__ = __webpack_require__(283)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8281,7 +8167,7 @@
 	})()}
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8290,15 +8176,15 @@
 	  value: true
 	});
 	
-	var _Jumper = __webpack_require__(273);
+	var _Jumper = __webpack_require__(274);
 	
 	var _Jumper2 = _interopRequireDefault(_Jumper);
 	
-	var _Pager = __webpack_require__(276);
+	var _Pager = __webpack_require__(277);
 	
 	var _Pager2 = _interopRequireDefault(_Pager);
 	
-	var _Options = __webpack_require__(279);
+	var _Options = __webpack_require__(280);
 	
 	var _Options2 = _interopRequireDefault(_Options);
 	
@@ -8346,7 +8232,9 @@
 	      }
 	      this.getPageRange();
 	      this.$nextTick(function () {
+	        // pagination-size-change将来要废弃，使用size-change
 	        _this.$dispatch('pagination-size-change', _this.currPage, _pageSize);
+	        _this.$dispatch('size-change', _this.currPage, _pageSize);
 	      });
 	    },
 	    currPage: function currPage() {
@@ -8468,7 +8356,10 @@
 	      this.getPageRange();
 	    },
 	    onChange: function onChange(pageNum) {
+	      // 此事件在新版中废弃，统一使用change事件，但有历史原因有项目用了，暂时保留
 	      this.$dispatch('pagination-page-change', pageNum);
+	      // 新加的，暂时保持新老并存
+	      this.$dispatch('change', pageNum);
 	    },
 	    _isValid: function _isValid(page) {
 	      return typeof page === 'number' && page >= 1 && page !== this.currPage;
@@ -8514,16 +8405,16 @@
 	// <script>
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(274)
+	__vue_script__ = __webpack_require__(275)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Pagination/Jumper.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(275)
+	__vue_template__ = __webpack_require__(276)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8542,7 +8433,7 @@
 	})()}
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8648,22 +8539,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-if=\"quickGo\" :class=\"[prefixCls + '-pagination-jump']\">\n    <div :class=\"[prefixCls + '-pagination-jumper-wrap']\">\n      跳至\n      <input type=\"text\" :value=\"_current\" @change=\"_handleChange($event)\" :class=\"inputClassObj\"/>\n      页\n    </div>\n    <button type=\"button\" @click=\"_go\" :class=\"btnClassObj\">\n  跳转</button>\n</div>\n";
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(277)
+	__vue_script__ = __webpack_require__(278)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Pagination/Pager.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(278)
+	__vue_template__ = __webpack_require__(279)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8682,7 +8573,7 @@
 	})()}
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8691,7 +8582,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -8774,22 +8665,22 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"pagerClassObj\">\n  <li v-for=\"page in pageRange\"\n      @click=\"pageClick(page.num)\"\n      :class=\"[prefixCls + '-pagination-item', page.className]\" >\n    <span v-if=\"page.className != prefixCls + '-pagination-item-prev' && page.className != prefixCls + '-pagination-item-next'\">\n      {{page.text}}\n    </span>\n    <icon v-if=\"page.className === prefixCls + '-pagination-item-prev'\"\n          type=\"prev\"\n          size=\"12\"\n          color=\"#666\" ></icon>\n    <icon v-if=\"page.className === prefixCls + '-pagination-item-next'\"\n          type=\"next\"\n          size=\"12\"\n          color=\"#666\"></icon>\n    <icon v-if=\"page.className === prefixCls + '-pagination-item-disabled' && page.icon === 'prev'\"\n          type=\"prev\"\n          size=\"12\"\n          color=\"#e6e6e6\"></icon>\n    <icon v-if=\"page.className === prefixCls + '-pagination-item-disabled' && page.icon==='next'\"\n          type=\"next\"\n          size=\"12\"\n          color=\"#e6e6e6\"></icon>\n  </li>\n</ul>\n";
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(280)
+	__vue_script__ = __webpack_require__(281)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Pagination/Options.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(281)
+	__vue_template__ = __webpack_require__(282)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8808,7 +8699,7 @@
 	})()}
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8817,7 +8708,7 @@
 	  value: true
 	});
 	
-	var _Select = __webpack_require__(221);
+	var _Select = __webpack_require__(222);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
@@ -8868,25 +8759,25 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div v-if=\"showSizeChanger\" :class=\"[prefixCls + '-pagination-selector']\">\n    <v-select :value=\"'' + defaultSize\" @change=\"change\">\n        <v-option value=\"10\">10 条/页</v-option>\n        <v-option value=\"20\">20 条/页</v-option>\n        <v-option value=\"30\">30 条/页</v-option>\n        <v-option value=\"40\">40 条/页</v-option>\n    </v-select>\n    <div :class=\"[prefixCls + '-pagination-totalpage']\">共{{ total }}条数据</div>\n</div>\n";
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-pagination']\">\n<template v-if=\"totalPage > 1\">\n  <options :total=\"total\" :default-size=\"pageSize\" :show-size-changer=\"showSizeChanger\" @pagination-size-change=\"changePageSize\"></options>\n  <jumper\n      :quick-go=\"showJumper ? _handleChange.bind(this) : null\"\n      :curr-page=\"currPage\"\n      :total-page=\"totalPage\"\n      :mini=\"mini\"\n  ></jumper>\n  <pager :page-range=\"pageRange\" :simple=\"simple\"  :mini=\"mini\" :page-click=\"pageClick\"></pager>\n</template>\n</div>\n";
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-table', prefixCls + '-table-'+ size, loading && (prefixCls + '-table-loading')]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container', fixedHeader && (prefixCls + '-table-fixed-header')]\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{{column['title']}}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" :class=\"[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" :class=\"[prefixCls + '-table-sorter']\">\n              <icon type=\"caretup\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"[sorderOrder[$index] == 'ascend' && (prefixCls + '-table-active')]\"></icon>\n              <icon type=\"caretdown\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"[sorderOrder[$index] == 'descend' && (prefixCls + '-table-active')]\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + '-table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-if=\"pagination\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination v-ref:pager :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\" @pagination-size-change=\"changeSize\"></pagination>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-table', prefixCls + '-table-'+ size, loading && (prefixCls + '-table-loading')]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container', fixedHeader && (prefixCls + '-table-fixed-header')]\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{{column['title']}}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" :class=\"[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" :class=\"[prefixCls + '-table-sorter']\">\n              <icon type=\"caretup\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"[sorderOrder[$index] == 'ascend' && (prefixCls + '-table-active')]\"></icon>\n              <icon type=\"caretdown\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"[sorderOrder[$index] == 'descend' && (prefixCls + '-table-active')]\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + '-table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-show=\"pagination && pagination.total > 0\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination v-ref:pager :total=\"pagination.total\" :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\" @pagination-size-change=\"changeSize\"></pagination>\n  </div>\n</div>\n";
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8895,7 +8786,7 @@
 	  value: true
 	});
 	
-	var _Badge = __webpack_require__(285);
+	var _Badge = __webpack_require__(286);
 	
 	var _Badge2 = _interopRequireDefault(_Badge);
 
@@ -8904,16 +8795,16 @@
 	exports.default = _Badge2.default;
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(286)
+	__vue_script__ = __webpack_require__(287)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Badge/Badge.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(287)
+	__vue_template__ = __webpack_require__(288)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8932,7 +8823,7 @@
 	})()}
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8978,13 +8869,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span :class=\"[prefixCls + '-badge']\">\n  <slot></slot>\n  <sup :class=\"[prefixCls + '-badge-dot']\" v-if=\"dot\"></sup>\n  <template v-else>\n    <sup v-if='count > 0' :class=\"[prefixCls + '-badge-count']\">\n      {{count | short}}\n    </sup>\n  </template>\n</span>\n";
 
 /***/ },
-/* 288 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8993,11 +8884,11 @@
 	  value: true
 	});
 	
-	var _Carousel = __webpack_require__(289);
+	var _Carousel = __webpack_require__(290);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Slide = __webpack_require__(294);
+	var _Slide = __webpack_require__(297);
 	
 	var _Slide2 = _interopRequireDefault(_Slide);
 	
@@ -9008,17 +8899,17 @@
 	exports.default = _Carousel2.default;
 
 /***/ },
-/* 289 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(290)
-	__vue_script__ = __webpack_require__(292)
+	__webpack_require__(291)
+	__vue_script__ = __webpack_require__(295)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Carousel/Carousel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(293)
+	__vue_template__ = __webpack_require__(296)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9037,16 +8928,16 @@
 	})()}
 
 /***/ },
-/* 290 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(291);
+	var content = __webpack_require__(292);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(143)(content, {});
+	var update = __webpack_require__(294)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -9063,10 +8954,10 @@
 	}
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(142)();
+	exports = module.exports = __webpack_require__(293)();
 	// imports
 	
 	
@@ -9077,7 +8968,285 @@
 
 
 /***/ },
-/* 292 */
+/* 293 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+	
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+	
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+	
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+	
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+	
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+	
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+	
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+	
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+	
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+	
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+	
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+	
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+	
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+	
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+	
+		update(obj);
+	
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+	
+	var replaceText = (function () {
+		var textStore = [];
+	
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+	
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+	
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+	
+		if (media) {
+			styleElement.setAttribute("media", media);
+		}
+	
+		if (sourceMap) {
+			// https://developer.chrome.com/devtools/docs/javascript-debugging
+			// this makes source maps inside style tags work properly in Chrome
+			css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */';
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+
+/***/ },
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9086,11 +9255,11 @@
 	  value: true
 	});
 	
-	var _toConsumableArray2 = __webpack_require__(77);
+	var _toConsumableArray2 = __webpack_require__(78);
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -9229,22 +9398,22 @@
 	// <script>
 
 /***/ },
-/* 293 */
+/* 296 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
-/* 294 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(295)
+	__vue_script__ = __webpack_require__(298)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Carousel/Slide.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(296)
+	__vue_template__ = __webpack_require__(299)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9263,7 +9432,7 @@
 	})()}
 
 /***/ },
-/* 295 */
+/* 298 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9310,23 +9479,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 296 */
+/* 299 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"item\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 297 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(298)
-	__vue_script__ = __webpack_require__(300)
+	__webpack_require__(301)
+	__vue_script__ = __webpack_require__(303)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Affix.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(301)
+	__vue_template__ = __webpack_require__(304)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9345,16 +9514,16 @@
 	})()}
 
 /***/ },
-/* 298 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(299);
+	var content = __webpack_require__(302);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(143)(content, {});
+	var update = __webpack_require__(294)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -9371,10 +9540,10 @@
 	}
 
 /***/ },
-/* 299 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(142)();
+	exports = module.exports = __webpack_require__(293)();
 	// imports
 	
 	
@@ -9385,7 +9554,7 @@
 
 
 /***/ },
-/* 300 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9394,7 +9563,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(170);
+	var _EventListener = __webpack_require__(167);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -9494,13 +9663,13 @@
 	// <script>
 
 /***/ },
-/* 301 */
+/* 304 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n  <div v-bind:class=\"{'vue-affix': affixed}\"\n    v-bind:style=\"styles\">\n    <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 302 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9509,7 +9678,7 @@
 	  value: true
 	});
 	
-	var _Textarea = __webpack_require__(303);
+	var _Textarea = __webpack_require__(306);
 	
 	var _Textarea2 = _interopRequireDefault(_Textarea);
 
@@ -9518,16 +9687,16 @@
 	exports.default = _Textarea2.default;
 
 /***/ },
-/* 303 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(304)
+	__vue_script__ = __webpack_require__(307)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Textarea/Textarea.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(305)
+	__vue_template__ = __webpack_require__(308)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9546,7 +9715,7 @@
 	})()}
 
 /***/ },
-/* 304 */
+/* 307 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9688,13 +9857,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 305 */
+/* 308 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-textarea-box']\">\n  <template v-if=\"autosize\">\n    <pre :id=\"preId\"><span>{{content}}</span><br></pre>\n  </template>\n  <textarea v-bind=\"{disabled: isDisabled}\"\n            :maxlength=\"limitWords\"\n            :class=\"textareaClassObj\"\n            :name=\"name\"\n            :placeholder=\"placeholder\"\n            v-model=\"content\"></textarea>\n  <p v-if=\"limitWords\"\n     :class=\"wordClassObj\">{{ curWords }}/{{ limitWords }}</p>\n  <p v-if=\"showWordsCount\"\n     :class=\"[prefixCls + '-textarea-words-area']\">{{ countTips }}{{ curWords }}</p>\n</div>\n";
 
 /***/ },
-/* 306 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9703,11 +9872,11 @@
 	  value: true
 	});
 	
-	var _Accordion = __webpack_require__(307);
+	var _Accordion = __webpack_require__(310);
 	
 	var _Accordion2 = _interopRequireDefault(_Accordion);
 	
-	var _Panel = __webpack_require__(310);
+	var _Panel = __webpack_require__(313);
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
@@ -9718,16 +9887,16 @@
 	exports.default = _Accordion2.default;
 
 /***/ },
-/* 307 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(308)
+	__vue_script__ = __webpack_require__(311)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Accordion/Accordion.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(309)
+	__vue_template__ = __webpack_require__(312)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9746,7 +9915,7 @@
 	})()}
 
 /***/ },
-/* 308 */
+/* 311 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9803,22 +9972,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 309 */
+/* 312 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-panel-group']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 310 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(311)
+	__vue_script__ = __webpack_require__(314)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Accordion/Panel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(312)
+	__vue_template__ = __webpack_require__(315)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9837,7 +10006,7 @@
 	})()}
 
 /***/ },
-/* 311 */
+/* 314 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9909,13 +10078,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 312 */
+/* 315 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-panel', prefixCls + '-panel-default']\">\n    <div :class=\"[prefixCls + '-panel-heading']\" @click=\"toggleIsOpen()\">\n      <slot name=\"panel-header\"></slot>\n    </div>\n    <div :class=\"[prefixCls + '-panel-collapse']\"\n      v-el:panel\n      v-show=\"isOpen\"\n      transition=\"collapse\"\n    >\n      <div :class=\"[prefixCls + '-panel-body']\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
-/* 313 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9924,7 +10093,7 @@
 	  value: true
 	});
 	
-	var _Popover = __webpack_require__(314);
+	var _Popover = __webpack_require__(317);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 
@@ -9933,16 +10102,16 @@
 	exports.default = _Popover2.default;
 
 /***/ },
-/* 314 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(315)
+	__vue_script__ = __webpack_require__(318)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Popover/Popover.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(316)
+	__vue_template__ = __webpack_require__(319)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9961,7 +10130,7 @@
 	})()}
 
 /***/ },
-/* 315 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9970,45 +10139,71 @@
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(210);
+	var _GlobalMixin = __webpack_require__(207);
 	
-	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
+	
+	var _Trigger = __webpack_require__(208);
+	
+	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = {
-	  mixins: [_popoverMixins2.default]
-	};
-	// </script>
-
-	/* generated by vue-loader */
 	// <template>
-	//   <div :class="[prefixCls + '-popover-trigger']" v-el:trigger>
-	//     <slot>
-	//     </slot>
-	//   </div>
-	//   <div v-el:popover
-	//        v-show="show"
-	//        :class="popoverClassObj"
-	//        :transition="effect">
-	//       <div :class="[prefixCls + '-popover-arrow']"></div>
-	//       <h3 :class="[prefixCls + '-popover-title']" v-show="title">{{title}}</h3>
-	//       <div :class="[prefixCls + '-popover-content']">
-	//         {{content}}
-	//       </div>
+	//   <div :class="[prefixCls + '-popover-cont']">
+	//     <trigger :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover">
+	//       <slot slot="trigger"></slot>
+	//       <slot slot="popup" name="popup" role="popover">
+	//         <div :class="[prefixCls + '-popover-arrow']"></div>
+	//         <h3 :class="[prefixCls + '-popover-title']" v-show="header && title">{{title}}</h3>
+	//         <div :class="[prefixCls + '-popover-content']">
+	//           {{content}}
+	//         </div>
+	//       </slot>
+	//     </trigger>
 	//   </div>
 	// </template>
 	//
 	// <script>
+	exports.default = {
+	  mixins: [_GlobalMixin2.default],
+	
+	  components: {
+	    Trigger: _Trigger2.default
+	  },
+	
+	  props: {
+	    trigger: {
+	      type: String
+	    },
+	    effect: {
+	      type: String
+	    },
+	    placement: {
+	      type: String
+	    },
+	    title: {
+	      type: String
+	    },
+	    content: [String, Number],
+	    header: {
+	      type: Boolean,
+	      default: true
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
 
 /***/ },
-/* 316 */
+/* 319 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-popover-trigger']\" v-el:trigger>\n  <slot>\n  </slot>\n</div>\n<div v-el:popover\n     v-show=\"show\"\n     :class=\"popoverClassObj\"\n     :transition=\"effect\">\n    <div :class=\"[prefixCls + '-popover-arrow']\"></div>\n    <h3 :class=\"[prefixCls + '-popover-title']\" v-show=\"title\">{{title}}</h3>\n    <div :class=\"[prefixCls + '-popover-content']\">\n      {{content}}\n    </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-popover-cont']\">\n  <trigger :trigger=\"trigger\" :effect=\"effect\" :placement=\"placement\" popup-cls=\"popover\">\n    <slot slot=\"trigger\"></slot>\n    <slot slot=\"popup\" name=\"popup\" role=\"popover\">\n      <div :class=\"[prefixCls + '-popover-arrow']\"></div>\n      <h3 :class=\"[prefixCls + '-popover-title']\" v-show=\"header && title\">{{title}}</h3>\n      <div :class=\"[prefixCls + '-popover-content']\">\n        {{content}}\n      </div>\n    </slot>\n  </trigger>\n</div>\n";
 
 /***/ },
-/* 317 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10017,11 +10212,11 @@
 	  value: true
 	});
 	
-	var _Tabset = __webpack_require__(318);
+	var _Tabset = __webpack_require__(321);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _Tab = __webpack_require__(321);
+	var _Tab = __webpack_require__(324);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
@@ -10032,16 +10227,16 @@
 	exports.default = _Tabset2.default;
 
 /***/ },
-/* 318 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(319)
+	__vue_script__ = __webpack_require__(322)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tabs/Tabset.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(320)
+	__vue_template__ = __webpack_require__(323)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10060,7 +10255,7 @@
 	})()}
 
 /***/ },
-/* 319 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10069,7 +10264,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -10261,22 +10456,22 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 320 */
+/* 323 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-tab-wrapper']\">\n  <div :class=\"[prefixCls + '-tab-header']\">\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" :class=\"[prefixCls + '-tab-arrow-prev']\" @click=\"prev\">\n      <icon v-if=\"prev_tabIndex==0\" type=\"prev\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"prev\" size=\"12\"></icon>\n    </span>\n    <ul v-if=\"trigger=='click'\" :class=\"listClassObj\" role=\"tablist\" style=\"width: 99999px;\">\n      <li v-for=\"r in renderData\"\n          :class=\"[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]\"\n          @click.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <ul v-else :class=\"listClassObj\" role=\"tablist\" style=\"width: 99999px;\">\n    <li v-for=\"r in renderData\"\n          :class=\"[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]\"\n          @mouseenter.prevent=\"handleTabListClick($index, r)\"\n          :disabled=\"r.disabled\"\n      >\n          <a href=\"javascript:void(0);\">{{{r.header}}}</a>\n      </li>\n    </ul>\n    <span v-if=\"renderData.length > showLen && showLen >= 3\" :class=\"[prefixCls + '-tab-arrow-next']\" @click=\"next\">\n      <icon v-if=\"next_tabIndex == maxTabIndex\" type=\"next\" size=\"12\" color=\"#ccc\" style=\"cursor: not-allowed\"></icon>\n      <icon v-else type=\"next\" size=\"12\"></icon>\n    </span>\n  </div>\n\n   <!-- Tab panes -->\n   <div class=\"tab-content\" v-el:tab-content>\n      <slot></slot>\n   </div>\n</div>\n\n";
 
 /***/ },
-/* 321 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(322)
+	__vue_script__ = __webpack_require__(325)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tabs/Tab.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(323)
+	__vue_template__ = __webpack_require__(326)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10295,7 +10490,7 @@
 	})()}
 
 /***/ },
-/* 322 */
+/* 325 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10362,13 +10557,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 323 */
+/* 326 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div role=\"tabpanel\" :class=\"[prefixCls + 'tab-pane']\"\n    v-show=\"show\"\n    :transition=\"transition\"\n>\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 324 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10377,11 +10572,11 @@
 	  value: true
 	});
 	
-	var _Steps = __webpack_require__(325);
+	var _Steps = __webpack_require__(328);
 	
 	var _Steps2 = _interopRequireDefault(_Steps);
 	
-	var _Step = __webpack_require__(328);
+	var _Step = __webpack_require__(331);
 	
 	var _Step2 = _interopRequireDefault(_Step);
 	
@@ -10392,16 +10587,16 @@
 	exports.default = _Steps2.default;
 
 /***/ },
-/* 325 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(326)
+	__vue_script__ = __webpack_require__(329)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Steps/Steps.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(327)
+	__vue_template__ = __webpack_require__(330)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10420,7 +10615,7 @@
 	})()}
 
 /***/ },
-/* 326 */
+/* 329 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10542,22 +10737,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 327 */
+/* 330 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-steps']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 328 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(329)
+	__vue_script__ = __webpack_require__(332)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Steps/Step.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(330)
+	__vue_template__ = __webpack_require__(333)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10576,7 +10771,7 @@
 	})()}
 
 /***/ },
-/* 329 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10585,7 +10780,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -10662,13 +10857,13 @@
 	// <script>
 
 /***/ },
-/* 330 */
+/* 333 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"stepClassObj\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\"\n      :class=\"[prefixCls + '-step-tail']\">\n   <i>\n    <i :style=\"{ backgroundColor: color }\"></i>\n   </i>\n </div>\n <div :class=\"[prefixCls + '-step-head']\">\n   <div :class=\"[prefixCls + '-step-head-inner']\">\n    <span v-if=\"status !== 'finish'\"\n          :class=\"[prefixCls + '-step-icon']\"\n      :style=\"{\n       borderColor: status==='process'?color: '#e9e9e9',\n       backgroundColor: status==='process'?color: '#fff'}\">\n      {{ stepNumber }}\n    </span>\n    <span v-else\n          :class=\"[prefixCls + '-step-finish-icon']\">\n      <icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n    </span>\n   </div>\n </div>\n <div :class=\"[prefixCls + '-step-main']\">\n   <div :class=\"[prefixCls + '-step-main-title']\">{{ title }}</div>\n   <div :class=\"[prefixCls + '-step-main-description']\">{{ description }}</div>\n </div>\n</div>\n";
 
 /***/ },
-/* 331 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10677,11 +10872,11 @@
 	  value: true
 	});
 	
-	var _Tree = __webpack_require__(332);
+	var _Tree = __webpack_require__(335);
 	
 	var _Tree2 = _interopRequireDefault(_Tree);
 	
-	var _TreeNode = __webpack_require__(334);
+	var _TreeNode = __webpack_require__(337);
 	
 	var _TreeNode2 = _interopRequireDefault(_TreeNode);
 	
@@ -10692,16 +10887,16 @@
 	exports.default = _Tree2.default;
 
 /***/ },
-/* 332 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(333)
+	__vue_script__ = __webpack_require__(336)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tree/Tree.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(337)
+	__vue_template__ = __webpack_require__(340)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10720,7 +10915,7 @@
 	})()}
 
 /***/ },
-/* 333 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10729,7 +10924,7 @@
 	  value: true
 	});
 	
-	var _TreeNode = __webpack_require__(334);
+	var _TreeNode = __webpack_require__(337);
 	
 	var _TreeNode2 = _interopRequireDefault(_TreeNode);
 	
@@ -10766,16 +10961,16 @@
 	// <script>
 
 /***/ },
-/* 334 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(335)
+	__vue_script__ = __webpack_require__(338)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Tree/TreeNode.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(336)
+	__vue_template__ = __webpack_require__(339)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10794,7 +10989,7 @@
 	})()}
 
 /***/ },
-/* 335 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10803,7 +10998,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -10875,19 +11070,19 @@
 	// <script>
 
 /***/ },
-/* 336 */
+/* 339 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li>\n  <a :title=\"model.name\" @click=\"toggle\">\n    <span v-if=\"isFolder\" :class=\"[prefixCls + '-tree-switcher', open && prefixCls + '-tree-switcher-open']\">\n      <icon type=\"caretup\"></icon>\n    </span>\n    <span :class=\"[prefixCls + '-tree-title']\">\n      {{model.name}}\n    </span>\n  </a>\n  <ul v-show=\"open\" v-if=\"isFolder\" transition=\"slide\" :class=\"[open && prefixCls + '-tree-child-tree-open']\">\n    <tree-node\n      v-for=\"model in model.children\"\n      :model=\"model\">\n    </tree-node>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 337 */
+/* 340 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"[prefixCls + '-tree']\">\n  <tree-node\n    :model=\"dataSource\">\n  </tree-node>\n</ul>\n";
 
 /***/ },
-/* 338 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10896,19 +11091,19 @@
 	  value: true
 	});
 	
-	var _Menu = __webpack_require__(339);
+	var _Menu = __webpack_require__(342);
 	
 	var _Menu2 = _interopRequireDefault(_Menu);
 	
-	var _SubMenu = __webpack_require__(342);
+	var _SubMenu = __webpack_require__(345);
 	
 	var _SubMenu2 = _interopRequireDefault(_SubMenu);
 	
-	var _MenuItem = __webpack_require__(345);
+	var _MenuItem = __webpack_require__(348);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
-	var _MenuItemGroup = __webpack_require__(348);
+	var _MenuItemGroup = __webpack_require__(351);
 	
 	var _MenuItemGroup2 = _interopRequireDefault(_MenuItemGroup);
 	
@@ -10924,16 +11119,16 @@
 	exports.default = _Menu2.default;
 
 /***/ },
-/* 339 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(340)
+	__vue_script__ = __webpack_require__(343)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/Menu.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(341)
+	__vue_template__ = __webpack_require__(344)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10952,7 +11147,7 @@
 	})()}
 
 /***/ },
-/* 340 */
+/* 343 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11002,22 +11197,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 341 */
+/* 344 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"[prefixCls + '-menu', prefixCls + '-menu-root', prefixCls + '-menu-'+ mode]\">\n  <slot></slot>\n</ul>\n";
 
 /***/ },
-/* 342 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(343)
+	__vue_script__ = __webpack_require__(346)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/SubMenu.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(344)
+	__vue_template__ = __webpack_require__(347)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11036,7 +11231,7 @@
 	})()}
 
 /***/ },
-/* 343 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11045,11 +11240,11 @@
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(175);
+	var _typeof2 = __webpack_require__(172);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
-	var _Icon = __webpack_require__(134);
+	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -11112,6 +11307,17 @@
 	    open: function open() {
 	      this.show = true;
 	    }
+	  },
+	  transitions: {
+	    collapse: {
+	      afterEnter: function afterEnter(el) {
+	        el.style.maxHeight = '';
+	      },
+	      beforeLeave: function beforeLeave(el) {
+	        el.style.maxHeight = el.offsetHeight + 'px';
+	        return el.offsetHeight;
+	      }
+	    }
 	  }
 	};
 	// </script>
@@ -11132,22 +11338,22 @@
 	// <script>
 
 /***/ },
-/* 344 */
+/* 347 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li :class=\"[prefixCls + '-menu-submenu', prefixCls + '-menu-submenu-' + mode, show && (prefixCls + '-menu-submenu-open')]\">\n  <div :class=\"[prefixCls + '-menu-submenu-title']\" @click=\"triggerSub\">\n    {{title}}\n    <icon type=\"down\" :class=\"[prefixCls + '-menu-icon']\"></icon>\n  </div>\n  <ul :class=\"[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]\" v-show=\"show\" transition=\"collapse\">\n    <slot></slot>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 345 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(346)
+	__vue_script__ = __webpack_require__(349)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/MenuItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(347)
+	__vue_template__ = __webpack_require__(350)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11166,7 +11372,7 @@
 	})()}
 
 /***/ },
-/* 346 */
+/* 349 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11216,22 +11422,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 347 */
+/* 350 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li role=\"menuitem\"\n  :class=\"[prefixCls + '-menu-item', disabled && (prefixCls + '-menu-item-disabled') , selected && (prefixCls + '-menu-item-selected')]\"\n  style=\"padding-left:48px\"\n  @click=\"selectItem($event)\"\n>\n  <slot></slot>\n</li>\n";
 
 /***/ },
-/* 348 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(349)
+	__vue_script__ = __webpack_require__(352)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Menu/MenuItemGroup.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(350)
+	__vue_template__ = __webpack_require__(353)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11250,7 +11456,7 @@
 	})()}
 
 /***/ },
-/* 349 */
+/* 352 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11282,13 +11488,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 350 */
+/* 353 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li :class=\"[prefixCls + '-menu-item-group']\">\n  <div :class=\"[prefixCls + '-menu-item-group-title']\">{{title}}</div>\n  <ul :class=\"[prefixCls + '-menu-item-group-list']\">\n    <slot></slot>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 351 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11297,11 +11503,11 @@
 	  value: true
 	});
 	
-	var _Breadcrumb = __webpack_require__(352);
+	var _Breadcrumb = __webpack_require__(355);
 	
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 	
-	var _BreadcrumbItem = __webpack_require__(355);
+	var _BreadcrumbItem = __webpack_require__(358);
 	
 	var _BreadcrumbItem2 = _interopRequireDefault(_BreadcrumbItem);
 	
@@ -11312,16 +11518,16 @@
 	exports.default = _Breadcrumb2.default;
 
 /***/ },
-/* 352 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(353)
+	__vue_script__ = __webpack_require__(356)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Breadcrumb/Breadcrumb.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(354)
+	__vue_template__ = __webpack_require__(357)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11340,7 +11546,7 @@
 	})()}
 
 /***/ },
-/* 353 */
+/* 356 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11378,22 +11584,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 354 */
+/* 357 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-breadcrumbs']\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 355 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(356)
+	__vue_script__ = __webpack_require__(359)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Breadcrumb/BreadcrumbItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(357)
+	__vue_template__ = __webpack_require__(360)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11412,7 +11618,7 @@
 	})()}
 
 /***/ },
-/* 356 */
+/* 359 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11451,23 +11657,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 357 */
+/* 360 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\t<span :class=\"[prefixCls + '-breadcrumb']\">\n\t\t<a v-if=\"href\"\n       :href=\"href\"\n       :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</a>\n\t\t<span v-else\n          :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</span>\n\t\t<span :class=\"[prefixCls + '-breadcrumb-slash']\">{{ slash }}</span>\n\t</span>\n";
 
 /***/ },
-/* 358 */
+/* 361 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<header class=\"navbar navbar-top bs-docs-nav\" id=\"top\" role=\"banner\">\n  <v-row class=\"container\">\n    <v-col span=\"5\">\n      <h1><a href=\"components.html\">ATUI</a></h1>\n    </v-col>\n    <v-col span=\"25\">\n      <v-menu mode=\"horizontal\">\n        <menu-item><a href=\"components.html\">组件</a></menu-item>\n        <menu-item><a href=\"widgets.html\">widgets(业务组件)</a></menu-item>\n        <menu-item><a href=\"filters.html\">filters(数据过滤器)</a></menu-item>\n        <menu-item><a href=\"http://gitlab.alibaba-inc.com/aliqin/atui/\">GitLab</a></menu-item>\n        <menu-item><a href=\"http://ued.aliqin.alibaba.net/webcompon/\">视觉稿</a></menu-item>\n      </v-menu>\n    </v-col>\n  </v-row>\n</header>\n<ul class=\"themes\" id=\"J_header\">\n  <li v-for=\"theme in themes\" :class=\"{active:theme.active}\" :style=\"{backgroundColor:theme.color}\" @click=\"changeTheme(theme.csslink,$event)\" :title=\"theme.name\">\n  </li>\n</ul>\n";
 
 /***/ },
-/* 359 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(360)
+	__vue_template__ = __webpack_require__(363)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11486,23 +11692,23 @@
 	})()}
 
 /***/ },
-/* 360 */
+/* 363 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"getting-started\">\n\n    <h2>安装方法：CommonJS</h2>\n    <pre><code class=\"language-javascript\">\n$ tnpm install @ali/vue-component --save-dev\n\n// css引入 greater-blue | tao-orange | or tmall-red (推荐)\nimport '@ali/vue-component/dist/greater-blue.css'\n\n// 或less引入\nimport '@ali/vue-component/style/themes/greater-blue.css'\n\n// 引入组件\nimport { Alert } from '@ali/vue-component'\n\n// 如果没有使用rollup或webpak2.0，整个组件JS都会打包进去，使用如下方式可按需打包\nimport Alert from '@ali/vue-component/src/components/Alert'\n\nnew Vue({\n  components: {\n    Alert\n  }\n})\n    </code></pre>\n    <h3>浏览器引用</h3>\n    <pre><code class=\"language-markup\">\n&lt;script src=&quot;path/to/vue.js&quot;&gt;&lt;/script&gt;\n&lt;script src=&quot;path/to/atui.js&quot;&gt;&lt;/script&gt;\n&lt;script&gt;\n  var alert = VueComponent.alert\n&lt;/script&gt;\n    </code></pre>\n  </div>\n";
 
 /***/ },
-/* 361 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(362)
-	__vue_script__ = __webpack_require__(364)
+	__webpack_require__(365)
+	__vue_script__ = __webpack_require__(367)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/gridDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(365)
+	__vue_template__ = __webpack_require__(368)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11521,16 +11727,16 @@
 	})()}
 
 /***/ },
-/* 362 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(363);
+	var content = __webpack_require__(366);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(143)(content, {});
+	var update = __webpack_require__(294)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -11547,10 +11753,10 @@
 	}
 
 /***/ },
-/* 363 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(142)();
+	exports = module.exports = __webpack_require__(293)();
 	// imports
 	
 	
@@ -11561,7 +11767,7 @@
 
 
 /***/ },
-/* 364 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11570,7 +11776,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var vRow = _src.Layout.Row; // <template>
 	//   <div class="bs-docs-section" id="grid">
@@ -11734,23 +11940,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 365 */
+/* 368 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"grid\">\n    <h3 class=\"page-header\"><a href=\"#grid\" class=\"anchor\">Grid 栅格 </a></h3>\n    <div class=\"bs-example\">\n      <div class=\"grid-demo\">\n        <v-row>\n          <v-col span=\"24\">col-24</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"23\">col-23</v-col>\n          <v-col span=\"1\">1</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"22\">col-22</v-col>\n          <v-col span=\"2\">2</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"21\">col-21</v-col>\n          <v-col span=\"3\">col-3</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"20\">col-20</v-col>\n          <v-col span=\"4\">col-4</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"19\">col-19</v-col>\n          <v-col span=\"5\">col-5</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"18\">col-18</v-col>\n          <v-col span=\"6\">col-6</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"17\">col-17</v-col>\n          <v-col span=\"7\">col-7</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"16\">col-16</v-col>\n          <v-col span=\"8\">col-8</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"15\">col-15</v-col>\n          <v-col span=\"9\">col-9</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"14\">col-14</v-col>\n          <v-col span=\"10\">col-10</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"13\">col-13</v-col>\n          <v-col span=\"11\">col-11</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"12\">col-12</v-col>\n          <v-col span=\"12\">col-12</v-col>\n        </v-row>\n        <v-row>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n          <v-col span=\"1\"></v-col>\n        </v-row>\n      </div>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-row>\n  <v-col span=\"24\">col-24</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"23\">col-23</v-col>\n  <v-col span=\"1\">1</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"22\">col-22</v-col>\n  <v-col span=\"2\">2</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"21\">col-21</v-col>\n  <v-col span=\"3\">col-3</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"20\">col-20</v-col>\n  <v-col span=\"4\">col-4</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"19\">col-19</v-col>\n  <v-col span=\"5\">col-5</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"18\">col-18</v-col>\n  <v-col span=\"6\">col-6</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"17\">col-17</v-col>\n  <v-col span=\"7\">col-7</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"16\">col-16</v-col>\n  <v-col span=\"8\">col-8</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"15\">col-15</v-col>\n  <v-col span=\"9\">col-9</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"14\">col-14</v-col>\n  <v-col span=\"10\">col-10</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"13\">col-13</v-col>\n  <v-col span=\"11\">col-11</v-col>\n</v-row>\n<v-row>\n  <v-col span=\"12\">col-12</v-col>\n  <v-col span=\"12\">col-12</v-col>\n</v-row>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
-/* 366 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(367)
-	__vue_script__ = __webpack_require__(369)
+	__webpack_require__(370)
+	__vue_script__ = __webpack_require__(372)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/iconDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(370)
+	__vue_template__ = __webpack_require__(373)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11769,16 +11975,16 @@
 	})()}
 
 /***/ },
-/* 367 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(368);
+	var content = __webpack_require__(371);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(143)(content, {});
+	var update = __webpack_require__(294)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -11795,10 +12001,10 @@
 	}
 
 /***/ },
-/* 368 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(142)();
+	exports = module.exports = __webpack_require__(293)();
 	// imports
 	
 	
@@ -11809,7 +12015,7 @@
 
 
 /***/ },
-/* 369 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11818,7 +12024,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: { Icon: _src.Icon }
@@ -11888,22 +12094,22 @@
 	// <script>
 
 /***/ },
-/* 370 */
+/* 373 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"icon\">\n    <h3 class=\"page-header\"><a href=\"#icon\" class=\"anchor\">Icon 图标</a></h3>\n    <div class=\"bs-example\">\n      <icon type=\"caretup\"></icon>箭头\n      <icon type=\"caretdown\"></icon>箭头\n      <icon type=\"head\"></icon>页首\n      <icon type=\"tail\"></icon>页尾\n      <icon type=\"clear\"></icon>清除\n      <icon type=\"close\"></icon>关闭\n      <icon type=\"search\"></icon>搜索\n      <icon type=\"up\"></icon>向上\n      <icon type=\"down\"></icon>向下\n      <icon type=\"prev\"></icon>上一页\n      <icon type=\"next\"></icon>下一页\n      <icon type=\"warning\" color=\"red\" size=\"20\"></icon>警告\n      <icon type=\"error\"></icon>错误\n      <icon type=\"info\"></icon>信息\n      <icon type=\"help\"></icon>帮助\n      <icon type=\"success\"></icon>成功\n      <icon type=\"filter\"></icon>过滤\n      <icon type=\"doc\"></icon>附件\n      <icon type=\"calendar\"></icon>日历\n      <icon type=\"tick\"></icon>对勾\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<!--更多icon请看这里 http://iconfont.cn/users/project?pid=77664 -->\n<icon type=\"arrowup\"></icon>箭头\n<icon type=\"arrowdown\"></icon>箭头\n<icon type=\"head\"></icon>页首\n<icon type=\"tail\"></icon>页尾\n<icon type=\"clear\"></icon>清除\n<icon type=\"close\"></icon>关闭\n<icon type=\"search\"></icon>搜索\n<icon type=\"up\"></icon>向上\n<icon type=\"down\"></icon>向下\n<icon type=\"prev\"></icon>上一页\n<icon type=\"next\"></icon>下一页\n<icon type=\"warning\" color=\"red\" size=\"20\"></icon>警告\n<icon type=\"error\"></icon>错误\n<icon type=\"info\"></icon>信息\n<icon type=\"help\"></icon>帮助\n<icon type=\"success\"></icon>成功\n<icon type=\"filter\"></icon>过滤\n<icon type=\"doc\"></icon>附件\n<icon type=\"calendar\"></icon>日历\n<icon type=\"tick\"></icon>对勾\n  </script></code></pre>\n  <h2>Options</h2>\n  </div>\n";
 
 /***/ },
-/* 371 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(372)
+	__vue_script__ = __webpack_require__(375)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/buttonDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(373)
+	__vue_template__ = __webpack_require__(376)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11922,7 +12128,7 @@
 	})()}
 
 /***/ },
-/* 372 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11931,7 +12137,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var vButton = _src.Button; // <template>
 	//   <div class="bs-docs-section" id="button">
@@ -12132,22 +12338,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 373 */
+/* 376 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"button\">\n    <h3 class=\"page-header\"><a href=\"#buttons\" class=\"anchor\">Button 按钮</a></h3>\n    <div class=\"bs-example\">\n      <h4>普通按钮使用，一级按钮，可以设置按钮大小</h4>\n      <v-button large primary value=\"大号+主按钮\"></v-button>\n      <v-button primary value=\"中号+主按钮\"></v-button>\n      <v-button small primary value=\"小号+主按钮\"></v-button>\n      <br>\n      <h4>普通按钮使用，二级按钮</h4>\n      <v-button large secondary value=\"大号+次按钮\"></v-button>\n      <v-button secondary value=\"中号+次按钮\"></v-button>\n      <v-button small secondary value=\"小号+次按钮\"></v-button>\n      <br>\n      <h4>普通按钮使用，三级按钮</h4>\n      <v-button large tertiary value=\"大号+三级按钮\"></v-button>\n      <v-button tertiary value=\"中号+三级按钮\"></v-button>\n      <v-button small tertiary value=\"小号+三级按钮\"></v-button>\n      <br>\n      <h4>普通按钮使用，禁用按钮</h4>\n      <v-button large disabled value=\"大号+失效按钮\"></v-button>\n      <v-button disabled value=\"中号+失效按钮\"></v-button>\n      <v-button small disabled value=\"小号+失效按钮\"></v-button>\n      <br>\n      <h4>普通按钮使用，文字型按钮</h4>\n      <v-button large text value=\"大号+文字型按钮\"></v-button>\n      <v-button text value=\"中号+文字型按钮\"></v-button>\n      <v-button small text value=\"小号+文字型按钮\"></v-button>\n      <br>\n      <h4>普通按钮使用，带有icon的按钮</h4>\n      <v-button>\n        <icon type=\"close\"></icon>关闭\n      </v-button>\n      <br>\n      <h4>按钮组使用</h4>\n      <h5>Basic</h5>\n      <button-group @switch=\"buttonGroupSwitch\">\n        <v-button class=\"active\" value=\"cancel\"></v-button>\n        <v-button value=\"ok\"></v-button>\n      </button-group>\n      <button-group large>\n        <v-button class=\"active\" value=\"L\"></v-button>\n        <v-button value=\"M\"></v-button>\n        <v-button value=\"M\"></v-button>\n      </button-group>\n      <button-group small>\n        <v-button disabled value=\"L\"></v-button>\n        <v-button disabled value=\"M\"></v-button>\n        <v-button disabled value=\"M\"></v-button>\n        <v-button disabled value=\"R\"></v-button>\n      </button-group>\n      <h5>带有icon的按钮组</h5>\n      <button-group>\n        <v-button>\n          <icon type=\"prev\"></icon>上一页\n        </v-button>\n        <v-button>\n          下一页<icon type=\"next\"></icon>\n        </v-button>\n      </button-group>\n      <button-group>\n        <v-button>\n          <icon type=\"head\"></icon>\n        </v-button>\n        <v-button>\n          <icon type=\"tail\"></icon>\n        </v-button>\n      </button-group>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<!-- 基础按钮，使用封装的Button组件，通过添加属性，呈现样式 -->\n<!-- 大号（large）、中号（默认）和小号（small）-->\n<!-- 有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->\n<!-- 可以通过属性value控制按钮文案或者组件调用中插入html代码 -->\n<v-button large primary value=\"大号+主按钮\"></v-button>\n<v-button large primary>大号+主按钮</v-button>\n<v-button>\n  <icon type=\"close\"></icon>关闭\n</v-button>\n\n<!-- 按钮组，使用封装的ButtonGroup组件 -->\n<button-group>\n  <v-button secondary value=\"cancel\"></v-button>\n  <v-button primary value=\"ok\"></v-button>\n</button-group>\n<button-group large>\n  <v-button primary value=\"L\"></v-button>\n  <v-button secondary value=\"M\"></v-button>\n  <v-button tertiary value=\"M\"></v-button>\n</button-group>\n<button-group small>\n  <v-button disabled value=\"L\"></v-button>\n  <v-button disabled value=\"M\"></v-button>\n  <v-button disabled value=\"M\"></v-button>\n  <v-button disabled value=\"R\"></v-button>\n</button-group>\n<button-group>\n  <v-button>\n    <icon type=\"prev\"></icon>上一页\n  </v-button>\n  <v-button>\n    下一页<icon type=\"next\"></icon>\n  </v-button>\n</button-group>\n<button-group>\n  <v-button>\n    <icon type=\"head\"></icon>\n  </v-button>\n  <v-button>\n    <icon type=\"tail\"></icon>\n  </v-button>\n</button-group>\n</script></code></pre>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>按钮文案</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>按钮尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>按钮尺寸，小</td>\n        </tr>\n        <tr>\n          <td>primary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，主按钮</td>\n        </tr>\n        <tr>\n          <td>secondary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，次按钮</td>\n        </tr>\n        <tr>\n          <td>tertiary</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，三级按钮</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，失效按钮</td>\n        </tr>\n        <tr>\n          <td>text</td>\n          <td></td>\n          <td></td>\n          <td>按钮类型，文字型按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 374 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(375)
+	__vue_script__ = __webpack_require__(378)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/inputDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(376)
+	__vue_template__ = __webpack_require__(379)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12166,7 +12372,7 @@
 	})()}
 
 /***/ },
-/* 375 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12175,7 +12381,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var FormItem = _src.Form.FormItem; // <template>
 	//   <div class="bs-docs-section" id="input">
@@ -12389,22 +12595,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 376 */
+/* 379 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"input\">\n    <h3 class=\"page-header\"><a href=\"#input\" class=\"anchor\">Input 输入框</a></h3>\n    <div class=\"bs-example\">\n      <div>\n        <v-input large type=\"text\" placeholder=\"输入框－大尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input type=\"text\" placeholder=\"输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input small type=\"text\" placeholder=\"输入框－小尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input disabled type=\"text\" placeholder=\"禁用输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input valid-status=\"error\" type=\"text\" placeholder=\"error输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input valid-status=\"success\" type=\"text\" placeholder=\"success输入框－默认尺寸\"></v-input>\n      </div>\n      <h4>带有验证功能的输入框</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n          <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n        </form-item>\n        <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n          <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n        </form-item>\n      </v-form>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<!-- input输入框，使用封装的Input组件，通过添加属性，呈现样式 -->\n<!-- 大号（large）、中号（默认）、小号（small）、禁用（disabled）、错误提示（error）、成功提示（success）-->\n<!-- 有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->\n<!-- 通过属性placeholder控制输入框预期值的提示信息 -->\n<!-- 通过属性type控制输入框类型，radio和checkbox不在该组件处理范围，会单独处理，请关注Radio组件和Checkbox组件 -->\n<div>\n  <v-input large type=\"text\" placeholder=\"输入框－大尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input type=\"text\" placeholder=\"输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input small type=\"text\" placeholder=\"输入框－小尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input disabled type=\"text\" placeholder=\"禁用输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input valid-status=\"error\" type=\"text\" placeholder=\"error输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input valid-status=\"success\" type=\"text\" placeholder=\"success输入框－默认尺寸\"></v-input>\n</div>\n<h4>带有验证功能的输入框</h4>\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n  </form-item>\n  <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n    <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n  </form-item>\n</v-form>\n</script></code></pre>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>输入框预期值的提示信息</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>输入框尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>输入框尺寸，小</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，禁用</td>\n        </tr>\n        <tr>\n          <td>error</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，输入验证失败</td>\n        </tr>\n        <tr>\n          <td>success</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，输入验证成功</td>\n        </tr>\n        <tr>\n          <td>required</td>\n          <td></td>\n          <td></td>\n          <td>验证非空，也可放在rules参数中</td>\n        </tr>\n        <tr>\n          <td>maxlength</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入字符最大长度</td>\n        </tr>\n        <tr>\n          <td>maxlength-tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>最大长度验证失败时提示文案</td>\n        </tr>\n        <tr>\n          <td>minlength</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入字符最小长度</td>\n        </tr>\n        <tr>\n          <td>minlength-tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>最小长度验证失败时提示文案</td>\n        </tr>\n        <tr>\n          <td>rules</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>输入框验证规则，内部现已集成required|isPhone|isNumber|isTelephone|isEmail</td>\n        </tr>\n        <tr>\n          <td>valid-status</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>实时获取当前验证状态</td>\n        </tr>\n        <tr>\n          <td>tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>实时获取当前验证提示</td>\n        </tr>\n        <tr>\n          <td>valid-result</td>\n          <td><code>Object</code></td>\n          <td></td>\n          <td>实时获取当前所有验证条件的验证结果</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 377 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(378)
+	__vue_script__ = __webpack_require__(381)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/uploaderDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(379)
+	__vue_template__ = __webpack_require__(382)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12423,7 +12629,7 @@
 	})()}
 
 /***/ },
-/* 378 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12432,7 +12638,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -12636,22 +12842,22 @@
 	// <script>
 
 /***/ },
-/* 379 */
+/* 382 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"uploader\">\n    <h3 class=\"page-header\"><a href=\"#uploader\" class=\"anchor\">Uploader 文件上传 </a></h3>\n    <div class=\"bs-example\">\n      <h4>普通上传，无上传文件格式要求</h4>\n      <uploader\n        upload-type=\"click\"\n        :url=\"ajaxUrl\"\n        :multiple=\"multiple\"\n        name=\"files1\"\n        :file-list.sync=\"fileList1\">\n      </uploader>\n      <h4>有上传文件格式要求</h4>\n      <h5>此处只能上传png格式图片</h5>\n      <uploader\n        upload-type=\"click\"\n        :url=\"ajaxUrl\"\n        :multiple=\"multiple\"\n        name=\"files2\"\n        accept=\"image/png\"\n        :file-list.sync=\"fileList1\">\n      </uploader>\n      <h4>有上传数量要求</h4>\n      <h5>此处最多只能上传5个文件，包含已经上传的</h5>\n      <uploader\n        upload-type=\"click\"\n        :url=\"ajaxUrl\"\n        :multiple=\"multiple\"\n        name=\"files3\"\n        :maxlength=\"5\"\n        :file-list.sync=\"fileList1\">\n      </uploader>\n      <h4>拖拽上传</h4>\n      <uploader\n        id=\"file-upload-drag-test\"\n        form-id=\"upload2\"\n        upload-type=\"drag\"\n        :url=\"ajaxUrl\"\n        :multiple=\"multiple\"\n        name=\"files2\"\n        :auto-submit=\"autoSubmit\"\n        :hide-button=\"hideButton\"\n        :file-list.sync=\"fileList1\">\n      </uploader>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\nupload文件上传\n1、点击上传调用方式\n<form id=\"upload1\" method=\"post\" action=\"{{ajaxUrl}}\">\n  <uploader\n    id=\"file-upload-click-test\"\n    form-id=\"upload1\"\n    upload-type=\"click\"\n    :ajax=\"ajaxUrl\"\n    :multiple=\"multiple\"\n    name=\"files1\"\n    :auto-submit=\"true\"\n    :hide-button=\"true\"\n    :file-list.sync=\"fileList1\">\n  </uploader>\n</form>\n2、支持拖拽上传调用方式\n<form id=\"upload2\" method=\"post\" action=\"{{ajaxUrl}}\">\n  <uploader\n    id=\"file-upload-drag-test\"\n    form-id=\"upload2\"\n    upload-type=\"drag\"\n    :ajax=\"ajaxUrl\"\n    :multiple=\"multiple\"\n    name=\"files2\"\n    :auto-submit=\"autoSubmit\"\n    :hide-button=\"hideButton\"\n    :file-list.sync=\"fileList2\">\n  </uploader>\n</form>\n    </script></code></pre>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>id</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>唯一标识</td>\n        </tr>\n        <tr>\n          <td>form-id</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>如需上传后自动提交，请确保以该值为id的form存在，否则，无需设置</td>\n        </tr>\n        <tr>\n          <td>upload-type</td>\n          <td><code>String</code></td>\n          <td><code>click</code></td>\n          <td>取值有<code>click</code>和<code>drop</code>两种，分别代表点击上传和支持拖拽上传</td>\n        </tr>\n        <tr>\n          <td>accept</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>上传的文件类型指定，详细可查看MIME类型</td>\n        </tr>\n        <tr>\n          <td>ajax</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>文件上传的地址</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否支持多文件上传</td>\n        </tr>\n        <tr>\n          <td>name</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>名称</td>\n        </tr>\n        <tr>\n          <td>auto-submit</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>上传后是否自动提交</td>\n        </tr>\n        <tr>\n          <td>hide-button</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否隐藏upload按钮</td>\n        </tr>\n        <tr>\n          <td>file-list</td>\n          <td><code>Array</code></td>\n          <td><code>空数组</code></td>\n          <td>上传的文件列表</td>\n        </tr>\n        <tr>\n          <td>method</td>\n          <td><code>String</code></td>\n          <td><code>POST</code></td>\n          <td>上传文件请求类型</td>\n        </tr>\n        <tr>\n          <td>completed::file-upload</td>\n          <td><code>Function</code></td>\n          <td></td>\n          <td>上传请求执行完成后的回调，需要在events中捕获。</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n";
 
 /***/ },
-/* 380 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(381)
+	__vue_script__ = __webpack_require__(384)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/formDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(382)
+	__vue_template__ = __webpack_require__(385)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12670,7 +12876,7 @@
 	})()}
 
 /***/ },
-/* 381 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12679,7 +12885,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var Option = _src.Select.Option; // <template>
 	//
@@ -12703,7 +12909,15 @@
 	//           <label><input type="checkbox" name="sexy" />女</label>
 	//         </form-item>
 	//         <form-item required label="行业：" label-col="4">
-	//           <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+	//           <v-select :value.sync="arr" :options="industry" :close-on-select="true" placeholder="选择类别">
+	//             <v-option value="Apple">苹果</v-option>
+	//             <v-option value="Banana" disabled>Banana</v-option>
+	//             <v-option value="Cherry">Cherry</v-option>
+	//             <v-option value="Orange">OrangeText</v-option>
+	//             <v-option value="Grape">Grape</v-option>
+	//             <v-option value="agg">鸡蛋</v-option>
+	//             <v-option value="芒果">芒果</v-option>
+	//           </v-select>
 	//         </form-item>
 	//         <form-item label-col="4">
 	//           <v-button type="submit" primary>确定</v-button>
@@ -12950,22 +13164,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 382 */
+/* 385 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">Form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <h4>纵向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n          <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n        </form-item>\n        <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n          <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n        </form-item>\n        <form-item required label=\"性别\" label-col=\"4\">\n          <label><input type=\"radio\" name=\"sexy\" checked />男</label>\n          <label><input type=\"radio\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"性取向\" label-col=\"4\">\n          <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n          <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item label-col=\"4\">\n          <v-button type=\"submit\" primary>确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n      <h4>横向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n          <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"0\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n纵向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n  </form-item>\n  <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon tips=\"form1.telTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\"></v-input>\n  </form-item>\n  <form-item required label=\"性别\" label-col=\"4\">\n    <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n    <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n横向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"联系人电话：\" :valid-status=\"telStatus\" item-col=\"8\" label-col=\"10\" has-icon tips=\"123\">\n    <v-input type=\"text\" placeholder=\"电话号码\" :valid-status=\"telStatus\" :value.sync=\"tel\" @click=\"clickFun\"></v-input>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n    <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"0\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n    <h4>FormItem组件参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>item-col</td>\n          <td><code>String</code></td>\n          <td><code>24</code></td>\n          <td>以24格为准，当前FormItem组件占的栅格列数</td>\n        </tr>\n        <tr>\n          <td>label</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>label域文案</td>\n        </tr>\n        <tr>\n          <td>label-col</td>\n          <td><code>String</code></td>\n          <td><code>7</code></td>\n          <td>以当前的FormItem组件为准，label域占的列数</td>\n        </tr>\n        <tr>\n          <td>wrapper-col</td>\n          <td></td>\n          <td><code>24-（label-col属性值）</code></td>\n          <td>以当前的FormItem组件为准，非label域占的列数</td>\n        </tr>\n        <tr>\n          <td>required</td>\n          <td></td>\n          <td></td>\n          <td>是否是必填项，配置后，会在label文案前加’*‘标识</td>\n        </tr>\n        <tr>\n          <td>tips</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>各种状态下的提示文案</td>\n        </tr>\n        <tr>\n          <td>valid-status</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>当前验证状态，有空,success,warning,error,validating</td>\n        </tr>\n        <tr>\n          <td>has-icon</td>\n          <td></td>\n          <td></td>\n          <td>配合validateStatus属性使用，是否展示校验状态图标</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">Form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <h4>纵向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n          <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n        </form-item>\n        <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n          <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n        </form-item>\n        <form-item required label=\"性别\" label-col=\"4\">\n          <label><input type=\"radio\" name=\"sexy\" checked />男</label>\n          <label><input type=\"radio\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"性取向\" label-col=\"4\">\n          <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n          <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\" placeholder=\"选择类别\">\n            <v-option value=\"Apple\">苹果</v-option>\n            <v-option value=\"Banana\" disabled>Banana</v-option>\n            <v-option value=\"Cherry\">Cherry</v-option>\n            <v-option value=\"Orange\">OrangeText</v-option>\n            <v-option value=\"Grape\">Grape</v-option>\n            <v-option value=\"agg\">鸡蛋</v-option>\n            <v-option value=\"芒果\">芒果</v-option>\n          </v-select>\n        </form-item>\n        <form-item label-col=\"4\">\n          <v-button type=\"submit\" primary>确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n      <h4>横向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n          <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"0\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n纵向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n  </form-item>\n  <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon tips=\"form1.telTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\"></v-input>\n  </form-item>\n  <form-item required label=\"性别\" label-col=\"4\">\n    <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n    <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n横向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"联系人电话：\" :valid-status=\"telStatus\" item-col=\"8\" label-col=\"10\" has-icon tips=\"123\">\n    <v-input type=\"text\" placeholder=\"电话号码\" :valid-status=\"telStatus\" :value.sync=\"tel\" @click=\"clickFun\"></v-input>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n    <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"0\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n    <h4>FormItem组件参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>item-col</td>\n          <td><code>String</code></td>\n          <td><code>24</code></td>\n          <td>以24格为准，当前FormItem组件占的栅格列数</td>\n        </tr>\n        <tr>\n          <td>label</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>label域文案</td>\n        </tr>\n        <tr>\n          <td>label-col</td>\n          <td><code>String</code></td>\n          <td><code>7</code></td>\n          <td>以当前的FormItem组件为准，label域占的列数</td>\n        </tr>\n        <tr>\n          <td>wrapper-col</td>\n          <td></td>\n          <td><code>24-（label-col属性值）</code></td>\n          <td>以当前的FormItem组件为准，非label域占的列数</td>\n        </tr>\n        <tr>\n          <td>required</td>\n          <td></td>\n          <td></td>\n          <td>是否是必填项，配置后，会在label文案前加’*‘标识</td>\n        </tr>\n        <tr>\n          <td>tips</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>各种状态下的提示文案</td>\n        </tr>\n        <tr>\n          <td>valid-status</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>当前验证状态，有空,success,warning,error,validating</td>\n        </tr>\n        <tr>\n          <td>has-icon</td>\n          <td></td>\n          <td></td>\n          <td>配合validateStatus属性使用，是否展示校验状态图标</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 383 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(384)
+	__vue_script__ = __webpack_require__(387)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/switchDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(385)
+	__vue_template__ = __webpack_require__(388)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12984,7 +13198,7 @@
 	})()}
 
 /***/ },
-/* 384 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12993,7 +13207,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  data: function data() {
@@ -13165,22 +13379,22 @@
 	// <script>
 
 /***/ },
-/* 385 */
+/* 388 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"switch\">\n    <h3 class=\"page-header\"><a href=\"#switch\" class=\"anchor\">Switch 开关</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\" >基本类型</h4>\n        <table class=\"switchDocs-demo-table\">\n          <tr>\n            <th>关</th>\n            <th>开</th>\n            <th>禁用</th>\n          </tr>\n          <tr>\n            <td><v-switch small color=\"#000\"></v-switch></td>\n            <td><v-switch small checked @change=\"changeHandler\"></v-switch>\n            </td>\n            <td><v-switch small disabled></v-switch></td>\n          </tr>\n          <tr>\n            <td><v-switch></v-switch></td>\n            <td><v-switch checked @change=\"changeHandler\"></v-switch></td>\n            <td><v-switch disabled></v-switch></td>\n          </tr>\n        </table>\n\n      <h4 class=\"example-title\">带文字形式</h4>\n        <table class=\"switchDocs-demo-table\">\n          <tr>\n            <td><v-switch>\n          <span slot=\"checkedPart\">开</span>\n          <span slot=\"unCheckedPart\">关</span>\n        </v-switch></td>\n            <td><v-switch :disabled=\"disabled\" checked>\n          <span slot=\"checkedPart\">开</span>\n          <span slot=\"unCheckedPart\">关</span>\n        </v-switch>\n        </td>\n            <td><v-switch :disabled=\"disabled\">\n          <span slot=\"checkedPart\">开</span>\n          <span slot=\"unCheckedPart\">关</span>\n        </v-switch>\n        </td>\n          </tr>\n        </table>\n        <h4 class=\"example-title\">带图标形式</h4>\n        <table class=\"switchDocs-demo-table\">\n            <tr>\n              <td>\n                <v-switch>\n                  <span slot=\"checkedPart\"><v-icon type=\"tick\" size=\"16\"></v-icon></span>\n                  <span slot=\"unCheckedPart\"><v-icon type=\"close\" size=\"12\"></v-icon></span>\n                </v-switch>\n              </td>\n            </tr>\n        </table>\n\n        <v-button large primary value=\"toggle disabled\" @click=\"_clickHandler\"></v-button>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-switch small color=\"#000\"></v-switch>\n<v-switch small checked @change=\"changeHandler\"></v-switch>\n<v-switch small disabled></v-switch>\n<v-switch></v-switch>\n<v-switch checked @change=\"changeHandler\"></v-switch>\n<v-switch disabled></v-switch>\n<v-switch>\n  <span slot=\"checkedPart\">开</span>\n  <span slot=\"unCheckedPart\">关</span>\n</v-switch>\n<v-switch :disabled=\"disabled\" checked>\n  <span slot=\"checkedPart\">开</span>\n  <span slot=\"unCheckedPart\">关</span>\n</v-switch>\n<v-switch :disabled=\"disabled\">\n  <span slot=\"checkedPart\">开</span>\n  <span slot=\"unCheckedPart\">关</span>\n</v-switch>\n<v-switch>\n  <span slot=\"checkedPart\"><v-icon type=\"tick\" size=\"16\"></v-icon></span>\n  <span slot=\"unCheckedPart\"><v-icon type=\"close\" size=\"12\"></v-icon></span>\n</v-switch>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>checked</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>当前开关是否选中</td>\n      </tr>\n      <tr>\n        <td>value</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>switch的值</td>\n      </tr>\n      <tr>\n        <td>disabled</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>当前开关是否禁用</td>\n      </tr>\n      <tr>\n        <td>color</td>\n        <td><code>String</code></td>\n        <td>#00a0ff</td>\n        <td>switch的颜色</td>\n      </tr>\n      <tr>\n        <td>@change</td>\n        <td><code>Function(switcher)</code></td>\n        <td></td>\n        <td>状态变化后的回调函数，返回参数为当前checked（boolean）</td>\n      </tr>\n      <tr>\n        <td>slot::checkedPart</td>\n        <td><code>slot node</code></td>\n        <td></td>\n        <td>选中时的内容</td>\n      </tr>\n      <tr>\n        <td>slot::unCheckedPart</td>\n        <td><code>slot node</code></td>\n        <td></td>\n        <td>没选中时的内容</td>\n      </tr>\n    </tbody>\n  </table>\n";
 
 /***/ },
-/* 386 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(387)
+	__vue_script__ = __webpack_require__(390)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/sliderDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(388)
+	__vue_template__ = __webpack_require__(391)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13199,7 +13413,7 @@
 	})()}
 
 /***/ },
-/* 387 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13208,7 +13422,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var VCol = _src.Layout.Col; // <template>
 	//   <div class="bs-docs-section" id="slider">
@@ -13338,22 +13552,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 388 */
+/* 391 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"slider\">\n    <h3 class=\"page-header\"><a href=\"#slider\" class=\"anchor\">Slider 滑动型输入器</a></h3>\n    <div class=\"bs-example\">\n      <h4>basic</h4>\n      <slider :value=\"30\"></slider>\n      <br><br>\n      <slider :value=\"[20,50]\"></slider>\n      <br><br>\n      <slider :value=\"[20,50]\" disabled></slider>\n      <br><br>\n      <h4>带有输入框的滑块</h4>\n      <v-row>\n        <v-col span=\"14\">\n          <slider :value.sync=\"sliderValue\"></slider>\n        </v-col>\n        <v-col span=\"10\">\n          <v-input type=\"text\" :value.sync=\"sliderValue\"></v-input>\n        </v-col>\n      </v-row>\n      <h4>有取值区间的滑块</h4>\n      <slider :value=\"1\" :min=\"1\" :max=\"21\"></slider>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\nbasic\n<slider :value=\"30\"></slider>\n<slider :value=\"[20,50]\"></slider>\n<slider :value=\"[20,50]\" disabled></slider>\n带有输入框的滑块\n<v-row>\n  <v-col span=\"14\">\n    <slider :value.sync=\"sliderValue\"></slider>\n  </v-col>\n  <v-col span=\"10\">\n    <v-input type=\"text\" :value.sync=\"sliderValue\"></v-input>\n  </v-col>\n</v-row>\n有取值区间的滑块\n<slider :value=\"1\" :min=\"1\" :max=\"21\"></slider>\n  </script></code></pre>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>id</td>\n          <td><code>String</code></td>\n          <td><code>'slider' + new Date().getTime()</code></td>\n          <td>滑块组件Id</td>\n        </tr>\n        <tr>\n          <td>value</td>\n          <td><code>String、Number、Array</code></td>\n          <td><code>0</code></td>\n          <td>默认值，类型为数字、数字型字符串、数字型数组、数字型数组字符串四种。<br>eg: 值为1或者'1'，表现为单滑块，终点是1，可更改位置；<br>eg: 值为[5,10]或者['5','10']，表现为双滑块，滑块起点和终点分别是5、10，并且位置都可更改</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td></td>\n          <td></td>\n          <td>配置该属性后，滑块被禁用</td>\n        </tr>\n        <tr>\n          <td>min</td>\n          <td><code>String、Number</code></td>\n          <td><code>0</code></td>\n          <td>滑块位置取值区间最小值</td>\n        </tr>\n        <tr>\n          <td>max</td>\n          <td><code>String、Number</code></td>\n          <td><code>100</code></td>\n          <td>滑块位置取值区间最大值</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 389 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(390)
+	__vue_script__ = __webpack_require__(393)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/dropdownDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(391)
+	__vue_template__ = __webpack_require__(394)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13372,7 +13586,7 @@
 	})()}
 
 /***/ },
-/* 390 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13381,7 +13595,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -13522,22 +13736,22 @@
 	// <script>
 
 /***/ },
-/* 391 */
+/* 394 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"dropdown\">\n    <h3 class=\"page-header\"><a href=\"#dropdown\" class=\"anchor\">Dropdown 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <dropdown>\n        <div data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </div>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"atui-btn\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"atui-btn atui-btn-primary\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown trigger=\"hover\">\n        <a href=\"#\" data-toggle=\"dropdown\">\n          鼠标移上来显示 <icon type=\"down\"></icon>\n        </a>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<dropdown>\n  <div data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </div>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"atui-btn\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"atui-btn atui-btn-primary\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown trigger=\"hover\">\n  <a href=\"#\" data-toggle=\"dropdown\">\n    鼠标移上来显示 <icon type=\"down\"></icon>\n  </a>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n</script></code></pre>\n\n\n<h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code> one of <code>click</code> <code>hover</code></td>\n          <td>触发类型</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 392 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(393)
+	__vue_script__ = __webpack_require__(396)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/selectDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(394)
+	__vue_template__ = __webpack_require__(397)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13556,7 +13770,7 @@
 	})()}
 
 /***/ },
-/* 393 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13565,7 +13779,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var Option = _src.Select.Option; // <template>
 	//   <div class="bs-docs-section" id="select">
@@ -13796,7 +14010,6 @@
 	      console.log(option);
 	    },
 	    onTagChange: function onTagChange(values) {
-	      console.log('sdfsdf', values);
 	      this.tagValues = values;
 	    }
 	  }
@@ -13806,22 +14019,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 394 */
+/* 397 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"select\">\n    <h3 class=\"page-header\"><a href=\"#select\" class=\"anchor\">Select 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <pre>选中值 : {{single1}}</pre>\n      <v-select :value.sync=\"single1\" :placeholder=\"placeholder\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n        <v-option value=\"agg\">鸡蛋</v-option>\n        <v-option value=\"芒果\">芒果</v-option>\n      </v-select>\n\n      <v-select :value=\"single\">\n        <v-option value=\"a\">终端</v-option>\n        <v-option value=\"b\">线路</v-option>\n        <v-option value=\"c\">号码拦截</v-option>\n      </v-select>\n\n      <v-select tags placeholder=\"请输入签名\">\n\n      </v-select>\n\n      <v-select :placeholder=\"placeholder\" style=\"width:200px;\" @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\" disabled>Banana</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">OrangeText</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n        <v-option value=\"agg\">鸡蛋</v-option>\n        <v-option value=\"芒果\">芒果</v-option>\n      </v-select>\n      <hr>\n      <h4>多选下拉(只能选已有的)</h4>\n\n      <v-select multiple @change=\"onSlectChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\">香蕉</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n\n      <hr>\n      <h4>tags(输入回车时变成一个tag)</h4>\n      选中值 : {{tagValues | json}} <br/>\n      <v-select tags :selected-options=\"selectedOptions\" @change=\"onTagChange\">\n        <v-option value=\"Apple\">苹果</v-option>\n        <v-option value=\"Banana\">香蕉</v-option>\n        <v-option value=\"Cherry\">Cherry</v-option>\n        <v-option value=\"Orange\">Orange</v-option>\n        <v-option value=\"Grape\">Grape</v-option>\n      </v-select>\n      <hr />\n\n      <h4>被禁用的select</h4>\n      <v-select placeholder=\"选择类别\" :disabled=\"true\">\n        <v-option>被禁用了噢</v-option>\n      </v-select>\n\n      <h4>下拉出自定义类容</h4>\n      <v-select placeholder=\"选择类别\" style=\"width:200px;\">\n        <v-option>\n          <tabs>\n            <tab header=\"系统短信签名\"></tab>\n            <tab header=\"系统短信签名\"></tab>\n            <tab header=\"系统短信签名\"></tab>\n          </tabs>\n        </v-option>\n      </v-select>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<pre>选中值 : {{single1}}</pre>\n<v-select :value.sync=\"single1\" :placeholder=\"placeholder\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">苹果</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n  <v-option value=\"agg\">鸡蛋</v-option>\n  <v-option value=\"芒果\">芒果</v-option>\n</v-select>\n\n<v-select :value=\"single\">\n  <v-option value=\"a\">终端</v-option>\n  <v-option value=\"b\">线路</v-option>\n  <v-option value=\"c\">号码拦截</v-option>\n</v-select>\n\n<v-select tags placeholder=\"请输入签名\">\n\n</v-select>\n\n<v-select :placeholder=\"placeholder\" style=\"width:200px;\" @change=\"onSlectChange\">\n  <v-option value=\"Apple\">苹果</v-option>\n  <v-option value=\"Banana\" disabled>Banana</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">OrangeText</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n  <v-option value=\"agg\">鸡蛋</v-option>\n  <v-option value=\"芒果\">芒果</v-option>\n</v-select>\n<hr>\n<h4>多选下拉(只能选已有的)</h4>\n\n<v-select multiple @change=\"onSlectChange\">\n  <v-option value=\"Apple\">苹果</v-option>\n  <v-option value=\"Banana\">香蕉</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n\n<hr>\n<h4>tags(输入回车时变成一个tag)</h4>\n选中值 : {{tagValues | json}} <br/>\n<v-select tags :selected-options=\"selectedOptions\" @change=\"onTagChange\">\n  <v-option value=\"Apple\">苹果</v-option>\n  <v-option value=\"Banana\">香蕉</v-option>\n  <v-option value=\"Cherry\">Cherry</v-option>\n  <v-option value=\"Orange\">Orange</v-option>\n  <v-option value=\"Grape\">Grape</v-option>\n</v-select>\n<hr />\n\n<h4>被禁用的select</h4>\n<v-select placeholder=\"选择类别\" :disabled=\"true\">\n  <v-option>被禁用了噢</v-option>\n</v-select>\n\n<h4>下拉出自定义类容</h4>\n<v-select placeholder=\"选择类别\" style=\"width:200px;\">\n  <v-option>\n    <tabs>\n      <tab header=\"系统短信签名\"></tab>\n      <tab header=\"系统短信签名\"></tab>\n      <tab header=\"系统短信签名\"></tab>\n    </tabs>\n  </v-option>\n</v-select>\n</script></code></pre>\n\n    <h2>Select 选项</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>Array/String</code></td>\n          <td><code>[]</code></td>\n          <td>默认要选中的值，如果是多选框可以设置数组</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td>请选择</td>\n          <td>默认选择提示</td>\n        </tr>\n        <tr>\n          <td>multiple</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否多选</td>\n        </tr>\n        <tr>\n          <td>limit</td>\n          <td><code>Number</code></td>\n          <td><code>1024</code></td>\n          <td>Limit the number of elements you are allowed to select.</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>onchange</td>\n          <td><code>Function</code></td>\n          <td><code></code></td>\n          <td>选中项发生变化时触发</td>\n        </tr>\n      </tbody>\n    </table>\n\n  </div>\n";
 
 /***/ },
-/* 395 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(396)
+	__vue_script__ = __webpack_require__(399)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/calendarDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(397)
+	__vue_template__ = __webpack_require__(400)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13840,7 +14053,7 @@
 	})()}
 
 /***/ },
-/* 396 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13849,7 +14062,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var Option = _src.Select.Option; // <template>
 	//   <div class="bs-docs-section" id="calendar">
@@ -13963,22 +14176,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 397 */
+/* 400 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"calendar\">\n    <h1 class=\"page-header\"><a href=\"#calendar\" class=\"anchor\">Calendar 日历</a></h1>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选择日期是: {{new Date(value).toString().slice(0, -23)}}\n        </pre>\n      </p>\n      <calendar v-ref:calendar :value.sync=\"value\" :disabled-date=\"disabledDate\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></calendar>\n\n      <h4>格式化</h4>\n      <v-select :default-value.sync=\"format\" >\n        <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n        <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n        <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n        <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n        <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n      </v-select>\n\n\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n    </script></code></pre>\n    <h2>Option</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n        <tr>\n          <td>format</td>\n          <td><code>String</code></td>\n          <td><code>MMMM/dd/yyyy</code></td>\n          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>\n        </tr>\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n        <tr>\n          <td>showResetButton</td>\n          <td><code>Boolean</code></td>\n          <td>false</td>\n          <td>是否显示清除日期按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 398 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(399)
+	__vue_script__ = __webpack_require__(402)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/datepickerDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(400)
+	__vue_template__ = __webpack_require__(403)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13997,7 +14210,7 @@
 	})()}
 
 /***/ },
-/* 399 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14006,7 +14219,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var RangePicker = _src.DatePicker.RangePicker; // <template>
 	//   <div class="bs-docs-section" id="datepicker">
@@ -14157,22 +14370,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 400 */
+/* 403 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"datepicker\">\n    <h1 class=\"page-header\"><a href=\"#datepicker\" class=\"anchor\">DatePicker 日期选择</a></h1>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选择日期是: {{value}}\n        </pre>\n      </p>\n      <date-picker v-ref:dp\n      :format=\"format.toString()\" :disabled-date=\"disabledDate\" @change=\"selectChange\"></date-picker>\n\n      <date-picker disabled :format=\"format\" @change=\"selectChange\"></date-picker>\n\n      <h4>格式化</h4>\n      <v-select :value.sync=\"format\" >\n        <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n        <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n        <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n        <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n        <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n      </v-select>\n\n      <h4>日期范围选择（rangePicker）</h4>\n\n      <range-picker @change=\"rangePickerChange\"></range-picker>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<date-picker v-ref:dp\n:format=\"format.toString()\"\n:disabled-date=\"disabledDate\"\n@change=\"selectChange\">\n</date-picker>\n\n<h4>日期范围选择（rangePicker）</h4>\n<range-picker></range-picker>\n\n// script\nimport {DatePicker, Select} from 'atui'\nconst RangePicker = DatePicker.RangePicker\nconst Option = Select.Option;\n\nexport default {\n  components: {\n    DatePicker,\n    RangePicker,\n    vSelect:Select,\n    vOption:Option\n  },\n  data() {\n    return {\n      disabled: [],\n      value: 'Oct/06/2015',\n      format: 'MMM/dd/yyyy',\n      reset: true\n    }\n  },\n  methods:{\n    selectChange(value) {\n      this.value = value\n    },\n    disabledDate(date) {\n      return date.getTime() <= new Date().getTime()\n    },\n    rangePickerChange(start,end) {\n      console.log('rangepicker',start,end)\n    }\n  }\n}\n\n\n</script></code></pre>\n    <h2>Option</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n        <tr>\n          <td>format</td>\n          <td><code>String</code></td>\n          <td><code>MMMM/dd/yyyy</code></td>\n          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>\n        </tr>\n        <tr>\n          <td>disabledDate</td>\n          <td><code>Function</code></td>\n          <td></td>\n          <td>禁用某些时间</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 401 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(402)
+	__vue_script__ = __webpack_require__(405)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/timepickerDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(403)
+	__vue_template__ = __webpack_require__(406)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14191,7 +14404,7 @@
 	})()}
 
 /***/ },
-/* 402 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14200,11 +14413,11 @@
 	  value: true
 	});
 	
-	var _toConsumableArray2 = __webpack_require__(77);
+	var _toConsumableArray2 = __webpack_require__(78);
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -14297,22 +14510,22 @@
 	// <script>
 
 /***/ },
-/* 403 */
+/* 406 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"timepicker\">\n    <h3 class=\"page-header\"><a href=\"#timepicker\" class=\"anchor\">TimePicker 时间选择</a></h3>\n    <div class=\"bs-example\">\n      <h4>时间范围选择（timePicker）</h4>\n      <time-picker @change=\"timePickerChange\" value=\"11:11:11\"></time-picker>\n       <h4>隐藏部分时间的选择</h4>\n      <time-picker @change=\"timePickerChange\" :disabled-minutes=\"disabledMinutes\" :disabled-seconds=\"disabledSeconds\"></time-picker>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<time-picker @change=\"timePickerChange\" value=\"11:11:11\"></time-picker>\n<time-picker @change=\"timePickerChange\" :disabled-minutes=\"disabledMinutes\" :disabled-seconds=\"disabledSeconds\"></time-picker>\n// script\nexport default {\n  components: {\n    TimePicker\n  },\n  data() {\n    return {\n      defaultTime: new Date().set\n    }\n  },\n  methods: {\n    disabledMinutes () {\n      return [...Array(60).keys()].filter(value => value % 10 !== 0)\n    },\n    disabledSeconds () {\n      return [...Array(60).keys()].filter(value => value % 30 !== 0)\n    },\n    timePickerChange(date,timeString) {\n      console.log('timepicker',date, timeString)\n    }\n  }\n}\n</script></code></pre>\n    <h2>Option</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 404 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(405)
+	__vue_script__ = __webpack_require__(408)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/searchboxDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(406)
+	__vue_template__ = __webpack_require__(409)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14331,7 +14544,7 @@
 	})()}
 
 /***/ },
-/* 405 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14340,7 +14553,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -14422,22 +14635,22 @@
 	// <script>
 
 /***/ },
-/* 406 */
+/* 409 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"searchbox\">\n    <h3 class=\"page-header\"><a href=\"#searchbox\" class=\"anchor\">Searchbox 搜索框</a></h3>\n    <div class=\"bs-example\">\n      <searchbox placeholder=\"请输入关键词搜索\" :value.sync=\"defaultVal\" :search-list=\"searchList\" text-field=\"name\"></searchbox>\n      <searchbox placeholder=\"请输入关键词搜索\"></searchbox>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<searchbox placeholder=\"请输入关键词搜索\" :value.sync=\"defaultVal\" :search-list=\"searchList\" text-field=\"name\"></searchbox>\n</script></code></pre>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>搜索框预期值的提示信息</td>\n        </tr>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>搜索框默认值</td>\n        </tr>\n        <tr>\n          <td>search-list</td>\n          <td><code>Array</code>或<code>Object</code></td>\n          <td><code>数组素组</code></td>\n          <td>搜索列表</td>\n        </tr>\n        <tr>\n          <td>text-filed</td>\n          <td><code>String</code></td>\n          <td><code>name</code></td>\n          <td>下拉列表中显示的是列表的哪个字段</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 407 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(408)
+	__vue_script__ = __webpack_require__(411)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/messageDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(409)
+	__vue_template__ = __webpack_require__(412)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14456,7 +14669,7 @@
 	})()}
 
 /***/ },
-/* 408 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14465,7 +14678,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  data: function data() {
@@ -14728,22 +14941,22 @@
 	// <script>
 
 /***/ },
-/* 409 */
+/* 412 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"message\">\n    <h3 class=\"page-header\">\n      <a href=\"#message\" class=\"anchor\">Message 警告提示</a>\n    </h3>\n    <div class=\"bs-example\" >\n      <button class=\"atui-btn atui-btn-success atui-btn-lg\"\n        @click=\"showRight = !showRight\">\n        点击在右边显示或隐藏\n      </button>\n      <button class=\"atui-btn atui-btn-success atui-btn-lg\"\n        @click=\"showMessage\">\n        全局toast，使用message.xx方法\n      </button>\n      <button class=\"atui-btn atui-btn-default atui-btn-lg\"\n        @click=\"showCenter = !showCenter\">\n        点击在中间显示或隐藏\n      </button>\n      <button class=\"atui-btn atui-btn-error atui-btn-lg\"\n        @click=\"showTop = !showTop\">\n        点击在顶部显示或隐藏\n      </button>\n      <hr>\n      <message type=\"success\" arrow=\"left\">\n        成功提示的文案\n      </message>\n\n      <message type=\"info\" arrow=\"right\">\n        消息提示的文案\n      </message>\n\n      <message type=\"error\" dismissable arrow=\"bottom\">\n        错误提示的文案,可关闭\n      </message>\n\n      <message type=\"warning\" dismissable arrow=\"top\">\n        警告提示的文案,可关闭\n      </message>\n\n      <message type=\"help\" dismissable>\n        帮助提示文案,可关闭\n      </message>\n\n      <message\n        :show.sync=\"showRight\"\n        :duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"top-right\"\n        dismissable\n      >\n        在右边显示的警告\n      </message>\n\n      <message\n        :show.sync=\"showCenter\"\n        duration=\"3000\"\n        type=\"success\"\n        width=\"400px\"\n        placement=\"center\"\n        dismissable>\n        在中间显示的警告\n      </message>\n\n      <message\n        :show.sync=\"showTop\"\n        :duration=\"3000\"\n        type=\"error\"\n        width=\"400px\"\n        placement=\"top\"\n        dismissable>\n        在顶部显示的警告\n      </message>\n    </div>\n\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button class=\"atui-btn atui-btn-success atui-btn-lg\"\n  @click=\"showRight = !showRight\">\n  点击在右边显示或隐藏\n</button>\n<button class=\"atui-btn atui-btn-success atui-btn-lg\"\n  @click=\"showMessage\">\n  全局toast，使用message.xx方法\n</button>\n<button class=\"atui-btn atui-btn-default atui-btn-lg\"\n  @click=\"showCenter = !showCenter\">\n  点击在中间显示或隐藏\n</button>\n<button class=\"atui-btn atui-btn-error atui-btn-lg\"\n  @click=\"showTop = !showTop\">\n  点击在顶部显示或隐藏\n</button>\n<hr>\n<message type=\"success\" arrow=\"left\">\n  成功提示的文案\n</message>\n\n<message type=\"info\" arrow=\"right\">\n  消息提示的文案\n</message>\n\n<message type=\"error\" dismissable arrow=\"bottom\">\n  错误提示的文案,可关闭\n</message>\n\n<message type=\"warning\" dismissable arrow=\"top\">\n  警告提示的文案,可关闭\n</message>\n\n<message type=\"help\" dismissable>\n  帮助提示文案,可关闭\n</message>\n\n<message\n  :show.sync=\"showRight\"\n  :duration=\"3000\"\n  type=\"success\"\n  width=\"400px\"\n  placement=\"top-right\"\n  dismissable\n>\n  在右边显示的警告\n</message>\n\n<message\n  :show.sync=\"showCenter\"\n  duration=\"3000\"\n  type=\"success\"\n  width=\"400px\"\n  placement=\"center\"\n  dismissable>\n  在中间显示的警告\n</message>\n\n<message\n  :show.sync=\"showTop\"\n  :duration=\"3000\"\n  type=\"error\"\n  width=\"400px\"\n  placement=\"top\"\n  dismissable>\n  在顶部显示的警告\n</message>\n\nimport {Message} from '@ali/atui'\n  export default {\n    data() {\n      return {\n        showRight: false,\n        showTop: false,\n        showCenter:false\n      }\n    },\n    components: {\n      Message,\n    },\n    methods:{\n      showMessage() {\n        Message.success('成功啦')\n      }\n    }\n  }\n</script></code></pre>\n\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>show</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示</td>\n        </tr>\n        <tr>\n          <td>dismissable</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>是否显示关闭按钮</td>\n        </tr>\n        <tr>\n          <td>type</td>\n          <td><code>String</code>, one of\n          <code>success</code>\n          <code>info</code>\n          <code>warning</code>\n          <code>danger</code>\n          <code>help</code>\n          </td>\n          <td><code>success</code></td>\n          <td>组件样式</td>\n        </tr>\n        <tr>\n          <td>duration</td>\n          <td><code>Number</code></td>\n          <td><code>0</code></td>\n          <td>自动关闭时间. 设置为 <code>0</code>或负数将不自动关闭.</td>\n        </tr>\n        <tr>\n          <td>height</td>\n          <td><code>String</code></td>\n          <td>高度</td>\n        </tr>\n        <tr>\n          <td>width</td>\n          <td><code>String</code></td>\n          <td>宽度</td>\n        </tr>\n        <tr>\n          <td>arrow</td>\n          <td><code>String</code>one of <code>top、left、right、bottom</code></td>\n          <td>剪头的方向，如果没有传则不显示箭头，默认不显示</td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code>. one of <code>top</code>, <code>top-right</code></td>\n          <td></td>\n          <td>组件的位置</td>\n        </tr>\n        <tr>\n          <td>showIcon</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否显示相应的ICON</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 410 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(411)
+	__vue_script__ = __webpack_require__(414)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/cascaderDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(412)
+	__vue_template__ = __webpack_require__(415)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14762,7 +14975,7 @@
 	})()}
 
 /***/ },
-/* 411 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -14771,7 +14984,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	// <template>
 	//   <div class="bs-docs-section" id="cascader">
@@ -14889,22 +15102,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 412 */
+/* 415 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"cascader\">\n    <h3 class=\"page-header\"><a href=\"#cascader\" class=\"anchor\">Cascader 级联选择</a></h3>\n    <div class=\"bs-example\">\n      <cascader :options=\"options\" @change=\"selectChange\" :default-value=\"defaultValue\"></cascader>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<cascader :options=\"options\" @change=\"selectChange\" :default-value=\"defaultValue\"></cascader>\n\nconst options = [{\n    value: 'zhejiang',\n    label: '浙江',\n    children: [{\n      value: 'hangzhou',\n      label: '杭州',\n      children: [{\n        value: 'xihu',\n        label: '西湖',\n      }],\n    }],\n  }, {\n    value: 'jiangsu',\n    label: '江苏',\n    children: [{\n      value: 'nanjing',\n      label: '南京',\n      children: [{\n        value: 'zhonghuamen',\n        label: '中华门',\n      }],\n    }],\n  }]\n\n  const defaultValue = ['zhejiang', 'hangzhou', 'xihu']\n\n  import {Cascader} from 'src/'\n  export default {\n    components: {\n      Cascader\n    },\n    data() {\n      return {\n        options:options,\n        defaultValue:defaultValue\n      }\n    },\n    methods:{\n      selectChange(selectedValue, option) {\n        alert(selectedValue)\n      }\n    }\n  }\n</script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>options</td>\n        <td><code>Array</code></td>\n        <td><code>[]</code></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>defaultValue</td>\n        <td><code>Array</code></td>\n        <td><code>[]</code></td>\n        <td>默认选中的值.</td>\n      </tr>\n      <tr>\n        <td>change</td>\n        <td><code>Function</code></td>\n        <td><code>function(selectedValue, option) {}</code></td>\n        <td>选择到最后一项触发的change事件\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 413 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(414)
+	__vue_script__ = __webpack_require__(417)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/modalDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(415)
+	__vue_template__ = __webpack_require__(418)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14923,7 +15136,7 @@
 	})()}
 
 /***/ },
-/* 414 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14932,7 +15145,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	// <template>
 	//   <div class="bs-docs-section" id="modal">
@@ -15141,22 +15354,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 415 */
+/* 418 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"modal\">\n    <h3 class=\"page-header\"><a href=\"#modal\" class=\"anchor\">Modal 对话框</a></h3>\n    <div class=\"bs-example\">\n      <button class=\"atui-btn atui-btn-success\" @click=\"fadeModal = true\">Fade modal</button>\n      <modal title=\"Fade Modal\" :show.sync=\"fadeModal\" effect=\"fade\" width=\"800px\">\n        <div slot=\"modal-body\" class=\"atui-modal-body\">\n          <v-textarea  :content.sync='textarea'></v-textarea>\n        </div>\n      </modal>\n      <button class=\"atui-btn atui-btn-primary\" @click=\"zoomModal = true\">Zoom modal</button>\n      <modal title=\"Zoom Modal\" :show.sync=\"zoomModal\" effect=\"zoom\" width=\"400px\">\n        <div slot=\"modal-header\"></div>\n        <div slot=\"modal-body\" class=\"atui-modal-body\">\n          高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。\n        </div>\n      </modal>\n      <button class=\"atui-btn atui-btn-default\" @click=\"showCustomModal = true\">Show custom modal</button>\n      <modal :show.sync=\"showCustomModal\" effect=\"fade\" width=\"90%\" height=\"90%\">\n        <div slot=\"modal-header\" class=\"atui-modal-header\">\n          <h4 class=\"modal-title\"><i>Custom</i> <code>Modal</code> <b>Title</b></h4>\n        </div>\n        <div slot=\"modal-body\" class=\"atui-modal-body\">\n          高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。\n        </div>\n        <div slot=\"modal-footer\" class=\"atui-modal-footer\">\n          <button type=\"button\" class=\"atui-btn atui-btn-default\" @click='showCustomModal = false'>Exit</button>\n          <button type=\"button\" class=\"atui-btn atui-btn-success\" @click='showCustomModal = false'>Custom Save</button>\n        </div>\n      </modal>\n      <button class=\"atui-btn atui-btn-warning\" @click=\"largeModal = true\">Large modal</button>\n      <modal title=\"Large Modal\" :show.sync=\"largeModal\" large>\n        <div slot=\"modal-body\" class=\"atui-modal-body\">\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n          <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n        </div>\n      </modal>\n      <button class=\"atui-btn atui-btn-danger\" @click=\"smallModal = true\">小弹窗</button>\n      <modal title=\"Small Modal\" :show.sync=\"smallModal\" small>\n        <div slot=\"modal-body\" class=\"atui-modal-body\">\n          高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。\n        </div>\n      </modal>\n\n      <button class=\"atui-btn atui-btn-danger\" @click=\"showConfirm\">使用程序直接弹出confirm</button>\n      <button class=\"atui-btn atui-btn-danger\" @click=\"showError\">使用程序直接弹出error</button>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button class=\"atui-btn atui-btn-default\"\n  @click=\"showModal = true\"\n  >显示弹窗\n</button>\n<modal title=\"Fade Modal\" :show.sync=\"fadeModal\" effect=\"fade\" width=\"800px\">\n  <div slot=\"modal-body\" class=\"atui-modal-body\">\n    <v-textarea  :content.sync='textarea'></v-textarea>\n  </div>\n</modal>\n<button class=\"atui-btn atui-btn-primary\" @click=\"zoomModal = true\">Zoom modal</button>\n<modal title=\"Zoom Modal\" :show.sync=\"zoomModal\" effect=\"zoom\" width=\"400px\">\n  <div slot=\"modal-header\"></div>\n  <div slot=\"modal-body\" class=\"atui-modal-body\">\n    高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。\n  </div>\n</modal>\n<button class=\"atui-btn atui-btn-default\" @click=\"showCustomModal = true\">Show custom modal</button>\n<modal :show.sync=\"showCustomModal\" effect=\"fade\" width=\"90%\" height=\"90%\">\n  <div slot=\"modal-header\" class=\"atui-modal-header\">\n    <h4 class=\"modal-title\"><i>Custom</i> <code>Modal</code> <b>Title</b></h4>\n  </div>\n  <div slot=\"modal-body\" class=\"atui-modal-body\">\n    高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。\n  </div>\n  <div slot=\"modal-footer\" class=\"atui-modal-footer\">\n    <button type=\"button\" class=\"atui-btn atui-btn-default\" @click='showCustomModal = false'>Exit</button>\n    <button type=\"button\" class=\"atui-btn atui-btn-success\" @click='showCustomModal = false'>Custom Save</button>\n  </div>\n</modal>\n<button class=\"atui-btn atui-btn-warning\" @click=\"largeModal = true\">Large modal</button>\n<modal title=\"Large Modal\" :show.sync=\"largeModal\" large>\n  <div slot=\"modal-body\" class=\"atui-modal-body\">\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n    <p>高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。</p>\n  </div>\n</modal>\n<button class=\"atui-btn atui-btn-danger\" @click=\"smallModal = true\">小弹窗</button>\n<modal title=\"Small Modal\" :show.sync=\"smallModal\" small>\n  <div slot=\"modal-body\" class=\"atui-modal-body\">\n    高圆圆，中国女演员，1979年10月5日出生于北京市丰台区云岗一个普通的知识分子家庭。1996年高圆圆被广告公司发掘，随后拍摄了大量广告，成为了广告圈中的模特。1997年高圆圆出演了她的第一部电影《爱情麻辣烫》，从此开始了她的演员生涯。2001年高圆圆参演的电影《十七岁的单车》获得柏林国际电影节最佳影片银熊奖。\n  </div>\n</modal>\n<button class=\"atui-btn atui-btn-default\"\n  @click=\"smallModal = true\"\n  >Small Modal\n</button>\n<modal :show.sync=\"smallModal\">\n  <div slot=\"modal-body\" class=\"modal-body\">...</div>\n</modal>\n  </script></code></pre>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>标题</td>\n      </tr>\n      <tr>\n        <td>width</td>\n        <td><code>Number, String or null</code></td>\n        <td><code>null</code></td>\n        <td> ( 例如: '80%' 或 '5em' 或500 ) 如果不填那么就是自动宽</td>\n      </tr>\n      <tr>\n        <td>callback</td>\n        <td><code>Function</code></td>\n        <td></td>\n        <td>当点击主要按钮时触发的回调.</td>\n      </tr>\n      <tr>\n        <td>large</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>大的弹窗</td>\n      </tr>\n      <tr>\n        <td>small</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>小的弹窗</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 416 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(417)
+	__vue_script__ = __webpack_require__(420)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/tableDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(418)
+	__vue_template__ = __webpack_require__(421)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15175,7 +15388,7 @@
 	})()}
 
 /***/ },
-/* 417 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15184,7 +15397,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var columns = [{
 	  title: '姓名',
@@ -15252,7 +15465,7 @@
 	//
 	//     <modal title="Fade Modal" :show.sync="show" effect="fade" width="800px">
 	//         <div slot="modal-body" class="modal-body">
-	//           <v-textarea  :content.sync='textarea'></v-textarea>
+	//           <v-textarea :content.sync='textarea'></v-textarea>
 	//         </div>
 	//       </modal>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
@@ -15444,6 +15657,7 @@
 	};
 	
 	var pagination = {
+	  total: _data.length,
 	  onShowSizeChange: function onShowSizeChange(current, pageSize) {
 	    console.log('Current: ', current, '; PageSize: ', pageSize);
 	  },
@@ -15508,23 +15722,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 418 */
+/* 421 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <h4>带分页</h4>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" :pagination=\"pagination\" v-ref:grid></grid>\n\n      <h4>不带分页</h4>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\"></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <input type=\"button\" @click=\"emptyData\" value=\"清空数据\"/>\n    <input type=\"button\" @click=\"changeSize\" value=\"改变大小({{size}})\"/>\n\n    <modal title=\"Fade Modal\" :show.sync=\"show\" effect=\"fade\" width=\"800px\">\n        <div slot=\"modal-body\" class=\"modal-body\">\n          <v-textarea  :content.sync='textarea'></v-textarea>\n        </div>\n      </modal>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<h4>带分页</h4>\n<grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" :pagination=\"pagination\" v-ref:grid></grid>\n\n<h4>不带分页</h4>\n<grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\"></grid>\n\n<!--脚本-->\nconst columns = [{\n  title: '姓名',\n  dataIndex: 'name',\n  filters: [{\n    text: '姓李的的',\n    value: '李',\n  }, {\n    text: '姓胡的',\n    value: '胡',\n  }],\n  sorter:true,\n  width:150\n}, {\n  title: '年龄',\n  dataIndex: 'age',\n  sorter: (a, b) => a.age - b.age,\n  render(text, record, index) {\n    return '<input v-model=\"gridData['+ index +'].age\"/>'\n  },\n  width:250\n}, {\n  title: '地址',\n  dataIndex: 'address',\n  filters: [{\n    text: '南湖',\n    value: '南湖',\n  }, {\n    text: '西湖',\n    value: '西湖',\n  }],\n  filterMultiple: false,\n  width:250\n\n},{\n    title: '操作 <tooltip content=\"提示\" placement=\"topRight\"><icon type=\"help\"></icon></tooltip>',\n    key: 'operation',\n    render(text, record) {\n      if(record) {\n        return '<icon type=\"info\"></icon><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n      }\n    }\n  }\n];\nconst data = [];\nfor (let i = 0; i < 46; i++) {\n  data.push({\n    key: i,\n    name: `李大嘴${i}`,\n    age: 32,\n    address: `西湖区湖底公园${i}号`,\n  });\n}\n// 配置选择数据的选项\nconst rowSelection = {\n  getCheckboxProps(record) {\n    return {\n      disabled: record.name === '胡彦祖'    // 配置无法勾选的列\n    };\n  },\n  onChange(selectedRowKeys, selectedRows) {\n    console.log('rowSelection.onChange',selectedRowKeys, selectedRows);\n  },\n  onSelect(record, selected, selectedRows) {\n    console.log('rowSelection.onSelect',record, selected, selectedRows);\n  },\n  onSelectAll(selected, selectedRows, changeRows) {\n    console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);\n  }\n};\nexport default {\n  components: {\n    Grid:VueComponent.Table,\n    Icon,\n    Row:Layout.Row\n  },\n  data() {\n    return {\n      size:'default',\n      fixedHeader:false,\n      loading:false,\n      gridData:data,\n      gridColumns: columns,\n      rowSelection:rowSelection\n    }\n  },\n  methods:{\n    changeData() {\n      this.gridData.push({\n        key: Math.random(),\n        name: '李秀莲大嘴哥',\n        age: Math.random(),\n        address: '西湖区湖底公园123号',\n      })\n    }\n  }\n}\n\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>\n        <td>表格大小</td>\n      </tr>\n       <tr>\n        <td>fixed-header</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>是否固定头部（注意，固定头部必须指定每列宽度）</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"table\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Table 表格</a></h3>\n    <div class=\"bs-example\">\n    <row>\n      <h4>带分页</h4>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" :pagination=\"pagination\" v-ref:grid></grid>\n\n      <h4>不带分页</h4>\n      <grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\"></grid>\n    </row>\n    </div>\n    <input type=\"button\" @click=\"changeData\" value=\"填充表格数据\"/> <input type=\"button\" @click=\"changeLoading\" value=\"切换loading状态\"/>\n    <input type=\"button\" @click=\"emptyData\" value=\"清空数据\"/>\n    <input type=\"button\" @click=\"changeSize\" value=\"改变大小({{size}})\"/>\n\n    <modal title=\"Fade Modal\" :show.sync=\"show\" effect=\"fade\" width=\"800px\">\n        <div slot=\"modal-body\" class=\"modal-body\">\n          <v-textarea :content.sync='textarea'></v-textarea>\n        </div>\n      </modal>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<h4>带分页</h4>\n<grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\" :pagination=\"pagination\" v-ref:grid></grid>\n\n<h4>不带分页</h4>\n<grid :data-source=\"gridData\" :columns=\"gridColumns\" :row-selection=\"rowSelection\" row-key=\"key\" @table-change=\"onTableChange\" :loading=\"loading\" :size=\"size\"></grid>\n\n<!--脚本-->\nconst columns = [{\n  title: '姓名',\n  dataIndex: 'name',\n  filters: [{\n    text: '姓李的的',\n    value: '李',\n  }, {\n    text: '姓胡的',\n    value: '胡',\n  }],\n  sorter:true,\n  width:150\n}, {\n  title: '年龄',\n  dataIndex: 'age',\n  sorter: (a, b) => a.age - b.age,\n  render(text, record, index) {\n    return '<input v-model=\"gridData['+ index +'].age\"/>'\n  },\n  width:250\n}, {\n  title: '地址',\n  dataIndex: 'address',\n  filters: [{\n    text: '南湖',\n    value: '南湖',\n  }, {\n    text: '西湖',\n    value: '西湖',\n  }],\n  filterMultiple: false,\n  width:250\n\n},{\n    title: '操作 <tooltip content=\"提示\" placement=\"topRight\"><icon type=\"help\"></icon></tooltip>',\n    key: 'operation',\n    render(text, record) {\n      if(record) {\n        return '<icon type=\"info\"></icon><a href=\"'+ record.key+'.html\" target=\"_blank\">详情</a>'\n      }\n    }\n  }\n];\nconst data = [];\nfor (let i = 0; i < 46; i++) {\n  data.push({\n    key: i,\n    name: `李大嘴${i}`,\n    age: 32,\n    address: `西湖区湖底公园${i}号`,\n  });\n}\n// 配置选择数据的选项\nconst rowSelection = {\n  getCheckboxProps(record) {\n    return {\n      disabled: record.name === '胡彦祖'    // 配置无法勾选的列\n    };\n  },\n  onChange(selectedRowKeys, selectedRows) {\n    console.log('rowSelection.onChange',selectedRowKeys, selectedRows);\n  },\n  onSelect(record, selected, selectedRows) {\n    console.log('rowSelection.onSelect',record, selected, selectedRows);\n  },\n  onSelectAll(selected, selectedRows, changeRows) {\n    console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);\n  }\n};\nexport default {\n  components: {\n    Grid:VueComponent.Table,\n    Icon,\n    Row:Layout.Row\n  },\n  data() {\n    return {\n      size:'default',\n      fixedHeader:false,\n      loading:false,\n      gridData:data,\n      gridColumns: columns,\n      rowSelection:rowSelection\n    }\n  },\n  methods:{\n    changeData() {\n      this.gridData.push({\n        key: Math.random(),\n        name: '李秀莲大嘴哥',\n        age: Math.random(),\n        address: '西湖区湖底公园123号',\n      })\n    }\n  }\n}\n\n</script></code></pre>\n  <h3>Table 选项 </h3>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>名称</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>描述</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>data-srouce</td>\n        <td><code>Array</code></td>\n        <td></td>\n        <td>要绑定的数据源</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td><code>default</code> 或 <code>middle</code> 或 <code>small</code></td>\n        <td>表格大小</td>\n      </tr>\n       <tr>\n        <td>fixed-header</td>\n        <td><code>Boolean</code></td>\n        <td><code>false</code></td>\n        <td>是否固定头部（注意，固定头部必须指定每列宽度）</td>\n      </tr>\n      <tr>\n        <td>row-selection</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否增加列checkbox选择</td>\n      </tr>\n      <tr>\n        <td>columns</td>\n        <td><code>Array</code></td>\n        <td>[]</td>\n        <td>表格列的配置描述</td>\n      </tr>\n      <tr>\n        <td>row-key</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>行选择时绑定的关键列名</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 419 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(420)
-	__vue_script__ = __webpack_require__(421)
+	__webpack_require__(423)
+	__vue_script__ = __webpack_require__(424)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/badgeDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(422)
+	__vue_template__ = __webpack_require__(425)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15543,13 +15757,13 @@
 	})()}
 
 /***/ },
-/* 420 */
+/* 423 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 421 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15558,7 +15772,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  data: function data() {
@@ -15664,22 +15878,22 @@
 	// <script>
 
 /***/ },
-/* 422 */
+/* 425 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"badge\">\n    <h3 class=\"page-header\"><a href=\"#badge\" class=\"anchor\">Badge 徽标数</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">基础型</h4>\n      <badge :count=\"6\">\n        <a href=\"javascript:;\" style=\"width: 42px; height: 42px; background-color: #eee; display: inline-block; border-radius: 6px;\"></a>\n      </badge>\n      <h4 class=\"example-title\">大数字型</h4>\n      <badge :count=\"99\">\n        <a href=\"javascript:;\" style=\"width: 42px; height: 42px; background-color: #eee; display: inline-block; border-radius: 6px;\"></a>\n      </badge>\n\n      <badge :count=\"1000\" >\n        <a href=\"javascript:;\" style=\"width: 42px; height: 42px; background-color: #eee; display: inline-block; border-radius: 6px;\"></a>\n      </badge>\n      <h4 class=\"example-title\">小红点型</h4>\n        <badge :dot=\"true\" >\n          <a href=\"javascript:;\" style=\"width: 42px; height: 42px; background-color: #eee; display: inline-block; border-radius: 6px;\"></a>\n        </badge>\n\n        <badge :dot=\"true\" >\n          <a href=\"javascript:;\" >这是一个文字链接</a>\n        </badge>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<badge :count=\"6\">\n  <a href=\"javascript:;\" class=\"badge-count-example\"></a>\n</badge>\n\n<badge :count=\"99\">\n  <a href=\"javascript:;\" class=\"badge-count-example\"></a>\n</badge>\n\n<badge :count=\"1000\">\n  <a href=\"javascript:;\" class=\"badge-count-example\"></a>\n</badge>\n\n<badge :dot=\"true\">\n  <a href=\"javascript:;\" class=\"badge-count-example\"></a>\n</badge>\n\n<badge :dot=\"true\">\n  <a href=\"javascript:;\" >这是一个文字链接</a>\n</badge>\n\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>count</td>\n        <td><code>Number</code></td>\n        <td></td>\n        <td>展示的数字，当大于99时展示99+</td>\n      </tr>\n      <tr>\n        <td>dot</td>\n        <td><code>Boolean</code></td>\n        <td></td>\n        <td>展示的红点</td>\n      </tr>\n    </tbody>\n  </table>\n";
 
 /***/ },
-/* 423 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(424)
+	__vue_script__ = __webpack_require__(427)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/carouselDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(425)
+	__vue_template__ = __webpack_require__(428)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15698,7 +15912,7 @@
 	})()}
 
 /***/ },
-/* 424 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15707,7 +15921,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var Slide = _src.Carousel.Slide; // <template>
 	//   <div class="bs-docs-section" id="carousel">
@@ -15803,17 +16017,17 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 425 */
+/* 428 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"carousel\">\n    <h3 class=\"page-header\"><a href=\"#caoursel\" class=\"anchor\">Carousel 走马灯</a></h3>\n    <div class=\"bs-example\">\n      <carousel indicators=\"true\" controls=\"true\">\n        <slide>\n          <img style=\"width:100%\" src=\"https://img.alicdn.com/tps/TB1Pq31KpXXXXbFXXXXXXXXXXXX-888-400.png\">\n          <div class=\"carousel-caption\">\n           <h3>Slide #1</h3>\n           <p>sunt in culpa qui officia deserunt mollit a.</p>\n         </div>\n        </slide>\n        <slide>\n          <img style=\"width:100%\" src=\"https://img.alicdn.com/tps/TB1ih3pJXXXXXbZXVXXXXXXXXXX-888-400.png\">\n          <div class=\"carousel-caption\">\n           <h3>Slide #2</h3>\n           <p>sunt in culpa qui officia deserunt mollit a.</p>\n         </div>\n        </slide>\n        <slide>\n          <img style=\"width:100%\" src=\"https://img.alicdn.com/tps/TB1fEtIKpXXXXbEXVXXXXXXXXXX-888-400.jpg\">\n          <div class=\"carousel-caption\">\n           <h3>Slide #3</h3>\n           <p>sunt in culpa qui officia deserunt mollit a.</p>\n         </div>\n        </slide>\n      </carousel>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<carousel>\n  <slide>\n    <img src=\"http://placehold.it/1200x400?text=one\">\n      <div class=\"carousel-caption\">\n       ...\n     </div>\n  </slide>\n  <slide>\n    <img src=\"http://placehold.it/1200x400?text=two\">\n  </slide>\n  <slide>\n    <img src=\"http://placehold.it/1200x400?text=three\">\n  </slide>\n</carousel>\n</script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>indicators</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the indicators.</td>\n      </tr>\n      <tr>\n        <td>controls</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the direction controls.</td>\n      </tr>\n      <tr>\n        <td>interval</td>\n        <td><code>Number</code></td>\n        <td><code>5000</code></td>\n        <td>The amount of time to delay between automatically cycling an item. If set to 0 or a negative number,\n          carousel will not automatically cycle.\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 426 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(427)
+	__vue_template__ = __webpack_require__(430)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15832,22 +16046,22 @@
 	})()}
 
 /***/ },
-/* 427 */
+/* 430 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"container bs-docs-container\">\n  <div class=\"atui-row\">\n      <slot></slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 428 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(429)
+	__vue_script__ = __webpack_require__(432)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/spinDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(430)
+	__vue_template__ = __webpack_require__(433)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15866,7 +16080,7 @@
 	})()}
 
 /***/ },
-/* 429 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15875,7 +16089,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -15930,22 +16144,22 @@
 	// <script>
 
 /***/ },
-/* 430 */
+/* 433 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"spin\">\n    <h3 class=\"page-header\"><a href=\"#spin\" class=\"anchor\">Spin 加载中</a></h3>\n    <div class=\"bs-example\">\n    <h4>小的加载</h4>\n    <spin show size=\"small\"></spin>\n    <h4>普通加载</h4>\n    <spin show></spin>\n    <h4>大的加载</h4>\n    <spin show size=\"large\"></spin>\n    <h4>隐藏的大的加载(默认不加show就不显示)</h4>\n    <spin size=\"large\"></spin>\n    <h4>包裹要loading的元素</h4>\n    <spin sping>\n      <div>\n        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n      </div>\n    </spin>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<h4>小的加载</h4>\n<spin show size=\"small\"></spin>\n<h4>普通加载</h4>\n<spin show></spin>\n<h4>大的加载</h4>\n<spin show size=\"large\"></spin>\n<h4>隐藏的大的加载(默认不加show就不显示)</h4>\n<spin size=\"large\"></spin>\n<h4>包裹要loading的元素</h4>\n<spin sping>\n  <div>\n    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容\n  </div>\n</spin>\n</script></code></pre>\n\n  </div>\n";
 
 /***/ },
-/* 431 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(432)
+	__vue_script__ = __webpack_require__(435)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/textareaDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(433)
+	__vue_template__ = __webpack_require__(436)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15964,7 +16178,7 @@
 	})()}
 
 /***/ },
-/* 432 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15973,7 +16187,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -16150,23 +16364,23 @@
 	// <script>
 
 /***/ },
-/* 433 */
+/* 436 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"textarea\">\n    <h3 class=\"page-header\"><a href=\"#textarea\" class=\"anchor\">Textarea 文本域</a></h3>\n    <div class=\"bs-example\">\n    <h4>基础文本域</h4>\n    <div>\n      <v-textarea placeholder=\"请输入描述信息\"></v-textarea>\n    </div>\n    <div>\n      <v-textarea disabled content=\"文本框被禁用了\"></v-textarea>\n    </div>\n    <div>\n      <v-textarea error content=\"信息错误了\"></v-textarea>\n    </div>\n    <h4>统计输入字数文本域</h4>\n    <div>\n      <v-textarea placeholder=\"请输入描述信息，有字数统计\" :words-count=\"true\"></v-textarea>\n    </div>\n    <div>\n      <v-textarea placeholder=\"请输入描述信息\" :words-count=\"true\" count-tips=\"您输入的字数是：\"></v-textarea>\n    </div>\n    <h4>有字数限制文本域</h4>\n    <div>\n      <v-textarea :limit-words=\"50\" placeholder=\"这里只能输入50个字\" :error=\"validStatus == 'error'\" name=\"ruohuan\" v-ref:textarea-limit :content.sync=\"content\"></v-textarea>\n    </div>\n    <div>\n      <v-textarea disabled :limit-words=\"10\" placeholder=\"这里只能输入10个字\"></v-textarea>\n    </div>\n    <h4>高度自适应的文本域</h4>\n    <div>\n      <v-textarea placeholder=\"高度无限增大\" autosize></v-textarea>\n    </div>\n    <div>\n      <v-textarea placeholder=\"有最大高度\" autosize max-rows=\"10\"></v-textarea>\n    </div>\n    <div>\n      <v-textarea placeholder=\"有最小高度\" autosize min-rows=\"5\"></v-textarea>\n    </div>\n    <div>\n      <v-textarea placeholder=\"有最大和最小高度\" autosize min-rows=\"5\" max-rows=\"10\"></v-textarea>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<h4>基础文本域</h4>\n<div>\n  <v-textarea placeholder=\"请输入描述信息\"></v-textarea>\n</div>\n<div>\n  <v-textarea disabled content=\"文本框被禁用了\"></v-textarea>\n</div>\n<div>\n  <v-textarea error content=\"信息错误了\"></v-textarea>\n</div>\n<h4>统计输入字数文本域</h4>\n<div>\n  <v-textarea placeholder=\"请输入描述信息，有字数统计\" :words-count=\"true\"></v-textarea>\n</div>\n<div>\n  <v-textarea placeholder=\"请输入描述信息\" :words-count=\"true\" count-tips=\"您输入的字数是：\"></v-textarea>\n</div>\n<h4>有字数限制文本域</h4>\n<div>\n  <v-textarea :limit-words=\"50\" placeholder=\"这里只能输入50个字\" :error=\"validStatus == 'error'\" name=\"ruohuan\" v-ref:textarea-limit :content.sync=\"content\"></v-textarea>\n</div>\n<div>\n  <v-textarea disabled :limit-words=\"10\" placeholder=\"这里只能输入10个字\"></v-textarea>\n</div>\n<h4>高度自适应的文本域</h4>\n<div>\n  <v-textarea placeholder=\"高度无限增大\" autosize></v-textarea>\n</div>\n<div>\n  <v-textarea placeholder=\"有最大高度\" autosize max-rows=\"10\"></v-textarea>\n</div>\n<div>\n  <v-textarea placeholder=\"有最小高度\" autosize min-rows=\"5\"></v-textarea>\n</div>\n<div>\n  <v-textarea placeholder=\"有最大和最小高度\" autosize min-rows=\"5\" max-rows=\"10\"></v-textarea>\n</div>\n</script></code></pre>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>content</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>文本域内容</td>\n        </tr>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>文本域预期值的提示信息</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td></td>\n          <td></td>\n          <td>文本域状态，禁用</td>\n        </tr>\n       <tr>\n          <td>error</td>\n          <td></td>\n          <td></td>\n          <td>文本域状态，输入验证失败</td>\n        </tr>\n        <tr>\n          <td>success</td>\n          <td></td>\n          <td></td>\n          <td>文本域状态，输入验证成功</td>\n        </tr>\n        <tr>\n          <td>limit-words</td>\n          <td><code>Number</code></td>\n          <td></td>\n          <td>文本域限制字数</td>\n        </tr>\n        <tr>\n          <td>words-count</td>\n          <td><code>Boolean || 空</code></td>\n          <td></td>\n          <td>文本域字数统计功能</td>\n        </tr>\n        <tr>\n          <td>count-tips</td>\n          <td><code>String</code></td>\n          <td><code>输入字数：</code></td>\n          <td>文本域字数统计提示</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</template>";
 
 /***/ },
-/* 434 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(435)
-	__vue_script__ = __webpack_require__(436)
+	__webpack_require__(438)
+	__vue_script__ = __webpack_require__(439)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/tagDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(437)
+	__vue_template__ = __webpack_require__(440)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16185,13 +16399,13 @@
 	})()}
 
 /***/ },
-/* 435 */
+/* 438 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 436 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16200,7 +16414,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  data: function data() {
@@ -16299,22 +16513,22 @@
 	// <script>
 
 /***/ },
-/* 437 */
+/* 440 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"tag\">\n    <h3 class=\"page-header\"><a href=\"#tag\" class=\"anchor\">Tag 标签</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">基本标签</h4>\n      <v-tag>标签一</v-tag>\n      <v-tag closable @close=\"closeTag\">标签（回调）</v-tag>\n      <v-tag :href=\"href\">标签（链接）</v-tag>\n      <h4 class=\"example-title\">三种颜色的标签</h4>\n      <v-tag color=\"green\">标签</v-tag>\n      <v-tag color=\"orange\" closable @close=\"closeTag\">标签</v-tag>\n      <v-tag color=\"red\" size=\"20\">标签</v-tag>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-tag>标签一</v-tag>\n<v-tag closable @close=\"closeTag\">标签（回调）</v-tag>\n<v-tag :href=\"href\">标签（链接）</v-tag>\n<v-tag color=\"green\">标签</v-tag>\n<v-tag color=\"orange\" closable @close=\"closeTag\">标签</v-tag>\n<v-tag color=\"red\" size=\"20\">标签</v-tag>\n</script></code></pre>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>closable</td>\n        <td><code>Boolean</code></td>\n        <td></td>\n        <td>是否显示关闭按钮</td>\n      </tr>\n      <tr>\n        <td>color</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>Tag的颜色，默认为#f2f2f2</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>Tag的尺寸，默认为12px</td>\n      </tr>\n      <tr>\n        <td>href</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>给tag加上链接地址，作为一个超链接</td>\n      </tr>\n      <tr>\n        <td>on-close</td>\n        <td><code>Function</code></td>\n        <td></td>\n        <td>点击关闭按钮之后所执行的回调函数</td>\n      </tr>\n\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 438 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(439)
+	__vue_script__ = __webpack_require__(442)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/tooltipDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(440)
+	__vue_template__ = __webpack_require__(443)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16333,7 +16547,7 @@
 	})()}
 
 /***/ },
-/* 439 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16342,7 +16556,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -16385,7 +16599,7 @@
 	//         </tr>
 	//         <tr>
 	//           <td>
-	//             <tooltip content="what does the fox say ？" placement="leftTop">
+	//             <tooltip content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod" placement="leftTop">
 	//               <button class="atui-btn atui-btn-default ">左上</button>
 	//             </tooltip>
 	//           </td>
@@ -16475,7 +16689,7 @@
 	// <tooltip content="Lorem ipsum dolor sit amet" placement="topRight">
 	// <button class="atui-btn atui-btn-default ">上右</button>
 	// </tooltip>
-	// <tooltip content="what does the fox say ？" placement="leftTop">
+	// <tooltip content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod" placement="leftTop">
 	// <button class="atui-btn atui-btn-default ">左上</button>
 	// </tooltip>
 	// <tooltip content="Are you kidding me?" placement="left">
@@ -16555,23 +16769,212 @@
 	// <script>
 
 /***/ },
-/* 440 */
+/* 443 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"tooltip\">\n    <h3 class=\"page-header\"><a href=\"#tooltip\" class=\"anchor\">Tooltip 文字提示</a></h3>\n    <div class=\"bs-example\">\n      <table class=\"table-tooltip\" cellspacing=\"5\">\n        <tr>\n          <td></td>\n          <td>\n            <tooltip content=\"talk is cheap show me the code\" placement=\"topLeft\">\n              <button class=\"atui-btn atui-btn-default \">上左</button>\n            </tooltip>\n          </td>\n          <td>\n            <tooltip\n              content=\"我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字\"\n              placement=\"top\">\n              <button class=\"atui-btn atui-btn-default \">上边</button>\n            </tooltip>\n          </td>\n          <td>\n            <tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"topRight\">\n              <button class=\"atui-btn atui-btn-default \">上右</button>\n            </tooltip>\n          </td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>\n            <tooltip content=\"what does the fox say ？\" placement=\"leftTop\">\n              <button class=\"atui-btn atui-btn-default \">左上</button>\n            </tooltip>\n          </td>\n          <td></td>\n          <td></td>\n          <td></td>\n          <td>\n            <tooltip content=\"bang bang bang!\" placement=\"rightTop\">\n              <button class=\"atui-btn atui-btn-default \">右上</button>\n            </tooltip>\n          </td>\n        </tr>\n        <tr>\n          <td>\n            <tooltip content=\"Are you kidding me?\" placement=\"left\">\n              <button class=\"atui-btn atui-btn-default \">左边</button>\n            </tooltip>\n          </td>\n          <td></td>\n          <td></td>\n          <td></td>\n          <td>\n            <tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"right\">\n              <button class=\"atui-btn atui-btn-default \">右边</button>\n            </tooltip>\n          </td>\n        </tr>\n        <tr>\n          <td>\n            <tooltip content=\"no, i'm serious! \" placement=\"leftBottom\">\n              <button class=\"atui-btn atui-btn-default \">左下</button>\n            </tooltip>\n          </td>\n          <td></td>\n          <td></td>\n          <td></td>\n          <td>\n            <tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"rightBottom\">\n              <button class=\"atui-btn atui-btn-default \">右下</button>\n            </tooltip>\n          </td>\n        </tr>\n        <tr>\n          <td></td>\n          <td>\n            <tooltip placement=\"bottomLeft\"\n                     content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n              <button class=\"atui-btn atui-btn-default \">下左</button>\n            </tooltip>\n          </td>\n          <td>\n            <tooltip placement=\"bottom\"\n                     content=\"我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字\">\n              <button class=\"atui-btn atui-btn-default \">下边</button>\n            </tooltip>\n          </td>\n          <td>\n            <tooltip placement=\"bottomRight\"\n                     content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n              <button class=\"atui-btn atui-btn-default \">下右</button>\n            </tooltip>\n          </td>\n          <td></td>\n        </tr>\n      </table>\n\n      <h4>Triger</h4>\n      <p>\n        <tooltip trigger=\"click\"\n                 effect=\"fadein\" content=\"提示文字\" placement=\"top\" trigger=\"hover\">\n          <button class=\"atui-btn atui-btn-default \">Click</button>\n        </tooltip>\n      </p>\n      <tooltip effect=\"scale\"\n               content=\"Lorem ipsum dolor sit amet\" placement=\"topLeft\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </tooltip>\n    </div>\n    <pre><code class=\"language-markup\">\n      <script type=\"language-mark-up\">\n<tooltip content=\"talk is cheap show me the code\" placement=\"topLeft\">\n<button class=\"atui-btn atui-btn-default \">上左</button>\n</tooltip>\n<tooltip content=\"talk is cheap show me the code\" placement=\"top\">\n<button class=\"atui-btn atui-btn-default \">上边</button>\n</tooltip>\n<tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"topRight\">\n<button class=\"atui-btn atui-btn-default \">上右</button>\n</tooltip>\n<tooltip content=\"what does the fox say ？\" placement=\"leftTop\">\n<button class=\"atui-btn atui-btn-default \">左上</button>\n</tooltip>\n<tooltip content=\"Are you kidding me?\" placement=\"left\">\n<button class=\"atui-btn atui-btn-default \">左边</button>\n</tooltip>\n<tooltip content=\"no, i'm serious! \" placement=\"leftBottom\">\n<button class=\"atui-btn atui-btn-default \">左下</button>\n</tooltip>\n<tooltip content=\"bang bang bang!\" placement=\"rightTop\">\n  <button class=\"atui-btn atui-btn-default \">右上</button>\n</tooltip>\n<tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"right\">\n  <button class=\"atui-btn atui-btn-default \">右边</button>\n</tooltip>\n<tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"rightBottom\">\n  <button class=\"atui-btn atui-btn-default \">右下</button>\n</tooltip>\n<tooltip  placement=\"bottomLeft\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n  <button class=\"atui-btn atui-btn-default \">下左</button>\n</tooltip>\n<tooltip  placement=\"bottom\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n  <button class=\"atui-btn atui-btn-default \">下边</button>\n</tooltip>\n<tooltip  placement=\"bottomRight\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n  <button class=\"atui-btn atui-btn-default \">下右</button>\n</tooltip>\n<tooltip trigger=\"click\"\n  effect=\"fadein\" content=\"提示文字\" placement=\"top\" trigger=\"hover\">\n  <button class=\"atui-btn atui-btn-default \">Click</button>\n  </tooltip>\n<tooltip effect=\"scale\"\ncontent=\"Lorem ipsum dolor sit amet\" placement=\"topLeft\" trigger=\"focus\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n</tooltip>\n\n      </script>\n    </code></pre>\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code></td>\n        <td><code>click</code></td>\n        <td>以何种方式触发显示气泡框,可选hover, click, focus</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code></td>\n        <td><code>scale</code></td>\n        <td>过渡效果，可选scale, fadein</td>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>内容</td>\n      </tr>\n      <td>placement</td>\n      <td><code>String</code></td>\n      <td></td>\n      <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight\n      </td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"tooltip\">\n    <h3 class=\"page-header\"><a href=\"#tooltip\" class=\"anchor\">Tooltip 文字提示</a></h3>\n    <div class=\"bs-example\">\n      <table class=\"table-tooltip\" cellspacing=\"5\">\n        <tr>\n          <td></td>\n          <td>\n            <tooltip content=\"talk is cheap show me the code\" placement=\"topLeft\">\n              <button class=\"atui-btn atui-btn-default \">上左</button>\n            </tooltip>\n          </td>\n          <td>\n            <tooltip\n              content=\"我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字\"\n              placement=\"top\">\n              <button class=\"atui-btn atui-btn-default \">上边</button>\n            </tooltip>\n          </td>\n          <td>\n            <tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"topRight\">\n              <button class=\"atui-btn atui-btn-default \">上右</button>\n            </tooltip>\n          </td>\n          <td></td>\n        </tr>\n        <tr>\n          <td>\n            <tooltip content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\" placement=\"leftTop\">\n              <button class=\"atui-btn atui-btn-default \">左上</button>\n            </tooltip>\n          </td>\n          <td></td>\n          <td></td>\n          <td></td>\n          <td>\n            <tooltip content=\"bang bang bang!\" placement=\"rightTop\">\n              <button class=\"atui-btn atui-btn-default \">右上</button>\n            </tooltip>\n          </td>\n        </tr>\n        <tr>\n          <td>\n            <tooltip content=\"Are you kidding me?\" placement=\"left\">\n              <button class=\"atui-btn atui-btn-default \">左边</button>\n            </tooltip>\n          </td>\n          <td></td>\n          <td></td>\n          <td></td>\n          <td>\n            <tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"right\">\n              <button class=\"atui-btn atui-btn-default \">右边</button>\n            </tooltip>\n          </td>\n        </tr>\n        <tr>\n          <td>\n            <tooltip content=\"no, i'm serious! \" placement=\"leftBottom\">\n              <button class=\"atui-btn atui-btn-default \">左下</button>\n            </tooltip>\n          </td>\n          <td></td>\n          <td></td>\n          <td></td>\n          <td>\n            <tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"rightBottom\">\n              <button class=\"atui-btn atui-btn-default \">右下</button>\n            </tooltip>\n          </td>\n        </tr>\n        <tr>\n          <td></td>\n          <td>\n            <tooltip placement=\"bottomLeft\"\n                     content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n              <button class=\"atui-btn atui-btn-default \">下左</button>\n            </tooltip>\n          </td>\n          <td>\n            <tooltip placement=\"bottom\"\n                     content=\"我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字我是tooltip里的文字\">\n              <button class=\"atui-btn atui-btn-default \">下边</button>\n            </tooltip>\n          </td>\n          <td>\n            <tooltip placement=\"bottomRight\"\n                     content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n              <button class=\"atui-btn atui-btn-default \">下右</button>\n            </tooltip>\n          </td>\n          <td></td>\n        </tr>\n      </table>\n\n      <h4>Triger</h4>\n      <p>\n        <tooltip trigger=\"click\"\n                 effect=\"fadein\" content=\"提示文字\" placement=\"top\" trigger=\"hover\">\n          <button class=\"atui-btn atui-btn-default \">Click</button>\n        </tooltip>\n      </p>\n      <tooltip effect=\"scale\"\n               content=\"Lorem ipsum dolor sit amet\" placement=\"topLeft\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </tooltip>\n    </div>\n    <pre><code class=\"language-markup\">\n      <script type=\"language-mark-up\">\n<tooltip content=\"talk is cheap show me the code\" placement=\"topLeft\">\n<button class=\"atui-btn atui-btn-default \">上左</button>\n</tooltip>\n<tooltip content=\"talk is cheap show me the code\" placement=\"top\">\n<button class=\"atui-btn atui-btn-default \">上边</button>\n</tooltip>\n<tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"topRight\">\n<button class=\"atui-btn atui-btn-default \">上右</button>\n</tooltip>\n<tooltip content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\" placement=\"leftTop\">\n<button class=\"atui-btn atui-btn-default \">左上</button>\n</tooltip>\n<tooltip content=\"Are you kidding me?\" placement=\"left\">\n<button class=\"atui-btn atui-btn-default \">左边</button>\n</tooltip>\n<tooltip content=\"no, i'm serious! \" placement=\"leftBottom\">\n<button class=\"atui-btn atui-btn-default \">左下</button>\n</tooltip>\n<tooltip content=\"bang bang bang!\" placement=\"rightTop\">\n  <button class=\"atui-btn atui-btn-default \">右上</button>\n</tooltip>\n<tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"right\">\n  <button class=\"atui-btn atui-btn-default \">右边</button>\n</tooltip>\n<tooltip content=\"Lorem ipsum dolor sit amet\" placement=\"rightBottom\">\n  <button class=\"atui-btn atui-btn-default \">右下</button>\n</tooltip>\n<tooltip  placement=\"bottomLeft\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n  <button class=\"atui-btn atui-btn-default \">下左</button>\n</tooltip>\n<tooltip  placement=\"bottom\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n  <button class=\"atui-btn atui-btn-default \">下边</button>\n</tooltip>\n<tooltip  placement=\"bottomRight\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n  <button class=\"atui-btn atui-btn-default \">下右</button>\n</tooltip>\n<tooltip trigger=\"click\"\n  effect=\"fadein\" content=\"提示文字\" placement=\"top\" trigger=\"hover\">\n  <button class=\"atui-btn atui-btn-default \">Click</button>\n  </tooltip>\n<tooltip effect=\"scale\"\ncontent=\"Lorem ipsum dolor sit amet\" placement=\"topLeft\" trigger=\"focus\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n</tooltip>\n\n      </script>\n    </code></pre>\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code></td>\n        <td><code>click</code></td>\n        <td>以何种方式触发显示气泡框,可选hover, click, focus</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code></td>\n        <td><code>scale</code></td>\n        <td>过渡效果，可选scale, fadein</td>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>内容</td>\n      </tr>\n      <td>placement</td>\n      <td><code>String</code></td>\n      <td></td>\n      <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight\n      </td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 441 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(442)
-	__vue_script__ = __webpack_require__(444)
+	__vue_script__ = __webpack_require__(445)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] docs/example/triggerDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(446)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/chenchaoqun/GitLab/aliqin/vue-component/docs/example/triggerDocs.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 445 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _src = __webpack_require__(134);
+	
+	exports.default = {
+	  components: {
+	    Trigger: _src.Trigger
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div class="bs-docs-section" id="trigger">
+	//     <h3 class="page-header"><a href="#trigger" class="anchor">Trigger 触发弹窗</a></h3>
+	//     <div class="bs-example">
+	//       <h3>普通</h3>
+	//       <trigger trigger="click" placement="top">
+	//         <button class="atui-btn" slot="trigger">click to trigger</button>
+	//         <div slot="popup">I'm a click popup</div>
+	//       </trigger>
+	//       <trigger trigger="hover">
+	//         <button class="atui-btn" slot="trigger">hover to trigger</button>
+	//         <div slot="popup">I'm a hover popup</div>
+	//       </trigger>
+	//       <trigger trigger="click" placement="topRight">
+	//         <button class="atui-btn" slot="trigger">click to show topRight</button>
+	//         <div slot="popup">I'm a hover popup</div>
+	//       </trigger>
+	//       <trigger trigger="hover" placement="topLeft">
+	//         <button class="atui-btn" slot="trigger">topLeft</button>
+	//         <div slot="popup">I'm a hover popup</div>
+	//       </trigger>
+	//       <trigger trigger="hover" placement="bottomRight">
+	//         <button class="atui-btn" slot="trigger">bottomRight</button>
+	//         <div slot="popup">I'm a hover popup</div>
+	//       </trigger>
+	//       <trigger trigger="focus">
+	//         <input type="text" class="atui-form-control" placeholder="Focus" slot="trigger">
+	//         <div slot="popup">I'm a hover popup</div>
+	//       </trigger>
+	//       <h3>复杂</h3>
+	//       <trigger trigger="click">
+	//         <button class="atui-btn" slot="trigger">popup里继续trigger</button>
+	//         <div slot="popup">
+	//           <trigger trigger="hover" placement="right">
+	//             <span slot="trigger" style="display: inline-block; padding: 20px; border: 1px solid gray">hover to trigger</span>
+	//             <div slot="popup" style="padding: 20px">I'm a hover popup</div>
+	//           </trigger>
+	//         </div>
+	//       </trigger>
+	//       <trigger trigger="hover" placement="right">
+	//         <trigger trigger="hover" slot="trigger">
+	//           <button class="atui-btn" slot="trigger">同时多个popup</button>
+	//           <div slot="popup">I'm popup-1</div>
+	//         </trigger>
+	//         <div slot="popup">I'm popup-2</div>
+	//       </trigger>
+	//     </div>
+	//     <pre><code class="language-markup"><script type="language-mark-up">
+	// <h3>普通</h3>
+	// <trigger trigger="click" placement="top">
+	//   <button class="atui-btn" slot="trigger">click to trigger</button>
+	//   <div slot="popup">I'm a click popup</div>
+	// </trigger>
+	// <trigger trigger="hover">
+	//   <button class="atui-btn" slot="trigger">hover to trigger</button>
+	//   <div slot="popup">I'm a hover popup</div>
+	// </trigger>
+	// <trigger trigger="click" placement="topRight">
+	//   <button class="atui-btn" slot="trigger">click to show topRight</button>
+	//   <div slot="popup">I'm a hover popup</div>
+	// </trigger>
+	// <trigger trigger="hover" placement="topLeft">
+	//   <button class="atui-btn" slot="trigger">topLeft</button>
+	//   <div slot="popup">I'm a hover popup</div>
+	// </trigger>
+	// <trigger trigger="hover" placement="bottomRight">
+	//   <button class="atui-btn" slot="trigger">bottomRight</button>
+	//   <div slot="popup">I'm a hover popup</div>
+	// </trigger>
+	// <trigger trigger="focus">
+	//   <input type="text" class="atui-form-control" placeholder="Focus" slot="trigger">
+	//   <div slot="popup">I'm a hover popup</div>
+	// </trigger>
+	// <h3>复杂</h3>
+	// <trigger trigger="click">
+	//   <button class="atui-btn" slot="trigger">popup里继续trigger</button>
+	//   <div slot="popup">
+	//     <trigger trigger="hover" placement="right">
+	//       <span slot="trigger" style="display: inline-block; padding: 20px; border: 1px solid gray">hover to trigger</span>
+	//       <div slot="popup" style="padding: 20px">I'm a hover popup</div>
+	//     </trigger>
+	//   </div>
+	// </trigger>
+	// <trigger trigger="hover" placement="right">
+	//   <trigger trigger="hover" slot="trigger">
+	//     <button class="atui-btn" slot="trigger">同时多个popup</button>
+	//     <div slot="popup">I'm popup-1</div>
+	//   </trigger>
+	//   <div slot="popup">I'm popup-2</div>
+	// </trigger>
+	// </script></code></pre>
+	//     <h2>Options</h2>
+	//     <table class="atui-table table-bordered">
+	//       <thead>
+	//         <tr>
+	//           <th>Name</th>
+	//           <th>Type</th>
+	//           <th>Default</th>
+	//           <th>Description</th>
+	//         </tr>
+	//       </thead>
+	//       <tbody>
+	//         <tr>
+	//           <td>trigger</td>
+	//           <td><code>String</code></td>
+	//           <td><code>click</code></td>
+	//           <td>以何种方式触发显示气泡框,可选hover, click, focus</td>
+	//         </tr>
+	//         <tr>
+	//           <td>effect</td>
+	//           <td><code>String</code></td>
+	//           <td><code>scale</code></td>
+	//           <td>过渡效果，可选scale, fadein</td>
+	//         </tr>
+	//         <tr>
+	//           <td>placement</td>
+	//           <td><code>String</code></td>
+	//           <td></td>
+	//           <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight
+	//           </td>
+	//         </tr>
+	//         <tr>
+	//           <td>popupCls</td>
+	//           <td><code>String</code></td>
+	//           <td></td>
+	//           <td>自定义popup的样式名
+	//           </td>
+	//         </tr>
+	//       </tbody>
+	//     </table>
+	//   </div>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 446 */
+/***/ function(module, exports) {
+
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"trigger\">\n    <h3 class=\"page-header\"><a href=\"#trigger\" class=\"anchor\">Trigger 触发弹窗</a></h3>\n    <div class=\"bs-example\">\n      <h3>普通</h3>\n      <trigger trigger=\"click\" placement=\"top\">\n        <button class=\"atui-btn\" slot=\"trigger\">click to trigger</button>\n        <div slot=\"popup\">I'm a click popup</div>\n      </trigger>\n      <trigger trigger=\"hover\">\n        <button class=\"atui-btn\" slot=\"trigger\">hover to trigger</button>\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <trigger trigger=\"click\" placement=\"topRight\">\n        <button class=\"atui-btn\" slot=\"trigger\">click to show topRight</button>\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <trigger trigger=\"hover\" placement=\"topLeft\">\n        <button class=\"atui-btn\" slot=\"trigger\">topLeft</button>\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <trigger trigger=\"hover\" placement=\"bottomRight\">\n        <button class=\"atui-btn\" slot=\"trigger\">bottomRight</button>\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <trigger trigger=\"focus\">\n        <input type=\"text\" class=\"atui-form-control\" placeholder=\"Focus\" slot=\"trigger\">\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <h3>复杂</h3>\n      <trigger trigger=\"click\">\n        <button class=\"atui-btn\" slot=\"trigger\">popup里继续trigger</button>\n        <div slot=\"popup\">\n          <trigger trigger=\"hover\" placement=\"right\">\n            <span slot=\"trigger\" style=\"display: inline-block; padding: 20px; border: 1px solid gray\">hover to trigger</span>\n            <div slot=\"popup\" style=\"padding: 20px\">I'm a hover popup</div>\n          </trigger>\n        </div>\n      </trigger>\n      <trigger trigger=\"hover\" placement=\"right\">\n        <trigger trigger=\"hover\" slot=\"trigger\">\n          <button class=\"atui-btn\" slot=\"trigger\">同时多个popup</button>\n          <div slot=\"popup\">I'm popup-1</div>\n        </trigger>\n        <div slot=\"popup\">I'm popup-2</div>\n      </trigger>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<h3>普通</h3>\n<trigger trigger=\"click\" placement=\"top\">\n  <button class=\"atui-btn\" slot=\"trigger\">click to trigger</button>\n  <div slot=\"popup\">I'm a click popup</div>\n</trigger>\n<trigger trigger=\"hover\">\n  <button class=\"atui-btn\" slot=\"trigger\">hover to trigger</button>\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<trigger trigger=\"click\" placement=\"topRight\">\n  <button class=\"atui-btn\" slot=\"trigger\">click to show topRight</button>\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<trigger trigger=\"hover\" placement=\"topLeft\">\n  <button class=\"atui-btn\" slot=\"trigger\">topLeft</button>\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<trigger trigger=\"hover\" placement=\"bottomRight\">\n  <button class=\"atui-btn\" slot=\"trigger\">bottomRight</button>\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<trigger trigger=\"focus\">\n  <input type=\"text\" class=\"atui-form-control\" placeholder=\"Focus\" slot=\"trigger\">\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<h3>复杂</h3>\n<trigger trigger=\"click\">\n  <button class=\"atui-btn\" slot=\"trigger\">popup里继续trigger</button>\n  <div slot=\"popup\">\n    <trigger trigger=\"hover\" placement=\"right\">\n      <span slot=\"trigger\" style=\"display: inline-block; padding: 20px; border: 1px solid gray\">hover to trigger</span>\n      <div slot=\"popup\" style=\"padding: 20px\">I'm a hover popup</div>\n    </trigger>\n  </div>\n</trigger>\n<trigger trigger=\"hover\" placement=\"right\">\n  <trigger trigger=\"hover\" slot=\"trigger\">\n    <button class=\"atui-btn\" slot=\"trigger\">同时多个popup</button>\n    <div slot=\"popup\">I'm popup-1</div>\n  </trigger>\n  <div slot=\"popup\">I'm popup-2</div>\n</trigger>\n</script></code></pre>\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code></td>\n          <td>以何种方式触发显示气泡框,可选hover, click, focus</td>\n        </tr>\n        <tr>\n          <td>effect</td>\n          <td><code>String</code></td>\n          <td><code>scale</code></td>\n          <td>过渡效果，可选scale, fadein</td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight\n          </td>\n        </tr>\n        <tr>\n          <td>popupCls</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>自定义popup的样式名\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+
+/***/ },
+/* 447 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(448)
+	__vue_script__ = __webpack_require__(450)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/accordionDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(445)
+	__vue_template__ = __webpack_require__(451)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16590,16 +16993,16 @@
 	})()}
 
 /***/ },
-/* 442 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(443);
+	var content = __webpack_require__(449);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(143)(content, {});
+	var update = __webpack_require__(294)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -16616,10 +17019,10 @@
 	}
 
 /***/ },
-/* 443 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(142)();
+	exports = module.exports = __webpack_require__(293)();
 	// imports
 	
 	
@@ -16630,7 +17033,7 @@
 
 
 /***/ },
-/* 444 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16639,7 +17042,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var Panel = _src.Accordion.Panel; // <template>
 	//   <div class="bs-docs-section" id="accordion">
@@ -16763,23 +17166,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 445 */
+/* 451 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"accordion\">\n    <h3 class=\"page-header\"><a href=\"#accordion\" class=\"anchor\">Accordion 手风琴</a></h3>\n    <div class=\"bs-example\">\n      <p>\n        <input type=\"checkbox\" v-model=\"checked\">\n        Open only one at a time.\n      </p>\n      <accordion :one-at-atime=\"checked\">\n        <panel :is-open=\"true\">\n          <div slot=\"panel-header\" class=\"custom-class\">Panel #1</div>\n          内容一\n        </panel>\n        <panel>\n          <div slot=\"panel-header\" class=\"custom-class\">Panel #2</div>\n          内容二\n        </panel>\n        <panel>\n          <div slot=\"panel-header\" class=\"custom-class\">Panel #3</div>\n          内容三\n        </panel>\n        <panel>\n          <div slot=\"panel-header\" class=\"custom-class\">Panel #4</div>\n          内容四\n        </panel>\n      </accordion>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"checkbox\" v-model=\"checked\">\n<label for=\"checked\">Open only one at a time.</label>\n<accordion :one-at-atime=\"checked\">\n  <panel :is-open=\"true\">\n    <div slot=\"panel-header\" class=\"custom-class\">Panel #1</div>\n    内容一\n  </panel>\n  <panel>\n    <div slot=\"panel-header\" class=\"custom-class\">Panel #2</div>\n    内容二\n  </panel>\n  <panel>\n    <div slot=\"panel-header\" class=\"custom-class\">Panel #3</div>\n    内容三\n  </panel>\n  <panel>\n    <div slot=\"panel-header\" class=\"custom-class\">Panel #4</div>\n    内容四\n  </panel>\n</accordion>\n</script></code></pre>\n    <h2>Accordion Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>one-at-time</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>Control whether expanding an item will cause the other items to close.</td>\n        </tr>\n      </tbody>\n    </table>\n    <h2>Panel Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>is-open</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>Whether accordion group is open or closed.</td>\n        </tr>\n        <tr>\n          <td>slot::panel-header</td>\n          <td><code>slot node</code></td>\n          <td></td>\n          <td>以内容分发的形式自定义header里面的内容，注意：因为header自动绑定了展开收起的事件，所以\n          如果用户自定义的元素里有事件绑定的操作，建议使用事件修饰符（例：@click.prev.stop=\"\"）</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 446 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(447)
-	__vue_script__ = __webpack_require__(449)
+	__webpack_require__(453)
+	__vue_script__ = __webpack_require__(455)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/affixDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(450)
+	__vue_template__ = __webpack_require__(456)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16798,16 +17201,16 @@
 	})()}
 
 /***/ },
-/* 447 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(448);
+	var content = __webpack_require__(454);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(143)(content, {});
+	var update = __webpack_require__(294)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -16824,10 +17227,10 @@
 	}
 
 /***/ },
-/* 448 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(142)();
+	exports = module.exports = __webpack_require__(293)();
 	// imports
 	
 	
@@ -16838,7 +17241,7 @@
 
 
 /***/ },
-/* 449 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16847,7 +17250,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -16923,22 +17326,22 @@
 	// <script>
 
 /***/ },
-/* 450 */
+/* 456 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <!-- <div class=\"bs-docs-section\" id=\"affix\">\n    <h3 class=\"page-header\"><a href=\"#affix\" class=\"anchor\">Affix 固钉</a></h3>\n    <div class=\"bs-example\">\n      <h3>\n        The sub-navigation on the RIGHT is a live demo of the affix.\n        <tooltip trigger=\"hover\" effect=\"fadein\" content=\"I'm a direction, not jerking off!\" placement=\"left\">\n          <span class=\"glyphicon glyphicon-hand-right pull-right animated shake\"></span>\n        </tooltip>\n      </h3>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<affix offset=\"\">\n  <nav class=\"sidebar\">\n    <ul>\n      <li>...</li>\n      <li>...</li>\n      <li>...</li>\n    </ul>\n  </nav>\n</affix>\n</script></code></pre>\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>offset</td>\n          <td><code>Number</code></td>\n          <td><code>0</code></td>\n          <td>Pixels to offset from top of screen when calculating position of scroll.</td>\n        </tr>\n      </tbody>\n    </table>\n  </div> -->\n";
 
 /***/ },
-/* 451 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(452)
+	__vue_script__ = __webpack_require__(458)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/asideDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(453)
+	__vue_template__ = __webpack_require__(459)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16957,7 +17360,7 @@
 	})()}
 
 /***/ },
-/* 452 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16966,7 +17369,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -17084,22 +17487,22 @@
 	// <script>
 
 /***/ },
-/* 453 */
+/* 459 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"aside\">\n    <h3 class=\"page-header\"><a href=\"#aside\" class=\"anchor\">Aside 侧边栏</a></h3>\n    <div class=\"bs-example\">\n      <button class=\"btn btn-success btn-lg\" @click=\"showRight = true\">Show Aside on right</button>\n\n      <sidebar :show.sync=\"showRight\" placement=\"right\" header=\"Title\" :width=\"350\">\n        <h4>Text in aside</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.</p>\n        <p> Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n        consequat.</p>\n          <pre><code class=\"language-javascript\">\nif (talk === cheap){\n  code.style.display = 'block'\n}\n        </code></pre>\n        <div class=\"aside-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"showRight=false\">Close</button>\n        </div>\n      </sidebar>\n\n      <button class=\"btn btn-danger btn-lg\" @click=\"showLeft = true\">Show Aside on left</button>\n\n      <sidebar  :show.sync=\"showLeft\" placement=\"left\" header=\"Title\" :width=\"350\">\n        <h4>Text in aside</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.</p>\n        <p> Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n        consequat.</p>\n        <pre><code class=\"language-javascript\">\nif (talk === cheap){\n  code.style.display = 'block'\n}\n        </code></pre>\n        <div class=\"aside-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"showLeft=false\">Close</button>\n        </div>\n      </sidebar>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button\nclass=\"btn btn-success btn-lg\"\n@click=\"showRight = true\">Show Aside on right</button>\n\n<sidebar :show.sync=\"showRight\" placement=\"right\" header=\"Title\" :width=\"350\">\n...\n</sidebar>\n\n<button\nclass=\"btn btn-danger btn-lg\"\n@click=\"showLeft = true\">Show Aside on left</button>\n\n<sidebar :show.sync=\"showLeft\" placement=\"left\" header=\"Title\" :width=\"350\">\n...\n</sidebar></script></code></pre>\n\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>show</td>\n          <td><code>Boolean</code></td>\n          <td></td>\n          <td>Whether show the component.</td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code>, one of <code>left</code>, <code>right</code></td>\n          <td><code>right</code></td>\n          <td>how to position the component.</td>\n        </tr>\n        <tr>\n          <td>header</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>Header text of the aside component.</td>\n        </tr>\n        <tr>\n          <td>width</td>\n          <td><code>Number</code></td>\n          <td></td>\n          <td></td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 454 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(455)
+	__vue_script__ = __webpack_require__(461)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/popoverDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(456)
+	__vue_template__ = __webpack_require__(462)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -17118,7 +17521,7 @@
 	})()}
 
 /***/ },
-/* 455 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17127,7 +17530,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  components: {
@@ -17278,23 +17681,23 @@
 	// <script>
 
 /***/ },
-/* 456 */
+/* 462 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"popover\">\n    <h3 class=\"page-header\"><a href=\"#popover\" class=\"anchor\">Popover 气泡</a></h3>\n    <div class=\"bs-example\">\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn \">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>No title</h4>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn\">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>Triger</h4>\n      <p>\n        <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n            <button class=\"atui-btn\">Mouseenter</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\"\n      title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </popover>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn \">Popover on top</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>No title</h4>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn\">Popover on top</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>Triger</h4>\n<p>\n  <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n      <button class=\"atui-btn\">Mouseenter</button>\n  </popover>\n</p>\n<popover effect=\"scale\"\ntitle=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n</popover>\n</script></code></pre>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code>, one of <code>click</code>\n        <code>focus</code>\n        <code>hover</code></td>\n        <td><code>click</code></td>\n        <td>How the popover is triggered.</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code>, one of <code>scale</code> <code>fade</code></td>\n        <td><code>fade</code></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>header</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the header.</td>\n      </tr>\n      <tr>\n        <td>placement</td>\n        <td><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></td>\n        <td></td>\n        <td>How to position the popover.</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 457 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(458)
-	__vue_script__ = __webpack_require__(460)
+	__webpack_require__(464)
+	__vue_script__ = __webpack_require__(466)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/tabsDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(461)
+	__vue_template__ = __webpack_require__(467)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -17313,16 +17716,16 @@
 	})()}
 
 /***/ },
-/* 458 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(459);
+	var content = __webpack_require__(465);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(143)(content, {});
+	var update = __webpack_require__(294)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -17339,10 +17742,10 @@
 	}
 
 /***/ },
-/* 459 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(142)();
+	exports = module.exports = __webpack_require__(293)();
 	// imports
 	
 	
@@ -17353,7 +17756,7 @@
 
 
 /***/ },
-/* 460 */
+/* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17362,7 +17765,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var Tab = _src.Tabs.Tab; // <template>
 	//   <div class="bs-docs-section" id="tabs">
@@ -17662,23 +18065,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 461 */
+/* 467 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"tabs\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Tabs 标签页</a></h3>\n    <div class=\"bs-example\">\n    <h4 class=\"example-title\">基础型</h4>\n      <tabs :base=\"true\">\n        <tab header=\"系统短信签名\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n      </tabs>\n      <br><br>\n      <h4 class=\"example-title\">迷你型</h4>\n      <tabs :base=\"true\" size=\"small\">\n        <tab header=\"系统短信签名\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n      </tabs>\n      <br><br>\n      <h4 class=\"example-title\">Tab数量较多的情况</h4>\n      <tabs :base=\"true\" trigger=\"hover\" >\n        <tab header=\"系统短信签名\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n      </tabs>\n      <br><br>\n      <h4 class=\"example-title\">选项卡型</h4>\n      <tabs @on-tab-click=\"handleOnClick\">\n        <tab header=\"推广短信签名啊啊啊中啊啊啊啊啊啊啊\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n      </tabs>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<tabs>\n  <tab header=\"系统短信签名\">\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n    ...\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n</tabs>\n<tabs :base=\"true\" size=\"small\">\n  <tab header=\"系统短信签名\">\n    <p>\n      选项卡一内容\n    </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n</tabs>\n<tabs :base=\"true\" trigger=\"hover\">\n  <tab header=\"系统短信签名\">\n    <p>\n      选项卡一内容\n    </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n</tabs>\n<tabs @on-tab-click=\"handleOnClick\">\n  <tab header=\"推广短信签名啊啊啊中啊啊啊啊啊啊啊\">\n    <p>\n      选项卡一内容\n    </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n</tabs>\n</script></code></pre>\n  <h2>Tab 选项 (非 TABS)</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>header</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>Heading text of the tab.</td>\n      </tr>\n      <tr>\n        <td>disabled</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否禁用当前Tab</td>\n      </tr>\n      <tr>\n        <td>base</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否采用基础型的Tab样式</td>\n      </tr>\n      <tr>\n        <td>show-len</td>\n        <td><code>Number</code></td>\n        <td>3</td>\n        <td>当前想要显示出多少个Tab</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td>'default'</td>\n        <td>大小，提供default和small两种大小</td>\n      </tr>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code></td>\n        <td>click</td>\n        <td>以何种方式触发选中Tab(可选，click，hover)</td>\n      </tr>\n      <tr>\n        <td>@on-tab-click</td>\n        <td><code>Function</code></td>\n        <td></td>\n        <td>tab被点击的回调，回调参数为当前tab的索引值</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 462 */
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(463)
-	__vue_script__ = __webpack_require__(464)
+	__webpack_require__(469)
+	__vue_script__ = __webpack_require__(470)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/stepsDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(465)
+	__vue_template__ = __webpack_require__(471)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -17697,13 +18100,13 @@
 	})()}
 
 /***/ },
-/* 463 */
+/* 469 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 464 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17712,7 +18115,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var Step = _src.Steps.Step; // <template>
 	//   <div class="bs-docs-section" id="steps">
@@ -17865,22 +18268,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 465 */
+/* 471 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"steps\">\n    <h3 class=\"page-header\"><a href=\"#steps\" class=\"anchor\">Steps 步骤条</a></h3>\n    <div class=\"bs-example\">\n        <h4 class=\"example-title\">基础型</h4>\n        <v-steps :current=\"current\" color=\"#00a0ff\">\n            <v-step title=\"已完成\" ></v-step>\n            <v-step title=\"进行中\"></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br><br>\n        <v-steps :current=\"current\" color=\"rgb(229, 46, 46)\">\n            <v-step title=\"已完成\" ></v-step>\n            <v-step title=\"进行中\"></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br>\n        <h4 class=\"example-title\">带文字描述</h4>\n        <v-steps :current=\"current\" >\n            <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n            <v-step title=\"进行中\"  description=\"这里是多信息的耶哦\"></v-step>\n            <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n            <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n        </v-steps>\n        <br>\n        <button type=\"button\" class=\"atui-btn atui-btn-default atui-btn-primary\" @click=\"_next\">next</button>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-steps :current=\"current\" color=\"#00a0ff\">\n  <v-step title=\"已完成\" ></v-step>\n  <v-step title=\"进行中\"></v-step>\n  <v-step title=\"有一个待运行\"></v-step>\n  <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\" color=\"rgb(229, 46, 46)\">\n    <v-step title=\"已完成\" ></v-step>\n    <v-step title=\"进行中\"></v-step>\n    <v-step title=\"有一个待运行\"></v-step>\n    <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\">\n  <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n  <v-step title=\"进行中\"  description=\"这里是多信息的耶哦\"></v-step>\n  <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n  <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n</v-steps>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <h4 style=\"margin: 20px 0;\">vSteps</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>current</td>\n        <td>Number</td>\n        <td>0</td>\n        <td>当前正在执行的步骤数，可以通过status属性覆盖状态</td>\n      </tr>\n      <tr>\n        <td>color</td>\n        <td>String</td>\n        <td></td>\n        <td>指定步骤条的样式颜色</td>\n      </tr>\n    </tbody>\n  </table>\n  <h4 style=\"margin: 20px 0;\">vSteps vStep</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>title</td>\n        <td>String</td>\n        <td>无</td>\n        <td>标题</td>\n      </tr>\n      <tr>\n        <td>description</td>\n        <td>String</td>\n        <td>无</td>\n        <td>步骤的详情描述</td>\n      </tr>\n      <tr>\n        <td>status</td>\n        <td>String</td>\n        <td>无</td>\n        <td>执行step的状态，当不设置此属性时，父组件Steps会自动根据current来设置对应status,（可选值wait, process, finish）</td>\n      </tr>\n    </tbody>\n  </table>\n";
 
 /***/ },
-/* 466 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(467)
+	__vue_script__ = __webpack_require__(473)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/menuDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(468)
+	__vue_template__ = __webpack_require__(474)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -17899,7 +18302,7 @@
 	})()}
 
 /***/ },
-/* 467 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17908,14 +18311,14 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var SubMenu = _src.Menu.SubMenu; // <template>
 	//   <div class="bs-docs-section" id="menu">
 	//     <h3 class="page-header"><a href="#menu" class="anchor">Menu 菜单</a></h3>
 	//     <div class="bs-example">
 	//     初始选中的key是{{selectedKey}}
-	//     <v-menu style="width:240px;" :selected-key="selectedKey">
+	//     <v-menu style="width:240px;" :selected-key="selectedKey" open-one>
 	//       <sub-menu title="导航一">
 	//         <menu-item-group title="分组1">
 	//           <menu-item key="1"><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
@@ -17943,7 +18346,7 @@
 	//     </v-menu>
 	//     </div>
 	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// <v-menu style="width:240px;" :selected-key="selectedKey">
+	// <v-menu style="width:240px;" :selected-key="selectedKey" open-one>
 	//   <sub-menu title="导航一">
 	//     <menu-item-group title="分组1">
 	//       <menu-item key="1"><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
@@ -18038,22 +18441,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 468 */
+/* 474 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"menu\">\n    <h3 class=\"page-header\"><a href=\"#menu\" class=\"anchor\">Menu 菜单</a></h3>\n    <div class=\"bs-example\">\n    初始选中的key是{{selectedKey}}\n    <v-menu style=\"width:240px;\" :selected-key=\"selectedKey\">\n      <sub-menu title=\"导航一\">\n        <menu-item-group title=\"分组1\">\n          <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n          <menu-item key=\"2\">选项2</menu-item>\n        </menu-item-group>\n        <menu-item-group title=\"分组2\">\n          <menu-item key=\"3\">选项3</menu-item>\n          <menu-item key=\"4\">选项4</menu-item>\n        </menu-item-group>\n      </sub-menu>\n      <sub-menu title=\"导航二\">\n        <menu-item key=\"5\">选项5</menu-item>\n        <menu-item key=\"6\">选项6</menu-item>\n        <sub-menu title=\"三级导航\">\n          <menu-item key=\"7\">选项7</menu-item>\n          <menu-item key=\"8\">选项8</menu-item>\n        </sub-menu>\n      </sub-menu>\n      <sub-menu title=\"导航三\">\n        <menu-item key=\"9\">选项9</menu-item>\n        <menu-item key=\"10\">选项10</menu-item>\n        <menu-item key=\"11\">选项11</menu-item>\n        <menu-item key=\"12\">选项12</menu-item>\n      </sub-menu>\n    </v-menu>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-menu style=\"width:240px;\" :selected-key=\"selectedKey\">\n  <sub-menu title=\"导航一\">\n    <menu-item-group title=\"分组1\">\n      <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n      <menu-item key=\"2\">选项2</menu-item>\n    </menu-item-group>\n    <menu-item-group title=\"分组2\">\n      <menu-item key=\"3\">选项3</menu-item>\n      <menu-item key=\"4\">选项4</menu-item>\n    </menu-item-group>\n  </sub-menu>\n  <sub-menu title=\"导航二\">\n    <menu-item key=\"5\">选项5</menu-item>\n    <menu-item key=\"6\">选项6</menu-item>\n    <sub-menu title=\"三级导航\">\n      <menu-item key=\"7\">选项7</menu-item>\n      <menu-item key=\"8\">选项8</menu-item>\n    </sub-menu>\n  </sub-menu>\n  <sub-menu title=\"导航三\">\n    <menu-item key=\"9\">选项9</menu-item>\n    <menu-item key=\"10\">选项10</menu-item>\n    <menu-item key=\"11\">选项11</menu-item>\n    <menu-item key=\"12\">选项12</menu-item>\n  </sub-menu>\n</v-menu>\n\n<!--script-->\nimport {Menu} from atui\nconst { SubMenu, MenuItem, MenuItemGroup} = Menu\nexport default {\n  components: {\n    vMenu: Menu,\n    SubMenu,\n    MenuItemGroup,\n    MenuItem\n  },\n  data() {\n    return {\n      selectedKey: '6'\n    }\n  }\n}\n  </script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tr>\n      <th>openOne</th>\n      <th>Boolean</th>\n      <th>false</th>\n      <th>始终只打开一个菜单</th>\n    </tr>\n    <tr>\n      <th>selectedKey</th>\n      <th>String</th>\n      <th></th>\n      <th>选中的MenuItem的Key</th>\n    </tr>\n    <tbody>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"menu\">\n    <h3 class=\"page-header\"><a href=\"#menu\" class=\"anchor\">Menu 菜单</a></h3>\n    <div class=\"bs-example\">\n    初始选中的key是{{selectedKey}}\n    <v-menu style=\"width:240px;\" :selected-key=\"selectedKey\" open-one>\n      <sub-menu title=\"导航一\">\n        <menu-item-group title=\"分组1\">\n          <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n          <menu-item key=\"2\">选项2</menu-item>\n        </menu-item-group>\n        <menu-item-group title=\"分组2\">\n          <menu-item key=\"3\">选项3</menu-item>\n          <menu-item key=\"4\">选项4</menu-item>\n        </menu-item-group>\n      </sub-menu>\n      <sub-menu title=\"导航二\">\n        <menu-item key=\"5\">选项5</menu-item>\n        <menu-item key=\"6\">选项6</menu-item>\n        <sub-menu title=\"三级导航\">\n          <menu-item key=\"7\">选项7</menu-item>\n          <menu-item key=\"8\">选项8</menu-item>\n        </sub-menu>\n      </sub-menu>\n      <sub-menu title=\"导航三\">\n        <menu-item key=\"9\">选项9</menu-item>\n        <menu-item key=\"10\">选项10</menu-item>\n        <menu-item key=\"11\">选项11</menu-item>\n        <menu-item key=\"12\">选项12</menu-item>\n      </sub-menu>\n    </v-menu>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-menu style=\"width:240px;\" :selected-key=\"selectedKey\" open-one>\n  <sub-menu title=\"导航一\">\n    <menu-item-group title=\"分组1\">\n      <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n      <menu-item key=\"2\">选项2</menu-item>\n    </menu-item-group>\n    <menu-item-group title=\"分组2\">\n      <menu-item key=\"3\">选项3</menu-item>\n      <menu-item key=\"4\">选项4</menu-item>\n    </menu-item-group>\n  </sub-menu>\n  <sub-menu title=\"导航二\">\n    <menu-item key=\"5\">选项5</menu-item>\n    <menu-item key=\"6\">选项6</menu-item>\n    <sub-menu title=\"三级导航\">\n      <menu-item key=\"7\">选项7</menu-item>\n      <menu-item key=\"8\">选项8</menu-item>\n    </sub-menu>\n  </sub-menu>\n  <sub-menu title=\"导航三\">\n    <menu-item key=\"9\">选项9</menu-item>\n    <menu-item key=\"10\">选项10</menu-item>\n    <menu-item key=\"11\">选项11</menu-item>\n    <menu-item key=\"12\">选项12</menu-item>\n  </sub-menu>\n</v-menu>\n\n<!--script-->\nimport {Menu} from atui\nconst { SubMenu, MenuItem, MenuItemGroup} = Menu\nexport default {\n  components: {\n    vMenu: Menu,\n    SubMenu,\n    MenuItemGroup,\n    MenuItem\n  },\n  data() {\n    return {\n      selectedKey: '6'\n    }\n  }\n}\n  </script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tr>\n      <th>openOne</th>\n      <th>Boolean</th>\n      <th>false</th>\n      <th>始终只打开一个菜单</th>\n    </tr>\n    <tr>\n      <th>selectedKey</th>\n      <th>String</th>\n      <th></th>\n      <th>选中的MenuItem的Key</th>\n    </tr>\n    <tbody>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 469 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(470)
+	__vue_script__ = __webpack_require__(476)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/treeDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(471)
+	__vue_template__ = __webpack_require__(477)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18072,7 +18475,7 @@
 	})()}
 
 /***/ },
-/* 470 */
+/* 476 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18081,7 +18484,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	// <template>
 	//   <div class="bs-docs-section" id="tree">
@@ -18166,23 +18569,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 471 */
+/* 477 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"tree\">\n    <h3 class=\"page-header\"><a href=\"#tree\" class=\"anchor\">Tree 树形菜单</a></h3>\n    <div class=\"bs-example\">\n    <h4>普通树形</h4>\n    <tree :data-source=\"dataSource\"></tree>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<tree :data-source=\"dataSource\"></tree>\n//\nvar data = {\n  name: 'My Tree',\n  children: [\n    { name: 'hello' },\n    { name: 'wat' },\n    {\n      name: 'child folder',\n      children: [\n        {\n          name: 'child folder',\n          children: [\n            { name: 'hello' },\n            { name: 'wat' }\n          ]\n        },\n        { name: 'hello' },\n        { name: 'wat' },\n        {\n          name: 'child folder',\n          children: [\n            { name: 'hello' },\n            { name: 'wat' }\n          ]\n        }\n      ]\n    }\n  ]\n}\nexport default {\n  components: {\n    Tree\n  },\n  data () {\n    return {\n      dataSource : data\n    }\n  }\n}\n</script></code></pre>\n\n  </div>\n";
 
 /***/ },
-/* 472 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(473)
-	__vue_script__ = __webpack_require__(474)
+	__webpack_require__(479)
+	__vue_script__ = __webpack_require__(480)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/breadcrumbDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(475)
+	__vue_template__ = __webpack_require__(481)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18201,13 +18604,13 @@
 	})()}
 
 /***/ },
-/* 473 */
+/* 479 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 474 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18216,7 +18619,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	var BreadcrumbItem = _src.Breadcrumb.BreadcrumbItem; // <template>
 	//   <div class="bs-docs-section" id="breadcrumb">
@@ -18324,23 +18727,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 475 */
+/* 481 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"breadcrumb\">\n    <h3 class=\"page-header\"><a href=\"#breadcrumb\" class=\"anchor\">Breadcrumb 面包屑</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">基本样式</h4>\n      <breadcrumb>\n        <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n        <breadcrumb-item>三级类目</breadcrumb-item>\n      </breadcrumb>\n      <h4 class=\"example-title\">分隔符样式（选用）</h4>\n      <breadcrumb slash=\"&gt;\">\n        <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">三级类目</breadcrumb-item>\n        <breadcrumb-item>四级类目</breadcrumb-item>\n      </breadcrumb>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<breadcrumb>\n  <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n  <breadcrumb-item>三级类目</breadcrumb-item>\n</breadcrumb>\n<breadcrumb slash=\"&gt;\">\n  <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">三级类目</breadcrumb-item>\n  <breadcrumb-item>四级类目</breadcrumb-item>\n</breadcrumb>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <h4 style=\"margin: 20px 0;\">Breadcrumb</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>slash</td>\n        <td>String</td>\n        <td>/</td>\n        <td>每一级类目之间的分隔符</td>\n      </tr>\n    </tbody>\n  </table>\n  <h4 style=\"margin: 20px 0;\">BreadcrumbItem</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>href</td>\n        <td>String</td>\n        <td>无</td>\n        <td>链接，如果不传则不可点击</td>\n      </tr>\n    </tbody>\n  </table>\n";
 
 /***/ },
-/* 476 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(477)
-	__vue_script__ = __webpack_require__(478)
+	__webpack_require__(483)
+	__vue_script__ = __webpack_require__(484)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/paginationDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(479)
+	__vue_template__ = __webpack_require__(485)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18359,13 +18762,13 @@
 	})()}
 
 /***/ },
-/* 477 */
+/* 483 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 478 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18374,7 +18777,7 @@
 	  value: true
 	});
 	
-	var _src = __webpack_require__(133);
+	var _src = __webpack_require__(134);
 	
 	exports.default = {
 	  data: function data() {
@@ -18539,22 +18942,22 @@
 	// <script>
 
 /***/ },
-/* 479 */
+/* 485 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"pagination\">\n    <h3 class=\"page-header\"><a href=\"#pagination\" class=\"anchor\">Pagination 翻页</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">完全版</h4>\n      <pagination :curr-page=\"currPage\"\n                  :total=\"total\"\n                  show-jumper\n                  :page-size=\"pageSize\"\n                  show-size-changer>\n      </pagination>\n      <h4 class=\"example-title\">迷你版</h4>\n      <pagination :curr-page=\"currPage\"\n                  :total=\"total\"\n                  show-jumper\n                  mini>\n      </pagination>\n      <h4 class=\"example-title\">精简版</h4>\n      <pagination :curr-page=\"currPage\"\n                  :total=\"total\"\n                  simple\n                  class=\"custom\">\n      </pagination>\n\n\n      <input type=\"button\" value=\"changeTotalPage\" @click=\"changeTotalPage\"/>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<h4 class=\"example-title\">完全版</h4>\n<pagination :curr-page=\"currPage\"\n            :total=\"total\"\n            show-jumper\n            :page-size=\"pageSize\"\n            show-size-changer>\n</pagination>\n<h4 class=\"example-title\">迷你版</h4>\n<pagination :curr-page=\"currPage\"\n            :total=\"total\"\n            show-jumper\n            mini>\n</pagination>\n<h4 class=\"example-title\">精简版</h4>\n<pagination :curr-page=\"currPage\"\n            :total=\"total\"\n            simple\n            class=\"custom\">\n</pagination>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>total-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>总页数</td>\n      </tr>\n      <tr>\n        <td>curr-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>当前页</td>\n      </tr>\n      <tr>\n        <td>default-size</td>\n        <td>Number</td>\n        <td>one of <code>10、20、30</code></td>\n        <td>如果有选择页码大小的话，这个可以指定每页的大小</td>\n      </tr>\n      <tr>\n        <td>total</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>数据总条数</td>\n      </tr>\n      <tr>\n        <td>show-jumper</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启跳转功能</td>\n      </tr>\n      <tr>\n        <td>show-size-changer</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启修改每页条数功能</td>\n      </tr>\n      <tr>\n        <td>simple</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用精简版样式</td>\n      </tr>\n      <tr>\n        <td>mini</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用迷你版样式</td>\n      </tr>\n    </tbody>\n  </table>\n  <br>\n  <strong>注：</strong>pagination组件会监听当前currPage的变化，当其发生变化时pagination组件会向上派发一个回调事件，名字叫pageChange，回调参数就是当前页以及pagination的id，需要在引用pagination的当前文件里面的events对象里将其加入进去.\n  <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n    events: {\n      pageChange (page, id) {\n\n      }\n    }\n  </script></code></pre>\n";
 
 /***/ },
-/* 480 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(481)
+	__vue_script__ = __webpack_require__(487)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(484)
+	__vue_template__ = __webpack_require__(490)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18573,7 +18976,7 @@
 	})()}
 
 /***/ },
-/* 481 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18582,7 +18985,7 @@
 	  value: true
 	});
 	
-	__webpack_require__(482);
+	__webpack_require__(488);
 	
 	exports.default = {
 	  data: function data() {
@@ -18611,12 +19014,12 @@
 	// <script>
 
 /***/ },
-/* 482 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _phoneNumber = __webpack_require__(483);
+	var _phoneNumber = __webpack_require__(489);
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -18627,7 +19030,7 @@
 	module.exports = {};
 
 /***/ },
-/* 483 */
+/* 489 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -18654,41 +19057,41 @@
 	};
 
 /***/ },
-/* 484 */
+/* 490 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phonenumber\">\n    <h3 class=\"page-header\"><a href=\"#phonenumber\" class=\"anchor\">手机号码格式化 phonenumber</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phoneNumber}}</div>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"text\" v-model=\"number\" />\n<div>{{number | phoneNumber}}</div>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
-/* 485 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(486);
-	__webpack_require__(487);
-	__webpack_require__(488);
+	__webpack_require__(492);
+	__webpack_require__(493);
+	__webpack_require__(494);
 
 /***/ },
-/* 486 */
+/* 492 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 487 */
+/* 493 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 488 */
+/* 494 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 489 */
+/* 495 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -19412,7 +19815,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 490 */
+/* 496 */
 /***/ function(module, exports) {
 
 	"use strict";

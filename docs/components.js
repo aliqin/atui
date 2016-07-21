@@ -41,6 +41,7 @@ import spinDocs from './example/spinDocs.vue'
 import textareaDocs from './example/textareaDocs.vue'
 import tagDocs from './example/tagDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
+import triggerDocs from './example/triggerDocs.vue'
 import accordionDocs from './example/accordionDocs.vue'
 
 
@@ -102,6 +103,7 @@ new Vue({
     breadcrumbDocs,
     paginationDocs,
     tooltipDocs,
+    triggerDocs,
     menuDocs,
     searchboxDocs,
     phoneNumberDocs,

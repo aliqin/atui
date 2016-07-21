@@ -20,7 +20,15 @@
           <label><input type="checkbox" name="sexy" />女</label>
         </form-item>
         <form-item required label="行业：" label-col="4">
-          <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+          <v-select :value.sync="arr" :options="industry" :close-on-select="true" placeholder="选择类别">
+            <v-option value="Apple">苹果</v-option>
+            <v-option value="Banana" disabled>Banana</v-option>
+            <v-option value="Cherry">Cherry</v-option>
+            <v-option value="Orange">OrangeText</v-option>
+            <v-option value="Grape">Grape</v-option>
+            <v-option value="agg">鸡蛋</v-option>
+            <v-option value="芒果">芒果</v-option>
+          </v-select>
         </form-item>
         <form-item label-col="4">
           <v-button type="submit" primary>确定</v-button>
