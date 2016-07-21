@@ -16,7 +16,7 @@
 
     <modal title="Fade Modal" :show.sync="show" effect="fade" width="800px">
         <div slot="modal-body" class="modal-body">
-          <v-textarea  :content.sync='textarea'></v-textarea>
+          <v-textarea :content.sync='textarea'></v-textarea>
         </div>
       </modal>
     <pre><code class="language-markup"><script type="language-mark-up">
@@ -257,6 +257,7 @@ export default {
   }
 
   const pagination = {
+    total: data.length,
     onShowSizeChange(current, pageSize) {
       console.log('Current: ', current, '; PageSize: ', pageSize);
     },
