@@ -19,7 +19,7 @@ describe('Popover组件单元测试', () => {
   }).$mount()
 
   it('基本渲染功能', () => {
-    expect(vm.$el.querySelectorAll('.atui-popover-trigger').length).to.be.equal(1)
+    expect(vm.$el.querySelectorAll('.atui-trigger').length).to.be.equal(1)
     expect(vm.$el.querySelectorAll('.atui-btn').length).to.be.equal(1)
     expect(vm.$el.querySelectorAll('.atui-popover-top').length).to.be.equal(1)
   })

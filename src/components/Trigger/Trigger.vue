@@ -1,28 +1,27 @@
 <template>
   <div :class="[prefixCls + '-trigger-cont']">
-    <div v-if="triggerEvent === 'click'"
+    <div v-if="trigger === 'click'"
         v-el:trigger
          :class="[prefixCls + '-trigger']"
          @click="clickHandler">
       <slot name="trigger">trigger slot is not set</slot>
     </div>
-    <div v-if="triggerEvent === 'hover'"
+    <div v-if="trigger === 'hover'"
          v-el:trigger
          :class="[prefixCls + '-trigger']"
          @mouseenter="hoverHandler"
          @mouseleave="hoverHandler">
       <slot name="trigger">trigger slot is not set</slot>
     </div>
-    <div v-if="triggerEvent === 'focus'"
+    <div v-if="trigger === 'focus'"
          v-el:trigger
-         :class="[prefixCls + '-trigger']"
-         @focus="focusHandler"
-         @blur="blurHandler">
+         :class="[prefixCls + '-trigger']">
       <slot name="trigger">trigger slot is not set</slot>
     </div>
     <div v-el:popup
          v-show="show"
-         :class="popupClassObj" >
+         :class="popupClassObj"
+         :transition="effect">
       <slot name="popup">popup slot is not set</slot>
     </div>
   </div>
@@ -30,12 +29,13 @@
 
 <script type="text/babel">
   import GlobalMixin from './../_utils/GlobalMixin.js'
+  import EventListener from './../_utils/EventListener.js'
 
   export default {
     mixins: [GlobalMixin],
 
     props: {
-      triggerEvent: {
+      trigger: {
         type: String,
         default: 'click'
       },
@@ -46,6 +46,10 @@
       placement: {
         type: String,
         default: 'bottom'
+      },
+      popupCls: {
+        type: String,
+        default: 'popup'
       }
     },
 
@@ -61,24 +65,42 @@
 
     computed: {
       popupClassObj () {
-        let { prefixCls, placement } = this
+        let { prefixCls, popupCls, placement } = this
         let classObj = {}
 
-        classObj[prefixCls + '-popup'] = true
-        classObj[prefixCls + '-popup-top'] = placement === 'top'
-        classObj[prefixCls + '-popup-top-left'] = placement === 'topLeft'
-        classObj[prefixCls + '-popup-top-right'] = placement === 'topRight'
-        classObj[prefixCls + '-popup-left'] = placement === 'left'
-        classObj[prefixCls + '-popup-left-top'] = placement === 'leftTop'
-        classObj[prefixCls + '-popup-left-bottom'] = placement === 'leftBottom'
-        classObj[prefixCls + '-popup-right'] = placement === 'right'
-        classObj[prefixCls + '-popup-right-top'] = placement === 'rightTop'
-        classObj[prefixCls + '-popup-right-bottom'] = placement === 'rightBottom'
-        classObj[prefixCls + '-popup-bottom'] = placement === 'bottom'
-        classObj[prefixCls + '-popup-bottom-left'] = placement === 'bottomLeft'
-        classObj[prefixCls + '-popup-bottom-right'] = placement === 'bottomRight'
+        classObj[`${prefixCls}-popup`] = true
+        classObj[`${prefixCls}-${popupCls}`] = true
+        classObj[`${prefixCls}-${popupCls}-top`] = placement === 'top'
+        classObj[`${prefixCls}-${popupCls}-top-left`] = placement === 'topLeft'
+        classObj[`${prefixCls}-${popupCls}-top-right`] = placement === 'topRight'
+        classObj[`${prefixCls}-${popupCls}-left`] = placement === 'left'
+        classObj[`${prefixCls}-${popupCls}-left-top`] = placement === 'leftTop'
+        classObj[`${prefixCls}-${popupCls}-left-bottom`] = placement === 'leftBottom'
+        classObj[`${prefixCls}-${popupCls}-right`] = placement === 'right'
+        classObj[`${prefixCls}-${popupCls}-right-top`] = placement === 'rightTop'
+        classObj[`${prefixCls}-${popupCls}-right-bottom`] = placement === 'rightBottom'
+        classObj[`${prefixCls}-${popupCls}-bottom`] = placement === 'bottom'
+        classObj[`${prefixCls}-${popupCls}-bottom-left`] = placement === 'bottomLeft'
+        classObj[`${prefixCls}-${popupCls}-bottom-right`] = placement === 'bottomRight'
 
         return classObj
+      }
+    },
+
+    ready () {
+      const $trigger = this.$els.trigger.children[0]
+      const me = this
+      const { trigger } = this
+
+      if (trigger === 'focus') {
+        this._focusEvent = EventListener.listen($trigger, 'focus', () => {
+          me.show = true
+          me.resetPos()
+        })
+
+        this._blurEvent = EventListener.listen($trigger, 'blur', () => {
+          this.show = false
+        })
       }
     },
 
@@ -183,6 +205,8 @@
       focusHandler (ev) {
         const { type } = ev
 
+        console.log('ev', ev)
+
         if (type === 'focus') {
           this.show = true
           this.resetPos()
@@ -203,6 +227,11 @@
 
       if (popup && popup.nodeType) {
         popup.parentNode.removeChild(popup)
+      }
+
+      if (this._blurEvent) {
+        this._blurEvent.remove()
+        this._focusEvent.remove()
       }
     }
   }
