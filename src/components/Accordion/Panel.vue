@@ -52,8 +52,18 @@ export default {
     const panel = this.$els.panel
     panel.style.display = 'block'
     this.height = panel.offsetHeight
-    // panel.style.maxHeight = this.height + 'px'
     if (!this.isOpen) panel.style.display = 'none'
+  },
+  transitions: {
+    collapse: {
+      afterEnter (el) {
+        el.style.maxHeight = ''
+      },
+      beforeLeave (el) {
+        el.style.maxHeight = el.offsetHeight + 'px'
+        return el.offsetHeight
+      }
+    }
   }
 }
 </script>
