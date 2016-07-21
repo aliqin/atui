@@ -2,7 +2,7 @@
   <div :class="[prefixCls + '-popover-cont']">
     <trigger :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover">
       <slot slot="trigger"></slot>
-      <slot slot="popup" name="popup">
+      <slot slot="popup" name="popup" role="popover">
         <div :class="[prefixCls + '-popover-arrow']"></div>
         <h3 :class="[prefixCls + '-popover-title']" v-show="header && title">{{title}}</h3>
         <div :class="[prefixCls + '-popover-content']">

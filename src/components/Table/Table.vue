@@ -175,7 +175,7 @@ export default {
   },
   watch: {
     dataSource: {
-      handler (data,oldData) {
+      handler (data, oldData) {
         let me = this
 
         me.compileTbody()
