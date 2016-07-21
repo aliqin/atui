@@ -26,14 +26,11 @@
 //** Popover outer arrow fallback color
 @popover-arrow-outer-fallback-color:  darken(@popover-fallback-border-color, 20%);
 
-.@{prefix-cls-popover}-trigger {
+.@{prefix-cls-popover}-cont, .@{prefix-cls-popover}-slot {
   display: inline-block;
 }
+
 .@{prefix-cls-popover} {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: @zindex-popover;
   max-width: @popover-max-width;
   padding: 1px;
   // Our parent element can be arbitrary since popovers are by default inserted as a sibling of their target element.
