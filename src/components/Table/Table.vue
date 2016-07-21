@@ -64,8 +64,8 @@
         </tbody>
       </table>
     </div>
-    <div v-if="pagination" :class="[prefixCls + '-table-pagination']">
-      <pagination v-ref:pager :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
+    <div v-show="pagination && pagination.total > 0" :class="[prefixCls + '-table-pagination']">
+      <pagination v-ref:pager :total="pagination.total" :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
     </div>
   </div>
 </template>
@@ -78,7 +78,15 @@ import Pagination from '../Pagination/'
 
 export default {
   props: {
-    pagination: Object,
+    pagination: {
+      type: Object,
+      default () {
+        return {
+          total: 0,
+          currPage: 1
+        }
+      }
+    },
     dataSource: {
       type: Array,
       default () {
@@ -124,6 +132,7 @@ export default {
       }
     })
     return {
+      originDataSource: Array.concat(this.dataSource, []),
       isCheckedAll: false,
       isDisabledAll: false,
       sorderOrder: [],
@@ -134,10 +143,8 @@ export default {
     }
   },
   compiled () {
-    if (this.pagination) {
-      this.originDataSource = Array.concat(this.dataSource, [])
+    if (this.pagination.total > 0) {
       let pager = this.$refs.pager
-      pager.total = this.dataSource.length
       this.dataSource = this.originDataSource.slice(pager.currPage || 0, pager.pageSize)
     }
   },
@@ -168,13 +175,9 @@ export default {
   },
   watch: {
     dataSource: {
-      handler (data) {
+      handler (data,oldData) {
         let me = this
-        // if (me.pagination) {
-        //   me.originDataSource = Array.concat(this.dataSource, [])
-        //   let pager = me.$refs.pager
-        //   me.dataSource = me.originDataSource.slice(pager.currPage || 0, pager.pageSize)
-        // }
+
         me.compileTbody()
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
@@ -275,12 +278,18 @@ export default {
       this.onFilter(column)
     },
     changePage (pageNum) {
-      let pager = this.$refs.pager
-      this.dataSource = this.originDataSource.slice(
-        (pageNum - 1) * pager.pageSize,
-        pageNum * pager.pageSize
-      )
+      let me = this
+      let pager = me.$refs.pager
+      // 如果原始originDataSource有多余数据，证明是客户端分页
+      if (me.originDataSource.length > pageNum * pager.pageSize) {
+        me.dataSource = me.originDataSource.slice(
+          (pageNum - 1) * pager.pageSize,
+          pageNum * pager.pageSize
+        )
+      }
       this.pagination.onChange && this.pagination.onChange(pageNum)
+      me.pagination.currPage = pageNum
+      me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
     },
     changeSize (current, pageSize) {
       let pager = this.$refs.pager
