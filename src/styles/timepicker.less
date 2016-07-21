@@ -68,10 +68,11 @@
     transition: all .3s ease;
     width: 100%;
     &:hover {
-      background: #eaf8fe;
+      background: tint(@primary-color, 95%);
     }
     &.selected, &.selected:hover {
-      background: #d5f1fd;
+      color: #fff;
+      background: tint(@primary-color, 40%);
     }
     &.disabled {
       cursor: not-allowed;

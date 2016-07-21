@@ -57,7 +57,9 @@ export default {
       }
       this.getPageRange()
       this.$nextTick(() => {
+        // pagination-size-change将来要废弃，使用size-change
         this.$dispatch('pagination-size-change', this.currPage, pageSize)
+        this.$dispatch('size-change', this.currPage, pageSize)
       })
     },
     currPage () {
@@ -179,7 +181,10 @@ export default {
       this.getPageRange()
     },
     onChange (pageNum) {
+      // 此事件在新版中废弃，统一使用change事件，但有历史原因有项目用了，暂时保留
       this.$dispatch('pagination-page-change', pageNum)
+      // 新加的，暂时保持新老并存
+      this.$dispatch('change', pageNum)
     },
     _isValid (page) {
       return typeof page === 'number' && page >= 1 && page !== this.currPage
