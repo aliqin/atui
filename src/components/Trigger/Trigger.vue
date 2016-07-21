@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-el="http://www.w3.org/1999/xhtml">
   <div :class="[prefixCls + '-trigger-cont']">
     <div v-if="trigger === 'click'"
         v-el:trigger
@@ -50,6 +50,10 @@
       popupCls: {
         type: String,
         default: 'popup'
+      },
+      popupAlwaysInView: {
+        type: Boolean,
+        default: true
       }
     },
 
@@ -110,13 +114,28 @@
       },
 
       /**
+       * 设置弹窗视图内可见优先
+       */
+      enablePopupInView () {
+        const { placement } = this
+
+        if (placement.startsWith('top')) {
+
+        } else if (placement.startsWith('bottom')) {
+
+        }
+      },
+
+      /**
        * 设置tooltip坐标
        */
       resetPos () {
-        let me = this
-        const popup = me.$els.popup
+        const me = this
+        const { placement } = this
+        const $popup = me.$els.popup
 
-        if (me.show && popup.offsetWidth === 0) {
+        // 坐标修正
+        if (me.show && $popup.offsetWidth === 0) {
           setTimeout(() => {
             me.resetPos()
           }, 0)
@@ -127,63 +146,73 @@
         const offset = $trigger.getBoundingClientRect()
         const offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left
         const offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top
-        const offsetWidth = popup.offsetWidth
-        const offsetHeight = popup.offsetHeight
+        const offsetWidth = offset.width
+        const offsetHeight = offset.height
+        const popupOffsetWidth = $popup.offsetWidth
+        const popupOffsetHeight = $popup.offsetHeight
 
-        switch (me.placement) {
+        switch (placement) {
           case 'top' :
-            me.position.left = offsetLeft - offsetWidth / 2 + $trigger.offsetWidth / 2
-            me.position.top = offsetTop - offsetHeight
+            me.position.left = offsetLeft - popupOffsetWidth / 2 + offsetWidth / 2
+            me.position.top = offsetTop - popupOffsetHeight
             break
           case 'topLeft' :
-            me.position.left = offsetLeft - offsetWidth / 2 + $trigger.offsetWidth / 2 + offsetWidth / 4
-            me.position.top = offsetTop - offsetHeight
+            me.position.left = offsetLeft
+            me.position.top = offsetTop - popupOffsetHeight
             break
           case 'topRight' :
-            me.position.left = offsetLeft - offsetWidth / 2 + $trigger.offsetWidth / 2 - offsetWidth / 4
-            me.position.top = offsetTop - offsetHeight
+            me.position.left = offsetLeft + offsetWidth - popupOffsetWidth
+            me.position.top = offsetTop - popupOffsetHeight
             break
           case 'left':
-            me.position.left = offsetLeft - offsetWidth
-            me.position.top = offsetTop + $trigger.offsetHeight / 2 - offsetHeight / 2
+            me.position.left = offsetLeft - popupOffsetWidth
+            me.position.top = offsetTop + offsetHeight / 2 - popupOffsetHeight / 2
             break
           case 'leftTop':
-            me.position.left = offsetLeft - offsetWidth
-            me.position.top = offsetTop + $trigger.offsetHeight / 4 - offsetHeight / 2 + offsetHeight / 4
+            me.position.left = offsetLeft - popupOffsetWidth
+            me.position.top = offsetTop
             break
           case 'leftBottom':
-            me.position.left = offsetLeft - offsetWidth
-            me.position.top = offsetTop + $trigger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + $trigger.offsetHeight / 4
+            me.position.left = offsetLeft - popupOffsetWidth
+            me.position.top = offsetTop + offsetHeight - popupOffsetHeight
             break
           case 'right':
-            me.position.left = offsetLeft + $trigger.offsetWidth
-            me.position.top = offsetTop + $trigger.offsetHeight / 2 - offsetHeight / 2
+            me.position.left = offsetLeft + offsetWidth
+            me.position.top = offsetTop + offsetHeight / 2 - popupOffsetHeight / 2
             break
           case 'rightTop':
-            me.position.left = offsetLeft + $trigger.offsetWidth
-            me.position.top = offsetTop + $trigger.offsetHeight / 4 - offsetHeight / 2 + offsetHeight / 4
+            me.position.left = offsetLeft + offsetWidth
+            me.position.top = offsetTop
             break
           case 'rightBottom':
-            me.position.left = offsetLeft + $trigger.offsetWidth
-            me.position.top = offsetTop + $trigger.offsetHeight / 2 - offsetHeight / 2 - offsetHeight / 4 + $trigger.offsetHeight / 4
+            me.position.left = offsetLeft + offsetWidth
+            me.position.top = offsetTop + offsetHeight - popupOffsetHeight
             break
           case 'bottom':
-            me.position.left = offsetLeft - offsetWidth / 2 + $trigger.offsetWidth / 2
-            me.position.top = offsetTop + $trigger.offsetHeight
+            me.position.left = offsetLeft - popupOffsetWidth / 2 + offsetWidth / 2
+            me.position.top = offsetTop + offsetHeight
             break
           case 'bottomLeft':
-            me.position.left = offsetLeft - offsetWidth / 2 + $trigger.offsetWidth / 2 + offsetWidth / 4
-            me.position.top = offsetTop + $trigger.offsetHeight
+            me.position.left = offsetLeft
+            me.position.top = offsetTop + offsetHeight
             break
           case 'bottomRight':
-            me.position.left = offsetLeft - offsetWidth / 2 + $trigger.offsetWidth / 2 - offsetWidth / 4
-            me.position.top = offsetTop + $trigger.offsetHeight
+            me.position.left = offsetLeft + offsetWidth - popupOffsetWidth
+            me.position.top = offsetTop + offsetHeight
             break
           default:
             console.log('Wrong placement prop')
         }
-        popup.style.top = this.position.top + 'px'
-        popup.style.left = this.position.left + 'px'
+
+        $popup.style.top = this.position.top + 'px'
+        $popup.style.left = this.position.left + 'px'
+
+        // 向父组件派发事件
+        this.$dispatch('trigger-reset-pos', {
+          $trigger: $trigger,
+          $popup: $popup,
+          placement: placement
+        })
       },
 
       clickHandler (ev) {
@@ -223,10 +252,10 @@
     },
 
     beforeDestroy () {
-      let popup = this.$els.popup
+      const $popup = this.$els.popup
 
-      if (popup && popup.nodeType) {
-        popup.parentNode.removeChild(popup)
+      if ($popup && $popup.nodeType) {
+        $popup.parentNode.removeChild($popup)
       }
 
       if (this._blurEvent) {
