@@ -96,6 +96,8 @@
       const me = this
       const { trigger } = this
 
+      this.originalPlacement = this.placement
+
       if (trigger === 'focus') {
         this._focusEvent = EventListener.listen($trigger, 'focus', () => {
           me.show = true
@@ -109,33 +111,80 @@
     },
 
     methods: {
-      toggle () {
-        this.show = !this.show
-      },
-
       /**
-       * 设置弹窗视图内可见优先
+       * 优先设置弹窗视图内可见
        */
-      enablePopupInView () {
-        const { placement } = this
+      enablePopupInView (data) {
+        const { originalPlacement } = this
+        const { triggerOffset, triggerWidth, triggerHeight, popupWidth, popupHeight } = data
+        const triggerTop = triggerOffset.top
+        const triggerLeft = triggerOffset.left
+        const winWidth = window.innerWidth
+        const winHeight = window.innerHeight
+        let fixedPlacement = originalPlacement
+        let hasFix = false
 
-        if (placement.startsWith('top')) {
+        if (fixedPlacement.startsWith('top')) {
+          if (triggerTop < popupHeight) {
+            fixedPlacement = fixedPlacement.replace('top', 'bottom')
+            hasFix = true
+          }
+        } else if (fixedPlacement.startsWith('bottom')) {
+          if (winHeight - triggerTop - triggerHeight < popupHeight) {
+            fixedPlacement = fixedPlacement.replace('bottom', 'top')
+            hasFix = true
+          }
+        } else if (fixedPlacement.startsWith('left')) {
+          if (triggerLeft < popupWidth) {
+            fixedPlacement = fixedPlacement.replace('left', 'right')
+            hasFix = true
+          }
+        } else if (fixedPlacement.startsWith('right')) {
+          if (winWidth - triggerLeft - triggerWidth < popupWidth) {
+            fixedPlacement = fixedPlacement.replace('right', 'left')
+            hasFix = true
+          }
+        }
 
-        } else if (placement.startsWith('bottom')) {
+        if (fixedPlacement.endsWith('Top')) {
+          if (winHeight - triggerTop - triggerHeight < popupHeight) {
+            fixedPlacement = fixedPlacement.replace('Top', 'Bottom')
+            hasFix = true
+          }
+        } else if (fixedPlacement.endsWith('Bottom')) {
+          if (triggerTop < popupHeight) {
+            fixedPlacement = fixedPlacement.replace('Bottom', 'Top')
+            hasFix = true
+          }
+        } else if (fixedPlacement.endsWith('Left')) {
+          if (winWidth - triggerLeft - triggerWidth < popupWidth) {
+            fixedPlacement = fixedPlacement.replace('Left', 'Right')
+            hasFix = true
+          }
+        } else if (fixedPlacement.endsWith('Right')) {
+          if (triggerLeft < popupWidth) {
+            fixedPlacement = fixedPlacement.replace('Right', 'Left')
+            hasFix = true
+          }
+        }
 
+        if (hasFix) {
+          this.resetPos(fixedPlacement)
+        } else {
+          this.resetPos(originalPlacement)
         }
       },
 
       /**
        * 设置tooltip坐标
        */
-      resetPos () {
+      resetPos (inPlacement) {
         const me = this
-        const { placement } = this
+        const { popupAlwaysInView } = this
         const $popup = me.$els.popup
 
         // 坐标修正
-        if (me.show && $popup.offsetWidth === 0) {
+        if (!inPlacement && me.show && $popup.offsetWidth === 0) {
           setTimeout(() => {
             me.resetPos()
           }, 0)
@@ -143,62 +192,77 @@
         }
 
         const $trigger = me.$els.trigger.children[0]
-        const offset = $trigger.getBoundingClientRect()
-        const offsetLeft = document.documentElement.scrollLeft + document.body.scrollLeft + offset.left
-        const offsetTop = document.documentElement.scrollTop + document.body.scrollTop + offset.top
-        const offsetWidth = offset.width
-        const offsetHeight = offset.height
-        const popupOffsetWidth = $popup.offsetWidth
-        const popupOffsetHeight = $popup.offsetHeight
+        const triggerOffset = $trigger.getBoundingClientRect()
+        const triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left
+        const triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top
+        const triggerWidth = triggerOffset.width
+        const triggerHeight = triggerOffset.height
+        const popupWidth = $popup.offsetWidth
+        const popupHeight = $popup.offsetHeight
 
-        switch (placement) {
+        // 弹窗是否in view修正
+        if (popupAlwaysInView && !inPlacement) {
+          return this.enablePopupInView({
+            triggerOffset: triggerOffset,
+            triggerWidth: triggerWidth,
+            triggerHeight: triggerHeight,
+            popupWidth: popupWidth,
+            popupHeight: popupHeight
+          })
+        }
+
+        if (inPlacement) {
+          this.placement = inPlacement
+        }
+
+        switch (this.placement) {
           case 'top' :
-            me.position.left = offsetLeft - popupOffsetWidth / 2 + offsetWidth / 2
-            me.position.top = offsetTop - popupOffsetHeight
+            me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2
+            me.position.top = triggerTop - popupHeight
             break
           case 'topLeft' :
-            me.position.left = offsetLeft
-            me.position.top = offsetTop - popupOffsetHeight
+            me.position.left = triggerLeft
+            me.position.top = triggerTop - popupHeight
             break
           case 'topRight' :
-            me.position.left = offsetLeft + offsetWidth - popupOffsetWidth
-            me.position.top = offsetTop - popupOffsetHeight
+            me.position.left = triggerLeft + triggerWidth - popupWidth
+            me.position.top = triggerTop - popupHeight
             break
           case 'left':
-            me.position.left = offsetLeft - popupOffsetWidth
-            me.position.top = offsetTop + offsetHeight / 2 - popupOffsetHeight / 2
+            me.position.left = triggerLeft - popupWidth
+            me.position.top = triggerTop + triggerHeight / 2 - popupHeight / 2
             break
           case 'leftTop':
-            me.position.left = offsetLeft - popupOffsetWidth
-            me.position.top = offsetTop
+            me.position.left = triggerLeft - popupWidth
+            me.position.top = triggerTop
             break
           case 'leftBottom':
-            me.position.left = offsetLeft - popupOffsetWidth
-            me.position.top = offsetTop + offsetHeight - popupOffsetHeight
+            me.position.left = triggerLeft - popupWidth
+            me.position.top = triggerTop + triggerHeight - popupHeight
             break
           case 'right':
-            me.position.left = offsetLeft + offsetWidth
-            me.position.top = offsetTop + offsetHeight / 2 - popupOffsetHeight / 2
+            me.position.left = triggerLeft + triggerWidth
+            me.position.top = triggerTop + triggerHeight / 2 - popupHeight / 2
             break
           case 'rightTop':
-            me.position.left = offsetLeft + offsetWidth
-            me.position.top = offsetTop
+            me.position.left = triggerLeft + triggerWidth
+            me.position.top = triggerTop
             break
           case 'rightBottom':
-            me.position.left = offsetLeft + offsetWidth
-            me.position.top = offsetTop + offsetHeight - popupOffsetHeight
+            me.position.left = triggerLeft + triggerWidth
+            me.position.top = triggerTop + triggerHeight - popupHeight
             break
           case 'bottom':
-            me.position.left = offsetLeft - popupOffsetWidth / 2 + offsetWidth / 2
-            me.position.top = offsetTop + offsetHeight
+            me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2
+            me.position.top = triggerTop + triggerHeight
             break
           case 'bottomLeft':
-            me.position.left = offsetLeft
-            me.position.top = offsetTop + offsetHeight
+            me.position.left = triggerLeft
+            me.position.top = triggerTop + triggerHeight
             break
           case 'bottomRight':
-            me.position.left = offsetLeft + offsetWidth - popupOffsetWidth
-            me.position.top = offsetTop + offsetHeight
+            me.position.left = triggerLeft + triggerWidth - popupWidth
+            me.position.top = triggerTop + triggerHeight
             break
           default:
             console.log('Wrong placement prop')
@@ -211,13 +275,16 @@
         this.$dispatch('trigger-reset-pos', {
           $trigger: $trigger,
           $popup: $popup,
-          placement: placement
+          placement: this.placement
         })
       },
 
       clickHandler (ev) {
         this.show = !this.show
-        this.resetPos()
+
+        if (this.show) {
+          this.resetPos()
+        }
       },
 
       hoverHandler (ev) {
