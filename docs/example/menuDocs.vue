@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#menu" class="anchor">Menu 菜单</a></h3>
     <div class="bs-example">
     初始选中的key是{{selectedKey}}
-    <v-menu style="width:240px;" :selected-key="selectedKey">
+    <v-menu style="width:240px;" :selected-key="selectedKey" open-one>
       <sub-menu title="导航一">
         <menu-item-group title="分组1">
           <menu-item key="1"><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
@@ -31,7 +31,7 @@
     </v-menu>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<v-menu style="width:240px;" :selected-key="selectedKey">
+<v-menu style="width:240px;" :selected-key="selectedKey" open-one>
   <sub-menu title="导航一">
     <menu-item-group title="分组1">
       <menu-item key="1"><a href="http://www.alidayu.com" target="_blank">选项1</a></menu-item>
