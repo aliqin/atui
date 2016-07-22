@@ -28,8 +28,8 @@
 </template>
 
 <script type="text/babel">
-  import GlobalMixin from './../_utils/GlobalMixin.js'
-  import EventListener from './../_utils/EventListener.js'
+  import GlobalMixin from '../_utils/GlobalMixin.js'
+  import EventListener from '../_utils/EventListener.js'
 
   export default {
     mixins: [GlobalMixin],
