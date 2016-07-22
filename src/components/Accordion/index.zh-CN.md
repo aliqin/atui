@@ -1,8 +1,8 @@
 ---
 category: Components
-chinese: 面包屑
+chinese: 手风琴
 type: Navigation
-english: Breadcrumb
+english: Accordion
 ---
 
 显示当前页面在系统层级结构中的位置，并能向上返回。
@@ -16,12 +16,24 @@ english: Breadcrumb
 ## API
 
 ```html
-<Breadcrumb>
-  <Breadcrumb.Item>首页</Breadcrumb.Item>
-  <Breadcrumb.Item>应用中心</Breadcrumb.Item>
-  <Breadcrumb.Item>应用列表</Breadcrumb.Item>
-  <Breadcrumb.Item>某应用</Breadcrumb.Item>
-</Breadcrumb>
+<accordion :one-at-atime="checked">
+  <panel open>
+    <div slot="panel-header" class="custom-class">Panel #1</div>
+    内容一
+  </panel>
+  <panel>
+    <div slot="panel-header" class="custom-class">Panel #2</div>
+    内容二
+  </panel>
+  <panel>
+    <div slot="panel-header" class="custom-class">Panel #3</div>
+    内容三
+  </panel>
+  <panel>
+    <div slot="panel-header" class="custom-class">Panel #4</div>
+    内容四
+  </panel>
+</accordion>
 ```
 
 | 参数      | 说明                              | 类型              |  可选值 | 默认值 |
@@ -31,3 +43,5 @@ english: Breadcrumb
 | separator | 分隔符自定义                      | String or Element |         | '/'    |
 | linkRender | 自定义链接函数，和 react-router 配置使用 | Function(href, name, paths) | | - |
 | nameRender | 自定义文字函数，和 react-router 配置使用 | Function(breadcrumbName, route, params) | | - |
+
+
