@@ -34,13 +34,12 @@
 .@{prefix-cls-dropdown}-menu {
   position: absolute;
   top: 105%;
-  left: 0;
   z-index: @zindex-dropdown;
-  display: none; // none by default, but block on "open" of the menu
+  display: none;
   min-width: 100%;
   padding: 0;
   list-style: none;
-  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  text-align: left;
   background-color: @dropdown-bg;
   border: 1px solid @dropdown-border;
   border-radius: 4px;
