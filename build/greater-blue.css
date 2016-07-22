@@ -1621,11 +1621,11 @@ pre code {
 }
 .atui-table-filter-dropdown ul {
   list-style: none;
-  min-width: 96px;
+  min-width: 100px;
   padding: 0;
 }
 .atui-table-filter-dropdown li {
-  padding: 5px 10px;
+  padding: 3px 5px;
 }
 .atui-table-filter-dropdown li:hover {
   background-color: #f2f9fd;
@@ -2094,7 +2094,6 @@ input[type="radio"][disabled]:checked:after {
 .atui-dropdown-menu {
   position: absolute;
   top: 105%;
-  left: 0;
   z-index: 1080;
   display: none;
   min-width: 100%;
@@ -4881,8 +4880,6 @@ button.atui-close {
   vertical-align: middle;
 }
 .atui-time-picker-menus {
-  z-index: 10010;
-  position: absolute;
   outline: none;
   border: 1px solid #d9d9d9;
   list-style: none;
@@ -5351,12 +5348,10 @@ button.atui-close {
 }
 .address-box .tab-list ul {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   margin: 0;
   padding: 0;
 }
@@ -5386,12 +5381,10 @@ button.atui-close {
 .address-box .tab-content dl {
   position: relative;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   padding: 3px 0 3px 35px;
   margin: 0;
 }
