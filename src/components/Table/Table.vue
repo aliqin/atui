@@ -132,7 +132,7 @@ export default {
       }
     })
     return {
-      originDataSource: Array.concat(this.dataSource, []),
+      originDataSource: Object.assign(this.dataSource || [], []),
       isCheckedAll: false,
       isDisabledAll: false,
       sorderOrder: [],
