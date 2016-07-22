@@ -29,6 +29,7 @@
   </div>
 </template>
 <script type="text/babel">
+  import GlobalMixin from '../_utils/GlobalMixin.js'
   import Input from '../Input'
   import Trigger from '../Trigger'
   import Selection from './selection'
@@ -51,6 +52,8 @@
   }
 
   export default {
+    mixins: [GlobalMixin],
+
     props: {
       placeholder: {
         type: String,
@@ -82,10 +85,6 @@
         default () {
           return []
         }
-      },
-      prefixCls: {
-        type: String,
-        default: 'atui'
       }
     },
     filters: {
@@ -100,7 +99,6 @@
     data () {
       const now = new Date()
       return {
-        show: false,
         hour: now.getHours(),
         minute: now.getMinutes(),
         second: now.getSeconds()

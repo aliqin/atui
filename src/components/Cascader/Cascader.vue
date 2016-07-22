@@ -1,22 +1,29 @@
 <template>
   <div :class="[prefixCls + '-cascader']">
-    <span :class="[prefixCls + '-cascader-picker']">
-      <v-input readonly @click="toggleMenus" :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
-    </span>
-    <div :class="[prefixCls + '-cascader-menus']" v-show="show" transition="slide">
-      <ul :class="[prefixCls + '-cascader-menu']" v-for="(index, menu) in menus">
-        <li :class="[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]"
-            v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
-      </ul>
-    </div>
+    <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-blur="true">
+      <span slot="trigger"
+            :class="[prefixCls + '-cascader-picker']">
+        <v-input readonly :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
+      </span>
+      <div slot="popup"
+           :class="[prefixCls + '-cascader-menus']">
+        <ul :class="[prefixCls + '-cascader-menu']" v-for="(index, menu) in menus">
+          <li :class="[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]"
+              v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
+        </ul>
+      </div>
+    </trigger>
   </div>
 </template>
 
 <script type="text/babel">
-  import EventListener from '../_utils/EventListener'
+  import GlobalMixin from '../_utils/GlobalMixin'
   import Input from '../Input'
+  import Trigger from '../Trigger'
 
   export default {
+    mixins: [GlobalMixin],
+
     props: {
       options: {
         type: Array,
@@ -41,23 +48,22 @@
       },
       defaultValue: {
         type: Array
-      },
-      prefixCls: {
-        type: String,
-        default: 'atui'
       }
     },
+
     components: {
-      vInput: Input
+      vInput: Input,
+      trigger: Trigger
     },
+
     data () {
       return {
         menus: [],
         selectedOptions: [],
-        displayValue: '',
-        show: false
+        displayValue: ''
       }
     },
+
     computed: {
       selectedValue () {
         let me = this
@@ -72,6 +78,7 @@
         })
       }
     },
+
     created () {
       let me = this
       me.menus[0] = []
@@ -91,15 +98,7 @@
         })
       }
     },
-    ready () {
-      const el = this.$el
-      let me = this
-      me._closeEvent = EventListener.listen(window, 'click', (e) => {
-        if (!el.contains(e.target)) {
-          me.show = false
-        }
-      })
-    },
+
     methods: {
       changeOption (index, option, event) {
         let me = this
@@ -120,9 +119,6 @@
           me.show = false
         }
         me.menus = menus
-      },
-      toggleMenus () {
-        this.show = !this.show
       }
     }
   }
