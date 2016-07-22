@@ -8,25 +8,15 @@
   export default {
     name: 'accordion',
     props: {
-      oneAtATime: {
-        type: Boolean
-      },
+      openOne: Boolean,
       prefixCls: {
         type: String,
         default: 'atui'
       }
     },
-    methods: {
-      _mapIndexToChildComponent () {
-        const self = this
-        self.$children.forEach((item, index) => {
-          item.index = index
-        })
-      }
-    },
     created () {
       this.$on('isOpenEvent', (child) => {
-        if (this.oneAtATime) {
+        if (this.openOne) {
           this.$children.forEach((item, index) => {
             item.index = index
             if (child !== item) {
@@ -37,7 +27,10 @@
       })
     },
     ready () {
-      this._mapIndexToChildComponent()
+      const me = this
+      me.$children.forEach((item, index) => {
+        item.index = index
+      })
     }
   }
 </script>
