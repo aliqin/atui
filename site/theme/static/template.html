@@ -7,7 +7,7 @@
     <title>Atui - 阿里通信组件库</title>
     <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{{ root }}index.css"/>
-    <link rel="stylesheet" type="text/css" href="http://g.alicdn.com/aliqin/atui/0.1.1/tao-orange.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8088/greater-blue.css">
     <!--[if lte IE 10]>
     <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js"></script>
     <![endif]-->
@@ -34,10 +34,11 @@
     })();
     </script>
     <script src="http://g.alicdn.com/aliqin/atui/0.1.1/vue.js"></script>
-    <script src="http://g.alicdn.com/aliqin/atui/0.1.1/atui.js"></script>
+    <script src="http://localhost:8080/build/atui.js"></script>
+    <!-- <script src="http://g.alicdn.com/aliqin/atui/0.1.1/atui.js"></script> -->
     <script src="{{ root }}common.js"></script>
     <script src="{{ root }}index.js"></script>
-    
+
     <script>
         /*var components = {};
         var perfix = ['Button', 'Form', 'Input', 'Menu', 'Select', 'Table', 'Textarea', 'Switch', 'Steps'];
@@ -45,10 +46,10 @@
             if (perfix.indexOf(item) > -1) {
               components['v' + item] = atui[item];
             } else {
-              components[item] = atui[item];  
+              components[item] = atui[item];
             }
-            
-            
+
+
         })
       new Vue({
         el: 'body',
