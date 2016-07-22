@@ -34,23 +34,32 @@ english: Atui
 ## 安装
 
 ```bash
-$ npm install antd
+$ tnpm install @ali/vue-component --save
 ```
 
 ## 示例
 
 ```jsx
-import { DatePicker } from 'antd';
-ReactDOM.render(<DatePicker />, mountNode);
+<v-button>按钮</v-button>
+
+new Vue({
+    components: {
+        vButton: atui.Button
+    }
+})
 ```
 
 引入样式：
 
 ```jsx
-import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
+// css引入 greater-blue | tao-orange | or tmall-red (推荐)
+import '@ali/vue-component/dist/greater-blue.css'
+
+// 或less引入
+import '@ali/vue-component/style/themes/greater-blue.css'
 ```
 
-按需加载可通过此写法 `import DatePicker from 'antd/lib/date-picker'` 或使用插件 [babel-plugin-antd](https://github.com/ant-design/babel-plugin-antd)（此插件支持 js 和 css 同时按需加载）。
+按需加载可通过此写法 `import { Alert } from '@ali/vue-component'`。
 
 
 ## 版本

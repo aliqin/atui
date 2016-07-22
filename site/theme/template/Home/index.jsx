@@ -103,7 +103,7 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <DocumentTitle title="Ant Design - 一个 UI 设计语言">
+      <DocumentTitle title="Atui - 阿里通信前端UI组件">
         <Layout {...this.props}>
           <div className="main-wrapper">
             <Link />
