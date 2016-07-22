@@ -1,30 +1,36 @@
-<template>
+<template xmlns:v-el="http://www.w3.org/1999/xhtml">
   <div :class="[prefixCls + '-time-picker']">
-    <span :class="[prefixCls + '-time-picker-toggler']">
-      <v-input v-el:picker-toggler readonly @click="toggleMenus" :value="value" :placeholder="placeholder"></v-input>
-    </span>
-    <div v-el:picker-menus :class="[prefixCls + '-time-picker-menus']" v-show="show" transition="slide">
-      <div :class="[prefixCls + '-time-picker-panel']">
-        <ul v-el:h :class="time-hours" @mouseover="selection('H')">
-          <li v-for="index in 24" v-if="disabledHours().indexOf(index) < 0" :class="{selected: hour === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
-        </ul>
+    <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-blur="true">
+      <span slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
+        <v-input readonly
+                 v-el:picker-toggler
+                 :value="value"
+                 :placeholder="placeholder"></v-input>
+      </span>
+      <div slot="popup"
+           :class="[prefixCls + '-time-picker-menus']">
+        <div :class="[prefixCls + '-time-picker-panel']">
+          <ul v-el:h :class="time-hours" @mouseover="selection('H')">
+            <li v-for="index in 24" v-if="disabledHours().indexOf(index) < 0" :class="{selected: hour === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
+          </ul>
+        </div>
+        <div :class="[prefixCls + '-time-picker-panel']">
+          <ul v-el:m class="time-minute" @mouseover="selection('M')">
+            <li v-for="index in 59" v-if="disabledMinutes().indexOf(index) < 0" :class="{selected: minute === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
+          </ul>
+        </div>
+        <div :class="[prefixCls + '-time-picker-panel']" @mouseover="selection('S')">
+          <ul v-el:s class="time-seconds">
+            <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0" :class="{selected: second === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
+          </ul>
+        </div>
       </div>
-      <div :class="[prefixCls + '-time-picker-panel']">
-        <ul v-el:m class="time-minute" @mouseover="selection('M')">
-          <li v-for="index in 59" v-if="disabledMinutes().indexOf(index) < 0" :class="{selected: minute === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
-        </ul>
-      </div>
-      <div :class="[prefixCls + '-time-picker-panel']" @mouseover="selection('S')">
-        <ul v-el:s class="time-seconds">
-          <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0" :class="{selected: second === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
-        </ul>
-      </div>
-    </div>
+    </trigger>
   </div>
 </template>
 <script type="text/babel">
-  import EventListener from '../_utils/EventListener'
   import Input from '../Input'
+  import Trigger from '../Trigger'
   import Selection from './selection'
 
   const scrollTo = (element, to, duration) => {
@@ -43,6 +49,7 @@
       scrollTo(element, to, duration - 10)
     })
   }
+
   export default {
     props: {
       placeholder: {
@@ -87,7 +94,8 @@
       }
     },
     components: {
-      vInput: Input
+      vInput: Input,
+      trigger: Trigger
     },
     data () {
       const now = new Date()
@@ -121,6 +129,19 @@
         this.selectChoosed('s', index)
       }
     },
+
+    events: {
+      'trigger-popup-toggle' (show) {
+        if (show) {
+          this.$nextTick(() => {
+            this.selectChoosed('h', this.hour, 1)
+            this.selectChoosed('m', this.minute, 1)
+            this.selectChoosed('s', this.second, 1)
+          })
+        }
+      }
+    },
+
     created () {
       if (this.value && this.value.constructor === Date) {
         this.hour = this.value.getHours()
@@ -134,19 +155,6 @@
       } else {
         this.value = this.leftPad(this.hour) + ':' + this.leftPad(this.minute) + ':' + this.leftPad(this.second)
       }
-    },
-    attached () {
-      document.body.appendChild(this.$els.pickerMenus)
-    },
-    ready () {
-      let me = this
-      let menus = me.$els.pickerMenus
-      let toggler = me.$els.pickerToggler
-      me._closeEvent = EventListener.listen(window, 'click', (e) => {
-        if (!menus.contains(e.target) && !toggler.contains(e.target)) {
-          me.show = false
-        }
-      })
     },
     methods: {
       leftPad (value) {
@@ -184,22 +192,6 @@
       },
       chooseSecond (index) {
         this.second = index
-      },
-      toggleMenus () {
-        let me = this
-        me.show = !me.show
-        if (me.show) {
-          let toggler = me.$els.pickerToggler
-          let menus = me.$els.pickerMenus
-          const offset = toggler.getBoundingClientRect()
-          menus.style.top = offset.top + document.body.scrollTop + document.documentElement.scrollTop + toggler.offsetHeight + 'px'
-          menus.style.left = offset.left + 'px'
-          me.$nextTick(() => {
-            me.selectChoosed('h', me.hour, 1)
-            me.selectChoosed('m', me.minute, 1)
-            me.selectChoosed('s', me.second, 1)
-          })
-        }
       }
     }
   }
