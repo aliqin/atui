@@ -6,8 +6,8 @@
         <input type="checkbox" v-model="checked">
         Open only one at a time.
       </p>
-      <accordion :one-at-atime="checked">
-        <panel :is-open="true">
+      <accordion :open-one="checked">
+        <panel open>
           <div slot="panel-header" class="custom-class">Panel #1</div>
           内容一
         </panel>

@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import coerceBoolean from './_utils/coerceBoolean.js'
 
 export default {
   props: {
@@ -24,22 +23,16 @@ export default {
       require: true
     },
     label: {
-      type: Boolean,
-      coerce: coerceBoolean,
-      default: false
+      type: Boolean
     },
     type: {
       type: String
     },
     striped: {
-      type: Boolean,
-      coerce: coerceBoolean,
-      default: false
+      type: Boolean
     },
     animated: {
-      type: Boolean,
-      coerce: coerceBoolean,
-      default: false
+      type: Boolean
     }
   }
 }
