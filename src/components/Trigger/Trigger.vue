@@ -126,7 +126,6 @@
       if (popupHideWhenBlur) {
         this._closeEvent = EventListener.listen(window, 'click', (ev) => {
           if (!$popup.contains(ev.target) && !$trigger.contains(ev.target)) {
-            debugger
             me.show = false
           }
         })
