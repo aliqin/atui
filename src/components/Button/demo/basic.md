@@ -35,7 +35,8 @@ Primary button and default button can be used without other button, but ghost bu
 new Vue({
     el: 'body',
     components: {
-        vButton: atui.Button
+        vButton: atui.Button,
+        icon: atui.Icon
     }
 })
 ````
