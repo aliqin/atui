@@ -81,7 +81,6 @@
     "rc-tween-one": "~0.6.20",
     "react-copy-to-clipboard": "^4.0.1",
     "react-document-title": "^2.0.1",
-    "react-dom": "^15.2.1",
     "react-github-button": "^0.1.1",
     "react-intl": "^2.0.1",
     "style-loader": "^0.13.0",
@@ -93,6 +92,10 @@
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0"
   },
   "scripts": {
     "docs": "webpack-dev-server --hot --inline --host 0.0.0.0",
