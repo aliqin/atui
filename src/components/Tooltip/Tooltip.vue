@@ -46,7 +46,7 @@
     },
 
     events: {
-      'trigger-reset-pos': function (data) {
+      'trigger-reset-pos' (data) {
         const { prefixCls, popupCls } = this
         const { $trigger, $popup, placement } = data
         const $arrow = $popup.querySelector(`.${prefixCls}-${popupCls}-arrow`)

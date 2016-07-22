@@ -115,17 +115,55 @@
         <tr>
           <td>placement</td>
           <td><code>String</code></td>
-          <td></td>
+          <td><code>bottom</code></td>
           <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight
           </td>
         </tr>
         <tr>
           <td>popupCls</td>
           <td><code>String</code></td>
-          <td></td>
+          <td><code>popup</code></td>
           <td>自定义popup的样式名
           </td>
         </tr>
+        <tr>
+          <td>popupAlwaysInView</td>
+          <td><code>Boolean</code></td>
+          <td><code>true</code></td>
+          <td>是否支持坐标智能检测,保证弹窗优先在视图区域可见,默认开启
+          </td>
+        </tr>
+        <tr>
+          <td>popupHideWhenBlur</td>
+          <td><code>Boolean</code></td>
+          <td><code>false</code></td>
+          <td>点击trigger组件外部区域的时候,是否隐藏popup浮层,默认不隐藏</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>events</h2>
+    <table class="atui-table table-bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Params</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>trigger-reset-pos</td>
+        <td><code>{$trigger, $popup, placement}</code></td>
+        <td><code>Object</code></td>
+        <td>popup定位事件</td>
+      </tr>
+      <tr>
+        <td>trigger-popup-toggle</td>
+        <td><code>show</code></td>
+        <td><code>Boolean</code></td>
+        <td>popup切换显示隐藏状态事件,true表示可见</td>
+      </tr>
       </tbody>
     </table>
   </div>

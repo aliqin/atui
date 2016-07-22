@@ -54,6 +54,10 @@
       popupAlwaysInView: {
         type: Boolean,
         default: true
+      },
+      popupHideWhenBlur: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -91,21 +95,40 @@
       }
     },
 
+    watch: {
+      'show' (val, oldVal) {
+        // 向父组件派发事件
+        this.$dispatch('trigger-popup-toggle', val)
+      }
+    },
+
     ready () {
-      const $trigger = this.$els.trigger.children[0]
+      const $trigger = this.$els.trigger
+      const $popup = this.$els.popup
+      const $triggerTarget = this.$els.trigger.children[0]
       const me = this
-      const { trigger } = this
+      const { trigger, popupHideWhenBlur } = this
 
       this.originalPlacement = this.placement
 
       if (trigger === 'focus') {
-        this._focusEvent = EventListener.listen($trigger, 'focus', () => {
+        this._focusEvent = EventListener.listen($triggerTarget, 'focus', () => {
           me.show = true
           me.resetPos()
         })
 
-        this._blurEvent = EventListener.listen($trigger, 'blur', () => {
+        this._blurEvent = EventListener.listen($triggerTarget, 'blur', () => {
           this.show = false
+        })
+      }
+
+      // 点击trigger组件外部区域的时候,隐藏popup
+      if (popupHideWhenBlur) {
+        this._closeEvent = EventListener.listen(window, 'click', (ev) => {
+          if (!$popup.contains(ev.target) && !$trigger.contains(ev.target)) {
+            debugger
+            me.show = false
+          }
         })
       }
     },
@@ -328,6 +351,10 @@
       if (this._blurEvent) {
         this._blurEvent.remove()
         this._focusEvent.remove()
+      }
+
+      if (this._closeEvent) {
+        this._closeEvent.remove()
       }
     }
   }
