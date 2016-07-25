@@ -7,46 +7,7 @@
     </div>
 
 <pre><code class="language-markup"><script type="language-mark-up">
-<tree :data-source="dataSource"></tree>
-//
-var data = {
-  name: 'My Tree',
-  children: [
-    { name: 'hello' },
-    { name: 'wat' },
-    {
-      name: 'child folder',
-      children: [
-        {
-          name: 'child folder',
-          children: [
-            { name: 'hello' },
-            { name: 'wat' }
-          ]
-        },
-        { name: 'hello' },
-        { name: 'wat' },
-        {
-          name: 'child folder',
-          children: [
-            { name: 'hello' },
-            { name: 'wat' }
-          ]
-        }
-      ]
-    }
-  ]
-}
-export default {
-  components: {
-    Tree
-  },
-  data () {
-    return {
-      dataSource : data
-    }
-  }
-}
+
 </script></code></pre>
 
   </div>

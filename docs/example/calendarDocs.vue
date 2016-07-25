@@ -90,7 +90,7 @@
           if (!date) {
             return false;
           }
-          return date.getTime() >= new Date(2016, 11, 17).getTime();
+          return date.getTime() >= new Date(2015, 11, 17).getTime();
         }
       }
     },

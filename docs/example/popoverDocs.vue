@@ -3,36 +3,36 @@
     <h3 class="page-header"><a href="#popover" class="anchor">Popover 气泡</a></h3>
     <div class="bs-example">
       <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="top">
-        <button class="atui-btn ">Popover on top</button>
+        <button class="btn ">Popover on top</button>
       </popover>
       <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="left">
-        <button class="atui-btn">Popover on left</button>
+        <button class="btn">Popover on left</button>
       </popover>
       <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="right">
-        <button class="atui-btn">Popover on right</button>
+        <button class="btn">Popover on right</button>
       </popover>
-      <popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="bottom">
-        <button class="atui-btn">Popover on bottom</button>
+      <popover effect="fade" placement="bottom" header title="我是标题" content="我是内容，我是内容，我是内容">
+        <button class="btn">Popover on bottom</button>
       </popover>
       <hr>
       <h4>No title</h4>
-      <popover effect="fade" content="我是内容，我是内容，我是内容" placement="top">
-        <button class="atui-btn">Popover on top</button>
+      <popover effect="fade"  title="我是标题" content="我是内容，我是内容，我是内容" placement="top">
+        <button class="btn">Popover on top</button>
       </popover>
-      <popover effect="fade" content="我是内容，我是内容，我是内容" placement="left">
-        <button class="atui-btn">Popover on left</button>
+      <popover effect="fade"  title="我是标题" content="我是内容，我是内容，我是内容" placement="left">
+        <button class="btn">Popover on left</button>
       </popover>
-      <popover effect="fade" content="我是内容，我是内容，我是内容" placement="right">
-        <button class="atui-btn">Popover on right</button>
+      <popover effect="fade"  title="我是标题" content="我是内容，我是内容，我是内容" placement="right">
+        <button class="btn">Popover on right</button>
       </popover>
-      <popover effect="fade" content="我是内容，我是内容，我是内容" placement="bottom">
-        <button class="atui-btn">Popover on bottom</button>
+      <popover effect="fade" placement="bottom"  title="我是标题" content="我是内容，我是内容，我是内容">
+        <button class="btn">Popover on bottom</button>
       </popover>
       <hr>
       <h4>Triger</h4>
       <p>
         <popover effect="scale"  title="我是标题" content="我是内容，我是内容，我是内容" placement="top" trigger="hover">
-            <button class="atui-btn">Mouseenter</button>
+            <button class="btn">Mouseenter</button>
         </popover>
       </p>
       <popover effect="scale"
@@ -41,42 +41,12 @@
       </popover>
     </div>
     <pre><code class="language-markup"><script type="language-mark-up">
-<popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="top">
-  <button class="atui-btn ">Popover on top</button>
-</popover>
-<popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="left">
-  <button class="atui-btn">Popover on left</button>
-</popover>
-<popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="right">
-  <button class="atui-btn">Popover on right</button>
-</popover>
-<popover effect="fade" header title="我是标题" content="我是内容，我是内容，我是内容" placement="bottom">
-  <button class="atui-btn">Popover on bottom</button>
-</popover>
-<hr>
-<h4>No title</h4>
-<popover effect="fade" content="我是内容，我是内容，我是内容" placement="top">
-  <button class="atui-btn">Popover on top</button>
-</popover>
-<popover effect="fade" content="我是内容，我是内容，我是内容" placement="left">
-  <button class="atui-btn">Popover on left</button>
-</popover>
-<popover effect="fade" content="我是内容，我是内容，我是内容" placement="right">
-  <button class="atui-btn">Popover on right</button>
-</popover>
-<popover effect="fade" content="我是内容，我是内容，我是内容" placement="bottom">
-  <button class="atui-btn">Popover on bottom</button>
-</popover>
-<hr>
-<h4>Triger</h4>
-<p>
-  <popover effect="scale"  title="我是标题" content="我是内容，我是内容，我是内容" placement="top" trigger="hover">
-      <button class="atui-btn">Mouseenter</button>
-  </popover>
-</p>
-<popover effect="scale"
-title="我是标题" content="我是内容，我是内容，我是内容" placement="bottom" trigger="focus">
-  <input type="text" class="form-control" placeholder="Focus">
+<popover
+  effect="fade"
+  placement="bottom"
+  title="我是标题"
+  content="我是内容，我是内容，我是内容">
+  <button class="btn">Popover on bottom</button>
 </popover>
 </script></code></pre>
   <h2>Options</h2>

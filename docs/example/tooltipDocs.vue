@@ -26,7 +26,7 @@
         </tr>
         <tr>
           <td>
-            <tooltip content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod" placement="leftTop">
+            <tooltip content="what does the fox say ？" placement="leftTop">
               <button class="atui-btn atui-btn-default ">左上</button>
             </tooltip>
           </td>
@@ -116,7 +116,7 @@
 <tooltip content="Lorem ipsum dolor sit amet" placement="topRight">
 <button class="atui-btn atui-btn-default ">上右</button>
 </tooltip>
-<tooltip content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod" placement="leftTop">
+<tooltip content="what does the fox say ？" placement="leftTop">
 <button class="atui-btn atui-btn-default ">左上</button>
 </tooltip>
 <tooltip content="Are you kidding me?" placement="left">

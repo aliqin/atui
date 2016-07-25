@@ -135,13 +135,15 @@
   <v-col span="12">col-12</v-col>
 </v-row>
 </script></code></pre>
+    </script>
+    </code>
   </div>
 </template>
 <style>
-  .grid-demo .atui-row{
+  .grid-demo .row{
     margin:5px 0;
   }
-  .grid-demo .atui-row > div{
+  .grid-demo .row > div{
     text-align: center;
     line-height: 30px;
     height: 30px;
@@ -149,7 +151,7 @@
     background-clip: content-box;
   }
 </style>
-<script type="text/babel">
+<script>
   import {Layout} from 'src/'
   const vRow = Layout.Row
   const vCol = Layout.Col
@@ -157,3 +159,5 @@
     components: { vRow, vCol },
   }
 </script>
+
+

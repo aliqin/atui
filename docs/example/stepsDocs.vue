@@ -25,7 +25,7 @@
             <v-step title="待运行" description="这里是多信息的描述啊"></v-step>
         </v-steps>
         <br>
-        <button type="button" class="atui-btn atui-btn-default atui-btn-primary" @click="_next">next</button>
+        <button type="button" class="btn default primary" @click="_next">next</button>
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">

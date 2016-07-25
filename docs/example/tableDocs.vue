@@ -3,11 +3,7 @@
     <h3 class="page-header"><a href="#tabs" class="anchor">Table 表格</a></h3>
     <div class="bs-example">
     <row>
-      <h4>带分页</h4>
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :pagination="pagination" v-ref:grid></grid>
-
-      <h4>不带分页</h4>
-      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
+      <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" fixed-header v-ref:grid></grid>
     </row>
     </div>
     <input type="button" @click="changeData" value="填充表格数据"/> <input type="button" @click="changeLoading" value="切换loading状态"/>
@@ -16,14 +12,10 @@
 
     <modal title="Fade Modal" :show.sync="show" effect="fade" width="800px">
         <div slot="modal-body" class="modal-body">
-          <v-textarea :content.sync='textarea'></v-textarea>
+          <v-textarea  :content.sync='textarea'></v-textarea>
         </div>
       </modal>
     <pre><code class="language-markup"><script type="language-mark-up">
-<h4>带分页</h4>
-<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size" :pagination="pagination" v-ref:grid></grid>
-
-<h4>不带分页</h4>
 <grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
 
 <!--脚本-->
@@ -61,7 +53,7 @@ const columns = [{
   width:250
 
 },{
-    title: '操作 <tooltip content="提示" placement="topRight"><icon type="help"></icon></tooltip>',
+    title: '操作',
     key: 'operation',
     render(text, record) {
       if(record) {
@@ -70,15 +62,40 @@ const columns = [{
     }
   }
 ];
-const data = [];
-for (let i = 0; i < 46; i++) {
-  data.push({
-    key: i,
-    name: `李大嘴${i}`,
-    age: 32,
-    address: `西湖区湖底公园${i}号`,
-  });
-}
+
+const data = [{
+  key: '1',
+  name: '胡斌',
+  age: 32,
+  address: '南湖区湖底公园1号',
+}, {
+  key: '2',
+  name: '胡彦祖',
+  age: 42,
+  address: '西湖区湖底公园12号',
+}, {
+  key: '3',
+  name: '李大嘴',
+  age: 32,
+  address: '南湖区湖底公园123号',
+}, {
+  key: '4',
+  name: '李秀莲大嘴哥',
+  age: 32,
+  address: '西湖区湖底公园123号',
+},
+{
+  key: '5',
+  name: '刘德华',
+  age: 54,
+  address: '西湖区湖底公园999号',
+},
+{
+  key: '6',
+  name: '洪金宝',
+  age: 66,
+  address: '香港弥敦道',
+}];
 // 配置选择数据的选项
 const rowSelection = {
   getCheckboxProps(record) {
@@ -196,11 +213,10 @@ export default {
     dataIndex: 'age',
     sorter: (a, b) => a.age - b.age,
     render(text, record, index) {
-      // return '<tooltip content="talk is cheap show me the code" placement="topLeft">'+
-      //           '<div>'+ record.name +'</div>'
-      //           // '<input v-if="gridData['+ index +']" v-model="gridData['+ index +'].age"/>'+
-      //         '</tooltip>'
-      return ''
+      return '<tooltip content="talk is cheap show me the code" placement="topLeft">'+
+                '<div>'+ record.name +'</div>'
+                // '<input v-if="gridData['+ index +']" v-model="gridData['+ index +'].age"/>'+
+              '</tooltip>'
     },
     width:250
   }, {
@@ -217,7 +233,7 @@ export default {
     width:250
 
   },{
-      title: '操作 <tooltip content="提示" placement="topRight"><icon type="help"></icon></tooltip>',
+      title: '操作',
       key: 'operation',
       render(text, record) {
         if(record) {
@@ -227,18 +243,41 @@ export default {
         }
       }
     }
-  ]
+  ];
 
-  const data = [];
-  for (let i = 0; i < 46; i++) {
-    data.push({
-      key: i,
-      name: `李大嘴${i}`,
-      age: 32,
-      address: `西湖区湖底公园${i}号`,
-    });
-  }
-
+  const data = [{
+    key: '1',
+    name: '胡斌',
+    age: 32,
+    address: '南湖区湖底公园1号',
+  }, {
+    key: '2',
+    name: '胡彦祖',
+    age: 42,
+    address: '西湖区湖底公园12号',
+  }, {
+    key: '3',
+    name: '李大嘴',
+    age: 32,
+    address: '南湖区湖底公园123号',
+  }, {
+    key: '4',
+    name: '李秀莲大嘴哥',
+    age: 32,
+    address: '西湖区湖底公园123号',
+  },
+  {
+    key: '5',
+    name: '刘德华',
+    age: 54,
+    address: '西湖区湖底公园999号',
+  },
+  {
+    key: '6',
+    name: '洪金宝',
+    age: 66,
+    address: '香港弥敦道',
+  }];
   const rowSelection = {
     getCheckboxProps(record) {
       return {
@@ -254,18 +293,7 @@ export default {
     onSelectAll(selected, selectedRows, changeRows) {
       console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);
     }
-  }
-
-  const pagination = {
-    total: data.length,
-    onShowSizeChange(current, pageSize) {
-      console.log('Current: ', current, '; PageSize: ', pageSize);
-    },
-    onChange(current) {
-      console.log('Current: ', current);
-    },
-  }
-
+  };
   export default {
     components: {
       Grid:Table,
@@ -284,7 +312,6 @@ export default {
         show:false,
         textarea:'',
         gridColumns: columns,
-        pagination: pagination,
         rowSelection:rowSelection
       }
     },
@@ -309,7 +336,7 @@ export default {
         this.loading = !this.loading
       },
       changeSize() {
-        this.size = "default" == this.size ? "middle" : "middle" == this.size ? "small" : "default"
+        this.size = "default"==this.size ? "middle" : "middle" == this.size ? "small" : "default"
       },
       changeFixed() {
         this.fixedHeader = !this.fixedHeader

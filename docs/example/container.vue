@@ -1,6 +1,6 @@
 <template>
   <div class="container bs-docs-container">
-    <div class="atui-row">
+    <div class="row">
         <slot></slot>
     </div>
   </div>

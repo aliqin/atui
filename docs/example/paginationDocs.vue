@@ -3,20 +3,23 @@
     <h3 class="page-header"><a href="#pagination" class="anchor">Pagination 翻页</a></h3>
     <div class="bs-example">
       <h4 class="example-title">完全版</h4>
-      <pagination :curr-page="currPage"
+      <pagination class="customclass" :total-page.sync="totalPage"
+                  :curr-page.sync="currPage"
                   :total="total"
                   show-jumper
-                  :page-size="pageSize"
+                  :default-size="defaultSize"
                   show-size-changer>
       </pagination>
       <h4 class="example-title">迷你版</h4>
-      <pagination :curr-page="currPage"
+      <pagination :total-page.sync="totalPage"
+                  :curr-page.sync="currPage"
                   :total="total"
                   show-jumper
                   mini>
       </pagination>
       <h4 class="example-title">精简版</h4>
-      <pagination :curr-page="currPage"
+      <pagination :total-page.sync="totalPage"
+                  :curr-page.sync="currPage"
                   :total="total"
                   simple
                   class="custom">
@@ -27,25 +30,9 @@
     </div>
 <pre>
 <code class="language-markup"><script type="language-mark-up">
-<h4 class="example-title">完全版</h4>
-<pagination :curr-page="currPage"
-            :total="total"
-            show-jumper
-            :page-size="pageSize"
-            show-size-changer>
-</pagination>
-<h4 class="example-title">迷你版</h4>
-<pagination :curr-page="currPage"
-            :total="total"
-            show-jumper
-            mini>
-</pagination>
-<h4 class="example-title">精简版</h4>
-<pagination :curr-page="currPage"
-            :total="total"
-            simple
-            class="custom">
-</pagination>
+<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :show-jumper="true" :show-size-changer="true"></pagination>
+<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :show-jumper="true" :mini="true"></pagination>
+<pagination :total-page.sync="totalPage",:curr-page.sync="currPage",:total="total",:simple="true" class="custom"></pagination>
 </script></code></pre>
   </div>
   <h2>Options</h2>
@@ -125,11 +112,12 @@
   export default {
     data () {
       return {
+        totalPage: 100,
         currPage: 10,
         showJumper: true,
         total: 100,
         showSizeChanger: true,
-        pageSize:20
+        defaultSize:20
       }
     },
     components: {
@@ -145,9 +133,10 @@
     },
     methods:{
       changeTotalPage() {
+        this.totalPage = 50
         this.currPage = 20
         this.total = 1000
-        this.pageSize = 30
+        this.defaultSize = 30
       }
     },
     ready () {
