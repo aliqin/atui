@@ -1,7 +1,7 @@
 ---
 order: 0
 title:
-  zh-CN: 按钮类型
+  zh-CN: 基本
   en-US: Type
 ---
 
@@ -21,21 +21,6 @@ title:
   <a href="javascript:;" class="badge-count-example"></a>
 </badge><br/>
 
-<badge :count="99">
-  <a href="javascript:;" class="badge-count-example"></a>
-</badge><br/>
-
-<badge :count="1000">
-  <a href="javascript:;" class="badge-count-example"></a>
-</badge><br/>
-
-<badge :dot="true">
-  <a href="javascript:;" class="badge-count-example"></a>
-</badge><br/>
-
-<badge :dot="true">
-  <a href="javascript:;" >这是一个文字链接</a>
-</badge>
 
 ````
 
