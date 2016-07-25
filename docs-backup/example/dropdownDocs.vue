@@ -6,7 +6,7 @@
         <div data-toggle="dropdown">
           点击显示菜单 <icon type="down"></icon>
         </div>
-        <ul name="dropdown-menu" class="atui-dropdown-menu">
+        <ul slot="dropdown-menu" class="atui-dropdown-menu">
           <li><a>选项一</a></li>
           <li><a>选项二</a></li>
           <li><a>选项三</a></li>
@@ -18,7 +18,7 @@
         <button type="button" class="atui-btn" data-toggle="dropdown">
           点击显示菜单 <icon type="down"></icon>
         </button>
-        <ul name="dropdown-menu" class="atui-dropdown-menu">
+        <ul slot="dropdown-menu" class="atui-dropdown-menu">
           <li><a>选项一</a></li>
           <li><a>选项二</a></li>
           <li><a>选项三</a></li>
@@ -30,7 +30,7 @@
         <button type="button" class="atui-btn atui-btn-primary" data-toggle="dropdown">
           点击显示菜单 <icon type="down"></icon>
         </button>
-        <ul name="dropdown-menu" class="atui-dropdown-menu">
+        <ul slot="dropdown-menu" class="atui-dropdown-menu">
           <li><a href="#">选项一</a></li>
           <li><a href="#">选项二</a></li>
           <li><a href="#">选项三</a></li>
@@ -42,7 +42,7 @@
         <a href="#" data-toggle="dropdown">
           鼠标移上来显示 <icon type="down"></icon>
         </a>
-        <ul name="dropdown-menu" class="atui-dropdown-menu">
+        <ul slot="dropdown-menu" class="atui-dropdown-menu">
           <li><a href="#">选项一</a></li>
           <li><a href="#">选项二</a></li>
           <li><a href="#">选项三</a></li>
@@ -56,7 +56,7 @@
   <div data-toggle="dropdown">
     点击显示菜单 <icon type="down"></icon>
   </div>
-  <ul name="dropdown-menu" class="atui-dropdown-menu">
+  <ul slot="dropdown-menu" class="atui-dropdown-menu">
     <li><a>选项一</a></li>
     <li><a>选项二</a></li>
     <li><a>选项三</a></li>
@@ -68,7 +68,7 @@
   <button type="button" class="atui-btn" data-toggle="dropdown">
     点击显示菜单 <icon type="down"></icon>
   </button>
-  <ul name="dropdown-menu" class="atui-dropdown-menu">
+  <ul slot="dropdown-menu" class="atui-dropdown-menu">
     <li><a>选项一</a></li>
     <li><a>选项二</a></li>
     <li><a>选项三</a></li>
@@ -80,7 +80,7 @@
   <button type="button" class="atui-btn atui-btn-primary" data-toggle="dropdown">
     点击显示菜单 <icon type="down"></icon>
   </button>
-  <ul name="dropdown-menu" class="atui-dropdown-menu">
+  <ul slot="dropdown-menu" class="atui-dropdown-menu">
     <li><a href="#">选项一</a></li>
     <li><a href="#">选项二</a></li>
     <li><a href="#">选项三</a></li>
@@ -92,7 +92,7 @@
   <a href="#" data-toggle="dropdown">
     鼠标移上来显示 <icon type="down"></icon>
   </a>
-  <ul name="dropdown-menu" class="atui-dropdown-menu">
+  <ul slot="dropdown-menu" class="atui-dropdown-menu">
     <li><a href="#">选项一</a></li>
     <li><a href="#">选项二</a></li>
     <li><a href="#">选项三</a></li>

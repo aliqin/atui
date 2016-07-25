@@ -2079,23 +2079,26 @@ input[type="radio"][disabled]:checked:after {
   margin-bottom: 24px;
   background: url("//img.alicdn.com/tfs/TB1zGqYJVXXXXXkXXXXXXXXXXXX-89-72.jpg") center center no-repeat;
 }
-.atui-dropdown {
-  position: relative;
+.atui-dropdown-cont {
   display: inline-block;
   vertical-align: middle;
 }
-.atui-dropdown .atui-icon {
+.atui-dropdown-cont .atui-icon {
   font-size: 12px !important;
+}
+.atui-dropdown-cont .atui-icon-down {
+  display: inline-block;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 .hover-trigger:hover .atui-dropdown-menu {
   display: block;
   margin: 0;
 }
+.atui-dropdown-menu-cont {
+  display: inline-block;
+}
 .atui-dropdown-menu {
-  position: absolute;
-  top: 105%;
-  z-index: 1080;
-  display: none;
   min-width: 100%;
   padding: 0;
   list-style: none;
@@ -2121,11 +2124,13 @@ input[type="radio"][disabled]:checked:after {
   text-decoration: none;
   background-color: #f2fafd;
 }
-.atui-dropdown-menu > .atui-dropdown-option-chosen, .atui-dropdown-menu > .atui-dropdown-option-chosen:hover, .atui-dropdown-menu > .atui-dropdown-option-chosen:focus {
+.atui-dropdown-menu > .atui-dropdown-option-disabled, .atui-dropdown-menu > .atui-dropdown-option-disabled:hover, .atui-dropdown-menu > .atui-dropdown-option-disabled:focus {
   text-decoration: none;
-  outline: 0;
-  color: #fff;
-  background-color: #66c0ec;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  color: #dddddd;
+  cursor: not-allowed;
 }
 .atui-dropdown-menu > .atui-dropdown-option-disabled, .atui-dropdown-menu > .atui-dropdown-option-disabled:hover, .atui-dropdown-menu > .atui-dropdown-option-disabled:focus {
   text-decoration: none;
@@ -2135,10 +2140,7 @@ input[type="radio"][disabled]:checked:after {
   color: #dddddd;
   cursor: not-allowed;
 }
-.atui-dropdown-open > .atui-dropdown-menu {
-  display: block;
-}
-.atui-dropdown-open .atui-dropdown-icon {
+.atui-dropdown-open .atui-icon-down {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -5002,7 +5004,6 @@ button.atui-close {
   vertical-align: middle;
 }
 .atui-cascader-menus {
-  z-index: 1080;
   font-size: 12px;
   background: #fff;
   border: 1px solid #d9d9d9;

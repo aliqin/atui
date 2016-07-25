@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(492);
+	module.exports = __webpack_require__(495);
 
 
 /***/ },
@@ -4593,7 +4593,17 @@
 	//          :class="[prefixCls + '-trigger']">
 	//       <slot name="trigger">trigger slot is not set</slot>
 	//     </div>
-	//     <div v-el:popup
+	//     <div v-if="trigger === 'hover'"
+	//          v-el:popup
+	//          v-show="show"
+	//          :class="popupClassObj"
+	//          :transition="effect"
+	//          @mouseenter="hoverHandler"
+	//          @mouseleave="hoverHandler">
+	//       <slot name="popup">popup slot is not set</slot>
+	//     </div>
+	//     <div v-else
+	//          v-el:popup
 	//          v-show="show"
 	//          :class="popupClassObj"
 	//          :transition="effect">
@@ -4630,6 +4640,14 @@
 	    popupHideWhenBlur: {
 	      type: Boolean,
 	      default: false
+	    },
+	    popupHideDelay: {
+	      type: Number,
+	      default: 0
+	    },
+	    show: {
+	      type: Boolean,
+	      default: false
 	    }
 	  },
 	
@@ -4638,8 +4656,7 @@
 	      position: {
 	        top: 0,
 	        left: 0
-	      },
-	      show: false
+	      }
 	    };
 	  },
 	
@@ -4896,14 +4913,24 @@
 	      }
 	    },
 	    hoverHandler: function hoverHandler(ev) {
+	      var me = this;
+	      var popupHideDelay = this.popupHideDelay;
 	      var type = ev.type;
 	
+	
+	      if (popupHideDelay && this._mouseLeaveTimer) clearTimeout(this._mouseLeaveTimer);
 	
 	      if (type === 'mouseenter') {
 	        this.show = true;
 	        this.resetPos();
 	      } else {
-	        this.show = false;
+	        if (popupHideDelay) {
+	          this._mouseLeaveTimer = setTimeout(function () {
+	            me.show = false;
+	          }, popupHideDelay);
+	        } else {
+	          this.show = false;
+	        }
 	      }
 	    },
 	    focusHandler: function focusHandler(ev) {
@@ -4941,6 +4968,8 @@
 	    if (this._closeEvent) {
 	      this._closeEvent.remove();
 	    }
+	
+	    this._mouseLeaveTimer = null;
 	  }
 	};
 	// </script>
@@ -4951,7 +4980,7 @@
 /* 211 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n      v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n      v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n  <div v-else\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
 
 /***/ },
 /* 212 */
@@ -5147,13 +5176,40 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(207);
 	
-	var _EventListener2 = _interopRequireDefault(_EventListener);
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
+	
+	var _Trigger = __webpack_require__(208);
+	
+	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//   <div :class="[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]">
+	//     <trigger :trigger="trigger"
+	//              effect="slide"
+	//              popup-cls="dropdown"
+	//              placement="bottomLeft"
+	//              :popup-hide-delay="200"
+	//              :show.sync="open">
+	//       <slot slot="trigger"></slot>
+	//       <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont'">
+	//         <slot name="dropdown-menu" role="dropdown"></slot>
+	//       </div>
+	//     </trigger>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
 	exports.default = {
+	  mixins: [_GlobalMixin2.default],
+	
+	  components: {
+	    Trigger: _Trigger2.default
+	  },
+	
 	  props: {
 	    trigger: {
 	      type: String,
@@ -5161,77 +5217,18 @@
 	    },
 	    open: {
 	      type: Boolean
-	    },
-	    prefixCls: {
-	      type: String,
-	      default: 'atui'
 	    }
-	  },
-	  methods: {
-	    toggleDropdown: function toggleDropdown(e) {
-	      e.preventDefault();
-	      this.open = !this.open;
-	    }
-	  },
-	  ready: function ready() {
-	    var me = this;
-	    var el = me.$el;
-	    var toggle = el.querySelector('[data-toggle="dropdown"]');
-	    var self = this;
-	
-	    if (!toggle) {
-	      return;
-	    }
-	
-	    var event = me.trigger === 'click' ? 'click' : 'mouseenter';
-	
-	    toggle.addEventListener(event, function () {
-	      clearTimeout(me.timeout);
-	      me.open = true;
-	    });
-	
-	    if (me.trigger === 'hover') {
-	      me.$el.addEventListener('mouseleave', function () {
-	        me.timeout = setTimeout(function () {
-	          me.open = false;
-	        }, 300);
-	      });
-	
-	      me.$el.addEventListener('mouseenter', function () {
-	        if (me.timeout) {
-	          clearTimeout(me.timeout);
-	          me.timeout = null;
-	        }
-	      });
-	    }
-	
-	    this._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
-	      if (!el.contains(e.target)) {
-	        self.open = false;
-	      }
-	    });
-	  },
-	  beforeDestroy: function beforeDestroy() {
-	    if (this._closeEvent) this._closeEvent.remove();
 	  }
 	};
 	// </script>
 
 	/* generated by vue-loader */
-	// <template>
-	//   <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
-	//     <slot></slot>
-	//     <slot name="dropdown-menu"></slot>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
 
 /***/ },
 /* 221 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]\">\n  <trigger :trigger=\"trigger\"\n           effect=\"slide\"\n           popup-cls=\"dropdown\"\n           placement=\"bottomLeft\"\n           :popup-hide-delay=\"200\"\n           :show.sync=\"open\">\n    <slot slot=\"trigger\"></slot>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu-cont'\">\n      <slot name=\"dropdown-menu\" role=\"dropdown\"></slot>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 222 */
@@ -11573,16 +11570,19 @@
 /* 478 */,
 /* 479 */,
 /* 480 */,
-/* 481 */
+/* 481 */,
+/* 482 */,
+/* 483 */,
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(482)
+	__vue_script__ = __webpack_require__(485)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(485)
+	__vue_template__ = __webpack_require__(488)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11601,7 +11601,7 @@
 	})()}
 
 /***/ },
-/* 482 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11610,7 +11610,7 @@
 	  value: true
 	});
 	
-	__webpack_require__(483);
+	__webpack_require__(486);
 	
 	exports.default = {
 	  data: function data() {
@@ -11639,12 +11639,12 @@
 	// <script>
 
 /***/ },
-/* 483 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _phoneNumber = __webpack_require__(484);
+	var _phoneNumber = __webpack_require__(487);
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -11655,7 +11655,7 @@
 	module.exports = {};
 
 /***/ },
-/* 484 */
+/* 487 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11682,41 +11682,41 @@
 	};
 
 /***/ },
-/* 485 */
+/* 488 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phonenumber\">\n    <h3 class=\"page-header\"><a href=\"#phonenumber\" class=\"anchor\">手机号码格式化 phonenumber</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phoneNumber}}</div>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"text\" v-model=\"number\" />\n<div>{{number | phoneNumber}}</div>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
-/* 486 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(487);
-	__webpack_require__(488);
-	__webpack_require__(489);
-
-/***/ },
-/* 487 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 488 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 489 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
+	__webpack_require__(490);
+	__webpack_require__(491);
+	__webpack_require__(492);
 
 /***/ },
 /* 490 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 491 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 492 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 493 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -12504,7 +12504,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 491 */
+/* 494 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12528,7 +12528,7 @@
 	})();
 
 /***/ },
-/* 492 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12549,15 +12549,15 @@
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _phoneNumberDocs = __webpack_require__(481);
+	var _phoneNumberDocs = __webpack_require__(484);
 	
 	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(486);
-	__webpack_require__(490);
-	__webpack_require__(491);
+	__webpack_require__(489);
+	__webpack_require__(493);
+	__webpack_require__(494);
 	
 	// filters
 	
