@@ -1,8 +1,8 @@
 ---
 category: Components
-type: Basic
-title: Button
-subtitle: 按钮
+type: Other
+title: QueueAnim
+subtitle: 动画
 ---
 
 按钮用于开始一个即时操作。
