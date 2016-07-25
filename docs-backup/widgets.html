@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>阿里通信vue组件库</title>
+  <link rel="stylesheet" type="text/css" href="../build/greater-blue.css" id="J_ThemeCss">
+  <link rel="stylesheet" type="text/css" href="assets/docs.css">
+  <link rel="stylesheet" type="text/css" href="assets/prism-coy.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body class="greater-blue">
+<div id="wrapper"  style="display:none" v-show="show" transition="fade">
+  <header-docs></header-docs>
+  <container>
+  <div class="atui-col-md-5">
+    <affix>
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" style="max-height:800px;overflow:auto;">
+
+          <h3>widget组件</h3>
+          <ul class="nav bs-docs-sidenav" id="sidenav">
+            <li v-for="a in widgets"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+          </ul>
+        </nav>
+      </affix>
+    </div>
+    <div class="atui-col-md-19">
+      <h3>widget</h3>
+      <div class="widgets">
+        <address-select-docs></address-select-docs>
+      </div>
+      </div>
+    </div>
+
+  </container>
+  <footer class="bs-docs-footer">
+  <div class="container">
+    <p>
+
+    </p>
+  </div>
+</footer>
+</div>
+<!-- using cdn version here so it works under gh-pages -->
+<script src="../dist/vue.dev.js"></script>
+<script src="../build/widgets-docs.js"></script>
+</body>
+</html>

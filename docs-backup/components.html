@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>阿里通信vue组件库</title>
+  <link rel="stylesheet" type="text/css" href="../build/greater-blue.css" id="J_ThemeCss">
+  <link rel="stylesheet" type="text/css" href="assets/docs.css">
+  <link rel="stylesheet" type="text/css" href="assets/prism-coy.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body class="greater-blue">
+<div id="wrapper" style="display:none" v-show="show"  transition="fade">
+  <header-docs></header-docs>
+  <container>
+  <div class="atui-col-md-5">
+    <affix>
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" style="max-height:800px;overflow:auto;">
+          <h3>基础样式</h3>
+          <ul class="nav bs-docs-sidenav">
+            <li v-for="a in elements"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+          </ul>
+          <h3>UI组件</h3>
+          <ul class="nav bs-docs-sidenav" id="sidenav">
+            <li v-for="a in components"><a href="#{{ a.toLowerCase() | space }}">{{ a }}</a></li>
+          </ul>
+          <a href="#top" class="back-to-top">Back to top</a>
+          <a href="http://gitlab.alibaba-inc.com/aliqin/vue-component" class="back-to-top">GitLab</a>
+        </nav>
+      </affix>
+    </div>
+    <div class="atui-col-md-19">
+
+      <getting-started></getting-started>
+      <h3>基础样式</h3>
+      <div class="elements">
+        <grid-docs></grid-docs>
+        <icon-docs></icon-docs>
+        <button-docs></button-docs>
+        <input-docs></input-docs>
+        <textarea-docs></textarea-docs>
+        <uploader-docs></uploader-docs>
+        <form-docs></form-docs>
+        <switch-docs></switch-docs>
+      </div>
+      <h3>UI组件</h3>
+      <div class="components">
+        <slider-docs></slider-docs>
+        <message-docs></message-docs>
+        <cascader-docs></cascader-docs>
+        <searchbox-docs></searchbox-docs>
+        <badge-docs></badge-docs>
+        <tag-docs></tag-docs>
+        <modal-docs></modal-docs>
+        <tabs-docs></tabs-docs>
+        <spin-docs></spin-docs>
+        <table-docs></table-docs>
+
+        <accordion-docs></accordion-docs>
+        <!-- <affix-docs></affix-docs> -->
+
+        <!-- <aside-docs></aside-docs> -->
+        <calendar-docs></calendar-docs>
+
+        <dropdown-docs></dropdown-docs>
+
+        <popover-docs></popover-docs>
+        <!-- <progressbar-docs></progressbar-docs> -->
+        <select-docs></select-docs>
+        <tooltip-docs></tooltip-docs>
+        <trigger-docs></trigger-docs>
+        <!-- <typeahead-docs></typeahead-docs> -->
+
+        <!-- <carousel-docs></carousel-docs> -->
+        <datepicker-docs></datepicker-docs>
+        <timepicker-docs></timepicker-docs>
+        <steps-docs></steps-docs>
+        <breadcrumb-docs ></breadcrumb-docs>
+        <pagination-docs></pagination-docs>
+        <menu-docs></menu-docs>
+        <tree-docs></tree-docs>
+      </div>
+    </div>
+
+  </container>
+  <footer class="bs-docs-footer">
+    <div class="container">
+      <p>
+
+      </p>
+    </div>
+</footer>
+</div>
+<!-- using cdn version here so it works under gh-pages -->
+<script src="../dist/vue.dev.js"></script>
+<script src="../build/components-docs.js"></script>
+</body>
+</html>
