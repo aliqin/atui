@@ -1,6 +1,5 @@
 export function collectDocs(docs) {
   // locale copy from layout
-  console.log(docs)
   const locale = (typeof localStorage !== 'undefined' && localStorage.getItem('locale') !== 'en-US') ?
         'zh-CN' : 'en-US';
   const docsList = Object.keys(docs)
