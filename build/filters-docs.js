@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(495);
+	module.exports = __webpack_require__(492);
 
 
 /***/ },
@@ -1042,7 +1042,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-147983ff/headerDocs.vue"
+	  var id = "_v-4aed0b7c/headerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1388,7 +1388,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-d85b2bd0/Icon.vue"
+	  var id = "_v-6cc5e2ca/Icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1485,7 +1485,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-373970f8/Form.vue"
+	  var id = "_v-6d04157b/Form.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1593,7 +1593,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-323de8fc/Row.vue"
+	  var id = "_v-9470564e/Row.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1653,7 +1653,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-18256da2/Col.vue"
+	  var id = "_v-c8a14d02/Col.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1729,7 +1729,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-ca5542aa/FormItem.vue"
+	  var id = "_v-2c37eca4/FormItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1901,7 +1901,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-760691f8/Button.vue"
+	  var id = "_v-75d5860a/Button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2000,7 +2000,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0dc1d2a9/Group.vue"
+	  var id = "_v-52ff8974/Group.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2120,7 +2120,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7fd91b8e/Input.vue"
+	  var id = "_v-6d8cab51/Input.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2495,7 +2495,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-db75a100/Searchbox.vue"
+	  var id = "_v-471a4c43/Searchbox.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2736,7 +2736,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-628d71b8/Uploader.vue"
+	  var id = "_v-370e398a/Uploader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3848,7 +3848,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-37c076c8/Message.vue"
+	  var id = "_v-045f25ea/Message.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4026,7 +4026,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-39c8e1d0/Slider.vue"
+	  var id = "_v-322a3a1b/Slider.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4384,7 +4384,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c1d9ec0/Tooltip.vue"
+	  var id = "_v-1ba4d5fa/Tooltip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4545,7 +4545,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-ce463fac/Trigger.vue"
+	  var id = "_v-5eecd66d/Trigger.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4593,17 +4593,7 @@
 	//          :class="[prefixCls + '-trigger']">
 	//       <slot name="trigger">trigger slot is not set</slot>
 	//     </div>
-	//     <div v-if="trigger === 'hover'"
-	//          v-el:popup
-	//          v-show="show"
-	//          :class="popupClassObj"
-	//          :transition="effect"
-	//          @mouseenter="hoverHandler"
-	//          @mouseleave="hoverHandler">
-	//       <slot name="popup">popup slot is not set</slot>
-	//     </div>
-	//     <div v-else
-	//          v-el:popup
+	//     <div v-el:popup
 	//          v-show="show"
 	//          :class="popupClassObj"
 	//          :transition="effect">
@@ -4640,14 +4630,6 @@
 	    popupHideWhenBlur: {
 	      type: Boolean,
 	      default: false
-	    },
-	    popupHideDelay: {
-	      type: Number,
-	      default: 0
-	    },
-	    show: {
-	      type: Boolean,
-	      default: false
 	    }
 	  },
 	
@@ -4656,7 +4638,8 @@
 	      position: {
 	        top: 0,
 	        left: 0
-	      }
+	      },
+	      show: false
 	    };
 	  },
 	
@@ -4913,24 +4896,14 @@
 	      }
 	    },
 	    hoverHandler: function hoverHandler(ev) {
-	      var me = this;
-	      var popupHideDelay = this.popupHideDelay;
 	      var type = ev.type;
 	
-	
-	      if (popupHideDelay && this._mouseLeaveTimer) clearTimeout(this._mouseLeaveTimer);
 	
 	      if (type === 'mouseenter') {
 	        this.show = true;
 	        this.resetPos();
 	      } else {
-	        if (popupHideDelay) {
-	          this._mouseLeaveTimer = setTimeout(function () {
-	            me.show = false;
-	          }, popupHideDelay);
-	        } else {
-	          this.show = false;
-	        }
+	        this.show = false;
 	      }
 	    },
 	    focusHandler: function focusHandler(ev) {
@@ -4968,8 +4941,6 @@
 	    if (this._closeEvent) {
 	      this._closeEvent.remove();
 	    }
-	
-	    this._mouseLeaveTimer = null;
 	  }
 	};
 	// </script>
@@ -4980,7 +4951,7 @@
 /* 211 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n      v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n  <div v-else\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n      v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
 
 /***/ },
 /* 212 */
@@ -5032,7 +5003,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-31a40bb8/Switch.vue"
+	  var id = "_v-fe9a928a/Switch.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5158,7 +5129,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-aad12dd0/Dropdown.vue"
+	  var id = "_v-2c82da9b/Dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5176,40 +5147,13 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(207);
+	var _EventListener = __webpack_require__(167);
 	
-	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
-	
-	var _Trigger = __webpack_require__(208);
-	
-	var _Trigger2 = _interopRequireDefault(_Trigger);
+	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
-	//   <div :class="[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]">
-	//     <trigger :trigger="trigger"
-	//              effect="slide"
-	//              popup-cls="dropdown"
-	//              placement="bottomLeft"
-	//              :popup-hide-delay="200"
-	//              :show.sync="open">
-	//       <slot slot="trigger"></slot>
-	//       <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont'">
-	//         <slot name="dropdown-menu" role="dropdown"></slot>
-	//       </div>
-	//     </trigger>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
 	exports.default = {
-	  mixins: [_GlobalMixin2.default],
-	
-	  components: {
-	    Trigger: _Trigger2.default
-	  },
-	
 	  props: {
 	    trigger: {
 	      type: String,
@@ -5217,18 +5161,77 @@
 	    },
 	    open: {
 	      type: Boolean
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
+	  },
+	  methods: {
+	    toggleDropdown: function toggleDropdown(e) {
+	      e.preventDefault();
+	      this.open = !this.open;
+	    }
+	  },
+	  ready: function ready() {
+	    var me = this;
+	    var el = me.$el;
+	    var toggle = el.querySelector('[data-toggle="dropdown"]');
+	    var self = this;
+	
+	    if (!toggle) {
+	      return;
+	    }
+	
+	    var event = me.trigger === 'click' ? 'click' : 'mouseenter';
+	
+	    toggle.addEventListener(event, function () {
+	      clearTimeout(me.timeout);
+	      me.open = true;
+	    });
+	
+	    if (me.trigger === 'hover') {
+	      me.$el.addEventListener('mouseleave', function () {
+	        me.timeout = setTimeout(function () {
+	          me.open = false;
+	        }, 300);
+	      });
+	
+	      me.$el.addEventListener('mouseenter', function () {
+	        if (me.timeout) {
+	          clearTimeout(me.timeout);
+	          me.timeout = null;
+	        }
+	      });
+	    }
+	
+	    this._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
+	      if (!el.contains(e.target)) {
+	        self.open = false;
+	      }
+	    });
+	  },
+	  beforeDestroy: function beforeDestroy() {
+	    if (this._closeEvent) this._closeEvent.remove();
 	  }
 	};
 	// </script>
 
 	/* generated by vue-loader */
+	// <template>
+	//   <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
+	//     <slot></slot>
+	//     <slot name="dropdown-menu"></slot>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
 
 /***/ },
 /* 221 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]\">\n  <trigger :trigger=\"trigger\"\n           effect=\"slide\"\n           popup-cls=\"dropdown\"\n           placement=\"bottomLeft\"\n           :popup-hide-delay=\"200\"\n           :show.sync=\"open\">\n    <slot slot=\"trigger\"></slot>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu-cont'\">\n      <slot name=\"dropdown-menu\" role=\"dropdown\"></slot>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
 
 /***/ },
 /* 222 */
@@ -5274,7 +5277,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3548fab8/Select.vue"
+	  var id = "_v-f750b48a/Select.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5616,7 +5619,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2f4cbe6e/Tag.vue"
+	  var id = "_v-6d6ca7b1/Tag.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5724,7 +5727,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c482c9e/Option.vue"
+	  var id = "_v-38ea94b4/Option.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5890,7 +5893,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-21dbdbb8/Calendar.vue"
+	  var id = "_v-b871658a/Calendar.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6290,7 +6293,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-8a73aa50/TimePicker.vue"
+	  var id = "_v-e271ba4a/TimePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6602,7 +6605,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-42f6cc38/DatePicker.vue"
+	  var id = "_v-16f7c43b/DatePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6735,7 +6738,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3f2f6bff/RangePicker.vue"
+	  var id = "_v-29651748/RangePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6879,7 +6882,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-65e90890/Cascader.vue"
+	  var id = "_v-4ef6ed3b/Cascader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7135,7 +7138,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-75903814/Modal.vue"
+	  var id = "_v-6343c7d7/Modal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7303,7 +7306,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0421e6d4/Table.vue"
+	  var id = "_v-28bac74e/Table.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7752,7 +7755,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7fd98fb8/Spin.vue"
+	  var id = "_v-94b7978a/Spin.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7917,7 +7920,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4ec66d10/Pagination.vue"
+	  var id = "_v-a6c47d0a/Pagination.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8183,7 +8186,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-a6e8ec8e/Jumper.vue"
+	  var id = "_v-2e76fb3c/Jumper.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8323,7 +8326,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-c3348e56/Pager.vue"
+	  var id = "_v-cb56ea1c/Pager.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8449,7 +8452,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4c7b53b0/Options.vue"
+	  var id = "_v-07fe128d/Options.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8571,7 +8574,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5783d380/Badge.vue"
+	  var id = "_v-45376343/Badge.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8676,7 +8679,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-b4fafc10/Carousel.vue"
+	  var id = "_v-276df37b/Carousel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8700,8 +8703,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -8719,7 +8722,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-b4fafc10] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?57215cc9"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../_utils/EventListener.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-276df37b] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?57215cc9"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../_utils/EventListener.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -9158,7 +9161,7 @@
 /* 294 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-b4fafc10=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-b4fafc10=\"\">\n    <indicator _v-b4fafc10=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-b4fafc10=\"\">\n    <slot _v-b4fafc10=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Next</span>\n  </a>\n</div>\n";
+	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
 /* 295 */
@@ -9180,7 +9183,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6a295c6e/Slide.vue"
+	  var id = "_v-5db20726/Slide.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9262,7 +9265,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0e1beb79/Affix.vue"
+	  var id = "_v-6e9b497c/Affix.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9463,7 +9466,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-01ffd738/Textarea.vue"
+	  var id = "_v-f8296e8a/Textarea.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9663,7 +9666,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-57604c8a/Accordion.vue"
+	  var id = "_v-0c35694d/Accordion.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9747,7 +9750,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-359fb846/Panel.vue"
+	  var id = "_v-08a0a2ee/Panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9877,7 +9880,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-60f88ff8/Popover.vue"
+	  var id = "_v-d4d8a372/Popover.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10002,7 +10005,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-fc9f2b32/Tabset.vue"
+	  var id = "_v-6f63fa2a/Tabset.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10237,7 +10240,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-c768556a/Tab.vue"
+	  var id = "_v-22291468/Tab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10362,7 +10365,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3e184b88/Steps.vue"
+	  var id = "_v-2bcbdb4b/Steps.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10517,7 +10520,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-805c160a/Step.vue"
+	  var id = "_v-435be0d8/Step.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10661,7 +10664,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5df38938/Tree.vue"
+	  var id = "_v-d883a48a/Tree.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10735,7 +10738,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-270a7a5a/TreeNode.vue"
+	  var id = "_v-7619255d/TreeNode.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10893,7 +10896,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7e5e29d8/Menu.vue"
+	  var id = "_v-97ae634a/Menu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10977,7 +10980,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-732f31d6/SubMenu.vue"
+	  var id = "_v-3bed9a73/SubMenu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11117,7 +11120,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-459ab0ea/MenuItem.vue"
+	  var id = "_v-2c41528e/MenuItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11200,7 +11203,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-37e29c64/MenuItemGroup.vue"
+	  var id = "_v-1935497e/MenuItemGroup.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11290,7 +11293,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-54cd6dd8/Breadcrumb.vue"
+	  var id = "_v-28ce65db/Breadcrumb.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11362,7 +11365,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-bb4028ea/BreadcrumbItem.vue"
+	  var id = "_v-1d4f2a0e/BreadcrumbItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11503,7 +11506,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3643c08c/container.vue"
+	  var id = "_v-77a4d517/container.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11570,19 +11573,16 @@
 /* 478 */,
 /* 479 */,
 /* 480 */,
-/* 481 */,
-/* 482 */,
-/* 483 */,
-/* 484 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(485)
+	__vue_script__ = __webpack_require__(482)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(488)
+	__vue_template__ = __webpack_require__(485)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11592,7 +11592,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-08a28617/phoneNumberDocs.vue"
+	  var id = "_v-0fbe14b4/phoneNumberDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11601,7 +11601,7 @@
 	})()}
 
 /***/ },
-/* 485 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11610,7 +11610,7 @@
 	  value: true
 	});
 	
-	__webpack_require__(486);
+	__webpack_require__(483);
 	
 	exports.default = {
 	  data: function data() {
@@ -11639,12 +11639,12 @@
 	// <script>
 
 /***/ },
-/* 486 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _phoneNumber = __webpack_require__(487);
+	var _phoneNumber = __webpack_require__(484);
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -11655,7 +11655,7 @@
 	module.exports = {};
 
 /***/ },
-/* 487 */
+/* 484 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11682,41 +11682,41 @@
 	};
 
 /***/ },
-/* 488 */
+/* 485 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phonenumber\">\n    <h3 class=\"page-header\"><a href=\"#phonenumber\" class=\"anchor\">手机号码格式化 phonenumber</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phoneNumber}}</div>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"text\" v-model=\"number\" />\n<div>{{number | phoneNumber}}</div>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
-/* 489 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(490);
-	__webpack_require__(491);
-	__webpack_require__(492);
+	__webpack_require__(487);
+	__webpack_require__(488);
+	__webpack_require__(489);
+
+/***/ },
+/* 487 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 488 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 489 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 /* 490 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 491 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 492 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 493 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -12504,7 +12504,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 494 */
+/* 491 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12528,7 +12528,7 @@
 	})();
 
 /***/ },
-/* 495 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12549,15 +12549,15 @@
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _phoneNumberDocs = __webpack_require__(484);
+	var _phoneNumberDocs = __webpack_require__(481);
 	
 	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(489);
-	__webpack_require__(493);
-	__webpack_require__(494);
+	__webpack_require__(486);
+	__webpack_require__(490);
+	__webpack_require__(491);
 	
 	// filters
 	

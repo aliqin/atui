@@ -245,59 +245,59 @@
 	
 	var _tooltipDocs2 = _interopRequireDefault(_tooltipDocs);
 	
-	var _triggerDocs = __webpack_require__(442);
+	var _triggerDocs = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./example/triggerDocs.vue\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
 	var _triggerDocs2 = _interopRequireDefault(_triggerDocs);
 	
-	var _accordionDocs = __webpack_require__(445);
+	var _accordionDocs = __webpack_require__(442);
 	
 	var _accordionDocs2 = _interopRequireDefault(_accordionDocs);
 	
-	var _affixDocs = __webpack_require__(450);
+	var _affixDocs = __webpack_require__(447);
 	
 	var _affixDocs2 = _interopRequireDefault(_affixDocs);
 	
-	var _asideDocs = __webpack_require__(455);
+	var _asideDocs = __webpack_require__(452);
 	
 	var _asideDocs2 = _interopRequireDefault(_asideDocs);
 	
-	var _popoverDocs = __webpack_require__(458);
+	var _popoverDocs = __webpack_require__(455);
 	
 	var _popoverDocs2 = _interopRequireDefault(_popoverDocs);
 	
-	var _tabsDocs = __webpack_require__(461);
+	var _tabsDocs = __webpack_require__(458);
 	
 	var _tabsDocs2 = _interopRequireDefault(_tabsDocs);
 	
-	var _stepsDocs = __webpack_require__(466);
+	var _stepsDocs = __webpack_require__(463);
 	
 	var _stepsDocs2 = _interopRequireDefault(_stepsDocs);
 	
-	var _menuDocs = __webpack_require__(470);
+	var _menuDocs = __webpack_require__(467);
 	
 	var _menuDocs2 = _interopRequireDefault(_menuDocs);
 	
-	var _treeDocs = __webpack_require__(473);
+	var _treeDocs = __webpack_require__(470);
 	
 	var _treeDocs2 = _interopRequireDefault(_treeDocs);
 	
-	var _breadcrumbDocs = __webpack_require__(476);
+	var _breadcrumbDocs = __webpack_require__(473);
 	
 	var _breadcrumbDocs2 = _interopRequireDefault(_breadcrumbDocs);
 	
-	var _paginationDocs = __webpack_require__(480);
+	var _paginationDocs = __webpack_require__(477);
 	
 	var _paginationDocs2 = _interopRequireDefault(_paginationDocs);
 	
-	var _phoneNumberDocs = __webpack_require__(484);
+	var _phoneNumberDocs = __webpack_require__(481);
 	
 	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(489);
-	__webpack_require__(493);
-	__webpack_require__(494);
+	__webpack_require__(486);
+	__webpack_require__(490);
+	__webpack_require__(491);
 	//  基础类
 	
 	
@@ -1350,7 +1350,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-147983ff/headerDocs.vue"
+	  var id = "_v-4aed0b7c/headerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1696,7 +1696,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-d85b2bd0/Icon.vue"
+	  var id = "_v-6cc5e2ca/Icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1793,7 +1793,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-373970f8/Form.vue"
+	  var id = "_v-6d04157b/Form.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1901,7 +1901,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-323de8fc/Row.vue"
+	  var id = "_v-9470564e/Row.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1961,7 +1961,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-18256da2/Col.vue"
+	  var id = "_v-c8a14d02/Col.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2037,7 +2037,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-ca5542aa/FormItem.vue"
+	  var id = "_v-2c37eca4/FormItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2209,7 +2209,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-760691f8/Button.vue"
+	  var id = "_v-75d5860a/Button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2308,7 +2308,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0dc1d2a9/Group.vue"
+	  var id = "_v-52ff8974/Group.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2428,7 +2428,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7fd91b8e/Input.vue"
+	  var id = "_v-6d8cab51/Input.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2803,7 +2803,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-db75a100/Searchbox.vue"
+	  var id = "_v-471a4c43/Searchbox.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3044,7 +3044,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-628d71b8/Uploader.vue"
+	  var id = "_v-370e398a/Uploader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4156,7 +4156,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-37c076c8/Message.vue"
+	  var id = "_v-045f25ea/Message.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4334,7 +4334,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-39c8e1d0/Slider.vue"
+	  var id = "_v-322a3a1b/Slider.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4692,7 +4692,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c1d9ec0/Tooltip.vue"
+	  var id = "_v-1ba4d5fa/Tooltip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4853,7 +4853,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-ce463fac/Trigger.vue"
+	  var id = "_v-5eecd66d/Trigger.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4901,17 +4901,7 @@
 	//          :class="[prefixCls + '-trigger']">
 	//       <slot name="trigger">trigger slot is not set</slot>
 	//     </div>
-	//     <div v-if="trigger === 'hover'"
-	//          v-el:popup
-	//          v-show="show"
-	//          :class="popupClassObj"
-	//          :transition="effect"
-	//          @mouseenter="hoverHandler"
-	//          @mouseleave="hoverHandler">
-	//       <slot name="popup">popup slot is not set</slot>
-	//     </div>
-	//     <div v-else
-	//          v-el:popup
+	//     <div v-el:popup
 	//          v-show="show"
 	//          :class="popupClassObj"
 	//          :transition="effect">
@@ -4948,14 +4938,6 @@
 	    popupHideWhenBlur: {
 	      type: Boolean,
 	      default: false
-	    },
-	    popupHideDelay: {
-	      type: Number,
-	      default: 0
-	    },
-	    show: {
-	      type: Boolean,
-	      default: false
 	    }
 	  },
 	
@@ -4964,7 +4946,8 @@
 	      position: {
 	        top: 0,
 	        left: 0
-	      }
+	      },
+	      show: false
 	    };
 	  },
 	
@@ -5221,24 +5204,14 @@
 	      }
 	    },
 	    hoverHandler: function hoverHandler(ev) {
-	      var me = this;
-	      var popupHideDelay = this.popupHideDelay;
 	      var type = ev.type;
 	
-	
-	      if (popupHideDelay && this._mouseLeaveTimer) clearTimeout(this._mouseLeaveTimer);
 	
 	      if (type === 'mouseenter') {
 	        this.show = true;
 	        this.resetPos();
 	      } else {
-	        if (popupHideDelay) {
-	          this._mouseLeaveTimer = setTimeout(function () {
-	            me.show = false;
-	          }, popupHideDelay);
-	        } else {
-	          this.show = false;
-	        }
+	        this.show = false;
 	      }
 	    },
 	    focusHandler: function focusHandler(ev) {
@@ -5276,8 +5249,6 @@
 	    if (this._closeEvent) {
 	      this._closeEvent.remove();
 	    }
-	
-	    this._mouseLeaveTimer = null;
 	  }
 	};
 	// </script>
@@ -5288,7 +5259,7 @@
 /* 211 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n      v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n  <div v-else\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n      v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
 
 /***/ },
 /* 212 */
@@ -5340,7 +5311,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-31a40bb8/Switch.vue"
+	  var id = "_v-fe9a928a/Switch.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5466,7 +5437,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-aad12dd0/Dropdown.vue"
+	  var id = "_v-2c82da9b/Dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5484,40 +5455,13 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(207);
+	var _EventListener = __webpack_require__(167);
 	
-	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
-	
-	var _Trigger = __webpack_require__(208);
-	
-	var _Trigger2 = _interopRequireDefault(_Trigger);
+	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
-	//   <div :class="[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]">
-	//     <trigger :trigger="trigger"
-	//              effect="slide"
-	//              popup-cls="dropdown"
-	//              placement="bottomLeft"
-	//              :popup-hide-delay="200"
-	//              :show.sync="open">
-	//       <slot slot="trigger"></slot>
-	//       <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont'">
-	//         <slot name="dropdown-menu" role="dropdown"></slot>
-	//       </div>
-	//     </trigger>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
 	exports.default = {
-	  mixins: [_GlobalMixin2.default],
-	
-	  components: {
-	    Trigger: _Trigger2.default
-	  },
-	
 	  props: {
 	    trigger: {
 	      type: String,
@@ -5525,18 +5469,77 @@
 	    },
 	    open: {
 	      type: Boolean
+	    },
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
 	    }
+	  },
+	  methods: {
+	    toggleDropdown: function toggleDropdown(e) {
+	      e.preventDefault();
+	      this.open = !this.open;
+	    }
+	  },
+	  ready: function ready() {
+	    var me = this;
+	    var el = me.$el;
+	    var toggle = el.querySelector('[data-toggle="dropdown"]');
+	    var self = this;
+	
+	    if (!toggle) {
+	      return;
+	    }
+	
+	    var event = me.trigger === 'click' ? 'click' : 'mouseenter';
+	
+	    toggle.addEventListener(event, function () {
+	      clearTimeout(me.timeout);
+	      me.open = true;
+	    });
+	
+	    if (me.trigger === 'hover') {
+	      me.$el.addEventListener('mouseleave', function () {
+	        me.timeout = setTimeout(function () {
+	          me.open = false;
+	        }, 300);
+	      });
+	
+	      me.$el.addEventListener('mouseenter', function () {
+	        if (me.timeout) {
+	          clearTimeout(me.timeout);
+	          me.timeout = null;
+	        }
+	      });
+	    }
+	
+	    this._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
+	      if (!el.contains(e.target)) {
+	        self.open = false;
+	      }
+	    });
+	  },
+	  beforeDestroy: function beforeDestroy() {
+	    if (this._closeEvent) this._closeEvent.remove();
 	  }
 	};
 	// </script>
 
 	/* generated by vue-loader */
+	// <template>
+	//   <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
+	//     <slot></slot>
+	//     <slot name="dropdown-menu"></slot>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
 
 /***/ },
 /* 221 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]\">\n  <trigger :trigger=\"trigger\"\n           effect=\"slide\"\n           popup-cls=\"dropdown\"\n           placement=\"bottomLeft\"\n           :popup-hide-delay=\"200\"\n           :show.sync=\"open\">\n    <slot slot=\"trigger\"></slot>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu-cont'\">\n      <slot name=\"dropdown-menu\" role=\"dropdown\"></slot>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]\">\n  <slot></slot>\n  <slot name=\"dropdown-menu\"></slot>\n</div>\n";
 
 /***/ },
 /* 222 */
@@ -5582,7 +5585,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3548fab8/Select.vue"
+	  var id = "_v-f750b48a/Select.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5924,7 +5927,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2f4cbe6e/Tag.vue"
+	  var id = "_v-6d6ca7b1/Tag.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6032,7 +6035,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c482c9e/Option.vue"
+	  var id = "_v-38ea94b4/Option.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6198,7 +6201,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-21dbdbb8/Calendar.vue"
+	  var id = "_v-b871658a/Calendar.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6598,7 +6601,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-8a73aa50/TimePicker.vue"
+	  var id = "_v-e271ba4a/TimePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6910,7 +6913,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-42f6cc38/DatePicker.vue"
+	  var id = "_v-16f7c43b/DatePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7043,7 +7046,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3f2f6bff/RangePicker.vue"
+	  var id = "_v-29651748/RangePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7187,7 +7190,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-65e90890/Cascader.vue"
+	  var id = "_v-4ef6ed3b/Cascader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7443,7 +7446,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-75903814/Modal.vue"
+	  var id = "_v-6343c7d7/Modal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7611,7 +7614,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0421e6d4/Table.vue"
+	  var id = "_v-28bac74e/Table.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8060,7 +8063,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7fd98fb8/Spin.vue"
+	  var id = "_v-94b7978a/Spin.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8225,7 +8228,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4ec66d10/Pagination.vue"
+	  var id = "_v-a6c47d0a/Pagination.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8491,7 +8494,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-a6e8ec8e/Jumper.vue"
+	  var id = "_v-2e76fb3c/Jumper.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8631,7 +8634,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-c3348e56/Pager.vue"
+	  var id = "_v-cb56ea1c/Pager.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8757,7 +8760,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4c7b53b0/Options.vue"
+	  var id = "_v-07fe128d/Options.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8879,7 +8882,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5783d380/Badge.vue"
+	  var id = "_v-45376343/Badge.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8984,7 +8987,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-b4fafc10/Carousel.vue"
+	  var id = "_v-276df37b/Carousel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9008,8 +9011,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -9027,7 +9030,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-b4fafc10] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?57215cc9"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../_utils/EventListener.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-276df37b] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?57215cc9"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../_utils/EventListener.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -9466,7 +9469,7 @@
 /* 294 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-b4fafc10=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-b4fafc10=\"\">\n    <indicator _v-b4fafc10=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-b4fafc10=\"\">\n    <slot _v-b4fafc10=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Next</span>\n  </a>\n</div>\n";
+	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
 /* 295 */
@@ -9488,7 +9491,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6a295c6e/Slide.vue"
+	  var id = "_v-5db20726/Slide.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9570,7 +9573,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0e1beb79/Affix.vue"
+	  var id = "_v-6e9b497c/Affix.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9771,7 +9774,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-01ffd738/Textarea.vue"
+	  var id = "_v-f8296e8a/Textarea.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9971,7 +9974,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-57604c8a/Accordion.vue"
+	  var id = "_v-0c35694d/Accordion.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10055,7 +10058,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-359fb846/Panel.vue"
+	  var id = "_v-08a0a2ee/Panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10185,7 +10188,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-60f88ff8/Popover.vue"
+	  var id = "_v-d4d8a372/Popover.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10310,7 +10313,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-fc9f2b32/Tabset.vue"
+	  var id = "_v-6f63fa2a/Tabset.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10545,7 +10548,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-c768556a/Tab.vue"
+	  var id = "_v-22291468/Tab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10670,7 +10673,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3e184b88/Steps.vue"
+	  var id = "_v-2bcbdb4b/Steps.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10825,7 +10828,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-805c160a/Step.vue"
+	  var id = "_v-435be0d8/Step.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10969,7 +10972,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5df38938/Tree.vue"
+	  var id = "_v-d883a48a/Tree.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11043,7 +11046,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-270a7a5a/TreeNode.vue"
+	  var id = "_v-7619255d/TreeNode.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11201,7 +11204,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7e5e29d8/Menu.vue"
+	  var id = "_v-97ae634a/Menu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11285,7 +11288,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-732f31d6/SubMenu.vue"
+	  var id = "_v-3bed9a73/SubMenu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11425,7 +11428,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-459ab0ea/MenuItem.vue"
+	  var id = "_v-2c41528e/MenuItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11508,7 +11511,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-37e29c64/MenuItemGroup.vue"
+	  var id = "_v-1935497e/MenuItemGroup.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11598,7 +11601,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-54cd6dd8/Breadcrumb.vue"
+	  var id = "_v-28ce65db/Breadcrumb.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11670,7 +11673,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-bb4028ea/BreadcrumbItem.vue"
+	  var id = "_v-1d4f2a0e/BreadcrumbItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11744,7 +11747,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7b81fc34/gettingStarted.vue"
+	  var id = "_v-305718f7/gettingStarted.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11779,7 +11782,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-526a1778/gridDocs.vue"
+	  var id = "_v-bd0e7b0a/gridDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12027,7 +12030,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2ccbe5ab/iconDocs.vue"
+	  var id = "_v-7bda90ae/iconDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12180,7 +12183,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-688358b8/buttonDocs.vue"
+	  var id = "_v-dc636c32/buttonDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12424,7 +12427,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7d364b44/inputDocs.vue"
+	  var id = "_v-542b8fbb/inputDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12680,7 +12683,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0a6d0b20/uploaderDocs.vue"
+	  var id = "_v-e74f06ba/uploaderDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12927,7 +12930,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-59073af6/formDocs.vue"
+	  var id = "_v-afd4340e/formDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13249,7 +13252,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-66d0c1a6/switchDocs.vue"
+	  var id = "_v-2ce0b7e9/switchDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13464,7 +13467,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e7b8f35a/sliderDocs.vue"
+	  var id = "_v-52337c96/sliderDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13637,7 +13640,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-9edd447a/dropdownDocs.vue"
+	  var id = "_v-327ccf46/dropdownDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13674,7 +13677,7 @@
 	//         <div data-toggle="dropdown">
 	//           点击显示菜单 <icon type="down"></icon>
 	//         </div>
-	//         <ul slot="dropdown-menu" class="atui-dropdown-menu">
+	//         <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//           <li><a>选项一</a></li>
 	//           <li><a>选项二</a></li>
 	//           <li><a>选项三</a></li>
@@ -13686,7 +13689,7 @@
 	//         <button type="button" class="atui-btn" data-toggle="dropdown">
 	//           点击显示菜单 <icon type="down"></icon>
 	//         </button>
-	//         <ul slot="dropdown-menu" class="atui-dropdown-menu">
+	//         <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//           <li><a>选项一</a></li>
 	//           <li><a>选项二</a></li>
 	//           <li><a>选项三</a></li>
@@ -13698,7 +13701,7 @@
 	//         <button type="button" class="atui-btn atui-btn-primary" data-toggle="dropdown">
 	//           点击显示菜单 <icon type="down"></icon>
 	//         </button>
-	//         <ul slot="dropdown-menu" class="atui-dropdown-menu">
+	//         <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//           <li><a href="#">选项一</a></li>
 	//           <li><a href="#">选项二</a></li>
 	//           <li><a href="#">选项三</a></li>
@@ -13710,7 +13713,7 @@
 	//         <a href="#" data-toggle="dropdown">
 	//           鼠标移上来显示 <icon type="down"></icon>
 	//         </a>
-	//         <ul slot="dropdown-menu" class="atui-dropdown-menu">
+	//         <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//           <li><a href="#">选项一</a></li>
 	//           <li><a href="#">选项二</a></li>
 	//           <li><a href="#">选项三</a></li>
@@ -13724,7 +13727,7 @@
 	//   <div data-toggle="dropdown">
 	//     点击显示菜单 <icon type="down"></icon>
 	//   </div>
-	//   <ul slot="dropdown-menu" class="atui-dropdown-menu">
+	//   <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//     <li><a>选项一</a></li>
 	//     <li><a>选项二</a></li>
 	//     <li><a>选项三</a></li>
@@ -13736,7 +13739,7 @@
 	//   <button type="button" class="atui-btn" data-toggle="dropdown">
 	//     点击显示菜单 <icon type="down"></icon>
 	//   </button>
-	//   <ul slot="dropdown-menu" class="atui-dropdown-menu">
+	//   <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//     <li><a>选项一</a></li>
 	//     <li><a>选项二</a></li>
 	//     <li><a>选项三</a></li>
@@ -13748,7 +13751,7 @@
 	//   <button type="button" class="atui-btn atui-btn-primary" data-toggle="dropdown">
 	//     点击显示菜单 <icon type="down"></icon>
 	//   </button>
-	//   <ul slot="dropdown-menu" class="atui-dropdown-menu">
+	//   <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//     <li><a href="#">选项一</a></li>
 	//     <li><a href="#">选项二</a></li>
 	//     <li><a href="#">选项三</a></li>
@@ -13760,7 +13763,7 @@
 	//   <a href="#" data-toggle="dropdown">
 	//     鼠标移上来显示 <icon type="down"></icon>
 	//   </a>
-	//   <ul slot="dropdown-menu" class="atui-dropdown-menu">
+	//   <ul name="dropdown-menu" class="atui-dropdown-menu">
 	//     <li><a href="#">选项一</a></li>
 	//     <li><a href="#">选项二</a></li>
 	//     <li><a href="#">选项三</a></li>
@@ -13799,7 +13802,7 @@
 /* 392 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"dropdown\">\n    <h3 class=\"page-header\"><a href=\"#dropdown\" class=\"anchor\">Dropdown 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <dropdown>\n        <div data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </div>\n        <ul slot=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"atui-btn\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul slot=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"atui-btn atui-btn-primary\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul slot=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown trigger=\"hover\">\n        <a href=\"#\" data-toggle=\"dropdown\">\n          鼠标移上来显示 <icon type=\"down\"></icon>\n        </a>\n        <ul slot=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<dropdown>\n  <div data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </div>\n  <ul slot=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"atui-btn\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul slot=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"atui-btn atui-btn-primary\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul slot=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown trigger=\"hover\">\n  <a href=\"#\" data-toggle=\"dropdown\">\n    鼠标移上来显示 <icon type=\"down\"></icon>\n  </a>\n  <ul slot=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n</script></code></pre>\n\n\n<h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code> one of <code>click</code> <code>hover</code></td>\n          <td>触发类型</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"dropdown\">\n    <h3 class=\"page-header\"><a href=\"#dropdown\" class=\"anchor\">Dropdown 下拉框</a></h3>\n    <div class=\"bs-example\">\n      <dropdown>\n        <div data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </div>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"atui-btn\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a>选项一</a></li>\n          <li><a>选项二</a></li>\n          <li><a>选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown>\n        <button type=\"button\" class=\"atui-btn atui-btn-primary\" data-toggle=\"dropdown\">\n          点击显示菜单 <icon type=\"down\"></icon>\n        </button>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n      <dropdown trigger=\"hover\">\n        <a href=\"#\" data-toggle=\"dropdown\">\n          鼠标移上来显示 <icon type=\"down\"></icon>\n        </a>\n        <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n          <li><a href=\"#\">选项一</a></li>\n          <li><a href=\"#\">选项二</a></li>\n          <li><a href=\"#\">选项三</a></li>\n          <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n          <li><a href=\"#\">其它</a></li>\n        </ul>\n      </dropdown>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<dropdown>\n  <div data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </div>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"atui-btn\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a>选项一</a></li>\n    <li><a>选项二</a></li>\n    <li><a>选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown>\n  <button type=\"button\" class=\"atui-btn atui-btn-primary\" data-toggle=\"dropdown\">\n    点击显示菜单 <icon type=\"down\"></icon>\n  </button>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n<dropdown trigger=\"hover\">\n  <a href=\"#\" data-toggle=\"dropdown\">\n    鼠标移上来显示 <icon type=\"down\"></icon>\n  </a>\n  <ul name=\"dropdown-menu\" class=\"atui-dropdown-menu\">\n    <li><a href=\"#\">选项一</a></li>\n    <li><a href=\"#\">选项二</a></li>\n    <li><a href=\"#\">选项三</a></li>\n    <li role=\"separator\" class=\"atui-dropdown-divider\"></li>\n    <li><a href=\"#\">其它</a></li>\n  </ul>\n</dropdown>\n</script></code></pre>\n\n\n<h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>名称</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code> one of <code>click</code> <code>hover</code></td>\n          <td>触发类型</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 393 */
@@ -13821,7 +13824,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1b041124/selectDocs.vue"
+	  var id = "_v-8ee4249e/selectDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14104,7 +14107,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c1197f0/calendarDocs.vue"
+	  var id = "_v-a405ed1a/calendarDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14259,7 +14262,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-55b12ea4/datepickerDocs.vue"
+	  var id = "_v-ec06f51e/datepickerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14453,7 +14456,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7897698d/timepickerDocs.vue"
+	  var id = "_v-2d6c8650/timepickerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14593,7 +14596,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2846f837/searchboxDocs.vue"
+	  var id = "_v-386c91d8/searchboxDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14718,7 +14721,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-a1e59d4a/messageDocs.vue"
+	  var id = "_v-aa07f910/messageDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15024,7 +15027,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2d872620/cascaderDocs.vue"
+	  var id = "_v-6b27de73/cascaderDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15185,7 +15188,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5eec2b7e/modalDocs.vue"
+	  var id = "_v-63509f9e/modalDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15436,7 +15439,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-31e77a62/tableDocs.vue"
+	  var id = "_v-76a3a082/tableDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15805,7 +15808,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5de99592/badgeDocs.vue"
+	  var id = "_v-63d1ea94/badgeDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15960,7 +15963,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0f2fbc12/carouselDocs.vue"
+	  var id = "_v-ddc9a4d6/carouselDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16093,7 +16096,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3643c08c/container.vue"
+	  var id = "_v-77a4d517/container.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16127,7 +16130,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4fa0c874/spinDocs.vue"
+	  var id = "_v-c2a11912/spinDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16225,7 +16228,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-514ed028/textareaDocs.vue"
+	  var id = "_v-5944096f/textareaDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16446,7 +16449,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5640466e/tagDocs.vue"
+	  var id = "_v-1efeaf0b/tagDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16594,7 +16597,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5b4c4557/tooltipDocs.vue"
+	  var id = "_v-573b1774/tooltipDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16835,12 +16838,13 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(443)
+	__webpack_require__(443)
+	__vue_script__ = __webpack_require__(445)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] docs-backup/example/triggerDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(444)
+	  console.warn("[vue-loader] docs-backup/example/accordionDocs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(446)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16850,7 +16854,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0b21460c/triggerDocs.vue"
+	  var id = "_v-b5659f8e/accordionDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16862,238 +16866,10 @@
 /* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _src = __webpack_require__(134);
-	
-	exports.default = {
-	  components: {
-	    Trigger: _src.Trigger
-	  }
-	};
-	// </script>
-
-	/* generated by vue-loader */
-	// <template>
-	//   <div class="bs-docs-section" id="trigger">
-	//     <h3 class="page-header"><a href="#trigger" class="anchor">Trigger 触发弹窗</a></h3>
-	//     <div class="bs-example">
-	//       <h3>普通</h3>
-	//       <trigger trigger="click" placement="top">
-	//         <button class="atui-btn" slot="trigger">click to trigger</button>
-	//         <div slot="popup">I'm a click popup</div>
-	//       </trigger>
-	//       <trigger trigger="hover">
-	//         <button class="atui-btn" slot="trigger">hover to trigger</button>
-	//         <div slot="popup">I'm a hover popup</div>
-	//       </trigger>
-	//       <trigger trigger="click" placement="topRight">
-	//         <button class="atui-btn" slot="trigger">click to show topRight</button>
-	//         <div slot="popup">I'm a hover popup</div>
-	//       </trigger>
-	//       <trigger trigger="hover" placement="topLeft">
-	//         <button class="atui-btn" slot="trigger">topLeft</button>
-	//         <div slot="popup">I'm a hover popup</div>
-	//       </trigger>
-	//       <trigger trigger="hover" placement="bottomRight">
-	//         <button class="atui-btn" slot="trigger">bottomRight</button>
-	//         <div slot="popup">I'm a hover popup</div>
-	//       </trigger>
-	//       <trigger trigger="focus">
-	//         <input type="text" class="atui-form-control" placeholder="Focus" slot="trigger">
-	//         <div slot="popup">I'm a hover popup</div>
-	//       </trigger>
-	//       <h3>复杂</h3>
-	//       <trigger trigger="click">
-	//         <button class="atui-btn" slot="trigger">popup里继续trigger</button>
-	//         <div slot="popup">
-	//           <trigger trigger="hover" placement="right">
-	//             <span slot="trigger" style="display: inline-block; padding: 20px; border: 1px solid gray">hover to trigger</span>
-	//             <div slot="popup" style="padding: 20px">I'm a hover popup</div>
-	//           </trigger>
-	//         </div>
-	//       </trigger>
-	//       <trigger trigger="hover" placement="right">
-	//         <trigger trigger="hover" slot="trigger">
-	//           <button class="atui-btn" slot="trigger">同时多个popup</button>
-	//           <div slot="popup">I'm popup-1</div>
-	//         </trigger>
-	//         <div slot="popup">I'm popup-2</div>
-	//       </trigger>
-	//     </div>
-	//     <pre><code class="language-markup"><script type="language-mark-up">
-	// <h3>普通</h3>
-	// <trigger trigger="click" placement="top">
-	//   <button class="atui-btn" slot="trigger">click to trigger</button>
-	//   <div slot="popup">I'm a click popup</div>
-	// </trigger>
-	// <trigger trigger="hover">
-	//   <button class="atui-btn" slot="trigger">hover to trigger</button>
-	//   <div slot="popup">I'm a hover popup</div>
-	// </trigger>
-	// <trigger trigger="click" placement="topRight">
-	//   <button class="atui-btn" slot="trigger">click to show topRight</button>
-	//   <div slot="popup">I'm a hover popup</div>
-	// </trigger>
-	// <trigger trigger="hover" placement="topLeft">
-	//   <button class="atui-btn" slot="trigger">topLeft</button>
-	//   <div slot="popup">I'm a hover popup</div>
-	// </trigger>
-	// <trigger trigger="hover" placement="bottomRight">
-	//   <button class="atui-btn" slot="trigger">bottomRight</button>
-	//   <div slot="popup">I'm a hover popup</div>
-	// </trigger>
-	// <trigger trigger="focus">
-	//   <input type="text" class="atui-form-control" placeholder="Focus" slot="trigger">
-	//   <div slot="popup">I'm a hover popup</div>
-	// </trigger>
-	// <h3>复杂</h3>
-	// <trigger trigger="click">
-	//   <button class="atui-btn" slot="trigger">popup里继续trigger</button>
-	//   <div slot="popup">
-	//     <trigger trigger="hover" placement="right">
-	//       <span slot="trigger" style="display: inline-block; padding: 20px; border: 1px solid gray">hover to trigger</span>
-	//       <div slot="popup" style="padding: 20px">I'm a hover popup</div>
-	//     </trigger>
-	//   </div>
-	// </trigger>
-	// <trigger trigger="hover" placement="right">
-	//   <trigger trigger="hover" slot="trigger">
-	//     <button class="atui-btn" slot="trigger">同时多个popup</button>
-	//     <div slot="popup">I'm popup-1</div>
-	//   </trigger>
-	//   <div slot="popup">I'm popup-2</div>
-	// </trigger>
-	// </script></code></pre>
-	//     <h2>Options</h2>
-	//     <table class="atui-table table-bordered">
-	//       <thead>
-	//         <tr>
-	//           <th>Name</th>
-	//           <th>Type</th>
-	//           <th>Default</th>
-	//           <th>Description</th>
-	//         </tr>
-	//       </thead>
-	//       <tbody>
-	//         <tr>
-	//           <td>trigger</td>
-	//           <td><code>String</code></td>
-	//           <td><code>click</code></td>
-	//           <td>以何种方式触发显示气泡框,可选hover, click, focus</td>
-	//         </tr>
-	//         <tr>
-	//           <td>effect</td>
-	//           <td><code>String</code></td>
-	//           <td><code>scale</code></td>
-	//           <td>过渡效果，可选scale, fadein</td>
-	//         </tr>
-	//         <tr>
-	//           <td>placement</td>
-	//           <td><code>String</code></td>
-	//           <td><code>bottom</code></td>
-	//           <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight
-	//           </td>
-	//         </tr>
-	//         <tr>
-	//           <td>popupCls</td>
-	//           <td><code>String</code></td>
-	//           <td><code>popup</code></td>
-	//           <td>自定义popup的样式名
-	//           </td>
-	//         </tr>
-	//         <tr>
-	//           <td>popupAlwaysInView</td>
-	//           <td><code>Boolean</code></td>
-	//           <td><code>true</code></td>
-	//           <td>是否支持坐标智能检测,保证弹窗优先在视图区域可见,默认开启
-	//           </td>
-	//         </tr>
-	//         <tr>
-	//           <td>popupHideWhenBlur</td>
-	//           <td><code>Boolean</code></td>
-	//           <td><code>false</code></td>
-	//           <td>点击trigger组件外部区域的时候,是否隐藏popup浮层,默认不隐藏</td>
-	//         </tr>
-	//       </tbody>
-	//     </table>
-	//     <h2>events</h2>
-	//     <table class="atui-table table-bordered">
-	//       <thead>
-	//       <tr>
-	//         <th>Name</th>
-	//         <th>Params</th>
-	//         <th>Type</th>
-	//         <th>Description</th>
-	//       </tr>
-	//       </thead>
-	//       <tbody>
-	//       <tr>
-	//         <td>trigger-reset-pos</td>
-	//         <td><code>{$trigger, $popup, placement}</code></td>
-	//         <td><code>Object</code></td>
-	//         <td>popup定位事件</td>
-	//       </tr>
-	//       <tr>
-	//         <td>trigger-popup-toggle</td>
-	//         <td><code>show</code></td>
-	//         <td><code>Boolean</code></td>
-	//         <td>popup切换显示隐藏状态事件,true表示可见</td>
-	//       </tr>
-	//       </tbody>
-	//     </table>
-	//   </div>
-	// </template>
-	//
-	// <script>
-
-/***/ },
-/* 444 */
-/***/ function(module, exports) {
-
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"trigger\">\n    <h3 class=\"page-header\"><a href=\"#trigger\" class=\"anchor\">Trigger 触发弹窗</a></h3>\n    <div class=\"bs-example\">\n      <h3>普通</h3>\n      <trigger trigger=\"click\" placement=\"top\">\n        <button class=\"atui-btn\" slot=\"trigger\">click to trigger</button>\n        <div slot=\"popup\">I'm a click popup</div>\n      </trigger>\n      <trigger trigger=\"hover\">\n        <button class=\"atui-btn\" slot=\"trigger\">hover to trigger</button>\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <trigger trigger=\"click\" placement=\"topRight\">\n        <button class=\"atui-btn\" slot=\"trigger\">click to show topRight</button>\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <trigger trigger=\"hover\" placement=\"topLeft\">\n        <button class=\"atui-btn\" slot=\"trigger\">topLeft</button>\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <trigger trigger=\"hover\" placement=\"bottomRight\">\n        <button class=\"atui-btn\" slot=\"trigger\">bottomRight</button>\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <trigger trigger=\"focus\">\n        <input type=\"text\" class=\"atui-form-control\" placeholder=\"Focus\" slot=\"trigger\">\n        <div slot=\"popup\">I'm a hover popup</div>\n      </trigger>\n      <h3>复杂</h3>\n      <trigger trigger=\"click\">\n        <button class=\"atui-btn\" slot=\"trigger\">popup里继续trigger</button>\n        <div slot=\"popup\">\n          <trigger trigger=\"hover\" placement=\"right\">\n            <span slot=\"trigger\" style=\"display: inline-block; padding: 20px; border: 1px solid gray\">hover to trigger</span>\n            <div slot=\"popup\" style=\"padding: 20px\">I'm a hover popup</div>\n          </trigger>\n        </div>\n      </trigger>\n      <trigger trigger=\"hover\" placement=\"right\">\n        <trigger trigger=\"hover\" slot=\"trigger\">\n          <button class=\"atui-btn\" slot=\"trigger\">同时多个popup</button>\n          <div slot=\"popup\">I'm popup-1</div>\n        </trigger>\n        <div slot=\"popup\">I'm popup-2</div>\n      </trigger>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<h3>普通</h3>\n<trigger trigger=\"click\" placement=\"top\">\n  <button class=\"atui-btn\" slot=\"trigger\">click to trigger</button>\n  <div slot=\"popup\">I'm a click popup</div>\n</trigger>\n<trigger trigger=\"hover\">\n  <button class=\"atui-btn\" slot=\"trigger\">hover to trigger</button>\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<trigger trigger=\"click\" placement=\"topRight\">\n  <button class=\"atui-btn\" slot=\"trigger\">click to show topRight</button>\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<trigger trigger=\"hover\" placement=\"topLeft\">\n  <button class=\"atui-btn\" slot=\"trigger\">topLeft</button>\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<trigger trigger=\"hover\" placement=\"bottomRight\">\n  <button class=\"atui-btn\" slot=\"trigger\">bottomRight</button>\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<trigger trigger=\"focus\">\n  <input type=\"text\" class=\"atui-form-control\" placeholder=\"Focus\" slot=\"trigger\">\n  <div slot=\"popup\">I'm a hover popup</div>\n</trigger>\n<h3>复杂</h3>\n<trigger trigger=\"click\">\n  <button class=\"atui-btn\" slot=\"trigger\">popup里继续trigger</button>\n  <div slot=\"popup\">\n    <trigger trigger=\"hover\" placement=\"right\">\n      <span slot=\"trigger\" style=\"display: inline-block; padding: 20px; border: 1px solid gray\">hover to trigger</span>\n      <div slot=\"popup\" style=\"padding: 20px\">I'm a hover popup</div>\n    </trigger>\n  </div>\n</trigger>\n<trigger trigger=\"hover\" placement=\"right\">\n  <trigger trigger=\"hover\" slot=\"trigger\">\n    <button class=\"atui-btn\" slot=\"trigger\">同时多个popup</button>\n    <div slot=\"popup\">I'm popup-1</div>\n  </trigger>\n  <div slot=\"popup\">I'm popup-2</div>\n</trigger>\n</script></code></pre>\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>trigger</td>\n          <td><code>String</code></td>\n          <td><code>click</code></td>\n          <td>以何种方式触发显示气泡框,可选hover, click, focus</td>\n        </tr>\n        <tr>\n          <td>effect</td>\n          <td><code>String</code></td>\n          <td><code>scale</code></td>\n          <td>过渡效果，可选scale, fadein</td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code></td>\n          <td><code>bottom</code></td>\n          <td>定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight\n          </td>\n        </tr>\n        <tr>\n          <td>popupCls</td>\n          <td><code>String</code></td>\n          <td><code>popup</code></td>\n          <td>自定义popup的样式名\n          </td>\n        </tr>\n        <tr>\n          <td>popupAlwaysInView</td>\n          <td><code>Boolean</code></td>\n          <td><code>true</code></td>\n          <td>是否支持坐标智能检测,保证弹窗优先在视图区域可见,默认开启\n          </td>\n        </tr>\n        <tr>\n          <td>popupHideWhenBlur</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>点击trigger组件外部区域的时候,是否隐藏popup浮层,默认不隐藏</td>\n        </tr>\n      </tbody>\n    </table>\n    <h2>events</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n      <tr>\n        <th>Name</th>\n        <th>Params</th>\n        <th>Type</th>\n        <th>Description</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr>\n        <td>trigger-reset-pos</td>\n        <td><code>{$trigger, $popup, placement}</code></td>\n        <td><code>Object</code></td>\n        <td>popup定位事件</td>\n      </tr>\n      <tr>\n        <td>trigger-popup-toggle</td>\n        <td><code>show</code></td>\n        <td><code>Boolean</code></td>\n        <td>popup切换显示隐藏状态事件,true表示可见</td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n";
-
-/***/ },
-/* 445 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__webpack_require__(446)
-	__vue_script__ = __webpack_require__(448)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] docs-backup/example/accordionDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(449)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-2c6b1d48/accordionDocs.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 446 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(447);
+	var content = __webpack_require__(444);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(292)(content, {});
@@ -17113,7 +16889,7 @@
 	}
 
 /***/ },
-/* 447 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(291)();
@@ -17127,7 +16903,7 @@
 
 
 /***/ },
-/* 448 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17260,23 +17036,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 449 */
+/* 446 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"accordion\">\n    <h3 class=\"page-header\"><a href=\"#accordion\" class=\"anchor\">Accordion 手风琴</a></h3>\n    <div class=\"bs-example\">\n      <p>\n        <input type=\"checkbox\" v-model=\"checked\">\n        Open only one at a time.\n      </p>\n      <accordion :open-one=\"checked\">\n        <panel open>\n          <div slot=\"panel-header\" class=\"custom-class\">Panel #1</div>\n          内容一\n        </panel>\n        <panel>\n          <div slot=\"panel-header\" class=\"custom-class\">Panel #2</div>\n          内容二\n        </panel>\n        <panel>\n          <div slot=\"panel-header\" class=\"custom-class\">Panel #3</div>\n          内容三\n        </panel>\n        <panel>\n          <div slot=\"panel-header\" class=\"custom-class\">Panel #4</div>\n          内容四\n        </panel>\n      </accordion>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"checkbox\" v-model=\"checked\">\n<label for=\"checked\">Open only one at a time.</label>\n<accordion :one-at-atime=\"checked\">\n  <panel :is-open=\"true\">\n    <div slot=\"panel-header\" class=\"custom-class\">Panel #1</div>\n    内容一\n  </panel>\n  <panel>\n    <div slot=\"panel-header\" class=\"custom-class\">Panel #2</div>\n    内容二\n  </panel>\n  <panel>\n    <div slot=\"panel-header\" class=\"custom-class\">Panel #3</div>\n    内容三\n  </panel>\n  <panel>\n    <div slot=\"panel-header\" class=\"custom-class\">Panel #4</div>\n    内容四\n  </panel>\n</accordion>\n</script></code></pre>\n    <h2>Accordion Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>one-at-time</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>Control whether expanding an item will cause the other items to close.</td>\n        </tr>\n      </tbody>\n    </table>\n    <h2>Panel Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>is-open</td>\n          <td><code>Boolean</code></td>\n          <td><code>false</code></td>\n          <td>Whether accordion group is open or closed.</td>\n        </tr>\n        <tr>\n          <td>slot::panel-header</td>\n          <td><code>slot node</code></td>\n          <td></td>\n          <td>以内容分发的形式自定义header里面的内容，注意：因为header自动绑定了展开收起的事件，所以\n          如果用户自定义的元素里有事件绑定的操作，建议使用事件修饰符（例：@click.prev.stop=\"\"）</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 450 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(451)
-	__vue_script__ = __webpack_require__(453)
+	__webpack_require__(448)
+	__vue_script__ = __webpack_require__(450)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/affixDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(454)
+	__vue_template__ = __webpack_require__(451)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -17286,7 +17062,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1c70ee64/affixDocs.vue"
+	  var id = "_v-a190b87e/affixDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17295,13 +17071,13 @@
 	})()}
 
 /***/ },
-/* 451 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(452);
+	var content = __webpack_require__(449);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(292)(content, {});
@@ -17321,7 +17097,7 @@
 	}
 
 /***/ },
-/* 452 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(291)();
@@ -17335,7 +17111,7 @@
 
 
 /***/ },
-/* 453 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17420,22 +17196,22 @@
 	// <script>
 
 /***/ },
-/* 454 */
+/* 451 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <!-- <div class=\"bs-docs-section\" id=\"affix\">\n    <h3 class=\"page-header\"><a href=\"#affix\" class=\"anchor\">Affix 固钉</a></h3>\n    <div class=\"bs-example\">\n      <h3>\n        The sub-navigation on the RIGHT is a live demo of the affix.\n        <tooltip trigger=\"hover\" effect=\"fadein\" content=\"I'm a direction, not jerking off!\" placement=\"left\">\n          <span class=\"glyphicon glyphicon-hand-right pull-right animated shake\"></span>\n        </tooltip>\n      </h3>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<affix offset=\"\">\n  <nav class=\"sidebar\">\n    <ul>\n      <li>...</li>\n      <li>...</li>\n      <li>...</li>\n    </ul>\n  </nav>\n</affix>\n</script></code></pre>\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>offset</td>\n          <td><code>Number</code></td>\n          <td><code>0</code></td>\n          <td>Pixels to offset from top of screen when calculating position of scroll.</td>\n        </tr>\n      </tbody>\n    </table>\n  </div> -->\n";
 
 /***/ },
-/* 455 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(456)
+	__vue_script__ = __webpack_require__(453)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/asideDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(457)
+	__vue_template__ = __webpack_require__(454)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -17445,7 +17221,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-78a0f9cc/asideDocs.vue"
+	  var id = "_v-0b67af29/asideDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17454,7 +17230,7 @@
 	})()}
 
 /***/ },
-/* 456 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17581,22 +17357,22 @@
 	// <script>
 
 /***/ },
-/* 457 */
+/* 454 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"aside\">\n    <h3 class=\"page-header\"><a href=\"#aside\" class=\"anchor\">Aside 侧边栏</a></h3>\n    <div class=\"bs-example\">\n      <button class=\"btn btn-success btn-lg\" @click=\"showRight = true\">Show Aside on right</button>\n\n      <sidebar :show.sync=\"showRight\" placement=\"right\" header=\"Title\" :width=\"350\">\n        <h4>Text in aside</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.</p>\n        <p> Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n        consequat.</p>\n          <pre><code class=\"language-javascript\">\nif (talk === cheap){\n  code.style.display = 'block'\n}\n        </code></pre>\n        <div class=\"aside-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"showRight=false\">Close</button>\n        </div>\n      </sidebar>\n\n      <button class=\"btn btn-danger btn-lg\" @click=\"showLeft = true\">Show Aside on left</button>\n\n      <sidebar  :show.sync=\"showLeft\" placement=\"left\" header=\"Title\" :width=\"350\">\n        <h4>Text in aside</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.</p>\n        <p> Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n        consequat.</p>\n        <pre><code class=\"language-javascript\">\nif (talk === cheap){\n  code.style.display = 'block'\n}\n        </code></pre>\n        <div class=\"aside-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"showLeft=false\">Close</button>\n        </div>\n      </sidebar>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<button\nclass=\"btn btn-success btn-lg\"\n@click=\"showRight = true\">Show Aside on right</button>\n\n<sidebar :show.sync=\"showRight\" placement=\"right\" header=\"Title\" :width=\"350\">\n...\n</sidebar>\n\n<button\nclass=\"btn btn-danger btn-lg\"\n@click=\"showLeft = true\">Show Aside on left</button>\n\n<sidebar :show.sync=\"showLeft\" placement=\"left\" header=\"Title\" :width=\"350\">\n...\n</sidebar></script></code></pre>\n\n    <h2>Options</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>show</td>\n          <td><code>Boolean</code></td>\n          <td></td>\n          <td>Whether show the component.</td>\n        </tr>\n        <tr>\n          <td>placement</td>\n          <td><code>String</code>, one of <code>left</code>, <code>right</code></td>\n          <td><code>right</code></td>\n          <td>how to position the component.</td>\n        </tr>\n        <tr>\n          <td>header</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>Header text of the aside component.</td>\n        </tr>\n        <tr>\n          <td>width</td>\n          <td><code>Number</code></td>\n          <td></td>\n          <td></td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
-/* 458 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(459)
+	__vue_script__ = __webpack_require__(456)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/popoverDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(460)
+	__vue_template__ = __webpack_require__(457)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -17606,7 +17382,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7aa311f9/popoverDocs.vue"
+	  var id = "_v-7691e416/popoverDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17615,7 +17391,7 @@
 	})()}
 
 /***/ },
-/* 459 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17775,23 +17551,23 @@
 	// <script>
 
 /***/ },
-/* 460 */
+/* 457 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"popover\">\n    <h3 class=\"page-header\"><a href=\"#popover\" class=\"anchor\">Popover 气泡</a></h3>\n    <div class=\"bs-example\">\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn \">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>No title</h4>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn\">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>Triger</h4>\n      <p>\n        <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n            <button class=\"atui-btn\">Mouseenter</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\"\n      title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </popover>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn \">Popover on top</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>No title</h4>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn\">Popover on top</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>Triger</h4>\n<p>\n  <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n      <button class=\"atui-btn\">Mouseenter</button>\n  </popover>\n</p>\n<popover effect=\"scale\"\ntitle=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n</popover>\n</script></code></pre>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code>, one of <code>click</code>\n        <code>focus</code>\n        <code>hover</code></td>\n        <td><code>click</code></td>\n        <td>How the popover is triggered.</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code>, one of <code>scale</code> <code>fade</code></td>\n        <td><code>fade</code></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>header</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the header.</td>\n      </tr>\n      <tr>\n        <td>placement</td>\n        <td><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></td>\n        <td></td>\n        <td>How to position the popover.</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 461 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(462)
-	__vue_script__ = __webpack_require__(464)
+	__webpack_require__(459)
+	__vue_script__ = __webpack_require__(461)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/tabsDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(465)
+	__vue_template__ = __webpack_require__(462)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -17801,7 +17577,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-557ff0a0/tabsDocs.vue"
+	  var id = "_v-244eb2b3/tabsDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -17810,13 +17586,13 @@
 	})()}
 
 /***/ },
-/* 462 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(463);
+	var content = __webpack_require__(460);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(292)(content, {});
@@ -17836,7 +17612,7 @@
 	}
 
 /***/ },
-/* 463 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(291)();
@@ -17850,7 +17626,7 @@
 
 
 /***/ },
-/* 464 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18159,23 +17935,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 465 */
+/* 462 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"tabs\">\n    <h3 class=\"page-header\"><a href=\"#tabs\" class=\"anchor\">Tabs 标签页</a></h3>\n    <div class=\"bs-example\">\n    <h4 class=\"example-title\">基础型</h4>\n      <tabs :base=\"true\">\n        <tab header=\"系统短信签名\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n      </tabs>\n      <br><br>\n      <h4 class=\"example-title\">迷你型</h4>\n      <tabs :base=\"true\" size=\"small\">\n        <tab header=\"系统短信签名\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n      </tabs>\n      <br><br>\n      <h4 class=\"example-title\">Tab数量较多的情况</h4>\n      <tabs :base=\"true\" trigger=\"hover\" >\n        <tab header=\"系统短信签名\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n      </tabs>\n      <br><br>\n      <h4 class=\"example-title\">选项卡型</h4>\n      <tabs @on-tab-click=\"handleOnClick\">\n        <tab header=\"推广短信签名啊啊啊中啊啊啊啊啊啊啊\">\n          <p>\n            选项卡一内容\n          </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"被禁用的\" disabled>\n          ...\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n        <tab header=\"推广短信签名\">\n           <p>\n              选项卡二内容\n           </p>\n        </tab>\n      </tabs>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<tabs>\n  <tab header=\"系统短信签名\">\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n    ...\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n</tabs>\n<tabs :base=\"true\" size=\"small\">\n  <tab header=\"系统短信签名\">\n    <p>\n      选项卡一内容\n    </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n</tabs>\n<tabs :base=\"true\" trigger=\"hover\">\n  <tab header=\"系统短信签名\">\n    <p>\n      选项卡一内容\n    </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"系统短信签名啊啊啊啊啊啊啊啊系统短信签名啊啊啊啊啊啊啊啊\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n</tabs>\n<tabs @on-tab-click=\"handleOnClick\">\n  <tab header=\"推广短信签名啊啊啊中啊啊啊啊啊啊啊\">\n    <p>\n      选项卡一内容\n    </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"被禁用的\" disabled>\n    ...\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n  <tab header=\"推广短信签名\">\n     <p>\n        选项卡二内容\n     </p>\n  </tab>\n</tabs>\n</script></code></pre>\n  <h2>Tab 选项 (非 TABS)</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>header</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td>Heading text of the tab.</td>\n      </tr>\n      <tr>\n        <td>disabled</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否禁用当前Tab</td>\n      </tr>\n      <tr>\n        <td>base</td>\n        <td><code>Boolean</code></td>\n        <td>false</td>\n        <td>是否采用基础型的Tab样式</td>\n      </tr>\n      <tr>\n        <td>show-len</td>\n        <td><code>Number</code></td>\n        <td>3</td>\n        <td>当前想要显示出多少个Tab</td>\n      </tr>\n      <tr>\n        <td>size</td>\n        <td><code>String</code></td>\n        <td>'default'</td>\n        <td>大小，提供default和small两种大小</td>\n      </tr>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code></td>\n        <td>click</td>\n        <td>以何种方式触发选中Tab(可选，click，hover)</td>\n      </tr>\n      <tr>\n        <td>@on-tab-click</td>\n        <td><code>Function</code></td>\n        <td></td>\n        <td>tab被点击的回调，回调参数为当前tab的索引值</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 466 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(467)
-	__vue_script__ = __webpack_require__(468)
+	__webpack_require__(464)
+	__vue_script__ = __webpack_require__(465)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/stepsDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(469)
+	__vue_template__ = __webpack_require__(466)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18185,7 +17961,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-fdb4ae8a/stepsDocs.vue"
+	  var id = "_v-13ec5e18/stepsDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -18194,13 +17970,13 @@
 	})()}
 
 /***/ },
-/* 467 */
+/* 464 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 468 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18362,22 +18138,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 469 */
+/* 466 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"steps\">\n    <h3 class=\"page-header\"><a href=\"#steps\" class=\"anchor\">Steps 步骤条</a></h3>\n    <div class=\"bs-example\">\n        <h4 class=\"example-title\">基础型</h4>\n        <v-steps :current=\"current\" color=\"#00a0ff\">\n            <v-step title=\"已完成\" ></v-step>\n            <v-step title=\"进行中\"></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br><br>\n        <v-steps :current=\"current\" color=\"rgb(229, 46, 46)\">\n            <v-step title=\"已完成\" ></v-step>\n            <v-step title=\"进行中\"></v-step>\n            <v-step title=\"有一个待运行\"></v-step>\n            <v-step title=\"待运行\"></v-step>\n        </v-steps>\n        <br>\n        <h4 class=\"example-title\">带文字描述</h4>\n        <v-steps :current=\"current\" >\n            <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n            <v-step title=\"进行中\"  description=\"这里是多信息的耶哦\"></v-step>\n            <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n            <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n        </v-steps>\n        <br>\n        <button type=\"button\" class=\"atui-btn atui-btn-default atui-btn-primary\" @click=\"_next\">next</button>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-steps :current=\"current\" color=\"#00a0ff\">\n  <v-step title=\"已完成\" ></v-step>\n  <v-step title=\"进行中\"></v-step>\n  <v-step title=\"有一个待运行\"></v-step>\n  <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\" color=\"rgb(229, 46, 46)\">\n    <v-step title=\"已完成\" ></v-step>\n    <v-step title=\"进行中\"></v-step>\n    <v-step title=\"有一个待运行\"></v-step>\n    <v-step title=\"待运行\"></v-step>\n</v-steps>\n<v-steps :current=\"current\">\n  <v-step title=\"已完成\" description=\"这里是多信息\"></v-step>\n  <v-step title=\"进行中\"  description=\"这里是多信息的耶哦\"></v-step>\n  <v-step title=\"有一个待运行\" description=\"描述啊描述啊\"></v-step>\n  <v-step title=\"待运行\" description=\"这里是多信息的描述啊\"></v-step>\n</v-steps>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <h4 style=\"margin: 20px 0;\">vSteps</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>current</td>\n        <td>Number</td>\n        <td>0</td>\n        <td>当前正在执行的步骤数，可以通过status属性覆盖状态</td>\n      </tr>\n      <tr>\n        <td>color</td>\n        <td>String</td>\n        <td></td>\n        <td>指定步骤条的样式颜色</td>\n      </tr>\n    </tbody>\n  </table>\n  <h4 style=\"margin: 20px 0;\">vSteps vStep</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>title</td>\n        <td>String</td>\n        <td>无</td>\n        <td>标题</td>\n      </tr>\n      <tr>\n        <td>description</td>\n        <td>String</td>\n        <td>无</td>\n        <td>步骤的详情描述</td>\n      </tr>\n      <tr>\n        <td>status</td>\n        <td>String</td>\n        <td>无</td>\n        <td>执行step的状态，当不设置此属性时，父组件Steps会自动根据current来设置对应status,（可选值wait, process, finish）</td>\n      </tr>\n    </tbody>\n  </table>\n";
 
 /***/ },
-/* 470 */
+/* 467 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(471)
+	__vue_script__ = __webpack_require__(468)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/menuDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(472)
+	__vue_template__ = __webpack_require__(469)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18387,7 +18163,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e21d0ede/menuDocs.vue"
+	  var id = "_v-43ffb8d8/menuDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -18396,7 +18172,7 @@
 	})()}
 
 /***/ },
-/* 471 */
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18535,22 +18311,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 472 */
+/* 469 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"menu\">\n    <h3 class=\"page-header\"><a href=\"#menu\" class=\"anchor\">Menu 菜单</a></h3>\n    <div class=\"bs-example\">\n    初始选中的key是{{selectedKey}}\n    <v-menu style=\"width:240px;\" :selected-key=\"selectedKey\" open-one>\n      <sub-menu title=\"导航一\">\n        <menu-item-group title=\"分组1\">\n          <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n          <menu-item key=\"2\">选项2</menu-item>\n        </menu-item-group>\n        <menu-item-group title=\"分组2\">\n          <menu-item key=\"3\">选项3</menu-item>\n          <menu-item key=\"4\">选项4</menu-item>\n        </menu-item-group>\n      </sub-menu>\n      <sub-menu title=\"导航二\">\n        <menu-item key=\"5\">选项5</menu-item>\n        <menu-item key=\"6\">选项6</menu-item>\n        <sub-menu title=\"三级导航\">\n          <menu-item key=\"7\">选项7</menu-item>\n          <menu-item key=\"8\">选项8</menu-item>\n        </sub-menu>\n      </sub-menu>\n      <sub-menu title=\"导航三\">\n        <menu-item key=\"9\">选项9</menu-item>\n        <menu-item key=\"10\">选项10</menu-item>\n        <menu-item key=\"11\">选项11</menu-item>\n        <menu-item key=\"12\">选项12</menu-item>\n      </sub-menu>\n    </v-menu>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<v-menu style=\"width:240px;\" :selected-key=\"selectedKey\" open-one>\n  <sub-menu title=\"导航一\">\n    <menu-item-group title=\"分组1\">\n      <menu-item key=\"1\"><a href=\"http://www.alidayu.com\" target=\"_blank\">选项1</a></menu-item>\n      <menu-item key=\"2\">选项2</menu-item>\n    </menu-item-group>\n    <menu-item-group title=\"分组2\">\n      <menu-item key=\"3\">选项3</menu-item>\n      <menu-item key=\"4\">选项4</menu-item>\n    </menu-item-group>\n  </sub-menu>\n  <sub-menu title=\"导航二\">\n    <menu-item key=\"5\">选项5</menu-item>\n    <menu-item key=\"6\">选项6</menu-item>\n    <sub-menu title=\"三级导航\">\n      <menu-item key=\"7\">选项7</menu-item>\n      <menu-item key=\"8\">选项8</menu-item>\n    </sub-menu>\n  </sub-menu>\n  <sub-menu title=\"导航三\">\n    <menu-item key=\"9\">选项9</menu-item>\n    <menu-item key=\"10\">选项10</menu-item>\n    <menu-item key=\"11\">选项11</menu-item>\n    <menu-item key=\"12\">选项12</menu-item>\n  </sub-menu>\n</v-menu>\n\n<!--script-->\nimport {Menu} from atui\nconst { SubMenu, MenuItem, MenuItemGroup} = Menu\nexport default {\n  components: {\n    vMenu: Menu,\n    SubMenu,\n    MenuItemGroup,\n    MenuItem\n  },\n  data() {\n    return {\n      selectedKey: '6'\n    }\n  }\n}\n  </script></code></pre>\n\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tr>\n      <th>openOne</th>\n      <th>Boolean</th>\n      <th>false</th>\n      <th>始终只打开一个菜单</th>\n    </tr>\n    <tr>\n      <th>selectedKey</th>\n      <th>String</th>\n      <th></th>\n      <th>选中的MenuItem的Key</th>\n    </tr>\n    <tbody>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
-/* 473 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(474)
+	__vue_script__ = __webpack_require__(471)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/treeDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(475)
+	__vue_template__ = __webpack_require__(472)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18560,7 +18336,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-798e27d0/treeDocs.vue"
+	  var id = "_v-6ec65a5a/treeDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -18569,7 +18345,7 @@
 	})()}
 
 /***/ },
-/* 474 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18663,23 +18439,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 475 */
+/* 472 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"tree\">\n    <h3 class=\"page-header\"><a href=\"#tree\" class=\"anchor\">Tree 树形菜单</a></h3>\n    <div class=\"bs-example\">\n    <h4>普通树形</h4>\n    <tree :data-source=\"dataSource\"></tree>\n    </div>\n\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<tree :data-source=\"dataSource\"></tree>\n//\nvar data = {\n  name: 'My Tree',\n  children: [\n    { name: 'hello' },\n    { name: 'wat' },\n    {\n      name: 'child folder',\n      children: [\n        {\n          name: 'child folder',\n          children: [\n            { name: 'hello' },\n            { name: 'wat' }\n          ]\n        },\n        { name: 'hello' },\n        { name: 'wat' },\n        {\n          name: 'child folder',\n          children: [\n            { name: 'hello' },\n            { name: 'wat' }\n          ]\n        }\n      ]\n    }\n  ]\n}\nexport default {\n  components: {\n    Tree\n  },\n  data () {\n    return {\n      dataSource : data\n    }\n  }\n}\n</script></code></pre>\n\n  </div>\n";
 
 /***/ },
-/* 476 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(477)
-	__vue_script__ = __webpack_require__(478)
+	__webpack_require__(474)
+	__vue_script__ = __webpack_require__(475)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/breadcrumbDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(479)
+	__vue_template__ = __webpack_require__(476)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18689,7 +18465,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7d3663f5/breadcrumbDocs.vue"
+	  var id = "_v-320b80b8/breadcrumbDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -18698,13 +18474,13 @@
 	})()}
 
 /***/ },
-/* 477 */
+/* 474 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 478 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18821,23 +18597,23 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 479 */
+/* 476 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"breadcrumb\">\n    <h3 class=\"page-header\"><a href=\"#breadcrumb\" class=\"anchor\">Breadcrumb 面包屑</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">基本样式</h4>\n      <breadcrumb>\n        <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n        <breadcrumb-item>三级类目</breadcrumb-item>\n      </breadcrumb>\n      <h4 class=\"example-title\">分隔符样式（选用）</h4>\n      <breadcrumb slash=\"&gt;\">\n        <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n        <breadcrumb-item :href=\"href\">三级类目</breadcrumb-item>\n        <breadcrumb-item>四级类目</breadcrumb-item>\n      </breadcrumb>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<breadcrumb>\n  <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n  <breadcrumb-item>三级类目</breadcrumb-item>\n</breadcrumb>\n<breadcrumb slash=\"&gt;\">\n  <breadcrumb-item :href=\"href\">一级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">二级类目</breadcrumb-item>\n  <breadcrumb-item :href=\"href\">三级类目</breadcrumb-item>\n  <breadcrumb-item>四级类目</breadcrumb-item>\n</breadcrumb>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <h4 style=\"margin: 20px 0;\">Breadcrumb</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>slash</td>\n        <td>String</td>\n        <td>/</td>\n        <td>每一级类目之间的分隔符</td>\n      </tr>\n    </tbody>\n  </table>\n  <h4 style=\"margin: 20px 0;\">BreadcrumbItem</h4>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>href</td>\n        <td>String</td>\n        <td>无</td>\n        <td>链接，如果不传则不可点击</td>\n      </tr>\n    </tbody>\n  </table>\n";
 
 /***/ },
-/* 480 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(481)
-	__vue_script__ = __webpack_require__(482)
+	__webpack_require__(478)
+	__vue_script__ = __webpack_require__(479)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/paginationDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(483)
+	__vue_template__ = __webpack_require__(480)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -18847,7 +18623,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-59fee48c/paginationDocs.vue"
+	  var id = "_v-0ed4014f/paginationDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -18856,13 +18632,13 @@
 	})()}
 
 /***/ },
-/* 481 */
+/* 478 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 482 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19036,22 +18812,22 @@
 	// <script>
 
 /***/ },
-/* 483 */
+/* 480 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"pagination\">\n    <h3 class=\"page-header\"><a href=\"#pagination\" class=\"anchor\">Pagination 翻页</a></h3>\n    <div class=\"bs-example\">\n      <h4 class=\"example-title\">完全版</h4>\n      <pagination :curr-page=\"currPage\"\n                  :total=\"total\"\n                  show-jumper\n                  :page-size=\"pageSize\"\n                  show-size-changer>\n      </pagination>\n      <h4 class=\"example-title\">迷你版</h4>\n      <pagination :curr-page=\"currPage\"\n                  :total=\"total\"\n                  show-jumper\n                  mini>\n      </pagination>\n      <h4 class=\"example-title\">精简版</h4>\n      <pagination :curr-page=\"currPage\"\n                  :total=\"total\"\n                  simple\n                  class=\"custom\">\n      </pagination>\n\n\n      <input type=\"button\" value=\"changeTotalPage\" @click=\"changeTotalPage\"/>\n    </div>\n<pre>\n<code class=\"language-markup\"><script type=\"language-mark-up\">\n<h4 class=\"example-title\">完全版</h4>\n<pagination :curr-page=\"currPage\"\n            :total=\"total\"\n            show-jumper\n            :page-size=\"pageSize\"\n            show-size-changer>\n</pagination>\n<h4 class=\"example-title\">迷你版</h4>\n<pagination :curr-page=\"currPage\"\n            :total=\"total\"\n            show-jumper\n            mini>\n</pagination>\n<h4 class=\"example-title\">精简版</h4>\n<pagination :curr-page=\"currPage\"\n            :total=\"total\"\n            simple\n            class=\"custom\">\n</pagination>\n</script></code></pre>\n  </div>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>参数</th>\n        <th>类型</th>\n        <th>默认值</th>\n        <th>说明</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>total-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>总页数</td>\n      </tr>\n      <tr>\n        <td>curr-page</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>当前页</td>\n      </tr>\n      <tr>\n        <td>default-size</td>\n        <td>Number</td>\n        <td>one of <code>10、20、30</code></td>\n        <td>如果有选择页码大小的话，这个可以指定每页的大小</td>\n      </tr>\n      <tr>\n        <td>total</td>\n        <td>Number</td>\n        <td>无</td>\n        <td>数据总条数</td>\n      </tr>\n      <tr>\n        <td>show-jumper</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启跳转功能</td>\n      </tr>\n      <tr>\n        <td>show-size-changer</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否开启修改每页条数功能</td>\n      </tr>\n      <tr>\n        <td>simple</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用精简版样式</td>\n      </tr>\n      <tr>\n        <td>mini</td>\n        <td>Boolean</td>\n        <td>false</td>\n        <td>是否采用迷你版样式</td>\n      </tr>\n    </tbody>\n  </table>\n  <br>\n  <strong>注：</strong>pagination组件会监听当前currPage的变化，当其发生变化时pagination组件会向上派发一个回调事件，名字叫pageChange，回调参数就是当前页以及pagination的id，需要在引用pagination的当前文件里面的events对象里将其加入进去.\n  <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n    events: {\n      pageChange (page, id) {\n\n      }\n    }\n  </script></code></pre>\n";
 
 /***/ },
-/* 484 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(485)
+	__vue_script__ = __webpack_require__(482)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(488)
+	__vue_template__ = __webpack_require__(485)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -19061,7 +18837,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-08a28617/phoneNumberDocs.vue"
+	  var id = "_v-0fbe14b4/phoneNumberDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -19070,7 +18846,7 @@
 	})()}
 
 /***/ },
-/* 485 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19079,7 +18855,7 @@
 	  value: true
 	});
 	
-	__webpack_require__(486);
+	__webpack_require__(483);
 	
 	exports.default = {
 	  data: function data() {
@@ -19108,12 +18884,12 @@
 	// <script>
 
 /***/ },
-/* 486 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _phoneNumber = __webpack_require__(487);
+	var _phoneNumber = __webpack_require__(484);
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -19124,7 +18900,7 @@
 	module.exports = {};
 
 /***/ },
-/* 487 */
+/* 484 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19151,41 +18927,41 @@
 	};
 
 /***/ },
-/* 488 */
+/* 485 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phonenumber\">\n    <h3 class=\"page-header\"><a href=\"#phonenumber\" class=\"anchor\">手机号码格式化 phonenumber</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phoneNumber}}</div>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"text\" v-model=\"number\" />\n<div>{{number | phoneNumber}}</div>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
-/* 489 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(490);
-	__webpack_require__(491);
-	__webpack_require__(492);
+	__webpack_require__(487);
+	__webpack_require__(488);
+	__webpack_require__(489);
+
+/***/ },
+/* 487 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 488 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 489 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 /* 490 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 491 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 492 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 493 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -19973,7 +19749,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 494 */
+/* 491 */
 /***/ function(module, exports) {
 
 	"use strict";
