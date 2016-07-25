@@ -95,7 +95,7 @@ export default class Header extends React.Component {
     const route = routes[0].path.replace(/^\//, '');
     let activeMenuItem = route.slice(0, route.indexOf(':') - 1) || 'home';
     if (activeMenuItem === 'components' || route === 'changelog') {
-      activeMenuItem = 'docs/react';
+      activeMenuItem = 'docs/atui';
     }
 
     const options = components
@@ -168,8 +168,8 @@ export default class Header extends React.Component {
                   <FormattedMessage id="app.header.menu.pattern" />
                 </Link>
               </Menu.Item>*/}
-              <Menu.Item key="docs/react">
-                <Link to="/docs/react/introduce">
+              <Menu.Item key="docs/atui">
+                <Link to="/docs/atui/introduce">
                   <FormattedMessage id="app.header.menu.react" />
                 </Link>
               </Menu.Item>

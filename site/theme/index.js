@@ -24,7 +24,7 @@ module.exports = {
     '/': './template/Home/index',
     '/docs/practice/:children': contentTmpl,
     '/docs/pattern/:children': contentTmpl,
-    '/docs/react/:children': contentTmpl,
+    '/docs/atui/:children': contentTmpl,
     '/changelog': contentTmpl,
     //'/components/:children': contentTmpl,
     '/src/components/:children': contentTmpl,

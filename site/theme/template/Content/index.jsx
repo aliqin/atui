@@ -12,9 +12,9 @@ export function collect(nextProps, callback) {
 
   const pathname = nextProps.location.pathname;
   let moduleDocs;
-  if (/(docs\/react\/)|(components\/)|(changelog)/i.test(pathname)) {
+  if (/(docs\/atui\/)|(components\/)|(changelog)/i.test(pathname)) {
     moduleDocs = [
-      ...utils.collectDocs(nextProps.data.docs.react),
+      ...utils.collectDocs(nextProps.data.docs.atui),
       ...componentsList,
       /* eslint-disable new-cap */
       nextProps.data.CHANGELOG(),
