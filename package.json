@@ -109,7 +109,7 @@
     "build": "npm run lint && NODE_ENV=production webpack --progress && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
     "test": "npm run lint && citest run",
     "authors": "git log --format='%aN <%aE>' | sort -u  > AUTHORS.txt",
-    "start": "npm run docs & bisheng start -c ./site/bisheng.config.js",
+    "start": "webpack-dev-server --config webconfig.bisheng.js --host 0.0.0.0 & bisheng start -c ./site/bisheng.config.js",
     "site": "bisheng build -c ./site/bisheng.config.js"
   },
   "publishConfig": {

@@ -44,10 +44,10 @@ title:
 
 ````vue-script
 new Vue({
-    el: 'body',
-    components: {
-        accordion: atui.Accordion,
-        panel: atui.Accordion.Panel
-    }
+  el: 'body',
+  components: {
+      accordion: atui.Accordion,
+      panel: atui.Accordion.Panel
+  }
 })
 ````
