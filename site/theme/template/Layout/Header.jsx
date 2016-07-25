@@ -146,11 +146,11 @@ export default class Header extends React.Component {
               </Select>
             </div>
             {
-              location.port ? (
+              /*location.port ? (
                 <Button id="lang" type="ghost" size="small" onClick={this.handleLangChange}>
                   <FormattedMessage id="app.header.lang" />
                 </Button>
-              ) : null
+              ) : null*/
             }
             <Menu mode={this.state.menuMode} selectedKeys={[activeMenuItem]} id="nav">
               <Menu.Item key="home">
