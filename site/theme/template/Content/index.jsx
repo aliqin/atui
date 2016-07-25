@@ -8,8 +8,6 @@ export function collect(nextProps, callback) {
   //for atui
   const componentsList = utils.collectDocs(nextProps.data.src.components);
 
-  console.log(nextProps, '=====')
-
   const pathname = nextProps.location.pathname;
   let moduleDocs;
   if (/(docs\/atui\/)|(components\/)|(changelog)/i.test(pathname)) {
