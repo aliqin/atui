@@ -3,8 +3,8 @@ var path = require('path')
 ghpages.publish(path.join(__dirname, './'), {
   branch: 'demo',
   message: '同步demo',
-  // add:true,
-  src:'{docs/**/*,build/**/*,dist/**/*,index.html}',
+  add:true,
+  src:'{docs-backup/**/*,build/**/*,dist/**/*,index.html}',
   logger: function(message) {
     console.log(message)
   }
