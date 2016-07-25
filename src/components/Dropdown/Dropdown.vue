@@ -7,7 +7,7 @@
              :popup-hide-delay="200"
              :show.sync="open">
       <slot slot="trigger"></slot>
-      <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont'">
+      <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont']">
         <slot name="dropdown-menu" role="dropdown"></slot>
       </div>
     </trigger>

@@ -1,7 +1,7 @@
 <template xmlns:v-el="http://www.w3.org/1999/xhtml">
   <div :class="[prefixCls + '-trigger-cont']">
     <div v-if="trigger === 'click'"
-        v-el:trigger
+         v-el:trigger
          :class="[prefixCls + '-trigger']"
          @click="clickHandler">
       <slot name="trigger">trigger slot is not set</slot>
@@ -122,7 +122,7 @@
     ready () {
       const $trigger = this.$els.trigger
       const $popup = this.$els.popup
-      const $triggerTarget = this.$els.trigger.children[0]
+      const $triggerTarget = $trigger.querySelector('input, textarea')
       const me = this
       const { trigger, popupHideWhenBlur } = this
 
@@ -135,7 +135,7 @@
         })
 
         this._blurEvent = EventListener.listen($triggerTarget, 'blur', () => {
-          this.show = false
+          me.show = false
         })
       }
 
