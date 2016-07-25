@@ -25,7 +25,7 @@ export default class Banner extends React.Component {
             <p key="content">阿里通信前端UI组件</p>
             <span className="line" key="line" />
             <div key="button" className="start-button clearfix">
-              <Link to="/docs/react/introduce">
+              <Link to="/docs/atui/introduce">
                 <Icon type="smile-circle" /> 开始探索
               </Link>
             </div>
