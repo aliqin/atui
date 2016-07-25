@@ -5,6 +5,8 @@ import Promise from 'bluebird';
 import * as utils from '../utils';
 
 export function collect(nextProps, callback) {
+
+  console.log(nextProps)
   //for atui
   const componentsList = utils.collectDocs(nextProps.data.src.components);
 

@@ -29,6 +29,7 @@ export default class Demo extends React.Component {
 
   render() {
     const props = this.props;
+    console.log(this.props)
     const {
       meta,
       src,
