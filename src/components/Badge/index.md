@@ -21,3 +21,15 @@ count | 数量 | number | -
 dot | 是否只显示小点 | boolean | | false
 
 
+<style>
+  .badge-count-example, .badge-dot-example {
+    width: 42px;
+    height: 42px;
+    background-color: #eee;
+    display: inline-block;
+    border-radius: 6px;
+  }
+  .example-title {
+    margin: 20px 0;
+  }
+</style>
