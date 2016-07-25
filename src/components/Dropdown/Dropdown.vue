@@ -1,14 +1,32 @@
 <template>
-  <div :class="[prefixCls + '-dropdown', open && (prefixCls + '-dropdown-open')]">
-    <slot></slot>
-    <slot name="dropdown-menu"></slot>
+  <div :class="[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]">
+    <trigger :trigger="trigger"
+             effect="slide"
+             popup-cls="dropdown"
+             placement="bottomLeft"
+             :popup-hide-delay="200"
+             :show.sync="open">
+      <slot slot="trigger"></slot>
+      <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont'">
+        <slot name="dropdown-menu" role="dropdown"></slot>
+      </div>
+    </trigger>
   </div>
 </template>
 
 <script type="text/babel">
-  import EventListener from '../_utils/EventListener'
+  import GlobalMixin from '../_utils/GlobalMixin'
+  import Trigger from '../Trigger'
 
   export default {
+    mixins: [
+      GlobalMixin
+    ],
+
+    components: {
+      Trigger
+    },
+
     props: {
       trigger: {
         type: String,
@@ -16,58 +34,7 @@
       },
       open: {
         type: Boolean
-      },
-      prefixCls: {
-        type: String,
-        default: 'atui'
       }
-    },
-    methods: {
-      toggleDropdown (e) {
-        e.preventDefault()
-        this.open = !this.open
-      }
-    },
-    ready () {
-      const me = this
-      const el = me.$el
-      const toggle = el.querySelector('[data-toggle="dropdown"]')
-      let self = this
-
-      if (!toggle) {
-        return
-      }
-
-      const event = me.trigger === 'click' ? 'click' : 'mouseenter'
-
-      toggle.addEventListener(event, () => {
-        clearTimeout(me.timeout)
-        me.open = true
-      })
-
-      if (me.trigger === 'hover') {
-        me.$el.addEventListener('mouseleave', () => {
-          me.timeout = setTimeout(() => {
-            me.open = false
-          }, 300)
-        })
-
-        me.$el.addEventListener('mouseenter', () => {
-          if (me.timeout) {
-            clearTimeout(me.timeout)
-            me.timeout = null
-          }
-        })
-      }
-
-      this._closeEvent = EventListener.listen(window, 'click', (e) => {
-        if (!el.contains(e.target)) {
-          self.open = false
-        }
-      })
-    },
-    beforeDestroy () {
-      if (this._closeEvent) this._closeEvent.remove()
     }
   }
 </script>

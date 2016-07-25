@@ -18,7 +18,17 @@
          :class="[prefixCls + '-trigger']">
       <slot name="trigger">trigger slot is not set</slot>
     </div>
-    <div v-el:popup
+    <div v-if="trigger === 'hover'"
+         v-el:popup
+         v-show="show"
+         :class="popupClassObj"
+         :transition="effect"
+         @mouseenter="hoverHandler"
+         @mouseleave="hoverHandler">
+      <slot name="popup">popup slot is not set</slot>
+    </div>
+    <div v-else
+         v-el:popup
          v-show="show"
          :class="popupClassObj"
          :transition="effect">
@@ -58,6 +68,14 @@
       popupHideWhenBlur: {
         type: Boolean,
         default: false
+      },
+      popupHideDelay: {
+        type: Number,
+        default: 0
+      },
+      show: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -66,8 +84,7 @@
         position: {
           top: 0,
           left: 0
-        },
-        show: false
+        }
       }
     },
 
@@ -310,13 +327,23 @@
       },
 
       hoverHandler (ev) {
+        const me = this
+        const { popupHideDelay } = this
         const { type } = ev
+
+        if (popupHideDelay && this._mouseLeaveTimer) clearTimeout(this._mouseLeaveTimer)
 
         if (type === 'mouseenter') {
           this.show = true
           this.resetPos()
         } else {
-          this.show = false
+          if (popupHideDelay) {
+            this._mouseLeaveTimer = setTimeout(() => {
+              me.show = false
+            }, popupHideDelay)
+          } else {
+            this.show = false
+          }
         }
       },
 
@@ -355,6 +382,8 @@
       if (this._closeEvent) {
         this._closeEvent.remove()
       }
+
+      this._mouseLeaveTimer = null
     }
   }
 </script>
