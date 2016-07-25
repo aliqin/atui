@@ -20,17 +20,14 @@ var banner =
   ' */'
 module.exports = {
   entry: {
-    atui: ['./src/index.js'],
-    atuiWidget: ['./src/widgets/index.js'],
-    atuiFilter: ['./src/filters/index.js'],
-    style: ['./src/style.js']
+    'components-docs': ['./docs-backup/components.js'],
+    'widgets-docs': ['./docs-backup/widgets.js'],
+    'filters-docs': ['./docs-backup/filters.js']
   },
   output: {
     path: './build',
     publicPath: '/build/',
-    filename: '[name].js',
-    library: '[name]',
-    libraryTarget: 'umd'
+    filename: '[name].js'
   },
   plugins: [
     extractAlidayu,
