@@ -3,7 +3,12 @@
     <trigger trigger="click" effect="slide" placement="bottomLeft" :show.sync="show">
       <div slot="trigger"
            :class="[prefixCls + '-datepicker-toggle']">
-        <input :class="[prefixCls + '-datepicker-input']" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
+        <input :class="[prefixCls + '-datepicker-input']"
+        v-bind="{disabled:disabled}"
+        type="text"
+        value="value"
+        :placeholder="placeholder"
+        readonly />
         <icon type="calendar"></icon>
       </div>
       <div slot="popup"

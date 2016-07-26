@@ -22,10 +22,10 @@ title:
 
 ````vue-script
 new Vue({
-    el: 'body',
-    components: {
-        vButton: atui.Button,
-        icon: atui.Icon
-    }
+  el: 'body',
+  components: {
+      vButton: atui.Button,
+      icon: atui.Icon
+  }
 })
 ````
