@@ -13,7 +13,8 @@ title:
 
 
 ````jsx
-<slider :value="30"></slider>
+basic
+<slider :value="[20,50]"></slider>
 ````
 
 ````vue-script

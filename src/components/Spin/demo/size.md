@@ -6,13 +6,18 @@ title:
 ---
 
 ## zh-CN
-要显示的时候show必须传，否则是不显示状态
+
+不同大小的加载器，分为`small`,`large`，不传就是默认的中型大小
 
 ## en-US
 
 
 ````jsx
-<spin show></spin>
+
+<spin show size="small"></spin>
+<spin show size="large"></spin>
+
+
 ````
 
 ````vue-script
