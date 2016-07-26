@@ -1,7 +1,7 @@
 ---
-order: 0
+order: 2
 title:
-  zh-CN: 基本
+  zh-CN: 日期范围
   en-US: Type
 ---
 
@@ -13,14 +13,14 @@ title:
 
 
 ````jsx
-<date-picker></date-picker>
+<range-picker></range-picker>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-      datePicker: atui.DatePicker
+    rangePicker: atui.DatePicker.PangePicker
   }
 })
 ````
