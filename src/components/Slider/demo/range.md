@@ -1,7 +1,7 @@
 ---
-order: 2
+order: 0
 title:
-  zh-CN: 日期范围
+  zh-CN: 基本
   en-US: Type
 ---
 
@@ -13,14 +13,15 @@ title:
 
 
 ````jsx
-<range-picker></range-picker>
+basic
+<slider :value="[20,50]"></slider>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    rangePicker: atui.DatePicker.RangePicker
+    slider: atui.Slider
   }
 })
 ````
