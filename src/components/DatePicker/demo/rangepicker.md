@@ -20,7 +20,7 @@ title:
 new Vue({
   el: 'body',
   components: {
-    rangePicker: atui.DatePicker.PangePicker
+    rangePicker: atui.DatePicker.RangePicker
   }
 })
 ````
