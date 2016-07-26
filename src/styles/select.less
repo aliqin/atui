@@ -2,16 +2,9 @@
 // --------------------------------------------------
 @prefix-cls-select: e("@{prefix-cls}-select");
 
-.@{prefix-cls-select}-container {
+.@{prefix-cls-select}-cont {
   position: relative;
   display: inline-block;
-
-  &.@{prefix-cls-select}-disabled {
-    background: #f2f2f2;
-    color: #ccc;
-    border-color: #e6e6e6;
-    cursor: not-allowed;
-  }
 
   .@{prefix-cls-select}-toggle {
     min-width: 100px;
@@ -69,7 +62,7 @@
     border: 0;
   }
   .@{prefix-cls-select}-tags:focus {
-    border-color: transparent;
+    border: 1px solid #d9d9d9;
     box-shadow: none;
   }
 }
@@ -86,5 +79,13 @@
     color: #bfbfbf;
     display: inline-block;
     transition: all .3s ease;
+  }
+}
+
+.@{prefix-cls}-trigger-disabled {
+  .@{prefix-cls-select}-toggle:focus {
+    border: 1px solid #d9d9d9;
+    box-shadow: none;
+    outline: none;
   }
 }

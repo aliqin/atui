@@ -3,8 +3,24 @@
 @prefix-cls-trigger: e("@{prefix-cls}-trigger");
 @prefix-cls-popup: e("@{prefix-cls}-popup");
 
-.@{prefix-cls-trigger}, .@{prefix-cls-trigger}-cont {
+.@{prefix-cls-trigger}-cont {
   display: inline-block;
+  width: 100%;
+}
+
+.@{prefix-cls-trigger}-disabled {
+  color: #ccc;
+  border-color: #e6e6e6;
+  cursor: not-allowed;
+
+  * {
+    cursor: not-allowed !important;
+    user-select: none;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
 }
 
 .@{prefix-cls-popup} {
