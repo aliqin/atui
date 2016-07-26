@@ -2147,17 +2147,11 @@ input[type="radio"][disabled]:checked:after {
 .atui-dropdown-divider {
   border-bottom: 1px solid #d9d9d9;
 }
-.atui-select-container {
+.atui-select-cont {
   position: relative;
   display: inline-block;
 }
-.atui-select-container.atui-select-disabled {
-  background: #f2f2f2;
-  color: #ccc;
-  border-color: #e6e6e6;
-  cursor: not-allowed;
-}
-.atui-select-container .atui-select-toggle {
+.atui-select-cont .atui-select-toggle {
   min-width: 100px;
   cursor: pointer;
   text-align: left;
@@ -2170,28 +2164,28 @@ input[type="radio"][disabled]:checked:after {
   line-height: 30px;
   overflow: hidden;
 }
-.atui-select-container .atui-select-toggle:focus {
+.atui-select-cont .atui-select-toggle:focus {
   border: 1px solid #e52e2e;
   box-shadow: 0px 0px 0px 2px rgba(229, 46, 46, 0.3);
   outline: none;
 }
-.atui-select-container .atui-select-toggle.large {
+.atui-select-cont .atui-select-toggle.large {
   height: 34px;
   line-height: 34px;
 }
-.atui-select-container .atui-select-toggle.small {
+.atui-select-cont .atui-select-toggle.small {
   height: 28px;
   line-height: 28px;
 }
-.atui-select-container .atui-select-toggle .atui-tag {
+.atui-select-cont .atui-select-toggle .atui-tag {
   margin: -4px 5px 0;
   border-radius: 4px;
   line-height: 1.5;
 }
-.atui-select-container .atui-select-multiple .atui-select-toggle {
+.atui-select-cont .atui-select-multiple .atui-select-toggle {
   cursor: default;
 }
-.atui-select-container .atui-select-placeholder {
+.atui-select-cont .atui-select-placeholder {
   position: absolute;
   top: 50%;
   left: 9px;
@@ -2201,14 +2195,14 @@ input[type="radio"][disabled]:checked:after {
   margin-top: -10px;
   cursor: default;
 }
-.atui-select-container .atui-select-search-field {
+.atui-select-cont .atui-select-search-field {
   width: 10px;
   height: 20px;
   outline: 0;
   border: 0;
 }
-.atui-select-container .atui-select-tags:focus {
-  border-color: transparent;
+.atui-select-cont .atui-select-tags:focus {
+  border: 1px solid #d9d9d9;
   box-shadow: none;
 }
 .atui-select-caret {
@@ -2223,6 +2217,11 @@ input[type="radio"][disabled]:checked:after {
   display: inline-block;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
+}
+.atui-trigger-disabled .atui-select-toggle:focus {
+  border: 1px solid #d9d9d9;
+  box-shadow: none;
+  outline: none;
 }
 .atui-nav {
   margin-bottom: 0;
@@ -4560,26 +4559,24 @@ button.atui-close {
   margin-right: 2px;
   vertical-align: top;
 }
-.atui-searchbox {
+.atui-searchbox-cont {
+  display: inline-block;
   position: relative;
 }
-.atui-searchbox .atui-searchbox-input {
+.atui-searchbox-cont .atui-searchbox-input {
   padding-right: 25px;
 }
-.atui-searchbox .atui-icon-search {
+.atui-searchbox-cont .atui-icon-search {
   position: absolute;
   right: 8px;
   top: 6px;
 }
-.atui-searchbox .atui-icon-clear {
+.atui-searchbox-cont .atui-icon-clear {
   position: absolute;
   top: 6px;
   right: 30px;
 }
 .atui-searchbox .atui-searchbox-list-containter {
-  position: absolute;
-  top: 100%;
-  left: 0;
   width: 100%;
   padding-top: 4px;
   z-index: 9999;
@@ -4951,7 +4948,6 @@ button.atui-close {
   background: transparent;
 }
 .atui-datepicker {
-  position: relative;
   display: inline-block;
 }
 .atui-datepicker-toggle {
@@ -4988,10 +4984,6 @@ button.atui-close {
   top: 50%;
   margin-top: -14px;
   right: 7px;
-}
-.atui-datepicker-calendar {
-  position: absolute;
-  z-index: 1080;
 }
 .atui-cascader {
   position: relative;
@@ -5758,8 +5750,24 @@ button.atui-close {
   border-left-color: #fff;
   bottom: -10px;
 }
-.atui-trigger, .atui-trigger-cont {
+.atui-trigger-cont {
   display: inline-block;
+  width: 100%;
+}
+.atui-trigger-disabled {
+  color: #ccc;
+  border-color: #e6e6e6;
+  cursor: not-allowed;
+}
+.atui-trigger-disabled * {
+  cursor: not-allowed !important;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.atui-trigger-disabled *:focus {
+  box-shadow: none !important;
 }
 .atui-popup {
   position: absolute;

@@ -1042,7 +1042,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4aed0b7c/headerDocs.vue"
+	  var id = "_v-147983ff/headerDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1168,11 +1168,11 @@
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 	
-	var _Uploader = __webpack_require__(169);
+	var _Uploader = __webpack_require__(174);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 	
-	var _Slider = __webpack_require__(201);
+	var _Slider = __webpack_require__(206);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 	
@@ -1204,7 +1204,7 @@
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 	
-	var _Message = __webpack_require__(196);
+	var _Message = __webpack_require__(201);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -1240,11 +1240,11 @@
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
-	var _Tooltip = __webpack_require__(204);
+	var _Tooltip = __webpack_require__(209);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Trigger = __webpack_require__(208);
+	var _Trigger = __webpack_require__(168);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -1388,7 +1388,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6cc5e2ca/Icon.vue"
+	  var id = "_v-d85b2bd0/Icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1485,7 +1485,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6d04157b/Form.vue"
+	  var id = "_v-373970f8/Form.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1593,7 +1593,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-9470564e/Row.vue"
+	  var id = "_v-323de8fc/Row.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1653,7 +1653,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-c8a14d02/Col.vue"
+	  var id = "_v-18256da2/Col.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1729,7 +1729,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c37eca4/FormItem.vue"
+	  var id = "_v-ca5542aa/FormItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1901,7 +1901,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-75d5860a/Button.vue"
+	  var id = "_v-760691f8/Button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2000,7 +2000,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-52ff8974/Group.vue"
+	  var id = "_v-0dc1d2a9/Group.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2120,7 +2120,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6d8cab51/Input.vue"
+	  var id = "_v-7fd91b8e/Input.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2485,7 +2485,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Searchbox/Searchbox.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(168)
+	__vue_template__ = __webpack_require__(173)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2495,7 +2495,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-471a4c43/Searchbox.vue"
+	  var id = "_v-db75a100/Searchbox.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2513,40 +2513,27 @@
 	  value: true
 	});
 	
+	var _GlobalMixin = __webpack_require__(167);
+	
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
+	
 	var _Icon = __webpack_require__(135);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _EventListener = __webpack_require__(167);
+	var _Trigger = __webpack_require__(168);
 	
-	var _EventListener2 = _interopRequireDefault(_EventListener);
+	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
-	//   <div :class="[prefixCls + '-searchbox']">
-	//     <input type="text"
-	//            :class="inputClassObj"
-	//            :placeholder="placeholder"
-	//            v-model="value"
-	//            @focus="focusInput"
-	//            debounce="500" />
-	//     <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
-	//     <icon type="search" :color="iconColor" size="14"></icon>
-	//     <div v-if="searchList && searchList.length > 0"
-	//          :class="[prefixCls + '-searchbox-list-containter']">
-	//       <ul v-show="showPop"
-	//           :class="[prefixCls + '-searchbox-list-dropdown']"
-	//           transition="slide">
-	//         <li v-for="item in searchList | filterBy value">
-	//           <a href="javascript:;" @click="checkItem($index, item[textField])" :title="item[textField]">{{item[textField]}}</a>
-	//         </li>
-	//       </ul>
-	//     </div>
-	//   </div>
-	// </template>
-	// <script type="text/babel">
 	exports.default = {
+	  mixins: [_GlobalMixin2.default],
+	
+	  components: {
+	    Trigger: _Trigger2.default, Icon: _Icon2.default
+	  },
+	
 	  props: {
 	    placeholder: {
 	      type: String,
@@ -2569,12 +2556,9 @@
 	    },
 	    filterField: {
 	      type: Array
-	    },
-	    prefixCls: {
-	      type: String,
-	      default: 'atui'
 	    }
 	  },
+	
 	  data: function data() {
 	    return {
 	      iconColor: '#BFBFBF',
@@ -2582,6 +2566,7 @@
 	      isCheck: false
 	    };
 	  },
+	
 	
 	  computed: {
 	    filterLables: function filterLables() {
@@ -2605,22 +2590,11 @@
 	      return classObj;
 	    }
 	  },
-	  components: {
-	    Icon: _Icon2.default
-	  },
-	  ready: function ready() {
-	    var self = this;
-	    var el = this.$el;
 	
-	    this._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
-	      if (!el.contains(e.target)) {
-	        self.blurInput();
-	      }
-	    });
-	  },
 	  beforeDestroy: function beforeDestroy() {
 	    if (this._closeEvent) this._closeEvent.remove();
 	  },
+	
 	
 	  watch: {
 	    value: function value(val) {
@@ -2629,6 +2603,7 @@
 	      this.isCheck = false;
 	    }
 	  },
+	
 	  methods: {
 	    focusInput: function focusInput() {
 	      this.iconColor = '#00A0FF';
@@ -2652,9 +2627,561 @@
 	// </script>
 
 	/* generated by vue-loader */
+	// <template>
+	//   <div :class="[prefixCls + '-searchbox-cont']">
+	//     <trigger trigger="focus" effect="slide" placement="bottomLeft" popup-cls="searchbox">
+	//       <div slot="trigger">
+	//         <input type="text"
+	//                :class="inputClassObj"
+	//                :placeholder="placeholder"
+	//                v-model="value"
+	//                @focus="focusInput"
+	//                debounce="500" />
+	//         <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
+	//         <icon type="search" :color="iconColor" size="14"></icon>
+	//       </div>
+	//       <div slot="popup" v-if="searchList && searchList.length > 0"
+	//            :class="[prefixCls + '-searchbox-list-containter']">
+	//         <ul :class="[prefixCls + '-searchbox-list-dropdown']">
+	//           <li v-for="item in searchList | filterBy value">
+	//             <a href="javascript:;" @click="checkItem($index, item[textField])" :title="item[textField]">{{item[textField]}}</a>
+	//           </li>
+	//         </ul>
+	//       </div>
+	//     </trigger>
+	//
+	//   </div>
+	// </template>
+	// <script type="text/babel">
 
 /***/ },
 /* 167 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * Global Mixin
+	 * @description 全局mixin
+	 */
+	
+	var GlobalMixin = {
+	  props: {
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
+	  }
+	};
+	
+	exports.default = GlobalMixin;
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Trigger = __webpack_require__(169);
+	
+	var _Trigger2 = _interopRequireDefault(_Trigger);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Trigger2.default;
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(170)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Trigger/Trigger.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(172)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-ce463fac/Trigger.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _GlobalMixin = __webpack_require__(167);
+	
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
+	
+	var _EventListener = __webpack_require__(171);
+	
+	var _EventListener2 = _interopRequireDefault(_EventListener);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template xmlns:v-el="http://www.w3.org/1999/xhtml">
+	//   <div :class="[prefixCls + '-trigger-cont']">
+	//     <div v-if="trigger === 'click'"
+	//          v-el:trigger
+	//          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
+	//          @click="clickHandler">
+	//       <slot name="trigger">trigger slot is not set</slot>
+	//     </div>
+	//     <div v-if="trigger === 'hover'"
+	//          v-el:trigger
+	//          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
+	//          @mouseenter="hoverHandler"
+	//          @mouseleave="hoverHandler">
+	//       <slot name="trigger">trigger slot is not set</slot>
+	//     </div>
+	//     <div v-if="trigger === 'focus'"
+	//          v-el:trigger
+	//          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
+	//       <slot name="trigger">trigger slot is not set</slot>
+	//     </div>
+	//     <div v-if="trigger === 'hover'"
+	//          v-el:popup
+	//          v-show="show"
+	//          :class="popupClassObj"
+	//          :transition="effect"
+	//          @mouseenter="hoverHandler"
+	//          @mouseleave="hoverHandler">
+	//       <slot name="popup">popup slot is not set</slot>
+	//     </div>
+	//     <div v-else
+	//          v-el:popup
+	//          v-show="show"
+	//          :class="popupClassObj"
+	//          :transition="effect">
+	//       <slot name="popup">popup slot is not set</slot>
+	//     </div>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
+	exports.default = {
+	  mixins: [_GlobalMixin2.default],
+	
+	  props: {
+	    trigger: {
+	      type: String,
+	      default: 'click'
+	    },
+	    effect: {
+	      type: String,
+	      default: 'zoom'
+	    },
+	    placement: {
+	      type: String,
+	      default: 'bottom'
+	    },
+	    popupCls: {
+	      type: String,
+	      default: 'popup'
+	    },
+	    popupAlwaysInView: {
+	      type: Boolean,
+	      default: true
+	    },
+	    popupHideWhenClickOutside: {
+	      type: Boolean,
+	      default: false
+	    },
+	    popupHideDelay: {
+	      type: Number,
+	      default: 0
+	    },
+	    triggerUsePopupWidth: {
+	      type: Boolean,
+	      default: false
+	    },
+	    show: {
+	      type: Boolean,
+	      default: false
+	    },
+	    disabled: {
+	      type: Boolean,
+	      default: false
+	    }
+	  },
+	
+	  data: function data() {
+	    return {
+	      position: {
+	        top: 0,
+	        left: 0
+	      }
+	    };
+	  },
+	
+	
+	  computed: {
+	    popupClassObj: function popupClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var popupCls = this.popupCls;
+	      var placement = this.placement;
+	
+	      var classObj = {};
+	
+	      classObj[prefixCls + '-popup'] = true;
+	      classObj[prefixCls + '-' + popupCls] = true;
+	      classObj[prefixCls + '-' + popupCls + '-top'] = placement === 'top';
+	      classObj[prefixCls + '-' + popupCls + '-top-left'] = placement === 'topLeft';
+	      classObj[prefixCls + '-' + popupCls + '-top-right'] = placement === 'topRight';
+	      classObj[prefixCls + '-' + popupCls + '-left'] = placement === 'left';
+	      classObj[prefixCls + '-' + popupCls + '-left-top'] = placement === 'leftTop';
+	      classObj[prefixCls + '-' + popupCls + '-left-bottom'] = placement === 'leftBottom';
+	      classObj[prefixCls + '-' + popupCls + '-right'] = placement === 'right';
+	      classObj[prefixCls + '-' + popupCls + '-right-top'] = placement === 'rightTop';
+	      classObj[prefixCls + '-' + popupCls + '-right-bottom'] = placement === 'rightBottom';
+	      classObj[prefixCls + '-' + popupCls + '-bottom'] = placement === 'bottom';
+	      classObj[prefixCls + '-' + popupCls + '-bottom-left'] = placement === 'bottomLeft';
+	      classObj[prefixCls + '-' + popupCls + '-bottom-right'] = placement === 'bottomRight';
+	
+	      return classObj;
+	    }
+	  },
+	
+	  watch: {
+	    'show': function show(val, oldVal) {
+	      // 向父组件派发事件
+	      this.$dispatch('trigger-popup-toggle', val);
+	    }
+	  },
+	
+	  ready: function ready() {
+	    var $trigger = this.$els.trigger;
+	    var $popup = this.$els.popup;
+	    var $triggerTarget = $trigger.querySelector('input, textarea');
+	    var me = this;
+	    var trigger = this.trigger;
+	    var popupHideWhenClickOutside = this.popupHideWhenClickOutside;
+	    var triggerUsePopupWidth = this.triggerUsePopupWidth;
+	
+	
+	    this.originalPlacement = this.placement;
+	
+	    if (trigger === 'focus') {
+	      this._focusEvent = _EventListener2.default.listen($triggerTarget, 'focus', function () {
+	        me.show = true;
+	        me.resetPos();
+	      });
+	
+	      this._blurEvent = _EventListener2.default.listen($triggerTarget, 'blur', function () {
+	        // blur触发的,延迟100ms关闭popup,保证popup上的交互事件触发
+	        setTimeout(function () {
+	          me.show = false;
+	        }, 100);
+	      });
+	    }
+	
+	    // 点击trigger组件外部区域的时候,隐藏popup
+	    if (popupHideWhenClickOutside) {
+	      this._closeEvent = _EventListener2.default.listen(window, 'click', function (ev) {
+	        if (!$popup.contains(ev.target) && !$trigger.contains(ev.target)) {
+	          me.show = false;
+	        }
+	      });
+	    }
+	
+	    // trigger使用popup宽度
+	    if (triggerUsePopupWidth) {
+	      //        console.log('$popup.style.width 1', $popup.style.width)
+	      //
+	      //        $popup.style.visibility = 'hidden'
+	      //        me.show = true
+	      //        $popup.style.display = 'block'
+	      //
+	      //        setTimeout(() => {
+	      //          $trigger.style.width = $popup.style.width
+	      //          $popup.style.visibility = ''
+	      //          $popup.style.display = ''
+	      //          console.log('$popup.style.width 2', $popup.style.width)
+	      //        }, 1000)
+	    }
+	  },
+	
+	
+	  methods: {
+	    /**
+	     * 优先设置弹窗视图内可见
+	     */
+	    enablePopupInView: function enablePopupInView(data) {
+	      var originalPlacement = this.originalPlacement;
+	      var triggerOffset = data.triggerOffset;
+	      var triggerWidth = data.triggerWidth;
+	      var triggerHeight = data.triggerHeight;
+	      var popupWidth = data.popupWidth;
+	      var popupHeight = data.popupHeight;
+	
+	      var triggerTop = triggerOffset.top;
+	      var triggerLeft = triggerOffset.left;
+	      var winWidth = window.innerWidth;
+	      var winHeight = window.innerHeight;
+	      var fixedPlacement = originalPlacement;
+	      var hasFix = false;
+	
+	      if (fixedPlacement.startsWith('top')) {
+	        if (triggerTop < popupHeight) {
+	          fixedPlacement = fixedPlacement.replace('top', 'bottom');
+	          hasFix = true;
+	        }
+	      } else if (fixedPlacement.startsWith('bottom')) {
+	        if (winHeight - triggerTop - triggerHeight < popupHeight) {
+	          fixedPlacement = fixedPlacement.replace('bottom', 'top');
+	          hasFix = true;
+	        }
+	      } else if (fixedPlacement.startsWith('left')) {
+	        if (triggerLeft < popupWidth) {
+	          fixedPlacement = fixedPlacement.replace('left', 'right');
+	          hasFix = true;
+	        }
+	      } else if (fixedPlacement.startsWith('right')) {
+	        if (winWidth - triggerLeft - triggerWidth < popupWidth) {
+	          fixedPlacement = fixedPlacement.replace('right', 'left');
+	          hasFix = true;
+	        }
+	      }
+	
+	      if (fixedPlacement.endsWith('Top')) {
+	        if (winHeight - triggerTop - triggerHeight < popupHeight) {
+	          fixedPlacement = fixedPlacement.replace('Top', 'Bottom');
+	          hasFix = true;
+	        }
+	      } else if (fixedPlacement.endsWith('Bottom')) {
+	        if (triggerTop < popupHeight) {
+	          fixedPlacement = fixedPlacement.replace('Bottom', 'Top');
+	          hasFix = true;
+	        }
+	      } else if (fixedPlacement.endsWith('Left')) {
+	        if (winWidth - triggerLeft - triggerWidth < popupWidth) {
+	          fixedPlacement = fixedPlacement.replace('Left', 'Right');
+	          hasFix = true;
+	        }
+	      } else if (fixedPlacement.endsWith('Right')) {
+	        if (triggerLeft < popupWidth) {
+	          fixedPlacement = fixedPlacement.replace('Right', 'Left');
+	          hasFix = true;
+	        }
+	      }
+	
+	      if (hasFix) {
+	        this.resetPos(fixedPlacement);
+	      } else {
+	        this.resetPos(originalPlacement);
+	      }
+	    },
+	
+	
+	    /**
+	     * 设置tooltip坐标
+	     */
+	    resetPos: function resetPos(inPlacement) {
+	      var me = this;
+	      var popupAlwaysInView = this.popupAlwaysInView;
+	
+	      var $popup = me.$els.popup;
+	
+	      // 坐标修正
+	      if (!inPlacement && me.show && $popup.offsetWidth === 0) {
+	        setTimeout(function () {
+	          me.resetPos();
+	        }, 0);
+	        return;
+	      }
+	
+	      var $trigger = me.$els.trigger.children[0];
+	      var triggerOffset = $trigger.getBoundingClientRect();
+	      var triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left;
+	      var triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top;
+	      var triggerWidth = triggerOffset.width;
+	      var triggerHeight = triggerOffset.height;
+	      var popupWidth = $popup.offsetWidth;
+	      var popupHeight = $popup.offsetHeight;
+	
+	      // 弹窗是否in view修正
+	      if (popupAlwaysInView && !inPlacement) {
+	        return this.enablePopupInView({
+	          triggerOffset: triggerOffset,
+	          triggerWidth: triggerWidth,
+	          triggerHeight: triggerHeight,
+	          popupWidth: popupWidth,
+	          popupHeight: popupHeight
+	        });
+	      }
+	
+	      if (inPlacement) {
+	        this.placement = inPlacement;
+	      }
+	
+	      switch (this.placement) {
+	        case 'top':
+	          me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2;
+	          me.position.top = triggerTop - popupHeight;
+	          break;
+	        case 'topLeft':
+	          me.position.left = triggerLeft;
+	          me.position.top = triggerTop - popupHeight;
+	          break;
+	        case 'topRight':
+	          me.position.left = triggerLeft + triggerWidth - popupWidth;
+	          me.position.top = triggerTop - popupHeight;
+	          break;
+	        case 'left':
+	          me.position.left = triggerLeft - popupWidth;
+	          me.position.top = triggerTop + triggerHeight / 2 - popupHeight / 2;
+	          break;
+	        case 'leftTop':
+	          me.position.left = triggerLeft - popupWidth;
+	          me.position.top = triggerTop;
+	          break;
+	        case 'leftBottom':
+	          me.position.left = triggerLeft - popupWidth;
+	          me.position.top = triggerTop + triggerHeight - popupHeight;
+	          break;
+	        case 'right':
+	          me.position.left = triggerLeft + triggerWidth;
+	          me.position.top = triggerTop + triggerHeight / 2 - popupHeight / 2;
+	          break;
+	        case 'rightTop':
+	          me.position.left = triggerLeft + triggerWidth;
+	          me.position.top = triggerTop;
+	          break;
+	        case 'rightBottom':
+	          me.position.left = triggerLeft + triggerWidth;
+	          me.position.top = triggerTop + triggerHeight - popupHeight;
+	          break;
+	        case 'bottom':
+	          me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2;
+	          me.position.top = triggerTop + triggerHeight;
+	          break;
+	        case 'bottomLeft':
+	          me.position.left = triggerLeft;
+	          me.position.top = triggerTop + triggerHeight;
+	          break;
+	        case 'bottomRight':
+	          me.position.left = triggerLeft + triggerWidth - popupWidth;
+	          me.position.top = triggerTop + triggerHeight;
+	          break;
+	        default:
+	          console.log('Wrong placement prop');
+	      }
+	
+	      $popup.style.top = this.position.top + 'px';
+	      $popup.style.left = this.position.left + 'px';
+	
+	      // 向父组件派发事件
+	      this.$dispatch('trigger-reset-pos', {
+	        $trigger: $trigger,
+	        $popup: $popup,
+	        placement: this.placement
+	      });
+	    },
+	    clickHandler: function clickHandler(ev) {
+	      if (this.disabled) return;
+	
+	      this.show = !this.show;
+	
+	      if (this.show) {
+	        this.resetPos();
+	      }
+	    },
+	    hoverHandler: function hoverHandler(ev) {
+	      if (this.disabled) return;
+	
+	      var me = this;
+	      var popupHideDelay = this.popupHideDelay;
+	      var type = ev.type;
+	
+	
+	      if (popupHideDelay && this._mouseLeaveTimer) clearTimeout(this._mouseLeaveTimer);
+	
+	      if (type === 'mouseenter') {
+	        this.show = true;
+	        this.resetPos();
+	      } else {
+	        if (popupHideDelay) {
+	          this._mouseLeaveTimer = setTimeout(function () {
+	            me.show = false;
+	          }, popupHideDelay);
+	        } else {
+	          this.show = false;
+	        }
+	      }
+	    },
+	    focusHandler: function focusHandler(ev) {
+	      if (this.disabled) return;
+	
+	      var type = ev.type;
+	
+	
+	      console.log('ev', ev);
+	
+	      if (type === 'focus') {
+	        this.show = true;
+	        this.resetPos();
+	      } else {
+	        this.show = false;
+	      }
+	    }
+	  },
+	
+	  attached: function attached() {
+	    if (this.$els.popup) {
+	      document.body.appendChild(this.$els.popup);
+	    }
+	  },
+	  beforeDestroy: function beforeDestroy() {
+	    var $popup = this.$els.popup;
+	
+	    if ($popup && $popup.nodeType) {
+	      $popup.parentNode.removeChild($popup);
+	    }
+	
+	    if (this._blurEvent) {
+	      this._blurEvent.remove();
+	      this._focusEvent.remove();
+	    }
+	
+	    if (this._closeEvent) {
+	      this._closeEvent.remove();
+	    }
+	
+	    this._mouseLeaveTimer = null;
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 171 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2693,13 +3220,19 @@
 	exports.default = EventListener;
 
 /***/ },
-/* 168 */
+/* 172 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-searchbox']\">\n  <input type=\"text\"\n         :class=\"inputClassObj\"\n         :placeholder=\"placeholder\"\n         v-model=\"value\"\n         @focus=\"focusInput\"\n         debounce=\"500\" />\n  <icon type=\"clear\" v-show=\"value\" color=\"#bfbfbf\" size=\"14\" @click=\"clearInput\"></icon>\n  <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n  <div v-if=\"searchList && searchList.length > 0\"\n       :class=\"[prefixCls + '-searchbox-list-containter']\">\n    <ul v-show=\"showPop\"\n        :class=\"[prefixCls + '-searchbox-list-dropdown']\"\n        transition=\"slide\">\n      <li v-for=\"item in searchList | filterBy value\">\n        <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" :title=\"item[textField]\">{{item[textField]}}</a>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n  <div v-else\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 169 */
+/* 173 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"[prefixCls + '-searchbox-cont']\">\n  <trigger trigger=\"focus\" effect=\"slide\" placement=\"bottomLeft\" popup-cls=\"searchbox\">\n    <div slot=\"trigger\">\n      <input type=\"text\"\n             :class=\"inputClassObj\"\n             :placeholder=\"placeholder\"\n             v-model=\"value\"\n             @focus=\"focusInput\"\n             debounce=\"500\" />\n      <icon type=\"clear\" v-show=\"value\" color=\"#bfbfbf\" size=\"14\" @click=\"clearInput\"></icon>\n      <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n    </div>\n    <div slot=\"popup\" v-if=\"searchList && searchList.length > 0\"\n         :class=\"[prefixCls + '-searchbox-list-containter']\">\n      <ul :class=\"[prefixCls + '-searchbox-list-dropdown']\">\n        <li v-for=\"item in searchList | filterBy value\">\n          <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" :title=\"item[textField]\">{{item[textField]}}</a>\n        </li>\n      </ul>\n    </div>\n  </trigger>\n\n</div>\n";
+
+/***/ },
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2708,7 +3241,7 @@
 	  value: true
 	});
 	
-	var _Uploader = __webpack_require__(170);
+	var _Uploader = __webpack_require__(175);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 
@@ -2717,16 +3250,16 @@
 	exports.default = _Uploader2.default;
 
 /***/ },
-/* 170 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(171)
+	__vue_script__ = __webpack_require__(176)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Uploader/Uploader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(200)
+	__vue_template__ = __webpack_require__(205)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2736,7 +3269,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-370e398a/Uploader.vue"
+	  var id = "_v-628d71b8/Uploader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2745,7 +3278,7 @@
 	})()}
 
 /***/ },
-/* 171 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2754,7 +3287,7 @@
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(172);
+	var _typeof2 = __webpack_require__(177);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -2762,7 +3295,7 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Message = __webpack_require__(196);
+	var _Message = __webpack_require__(201);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -3204,18 +3737,18 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 172 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _iterator = __webpack_require__(173);
+	var _iterator = __webpack_require__(178);
 	
 	var _iterator2 = _interopRequireDefault(_iterator);
 	
-	var _symbol = __webpack_require__(180);
+	var _symbol = __webpack_require__(185);
 	
 	var _symbol2 = _interopRequireDefault(_symbol);
 	
@@ -3230,24 +3763,24 @@
 	};
 
 /***/ },
-/* 173 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(174), __esModule: true };
+	module.exports = { "default": __webpack_require__(179), __esModule: true };
 
 /***/ },
-/* 174 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(81);
-	__webpack_require__(175);
-	module.exports = __webpack_require__(179).f('iterator');
+	__webpack_require__(180);
+	module.exports = __webpack_require__(184).f('iterator');
 
 /***/ },
-/* 175 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(176);
+	__webpack_require__(181);
 	var global        = __webpack_require__(88)
 	  , hide          = __webpack_require__(92)
 	  , Iterators     = __webpack_require__(104)
@@ -3262,12 +3795,12 @@
 	}
 
 /***/ },
-/* 176 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(177)
-	  , step             = __webpack_require__(178)
+	var addToUnscopables = __webpack_require__(182)
+	  , step             = __webpack_require__(183)
 	  , Iterators        = __webpack_require__(104)
 	  , toIObject        = __webpack_require__(110);
 	
@@ -3301,13 +3834,13 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 177 */
+/* 182 */
 /***/ function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ },
-/* 178 */
+/* 183 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -3315,29 +3848,29 @@
 	};
 
 /***/ },
-/* 179 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports.f = __webpack_require__(122);
 
 /***/ },
-/* 180 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(181), __esModule: true };
+	module.exports = { "default": __webpack_require__(186), __esModule: true };
 
 /***/ },
-/* 181 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(182);
-	__webpack_require__(193);
-	__webpack_require__(194);
-	__webpack_require__(195);
+	__webpack_require__(187);
+	__webpack_require__(198);
+	__webpack_require__(199);
+	__webpack_require__(200);
 	module.exports = __webpack_require__(89).Symbol;
 
 /***/ },
-/* 182 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3347,24 +3880,24 @@
 	  , DESCRIPTORS    = __webpack_require__(97)
 	  , $export        = __webpack_require__(87)
 	  , redefine       = __webpack_require__(102)
-	  , META           = __webpack_require__(183).KEY
+	  , META           = __webpack_require__(188).KEY
 	  , $fails         = __webpack_require__(98)
 	  , shared         = __webpack_require__(117)
 	  , setToStringTag = __webpack_require__(121)
 	  , uid            = __webpack_require__(118)
 	  , wks            = __webpack_require__(122)
-	  , wksExt         = __webpack_require__(179)
-	  , wksDefine      = __webpack_require__(184)
-	  , keyOf          = __webpack_require__(185)
-	  , enumKeys       = __webpack_require__(186)
-	  , isArray        = __webpack_require__(189)
+	  , wksExt         = __webpack_require__(184)
+	  , wksDefine      = __webpack_require__(189)
+	  , keyOf          = __webpack_require__(190)
+	  , enumKeys       = __webpack_require__(191)
+	  , isArray        = __webpack_require__(194)
 	  , anObject       = __webpack_require__(94)
 	  , toIObject      = __webpack_require__(110)
 	  , toPrimitive    = __webpack_require__(100)
 	  , createDesc     = __webpack_require__(101)
 	  , _create        = __webpack_require__(106)
-	  , gOPNExt        = __webpack_require__(190)
-	  , $GOPD          = __webpack_require__(192)
+	  , gOPNExt        = __webpack_require__(195)
+	  , $GOPD          = __webpack_require__(197)
 	  , $DP            = __webpack_require__(93)
 	  , $keys          = __webpack_require__(108)
 	  , gOPD           = $GOPD.f
@@ -3489,9 +4022,9 @@
 	
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f   = $defineProperty;
-	  __webpack_require__(191).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(188).f  = $propertyIsEnumerable;
-	  __webpack_require__(187).f = $getOwnPropertySymbols;
+	  __webpack_require__(196).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(193).f  = $propertyIsEnumerable;
+	  __webpack_require__(192).f = $getOwnPropertySymbols;
 	
 	  if(DESCRIPTORS && !__webpack_require__(86)){
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -3577,7 +4110,7 @@
 	setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-/* 183 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var META     = __webpack_require__(118)('meta')
@@ -3635,13 +4168,13 @@
 	};
 
 /***/ },
-/* 184 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global         = __webpack_require__(88)
 	  , core           = __webpack_require__(89)
 	  , LIBRARY        = __webpack_require__(86)
-	  , wksExt         = __webpack_require__(179)
+	  , wksExt         = __webpack_require__(184)
 	  , defineProperty = __webpack_require__(93).f;
 	module.exports = function(name){
 	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -3649,7 +4182,7 @@
 	};
 
 /***/ },
-/* 185 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var getKeys   = __webpack_require__(108)
@@ -3664,13 +4197,13 @@
 	};
 
 /***/ },
-/* 186 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
 	var getKeys = __webpack_require__(108)
-	  , gOPS    = __webpack_require__(187)
-	  , pIE     = __webpack_require__(188);
+	  , gOPS    = __webpack_require__(192)
+	  , pIE     = __webpack_require__(193);
 	module.exports = function(it){
 	  var result     = getKeys(it)
 	    , getSymbols = gOPS.f;
@@ -3684,19 +4217,19 @@
 	};
 
 /***/ },
-/* 187 */
+/* 192 */
 /***/ function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 /***/ },
-/* 188 */
+/* 193 */
 /***/ function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 /***/ },
-/* 189 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -3706,12 +4239,12 @@
 	};
 
 /***/ },
-/* 190 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 	var toIObject = __webpack_require__(110)
-	  , gOPN      = __webpack_require__(191).f
+	  , gOPN      = __webpack_require__(196).f
 	  , toString  = {}.toString;
 	
 	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -3731,7 +4264,7 @@
 
 
 /***/ },
-/* 191 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
@@ -3743,10 +4276,10 @@
 	};
 
 /***/ },
-/* 192 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var pIE            = __webpack_require__(188)
+	var pIE            = __webpack_require__(193)
 	  , createDesc     = __webpack_require__(101)
 	  , toIObject      = __webpack_require__(110)
 	  , toPrimitive    = __webpack_require__(100)
@@ -3764,25 +4297,25 @@
 	};
 
 /***/ },
-/* 193 */
+/* 198 */
 /***/ function(module, exports) {
 
 
 
 /***/ },
-/* 194 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(184)('asyncIterator');
+	__webpack_require__(189)('asyncIterator');
 
 /***/ },
-/* 195 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(184)('observable');
+	__webpack_require__(189)('observable');
 
 /***/ },
-/* 196 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3791,7 +4324,7 @@
 	  value: true
 	});
 	
-	var _Message = __webpack_require__(197);
+	var _Message = __webpack_require__(202);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -3829,16 +4362,16 @@
 	exports.default = _Message2.default;
 
 /***/ },
-/* 197 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(198)
+	__vue_script__ = __webpack_require__(203)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Message/Message.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(199)
+	__vue_template__ = __webpack_require__(204)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -3848,7 +4381,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-045f25ea/Message.vue"
+	  var id = "_v-37c076c8/Message.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3857,7 +4390,7 @@
 	})()}
 
 /***/ },
-/* 198 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3977,19 +4510,19 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 199 */
+/* 204 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div\n  v-show=\"show\"\n  :class=\"messageClassObj\"\n  :transition=\"transition\"\n  :style=\"{width:width}\"\n  role=\"alert\">\n  <div :class=\"[prefixCls + '-message-content']\">\n    <button v-show=\"dismissable\" type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"show = false\">\n    <span>&times;</span>\n    </button>\n    <icon v-if=\"showIcon\" :type=\"type\"></icon>\n    <slot>\n      {{content}}\n    </slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 200 */
+/* 205 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-upload']\" id=\"upload-{{uploadId}}\">\n  <div v-if=\"uploadType == 'click'\">\n    <label>\n      <input\n        type=\"file\"\n        :name=\"name\"\n        :accept=\"accept\"\n        :id=\"uploadId\"\n        :multiple=\"multiple\"\n        @change=\"onChange($event)\" />\n      <slot>\n        <span :class=\"[prefixCls + '-btn', prefixCls + '-btn-tertiary']\">点击上传</span>\n      </slot>\n    </label>\n    <div :class=\"[prefixCls + '-upload-list']\">\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in fileList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in uploadList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delFile($index)\"></icon>\n        </div>\n        <div :class=\"[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]\">\n          <div :class=\"[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']\">\n            <div :class=\"[prefixCls + '-upload-progress-inner']\">\n              <div :class=\"[prefixCls + '-upload-progress-bg']\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div v-if=\"uploadType == 'drag'\"\n       :class=\"[prefixCls + '-upload-drag']\">\n    <div :class=\"[prefixCls + '-upload-drag-container', dragover && (prefixCls + '-is-dragover')]\">\n      <input type=\"file\"\n             :name=\"name\"\n             :id=\"uploadId\"\n             :accept=\"accept\"\n             :multiple=\"multiple\"\n             @change=\"onChange($event)\" />\n      <label :for=\"uploadId\"\n             :class=\"[prefixCls + '-upload-drag-area']\">\n      <p :class=\"[prefixCls + '-upload-drag-icon']\"></p>\n      <span v-if=\"advanceDrag\">将文件拖拽至框中上传或点此上传</span>\n      <span v-if=\"!advanceDrag\">当前环境不支持拖拽上传，请点此上传</span>\n      <p v-if=\"fileList.length > 0\" v-for=\"file in selectFiles\">{{file}}</p>\n    </label>\n    </div>\n    <div :class=\"[prefixCls + '-upload-list']\">\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in fileList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delExistFile($index)\"></icon>\n        </div>\n      </div>\n      <div :class=\"[prefixCls + '-upload-item']\" v-for=\"file in uploadList\">\n        <div :class=\"[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]\"\n             @mouseover=\"filemouseover($index)\"\n             @mouseout=\"filemouseout\">\n          <icon type=\"doc\"\n                :class=\"[prefixCls + '-upload-file-icon']\"\n                size=\"12\"></icon>\n          <span>{{file.name}}</span>\n          <icon type=\"close\"\n                :class=\"[prefixCls + '-upload-del-info']\"\n                size=\"12\"\n                @click=\"delFile($index)\"></icon>\n        </div>\n        <div :class=\"[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]\">\n          <div :class=\"[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']\">\n            <div :class=\"[prefixCls + '-upload-progress-inner']\">\n              <div :class=\"[prefixCls + '-upload-progress-bg']\" :style=\"{width: progress[$index]}\"></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
-/* 201 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3998,7 +4531,7 @@
 	  value: true
 	});
 	
-	var _Slider = __webpack_require__(202);
+	var _Slider = __webpack_require__(207);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 
@@ -4007,11 +4540,11 @@
 	exports.default = _Slider2.default;
 
 /***/ },
-/* 202 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(203)
+	__vue_script__ = __webpack_require__(208)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
@@ -4026,7 +4559,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-322a3a1b/Slider.vue"
+	  var id = "_v-39c8e1d0/Slider.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4035,7 +4568,7 @@
 	})()}
 
 /***/ },
-/* 203 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4044,18 +4577,18 @@
 	  value: true
 	});
 	
-	var _Tooltip = __webpack_require__(204);
+	var _Tooltip = __webpack_require__(209);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _EventListener = __webpack_require__(167);
+	var _EventListener = __webpack_require__(171);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div :id="sliderId" :class="sliderClassObj" @click="clickFun">
+	//   <div :class="sliderClassObj" @click="clickFun">
 	//     <template v-for="item in valuePercent">
 	//       <tooltip :content="valueArray[$index]" placement="top">
 	//         <div :class="[prefixCls + '-slider-handle']" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
@@ -4077,7 +4610,6 @@
 	// <script type="text/ecmascript-6">
 	exports.default = {
 	  props: {
-	    id: String,
 	    // 默认值/初识位置，也可实时获取最新值
 	    value: [String, Number, Array],
 	    // 不可用状态
@@ -4347,7 +4879,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 204 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4356,7 +4888,7 @@
 	  value: true
 	});
 	
-	var _Tooltip = __webpack_require__(205);
+	var _Tooltip = __webpack_require__(210);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 
@@ -4365,11 +4897,11 @@
 	exports.default = _Tooltip2.default;
 
 /***/ },
-/* 205 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(206)
+	__vue_script__ = __webpack_require__(211)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
@@ -4384,7 +4916,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1ba4d5fa/Tooltip.vue"
+	  var id = "_v-2c1d9ec0/Tooltip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4393,7 +4925,7 @@
 	})()}
 
 /***/ },
-/* 206 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4402,11 +4934,11 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(207);
+	var _GlobalMixin = __webpack_require__(167);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Trigger = __webpack_require__(208);
+	var _Trigger = __webpack_require__(168);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -4438,7 +4970,6 @@
 	    trigger: {
 	      type: String,
 	      default: 'hover'
-	
 	    },
 	    effect: {
 	      type: String
@@ -4483,506 +5014,6 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 207 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	/**
-	 * Global Mixin
-	 * @description 全局mixin
-	 */
-	
-	var GlobalMixin = {
-	  props: {
-	    prefixCls: {
-	      type: String,
-	      default: 'atui'
-	    }
-	  }
-	};
-	
-	exports.default = GlobalMixin;
-
-/***/ },
-/* 208 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Trigger = __webpack_require__(209);
-	
-	var _Trigger2 = _interopRequireDefault(_Trigger);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _Trigger2.default;
-
-/***/ },
-/* 209 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(210)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Trigger/Trigger.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(211)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-5eecd66d/Trigger.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 210 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _GlobalMixin = __webpack_require__(207);
-	
-	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
-	
-	var _EventListener = __webpack_require__(167);
-	
-	var _EventListener2 = _interopRequireDefault(_EventListener);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template xmlns:v-el="http://www.w3.org/1999/xhtml">
-	//   <div :class="[prefixCls + '-trigger-cont']">
-	//     <div v-if="trigger === 'click'"
-	//         v-el:trigger
-	//          :class="[prefixCls + '-trigger']"
-	//          @click="clickHandler">
-	//       <slot name="trigger">trigger slot is not set</slot>
-	//     </div>
-	//     <div v-if="trigger === 'hover'"
-	//          v-el:trigger
-	//          :class="[prefixCls + '-trigger']"
-	//          @mouseenter="hoverHandler"
-	//          @mouseleave="hoverHandler">
-	//       <slot name="trigger">trigger slot is not set</slot>
-	//     </div>
-	//     <div v-if="trigger === 'focus'"
-	//          v-el:trigger
-	//          :class="[prefixCls + '-trigger']">
-	//       <slot name="trigger">trigger slot is not set</slot>
-	//     </div>
-	//     <div v-if="trigger === 'hover'"
-	//          v-el:popup
-	//          v-show="show"
-	//          :class="popupClassObj"
-	//          :transition="effect"
-	//          @mouseenter="hoverHandler"
-	//          @mouseleave="hoverHandler">
-	//       <slot name="popup">popup slot is not set</slot>
-	//     </div>
-	//     <div v-else
-	//          v-el:popup
-	//          v-show="show"
-	//          :class="popupClassObj"
-	//          :transition="effect">
-	//       <slot name="popup">popup slot is not set</slot>
-	//     </div>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
-	exports.default = {
-	  mixins: [_GlobalMixin2.default],
-	
-	  props: {
-	    trigger: {
-	      type: String,
-	      default: 'click'
-	    },
-	    effect: {
-	      type: String,
-	      default: 'zoom'
-	    },
-	    placement: {
-	      type: String,
-	      default: 'bottom'
-	    },
-	    popupCls: {
-	      type: String,
-	      default: 'popup'
-	    },
-	    popupAlwaysInView: {
-	      type: Boolean,
-	      default: true
-	    },
-	    popupHideWhenBlur: {
-	      type: Boolean,
-	      default: false
-	    },
-	    popupHideDelay: {
-	      type: Number,
-	      default: 0
-	    },
-	    show: {
-	      type: Boolean,
-	      default: false
-	    }
-	  },
-	
-	  data: function data() {
-	    return {
-	      position: {
-	        top: 0,
-	        left: 0
-	      }
-	    };
-	  },
-	
-	
-	  computed: {
-	    popupClassObj: function popupClassObj() {
-	      var prefixCls = this.prefixCls;
-	      var popupCls = this.popupCls;
-	      var placement = this.placement;
-	
-	      var classObj = {};
-	
-	      classObj[prefixCls + '-popup'] = true;
-	      classObj[prefixCls + '-' + popupCls] = true;
-	      classObj[prefixCls + '-' + popupCls + '-top'] = placement === 'top';
-	      classObj[prefixCls + '-' + popupCls + '-top-left'] = placement === 'topLeft';
-	      classObj[prefixCls + '-' + popupCls + '-top-right'] = placement === 'topRight';
-	      classObj[prefixCls + '-' + popupCls + '-left'] = placement === 'left';
-	      classObj[prefixCls + '-' + popupCls + '-left-top'] = placement === 'leftTop';
-	      classObj[prefixCls + '-' + popupCls + '-left-bottom'] = placement === 'leftBottom';
-	      classObj[prefixCls + '-' + popupCls + '-right'] = placement === 'right';
-	      classObj[prefixCls + '-' + popupCls + '-right-top'] = placement === 'rightTop';
-	      classObj[prefixCls + '-' + popupCls + '-right-bottom'] = placement === 'rightBottom';
-	      classObj[prefixCls + '-' + popupCls + '-bottom'] = placement === 'bottom';
-	      classObj[prefixCls + '-' + popupCls + '-bottom-left'] = placement === 'bottomLeft';
-	      classObj[prefixCls + '-' + popupCls + '-bottom-right'] = placement === 'bottomRight';
-	
-	      return classObj;
-	    }
-	  },
-	
-	  watch: {
-	    'show': function show(val, oldVal) {
-	      // 向父组件派发事件
-	      this.$dispatch('trigger-popup-toggle', val);
-	    }
-	  },
-	
-	  ready: function ready() {
-	    var _this = this;
-	
-	    var $trigger = this.$els.trigger;
-	    var $popup = this.$els.popup;
-	    var $triggerTarget = this.$els.trigger.children[0];
-	    var me = this;
-	    var trigger = this.trigger;
-	    var popupHideWhenBlur = this.popupHideWhenBlur;
-	
-	
-	    this.originalPlacement = this.placement;
-	
-	    if (trigger === 'focus') {
-	      this._focusEvent = _EventListener2.default.listen($triggerTarget, 'focus', function () {
-	        me.show = true;
-	        me.resetPos();
-	      });
-	
-	      this._blurEvent = _EventListener2.default.listen($triggerTarget, 'blur', function () {
-	        _this.show = false;
-	      });
-	    }
-	
-	    // 点击trigger组件外部区域的时候,隐藏popup
-	    if (popupHideWhenBlur) {
-	      this._closeEvent = _EventListener2.default.listen(window, 'click', function (ev) {
-	        if (!$popup.contains(ev.target) && !$trigger.contains(ev.target)) {
-	          me.show = false;
-	        }
-	      });
-	    }
-	  },
-	
-	
-	  methods: {
-	    /**
-	     * 优先设置弹窗视图内可见
-	     */
-	    enablePopupInView: function enablePopupInView(data) {
-	      var originalPlacement = this.originalPlacement;
-	      var triggerOffset = data.triggerOffset;
-	      var triggerWidth = data.triggerWidth;
-	      var triggerHeight = data.triggerHeight;
-	      var popupWidth = data.popupWidth;
-	      var popupHeight = data.popupHeight;
-	
-	      var triggerTop = triggerOffset.top;
-	      var triggerLeft = triggerOffset.left;
-	      var winWidth = window.innerWidth;
-	      var winHeight = window.innerHeight;
-	      var fixedPlacement = originalPlacement;
-	      var hasFix = false;
-	
-	      if (fixedPlacement.startsWith('top')) {
-	        if (triggerTop < popupHeight) {
-	          fixedPlacement = fixedPlacement.replace('top', 'bottom');
-	          hasFix = true;
-	        }
-	      } else if (fixedPlacement.startsWith('bottom')) {
-	        if (winHeight - triggerTop - triggerHeight < popupHeight) {
-	          fixedPlacement = fixedPlacement.replace('bottom', 'top');
-	          hasFix = true;
-	        }
-	      } else if (fixedPlacement.startsWith('left')) {
-	        if (triggerLeft < popupWidth) {
-	          fixedPlacement = fixedPlacement.replace('left', 'right');
-	          hasFix = true;
-	        }
-	      } else if (fixedPlacement.startsWith('right')) {
-	        if (winWidth - triggerLeft - triggerWidth < popupWidth) {
-	          fixedPlacement = fixedPlacement.replace('right', 'left');
-	          hasFix = true;
-	        }
-	      }
-	
-	      if (fixedPlacement.endsWith('Top')) {
-	        if (winHeight - triggerTop - triggerHeight < popupHeight) {
-	          fixedPlacement = fixedPlacement.replace('Top', 'Bottom');
-	          hasFix = true;
-	        }
-	      } else if (fixedPlacement.endsWith('Bottom')) {
-	        if (triggerTop < popupHeight) {
-	          fixedPlacement = fixedPlacement.replace('Bottom', 'Top');
-	          hasFix = true;
-	        }
-	      } else if (fixedPlacement.endsWith('Left')) {
-	        if (winWidth - triggerLeft - triggerWidth < popupWidth) {
-	          fixedPlacement = fixedPlacement.replace('Left', 'Right');
-	          hasFix = true;
-	        }
-	      } else if (fixedPlacement.endsWith('Right')) {
-	        if (triggerLeft < popupWidth) {
-	          fixedPlacement = fixedPlacement.replace('Right', 'Left');
-	          hasFix = true;
-	        }
-	      }
-	
-	      if (hasFix) {
-	        this.resetPos(fixedPlacement);
-	      } else {
-	        this.resetPos(originalPlacement);
-	      }
-	    },
-	
-	
-	    /**
-	     * 设置tooltip坐标
-	     */
-	    resetPos: function resetPos(inPlacement) {
-	      var me = this;
-	      var popupAlwaysInView = this.popupAlwaysInView;
-	
-	      var $popup = me.$els.popup;
-	
-	      // 坐标修正
-	      if (!inPlacement && me.show && $popup.offsetWidth === 0) {
-	        setTimeout(function () {
-	          me.resetPos();
-	        }, 0);
-	        return;
-	      }
-	
-	      var $trigger = me.$els.trigger.children[0];
-	      var triggerOffset = $trigger.getBoundingClientRect();
-	      var triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left;
-	      var triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top;
-	      var triggerWidth = triggerOffset.width;
-	      var triggerHeight = triggerOffset.height;
-	      var popupWidth = $popup.offsetWidth;
-	      var popupHeight = $popup.offsetHeight;
-	
-	      // 弹窗是否in view修正
-	      if (popupAlwaysInView && !inPlacement) {
-	        return this.enablePopupInView({
-	          triggerOffset: triggerOffset,
-	          triggerWidth: triggerWidth,
-	          triggerHeight: triggerHeight,
-	          popupWidth: popupWidth,
-	          popupHeight: popupHeight
-	        });
-	      }
-	
-	      if (inPlacement) {
-	        this.placement = inPlacement;
-	      }
-	
-	      switch (this.placement) {
-	        case 'top':
-	          me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2;
-	          me.position.top = triggerTop - popupHeight;
-	          break;
-	        case 'topLeft':
-	          me.position.left = triggerLeft;
-	          me.position.top = triggerTop - popupHeight;
-	          break;
-	        case 'topRight':
-	          me.position.left = triggerLeft + triggerWidth - popupWidth;
-	          me.position.top = triggerTop - popupHeight;
-	          break;
-	        case 'left':
-	          me.position.left = triggerLeft - popupWidth;
-	          me.position.top = triggerTop + triggerHeight / 2 - popupHeight / 2;
-	          break;
-	        case 'leftTop':
-	          me.position.left = triggerLeft - popupWidth;
-	          me.position.top = triggerTop;
-	          break;
-	        case 'leftBottom':
-	          me.position.left = triggerLeft - popupWidth;
-	          me.position.top = triggerTop + triggerHeight - popupHeight;
-	          break;
-	        case 'right':
-	          me.position.left = triggerLeft + triggerWidth;
-	          me.position.top = triggerTop + triggerHeight / 2 - popupHeight / 2;
-	          break;
-	        case 'rightTop':
-	          me.position.left = triggerLeft + triggerWidth;
-	          me.position.top = triggerTop;
-	          break;
-	        case 'rightBottom':
-	          me.position.left = triggerLeft + triggerWidth;
-	          me.position.top = triggerTop + triggerHeight - popupHeight;
-	          break;
-	        case 'bottom':
-	          me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2;
-	          me.position.top = triggerTop + triggerHeight;
-	          break;
-	        case 'bottomLeft':
-	          me.position.left = triggerLeft;
-	          me.position.top = triggerTop + triggerHeight;
-	          break;
-	        case 'bottomRight':
-	          me.position.left = triggerLeft + triggerWidth - popupWidth;
-	          me.position.top = triggerTop + triggerHeight;
-	          break;
-	        default:
-	          console.log('Wrong placement prop');
-	      }
-	
-	      $popup.style.top = this.position.top + 'px';
-	      $popup.style.left = this.position.left + 'px';
-	
-	      // 向父组件派发事件
-	      this.$dispatch('trigger-reset-pos', {
-	        $trigger: $trigger,
-	        $popup: $popup,
-	        placement: this.placement
-	      });
-	    },
-	    clickHandler: function clickHandler(ev) {
-	      this.show = !this.show;
-	
-	      if (this.show) {
-	        this.resetPos();
-	      }
-	    },
-	    hoverHandler: function hoverHandler(ev) {
-	      var me = this;
-	      var popupHideDelay = this.popupHideDelay;
-	      var type = ev.type;
-	
-	
-	      if (popupHideDelay && this._mouseLeaveTimer) clearTimeout(this._mouseLeaveTimer);
-	
-	      if (type === 'mouseenter') {
-	        this.show = true;
-	        this.resetPos();
-	      } else {
-	        if (popupHideDelay) {
-	          this._mouseLeaveTimer = setTimeout(function () {
-	            me.show = false;
-	          }, popupHideDelay);
-	        } else {
-	          this.show = false;
-	        }
-	      }
-	    },
-	    focusHandler: function focusHandler(ev) {
-	      var type = ev.type;
-	
-	
-	      console.log('ev', ev);
-	
-	      if (type === 'focus') {
-	        this.show = true;
-	        this.resetPos();
-	      } else {
-	        this.show = false;
-	      }
-	    }
-	  },
-	
-	  attached: function attached() {
-	    if (this.$els.popup) {
-	      document.body.appendChild(this.$els.popup);
-	    }
-	  },
-	  beforeDestroy: function beforeDestroy() {
-	    var $popup = this.$els.popup;
-	
-	    if ($popup && $popup.nodeType) {
-	      $popup.parentNode.removeChild($popup);
-	    }
-	
-	    if (this._blurEvent) {
-	      this._blurEvent.remove();
-	      this._focusEvent.remove();
-	    }
-	
-	    if (this._closeEvent) {
-	      this._closeEvent.remove();
-	    }
-	
-	    this._mouseLeaveTimer = null;
-	  }
-	};
-	// </script>
-
-	/* generated by vue-loader */
-
-/***/ },
-/* 211 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n      v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger']\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n  <div v-else\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
-
-/***/ },
 /* 212 */
 /***/ function(module, exports) {
 
@@ -4992,7 +5023,7 @@
 /* 213 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :id=\"sliderId\" :class=\"sliderClassObj\" @click=\"clickFun\">\n  <template v-for=\"item in valuePercent\">\n    <tooltip :content=\"valueArray[$index]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-handle']\" :style=\"{'left': item+'%'}\" @mousedown=\"mousedown\"></div>\n    </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length == 1\">\n    <tooltip :content=\"valueArray[0]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}\"></div>\n      </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length > 1\">\n    <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}\"></div>\n  </template>\n  <div :class=\"[prefixCls + '-slider-step']\"></div>\n  <div :class=\"[prefixCls + '-slider-mark']\"></div>\n</div>\n";
+	module.exports = "\n<div :class=\"sliderClassObj\" @click=\"clickFun\">\n  <template v-for=\"item in valuePercent\">\n    <tooltip :content=\"valueArray[$index]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-handle']\" :style=\"{'left': item+'%'}\" @mousedown=\"mousedown\"></div>\n    </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length == 1\">\n    <tooltip :content=\"valueArray[0]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}\"></div>\n      </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length > 1\">\n    <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}\"></div>\n  </template>\n  <div :class=\"[prefixCls + '-slider-step']\"></div>\n  <div :class=\"[prefixCls + '-slider-mark']\"></div>\n</div>\n";
 
 /***/ },
 /* 214 */
@@ -5032,7 +5063,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-fe9a928a/Switch.vue"
+	  var id = "_v-31a40bb8/Switch.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5158,7 +5189,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c82da9b/Dropdown.vue"
+	  var id = "_v-aad12dd0/Dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5176,11 +5207,11 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(207);
+	var _GlobalMixin = __webpack_require__(167);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Trigger = __webpack_require__(208);
+	var _Trigger = __webpack_require__(168);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -5195,7 +5226,7 @@
 	//              :popup-hide-delay="200"
 	//              :show.sync="open">
 	//       <slot slot="trigger"></slot>
-	//       <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont'">
+	//       <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont']">
 	//         <slot name="dropdown-menu" role="dropdown"></slot>
 	//       </div>
 	//     </trigger>
@@ -5228,7 +5259,7 @@
 /* 221 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]\">\n  <trigger :trigger=\"trigger\"\n           effect=\"slide\"\n           popup-cls=\"dropdown\"\n           placement=\"bottomLeft\"\n           :popup-hide-delay=\"200\"\n           :show.sync=\"open\">\n    <slot slot=\"trigger\"></slot>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu-cont'\">\n      <slot name=\"dropdown-menu\" role=\"dropdown\"></slot>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]\">\n  <trigger :trigger=\"trigger\"\n           effect=\"slide\"\n           popup-cls=\"dropdown\"\n           placement=\"bottomLeft\"\n           :popup-hide-delay=\"200\"\n           :show.sync=\"open\">\n    <slot slot=\"trigger\"></slot>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu-cont']\">\n      <slot name=\"dropdown-menu\" role=\"dropdown\"></slot>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 222 */
@@ -5274,7 +5305,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-f750b48a/Select.vue"
+	  var id = "_v-3548fab8/Select.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5292,9 +5323,9 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(167);
 	
-	var _EventListener2 = _interopRequireDefault(_EventListener);
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
 	var _Icon = __webpack_require__(135);
 	
@@ -5304,13 +5335,58 @@
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
+	var _Trigger = __webpack_require__(168);
+	
+	var _Trigger2 = _interopRequireDefault(_Trigger);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//   <div :class="selectClassObj">
+	//     <trigger trigger="click"
+	//              placement="bottomLeft"
+	//              effect="slide"
+	//              :popup-hide-when-click-outside="true"
+	//              :trigger-use-popup-width="true"
+	//              :disabled="disabled"
+	//              :show.sync="show">
+	//       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
+	//            tabindex="1"
+	//            v-bind="{disabled: disabled}">
+	//         <template v-if="!multiple">
+	//           <span v-show="showPlaceholder"
+	//                 :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>
+	//           <span :class="[prefixCls + '-select-btn-content']">{{ showText }}</span>
+	//           <span :class="[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]">
+	//             <icon :class="[prefixCls + '-dropdown-icon']" type="down" size="12"></icon></span>
+	//         </template>
+	//         <div v-else @click="focusInput">
+	//           <span :class="[prefixCls + '-select-placeholder']" v-show="showPlaceholder">{{placeholder}}</span>
+	//           <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
+	//           <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
+	//         </div>
+	//       </div>
+	//       <div slot="popup" :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0">
+	//         <slot></slot>
+	//         <div v-show="noResult" class="no-result">无结果</div>
+	//         <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
+	//       </div>
+	//     </trigger>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
 	exports.default = {
 	  name: 'select',
+	
+	  mixins: [_GlobalMixin2.default],
+	
 	  props: {
 	    width: String,
-	    value: [String, Array],
+	    value: {
+	      type: [String, Array],
+	      default: ''
+	    },
 	    placeholder: {
 	      type: String,
 	      default: '请选择'
@@ -5333,15 +5409,18 @@
 	    disabled: {
 	      type: Boolean
 	    },
-	    prefixCls: {
-	      type: String,
-	      default: 'atui'
+	    show: {
+	      type: Boolean,
+	      default: false
 	    }
 	  },
+	
 	  components: {
 	    Icon: _Icon2.default,
-	    Tag: _Tag2.default
+	    Tag: _Tag2.default,
+	    Trigger: _Trigger2.default
 	  },
+	
 	  created: function created() {
 	    var me = this;
 	    if (me.tags) {
@@ -5367,13 +5446,13 @@
 	    return {
 	      searchText: '',
 	      noResult: false,
-	      show: false,
 	      activeIndex: 0,
 	      showPlaceholder: true,
 	      showNotify: false,
 	      options: []
 	    };
 	  },
+	
 	
 	  computed: {
 	    showText: function showText() {
@@ -5382,19 +5461,18 @@
 	    selectClassObj: function selectClassObj() {
 	      var prefixCls = this.prefixCls;
 	      var show = this.show;
-	      var disabled = this.disabled;
 	      var multiple = this.multiple;
 	
 	      var classObj = {};
 	
-	      classObj[prefixCls + '-select-container'] = true;
+	      classObj[prefixCls + '-select-cont'] = true;
 	      classObj[prefixCls + '-dropdown-open'] = show;
-	      classObj[prefixCls + '-select-disabled'] = disabled;
 	      classObj[prefixCls + '-select-multiple'] = multiple;
 	
 	      return classObj;
 	    }
 	  },
+	
 	  watch: {
 	    value: function value(val) {
 	      var _this = this;
@@ -5427,21 +5505,8 @@
 	      this.$dispatch('change', this.multiple ? options : options[0]);
 	    }
 	  },
+	
 	  methods: {
-	    toggleDropdown: function toggleDropdown() {
-	      var me = this;
-	      if (this.disabled) {
-	        this.show = false;
-	        return;
-	      }
-	      this.show = !this.show;
-	      if (this.multiple) {
-	        this.showPlaceholder = false;
-	        setTimeout(function () {
-	          return me.$els.searchField.focus();
-	        }, 10);
-	      }
-	    },
 	    closeTag: function closeTag(option) {
 	      this.selectedOptions.$remove(option);
 	    },
@@ -5478,6 +5543,9 @@
 	        event.target.style.width = '10px';
 	      }
 	    },
+	    focusInput: function focusInput(ev) {
+	      this.$els.searchField.focus();
+	    },
 	    selectDown: function selectDown(event) {
 	      // event.preventDefault()
 	      // let childs = this.$children
@@ -5501,6 +5569,7 @@
 	      // childs[this.activeIndex].active = true
 	    }
 	  },
+	
 	  events: {
 	    'option-change': function optionChange(option) {
 	      this.showPlaceholder = false;
@@ -5531,52 +5600,29 @@
 	      // return true
 	    }
 	  },
-	  ready: function ready() {
+	
+	  'trigger-popup-toggle': function triggerPopupToggle(show) {
 	    var me = this;
-	    me._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
-	      if (!me.$el.contains(e.target)) {
-	        me.show = false;
-	      }
-	    });
-	  },
-	  beforeDestroy: function beforeDestroy() {
-	    if (this._closeEvent) this._closeEvent.remove();
+	
+	    if (this.disabled) {
+	      this.show = false;
+	      return;
+	    }
+	
+	    this.show = !this.show;
+	
+	    if (this.multiple) {
+	      this.showPlaceholder = false;
+	      setTimeout(function () {
+	        return me.$els.searchField.focus();
+	      }, 10);
+	    }
 	  }
 	};
 	// </script>
 	//
 
 	/* generated by vue-loader */
-	// <template>
-	//   <div :class="selectClassObj">
-	//     <div :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
-	//          tabindex="1"
-	//          @mousedown="toggleDropdown"
-	//          @keydown.up="selectUp"
-	//          @keydown.down="selectDown"
-	//          v-bind="{disabled: disabled}">
-	//       <template v-if="!multiple">
-	//         <span v-show="!value"
-	//               :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>
-	//         <span :class="[prefixCls + '-select-btn-content']">{{ showText }}</span>
-	//         <span :class="[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]">
-	//           <icon :class="[prefixCls + '-dropdown-icon']" type="down" size="12"></icon></span>
-	//       </template>
-	//       <div v-else>
-	//         <span :class="[prefixCls + '-select-placeholder']" v-show="showPlaceholder">{{placeholder}}</span>
-	//         <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
-	//         <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
-	//       </div>
-	//     </div>
-	//     <div :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0" transition="slide">
-	//       <slot></slot>
-	//       <div v-show="noResult" class="no-result">无结果</div>
-	//       <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
-	//     </div>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
 
 /***/ },
 /* 225 */
@@ -5616,7 +5662,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6d6ca7b1/Tag.vue"
+	  var id = "_v-2f4cbe6e/Tag.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5702,7 +5748,7 @@
 /* 229 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"selectClassObj\">\n  <div :class=\"[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]\"\n       tabindex=\"1\"\n       @mousedown=\"toggleDropdown\"\n       @keydown.up=\"selectUp\"\n       @keydown.down=\"selectDown\"\n       v-bind=\"{disabled: disabled}\">\n    <template v-if=\"!multiple\">\n      <span v-show=\"!value\"\n            :class=\"[prefixCls + '-select-placeholder']\">{{placeholder}}</span>\n      <span :class=\"[prefixCls + '-select-btn-content']\">{{ showText }}</span>\n      <span :class=\"[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]\">\n        <icon :class=\"[prefixCls + '-dropdown-icon']\" type=\"down\" size=\"12\"></icon></span>\n    </template>\n    <div v-else>\n      <span :class=\"[prefixCls + '-select-placeholder']\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n      <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n      <input type=\"text\" v-el:search-field :class=\"[prefixCls + '-select-search-field']\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n    </div>\n  </div>\n  <div :class=\"[prefixCls + '-dropdown-menu']\" v-show=\"show && options.length > 0\" transition=\"slide\">\n    <slot></slot>\n    <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n    <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"selectClassObj\">\n  <trigger trigger=\"click\"\n           placement=\"bottomLeft\"\n           effect=\"slide\"\n           :popup-hide-when-click-outside=\"true\"\n           :trigger-use-popup-width=\"true\"\n           :disabled=\"disabled\"\n           :show.sync=\"show\">\n    <div slot=\"trigger\" :class=\"[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]\"\n         tabindex=\"1\"\n         v-bind=\"{disabled: disabled}\">\n      <template v-if=\"!multiple\">\n        <span v-show=\"showPlaceholder\"\n              :class=\"[prefixCls + '-select-placeholder']\">{{placeholder}}</span>\n        <span :class=\"[prefixCls + '-select-btn-content']\">{{ showText }}</span>\n        <span :class=\"[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]\">\n          <icon :class=\"[prefixCls + '-dropdown-icon']\" type=\"down\" size=\"12\"></icon></span>\n      </template>\n      <div v-else @click=\"focusInput\">\n        <span :class=\"[prefixCls + '-select-placeholder']\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n        <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n        <input type=\"text\" v-el:search-field :class=\"[prefixCls + '-select-search-field']\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n      </div>\n    </div>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu']\" v-show=\"show && options.length > 0\">\n      <slot></slot>\n      <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n      <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 230 */
@@ -5724,7 +5770,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-38ea94b4/Option.vue"
+	  var id = "_v-2c482c9e/Option.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5890,7 +5936,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-b871658a/Calendar.vue"
+	  var id = "_v-21dbdbb8/Calendar.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6290,7 +6336,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e271ba4a/TimePicker.vue"
+	  var id = "_v-8a73aa50/TimePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6308,7 +6354,7 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(207);
+	var _GlobalMixin = __webpack_require__(167);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
@@ -6316,7 +6362,7 @@
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Trigger = __webpack_require__(208);
+	var _Trigger = __webpack_require__(168);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -6328,7 +6374,7 @@
 	
 	// <template xmlns:v-el="http://www.w3.org/1999/xhtml">
 	//   <div :class="[prefixCls + '-time-picker']">
-	//     <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-blur="true">
+	//     <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-click-outside="true">
 	//       <span slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
 	//         <v-input readonly
 	//                  v-el:picker-toggler
@@ -6556,7 +6602,7 @@
 /* 241 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-time-picker']\">\n  <trigger trigger=\"click\" placement=\"bottomLeft\" effect=\"slide\" :popup-hide-when-blur=\"true\">\n    <span slot=\"trigger\" :class=\"[prefixCls + '-time-picker-toggler']\">\n      <v-input readonly\n               v-el:picker-toggler\n               :value=\"value\"\n               :placeholder=\"placeholder\"></v-input>\n    </span>\n    <div slot=\"popup\"\n         :class=\"[prefixCls + '-time-picker-menus']\">\n      <div :class=\"[prefixCls + '-time-picker-panel']\">\n        <ul v-el:h :class=\"time-hours\" @mouseover=\"selection('H')\">\n          <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: hour === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\">\n        <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n          <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: minute === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\" @mouseover=\"selection('S')\">\n        <ul v-el:s class=\"time-seconds\">\n          <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: second === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-time-picker']\">\n  <trigger trigger=\"click\" placement=\"bottomLeft\" effect=\"slide\" :popup-hide-when-click-outside=\"true\">\n    <span slot=\"trigger\" :class=\"[prefixCls + '-time-picker-toggler']\">\n      <v-input readonly\n               v-el:picker-toggler\n               :value=\"value\"\n               :placeholder=\"placeholder\"></v-input>\n    </span>\n    <div slot=\"popup\"\n         :class=\"[prefixCls + '-time-picker-menus']\">\n      <div :class=\"[prefixCls + '-time-picker-panel']\">\n        <ul v-el:h :class=\"time-hours\" @mouseover=\"selection('H')\">\n          <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: hour === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\">\n        <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n          <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: minute === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\" @mouseover=\"selection('S')\">\n        <ul v-el:s class=\"time-seconds\">\n          <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: second === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 242 */
@@ -6602,7 +6648,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-16f7c43b/DatePicker.vue"
+	  var id = "_v-42f6cc38/DatePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6620,9 +6666,13 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(167);
 	
-	var _EventListener2 = _interopRequireDefault(_EventListener);
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
+	
+	var _Trigger = __webpack_require__(168);
+	
+	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
 	var _Calendar = __webpack_require__(233);
 	
@@ -6634,8 +6684,38 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//   <div :class="[prefixCls + '-datepicker']">
+	//     <trigger trigger="click" effect="slide" placement="bottomLeft" :show.sync="show">
+	//       <div slot="trigger"
+	//            :class="[prefixCls + '-datepicker-toggle']">
+	//         <input :class="[prefixCls + '-datepicker-input']"
+	//         v-bind="{disabled:disabled}"
+	//         type="text"
+	//         value="value"
+	//         :placeholder="placeholder"
+	//         readonly />
+	//         <icon type="calendar"></icon>
+	//       </div>
+	//       <div slot="popup"
+	//            :class="[prefixCls + '-datepicker-calendar']">
+	//         <calendar v-ref:calendar
+	//                   @change="selectChange"
+	//                   :value="value"
+	//                   :format="format"
+	//                   :locale="locale"
+	//                   :disabled-date="disabledDate"></calendar>
+	//       </div>
+	//     </trigger>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
 	exports.default = {
 	  name: 'date-picker',
+	
+	  mixins: [_GlobalMixin2.default],
+	
 	  props: {
 	    value: {
 	      type: String
@@ -6655,65 +6735,32 @@
 	      type: Function,
 	      default: function _default(date) {}
 	    },
-	    disabled: Boolean,
-	    prefixCls: {
-	      type: String,
-	      default: 'atui'
-	    }
+	    disabled: Boolean
 	  },
+	
 	  components: {
-	    icon: _Icon2.default,
-	    calendar: _Calendar2.default
+	    Icon: _Icon2.default, Calendar: _Calendar2.default, Trigger: _Trigger2.default
 	  },
+	
 	  methods: {
-	    inputClick: function inputClick() {
-	      if (this.disabled) {
-	        return;
-	      }
-	      this.show = !this.show;
-	    },
 	    selectChange: function selectChange(value) {
 	      this.value = value;
 	      this.show = false;
+	
 	      // 冒泡给上一层使用，比如rangePicker
 	      return true;
 	    }
-	  },
-	  ready: function ready() {
-	    var _this = this;
-	
-	    this._closeEvent = _EventListener2.default.listen(window, 'click', function (e) {
-	      if (!_this.$el.contains(e.target)) {
-	        _this.show = false;
-	      }
-	    });
-	  },
-	  beforeDestroy: function beforeDestroy() {
-	    if (this._closeEvent) this._closeEvent.remove();
 	  }
 	};
 	// </script>
 
 	/* generated by vue-loader */
-	// <template>
-	//   <div :class="[prefixCls + '-datepicker']">
-	//     <div :class="[prefixCls + '-datepicker-toggle']" @click="inputClick" >
-	//       <input :class="[prefixCls + '-datepicker-input']" transition="slide" v-bind="{disabled:disabled}" type="text" :value="value" :placeholder="placeholder" readonly/>
-	//       <icon type="calendar"></icon>
-	//     </div>
-	//     <div :class="[prefixCls + '-datepicker-calendar']">
-	//       <calendar :show="show" transition="slide" @change="selectChange" v-ref:calendar :value="value" :format="format" :locale="locale" :disabled-date="disabledDate"></calendar>
-	//     </div>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
 
 /***/ },
 /* 245 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-datepicker']\">\n  <div :class=\"[prefixCls + '-datepicker-toggle']\" @click=\"inputClick\" >\n    <input :class=\"[prefixCls + '-datepicker-input']\" transition=\"slide\" v-bind=\"{disabled:disabled}\" type=\"text\" :value=\"value\" :placeholder=\"placeholder\" readonly/>\n    <icon type=\"calendar\"></icon>\n  </div>\n  <div :class=\"[prefixCls + '-datepicker-calendar']\">\n    <calendar :show=\"show\" transition=\"slide\" @change=\"selectChange\" v-ref:calendar :value=\"value\" :format=\"format\" :locale=\"locale\" :disabled-date=\"disabledDate\"></calendar>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-datepicker']\">\n  <trigger trigger=\"click\" effect=\"slide\" placement=\"bottomLeft\" :show.sync=\"show\">\n    <div slot=\"trigger\"\n         :class=\"[prefixCls + '-datepicker-toggle']\">\n      <input :class=\"[prefixCls + '-datepicker-input']\"\n      v-bind=\"{disabled:disabled}\"\n      type=\"text\"\n      value=\"value\"\n      :placeholder=\"placeholder\"\n      readonly />\n      <icon type=\"calendar\"></icon>\n    </div>\n    <div slot=\"popup\"\n         :class=\"[prefixCls + '-datepicker-calendar']\">\n      <calendar v-ref:calendar\n                @change=\"selectChange\"\n                :value=\"value\"\n                :format=\"format\"\n                :locale=\"locale\"\n                :disabled-date=\"disabledDate\"></calendar>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 246 */
@@ -6735,7 +6782,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-29651748/RangePicker.vue"
+	  var id = "_v-3f2f6bff/RangePicker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6879,7 +6926,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4ef6ed3b/Cascader.vue"
+	  var id = "_v-65e90890/Cascader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6897,7 +6944,7 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(207);
+	var _GlobalMixin = __webpack_require__(167);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
@@ -6905,7 +6952,7 @@
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Trigger = __webpack_require__(208);
+	var _Trigger = __webpack_require__(168);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -7019,7 +7066,7 @@
 	/* generated by vue-loader */
 	// <template>
 	//   <div :class="[prefixCls + '-cascader']">
-	//     <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-blur="true">
+	//     <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-click-outside="true">
 	//       <span slot="trigger"
 	//             :class="[prefixCls + '-cascader-picker']">
 	//         <v-input readonly :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>
@@ -7041,7 +7088,7 @@
 /* 252 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-cascader']\">\n  <trigger trigger=\"click\" placement=\"bottomLeft\" effect=\"slide\" :popup-hide-when-blur=\"true\">\n    <span slot=\"trigger\"\n          :class=\"[prefixCls + '-cascader-picker']\">\n      <v-input readonly :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n    </span>\n    <div slot=\"popup\"\n         :class=\"[prefixCls + '-cascader-menus']\">\n      <ul :class=\"[prefixCls + '-cascader-menu']\" v-for=\"(index, menu) in menus\">\n        <li :class=\"[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]\"\n            v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n      </ul>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-cascader']\">\n  <trigger trigger=\"click\" placement=\"bottomLeft\" effect=\"slide\" :popup-hide-when-click-outside=\"true\">\n    <span slot=\"trigger\"\n          :class=\"[prefixCls + '-cascader-picker']\">\n      <v-input readonly :value=\"displayValue\" :placeholder=\"placeholder\" :style=\"{width:width}\"></v-input>\n    </span>\n    <div slot=\"popup\"\n         :class=\"[prefixCls + '-cascader-menus']\">\n      <ul :class=\"[prefixCls + '-cascader-menu']\" v-for=\"(index, menu) in menus\">\n        <li :class=\"[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]\"\n            v-for=\"option in menu\" @click=\"changeOption(index,option,$event)\">{{option.label}}</li>\n      </ul>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 253 */
@@ -7135,7 +7182,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6343c7d7/Modal.vue"
+	  var id = "_v-75903814/Modal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7303,7 +7350,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-28bac74e/Table.vue"
+	  var id = "_v-0421e6d4/Table.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7683,8 +7730,8 @@
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var getKeys  = __webpack_require__(108)
-	  , gOPS     = __webpack_require__(187)
-	  , pIE      = __webpack_require__(188)
+	  , gOPS     = __webpack_require__(192)
+	  , pIE      = __webpack_require__(193)
 	  , toObject = __webpack_require__(124)
 	  , IObject  = __webpack_require__(111)
 	  , $assign  = Object.assign;
@@ -7752,7 +7799,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-94b7978a/Spin.vue"
+	  var id = "_v-7fd98fb8/Spin.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7917,7 +7964,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-a6c47d0a/Pagination.vue"
+	  var id = "_v-4ec66d10/Pagination.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8183,7 +8230,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2e76fb3c/Jumper.vue"
+	  var id = "_v-a6e8ec8e/Jumper.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8323,7 +8370,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-cb56ea1c/Pager.vue"
+	  var id = "_v-c3348e56/Pager.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8449,7 +8496,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-07fe128d/Options.vue"
+	  var id = "_v-4c7b53b0/Options.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8571,7 +8618,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-45376343/Badge.vue"
+	  var id = "_v-5783d380/Badge.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8610,6 +8657,10 @@
 	    dot: {
 	      type: Boolean
 	    },
+	    overflowCount: {
+	      type: Number,
+	      default: 99
+	    },
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
@@ -8617,7 +8668,7 @@
 	  },
 	  filters: {
 	    short: function short(value) {
-	      return value >= 100 ? '99+' : value;
+	      return value >= this.overflowCount ? this.overflowCount + '+' : value;
 	    }
 	  }
 	};
@@ -8676,7 +8727,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-276df37b/Carousel.vue"
+	  var id = "_v-b4fafc10/Carousel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8700,8 +8751,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-276df37b&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-b4fafc10&scoped=true!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Carousel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -8719,7 +8770,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-276df37b] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?57215cc9"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../_utils/EventListener.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.carousel-control[_v-b4fafc10] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/components/Carousel/Carousel.vue?57215cc9"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmHA;EACA,gBAAA;CACA","file":"Carousel.vue","sourcesContent":["<template>\n<div class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\">\n    <indicator></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <slot></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n</template>\n\n<script>\nimport EventListener from '../_utils/EventListener.js'\nexport default {\n  props: {\n    indicators: {\n      type: Boolean,\n      default: true\n    },\n    controls: {\n      type: Boolean,\n      default: true\n    },\n    interval: {\n      type: Number,\n      default: 5000\n    }\n  },\n  components: {\n    'indicator': {\n      inherit: true,\n      template: '<li v-for=\"i in indicator\" @click=\"handleIndicatorClick($index)\" v-bind:class=\"{\\'active\\':$index === activeIndex}\"</li>',\n      methods: {\n        handleIndicatorClick (index) {\n          if (this.isAnimating) return false\n          this.isAnimating = true\n          this.activeIndex = index\n        }\n      }\n    }\n  },\n  data () {\n    return {\n      indicator: [],\n      activeIndex: 0,\n      isAnimating: false\n    }\n  },\n  computed: {\n    slider () {\n      return this.$el.querySelectorAll('.item')\n    }\n  },\n  watch: {\n    activeIndex (newVal, oldVal) {\n      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)\n    }\n  },\n  methods: {\n    slide (direction, selected, prev) {\n      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()\n      if (this._selectedEvent) this._selectedEvent.remove()\n      const prevSelectedEl = this.slider[prev]\n      const selectedEl = this.slider[selected]\n      const transitionendFn = () => {\n        [...this.slider].forEach((el) => { el.className = 'item' })\n        selectedEl.classList.add('active')\n        this.isAnimating = false\n      }\n      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')\n      // request property that requires layout to force a layout\n      // var x = selectedEl.clientHeight\n      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)\n      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)\n      prevSelectedEl.classList.add(direction)\n      selectedEl.classList.add(direction)\n    },\n    nextClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0\n    },\n    prevClick () {\n      if (this.isAnimating) return false\n      this.isAnimating = true\n      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1\n    }\n  },\n  ready () {\n    let intervalID = null\n    const el = this.$el\n    function intervalManager (flag, func, time) {\n      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)\n    }\n    if (this.interval) {\n      intervalManager(true, this.nextClick, this.interval)\n      el.addEventListener('mouseenter', () => intervalManager(false))\n      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .carousel-control {\n    cursor: pointer;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -9016,7 +9067,7 @@
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _EventListener = __webpack_require__(167);
+	var _EventListener = __webpack_require__(171);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -9158,7 +9209,7 @@
 /* 294 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-276df37b=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-276df37b=\"\">\n    <indicator _v-276df37b=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-276df37b=\"\">\n    <slot _v-276df37b=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-276df37b=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-276df37b=\"\"></span>\n    <span class=\"sr-only\" _v-276df37b=\"\">Next</span>\n  </a>\n</div>\n";
+	module.exports = "\n<div class=\"carousel slide\" data-ride=\"carousel\" _v-b4fafc10=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-b4fafc10=\"\">\n    <indicator _v-b4fafc10=\"\"></indicator>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-b4fafc10=\"\">\n    <slot _v-b4fafc10=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <a v-show=\"controls\" class=\"left carousel-control\" @click=\"prevClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Previous</span>\n  </a>\n  <a v-show=\"controls\" class=\"right carousel-control\" @click=\"nextClick\" _v-b4fafc10=\"\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-b4fafc10=\"\"></span>\n    <span class=\"sr-only\" _v-b4fafc10=\"\">Next</span>\n  </a>\n</div>\n";
 
 /***/ },
 /* 295 */
@@ -9180,7 +9231,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5db20726/Slide.vue"
+	  var id = "_v-6a295c6e/Slide.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9262,7 +9313,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6e9b497c/Affix.vue"
+	  var id = "_v-0e1beb79/Affix.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9320,7 +9371,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(167);
+	var _EventListener = __webpack_require__(171);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -9463,7 +9514,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-f8296e8a/Textarea.vue"
+	  var id = "_v-01ffd738/Textarea.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9663,7 +9714,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0c35694d/Accordion.vue"
+	  var id = "_v-57604c8a/Accordion.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9747,7 +9798,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-08a0a2ee/Panel.vue"
+	  var id = "_v-359fb846/Panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9877,7 +9928,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-d4d8a372/Popover.vue"
+	  var id = "_v-60f88ff8/Popover.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9895,11 +9946,11 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(207);
+	var _GlobalMixin = __webpack_require__(167);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Trigger = __webpack_require__(208);
+	var _Trigger = __webpack_require__(168);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -10002,7 +10053,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-6f63fa2a/Tabset.vue"
+	  var id = "_v-fc9f2b32/Tabset.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10237,7 +10288,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-22291468/Tab.vue"
+	  var id = "_v-c768556a/Tab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10362,7 +10413,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2bcbdb4b/Steps.vue"
+	  var id = "_v-3e184b88/Steps.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10517,7 +10568,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-435be0d8/Step.vue"
+	  var id = "_v-805c160a/Step.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10661,7 +10712,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-d883a48a/Tree.vue"
+	  var id = "_v-5df38938/Tree.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10735,7 +10786,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7619255d/TreeNode.vue"
+	  var id = "_v-270a7a5a/TreeNode.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10893,7 +10944,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-97ae634a/Menu.vue"
+	  var id = "_v-7e5e29d8/Menu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10977,7 +11028,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-3bed9a73/SubMenu.vue"
+	  var id = "_v-732f31d6/SubMenu.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10995,7 +11046,7 @@
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(172);
+	var _typeof2 = __webpack_require__(177);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -11117,7 +11168,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2c41528e/MenuItem.vue"
+	  var id = "_v-459ab0ea/MenuItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11200,7 +11251,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1935497e/MenuItemGroup.vue"
+	  var id = "_v-37e29c64/MenuItemGroup.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11290,7 +11341,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-28ce65db/Breadcrumb.vue"
+	  var id = "_v-54cd6dd8/Breadcrumb.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11362,7 +11413,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1d4f2a0e/BreadcrumbItem.vue"
+	  var id = "_v-bb4028ea/BreadcrumbItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11503,7 +11554,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-77a4d517/container.vue"
+	  var id = "_v-3643c08c/container.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11592,7 +11643,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0fbe14b4/phoneNumberDocs.vue"
+	  var id = "_v-08a28617/phoneNumberDocs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {

@@ -134,7 +134,7 @@
           </td>
         </tr>
         <tr>
-          <td>popupHideWhenBlur</td>
+          <td>popupHideWhenClickOutside</td>
           <td><code>Boolean</code></td>
           <td><code>false</code></td>
           <td>点击trigger组件外部区域的时候,是否隐藏popup浮层,默认不隐藏</td>

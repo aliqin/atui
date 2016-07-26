@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#select" class="anchor">Select 下拉框</a></h3>
     <div class="bs-example">
       <pre>选中值 : {{single1}}</pre>
-      <v-select :value.sync="single1" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
+      <v-select :value.sync="single1" :placeholder="placeholder" style="width: 200px" @change="onSlectChange">
         <v-option value="Apple">苹果</v-option>
         <v-option value="Banana" disabled>Banana</v-option>
         <v-option value="Cherry">Cherry</v-option>
