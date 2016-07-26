@@ -1,5 +1,5 @@
 <template>
-  <div :id="sliderId" :class="sliderClassObj" @click="clickFun">
+  <div :class="sliderClassObj" @click="clickFun">
     <template v-for="item in valuePercent">
       <tooltip :content="valueArray[$index]" placement="top">
         <div :class="[prefixCls + '-slider-handle']" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
@@ -24,7 +24,6 @@
 
   export default {
     props: {
-      id: String,
       // 默认值/初识位置，也可实时获取最新值
       value: [String, Number, Array],
       // 不可用状态
