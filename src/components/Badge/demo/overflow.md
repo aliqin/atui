@@ -1,7 +1,7 @@
 ---
 order: 0
 title:
-  zh-CN: 基本
+  zh-CN: 大数字
   en-US: Type
 ---
 
@@ -13,14 +13,17 @@ title:
 
 
 ````jsx
-<slider :value="30"></slider>
+<badge :count="1000">
+  <a href="javascript:;" class="badge-count-example"></a>
+</badge>
+
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    slider: atui.Slider
+      badge: atui.Badge
   }
 })
 ````

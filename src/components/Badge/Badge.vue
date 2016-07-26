@@ -20,14 +20,18 @@
       dot: {
         type: Boolean
       },
+      overflowCount: {
+        type: Number,
+        default: 99
+      },
       prefixCls: {
         type: String,
         default: 'atui'
       }
     },
     filters: {
-      short: (value) => {
-        return value >= 100 ? '99+' : value
+      short (value) {
+        return value >= this.overflowCount ? this.overflowCount + '+' : value
       }
     }
   }
