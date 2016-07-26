@@ -135,7 +135,10 @@
         })
 
         this._blurEvent = EventListener.listen($triggerTarget, 'blur', () => {
-          me.show = false
+          // blur触发的,延迟100ms关闭popup,保证popup上的交互事件触发
+          setTimeout(() => {
+            me.show = false
+          }, 100)
         })
       }
 

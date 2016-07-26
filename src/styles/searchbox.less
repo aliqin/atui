@@ -2,7 +2,8 @@
 // --------------------------------------------------
 @prefix-cls-searchbox: e("@{prefix-cls}-searchbox");
 
-.@{prefix-cls-searchbox} {
+.@{prefix-cls-searchbox}-cont {
+  display: inline-block;
   position: relative;
 
   .@{prefix-cls-searchbox}-input {
@@ -20,11 +21,11 @@
     top: 6px;
     right: 30px;
   }
+}
+
+.@{prefix-cls-searchbox} {
 
   .@{prefix-cls-searchbox}-list-containter {
-    position: absolute;
-    top: 100%;
-    left: 0;
     width: 100%;
     padding-top: 4px;
     z-index: 9999;
