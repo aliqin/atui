@@ -1,6 +1,6 @@
 <template xmlns:v-el="http://www.w3.org/1999/xhtml">
   <div :class="[prefixCls + '-time-picker']">
-    <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-blur="true">
+    <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-click-outside="true">
       <span slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
         <v-input readonly
                  v-el:picker-toggler

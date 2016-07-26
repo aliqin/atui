@@ -2,20 +2,20 @@
   <div :class="[prefixCls + '-trigger-cont']">
     <div v-if="trigger === 'click'"
          v-el:trigger
-         :class="[prefixCls + '-trigger']"
+         :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @click="clickHandler">
       <slot name="trigger">trigger slot is not set</slot>
     </div>
     <div v-if="trigger === 'hover'"
          v-el:trigger
-         :class="[prefixCls + '-trigger']"
+         :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @mouseenter="hoverHandler"
          @mouseleave="hoverHandler">
       <slot name="trigger">trigger slot is not set</slot>
     </div>
     <div v-if="trigger === 'focus'"
          v-el:trigger
-         :class="[prefixCls + '-trigger']">
+         :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
       <slot name="trigger">trigger slot is not set</slot>
     </div>
     <div v-if="trigger === 'hover'"
@@ -65,7 +65,7 @@
         type: Boolean,
         default: true
       },
-      popupHideWhenBlur: {
+      popupHideWhenClickOutside: {
         type: Boolean,
         default: false
       },
@@ -73,7 +73,15 @@
         type: Number,
         default: 0
       },
+      triggerUsePopupWidth: {
+        type: Boolean,
+        default: false
+      },
       show: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
         type: Boolean,
         default: false
       }
@@ -124,7 +132,7 @@
       const $popup = this.$els.popup
       const $triggerTarget = $trigger.querySelector('input, textarea')
       const me = this
-      const { trigger, popupHideWhenBlur } = this
+      const { trigger, popupHideWhenClickOutside, triggerUsePopupWidth } = this
 
       this.originalPlacement = this.placement
 
@@ -143,12 +151,28 @@
       }
 
       // 点击trigger组件外部区域的时候,隐藏popup
-      if (popupHideWhenBlur) {
+      if (popupHideWhenClickOutside) {
         this._closeEvent = EventListener.listen(window, 'click', (ev) => {
           if (!$popup.contains(ev.target) && !$trigger.contains(ev.target)) {
             me.show = false
           }
         })
+      }
+
+      // trigger使用popup宽度
+      if (triggerUsePopupWidth) {
+//        console.log('$popup.style.width 1', $popup.style.width)
+//
+//        $popup.style.visibility = 'hidden'
+//        me.show = true
+//        $popup.style.display = 'block'
+//
+//        setTimeout(() => {
+//          $trigger.style.width = $popup.style.width
+//          $popup.style.visibility = ''
+//          $popup.style.display = ''
+//          console.log('$popup.style.width 2', $popup.style.width)
+//        }, 1000)
       }
     },
 
@@ -322,6 +346,8 @@
       },
 
       clickHandler (ev) {
+        if (this.disabled) return
+
         this.show = !this.show
 
         if (this.show) {
@@ -330,6 +356,8 @@
       },
 
       hoverHandler (ev) {
+        if (this.disabled) return
+
         const me = this
         const { popupHideDelay } = this
         const { type } = ev
@@ -351,6 +379,8 @@
       },
 
       focusHandler (ev) {
+        if (this.disabled) return
+
         const { type } = ev
 
         console.log('ev', ev)

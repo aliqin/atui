@@ -1,42 +1,54 @@
 <template>
   <div :class="selectClassObj">
-    <div :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
-         tabindex="1"
-         @mousedown="toggleDropdown"
-         @keydown.up="selectUp"
-         @keydown.down="selectDown"
-         v-bind="{disabled: disabled}">
-      <template v-if="!multiple">
-        <span v-show="!value"
-              :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>
-        <span :class="[prefixCls + '-select-btn-content']">{{ showText }}</span>
-        <span :class="[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]">
-          <icon :class="[prefixCls + '-dropdown-icon']" type="down" size="12"></icon></span>
-      </template>
-      <div v-else>
-        <span :class="[prefixCls + '-select-placeholder']" v-show="showPlaceholder">{{placeholder}}</span>
-        <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
-        <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
+    <trigger trigger="click"
+             placement="bottomLeft"
+             effect="slide"
+             :popup-hide-when-click-outside="true"
+             :trigger-use-popup-width="true"
+             :disabled="disabled"
+             :show.sync="show">
+      <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
+           tabindex="1"
+           v-bind="{disabled: disabled}">
+        <template v-if="!multiple">
+          <span v-show="showPlaceholder"
+                :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>
+          <span :class="[prefixCls + '-select-btn-content']">{{ showText }}</span>
+          <span :class="[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]">
+            <icon :class="[prefixCls + '-dropdown-icon']" type="down" size="12"></icon></span>
+        </template>
+        <div v-else @click="focusInput">
+          <span :class="[prefixCls + '-select-placeholder']" v-show="showPlaceholder">{{placeholder}}</span>
+          <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
+          <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
+        </div>
       </div>
-    </div>
-    <div :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0" transition="slide">
-      <slot></slot>
-      <div v-show="noResult" class="no-result">无结果</div>
-      <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
-    </div>
+      <div slot="popup" :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0">
+        <slot></slot>
+        <div v-show="noResult" class="no-result">无结果</div>
+        <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
+      </div>
+    </trigger>
   </div>
 </template>
 
 <script type="text/babel">
-  import EventListener from '../_utils/EventListener'
+  import GlobalMixin from '../_utils/GlobalMixin'
   import Icon from '../Icon/'
   import Tag from '../Tag/'
+  import Trigger from '../Trigger'
 
   export default {
     name: 'select',
+
+    mixins: [GlobalMixin],
+
     props: {
       width: String,
-      value: [String, Array],
+      value: {
+        type: [String, Array],
+        default: ''
+      },
       placeholder: {
         type: String,
         default: '请选择'
@@ -59,15 +71,18 @@
       disabled: {
         type: Boolean
       },
-      prefixCls: {
-        type: String,
-        default: 'atui'
+      show: {
+        type: Boolean,
+        default: false
       }
     },
+
     components: {
       Icon,
-      Tag
+      Tag,
+      Trigger
     },
+
     created () {
       let me = this
       if (me.tags) {
@@ -89,33 +104,34 @@
         me.showPlaceholder = false
       }
     },
+
     data () {
       return {
         searchText: '',
         noResult: false,
-        show: false,
         activeIndex: 0,
         showPlaceholder: true,
         showNotify: false,
         options: []
       }
     },
+
     computed: {
       showText () {
         return this.selectedOptions && this.selectedOptions[0] && this.selectedOptions[0].label
       },
       selectClassObj () {
-        let { prefixCls, show, disabled, multiple } = this
+        let { prefixCls, show, multiple } = this
         let classObj = {}
 
-        classObj[prefixCls + '-select-container'] = true
+        classObj[prefixCls + '-select-cont'] = true
         classObj[prefixCls + '-dropdown-open'] = show
-        classObj[prefixCls + '-select-disabled'] = disabled
         classObj[prefixCls + '-select-multiple'] = multiple
 
         return classObj
       }
     },
+
     watch: {
       value (val) {
         if (!val) {
@@ -144,19 +160,8 @@
         this.$dispatch('change', this.multiple ? options : options[0])
       }
     },
+
     methods: {
-      toggleDropdown () {
-        let me = this
-        if (this.disabled) {
-          this.show = false
-          return
-        }
-        this.show = !this.show
-        if (this.multiple) {
-          this.showPlaceholder = false
-          setTimeout(() => me.$els.searchField.focus(), 10)
-        }
-      },
       closeTag (option) {
         this.selectedOptions.$remove(option)
       },
@@ -193,6 +198,9 @@
           event.target.style.width = '10px'
         }
       },
+      focusInput (ev) {
+        this.$els.searchField.focus()
+      },
       selectDown (event) {
         // event.preventDefault()
         // let childs = this.$children
@@ -216,8 +224,9 @@
         // childs[this.activeIndex].active = true
       }
     },
+
     events: {
-      'option-change': function (option) {
+      'option-change' (option) {
         this.showPlaceholder = false
 
         if (this.multiple) {
@@ -246,16 +255,21 @@
         // return true
       }
     },
-    ready () {
-      let me = this
-      me._closeEvent = EventListener.listen(window, 'click', (e) => {
-        if (!me.$el.contains(e.target)) {
-          me.show = false
-        }
-      })
-    },
-    beforeDestroy () {
-      if (this._closeEvent) this._closeEvent.remove()
+
+    'trigger-popup-toggle' (show) {
+      const me = this
+
+      if (this.disabled) {
+        this.show = false
+        return
+      }
+
+      this.show = !this.show
+
+      if (this.multiple) {
+        this.showPlaceholder = false
+        setTimeout(() => me.$els.searchField.focus(), 10)
+      }
     }
   }
 </script>
