@@ -13,45 +13,21 @@ title:
 
 
 ````jsx
-<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
-
-<button @click="changeData">填充表格数据</button>
-<button @click="loading = !loading">切换loading状态</button>
-<button @click="gridData = []">清空数据</button>
-
+<grid :data-source="gridData" :columns="gridColumns"  row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
 ````
 
 ````vue-script
 var columns = [{
   title: '姓名',
   dataIndex: 'name',
-  filters: [{
-    text: '姓李的的',
-    value: '李',
-  }, {
-    text: '姓胡的',
-    value: '胡',
-  }],
-  sorter:true,
   width:150
 }, {
   title: '年龄',
   dataIndex: 'age',
-  sorter: function(a, b) { return a.age - b.age },
-  render: function(text, record, index) {
-    return '<input v-model="gridData['+ index +'].age"/>'
-  },
   width:250
 }, {
   title: '地址',
   dataIndex: 'address',
-  filters: [{
-    text: '南湖',
-    value: '南湖',
-  }, {
-    text: '西湖',
-    value: '西湖',
-  }],
   filterMultiple: false,
   width:250
 
@@ -99,50 +75,24 @@ var data = [{
   age: 66,
   address: '香港弥敦道',
 }];
-// 配置选择数据的选项
-var rowSelection = {
-  getCheckboxProps: function(record) {
-    return {
-      disabled: record.name === '胡彦祖'    // 配置无法勾选的列
-    };
-  },
-  onChange: function(selectedRowKeys, selectedRows) {
-    console.log('rowSelection.onChange',selectedRowKeys, selectedRows);
-  },
-  onSelect: function(record, selected, selectedRows) {
-    console.log('rowSelection.onSelect',record, selected, selectedRows);
-  },
-  onSelectAll: function(selected, selectedRows, changeRows) {
-    console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);
-  }
-};
+
 
 
 new Vue({
-    el: 'body',
-    components: {
-        grid: atui.Table,
-        icon: atui.Icon,
-        row: atui.Layout.Row
-    },
-    data: function() {
-        return {
-          size:'default',
-          fixedHeader:false,
-          loading:false,
-          gridData:data,
-          gridColumns: columns,
-          rowSelection:rowSelection
-        }
-    },
-    methods:{
-    changeData: function() {
-      this.gridData.push({
-        key: Math.random(),
-        name: '李秀莲大嘴哥',
-        age: Math.random(),
-        address: '西湖区湖底公园123号',
-      })
+  el: 'body',
+  components: {
+    grid: atui.Table,
+    icon: atui.Icon,
+    row: atui.Layout.Row
+  },
+  data () {
+    return {
+      size:'default',
+      fixedHeader:false,
+      loading:false,
+      gridData:data,
+      gridColumns: columns,
+      rowSelection:rowSelection
     }
   }
 })
