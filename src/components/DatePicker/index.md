@@ -27,6 +27,3 @@ onClick | `click` 事件的 handler | function | -
 
 `<Button>Hello world!</Button>` 最终会被渲染为 `<button>Hello world!</button>`，并且除了上表中的属性，其它属性都会直接传到 `<button></button>`。
 
-<style>
-
-</style>
