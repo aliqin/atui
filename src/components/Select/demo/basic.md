@@ -17,7 +17,7 @@ title:
 <pre>
   选中值 : {{single}}
 </pre>
-<v-select :value="single" :placeholder="placeholder" style="width:200px;" @change="onSlectChange">
+<v-select :value="single" :placeholder="placeholder" @change="onSlectChange">
   <v-option value="Apple">苹果</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -49,7 +49,7 @@ title:
 
 
 <h4>下拉出自定义类容</h4>
-<v-select placeholder="选择类别" style="width:200px;">
+<v-select placeholder="选择类别">
 <v-option>
   <tabs>
     <tab header="系统短信签名"></tab>

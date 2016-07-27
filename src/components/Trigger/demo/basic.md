@@ -11,22 +11,43 @@ title:
 
 ## en-US
 
-
 ````jsx
-<popover
-  effect="fade"
-  placement="bottom"
-  title="我是标题"
-  content="我是内容，我是内容，我是内容">
-  <button class="btn">Popover on bottom</button>
-</popover>
+<trigger trigger="click" placement="top">
+  <button class="atui-btn" slot="trigger">click to trigger</button>
+  <div slot="popup">I'm a click popup</div>
+</trigger>
+
+<trigger trigger="hover">
+  <button class="atui-btn" slot="trigger">hover to trigger</button>
+  <div slot="popup">I'm a hover popup</div>
+</trigger>
+
+<trigger trigger="click" placement="topRight">
+  <button class="atui-btn" slot="trigger">click to show topRight</button>
+  <div slot="popup">I'm a hover popup</div>
+</trigger>
+
+<trigger trigger="hover" placement="topLeft">
+  <button class="atui-btn" slot="trigger">topLeft</button>
+  <div slot="popup">I'm a hover popup</div>
+</trigger>
+
+<trigger trigger="hover" placement="bottomRight">
+  <button class="atui-btn" slot="trigger">bottomRight</button>
+  <div slot="popup">I'm a hover popup</div>
+</trigger>
+
+<trigger trigger="focus">
+  <input type="text" class="atui-form-control" placeholder="Focus" slot="trigger">
+  <div slot="popup">I'm a hover popup</div>
+</trigger>
 ````
 
 ````vue-script
 new Vue({
     el: 'body',
     components: {
-        popover: atui.Popover
+        trigger: atui.Trigger
     }
 })
 ````
