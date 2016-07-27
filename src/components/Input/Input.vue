@@ -148,7 +148,7 @@
             }
           }
 
-          if (this.defaultErrorTips == '') {
+          if (this.defaultErrorTips === '') {
             self.tips = tips
           }
 
