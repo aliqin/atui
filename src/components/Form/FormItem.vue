@@ -8,7 +8,7 @@
   </v-col>
   <v-col :span="wrapperCol || calcWrapperCol" type="sm">
     <template v-if="tipsMode === 'popup'">
-      <popover effect="fade" :content="popupTips" placement="right" trigger="hover">
+      <popover effect="fade" :content="popupTips" placement="right" trigger="always">
         <div :class="[prefixCls + '-form-input']">
           <slot></slot>
           <template v-if="showIcon">
@@ -111,7 +111,7 @@
         return span.toString()
       },
       popupTips () {
-        if(this.validStatus === 'error') {
+        if (this.validStatus === 'error') {
           return this.tips
         }
 
