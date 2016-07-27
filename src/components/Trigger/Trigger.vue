@@ -1,5 +1,5 @@
 <template xmlns:v-el="http://www.w3.org/1999/xhtml">
-  <div :class="[prefixCls + '-trigger-cont']">
+  <div :class="[prefixCls + '-trigger-cont']" :style="{width: width}">
     <div v-if="trigger === 'click'"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
@@ -56,6 +56,10 @@
       placement: {
         type: String,
         default: 'bottom'
+      },
+      width: {
+        type: String,
+        default: 'auto'
       },
       popupCls: {
         type: String,

@@ -6,6 +6,7 @@
              :popup-hide-when-click-outside="true"
              :trigger-use-popup-width="true"
              :disabled="disabled"
+             :width.sync="width"
              :show.sync="show">
       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
            tabindex="1"
@@ -44,7 +45,6 @@
     mixins: [GlobalMixin],
 
     props: {
-      width: String,
       value: {
         type: [String, Array],
         default: ''
@@ -52,6 +52,10 @@
       placeholder: {
         type: String,
         default: '请选择'
+      },
+      width: {
+        type: String,
+        default: 'auto'
       },
       tags: Boolean,
       multiple: Boolean,
