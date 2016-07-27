@@ -1,6 +1,5 @@
 <template>
-  <input :type="type"
-         :class="inputClassObj"
+  <input :class="inputClassObj"
          :placeholder="placeholder"
          v-model="value"
          :valid-status.sync="validStatus"
@@ -9,10 +8,6 @@
 <script>
   export default {
     props: {
-      type: {
-        type: String,
-        default: 'text'
-      },
       placeholder: {
         type: String,
         default: ''
@@ -39,6 +34,9 @@
       },
       // 验证规则
       rules: {
+        type: Array
+      },
+      rulesTips: {
         type: Array
       },
       validResult: {
@@ -80,6 +78,7 @@
 
     data () {
       return {
+        defaultErrorTips: this.tips,
         results: {
           requiredValid: {
             validStatus: 'success',
@@ -137,6 +136,7 @@
           let self = this
           let tips = ''
           let status = ''
+
           for (let key in val) {
             let obj = val[key]
             if (obj) {
@@ -148,8 +148,11 @@
             }
           }
 
+          if (this.defaultErrorTips == '') {
+            self.tips = tips
+          }
+
           self.validStatus = status
-          self.tips = tips
           self.validResult = self.results
         },
         deep: true
@@ -170,11 +173,33 @@
           this.rulesValid(val)
         }
       },
-      rulesItemValid (rule, value) {
+
+      /**
+       * 规则验证
+       */
+      rulesValid (value) {
         let self = this
+
+        self.rules.forEach((val, index) => {
+          self.rulesItemValid(val, value, index)
+        })
+      },
+
+      /**
+       * 规则验证，枚举
+       */
+      rulesItemValid (rule, value, index) {
+        let self = this
+
+        // 正则验证
+        if (rule.indexOf('/') !== rule.lastIndexOf('/')) {
+          self.regularValid(value, rule, index)
+          return
+        }
+
         switch (rule) {
           case 'required':
-            self.requiredValid(value)
+            self.requiredValid(value, index)
             break
           case 'isPhone':
             self.phoneValid(value)
@@ -191,15 +216,20 @@
         }
       },
 
-      requiredValid (val) {
+      /**
+       * 非空验证
+       */
+      requiredValid (val, index) {
         let self = this
 
         self.results = self.results || {}
 
         if (!val) {
+          let tips = (index > -1) ? this.rulesTips[index] || '输入不能为空' : self.requiredTips || '输入不能为空'
+
           self.results.requiredValid = {
             validStatus: 'error',
-            tips: self.requiredTips || '输入不能为空'
+            tips: tips
           }
         } else {
           self.results.requiredValid = {
@@ -209,6 +239,9 @@
         }
       },
 
+      /**
+       * 最小长度验证
+       */
       minlengthValid (val) {
         let self = this
         let minlength = self.minlength - 0
@@ -232,14 +265,9 @@
         }
       },
 
-      rulesValid (value) {
-        let self = this
-
-        self.rules.forEach((val, index) => {
-          self.rulesItemValid(val, value)
-        })
-      },
-
+      /**
+       * 手机号码验证
+       */
       phoneValid (value) {
         let rule = /^1\d{10}$/
 
@@ -256,6 +284,9 @@
         }
       },
 
+      /**
+       * 数字验证
+       */
       numberValid (value) {
         let rule = /^\d*$/
 
@@ -267,11 +298,14 @@
         } else {
           this.results.isNumberValid = {
             validStatus: 'error',
-            tips: this.isPhoneValidTips || '数字验证失败'
+            tips: this.isNumberValidTips || '数字验证失败'
           }
         }
       },
 
+      /**
+       * 固话验证
+       */
       telValid (value) {
         let rule = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/
 
@@ -283,13 +317,16 @@
         } else {
           this.results.isTelValid = {
             validStatus: 'error',
-            tips: this.isPhoneValidTips || '输入固话格式错误，固话请用-'
+            tips: this.isTelValidTips || '输入固话格式错误，固话请用-'
           }
         }
       },
 
+      /**
+       * 邮箱验证
+       */
       emailValid (value) {
-        let rule = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+        let rule = /^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i
 
         if (rule.test(value) || value === '') {
           this.results.isEmailValid = {
@@ -299,7 +336,24 @@
         } else {
           this.results.isEmailValid = {
             validStatus: 'error',
-            tips: this.isPhoneValidTips || '输入email格式错误'
+            tips: this.isEmailValidTips || '输入email格式错误'
+          }
+        }
+      },
+
+      /**
+       * 正则验证
+       */
+      regularValid (value, rule, index) {
+        if (new RegExp(rule).test(value)) {
+          this.results.regularValid = {
+            validStatus: 'success',
+            tips: ''
+          }
+        } else {
+          this.results.regularValid = {
+            validStatus: 'error',
+            tips: this.rulesTips[index] || '第' + (index + 1) + '条正则规则验证失败'
           }
         }
       }
