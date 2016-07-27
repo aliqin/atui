@@ -13,7 +13,7 @@
          @mouseleave="hoverHandler">
       <slot name="trigger">trigger slot is not set</slot>
     </div>
-    <div v-if="trigger === 'focus'"
+    <div v-if="trigger === 'focus' || trigger === 'always'"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
       <slot name="trigger">trigger slot is not set</slot>
@@ -152,6 +152,11 @@
             me.show = false
           }, 100)
         })
+      }
+
+      if (trigger === 'always') {
+        me.show = true
+        me.resetPos()
       }
 
       // 点击trigger组件外部区域的时候,隐藏popup

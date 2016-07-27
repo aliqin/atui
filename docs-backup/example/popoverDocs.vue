@@ -35,6 +35,11 @@
             <button class="atui-btn">Mouseenter</button>
         </popover>
       </p>
+      <p>
+        <popover effect="fade" content="我是内容，我是内容，我是内容" placement="right" :show="true" trigger="always">
+            <button class="atui-btn">always show</button>
+        </popover>
+      </p>
       <popover effect="scale"
       title="我是标题" content="我是内容，我是内容，我是内容" placement="bottom" trigger="focus">
         <input type="text" class="form-control" placeholder="Focus">
