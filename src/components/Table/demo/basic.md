@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<grid :data-source="gridData" :columns="gridColumns"  row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
+<grid :data-source="gridData" :columns="gridColumns" row-key="key"></grid>
 ````
 
 ````vue-script
@@ -73,7 +73,7 @@ var data = [{
   key: '6',
   name: '洪金宝',
   age: 66,
-  address: '香港弥敦道',
+  address: '香港弥敦道1',
 }];
 
 

@@ -1,7 +1,7 @@
 ---
 order: 0
 title:
-  zh-CN: 基本
+  zh-CN: 自定义间隔符
   en-US: Type
 ---
 
@@ -13,10 +13,11 @@ title:
 
 
 ````jsx
-<breadcrumb>
+<breadcrumb slash="&gt;">
   <breadcrumb-item :href="href">一级类目</breadcrumb-item>
   <breadcrumb-item :href="href">二级类目</breadcrumb-item>
-  <breadcrumb-item>三级类目</breadcrumb-item>
+  <breadcrumb-item :href="href">三级类目</breadcrumb-item>
+  <breadcrumb-item>四级类目</breadcrumb-item>
 </breadcrumb>
 ````
 
@@ -24,8 +25,8 @@ title:
 new Vue({
   el: 'body',
   components: {
-    breadcrumb: atui.Breadcrumb,
-    breadcrumbItem: atui.Breadcrumb.BreadcrumbItem
+      breadcrumb: atui.Breadcrumb,
+      breadcrumbItem: atui.Breadcrumb.BreadcrumbItem
   }
 })
 ````

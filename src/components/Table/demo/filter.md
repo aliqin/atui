@@ -18,7 +18,7 @@ title:
 
 ````vue-script
 var columns = [{
-  title: '姓名',
+  title: '姓名ss',
   dataIndex: 'name',
   filters: [{
     text: '姓李的的',
@@ -92,7 +92,7 @@ var data = [{
   key: '6',
   name: '洪金宝',
   age: 66,
-  address: '香港弥敦道',
+  address: '香港弥敦道2',
 }];
 // 配置选择数据的选项
 var rowSelection = {

@@ -92,7 +92,7 @@ var data = [{
   key: '6',
   name: '洪金宝',
   age: 66,
-  address: '香港弥敦道',
+  address: '香港弥敦道3',
 }];
 // 配置选择数据的选项
 var rowSelection = {
