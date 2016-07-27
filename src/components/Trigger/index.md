@@ -5,33 +5,34 @@ title: Trigger
 subtitle: 触发器
 ---
 
-按钮用于开始一个即时操作。
+使用触发器,通过click|hover|focus等行为触发一个弹窗。
 
 ## 何时使用
 
-标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
+供其他UI组件如Tooltip|Popover|Select等组件调用。
 
 ## API
 
-通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` -> `shape` -> `size` -> `loading` -> `disabled`
-
-按钮的属性说明如下：
+### Props
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-type | 设置按钮类型，可选值为 `primary` `ghost` 或者不设 | string | -
-htmlType | 设置 `button` 原生的 `type` 值，可选值请参考 [HTML 标准](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type) | string | `button`
-icon | 设置按钮的图标类型 | string | -
-shape | 设置按钮形状，可选值为 `circle` `circle-outline` 或者不设 | string | -
-size | 设置按钮大小，可选值为 `small` `large` 或者不设 | string | `default`
-loading | 设置按钮载入状态 | boolean | false
-onClick | `click` 事件的 handler | function | -
+trigger | 以何种方式触发显示气泡框,可选hover, click, focus | `string` | `click`
+effect | 弹窗的过渡效果，可选scale, fadein | `string` | `scale`
+placement | 定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight | `string` | `bottom`
+popupCls | 自定义popup的样式名 | `string` | `popup`
+popupAlwaysInView | 是否支持坐标智能检测,保证弹窗优先在视图区域可见,默认开启 | `boolean` | `true`
+popupHideWhenClickOutside | 点击trigger组件外部区域的时候,是否隐藏popup浮层,默认不隐藏 | `boolean` | `false`
 
-`<Button>Hello world!</Button>` 最终会被渲染为 `<button>Hello world!</button>`，并且除了上表中的属性，其它属性都会直接传到 `<button></button>`。
+### Events
+
+属性 | 说明 | 类型 | 默认值
+-----|-----|-----|------
+trigger-reset-pos | popup定位事件 | `object` | `{$trigger, $popup, placement}`
+trigger-popup-toggle | popup切换显示隐藏状态事件,true表示可见 | `Boolean` | `show`
 
 <style>
-[id^="components-button-demo-"] .ant-btn {
-  margin-right: 8px;
-  margin-bottom: 12px;
-}
+  .atui-trigger-cont {
+    margin: 10px 0;
+  }
 </style>
