@@ -33,7 +33,7 @@
         <form-item label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon :tips="form1.telTips">
           <v-input type="tel" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel" :valid-result.sync="form1.telValidResult" :rules="['isNumber','isPhone']" :tips.sync="form1.telTips"></v-input>
         </form-item>
-        <form-item required label="邮箱：" :valid-status="form1.emailStatus" label-col="4" has-icon :tips="form1.emailTips">
+        <form-item required label="邮箱：" :valid-status="form1.emailStatus" label-col="4" has-icon :tips="form1.emailTips" tips-mode="popup" description="tishitixiahhsdhishdishid">
           <v-input type="text" placeholder="请输入您的邮箱" :valid-status.sync="form1.emailStatus" :value.sync="email" :valid-result.sync="form1.emailValidResult" :rules="['required','/^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i']" :tips.sync="form1.emailTips", :rules-tips="form1.emailRulesTips"></v-input>
         </form-item>
       </v-form>

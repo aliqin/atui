@@ -41,10 +41,13 @@ export default class Demo extends React.Component {
       highlightedStyle,
     } = props;
 
+    const randomEle = 'J_vue_' + Math.random().toString(36).substring(2);
+
     const execScript = () => {
       if (vueScript) {
+        const fun = vueScript.replace(/([^\r?\n]el:\s*['"]{1})body(['"]{1})/, '$1#'+ randomEle +'$2');
         setTimeout(() => {
-          eval(vueScript);
+          eval(fun);
         })
       }
     }
@@ -68,7 +71,7 @@ export default class Demo extends React.Component {
     });
     return (
       <section className={codeBoxClass} id={meta.id}>
-        <section className="code-box-demo">
+        <section id={randomEle} className="code-box-demo">
           {
             meta.iframe ?
               <iframe src={src} /> : 

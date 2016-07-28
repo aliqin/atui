@@ -6,7 +6,7 @@
         <div :class="[prefixCls + '-popover-arrow']"></div>
         <h3 :class="[prefixCls + '-popover-title']" v-show="header && title">{{title}}</h3>
         <div :class="[prefixCls + '-popover-content']">
-          {{content}}
+          {{{content}}}
         </div>
       </slot>
     </trigger>
