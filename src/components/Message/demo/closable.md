@@ -1,7 +1,7 @@
 ---
-order: 0
+order: 2
 title:
-  zh-CN: 基本
+  zh-CN: 可关闭的
   en-US: Type
 ---
 
@@ -13,8 +13,8 @@ title:
 
 
 ````jsx
-<message>
-  这是一个信息提示
+<message closable>
+  这是一个信息提示，可关闭
 </message>
 ````
 
