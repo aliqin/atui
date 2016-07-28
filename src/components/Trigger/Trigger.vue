@@ -66,6 +66,10 @@
         type: String,
         default: 'auto'
       },
+      offset: {
+        type: Array,
+        default: [0, 0]
+      },
       popupCls: {
         type: String,
         default: 'popup'
@@ -265,7 +269,7 @@
        */
       resetPos (inPlacement) {
         const me = this
-        const { popupAlwaysInView } = this
+        const { popupAlwaysInView, offset } = this
         const $popup = me.$els.popup
 
         // 坐标修正
@@ -353,8 +357,8 @@
             console.log('Wrong placement prop')
         }
 
-        $popup.style.top = this.position.top + 'px'
-        $popup.style.left = this.position.left + 'px'
+        $popup.style.left = this.position.left + offset[0] + 'px'
+        $popup.style.top = this.position.top + offset[1] + 'px'
 
         // 向父组件派发事件
         this.$dispatch('trigger-reset-pos', {

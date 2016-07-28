@@ -30,6 +30,14 @@ title:
   </trigger>
   <div slot="popup">I'm popup-2</div>
 </trigger>
+
+<trigger trigger="hover" placement="right">
+  <trigger trigger="hover" slot="trigger">
+    <button class="atui-btn" slot="trigger">同时多个popup</button>
+    <div slot="popup">I'm popup-1</div>
+  </trigger>
+  <div slot="popup">I'm popup-2</div>
+</trigger>
 ````
 
 ````vue-script
