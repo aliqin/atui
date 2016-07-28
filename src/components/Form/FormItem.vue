@@ -6,41 +6,27 @@
       {{label}}
     </label>
   </v-col>
-  <v-col :span="wrapperCol || calcWrapperCol" type="sm">
-    <template v-if="tipsMode === 'popup'">
-      <popover effect="fade" :content="popupTips" placement="right" :always-show="true">
-        <div :class="[prefixCls + '-form-input']">
-          <slot></slot>
-          <template v-if="showIcon">
-            <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'warn'" type="waring"></icon>
-            <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'error'" type="error"></icon>
-            <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'success'" type="success"></icon>
-            <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
-          </template>
-        </div>
-      </popover>
-    </template>
-
-    <template v-if="tipsMode === 'text'">
-      <div :class="[prefixCls + '-form-input']">
-        <slot></slot>
-        <template v-if="showIcon">
-          <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'warn'" type="waring"></icon>
-          <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'error'" type="error"></icon>
-          <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'success'" type="success"></icon>
-          <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
-        </template>
-      </div>
-      <div v-if="tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
-    </template>
-
+  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="[prefixCls + '-form-valid-popup-container']">
+    <div :class="[prefixCls + '-form-input']">
+      <slot></slot>
+      <template v-if="showIcon">
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'warn'" type="waring"></icon>
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'error'" type="error"></icon>
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'success'" type="success"></icon>
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
+      </template>
+    </div>
+    <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false">
+      {{{popupTips}}}
+    </message>
+    <div v-if="tipsMode === 'text' && tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
   </v-col>
 </v-col>
 </template>
 <script>
   import Layout from '../Layout/'
   import Icon from '../Icon/'
-  import Popover from '../Popover/'
+  import Message from '../Message/'
 
   const vCol = Layout.Col
 
@@ -110,6 +96,13 @@
         var span = 24 - parseInt(this.labelCol)
         return span.toString()
       },
+      popupMode () {
+        if (this.validStatus === 'error') {
+          return 'error'
+        }
+
+        return 'warning'
+      },
       popupTips () {
         if (this.validStatus === 'error') {
           return this.tips
@@ -121,7 +114,7 @@
     components: {
       vCol,
       Icon,
-      Popover
+      Message
     }
   }
 </script>
