@@ -30,6 +30,9 @@
             <v-option value="芒果">芒果</v-option>
           </v-select>
         </form-item>
+        <form-item required label="模板内容" label-col="4" tips-mode="popup" :description="testDescription">
+          <v-textarea placeholder="变量格式：${name}; 示例：尊敬的${name}，您的快递已在飞奔的路上，将在今天$[time]送达您的手里，请留意查收。"></v-textarea>
+        </form-item>
         <form-item label-col="4">
           <v-button type="submit" primary>确定</v-button>
           <v-button type="reset" tertiary value="重置条件"></v-button>
@@ -222,7 +225,7 @@
 // import FromInput from 'src/components/FormInput.vue';
 // import fromValid from 'src/plugins/form-valid.js';
 // Vue.use(fromValid);
-import {Input,Button,Select,Form,Layout} from 'src/'
+import {Input,Button,Select,Form,Layout,Textarea} from 'src/'
 
 const Option = Select.Option;
 const FormItem = Form.FormItem;
@@ -238,7 +241,8 @@ export default {
     vSelect:Select,
     vOption:Option,
     vForm:Form,
-    FormItem
+    FormItem,
+    vTextarea:Textarea
     // FormInput
   },
   data() {
@@ -260,7 +264,17 @@ export default {
         telValidResult: {},
         telStatus: '',
         telTips:'输入手机号码格式错误',
-      }
+      },
+      testDescription: '<ul>'+
+          '<li>不支持营销内容、全变量/组合变量模板;例如:您好，${msg}</li>'+
+          '<li>变量格式应如${name}，不能使用${email},${mobile},${id},${nick},${site}</li>'+
+          '<li>请勿在变量中添加特殊符号,如: , . # / : - ，。</li>'+
+          '<li>如有链接，请将已ICP备案的链接地址写于模板内容中，便于核实模板</li>'+
+          '<li>内容无须添加签名,内容首尾不能添加[],【】符号,调用接口时传入签名即可</li>'+
+          '<li>若签名/模板内容侵犯到第三方权益须获得第三方的真实授权,授权委托书等凭证上传管理中心</li>'+
+          '<li>签名/模板申请规范详见 <a href="http://tb.cn/OKCGyWx">http://tb.cn/OKCGyWx</a></li>'+
+          '<li>审计预计将在1个工作日内完成</li>'+
+      '</ul>'
     }
   },
   watch: {
