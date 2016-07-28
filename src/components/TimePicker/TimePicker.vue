@@ -1,14 +1,25 @@
 <template xmlns:v-el="http://www.w3.org/1999/xhtml">
   <div :class="[prefixCls + '-time-picker']">
-    <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-click-outside="true">
-      <span slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
+    <trigger trigger="click"
+             placement="bottomLeft"
+             effect="slide"
+             :popup-hide-when-click-outside="true"
+             :popup-cover-trigger="true">
+      <div slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
         <v-input readonly
-                 v-el:picker-toggler
                  :value="value"
                  :placeholder="placeholder"></v-input>
-      </span>
+        <icon type="time"></icon>
+      </div>
       <div slot="popup"
            :class="[prefixCls + '-time-picker-menus']">
+        <div>
+          <v-input readonly
+                   v-el:picker-toggler
+                   :class="[prefixCls + '-time-picker-input']"
+                   :value="value"
+                   :placeholder="placeholder"></v-input>
+        </div>
         <div :class="[prefixCls + '-time-picker-panel']">
           <ul v-el:h
             :class="time-hours" @mouseover="selection('H')">
@@ -44,6 +55,7 @@
   import GlobalMixin from '../_utils/GlobalMixin.js'
   import Input from '../Input'
   import Trigger from '../Trigger'
+  import Icon from '../Icon'
   import Selection from './selection'
 
   const scrollTo = (element, to, duration) => {
@@ -106,7 +118,8 @@
     },
     components: {
       vInput: Input,
-      trigger: Trigger
+      trigger: Trigger,
+      icon: Icon
     },
     data () {
       const now = new Date()
