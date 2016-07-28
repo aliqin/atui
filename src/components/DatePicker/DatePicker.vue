@@ -1,12 +1,12 @@
 <template>
   <div :class="[prefixCls + '-datepicker']">
-    <trigger trigger="click" effect="slide" placement="bottomLeft" :show.sync="show">
+    <trigger trigger="click" effect="slide" placement="bottomLeft" :show.sync="show" :disabled="disabled">
       <div slot="trigger"
            :class="[prefixCls + '-datepicker-toggle']">
         <input :class="[prefixCls + '-datepicker-input']"
-        v-bind="{disabled:disabled}"
+        v-bind="{disabled: disabled}"
         type="text"
-        value="value"
+        :value="value"
         :placeholder="placeholder"
         readonly />
         <icon type="calendar"></icon>
