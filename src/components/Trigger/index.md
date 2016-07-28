@@ -21,8 +21,10 @@ trigger | 以何种方式触发显示气泡框,可选hover, click, focus | `stri
 effect | 弹窗的过渡效果，可选scale, fadein | `string` | `scale`
 placement | 定义气泡框的放置位置，可选top，topLeft，topRight，<br> left，leftTop，leftBottom，right，rightTop，rightBottom，<br>bottom，bottomLeft，bottomRight | `string` | `bottom`
 width | 设置trigger宽度, 如`200px`、`50%` | `string` | `auto`
+offset | popup偏移量, 如`[0, 50]`,横向不偏移,纵向偏移50px | `Array` | `[0, 0]`
 popupCls | 自定义popup的样式名 | `string` | `popup`
 popupAlwaysInView | 是否支持坐标智能检测,保证弹窗优先在视图区域可见,默认开启 | `boolean` | `true`
+popupAlwaysShow | 永远展示popup,并且默认展示 | `boolean` | `false`
 popupHideWhenClickOutside | 点击trigger组件外部区域的时候,是否隐藏popup浮层,默认不隐藏 | `boolean` | `false`
 
 ### Events
