@@ -85,8 +85,8 @@ export default {
       messageClass[prefixCls + '-message-top'] = placement === 'top'
       messageClass[prefixCls + '-message-top-right'] = placement === 'top-right'
       messageClass[prefixCls + '-message-center'] = placement === 'center'
-      messageClass[prefixCls + '-arrow-' + arrow] = !!arrow
-
+      messageClass[prefixCls + '-message-arrow'] = !!arrow
+      messageClass[prefixCls + '-message-arrow-' + arrow] = !!arrow
       return messageClass
     }
   }
