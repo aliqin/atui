@@ -60,5 +60,8 @@ new Vue({
 </script>
 ```
 
-### 组件文档地址 http://groups.alidemo.cn/aliqin/atui/
-
+### 文档地址
+- 组件库 <http://groups.alidemo.cn/aliqin/atui/>
+- 组件库视觉规范
+  - DPL > 组件  <http://ux.alibaba.com/alitelecom.html>
+  - 视觉稿 <http://ued.aliqin.alibaba.net/webcompon/>
