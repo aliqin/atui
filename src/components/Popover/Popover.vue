@@ -1,6 +1,6 @@
 <template>
   <div :class="[prefixCls + '-popover-cont']">
-    <trigger :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover">
+    <trigger :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover" :popup-always-show="alwaysShow">
       <slot slot="trigger"></slot>
       <slot slot="popup" name="popup" role="popover">
         <div :class="[prefixCls + '-popover-arrow']"></div>
@@ -43,6 +43,10 @@
       header: {
         type: Boolean,
         default: true
+      },
+      alwaysShow: {
+        type: Boolean,
+        default: false
       }
     }
   }
