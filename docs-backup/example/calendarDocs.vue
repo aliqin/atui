@@ -84,7 +84,7 @@
     data() {
       return {
         disabled: [],
-        value: '6/06/2015',
+        value: '07/07/2016',
         format: ['MMM/dd/yyyy'],
         disabledDate(date) {
           if (!date) {
