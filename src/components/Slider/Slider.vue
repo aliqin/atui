@@ -1,5 +1,5 @@
 <template>
-  <div :class="sliderClassObj" @click="clickFun">
+  <div :id="sliderId" :class="sliderClassObj" @click="clickFun">
     <template v-for="item in valuePercent">
       <tooltip :content="valueArray[$index]" placement="top">
         <div :class="[prefixCls + '-slider-handle']" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
