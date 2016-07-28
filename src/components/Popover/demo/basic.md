@@ -18,7 +18,16 @@ title:
   placement="bottom"
   title="我是标题"
   content="我是内容，我是内容，我是内容">
-  <button class="btn">Popover on bottom</button>
+  <v-button>Popover on bottom</v-button>
+</popover>
+
+<popover
+  effect="fade"
+  placement="right"
+  title="永远展示"
+  content="怎么动都不会消失"
+  :always-show="true">
+  <v-button>Popover always show</v-button>
 </popover>
 ````
 
@@ -26,7 +35,8 @@ title:
 new Vue({
     el: 'body',
     components: {
-        popover: atui.Popover
+        popover: atui.Popover,
+        vButton: atui.Button
     }
 })
 ````

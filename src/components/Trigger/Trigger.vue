@@ -1,6 +1,11 @@
 <template xmlns:v-el="http://www.w3.org/1999/xhtml">
   <div :class="[prefixCls + '-trigger-cont']" :style="{width: width}">
-    <div v-if="trigger === 'click'"
+    <div v-if="popupAlwaysShow"
+         v-el:trigger
+         :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
+      <slot name="trigger">trigger slot is not set</slot>
+    </div>
+    <div v-if="trigger === 'click' && !popupAlwaysShow"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @click="clickHandler">
@@ -69,6 +74,10 @@
         type: Boolean,
         default: true
       },
+      popupAlwaysShow: {
+        type: Boolean,
+        default: false
+      },
       popupHideWhenClickOutside: {
         type: Boolean,
         default: false
@@ -136,7 +145,7 @@
       const $popup = this.$els.popup
       const $triggerTarget = $trigger.querySelector('input, textarea')
       const me = this
-      const { trigger, popupHideWhenClickOutside, triggerUsePopupWidth } = this
+      const { trigger, popupHideWhenClickOutside, triggerUsePopupWidth, popupAlwaysShow } = this
 
       this.originalPlacement = this.placement
 
@@ -154,13 +163,8 @@
         })
       }
 
-      if (trigger === 'always') {
-        me.show = true
-        me.resetPos()
-      }
-
       // 点击trigger组件外部区域的时候,隐藏popup
-      if (popupHideWhenClickOutside) {
+      if (!popupAlwaysShow && popupHideWhenClickOutside) {
         this._closeEvent = EventListener.listen(window, 'click', (ev) => {
           if (!$popup.contains(ev.target) && !$trigger.contains(ev.target)) {
             me.show = false
@@ -182,6 +186,12 @@
 //          $popup.style.display = ''
 //          console.log('$popup.style.width 2', $popup.style.width)
 //        }, 1000)
+      }
+
+      // 永远展示popup,并且默认展示
+      if (popupAlwaysShow) {
+        this.show = true
+        this.resetPos()
       }
     },
 
