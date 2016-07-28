@@ -69,9 +69,8 @@ import '@ali/vue-component/style/themes/greater-blue.css'
 
 ## 浏览器支持
 
-现代浏览器和 IE8 及以上。
+现代浏览器和 IE9 及以上。
 
-> [IE8 issues](https://github.com/xcatliu/react-ie8)
 
 ## 链接
 
@@ -87,16 +86,10 @@ import '@ali/vue-component/style/themes/greater-blue.css'
 
 ## 谁在使用
 
-- 蚂蚁金服
-- 阿里巴巴
-- 口碑
-- 新美大
-- 滴滴
+- 阿里通信
 
 > 如果你的公司和产品使用了 Ant Design，欢迎到 [这里](https://github.com/ant-design/ant-design/issues/477) 留言。
 
 ## 如何贡献
 
-在任何形式的参与前，请先阅读 [贡献者文档](https://github.com/ant-design/ant-design/blob/master/.github/CONTRIBUTING.md)。有任何建议或意见您可以 [Pull Request](https://github.com/ant-design/ant-design/pulls)，给我们 [报告 Bug](https://github.com/ant-design/ant-design/issues/new) 或 [提问](https://github.com/ant-design/ant-design/issues)。
 
-> 强烈推荐阅读 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)、[《如何向开源社区提问题》](https://github.com/seajs/seajs/issues/545) 和 [《如何有效地报告 Bug》](http://www.chiark.greenend.org.uk/%7Esgtatham/bugs-cn.html)，更好的问题更容易获得帮助。

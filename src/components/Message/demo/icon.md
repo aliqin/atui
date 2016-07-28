@@ -1,7 +1,7 @@
 ---
-order: 0
+order: 3
 title:
-  zh-CN: 基本
+  zh-CN: 带icon的
   en-US: Type
 ---
 
@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<message>
+<message show-icon type="info">
   这是一个信息提示
 </message>
 ````

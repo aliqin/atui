@@ -3,10 +3,9 @@
     v-show="show"
     :class="messageClassObj"
     :transition="transition"
-    :style="{width:width}"
     role="alert">
     <div :class="[prefixCls + '-message-content']">
-      <button v-show="dismissable" type="button" :class="[prefixCls + '-close']" @click="show = false">
+      <button v-show="closable" type="button" :class="[prefixCls + '-close']" @click="close">
       <span>&times;</span>
       </button>
       <icon v-if="showIcon" :type="type"></icon>
@@ -23,9 +22,10 @@ import Icon from '../Icon'
 export default {
   props: {
     type: {
-      type: String
+      type: String,
+      default: 'info'
     },
-    dismissable: {
+    closable: {
       type: Boolean
     },
     showIcon: {
@@ -37,9 +37,6 @@ export default {
     },
     duration: {
       type: [String, Number]
-    },
-    width: {
-      type: String
     },
     placement: {
       type: String
@@ -58,11 +55,6 @@ export default {
   components: {
     Icon
   },
-  created () {
-    if (this.type) {
-      this.showIcon = true
-    }
-  },
   watch: {
     show (val) {
       if (this._timeout) clearTimeout(this._timeout)
@@ -75,7 +67,6 @@ export default {
     messageClassObj () {
       let { prefixCls, type, arrow, placement } = this
       let messageClass = {}
-
       messageClass[prefixCls + '-message'] = true
       messageClass[prefixCls + '-message-success'] = type === 'success'
       messageClass[prefixCls + '-message-warning'] = type === 'warning'
@@ -88,6 +79,12 @@ export default {
       messageClass[prefixCls + '-message-arrow'] = !!arrow
       messageClass[prefixCls + '-message-arrow-' + arrow] = !!arrow
       return messageClass
+    }
+  },
+  methoeds: {
+    close () {
+      this.show = false
+      this.$dispatch('close')
     }
   }
 }
