@@ -3,14 +3,27 @@
 @prefix-cls-time-picker: e("@{prefix-cls}-time-picker");
 
 .@{prefix-cls-time-picker} {
-  position: relative;
   display: inline-block;
+
   &-toggler {
     position: relative;
     display: inline-block;
     width: 138px;
     cursor: pointer;
     vertical-align: middle;
+
+    .@{prefix-cls}-input:focus {
+      border-color: #bfbfbf;
+      box-shadow: none;
+    }
+
+    .@{prefix-cls}-icon-time {
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      right: 7px;
+      color: #ccc;
+    }
   }
 }
 
@@ -21,12 +34,17 @@
   font-size: 12px;
   text-align: left;
   background-color: #fff;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: 0 1px 6px hsla(0, 0%, 39%, .2);
   background-clip: padding-box;
   border: 1px solid #ccc;
   line-height: 1.5;
   overflow: hidden;
+
+  .@{prefix-cls-time-picker}-input {
+    border: 0;
+    border-radius: 0;
+  }
 }
 
 .@{prefix-cls-time-picker}-menus .@{prefix-cls-time-picker}-panel {

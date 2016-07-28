@@ -86,6 +86,13 @@
         type: Boolean,
         default: false
       },
+      // todo: 增强trigger和popup坐标对齐方式
+      // 参考 https://github.com/yiminghe/dom-align
+      // popup弹出的时候,刚好盖住trigger
+      popupCoverTrigger: {
+        type: Boolean,
+        default: false
+      },
       popupHideDelay: {
         type: Number,
         default: 0
@@ -269,7 +276,7 @@
        */
       resetPos (inPlacement) {
         const me = this
-        const { popupAlwaysInView, offset } = this
+        const { popupAlwaysInView, offset, popupCoverTrigger } = this
         const $popup = me.$els.popup
 
         // 坐标修正
@@ -280,7 +287,7 @@
           return
         }
 
-        const $trigger = me.$els.trigger.children[0]
+        const $trigger = me.$els.trigger
         const triggerOffset = $trigger.getBoundingClientRect()
         const triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left
         const triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top
@@ -355,6 +362,14 @@
             break
           default:
             console.log('Wrong placement prop')
+        }
+
+        if (popupCoverTrigger) {
+          if (this.placement.startsWith('top')) {
+            offset[1] = triggerHeight
+          } else if (this.placement.startsWith('bottom')) {
+            offset[1] = -triggerHeight
+          }
         }
 
         $popup.style.left = this.position.left + offset[0] + 'px'
