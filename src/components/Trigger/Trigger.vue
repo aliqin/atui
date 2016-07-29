@@ -201,8 +201,11 @@
 
       // 永远展示popup,并且默认展示
       if (popupAlwaysShow) {
+        // 显示优化,避免上来出现在页面左上角
+        $popup.style.visibility = 'hidden'
         this.show = true
         this.resetPos()
+        $popup.style.visibility = ''
       }
     },
 
