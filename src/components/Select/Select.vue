@@ -7,7 +7,8 @@
              :trigger-use-popup-width="true"
              :disabled="disabled"
              :width.sync="width"
-             :show.sync="show">
+             :show.sync="show"
+             @toggolePopup="togglePopupHandler">
       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
            tabindex="1"
            v-bind="{disabled: disabled}">
@@ -226,6 +227,22 @@
         //   option.active = false
         // })
         // childs[this.activeIndex].active = true
+      },
+
+      togglePopupHandler (show) {
+        const me = this
+
+        if (this.disabled) {
+          this.show = false
+          return
+        }
+
+        this.show = !this.show
+
+        if (this.multiple) {
+          this.showPlaceholder = false
+          setTimeout(() => me.$els.searchField.focus(), 10)
+        }
       }
     },
 
@@ -257,22 +274,6 @@
         this.searchText = ''
         // 需要把option的change事件继续冒泡给上一层级调用
         // return true
-      }
-    },
-
-    'trigger-popup-toggle' (show) {
-      const me = this
-
-      if (this.disabled) {
-        this.show = false
-        return
-      }
-
-      this.show = !this.show
-
-      if (this.multiple) {
-        this.showPlaceholder = false
-        setTimeout(() => me.$els.searchField.focus(), 10)
       }
     }
   }

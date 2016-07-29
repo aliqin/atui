@@ -1,6 +1,6 @@
 <template>
   <div :class="[prefixCls + '-popover-cont']">
-    <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls">
+    <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls" @reset-pos="resetPosHandler">
       <slot slot="trigger"></slot>
       <slot slot="popup" name="popup" role="tooltip">
         <div :class="[prefixCls + '-tooltip-arrow']"></div>
@@ -44,8 +44,8 @@
       }
     },
 
-    events: {
-      'trigger-reset-pos' (data) {
+    methods: {
+      resetPosHandler (data) {
         const { prefixCls, popupCls } = this
         const { $trigger, $popup, placement } = data
         const $arrow = $popup.querySelector(`.${prefixCls}-${popupCls}-arrow`)

@@ -4,7 +4,8 @@
              placement="bottomLeft"
              effect="slide"
              :popup-hide-when-click-outside="true"
-             :popup-cover-trigger="true">
+             :popup-cover-trigger="true"
+             @toggolePopup="togglePopupHandler">
       <div slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
         <v-input readonly
                  :value="value"
@@ -153,18 +154,6 @@
       }
     },
 
-    events: {
-      'trigger-popup-toggle' (show) {
-        if (show) {
-          this.$nextTick(() => {
-            this.selectChoosed('h', this.hour, 1)
-            this.selectChoosed('m', this.minute, 1)
-            this.selectChoosed('s', this.second, 1)
-          })
-        }
-      }
-    },
-
     created () {
       if (this.value && this.value.constructor === Date) {
         this.hour = this.value.getHours()
@@ -215,6 +204,15 @@
       },
       chooseSecond (index) {
         this.second = index
+      },
+      togglePopupHandler (show) {
+        if (show) {
+          this.$nextTick(() => {
+            this.selectChoosed('h', this.hour, 1)
+            this.selectChoosed('m', this.minute, 1)
+            this.selectChoosed('s', this.second, 1)
+          })
+        }
       }
     }
   }
