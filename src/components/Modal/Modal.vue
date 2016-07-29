@@ -32,9 +32,7 @@
 <script type="text/ecmascript-6">
 export default {
   props: {
-    title: {
-      type: String
-    },
+    title: String,
     show: {
       require: true,
       type: Boolean
@@ -45,19 +43,9 @@ export default {
       type: Function,
       default () {}
     },
-    effect: {
-      type: String,
-      default: null
-    },
-    backdrop: {
-      type: Boolean
-    },
-    large: {
-      type: Boolean
-    },
-    small: {
-      type: Boolean
-    },
+    effect: String,
+    backdrop: Boolean,
+    small: Boolean,
     prefixCls: {
       type: String,
       default: 'atui'

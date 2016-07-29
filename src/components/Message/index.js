@@ -11,7 +11,8 @@ import Message from './Message.vue'
         :duration="duration"
         :type="type"
         :transition="transition"
-        :placement="placement">
+        :placement="placement"
+        show-icon>
         {{content}}
         </message>
         `,
