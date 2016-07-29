@@ -2,7 +2,7 @@
   <div v-if="!closed"
        :class="[prefixCls + '-tag', color && (prefixCls + '-tag-color')]"
        :style="{'background-color': color}">
-    <a :href="href"
+    <a :href="href" :target="href ? '_blank' : ''"
        :class="[prefixCls + '-tag-text']"
        :style="{'fontSize': size+'px'}">
       <slot></slot>
