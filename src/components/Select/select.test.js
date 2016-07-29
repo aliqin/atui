@@ -43,11 +43,11 @@ describe('Select', () => {
   // it('mousedown事件的处理方法调用', () => {
     // vm.$children[0].disabled = true
     // expect(vm.$children[0].show).to.false
-    // vm.$children[0].$emit('trigger-popup-toggle')
+    // vm.$children[0].$emit('toggle-popup')
     // expect(vm.$children[0].show).to.false
 
     // vm.$children[0].disabled = false
-    // vm.$children[0].$emit('trigger-popup-toggle', true)
+    // vm.$children[0].$emit('toggle-popup', true)
     // expect(vm.$children[0].show).to.true
   // })
 

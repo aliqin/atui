@@ -147,7 +147,7 @@
     watch: {
       'show' (val, oldVal) {
         // 向父组件派发事件
-        this.$dispatch('trigger-popup-toggle', val)
+        this.$dispatch('toggle-popup', val)
       }
     },
 
@@ -379,7 +379,7 @@
         $popup.style.top = this.position.top + offset[1] + 'px'
 
         // 向父组件派发事件
-        this.$dispatch('trigger-reset-pos', {
+        this.$dispatch('reset-pos', {
           $trigger: $trigger,
           $popup: $popup,
           placement: this.placement
@@ -423,8 +423,6 @@
         if (this.disabled) return
 
         const { type } = ev
-
-        console.log('ev', ev)
 
         if (type === 'focus') {
           this.show = true

@@ -32,8 +32,8 @@ popupCoverTrigger | popup弹出的时候,刚好盖住trigger,todo: 增强trigger
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-@trigger-reset-pos | popup定位事件 | `object` | `{$trigger, $popup, placement}`
-@trigger-popup-toggle | popup切换显示隐藏状态事件,true表示可见 | `Boolean` | `show`
+@reset-pos | popup定位事件 | `function($trigger, $popup, placement)` | 无
+@toggle-popup | popup切换显示隐藏状态事件,true表示可见 | `function(show)` | 无
 
 <style>
   .atui-trigger-cont {
