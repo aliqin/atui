@@ -30,6 +30,7 @@ title:
 <icon type="filter"></icon>过滤
 <icon type="doc"></icon>附件
 <icon type="calendar"></icon>日历
+<icon type="time"></icon>时间
 <icon type="tick"></icon>对勾
 ````
 
