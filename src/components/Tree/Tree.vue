@@ -10,12 +10,8 @@
 import TreeNode from './TreeNode.vue'
 export default {
   props: {
-    checkable: {
-      type: Boolean
-    },
-    dataSource: {
-      type: Object
-    },
+    checkable: Boolean,
+    dataSource: Object,
     prefixCls: {
       type: String,
       default: 'atui'

@@ -1,7 +1,7 @@
 ---
-order: 0
+order: 2
 title:
-  zh-CN: 基本
+  zh-CN: 简单版
   en-US: Type
 ---
 
@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :show-jumper="true" :show-size-changer="true"></pagination> <br/>
+<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" simple></pagination>
 ````
 
 ````vue-script

@@ -1,19 +1,19 @@
 ---
 order: 0
 title:
-  zh-CN: 基本
+  zh-CN: hover
   en-US: Type
 ---
 
 ## zh-CN
-
+hover显示
 
 
 ## en-US
 
 ````jsx
 
-<dropdown>
+<dropdown toggle="hover">
   <div>
     点击显示菜单 <icon type="down"></icon>
   </div>

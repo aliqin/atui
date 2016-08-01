@@ -7,7 +7,7 @@ title:
 
 ## zh-CN
 
-
+DatePicker提供了一个子组件：`RangePicker`,使用`DatePicker.RangePicker`调用即可
 
 ## en-US
 

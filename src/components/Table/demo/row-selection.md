@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<grid :data-source="gridData1" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading"></grid>
+<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading"></grid>
 ````
 
 ````vue-script
@@ -94,7 +94,9 @@ var data = [{
   age: 66,
   address: '香港弥敦道4',
 }];
+
 // 配置选择数据的选项
+
 var rowSelection = {
   getCheckboxProps: function(record) {
     return {
@@ -122,22 +124,10 @@ new Vue({
   },
   data () {
     return {
-      size:'default',
-      fixedHeader:false,
       loading:false,
       gridData:data,
       gridColumns: columns,
-      rowSelection:rowSelection
-    }
-  },
-  methods:{
-    changeData () {
-      this.gridData.push({
-        key: Math.random(),
-        name: '李秀莲大嘴哥',
-        age: Math.random(),
-        address: '西湖区湖底公园123号',
-      })
+      rowSelection: rowSelection
     }
   }
 })

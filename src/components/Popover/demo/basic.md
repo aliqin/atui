@@ -20,23 +20,14 @@ title:
   content="我是内容，我是内容，我是内容">
   <v-button>Popover on bottom</v-button>
 </popover>
-
-<popover
-  effect="fade"
-  placement="right"
-  title="永远展示"
-  content="怎么动都不会消失"
-  :always-show="true">
-  <v-button>Popover always show</v-button>
-</popover>
 ````
 
 ````vue-script
 new Vue({
-    el: 'body',
-    components: {
-        popover: atui.Popover,
-        vButton: atui.Button
-    }
+  el: 'body',
+  components: {
+    popover: atui.Popover,
+    vButton: atui.Button
+  }
 })
 ````

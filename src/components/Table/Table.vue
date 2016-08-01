@@ -21,7 +21,7 @@
                 <div data-toggle="dropdown" @click="filterOpened = true">
                   <icon type="filter" size="12"></icon>
                 </div>
-                <div name="dropdown-menu" v-show="filterOpened" transition="slide" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
+                <div name="dropdown-menu" v-show="filterOpened" slot="dropdown-menu" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
                   <ul>
                     <li v-for="filter in column.filters">
                     <label>

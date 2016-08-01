@@ -13,14 +13,14 @@ title:
 
 
 ````jsx
-<date-picker></date-picker>
+<date-picker disabled></date-picker>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-      datePicker: atui.DatePicker
+    datePicker: atui.DatePicker
   }
 })
 ````

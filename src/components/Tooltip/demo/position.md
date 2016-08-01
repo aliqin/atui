@@ -15,10 +15,10 @@ title:
 ````jsx
 <div>
   <div :style="{marginLeft: '60px'}">
-    <tooltip content="上左" placement="topLeft">
+    <tooltip content="提示内容" placement="topLeft">
     <v-button>左上角</v-button>
     </tooltip>
-    <tooltip content="上边" placement="top">
+    <tooltip content="提示内容" placement="top">
     <v-button>上边</v-button>
     </tooltip>
     <tooltip content="提示内容" placement="topRight">
