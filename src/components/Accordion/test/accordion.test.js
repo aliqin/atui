@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Accordion from '../Accordion'
+import Accordion from '../../Accordion'
 
 const {Panel} = Accordion
 
