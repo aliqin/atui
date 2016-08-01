@@ -1,7 +1,7 @@
 ---
 order: 0
 title:
-  zh-CN: 基本
+  zh-CN: 迷你版
   en-US: Type
 ---
 
@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total"></pagination>
+<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" mini :total="total"></pagination>
 ````
 
 ````vue-script

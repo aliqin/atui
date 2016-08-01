@@ -1,5 +1,11 @@
 // Step
 // --------------------------------------------------
+
+
+// - wait
+@wait-icon-color:       #ccc;
+
+
 @prefix-cls-step: e("@{prefix-cls}-step");
 
 .@{prefix-cls-step} {
@@ -7,7 +13,7 @@
 	display: inline-block;
 	vertical-align: top;
 
-	.@{prefix-cls-step}-tail {
+	&-tail {
 		position: absolute;
 		left: 0;
 		top: 13px;
@@ -17,41 +23,23 @@
 		> i {
 	      display: inline-block;
 	      vertical-align: top;
-	      background: @process-tail-color;
+	      background: @primary-color;
 	      height: 1px;
 	      border-radius: 1px;
 	      width: 100%;
 	      position: relative;
-	      // &:after {
-	      //   position: absolute;
-	      //   content: '';
-	      //   top: 0;
-	      //   width: 0;
-	      //   background: @process-tail-color;
-	      //   height: 100%;
-	      //   opacity: 0;
-	      // }
-	      i {
-	        position: absolute;
-	        content: '';
-	        top: 0;
-	        width: 0;
-	        background: @process-tail-color;
-	        height: 100%;
-	        opacity: 0;
-	      }
 	    }
 	}
 
-	.@{prefix-cls-step}-head, .@{prefix-cls-step}-main {
+	&-head, &-main {
 		position: relative;
 		display: inline-block;
 		vertical-align: top;
 	}
 
-	.@{prefix-cls-step}-head {
+	&-head {
 		background-color: #fff;
-		.@{prefix-cls-step}-head-inner {
+		&-inner {
 			display: block;
 			width: 26px;
 			height: 26px;
@@ -60,7 +48,7 @@
 			// border-radius: 26px;
 			font-size: 14px;
 			margin-right: 8px;
-			// border: 1px solid @process-tail-color;
+			// border: 1px solid @primary-color;
 			transition: background-color 0.3s ease, border-color 0.3s ease;
 			> .@{prefix-cls-step}-icon {
 					display: inline-block;
@@ -68,9 +56,9 @@
 					height: 26px;
 					line-height: 1.8;
 			    top: -1px;
-			    color: @process-tail-color;
+			    color: @primary-color;
 			    position: relative;
-			    border: 1px solid @process-tail-color;
+			    border: 1px solid @primary-color;
 			    border-radius: 50%;
 			    text-align: center;
 			}
@@ -82,33 +70,36 @@
 				position: absolute;
 				left: 0;
 				top: 0;
+        .@{prefix-cls}-icon-success{
+          color: @primary-color;
+        }
 			}
 		}
 	}
 
-	.@{prefix-cls-step}-main {
+	&-main {
 		margin-top: 3px;
 		margin-left: -5px;
     color: #999;
-		.@{prefix-cls-step}-main-title {
+		&-title {
 			display: inline-block;
 			padding-right: 10px;
 			margin-bottom: 4px;
 			background-color: #fff;
 			font-size: 16px;
 		}
-		.@{prefix-cls-step}-main-description {
+		&-description {
 			max-width: 100px;
 			font-size: 12px;
 		}
 	}
 
-	&.@{prefix-cls-step}-status-process {
+	&-status-process {
 		.@{prefix-cls-step}-head-inner {
 			> .@{prefix-cls-step}-icon {
 				color: #fff;
-				border-color: @process-icon-color;
-				background-color: @process-icon-bg-color;
+				border-color: @primary-color;
+				background-color: @primary-color;
 			}
 		}
     .@{prefix-cls-step}-main {
@@ -116,24 +107,18 @@
     }
 	}
 
-	&.@{prefix-cls-step}-status-finish {
+	&-status-finish {
 		.@{prefix-cls-step}-head-inner {
 			> .@{prefix-cls-step}-icon {
-				color: @finish-icon-color;
+				color: @primary-color;
 			}
 		}
 		.@{prefix-cls-step}-tail {
 			> i {
-				background: @process-tail-color;
-				// &:after {
-				// 	width: 100%;
-				// 	background: @finish-tail-color;
-				// 	transition: all 0.4s ease;
-				// 	opacity: 1;
-				// }
+				background: @primary-color;
 				i {
 					width: 100%;
-					background: @finish-tail-color;
+					background: @primary-color;
 					transition: all 0.4s ease;
 					opacity: 1;
 				}
@@ -141,20 +126,21 @@
 		}
 
     .icon-tick {
-      color: @finish-icon-color;
+      color: @primary-color;
     }
 	}
 
-	&.@{prefix-cls-step}-status-wait {
+	&-status-wait {
 		.@{prefix-cls-step}-head-inner {
 			> .@{prefix-cls-step}-icon {
 				color: @wait-icon-color;
+        border-color: @wait-icon-color;
 			}
 		}
 	}
 
 	// 最后一个项目，将其title的padding设置为0
-	&.@{prefix-cls-step}-item-last {
+	&-item-last {
 		.@{prefix-cls-step}-main {
 			.@{prefix-cls-step}-main-title {
 				padding: 0;

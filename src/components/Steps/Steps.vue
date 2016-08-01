@@ -11,10 +11,6 @@
         type: Number,
         default: 0
       },
-      color: {
-        type: String,
-        default: '#ff7500'
-      },
       prefixCls: {
         type: String,
         default: 'atui'

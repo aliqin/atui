@@ -3,21 +3,18 @@
    <div v-if="!lastStep"
         :class="[prefixCls + '-step-tail']">
      <i>
-      <i :style="{ backgroundColor: color }"></i>
      </i>
    </div>
    <div :class="[prefixCls + '-step-head']">
      <div :class="[prefixCls + '-step-head-inner']">
-      <span v-if="status !== 'finish'"
-            :class="[prefixCls + '-step-icon']"
-        :style="{
-         borderColor: status==='process'?color: '#e9e9e9',
-         backgroundColor: status==='process'?color: '#fff'}">
+      <span
+        v-if="status !== 'finish'"
+        :class="[prefixCls + '-step-icon']">
         {{ stepNumber }}
       </span>
       <span v-else
             :class="[prefixCls + '-step-finish-icon']">
-        <icon type="success" size="28" :color="color"></icon>
+        <icon type="success" size="28"></icon>
       </span>
      </div>
    </div>
@@ -38,7 +35,6 @@ export default {
     stepNumber: Number,
     lastStep: Boolean,
     tailWidth: String,
-    color: String,
     prefixCls: {
       type: String,
       default: 'atui'

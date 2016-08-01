@@ -1,7 +1,7 @@
 ---
 order: 1
 title:
-  zh-CN: 基本
+  zh-CN: 页码改变与跳转功能
   en-US: Type
 ---
 
@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" :show-jumper="true" :show-size-changer="true"></pagination>
+<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" show-jumper show-size-changer></pagination>
 ````
 
 ````vue-script
