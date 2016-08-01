@@ -45,5 +45,9 @@ describe('Accordion组件单元测试', () => {
     expect(vm.$el.querySelectorAll('.atui-panel-group').length).to.be.equal(1)
     expect(vm.$el.querySelectorAll('.atui-panel').length).to.be.equal(4)
   })
+
+  it('test目录', () => {
+    expect(1).to.be.equal(1)
+  })
 })
 
