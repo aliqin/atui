@@ -12,18 +12,23 @@ subtitle: 日期选择器
 
 ## API
 
-
-按钮的属性说明如下：
+DatePicker
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-value | 设置默认时间 | string | -
-htmlType | 设置 `button` 原生的 `type` 值，可选值请参考 [HTML 标准](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type) | string | `button`
-icon | 设置按钮的图标类型 | string | -
-shape | 设置按钮形状，可选值为 `circle` `circle-outline` 或者不设 | string | -
-size | 设置按钮大小，可选值为 `small` `large` 或者不设 | string | `default`
-loading | 设置按钮载入状态 | boolean | false
-onClick | `click` 事件的 handler | function | -
+placeholder | 占位文字 | String | 请选择日期
+disabled | 是否禁用 | Boolean | false
+format | 格式 | String | yyyy-MM-dd
+disabledDate | 禁用的日期 | Function | `function(){}`
+locale | 语言 | String  `zh_CN` or  `en_US`| zh_CN
 
-`<Button>Hello world!</Button>` 最终会被渲染为 `<button>Hello world!</button>`，并且除了上表中的属性，其它属性都会直接传到 `<button></button>`。
 
+
+RangePicker
+
+属性 | 说明 | 类型 | 默认值
+-----|-----|-----|------
+startDate | 开始日期,如果不设置默认为今天 | String | |
+endDate | 结束日期,如果不设置默认为今天 | String | |
+disabled | 是否禁用 | Boolean | false
+format | 格式 | String | yyyy-MM-dd

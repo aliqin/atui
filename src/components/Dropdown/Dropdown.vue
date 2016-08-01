@@ -5,6 +5,7 @@
              popup-cls="dropdown"
              placement="bottomLeft"
              :popup-hide-delay="200"
+             popup-hide-when-click-outside
              :show.sync="open">
       <slot slot="trigger"></slot>
       <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont']">

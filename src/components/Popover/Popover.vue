@@ -4,7 +4,7 @@
       <slot slot="trigger"></slot>
       <slot slot="popup" name="popup" role="popover">
         <div :class="[prefixCls + '-popover-arrow']"></div>
-        <h3 :class="[prefixCls + '-popover-title']" v-show="header && title">{{title}}</h3>
+        <h3 :class="[prefixCls + '-popover-title']" v-show="showHeader && title">{{title}}</h3>
         <div :class="[prefixCls + '-popover-content']">
           {{{content}}}
         </div>
@@ -27,27 +27,16 @@
     },
 
     props: {
-      trigger: {
-        type: String
-      },
-      effect: {
-        type: String
-      },
-      placement: {
-        type: String
-      },
-      title: {
-        type: String
-      },
-      content: [String, Number],
-      header: {
+      trigger: String,
+      effect: String,
+      placement: String,
+      title: String,
+      content: String,
+      showHeader: {
         type: Boolean,
         default: true
       },
-      alwaysShow: {
-        type: Boolean,
-        default: false
-      }
+      alwaysShow: Boolean
     }
   }
 </script>

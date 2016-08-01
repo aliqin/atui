@@ -5,33 +5,51 @@ title: Menu
 subtitle: 导航菜单
 ---
 
-按钮用于开始一个即时操作。
 
 ## 何时使用
 
-标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
 
 ## API
 
-通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` -> `shape` -> `size` -> `loading` -> `disabled`
+### Menu props
 
-按钮的属性说明如下：
+| 参数     | 说明           | 类型     | 默认值       |
+|----------|---------------|----------|--------------|
+| theme    | 主题颜色 | String: `light` `dark` | `light` |
+| mode | 菜单类型，现在支持垂直、水平、和内嵌模式三种 | String: `vertical` `horizontal` `inline` | `vertical` |
+| selectedKeys | 当前选中的菜单项 key 数组 | Array |      |
+| defaultSelectedKeys | 初始选中的菜单项 key 数组 | Array |      |
+| openKeys | 当前展开的 SubMenu 菜单项 key 数组 | Array |  |
+| defaultOpenKeys | 初始展开的 SubMenu 菜单项 key 数组 |  |      |
+| onOpen | SubMenu 展开回调 | Function({ key, item, keyPath }) |  |
+| onClose | SubMenu 收起回调 | Function({ key, item, keyPath }) |  |
+| onSelect | 被选中时调 | Function({ item, key, selectedKeys }) | 无   |
+| onDeselect | 取消选中时调用，仅在 multiple 生效 | Function({ item, key, selectedKeys }) | - |
+| onClick | 点击 menuitem 调用此函数，参数为 {item, key, keyPath} | function | - |
+| style | 根节点样式 | Object | |
 
-属性 | 说明 | 类型 | 默认值
------|-----|-----|------
-type | 设置按钮类型，可选值为 `primary` `ghost` 或者不设 | string | -
-htmlType | 设置 `button` 原生的 `type` 值，可选值请参考 [HTML 标准](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type) | string | `button`
-icon | 设置按钮的图标类型 | string | -
-shape | 设置按钮形状，可选值为 `circle` `circle-outline` 或者不设 | string | -
-size | 设置按钮大小，可选值为 `small` `large` 或者不设 | string | `default`
-loading | 设置按钮载入状态 | boolean | false
-onClick | `click` 事件的 handler | function | -
+> More options in [rc-menu](https://github.com/react-component/menu#api)
 
-`<Button>Hello world!</Button>` 最终会被渲染为 `<button>Hello world!</button>`，并且除了上表中的属性，其它属性都会直接传到 `<button></button>`。
+### Menu.Item props
 
-<style>
-[id^="components-button-demo-"] .ant-btn {
-  margin-right: 8px;
-  margin-bottom: 12px;
-}
-</style>
+| 参数     | 说明           | 类型     | 默认值       |
+|----------|----------------|----------|--------------|
+| disabled    | 是否禁用 | Boolean   |  false  |
+| key   | item 的唯一标志 |  String |  |
+
+### Menu.SubMenu props
+
+| 参数     | 说明           | 类型     | 默认值       |
+|----------|----------------|----------|--------------|
+| disabled    | 是否禁用 | Boolean   |  false  |
+| key | 唯一标志 |  String |  |
+| title    | 子菜单项值 | String or React.Element   |    |
+| children | 子菜单的菜单项 | (MenuItem or SubMenu)[] |  |
+| onTitleClick | 点击子菜单标题 | Function({ eventKey, domEvent }) |  |
+
+### Menu.ItemGroup props
+
+| 参数     | 说明           | 类型     | 默认值       |
+|----------|----------------|----------|--------------|
+| title    | 分组标题       | String or React.Element |    |
+| children | 分组的菜单项    | MenuItem[] |  |

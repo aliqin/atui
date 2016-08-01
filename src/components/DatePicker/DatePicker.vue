@@ -1,6 +1,10 @@
 <template>
   <div :class="[prefixCls + '-datepicker']">
-    <trigger trigger="click" effect="slide" placement="bottomLeft" :show.sync="show" :disabled="disabled">
+    <trigger trigger="click" effect="slide"
+    placement="bottomLeft"
+    :show.sync="show"
+    :disabled="disabled"
+    popup-hide-when-click-outside>
       <div slot="trigger"
            :class="[prefixCls + '-datepicker-toggle']">
         <input :class="[prefixCls + '-datepicker-input']"
@@ -11,14 +15,14 @@
         readonly />
         <icon type="calendar"></icon>
       </div>
-      <div slot="popup"
-           :class="[prefixCls + '-datepicker-calendar']">
+      <div slot="popup" :class="[prefixCls + '-datepicker-calendar']">
         <calendar v-ref:calendar
-                  @change="selectChange"
-                  :value="value"
-                  :format="format"
-                  :locale="locale"
-                  :disabled-date="disabledDate"></calendar>
+          @change="selectChange"
+          :value="value"
+          :format="format"
+          :locale="locale"
+          :disabled-date="disabledDate">
+        </calendar>
       </div>
     </trigger>
   </div>

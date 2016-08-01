@@ -6,6 +6,7 @@ title:
 ---
 
 ## zh-CN
+该组件尚未完善
 
 
 
@@ -13,11 +14,11 @@ title:
 
 
 ````jsx
-<carousel>
+<!-- <carousel>
     <slide>hello</slide>
     <slide>hello</slide>
     <slide>hello</slide>
-</carousel>
+</carousel> -->
 ````
 
 ````vue-script

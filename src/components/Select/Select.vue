@@ -3,8 +3,8 @@
     <trigger trigger="click"
              placement="bottomLeft"
              effect="slide"
-             :popup-hide-when-click-outside="true"
-             :trigger-use-popup-width="true"
+             popup-hide-when-click-outside
+             trigger-use-popup-width
              :disabled="disabled"
              :width.sync="width"
              :show.sync="show"
