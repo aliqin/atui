@@ -3,8 +3,8 @@
     <trigger trigger="click"
              placement="bottomLeft"
              effect="slide"
-             :popup-hide-when-click-outside="true"
-             :popup-cover-trigger="true"
+             popup-hide-when-click-outside
+             popup-cover-trigger
              @toggolePopup="togglePopupHandler">
       <div slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
         <v-input readonly
