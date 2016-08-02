@@ -3,6 +3,7 @@ category: Components
 type: Basic
 title: Icon
 subtitle: 图标
+cols: 1
 ---
 
 

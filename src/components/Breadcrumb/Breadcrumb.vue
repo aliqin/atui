@@ -7,7 +7,7 @@
 <script type="text/babel">
 export default {
   props: {
-    slash: {
+    symbol: {
       type: String,
       default: '/'
     },
@@ -19,7 +19,7 @@ export default {
   ready () {
     const me = this
     me.$children.forEach((child) => {
-      child.slash = me.slash
+      child.symbol = me.symbol
     })
   }
 }

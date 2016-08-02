@@ -9,7 +9,7 @@
           :class="[prefixCls + '-breadcrumb-link']">
 			<slot></slot>
 		</span>
-		<span :class="[prefixCls + '-breadcrumb-slash']">{{ slash }}</span>
+		<span :class="[prefixCls + '-breadcrumb-symbol']">{{ symbol }}</span>
 	</span>
 </template>
 
@@ -17,7 +17,7 @@
 export default {
   props: {
     href: String,
-    slash: String,
+    symbol: String,
     prefixCls: {
       type: String,
       default: 'atui'

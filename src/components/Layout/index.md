@@ -3,6 +3,7 @@ category: Components
 type: Basic
 title: Layout
 subtitle: 布局
+cols: 1
 ---
 
 
