@@ -7,17 +7,18 @@ title:
 
 ## zh-CN
 
-
+tags(输入回车时变成一个tag)
 
 ## en-US
 
 
 ````jsx
-<v-select value="Cherry" width="200px" @change="onSlectChange">
-  <v-option value="Apple">苹果</v-option>
-  <v-option value="Banana" disabled>Banana</v-option>
+
+<v-select tags value="Banana">
+  <v-option value="Apple">Apple</v-option>
+  <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
-  <v-option value="Orange">OrangeText</v-option>
+  <v-option value="Orange">Orange</v-option>
   <v-option value="Grape">Grape</v-option>
 </v-select>
 ````
