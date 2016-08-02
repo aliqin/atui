@@ -44,20 +44,20 @@ var options = [{
 var defaultValue = ['zhejiang', 'hangzhou', 'xihu']
 
 new Vue({
-    el: 'body',
-    components: {
-        cascader: atui.Cascader
-    },
-    data: function() {
-      return {
-        options:options,
-        defaultValue:defaultValue
+  el: 'body',
+  components: {
+    cascader: atui.Cascader
+  },
+  data () {
+    return {
+      options: options,
+      defaultValue: defaultValue
     }
   },
   methods: {
     selectChange(selectedValue, option) {
-        alert(selectedValue)
-      }
+      alert(selectedValue)
+    }
   }
 })
 ````
