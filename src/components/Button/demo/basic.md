@@ -24,8 +24,8 @@ title:
 new Vue({
   el: 'body',
   components: {
-      vButton: atui.Button,
-      icon: atui.Icon
+    vButton: atui.Button,
+    icon: atui.Icon
   }
 })
 ````

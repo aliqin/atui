@@ -1,4 +1,4 @@
-<template xmlns:v-el="http://www.w3.org/1999/xhtml">
+<template>
   <div :class="[prefixCls + '-trigger-cont']" :style="{width: width}">
     <div v-if="popupAlwaysShow"
          v-el:trigger
