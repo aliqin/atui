@@ -337,7 +337,7 @@
 	    badgeDocs: _badgeDocs2.default,
 	    tagDocs: _tagDocs2.default,
 	    headerDocs: _headerDocs2.default,
-	    accordionDocs: accordionDocs,
+	    // accordionDocs,
 	    calendarDocs: _calendarDocs2.default,
 	    affixDocs: _affixDocs2.default,
 	    // asideDocs,

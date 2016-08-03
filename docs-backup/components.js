@@ -84,7 +84,7 @@ new Vue({
     badgeDocs,
     tagDocs,
     headerDocs,
-    accordionDocs,
+    // accordionDocs,
     calendarDocs,
     affixDocs,
     // asideDocs,
