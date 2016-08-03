@@ -42,7 +42,7 @@ import textareaDocs from './example/textareaDocs.vue'
 import tagDocs from './example/tagDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import triggerDocs from './example/triggerDocs.vue'
-import accordionDocs from './example/accordionDocs.vue'
+// import accordionDocs from './example/accordionDocs.vue'
 
 
 // 导航类
