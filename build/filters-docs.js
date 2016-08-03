@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(488);
+	module.exports = __webpack_require__(483);
 
 
 /***/ },
@@ -11536,21 +11536,16 @@
 /* 469 */,
 /* 470 */,
 /* 471 */,
-/* 472 */,
-/* 473 */,
-/* 474 */,
-/* 475 */,
-/* 476 */,
-/* 477 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(478)
+	__vue_script__ = __webpack_require__(473)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] docs-backup/example/filters/phoneNumberDocs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(481)
+	__vue_template__ = __webpack_require__(476)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11569,7 +11564,7 @@
 	})()}
 
 /***/ },
-/* 478 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11578,7 +11573,7 @@
 	  value: true
 	});
 	
-	__webpack_require__(479);
+	__webpack_require__(474);
 	
 	exports.default = {
 	  data: function data() {
@@ -11607,12 +11602,12 @@
 	// <script>
 
 /***/ },
-/* 479 */
+/* 474 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _phoneNumber = __webpack_require__(480);
+	var _phoneNumber = __webpack_require__(475);
 	
 	var _phoneNumber2 = _interopRequireDefault(_phoneNumber);
 	
@@ -11623,7 +11618,7 @@
 	module.exports = {};
 
 /***/ },
-/* 480 */
+/* 475 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11650,41 +11645,41 @@
 	};
 
 /***/ },
-/* 481 */
+/* 476 */
 /***/ function(module, exports) {
 
 	module.exports = "\n  <div class=\"bs-docs-section\" id=\"phonenumber\">\n    <h3 class=\"page-header\"><a href=\"#phonenumber\" class=\"anchor\">手机号码格式化 phonenumber</a></h3>\n    <div class=\"bs-example\">\n    <input type=\"text\" v-model=\"number\" />\n    <div>{{number | phoneNumber}}</div>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<input type=\"text\" v-model=\"number\" />\n<div>{{number | phoneNumber}}</div>\n</script></code></pre>\n  </div>\n";
 
 /***/ },
-/* 482 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(483);
-	__webpack_require__(484);
-	__webpack_require__(485);
+	__webpack_require__(478);
+	__webpack_require__(479);
+	__webpack_require__(480);
 
 /***/ },
-/* 483 */
+/* 478 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 484 */
+/* 479 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 485 */
+/* 480 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 486 */
+/* 481 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -12472,7 +12467,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 487 */
+/* 482 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12496,7 +12491,7 @@
 	})();
 
 /***/ },
-/* 488 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12517,15 +12512,15 @@
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _phoneNumberDocs = __webpack_require__(477);
+	var _phoneNumberDocs = __webpack_require__(472);
 	
 	var _phoneNumberDocs2 = _interopRequireDefault(_phoneNumberDocs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	__webpack_require__(477);
+	__webpack_require__(481);
 	__webpack_require__(482);
-	__webpack_require__(486);
-	__webpack_require__(487);
 	
 	// filters
 	
