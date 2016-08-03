@@ -7,17 +7,14 @@ title:
 
 ## zh-CN
 
-
+一级按钮，可以设置按钮大小
 
 ## en-US
 
-
 ````jsx
 <v-button large primary value="大号+主按钮"></v-button>
-<v-button large primary>大号+主按钮</v-button>
-<v-button>
-  <icon type="close"></icon>关闭
-</v-button>
+<v-button primary value="中号+主按钮"></v-button>
+<v-button small primary value="小号+主按钮"></v-button>
 ````
 
 ````vue-script
