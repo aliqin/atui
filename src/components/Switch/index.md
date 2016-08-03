@@ -13,8 +13,10 @@ subtitle: 开关
 ## API
 
 
-按钮的属性说明如下：
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-
+checked | 是否选中 | Boolean | |
+small | 小型switch | Boolean | |
+disabled | 是否禁用 | Boolean | |
+color | 选中时的背景色 | String | |

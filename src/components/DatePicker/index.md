@@ -12,7 +12,7 @@ subtitle: 日期选择器
 
 ## API
 
-DatePicker
+### DatePicker
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
@@ -24,7 +24,7 @@ locale | 语言 | String  `zh_CN` or  `en_US`| zh_CN
 
 
 
-RangePicker
+### DatePicker.RangePicker
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------

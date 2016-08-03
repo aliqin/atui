@@ -3,56 +3,26 @@ order: 0
 english: ATUI
 ---
 
-由阿里通信前端团队打造基于VUE的前端组件库
+由阿里通信前端团队打造基于Vue的前端组件库,其中大部分实现借鉴了 [ant.design](http://ant.design)
 
-<div class="pic-plus">
-
-</div>
 ---
 
 ## 特性
 
-
-
-## 安装
-
-```bash
-$ tnpm install @ali/atui --save
-```
-
-## 示例
-
-```jsx
-<v-button>按钮</v-button>
-
-new Vue({
-  components: {
-    vButton: atui.Button
-  }
-})
-```
-
-引入样式：
-
-```jsx
-// css引入 greater-blue | tao-orange | or tmall-red
-import '@ali/atui/dist/greater-blue.css'
+Vue实现的PC端组件库，对于不习惯React JSX语法的同学，是一个不错的选择
 
 
 
-按需加载可通过此写法 `import { Alert } from '@ali/atui'`。
 
 
 ## 版本
 
-
+0.1.2
 
 ## 浏览器支持
 
 现代浏览器和 IE9 及以上。
 
-
-## 链接
 
 
 ## 谁在使用

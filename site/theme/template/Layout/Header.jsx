@@ -152,7 +152,7 @@ export default class Header extends React.Component {
               ) : null*/
             }
             <Menu mode={this.state.menuMode} selectedKeys={[activeMenuItem]} id="nav">
-              <Menu.Item key="home">
+              {/*<Menu.Item key="home">
                 <Link to="/">
                   <FormattedMessage id="app.header.menu.home" />
                 </Link>
@@ -162,7 +162,7 @@ export default class Header extends React.Component {
                   <FormattedMessage id="app.header.menu.practice" />
                 </Link>
               </Menu.Item>
-              {/*<Menu.Item key="docs/pattern">
+              <Menu.Item key="docs/pattern">
                 <Link to="/docs/pattern/navigation">
                   <FormattedMessage id="app.header.menu.pattern" />
                 </Link>
@@ -176,12 +176,12 @@ export default class Header extends React.Component {
                 <Link to="/docs/spec/introduce">
                   <FormattedMessage id="app.header.menu.spec" />
                 </Link>
-              </Menu.Item>*/}
+              </Menu.Item>
               <Menu.Item key="docs/resource">
                 <Link to="/docs/resource/download">
                   <FormattedMessage id="app.header.menu.resource" />
                 </Link>
-              </Menu.Item>
+              </Menu.Item>*/}
             </Menu>
           </Col>
         </Row>

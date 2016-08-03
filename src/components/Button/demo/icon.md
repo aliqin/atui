@@ -1,7 +1,7 @@
 ---
 order: 3
 title:
-  zh-CN: 基本
+  zh-CN: 带Icon的按钮
   en-US: Type
 ---
 

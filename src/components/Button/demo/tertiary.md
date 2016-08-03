@@ -1,7 +1,7 @@
 ---
 order: 2
 title:
-  zh-CN: 基本
+  zh-CN: 三级按钮
   en-US: Type
 ---
 

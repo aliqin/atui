@@ -1,7 +1,7 @@
 ---
 order: 4
 title:
-  zh-CN: 基本
+  zh-CN: 文字按钮
   en-US: Type
 ---
 

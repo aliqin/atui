@@ -17,17 +17,20 @@ title:
   <v-button secondary value="cancel"></v-button>
   <v-button primary value="ok"></v-button>
 </button-group>
+<br/>
 <button-group large>
   <v-button primary value="L"></v-button>
   <v-button secondary value="M"></v-button>
   <v-button tertiary value="M"></v-button>
 </button-group>
+<br/>
 <button-group small>
   <v-button disabled value="L"></v-button>
   <v-button disabled value="M"></v-button>
   <v-button disabled value="M"></v-button>
   <v-button disabled value="R"></v-button>
 </button-group>
+<br/>
 <button-group>
   <v-button>
     <icon type="prev"></icon>上一页
@@ -36,6 +39,7 @@ title:
     下一页<icon type="next"></icon>
   </v-button>
 </button-group>
+<br/>
 <button-group>
   <v-button>
     <icon type="head"></icon>
@@ -51,6 +55,7 @@ new Vue({
   el: 'body',
   components: {
     vButton: atui.Button,
+    buttonGroup: atui.Button.Group,
     icon: atui.Icon
   }
 })

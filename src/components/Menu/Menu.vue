@@ -16,7 +16,6 @@ export default {
       default: 'atui'
     },
     openOne: Boolean,
-    defaultOpenKeys: Array,
     selectedKey: String
   },
   ready () {
