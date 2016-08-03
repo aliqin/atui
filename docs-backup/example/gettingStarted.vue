@@ -6,16 +6,16 @@
 $ tnpm install @ali/vue-component --save-dev
 
 // css引入 greater-blue | tao-orange | or tmall-red (推荐)
-import '@ali/vue-component/dist/greater-blue.css'
+import '@ali/atui/dist/greater-blue.css'
 
 // 或less引入
-import '@ali/vue-component/style/themes/greater-blue.css'
+import '@ali/atui/style/themes/greater-blue.css'
 
 // 引入组件
-import { Alert } from '@ali/vue-component'
+import { Alert } from '@ali/atui'
 
 // 如果没有使用rollup或webpak2.0，整个组件JS都会打包进去，使用如下方式可按需打包
-import Alert from '@ali/vue-component/src/components/Alert'
+import Alert from '@ali/atui/src/components/Alert'
 
 new Vue({
   components: {
