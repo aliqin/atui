@@ -7,15 +7,13 @@ title:
 
 ## zh-CN
 
-
+不同的大小定义和颜色定义
 
 ## en-US
 
 
 ````jsx
-<v-switch></v-switch>
-<v-switch checked></v-switch>
-<v-switch disabled></v-switch>
+<v-switch small color="#000"></v-switch>
 ````
 
 ````vue-script

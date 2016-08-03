@@ -14,7 +14,7 @@ tags(输入回车时变成一个tag)
 
 ````jsx
 
-<v-select tags value="Banana">
+<v-select tags value="Banana" width="100%">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>

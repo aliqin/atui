@@ -1,5 +1,5 @@
 ---
-order: 0
+order: 1
 title:
   zh-CN: 基本
   en-US: Type
@@ -7,15 +7,13 @@ title:
 
 ## zh-CN
 
-基础用法
+字数限制
 
 ## en-US
 
 
 ````jsx
-<v-textarea placeholder="请在这里输入说明"></v-textarea>
-<v-textarea disabled content="被禁用了"></v-textarea>
-
+<v-textarea :limit-words="10" placeholder="这里只能输入10个字"></v-textarea>
 ````
 
 ````vue-script

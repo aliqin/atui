@@ -25,7 +25,7 @@
           <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
         </div>
       </div>
-      <div slot="popup" :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0">
+      <div slot="popup" :style="{width:width}" :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0">
         <slot></slot>
         <div v-show="noResult" class="no-result">无结果</div>
         <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
@@ -65,9 +65,6 @@
         default () {
           return []
         }
-      },
-      search: {
-        type: Boolean
       },
       limit: {
         type: Number,
