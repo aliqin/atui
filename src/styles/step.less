@@ -1,150 +1,135 @@
 // Step
 // --------------------------------------------------
-
-
 // - wait
-@wait-icon-color:       #ccc;
-
-
+@wait-icon-color: #ccc;
 @prefix-cls-step: e("@{prefix-cls}-step");
-
 .@{prefix-cls-step} {
-	position: relative;
-	display: inline-block;
-	vertical-align: top;
-
-	&-tail {
-		position: absolute;
-		left: 0;
-		top: 13px;
-		width: 100%;
-		height: 1px;
-		padding: 0 10px;
-		> i {
-	      display: inline-block;
-	      vertical-align: top;
-	      background: @primary-color;
-	      height: 1px;
-	      border-radius: 1px;
-	      width: 100%;
-	      position: relative;
-	    }
-	}
-
-	&-head, &-main {
-		position: relative;
-		display: inline-block;
-		vertical-align: top;
-	}
-
-	&-head {
-		background-color: #fff;
-		&-inner {
-			display: block;
-			width: 26px;
-			height: 26px;
-			line-height: 26px;
-			text-align: center;
-			// border-radius: 26px;
-			font-size: 14px;
-			margin-right: 8px;
-			// border: 1px solid @primary-color;
-			transition: background-color 0.3s ease, border-color 0.3s ease;
-			> .@{prefix-cls-step}-icon {
-					display: inline-block;
-					width: 26px;
-					height: 26px;
-					line-height: 1.8;
-			    top: -1px;
-			    color: @primary-color;
-			    position: relative;
-			    border: 1px solid @primary-color;
-			    border-radius: 50%;
-			    text-align: center;
-			}
-
-			.@{prefix-cls-step}-finish-icon {
-				display: inline-block;
-				width: 26px;
-				height: 26px;
-				position: absolute;
-				left: 0;
-				top: 0;
-        .@{prefix-cls}-icon-success{
-          color: @primary-color;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    &-tail {
+        position: absolute;
+        left: 0;
+        top: 13px;
+        width: 100%;
+        height: 1px;
+        padding: 0 10px;
+        > i {
+            display: inline-block;
+            vertical-align: top;
+            background: @primary-color;
+            height: 1px;
+            border-radius: 1px;
+            width: 100%;
+            position: relative;
         }
-			}
-		}
-	}
-
-	&-main {
-		margin-top: 3px;
-		margin-left: -5px;
-    color: #999;
-		&-title {
-			display: inline-block;
-			padding-right: 10px;
-			margin-bottom: 4px;
-			background-color: #fff;
-			font-size: 16px;
-		}
-		&-description {
-			max-width: 100px;
-			font-size: 12px;
-		}
-	}
-
-	&-status-process {
-		.@{prefix-cls-step}-head-inner {
-			> .@{prefix-cls-step}-icon {
-				color: #fff;
-				border-color: @primary-color;
-				background-color: @primary-color;
-			}
-		}
-    .@{prefix-cls-step}-main {
-      color: #333;
     }
-	}
-
-	&-status-finish {
-		.@{prefix-cls-step}-head-inner {
-			> .@{prefix-cls-step}-icon {
-				color: @primary-color;
-			}
-		}
-		.@{prefix-cls-step}-tail {
-			> i {
-				background: @primary-color;
-				i {
-					width: 100%;
-					background: @primary-color;
-					transition: all 0.4s ease;
-					opacity: 1;
-				}
-			}
-		}
-
-    .icon-tick {
-      color: @primary-color;
+    &-head, &-main {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
     }
-	}
-
-	&-status-wait {
-		.@{prefix-cls-step}-head-inner {
-			> .@{prefix-cls-step}-icon {
-				color: @wait-icon-color;
-        border-color: @wait-icon-color;
-			}
-		}
-	}
-
-	// 最后一个项目，将其title的padding设置为0
-	&-item-last {
-		.@{prefix-cls-step}-main {
-			.@{prefix-cls-step}-main-title {
-				padding: 0;
-			}
-		}
-	}
+    &-head {
+        background-color: #fff;
+        &-inner {
+            display: block;
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            // border-radius: 26px;
+            font-size: 14px;
+            margin-right: 8px;
+            // border: 1px solid @primary-color;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            > .@{prefix-cls-step}-icon {
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                line-height: 1.8;
+                top: -1px;
+                color: @primary-color;
+                position: relative;
+                border: 1px solid @primary-color;
+                border-radius: 50%;
+                text-align: center;
+            }
+            .@{prefix-cls-step}-finish-icon {
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                .@{prefix-cls}-icon-success {
+                    color: @primary-color;
+                }
+            }
+        }
+    }
+    &-main {
+        margin-top: 3px;
+        margin-left: -5px;
+        color: #999;
+        &-title {
+            display: inline-block;
+            padding-right: 10px;
+            margin-bottom: 4px;
+            background-color: #fff;
+            font-size: 16px;
+        }
+        &-description {
+            max-width: 100px;
+            font-size: 12px;
+        }
+    }
+    &-status-process {
+        .@{prefix-cls-step}-head-inner {
+            > .@{prefix-cls-step}-icon {
+                color: #fff;
+                border-color: @primary-color;
+                background-color: @primary-color;
+            }
+        }
+        .@{prefix-cls-step}-main {
+            color: #333;
+        }
+    }
+    &-status-finish {
+        .@{prefix-cls-step}-head-inner {
+            > .@{prefix-cls-step}-icon {
+                color: @primary-color;
+            }
+        }
+        .@{prefix-cls-step}-tail {
+            > i {
+                background: @primary-color;
+                i {
+                    width: 100%;
+                    background: @primary-color;
+                    transition: all 0.4s ease;
+                    opacity: 1;
+                }
+            }
+        }
+        .icon-tick {
+            color: @primary-color;
+        }
+    }
+    &-status-wait {
+        .@{prefix-cls-step}-head-inner {
+            > .@{prefix-cls-step}-icon {
+                color: @wait-icon-color;
+                border-color: @wait-icon-color;
+            }
+        }
+    }
+    // 最后一个项目，将其title的padding设置为0
+    &-item-last {
+        .@{prefix-cls-step}-main {
+            .@{prefix-cls-step}-main-title {
+                padding: 0;
+            }
+        }
+    }
 }

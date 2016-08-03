@@ -1,112 +1,107 @@
 // TimePicker
 // --------------------------------------------------
 @prefix-cls-time-picker: e("@{prefix-cls}-time-picker");
-
 .@{prefix-cls-time-picker} {
-  display: inline-block;
-
-  &-toggler {
-    position: relative;
     display: inline-block;
-    width: 138px;
-    cursor: pointer;
-    vertical-align: middle;
-
-    .@{prefix-cls}-input:focus {
-      border-color: #bfbfbf;
-      box-shadow: none;
+    &-toggler {
+        position: relative;
+        display: inline-block;
+        width: 138px;
+        cursor: pointer;
+        vertical-align: middle;
+        .@{prefix-cls}-input:focus {
+            border-color: #bfbfbf;
+            box-shadow: none;
+        }
+        .@{prefix-cls}-icon-time {
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            right: 7px;
+            color: #ccc;
+        }
     }
-
-    .@{prefix-cls}-icon-time {
-      position: absolute;
-      top: 50%;
-      margin-top: -10px;
-      right: 7px;
-      color: #ccc;
-    }
-  }
 }
 
 .@{prefix-cls-time-picker}-menus {
-  outline: none;
-  border: 1px solid #d9d9d9;
-  list-style: none;
-  font-size: 12px;
-  text-align: left;
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 1px 6px hsla(0, 0%, 39%, .2);
-  background-clip: padding-box;
-  border: 1px solid #ccc;
-  line-height: 1.5;
-  overflow: hidden;
-
-  .@{prefix-cls-time-picker}-input {
-    border: 0;
-    border-radius: 0;
-  }
+    outline: none;
+    border: 1px solid #d9d9d9;
+    list-style: none;
+    font-size: 12px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px hsla(0, 0%, 39%, .2);
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+    overflow: hidden;
+    .@{prefix-cls-time-picker}-input {
+        border: 0;
+        border-radius: 0;
+    }
 }
 
 .@{prefix-cls-time-picker}-menus .@{prefix-cls-time-picker}-panel {
-  float: left;
-  font-size: 12px;
-  border: 1px solid #e9e9e9;
-  border-width: 1px 1px 0;
-  margin-left: -1px;
-  box-sizing: border-box;
-  width: 56px;
-  overflow: hidden;
-  position: relative;
-  &:hover {
-    overflow-y: auto;
-  }
-  &:last-child {
-    border-right: 0;
-  }
+    float: left;
+    font-size: 12px;
+    border: 1px solid #e9e9e9;
+    border-width: 1px 1px 0;
+    margin-left: -1px;
+    box-sizing: border-box;
+    width: 56px;
+    overflow: hidden;
+    position: relative;
+    &:hover {
+        overflow-y: auto;
+    }
+    &:last-child {
+        border-right: 0;
+    }
 }
 
 .@{prefix-cls-time-picker}-menus .@{prefix-cls-time-picker}-panel > ul {
-  list-style: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-height: 144px;
-  & > li {
-    padding: 0 0 0 16px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 24px;
-    line-height: 24px;
-    user-select: none;
-    box-sizing: content-box;
-    transition: all .3s ease;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    &:hover {
-      background: tint(@primary-color, 95%);
+    max-height: 144px;
+    & > li {
+        padding: 0 0 0 16px;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 24px;
+        line-height: 24px;
+        user-select: none;
+        box-sizing: content-box;
+        transition: all .3s ease;
+        width: 100%;
+        &:hover {
+            background: tint(@primary-color, 95%);
+        }
+        &.selected, &.selected:hover {
+            color: #fff;
+            background: tint(@primary-color, 40%);
+        }
+        &.disabled {
+            cursor: not-allowed;
+            color: #ccc;
+        }
+        &.disabled:hover {
+            background: transparent;
+        }
     }
-    &.selected, &.selected:hover {
-      color: #fff;
-      background: tint(@primary-color, 40%);
-    }
-    &.disabled {
-      cursor: not-allowed;
-      color: #ccc;
-    }
-    &.disabled:hover {
-      background: transparent;
-    }
-  }
 }
 
 .@{prefix-cls-time-picker}-menus .@{prefix-cls}-icon-clear {
-  position: absolute;
-  right:10px;
-  top:6px;
-  cursor: pointer;
-  opacity: .6;
-  &:hover{
-    opacity: 8;
-  }
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    cursor: pointer;
+    opacity: .6;
+    &:hover {
+        opacity: 8;
+    }
 }

@@ -1,134 +1,130 @@
 // Modal
 // --------------------------------------------------
 @prefix-cls-modal: e("@{prefix-cls}-modal");
-
 // z-index;
-@zindex-modal-background:  1040;
-@zindex-modal:             1050;
-
+@zindex-modal-background: 1040;
+@zindex-modal: 1050;
 //** Padding applied to the modal body
-@modal-inner-padding:         15px;
-
+@modal-inner-padding: 15px;
 //** Padding applied to the modal title
-@modal-title-padding:         15px;
+@modal-title-padding: 15px;
 //** Modal title line-height
-@modal-title-line-height:     1.5;
-
-@modal-content-bg:                             #fff;
-@modal-content-border-color:                   rgba(0, 0, 0, .2);
-@modal-content-fallback-border-color:          #999;
-@modal-backdrop-bg:           #000;
-@modal-header-border-color:   #e5e5e5;
-@modal-footer-border-color:   @modal-header-border-color;
-
-@modal-lg:                    900px;
-@modal-md:                    600px;
-@modal-sm:                    400px;
-
+@modal-title-line-height: 1.5;
+@modal-content-bg: #fff;
+@modal-content-border-color: rgba(0, 0, 0, .2);
+@modal-content-fallback-border-color: #999;
+@modal-backdrop-bg: #000;
+@modal-header-border-color: #e5e5e5;
+@modal-footer-border-color: @modal-header-border-color;
+@modal-lg: 900px;
+@modal-md: 600px;
+@modal-sm: 400px;
 .@{prefix-cls-modal}-open {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .@{prefix-cls-modal} {
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: @zindex-modal;
-  -webkit-overflow-scrolling: touch;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
-  outline: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: @zindex-modal;
+    -webkit-overflow-scrolling: touch;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+    outline: 0;
 }
-
 
 .@{prefix-cls-modal}-dialog {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 400px;
 }
+
 .ie9 .@{prefix-cls-modal}-dialog {
-  position: static;
-  margin: 50px auto;
+    position: static;
+    margin: 50px auto;
 }
+
 .@{prefix-cls-modal}-content {
-  background-color: @modal-content-bg;
-  background-clip: padding-box;
-  outline: 0;
-  border:1px solid #d9d9d9;
-  box-shadow:0px 2px 2px 0px rgba(0,0,0,0.05);
-  border-radius:8px;
+    background-color: @modal-content-bg;
+    background-clip: padding-box;
+    outline: 0;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
 }
 
 .@{prefix-cls-modal}-header {
-  padding: @modal-title-padding;
-  border-bottom: 1px solid @modal-header-border-color;
-  &:extend(.clearfix all);
+    padding: @modal-title-padding;
+    border-bottom: 1px solid @modal-header-border-color;
+    &:extend(.clearfix all);
 }
+
 .@{prefix-cls-modal}-header .close {
-  margin-top: -2px;
+    margin-top: -2px;
 }
 
 .@{prefix-cls-modal}-title {
-  margin: 0;
-  line-height: @modal-title-line-height;
+    margin: 0;
+    line-height: @modal-title-line-height;
 }
 
 .@{prefix-cls-modal}-body {
-  position: relative;
-  padding: @modal-inner-padding;
-  word-wrap: break-word;
-  max-height: 100%;
-  overflow: auto;
-  .@{prefix-cls-modal}-body {
-    padding: 0;
-  }
+    position: relative;
+    padding: @modal-inner-padding;
+    word-wrap: break-word;
+    max-height: 100%;
+    overflow: auto;
+    .@{prefix-cls-modal}-body {
+        padding: 0;
+    }
 }
 
 .@{prefix-cls-modal}-footer {
-  padding: @modal-inner-padding;
-  text-align: right;
-  &:extend(.clearfix all);
-  .btn + .btn {
-    margin-left: 5px;
-    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
-  }
+    padding: @modal-inner-padding;
+    text-align: right;
+    &:extend(.clearfix all);
+    .btn + .btn {
+        margin-left: 5px;
+        margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+    }
 }
 
 .@{prefix-cls}-confirm {
-  .@{prefix-cls}-iconfont {
-    position: relative;
-    top: 5px;
-  }
-  &-title {
-    font-size: 14px;
-  }
-  &-content {
-    margin-left: 50px;
-    font-size: 12px;
-    color: #666;
-    margin-top: 8px;
-  }
+    .@{prefix-cls}-iconfont {
+        position: relative;
+        top: 5px;
+    }
+    &-title {
+        font-size: 14px;
+    }
+    &-content {
+        margin-left: 50px;
+        font-size: 12px;
+        color: #666;
+        margin-top: 8px;
+    }
 }
 
 @media (min-width: @screen-sm-min) {
-  .@{prefix-cls-modal}-dialog {
-    width: @modal-md;
-  }
-  .@{prefix-cls-modal}-content {
-    .box-shadow(0 5px 15px rgba(0, 0, 0, .5));
-  }
-  .@{prefix-cls-modal}-sm {
-    width: @modal-sm;
-  }
+    .@{prefix-cls-modal}-dialog {
+        width: @modal-md;
+    }
+    .@{prefix-cls-modal}-content {
+        .box-shadow(0 5px 15px rgba(0, 0, 0, .5));
+    }
+    .@{prefix-cls-modal}-sm {
+        width: @modal-sm;
+    }
 }
 
 @media (min-width: @screen-md-min) {
-  .@{prefix-cls-modal}-lg {
-    width: @modal-lg;
-  }
+    .@{prefix-cls-modal}-lg {
+        width: @modal-lg;
+    }
 }
