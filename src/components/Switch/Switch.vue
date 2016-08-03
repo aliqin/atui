@@ -12,21 +12,11 @@
 <script>
 export default {
   props: {
-    checked: {
-      type: Boolean
-    },
-    value: {
-      type: String
-    },
-    disabled: {
-      type: Boolean
-    },
-    small: {
-      type: Boolean
-    },
-    color: {
-      type: String
-    },
+    checked: Boolean,
+    value: String,
+    disabled: Boolean,
+    small: Boolean,
+    color: String,
     prefixCls: {
       type: String,
       default: 'atui'

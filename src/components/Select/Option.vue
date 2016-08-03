@@ -12,12 +12,8 @@
   export default {
     name: 'option',
     props: {
-      value: {
-        type: String
-      },
-      disabled: {
-        type: Boolean
-      },
+      value: String,
+      disabled: Boolean,
       prefixCls: {
         type: String,
         default: 'atui'

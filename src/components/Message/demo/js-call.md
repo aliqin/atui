@@ -29,11 +29,10 @@ title:
 new Vue({
   el: 'body',
   components: {
-    message: atui.Message,
     vButton: atui.Button
   },
   methods: {
-    showSuccess () {
+    showMessage () {
       atui.Message.success('成功啦')
     }
   }
