@@ -51,9 +51,7 @@ new Vue({
     tree: atui.Tree
   },
   data: {
-    return {
-      dataSource: treeData
-    }
+    dataSource: treeData
   }
 })
 ````

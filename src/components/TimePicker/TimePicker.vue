@@ -1,11 +1,12 @@
-<template xmlns:v-el="http://www.w3.org/1999/xhtml">
+<template>
   <div :class="[prefixCls + '-time-picker']">
     <trigger trigger="click"
              placement="bottomLeft"
              effect="slide"
              popup-hide-when-click-outside
              popup-cover-trigger
-             @toggolePopup="togglePopupHandler">
+             @toggolePopup="togglePopupHandler"
+             v-ref:trigger>
       <div slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
         <v-input readonly
                  :value="value"
@@ -14,6 +15,7 @@
       </div>
       <div slot="popup"
            :class="[prefixCls + '-time-picker-menus']">
+        <icon type="clear" @click="closePopup"></icon>
         <div>
           <v-input readonly
                    v-el:picker-toggler
@@ -213,6 +215,9 @@
             this.selectChoosed('s', this.second, 1)
           })
         }
+      },
+      closePopup () {
+        this.$refs.trigger.show = false
       }
     }
   }

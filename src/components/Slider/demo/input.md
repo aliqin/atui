@@ -31,6 +31,9 @@ new Vue({
     vRow: atui.Layout.Row,
     vCol: atui.Layout.Col,
     vInput: atui.Input
+  },
+  data: {
+    sliderValue : 5
   }
 })
 ````

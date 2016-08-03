@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<breadcrumb slash="&gt;">
+<breadcrumb symbol="&gt;">
   <breadcrumb-item :href="href">一级类目</breadcrumb-item>
   <breadcrumb-item :href="href">二级类目</breadcrumb-item>
   <breadcrumb-item :href="href">三级类目</breadcrumb-item>

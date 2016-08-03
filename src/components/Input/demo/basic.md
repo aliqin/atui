@@ -28,14 +28,6 @@ title:
 <div>
   <v-input disabled type="text" placeholder="禁用输入框－默认尺寸"></v-input>
 </div>
-<br>
-<div>
-  <v-input valid-status="error" type="text" placeholder="error输入框－默认尺寸"></v-input>
-</div>
-<br>
-<div>
-  <v-input valid-status="success" type="text" placeholder="success输入框－默认尺寸"></v-input>
-</div>
 ````
 
 ````vue-script

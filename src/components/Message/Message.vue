@@ -8,7 +8,7 @@
       <button v-show="closable" type="button" :class="[prefixCls + '-close']" @click="close">
       <span>&times;</span>
       </button>
-      <icon v-if="showIcon" :type="type"></icon>
+      <icon v-if="showIcon" :type="type + '-s'"></icon>
       <slot>
         {{content}}
       </slot>
@@ -81,7 +81,7 @@ export default {
       return messageClass
     }
   },
-  methoeds: {
+  methods: {
     close () {
       this.show = false
       this.$dispatch('close')

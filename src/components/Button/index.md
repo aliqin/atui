@@ -13,7 +13,7 @@ subtitle: 按钮
 ## API
 
 
-按钮的属性说明如下：
+### Button
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
@@ -26,3 +26,14 @@ tertiary | 按钮类型，三级按钮 | Boolean | false |
 text | 按钮类型，文字型按钮 | Boolean | false |
 disabled | 按钮类型，失效按钮 | Boolean | false |
 
+### Button.Group
+属性 | 说明 | 类型 | 默认值
+-----|-----|-----|------
+large | 按钮组尺寸，大 | Boolean | false |
+small | 按钮组尺寸，小 | Boolean | false |
+
+<style>
+  #src-components-Button-demo-btn-group .atui-btn-group {
+    margin-bottom: 10px;
+  }
+</style>

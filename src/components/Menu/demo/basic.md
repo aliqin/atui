@@ -43,12 +43,12 @@ title:
 
 ````vue-script
 new Vue({
-    el: 'body',
-    components: {
-        vMenu: atui.Menu,
-        menuItem: atui.Menu.MenuItem,
-        menuItemGroup: atui.Menu.MenuItemGroup,
-        subMenu: atui.Menu.SubMenu
-    }
+  el: 'body',
+  components: {
+    vMenu: atui.Menu,
+    menuItem: atui.Menu.MenuItem,
+    menuItemGroup: atui.Menu.MenuItemGroup,
+    subMenu: atui.Menu.SubMenu
+  }
 })
 ````

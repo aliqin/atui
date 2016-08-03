@@ -23,10 +23,18 @@ new Vue({
 ## API
 
 
-按钮的属性说明如下：
+### Layout.Row
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
+
+### Layout.Col
+
+属性 | 说明 | 类型 | 默认值
+-----|-----|-----|------
+span | 栅格数量 | String | 1
+
+
 
 <style>
   #src-components-Layout-demo-basic .atui-row > div{
