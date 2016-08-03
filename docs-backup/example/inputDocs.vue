@@ -30,8 +30,11 @@
         <form-item required label="姓名：" :valid-status="form1.nameStatus" label-col="4" has-icon :tips="form1.nameTips">
           <v-input type="text" placeholder="请输入您的姓名"  :value.sync="username" required required-tips="用户名为必填项" maxlength="12" minlength="2" minlength-tips="用户名不能少于2个字符" :valid-status.sync="form1.nameStatus" :tips.sync="form1.nameTips" :valid-result.sync="form1.nameValidResult"></v-input>
         </form-item>
-        <form-item required label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon :tips="form1.telTips">
+        <form-item label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon :tips="form1.telTips">
           <v-input type="tel" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel" :valid-result.sync="form1.telValidResult" :rules="['isNumber','isPhone']" :tips.sync="form1.telTips"></v-input>
+        </form-item>
+        <form-item required label="邮箱：" :valid-status="form1.emailStatus" label-col="4" has-icon :tips="form1.emailTips" tips-mode="popup" description="tishitixiahhsdhishdishid">
+          <v-input type="text" placeholder="请输入您的邮箱" :valid-status.sync="form1.emailStatus" :value.sync="email" :valid-result.sync="form1.emailValidResult" :rules="['required','/^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i']" :tips.sync="form1.emailTips", :rules-tips="form1.emailRulesTips"></v-input>
         </form-item>
       </v-form>
     </div>
@@ -71,6 +74,9 @@
   </form-item>
   <form-item required label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon :tips="form1.telTips">
     <v-input type="tel" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel" :valid-result.sync="form1.telValidResult" :rules="['isNumber','isPhone']" :tips.sync="form1.telTips"></v-input>
+  </form-item>
+  <form-item required label="邮箱：" :valid-status="form1.emailStatus" label-col="4" has-icon :tips="form1.emailTips">
+    <v-input type="text" placeholder="请输入您的邮箱" :valid-status.sync="form1.emailStatus" :value.sync="email" :valid-result.sync="form1.emailValidResult" :rules="['required','/^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i']" :tips.sync="form1.emailTips", :rules-tips="form1.emailRulesTips"></v-input>
   </form-item>
 </v-form>
 </script></code></pre>
@@ -128,6 +134,12 @@
           <td>验证非空，也可放在rules参数中</td>
         </tr>
         <tr>
+          <td>requiredTips</td>
+          <td></td>
+          <td></td>
+          <td>非空验证失败时提示文案</td>
+        </tr>
+        <tr>
           <td>maxlength</td>
           <td><code>String</code></td>
           <td></td>
@@ -158,6 +170,12 @@
           <td>输入框验证规则，内部现已集成required|isPhone|isNumber|isTelephone|isEmail</td>
         </tr>
         <tr>
+          <td>rulesTips</td>
+          <td><code>Array</code></td>
+          <td></td>
+          <td>输入框验证规则验证失败时提示文案，文案配置顺序要和rules一一对应</td>
+        </tr>
+        <tr>
           <td>valid-status</td>
           <td><code>String</code></td>
           <td></td>
@@ -167,7 +185,7 @@
           <td>tips</td>
           <td><code>String</code></td>
           <td></td>
-          <td>实时获取当前验证提示</td>
+          <td>实时获取当前验证提示，该属性如有默认值，所有验证规则的验证错误提示都会失效</td>
         </tr>
         <tr>
           <td>valid-result</td>
@@ -200,7 +218,11 @@ export default{
         nameTips: '',
         telValidResult: {},
         telStatus: '',
-        telTips:'输入手机号码格式错误'
+        telTips: '输入手机号码格式错误123',
+        emailValidResult: {},
+        emailStatus: '',
+        emailTips: '',
+        emailRulesTips: ['请输入内容', '正则验证失败']
       }
     }
   }

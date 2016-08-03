@@ -1464,19 +1464,19 @@
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
-	var _Button = __webpack_require__(153);
+	var _Button = __webpack_require__(157);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _Input = __webpack_require__(160);
+	var _Input = __webpack_require__(164);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Searchbox = __webpack_require__(164);
+	var _Searchbox = __webpack_require__(168);
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 	
-	var _Uploader = __webpack_require__(174);
+	var _Uploader = __webpack_require__(178);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 	
@@ -1512,7 +1512,7 @@
 	
 	var _Cascader2 = _interopRequireDefault(_Cascader);
 	
-	var _Message = __webpack_require__(201);
+	var _Message = __webpack_require__(152);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -1552,7 +1552,7 @@
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -2027,7 +2027,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Form/FormItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(152)
+	__vue_template__ = __webpack_require__(156)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2063,9 +2063,13 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
+	var _Message = __webpack_require__(152);
+	
+	var _Message2 = _interopRequireDefault(_Message);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
+	var vCol = _Layout2.default.Col; // <template>
 	// <v-col :span="itemCol" :class="formItemClassObj">
 	//   <v-col :span="labelCol" type="sm">
 	//     <label v-if="label" :class="[prefixCls + '-form-label']">
@@ -2073,7 +2077,7 @@
 	//       {{label}}
 	//     </label>
 	//   </v-col>
-	//   <v-col :span="wrapperCol || calcWrapperCol" type="sm">
+	//   <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="[prefixCls + '-form-valid-popup-container']">
 	//     <div :class="[prefixCls + '-form-input']">
 	//       <slot></slot>
 	//       <template v-if="showIcon">
@@ -2083,13 +2087,14 @@
 	//         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
 	//       </template>
 	//     </div>
-	//     <div v-if="tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
+	//     <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false">
+	//       {{{popupTips}}}
+	//     </message>
+	//     <div v-if="tipsMode === 'text' && tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
 	//   </v-col>
 	// </v-col>
 	// </template>
 	// <script>
-	var vCol = _Layout2.default.Col;
-	
 	exports.default = {
 	  props: {
 	    label: String,
@@ -2107,7 +2112,7 @@
 	    },
 	    // 是否必填
 	    required: Boolean,
-	    // 提示信息，如不设置，会根据验证规则自动生成
+	    // 提示信息
 	    tips: {
 	      type: String,
 	      default: ''
@@ -2122,6 +2127,15 @@
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
+	    },
+	    // 提示展示类型，默认(text)提示文案显示在输入域的下方，泡泡(popup)提示文案显示在输入域的右侧
+	    tipsMode: {
+	      type: String,
+	      default: 'text'
+	    },
+	    // 输入描述，用于popup模式下
+	    description: {
+	      type: String
 	    }
 	  },
 	
@@ -2148,11 +2162,26 @@
 	    calcWrapperCol: function calcWrapperCol() {
 	      var span = 24 - parseInt(this.labelCol);
 	      return span.toString();
+	    },
+	    popupMode: function popupMode() {
+	      if (this.validStatus === 'error') {
+	        return 'error';
+	      }
+	
+	      return 'warning';
+	    },
+	    popupTips: function popupTips() {
+	      if (this.validStatus === 'error') {
+	        return this.tips;
+	      }
+	
+	      return this.description;
 	    }
 	  },
 	  components: {
 	    vCol: vCol,
-	    Icon: _Icon2.default
+	    Icon: _Icon2.default,
+	    Message: _Message2.default
 	  }
 	};
 	// </script>
@@ -2161,12 +2190,6 @@
 
 /***/ },
 /* 152 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<v-col :span=\"itemCol\" :class=\"formItemClassObj\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" :class=\"[prefixCls + '-form-label']\">\n      <span v-if=\"isRequired\" :class=\"[prefixCls + '-form-required-icon']\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\" type=\"sm\">\n    <div :class=\"[prefixCls + '-form-input']\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <div v-if=\"tips && validStatus\" :class=\"[prefixCls + '-form-status-info']\">{{tips}}</div>\n  </v-col>\n</v-col>\n";
-
-/***/ },
-/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2175,11 +2198,214 @@
 	  value: true
 	});
 	
-	var _Button = __webpack_require__(154);
+	var _Message = __webpack_require__(153);
+	
+	var _Message2 = _interopRequireDefault(_Message);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	['info', 'success', 'error', 'warning', 'loading'].forEach(function (type, i) {
+	  _Message2.default[type] = function (content, duration, placement) {
+	    duration = duration || 3000;
+	    placement = placement || 'top';
+	    new Vue({
+	      template: '\n        <message class="atui-message-notice"\n        :show="show"\n        :duration="duration"\n        :type="type"\n        :transition="transition"\n        :placement="placement"\n        show-icon>\n        {{content}}\n        </message>\n        ',
+	      components: {
+	        Message: _Message2.default
+	      },
+	      data: {
+	        content: content,
+	        type: type,
+	        duration: duration,
+	        show: true,
+	        transition: 'movedown',
+	        placement: placement
+	      },
+	      ready: function ready() {
+	        var me = this;
+	        if (me.duration) {
+	          setTimeout(function () {
+	            me.$destroy(true);
+	          }, duration);
+	        }
+	      }
+	    }).$mount().$appendTo(document.body);
+	  };
+	});
+	
+	exports.default = _Message2.default;
+
+/***/ },
+/* 153 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(154)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Message/Message.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(155)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-045f25ea/Message.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 154 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Icon = __webpack_require__(135);
+	
+	var _Icon2 = _interopRequireDefault(_Icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  props: {
+	    type: {
+	      type: String,
+	      default: 'info'
+	    },
+	    closable: {
+	      type: Boolean
+	    },
+	    showIcon: {
+	      type: Boolean
+	    },
+	    show: {
+	      type: Boolean,
+	      default: true
+	    },
+	    duration: {
+	      type: [String, Number]
+	    },
+	    placement: {
+	      type: String
+	    },
+	    content: String,
+	    transition: {
+	      type: String,
+	      default: 'fade'
+	    },
+	    arrow: String,
+	    prefixCls: {
+	      type: String,
+	      default: 'atui'
+	    }
+	  },
+	  components: {
+	    Icon: _Icon2.default
+	  },
+	  watch: {
+	    show: function show(val) {
+	      var _this = this;
+	
+	      if (this._timeout) clearTimeout(this._timeout);
+	      if (val && Boolean(this.duration)) {
+	        this._timeout = setTimeout(function () {
+	          _this.show = false;
+	        }, this.duration);
+	      }
+	    }
+	  },
+	  computed: {
+	    messageClassObj: function messageClassObj() {
+	      var prefixCls = this.prefixCls;
+	      var type = this.type;
+	      var arrow = this.arrow;
+	      var placement = this.placement;
+	
+	      var messageClass = {};
+	      messageClass[prefixCls + '-message'] = true;
+	      messageClass[prefixCls + '-message-success'] = type === 'success';
+	      messageClass[prefixCls + '-message-warning'] = type === 'warning';
+	      messageClass[prefixCls + '-message-info'] = type === 'info';
+	      messageClass[prefixCls + '-message-error'] = type === 'error';
+	      messageClass[prefixCls + '-message-help'] = type === 'help';
+	      messageClass[prefixCls + '-message-top'] = placement === 'top';
+	      messageClass[prefixCls + '-message-top-right'] = placement === 'top-right';
+	      messageClass[prefixCls + '-message-center'] = placement === 'center';
+	      messageClass[prefixCls + '-message-arrow'] = !!arrow;
+	      messageClass[prefixCls + '-message-arrow-' + arrow] = !!arrow;
+	      return messageClass;
+	    }
+	  },
+	  methods: {
+	    close: function close() {
+	      this.show = false;
+	      this.$dispatch('close');
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div
+	//     v-show="show"
+	//     :class="messageClassObj"
+	//     :transition="transition"
+	//     role="alert">
+	//     <div :class="[prefixCls + '-message-content']">
+	//       <button v-show="closable" type="button" :class="[prefixCls + '-close']" @click="close">
+	//       <span>&times;</span>
+	//       </button>
+	//       <icon v-if="showIcon" :type="type"></icon>
+	//       <slot>
+	//         {{content}}
+	//       </slot>
+	//     </div>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/babel">
+
+/***/ },
+/* 155 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div\n  v-show=\"show\"\n  :class=\"messageClassObj\"\n  :transition=\"transition\"\n  role=\"alert\">\n  <div :class=\"[prefixCls + '-message-content']\">\n    <button v-show=\"closable\" type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"close\">\n    <span>&times;</span>\n    </button>\n    <icon v-if=\"showIcon\" :type=\"type\"></icon>\n    <slot>\n      {{content}}\n    </slot>\n  </div>\n</div>\n";
+
+/***/ },
+/* 156 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<v-col :span=\"itemCol\" :class=\"formItemClassObj\">\n  <v-col :span=\"labelCol\" type=\"sm\">\n    <label v-if=\"label\" :class=\"[prefixCls + '-form-label']\">\n      <span v-if=\"isRequired\" :class=\"[prefixCls + '-form-required-icon']\">*</span>\n      {{label}}\n    </label>\n  </v-col>\n  <v-col :span=\"wrapperCol || calcWrapperCol\" type=\"sm\" :class=\"[prefixCls + '-form-valid-popup-container']\">\n    <div :class=\"[prefixCls + '-form-input']\">\n      <slot></slot>\n      <template v-if=\"showIcon\">\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'warn'\" type=\"waring\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'error'\" type=\"error\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'success'\" type=\"success\"></icon>\n        <icon :class=\"[prefixCls + '-form-status-icon']\" v-if=\"validStatus == 'help'\" type=\"help\"></icon>\n      </template>\n    </div>\n    <message v-if=\"tipsMode === 'popup' && popupTips\" :class=\"[prefixCls + '-form-valid-popup-message']\" :type=\"popupMode\" arrow=\"left\" :show-icon=\"false\">\n      {{{popupTips}}}\n    </message>\n    <div v-if=\"tipsMode === 'text' && tips && validStatus\" :class=\"[prefixCls + '-form-status-info']\">{{tips}}</div>\n  </v-col>\n</v-col>\n";
+
+/***/ },
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Button = __webpack_require__(158);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _Group = __webpack_require__(157);
+	var _Group = __webpack_require__(161);
 	
 	var _Group2 = _interopRequireDefault(_Group);
 	
@@ -2190,16 +2416,16 @@
 	exports.default = _Button2.default;
 
 /***/ },
-/* 154 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(155)
+	__vue_script__ = __webpack_require__(159)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Button/Button.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(156)
+	__vue_template__ = __webpack_require__(160)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2218,7 +2444,7 @@
 	})()}
 
 /***/ },
-/* 155 */
+/* 159 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2283,22 +2509,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 156 */
+/* 160 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<button :type=\"type\" :class=\"btnClassObj\">\n  <slot>{{value}}</slot>\n</button>\n";
 
 /***/ },
-/* 157 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(158)
+	__vue_script__ = __webpack_require__(162)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Button/Group.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(159)
+	__vue_template__ = __webpack_require__(163)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2317,7 +2543,7 @@
 	})()}
 
 /***/ },
-/* 158 */
+/* 162 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2385,13 +2611,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 159 */
+/* 163 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"btnClassObj\"\n     @click=\"clickBtnGroup\">\n  <slot></slot>\n</div>\n";
 
 /***/ },
-/* 160 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2400,7 +2626,7 @@
 	  value: true
 	});
 	
-	var _Input = __webpack_require__(161);
+	var _Input = __webpack_require__(165);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -2409,16 +2635,16 @@
 	exports.default = _Input2.default;
 
 /***/ },
-/* 161 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(162)
+	__vue_script__ = __webpack_require__(166)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Input/Input.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(163)
+	__vue_template__ = __webpack_require__(167)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2437,7 +2663,7 @@
 	})()}
 
 /***/ },
-/* 162 */
+/* 166 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2446,8 +2672,7 @@
 	  value: true
 	});
 	// <template>
-	//   <input :type="type"
-	//          :class="inputClassObj"
+	//   <input :class="inputClassObj"
 	//          :placeholder="placeholder"
 	//          v-model="value"
 	//          :valid-status.sync="validStatus"
@@ -2456,10 +2681,6 @@
 	// <script>
 	exports.default = {
 	  props: {
-	    type: {
-	      type: String,
-	      default: 'text'
-	    },
 	    placeholder: {
 	      type: String,
 	      default: ''
@@ -2486,6 +2707,9 @@
 	    },
 	    // 验证规则
 	    rules: {
+	      type: Array
+	    },
+	    rulesTips: {
 	      type: Array
 	    },
 	    validResult: {
@@ -2527,6 +2751,7 @@
 	
 	  data: function data() {
 	    return {
+	      defaultErrorTips: this.tips,
 	      results: {
 	        requiredValid: {
 	          validStatus: 'success',
@@ -2593,6 +2818,7 @@
 	        var self = this;
 	        var tips = '';
 	        var status = '';
+	
 	        for (var key in val) {
 	          var obj = val[key];
 	          if (obj) {
@@ -2604,8 +2830,11 @@
 	          }
 	        }
 	
+	        if (this.defaultErrorTips === '') {
+	          self.tips = tips;
+	        }
+	
 	        self.validStatus = status;
-	        self.tips = tips;
 	        self.validResult = self.results;
 	      },
 	
@@ -2627,11 +2856,35 @@
 	        this.rulesValid(val);
 	      }
 	    },
-	    rulesItemValid: function rulesItemValid(rule, value) {
+	
+	
+	    /**
+	     * 规则验证
+	     */
+	    rulesValid: function rulesValid(value) {
 	      var self = this;
+	
+	      self.rules.forEach(function (val, index) {
+	        self.rulesItemValid(val, value, index);
+	      });
+	    },
+	
+	
+	    /**
+	     * 规则验证，枚举
+	     */
+	    rulesItemValid: function rulesItemValid(rule, value, index) {
+	      var self = this;
+	
+	      // 正则验证
+	      if (rule.indexOf('/') !== rule.lastIndexOf('/')) {
+	        self.regularValid(value, rule, index);
+	        return;
+	      }
+	
 	      switch (rule) {
 	        case 'required':
-	          self.requiredValid(value);
+	          self.requiredValid(value, index);
 	          break;
 	        case 'isPhone':
 	          self.phoneValid(value);
@@ -2647,15 +2900,22 @@
 	          break;
 	      }
 	    },
-	    requiredValid: function requiredValid(val) {
+	
+	
+	    /**
+	     * 非空验证
+	     */
+	    requiredValid: function requiredValid(val, index) {
 	      var self = this;
 	
 	      self.results = self.results || {};
 	
 	      if (!val) {
+	        var tips = index > -1 ? this.rulesTips[index] || '输入不能为空' : self.requiredTips || '输入不能为空';
+	
 	        self.results.requiredValid = {
 	          validStatus: 'error',
-	          tips: self.requiredTips || '输入不能为空'
+	          tips: tips
 	        };
 	      } else {
 	        self.results.requiredValid = {
@@ -2664,6 +2924,11 @@
 	        };
 	      }
 	    },
+	
+	
+	    /**
+	     * 最小长度验证
+	     */
 	    minlengthValid: function minlengthValid(val) {
 	      var self = this;
 	      var minlength = self.minlength - 0;
@@ -2686,13 +2951,11 @@
 	        }
 	      }
 	    },
-	    rulesValid: function rulesValid(value) {
-	      var self = this;
 	
-	      self.rules.forEach(function (val, index) {
-	        self.rulesItemValid(val, value);
-	      });
-	    },
+	
+	    /**
+	     * 手机号码验证
+	     */
 	    phoneValid: function phoneValid(value) {
 	      var rule = /^1\d{10}$/;
 	
@@ -2708,6 +2971,11 @@
 	        };
 	      }
 	    },
+	
+	
+	    /**
+	     * 数字验证
+	     */
 	    numberValid: function numberValid(value) {
 	      var rule = /^\d*$/;
 	
@@ -2719,10 +2987,15 @@
 	      } else {
 	        this.results.isNumberValid = {
 	          validStatus: 'error',
-	          tips: this.isPhoneValidTips || '数字验证失败'
+	          tips: this.isNumberValidTips || '数字验证失败'
 	        };
 	      }
 	    },
+	
+	
+	    /**
+	     * 固话验证
+	     */
 	    telValid: function telValid(value) {
 	      var rule = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/;
 	
@@ -2734,12 +3007,17 @@
 	      } else {
 	        this.results.isTelValid = {
 	          validStatus: 'error',
-	          tips: this.isPhoneValidTips || '输入固话格式错误，固话请用-'
+	          tips: this.isTelValidTips || '输入固话格式错误，固话请用-'
 	        };
 	      }
 	    },
+	
+	
+	    /**
+	     * 邮箱验证
+	     */
 	    emailValid: function emailValid(value) {
-	      var rule = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+	      var rule = /^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i;
 	
 	      if (rule.test(value) || value === '') {
 	        this.results.isEmailValid = {
@@ -2749,7 +3027,25 @@
 	      } else {
 	        this.results.isEmailValid = {
 	          validStatus: 'error',
-	          tips: this.isPhoneValidTips || '输入email格式错误'
+	          tips: this.isEmailValidTips || '输入email格式错误'
+	        };
+	      }
+	    },
+	
+	
+	    /**
+	     * 正则验证
+	     */
+	    regularValid: function regularValid(value, rule, index) {
+	      if (new RegExp(rule).test(value)) {
+	        this.results.regularValid = {
+	          validStatus: 'success',
+	          tips: ''
+	        };
+	      } else {
+	        this.results.regularValid = {
+	          validStatus: 'error',
+	          tips: this.rulesTips[index] || '第' + (index + 1) + '条正则规则验证失败'
 	        };
 	      }
 	    }
@@ -2760,13 +3056,13 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 163 */
+/* 167 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<input :type=\"type\"\n       :class=\"inputClassObj\"\n       :placeholder=\"placeholder\"\n       v-model=\"value\"\n       :valid-status.sync=\"validStatus\"\n       :maxlength=\"maxlength\" />\n";
+	module.exports = "\n<input :class=\"inputClassObj\"\n       :placeholder=\"placeholder\"\n       v-model=\"value\"\n       :valid-status.sync=\"validStatus\"\n       :maxlength=\"maxlength\" />\n";
 
 /***/ },
-/* 164 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2775,7 +3071,7 @@
 	  value: true
 	});
 	
-	var _Searchbox = __webpack_require__(165);
+	var _Searchbox = __webpack_require__(169);
 	
 	var _Searchbox2 = _interopRequireDefault(_Searchbox);
 
@@ -2784,16 +3080,16 @@
 	exports.default = _Searchbox2.default;
 
 /***/ },
-/* 165 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(166)
+	__vue_script__ = __webpack_require__(170)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Searchbox/Searchbox.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(173)
+	__vue_template__ = __webpack_require__(177)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2812,7 +3108,7 @@
 	})()}
 
 /***/ },
-/* 166 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2821,7 +3117,7 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
@@ -2829,7 +3125,7 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -2963,7 +3259,7 @@
 	// <script type="text/babel">
 
 /***/ },
-/* 167 */
+/* 171 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2988,7 +3284,7 @@
 	exports.default = GlobalMixin;
 
 /***/ },
-/* 168 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2997,7 +3293,7 @@
 	  value: true
 	});
 	
-	var _Trigger = __webpack_require__(169);
+	var _Trigger = __webpack_require__(173);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 
@@ -3006,16 +3302,16 @@
 	exports.default = _Trigger2.default;
 
 /***/ },
-/* 169 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(170)
+	__vue_script__ = __webpack_require__(174)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/Trigger/Trigger.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(172)
+	__vue_template__ = __webpack_require__(176)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -3034,7 +3330,7 @@
 	})()}
 
 /***/ },
-/* 170 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3043,19 +3339,24 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _EventListener = __webpack_require__(171);
+	var _EventListener = __webpack_require__(175);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template xmlns:v-el="http://www.w3.org/1999/xhtml">
-	//   <div :class="[prefixCls + '-trigger-cont']">
-	//     <div v-if="trigger === 'click'"
+	// <template>
+	//   <div :class="[prefixCls + '-trigger-cont']" :style="{width: width}">
+	//     <div v-if="popupAlwaysShow"
+	//          v-el:trigger
+	//          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
+	//       <slot name="trigger">trigger slot is not set</slot>
+	//     </div>
+	//     <div v-if="trigger === 'click' && !popupAlwaysShow"
 	//          v-el:trigger
 	//          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
 	//          @click="clickHandler">
@@ -3068,7 +3369,7 @@
 	//          @mouseleave="hoverHandler">
 	//       <slot name="trigger">trigger slot is not set</slot>
 	//     </div>
-	//     <div v-if="trigger === 'focus'"
+	//     <div v-if="trigger === 'focus' || trigger === 'always'"
 	//          v-el:trigger
 	//          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
 	//       <slot name="trigger">trigger slot is not set</slot>
@@ -3109,6 +3410,14 @@
 	      type: String,
 	      default: 'bottom'
 	    },
+	    width: {
+	      type: String,
+	      default: 'auto'
+	    },
+	    offset: {
+	      type: Array,
+	      default: [0, 0]
+	    },
 	    popupCls: {
 	      type: String,
 	      default: 'popup'
@@ -3117,7 +3426,18 @@
 	      type: Boolean,
 	      default: true
 	    },
+	    popupAlwaysShow: {
+	      type: Boolean,
+	      default: false
+	    },
 	    popupHideWhenClickOutside: {
+	      type: Boolean,
+	      default: false
+	    },
+	    // todo: 增强trigger和popup坐标对齐方式
+	    // 参考 https://github.com/yiminghe/dom-align
+	    // popup弹出的时候,刚好盖住trigger
+	    popupCoverTrigger: {
 	      type: Boolean,
 	      default: false
 	    },
@@ -3179,7 +3499,7 @@
 	  watch: {
 	    'show': function show(val, oldVal) {
 	      // 向父组件派发事件
-	      this.$dispatch('trigger-popup-toggle', val);
+	      this.$dispatch('toggle-popup', val);
 	    }
 	  },
 	
@@ -3191,6 +3511,7 @@
 	    var trigger = this.trigger;
 	    var popupHideWhenClickOutside = this.popupHideWhenClickOutside;
 	    var triggerUsePopupWidth = this.triggerUsePopupWidth;
+	    var popupAlwaysShow = this.popupAlwaysShow;
 	
 	
 	    this.originalPlacement = this.placement;
@@ -3210,7 +3531,7 @@
 	    }
 	
 	    // 点击trigger组件外部区域的时候,隐藏popup
-	    if (popupHideWhenClickOutside) {
+	    if (!popupAlwaysShow && popupHideWhenClickOutside) {
 	      this._closeEvent = _EventListener2.default.listen(window, 'click', function (ev) {
 	        if (!$popup.contains(ev.target) && !$trigger.contains(ev.target)) {
 	          me.show = false;
@@ -3219,19 +3540,28 @@
 	    }
 	
 	    // trigger使用popup宽度
-	    if (triggerUsePopupWidth) {
-	      //        console.log('$popup.style.width 1', $popup.style.width)
-	      //
-	      //        $popup.style.visibility = 'hidden'
-	      //        me.show = true
-	      //        $popup.style.display = 'block'
-	      //
-	      //        setTimeout(() => {
-	      //          $trigger.style.width = $popup.style.width
-	      //          $popup.style.visibility = ''
-	      //          $popup.style.display = ''
-	      //          console.log('$popup.style.width 2', $popup.style.width)
-	      //        }, 1000)
+	    if (triggerUsePopupWidth) {}
+	    //        console.log('$popup.style.width 1', $popup.style.width)
+	    //
+	    //        $popup.style.visibility = 'hidden'
+	    //        me.show = true
+	    //        $popup.style.display = 'block'
+	    //
+	    //        setTimeout(() => {
+	    //          $trigger.style.width = $popup.style.width
+	    //          $popup.style.visibility = ''
+	    //          $popup.style.display = ''
+	    //          console.log('$popup.style.width 2', $popup.style.width)
+	    //        }, 1000)
+	
+	
+	    // 永远展示popup,并且默认展示
+	    if (popupAlwaysShow) {
+	      // 显示优化,避免上来出现在页面左上角
+	      $popup.style.visibility = 'hidden';
+	      this.show = true;
+	      this.resetPos();
+	      $popup.style.visibility = '';
 	    }
 	  },
 	
@@ -3313,6 +3643,8 @@
 	    resetPos: function resetPos(inPlacement) {
 	      var me = this;
 	      var popupAlwaysInView = this.popupAlwaysInView;
+	      var offset = this.offset;
+	      var popupCoverTrigger = this.popupCoverTrigger;
 	
 	      var $popup = me.$els.popup;
 	
@@ -3324,7 +3656,7 @@
 	        return;
 	      }
 	
-	      var $trigger = me.$els.trigger.children[0];
+	      var $trigger = me.$els.trigger;
 	      var triggerOffset = $trigger.getBoundingClientRect();
 	      var triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left;
 	      var triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top;
@@ -3401,11 +3733,19 @@
 	          console.log('Wrong placement prop');
 	      }
 	
-	      $popup.style.top = this.position.top + 'px';
-	      $popup.style.left = this.position.left + 'px';
+	      if (popupCoverTrigger) {
+	        if (this.placement.startsWith('top')) {
+	          offset[1] = triggerHeight;
+	        } else if (this.placement.startsWith('bottom')) {
+	          offset[1] = -triggerHeight;
+	        }
+	      }
+	
+	      $popup.style.left = this.position.left + offset[0] + 'px';
+	      $popup.style.top = this.position.top + offset[1] + 'px';
 	
 	      // 向父组件派发事件
-	      this.$dispatch('trigger-reset-pos', {
+	      this.$dispatch('reset-pos', {
 	        $trigger: $trigger,
 	        $popup: $popup,
 	        placement: this.placement
@@ -3449,8 +3789,6 @@
 	      var type = ev.type;
 	
 	
-	      console.log('ev', ev);
-	
 	      if (type === 'focus') {
 	        this.show = true;
 	        this.resetPos();
@@ -3489,7 +3827,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 171 */
+/* 175 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3528,19 +3866,19 @@
 	exports.default = EventListener;
 
 /***/ },
-/* 172 */
+/* 176 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\">\n  <div v-if=\"trigger === 'click'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n  <div v-else\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-trigger-cont']\" :style=\"{width: width}\">\n  <div v-if=\"popupAlwaysShow\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'click' && !popupAlwaysShow\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\"\n       @click=\"clickHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'focus' || trigger === 'always'\"\n       v-el:trigger\n       :class=\"[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]\">\n    <slot name=\"trigger\">trigger slot is not set</slot>\n  </div>\n  <div v-if=\"trigger === 'hover'\"\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\"\n       @mouseenter=\"hoverHandler\"\n       @mouseleave=\"hoverHandler\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n  <div v-else\n       v-el:popup\n       v-show=\"show\"\n       :class=\"popupClassObj\"\n       :transition=\"effect\">\n    <slot name=\"popup\">popup slot is not set</slot>\n  </div>\n</div>\n";
 
 /***/ },
-/* 173 */
+/* 177 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"[prefixCls + '-searchbox-cont']\">\n  <trigger trigger=\"focus\" effect=\"slide\" placement=\"bottomLeft\" popup-cls=\"searchbox\">\n    <div slot=\"trigger\">\n      <input type=\"text\"\n             :class=\"inputClassObj\"\n             :placeholder=\"placeholder\"\n             v-model=\"value\"\n             @focus=\"focusInput\"\n             debounce=\"500\" />\n      <icon type=\"clear\" v-show=\"value\" color=\"#bfbfbf\" size=\"14\" @click=\"clearInput\"></icon>\n      <icon type=\"search\" :color=\"iconColor\" size=\"14\"></icon>\n    </div>\n    <div slot=\"popup\" v-if=\"searchList && searchList.length > 0\"\n         :class=\"[prefixCls + '-searchbox-list-containter']\">\n      <ul :class=\"[prefixCls + '-searchbox-list-dropdown']\">\n        <li v-for=\"item in searchList | filterBy value\">\n          <a href=\"javascript:;\" @click=\"checkItem($index, item[textField])\" :title=\"item[textField]\">{{item[textField]}}</a>\n        </li>\n      </ul>\n    </div>\n  </trigger>\n\n</div>\n";
 
 /***/ },
-/* 174 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3549,7 +3887,7 @@
 	  value: true
 	});
 	
-	var _Uploader = __webpack_require__(175);
+	var _Uploader = __webpack_require__(179);
 	
 	var _Uploader2 = _interopRequireDefault(_Uploader);
 
@@ -3558,11 +3896,11 @@
 	exports.default = _Uploader2.default;
 
 /***/ },
-/* 175 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(176)
+	__vue_script__ = __webpack_require__(180)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
@@ -3586,7 +3924,7 @@
 	})()}
 
 /***/ },
-/* 176 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3595,7 +3933,7 @@
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(177);
+	var _typeof2 = __webpack_require__(181);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -3603,7 +3941,7 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Message = __webpack_require__(201);
+	var _Message = __webpack_require__(152);
 	
 	var _Message2 = _interopRequireDefault(_Message);
 	
@@ -4045,18 +4383,18 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 177 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _iterator = __webpack_require__(178);
+	var _iterator = __webpack_require__(182);
 	
 	var _iterator2 = _interopRequireDefault(_iterator);
 	
-	var _symbol = __webpack_require__(185);
+	var _symbol = __webpack_require__(189);
 	
 	var _symbol2 = _interopRequireDefault(_symbol);
 	
@@ -4071,24 +4409,24 @@
 	};
 
 /***/ },
-/* 178 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(179), __esModule: true };
+	module.exports = { "default": __webpack_require__(183), __esModule: true };
 
 /***/ },
-/* 179 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(81);
-	__webpack_require__(180);
-	module.exports = __webpack_require__(184).f('iterator');
+	__webpack_require__(184);
+	module.exports = __webpack_require__(188).f('iterator');
 
 /***/ },
-/* 180 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(181);
+	__webpack_require__(185);
 	var global        = __webpack_require__(88)
 	  , hide          = __webpack_require__(92)
 	  , Iterators     = __webpack_require__(104)
@@ -4103,12 +4441,12 @@
 	}
 
 /***/ },
-/* 181 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(182)
-	  , step             = __webpack_require__(183)
+	var addToUnscopables = __webpack_require__(186)
+	  , step             = __webpack_require__(187)
 	  , Iterators        = __webpack_require__(104)
 	  , toIObject        = __webpack_require__(110);
 	
@@ -4142,13 +4480,13 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 182 */
+/* 186 */
 /***/ function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ },
-/* 183 */
+/* 187 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -4156,29 +4494,29 @@
 	};
 
 /***/ },
-/* 184 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports.f = __webpack_require__(122);
 
 /***/ },
-/* 185 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(186), __esModule: true };
+	module.exports = { "default": __webpack_require__(190), __esModule: true };
 
 /***/ },
-/* 186 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(187);
-	__webpack_require__(198);
-	__webpack_require__(199);
-	__webpack_require__(200);
+	__webpack_require__(191);
+	__webpack_require__(202);
+	__webpack_require__(203);
+	__webpack_require__(204);
 	module.exports = __webpack_require__(89).Symbol;
 
 /***/ },
-/* 187 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4188,24 +4526,24 @@
 	  , DESCRIPTORS    = __webpack_require__(97)
 	  , $export        = __webpack_require__(87)
 	  , redefine       = __webpack_require__(102)
-	  , META           = __webpack_require__(188).KEY
+	  , META           = __webpack_require__(192).KEY
 	  , $fails         = __webpack_require__(98)
 	  , shared         = __webpack_require__(117)
 	  , setToStringTag = __webpack_require__(121)
 	  , uid            = __webpack_require__(118)
 	  , wks            = __webpack_require__(122)
-	  , wksExt         = __webpack_require__(184)
-	  , wksDefine      = __webpack_require__(189)
-	  , keyOf          = __webpack_require__(190)
-	  , enumKeys       = __webpack_require__(191)
-	  , isArray        = __webpack_require__(194)
+	  , wksExt         = __webpack_require__(188)
+	  , wksDefine      = __webpack_require__(193)
+	  , keyOf          = __webpack_require__(194)
+	  , enumKeys       = __webpack_require__(195)
+	  , isArray        = __webpack_require__(198)
 	  , anObject       = __webpack_require__(94)
 	  , toIObject      = __webpack_require__(110)
 	  , toPrimitive    = __webpack_require__(100)
 	  , createDesc     = __webpack_require__(101)
 	  , _create        = __webpack_require__(106)
-	  , gOPNExt        = __webpack_require__(195)
-	  , $GOPD          = __webpack_require__(197)
+	  , gOPNExt        = __webpack_require__(199)
+	  , $GOPD          = __webpack_require__(201)
 	  , $DP            = __webpack_require__(93)
 	  , $keys          = __webpack_require__(108)
 	  , gOPD           = $GOPD.f
@@ -4330,9 +4668,9 @@
 	
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f   = $defineProperty;
-	  __webpack_require__(196).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(193).f  = $propertyIsEnumerable;
-	  __webpack_require__(192).f = $getOwnPropertySymbols;
+	  __webpack_require__(200).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(197).f  = $propertyIsEnumerable;
+	  __webpack_require__(196).f = $getOwnPropertySymbols;
 	
 	  if(DESCRIPTORS && !__webpack_require__(86)){
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -4418,7 +4756,7 @@
 	setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-/* 188 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var META     = __webpack_require__(118)('meta')
@@ -4476,13 +4814,13 @@
 	};
 
 /***/ },
-/* 189 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global         = __webpack_require__(88)
 	  , core           = __webpack_require__(89)
 	  , LIBRARY        = __webpack_require__(86)
-	  , wksExt         = __webpack_require__(184)
+	  , wksExt         = __webpack_require__(188)
 	  , defineProperty = __webpack_require__(93).f;
 	module.exports = function(name){
 	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -4490,7 +4828,7 @@
 	};
 
 /***/ },
-/* 190 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var getKeys   = __webpack_require__(108)
@@ -4505,13 +4843,13 @@
 	};
 
 /***/ },
-/* 191 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
 	var getKeys = __webpack_require__(108)
-	  , gOPS    = __webpack_require__(192)
-	  , pIE     = __webpack_require__(193);
+	  , gOPS    = __webpack_require__(196)
+	  , pIE     = __webpack_require__(197);
 	module.exports = function(it){
 	  var result     = getKeys(it)
 	    , getSymbols = gOPS.f;
@@ -4525,19 +4863,19 @@
 	};
 
 /***/ },
-/* 192 */
+/* 196 */
 /***/ function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 /***/ },
-/* 193 */
+/* 197 */
 /***/ function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 /***/ },
-/* 194 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -4547,12 +4885,12 @@
 	};
 
 /***/ },
-/* 195 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 	var toIObject = __webpack_require__(110)
-	  , gOPN      = __webpack_require__(196).f
+	  , gOPN      = __webpack_require__(200).f
 	  , toString  = {}.toString;
 	
 	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -4572,7 +4910,7 @@
 
 
 /***/ },
-/* 196 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
@@ -4584,10 +4922,10 @@
 	};
 
 /***/ },
-/* 197 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var pIE            = __webpack_require__(193)
+	var pIE            = __webpack_require__(197)
 	  , createDesc     = __webpack_require__(101)
 	  , toIObject      = __webpack_require__(110)
 	  , toPrimitive    = __webpack_require__(100)
@@ -4605,223 +4943,22 @@
 	};
 
 /***/ },
-/* 198 */
+/* 202 */
 /***/ function(module, exports) {
 
 
-
-/***/ },
-/* 199 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(189)('asyncIterator');
-
-/***/ },
-/* 200 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(189)('observable');
-
-/***/ },
-/* 201 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Message = __webpack_require__(202);
-	
-	var _Message2 = _interopRequireDefault(_Message);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	['info', 'success', 'error', 'warning', 'loading'].forEach(function (type, i) {
-	  _Message2.default[type] = function (content, duration, placement) {
-	    duration = duration || 3000;
-	    placement = placement || 'top';
-	    new Vue({
-	      template: '\n        <message class="atui-message-notice"\n        :show="show"\n        :duration="duration"\n        :type="type"\n        :transition="transition"\n        :placement="placement">\n        {{content}}\n        </message>\n        ',
-	      components: {
-	        Message: _Message2.default
-	      },
-	      data: {
-	        content: content,
-	        type: type,
-	        duration: duration,
-	        show: true,
-	        transition: 'movedown',
-	        placement: placement
-	      },
-	      ready: function ready() {
-	        var me = this;
-	        if (me.duration) {
-	          setTimeout(function () {
-	            me.$destroy(true);
-	          }, duration);
-	        }
-	      }
-	    }).$mount().$appendTo(document.body);
-	  };
-	});
-	
-	exports.default = _Message2.default;
-
-/***/ },
-/* 202 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(203)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/Message/Message.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(204)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-045f25ea/Message.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
 
 /***/ },
 /* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Icon = __webpack_require__(135);
-	
-	var _Icon2 = _interopRequireDefault(_Icon);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  props: {
-	    type: {
-	      type: String
-	    },
-	    dismissable: {
-	      type: Boolean
-	    },
-	    showIcon: {
-	      type: Boolean
-	    },
-	    show: {
-	      type: Boolean,
-	      default: true
-	    },
-	    duration: {
-	      type: [String, Number]
-	    },
-	    width: {
-	      type: String
-	    },
-	    placement: {
-	      type: String
-	    },
-	    content: String,
-	    transition: {
-	      type: String,
-	      default: 'fade'
-	    },
-	    arrow: String,
-	    prefixCls: {
-	      type: String,
-	      default: 'atui'
-	    }
-	  },
-	  components: {
-	    Icon: _Icon2.default
-	  },
-	  created: function created() {
-	    if (this.type) {
-	      this.showIcon = true;
-	    }
-	  },
-	
-	  watch: {
-	    show: function show(val) {
-	      var _this = this;
-	
-	      if (this._timeout) clearTimeout(this._timeout);
-	      if (val && Boolean(this.duration)) {
-	        this._timeout = setTimeout(function () {
-	          _this.show = false;
-	        }, this.duration);
-	      }
-	    }
-	  },
-	  computed: {
-	    messageClassObj: function messageClassObj() {
-	      var prefixCls = this.prefixCls;
-	      var type = this.type;
-	      var arrow = this.arrow;
-	      var placement = this.placement;
-	
-	      var messageClass = {};
-	
-	      messageClass[prefixCls + '-message'] = true;
-	      messageClass[prefixCls + '-message-success'] = type === 'success';
-	      messageClass[prefixCls + '-message-warning'] = type === 'warning';
-	      messageClass[prefixCls + '-message-info'] = type === 'info';
-	      messageClass[prefixCls + '-message-error'] = type === 'error';
-	      messageClass[prefixCls + '-message-help'] = type === 'help';
-	      messageClass[prefixCls + '-message-top'] = placement === 'top';
-	      messageClass[prefixCls + '-message-top-right'] = placement === 'top-right';
-	      messageClass[prefixCls + '-message-center'] = placement === 'center';
-	      messageClass[prefixCls + '-arrow-' + arrow] = !!arrow;
-	
-	      return messageClass;
-	    }
-	  }
-	};
-	// </script>
-
-	/* generated by vue-loader */
-	// <template>
-	//   <div
-	//     v-show="show"
-	//     :class="messageClassObj"
-	//     :transition="transition"
-	//     :style="{width:width}"
-	//     role="alert">
-	//     <div :class="[prefixCls + '-message-content']">
-	//       <button v-show="dismissable" type="button" :class="[prefixCls + '-close']" @click="show = false">
-	//       <span>&times;</span>
-	//       </button>
-	//       <icon v-if="showIcon" :type="type"></icon>
-	//       <slot>
-	//         {{content}}
-	//       </slot>
-	//     </div>
-	//   </div>
-	// </template>
-	//
-	// <script type="text/babel">
+	__webpack_require__(193)('asyncIterator');
 
 /***/ },
 /* 204 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<div\n  v-show=\"show\"\n  :class=\"messageClassObj\"\n  :transition=\"transition\"\n  :style=\"{width:width}\"\n  role=\"alert\">\n  <div :class=\"[prefixCls + '-message-content']\">\n    <button v-show=\"dismissable\" type=\"button\" :class=\"[prefixCls + '-close']\" @click=\"show = false\">\n    <span>&times;</span>\n    </button>\n    <icon v-if=\"showIcon\" :type=\"type\"></icon>\n    <slot>\n      {{content}}\n    </slot>\n  </div>\n</div>\n";
+	__webpack_require__(193)('observable');
 
 /***/ },
 /* 205 */
@@ -4889,21 +5026,21 @@
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _EventListener = __webpack_require__(171);
+	var _EventListener = __webpack_require__(175);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div :class="sliderClassObj" @click="clickFun">
+	//   <div :id="sliderId" :class="sliderClassObj" @click="clickFun">
 	//     <template v-for="item in valuePercent">
-	//       <tooltip :content="valueArray[$index]" placement="top">
+	//       <tooltip :content="valueArray[$index]">
 	//         <div :class="[prefixCls + '-slider-handle']" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
 	//       </tooltip>
 	//     </template>
 	//     <template v-if="valuePercent.length == 1">
-	//       <tooltip :content="valueArray[0]" placement="top">
+	//       <tooltip :content="valueArray[0]">
 	//         <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}"></div>
 	//         </tooltip>
 	//     </template>
@@ -5242,11 +5379,11 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -5254,7 +5391,7 @@
 	
 	// <template>
 	//   <div :class="[prefixCls + '-popover-cont']">
-	//     <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls">
+	//     <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls" @reset-pos="resetPosHandler">
 	//       <slot slot="trigger"></slot>
 	//       <slot slot="popup" name="popup" role="tooltip">
 	//         <div :class="[prefixCls + '-tooltip-arrow']"></div>
@@ -5293,8 +5430,8 @@
 	    }
 	  },
 	
-	  events: {
-	    'trigger-reset-pos': function triggerResetPos(data) {
+	  methods: {
+	    resetPosHandler: function resetPosHandler(data) {
 	      var prefixCls = this.prefixCls;
 	      var popupCls = this.popupCls;
 	      var $trigger = data.$trigger;
@@ -5325,13 +5462,13 @@
 /* 212 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-popover-cont']\">\n  <trigger :trigger=\"trigger\" :effect=\"effect\" :placement=\"placement\" :popup-cls=\"popupCls\">\n    <slot slot=\"trigger\"></slot>\n    <slot slot=\"popup\" name=\"popup\" role=\"tooltip\">\n      <div :class=\"[prefixCls + '-tooltip-arrow']\"></div>\n      <div :class=\"[prefixCls + '-tooltip-inner']\">\n        {{{content}}}\n      </div>\n    </slot>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-popover-cont']\">\n  <trigger :trigger=\"trigger\" :effect=\"effect\" :placement=\"placement\" :popup-cls=\"popupCls\" @reset-pos=\"resetPosHandler\">\n    <slot slot=\"trigger\"></slot>\n    <slot slot=\"popup\" name=\"popup\" role=\"tooltip\">\n      <div :class=\"[prefixCls + '-tooltip-arrow']\"></div>\n      <div :class=\"[prefixCls + '-tooltip-inner']\">\n        {{{content}}}\n      </div>\n    </slot>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 213 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"sliderClassObj\" @click=\"clickFun\">\n  <template v-for=\"item in valuePercent\">\n    <tooltip :content=\"valueArray[$index]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-handle']\" :style=\"{'left': item+'%'}\" @mousedown=\"mousedown\"></div>\n    </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length == 1\">\n    <tooltip :content=\"valueArray[0]\" placement=\"top\">\n      <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}\"></div>\n      </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length > 1\">\n    <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}\"></div>\n  </template>\n  <div :class=\"[prefixCls + '-slider-step']\"></div>\n  <div :class=\"[prefixCls + '-slider-mark']\"></div>\n</div>\n";
+	module.exports = "\n<div :id=\"sliderId\" :class=\"sliderClassObj\" @click=\"clickFun\">\n  <template v-for=\"item in valuePercent\">\n    <tooltip :content=\"valueArray[$index]\">\n      <div :class=\"[prefixCls + '-slider-handle']\" :style=\"{'left': item+'%'}\" @mousedown=\"mousedown\"></div>\n    </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length == 1\">\n    <tooltip :content=\"valueArray[0]\">\n      <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}\"></div>\n      </tooltip>\n  </template>\n  <template v-if=\"valuePercent.length > 1\">\n    <div :class=\"[prefixCls + '-slider-track']\" :style=\"{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}\"></div>\n  </template>\n  <div :class=\"[prefixCls + '-slider-step']\"></div>\n  <div :class=\"[prefixCls + '-slider-mark']\"></div>\n</div>\n";
 
 /***/ },
 /* 214 */
@@ -5402,21 +5539,11 @@
 	// <script>
 	exports.default = {
 	  props: {
-	    checked: {
-	      type: Boolean
-	    },
-	    value: {
-	      type: String
-	    },
-	    disabled: {
-	      type: Boolean
-	    },
-	    small: {
-	      type: Boolean
-	    },
-	    color: {
-	      type: String
-	    },
+	    checked: Boolean,
+	    value: String,
+	    disabled: Boolean,
+	    small: Boolean,
+	    color: String,
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
@@ -5515,11 +5642,11 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -5532,6 +5659,7 @@
 	//              popup-cls="dropdown"
 	//              placement="bottomLeft"
 	//              :popup-hide-delay="200"
+	//              popup-hide-when-click-outside
 	//              :show.sync="open">
 	//       <slot slot="trigger"></slot>
 	//       <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont']">
@@ -5567,7 +5695,7 @@
 /* 221 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]\">\n  <trigger :trigger=\"trigger\"\n           effect=\"slide\"\n           popup-cls=\"dropdown\"\n           placement=\"bottomLeft\"\n           :popup-hide-delay=\"200\"\n           :show.sync=\"open\">\n    <slot slot=\"trigger\"></slot>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu-cont']\">\n      <slot name=\"dropdown-menu\" role=\"dropdown\"></slot>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]\">\n  <trigger :trigger=\"trigger\"\n           effect=\"slide\"\n           popup-cls=\"dropdown\"\n           placement=\"bottomLeft\"\n           :popup-hide-delay=\"200\"\n           popup-hide-when-click-outside\n           :show.sync=\"open\">\n    <slot slot=\"trigger\"></slot>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu-cont']\">\n      <slot name=\"dropdown-menu\" role=\"dropdown\"></slot>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 222 */
@@ -5631,7 +5759,7 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
@@ -5643,7 +5771,7 @@
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -5654,10 +5782,12 @@
 	//     <trigger trigger="click"
 	//              placement="bottomLeft"
 	//              effect="slide"
-	//              :popup-hide-when-click-outside="true"
-	//              :trigger-use-popup-width="true"
+	//              popup-hide-when-click-outside
+	//              trigger-use-popup-width
 	//              :disabled="disabled"
-	//              :show.sync="show">
+	//              :width.sync="width"
+	//              :show.sync="show"
+	//              @toggolePopup="togglePopupHandler">
 	//       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
 	//            tabindex="1"
 	//            v-bind="{disabled: disabled}">
@@ -5674,7 +5804,7 @@
 	//           <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
 	//         </div>
 	//       </div>
-	//       <div slot="popup" :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0">
+	//       <div slot="popup" :style="{width:width}" :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0">
 	//         <slot></slot>
 	//         <div v-show="noResult" class="no-result">无结果</div>
 	//         <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
@@ -5690,7 +5820,6 @@
 	  mixins: [_GlobalMixin2.default],
 	
 	  props: {
-	    width: String,
 	    value: {
 	      type: [String, Array],
 	      default: ''
@@ -5699,6 +5828,10 @@
 	      type: String,
 	      default: '请选择'
 	    },
+	    width: {
+	      type: String,
+	      default: 'auto'
+	    },
 	    tags: Boolean,
 	    multiple: Boolean,
 	    selectedOptions: {
@@ -5706,9 +5839,6 @@
 	      default: function _default() {
 	        return [];
 	      }
-	    },
-	    search: {
-	      type: Boolean
 	    },
 	    limit: {
 	      type: Number,
@@ -5875,6 +6005,23 @@
 	      //   option.active = false
 	      // })
 	      // childs[this.activeIndex].active = true
+	    },
+	    togglePopupHandler: function togglePopupHandler(show) {
+	      var me = this;
+	
+	      if (this.disabled) {
+	        this.show = false;
+	        return;
+	      }
+	
+	      this.show = !this.show;
+	
+	      if (this.multiple) {
+	        this.showPlaceholder = false;
+	        setTimeout(function () {
+	          return me.$els.searchField.focus();
+	        }, 10);
+	      }
 	    }
 	  },
 	
@@ -5906,24 +6053,6 @@
 	      this.searchText = '';
 	      // 需要把option的change事件继续冒泡给上一层级调用
 	      // return true
-	    }
-	  },
-	
-	  'trigger-popup-toggle': function triggerPopupToggle(show) {
-	    var me = this;
-	
-	    if (this.disabled) {
-	      this.show = false;
-	      return;
-	    }
-	
-	    this.show = !this.show;
-	
-	    if (this.multiple) {
-	      this.showPlaceholder = false;
-	      setTimeout(function () {
-	        return me.$els.searchField.focus();
-	      }, 10);
 	    }
 	  }
 	};
@@ -6031,7 +6160,7 @@
 	//   <div v-if="!closed"
 	//        :class="[prefixCls + '-tag', color && (prefixCls + '-tag-color')]"
 	//        :style="{'background-color': color}">
-	//     <a :href="href"
+	//     <a :href="href" :target="href ? '_blank' : ''"
 	//        :class="[prefixCls + '-tag-text']"
 	//        :style="{'fontSize': size+'px'}">
 	//       <slot></slot>
@@ -6050,13 +6179,13 @@
 /* 228 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div v-if=\"!closed\"\n     :class=\"[prefixCls + '-tag', color && (prefixCls + '-tag-color')]\"\n     :style=\"{'background-color': color}\">\n  <a :href=\"href\"\n     :class=\"[prefixCls + '-tag-text']\"\n     :style=\"{'fontSize': size+'px'}\">\n    <slot></slot>\n  </a>\n  <span v-if=\"closable\"\n       :class=\"[prefixCls + '-tag-close']\"\n       @click=\"closeHandler\">\n   <v-icon type=\"close\" :size=\"size\"></v-icon>\n  </span>\n</div>\n";
+	module.exports = "\n<div v-if=\"!closed\"\n     :class=\"[prefixCls + '-tag', color && (prefixCls + '-tag-color')]\"\n     :style=\"{'background-color': color}\">\n  <a :href=\"href\" :target=\"href ? '_blank' : ''\"\n     :class=\"[prefixCls + '-tag-text']\"\n     :style=\"{'fontSize': size+'px'}\">\n    <slot></slot>\n  </a>\n  <span v-if=\"closable\"\n       :class=\"[prefixCls + '-tag-close']\"\n       @click=\"closeHandler\">\n   <v-icon type=\"close\" :size=\"size\"></v-icon>\n  </span>\n</div>\n";
 
 /***/ },
 /* 229 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"selectClassObj\">\n  <trigger trigger=\"click\"\n           placement=\"bottomLeft\"\n           effect=\"slide\"\n           :popup-hide-when-click-outside=\"true\"\n           :trigger-use-popup-width=\"true\"\n           :disabled=\"disabled\"\n           :show.sync=\"show\">\n    <div slot=\"trigger\" :class=\"[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]\"\n         tabindex=\"1\"\n         v-bind=\"{disabled: disabled}\">\n      <template v-if=\"!multiple\">\n        <span v-show=\"showPlaceholder\"\n              :class=\"[prefixCls + '-select-placeholder']\">{{placeholder}}</span>\n        <span :class=\"[prefixCls + '-select-btn-content']\">{{ showText }}</span>\n        <span :class=\"[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]\">\n          <icon :class=\"[prefixCls + '-dropdown-icon']\" type=\"down\" size=\"12\"></icon></span>\n      </template>\n      <div v-else @click=\"focusInput\">\n        <span :class=\"[prefixCls + '-select-placeholder']\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n        <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n        <input type=\"text\" v-el:search-field :class=\"[prefixCls + '-select-search-field']\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n      </div>\n    </div>\n    <div slot=\"popup\" :class=\"[prefixCls + '-dropdown-menu']\" v-show=\"show && options.length > 0\">\n      <slot></slot>\n      <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n      <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"selectClassObj\">\n  <trigger trigger=\"click\"\n           placement=\"bottomLeft\"\n           effect=\"slide\"\n           popup-hide-when-click-outside\n           trigger-use-popup-width\n           :disabled=\"disabled\"\n           :width.sync=\"width\"\n           :show.sync=\"show\"\n           @toggolePopup=\"togglePopupHandler\">\n    <div slot=\"trigger\" :class=\"[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]\"\n         tabindex=\"1\"\n         v-bind=\"{disabled: disabled}\">\n      <template v-if=\"!multiple\">\n        <span v-show=\"showPlaceholder\"\n              :class=\"[prefixCls + '-select-placeholder']\">{{placeholder}}</span>\n        <span :class=\"[prefixCls + '-select-btn-content']\">{{ showText }}</span>\n        <span :class=\"[prefixCls + '-select-caret', show && (prefixCls + '-select-open')]\">\n          <icon :class=\"[prefixCls + '-dropdown-icon']\" type=\"down\" size=\"12\"></icon></span>\n      </template>\n      <div v-else @click=\"focusInput\">\n        <span :class=\"[prefixCls + '-select-placeholder']\" v-show=\"showPlaceholder\">{{placeholder}}</span>\n        <tag v-for=\"option in selectedOptions\" closable @close=\"closeTag(option)\">{{{option.label}}}</tag>\n        <input type=\"text\" v-el:search-field :class=\"[prefixCls + '-select-search-field']\" @input=\"onInput\" @keydown.delete=\"deleteTag\" @blur=\"createTag\" @keydown.enter.prevent=\"createTag\" v-model=\"searchText\" autocomplete=\"off\"/>\n      </div>\n    </div>\n    <div slot=\"popup\" :style=\"{width:width}\" :class=\"[prefixCls + '-dropdown-menu']\" v-show=\"show && options.length > 0\">\n      <slot></slot>\n      <div v-show=\"noResult\" class=\"no-result\">无结果</div>\n      <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多可选 ({{limit}})项.</div>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 230 */
@@ -6109,12 +6238,8 @@
 	exports.default = {
 	  name: 'option',
 	  props: {
-	    value: {
-	      type: String
-	    },
-	    disabled: {
-	      type: Boolean
-	    },
+	    value: String,
+	    disabled: Boolean,
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
@@ -6254,14 +6379,30 @@
 
 /***/ },
 /* 235 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
+	
+	var _GlobalMixin = __webpack_require__(171);
+	
+	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var localeConfig = {
+	  zh_CN: {
+	    weekRange: ['日', '一', '二', '三', '四', '五', '六'],
+	    monthNames: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+	  },
+	  en_US: {
+	    weekRange: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+	    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+	  }
+	}; // <template>
 	//   <div :class="[prefixCls + '-calendar']" v-show="show">
 	//     <div :class="[prefixCls + '-calendar-popup']" v-show="displayDayView">
 	//       <div :class="[prefixCls + '-calendar-inner']">
@@ -6326,18 +6467,10 @@
 	// </template>
 	//
 	// <script type="text/babel">
-	var localeConfig = {
-	  zh_CN: {
-	    weekRange: ['日', '一', '二', '三', '四', '五', '六'],
-	    monthNames: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
-	  },
-	  en_US: {
-	    weekRange: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-	    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-	  }
-	};
-	
 	exports.default = {
+	
+	  mixins: [_GlobalMixin2.default],
+	
 	  props: {
 	    value: {
 	      type: String,
@@ -6368,10 +6501,6 @@
 	    mode: {
 	      type: String,
 	      default: 'month'
-	    },
-	    prefixCls: {
-	      type: String,
-	      default: 'atui'
 	    }
 	  },
 	  data: function data() {
@@ -6513,8 +6642,9 @@
 	      return dict[month];
 	    },
 	    getDateRange: function getDateRange() {
-	      this.dateRange = [];
-	      this.decadeRange = [];
+	      var prefixCls = this.prefixCls;
+	
+	      var today = new Date();
 	      var time = {
 	        year: this.currDate.getFullYear(),
 	        month: this.currDate.getMonth(),
@@ -6522,6 +6652,10 @@
 	      };
 	      var yearStr = time.year.toString();
 	      var firstYearOfDecade = yearStr.substring(0, yearStr.length - 1) + 0 - 1;
+	
+	      this.dateRange = [];
+	      this.decadeRange = [];
+	
 	      for (var i = 0; i < 12; i++) {
 	        this.decadeRange.push({
 	          text: firstYearOfDecade + i
@@ -6539,7 +6673,7 @@
 	        for (var _i = 1; _i < firstDayWeek; _i++) {
 	          var dayText = prevMonthDayCount - firstDayWeek + _i + 1;
 	          var date = new Date(preMonth.year, preMonth.month, dayText);
-	          var sclass = this.disabledDate(date) ? 'atui-calendar-item-disable' : 'atui-calendar-item-gray';
+	          var sclass = this.disabledDate(date) ? prefixCls + '-calendar-item-disable' : prefixCls + '-calendar-item-gray';
 	          this.dateRange.push({
 	            text: dayText,
 	            date: date,
@@ -6555,7 +6689,13 @@
 	        // this.disabledDaysOfWeek.forEach((el)=> {
 	        //   if (week === parseInt(el, 10)) sclass = 'atui-calendar-item-disable'
 	        // })
-	        // 开发者指定的禁用日期
+	
+	        // 今天
+	        if (_i2 === today.getDate() && today.getFullYear() === time.year && today.getMonth() === time.month) {
+	          _sclass = 'atui-calendar-item-today';
+	        }
+	
+	        // 当前选择的日期
 	        if (_i2 === time.day) {
 	          if (this.value) {
 	            var valueDate = this.parse(this.value);
@@ -6566,9 +6706,12 @@
 	            }
 	          }
 	        }
+	
+	        // 开发者指定的禁用日期
 	        if (this.disabledDate(_date)) {
 	          _sclass = 'atui-calendar-item-disable';
 	        }
+	
 	        this.dateRange.push({
 	          text: _i2,
 	          date: _date,
@@ -6662,17 +6805,21 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Input = __webpack_require__(160);
+	var _Input = __webpack_require__(164);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
+	
+	var _Icon = __webpack_require__(135);
+	
+	var _Icon2 = _interopRequireDefault(_Icon);
 	
 	var _selection = __webpack_require__(240);
 	
@@ -6680,37 +6827,6 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template xmlns:v-el="http://www.w3.org/1999/xhtml">
-	//   <div :class="[prefixCls + '-time-picker']">
-	//     <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-click-outside="true">
-	//       <span slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
-	//         <v-input readonly
-	//                  v-el:picker-toggler
-	//                  :value="value"
-	//                  :placeholder="placeholder"></v-input>
-	//       </span>
-	//       <div slot="popup"
-	//            :class="[prefixCls + '-time-picker-menus']">
-	//         <div :class="[prefixCls + '-time-picker-panel']">
-	//           <ul v-el:h :class="time-hours" @mouseover="selection('H')">
-	//             <li v-for="index in 24" v-if="disabledHours().indexOf(index) < 0" :class="{selected: hour === index}" @click="chooseHour(index, $event)">{{index | leftPad}}</li>
-	//           </ul>
-	//         </div>
-	//         <div :class="[prefixCls + '-time-picker-panel']">
-	//           <ul v-el:m class="time-minute" @mouseover="selection('M')">
-	//             <li v-for="index in 59" v-if="disabledMinutes().indexOf(index) < 0" :class="{selected: minute === index}" @click="chooseMinute(index, $event)">{{index | leftPad}}</li>
-	//           </ul>
-	//         </div>
-	//         <div :class="[prefixCls + '-time-picker-panel']" @mouseover="selection('S')">
-	//           <ul v-el:s class="time-seconds">
-	//             <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0" :class="{selected: second === index}" @click="chooseSecond(index, $event)">{{index | leftPad}}</li>
-	//           </ul>
-	//         </div>
-	//       </div>
-	//     </trigger>
-	//   </div>
-	// </template>
-	// <script type="text/babel">
 	var scrollTo = function scrollTo(element, to, duration) {
 	  var requestAnimationFrame = window.requestAnimationFrame || function () {
 	    return setTimeout(arguments[0], 10);
@@ -6726,8 +6842,61 @@
 	    if (element.scrollTop === to) return;
 	    scrollTo(element, to, duration - 10);
 	  });
-	};
-	
+	}; // <template xmlns:v-el="http://www.w3.org/1999/xhtml">
+	//   <div :class="[prefixCls + '-time-picker']">
+	//     <trigger trigger="click"
+	//              placement="bottomLeft"
+	//              effect="slide"
+	//              popup-hide-when-click-outside
+	//              popup-cover-trigger
+	//              @toggolePopup="togglePopupHandler">
+	//       <div slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
+	//         <v-input readonly
+	//                  :value="value"
+	//                  :placeholder="placeholder"></v-input>
+	//         <icon type="time"></icon>
+	//       </div>
+	//       <div slot="popup"
+	//            :class="[prefixCls + '-time-picker-menus']">
+	//         <div>
+	//           <v-input readonly
+	//                    v-el:picker-toggler
+	//                    :class="[prefixCls + '-time-picker-input']"
+	//                    :value="value"
+	//                    :placeholder="placeholder"></v-input>
+	//         </div>
+	//         <div :class="[prefixCls + '-time-picker-panel']">
+	//           <ul v-el:h
+	//             :class="time-hours" @mouseover="selection('H')">
+	//             <li v-for="index in 24"
+	//               v-if="disabledHours().indexOf(index) < 0"
+	//               :class="{selected: hour === index}"
+	//               @click="chooseHour(index, $event)">{{index | leftPad}}
+	//             </li>
+	//           </ul>
+	//         </div>
+	//         <div :class="[prefixCls + '-time-picker-panel']">
+	//           <ul v-el:m class="time-minute" @mouseover="selection('M')">
+	//             <li v-for="index in 59"
+	//               v-if="disabledMinutes().indexOf(index) < 0"
+	//               :class="{selected: minute === index}"
+	//               @click="chooseMinute(index, $event)">{{index | leftPad}}
+	//             </li>
+	//           </ul>
+	//         </div>
+	//         <div :class="[prefixCls + '-time-picker-panel']" @mouseover="selection('S')">
+	//           <ul v-el:s class="time-seconds">
+	//             <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0"
+	//               :class="{selected: second === index}"
+	//               @click="chooseSecond(index, $event)">{{index | leftPad}}
+	//             </li>
+	//           </ul>
+	//         </div>
+	//       </div>
+	//     </trigger>
+	//   </div>
+	// </template>
+	// <script type="text/babel">
 	exports.default = {
 	  mixins: [_GlobalMixin2.default],
 	
@@ -6771,7 +6940,8 @@
 	  },
 	  components: {
 	    vInput: _Input2.default,
-	    trigger: _Trigger2.default
+	    trigger: _Trigger2.default,
+	    icon: _Icon2.default
 	  },
 	  data: function data() {
 	    var now = new Date();
@@ -6803,20 +6973,6 @@
 	    },
 	    second: function second(index) {
 	      this.selectChoosed('s', index);
-	    }
-	  },
-	
-	  events: {
-	    'trigger-popup-toggle': function triggerPopupToggle(show) {
-	      var _this = this;
-	
-	      if (show) {
-	        this.$nextTick(function () {
-	          _this.selectChoosed('h', _this.hour, 1);
-	          _this.selectChoosed('m', _this.minute, 1);
-	          _this.selectChoosed('s', _this.second, 1);
-	        });
-	      }
 	    }
 	  },
 	
@@ -6871,6 +7027,17 @@
 	    },
 	    chooseSecond: function chooseSecond(index) {
 	      this.second = index;
+	    },
+	    togglePopupHandler: function togglePopupHandler(show) {
+	      var _this = this;
+	
+	      if (show) {
+	        this.$nextTick(function () {
+	          _this.selectChoosed('h', _this.hour, 1);
+	          _this.selectChoosed('m', _this.minute, 1);
+	          _this.selectChoosed('s', _this.second, 1);
+	        });
+	      }
 	    }
 	  }
 	};
@@ -6910,7 +7077,7 @@
 /* 241 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-time-picker']\">\n  <trigger trigger=\"click\" placement=\"bottomLeft\" effect=\"slide\" :popup-hide-when-click-outside=\"true\">\n    <span slot=\"trigger\" :class=\"[prefixCls + '-time-picker-toggler']\">\n      <v-input readonly\n               v-el:picker-toggler\n               :value=\"value\"\n               :placeholder=\"placeholder\"></v-input>\n    </span>\n    <div slot=\"popup\"\n         :class=\"[prefixCls + '-time-picker-menus']\">\n      <div :class=\"[prefixCls + '-time-picker-panel']\">\n        <ul v-el:h :class=\"time-hours\" @mouseover=\"selection('H')\">\n          <li v-for=\"index in 24\" v-if=\"disabledHours().indexOf(index) < 0\" :class=\"{selected: hour === index}\" @click=\"chooseHour(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\">\n        <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n          <li v-for=\"index in 59\" v-if=\"disabledMinutes().indexOf(index) < 0\" :class=\"{selected: minute === index}\" @click=\"chooseMinute(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\" @mouseover=\"selection('S')\">\n        <ul v-el:s class=\"time-seconds\">\n          <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\" :class=\"{selected: second === index}\" @click=\"chooseSecond(index, $event)\">{{index | leftPad}}</li>\n        </ul>\n      </div>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-time-picker']\">\n  <trigger trigger=\"click\"\n           placement=\"bottomLeft\"\n           effect=\"slide\"\n           popup-hide-when-click-outside\n           popup-cover-trigger\n           @toggolePopup=\"togglePopupHandler\">\n    <div slot=\"trigger\" :class=\"[prefixCls + '-time-picker-toggler']\">\n      <v-input readonly\n               :value=\"value\"\n               :placeholder=\"placeholder\"></v-input>\n      <icon type=\"time\"></icon>\n    </div>\n    <div slot=\"popup\"\n         :class=\"[prefixCls + '-time-picker-menus']\">\n      <div>\n        <v-input readonly\n                 v-el:picker-toggler\n                 :class=\"[prefixCls + '-time-picker-input']\"\n                 :value=\"value\"\n                 :placeholder=\"placeholder\"></v-input>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\">\n        <ul v-el:h\n          :class=\"time-hours\" @mouseover=\"selection('H')\">\n          <li v-for=\"index in 24\"\n            v-if=\"disabledHours().indexOf(index) < 0\"\n            :class=\"{selected: hour === index}\"\n            @click=\"chooseHour(index, $event)\">{{index | leftPad}}\n          </li>\n        </ul>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\">\n        <ul v-el:m class=\"time-minute\" @mouseover=\"selection('M')\">\n          <li v-for=\"index in 59\"\n            v-if=\"disabledMinutes().indexOf(index) < 0\"\n            :class=\"{selected: minute === index}\"\n            @click=\"chooseMinute(index, $event)\">{{index | leftPad}}\n          </li>\n        </ul>\n      </div>\n      <div :class=\"[prefixCls + '-time-picker-panel']\" @mouseover=\"selection('S')\">\n        <ul v-el:s class=\"time-seconds\">\n          <li v-for=\"index in 59\" v-if=\"disabledSeconds().indexOf(index) < 0\"\n            :class=\"{selected: second === index}\"\n            @click=\"chooseSecond(index, $event)\">{{index | leftPad}}\n          </li>\n        </ul>\n      </div>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 242 */
@@ -6974,11 +7141,11 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -6994,25 +7161,29 @@
 	
 	// <template>
 	//   <div :class="[prefixCls + '-datepicker']">
-	//     <trigger trigger="click" effect="slide" placement="bottomLeft" :show.sync="show">
+	//     <trigger trigger="click" effect="slide"
+	//     placement="bottomLeft"
+	//     :show.sync="show"
+	//     :disabled="disabled"
+	//     popup-hide-when-click-outside>
 	//       <div slot="trigger"
 	//            :class="[prefixCls + '-datepicker-toggle']">
 	//         <input :class="[prefixCls + '-datepicker-input']"
-	//         v-bind="{disabled:disabled}"
+	//         v-bind="{disabled: disabled}"
 	//         type="text"
-	//         value="value"
+	//         :value="value"
 	//         :placeholder="placeholder"
 	//         readonly />
 	//         <icon type="calendar"></icon>
 	//       </div>
-	//       <div slot="popup"
-	//            :class="[prefixCls + '-datepicker-calendar']">
+	//       <div slot="popup" :class="[prefixCls + '-datepicker-calendar']">
 	//         <calendar v-ref:calendar
-	//                   @change="selectChange"
-	//                   :value="value"
-	//                   :format="format"
-	//                   :locale="locale"
-	//                   :disabled-date="disabledDate"></calendar>
+	//           @change="selectChange"
+	//           :value="value"
+	//           :format="format"
+	//           :locale="locale"
+	//           :disabled-date="disabledDate">
+	//         </calendar>
 	//       </div>
 	//     </trigger>
 	//   </div>
@@ -7068,7 +7239,7 @@
 /* 245 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-datepicker']\">\n  <trigger trigger=\"click\" effect=\"slide\" placement=\"bottomLeft\" :show.sync=\"show\">\n    <div slot=\"trigger\"\n         :class=\"[prefixCls + '-datepicker-toggle']\">\n      <input :class=\"[prefixCls + '-datepicker-input']\"\n      v-bind=\"{disabled:disabled}\"\n      type=\"text\"\n      value=\"value\"\n      :placeholder=\"placeholder\"\n      readonly />\n      <icon type=\"calendar\"></icon>\n    </div>\n    <div slot=\"popup\"\n         :class=\"[prefixCls + '-datepicker-calendar']\">\n      <calendar v-ref:calendar\n                @change=\"selectChange\"\n                :value=\"value\"\n                :format=\"format\"\n                :locale=\"locale\"\n                :disabled-date=\"disabledDate\"></calendar>\n    </div>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-datepicker']\">\n  <trigger trigger=\"click\" effect=\"slide\"\n  placement=\"bottomLeft\"\n  :show.sync=\"show\"\n  :disabled=\"disabled\"\n  popup-hide-when-click-outside>\n    <div slot=\"trigger\"\n         :class=\"[prefixCls + '-datepicker-toggle']\">\n      <input :class=\"[prefixCls + '-datepicker-input']\"\n      v-bind=\"{disabled: disabled}\"\n      type=\"text\"\n      :value=\"value\"\n      :placeholder=\"placeholder\"\n      readonly />\n      <icon type=\"calendar\"></icon>\n    </div>\n    <div slot=\"popup\" :class=\"[prefixCls + '-datepicker-calendar']\">\n      <calendar v-ref:calendar\n        @change=\"selectChange\"\n        :value=\"value\"\n        :format=\"format\"\n        :locale=\"locale\"\n        :disabled-date=\"disabledDate\">\n      </calendar>\n    </div>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 246 */
@@ -7252,15 +7423,15 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Input = __webpack_require__(160);
+	var _Input = __webpack_require__(164);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -7541,9 +7712,7 @@
 	// <script type="text/ecmascript-6">
 	exports.default = {
 	  props: {
-	    title: {
-	      type: String
-	    },
+	    title: String,
 	    show: {
 	      require: true,
 	      type: Boolean
@@ -7554,19 +7723,9 @@
 	      type: Function,
 	      default: function _default() {}
 	    },
-	    effect: {
-	      type: String,
-	      default: null
-	    },
-	    backdrop: {
-	      type: Boolean
-	    },
-	    large: {
-	      type: Boolean
-	    },
-	    small: {
-	      type: Boolean
-	    },
+	    effect: String,
+	    backdrop: Boolean,
+	    small: Boolean,
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
@@ -7721,7 +7880,7 @@
 	//                 <div data-toggle="dropdown" @click="filterOpened = true">
 	//                   <icon type="filter" size="12"></icon>
 	//                 </div>
-	//                 <div name="dropdown-menu" v-show="filterOpened" transition="slide" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
+	//                 <div name="dropdown-menu" v-show="filterOpened" slot="dropdown-menu" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
 	//                   <ul>
 	//                     <li v-for="filter in column.filters">
 	//                     <label>
@@ -8038,8 +8197,8 @@
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var getKeys  = __webpack_require__(108)
-	  , gOPS     = __webpack_require__(192)
-	  , pIE      = __webpack_require__(193)
+	  , gOPS     = __webpack_require__(196)
+	  , pIE      = __webpack_require__(197)
 	  , toObject = __webpack_require__(124)
 	  , IObject  = __webpack_require__(111)
 	  , $assign  = Object.assign;
@@ -8242,13 +8401,11 @@
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
-	var _Jumper = __webpack_require__(272);
-	
-	var _Jumper2 = _interopRequireDefault(_Jumper);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_Pagination2.default.Jumper = _Jumper2.default;
+	// import Jumper from './Jumper.vue'
+	
+	// Pagination.Jumper = Jumper
 	
 	exports.default = _Pagination2.default;
 
@@ -8886,7 +9043,7 @@
 /* 282 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-table', prefixCls + '-table-'+ size, loading && (prefixCls + '-table-loading')]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container', fixedHeader && (prefixCls + '-table-fixed-header')]\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{{column['title']}}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" transition=\"slide\" :class=\"[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" :class=\"[prefixCls + '-table-sorter']\">\n              <icon type=\"caretup\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"[sorderOrder[$index] == 'ascend' && (prefixCls + '-table-active')]\"></icon>\n              <icon type=\"caretdown\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"[sorderOrder[$index] == 'descend' && (prefixCls + '-table-active')]\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + '-table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-show=\"pagination && pagination.total > 0\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination v-ref:pager :total=\"pagination.total\" :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\" @pagination-size-change=\"changeSize\"></pagination>\n  </div>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-table', prefixCls + '-table-'+ size, loading && (prefixCls + '-table-loading')]\">\n  <spin size=\"sm\" v-if=\"loading\"></spin>\n  <!-- <table :class=\"['atui-table-fixed-header','atui-table']\" v-if=\"fixedHeader\">\n</table> -->\n  <div :class=\"[prefixCls + '-table-container', fixedHeader && (prefixCls + '-table-fixed-header')]\">\n    <table>\n      <colgroup>\n        <col v-if=\"rowSelection\"></col>\n        <col v-for=\"column in columns\" :width=\"column.width\"></col>\n      </colgroup>\n      <thead>\n        <tr>\n          <th v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input v-if=\"dataSource && dataSource.length\" type=\"checkbox\" v-bind=\"{checked:isCheckedAll,disabled:isDisabledAll}\" @change=\"onCheckAll\"\n            />\n          </th>\n          <th v-for=\"column in columns\" :width=\"column.width\">\n            {{{column['title']}}}\n            <dropdown v-if=\"column.filters\" data-toggle=\"dropdown\" :open=\"filterOpened\">\n              <div data-toggle=\"dropdown\" @click=\"filterOpened = true\">\n                <icon type=\"filter\" size=\"12\"></icon>\n              </div>\n              <div name=\"dropdown-menu\" v-show=\"filterOpened\" slot=\"dropdown-menu\" :class=\"[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']\">\n                <ul>\n                  <li v-for=\"filter in column.filters\">\n                  <label>\n                    <input :type=\"column.filterMultiple === false ? 'radio' : 'checkbox' \" :value=\"filter.value\" v-model=\"filters[column.dataIndex]\" />{{filter.text}}\n                  </label>\n                  </li>\n                </ul>\n                <div :class=\"[prefixCls + '-table-filter-dropdown-btns']\">\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link confirm']\" @click=\"onFilter(column)\">确定</a>\n                  <a :class=\"[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']\" @click=\"resetFilter(column)\">重置</a>\n                </div>\n              </div>\n\n            </dropdown>\n            <div v-if=\"dataSource && dataSource.length && column.sorter\" :class=\"[prefixCls + '-table-sorter']\">\n              <icon type=\"caretup\" size=\"10\" @click=\"sortAction(column,$index,'ascend')\" :class=\"[sorderOrder[$index] == 'ascend' && (prefixCls + '-table-active')]\"></icon>\n              <icon type=\"caretdown\" size=\"10\" @click=\"sortAction(column,$index,'descend')\" :class=\"[sorderOrder[$index] == 'descend' && (prefixCls + '-table-active')]\"></icon>\n            </div>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-if=\"!dataSource || !dataSource.length\">\n          <td colspan=\"20\" style=\"text-align: center;\" :class=\"[prefixCls + '-table-empty']\">{{noDataTip}}</td>\n        </tr>\n        <tr v-for=\"(rowIndex, record) in dataSource\" :track-by=\"$index\">\n          <td v-if=\"rowSelection\" :class=\"[prefixCls + '-table-selection-column']\">\n            <input type=\"checkbox\" v-model=\"checkedValues\" :value=\"record[rowKey]\" @change.stop=\"onCheckOne($event,record)\" v-bind=\"rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)\"\n            />\n          </td>\n          <td v-for=\"column in columns\">\n            <template v-if=\"column.render && record\">\n              {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}\n            </template>\n            <template v-else>\n              {{record[column.dataIndex]}}\n            </template>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-show=\"pagination && pagination.total > 0\" :class=\"[prefixCls + '-table-pagination']\">\n    <pagination v-ref:pager :total=\"pagination.total\" :show-jumper=\"true\" :show-size-changer=\"true\" @pagination-page-change=\"changePage\" @pagination-size-change=\"changeSize\"></pagination>\n  </div>\n</div>\n";
 
 /***/ },
 /* 283 */
@@ -9375,7 +9532,7 @@
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _EventListener = __webpack_require__(171);
+	var _EventListener = __webpack_require__(175);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -9679,7 +9836,7 @@
 	  value: true
 	});
 	
-	var _EventListener = __webpack_require__(171);
+	var _EventListener = __webpack_require__(175);
 	
 	var _EventListener2 = _interopRequireDefault(_EventListener);
 	
@@ -10254,11 +10411,11 @@
 	  value: true
 	});
 	
-	var _GlobalMixin = __webpack_require__(167);
+	var _GlobalMixin = __webpack_require__(171);
 	
 	var _GlobalMixin2 = _interopRequireDefault(_GlobalMixin);
 	
-	var _Trigger = __webpack_require__(168);
+	var _Trigger = __webpack_require__(172);
 	
 	var _Trigger2 = _interopRequireDefault(_Trigger);
 	
@@ -10266,13 +10423,13 @@
 	
 	// <template>
 	//   <div :class="[prefixCls + '-popover-cont']">
-	//     <trigger :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover">
+	//     <trigger :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover" :popup-always-show="alwaysShow">
 	//       <slot slot="trigger"></slot>
 	//       <slot slot="popup" name="popup" role="popover">
 	//         <div :class="[prefixCls + '-popover-arrow']"></div>
-	//         <h3 :class="[prefixCls + '-popover-title']" v-show="header && title">{{title}}</h3>
+	//         <h3 :class="[prefixCls + '-popover-title']" v-show="showHeader && title">{{title}}</h3>
 	//         <div :class="[prefixCls + '-popover-content']">
-	//           {{content}}
+	//           {{{content}}}
 	//         </div>
 	//       </slot>
 	//     </trigger>
@@ -10288,23 +10445,16 @@
 	  },
 	
 	  props: {
-	    trigger: {
-	      type: String
-	    },
-	    effect: {
-	      type: String
-	    },
-	    placement: {
-	      type: String
-	    },
-	    title: {
-	      type: String
-	    },
-	    content: [String, Number],
-	    header: {
+	    trigger: String,
+	    effect: String,
+	    placement: String,
+	    title: String,
+	    content: String,
+	    showHeader: {
 	      type: Boolean,
 	      default: true
-	    }
+	    },
+	    alwaysShow: Boolean
 	  }
 	};
 	// </script>
@@ -10315,7 +10465,7 @@
 /* 317 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"[prefixCls + '-popover-cont']\">\n  <trigger :trigger=\"trigger\" :effect=\"effect\" :placement=\"placement\" popup-cls=\"popover\">\n    <slot slot=\"trigger\"></slot>\n    <slot slot=\"popup\" name=\"popup\" role=\"popover\">\n      <div :class=\"[prefixCls + '-popover-arrow']\"></div>\n      <h3 :class=\"[prefixCls + '-popover-title']\" v-show=\"header && title\">{{title}}</h3>\n      <div :class=\"[prefixCls + '-popover-content']\">\n        {{content}}\n      </div>\n    </slot>\n  </trigger>\n</div>\n";
+	module.exports = "\n<div :class=\"[prefixCls + '-popover-cont']\">\n  <trigger :trigger=\"trigger\" :effect=\"effect\" :placement=\"placement\" popup-cls=\"popover\" :popup-always-show=\"alwaysShow\">\n    <slot slot=\"trigger\"></slot>\n    <slot slot=\"popup\" name=\"popup\" role=\"popover\">\n      <div :class=\"[prefixCls + '-popover-arrow']\"></div>\n      <h3 :class=\"[prefixCls + '-popover-title']\" v-show=\"showHeader && title\">{{title}}</h3>\n      <div :class=\"[prefixCls + '-popover-content']\">\n        {{{content}}}\n      </div>\n    </slot>\n  </trigger>\n</div>\n";
 
 /***/ },
 /* 318 */
@@ -10751,10 +10901,6 @@
 	      type: Number,
 	      default: 0
 	    },
-	    color: {
-	      type: String,
-	      default: '#ff7500'
-	    },
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
@@ -10908,7 +11054,6 @@
 	    stepNumber: Number,
 	    lastStep: Boolean,
 	    tailWidth: String,
-	    color: String,
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
@@ -10943,21 +11088,18 @@
 	//    <div v-if="!lastStep"
 	//         :class="[prefixCls + '-step-tail']">
 	//      <i>
-	//       <i :style="{ backgroundColor: color }"></i>
 	//      </i>
 	//    </div>
 	//    <div :class="[prefixCls + '-step-head']">
 	//      <div :class="[prefixCls + '-step-head-inner']">
-	//       <span v-if="status !== 'finish'"
-	//             :class="[prefixCls + '-step-icon']"
-	//         :style="{
-	//          borderColor: status==='process'?color: '#e9e9e9',
-	//          backgroundColor: status==='process'?color: '#fff'}">
+	//       <span
+	//         v-if="status !== 'finish'"
+	//         :class="[prefixCls + '-step-icon']">
 	//         {{ stepNumber }}
 	//       </span>
 	//       <span v-else
 	//             :class="[prefixCls + '-step-finish-icon']">
-	//         <icon type="success" size="28" :color="color"></icon>
+	//         <icon type="success" size="28"></icon>
 	//       </span>
 	//      </div>
 	//    </div>
@@ -10974,7 +11116,7 @@
 /* 331 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"stepClassObj\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\"\n      :class=\"[prefixCls + '-step-tail']\">\n   <i>\n    <i :style=\"{ backgroundColor: color }\"></i>\n   </i>\n </div>\n <div :class=\"[prefixCls + '-step-head']\">\n   <div :class=\"[prefixCls + '-step-head-inner']\">\n    <span v-if=\"status !== 'finish'\"\n          :class=\"[prefixCls + '-step-icon']\"\n      :style=\"{\n       borderColor: status==='process'?color: '#e9e9e9',\n       backgroundColor: status==='process'?color: '#fff'}\">\n      {{ stepNumber }}\n    </span>\n    <span v-else\n          :class=\"[prefixCls + '-step-finish-icon']\">\n      <icon type=\"success\" size=\"28\" :color=\"color\"></icon>\n    </span>\n   </div>\n </div>\n <div :class=\"[prefixCls + '-step-main']\">\n   <div :class=\"[prefixCls + '-step-main-title']\">{{ title }}</div>\n   <div :class=\"[prefixCls + '-step-main-description']\">{{ description }}</div>\n </div>\n</div>\n";
+	module.exports = "\n<div :class=\"stepClassObj\" :style=\"{'width': tailWidth}\">\n <div v-if=\"!lastStep\"\n      :class=\"[prefixCls + '-step-tail']\">\n   <i>\n   </i>\n </div>\n <div :class=\"[prefixCls + '-step-head']\">\n   <div :class=\"[prefixCls + '-step-head-inner']\">\n    <span\n      v-if=\"status !== 'finish'\"\n      :class=\"[prefixCls + '-step-icon']\">\n      {{ stepNumber }}\n    </span>\n    <span v-else\n          :class=\"[prefixCls + '-step-finish-icon']\">\n      <icon type=\"success\" size=\"28\"></icon>\n    </span>\n   </div>\n </div>\n <div :class=\"[prefixCls + '-step-main']\">\n   <div :class=\"[prefixCls + '-step-main-title']\">{{ title }}</div>\n   <div :class=\"[prefixCls + '-step-main-description']\">{{ description }}</div>\n </div>\n</div>\n";
 
 /***/ },
 /* 332 */
@@ -11046,12 +11188,8 @@
 	
 	exports.default = {
 	  props: {
-	    checkable: {
-	      type: Boolean
-	    },
-	    dataSource: {
-	      type: Object
-	    },
+	    checkable: Boolean,
+	    dataSource: Object,
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
@@ -11287,7 +11425,6 @@
 	      default: 'atui'
 	    },
 	    openOne: Boolean,
-	    defaultOpenKeys: Array,
 	    selectedKey: String
 	  },
 	  ready: function ready() {
@@ -11354,7 +11491,7 @@
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(177);
+	var _typeof2 = __webpack_require__(181);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -11675,7 +11812,7 @@
 	// <script type="text/babel">
 	exports.default = {
 	  props: {
-	    slash: {
+	    symbol: {
 	      type: String,
 	      default: '/'
 	    },
@@ -11687,7 +11824,7 @@
 	  ready: function ready() {
 	    var me = this;
 	    me.$children.forEach(function (child) {
-	      child.slash = me.slash;
+	      child.symbol = me.symbol;
 	    });
 	  }
 	};
@@ -11749,7 +11886,7 @@
 	//           :class="[prefixCls + '-breadcrumb-link']">
 	// 			<slot></slot>
 	// 		</span>
-	// 		<span :class="[prefixCls + '-breadcrumb-slash']">{{ slash }}</span>
+	// 		<span :class="[prefixCls + '-breadcrumb-symbol']">{{ symbol }}</span>
 	// 	</span>
 	// </template>
 	//
@@ -11757,7 +11894,7 @@
 	exports.default = {
 	  props: {
 	    href: String,
-	    slash: String,
+	    symbol: String,
 	    prefixCls: {
 	      type: String,
 	      default: 'atui'
@@ -11772,7 +11909,7 @@
 /* 358 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\t<span :class=\"[prefixCls + '-breadcrumb']\">\n\t\t<a v-if=\"href\"\n       :href=\"href\"\n       :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</a>\n\t\t<span v-else\n          :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</span>\n\t\t<span :class=\"[prefixCls + '-breadcrumb-slash']\">{{ slash }}</span>\n\t</span>\n";
+	module.exports = "\n\t<span :class=\"[prefixCls + '-breadcrumb']\">\n\t\t<a v-if=\"href\"\n       :href=\"href\"\n       :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</a>\n\t\t<span v-else\n          :class=\"[prefixCls + '-breadcrumb-link']\">\n\t\t\t<slot></slot>\n\t\t</span>\n\t\t<span :class=\"[prefixCls + '-breadcrumb-symbol']\">{{ symbol }}</span>\n\t</span>\n";
 
 /***/ },
 /* 359 */
@@ -11807,7 +11944,7 @@
 /* 361 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"getting-started\">\n\n    <h2>安装方法：CommonJS</h2>\n    <pre><code class=\"language-javascript\">\n$ tnpm install @ali/vue-component --save-dev\n\n// css引入 greater-blue | tao-orange | or tmall-red (推荐)\nimport '@ali/vue-component/dist/greater-blue.css'\n\n// 或less引入\nimport '@ali/vue-component/style/themes/greater-blue.css'\n\n// 引入组件\nimport { Alert } from '@ali/vue-component'\n\n// 如果没有使用rollup或webpak2.0，整个组件JS都会打包进去，使用如下方式可按需打包\nimport Alert from '@ali/vue-component/src/components/Alert'\n\nnew Vue({\n  components: {\n    Alert\n  }\n})\n    </code></pre>\n    <h3>浏览器引用</h3>\n    <pre><code class=\"language-markup\">\n&lt;script src=&quot;path/to/vue.js&quot;&gt;&lt;/script&gt;\n&lt;script src=&quot;path/to/atui.js&quot;&gt;&lt;/script&gt;\n&lt;script&gt;\n  var alert = VueComponent.alert\n&lt;/script&gt;\n    </code></pre>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"getting-started\">\n\n    <h2>安装方法：CommonJS</h2>\n    <pre><code class=\"language-javascript\">\n$ tnpm install @ali/vue-component --save-dev\n\n// css引入 greater-blue | tao-orange | or tmall-red (推荐)\nimport '@ali/atui/dist/greater-blue.css'\n\n// 或less引入\nimport '@ali/atui/style/themes/greater-blue.css'\n\n// 引入组件\nimport { Alert } from '@ali/atui'\n\n// 如果没有使用rollup或webpak2.0，整个组件JS都会打包进去，使用如下方式可按需打包\nimport Alert from '@ali/atui/src/components/Alert'\n\nnew Vue({\n  components: {\n    Alert\n  }\n})\n    </code></pre>\n    <h3>浏览器引用</h3>\n    <pre><code class=\"language-markup\">\n&lt;script src=&quot;path/to/vue.js&quot;&gt;&lt;/script&gt;\n&lt;script src=&quot;path/to/atui.js&quot;&gt;&lt;/script&gt;\n&lt;script&gt;\n  var alert = VueComponent.alert\n&lt;/script&gt;\n    </code></pre>\n  </div>\n";
 
 /***/ },
 /* 362 */
@@ -12527,8 +12664,11 @@
 	//         <form-item required label="姓名：" :valid-status="form1.nameStatus" label-col="4" has-icon :tips="form1.nameTips">
 	//           <v-input type="text" placeholder="请输入您的姓名"  :value.sync="username" required required-tips="用户名为必填项" maxlength="12" minlength="2" minlength-tips="用户名不能少于2个字符" :valid-status.sync="form1.nameStatus" :tips.sync="form1.nameTips" :valid-result.sync="form1.nameValidResult"></v-input>
 	//         </form-item>
-	//         <form-item required label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon :tips="form1.telTips">
+	//         <form-item label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon :tips="form1.telTips">
 	//           <v-input type="tel" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel" :valid-result.sync="form1.telValidResult" :rules="['isNumber','isPhone']" :tips.sync="form1.telTips"></v-input>
+	//         </form-item>
+	//         <form-item required label="邮箱：" :valid-status="form1.emailStatus" label-col="4" has-icon :tips="form1.emailTips" tips-mode="popup" description="tishitixiahhsdhishdishid">
+	//           <v-input type="text" placeholder="请输入您的邮箱" :valid-status.sync="form1.emailStatus" :value.sync="email" :valid-result.sync="form1.emailValidResult" :rules="['required','/^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i']" :tips.sync="form1.emailTips", :rules-tips="form1.emailRulesTips"></v-input>
 	//         </form-item>
 	//       </v-form>
 	//     </div>
@@ -12568,6 +12708,9 @@
 	//   </form-item>
 	//   <form-item required label="电话：" :valid-status="form1.telStatus" label-col="4" has-icon :tips="form1.telTips">
 	//     <v-input type="tel" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel" :valid-result.sync="form1.telValidResult" :rules="['isNumber','isPhone']" :tips.sync="form1.telTips"></v-input>
+	//   </form-item>
+	//   <form-item required label="邮箱：" :valid-status="form1.emailStatus" label-col="4" has-icon :tips="form1.emailTips">
+	//     <v-input type="text" placeholder="请输入您的邮箱" :valid-status.sync="form1.emailStatus" :value.sync="email" :valid-result.sync="form1.emailValidResult" :rules="['required','/^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i']" :tips.sync="form1.emailTips", :rules-tips="form1.emailRulesTips"></v-input>
 	//   </form-item>
 	// </v-form>
 	// </script></code></pre>
@@ -12625,6 +12768,12 @@
 	//           <td>验证非空，也可放在rules参数中</td>
 	//         </tr>
 	//         <tr>
+	//           <td>requiredTips</td>
+	//           <td></td>
+	//           <td></td>
+	//           <td>非空验证失败时提示文案</td>
+	//         </tr>
+	//         <tr>
 	//           <td>maxlength</td>
 	//           <td><code>String</code></td>
 	//           <td></td>
@@ -12655,6 +12804,12 @@
 	//           <td>输入框验证规则，内部现已集成required|isPhone|isNumber|isTelephone|isEmail</td>
 	//         </tr>
 	//         <tr>
+	//           <td>rulesTips</td>
+	//           <td><code>Array</code></td>
+	//           <td></td>
+	//           <td>输入框验证规则验证失败时提示文案，文案配置顺序要和rules一一对应</td>
+	//         </tr>
+	//         <tr>
 	//           <td>valid-status</td>
 	//           <td><code>String</code></td>
 	//           <td></td>
@@ -12664,7 +12819,7 @@
 	//           <td>tips</td>
 	//           <td><code>String</code></td>
 	//           <td></td>
-	//           <td>实时获取当前验证提示</td>
+	//           <td>实时获取当前验证提示，该属性如有默认值，所有验证规则的验证错误提示都会失效</td>
 	//         </tr>
 	//         <tr>
 	//           <td>valid-result</td>
@@ -12695,7 +12850,11 @@
 	        nameTips: '',
 	        telValidResult: {},
 	        telStatus: '',
-	        telTips: '输入手机号码格式错误'
+	        telTips: '输入手机号码格式错误123',
+	        emailValidResult: {},
+	        emailStatus: '',
+	        emailTips: '',
+	        emailRulesTips: ['请输入内容', '正则验证失败']
 	      }
 	    };
 	  }
@@ -12709,7 +12868,7 @@
 /* 377 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"input\">\n    <h3 class=\"page-header\"><a href=\"#input\" class=\"anchor\">Input 输入框</a></h3>\n    <div class=\"bs-example\">\n      <div>\n        <v-input large type=\"text\" placeholder=\"输入框－大尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input type=\"text\" placeholder=\"输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input small type=\"text\" placeholder=\"输入框－小尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input disabled type=\"text\" placeholder=\"禁用输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input valid-status=\"error\" type=\"text\" placeholder=\"error输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input valid-status=\"success\" type=\"text\" placeholder=\"success输入框－默认尺寸\"></v-input>\n      </div>\n      <h4>带有验证功能的输入框</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n          <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n        </form-item>\n        <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n          <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n        </form-item>\n      </v-form>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<!-- input输入框，使用封装的Input组件，通过添加属性，呈现样式 -->\n<!-- 大号（large）、中号（默认）、小号（small）、禁用（disabled）、错误提示（error）、成功提示（success）-->\n<!-- 有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->\n<!-- 通过属性placeholder控制输入框预期值的提示信息 -->\n<!-- 通过属性type控制输入框类型，radio和checkbox不在该组件处理范围，会单独处理，请关注Radio组件和Checkbox组件 -->\n<div>\n  <v-input large type=\"text\" placeholder=\"输入框－大尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input type=\"text\" placeholder=\"输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input small type=\"text\" placeholder=\"输入框－小尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input disabled type=\"text\" placeholder=\"禁用输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input valid-status=\"error\" type=\"text\" placeholder=\"error输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input valid-status=\"success\" type=\"text\" placeholder=\"success输入框－默认尺寸\"></v-input>\n</div>\n<h4>带有验证功能的输入框</h4>\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n  </form-item>\n  <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n    <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n  </form-item>\n</v-form>\n</script></code></pre>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>输入框预期值的提示信息</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>输入框尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>输入框尺寸，小</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，禁用</td>\n        </tr>\n        <tr>\n          <td>error</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，输入验证失败</td>\n        </tr>\n        <tr>\n          <td>success</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，输入验证成功</td>\n        </tr>\n        <tr>\n          <td>required</td>\n          <td></td>\n          <td></td>\n          <td>验证非空，也可放在rules参数中</td>\n        </tr>\n        <tr>\n          <td>maxlength</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入字符最大长度</td>\n        </tr>\n        <tr>\n          <td>maxlength-tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>最大长度验证失败时提示文案</td>\n        </tr>\n        <tr>\n          <td>minlength</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入字符最小长度</td>\n        </tr>\n        <tr>\n          <td>minlength-tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>最小长度验证失败时提示文案</td>\n        </tr>\n        <tr>\n          <td>rules</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>输入框验证规则，内部现已集成required|isPhone|isNumber|isTelephone|isEmail</td>\n        </tr>\n        <tr>\n          <td>valid-status</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>实时获取当前验证状态</td>\n        </tr>\n        <tr>\n          <td>tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>实时获取当前验证提示</td>\n        </tr>\n        <tr>\n          <td>valid-result</td>\n          <td><code>Object</code></td>\n          <td></td>\n          <td>实时获取当前所有验证条件的验证结果</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"input\">\n    <h3 class=\"page-header\"><a href=\"#input\" class=\"anchor\">Input 输入框</a></h3>\n    <div class=\"bs-example\">\n      <div>\n        <v-input large type=\"text\" placeholder=\"输入框－大尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input type=\"text\" placeholder=\"输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input small type=\"text\" placeholder=\"输入框－小尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input disabled type=\"text\" placeholder=\"禁用输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input valid-status=\"error\" type=\"text\" placeholder=\"error输入框－默认尺寸\"></v-input>\n      </div>\n      <br>\n      <div>\n        <v-input valid-status=\"success\" type=\"text\" placeholder=\"success输入框－默认尺寸\"></v-input>\n      </div>\n      <h4>带有验证功能的输入框</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n          <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n        </form-item>\n        <form-item label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n          <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n        </form-item>\n        <form-item required label=\"邮箱：\" :valid-status=\"form1.emailStatus\" label-col=\"4\" has-icon :tips=\"form1.emailTips\" tips-mode=\"popup\" description=\"tishitixiahhsdhishdishid\">\n          <v-input type=\"text\" placeholder=\"请输入您的邮箱\" :valid-status.sync=\"form1.emailStatus\" :value.sync=\"email\" :valid-result.sync=\"form1.emailValidResult\" :rules=\"['required','/^[a-z0-9](\\w|\\.|-)*@([a-z0-9]+-?[a-z0-9]+\\.){1,3}[a-z]{2,4}$/i']\" :tips.sync=\"form1.emailTips\", :rules-tips=\"form1.emailRulesTips\"></v-input>\n        </form-item>\n      </v-form>\n    </div>\n<pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<!-- input输入框，使用封装的Input组件，通过添加属性，呈现样式 -->\n<!-- 大号（large）、中号（默认）、小号（small）、禁用（disabled）、错误提示（error）、成功提示（success）-->\n<!-- 有主按钮（primary）、次按钮（secondary）、三级按钮（tertiary）、失效按钮（disabled）和文字型按钮（text）-->\n<!-- 通过属性placeholder控制输入框预期值的提示信息 -->\n<!-- 通过属性type控制输入框类型，radio和checkbox不在该组件处理范围，会单独处理，请关注Radio组件和Checkbox组件 -->\n<div>\n  <v-input large type=\"text\" placeholder=\"输入框－大尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input type=\"text\" placeholder=\"输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input small type=\"text\" placeholder=\"输入框－小尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input disabled type=\"text\" placeholder=\"禁用输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input valid-status=\"error\" type=\"text\" placeholder=\"error输入框－默认尺寸\"></v-input>\n</div>\n<br>\n<div>\n  <v-input valid-status=\"success\" type=\"text\" placeholder=\"success输入框－默认尺寸\"></v-input>\n</div>\n<h4>带有验证功能的输入框</h4>\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n  </form-item>\n  <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n    <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n  </form-item>\n  <form-item required label=\"邮箱：\" :valid-status=\"form1.emailStatus\" label-col=\"4\" has-icon :tips=\"form1.emailTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的邮箱\" :valid-status.sync=\"form1.emailStatus\" :value.sync=\"email\" :valid-result.sync=\"form1.emailValidResult\" :rules=\"['required','/^[a-z0-9](\\w|\\.|-)*@([a-z0-9]+-?[a-z0-9]+\\.){1,3}[a-z]{2,4}$/i']\" :tips.sync=\"form1.emailTips\", :rules-tips=\"form1.emailRulesTips\"></v-input>\n  </form-item>\n</v-form>\n</script></code></pre>\n    <h4>参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>placeholder</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>输入框预期值的提示信息</td>\n        </tr>\n        <tr>\n          <td>large</td>\n          <td></td>\n          <td></td>\n          <td>输入框尺寸，大</td>\n        </tr>\n        <tr>\n          <td>small</td>\n          <td></td>\n          <td></td>\n          <td>输入框尺寸，小</td>\n        </tr>\n        <tr>\n          <td>disabled</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，禁用</td>\n        </tr>\n        <tr>\n          <td>error</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，输入验证失败</td>\n        </tr>\n        <tr>\n          <td>success</td>\n          <td></td>\n          <td></td>\n          <td>输入框状态，输入验证成功</td>\n        </tr>\n        <tr>\n          <td>required</td>\n          <td></td>\n          <td></td>\n          <td>验证非空，也可放在rules参数中</td>\n        </tr>\n        <tr>\n          <td>requiredTips</td>\n          <td></td>\n          <td></td>\n          <td>非空验证失败时提示文案</td>\n        </tr>\n        <tr>\n          <td>maxlength</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入字符最大长度</td>\n        </tr>\n        <tr>\n          <td>maxlength-tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>最大长度验证失败时提示文案</td>\n        </tr>\n        <tr>\n          <td>minlength</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入字符最小长度</td>\n        </tr>\n        <tr>\n          <td>minlength-tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>最小长度验证失败时提示文案</td>\n        </tr>\n        <tr>\n          <td>rules</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>输入框验证规则，内部现已集成required|isPhone|isNumber|isTelephone|isEmail</td>\n        </tr>\n        <tr>\n          <td>rulesTips</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>输入框验证规则验证失败时提示文案，文案配置顺序要和rules一一对应</td>\n        </tr>\n        <tr>\n          <td>valid-status</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>实时获取当前验证状态</td>\n        </tr>\n        <tr>\n          <td>tips</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>实时获取当前验证提示，该属性如有默认值，所有验证规则的验证错误提示都会失效</td>\n        </tr>\n        <tr>\n          <td>valid-result</td>\n          <td><code>Object</code></td>\n          <td></td>\n          <td>实时获取当前所有验证条件的验证结果</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 378 */
@@ -13030,6 +13189,9 @@
 	//             <v-option value="芒果">芒果</v-option>
 	//           </v-select>
 	//         </form-item>
+	//         <form-item required label="模板内容" label-col="4" tips-mode="popup" :description="testDescription">
+	//           <v-textarea placeholder="变量格式：${name}; 示例：尊敬的${name}，您的快递已在飞奔的路上，将在今天$[time]送达您的手里，请留意查收。"></v-textarea>
+	//         </form-item>
 	//         <form-item label-col="4">
 	//           <v-button type="submit" primary>确定</v-button>
 	//           <v-button type="reset" tertiary value="重置条件"></v-button>
@@ -13236,7 +13398,8 @@
 	    vSelect: _src.Select,
 	    vOption: Option,
 	    vForm: _src.Form,
-	    FormItem: FormItem
+	    FormItem: FormItem,
+	    vTextarea: _src.Textarea
 	    // FormInput
 	  },
 	  data: function data() {
@@ -13252,7 +13415,8 @@
 	        telValidResult: {},
 	        telStatus: '',
 	        telTips: '输入手机号码格式错误'
-	      }
+	      },
+	      testDescription: '<ul>' + '<li>不支持营销内容、全变量/组合变量模板;例如:您好，${msg}</li>' + '<li>变量格式应如${name}，不能使用${email},${mobile},${id},${nick},${site}</li>' + '<li>请勿在变量中添加特殊符号,如: , . # / : - ，。</li>' + '<li>如有链接，请将已ICP备案的链接地址写于模板内容中，便于核实模板</li>' + '<li>内容无须添加签名,内容首尾不能添加[],【】符号,调用接口时传入签名即可</li>' + '<li>若签名/模板内容侵犯到第三方权益须获得第三方的真实授权,授权委托书等凭证上传管理中心</li>' + '<li>签名/模板申请规范详见 <a href="http://tb.cn/OKCGyWx">http://tb.cn/OKCGyWx</a></li>' + '<li>审计预计将在1个工作日内完成</li>' + '</ul>'
 	    };
 	  },
 	
@@ -13278,7 +13442,7 @@
 /* 383 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">Form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <h4>纵向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n          <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n        </form-item>\n        <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n          <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n        </form-item>\n        <form-item required label=\"性别\" label-col=\"4\">\n          <label><input type=\"radio\" name=\"sexy\" checked />男</label>\n          <label><input type=\"radio\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"性取向\" label-col=\"4\">\n          <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n          <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\" placeholder=\"选择类别\">\n            <v-option value=\"Apple\">苹果</v-option>\n            <v-option value=\"Banana\" disabled>Banana</v-option>\n            <v-option value=\"Cherry\">Cherry</v-option>\n            <v-option value=\"Orange\">OrangeText</v-option>\n            <v-option value=\"Grape\">Grape</v-option>\n            <v-option value=\"agg\">鸡蛋</v-option>\n            <v-option value=\"芒果\">芒果</v-option>\n          </v-select>\n        </form-item>\n        <form-item label-col=\"4\">\n          <v-button type=\"submit\" primary>确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n      <h4>横向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n          <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"0\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n纵向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n  </form-item>\n  <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon tips=\"form1.telTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\"></v-input>\n  </form-item>\n  <form-item required label=\"性别\" label-col=\"4\">\n    <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n    <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n横向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"联系人电话：\" :valid-status=\"telStatus\" item-col=\"8\" label-col=\"10\" has-icon tips=\"123\">\n    <v-input type=\"text\" placeholder=\"电话号码\" :valid-status=\"telStatus\" :value.sync=\"tel\" @click=\"clickFun\"></v-input>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n    <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"0\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n    <h4>FormItem组件参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>item-col</td>\n          <td><code>String</code></td>\n          <td><code>24</code></td>\n          <td>以24格为准，当前FormItem组件占的栅格列数</td>\n        </tr>\n        <tr>\n          <td>label</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>label域文案</td>\n        </tr>\n        <tr>\n          <td>label-col</td>\n          <td><code>String</code></td>\n          <td><code>7</code></td>\n          <td>以当前的FormItem组件为准，label域占的列数</td>\n        </tr>\n        <tr>\n          <td>wrapper-col</td>\n          <td></td>\n          <td><code>24-（label-col属性值）</code></td>\n          <td>以当前的FormItem组件为准，非label域占的列数</td>\n        </tr>\n        <tr>\n          <td>required</td>\n          <td></td>\n          <td></td>\n          <td>是否是必填项，配置后，会在label文案前加’*‘标识</td>\n        </tr>\n        <tr>\n          <td>tips</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>各种状态下的提示文案</td>\n        </tr>\n        <tr>\n          <td>valid-status</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>当前验证状态，有空,success,warning,error,validating</td>\n        </tr>\n        <tr>\n          <td>has-icon</td>\n          <td></td>\n          <td></td>\n          <td>配合validateStatus属性使用，是否展示校验状态图标</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n\n  <div class=\"bs-docs-section\" id=\"form\">\n    <h3 class=\"page-header\"><a href=\"#form\" class=\"anchor\">Form 表单 </a></h3>\n    <div class=\"bs-example\">\n      <h4>纵向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n          <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n        </form-item>\n        <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon :tips=\"form1.telTips\">\n          <v-input type=\"tel\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\" :valid-result.sync=\"form1.telValidResult\" :rules=\"['isNumber','isPhone']\" :tips.sync=\"form1.telTips\"></v-input>\n        </form-item>\n        <form-item required label=\"性别\" label-col=\"4\">\n          <label><input type=\"radio\" name=\"sexy\" checked />男</label>\n          <label><input type=\"radio\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"性取向\" label-col=\"4\">\n          <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n          <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n        </form-item>\n        <form-item required label=\"行业：\" label-col=\"4\">\n          <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\" placeholder=\"选择类别\">\n            <v-option value=\"Apple\">苹果</v-option>\n            <v-option value=\"Banana\" disabled>Banana</v-option>\n            <v-option value=\"Cherry\">Cherry</v-option>\n            <v-option value=\"Orange\">OrangeText</v-option>\n            <v-option value=\"Grape\">Grape</v-option>\n            <v-option value=\"agg\">鸡蛋</v-option>\n            <v-option value=\"芒果\">芒果</v-option>\n          </v-select>\n        </form-item>\n        <form-item required label=\"模板内容\" label-col=\"4\" tips-mode=\"popup\" :description=\"testDescription\">\n          <v-textarea placeholder=\"变量格式：${name}; 示例：尊敬的${name}，您的快递已在飞奔的路上，将在今天$[time]送达您的手里，请留意查收。\"></v-textarea>\n        </form-item>\n        <form-item label-col=\"4\">\n          <v-button type=\"submit\" primary>确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n      <h4>横向排列</h4>\n      <v-form action=\"aaa.do\" method=\"post\">\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n          <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n        </form-item>\n        <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n          <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n        </form-item>\n        <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n          <v-input placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n          <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n        </form-item>\n        <form-item required label-col=\"0\">\n          <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n        </form-item>\n        <form-item required label-col=\"4\">\n          <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n          <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n        </form-item>\n      </v-form>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n纵向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item required label=\"姓名：\" :valid-status=\"form1.nameStatus\" label-col=\"4\" has-icon :tips=\"form1.nameTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的姓名\"  :value.sync=\"username\" required required-tips=\"用户名为必填项\" maxlength=\"12\" minlength=\"2\" minlength-tips=\"用户名不能少于2个字符\" :valid-status.sync=\"form1.nameStatus\" :tips.sync=\"form1.nameTips\" :valid-result.sync=\"form1.nameValidResult\"></v-input>\n  </form-item>\n  <form-item required label=\"电话：\" :valid-status=\"form1.telStatus\" label-col=\"4\" has-icon tips=\"form1.telTips\">\n    <v-input type=\"text\" placeholder=\"请输入您的电话号码\" :valid-status.sync=\"form1.telStatus\" :value.sync=\"tel\"></v-input>\n  </form-item>\n  <form-item required label=\"性别\" label-col=\"4\">\n    <label><input type=\"checkbox\" name=\"sexy\" checked />男</label>\n    <label><input type=\"checkbox\" name=\"sexy\" />女</label>\n  </form-item>\n  <form-item required label=\"行业：\" label-col=\"4\">\n    <v-select :default-value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n横向排列\n<v-form action=\"aaa.do\" method=\"post\">\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item label=\"联系人电话：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"联系人电话：\" :valid-status=\"telStatus\" item-col=\"8\" label-col=\"10\" has-icon tips=\"123\">\n    <v-input type=\"text\" placeholder=\"电话号码\" :valid-status=\"telStatus\" :value.sync=\"tel\" @click=\"clickFun\"></v-input>\n  </form-item>\n  <form-item required label=\"应用名/网站名：\" item-col=\"8\" label-col=\"10\">\n    <v-input type=\"text\" placeholder=\"若还未上线可填无\"></v-input>\n  </form-item>\n  <form-item required label=\"行业：\" item-col=\"8\" label-col=\"10\">\n    <v-select :value.sync=\"arr\" :options=\"industry\" :close-on-select=\"true\"></v-select>\n  </form-item>\n  <form-item required label=\"电话号码：\" item-col=\"8\" label-col=\"10\">\n    <v-input placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"error\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"error\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label=\"电话号码：\" valid-status=\"success\" has-icon item-col=\"8\" label-col=\"10\" tips=\"请输入有效的电话号码\">\n    <v-input valid-status=\"success\" placeholder=\"请输入电话号码\"></v-input>\n  </form-item>\n  <form-item required label-col=\"0\">\n    <label><input type=\"checkbox\" />阅读并接受《用户协议》</label>\n  </form-item>\n  <form-item required label-col=\"4\">\n    <v-button type=\"submit\" primary @click=\"validFun\">确定</v-button>\n    <v-button type=\"reset\" tertiary value=\"重置条件\"></v-button>\n  </form-item>\n</v-form>\n    </script></code></pre>\n    </script>\n    </code>\n    <h4>FormItem组件参数</h4>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>参数名</th>\n          <th>类型</th>\n          <th>默认值</th>\n          <th>说明</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>item-col</td>\n          <td><code>String</code></td>\n          <td><code>24</code></td>\n          <td>以24格为准，当前FormItem组件占的栅格列数</td>\n        </tr>\n        <tr>\n          <td>label</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>label域文案</td>\n        </tr>\n        <tr>\n          <td>label-col</td>\n          <td><code>String</code></td>\n          <td><code>7</code></td>\n          <td>以当前的FormItem组件为准，label域占的列数</td>\n        </tr>\n        <tr>\n          <td>wrapper-col</td>\n          <td></td>\n          <td><code>24-（label-col属性值）</code></td>\n          <td>以当前的FormItem组件为准，非label域占的列数</td>\n        </tr>\n        <tr>\n          <td>required</td>\n          <td></td>\n          <td></td>\n          <td>是否是必填项，配置后，会在label文案前加’*‘标识</td>\n        </tr>\n        <tr>\n          <td>tips</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>各种状态下的提示文案</td>\n        </tr>\n        <tr>\n          <td>valid-status</td>\n          <td><code>String</code></td>\n          <td><code>空</code></td>\n          <td>当前验证状态，有空,success,warning,error,validating</td>\n        </tr>\n        <tr>\n          <td>has-icon</td>\n          <td></td>\n          <td></td>\n          <td>配合validateStatus属性使用，是否展示校验状态图标</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 384 */
@@ -14185,7 +14349,7 @@
 	//         </pre>
 	//       </p>
 	//       <calendar v-ref:calendar :value.sync="value" :disabled-date="disabledDate"
-	//       :format="format.toString()" :show-reset-button="reset" @change="selectChange"></calendar>
+	//       :format="format.toString()" @change="selectChange"></calendar>
 	//
 	//       <h4>格式化</h4>
 	//       <v-select :default-value.sync="format" >
@@ -14258,7 +14422,7 @@
 	  data: function data() {
 	    return {
 	      disabled: [],
-	      value: '6/06/2015',
+	      value: '07/07/2016',
 	      format: ['MMM/dd/yyyy'],
 	      disabledDate: function disabledDate(date) {
 	        if (!date) {
@@ -14288,7 +14452,7 @@
 /* 398 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"calendar\">\n    <h1 class=\"page-header\"><a href=\"#calendar\" class=\"anchor\">Calendar 日历</a></h1>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选择日期是: {{new Date(value).toString().slice(0, -23)}}\n        </pre>\n      </p>\n      <calendar v-ref:calendar :value.sync=\"value\" :disabled-date=\"disabledDate\"\n      :format=\"format.toString()\" :show-reset-button=\"reset\" @change=\"selectChange\"></calendar>\n\n      <h4>格式化</h4>\n      <v-select :default-value.sync=\"format\" >\n        <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n        <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n        <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n        <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n        <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n      </v-select>\n\n\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n    </script></code></pre>\n    <h2>Option</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n        <tr>\n          <td>format</td>\n          <td><code>String</code></td>\n          <td><code>MMMM/dd/yyyy</code></td>\n          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>\n        </tr>\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n        <tr>\n          <td>showResetButton</td>\n          <td><code>Boolean</code></td>\n          <td>false</td>\n          <td>是否显示清除日期按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"calendar\">\n    <h1 class=\"page-header\"><a href=\"#calendar\" class=\"anchor\">Calendar 日历</a></h1>\n    <div class=\"bs-example\">\n      <p>\n        <pre>\n选择日期是: {{new Date(value).toString().slice(0, -23)}}\n        </pre>\n      </p>\n      <calendar v-ref:calendar :value.sync=\"value\" :disabled-date=\"disabledDate\"\n      :format=\"format.toString()\" @change=\"selectChange\"></calendar>\n\n      <h4>格式化</h4>\n      <v-select :default-value.sync=\"format\" >\n        <v-option value=\"yyyy,MM,dd\">yyyy,MM,dd</v-option>\n        <v-option value=\"yyyy-MM-dd\">yyyy-MM-dd</v-option>\n        <v-option value=\"yyyy.MM.dd\">yyyy.MM.dd</v-option>\n        <v-option value=\"MMM/dd/yyyy\">MMM/dd/yyyy</v-option>\n        <v-option value=\"MMMM/dd/yyyy\">MMMM/dd/yyyy</v-option>\n      </v-select>\n\n\n\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n    </script></code></pre>\n    <h2>Option</h2>\n    <table class=\"atui-table table-bordered\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>value</td>\n          <td><code>String</code></td>\n          <td></td>\n          <td>输入框里的默认值</td>\n        </tr>\n        <tr>\n          <td>Width</td>\n          <td><code>String</code></td>\n          <td>200px</td>\n          <td>输入框的宽度</td>\n        </tr>\n        <tr>\n          <td>format</td>\n          <td><code>String</code></td>\n          <td><code>MMMM/dd/yyyy</code></td>\n          <td>显示格式， 可按照d, dd, M, MM ,MMM , MMMM, yyyy格式化.</td>\n        </tr>\n        <tr>\n          <td>disabledDaysOfWeek</td>\n          <td><code>Array</code></td>\n          <td></td>\n          <td>禁用一周的某一天. 按 0 到 6 .\n             禁用多天可用<code>逗号</code>分隔</td>\n        </tr>\n        <tr>\n          <td>showResetButton</td>\n          <td><code>Boolean</code></td>\n          <td>false</td>\n          <td>是否显示清除日期按钮</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n";
 
 /***/ },
 /* 399 */
@@ -17721,6 +17885,11 @@
 	//             <button class="atui-btn">Mouseenter</button>
 	//         </popover>
 	//       </p>
+	//       <p>
+	//         <popover effect="fade" content="我是内容，我是内容，我是内容" placement="right" :show="true" trigger="always">
+	//             <button class="atui-btn">always show</button>
+	//         </popover>
+	//       </p>
 	//       <popover effect="scale"
 	//       title="我是标题" content="我是内容，我是内容，我是内容" placement="bottom" trigger="focus">
 	//         <input type="text" class="form-control" placeholder="Focus">
@@ -17828,7 +17997,7 @@
 /* 460 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div class=\"bs-docs-section\" id=\"popover\">\n    <h3 class=\"page-header\"><a href=\"#popover\" class=\"anchor\">Popover 气泡</a></h3>\n    <div class=\"bs-example\">\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn \">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>No title</h4>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn\">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>Triger</h4>\n      <p>\n        <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n            <button class=\"atui-btn\">Mouseenter</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\"\n      title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </popover>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn \">Popover on top</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>No title</h4>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn\">Popover on top</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>Triger</h4>\n<p>\n  <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n      <button class=\"atui-btn\">Mouseenter</button>\n  </popover>\n</p>\n<popover effect=\"scale\"\ntitle=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n</popover>\n</script></code></pre>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code>, one of <code>click</code>\n        <code>focus</code>\n        <code>hover</code></td>\n        <td><code>click</code></td>\n        <td>How the popover is triggered.</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code>, one of <code>scale</code> <code>fade</code></td>\n        <td><code>fade</code></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>header</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the header.</td>\n      </tr>\n      <tr>\n        <td>placement</td>\n        <td><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></td>\n        <td></td>\n        <td>How to position the popover.</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
+	module.exports = "\n  <div class=\"bs-docs-section\" id=\"popover\">\n    <h3 class=\"page-header\"><a href=\"#popover\" class=\"anchor\">Popover 气泡</a></h3>\n    <div class=\"bs-example\">\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn \">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>No title</h4>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n        <button class=\"atui-btn\">Popover on top</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n        <button class=\"atui-btn\">Popover on left</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n        <button class=\"atui-btn\">Popover on right</button>\n      </popover>\n      <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n        <button class=\"atui-btn\">Popover on bottom</button>\n      </popover>\n      <hr>\n      <h4>Triger</h4>\n      <p>\n        <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n            <button class=\"atui-btn\">Mouseenter</button>\n        </popover>\n      </p>\n      <p>\n        <popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\" :show=\"true\" trigger=\"always\">\n            <button class=\"atui-btn\">always show</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\"\n      title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n      </popover>\n    </div>\n    <pre><code class=\"language-markup\"><script type=\"language-mark-up\">\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn \">Popover on top</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" header title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>No title</h4>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"top\">\n  <button class=\"atui-btn\">Popover on top</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"left\">\n  <button class=\"atui-btn\">Popover on left</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"right\">\n  <button class=\"atui-btn\">Popover on right</button>\n</popover>\n<popover effect=\"fade\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\">\n  <button class=\"atui-btn\">Popover on bottom</button>\n</popover>\n<hr>\n<h4>Triger</h4>\n<p>\n  <popover effect=\"scale\"  title=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"top\" trigger=\"hover\">\n      <button class=\"atui-btn\">Mouseenter</button>\n  </popover>\n</p>\n<popover effect=\"scale\"\ntitle=\"我是标题\" content=\"我是内容，我是内容，我是内容\" placement=\"bottom\" trigger=\"focus\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Focus\">\n</popover>\n</script></code></pre>\n  <h2>Options</h2>\n  <table class=\"atui-table table-bordered\">\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Default</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>trigger</td>\n        <td><code>String</code>, one of <code>click</code>\n        <code>focus</code>\n        <code>hover</code></td>\n        <td><code>click</code></td>\n        <td>How the popover is triggered.</td>\n      </tr>\n      <tr>\n        <td>effect</td>\n        <td><code>String</code>, one of <code>scale</code> <code>fade</code></td>\n        <td><code>fade</code></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>title</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>content</td>\n        <td><code>String</code></td>\n        <td></td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>header</td>\n        <td><code>Boolean</code></td>\n        <td><code>true</code></td>\n        <td>Whether to show the header.</td>\n      </tr>\n      <tr>\n        <td>placement</td>\n        <td><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></td>\n        <td></td>\n        <td>How to position the popover.</td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n";
 
 /***/ },
 /* 461 */
