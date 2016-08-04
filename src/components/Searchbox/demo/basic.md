@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<searchbox placeholder="请输入关键词搜索" :value.sync="defaultVal" :search-list="searchList" text-field="name"></searchbox>
+<searchbox placeholder="请输入关键词搜索" :value.sync="defaultVal" :search-list="searchList" text-field="name" @value-change="valueChange" @value-check="valueCheck"></searchbox>
 ````
 
 ````vue-script
@@ -40,6 +40,14 @@ new Vue({
         {name: '素材', value: '21'},
         {name: '香菜', value: '22'}
       ]
+    }
+  },
+  methods: {
+    valueChange (val) {
+      console.log(val);
+    },
+    valueCheck (item) {
+      console.log(item);
     }
   }
 })
