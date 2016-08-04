@@ -1,10 +1,10 @@
 var ghpages = require('gh-pages')
 var path = require('path')
-ghpages.publish(path.join(__dirname, './'), {
+ghpages.publish(path.join(__dirname, './_site'), {
   branch: 'demo',
   message: '同步demo',
-  add:true,
-  src:'{_site/**/*,docs-backup/**/*,build/**/*,dist/**/*,index.html}',
+  // add:true,
+  src:'**/*',
   logger: function(message) {
     console.log(message)
   }

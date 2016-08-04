@@ -28,6 +28,7 @@ import Textarea from './components/Textarea/'
 import Tag from './components/Tag/'
 import Tooltip from './components/Tooltip/'
 import Trigger from './components/Trigger/'
+import Accordion from './components/Accordion/'
 // 导航类
 // import ffix from './components/affix.vue'
 // import side from './components/aside.vue'
@@ -66,6 +67,7 @@ const VueComponent = {
   Tag,
   Tooltip,
   Trigger,
+  Accordion,
   Popover,
   Tabs,
   Steps,
