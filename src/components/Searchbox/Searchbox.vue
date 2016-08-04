@@ -14,13 +14,12 @@
       <div slot="popup" v-if="searchList && searchList.length > 0"
            :class="[prefixCls + '-searchbox-list-containter']">
         <ul :class="[prefixCls + '-searchbox-list-dropdown']">
-          <li v-for="item in searchList | filterBy value">
+          <li v-for="item in searchList | filterBy filterValue">
             <a href="javascript:;" @click="checkItem($index, item[textField])" :title="item[textField]">{{item[textField]}}</a>
           </li>
         </ul>
       </div>
     </trigger>
-
   </div>
 </template>
 <script type="text/babel">
@@ -88,6 +87,10 @@
         classObj[prefixCls + '-input-small'] = small
 
         return classObj
+      },
+
+      filterValue () {
+        return this.value.replace(/^\s+|\s+$/g, '')
       }
     },
 
@@ -96,10 +99,15 @@
     },
 
     watch: {
-      value (val) {
-        !this.isCheck && this.$dispatch('searchbox-value-change', val, this)
+      value (newVal, oldVal) {
+        newVal = newVal.replace(/^\s+|\s+$/g, '')
+        oldVal = oldVal.replace(/^\s+|\s+$/g, '')
 
-        this.isCheck = false
+        if (newVal !== oldVal) {
+          !this.isCheck && this.$dispatch('value-change', newVal, this)
+
+          this.isCheck = false
+        }
       }
     },
 
@@ -115,7 +123,7 @@
       checkItem (index, val) {
         this.value = val
         this.isCheck = true
-        this.$dispatch('searchbox-value-check', this.searchList[index], this)
+        this.$dispatch('value-check', this.searchList[index], this)
         this.blurInput()
       },
       clearInput () {
