@@ -163,7 +163,9 @@
       if (trigger === 'focus') {
         this._focusEvent = EventListener.listen($triggerTarget, 'focus', () => {
           me.show = true
-          me.resetPos()
+          this.$nextTick(() => {
+            this.resetPos()
+          })
         })
 
         this._blurEvent = EventListener.listen($triggerTarget, 'blur', () => {
@@ -204,7 +206,9 @@
         // 显示优化,避免上来出现在页面左上角
         $popup.style.visibility = 'hidden'
         this.show = true
-        this.resetPos()
+        this.$nextTick(() => {
+          this.resetPos()
+        })
         $popup.style.visibility = ''
       }
     },
@@ -281,7 +285,6 @@
         const me = this
         const { popupAlwaysInView, offset, popupCoverTrigger } = this
         const $popup = me.$els.popup
-
         // 坐标修正
         if (!inPlacement && me.show && $popup.offsetWidth === 0) {
           setTimeout(() => {
@@ -291,6 +294,7 @@
         }
 
         const $trigger = me.$els.trigger
+        console.log($trigger)
         const triggerOffset = $trigger.getBoundingClientRect()
         const triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left
         const triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top
@@ -392,7 +396,9 @@
         this.show = !this.show
 
         if (this.show) {
-          this.resetPos()
+          this.$nextTick(() => {
+            this.resetPos()
+          })
         }
       },
 
@@ -407,7 +413,9 @@
 
         if (type === 'mouseenter') {
           this.show = true
-          this.resetPos()
+          this.$nextTick(() => {
+            this.resetPos()
+          })
         } else {
           if (popupHideDelay) {
             this._mouseLeaveTimer = setTimeout(() => {
@@ -426,7 +434,9 @@
 
         if (type === 'focus') {
           this.show = true
-          this.resetPos()
+          this.$nextTick(() => {
+            this.resetPos()
+          })
         } else {
           this.show = false
         }

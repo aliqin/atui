@@ -3,7 +3,10 @@ order: 0
 english: ATUI
 ---
 
-由阿里通信前端团队打造基于Vue的前端组件库,其中大部分实现借鉴了 [ant.design](http://ant.design)
+由阿里通信技术团队打造基于Vue的Web组件库，
+
+> 部分实现借鉴了 [ant.design](http://ant.design)
+> 文档系统使用了ant.design的文档系统[bisheng](https://github.com/benjycui/bisheng)
 
 ## 特性
 
