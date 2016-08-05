@@ -157,7 +157,7 @@
             valuePercent.push((valueArray[i] - min) * unit)
           }
         } else {
-          console.log('配置数据格式出错，请配置数字、数字型字符串、数字型数组、数字型数组字符串类型')
+          console.error('配置数据格式出错，请配置数字、数字型字符串、数字型数组、数字型数组字符串类型')
           valueArray = [0]
           valuePercent = [0]
         }

@@ -12,7 +12,8 @@ import Message from './Message.vue'
         :type="type"
         :transition="transition"
         :placement="placement"
-        show-icon>
+        show-icon
+        style="z-index:2000;">
         {{content}}
         </message>
         `,
