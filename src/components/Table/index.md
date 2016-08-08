@@ -44,7 +44,7 @@ const columns = [{
   key: 'address',
 }];
 
-<Table dataSource={dataSource} columns={columns} />
+<v-table :data-source="dataSource" :columns="columns"></v-table>
 ```
 
 

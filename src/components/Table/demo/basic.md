@@ -7,14 +7,15 @@ title:
 
 ## zh-CN
 
-
+最基本的数据展示
 
 ## en-US
 
 
 ````jsx
-<grid :data-source="gridData" :columns="gridColumns" row-key="key"></grid>
+<v-table :data-source="gridData" :columns="gridColumns" row-key="key"></v-table>
 ````
+
 
 ````vue-script
 var columns = [{
@@ -74,25 +75,18 @@ var data = [{
   name: '洪金宝',
   age: 66,
   address: '香港弥敦道1',
-}];
-
-
+}]
 
 new Vue({
   el: 'body',
   components: {
-    grid: atui.Table,
-    icon: atui.Icon,
-    row: atui.Layout.Row
+    vTable: atui.Table,
+    icon: atui.Icon
   },
   data () {
     return {
-      size:'default',
-      fixedHeader:false,
-      loading:false,
       gridData:data,
-      gridColumns: columns,
-      rowSelection:rowSelection
+      gridColumns: columns
     }
   }
 })

@@ -20,12 +20,10 @@
 export default {
   props: {
     open: Boolean,
-    header: String,
     onToggle: {
       type: Function,
       default: () => {}
     },
-    index: Number,
     prefixCls: {
       type: String,
       default: 'atui'

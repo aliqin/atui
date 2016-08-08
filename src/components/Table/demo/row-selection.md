@@ -7,13 +7,31 @@ title:
 
 ## zh-CN
 
+row-selection属性可增加选择功能
 
-
+```js
+const rowSelection = {
+  getCheckboxProps (record) {
+    return {
+      disabled: record.name === '胡彦祖'
+    }
+  },
+  onChange (selectedRowKeys, selectedRows) {
+    console.log('rowSelection.onChange',selectedRowKeys, selectedRows)
+  },
+  onSelect (record, selected, selectedRows) {
+    console.log('rowSelection.onSelect',record, selected, selectedRows)
+  },
+  onSelectAll (selected, selectedRows, changeRows) {
+    console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows)
+  }
+}
+```
 ## en-US
 
 
 ````jsx
-<grid :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading"></grid>
+<v-table :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading"></v-table>
 ````
 
 ````vue-script
@@ -118,7 +136,7 @@ var rowSelection = {
 new Vue({
   el: 'body',
   components: {
-    grid: atui.Table,
+    vTable: atui.Table,
     icon: atui.Icon,
     row: atui.Layout.Row
   },

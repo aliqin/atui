@@ -17,7 +17,7 @@ title:
 
 ````jsx
 <accordion open-one>
-  <panel is-open>
+  <panel open>
     <div slot="panel-header" class="custom-class">Panel #1</div>
     内容一
   </panel>
