@@ -64,7 +64,7 @@
       },
       width: {
         type: String,
-        default: 'auto'
+        default: '100%'
       },
       offset: {
         type: Array,
@@ -98,6 +98,10 @@
         default: 0
       },
       triggerUsePopupWidth: {
+        type: Boolean,
+        default: false
+      },
+      popupUseTriggerWidth: {
         type: Boolean,
         default: false
       },
@@ -156,7 +160,7 @@
       const $popup = this.$els.popup
       const $triggerTarget = $trigger.querySelector('input, textarea')
       const me = this
-      const { trigger, popupHideWhenClickOutside, triggerUsePopupWidth, popupAlwaysShow } = this
+      const { trigger, popupHideWhenClickOutside, triggerUsePopupWidth, popupAlwaysShow, popupUseTriggerWidth } = this
 
       this.originalPlacement = this.placement
 
@@ -187,18 +191,20 @@
 
       // trigger使用popup宽度
       if (triggerUsePopupWidth) {
-//        console.log('$popup.style.width 1', $popup.style.width)
-//
-//        $popup.style.visibility = 'hidden'
-//        me.show = true
-//        $popup.style.display = 'block'
-//
-//        setTimeout(() => {
-//          $trigger.style.width = $popup.style.width
-//          $popup.style.visibility = ''
-//          $popup.style.display = ''
-//          console.log('$popup.style.width 2', $popup.style.width)
-//        }, 1000)
+        console.log('$popup.style.width 1', window.getComputedStyle($popup).width)
+
+        $popup.style.visibility = 'hidden'
+        $popup.style.display = 'block'
+        // me.show = true
+        $trigger.style.width = window.getComputedStyle($popup).width
+        console.log('$popup.style.width 2', window.getComputedStyle($popup).width)
+        $popup.style.visibility = ''
+        $popup.style.display = 'none'
+
+      }
+
+      if (popupUseTriggerWidth) {
+        $popup.style.width = window.getComputedStyle($trigger).width
       }
 
       // 永远展示popup,并且默认展示

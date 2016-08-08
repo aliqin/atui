@@ -1,12 +1,18 @@
 # atui
 阿里通信基于Vue.js的组件库.
 
-[![ci status][ci-image]][ci-url] [![line coverage][line-coverage-image]][ci-url] [![branch coverage][branch-coverage-image]][ci-url]
 
+[![TNPM version][tnpm-image]][tnpm-url]
+[![build status][ci-image]][ci-url]
+[![line coverage][line-coverage-image]][ci-url]
+[![branch coverage][branch-coverage-image]][ci-url]
+
+[tnpm-image]: http://web.npm.alibaba-inc.com/badge/v/@ali/atui.svg?style=flat-square
+[tnpm-url]: http://web.npm.alibaba-inc.com/package/@ali/atui
 [ci-image]: http://cise.alibaba-inc.com/task/295950/status.svg
-[ci-url]: http://cise.alibaba-inc.com/task/335097
-[line-coverage-image]: http://cise.alibaba-inc.com/task/335097/ut_line_coverage.svg
-[branch-coverage-image]: http://cise.alibaba-inc.com/task/335097/ut_branch_coverage.svg
+[ci-url]: http://cise.alibaba-inc.com/task/295950
+[line-coverage-image]: http://cise.alibaba-inc.com/task/295950/ut_line_coverage.svg
+[branch-coverage-image]: http://cise.alibaba-inc.com/task/295950/ut_branch_coverage.svg
 
 <p align="center"></a></p>
 

@@ -8,7 +8,8 @@
              :disabled="disabled"
              :width.sync="width"
              :show.sync="show"
-             @toggolePopup="togglePopupHandler">
+             :offset="[0,3]"
+             @toggole-popup="togglePopupHandler">
       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
            tabindex="1"
            v-bind="{disabled: disabled}">
@@ -25,7 +26,7 @@
           <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
         </div>
       </div>
-      <div slot="popup" :style="{width:width}" :class="[prefixCls + '-dropdown-menu']" v-show="show && options.length > 0">
+      <div slot="popup" :style="{width:width}" :class="[prefixCls + '-dropdown-menu']">
         <slot></slot>
         <div v-show="noResult" class="no-result">无结果</div>
         <div class="notify" v-show="showNotify" transition="fadein">最多可选 ({{limit}})项.</div>
