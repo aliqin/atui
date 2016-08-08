@@ -16,4 +16,6 @@ subtitle: 搜索条
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
+placeholder | 占位提示 | String | |
+searchList | 搜索候选提示列表 | Array | []
 

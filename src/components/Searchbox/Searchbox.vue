@@ -1,6 +1,11 @@
 <template>
   <div :class="[prefixCls + '-searchbox-cont']">
-    <trigger trigger="focus" effect="slide" placement="bottomLeft" popup-cls="searchbox">
+    <trigger style="width:100%"
+    trigger="focus"
+    effect="slide"
+    placement="bottomLeft"
+    popup-cls="searchbox"
+    popup-use-trigger-width>
       <div slot="trigger">
         <input type="text"
                :class="inputClassObj"
@@ -11,7 +16,7 @@
         <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
         <icon type="search" :color="iconColor" size="14"></icon>
       </div>
-      <div slot="popup" v-if="searchList && searchList.length > 0"
+      <div slot="popup" v-el:popup v-if="searchList && searchList.length > 0"
            :class="[prefixCls + '-searchbox-list-containter']">
         <ul :class="[prefixCls + '-searchbox-list-dropdown']">
           <li v-for="item in searchList | filterBy filterValue">
@@ -49,7 +54,7 @@
         type: String,
         default: ''
       },
-      searchList: null,
+      searchList: Array,
       large: Boolean,
       small: Boolean,
       textField: {

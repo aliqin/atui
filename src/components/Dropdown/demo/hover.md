@@ -13,7 +13,7 @@ hover显示
 
 ````jsx
 
-<dropdown toggle="hover">
+<dropdown trigger="hover">
   <div>
     点击显示菜单 <icon type="down"></icon>
   </div>
