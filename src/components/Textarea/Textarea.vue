@@ -11,7 +11,7 @@
             v-model="content"></textarea>
   <p v-if="limitWords"
      :class="wordClassObj">{{ curWords }}/{{ limitWords }}</p>
-  <p v-if="showWordsCount"
+  <p v-if="wordsCount"
      :class="[prefixCls + '-textarea-words-area']">{{ countTips }}{{ curWords }}</p>
 </div>
 </template>
@@ -50,10 +50,6 @@
       }
     },
     computed: {
-      showWordsCount () {
-        return this.wordsCount === true || this.wordsCount === 'true' || this.wordsCount === ''
-      },
-
       curWords () {
         if (this.content) {
           return this.content.length
