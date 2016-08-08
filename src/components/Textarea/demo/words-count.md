@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<v-textarea placeholder="请输入描述信息" :words-count="true" count-tips="您输入的字数是："></v-textarea>
+<v-textarea placeholder="请输入描述信息" words-count count-tips="您输入的字数是："></v-textarea>
 ````
 
 ````vue-script
