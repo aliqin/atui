@@ -6,14 +6,44 @@ title:
 ---
 
 ## zh-CN
+在columns项里增加filters可增加筛选功能
 
-
-
+```js
+var columns = [{
+  title: '姓名ss',
+  dataIndex: 'name',
+  filters: [{
+    text: '姓李的的',
+    value: '李',
+  }, {
+    text: '姓胡的',
+    value: '胡',
+  }],
+  sorter:true,
+  width:150
+}, {
+  title: '年龄',
+  dataIndex: 'age',
+  width:250
+}, {
+  title: '地址',
+  dataIndex: 'address',
+  filters: [{
+    text: '南湖',
+    value: '南湖',
+  }, {
+    text: '西湖',
+    value: '西湖',
+  }],
+  filterMultiple: false,
+  width: 250
+}]
+```
 ## en-US
 
 
 ````jsx
-<grid :data-source="gridData" :columns="gridColumns" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
+<v-table :data-source="gridData" :columns="gridColumns" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></v-table>
 ````
 
 ````vue-script
@@ -32,10 +62,6 @@ var columns = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
-  sorter: function(a, b) { return a.age - b.age },
-  render: function(text, record, index) {
-    return '<input v-model="gridData['+ index +'].age"/>'
-  },
   width:250
 }, {
   title: '地址',
@@ -93,7 +119,8 @@ var data = [{
   name: '洪金宝',
   age: 66,
   address: '香港弥敦道2',
-}];
+}]
+
 // 配置选择数据的选项
 var rowSelection = {
   getCheckboxProps: function(record) {
@@ -110,34 +137,20 @@ var rowSelection = {
   onSelectAll: function(selected, selectedRows, changeRows) {
     console.log('rowSelection.onSelectAll',selected, selectedRows, changeRows);
   }
-};
+}
 
 
 new Vue({
   el: 'body',
   components: {
-    grid: atui.Table,
-    icon: atui.Icon,
-    row: atui.Layout.Row
+    vTable: atui.Table,
+    icon: atui.Icon
   },
   data () {
     return {
-      size:'default',
-      fixedHeader:false,
-      loading:false,
       gridData:data,
       gridColumns: columns,
       rowSelection:rowSelection
-    }
-  },
-  methods:{
-    changeData () {
-      this.gridData.push({
-        key: Math.random(),
-        name: '李秀莲大嘴哥',
-        age: Math.random(),
-        address: '西湖区湖底公园123号',
-      })
     }
   }
 })

@@ -7,13 +7,19 @@ title:
 
 ## zh-CN
 
+增加pagination属性以分页，
+```
+const pagination = {
+  total: data.length
+}
 
+```
 
 ## en-US
 
 
 ````jsx
-<grid :data-source="gridData" :columns="gridColumns" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></grid>
+<v-table :data-source="gridData" :columns="gridColumns" row-key="key" :pagination="pagination"></v-table>
 ````
 
 ````vue-script
@@ -59,41 +65,22 @@ var columns = [{
       }
     }
   }
-];
+]
 
-var data = [{
-  key: '1',
-  name: '胡斌',
-  age: 32,
-  address: '南湖区湖底公园1号',
-}, {
-  key: '2',
-  name: '胡彦祖',
-  age: 42,
-  address: '西湖区湖底公园12号',
-}, {
-  key: '3',
-  name: '李大嘴',
-  age: 32,
-  address: '南湖区湖底公园123号',
-}, {
-  key: '4',
-  name: '李秀莲大嘴哥',
-  age: 32,
-  address: '西湖区湖底公园123号',
-},
-{
-  key: '5',
-  name: '刘德华',
-  age: 54,
-  address: '西湖区湖底公园999号',
-},
-{
-  key: '6',
-  name: '洪金宝',
-  age: 66,
-  address: '香港弥敦道3',
-}];
+const data = [];
+for (let i = 0; i < 46; i++) {
+  data.push({
+    key: i,
+    name: `李大嘴${i}`,
+    age: 32,
+    address: `西湖区湖底公园${i}号`,
+  });
+}
+
+const pagination = {
+  total: data.length
+}
+
 // 配置选择数据的选项
 var rowSelection = {
   getCheckboxProps: function(record) {
@@ -116,28 +103,16 @@ var rowSelection = {
 new Vue({
   el: 'body',
   components: {
-    grid: atui.Table,
-    icon: atui.Icon,
-    row: atui.Layout.Row
+    vTable: atui.Table,
+    icon: atui.Icon
   },
   data () {
     return {
-      size:'default',
-      fixedHeader:false,
-      loading:false,
-      gridData:data,
+      loading: false,
+      gridData: data,
       gridColumns: columns,
-      rowSelection:rowSelection
-    }
-  },
-  methods:{
-    changeData () {
-      this.gridData.push({
-        key: Math.random(),
-        name: '李秀莲大嘴哥',
-        age: Math.random(),
-        address: '西湖区湖底公园123号',
-      })
+      rowSelection: rowSelection,
+      pagination: pagination
     }
   }
 })
