@@ -68,7 +68,9 @@
       },
       offset: {
         type: Array,
-        default: [0, 0]
+        default () {
+          return [0, 0]
+        }
       },
       popupCls: {
         type: String,
@@ -191,16 +193,11 @@
 
       // trigger使用popup宽度
       if (triggerUsePopupWidth) {
-        console.log('$popup.style.width 1', window.getComputedStyle($popup).width)
-
         $popup.style.visibility = 'hidden'
         $popup.style.display = 'block'
-        // me.show = true
         $trigger.style.width = window.getComputedStyle($popup).width
-        console.log('$popup.style.width 2', window.getComputedStyle($popup).width)
         $popup.style.visibility = ''
         $popup.style.display = 'none'
-
       }
 
       if (popupUseTriggerWidth) {

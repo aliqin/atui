@@ -31,7 +31,7 @@ const rowSelection = {
 
 
 ````jsx
-<v-table :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" @table-change="onTableChange" :loading="loading"></v-table>
+<v-table :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" :loading="loading"></v-table>
 ````
 
 ````vue-script

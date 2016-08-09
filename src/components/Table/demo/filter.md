@@ -43,7 +43,7 @@ var columns = [{
 
 
 ````jsx
-<v-table :data-source="gridData" :columns="gridColumns" row-key="key" @table-change="onTableChange" :loading="loading" :size="size"></v-table>
+<v-table :data-source="gridData" :columns="gridColumns" row-key="key" :loading="loading" :size="size"></v-table>
 ````
 
 ````vue-script
