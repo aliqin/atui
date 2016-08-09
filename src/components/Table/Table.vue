@@ -17,11 +17,11 @@
             </th>
             <th v-for="column in columns" :width="column.width">
               {{{column['title']}}}
-              <dropdown v-if="column.filters" data-toggle="dropdown" :open="filterOpened">
-                <div data-toggle="dropdown" @click="filterOpened = true">
+              <dropdown v-ref:filterMenu v-if="column.filters" trigger="hover">
+                <div>
                   <icon type="filter" size="12"></icon>
                 </div>
-                <div name="dropdown-menu" v-show="filterOpened" slot="dropdown-menu" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
+                <div name="dropdown-menu" slot="dropdown-menu" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
                   <ul>
                     <li v-for="filter in column.filters">
                     <label>
@@ -261,10 +261,7 @@ export default {
     // filter时触发
     onFilter (column) {
       let me = this
-      me.filterOpened = true
-      setTimeout(() => {
-        me.filterOpened = false
-      }, 100)
+      me.$broadcast('closeDropdown')
       if (column.hasOwnProperty('filterMultiple') && column.filterMultiple === false) {
         /* vue的v-model会把radio的值转换成一个字符串，这里为了参数格式与checkbox相同
         则再转换成数组 */

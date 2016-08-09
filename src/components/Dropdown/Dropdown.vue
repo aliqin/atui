@@ -36,6 +36,11 @@
       open: {
         type: Boolean
       }
+    },
+    events: {
+      closeDropdown () {
+        this.open = false
+      }
     }
   }
 </script>
