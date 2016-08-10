@@ -52,7 +52,7 @@ export default {
     },
     showLen: {
       type: Number,
-      default: 3
+      default: 8
     },
     base: {
       type: Boolean,
