@@ -1,7 +1,7 @@
 ---
 order: 3
 title:
-  zh-CN: 基本
+  zh-CN: 回调
   en-US: Type
 ---
 
@@ -62,6 +62,11 @@ new Vue({
   components: {
     tabs: atui.Tabs,
     tab: atui.Tabs.Tab
+  },
+  methods: {
+    handleOnClick (index) {
+      console.log(index)
+    }
   }
 })
 ````

@@ -1,7 +1,7 @@
 ---
 order: 2
 title:
-  zh-CN: 基本
+  zh-CN: hover触发
   en-US: Type
 ---
 
@@ -14,7 +14,7 @@ title:
 
 
 ````jsx
-<tabs :base="true" trigger="hover">
+<tabs base trigger="hover">
   <tab header="系统短信签名">
     <p>
       选项卡一内容
