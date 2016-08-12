@@ -43,7 +43,7 @@ var columns = [{
 
 
 ````jsx
-<v-table :data-source="gridData" :columns="gridColumns" row-key="key" :loading="loading" :size="size"></v-table>
+<v-table :data-source="gridData" @table-change="onTableChange" :columns="gridColumns" row-key="key" :loading="loading"></v-table>
 ````
 
 ````vue-script
@@ -152,6 +152,13 @@ new Vue({
       gridColumns: columns,
       rowSelection:rowSelection
     }
+  },
+  methods: {
+    onTableChange(paging,filter,sorter) {
+      console.log('table-change',paging,filter,sorter)
+      //let me = this
+      //me.gridData = me.gridData.reverse()
+    },
   }
 })
 ````
