@@ -3,7 +3,7 @@
     <h3 class="page-header"><a href="#tag" class="anchor">Tag 标签</a></h3>
     <div class="bs-example">
       <h4 class="example-title">基本标签</h4>
-      <v-tag>标签一</v-tag>
+      <v-tag @click="clickFun">标签一</v-tag>
       <v-tag closable @close="closeTag">标签（回调）</v-tag>
       <v-tag :href="href">标签（链接）</v-tag>
       <h4 class="example-title">三种颜色的标签</h4>
@@ -78,6 +78,10 @@
     methods: {
       closeTag () {
         alert('这里是关闭标签之后的回调函数哦！！！');
+      },
+
+      clickFun () {
+        alert('click回调')
       }
     },
     components: {
