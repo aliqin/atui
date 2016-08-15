@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!closed"
+  <div v-show="!closed"
        :class="[prefixCls + '-tag', color && (prefixCls + '-tag-color')]"
        :style="{'background-color': color}">
     <a :href="href" :target="href ? '_blank' : ''"
