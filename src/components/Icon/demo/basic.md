@@ -6,6 +6,7 @@ title:
 ---
 
 ## zh-CN
+
 所有的icon示例
 
 
@@ -22,7 +23,7 @@ title:
 <icon type="down"></icon>向下
 <icon type="prev"></icon>上一页
 <icon type="next"></icon>下一页
-<icon type="warning" color="red" size="20"></icon>警告
+<icon type="warning"></icon>警告
 <icon type="error"></icon>错误
 <icon type="info"></icon>信息
 <icon type="help"></icon>帮助

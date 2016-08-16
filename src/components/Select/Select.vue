@@ -1,15 +1,16 @@
 <template>
-  <div :class="selectClassObj">
+  <div :class="selectClassObj" :style="style">
     <trigger trigger="click"
              placement="bottomLeft"
              effect="slide"
              popup-hide-when-click-outside
-             trigger-use-popup-width
              :disabled="disabled"
-             :width.sync="width"
+             :width="width"
              :show.sync="show"
              :offset="[0,3]"
-             @toggole-popup="togglePopupHandler">
+             @toggole-popup="togglePopupHandler"
+             popup-use-trigger-width
+             v-ref:triige>
       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
            tabindex="1"
            v-bind="{disabled: disabled}">
@@ -55,6 +56,7 @@
         type: String,
         default: '请选择'
       },
+      style: String,
       width: {
         type: String,
         default: 'auto'

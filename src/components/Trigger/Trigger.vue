@@ -1,5 +1,5 @@
 <template>
-  <div :class="[prefixCls + '-trigger-cont']" :style="{width: width}">
+  <div :class="[prefixCls + '-trigger-cont']" style="width:100%">
     <div v-if="popupAlwaysShow"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">

@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<v-select value="Cherry" width="200px" @change="onSlectChange">
+<v-select value="Cherry" style="width:200px" @change="onSlectChange">
   <v-option value="Apple">苹果</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
