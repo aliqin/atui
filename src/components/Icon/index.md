@@ -3,7 +3,6 @@ category: Components
 type: Basic
 title: Icon
 subtitle: 图标
-cols: 1
 ---
 
 
@@ -19,6 +18,6 @@ cols: 1
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
 type | icon类型，必选 | String | |
-size | 大小 | String | 14px |
+size | 大小 | String | 16px |
 color | 颜色 | String | |
 
