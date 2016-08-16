@@ -50,8 +50,8 @@
             <dl>
               <dd>
                 <template v-for="item in list.streetList">
-                  <a :title="item[0]}}" :attr-id="$key" :parent-id="item[1]" href="javascript:" @click.stop="chooseStreet($key, item[0])" :class="{'active': streetId == $key}" track-by="$key">
-                    <input v-if="streetId == $key" value="item[0]}}" type="hidden" v-model="street" />
+                  <a :title="item[0]" :attr-id="$key" :parent-id="item[1]" href="javascript:" @click.stop="chooseStreet($key, item[0])" :class="{'active': streetId == $key}" track-by="$key">
+                    <input v-if="streetId == $key" value="item[0]" type="hidden" v-model="street" />
                     {{item[0]}}
                   </a>
                 </template>
