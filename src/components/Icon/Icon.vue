@@ -12,8 +12,7 @@ export default {
       require: true
     },
     size: {
-      type: String,
-      default: '14'
+      type: String
     },
     color: {
       type: String
