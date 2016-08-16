@@ -205,10 +205,22 @@
       margin-left: 0;
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
+
+      &:hover {
+        &+.@{prefix-cls-btn} {
+          border-left-color: tint(@primary-color, 40%);
+        }
+      }
     }
 
     &:not(:first-child):not(:last-child) {
       border-radius: 0;
+
+      &:hover {
+        &+.@{prefix-cls-btn} {
+          border-left-color: tint(@primary-color, 40%);
+        }
+      }
     }
 
     &:last-child:not(:first-child) {
@@ -229,6 +241,24 @@
 
       &:focus, &:focus {
         .disabled();
+      }
+
+      &:first-child:not(:last-child) {
+
+        &:hover {
+          &+.@{prefix-cls-btn} {
+            .disabled();
+          }
+        }
+      }
+
+      &:not(:first-child):not(:last-child) {
+
+        &:hover {
+          &+.@{prefix-cls-btn} {
+            .disabled();
+          }
+        }
       }
     }
 
