@@ -42,10 +42,12 @@ export default {
   data () {
     return {
       pageRange: [],
-      totalPage: this.totalPage || Math.ceil(this.total / this.pageSize),
       prevShow: 1,
       nextShow: 1
     }
+  },
+  created () {
+    this.totalPage = this.totalPage || Math.ceil(this.total / this.pageSize)
   },
   watch: {
     total () {
