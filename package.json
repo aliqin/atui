@@ -110,7 +110,7 @@
     "test": "npm run lint && citest run",
     "authors": "git log --format='%aN <%aE>' | sort -u  > AUTHORS.txt",
     "start": "webpack-dev-server --config webconfig.bisheng.js --host 0.0.0.0 & bisheng start -c ./site/bisheng.config.js",
-    "site": "bisheng build -c ./site/bisheng.config.js"
+    "site": "bisheng build -c ./site/bisheng.config.js && sh post-site.sh"
   },
   "publishConfig": {
     "registry": "http://registry.npm.alibaba-inc.com"

@@ -1,12 +1,10 @@
-@header-height: 80px;
+@header-height: 70px;
 
 #header {
   transition: opacity 0.5s;
   background: #fff;
   border-bottom: 1px solid #eee;
   height: @header-height;
-  margin-bottom: 24px;
-  padding: 0 4%;
   width: 100%;
 
   &.home-nav-bottom {
@@ -23,25 +21,14 @@
 
 #logo {
   float: left;
-  height: 80px;
-  line-height: 80px;
+  height: @header-height;
+  line-height: @header-height;
 }
 
 #logo img {
-  height: 80px;
-  line-height: 80px;
-  width: 40px;
-  margin-right: 8px;
+  margin-left: 20px;
 }
 
-#logo span {
-  float: right;
-  font-size: 16px;
-  font-family: 'Raleway', 'Hiragino Sans GB', sans-serif;
-  height: 80px;
-  line-height: 80px;
-  text-transform: uppercase;
-}
 
 #search-box {
   border-left: 1px solid #EBEDEE;
@@ -72,7 +59,8 @@
 #nav {
   border: 0;
   float: right;
-  font-size: 14px;
+  font-size: 16px;
+  margin-right: 20px;
 }
 
 #nav li {
@@ -81,10 +69,12 @@
   min-width: 72px;
   text-align: center;
   border-bottom-width: 3px;
+  color:#666;
 
   &.ant-menu-item-selected a {
     color: #2db7f5;
     font-weight: bold;
+    text-decoration: none;
   }
 }
 

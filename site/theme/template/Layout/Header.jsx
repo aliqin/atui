@@ -118,18 +118,18 @@ export default class Header extends React.Component {
     return (
       <header id="header" className={headerClassName}>
         <Row>
-          <Col lg={4} md={6} sm={7} xs={24}>
+          <Col lg={4} md={4} sm={7} xs={24}>
             <Icon
               className="nav-phone-icon"
               onClick={this.handleMenuIconClick}
               type="menu"
             />
             <Link to="/" id="logo">
-              <span>ATUI</span>
+              <img width="180" height="46" src="//img.alicdn.com/tps/TB1f8flLpXXXXcGXpXXXXXXXXXX-180-46.png" />
             </Link>
           </Col>
           <Col className={`nav ${this.state.menuVisible ? 'nav-show' : ''}`}
-            lg={20} md={18} sm={17} xs={0} style={{ display: 'block' }}
+            lg={20} md={20} sm={17} xs={0} style={{ display: 'block' }}
           >
             <div id="search-box">
               <Select combobox

@@ -17,7 +17,7 @@
             </th>
             <th v-for="column in columns" :width="column.width">
               {{{column['title']}}}
-              <dropdown v-ref:filterMenu v-if="column.filters" trigger="hover">
+              <dropdown v-ref:filter-menu v-if="column.filters" trigger="hover">
                 <div>
                   <icon type="filter" size="12"></icon>
                 </div>
