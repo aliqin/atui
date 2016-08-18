@@ -1,6 +1,10 @@
 <template>
   <div :class="[prefixCls + '-cascader']">
-    <trigger trigger="click" placement="bottomLeft" effect="slide" :popup-hide-when-click-outside="true">
+    <trigger trigger="click"
+    placement="bottomLeft"
+    effect="slide"
+    popup-hide-when-click-outside
+    >
       <span slot="trigger"
             :class="[prefixCls + '-cascader-picker']">
         <v-input readonly :value="displayValue" :placeholder="placeholder" :style="{width:width}"></v-input>

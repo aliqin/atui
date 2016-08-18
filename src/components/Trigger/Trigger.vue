@@ -69,7 +69,7 @@
       offset: {
         type: Array,
         default () {
-          return [0, 0]
+          return [0, 2]
         }
       },
       popupCls: {
@@ -81,39 +81,32 @@
         default: true
       },
       popupAlwaysShow: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       popupHideWhenClickOutside: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       // todo: 增强trigger和popup坐标对齐方式
       // 参考 https://github.com/yiminghe/dom-align
       // popup弹出的时候,刚好盖住trigger
       popupCoverTrigger: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       popupHideDelay: {
         type: Number,
         default: 0
       },
       triggerUsePopupWidth: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       popupUseTriggerWidth: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       show: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       disabled: {
-        type: Boolean,
-        default: false
+        type: Boolean
       }
     },
 
@@ -297,7 +290,6 @@
         }
 
         const $trigger = me.$els.trigger
-        console.log($trigger)
         const triggerOffset = $trigger.getBoundingClientRect()
         const triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left
         const triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top
