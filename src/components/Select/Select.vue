@@ -12,8 +12,7 @@
              v-ref:triige>
       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
            tabindex="1"
-           v-bind="{disabled: disabled}"
-           v-ref:popup>
+           v-bind="{disabled: disabled}">
         <template v-if="!multiple">
           <span v-show="showPlaceholder"
                 :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>
