@@ -21,8 +21,13 @@ title:
     <v-input type="text" placeholder="请输入您的电话号码" :valid-status.sync="form1.telStatus" :value.sync="tel"></v-input>
   </form-item>
   <form-item required label="性别:" label-col="4">
-    <label><input type="checkbox" name="sexy" checked />男</label>
-    <label><input type="checkbox" name="sexy" />女</label>
+    <label><input type="radio" name="sexy" checked />男</label>
+    <label><input type="radio" name="sexy" />女</label>
+  </form-item>
+  <form-item required label="喜好:" label-col="4">
+    <label><input type="checkbox" name="tw" checked />跳舞</label>
+    <label><input type="checkbox" name="hh" />画画</label>
+    <label><input type="checkbox" name="tq" />弹琴</label>
   </form-item>
   <form-item required label="行业:" label-col="4">
     <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>

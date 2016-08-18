@@ -6,6 +6,10 @@
 input[type="checkbox"],
 input[type="radio"] {
   appearance: none;
+  position: relative;
+  top: -1px;
+  zoom: 1;
+  outline: none;
 }
 
 input[type="checkbox"] {
@@ -20,8 +24,8 @@ input[type="checkbox"] {
   outline: none;
 
   &:checked {
-    background-color: @checkbox-bg;
-    border-color: @checkbox-bg;
+    // background-color: @checkbox-bg;
+    // border-color: @checkbox-bg;
 
     &:after {
       position: absolute;
@@ -31,7 +35,8 @@ input[type="checkbox"] {
       background-color: transparent;
       content: '\00ac';
       font-family: arial;
-      color: #fff;
+      // color: #fff;
+      color: @checkbox-bg;
       font-size: 12px;
       font-weight: bold;
       border-radius: 2px;
