@@ -7,13 +7,13 @@
              :disabled="disabled"
              :width="width"
              :show.sync="show"
-             :offset="[0,3]"
              @toggole-popup="togglePopupHandler"
              popup-use-trigger-width
              v-ref:triige>
       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
            tabindex="1"
-           v-bind="{disabled: disabled}">
+           v-bind="{disabled: disabled}"
+           v-ref:popup>
         <template v-if="!multiple">
           <span v-show="showPlaceholder"
                 :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>

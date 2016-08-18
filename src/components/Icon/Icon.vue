@@ -1,5 +1,6 @@
 <template>
 <i :class="[prefixCls + '-iconfont', prefixCls + '-icon-' + type]" :style="{ fontSize: size + 'px',color:color }">
+  <slot></slot>
 </i>
 </template>
 
