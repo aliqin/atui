@@ -5,7 +5,7 @@
              effect="slide"
              popup-hide-when-click-outside
              popup-cover-trigger
-             @toggole-popup="togglePopupHandler"
+             @toggle-popup="togglePopupHandler"
              v-ref:trigger>
       <div slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
         <v-input readonly
