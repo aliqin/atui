@@ -25,6 +25,7 @@ export default {
       default: 10
     },
     total: Number,
+    totalPage: Number,
     currPage: {
       type: Number,
       default: 1
@@ -41,7 +42,7 @@ export default {
   data () {
     return {
       pageRange: [],
-      totalPage: Math.ceil(this.total / this.pageSize),
+      totalPage: this.totalPage || Math.ceil(this.total / this.pageSize),
       prevShow: 1,
       nextShow: 1
     }
