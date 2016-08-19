@@ -312,15 +312,15 @@
         if (inPlacement) {
           this.placement = inPlacement
         }
-
+        // @note top值减4，减去2px的border宽度，另外2px是保持trigger和popup保持2px的间距
         switch (this.placement) {
           case 'top' :
             me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2
-            me.position.top = triggerTop - popupHeight
+            me.position.top = triggerTop - popupHeight - 4
             break
           case 'topLeft' :
             me.position.left = triggerLeft
-            me.position.top = triggerTop - popupHeight
+            me.position.top = triggerTop - popupHeight - 4
             break
           case 'topRight' :
             me.position.left = triggerLeft + triggerWidth - popupWidth
