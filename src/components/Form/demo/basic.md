@@ -30,7 +30,11 @@ title:
     <label><input type="checkbox" name="tq" />弹琴</label>
   </form-item>
   <form-item required label="行业:" label-col="4">
-    <v-select :default-value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+    <v-select :default-value.sync="arr" :close-on-select="true">
+      <v-option value="computer">计算机</v-option>
+      <v-option value="networdk">网络</v-option>
+      <v-option value="math">数学</v-option>
+    </v-select>
   </form-item>
   <form-item label-col="4">
     <v-button type="submit" primary @click="validFun">确定</v-button>
@@ -47,9 +51,12 @@ new Vue({
     formItem: atui.Form.FormItem,
     vInput: atui.Input,
     vSelect: atui.Select,
-    vButton: atui.Button,
+    vOption: atui.Select.Option,
     vButton: atui.Button,
     datePicker: atui.DatePicker
+  },
+  methods: {
+    validFun () {}
   }
 })
 ````

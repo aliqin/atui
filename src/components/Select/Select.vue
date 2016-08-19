@@ -55,6 +55,8 @@
         type: String,
         default: '请选择'
       },
+      large: Boolean,
+      small: Boolean,
       style: String,
       width: {
         type: String,
@@ -125,12 +127,14 @@
         return this.selectedOptions && this.selectedOptions[0] && this.selectedOptions[0].label
       },
       selectClassObj () {
-        let { prefixCls, show, multiple } = this
+        let { prefixCls, show, multiple, large, small } = this
         let classObj = {}
 
         classObj[prefixCls + '-select-cont'] = true
         classObj[prefixCls + '-dropdown-open'] = show
         classObj[prefixCls + '-select-multiple'] = multiple
+        classObj[prefixCls + '-select-large'] = large
+        classObj[prefixCls + '-select-small'] = small
 
         return classObj
       }
