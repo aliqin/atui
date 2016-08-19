@@ -69,7 +69,7 @@
       offset: {
         type: Array,
         default () {
-          return [0, 3]
+          return [0, 2]
         }
       },
       popupCls: {
