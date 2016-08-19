@@ -3,25 +3,25 @@
     <div v-if="popupAlwaysShow"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
-      <slot name="trigger">trigger slot is not set</slot>
+      <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'click' && !popupAlwaysShow"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @click="clickHandler">
-      <slot name="trigger">trigger slot is not set</slot>
+      <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'hover'"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @mouseenter="hoverHandler"
          @mouseleave="hoverHandler">
-      <slot name="trigger">trigger slot is not set</slot>
+      <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'focus' || trigger === 'always'"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
-      <slot name="trigger">trigger slot is not set</slot>
+      <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'hover'"
          v-el:popup
