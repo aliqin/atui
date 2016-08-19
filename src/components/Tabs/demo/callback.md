@@ -40,23 +40,11 @@ title:
         选项卡二内容
      </p>
   </tab>
-  <tab header="被禁用的" disabled>
-    ...
-  </tab>
-  <tab header="推广短信签名">
-     <p>
-        选项卡二内容
-     </p>
-  </tab>
-  <tab header="推广短信签名">
-     <p>
-        选项卡二内容
-     </p>
-  </tab>
 </tabs>
 ````
 
 ````vue-script
+let Message = atui.Message
 new Vue({
   el: 'body',
   components: {
@@ -65,7 +53,7 @@ new Vue({
   },
   methods: {
     handleOnClick (index) {
-      console.log(index)
+      Message.info('这是第'+ index + '个Tab')
     }
   }
 })
