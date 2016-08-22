@@ -11,7 +11,7 @@
         <v-input readonly
                  :value="value"
                  :placeholder="placeholder"></v-input>
-        <icon type="time"></icon>
+        <icon type="time" :color="value ? '#666' : '#BFBFBF'"></icon>
       </div>
       <div slot="popup"
            :class="[prefixCls + '-time-picker-menus']">
