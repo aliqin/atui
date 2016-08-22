@@ -20,6 +20,11 @@ title:
 <icon type="success-s" color="#1dbf38"></icon>
 <icon type="help-s" color="#ff9000"></icon>
 <icon type="warning-s" color="#b366ff"></icon>
+<icon type="info-s-b" color="#30b2f2"></icon>
+<icon type="error-s-b" color="#ff5959"></icon>
+<icon type="success-s-b" color="#1dbf38"></icon>
+<icon type="help-s-b" color="#ff9000"></icon>
+<icon type="warning-s-b" color="#b366ff"></icon>
 <br>
 <icon type="info" color="#30b2f2"></icon>
 <icon type="error" color="#ff5959"></icon>
