@@ -1,3 +1,5 @@
+@asideBg:#36394d;
+
 html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,31 +23,39 @@ body {
 
 a {
   transition: color .3s ease;
+  &:hover{
+    text-decoration:none;
+  }
+}
+
+a:hover {
+  text-decoration:none;
 }
 
 .main-wrapper {
-  background: #fff;
-  width: 92%;
   margin: 0 auto;
-  border-radius: 6px;
   overflow: hidden;
-  padding: 24px 0 0;
-  margin-bottom: 24px;
   position: relative;
+  background: @asideBg;
 }
 
 div.main-container {
-  padding: 0 6% 120px 4%;
+  padding: 30px 6% 120px 4%;
+  min-height:2000px;
   margin-left: -1px;
   background: #fff;
-  min-height: 500px;
   overflow: hidden;
   border-left: 1px solid #e9e9e9;
   position: relative;
 }
 
 .aside-container {
+  min-height:2000px;
+  padding-top: 30px;
   padding-bottom: 50px;
+  background: @asideBg;
+  overflow:hidden;
+  color:#fff;
 
   &.ant-menu-inline .ant-menu-submenu-title h4,
   &.ant-menu-inline > .ant-menu-item,
@@ -53,11 +63,51 @@ div.main-container {
     font-size: 14px;
     text-overflow: ellipsis;
     overflow: hidden;
+    color:#fff;
   }
+
+  &.ant-menu-inline .ant-menu-item a {
+    background:transparent;
+    font-size:12px;
+    &:hover{
+      color:0096e0;
+      text-decoration:none;
+    }
+  }
+
+  .ant-menu-item-active,
+  .ant-menu-submenu-active .ant-menu-submenu-title {
+    background:#242633;
+  }
+
+  .ant-menu-submenu-active,.ant-menu-submenu-title:hover {
+    background: #242633;
+  }
+
+
+  .ant-menu-item-group {
+    .ant-menu-item-group-title{
+      color:#c8c8c8;
+      font-size:12px;
+    }
+  }
+
+  .ant-menu-sub {
+    background: @asideBg;
+  }
+
+
 
   a[disabled] {
     color: #ccc;
   }
+}
+
+.ant-menu-inline .ant-menu-item-selected, .ant-menu-inline .ant-menu-selected {
+  border-left: 4px solid #0096e0;
+  border-right: none;
+  background:#242633;
+  box-sizing:border-box;
 }
 
 .aside-container .chinese {
@@ -118,9 +168,6 @@ div.main-container {
   }
 }
 
-.page-wrapper {
-  background: #ECECEC;
-}
 
 .loop-yoyo-load(@index) when (@index >= 0) {
   .yoyo-x-@{index} {

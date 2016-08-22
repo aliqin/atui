@@ -139,8 +139,8 @@ export default class MainContent extends React.Component {
 
     return (
       <div className="main-wrapper">
-        <Row>
-          <Col lg={4} md={6} sm={24} xs={24}>
+        <Row className="sub-wrapper">
+          <Col lg={4} md={4} sm={24} xs={24}>
             <Menu className="aside-container" mode="inline"
               defaultOpenKeys={Object.keys(utils.getMenuItems(moduleData, locale))}
               selectedKeys={[activeMenuItem]}
@@ -148,7 +148,7 @@ export default class MainContent extends React.Component {
               {menuItems}
             </Menu>
           </Col>
-          <Col lg={20} md={18} sm={24} xs={24} className="main-container">
+          <Col lg={20} md={20} sm={24} xs={24} className="main-container">
             {
               props.utils.get(props, 'pageData.demo') ?
                 <ComponentDoc {...props} doc={localizedPageData} demos={props.demos} /> :

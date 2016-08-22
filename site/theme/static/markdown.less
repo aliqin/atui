@@ -1,5 +1,7 @@
+@preColor:#f7f7f7;
+
 .markdown {
-  color: #666;
+  color: #333;
   font-size: 14px;
   line-height: 1.8;
 }
@@ -14,7 +16,7 @@
 }
 
 .markdown h1 {
-  color: #404040;
+  color: #333;
   font-weight: bold;
   line-height: 40px;
   margin-bottom: 24px;
@@ -33,14 +35,15 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  color: #404040;
+  font-family:PingFangSC-Regular;
+  color: #333;
   margin: 1.6em 0 0.6em 0;
   font-weight: 500;
   clear: both;
 }
 
-.markdown h1 { font-size: 28px; }
-.markdown h2 { font-size: 22px; }
+.markdown h1 { font-size: 24px; font-family:PingFangSC-Medium;}
+.markdown h2 { font-size: 18px; }
 .markdown h3 { font-size: 18px; }
 .markdown h4 { font-size: 16px; }
 .markdown h5 { font-size: 14px; }
@@ -57,6 +60,11 @@
 .markdown p,
 .markdown pre {
   margin: 1em 0;
+  border-top:none;
+}
+.markdown pre[class*="language-"]{
+  background: @preColor;
+  border-color:@preColor;
 }
 
 .markdown ul > li {
@@ -86,7 +94,7 @@
 
 .markdown code {
   margin: 0 3px;
-  background: #f7f7f7;
+  background: @preColor;
   padding: 1px 6px;
   border-radius: 3px;
   color: #777;
@@ -97,13 +105,12 @@
 
 .markdown pre {
   border-radius: 6px;
-  background: #f7f7f7;
+  background: @preColor;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
 .markdown pre code {
   border: none;
-  // background: #f7f7f7;
   margin: 0;
   font-size: 13px;
   color: #666;
@@ -126,7 +133,8 @@
 
 .markdown > table th {
   white-space: nowrap;
-  color: #5C6B77;
+  color: #666;
+  font-size:12px;
   font-weight: 600;
 }
 
@@ -138,7 +146,7 @@
 }
 
 .markdown > table th {
-  background: #F7F7F7;
+  background: @preColor;
 }
 
 .markdown blockquote {
