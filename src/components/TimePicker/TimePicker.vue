@@ -13,7 +13,7 @@
                   v-bind="{disabled: disabled, large: large, small: small}"
                  :value="value"
                  :placeholder="placeholder"></v-input>
-        <icon type="shijian" :color="value ? '#666' : '#BFBFBF'"></icon>
+        <icon type="time" :color="disabled ? #bfbfbf : (value ? '#666' : '#BFBFBF')"></icon>
       </div>
       <div slot="popup"
            :class="[prefixCls + '-time-picker-menus']">
