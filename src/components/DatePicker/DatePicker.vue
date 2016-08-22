@@ -7,12 +7,17 @@
     popup-hide-when-click-outside>
       <div slot="trigger"
            :class="[prefixCls + '-datepicker-toggle']">
-        <input :class="[prefixCls + '-datepicker-input']"
+        <v-input v-bind="{disabled: disabled, large: large, small: small}"
+        type="text"
+        :value="value"
+        :placeholder="placeholder"
+        readonly></v-input>
+        <!-- <input :class="[prefixCls + '-datepicker-input']"
         v-bind="{disabled: disabled}"
         type="text"
         :value="value"
         :placeholder="placeholder"
-        readonly />
+        readonly /> -->
         <icon type="calendar"></icon>
       </div>
       <div slot="popup" :class="[prefixCls + '-datepicker-calendar']">
@@ -33,6 +38,7 @@
   import Trigger from '../Trigger'
   import Calendar from '../Calendar/'
   import Icon from '../Icon/'
+  import VInput from '../Input/'
 
   export default {
     name: 'date-picker',
@@ -60,11 +66,13 @@
         type: Function,
         default: (date) => {}
       },
-      disabled: Boolean
+      disabled: Boolean,
+      large: Boolean,
+      small: Boolean
     },
 
     components: {
-      Icon, Calendar, Trigger
+      Icon, Calendar, Trigger, VInput
     },
 
     methods: {
