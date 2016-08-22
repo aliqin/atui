@@ -18,7 +18,7 @@
         :value="value"
         :placeholder="placeholder"
         readonly /> -->
-        <icon type="calendar"></icon>
+        <icon type="calendar" :color="iconColor"></icon>
       </div>
       <div slot="popup" :class="[prefixCls + '-datepicker-calendar']">
         <calendar v-ref:calendar
@@ -73,6 +73,24 @@
 
     components: {
       Icon, Calendar, Trigger, VInput
+    },
+
+    data () {
+      return {
+        iconColor: '#BFBFBF'
+      }
+    },
+
+    watch: {
+      value (val) {
+        if (val) {
+          this.iconColor = '#666'
+
+          return
+        }
+
+        this.iconColor = '#BFBFBF'
+      }
     },
 
     methods: {
