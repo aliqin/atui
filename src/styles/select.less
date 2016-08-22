@@ -5,8 +5,17 @@
 .@{prefix-cls-select}-cont {
   position: relative;
   display: inline-block;
+  min-width: 100px;
+  height: 30px;
+  line-height: 30px;
+
+  .@{prefix-cls}-trigger-cont, .@{prefix-cls}-trigger {
+    height: 100%;
+  }
 
   .@{prefix-cls-select}-toggle {
+    position: relative;
+    zoom: 1;
     min-width: 80px;
     cursor: pointer;
     text-align: left;
@@ -15,25 +24,16 @@
     border-radius: 4px;
     font-size: 12px;
     padding: 0 10px;
-    min-height: 30px;
-    line-height: 30px;
+    height: 100%;
     overflow: hidden;
 
     &:focus {
       border: 1px solid @primary-color;
-      box-shadow: 0px 0px 0px 2px fade(@primary-color, 30%);
+      // box-shadow: 0px 0px 0px 2px fade(@primary-color, 30%);
       outline: none;
     }
 
-    &.large {
-      height: 34px;
-      line-height: 34px;
-    }
 
-    &.small {
-      height: 28px;
-      line-height: 28px;
-    }
     .atui-tag {
       margin: -4px 5px 0;
       border-radius: 4px;
@@ -44,15 +44,52 @@
   .@{prefix-cls-select}-multiple .@{prefix-cls-select}-toggle {
     cursor: default;
   }
+
+  .@{prefix-cls-select}-btn-content {
+    display: block;
+    height: 100%;
+    line-height: 28px;
+  }
+
+  &.@{prefix-cls-select}-large {
+    height: 34px;
+    line-height: 34px;
+
+    .@{prefix-cls-select}-btn-content {
+      line-height: 32px;
+    }
+
+    .@{prefix-cls-select}-placeholder {
+      line-height: 32px;
+    }
+
+    .@{prefix-cls-select}-caret {
+      line-height: 32px;
+    }
+  }
+
+  &.@{prefix-cls-select}-small {
+    height: 28px;
+    line-height: 28px;
+
+    .@{prefix-cls-select}-btn-content {
+      line-height: 26px;
+    }
+
+    .@{prefix-cls-select}-placeholder {
+      line-height: 26px;
+    }
+
+    .@{prefix-cls-select}-caret {
+      line-height: 26px;
+    }
+  }
+
   .@{prefix-cls-select}-placeholder {
+    display: block;
     color: #ccc;
-    position: absolute;
-    top: 50%;
-    left: 9px;
-    color: #ccc;
-    line-height: 20px;
-    height: 20px;
-    margin-top: -10px;
+    line-height: 28px;
+    height: 100%;
     cursor: default;
   }
   .@{prefix-cls-select}-search-field {
@@ -70,16 +107,21 @@
 .@{prefix-cls-select}-caret {
   display: inline-block;
   position: absolute;
-  top: 50%;
-  // transform:translateY(-50%);
-  margin-top: -18px;
+  top: 0;
   right: 10px;
+  height: 100%;
+  line-height: 28px;
 
   .@{prefix-cls}-iconfont {
     color: #bfbfbf;
     display: inline-block;
     transition: all .3s ease;
   }
+}
+
+.@{prefix-cls}-dropdown-menu {
+  max-height: 137px;
+  overflow-y: auto;
 }
 
 .@{prefix-cls}-trigger-disabled {

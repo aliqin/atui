@@ -14,40 +14,40 @@ title:
 
 ````jsx
 <v-form action="aaa.do" method="post">
-  <form-item label="联系人电话：" item-col="8" label-col="10">
+  <form-item label="联系人电话:" item-col="8" label-col="10">
     <v-input type="text" placeholder="电话号码"></v-input>
   </form-item>
-  <form-item label="联系人电话：" item-col="8" label-col="10">
+  <form-item label="联系人电话:" item-col="8" label-col="10">
     <v-input type="text" placeholder="电话号码"></v-input>
   </form-item>
-  <form-item label="联系人电话：" item-col="8" label-col="10">
+  <form-item label="联系人电话:" item-col="8" label-col="10">
     <v-input type="text" placeholder="电话号码"></v-input>
   </form-item>
-  <form-item label="联系人电话：" item-col="8" label-col="10">
+  <form-item label="联系人电话:" item-col="8" label-col="10">
     <v-input type="text" placeholder="电话号码"></v-input>
   </form-item>
-  <form-item label="联系人电话：" item-col="8" label-col="10">
+  <form-item label="联系人电话:" item-col="8" label-col="10">
     <v-input type="text" placeholder="电话号码"></v-input>
   </form-item>
-  <form-item label="联系人电话：" item-col="8" label-col="10">
+  <form-item label="联系人电话:" item-col="8" label-col="10">
     <v-input type="text" placeholder="电话号码"></v-input>
   </form-item>
-  <form-item required label="联系人电话：" :valid-status="telStatus" item-col="8" label-col="10" has-icon tips="123">
+  <form-item required label="联系人电话:" :valid-status="telStatus" item-col="8" label-col="10" has-icon tips="123">
     <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel" @click="clickFun"></v-input>
   </form-item>
-  <form-item required label="应用名/网站名：" item-col="8" label-col="10">
+  <form-item required label="应用名/网站名:" item-col="8" label-col="10">
     <v-input type="text" placeholder="若还未上线可填无"></v-input>
   </form-item>
-  <form-item required label="行业：" item-col="8" label-col="10">
+  <form-item required label="行业:" item-col="8" label-col="10">
     <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
   </form-item>
-  <form-item required label="电话号码：" item-col="8" label-col="10">
+  <form-item required label="电话号码:" item-col="8" label-col="10">
     <v-input placeholder="请输入电话号码"></v-input>
   </form-item>
-  <form-item required label="电话号码：" valid-status="error" has-icon item-col="8" label-col="10" tips="请输入有效的电话号码">
+  <form-item required label="电话号码:" valid-status="error" has-icon item-col="8" label-col="10" tips="请输入有效的电话号码">
     <v-input valid-status="error" placeholder="请输入电话号码"></v-input>
   </form-item>
-  <form-item required label="电话号码：" valid-status="success" has-icon item-col="8" label-col="10" tips="请输入有效的电话号码">
+  <form-item required label="电话号码:" valid-status="success" has-icon item-col="8" label-col="10" tips="请输入有效的电话号码">
     <v-input valid-status="success" placeholder="请输入电话号码"></v-input>
   </form-item>
   <form-item required label-col="0">

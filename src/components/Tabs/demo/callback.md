@@ -1,7 +1,7 @@
 ---
 order: 3
 title:
-  zh-CN: 基本
+  zh-CN: 回调
   en-US: Type
 ---
 
@@ -40,28 +40,21 @@ title:
         选项卡二内容
      </p>
   </tab>
-  <tab header="被禁用的" disabled>
-    ...
-  </tab>
-  <tab header="推广短信签名">
-     <p>
-        选项卡二内容
-     </p>
-  </tab>
-  <tab header="推广短信签名">
-     <p>
-        选项卡二内容
-     </p>
-  </tab>
 </tabs>
 ````
 
 ````vue-script
+let Message = atui.Message
 new Vue({
   el: 'body',
   components: {
     tabs: atui.Tabs,
     tab: atui.Tabs.Tab
+  },
+  methods: {
+    handleOnClick (index) {
+      Message.info('这是第'+ index + '个Tab')
+    }
   }
 })
 ````

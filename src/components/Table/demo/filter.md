@@ -43,7 +43,7 @@ var columns = [{
 
 
 ````jsx
-<v-table :data-source="gridData" :columns="gridColumns" row-key="key" :loading="loading" :size="size"></v-table>
+<v-table :data-source="gridData" @table-change="onTableChange" :columns="gridColumns" row-key="key" :loading="loading"></v-table>
 ````
 
 ````vue-script
@@ -81,7 +81,7 @@ var columns = [{
     key: 'operation',
     render: function(text, record) {
       if(record) {
-        return '<icon type="info"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
+        return '<icon type="info-s"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
       }
     }
   }
@@ -152,6 +152,13 @@ new Vue({
       gridColumns: columns,
       rowSelection:rowSelection
     }
+  },
+  methods: {
+    onTableChange(paging,filter,sorter) {
+      console.log('table-change',paging,filter,sorter)
+      //let me = this
+      //me.gridData = me.gridData.reverse()
+    },
   }
 })
 ````

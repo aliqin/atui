@@ -8,7 +8,7 @@
     <template v-if="valuePercent.length == 1">
       <tooltip :content="valueArray[0]">
         <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}"></div>
-        </tooltip>
+      </tooltip>
     </template>
     <template v-if="valuePercent.length > 1">
       <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}"></div>

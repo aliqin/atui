@@ -42,17 +42,13 @@ import Icon from '../Icon/'
 
 export default {
   props: {
-    effect: {
-      type: String,
-      default: 'fadein'
-    },
     active: {
       type: Number,
       default: 0
     },
     showLen: {
       type: Number,
-      default: 8
+      default: 6
     },
     base: {
       type: Boolean,

@@ -6,6 +6,7 @@ title:
 ---
 
 ## zh-CN
+
 所有的icon示例
 
 
@@ -13,25 +14,24 @@ title:
 
 
 ````jsx
-<icon type="head"></icon>页首
-<icon type="tail"></icon>页尾
-<icon type="clear"></icon>清除
-<icon type="close"></icon>关闭
-<icon type="search"></icon>搜索
-<icon type="up"></icon>向上
-<icon type="down"></icon>向下
-<icon type="prev"></icon>上一页
-<icon type="next"></icon>下一页
-<icon type="warning" color="red" size="20"></icon>警告
-<icon type="error"></icon>错误
-<icon type="info"></icon>信息
-<icon type="help"></icon>帮助
-<icon type="success"></icon>成功
-<icon type="filter"></icon>过滤
-<icon type="doc"></icon>附件
-<icon type="calendar"></icon>日历
-<icon type="time"></icon>时间
-<icon type="tick"></icon>对勾
+<icon type="info-s"></icon>
+<icon type="error-s"></icon>
+<icon type="success-s"></icon>
+<icon type="help-s"></icon>
+<icon type="warning-s"></icon>
+<icon type="close"></icon>
+<icon type="head"></icon>
+<icon type="tail"></icon>
+<icon type="prev"></icon>
+<icon type="next"></icon>
+<icon type="filter"></icon>
+<icon type="tick"></icon>
+<icon type="up"></icon>
+<icon type="down"></icon>
+<icon type="search"></icon>
+<icon type="doc"></icon>
+<icon type="calendar"></icon>
+<icon type="time"></icon>
 ````
 
 ````vue-script
