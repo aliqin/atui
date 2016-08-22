@@ -19,6 +19,11 @@ title:
 <icon type="success-s"></icon>
 <icon type="help-s"></icon>
 <icon type="warning-s"></icon>
+<icon type="info-s-b"></icon>
+<icon type="error-s-b"></icon>
+<icon type="success-s-b"></icon>
+<icon type="help-s-b"></icon>
+<icon type="warning-s-b"></icon>
 <icon type="close"></icon>
 <icon type="head"></icon>
 <icon type="tail"></icon>
