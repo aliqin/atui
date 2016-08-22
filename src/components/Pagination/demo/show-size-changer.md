@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<pagination :total-page.sync="totalPage" :curr-page.sync="currPage" :total="total" show-jumper show-size-changer></pagination>
+<pagination :curr-page.sync="currPage" :total="total" show-jumper show-size-changer></pagination>
 ````
 
 ````vue-script
@@ -24,7 +24,6 @@ new Vue({
   },
   data: function() {
     return {
-      totalPage: 10,
       currPage: 2,
       total: 273
     }

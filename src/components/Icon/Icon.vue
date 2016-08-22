@@ -1,5 +1,6 @@
 <template>
 <i :class="[prefixCls + '-iconfont', prefixCls + '-icon-' + type]" :style="{ fontSize: size + 'px',color:color }">
+  <slot></slot>
 </i>
 </template>
 
@@ -12,8 +13,7 @@ export default {
       require: true
     },
     size: {
-      type: String,
-      default: '14'
+      type: String
     },
     color: {
       type: String

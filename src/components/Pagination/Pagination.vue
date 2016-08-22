@@ -25,6 +25,7 @@ export default {
       default: 10
     },
     total: Number,
+    totalPage: Number,
     currPage: {
       type: Number,
       default: 1
@@ -41,9 +42,16 @@ export default {
   data () {
     return {
       pageRange: [],
-      totalPage: Math.ceil(this.total / this.pageSize),
       prevShow: 1,
       nextShow: 1
+    }
+  },
+  created () {
+    // 兼容0.1.2之前的版本，有调用方直接传了totaoPage
+    if (this.totalPage) {
+      this.pageSize = this.total / this.totalPage
+    } else {
+      this.totalPage = Math.ceil(this.total / this.pageSize)
     }
   },
   watch: {

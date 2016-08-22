@@ -1,7 +1,7 @@
 ---
 order: 0
 title:
-  zh-CN: 基本
+  zh-CN: 多选
   en-US: Type
 ---
 
@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<v-select multiple>
+<v-select multiple style="width:100%">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>

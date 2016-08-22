@@ -1,27 +1,27 @@
 <template>
-  <div :class="[prefixCls + '-trigger-cont']" :style="{width: width}">
+  <div :class="[prefixCls + '-trigger-cont']" style="width:100%">
     <div v-if="popupAlwaysShow"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
-      <slot name="trigger">trigger slot is not set</slot>
+      <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'click' && !popupAlwaysShow"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @click="clickHandler">
-      <slot name="trigger">trigger slot is not set</slot>
+      <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'hover'"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @mouseenter="hoverHandler"
          @mouseleave="hoverHandler">
-      <slot name="trigger">trigger slot is not set</slot>
+      <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'focus' || trigger === 'always'"
          v-el:trigger
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
-      <slot name="trigger">trigger slot is not set</slot>
+      <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'hover'"
          v-el:popup
@@ -69,7 +69,7 @@
       offset: {
         type: Array,
         default () {
-          return [0, 0]
+          return [0, 2]
         }
       },
       popupCls: {
@@ -81,39 +81,32 @@
         default: true
       },
       popupAlwaysShow: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       popupHideWhenClickOutside: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       // todo: 增强trigger和popup坐标对齐方式
       // 参考 https://github.com/yiminghe/dom-align
       // popup弹出的时候,刚好盖住trigger
       popupCoverTrigger: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       popupHideDelay: {
         type: Number,
         default: 0
       },
       triggerUsePopupWidth: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       popupUseTriggerWidth: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       show: {
-        type: Boolean,
-        default: false
+        type: Boolean
       },
       disabled: {
-        type: Boolean,
-        default: false
+        type: Boolean
       }
     },
 
@@ -297,7 +290,6 @@
         }
 
         const $trigger = me.$els.trigger
-        console.log($trigger)
         const triggerOffset = $trigger.getBoundingClientRect()
         const triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left
         const triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top
@@ -320,15 +312,15 @@
         if (inPlacement) {
           this.placement = inPlacement
         }
-
+        // @note top值减4，减去2px的border宽度，另外2px是保持trigger和popup保持2px的间距
         switch (this.placement) {
           case 'top' :
             me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2
-            me.position.top = triggerTop - popupHeight
+            me.position.top = triggerTop - popupHeight - 4
             break
           case 'topLeft' :
             me.position.left = triggerLeft
-            me.position.top = triggerTop - popupHeight
+            me.position.top = triggerTop - popupHeight - 4
             break
           case 'topRight' :
             me.position.left = triggerLeft + triggerWidth - popupWidth
