@@ -2,6 +2,7 @@
   <div :class="[prefixCls + '-time-picker']">
     <trigger trigger="click"
              placement="bottomLeft"
+             :disabled="disabled"
              effect="slide"
              popup-hide-when-click-outside
              popup-cover-trigger
@@ -9,15 +10,17 @@
              v-ref:trigger>
       <div slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
         <v-input readonly
+                  v-bind="{disabled: disabled, large: large, small: small}"
                  :value="value"
                  :placeholder="placeholder"></v-input>
-        <icon type="time" :color="value ? '#666' : '#BFBFBF'"></icon>
+        <icon type="shijian" :color="value ? '#666' : '#BFBFBF'"></icon>
       </div>
       <div slot="popup"
            :class="[prefixCls + '-time-picker-menus']">
         <icon type="clear" @click="closePopup"></icon>
         <div>
           <v-input readonly
+                    v-bind="{disabled: disabled, large: large, small: small}"
                    v-el:picker-toggler
                    :class="[prefixCls + '-time-picker-input']"
                    :value="value"
@@ -94,6 +97,9 @@
       value: {
         type: [Date, String]
       },
+      disabled: Boolean,
+      large: Boolean,
+      small: Boolean,
       hideDisabledOptions: Boolean,
       disabledHours: {
         type: Function,
