@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<date-picker style="width: 300px"></date-picker>
+<date-picker style="width: 219px"></date-picker>
 ````
 
 ````vue-script
