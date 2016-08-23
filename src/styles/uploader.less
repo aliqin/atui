@@ -42,6 +42,11 @@
 
 .@{prefix-cls-upload}-drag-area {
   outline: none;
+
+  span {
+    color: #333;
+    font-size: 14px;
+  }
 }
 
 .@{prefix-cls-upload}-file-icon {
@@ -106,7 +111,7 @@
   height: 100%;
   padding: 20px 0;
   cursor: pointer;
-  border: 1px dashed #d9d9d9;
+  border: 1px dashed #bfbfbf;
   border-radius: 6px;
   text-align: center;
   -webkit-transition: border-color .3s ease;
@@ -115,12 +120,16 @@
   &.@{prefix-cls-upload}-is-dragover {
     border-color: #00a0ff;
   }
+
+  &:hover {
+    border-color: #999;
+  }
 }
 
 .@{prefix-cls-upload}-drag-icon {
   height: 72px;
   min-width: 90px;
   margin-bottom: 24px;
-  background: url("//img.alicdn.com/tfs/TB1zGqYJVXXXXXkXXXXXXXXXXXX-89-72.jpg") center center no-repeat;
+  background: url(//img.alicdn.com/tps/TB1r4YnMVXXXXXOXVXXXXXXXXXX-59-71.png) center center no-repeat;
 }
 

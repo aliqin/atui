@@ -75,12 +75,14 @@
         box-sizing: content-box;
         transition: all .3s ease;
         width: 100%;
+        color: #666;
         &:hover {
             background: tint(@primary-color, 95%);
         }
         &.selected, &.selected:hover {
-            color: #fff;
-            background: tint(@primary-color, 40%);
+            color: #333;
+            background-color: #F2F2F2;
+            // background: tint(@primary-color, 40%);
         }
         &.disabled {
             cursor: not-allowed;
