@@ -63,7 +63,7 @@
         <label :for="uploadId"
                :class="[prefixCls + '-upload-drag-area']">
         <p :class="[prefixCls + '-upload-drag-icon']"></p>
-        <span v-if="advanceDrag">将文件拖拽至框中上传或点此上传</span>
+        <span v-if="advanceDrag">点击或将文件拖拽到此区域上传</span>
         <span v-if="!advanceDrag">当前环境不支持拖拽上传，请点此上传</span>
         <p v-if="fileList.length > 0" v-for="file in selectFiles">{{file}}</p>
       </label>
