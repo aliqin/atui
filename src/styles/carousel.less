@@ -13,17 +13,22 @@
 
 @carousel-caption-color:                      #fff;
 
+@prefix-cls-carousel: e("@{prefix-cls}-carousel");
+
 // Wrapper for the slide container and indicators
-.carousel {
+.@{prefix-cls-carousel} {
   position: relative;
+  img{
+    max-width: 100%;
+  }
 }
 
-.carousel-inner {
+.@{prefix-cls-carousel}-inner {
   position: relative;
   overflow: hidden;
   width: 100%;
 
-  > .item {
+  > .carousel-item {
     display: none;
     position: relative;
     .transition(.6s ease-in-out left);
@@ -100,7 +105,7 @@
 // Left/right controls for nav
 // ---------------------------
 
-.carousel-control {
+.@{prefix-cls-carousel}-control {
   position: absolute;
   top: 0;
   left: 0;
@@ -181,7 +186,7 @@
 // Add an unordered list with the following class and add a list item for each
 // slide your carousel holds.
 
-.carousel-indicators {
+.@{prefix-cls-carousel}-indicators {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -225,7 +230,7 @@
 // Optional captions
 // -----------------------------
 // Hidden by default for smaller viewports
-.carousel-caption {
+.@{prefix-cls-carousel}-caption {
   position: absolute;
   left: 15%;
   right: 15%;
@@ -246,7 +251,7 @@
 @media screen and (min-width: @screen-sm-min) {
 
   // Scale up the controls a smidge
-  .carousel-control {
+  .@{prefix-cls-carousel}-control {
     .glyphicon-chevron-left,
     .glyphicon-chevron-right,
     .icon-prev,
@@ -267,14 +272,14 @@
   }
 
   // Show and left align the captions
-  .carousel-caption {
+  .@{prefix-cls-carousel}-caption {
     left: 20%;
     right: 20%;
     padding-bottom: 30px;
   }
 
   // Move up the indicators
-  .carousel-indicators {
+  .@{prefix-cls-carousel}-indicators {
     bottom: 20px;
   }
 }
