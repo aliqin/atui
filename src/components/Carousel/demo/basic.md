@@ -14,11 +14,19 @@ title:
 
 
 ````jsx
-<!-- <carousel>
-    <slide>hello</slide>
-    <slide>hello</slide>
-    <slide>hello</slide>
-</carousel> -->
+<carousel>
+    <slide>
+    <img src="http://placehold.it/1200x400?text=one">
+    <div class="carousel-caption">
+    </div>
+  </slide>
+  <slide>
+    <img src="http://placehold.it/1200x400?text=two">
+  </slide>
+  <slide>
+    <img src="http://placehold.it/1200x400?text=three">
+  </slide>
+</carousel>
 ````
 
 ````vue-script

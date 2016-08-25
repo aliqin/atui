@@ -1,27 +1,27 @@
 <template>
-<div class="carousel slide" data-ride="carousel">
+<div :class="[prefixCls + '-carousel']" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators" v-show="indicators">
-    <indicator></indicator>
+  <ol :class="[prefixCls + '-carousel-indicators']" v-show="indicators">
+    <li v-for="i in indicator" @click="indicatorClick($index)" :class="{active:$index === index}"><span></span></li>
   </ol>
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+  <div :class="[prefixCls + '-carousel-inner']" role="listbox">
     <slot></slot>
   </div>
   <!-- Controls -->
-  <a v-show="controls" class="left carousel-control" @click="prevClick">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a v-show="controls" class="right carousel-control" @click="nextClick">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  <div v-show="controls" :class="[prefixCls + '-carousel-controls','hidden-xs']">
+    <a :class="[prefixCls + '-carousel-control','left']" role="button" @click="prev">
+      <icon type="prev"></icon>
+    </a>
+    <a :class="[prefixCls + '-carousel-control','right']" role="button" @click="next">
+      <icon type="next"></icon>
+    </a>
+  </div>
 </div>
 </template>
 
 <script>
-import EventListener from '../_utils/EventListener.js'
+import Icon from '../Icon'
 export default {
   props: {
     indicators: {
@@ -35,85 +35,84 @@ export default {
     interval: {
       type: Number,
       default: 5000
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   components: {
-    'indicator': {
-      inherit: true,
-      template: '<li v-for="i in indicator" @click="handleIndicatorClick($index)" v-bind:class="{\'active\':$index === activeIndex}"</li>',
-      methods: {
-        handleIndicatorClick (index) {
-          if (this.isAnimating) return false
-          this.isAnimating = true
-          this.activeIndex = index
-        }
-      }
-    }
+    Icon
   },
   data () {
     return {
       indicator: [],
-      activeIndex: 0,
+      index: 0,
       isAnimating: false
     }
   },
   computed: {
     slider () {
-      return this.$el.querySelectorAll('.item')
+      return this.$el.querySelectorAll('.carousel-item')
     }
   },
   watch: {
-    activeIndex (newVal, oldVal) {
-      newVal > oldVal ? this.slide('left', newVal, oldVal) : this.slide('right', newVal, oldVal)
+    index (newVal, oldVal) {
+      this.slide(newVal > oldVal ? 'left' : 'right', newVal, oldVal)
     }
   },
   methods: {
-    slide (direction, selected, prev) {
-      if (this._prevSelectedEvent) this._prevSelectedEvent.remove()
-      if (this._selectedEvent) this._selectedEvent.remove()
-      const prevSelectedEl = this.slider[prev]
-      const selectedEl = this.slider[selected]
-      const transitionendFn = () => {
-        [...this.slider].forEach((el) => { el.className = 'item' })
-        selectedEl.classList.add('active')
+    indicatorClick (index) {
+      if (this.isAnimating || this.index === index) return false
+      this.isAnimating = true
+      this.index = index
+    },
+    slide (direction, next, prev) {
+      let me = this
+      const selected = this.slider[next]
+      const className = direction === 'left' ? 'next' : 'prev'
+      Vue.util.addClass(selected, className)
+      // request property that requires layout to force a layout
+      selected.clientHeight
+      Vue.util.addClass(this.slider[prev], direction)
+      Vue.util.addClass(selected, direction)
+
+      let transFun = () => {
+        me.slider.forEach((item) => {
+          item.className = 'carousel-item'
+          item.removeEventListener('transitionend', transFun)
+        })
+        Vue.util.addClass(selected, 'active')
         this.isAnimating = false
       }
-      direction === 'left' ? selectedEl.classList.add('next') : selectedEl.classList.add('prev')
-      // request property that requires layout to force a layout
-      // var x = selectedEl.clientHeight
-      this._prevSelectedEvent = EventListener.listen(prevSelectedEl, 'transitionend', transitionendFn)
-      this._selectedEvent = EventListener.listen(selectedEl, 'transitionend', transitionendFn)
-      prevSelectedEl.classList.add(direction)
-      selectedEl.classList.add(direction)
+      this.slider[prev].addEventListener('transitionend', transFun, false)
+      selected.addEventListener('transitionend', transFun, false)
     },
-    nextClick () {
+    next () {
       if (this.isAnimating) return false
       this.isAnimating = true
-      this.activeIndex + 1 < this.slider.length ? this.activeIndex += 1 : this.activeIndex = 0
+      this.index + 1 < this.slider.length ? this.index += 1 : this.index = 0
     },
-    prevClick () {
+    prev () {
       if (this.isAnimating) return false
       this.isAnimating = true
-      this.activeIndex === 0 ? this.activeIndex = this.slider.length - 1 : this.activeIndex -= 1
+      this.index === 0 ? this.index = this.slider.length - 1 : this.index -= 1
     }
   },
   ready () {
-    let intervalID = null
-    const el = this.$el
-    function intervalManager (flag, func, time) {
-      flag ? intervalID = setInterval(func, time) : clearInterval(intervalID)
-    }
-    if (this.interval) {
-      intervalManager(true, this.nextClick, this.interval)
-      el.addEventListener('mouseenter', () => intervalManager(false))
-      el.addEventListener('mouseleave', () => intervalManager(true, this.nextClick, this.interval))
+    if (this.interval > 0) {
+      let intervalID = null
+      const intervalManager = () => {
+        intervalID = setInterval(this.next, this.interval)
+      }
+      this.$el.onmouseenter = () => {
+        clearInterval(intervalID)
+      }
+      this.$el.onmouseleave = () => {
+        intervalManager()
+      }
+      intervalManager()
     }
   }
 }
 </script>
-
-<style scoped>
-  .carousel-control {
-    cursor: pointer;
-  }
-</style>
