@@ -12,9 +12,6 @@ const vRow = Layout.Row
 
 export default {
   props: {
-    // 表单元素排列方式，有纵向和横向两种 horizontal、vertical
-    horizontal: Boolean,
-    vertical: Boolean,
     prefixCls: {
       type: String,
       default: 'atui'
@@ -22,13 +19,11 @@ export default {
   },
   computed: {
     formClassObj () {
-      let { prefixCls, horizontal, vertical } = this
+      let { prefixCls } = this
       let classObj = {}
 
       classObj[prefixCls + '-form'] = true
-      classObj[prefixCls + '-form-horizontal'] = horizontal
-      classObj[prefixCls + '-form-vertical'] = vertical
-
+      
       return classObj
     }
   },
