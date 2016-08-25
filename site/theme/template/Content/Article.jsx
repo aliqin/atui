@@ -46,7 +46,7 @@ export default class Article extends React.Component {
     const { meta, description } = content;
     const { title, subtitle, chinese, english } = meta;
     return (
-      <DocumentTitle title={`${title || chinese || english} - Ant Design`}>
+      <DocumentTitle title={`${title || chinese || english} - ATUI`}>
         <article className="markdown">
           <h1>
             {title || english}
