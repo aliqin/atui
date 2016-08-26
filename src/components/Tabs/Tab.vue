@@ -14,8 +14,7 @@ export default {
       type: String
     },
     disabled: {
-      type: Boolean,
-      default: false
+      type: Boolean
     },
     prefixCls: {
       type: String,

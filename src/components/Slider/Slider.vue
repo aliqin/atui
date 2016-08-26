@@ -184,7 +184,7 @@
        * @return {[type]}       [description]
        */
       sliderStartCallBack (value) {
-        this.$dispatch('slider:start', this, value)
+        this.$dispatch('start', value, this)
       },
 
       getWrapperElement (wrapper) {
@@ -244,7 +244,7 @@
         this.valueArray = valueArray.reverse().reverse()
         this.valuePercent = valuePercent.reverse().reverse()
 
-        this.$dispatch('slider:onChange', this, this.valueArray)
+        this.$dispatch('change', this.valueArray, this)
       },
 
       preventEventDefaults (e) {
@@ -285,7 +285,7 @@
       mouseup (e) {
         if (this.dragging) {
           this.dragging = false
-          this.$dispatch('slider:onAfterChange', this, this.valueArray)
+          this.$dispatch('afterChange', this.valueArray, this)
         }
       }
     }
