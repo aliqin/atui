@@ -13,7 +13,16 @@ cols: 1
 ## API
 
 
+### Tabs
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
+trigger | 触发事件类型 | String | click
+base | 是否为基本类型 | Boolean | false
 
+### Tabs.Tab
+
+属性 | 说明 | 类型 | 默认值
+-----|-----|-----|------
+header | 标签头内容 | String | |
+disabled | 是否禁用 | Boolean | false

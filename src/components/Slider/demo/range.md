@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-basic
+
 <slider :value="[20,50]"></slider>
 ````
 
