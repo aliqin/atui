@@ -1,7 +1,7 @@
 ---
 order: 0
 title:
-  zh-CN: 基本
+  zh-CN: 范围区间
   en-US: Type
 ---
 

@@ -3,7 +3,6 @@ category: Components
 type: Form Controls
 title: Slider
 subtitle: 滑动输入条
-cols: 1
 ---
 
 
