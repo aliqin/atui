@@ -289,7 +289,7 @@
           return
         }
 
-        const $trigger = me.$els.trigger
+        const $trigger = me.$els.trigger.children[0]
         const triggerOffset = $trigger.getBoundingClientRect()
         const triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left
         const triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top

@@ -23,7 +23,6 @@ export default {
       let classObj = {}
 
       classObj[prefixCls + '-form'] = true
-      
       return classObj
     }
   },
