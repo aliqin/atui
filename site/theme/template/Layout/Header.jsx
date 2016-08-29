@@ -172,6 +172,11 @@ export default class Header extends React.Component {
                   <FormattedMessage id="app.header.menu.react" />
                 </Link>
               </Menu.Item>
+              <Menu.Item key="docs/atui-weiget">
+                <Link to="/docs/widgets/introduce">
+                  <FormattedMessage id="app.header.menu.widgets" />
+                </Link>
+              </Menu.Item>
               {/*<Menu.Item key="docs/spec">
                 <Link to="/docs/spec/introduce">
                   <FormattedMessage id="app.header.menu.spec" />

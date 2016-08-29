@@ -5,6 +5,7 @@ module.exports = {
   source: [
     //'./components',
     './src/components',
+    './src/widgets',
     './docs',
     'CHANGELOG.md'
   ],

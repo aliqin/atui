@@ -6,9 +6,10 @@ import * as utils from '../utils';
 
 export function collect(nextProps, callback) {
 
-  console.log(nextProps)
+  console.log('nextProps', nextProps)
   //for atui
   const componentsList = utils.collectDocs(nextProps.data.src.components);
+  const weigetList = utils.collectDocs(nextProps.data.src.widgets);
 
   const pathname = nextProps.location.pathname;
   let moduleDocs;
@@ -18,6 +19,14 @@ export function collect(nextProps, callback) {
       ...componentsList,
       /* eslint-disable new-cap */
       nextProps.data.CHANGELOG(),
+      /* eslint-enable new-cap */
+    ];
+  } else if(/(docs\/widgets\/)/i.test(pathname)) {
+    moduleDocs = [
+      ...utils.collectDocs(nextProps.data.docs.widgets),
+      ...weigetList,
+       // eslint-disable new-cap
+      // nextProps.data.CHANGELOG(),
       /* eslint-enable new-cap */
     ];
   } else {
