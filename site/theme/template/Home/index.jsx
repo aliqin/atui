@@ -12,6 +12,7 @@ import * as utils from '../utils';
 
 export function collect(nextProps, callback) {
   //for atui
+  // console.log('sfsdf',nextProps)
   const componentsList = utils.collectDocs(nextProps.data.src.components);
   Promise.all(componentsList)
     .then((list) => callback(null, { ...nextProps, components: list }));
