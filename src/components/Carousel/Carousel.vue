@@ -92,11 +92,13 @@ export default {
       if (this.isAnimating) return false
       this.isAnimating = true
       this.index + 1 < this.slider.length ? this.index += 1 : this.index = 0
+      this.$dispatch('slide', this.index, this)
     },
     prev () {
       if (this.isAnimating) return false
       this.isAnimating = true
       this.index === 0 ? this.index = this.slider.length - 1 : this.index -= 1
+      this.$dispatch('slide', this.index, this)
     }
   },
   ready () {
