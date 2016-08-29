@@ -21,7 +21,7 @@ export function collect(nextProps, callback) {
       nextProps.data.CHANGELOG(),
       /* eslint-enable new-cap */
     ];
-  } else if(/(docs\/widgets\/)/i.test(pathname)) {
+  } else if(/(docs\/widgets\/)|(widgets\/)/i.test(pathname)) {
     moduleDocs = [
       ...utils.collectDocs(nextProps.data.docs.widgets),
       ...weigetList,
