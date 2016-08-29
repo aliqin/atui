@@ -84,6 +84,7 @@ export default {
         })
         Vue.util.addClass(selected, 'active')
         this.isAnimating = false
+        this.$dispatch('slide', this.index, this)
       }
       this.slider[prev].addEventListener('transitionend', transFun, false)
       selected.addEventListener('transitionend', transFun, false)
