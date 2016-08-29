@@ -1,5 +1,6 @@
 const contentTmpl = './template/Content/index';
 
+
 module.exports = {
   categoryOrder: {
     组件: 0,
