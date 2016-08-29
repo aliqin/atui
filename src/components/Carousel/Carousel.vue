@@ -68,6 +68,7 @@ export default {
       this.index = index
     },
     slide (direction, next, prev) {
+      this.$dispatch('slide', this.index, this)
       let me = this
       const selected = this.slider[next]
       const className = direction === 'left' ? 'next' : 'prev'
@@ -78,7 +79,6 @@ export default {
       Vue.util.addClass(selected, direction)
 
       let transFun = () => {
-        this.$dispatch('slide', this.index, this)
         me.slider.forEach((item) => {
           item.className = 'carousel-item'
           item.removeEventListener('transitionend', transFun)
@@ -90,13 +90,11 @@ export default {
       selected.addEventListener('transitionend', transFun, false)
     },
     next () {
-      this.$dispatch('slide', this.index, this)
       if (this.isAnimating) return false
       this.isAnimating = true
       this.index + 1 < this.slider.length ? this.index += 1 : this.index = 0
     },
     prev () {
-      this.$dispatch('slide', this.index, this)
       if (this.isAnimating) return false
       this.isAnimating = true
       this.index === 0 ? this.index = this.slider.length - 1 : this.index -= 1
