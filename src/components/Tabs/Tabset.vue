@@ -51,8 +51,7 @@ export default {
       default: 6
     },
     base: {
-      type: Boolean,
-      default: false
+      type: Boolean
     },
     trigger: {
       type: String,

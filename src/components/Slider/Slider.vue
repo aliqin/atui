@@ -6,9 +6,9 @@
       </tooltip>
     </template>
     <template v-if="valuePercent.length == 1">
-      <tooltip :content="valueArray[0]">
+      <!--<tooltip :content="valueArray[0]">-->
         <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': '0%', 'width': valuePercent[0]+'%'}"></div>
-      </tooltip>
+      <!--</tooltip>-->
     </template>
     <template v-if="valuePercent.length > 1">
       <div :class="[prefixCls + '-slider-track']" :style="{'visibility': 'visible', 'left': valuePercent[0]+'%', 'width': valuePercent[1]-valuePercent[0]+'%'}"></div>
@@ -184,7 +184,7 @@
        * @return {[type]}       [description]
        */
       sliderStartCallBack (value) {
-        this.$dispatch('slider:start', this, value)
+        this.$dispatch('start', value, this)
       },
 
       getWrapperElement (wrapper) {
@@ -244,7 +244,7 @@
         this.valueArray = valueArray.reverse().reverse()
         this.valuePercent = valuePercent.reverse().reverse()
 
-        this.$dispatch('slider:onChange', this, this.valueArray)
+        this.$dispatch('change', this.valueArray, this)
       },
 
       preventEventDefaults (e) {
@@ -285,7 +285,7 @@
       mouseup (e) {
         if (this.dragging) {
           this.dragging = false
-          this.$dispatch('slider:onAfterChange', this, this.valueArray)
+          this.$dispatch('afterChange', this.valueArray, this)
         }
       }
     }
