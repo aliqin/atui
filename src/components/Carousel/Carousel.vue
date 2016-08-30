@@ -1,119 +1,188 @@
 <template>
-<div :class="[prefixCls + '-carousel']" data-ride="carousel">
-  <!-- Indicators -->
-  <ol :class="[prefixCls + '-carousel-indicators']" v-show="indicators">
-    <li v-for="i in indicator" @click="indicatorClick($index)" :class="{active:$index === index}"><span></span></li>
-  </ol>
-  <!-- Wrapper for slides -->
-  <div :class="[prefixCls + '-carousel-inner']" role="listbox">
-    <slot></slot>
+  <div :class="[prefixCls + '-carousel']"
+       :style="{ width: width, height: height }">
+    <component :is="animation"
+               :style="{ transition: 'all ' + thisSpeed + 's' }"
+               :speed="thisSpeed"
+               :class="[prefixCls + '-carousel-content']"
+               v-ref:content>
+      <slot></slot>
+    </component>
+
+    <div :class="[prefixCls + '-carousel-btn', prefixCls + '-carousel-left-btn']"
+         @click.stop="preview"
+         v-if="controlBtn">
+      <i :class="[prefixCls + '-carousel-icon', prefixCls + '-carousel-icon-left']"></i>
+    </div>
+    <div :class="[prefixCls + '-carousel-btn', prefixCls + '-carousel-right-btn']"
+         @click.stop="next"
+         v-if="controlBtn">
+      <i :class="[prefixCls + '-carousel-icon', prefixCls + '-carousel-icon-right']"></i>
+    </div>
+
+    <div :class="[prefixCls + '-carousel-indicators',indicatorClass]"
+         v-if="indicators !== false"
+         @click.stop>
+      <i :class="[prefixCls + '-carousel-indicator-icon' ,{ 'carousel-indicator-active': posFlag === $index }]"
+         v-for="i in childrenArr"
+         @click="jump2($index)"></i>
+    </div>
   </div>
-  <!-- Controls -->
-  <div v-show="controls" :class="[prefixCls + '-carousel-controls','hidden-xs']">
-    <a :class="[prefixCls + '-carousel-control','left']" role="button" @click="prev">
-      <icon type="prev"></icon>
-    </a>
-    <a :class="[prefixCls + '-carousel-control','right']" role="button" @click="next">
-      <icon type="next"></icon>
-    </a>
-  </div>
-</div>
 </template>
 
 <script>
-import Icon from '../Icon'
-export default {
-  props: {
-    indicators: {
-      type: Boolean,
-      default: true
+  import { normal, fade } from './animation'
+  export default {
+    data () {
+      return {
+        posFlag: 0,
+        childrenArr: [],
+        childrenLength: 0
+      }
     },
-    controls: {
-      type: Boolean,
-      default: true
+    props: {
+      width: {
+        type: String,
+        default: 'auto'
+      },
+      height: {
+        type: String,
+        default: '400px'
+      },
+      interval: {
+        type: Number,
+        default: 3000
+      },
+      speed: {
+        type: Number,
+        default: 500
+      },
+      auto: {
+        type: Boolean,
+        default: true
+      },
+      indicators: {
+        default: 'center'
+      },
+      controlBtn: {
+        type: Boolean,
+        default: true
+      },
+      animation: {
+        type: String,
+        default: 'normal'
+      },
+      prefixCls: {
+        type: String,
+        default: 'atui'
+      }
     },
-    interval: {
-      type: Number,
-      default: 5000
-    },
-    prefixCls: {
-      type: String,
-      default: 'atui'
-    }
-  },
-  components: {
-    Icon
-  },
-  data () {
-    return {
-      indicator: [],
-      index: 0,
-      isAnimating: false
-    }
-  },
-  computed: {
-    slider () {
-      return this.$el.querySelectorAll('.carousel-item')
-    }
-  },
-  watch: {
-    index (newVal, oldVal) {
-      this.slide(newVal > oldVal ? 'left' : 'right', newVal, oldVal)
-    }
-  },
-  methods: {
-    indicatorClick (index) {
-      if (this.isAnimating || this.index === index) return false
-      this.isAnimating = true
-      this.index = index
-    },
-    slide (direction, next, prev) {
-      this.$dispatch('slide', this.index, this)
-      let me = this
-      const selected = this.slider[next]
-      const className = direction === 'left' ? 'next' : 'prev'
-      Vue.util.addClass(selected, className)
-      // request property that requires layout to force a layout
-      selected.clientHeight
-      Vue.util.addClass(this.slider[prev], direction)
-      Vue.util.addClass(selected, direction)
 
-      let transFun = () => {
-        me.slider.forEach((item) => {
-          item.className = 'carousel-item'
-          item.removeEventListener('transitionend', transFun)
-        })
-        Vue.util.addClass(selected, 'active')
-        this.isAnimating = false
+    computed: {
+      thisSpeed () {
+        let speed = this.speed / 1000
+
+        return speed.toFixed(2)
+      },
+      indicatorClass () {
+        if (this.indicators) {
+          return `${this.prefixCls}-carousel-${this.indicators}`
+        }
       }
-      this.slider[prev].addEventListener('transitionend', transFun, false)
-      selected.addEventListener('transitionend', transFun, false)
     },
-    next () {
-      if (this.isAnimating) return false
-      this.isAnimating = true
-      this.index + 1 < this.slider.length ? this.index += 1 : this.index = 0
+    methods: {
+      autoplay () {
+        let timer
+        // Get animation's vm
+        let content = this.$refs.content
+        let _this = this
+        function setTimer () {
+          return setInterval(() => {
+            if (_this.posFlag < _this.$children.length - 2) {
+              _this.posFlag++
+            } else {
+              _this.posFlag = 0
+            }
+
+            content.animation(_this.posFlag)
+          }, _this.interval)
+        }
+        return function () {
+          if (timer) {
+            clearInterval(timer)
+            timer = setTimer()
+          } else {
+            // Config autoplay & carousel item large than 2, coz carousel is one of items
+            if (_this.auto && _this.$children.length > 2) {
+              timer = setTimer()
+            }
+          }
+        }
+      },
+      next () {
+        let content = this.$refs.content
+        if (this.posFlag < this.$children.length - 2) {
+          ++this.posFlag
+        } else {
+          this.posFlag = 0
+        }
+        content.animation(this.posFlag)
+        // Clean the Timer, reset autoplay's interval time.
+        this.autoplay()
+      },
+      preview () {
+        let content = this.$refs.content
+
+        if (this.posFlag > 0) {
+          --this.posFlag
+        } else {
+          this.posFlag = this.$children.length - 2
+        }
+        content.animation(this.posFlag, 'preview')
+        this.autoplay()
+      },
+      jump2 (index) {
+        let content = this.$refs.content
+        content.animation(index, 'jump')
+        this.posFlag = index
+        this.autoplay()
+      }
     },
-    prev () {
-      if (this.isAnimating) return false
-      this.isAnimating = true
-      this.index === 0 ? this.index = this.slider.length - 1 : this.index -= 1
-    }
-  },
-  ready () {
-    if (this.interval > 0) {
-      let intervalID = null
-      const intervalManager = () => {
-        intervalID = setInterval(this.next, this.interval)
+    events: {
+      scaleSliderWidth (fn) {
+        let _this = this
+        fn(this.$el.clientWidth, this.$children.length - 1)
+        // For addChildrenLength()
+        this.scaleSliderWidth = function () {
+          fn(_this.$el.clientWidth, _this.$children.length - 1)
+        }
+      },
+      addChildrenLength () {
+        this.childrenLength++
+        this.childrenArr.push(this.childrenArr.length)
+        if (this.animation === 'normal') {
+          this.scaleSliderWidth()
+        }
+        this.autoplay()
+      },
+      scaleItemsWidth (fn) {
+        fn(this.$el.clientWidth)
+      },
+      beforeChange () {
+        return true
+      },
+      afterChange () {
+        return true
       }
-      this.$el.onmouseenter = () => {
-        clearInterval(intervalID)
-      }
-      this.$el.onmouseleave = () => {
-        intervalManager()
-      }
-      intervalManager()
+    },
+    ready () {
+      // Init autoplay function.
+      this.autoplay = this.autoplay()
+      this.autoplay()
+    },
+    components: {
+      normal,
+      fade
     }
   }
-}
 </script>
