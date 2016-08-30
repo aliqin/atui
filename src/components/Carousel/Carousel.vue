@@ -68,6 +68,7 @@ export default {
       this.index = index
     },
     slide (direction, next, prev) {
+      this.$dispatch('slide', this.index, this)
       let me = this
       const selected = this.slider[next]
       const className = direction === 'left' ? 'next' : 'prev'

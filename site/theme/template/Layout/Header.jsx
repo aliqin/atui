@@ -106,6 +106,9 @@ export default class Header extends React.Component {
       activeMenuItem = 'docs/atui';
     }
 
+    if (activeMenuItem === 'widgets') {
+      activeMenuItem = 'docs/widgets';
+    }
     const options = components
       .map(({ meta }) => {
         const pathSnippet = meta.filename.split('/')[2];
@@ -179,6 +182,11 @@ export default class Header extends React.Component {
               <Menu.Item key="docs/atui">
                 <Link to="/docs/atui/introduce">
                   <FormattedMessage id="app.header.menu.react" />
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="docs/widgets">
+                <Link to="/docs/widgets/introduce">
+                  <FormattedMessage id="app.header.menu.widgets" />
                 </Link>
               </Menu.Item>
               {/*<Menu.Item key="docs/spec">
