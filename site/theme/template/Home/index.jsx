@@ -100,10 +100,10 @@ export default class Home extends React.Component {
         animation: upDownMove 1.2s ease-in-out infinite;
       }
       .fade-enter {
-        display:none;
+        
       }
       .fade-enter-active {
-        display:none;
+        
       }
     `;
   }
