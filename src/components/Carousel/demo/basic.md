@@ -14,7 +14,7 @@ title:
 
 
 ````jsx
-<carousel height="300px">
+<carousel height="300px" control-btn>
   <slide>
     <img src="http://placehold.it/400x300?text=one">
     <div class="carousel-caption">

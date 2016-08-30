@@ -23,15 +23,11 @@ export default {
       function fade (preview, next) {
         this.items[ preview ].style.opacity = 0
         this.items[ next ].style.opacity = 1
-
         setTimeout(() => {
           this.items[ preview ].style.zIndex = length
           this.items[ next ].style.zIndex = length + 1
         }, parseInt(this.speed) * 1000)
-
-
       }
-
       if (flag === 'preview') {
         if (position === length - 1) {
           fade.call(this, 0, position)
@@ -59,12 +55,11 @@ export default {
         }
       }
 
-      function endCall() {
+      function endCall () {
         me.$el.removeEventListener('transitionend', endCall)
         me.$dispatch('afterChange', me)
       }
       me.$el.addEventListener('transitionend', endCall, false)
-
     },
     init () {
       let items = this.items = this.$el.children

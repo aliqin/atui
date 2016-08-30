@@ -29,18 +29,18 @@ title:
 
 ````vue-script
 new Vue({
-    el: 'body',
-    components: {
-        carousel: atui.Carousel,
-        slide: atui.Carousel.Slide
+  el: 'body',
+  components: {
+      carousel: atui.Carousel,
+      slide: atui.Carousel.Slide
+  },
+  events: {
+    beforeChange (slide) {
+      console.log('beforeFade',slide)
     },
-    events: {
-      beforeChange (slide) {
-        console.log('beforeFade',slide)
-      },
-      afterChange (slide) {
-        console.log('afterFade',slide)
-      }
+    afterChange (slide) {
+      console.log('afterFade',slide)
     }
+  }
 })
 ````
