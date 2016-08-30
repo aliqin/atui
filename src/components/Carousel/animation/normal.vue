@@ -23,7 +23,7 @@ export default {
       let me = this
       me.$dispatch('beforeChange', me)
       me.$el.style.transform = `translateX(${position * -this.width}px)`
-      function endCall() {
+      function endCall () {
         me.$el.removeEventListener('transitionend', endCall)
         me.$dispatch('afterChange', me)
       }

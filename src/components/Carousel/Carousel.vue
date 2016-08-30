@@ -65,8 +65,7 @@
         default: 'center'
       },
       controlBtn: {
-        type: Boolean,
-        default: true
+        type: Boolean
       },
       animation: {
         type: String,
