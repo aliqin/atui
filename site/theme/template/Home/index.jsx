@@ -86,17 +86,23 @@ export default class Home extends React.Component {
         background: #fff;
       }
       #footer {
-        background: #000;
+        background: #fff;
       }
       #footer,
       #footer h2 {
-        color: #999;
+        color: #666;
       }
       #footer a {
-        color: #eee;
+        color: #0087e0;
       }
       .down {
         animation: upDownMove 1.2s ease-in-out infinite;
+      }
+      .fade-enter {
+        display:none;
+      }
+      .fade-enter-active {
+        display:none;
       }
     `;
   }
@@ -106,12 +112,7 @@ export default class Home extends React.Component {
       <DocumentTitle title="Atui - 阿里通信前端UI组件">
         <Layout {...this.props}>
           <div className="main-wrapper">
-            <Link />
             <Banner />
-            <Page1 />
-            <Page2 />
-            <Page3 />
-            <Page4 />
             <style dangerouslySetInnerHTML={{ __html: this.getStyle() }} />
           </div>
         </Layout>

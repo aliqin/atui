@@ -90,8 +90,16 @@ export default class Header extends React.Component {
     }
   }
 
+  onMouseEnter = (e) => {
+    this.props.onHeaderHover();
+  }
+
+  onMouseLeave = (e) => {
+
+  }
+
   render() {
-    const { routes, components } = this.props;
+    const { routes, components, onHeaderHover } = this.props;
     const route = routes[0].path.replace(/^\//, '');
     let activeMenuItem = route.slice(0, route.indexOf(':') - 1) || 'home';
     if (activeMenuItem === 'components' || route === 'changelog') {
@@ -116,7 +124,7 @@ export default class Header extends React.Component {
     });
 
     return (
-      <header id="header" className={headerClassName}>
+      <header id="header" className={headerClassName} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
         <Row>
           <Col lg={4} md={4} sm={7} xs={24}>
             <Icon
@@ -152,11 +160,12 @@ export default class Header extends React.Component {
               ) : null*/
             }
             <Menu mode={this.state.menuMode} selectedKeys={[activeMenuItem]} id="nav">
-              {/*<Menu.Item key="home">
+              {<Menu.Item key="home">
                 <Link to="/">
                   <FormattedMessage id="app.header.menu.home" />
                 </Link>
               </Menu.Item>
+              /*
               <Menu.Item key="docs/practice">
                 <Link to="/docs/practice/cases">
                   <FormattedMessage id="app.header.menu.practice" />
