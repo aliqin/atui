@@ -19,22 +19,13 @@ export default class Banner extends React.Component {
   render() {
     return (
       <section id="banner">
-        <ScrollElement scrollName="banner" className="page">
-          <QueueAnim className="banner-text-wrapper" type={this.typeFunc} delay={300}>
-            <h2 key="h2">Atui</h2>
-            <p key="content">阿里通信前端UI组件</p>
-            <span className="line" key="line" />
-            <div key="button" className="start-button clearfix">
-              <Link to="/docs/atui/introduce">
-                <Icon type="smile-circle" /> 开始探索
-              </Link>
-            </div>
-            <GitHubButton key="github-button" type="stargazers"
-              namespace="ant-design" repo="ant-design"
-            />
-          </QueueAnim>
-          <Icon type="down" className="down" />
-        </ScrollElement>
+        <div className="home-content">
+          <h1>Work Smarter, Not Harder</h1>
+          <h3>A revolutionary workflow to optimise your design and development.</h3>
+          <Link to="/docs/atui/introduce">
+              <span className="btn-more">Learn more</span>
+          </Link>
+        </div>
       </section>
     );
   }

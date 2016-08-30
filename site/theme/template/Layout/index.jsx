@@ -6,6 +6,8 @@ import Header from './Header';
 import Footer from './Footer';
 import enLocale from '../../en-US.js';
 import cnLocale from '../../zh-CN.js';
+import TweenOne from 'rc-tween-one';
+import Animate from 'rc-animate';
 import '../../static/style';
 
 // Expose to iframe
@@ -48,6 +50,16 @@ export default class Layout extends React.Component {
     router: React.PropTypes.object.isRequired,
   }
 
+  constructor() {
+    super(...arguments);
+    this.state = {
+      headerFade: false //播放header动画
+    };
+    [
+      'onHeaderHover',
+    ].forEach((method) => this[method] = this[method].bind(this))
+  }
+
   componentDidMount() {
     if (typeof ga !== 'undefined' && !gaListenerSetted) {
       this.context.router.listen((loc) => {
@@ -68,12 +80,26 @@ export default class Layout extends React.Component {
     clearTimeout(this.timer);
   }
 
+  onHeaderHover() {
+    this.setState({
+      headerFade:true
+    });
+  }
+
   render() {
     const props = this.props;
     return (
       <IntlProvider locale={appLocale.locale} messages={appLocale.messages}>
         <div className="page-wrapper">
-          <Header {...props} />
+          <Animate
+            showProp="headerFade"
+            transitionName="fade"
+          >
+            <Header  {...props}
+              headerFade={this.state.headerFade}
+              onHeaderHover={this.onHeaderHover}
+            />
+          </Animate>
           {props.children}
           <Footer />
         </div>
