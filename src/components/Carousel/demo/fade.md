@@ -14,7 +14,7 @@ title:
 
 
 ````jsx
-<carousel height="300px" animation="fade" :speed="1000" :auto-play="false">
+<carousel height="300px" animation="fade" :speed="1000" >
   <slide>
     <img src="https://placeholdit.imgix.net/~text?txtsize=75&txt=one&w=400&h=300&txttrack=0&bg=0096e0&txtclr=fff">
   </slide>

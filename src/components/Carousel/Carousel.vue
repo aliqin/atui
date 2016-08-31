@@ -63,6 +63,9 @@
         type: Boolean,
         default: true
       },
+      hoverStop: {
+        type: Boolean
+      },
       indicators: {
         default: 'center'
       },
@@ -121,11 +124,14 @@
         }
       },
       stop () {
-        console.log('stop')
-        clearInterval(this.timer)
+        if (this.hoverStop) {
+          clearInterval(this.timer)
+        }
       },
       resume () {
-        this.play()
+        if (this.hoverStop) {
+          this.play()
+        }
       },
       next () {
         let content = this.$refs.content
