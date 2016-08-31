@@ -5,7 +5,10 @@ import enquire from 'enquire.js';
 import { debounce } from 'lodash';
 import classNames from 'classnames';
 import { Select, Menu, Row, Col, Icon, Button } from 'antd';
+import Animate from 'rc-animate';
+import Div from '../Comp/Div';
 const Option = Select.Option;
+
 
 import '../../static/antd.min.css';
 
@@ -41,6 +44,7 @@ export default class Header extends React.Component {
       menuVisible: false,
       menuMode: 'horizontal',
       isFirstFrame: true,
+      headerFade:false
     };
   }
 
@@ -91,11 +95,15 @@ export default class Header extends React.Component {
   }
 
   onMouseEnter = (e) => {
-    this.props.onHeaderHover();
+    this.setState({
+      headerFade:true
+    });
   }
 
   onMouseLeave = (e) => {
-
+    this.setState({
+      headerFade:false
+    });
   }
 
   render() {
@@ -124,10 +132,22 @@ export default class Header extends React.Component {
     const headerClassName = classNames({
       clearfix: true,
       'home-nav-white': !this.state.isFirstFrame,
+      'header-hover': this.state.headerFade
     });
 
     return (
       <header id="header" className={headerClassName} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+        <Animate
+          showProp="headerFade"
+          transitionName="fade"
+        >
+          {this.state.headerFade ?
+            <Div 
+              className="header-bg" 
+              headerFade={this.state.headerFade}
+            /> : null
+          }
+        </Animate>
         <Row>
           <Col lg={4} md={4} sm={7} xs={24}>
             <Icon
@@ -136,7 +156,7 @@ export default class Header extends React.Component {
               type="menu"
             />
             <Link to="/" id="logo">
-              <img width="180" height="46" src="//img.alicdn.com/tps/TB16_awMVXXXXcKXpXXXXXXXXXX-360-92.png" />
+              <span className="logoBg"></span>
             </Link>
           </Col>
           <Col className={`nav ${this.state.menuVisible ? 'nav-show' : ''}`}

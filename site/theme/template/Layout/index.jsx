@@ -57,6 +57,7 @@ export default class Layout extends React.Component {
     };
     [
       'onHeaderHover',
+      'onHeaderLeave'
     ].forEach((method) => this[method] = this[method].bind(this))
   }
 
@@ -86,20 +87,18 @@ export default class Layout extends React.Component {
     });
   }
 
+  onHeaderLeave() {
+    this.setState({
+      headerFade:false
+    });
+  }
+
   render() {
     const props = this.props;
     return (
       <IntlProvider locale={appLocale.locale} messages={appLocale.messages}>
         <div className="page-wrapper">
-          <Animate
-            showProp="headerFade"
-            transitionName="fade"
-          >
-            <Header  {...props}
-              headerFade={this.state.headerFade}
-              onHeaderHover={this.onHeaderHover}
-            />
-          </Animate>
+            <Header  {...props} />
           {props.children}
           <Footer />
         </div>

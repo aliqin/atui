@@ -43,13 +43,83 @@ export default class Home extends React.Component {
         display: inline;
         min-height: 600px;
       }
+      
       #header {
         position: fixed;
+        height: 88px;
         z-index: 999;
-        background: rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255,0);
         border-bottom: 1px solid transparent;
         transition: border .5s cubic-bezier(0.455, 0.03, 0.515, 0.955), background .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       }
+
+      .logoBg {
+        width: 95px;
+        height: 28px;
+        background-image: url('//img.alicdn.com/tps/TB1_fcTMVXXXXbGXpXXXXXXXXXX-189-76.png');
+        margin-top: 30px;
+        margin-left: 35px;
+      }
+
+      #nav li {
+        height: 88px;
+        line-height: 88px;
+      }
+
+      #header .header-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 88px;
+        background: #fff;
+      }
+
+      #header.header-hover .logoBg{
+        background-image: url('//img.alicdn.com/tps/TB1hFZ7MVXXXXasXFXXXXXXXXXX-189-76.png');
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0; 
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .fade-enter {
+        animation-duration: .5s;
+        animation-fill-mode: both;
+        animation-name: fadeIn;
+        animation-play-state: running;
+      }
+
+      .fade-enter-active {
+        
+      }
+      
+      .fade-leave {
+        animation-duration: .5s;
+        animation-fill-mode: both;
+        animation-name: fadeOut;
+        animation-play-state: running;
+      }
+      /*
+      #header.fade-leave-active {
+        animation-name: fadeOut;
+        animation-play-state: running;
+      }
+      */
+
       #header .ant-select-selection,
       #header .ant-menu {
         background: transparent;
@@ -77,9 +147,33 @@ export default class Home extends React.Component {
         color: #eee;
         transition: color 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       }
+      #header.header-hover #nav a {
+        color: #666;
+      }
+      #nav li.ant-menu-item-selected a{
+        color: #fff;
+      }
+
+      #header.header-hover #nav li.ant-menu-item-selected a{
+        color: #0087e0;
+      }
+      
+      .ant-menu-horizontal>.ant-menu-item-selected,
+      .ant-menu-horizontal>.ant-menu-item:hover,
+      .ant-menu-horizontal>.ant-menu-item-selected:hover {
+        border-bottom:2px solid #fff;
+      }
+
+      #header.header-hover .ant-menu-horizontal>.ant-menu-item-selected,
+      #header.header-hover .ant-menu-horizontal>.ant-menu-item:hover,
+      #header.header-hover .ant-menu-horizontal>.ant-menu-item-selected:hover {
+        border-bottom: 2px solid #0087e0;
+      }
+
       #search-box {
         border-left-color: rgba(235, 237, 238, .5);
         transition: border 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        display:none;
       }
       section {
         height: 100%;
@@ -98,12 +192,6 @@ export default class Home extends React.Component {
       }
       .down {
         animation: upDownMove 1.2s ease-in-out infinite;
-      }
-      .fade-enter {
-        
-      }
-      .fade-enter-active {
-        
       }
     `;
   }
