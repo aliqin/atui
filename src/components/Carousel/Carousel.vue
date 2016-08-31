@@ -1,6 +1,8 @@
 <template>
   <div :class="[prefixCls + '-carousel']"
-       :style="{ width: width, height: height }">
+       :style="{ width: width, height: height }"
+       @mouseover="stop"
+       @mouseout="resume">
     <component :is="animation"
                :style="{ transition: 'all ' + thisSpeed + 's' }"
                :speed="thisSpeed"
@@ -57,7 +59,7 @@
         type: Number,
         default: 500
       },
-      auto: {
+      autoPlay: {
         type: Boolean,
         default: true
       },
@@ -90,33 +92,40 @@
       }
     },
     methods: {
-      autoplay () {
-        let timer
+      play () {
+        // let timer
         // Get animation's vm
         let content = this.$refs.content
-        let _this = this
+        let me = this
         function setTimer () {
           return setInterval(() => {
-            if (_this.posFlag < _this.$children.length - 2) {
-              _this.posFlag++
+            if (me.posFlag < me.$children.length - 2) {
+              me.posFlag++
             } else {
-              _this.posFlag = 0
+              me.posFlag = 0
             }
 
-            content.animation(_this.posFlag)
-          }, _this.interval)
+            content.animation(me.posFlag)
+          }, me.interval)
         }
         return function () {
-          if (timer) {
-            clearInterval(timer)
-            timer = setTimer()
+          if (me.timer) {
+            clearInterval(me.timer)
+            me.timer = setTimer()
           } else {
-            // Config autoplay & carousel item large than 2, coz carousel is one of items
-            if (_this.auto && _this.$children.length > 2) {
-              timer = setTimer()
+            // Config play & carousel item large than 2, coz carousel is one of items
+            if (me.autoPlay && me.$children.length > 2) {
+              me.timer = setTimer()
             }
           }
         }
+      },
+      stop () {
+        console.log('stop')
+        clearInterval(this.timer)
+      },
+      resume () {
+        this.play()
       },
       next () {
         let content = this.$refs.content
@@ -126,8 +135,8 @@
           this.posFlag = 0
         }
         content.animation(this.posFlag)
-        // Clean the Timer, reset autoplay's interval time.
-        this.autoplay()
+        // Clean the Timer, reset play's interval time.
+        this.play()
       },
       preview () {
         let content = this.$refs.content
@@ -138,13 +147,13 @@
           this.posFlag = this.$children.length - 2
         }
         content.animation(this.posFlag, 'preview')
-        this.autoplay()
+        this.play()
       },
       jump2 (index) {
         let content = this.$refs.content
         content.animation(index, 'jump')
         this.posFlag = index
-        this.autoplay()
+        this.play()
       }
     },
     events: {
@@ -162,7 +171,7 @@
         if (this.animation === 'normal') {
           this.scaleSliderWidth()
         }
-        this.autoplay()
+        this.play()
       },
       scaleItemsWidth (fn) {
         fn(this.$el.clientWidth)
@@ -175,9 +184,9 @@
       }
     },
     ready () {
-      // Init autoplay function.
-      this.autoplay = this.autoplay()
-      this.autoplay()
+      // Init play function.
+      this.play = this.play()
+      this.play()
     },
     components: {
       normal,
