@@ -1,0 +1,34 @@
+.themes{
+  overflow: hidden;
+  position: fixed;
+  right:120px;
+  top:100px;
+  list-style: none;
+  z-index: 9999;
+  .thtmes-tips{
+    font-size: 12px;
+    float:left;
+  }
+}
+.themes ul {
+  float:right;
+}
+.themes li{
+  float:left;
+  width:14px;
+  height:14px;
+  border-radius:100%;
+  margin:0 3px;
+  cursor: pointer;
+  color:#fff;
+  font-size: 12px;
+  transition: all .3s ease;
+  opacity: .6;
+  padding: 2px;
+  border:1px solid #d9d9d9;
+  background-clip: content-box;
+}
+.themes li.active{
+  opacity: 1;
+  transform: scale(1.2);
+}

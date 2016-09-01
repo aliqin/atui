@@ -23,7 +23,7 @@
     </div>
 
     <div :class="[prefixCls + '-carousel-indicators',indicatorClass]"
-         v-if="indicators !== false"
+         v-if="indicators !== false && childrenLength > 1"
          @click.stop>
       <i :class="[prefixCls + '-carousel-indicator-icon' ,{ 'carousel-indicator-active': posFlag === $index }]"
          v-for="i in childrenArr"
@@ -49,7 +49,7 @@
       },
       height: {
         type: String,
-        default: '400px'
+        default: '100%'
       },
       interval: {
         type: Number,
@@ -192,6 +192,7 @@
     ready () {
       // Init play function.
       this.play = this.play()
+      this.$el.clentHight
       this.play()
     },
     components: {
