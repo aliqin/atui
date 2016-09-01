@@ -89,7 +89,7 @@ export default class Footer extends React.Component {
             </div>
           </li>
           <li>
-            <div>©2016 阿里通信前端</div>
+            <div>©2016 阿里通信</div>
             <div>Powered by <a href="https://github.com/benjycui/bisheng">BiSheng</a></div>
           </li>
         </ul>
