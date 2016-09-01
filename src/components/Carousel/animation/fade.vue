@@ -67,6 +67,9 @@ export default {
 
       Array.prototype.forEach.call(items, (item, index) => {
         item.style.position = 'absolute'
+        if (index === 0) {
+          item.style.position = 'relative'
+        }
         item.style.left = 0
         item.style.top = 0
         item.style.zIndex = length - index

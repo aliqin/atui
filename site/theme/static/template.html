@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atui - 阿里通信组件库</title>
     <link rel="stylesheet" type="text/css" href="{{ root }}index.css"/>
-     <link rel="stylesheet" type="text/css" href="http://g-assets.daily.taobao.net/aliqin/atui/0.1.2/greater-blue.css">
+     <!-- <link rel="stylesheet" type="text/css" href="http://g-assets.daily.taobao.net/aliqin/atui/0.1.2/greater-blue.css"> -->
+    <link id="J_ThemeCss" rel="stylesheet" type="text/css" href="http://localhost:8080/build/greater-blue.css">
   </head>
   <body>
     <div id="react-content"></div>
+    <div class="themes" id="J_themes" style="display: none;">
+      <div class="thtmes-tips">配色方案选择：</div>
+      <ul>
+        <li v-for="theme in themes" :class="{active:theme.active}" :style="{backgroundColor:theme.color}" @click="changeTheme(theme.csslink,$event)" :title="theme.name">
+        </li>
+      </ul>
+    </div>
     <script src="http://g.alicdn.com/aliqin/atui/0.1.1/vue.dev.js"></script>
     <!-- <script src="http://g-assets.daily.taobao.net/aliqin/atui/0.1.2/atui.js"></script>
     <script src="http://g-assets.daily.taobao.net/aliqin/atui/0.1.2/atuiWidget.js"></script> -->
@@ -18,6 +26,56 @@
 
     <script src="{{ root }}common.js"></script>
     <script src="{{ root }}index.js"></script>
+    <script>
 
+      var hostname = location.hostname
+      root = 'http://g-assets.daily.taobao.net/aliqin/atui/0.1.2/'
+      if(/localhost/ig.test(hostname)) {
+        root = 'http://localhost:8080/build/'
+      }
+
+      if (/(src\/components\/)|(src\/widgets\/)/.test(location.pathname) ) {
+        document.getElementById('J_themes').style.display = ''
+      }
+
+      new Vue({
+        el: '#J_themes',
+        data: {
+          themes:[
+          {
+              name : '大于蓝',
+              csslink:'greater-blue.css',
+              active:true,
+              color:'#00aaff'
+          },
+          {
+              name : '天猫红',
+              csslink:'tmall-red.css',
+              active:false,
+              color:'#e52e2e'
+          },
+          {
+              name : '淘宝橙',
+              csslink:'tao-orange.css',
+              active:false,
+              color:'#ff7500'
+          }],
+        },
+        methods:{
+          changeTheme: function (csslink, event) {
+            event.preventDefault();
+            this.themes.forEach( function(i) {
+              i.active = false;
+              if(i.csslink == csslink) {
+                i.active = true;
+              }
+            })
+            document.getElementById('J_ThemeCss').href = root + csslink
+            // document.body.className = csslink.replace('.css','')
+            Vue.util.addClass(document.body, csslink.replace('.css',''))
+          }
+        }
+      })
+    </script>
   </body>
 </html>
