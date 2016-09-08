@@ -88,6 +88,7 @@
     "url-loader": "~0.5.7",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
+    "vue-html5-editor": "^0.4.2",
     "vue-loader": "^8.3.0",
     "vue-router": "~0.7.13",
     "vue-style-loader": "^1.0.0",
