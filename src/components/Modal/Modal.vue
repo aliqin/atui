@@ -1,12 +1,11 @@
 <template>
-  <div role="dialog" :class="[prefixCls + '-modal']" v-show="show" transition="fade"
+  <div role="dialog" :class="[prefixCls + '-modal']" v-show="show"
     @click="clickBack"
     >
     <div v-show="show"
          :class="dialogClassObj"
          :style="{width: width}"
-         role="document"
-         transition="fade">
+         role="document">
       <div :class="[prefixCls + '-modal-content']">
         <slot name="modal-header">
           <div :class="[prefixCls + '-modal-header']">
