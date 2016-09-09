@@ -1,5 +1,5 @@
 import AddressSelect from './AddressSelect/'
-import Editor from './Editor'
+import Editor from './Editor/'
 
 const VueWidget = {
   AddressSelect,
