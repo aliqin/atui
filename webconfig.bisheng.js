@@ -71,7 +71,8 @@ module.exports = {
     },{ 
         test: /\.css$/, 
         loader: "style-loader!css-loader" 
-    },{   test: /\.(png)$/,
+    },{   
+        test: /\.(png|woff|woff2|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
         loader: 'url-loader?limit=100000'
     },{
         test: /greater-blue\.less$/,

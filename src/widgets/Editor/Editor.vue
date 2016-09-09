@@ -8,24 +8,23 @@
 </template>
 
 <script>
-	import VueHtml5Editor from 'vue-html5-editor'
-  import './editor-style.css'
+import VueHtml5Editor from 'vue-html5-editor'
 
-  Vue.use(VueHtml5Editor);
-  
-  export default {
-    props: {
-      content: {
-        type: String,
-        default: ''
-      },
-      height: Number,
-      zIndex: Number,
-      autoHeight: {
-        type: Boolean,
-        default: true
-      }
+Vue.use(VueHtml5Editor)
+
+export default {
+  props: {
+    content: {
+      type: String,
+      default: ''
+    },
+    height: Number,
+    zIndex: Number,
+    autoHeight: {
+      type: Boolean,
+      default: true
     }
   }
+}
 </script>
 

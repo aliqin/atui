@@ -15,6 +15,7 @@
     "exclude": ["gradient"]
   },
   "excludedFiles": [
-    "src/styles/mixins/grid-framework.less"
+    "src/styles/mixins/grid-framework.less",
+    "src/styles/editor.less"
   ]
 }
