@@ -12,7 +12,7 @@ module.exports = {
   lazyLoad: true,
   theme: './site/theme',
   htmlTemplate: './site/theme/static/template.html',
-  root: '/bisheng-theme-one/',
+  root: '/',
   plugins: [
     'bisheng-plugin-description',
     'bisheng-plugin-toc?maxDepth=2',
