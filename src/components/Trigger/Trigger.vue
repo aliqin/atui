@@ -30,14 +30,14 @@
          :transition="effect"
          @mouseenter="hoverHandler"
          @mouseleave="hoverHandler">
-      <slot name="popup">popup slot is not set</slot>
+      <slot name="popup"></slot>
     </div>
     <div v-else
          v-el:popup
          v-show="show"
          :class="popupClassObj"
          :transition="effect">
-      <slot name="popup">popup slot is not set</slot>
+      <slot name="popup"></slot>
     </div>
   </div>
 </template>
