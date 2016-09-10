@@ -6,7 +6,7 @@
       {{label}}
     </label>
   </v-col>
-  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="[prefixCls + '-form-valid-popup-container']">
+  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass">
     <div :class="[prefixCls + '-form-input']">
       <slot></slot>
       <template v-if="showIcon">
@@ -75,6 +75,13 @@
     },
 
     computed: {
+      popupContainerClass () {
+        if (this.tipsMode === 'popup' && this.popupTips) {
+          return this.prefixCls + '-form-valid-popup-container'
+        }
+
+        return ''
+      },
       formItemClassObj () {
         let { prefixCls, validStatus } = this
         let classObj = {}
@@ -83,6 +90,7 @@
         classObj[prefixCls + '-form-with-help'] = validStatus
         classObj[prefixCls + '-form-has-error'] = validStatus === 'error'
         classObj[prefixCls + '-form-has-success'] = validStatus === 'success'
+        classObj[prefixCls + '-form-popup'] = (this.tipsMode === 'popup' && this.popupTips)
 
         return classObj
       },

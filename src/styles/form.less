@@ -117,6 +117,10 @@ input[type="radio"] {
     &.@{prefix-cls-form}-with-help {
       margin-bottom: 0;
     }
+
+    &.@{prefix-cls-form}-popup {
+      margin-bottom: 20px;
+    }
   }
 
   .@{prefix-cls-form}-status-icon {
@@ -165,5 +169,22 @@ input[type="radio"] {
 
   .@{prefix-cls-form}-status-info {
     line-height: 20px;
+  }
+}
+
+.@{prefix-cls-form}-valid-popup-container {
+  position: relative;
+  zoom: 1;
+  padding-right: 300px;
+
+  .@{prefix-cls-form}-valid-popup-message {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+  }
+
+  .@{prefix-cls}-message.@{prefix-cls}-message-arrow-left:before {
+    top: 15px;
   }
 }
