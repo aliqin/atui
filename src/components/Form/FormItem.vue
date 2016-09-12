@@ -6,7 +6,7 @@
       {{label}}
     </label>
   </v-col>
-  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass" :style="{paddingRight: descriptionSpace + 'px'}">
+  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass" :style="popupContainerStyle">
     <div :class="[prefixCls + '-form-input']">
       <slot></slot>
       <template v-if="showIcon">
@@ -90,6 +90,15 @@
         }
 
         return ''
+      },
+      popupContainerStyle () {
+        let self = this
+        if (self.tipsMode === 'popup' && self.popupTips) {
+          return {
+            paddingRight: self.descriptionSpace + 'px'
+          }
+        }
+        return {}
       },
       formItemClassObj () {
         let { prefixCls, validStatus } = this
