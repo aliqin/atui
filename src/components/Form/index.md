@@ -31,4 +31,5 @@ has-icon | 配合validateStatus属性使用，是否展示校验状态图标 | B
 prefix-cls | 样式前缀 | String | atui
 tips-mode | 提示文案显示方式，目前取值有text（提示文案显示在输入域的下方）和popup（提示文案显示在输入域的右侧） | String | text
 description | popup模式提示下，显示的输入提示，如果验证状态为error，则会显示错误提示文案 | String | 空
+description-Width | popup提示框的宽度，和description配合使用 | String、Number | 300
 

@@ -6,7 +6,7 @@
       {{label}}
     </label>
   </v-col>
-  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass">
+  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass" :style="{paddingRight: descriptionWidth + 'px'}">
     <div :class="[prefixCls + '-form-input']">
       <slot></slot>
       <template v-if="showIcon">
@@ -16,7 +16,7 @@
         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
       </template>
     </div>
-    <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false">
+    <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false" :style="{width: descriptionWidth + 'px'}">
       {{{popupTips}}}
     </message>
     <div v-if="tipsMode === 'text' && tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
@@ -71,6 +71,11 @@
       // 输入描述，用于popup模式下
       description: {
         type: String
+      },
+      // popup输入提示宽度
+      descriptionWidth: {
+        type: [Number, String],
+        default: 300
       }
     },
 
