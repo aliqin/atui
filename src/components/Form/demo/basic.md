@@ -36,7 +36,7 @@ title:
       <v-option value="math">数学</v-option>
     </v-select>
   </form-item>
-  <form-item required label="模板内容" label-col="4" tips-mode="popup" :description="testDescription" description-width="500">
+  <form-item required label="模板内容" label-col="4" tips-mode="popup" :description="testDescription" description-width="500" description-space="500">
     <v-textarea placeholder="变量格式：${name}; 示例：尊敬的${name}，您的快递已在飞奔的路上，将在今天$[time]送达您的手里，请留意查收。"></v-textarea>
   </form-item>
   <form-item label-col="4">
