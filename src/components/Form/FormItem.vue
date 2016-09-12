@@ -6,7 +6,7 @@
       {{label}}
     </label>
   </v-col>
-  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass" :style="{paddingRight: descriptionWidth + 'px'}">
+  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass" :style="{paddingRight: descriptionSpace + 'px'}">
     <div :class="[prefixCls + '-form-input']">
       <slot></slot>
       <template v-if="showIcon">
@@ -16,7 +16,7 @@
         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
       </template>
     </div>
-    <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false" :style="{width: descriptionWidth + 'px'}">
+    <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false" :style="{width: descriptionWidth + 'px', right: descriptionRight + 'px'}">
       {{{popupTips}}}
     </message>
     <div v-if="tipsMode === 'text' && tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
@@ -76,6 +76,10 @@
       descriptionWidth: {
         type: [Number, String],
         default: 300
+      },
+      descriptionSpace: {
+        type: [Number, String],
+        default: 300
       }
     },
 
@@ -122,6 +126,9 @@
         }
 
         return this.description
+      },
+      descriptionRight () {
+        return this.descriptionSpace - 0 - this.descriptionWidth
       }
     },
     components: {
