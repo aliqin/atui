@@ -15,14 +15,15 @@ ATUI支持所有的现代浏览器和 IE9+。
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/aliqin/atui/0.1.2/greater-blue.css">
   </head>
   <body>
     <message>这是一个提示消息</message>
   </body>
-  <script src="dist/vue.js"></script>
-  <script src="dist/atui.js"></script>
+  <script src="http://g.alicdn.com/aliqin/atui/0.1.1/vue.dev.js"></script>
+  <script src="http://g.alicdn.com/aliqin/atui/0.1.2/atui.js"></script>
   <script>
+
     new Vue({
       el:'body',
       components: {
