@@ -1,5 +1,5 @@
 # atui
-阿里通信基于Vue.js的组件库.
+阿里通信基于Vue.js的组件库. http://atui.alibaba.net
 
 
 [![TNPM version][tnpm-image]][tnpm-url]
@@ -53,9 +53,9 @@ new Vue({
 ### 浏览器引用
 
 ```html
-<script src="//g.alicdn.com/aliqin/atui/0.0.10/vue.dev.js"></script>
+<script src="//g.alicdn.com/aliqin/atui/0.1.2/vue.dev.js"></script>
 <!--开发时建议引入vue.dev.js，发布时引用vue.js即可-->
-<script src="//g.alicdn.com/aliqin/atui/0.0.10/atui.js"></script>
+<script src="//g.alicdn.com/aliqin/atui/0.1.2/atui.js"></script>
 <script>
   const { Alert } = atui
   new Vue({
@@ -65,9 +65,3 @@ new Vue({
   })
 </script>
 ```
-
-### 文档地址
-- 组件库 <http://groups.alidemo.cn/aliqin/atui/>
-- 组件库视觉规范
-  - DPL > 组件  <http://ux.alibaba.com/alitelecom.html>
-  - 视觉稿 <http://ued.aliqin.alibaba.net/webcompon/>

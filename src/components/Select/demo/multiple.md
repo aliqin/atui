@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<v-select multiple style="width:100%">
+<v-select multiple placeholder="请输入" style="width:100%">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
