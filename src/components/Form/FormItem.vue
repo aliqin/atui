@@ -6,7 +6,7 @@
       {{label}}
     </label>
   </v-col>
-  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass" :style="popupContainerStyle">
+  <v-col :span="wrapperCol || calcWrapperCol" type="sm" :class="popupContainerClass">
     <div :class="[prefixCls + '-form-input']">
       <slot></slot>
       <template v-if="showIcon">
