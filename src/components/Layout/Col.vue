@@ -13,7 +13,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'md'
+      default: 'sm'
     },
     prefixCls: {
       type: String,
