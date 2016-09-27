@@ -16,7 +16,7 @@
         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
       </template>
     </div>
-    <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false" :style="{width: descriptionWidth + 'px', right: descriptionRight + 'px'}">
+    <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false">
       {{{popupTips}}}
     </message>
     <div v-if="tipsMode === 'text' && tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
