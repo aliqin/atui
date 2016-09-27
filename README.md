@@ -16,7 +16,7 @@
 
 <p align="center"></a></p>
 
-* [Vue.js](http://vuejs.org/) (基于Vue.js `^v1.x.x 版本以上`).
+* [Vue.js](http://vuejs.org/) (基于Vue.js `^v1.2.6 版本以上`).
 
 
 ## 安装方法
