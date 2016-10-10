@@ -1,12 +1,12 @@
 <template>
   <div :class="[prefixCls + '-popover-cont']">
-    <trigger :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover" :popup-always-show="alwaysShow">
+    <trigger v:ref="trigger" :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover" :popup-always-show="alwaysShow" :show.sync="visible">
       <slot slot="trigger"></slot>
       <slot slot="popup" name="popup" role="popover">
         <div :class="[prefixCls + '-popover-arrow']"></div>
         <h3 :class="[prefixCls + '-popover-title']" v-show="showHeader && title">{{title}}</h3>
         <div :class="[prefixCls + '-popover-content']">
-          {{{content}}}
+          <slot name="content">{{{content}}}</slot>
         </div>
       </slot>
     </trigger>
@@ -21,14 +21,15 @@
     mixins: [
       GlobalMixin
     ],
-
     components: {
       Trigger
     },
-
     props: {
       trigger: String,
       effect: String,
+      visible: {
+        type: Boolean
+      },
       placement: String,
       title: String,
       content: String,

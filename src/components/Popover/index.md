@@ -20,5 +20,7 @@ trigger | 触发事件 | String | click
 placement | 汽泡位置 | String | 参考Trigger组件
 title | 标题 | String |  |
 content | 内容 | String |  |
+visible | 用于手动控制浮层显隐 | Boolean | false
 showHeader | 是否显示标题 | Boolean | true
 alwaysShow | 是否一直显示 | Boolean | false
+
