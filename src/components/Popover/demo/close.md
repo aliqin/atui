@@ -18,7 +18,10 @@ title:
   placement="bottom"
   :visible.sync="visible"
   title="我是标题">
-  <p slot="content"><v-button @click="visible = false">点我关闭</v-button></p>
+  <div slot="content">
+  <p>我是文字，我是文字，我是文字，我是文字，我是文字，我是文字，我是文字，</p>
+  <v-button @click="visible = false">点我关闭</v-button>
+  </div>
   <v-button>Popover on bottom</v-button>
 </popover>
 ````

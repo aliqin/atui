@@ -1,6 +1,6 @@
 {
   "name": "@ali/atui",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "components built with Vue.js",
   "main": "dist/atui.js",
   "repository": {
@@ -119,7 +119,7 @@
     "debug": "webpack-dev-server --host 0.0.0.0 --port 9999 --config  webpack.debug.js",
     "deploy": "rm -rf _site && npm run site && node depoly.js",
     "publish-npm": "npm run authors && tnpm publish",
-    "build": "npm run lint && NODE_ENV=production webpack --progress && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
+    "build": "npm run lint && NODE_ENV=production webpack --config build/webconfig.config.js --progress && cp node_modules/vue/dist/vue.js dist/vue.dev.js && cp node_modules/vue/dist/vue.min.js dist/vue.js",
     "test": "npm run lint",
     "authors": "git log --format='%aN <%aE>' | sort -u  > AUTHORS.txt",
     "start": "webpack-dev-server --config build/webconfig.config.js --host 0.0.0.0 & bisheng start -c ./site/bisheng.config.js",
