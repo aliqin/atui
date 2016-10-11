@@ -17,7 +17,7 @@ hover显示
   <div>
     点击显示菜单 <icon type="down"></icon>
   </div>
-  <ul slot="dropdown-menu" class="atui-dropdown-menu">
+  <ul slot="dropdown-menu">
     <li><a>选项一</a></li>
     <li><a>选项二</a></li>
     <li><a>选项三</a></li>
@@ -32,7 +32,8 @@ hover显示
 new Vue({
   el: 'body',
   components: {
-    dropdown: atui.Dropdown
+    dropdown: atui.Dropdown,
+    icon: atui.Icon
   }
 })
 ````

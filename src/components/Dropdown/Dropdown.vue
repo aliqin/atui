@@ -6,9 +6,10 @@
              placement="bottomLeft"
              :popup-hide-delay="200"
              popup-hide-when-click-outside
+             popup-use-trigger-width
              :show.sync="open">
       <slot slot="trigger"></slot>
-      <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont']">
+      <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont','atui-dropdown-menu']">
         <slot name="dropdown-menu" role="dropdown"></slot>
       </div>
     </trigger>
