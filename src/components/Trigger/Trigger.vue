@@ -194,7 +194,7 @@
       }
 
       if (popupUseTriggerWidth) {
-        $popup.style.width = window.getComputedStyle($trigger).width
+        $popup.style.minWidth = window.getComputedStyle($trigger).width
       }
 
       // 永远展示popup,并且默认展示
