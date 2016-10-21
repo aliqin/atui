@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atui - 阿里通信组件库</title>
+    <script>
+      var hostname = location.hostname
+      root = 'http://g.alicdn.com/aliqin/atui/0.1.2/'
+      if(/localhost/ig.test(hostname)) {
+        root = 'http://localhost:8080/build/'
+      }
+    </script>
     <link rel="stylesheet" type="text/css" href="{{ root }}index.css"/>
     <!-- <link rel="stylesheet" id="J_ThemeCss" type="text/css" href="http://g.alicdn.com/aliqin/atui/0.1.2/greater-blue.css"> -->
     <link id="J_ThemeCss" rel="stylesheet" type="text/css" href="http://localhost:8080/build/greater-blue.css">
@@ -18,23 +25,14 @@
         </li>
       </ul>
     </div>
-    <script src="http://g.alicdn.com/aliqin/atui/0.1.2/vue.dev.js"></script>
-    <!-- <script src="http://g.alicdn.com/aliqin/atui/0.1.2/atui.js"></script>
-    <script src="http://g.ali -->cdn.com/aliqin/atui/0.1.2/atuiWidget.js"></script>
-
-
-    <script src="http://localhost:8080/build/atui.js"></script>
-    <script src="http://localhost:8080/build/atuiWidget.js"></script>
-
+    <script src="http://g.alicdn.com/aliqin/atui/0.1.3/vue.dev.js"></script>
+    <script>
+      document.write('<script src="'+ root +'atui.js"><\/script>')
+      document.write('<script src="'+ root +'atuiWidget.js"><\/script>')
+    </script>
     <script src="{{ root }}common.js"></script>
     <script src="{{ root }}index.js"></script>
     <script>
-
-      var hostname = location.hostname
-      root = 'http://g.alicdn.com/aliqin/atui/0.1.2/'
-      if(/localhost/ig.test(hostname)) {
-        root = 'http://localhost:8080/build/'
-      }
 
       if (/(src\/components\/)|(src\/widgets\/)/.test(location.pathname) ) {
         document.getElementById('J_themes').style.display = ''

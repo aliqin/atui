@@ -1,7 +1,7 @@
 <template>
   <div v-show="show"
        :class="optionClassObj"
-       @mousedown.prevent.stop="handleClick">
+       @mouseup.prevent.stop="handleClick">
     <slot></slot>
   </div>
 </template>
