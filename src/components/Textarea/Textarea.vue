@@ -80,7 +80,7 @@
       }
     },
     ready () {
-      if (this.maxRows || this.minRows) {
+      if (this.autosize && (this.maxRows || this.minRows)) {
         let self = this
         setTimeout(function () {
           let ele = document.getElementById(self.preId)

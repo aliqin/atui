@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<searchbox placeholder="请输入关键词搜索" :value.sync="defaultVal" :search-list="searchList" text-field="name" @value-change="valueChange" @value-check="valueCheck"></searchbox>
+<searchbox placeholder="请输入关键词搜索" :value="defaultVal" :search-list="searchList" text-field="name" @value-change="valueChange" @value-check="valueCheck"></searchbox>
 ````
 
 ````vue-script
