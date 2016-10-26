@@ -92,11 +92,11 @@
         }
       }
     },
-    watch: {
-      childrenLength(val) {
+    // watch: {
+    //   childrenLength (val) {
 
-      }
-    },
+    //   }
+    // },
     methods: {
       play () {
         // let timer

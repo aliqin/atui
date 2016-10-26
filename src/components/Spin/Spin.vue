@@ -35,8 +35,8 @@ export default {
       isSupportAnimation: isSupportAnimation
     }
   },
-  created() {
-    if(this.sping) {
+  created () {
+    if (this.sping) {
       this.show = true
     }
   },
@@ -49,11 +49,9 @@ export default {
     spinClassObj () {
       let { prefixCls, size, sping } = this
       let classObj = {}
-
       classObj[prefixCls + '-spin'] = true
       classObj[prefixCls + '-spin-' + size] = true
       classObj[prefixCls + '-sping'] = sping
-
       return classObj
     }
   }

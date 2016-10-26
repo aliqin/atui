@@ -57,8 +57,7 @@
       }
       this.$parent.$data.options.push(option)
       let value = this.$parent.value
-      if((Array.isArray(value) && value.indexOf(this.value) >= 0)
-        || value === this.value) {
+      if ((Array.isArray(value) && value.indexOf(this.value) >= 0) || value === this.value) {
         this.$parent.selectedOptions.push(option)
       }
     },
