@@ -9,11 +9,11 @@ title:
 
 可以直接使用组件实例调用方法,比如：
 
-- `message.success(content, duration)`
-- `message.error(content, duration)`
-- `message.info(content, duration)`
-- `message.warning(content, duration)`
-- `message.loading(content, duration)`
+- `Message.success(content, duration)`
+- `Message.error(content, duration)`
+- `Message.info(content, duration)`
+- `Message.warning(content, duration)`
+- `Message.loading(content, duration)`
 
 ## en-US
 

@@ -56,7 +56,9 @@
         disabled: this.disabled
       }
       this.$parent.$data.options.push(option)
-      if (this.$parent.value === this.value) {
+      let value = this.$parent.value
+      if((Array.isArray(value) && value.indexOf(this.value) >= 0)
+        || value === this.value) {
         this.$parent.selectedOptions.push(option)
       }
     },

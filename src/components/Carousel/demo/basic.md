@@ -39,10 +39,10 @@ new Vue({
     },
     events: {
       beforeChange (slide) {
-        console.log('before',slide)
+        //console.log('before',slide)
       },
       afterChange (slide) {
-        console.log('after',slide)
+        //console.log('after',slide)
       }
     }
 })

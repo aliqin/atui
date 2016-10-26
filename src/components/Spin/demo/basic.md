@@ -12,7 +12,9 @@ title:
 
 
 ````jsx
-<spin show></spin>
+<spin :show="show"></spin>
+<br/>
+<button @click="show = !show">点我{{show ? '隐藏' : '显示'}}</button>
 ````
 
 ````vue-script
@@ -20,6 +22,9 @@ new Vue({
   el: 'body',
   components: {
     spin: atui.Spin
+  },
+  data () {
+    return { show: false }
   }
 })
 ````

@@ -26,7 +26,7 @@
          v-if="indicators !== false && childrenLength > 1"
          @click.stop>
       <i :class="[prefixCls + '-carousel-indicator-icon' ,{ 'carousel-indicator-active': posFlag === $index }]"
-         v-for="i in childrenArr"
+         v-for="i in childrenLength"
          @click="jump2($index)"></i>
     </div>
   </div>
@@ -38,7 +38,6 @@
     data () {
       return {
         posFlag: 0,
-        childrenArr: [],
         childrenLength: 0
       }
     },
@@ -85,13 +84,17 @@
     computed: {
       thisSpeed () {
         let speed = this.speed / 1000
-
         return speed.toFixed(2)
       },
       indicatorClass () {
         if (this.indicators) {
           return `${this.prefixCls}-carousel-${this.indicators}`
         }
+      }
+    },
+    watch: {
+      childrenLength(val) {
+
       }
     },
     methods: {
@@ -173,7 +176,7 @@
       },
       addChildrenLength () {
         this.childrenLength++
-        this.childrenArr.push(this.childrenArr.length)
+        // this.childrenArr.push(this.childrenArr.length)
         if (this.animation === 'normal') {
           this.scaleSliderWidth()
         }

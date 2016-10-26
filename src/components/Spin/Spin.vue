@@ -1,6 +1,6 @@
 <template>
-<div :class="spinClassObj" v-show="show">
-  <div v-if="isSupportAnimation || !tip" :class="[prefixCls + '-sping-point']">
+<div :class="spinClassObj">
+  <div v-show="show" v-if="isSupportAnimation || !tip" :class="[prefixCls + '-sping-point']">
       <div></div>
       <div></div>
       <div></div>
@@ -35,12 +35,14 @@ export default {
       isSupportAnimation: isSupportAnimation
     }
   },
-  methods: {
-    show () {
+  created() {
+    if(this.sping) {
       this.show = true
-    },
-    hide () {
-      this.show = false
+    }
+  },
+  watch: {
+    sping (val) {
+      this.show = val
     }
   },
   computed: {

@@ -64,12 +64,6 @@
       },
       tags: Boolean,
       multiple: Boolean,
-      selectedOptions: {
-        type: Array,
-        default () {
-          return []
-        }
-      },
       limit: {
         type: Number,
         default: 1024
@@ -118,7 +112,8 @@
         activeIndex: 0,
         showPlaceholder: true,
         showNotify: false,
-        options: []
+        options: [],
+        selectedOptions: []
       }
     },
 
