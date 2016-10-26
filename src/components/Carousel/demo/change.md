@@ -1,12 +1,12 @@
 ---
 order: 0
 title:
-  zh-CN: 渐显
+  zh-CN: 动态改变
   en-US: Type
 ---
 
 ## zh-CN
-
+动态增加或删除卡片
 
 
 
@@ -24,7 +24,12 @@ title:
   <slide>
     <img src="https://placeholdit.imgix.net/~text?txtsize=75&txt=three&w=400&h=300&txttrack=0&bg=e52e2e&txtclr=fff">
   </slide>
+  <slide v-if="hasFour">
+    <img src="https://placeholdit.imgix.net/~text?txtsize=75&txt=four&w=400&h=300&txttrack=0&bg=e52e2e&txtclr=fff">
+  </slide>
 </carousel>
+<br/>
+<button @click="showFour">添加第四张</button>
 ````
 
 ````vue-script
@@ -33,6 +38,16 @@ new Vue({
   components: {
       carousel: atui.Carousel,
       slide: atui.Carousel.Slide
+  },
+  data() {
+    return {
+      hasFour: false
+    }
+  },
+  methods: {
+    showFour() {
+      this.hasFour = true
+    }
   },
   events: {
     beforeChange (slide) {

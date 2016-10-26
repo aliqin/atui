@@ -13,7 +13,7 @@
                   v-bind="{disabled: disabled, large: large, small: small}"
                  :value="value"
                  :placeholder="placeholder"></v-input>
-        <icon type="time" :color="disabled ? #bfbfbf : (value ? '#666' : '#BFBFBF')"></icon>
+        <icon type="time" :color="disabled ? '#bfbfbf' : (value ? '#666' : '#BFBFBF')"></icon>
       </div>
       <div slot="popup"
            :class="[prefixCls + '-time-picker-menus']">
@@ -38,7 +38,7 @@
         </div>
         <div :class="[prefixCls + '-time-picker-panel']">
           <ul v-el:m class="time-minute" @mouseover="selection('M')">
-            <li v-for="index in 59"
+            <li v-for="index in 60"
               v-if="disabledMinutes().indexOf(index) < 0"
               :class="{selected: minute === index}"
               @click="chooseMinute(index, $event)">{{index | leftPad}}
@@ -47,7 +47,7 @@
         </div>
         <div :class="[prefixCls + '-time-picker-panel']" @mouseover="selection('S')">
           <ul v-el:s class="time-seconds">
-            <li v-for="index in 59" v-if="disabledSeconds().indexOf(index) < 0"
+            <li v-for="index in 60" v-if="disabledSeconds().indexOf(index) < 0"
               :class="{selected: second === index}"
               @click="chooseSecond(index, $event)">{{index | leftPad}}
             </li>
@@ -89,7 +89,6 @@
         type: String,
         default: '请选择时间'
       },
-      // defaultValue: [Date, String],
       size: {
         type: String,
         default: 'default'
@@ -140,6 +139,7 @@
     },
     watch: {
       value (val) {
+        // alert(val)
         if (val) {
           this.placeholder = ''
           const time = new Date()
@@ -147,8 +147,6 @@
           time.setMinutes(this.minute)
           time.setSeconds(this.second)
           this.$dispatch('change', time, this.value)
-        } else {
-          this.placeholder = this.originPlaceHolder
         }
       },
       hour (index) {
@@ -172,8 +170,6 @@
         this.hour = +arr[0]
         this.minute = +arr[1]
         this.second = +arr[2]
-      } else {
-        this.value = this.leftPad(this.hour) + ':' + this.leftPad(this.minute) + ':' + this.leftPad(this.second)
       }
     },
     methods: {
@@ -202,16 +198,22 @@
         if (target) {
           scrollTo(target.parentNode, index * target.children[0].offsetHeight, duration || 100)
         }
-        this.value = this.leftPad(this.hour) + ':' + this.leftPad(this.minute) + ':' + this.leftPad(this.second)
+
       },
       chooseHour (index) {
         this.hour = index
+        this.setValue()
       },
       chooseMinute (index) {
         this.minute = index
+        this.setValue()
       },
       chooseSecond (index) {
         this.second = index
+        this.setValue()
+      },
+      setValue() {
+        this.value = this.leftPad(this.hour) + ':' + this.leftPad(this.minute) + ':' + this.leftPad(this.second)
       },
       togglePopupHandler (show) {
         if (show) {

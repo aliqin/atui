@@ -12,19 +12,24 @@ title:
 
 
 ````jsx
-<spin sping>
+<spin :sping="sping">
   <div>
     内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
     内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
   </div>
 </spin>
+<br/>
+<button @click="sping = !sping">点我{{sping ? '隐藏' : '显示'}}loading</button>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-      spin: atui.Spin
+    spin: atui.Spin
+  },
+  data() {
+    return { sping: true }
   }
 })
 ````
