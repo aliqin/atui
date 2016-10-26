@@ -198,7 +198,6 @@
         if (target) {
           scrollTo(target.parentNode, index * target.children[0].offsetHeight, duration || 100)
         }
-
       },
       chooseHour (index) {
         this.hour = index
@@ -212,7 +211,7 @@
         this.second = index
         this.setValue()
       },
-      setValue() {
+      setValue () {
         this.value = this.leftPad(this.hour) + ':' + this.leftPad(this.minute) + ':' + this.leftPad(this.second)
       },
       togglePopupHandler (show) {
