@@ -24,7 +24,8 @@
     data () {
       return {
         itemsWidth: [],
-        previousStepsWidth: ''
+        previousStepsWidth: '',
+        isDisplayNone: false
       }
     },
     methods: {
@@ -47,11 +48,15 @@
           }
         })
       },
+
       _handleTailWidth () {
         const self = this
         const dom = self.$el
         const len = dom.children.length - 1
         this.itemsWidth = new Array(len + 1)
+
+        // 将display为none的steps组件设为block，方便获取宽度，同时对其opacity设置为0
+        self._setStyleByDisplay()
 
         let i = 0
         for (; i <= len - 1; i++) {
@@ -59,7 +64,7 @@
           this.itemsWidth[i] = Math.ceil(_item[0].offsetWidth + _item[1].children[0].offsetWidth)
         }
         this.itemsWidth[i] = Math.ceil(this.$el.children[len].offsetWidth)
-        // div.steps的宽度
+
         this.previousStepsWidth = Math.floor(this.$el.offsetWidth)
         this._update()
 
@@ -69,7 +74,11 @@
         this.$children.forEach((child, index) => {
           child.tailWidth = (self.itemsWidth.length === 0 || index === len) ? 'auto' : self.itemsWidth[index] + self.tailWidth + 'px'
         })
+
+        // 恢复steps默认样式
+        self._recoverDefaultStyle()
       },
+
       _update () {
         const len = this.$children.length - 1
         let tw = 0
@@ -82,6 +91,44 @@
         }
         this.tailWidth = dw
       },
+
+      _setStyleByDisplay () {
+        let self = this
+        let style = self.$el.style
+        let display = self._getStyle(this.$el, 'display')
+
+        if (display === 'none' && !self.isDisplayNone) {
+          style.display = 'block'
+          style.opacity = 0
+          self.isDisplayNone = true
+        }
+      },
+
+      _recoverDefaultStyle () {
+        let self = this
+        let style = self.$el.style
+
+        if (self.isDisplayNone) {
+          style.display = 'none'
+          style.opacity = 1
+          self.isDisplayNone = false
+        }
+      },
+
+      _getStyle (elem, name) {
+        if (elem.style[name]) {
+          return elem.style[name]
+        } else if (document.defaultView && document.defaultView.getComputedStyle) {
+          name = name.replace(/([A-Z])/g, '-$1')
+          name = name.toLowerCase()
+
+          let s = document.defaultView.getComputedStyle(elem, '')
+          return s && s.getPropertyValue(name)
+        } else {
+          return null
+        }
+      },
+
       resize () {
         const w = Math.floor(this.$el.offsetWidth)
         if (this.previousStepsWidth === w) {
