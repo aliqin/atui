@@ -137,44 +137,56 @@
 
     watch: {
       value (val) {
+        let me = this
         if (!val) {
-          this.showPlaceholder = true
+          me.showPlaceholder = true
           return
         }
-        this.showPlaceholder = false
-        if (this.multiple) {
+        me.showPlaceholder = false
+        if (me.multiple) {
           if (val.length > this.limit) {
-            this.showNotify = true
-            this.value.pop()
-            setTimeout(() => { this.showNotify = false }, 1000)
+            me.showNotify = true
+            me.value.pop()
+            setTimeout(() => { me.showNotify = false }, 1000)
           }
+          // 多选时，当value有变化则重新设置selectedOptions
+          let options = []
+          val.forEach(v => {
+            // 先判断是否在原来的option中
+            let option = me.options.filter(opt => {
+              return opt.value === v
+            })
+            if (option.length) {
+              options.push(option[0])
+            } else {
+              // 不在证明是新建的tag，则创建一个option
+              options.push({
+                label: v,
+                value: v,
+                disabled: false
+              })
+            }
+          })
+          this.$set('selectedOptions', options)
         } else {
           this.$broadcast('valueChange', val)
         }
       },
       selectedOptions (options) {
-        if (this.multiple) {
-          this.value = this.selectedOptions.map((option) => {
-            return option.value
-          })
-        } else {
-          this.value = this.selectedOptions[0].value
-        }
         this.$dispatch('change', this.multiple ? options : options[0])
       }
     },
 
     methods: {
       closeTag (option) {
-        this.selectedOptions.$remove(option)
+        this.value.$remove(option.value)
       },
       deleteTag (event) {
         let input = event.target
         let value = input.value
         if (value.length === 0) {
-          let options = this.selectedOptions
-          let option = options[options.length - 1]
-          this.selectedOptions.$remove(option)
+          let value = this.value[this.value.length - 1]
+          this.value.$remove(value)
         }
       },
       onInput (event) {
@@ -191,11 +203,7 @@
             return
           }
           if (this.value.indexOf(value) === -1) {
-            const option = {
-              label: value,
-              value: value
-            }
-            this.selectedOptions.push(option)
+            this.value.push(value)
           }
           this.searchText = ''
           event.target.style.width = '10px'
@@ -229,14 +237,11 @@
 
       togglePopupHandler (show) {
         const me = this
-
         if (this.disabled) {
           this.show = false
           return
         }
-
         this.show = !this.show
-
         if (this.multiple) {
           this.showPlaceholder = false
           setTimeout(() => me.$els.searchField.focus(), 10)
@@ -249,20 +254,13 @@
         this.showPlaceholder = false
 
         if (this.multiple) {
-          let isSelected = this.selectedOptions.some((item) => {
-            return item.value === option.value
-          })
+          let isSelected = this.value.indexOf(option.value) >= 0
           if (!isSelected) {
-            this.selectedOptions.push(option)
             this.value.push(option.value)
           } else {
-            this.selectedOptions = this.selectedOptions.filter((item) => {
-              return item.value !== option.value
-            })
             this.value.$remove(option.value)
           }
         } else {
-          // this.selectedOptions = [option]
           this.value = option.value
         }
 

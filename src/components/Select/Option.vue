@@ -51,7 +51,7 @@
     },
     ready () {
       let option = {
-        label: this.$el.innerText,
+        label: this.$el.innerText.trim(),
         value: this.value,
         disabled: this.disabled
       }
