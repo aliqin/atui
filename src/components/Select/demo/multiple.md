@@ -14,11 +14,11 @@ title:
 
 ````jsx
 <v-select multiple :value="['Apple','Banana']" placeholder="请输入" style="width:100%">
-  <v-option value="Apple">Apple</v-option>
-  <v-option value="Banana">Banana</v-option>
-  <v-option value="Cherry">Cherry</v-option>
-  <v-option value="Orange">Orange</v-option>
-  <v-option value="Grape">Grape</v-option>
+  <v-option value="Apple">AppleText</v-option>
+  <v-option value="Banana">BananaText</v-option>
+  <v-option value="Cherry">CherryText</v-option>
+  <v-option value="Orange">OrangeText</v-option>
+  <v-option value="Grape">GrapeText</v-option>
 </v-select>
 ````
 
