@@ -57,7 +57,7 @@
                 {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}
               </template>
               <template v-else>
-                {{record[column.dataIndex]}}
+                {{{record[column.dataIndex]}}}
               </template>
             </td>
           </tr>
