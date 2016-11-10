@@ -26,6 +26,10 @@ module.exports = {
       }
     ]
   },
+  babel: {
+    loose: 'all',
+    optional: ['runtime']
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -34,7 +38,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: './src',
+    contentBase: './test/unit',
     noInfo: true
   },
   devtool: 'source-map'

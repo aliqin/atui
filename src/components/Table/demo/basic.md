@@ -19,7 +19,7 @@ title:
 
 ````vue-script
 var columns = [{
-  title: '姓名',
+  title: '姓名<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">',
   dataIndex: 'name',
   width:150
 }, {
@@ -47,7 +47,7 @@ var data = [{
   key: '1',
   name: '胡斌',
   age: 32,
-  address: '南湖区湖底公园1号',
+  address: '南湖区湖底公园1号<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">',
 }, {
   key: '2',
   name: '胡彦祖',
