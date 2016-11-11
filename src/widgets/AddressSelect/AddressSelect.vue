@@ -127,7 +127,17 @@ export default {
       provinceId: this.defaultAddr.provinceId,
       cityId: this.defaultAddr.cityId,
       countyId: this.defaultAddr.countyId,
-      streetId: this.defaultAddr.streetId
+      streetId: this.defaultAddr.streetId,
+      addr: {
+        provinceName: '',
+        cityName: '',
+        countyName: '',
+        streetName: '',
+        provinceId: this.defaultAddr.provinceId,
+        cityId: this.defaultAddr.cityId,
+        countyId: this.defaultAddr.countyId,
+        streetId: this.defaultAddr.streetId
+      }
     }
   },
   watch: {
@@ -146,18 +156,6 @@ export default {
     }
   },
   computed: {
-    // provinceId () {
-    //   return this.defaultAddr.provinceId
-    // },
-    // cityId () {
-    //   return this.defaultAddr.cityId
-    // },
-    // countyId () {
-    //   return this.defaultAddr.countyId
-    // },
-    // streetId () {
-    //   return this.defaultAddr.streetId
-    // },
     tabList () {
       let level = this.level - 0
       level = typeof level === 'number' ? level : 4
@@ -323,6 +321,14 @@ export default {
         provinceName: this.province,
         provinceId: this.provinceId
       }, this)
+      this.addr.provinceId = this.provinceId
+      this.addr.provinceName = this.province
+      this.addr.cityId = ''
+      this.addr.cityName = ''
+      this.addr.countyId = ''
+      this.addr.countyName = ''
+      this.addr.streetId = ''
+      this.addr.streetName = ''
     },
     chooseCity (cityId, city) {
       var tabLen = this.tabList.length
@@ -338,6 +344,12 @@ export default {
         cityName: this.city,
         cityId: this.cityId
       }, this)
+      this.addr.cityId = this.cityId
+      this.addr.cityName = this.city
+      this.addr.countyId = ''
+      this.addr.countyName = ''
+      this.addr.streetId = ''
+      this.addr.streetName = ''
     },
     chooseCounty (countyId, county) {
       var tabLen = this.tabList.length
@@ -353,6 +365,10 @@ export default {
         countyName: this.county,
         countyId: this.countyId
       }, this)
+      this.addr.countyId = this.countyId
+      this.addr.countyName = this.county
+      this.addr.streetId = ''
+      this.addr.streetName = ''
     },
     chooseStreet (streetId, street) {
       this.street = street
@@ -362,6 +378,8 @@ export default {
         streetName: this.street,
         streetId: this.streetId
       }, this)
+      this.addr.streetId = this.streetId
+      this.addr.streetName = this.street
     },
     changeProvinceId () {
       this.cityId = ''
