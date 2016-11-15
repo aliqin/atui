@@ -47,7 +47,7 @@
           <tr v-if="!dataSource || !dataSource.length">
             <td colspan="20" style="text-align: center;" :class="[prefixCls + '-table-empty']">{{noDataTip}}</td>
           </tr>
-          <tr v-for="(rowIndex, record) in dataSource" :track-by="$index">
+          <tr v-for="(rowIndex, record) in dataSource" :track-by="$index" @click="onRowClick(rowIndex, record)">
             <td v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
               <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
               />
@@ -193,6 +193,9 @@ export default {
     }
   },
   methods: {
+    onRowClick (rowIndex, record) {
+      this.$dispatch('row-click', rowIndex, record)
+    },
     compileTbody () {
       let me = this
       //  因为table里有html和事件绑定，所以需要重新调用$compile，而马上调用时可能页面还没有重新渲染完成

@@ -74,8 +74,10 @@ var columns = [{
     value: '西湖',
   }],
   filterMultiple: false,
-  width:250
-
+  width:250,
+  onFilter: function(){
+    debugger
+  }
 },{
     title: '操作',
     key: 'operation',

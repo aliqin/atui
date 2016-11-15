@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<v-table :data-source="gridData" :columns="gridColumns" row-key="key"></v-table>
+<v-table :data-source="gridData" :columns="gridColumns" row-key="key" @row-click="rowClick"></v-table>
 ````
 
 
@@ -31,7 +31,6 @@ var columns = [{
   dataIndex: 'address',
   filterMultiple: false,
   width:250
-
 },{
     title: '操作',
     key: 'operation',
@@ -45,7 +44,7 @@ var columns = [{
 
 var data = [{
   key: '1',
-  name: '胡斌',
+  name: '-1条',
   age: 32,
   address: '南湖区湖底公园1号<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">',
 }, {
@@ -87,6 +86,11 @@ new Vue({
     return {
       gridData:data,
       gridColumns: columns
+    }
+  },
+  methods: {
+    rowClick (rowIndex, record) {
+      console.log(rowIndex, record)
     }
   }
 })
