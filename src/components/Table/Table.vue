@@ -271,7 +271,12 @@ export default {
         let value = me.filters[column.dataIndex]
         me.filters[column.dataIndex] = [value]
       }
-      me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
+      if (column.onFilter) {
+        //  配置了onFilter就是本地模式，否则就派发事件
+        column.onFilter.call(this, this.pagination, me.filters, me.sorter)
+      } else {
+        me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
+      }
     },
     resetFilter (column) {
       this.filters[column.dataIndex] = []

@@ -75,8 +75,8 @@ var columns = [{
   }],
   filterMultiple: false,
   width:250,
-  onFilter: function(){
-    debugger
+  onFilter: function(pagination, filters, sorter){
+    console.log(arguments)
   }
 },{
     title: '操作',
