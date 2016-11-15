@@ -7,14 +7,13 @@
     <title>Atui - 阿里通信组件库</title>
     <script>
       var hostname = location.hostname
-      root = 'http://g.alicdn.com/aliqin/atui/0.1.2/'
+      root = 'http://g.alicdn.com/aliqin/atui/0.1.7/'
       if(/localhost/ig.test(hostname)) {
         root = 'http://localhost:8080/build/'
       }
     </script>
     <link rel="stylesheet" type="text/css" href="{{ root }}index.css"/>
-    <!-- <link rel="stylesheet" id="J_ThemeCss" type="text/css" href="http://g.alicdn.com/aliqin/atui/0.1.2/greater-blue.css"> -->
-    <link id="J_ThemeCss" rel="stylesheet" type="text/css" href="http://localhost:8080/build/greater-blue.css">
+    <link id="J_ThemeCss" rel="stylesheet" type="text/css" href="{{ root }}greater-blue.css">
   </head>
   <body>
     <div id="react-content"></div>
