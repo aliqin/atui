@@ -12,7 +12,7 @@ title:
 
 
 ````jsx
-<address-select large level="4" placeholder="请选择详细地址"></address-select>
+<address-select large level="4" placeholder="请选择详细地址" v-ref:select-addr></address-select>
 ````
 
 ````vue-script
@@ -20,6 +20,10 @@ new Vue({
   el: 'body',
   components: {
     addressSelect: atuiWidget.AddressSelect
+  },
+  ready() {
+    // 获取当前地址
+    console.log(this.$refs.selectAddr.addr)
   }
 })
 ````
