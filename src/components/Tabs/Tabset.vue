@@ -153,7 +153,8 @@ export default {
           self.wrapperWidth += _itemWidth
         }
       }
-      tabsHeader.style.width = self.wrapperWidth + 'px'
+      // modify By ruohuan 宽度不需要设置，默认100%就好，特殊场景业务，业务自己处理
+      // tabsHeader.style.width = self.wrapperWidth + 'px'
       self.$el.style.visibility = 'visible'
     }
   },
