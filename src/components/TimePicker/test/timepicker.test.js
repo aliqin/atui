@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import TimePicker from '../TimePicker/'
+import TimePicker from '../'
 
 new Vue({
   template: `

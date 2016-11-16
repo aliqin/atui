@@ -1,15 +1,13 @@
 import Vue from 'vue'
-import Button from '../Button/'
+import Button from '../'
 let Group = Button.Group
 let vm = new Vue({
   template: `
       <div>
         <button-group>
           <v-button>
-            <icon type="head"></icon>
           </v-button>
           <v-button>
-            <icon type="tail"></icon>
           </v-button>
         </button-group>
       </div>

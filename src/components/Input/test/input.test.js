@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Input from '../Input'
+import Input from '../'
 
 describe('Input组件单元测试', () => {
   let vm = new Vue({

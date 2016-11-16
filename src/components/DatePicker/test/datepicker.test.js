@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import DatePicker from '../DatePicker/'
+import DatePicker from '../'
 
 let vm = new Vue({
   template: `

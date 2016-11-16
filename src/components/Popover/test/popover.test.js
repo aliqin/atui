@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Popover from '../Popover'
+import Popover from '../'
 
 describe('Popover组件单元测试', () => {
   let vm = new Vue({

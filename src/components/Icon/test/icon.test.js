@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Icon from '../Icon'
+import Icon from '../'
 
 describe('Icon组件单元测试', () => {
   let vm = new Vue({

@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Steps from '../Steps/'
+import Steps from '../'
 
 const {Step} = Steps
 
