@@ -12,11 +12,3 @@ default:
   unit_test:
     exec:
     - fed-ci --repo ${scm_url} --branch ${scm_branch} --commitId ${source_version} --ciseBuildId ${build_idx} --ciseId ${task_id} --empId ${creator_emp_id}
-
-###################
-#
-# - 默认情况下，持续集成都使用 linux 机器，如果有 windows 需求，请参考下方的文档链接
-# - 如果需要同时使用多个 Node.js 版本运行，请参考文档
-# - 文档链接：http://doc.uitest.taobao.net/ci/yaml.html
-#
-##################
