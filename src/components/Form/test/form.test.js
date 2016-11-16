@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Form from '../Form'
+import Form from '../'
 
 const FormItem = Form.FormItem
 

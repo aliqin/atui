@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Breadcrumb from '../Breadcrumb'
+import Breadcrumb from '../'
 
 const {BreadcrumbItem} = Breadcrumb
 

@@ -1,5 +1,5 @@
-// import Vue from 'vue'
-/* import Tooltip from '../Tooltip/'
+import Vue from 'vue'
+ import Tooltip from '../'
 
 new Vue({
   template: `
@@ -10,7 +10,7 @@ new Vue({
       </div>
       `,
   components: { Tooltip }
-}).$mount().$appendTo('body')*/
+}).$mount().$appendTo('body')
 
 // tooltip组件严重拉低了coverage summary统计数据
 /* describe('Tooltip', () => {

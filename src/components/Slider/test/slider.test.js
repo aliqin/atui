@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Slider from '../Slider'
+import Slider from '../'
 
 describe('Slider组件单元测试', () => {
   let vm = new Vue({

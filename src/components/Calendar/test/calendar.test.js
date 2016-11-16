@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Calendar from '../Calendar'
+import Calendar from '../'
 
 describe('Calendar组件单元测试', () => {
   let vm = new Vue({
@@ -15,7 +15,7 @@ describe('Calendar组件单元测试', () => {
     `,
     replace: false,
     methods: {
-      selectChange: sinon.spy()
+      selectChange () {}
     }
   }).$mount()
 

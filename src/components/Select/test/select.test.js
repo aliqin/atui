@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import vSelect from '../Select'
+import vSelect from '../'
 const vOption = vSelect.Option
 
 describe('Select', () => {

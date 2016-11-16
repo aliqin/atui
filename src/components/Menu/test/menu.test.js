@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Menu from '../Menu'
+import Menu from '../'
 
 const {SubMenu, MenuItem, MenuItemGroup} = Menu
 

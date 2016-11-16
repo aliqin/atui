@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Tabs from '../Tabs/'
+import Tabs from '../'
 const {
     Tab
 } = Tabs

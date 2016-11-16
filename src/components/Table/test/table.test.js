@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Grid from '../Table/'
+import Grid from '../'
 const columns = [{
   title: '姓名',
   dataIndex: 'name',

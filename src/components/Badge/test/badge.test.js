@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import Badge from '../Badge'
+import Badge from '../'
 
 describe('Badge组件单元测试', () => {
   let vm = new Vue({
