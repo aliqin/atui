@@ -1,5 +1,5 @@
 import Vue from 'vue'
- import Tooltip from '../'
+import Tooltip from '../'
 
 new Vue({
   template: `

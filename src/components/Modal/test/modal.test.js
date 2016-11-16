@@ -8,8 +8,8 @@ describe('Modal', () => {
         show: true
       }
     },
-    methods:{
-      modalCallback() {}
+    methods: {
+      modalCallback () {}
     },
     template: `
       <div>
