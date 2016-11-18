@@ -138,7 +138,7 @@ export default {
       const dom = self.$el
       const prefixCls = self.prefixCls
       const nav = dom.querySelector('.' + prefixCls + '-nav')
-      const tabsHeader = dom.querySelector('.' + prefixCls + '-tab-header')
+      // const tabsHeader = dom.querySelector('.' + prefixCls + '-tab-header')
       const list = nav.children
       const showlen = this.showLen
       const len = list.length
