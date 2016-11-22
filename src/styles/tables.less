@@ -70,6 +70,10 @@
     }
   }
 
+  th.@{prefix-cls-table}-expand-icon-th {
+    width: 34px;
+  }
+
   tbody tr:hover {
     background-color: @tr-hover-color;
   }
@@ -86,6 +90,34 @@
     padding: 14px;
     border-bottom: 1px solid #f0f0f0;
     color: #666;
+  }
+
+  td.@{prefix-cls-table}-row-expand-icon-cell {
+    width: 18px;
+  }
+
+  .@{prefix-cls-table}-row-expand-icon {
+    cursor: pointer;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    line-height: 14px;
+    border: 1px solid #e9e9e9;
+    user-select: none;
+    background: #fff;
+  }
+
+  .@{prefix-cls-table}-row-collapsed:after {
+    content: '+';
+  }
+
+  .@{prefix-cls-table}-row-expanded:after {
+    content: '-';
+  }
+
+  .@{prefix-cls-table}-expanded-row {
+    background: #fbfbfb;
   }
 
   &-pagination {
