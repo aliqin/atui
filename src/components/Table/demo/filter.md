@@ -58,7 +58,12 @@ var columns = [{
     value: '胡',
   }],
   sorter:true,
-  width:150
+  width:150,
+  onFilter: (names, record) => {
+    return names.some(function(name){
+      return record.name.indexOf(name) == 0 
+    })
+  }
 }, {
   title: '年龄',
   dataIndex: 'age',
@@ -70,9 +75,10 @@ var columns = [{
     text: '42',
     value: '42',
   }],
-  onFilter: (value, record) => {
-    console.log(value)
-    return record.age == value
+  onFilter: (ages, record) => {
+    return ages.some(function(age){
+      return record.age == age
+    })
   }
 }, {
   title: '地址',
@@ -87,7 +93,6 @@ var columns = [{
   filterMultiple: false,
   width:250,
   onFilter: (value, record) => {
-    console.log(value)
     return record.address.indexOf(value)>=0
   }
 },{
