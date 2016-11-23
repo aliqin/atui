@@ -62,7 +62,18 @@ var columns = [{
 }, {
   title: '年龄',
   dataIndex: 'age',
-  width:250
+  width:250,
+  filters: [{
+    text: '32',
+    value: '32',
+  }, {
+    text: '42',
+    value: '42',
+  }],
+  onFilter: (value, record) => {
+    console.log(value)
+    return record.age == value
+  }
 }, {
   title: '地址',
   dataIndex: 'address',
@@ -75,8 +86,9 @@ var columns = [{
   }],
   filterMultiple: false,
   width:250,
-  onFilter: function(pagination, filters, sorter){
-    console.log(arguments)
+  onFilter: (value, record) => {
+    console.log(value)
+    return record.address.indexOf(value)>=0
   }
 },{
     title: '操作',

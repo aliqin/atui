@@ -269,11 +269,14 @@ export default {
         /* vue的v-model会把radio的值转换成一个字符串，这里为了参数格式与checkbox相同
         则再转换成数组 */
         let value = me.filters[column.dataIndex]
-        me.filters[column.dataIndex] = [value]
+        me.filters[column.dataIndex] = value.constructor == Array ? value : [value]
       }
+      
       if (column.onFilter) {
         //  配置了onFilter就是本地模式，否则就派发事件
-        column.onFilter.call(this, this.pagination, me.filters, me.sorter)
+        this.dataSource = this.originDataSource.filter((record) => {
+          return column.onFilter.call(this, me.filters[column.dataIndex], record)
+        })
       } else {
         me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
       }
