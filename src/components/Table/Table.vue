@@ -146,7 +146,9 @@ export default {
   data () {
     this.compileTbody()
     const filters = {}
+    const columnMap = {}
     this.columns.forEach((item) => {
+      columnMap[item.dataIndex] = item
       if (item.filters) {
         // 如果有filter的情况，则把filter保存为一个空对象，filter时的chechbox需要用到双向绑定
         filters[item.dataIndex] = []
@@ -160,6 +162,7 @@ export default {
       checkedRows: [],
       filterOpened: false,
       filters: filters,
+      columnMap: columnMap,
       sorter: {}
     }
   },
@@ -284,29 +287,35 @@ export default {
       }
       me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
     },
-    // filter时触发
-    onFilter (column) {
+    onFilter () {
+      // 每次filter条件变化都应该拿原始数据把所有条件都过滤一遍
       let me = this
+      let filters = me.filters
       me.$broadcast('closeDropdown')
-      if (column.hasOwnProperty('filterMultiple') && column.filterMultiple === false) {
-        /* vue的v-model会把radio的值转换成一个字符串，这里为了参数格式与checkbox相同
-        则再转换成数组 */
-        let value = me.filters[column.dataIndex]
-        me.filters[column.dataIndex] = value.constructor == Array ? value : [value]
-      }
-      
-      if (column.onFilter) {
-        //  配置了onFilter就是本地模式，否则就派发事件
-        this.dataSource = this.originDataSource.filter((record) => {
-          return column.onFilter.call(this, me.filters[column.dataIndex], record)
-        })
-      } else {
-        me.$dispatch('table-change', this.pagination, me.filters, me.sorter)
+      this.dataSource = this.originDataSource
+
+      for (let currColumnKey in filters) {
+        let currColumn = me.columnMap[currColumnKey]
+        let value = filters[currColumnKey]
+        if (currColumn.hasOwnProperty('filterMultiple') && currColumn.filterMultiple === false) {
+          /* vue的v-model会把radio的值转换成一个字符串，这里为了参数格式与checkbox相同
+          则再转换成数组 */
+          // 先注释这个逻辑了，这样filterMultiple为true的时候返回一个数组，false的时候返回单个字符串
+          // value = value.constructor === Array ? value : [value]
+        }
+
+        if (currColumn.onFilter) {
+          //  配置了onFilter就是本地模式，否则就派发事件
+          this.dataSource = this.dataSource.filter((record) => {
+            // reset时value是空数组，此时应该true
+            return value.length === 0 || currColumn.onFilter.call(this, value, record)
+          })
+        }
       }
     },
     resetFilter (column) {
       this.filters[column.dataIndex] = []
-      this.onFilter(column)
+      this.onFilter()
     },
     changePage (pageNum) {
       let me = this
