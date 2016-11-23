@@ -7,6 +7,7 @@
       <table>
         <colgroup>
           <col v-if="rowSelection"></col>
+          <col v-if="expandedRowRender"></col>
           <col v-for="column in columns" :width="column.width"></col>
         </colgroup>
         <thead>
@@ -15,6 +16,7 @@
               <input v-if="dataSource && dataSource.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"
               />
             </th>
+            <th v-if="expandedRowRender" :class="[prefixCls + '-table-expand-icon-th']"></th>
             <th v-for="column in columns" :width="column.width">
               {{{column['title']}}}
               <dropdown v-ref:filter-menu v-if="column.filters" trigger="hover">
@@ -47,20 +49,33 @@
           <tr v-if="!dataSource || !dataSource.length">
             <td colspan="20" style="text-align: center;" :class="[prefixCls + '-table-empty']">{{noDataTip}}</td>
           </tr>
-          <tr v-for="(rowIndex, record) in dataSource" :track-by="$index" @click="onRowClick(rowIndex, record)">
-            <td v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
-              <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
-              />
-            </td>
-            <td v-for="column in columns">
-              <template v-if="column.render && record">
-                {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}
-              </template>
-              <template v-else>
-                {{{record[column.dataIndex]}}}
-              </template>
-            </td>
-          </tr>
+          <template v-for="(rowIndex, record) in dataSource">
+            <tr :track-by="$index"  @click="onRowClick(rowIndex, record)">
+              <td v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
+                <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
+                />
+              </td>
+              <td v-if="expandedRowRender" :class="[prefixCls + '-table-row-expand-icon-cell']">
+                <span :class="[prefixCls + '-table-row-expand-icon', prefixCls + (record.__expanded == 1 ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
+              </td>
+              <td v-for="column in columns">
+                <template v-if="column.render && record">
+                  {{{column.render.call(this._context,record[column.dataIndex],record,rowIndex)}}}
+                </template>
+                <template v-else>
+                  {{{record[column.dataIndex]}}}
+                </template>
+              </td>
+            </tr>
+            <tr v-if="record.__expanded" :class="[prefixCls + '-table-expanded-row']">
+              <td>
+                <span :class="[prefixCls + '-expanded-row-indent']"></span>
+              </td>
+              <td :colspan="columns.length"> 
+                {{{expandedRowRender(record)}}}
+              </td>
+            </tr>
+          </template>
         </tbody>
       </table>
     </div>
@@ -103,6 +118,7 @@ export default {
         return []
       }
     },
+    expandedRowRender: Function,
     rowSelection: Object,
     rowKey: String,
     loading: Boolean,
@@ -121,6 +137,11 @@ export default {
     Dropdown,
     Spin,
     Pagination
+  },
+  created () {
+    this.dataSource.forEach((record) => {
+      Vue.set(record, '__expanded', 0)
+    })
   },
   data () {
     this.compileTbody()
@@ -177,7 +198,6 @@ export default {
     dataSource: {
       handler (data, oldData) {
         let me = this
-
         me.compileTbody()
         // 如果有删除行为或者清空行为，则需要把选中行数据重新计算出，否则checkedRow一直存在没变化
         me.checkedRows = data.filter((record) => {
@@ -195,6 +215,9 @@ export default {
   methods: {
     onRowClick (rowIndex, record) {
       this.$dispatch('row-click', rowIndex, record)
+    },
+    onRowExpand (rowIndex, record) {
+      record.__expanded = !record.__expanded
     },
     compileTbody () {
       let me = this
