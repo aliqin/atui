@@ -62,6 +62,7 @@ const columns = [{
 | rowKey        | 表格行 key 的取值，可以是字符串或一个函数 | String or Function(record, index):string | 'key' |
 | @change      | 分页、排序、筛选变化时触发 | Function(pagination, filters, sorter) |  |
 | @row-click    | 表格行点击事件 | Function(rowIndex, record) | |
+| expandedRowRender    | 额外的展开行 | Function(record) | |
 | loading       | 页面是否加载中 | Boolean | false |
 
 
