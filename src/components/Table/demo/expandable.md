@@ -86,9 +86,7 @@ new Vue({
     return {
       gridData:data,
       gridColumns: columns,
-      expandedRowRender: function(record){
-        return '<span>' + record.name + '</span>'
-      }
+      expandedRowRender: (record) => { return '<span>' + record.name + '</span>' }
     }
   },
   methods: {
