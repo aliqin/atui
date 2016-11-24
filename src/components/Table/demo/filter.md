@@ -20,11 +20,28 @@ var columns = [{
     value: '胡',
   }],
   sorter:true,
-  width:150
+  width:150,
+  onFilter: (names, record) => {
+    return names.some(function(name){
+      return record.name.indexOf(name) == 0 
+    })
+  }
 }, {
   title: '年龄',
   dataIndex: 'age',
-  width:250
+  width:250,
+  filters: [{
+    text: '32',
+    value: '32',
+  }, {
+    text: '42',
+    value: '42',
+  }],
+  onFilter: (ages, record) => {
+    return ages.some(function(age){
+      return record.age == age
+    })
+  }
 }, {
   title: '地址',
   dataIndex: 'address',
@@ -36,8 +53,20 @@ var columns = [{
     value: '西湖',
   }],
   filterMultiple: false,
-  width: 250
-}]
+  width:250,
+  onFilter: (value, record) => {
+    return record.address.indexOf(value)>=0
+  }
+},{
+    title: '操作',
+    key: 'operation',
+    render: function(text, record) {
+      if(record) {
+        return '<icon type="info-s"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
+      }
+    }
+  }
+];
 ```
 ## en-US
 
