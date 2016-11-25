@@ -42,7 +42,8 @@ export default {
     return {
       pageRange: [],
       prevShow: 1,
-      nextShow: 1
+      nextShow: 1,
+      totalPage: 0
     }
   },
   created () {
