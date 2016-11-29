@@ -56,7 +56,7 @@
                 />
               </td>
               <td v-if="expandedRowRender" :class="[prefixCls + '-table-row-expand-icon-cell']">
-                <span :class="[prefixCls + '-table-row-expand-icon', prefixCls + (record.__expanded == 1 ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
+                <span v-if="!record.__no_expand" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (record.__expanded == 1 ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
               </td>
               <td v-for="column in columns">
                 <template v-if="column.render && record">
@@ -69,7 +69,7 @@
             </tr>
             <tr v-if="record.__expanded" :class="[prefixCls + '-table-expanded-row']">
               <td>
-                <span :class="[prefixCls + '-expanded-row-indent']"></span>
+                <span :class="[prefixCls + '-expanded-row-indent']" v-if="!record.__no_expand"></span>
               </td>
               <td :colspan="columns.length"> 
                 {{{expandedRowRender(record)}}}
