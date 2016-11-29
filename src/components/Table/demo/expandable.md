@@ -7,7 +7,7 @@ title:
 
 ## zh-CN
 
-当表格内容较多不能一次性完全展示时，配置expandedRowRender函数
+当表格内容较多不能一次性完全展示时，配置expandedRowRender函数，如果部分行不需要展开，该行record增加__no_expand字段，值为true
 
 ## en-US
 
@@ -46,12 +46,13 @@ var data = [{
   key: '1',
   name: '-1条',
   age: 32,
-  address: '南湖区湖底公园1号<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">',
+  address: '南湖区湖底公园1号<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">'
 }, {
   key: '2',
   name: '胡彦祖',
   age: 42,
   address: '西湖区湖底公园12号',
+  __no_expand: true
 }, {
   key: '3',
   name: '李大嘴',
@@ -62,6 +63,7 @@ var data = [{
   name: '李秀莲大嘴哥',
   age: 32,
   address: '西湖区湖底公园123号',
+  __no_expand: true
 },
 {
   key: '5',
