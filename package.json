@@ -5,7 +5,7 @@
   "main": "dist/atui.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:aliqin/atui.git"
+    "url": "git+ssh://git@github.com/aliqin/atui.git"
   },
   "homepage": "https://github.com/aliqin/atui",
   "directories": {
@@ -126,9 +126,6 @@
     "site": "bisheng build -c ./site/bisheng.config.js && sh post-site.sh && sh sync_doc.sh",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
   },
-  "publishConfig": {
-    "registry": "http://registry.npm.alibaba-inc.com"
-  },
   "author": "aliqin fe team",
   "license": "MIT",
   "ciPluginsDescription": "`ciPlugins` 每个 key 是插件，对应值是插件参数，插件支持参数请参考：http://uitest.taobao.net/plugin",
@@ -139,5 +136,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/aliqin/atui/issues"
   }
 }
