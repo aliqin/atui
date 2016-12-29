@@ -1,10 +1,18 @@
 # atui
-阿里通信基于Vue.js的组件库. http://atui.alibaba.net
+阿里通信基于Vue.js的组件库. http://aliqin.github.io
 
 [![NPM version][npm-image]][npm-url]
+[![issues][issue-image]][npm-url]
+[![forks][forks-image]][npm-url]
+[![stars][stars-image]][npm-url]
+[![license][license-image]][npm-url]
 
 [npm-image]: https://img.shields.io/npm/v/atui.svg?style=flat
-[npm-url]: http://www.npmjs.com/package/atui
+[npm-url]: https://www.npmjs.com/package/atui
+[issue-image]: https://img.shields.io/github/issues/aliqin/atui.svg
+[forks-image]: https://img.shields.io/github/forks/aliqin/atui.svg
+[stars-image]: https://img.shields.io/github/stars/aliqin/atui.svg
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
 * [Vue.js](http://vuejs.org/) (基于Vue.js `v2.1.4 版本以上`).
 
@@ -19,7 +27,7 @@ $ npm install atui --save-dev
 
 
 ```js
-$ nnpm install atui --save-dev
+$ npm install atui --save-dev
 
 // css引入 greater-blue | tao-orange | or tmall-red (推荐)
 import 'atui/dist/greater-blue.css'
