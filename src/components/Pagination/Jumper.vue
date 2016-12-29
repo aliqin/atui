@@ -12,6 +12,7 @@
 
 <script type="text/babel">
 export default {
+  name: 'Jumper',
   props: {
     quickGo: {
       type: Function,
@@ -32,7 +33,7 @@ export default {
       default: 'atui'
     }
   },
-  compiled () {
+  created () {
     this._current = this.currPage
   },
   computed: {
@@ -80,7 +81,6 @@ export default {
         val = this.currPage
       }
       const c = this.quickGo(val)
-      this.currPage = c
       this._current = c
     }
   }

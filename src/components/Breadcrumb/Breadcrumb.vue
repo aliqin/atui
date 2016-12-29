@@ -7,6 +7,7 @@
 <script type="text/babel">
 export default {
   props: {
+    name: 'Breadcrumb',
     symbol: {
       type: String,
       default: '/'
@@ -16,7 +17,7 @@ export default {
       default: 'atui'
     }
   },
-  ready () {
+  mounted () {
     const me = this
     me.$children.forEach((child) => {
       child.symbol = me.symbol

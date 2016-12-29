@@ -11,6 +11,7 @@ import Layout from '../Layout/'
 const vRow = Layout.Row
 
 export default {
+  name: 'Form',
   props: {
     prefixCls: {
       type: String,

@@ -5,22 +5,22 @@
         <icon v-if="prev_tabIndex==0" type="prev" size="12" color="#ccc" style="cursor: not-allowed"></icon>
         <icon v-else type="prev" size="12"></icon>
       </span>
-      <ul v-if="trigger=='click'" :class="listClassObj" role="tablist" style="width: 99999px;">
-        <li v-for="r in renderData"
-            :class="[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]"
-            @click.prevent="handleTabListClick($index, r)"
+      <ul v-if="trigger=='click'" :class="listClassObj" role="tablist">
+        <li v-for="(r, index) in renderData"
+            :class="[index === currActive && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]"
+            @click.prevent="handleTabListClick(index, r)"
             :disabled="r.disabled"
         >
-            <a href="javascript:void(0);">{{{r.header}}}</a>
+            <a href="javascript:void(0);" v-html="r.header"></a>
         </li>
       </ul>
-      <ul v-else :class="listClassObj" role="tablist" style="width: 99999px;">
-      <li v-for="r in renderData"
-            :class="[$index === active && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]"
-            @mouseenter.prevent="handleTabListClick($index, r)"
+      <ul v-else :class="listClassObj" role="tablist">
+      <li v-for="(r, index) in renderData"
+            :class="[index === currActive && (prefixCls + '-nav-active'), r.disabled && (prefixCls + '-nav-disabled')]"
+            @mouseenter.prevent="handleTabListClick(index, r)"
             :disabled="r.disabled"
         >
-            <a href="javascript:void(0);">{{{r.header}}}</a>
+            <a href="javascript:void(0);" v-html="r.header"></a>
         </li>
       </ul>
       <span v-if="renderData.length > showLen && showLen >= 3" :class="[prefixCls + '-tab-arrow-next']" @click="next">
@@ -30,7 +30,7 @@
     </div>
 
      <!-- Tab panes -->
-     <div class="tab-content" v-el:tab-content>
+     <div class="tab-content" ref="tabContent">
         <slot></slot>
      </div>
   </div>
@@ -41,10 +41,17 @@
 import Icon from '../Icon/'
 
 export default {
+  name: 'Tabset',
   props: {
     active: {
       type: Number,
       default: 0
+    },
+    headers: {
+      type: Array,
+      default: function () {
+        return []
+      }
     },
     showLen: {
       type: Number,
@@ -71,6 +78,7 @@ export default {
     return {
       renderData: [],
       index: 2,
+      currActive: this.active,
       translateX: 0,
       wrapperWidth: 0,
       navWidth: 0,
@@ -96,10 +104,23 @@ export default {
       return classObj
     }
   },
+  watch: {
+    headers () {
+      let me = this
+      Vue.nextTick(function () {
+        me.renderData = me.$children.map((child, index) => {
+          return {
+            header: child.header,
+            disabled: child.disabled
+          }
+        })
+      })
+    }
+  },
   methods: {
     handleTabListClick (index, el) {
-      if (!el.disabled) this.active = index
-      this.$dispatch('on-tab-click', this.active)
+      if (!el.disabled) this.currActive = index
+      this.$emit('on-tab-click', this.currActive)
     },
     prev () {
       this._handleMoveX('right')
@@ -158,13 +179,10 @@ export default {
       self.$el.style.visibility = 'visible'
     }
   },
-
-  compiled () {
+  mounted () {
     this.$el.style.visibility = 'hidden'
-  },
-
-  ready () {
     const self = this
+    console.log(self)
     /**
      * 动态去设置容器tabsWrapper的宽度以及内部nav的宽度，以便让它不溢出，类似于轮播图。
      * 这里需要用setTimeout函数，否则获取不到dom节点。

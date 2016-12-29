@@ -20,6 +20,7 @@
 import Icon from '../Icon'
 
 export default {
+  name: 'Message',
   props: {
     type: {
       type: String,
@@ -84,7 +85,7 @@ export default {
   methods: {
     close () {
       this.show = false
-      this.$dispatch('close')
+      this.$emit('close')
     }
   }
 }

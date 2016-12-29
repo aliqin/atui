@@ -14,8 +14,7 @@ describe('Input组件单元测试', () => {
       <div>
         <v-input type="text" placeholder="input text"></v-input>
       </div>
-    `,
-    replace: false
+    `
   }).$mount()
 
   it('基础功能渲染', () => {

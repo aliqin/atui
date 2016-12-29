@@ -1,12 +1,12 @@
 <template>
 <div :class="[prefixCls + '-panel', prefixCls + '-panel-default']">
     <div :class="[prefixCls + '-panel-heading']"
-      @click="toggleIsOpen()">
+      @click="clicked()">
       <slot name="panel-header"></slot>
     </div>
     <div :class="[prefixCls + '-panel-collapse']"
-      v-el:panel
-      v-show="open"
+      ref="panel"
+      v-show="openState"
       transition="collapse"
     >
       <div :class="[prefixCls + '-panel-body']">
@@ -18,6 +18,7 @@
 
 <script type="text/babel">
 export default {
+  name: 'Panel',
   props: {
     open: Boolean,
     onToggle: {
@@ -31,21 +32,22 @@ export default {
   },
   data () {
     return {
-      height: 0
+      height: 0,
+      openState: this.open
     }
   },
   methods: {
-    toggleIsOpen () {
-      this.open = !this.open
+    clicked () {
+      this.openState = !this.openState
       this.onToggle(this)
-      this.$dispatch('isOpenEvent', this)
+      this.$emit('click', this)
     }
   },
-  ready () {
-    const panel = this.$els.panel
+  mounted () {
+    const panel = this.$refs.panel
     panel.style.display = 'block'
     this.height = panel.offsetHeight
-    if (!this.open) panel.style.display = 'none'
+    if (!this.openState) panel.style.display = 'none'
   },
   transitions: {
     collapse: {

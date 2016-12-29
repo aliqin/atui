@@ -21,7 +21,7 @@ new Vue({
   components: {
     addressSelect: atuiWidget.AddressSelect
   },
-  ready() {
+  mounted() {
     // 获取当前地址
     console.log(this.$refs.selectAddr.addr)
   }

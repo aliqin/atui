@@ -2,14 +2,14 @@
   <div :class="[prefixCls + '-datepicker']">
     <trigger trigger="click" effect="slide"
     placement="bottomLeft"
-    :show.sync="show"
     :disabled="disabled"
+    ref="trigger"
     popup-hide-when-click-outside>
       <div slot="trigger"
            :class="[prefixCls + '-datepicker-toggle']">
         <v-input v-bind="{disabled: disabled, large: large, small: small}"
         type="text"
-        :value="value"
+        :value="selectedValue"
         :placeholder="placeholder"
         readonly></v-input>
         <!-- <input :class="[prefixCls + '-datepicker-input']"
@@ -21,9 +21,9 @@
         <icon type="calendar" :color="iconColor"></icon>
       </div>
       <div slot="popup" :class="[prefixCls + '-datepicker-calendar']">
-        <calendar v-ref:calendar
+        <calendar ref="calendar"
           @change="selectChange"
-          :value="value"
+          :value="selectedValue"
           :format="format"
           :locale="locale"
           :disabled-date="disabledDate">
@@ -41,12 +41,10 @@
   import VInput from '../Input/'
 
   export default {
-    name: 'date-picker',
-
+    name: 'DatePicker',
     mixins: [
       GlobalMixin
     ],
-
     props: {
       value: {
         type: String
@@ -61,7 +59,6 @@
       locale: {
         default: 'zh_CN'
       },
-      show: Boolean,
       disabledDate: {
         type: Function,
         default: (date) => {}
@@ -77,7 +74,9 @@
 
     data () {
       return {
-        iconColor: '#BFBFBF'
+        iconColor: '#BFBFBF',
+        show: false,
+        selectedValue: this.value
       }
     },
 
@@ -85,21 +84,18 @@
       value (val) {
         if (val) {
           this.iconColor = '#666'
-
           return
         }
-
         this.iconColor = '#BFBFBF'
       }
     },
 
     methods: {
       selectChange (value) {
-        this.value = value
-        this.show = false
-
+        this.selectedValue = value
+        this.$refs.trigger.showPopup = false
         // 冒泡给上一层使用，比如rangePicker
-        return true
+        this.$emit('change', value)
       }
     }
   }

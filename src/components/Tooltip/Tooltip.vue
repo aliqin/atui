@@ -1,13 +1,16 @@
 <template>
   <div :class="[prefixCls + '-popover-cont']">
     <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls" @reset-pos="resetPosHandler">
-      <slot slot="trigger"></slot>
-      <slot slot="popup" name="popup" role="tooltip">
-        <div :class="[prefixCls + '-tooltip-arrow']"></div>
-        <div :class="[prefixCls + '-tooltip-inner']">
-          {{{content}}}
-        </div>
-      </slot>
+      <template slot="trigger">
+        <slot></slot>
+      </template>
+      <template slot="popup">
+        <slot role="tooltip" name="popup">
+          <div :class="[prefixCls + '-tooltip-arrow']"></div>
+          <div :class="[prefixCls + '-tooltip-inner']" v-html="content">
+          </div>
+        </slot>
+      </template>
     </trigger>
   </div>
 </template>
@@ -17,6 +20,7 @@
   import Trigger from '../Trigger'
 
   export default {
+    name: 'Tooltip',
     mixins: [
       GlobalMixin
     ],

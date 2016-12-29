@@ -13,14 +13,14 @@ title:
 
 
 ````jsx
-<time-picker value="10:00:00" disabled></time-picker>
+<v-time-picker value="10:00:00" disabled></v-time-picker>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    timePicker: atui.TimePicker
+    vTimePicker: atui.TimePicker
   }
 })
 ````

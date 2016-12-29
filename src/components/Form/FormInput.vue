@@ -13,6 +13,7 @@
 </style>
 <script>
   export default {
+    name: 'FormInput',
     props: {
       label: String,
       id: String,

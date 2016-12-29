@@ -23,4 +23,5 @@ content | 内容 | String |  |
 visible | 用于手动控制浮层显隐 | Boolean | false
 showHeader | 是否显示标题 | Boolean | true
 alwaysShow | 是否一直显示 | Boolean | false
+@pop-change | pop弹出状态变化时派发pop-change事件，参数为true或false，表示是否展示 | Function | |
 

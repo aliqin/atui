@@ -1,5 +1,5 @@
 <template>
-  <div :class="[prefixCls + '-dropdown-cont', open && (prefixCls + '-dropdown-open')]">
+  <div :class="[prefixCls + '-dropdown-cont', isOpen && (prefixCls + '-dropdown-open')]">
     <trigger :trigger="trigger"
              effect="slide"
              popup-cls="dropdown"
@@ -7,8 +7,11 @@
              :popup-hide-delay="200"
              popup-hide-when-click-outside
              popup-use-trigger-width
-             :show.sync="open">
-      <slot slot="trigger"></slot>
+             @toggle-popup="onTogglePopup"
+             :show="isOpen">
+      <template slot="trigger">
+        <slot></slot>
+      </template>
       <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont','atui-dropdown-menu']">
         <slot name="dropdown-menu" role="dropdown"></slot>
       </div>
@@ -21,14 +24,10 @@
   import Trigger from '../Trigger'
 
   export default {
+    name: 'Dropdown',
     mixins: [
       GlobalMixin
     ],
-
-    components: {
-      Trigger
-    },
-
     props: {
       trigger: {
         type: String,
@@ -38,9 +37,22 @@
         type: Boolean
       }
     },
-    events: {
-      closeDropdown () {
-        this.open = false
+    components: {
+      Trigger
+    },
+    data () {
+      return {
+        isOpen: this.open
+      }
+    },
+    created () {
+      this.$on('closeDropdown', () => {
+        this.isOpen = false
+      })
+    },
+    methods: {
+      onTogglePopup: function (val) {
+        this.isOpen = val
       }
     }
   }

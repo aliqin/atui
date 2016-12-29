@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<pagination :curr-page.sync="currPage" :total="total" simple></pagination>
+<pagination :curr-page="currPage" :total="total" simple></pagination>
 ````
 
 ````vue-script

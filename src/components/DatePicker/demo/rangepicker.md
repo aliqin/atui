@@ -13,7 +13,7 @@ DatePicker提供了一个子组件：`RangePicker`,使用`DatePicker.RangePicker
 
 
 ````jsx
-<range-picker></range-picker>
+<range-picker @change="change"></range-picker>
 ````
 
 ````vue-script
@@ -21,6 +21,11 @@ new Vue({
   el: 'body',
   components: {
     rangePicker: atui.DatePicker.RangePicker
+  },
+  methods:{
+    change(start,end)  {
+      console.log(start,end)
+    }
   }
 })
 ````

@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  name: 'MenuItemGroup',
   props: {
     title: String,
     prefixCls: {

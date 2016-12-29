@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'Slide',
     props: {
       prefixCls: {
         type: String,
@@ -17,9 +18,11 @@
         this.$el.style.width = `${width}px`
       }
     },
-    ready () {
-      this.$dispatch('scaleItemsWidth', this.scaleItemWidth)
-      this.$dispatch('addChildrenLength')
+    mounted () {
+      this.$nextTick(() => {
+        this.$parent.$parent.$emit('scaleItemsWidth', this.scaleItemWidth)
+        this.$parent.$parent.$emit('addItem', this.$el)
+      })
     }
   }
 </script>

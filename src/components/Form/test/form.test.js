@@ -20,8 +20,7 @@ describe('Form组件单元测试', () => {
             <label><input type="checkbox" name="sexy" />女</label>
           </v-form-item>
       </v-form>
-    `,
-    replace: false
+    `
   }).$mount()
 
   it('基础功能渲染', () => {

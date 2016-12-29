@@ -11,22 +11,22 @@ Trigger最基本的用法
 ## en-US
 
 ````jsx
-<trigger>
+<v-trigger>
   <v-button slot="trigger">popup on bottom</v-button>
   <div slot="popup">I'm a popup</div>
-</trigger>
+</v-trigger>
 
-<trigger placement="right">
+<v-trigger placement="right">
   <v-button slot="trigger">popup on right</v-button>
   <div slot="popup">I'm a popup</div>
-</trigger>
+</v-trigger>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    trigger: atui.Trigger,
+    vTrigger: atui.Trigger,
     vButton: atui.Button
   }
 })

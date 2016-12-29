@@ -1,22 +1,22 @@
 <template>
-<div :class="spinClassObj">
-  <div v-show="show" v-if="isSupportAnimation || !tip" :class="[prefixCls + '-sping-point']">
-      <div></div>
-      <div></div>
-      <div></div>
+  <div :class="spinClassObj">
+    <div v-show="visible" v-if="isSupportAnimation || !tip" :class="[prefixCls + '-sping-point']">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <p v-else :class="[prefixCls + '-sping-text']">{{ tip || '加载中...' }}</p>
+    <div :class="[prefixCls + '-sping-content']">
+      <slot></slot>
+    </div>
   </div>
-  <p v-else :class="[prefixCls + '-sping-text']">{{ tip || '加载中...' }}</p>
-  <div :class="[prefixCls + '-sping-content']">
-    <slot></slot>
-  </div>
-</div>
 </template>
 
 <script>
 import isSupportAnimation from '../_utils/cssAnimationSupported'
 
 export default {
-  name: 'spin',
+  name: 'Spin',
   props: {
     show: Boolean,
     sping: Boolean,
@@ -32,17 +32,8 @@ export default {
   },
   data () {
     return {
+      visible: this.show,
       isSupportAnimation: isSupportAnimation
-    }
-  },
-  created () {
-    if (this.sping) {
-      this.show = true
-    }
-  },
-  watch: {
-    sping (val) {
-      this.show = val
     }
   },
   computed: {
@@ -54,5 +45,22 @@ export default {
       classObj[prefixCls + '-sping'] = sping
       return classObj
     }
+  },
+  created () {
+    if (this.sping) {
+      this.visible = true
+    }
+  },
+  watch: {
+    sping (val) {
+      this.visible = val
+    },
+    show (newVal, oldVal) {
+      this.visible = newVal
+    },
+    visible (newVal, oldVal) {
+      this.$emit('toggle', newVal)
+    }
   }
 }
+</script>

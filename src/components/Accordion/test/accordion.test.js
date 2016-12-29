@@ -18,28 +18,30 @@ describe('Accordion组件单元测试', () => {
       Accordion,
       Panel
     },
-    replace: false,
     template: `
-      <accordion :one-at-a-time="oneAtATime">
-        <panel :is-open="true">
-          <div slot="panel-header" class="custom-class">Panel #1</div>
-          内容一
-        </panel>
-        <panel>
-          <div slot="panel-header" class="custom-class">Panel #2</div>
-          内容二
-        </panel>
-        <panel>
-          <div slot="panel-header" class="custom-class">Panel #3</div>
-          内容三
-        </panel>
-        <panel>
-          <div slot="panel-header" class="custom-class">Panel #4</div>
-          内容四
-        </panel>
-      </accordion>
+      <div id="app">
+        <accordion :one-at-a-time="oneAtATime">
+          <panel :is-open="true">
+            <div slot="panel-header" class="custom-class">Panel #1</div>
+            内容一
+          </panel>
+          <panel>
+            <div slot="panel-header" class="custom-class">Panel #2</div>
+            内容二
+          </panel>
+          <panel>
+            <div slot="panel-header" class="custom-class">Panel #3</div>
+            内容三
+          </panel>
+          <panel>
+            <div slot="panel-header" class="custom-class">Panel #4</div>
+            内容四
+          </panel>
+        </accordion>
+      </div>
     `
   }).$mount()
+  console.log(vm.$el)
 
   it('基本功能渲染', () => {
     expect(vm.$el.querySelectorAll('.atui-panel-group').length).to.be.equal(1)

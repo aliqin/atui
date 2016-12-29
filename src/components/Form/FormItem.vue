@@ -17,7 +17,7 @@
       </template>
     </div>
     <message v-if="tipsMode === 'popup' && popupTips" :class="[prefixCls + '-form-valid-popup-message']" :type="popupMode" arrow="left" :show-icon="false">
-      {{{popupTips}}}
+      {{popupTips}}
     </message>
     <div v-if="tipsMode === 'text' && tips && validStatus" :class="[prefixCls + '-form-status-info']">{{tips}}</div>
   </v-col>
@@ -31,6 +31,7 @@
   const vCol = Layout.Col
 
   export default {
+    name: 'FormItem',
     props: {
       label: String,
       itemCol: {

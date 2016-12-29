@@ -14,14 +14,17 @@ title:
 
 ````jsx
 
-<slider :value="[20,50]"></slider>
+<v-slider v-model="initRange"></v-slider>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    slider: atui.Slider
+    vSlider: atui.Slider
+  },
+  data: {
+    initRange:[20,50]
   }
 })
 ````

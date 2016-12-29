@@ -30,6 +30,11 @@ new Vue({
   components: {
     vSwitch: atui.Switch,
     vIcon: atui.Icon
+  },
+  data() {
+    return {
+      disabled: false
+    } 
   }
 })
 ````

@@ -13,14 +13,14 @@ title:
 
 
 ````jsx
-<time-picker @change="timePickerChange" :disabled-minutes="disabledMinutes" :disabled-seconds="disabledSeconds"></time-picker>
+<v-time-picker @change="timePickerChange" :disabled-minutes="disabledMinutes" :disabled-seconds="disabledSeconds"></v-time-picker>
 ````
 
 ````vue-script
 new Vue({
     el: 'body',
     components: {
-      timePicker: atui.TimePicker
+      vTimePicker: atui.TimePicker
     },
     methods: {
       disabledMinutes: function() {

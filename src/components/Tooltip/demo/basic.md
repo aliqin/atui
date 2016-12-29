@@ -13,9 +13,9 @@ title:
 
 
 ````jsx
-<tooltip content="我是提示内容，我的位置会自适应。我是提示内容，我的位置会自适应。我是提示内容，我的位置会自适应。我是提示内容，我的位置会自适应。我是提示内容，我的位置会自适应。">
+<v-tooltip content="我是提示内容，我的位置会自适应。我是提示内容，我的位置会自适应。我是提示内容，我的位置会自适应。我是提示内容，我的位置会自适应。我是提示内容，我的位置会自适应。">
  <v-button>鼠标请移过来</v-button>
-</tooltip>
+</v-tooltip>
 
 ````
 
@@ -23,7 +23,7 @@ title:
 new Vue({
   el: 'body',
   components: {
-    tooltip: atui.Tooltip,
+    vTooltip: atui.Tooltip,
     vButton: atui.Button
   }
 })

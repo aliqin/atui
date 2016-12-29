@@ -10,29 +10,29 @@
         <input type="text"
                :class="inputClassObj"
                :placeholder="placeholder"
-               v-model="value"
-               @focus="focusInput"
-               debounce="500" />
-        <icon type="clear" v-show="value" color="#bfbfbf" size="14" @click="clearInput"></icon>
+               v-model="searchValue"
+               @focus="focusInput" />
+        <icon type="clear" v-show="searchValue" color="#bfbfbf" size="14" @click="clearInput"></icon>
         <icon type="search" :color="iconColor" size="14"></icon>
       </div>
-      <div slot="popup" v-el:popup v-if="searchList && searchList.length > 0"
+      <div slot="popup" ref="popup" v-if="searchList && searchList.length > 0"
            :class="[prefixCls + '-searchbox-list-containter']">
         <ul :class="[prefixCls + '-searchbox-list-dropdown']">
-          <li v-for="item in searchList | filterBy filterValue">
-            <a href="javascript:;" @click="checkItem($index, item[textField])" :title="item[textField]">{{item[textField]}}</a>
+          <li v-for="(item, index) in searchList" v-if="~item[textField].indexOf(searchValue)">
+            <a href="javascript:;" @click="checkItem(index, item[textField])" :title="item[textField]">{{item[textField]}}</a>
           </li>
         </ul>
       </div>
     </trigger>
   </div>
-</template>
+</template> 
 <script type="text/babel">
   import GlobalMixin from '../_utils/GlobalMixin'
   import Icon from '../Icon/'
   import Trigger from '../Trigger'
 
   export default {
+    name: 'Searchbox',
     mixins: [
       GlobalMixin
     ],
@@ -68,6 +68,7 @@
 
     data () {
       return {
+        searchValue: this.value,
         iconColor: '#BFBFBF',
         showPop: false,
         isCheck: false
@@ -104,12 +105,12 @@
     },
 
     watch: {
-      value (newVal, oldVal) {
+      searchValue (newVal, oldVal) {
         newVal = newVal.replace(/^\s+|\s+$/g, '')
         oldVal = oldVal.replace(/^\s+|\s+$/g, '')
 
         if (newVal !== oldVal) {
-          !this.isCheck && this.$dispatch('value-change', newVal, this)
+          !this.isCheck && this.$emit('value-change', newVal, this)
 
           this.isCheck = false
         }
@@ -126,13 +127,13 @@
         this.showPop = false
       },
       checkItem (index, val) {
-        this.value = val
+        this.searchValue = val
         this.isCheck = true
-        this.$dispatch('value-check', this.searchList[index], this)
+        this.$emit('value-check', this.searchList[index], this)
         this.blurInput()
       },
       clearInput () {
-        this.value = ''
+        this.searchValue = ''
       }
     }
   }

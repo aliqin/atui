@@ -11,17 +11,17 @@ title:
 ## en-US
 
 ````jsx
-<trigger :offset="[50, 0]" placement="right">
+<v-trigger :offset="[50, 0]" placement="right">
   <v-button slot="trigger">弹窗向右偏移50px</v-button>
   <div slot="popup">我被偏移了...</div>
-</trigger>
+</v-trigger>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    trigger: atui.Trigger,
+    vTrigger: atui.Trigger,
     vButton: atui.Button
   }
 })

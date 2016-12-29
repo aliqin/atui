@@ -1,14 +1,16 @@
 <template>
 <div :class="[prefixCls + '-textarea-box']">
-  <template v-if="autosize">
-    <pre :id="preId"><span>{{content}}</span><br></pre>
-  </template>
-  <textarea v-bind="{disabled: isDisabled}"
-            :maxlength="limitWords"
-            :class="textareaClassObj"
-            :name="name"
-            :placeholder="placeholder"
-            v-model="content"></textarea>
+  <div :class="[prefixCls + '-textarea-wrap']">
+    <template v-if="autosize">
+      <pre :id="preId"><span>{{content}}</span><br></pre>
+    </template>
+    <textarea v-bind="{disabled: isDisabled}"
+              :maxlength="limitWords"
+              :class="textareaClassObj"
+              :name="name"
+              :placeholder="placeholder"
+              v-model="content"></textarea>
+  </div>
   <p v-if="limitWords"
      :class="wordClassObj">{{ curWords }}/{{ limitWords }}</p>
   <p v-if="wordsCount"
@@ -18,6 +20,7 @@
 
 <script>
   export default {
+    name: 'Textarea',
     props: {
       limitWords: Number,
       placeholder: String,
@@ -25,7 +28,7 @@
       disabled: Boolean,
       error: Boolean,
       success: Boolean,
-      content: {
+      value: {
         type: String,
         default: ''
       },
@@ -44,9 +47,25 @@
     },
     data () {
       return {
+        content: this.value,
         overLimit: false,
         isDisabled: this.disabled === true || this.disabled === '',
         preId: 'pre' + (new Date()).getTime()
+      }
+    },
+    watch: {
+      value (newVal, oldVal) {
+        this.content = newVal
+      },
+      content (newVal, oldVal) {
+        let len = newVal.length
+        this.curWords = len
+        if (len >= this.limitWords - 0) {
+          this.overLimit = true
+        } else {
+          this.overLimit = false
+        }
+        this.$emit('input', newVal)
       }
     },
     computed: {
@@ -79,7 +98,7 @@
         return classObj
       }
     },
-    ready () {
+    mounted () {
       if (this.autosize && (this.maxRows || this.minRows)) {
         let self = this
         setTimeout(function () {
@@ -98,17 +117,6 @@
             ele.style.minHeight = self.minRows * lineHeight + borderTopWidth + borderBottomWidth + paddingTop + paddingBottom + 'px'
           }
         }, 0)
-      }
-    },
-    watch: {
-      content (newVal, oldVal) {
-        let len = newVal.length
-        this.curWords = len
-        if (len >= this.limitWords - 0) {
-          this.overLimit = true
-        } else {
-          this.overLimit = false
-        }
       }
     }
   }

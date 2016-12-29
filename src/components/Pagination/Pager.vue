@@ -30,6 +30,7 @@
   import Icon from '../Icon/'
 
   export default {
+    name: 'Pager',
     props: {
       simple: {
         type: Boolean,

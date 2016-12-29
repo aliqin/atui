@@ -1,12 +1,13 @@
 <template>
   <input :class="inputClassObj"
          :placeholder="placeholder"
-         v-model="value"
-         :valid-status.sync="validStatus"
+         v-model="content"
+         :valid-status="validStatus"
          :maxlength="maxlength" />
 </template>
 <script>
   export default {
+    name: 'Input',
     props: {
       placeholder: {
         type: String,
@@ -18,55 +19,35 @@
       large: Boolean,
       small: Boolean,
       value: [String, Number],
-      // 是否必填
-      required: {
-        type: Boolean,
-        default: false
-      },
-      requiredTips: String,
       maxlength: String,
       minlength: String,
       minlengthTips: String,
-      // 验证状态，如不设置，会根据验证规则自动生成 success,warning,error,validating
+      // 验证状态，如不设置，会根据验证规则自动生成 success,error
       validStatus: {
         type: String,
         default: ''
       },
       // 验证规则
       rules: {
-        type: Array
-      },
-      rulesTips: {
-        type: Array
-      },
-      validResult: {
-        type: Object,
-        default () {
-          return {
-            requiredValid: {
-              validStatus: 'success',
-              tips: ''
-            },
-            minlengthValid: {
-              validStatus: 'success',
-              tips: ''
-            },
-            isNumberValid: {
-              validStatus: 'success',
-              tips: ''
-            },
-            isTelValid: {
-              validStatus: 'success',
-              tips: ''
-            },
-            isEmailValid: {
-              validStatus: 'success',
-              tips: ''
-            }
-          }
+        type: Array,
+        default: function () {
+          return []
         }
       },
+      rulesTips: {
+        type: Array,
+        default: function () {
+          return []
+        }
+      },
+      validResult: Object,
+      // 兼容旧版本的错误提示配置
       tips: {
+        type: String,
+        default: ''
+      },
+      // 错误提示更名为errorTips
+      errorTips: {
         type: String,
         default: ''
       },
@@ -77,34 +58,11 @@
     },
 
     data () {
+      let defaultErrorTips = this.errorTips || this.tips
+
       return {
-        defaultErrorTips: this.tips,
-        results: {
-          requiredValid: {
-            validStatus: 'success',
-            tips: ''
-          },
-          minlengthValid: {
-            validStatus: 'success',
-            tips: ''
-          },
-          isPhoneValid: {
-            validStatus: 'success',
-            tips: ''
-          },
-          isNumberValid: {
-            validStatus: 'success',
-            tips: ''
-          },
-          isTelValid: {
-            validStatus: 'success',
-            tips: ''
-          },
-          isEmailValid: {
-            validStatus: 'success',
-            tips: ''
-          }
-        }
+        defaultErrorTips: defaultErrorTips,
+        content: this.value
       }
     },
 
@@ -126,45 +84,41 @@
 
     watch: {
       value (newVal, oldVal) {
-        if (this.validResult) {
-          this.valid(newVal)
-        }
+        this.content = newVal
       },
-
-      results: {
-        handler (val, oldVal) {
-          let self = this
-          let tips = ''
-          let status = ''
-
-          for (let key in val) {
-            let obj = val[key]
-            if (obj) {
-              tips += obj.tips + '  '
-
-              if (obj.validStatus !== 'success') {
-                status = 'error'
-              }
-            }
-          }
-
-          if (this.defaultErrorTips === '') {
-            self.tips = tips
-          }
-
-          self.validStatus = status
-          self.validResult = self.results
-        },
-        deep: true
+      content (newVal, oldVal) {
+        this.valid(newVal)
+        this.$emit('input', newVal)
       }
     },
 
     methods: {
-      valid (val) {
-        if (this.required) {
-          this.requiredValid(val)
+      setValidStatus () {
+        let val = this.validResult
+        let tips = ''
+        let status = ''
+
+        for (let key in val) {
+          let obj = val[key]
+          if (obj) {
+            tips += obj.tips + '  '
+
+            if (obj.validStatus !== 'success') {
+              status = 'error'
+            }
+          }
         }
 
+        if (this.defaultErrorTips === '') {
+          // 兼容旧版本
+          this.tips = tips.trim()
+          this.errorTips = tips.trim()
+        }
+
+        this.validStatus = status
+      },
+
+      valid (val) {
         if (this.minlength) {
           this.minlengthValid(val)
         }
@@ -192,7 +146,7 @@
         let self = this
 
         // 正则验证
-        if (rule.indexOf('/') !== rule.lastIndexOf('/')) {
+        if (rule.constructor && rule.constructor.name === 'RegExp') {
           self.regularValid(value, rule, index)
           return
         }
@@ -201,17 +155,20 @@
           case 'required':
             self.requiredValid(value, index)
             break
+          case 'notNull':
+            self.requiredValid(value, index)
+            break
           case 'isPhone':
-            self.phoneValid(value)
+            self.phoneValid(value, index)
             break
           case 'isNumber':
-            self.numberValid(value)
+            self.numberValid(value, index)
             break
           case 'isTelephone':
-            self.telValid(value)
+            self.telValid(value, index)
             break
           case 'isEmail':
-            self.emailValid(value)
+            self.emailValid(value, index)
             break
         }
       },
@@ -220,142 +177,170 @@
        * 非空验证
        */
       requiredValid (val, index) {
-        let self = this
-
-        self.results = self.results || {}
+        let results = {}
+        let tips = (index > -1) ? this.rulesTips[index] || this.errorTips || this.tips || '输入不能为空' : this.requiredTips || this.errorTips || this.tips || '输入不能为空'
 
         if (!val) {
-          let tips = (index > -1) ? this.rulesTips[index] || '输入不能为空' : self.requiredTips || '输入不能为空'
-
-          self.results.requiredValid = {
+          results.requiredValid = {
             validStatus: 'error',
             tips: tips
           }
         } else {
-          self.results.requiredValid = {
+          results.requiredValid = {
             validStatus: 'success',
             tips: ''
           }
         }
+
+        Object.assign(this.validResult, results)
+        this.setValidStatus()
       },
 
       /**
        * 最小长度验证
        */
       minlengthValid (val) {
-        let self = this
-        let minlength = self.minlength - 0
-
-        self.results = self.results || {}
+        let minlength = this.minlength - 0
+        let results = {}
+        let tips = this.minlengthTips || '输入字符数不能小于' + minlength
 
         if (val) {
           let len = val.length
-
-          if (val.length < minlength) {
-            self.results.minlengthValid = {
+          if (len < minlength) {
+            results.minlengthValid = {
               validStatus: 'error',
-              tips: self.minlengthTips || '输入字符数不能小于' + len
+              tips: tips
             }
           } else {
-            self.results.minlengthValid = {
+            results.minlengthValid = {
               validStatus: 'success',
               tips: ''
             }
           }
         }
+
+        Object.assign(this.validResult, results)
+        this.setValidStatus()
       },
 
       /**
        * 手机号码验证
        */
-      phoneValid (value) {
+      phoneValid (value, index) {
         let rule = /^1\d{10}$/
+        let results = {}
+        let tips = (index > -1) ? this.rulesTips[index] || this.errorTips || this.tips || '输入手机号码格式错误' : '输入手机号码格式错误'
 
         if (rule.test(value) || value === '') {
-          this.results.isPhoneValid = {
+          results.isPhoneValid = {
             validStatus: 'success',
             tips: ''
           }
         } else {
-          this.results.isPhoneValid = {
+          results.isPhoneValid = {
             validStatus: 'error',
-            tips: this.isPhoneValidTips || '输入手机号码格式错误'
+            tips: tips
           }
         }
+
+        Object.assign(this.validResult, results)
+        this.setValidStatus()
       },
 
       /**
        * 数字验证
        */
-      numberValid (value) {
+      numberValid (value, index) {
         let rule = /^\d*$/
+        let results = {}
+        let tips = (index > -1) ? this.rulesTips[index] || this.errorTips || this.tips || '数字验证失败' : '数字验证失败'
 
         if (rule.test(value) || value === '') {
-          this.results.isNumberValid = {
+          results.isNumberValid = {
             validStatus: 'success',
             tips: ''
           }
         } else {
-          this.results.isNumberValid = {
+          results.isNumberValid = {
             validStatus: 'error',
-            tips: this.isNumberValidTips || '数字验证失败'
+            tips: tips
           }
         }
+
+        Object.assign(this.validResult, results)
+        this.setValidStatus()
       },
 
       /**
        * 固话验证
        */
-      telValid (value) {
+      telValid (value, index) {
         let rule = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/
+        let results = {}
+        let tips = (index > -1) ? this.rulesTips[index] || this.errorTips || this.tips || '输入固话格式错误，固话请用-' : '输入固话格式错误，固话请用-'
 
         if (rule.test(value) || value === '') {
-          this.results.isTelValid = {
+          results.isTelValid = {
             validStatus: 'success',
             tips: ''
           }
         } else {
-          this.results.isTelValid = {
+          results.isTelValid = {
             validStatus: 'error',
-            tips: this.isTelValidTips || '输入固话格式错误，固话请用-'
+            tips: tips
           }
         }
+
+        Object.assign(this.validResult, results)
+        this.setValidStatus()
       },
 
       /**
        * 邮箱验证
        */
-      emailValid (value) {
+      emailValid (value, index) {
         let rule = /^[a-z0-9](\w|\.|-)*@([a-z0-9]+-?[a-z0-9]+\.){1,3}[a-z]{2,4}$/i
+        let results = {}
+        let tips = (index > -1) ? this.rulesTips[index] || this.errorTips || this.tips || '输入email格式错误' : '输入email格式错误'
 
         if (rule.test(value) || value === '') {
-          this.results.isEmailValid = {
+          results.isEmailValid = {
             validStatus: 'success',
             tips: ''
           }
         } else {
-          this.results.isEmailValid = {
+          results.isEmailValid = {
             validStatus: 'error',
-            tips: this.isEmailValidTips || '输入email格式错误'
+            tips: tips
           }
         }
+
+        Object.assign(this.validResult, results)
+        this.setValidStatus()
       },
 
       /**
        * 正则验证
        */
       regularValid (value, rule, index) {
-        if (new RegExp(rule).test(value)) {
-          this.results.regularValid = {
+        let results = {}
+        let tips = this.rulesTips[index] || '第' + (index + 1) + '条正则规则验证失败'
+        let reg = rule
+
+        if (reg.test(value) || value === '') {
+          results.regularValid = {
             validStatus: 'success',
             tips: ''
           }
         } else {
-          this.results.regularValid = {
+          results.regularValid = {
             validStatus: 'error',
-            tips: this.rulesTips[index] || '第' + (index + 1) + '条正则规则验证失败'
+            tips: tips
           }
         }
+
+        Object.assign(this.validResult, results)
+        this.setValidStatus()
       }
     }
   }

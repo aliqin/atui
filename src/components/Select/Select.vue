@@ -6,14 +6,14 @@
              popup-hide-when-click-outside
              :disabled="disabled"
              :width="width"
-             :show.sync="show"
-             @toggole-popup="togglePopupHandler"
+             :show="show"
+             @toggle-popup="togglePopupHandler"
              popup-use-trigger-width
-             v-ref:triige>
+             ref="trigger">
       <div slot="trigger" :class="[prefixCls + '-select-toggle', tags && (prefixCls + '-select-tags')]"
            tabindex="1"
            v-bind="{disabled: disabled}">
-        <template v-if="!multiple">
+        <template v-if="!multipleSelect">
           <span v-show="showPlaceholder"
                 :class="[prefixCls + '-select-placeholder']">{{placeholder}}</span>
           <span :class="[prefixCls + '-select-btn-content']">{{ showText }}</span>
@@ -22,8 +22,8 @@
         </template>
         <div v-else @click="focusInput">
           <span :class="[prefixCls + '-select-placeholder']" v-show="showPlaceholder">{{placeholder}}</span>
-          <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{{option.label}}}</tag>
-          <input type="text" v-el:search-field :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
+          <tag v-for="option in selectedOptions" closable @close="closeTag(option)" v-html="option.label"></tag>
+          <input type="text" ref="searchField" :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
         </div>
       </div>
       <div slot="popup" :style="{width:width}" :class="[prefixCls + '-dropdown-menu']">
@@ -42,14 +42,14 @@
   import Trigger from '../Trigger'
 
   export default {
-    name: 'select',
+    name: 'Select',
 
     mixins: [GlobalMixin],
 
     props: {
-      value: {
-        type: [String, Array],
-        default: ''
+      defaultValue: {
+        type: [String, Number, Array],
+        default: null
       },
       placeholder: {
         type: String,
@@ -70,10 +70,6 @@
       },
       disabled: {
         type: Boolean
-      },
-      show: {
-        type: Boolean,
-        default: false
       }
     },
 
@@ -85,24 +81,46 @@
 
     created () {
       let me = this
-      if (me.tags) {
-        me.multiple = true
+      let value = me.defaultValue
+      if (me.multiple || me.tags) {
+        me.multipleSelect = true
       }
-      if (!me.value) {
-        me.value = me.multiple ? [] : ''
+      if (me.defaultValue === null) {
+        value = me.multipleSelect ? [] : ''
       }
-      if (me.multiple && !Array.isArray(me.value)) {
-        me.value = [me.value]
+      if (me.multipleSelect && !Array.isArray(me.defaultValue)) {
+        value = [me.defaultValue]
       }
-      if (!me.multiple && Array.isArray(me.value)) {
-        me.value = me.value.slice(0, 1)
+      if (!me.multipleSelect && Array.isArray(me.defaultValue)) {
+        value = me.defaultValue.slice(0, 1)
       }
-      if (me.multiple && me.value.length > me.limit) {
-        me.value = me.value.slice(0, me.limit)
+      if (me.multipleSelect && me.defaultValue.length > me.limit) {
+        value = me.defaultValue.slice(0, me.limit)
       }
-      if (me.value.length || me.selectedOptions.length) {
+      if ((me.defaultValue !== null) || me.selectedOptions.length) {
         me.showPlaceholder = false
       }
+      this.value = value
+      this.$on('option-change', function (option) {
+        me.showPlaceholder = false
+
+        if (me.multipleSelect) {
+          let isSelected = me.value.indexOf(option.value) >= 0
+          if (!isSelected) {
+            me.value.push(option.value)
+          } else {
+            let index = me.value.indexOf(option.value)
+            me.value.splice(index, 1)
+          }
+        } else {
+          me.value = option.value
+        }
+        if (!this.multipleSelect) {
+          // this.show = false
+          this.$refs.trigger.showPopup = false
+        }
+        me.searchText = ''
+      })
     },
 
     data () {
@@ -112,6 +130,9 @@
         activeIndex: 0,
         showPlaceholder: true,
         showNotify: false,
+        show: false,
+        value: [],
+        multipleSelect: false,
         options: [],
         selectedOptions: []
       }
@@ -122,12 +143,12 @@
         return this.selectedOptions && this.selectedOptions[0] && this.selectedOptions[0].label
       },
       selectClassObj () {
-        let { prefixCls, show, multiple, large, small } = this
+        let { prefixCls, show, multipleSelect, large, small } = this
         let classObj = {}
 
         classObj[prefixCls + '-select-cont'] = true
         classObj[prefixCls + '-dropdown-open'] = show
-        classObj[prefixCls + '-select-multiple'] = multiple
+        classObj[prefixCls + '-select-multipleSelect'] = multipleSelect
         classObj[prefixCls + '-select-large'] = large
         classObj[prefixCls + '-select-small'] = small
 
@@ -143,7 +164,7 @@
           return
         }
         me.showPlaceholder = false
-        if (me.multiple) {
+        if (me.multipleSelect) {
           if (val.length > this.limit) {
             me.showNotify = true
             me.value.pop()
@@ -167,26 +188,45 @@
               })
             }
           })
-          this.$set('selectedOptions', options)
+          me.$set(this, 'selectedOptions', options)
         } else {
-          this.$broadcast('valueChange', val)
+          me.$refs.trigger.$children.forEach((child) => {
+            if (val === child.value && !child.disabled) {
+              const option = {
+                label: child.$el.innerText,
+                value: child.value,
+                disabled: child.disabled
+              }
+              me.selectedOptions = [option]
+              child.chosen = true
+            }
+          })
+          // me.$emit('valueChange', val)
         }
       },
       selectedOptions (options) {
-        this.$dispatch('change', this.multiple ? options : options[0])
+        this.$emit('change', this.multipleSelect ? options : options[0])
       }
     },
 
     methods: {
+      /**
+       * 设置选中的值
+       * @param value {any}
+       */
+      setValue (value) {
+        this.value = value
+      },
       closeTag (option) {
-        this.value.$remove(option.value)
+        let index = this.value.indexOf(option.value)
+        this.value.splice(index, 1)
       },
       deleteTag (event) {
         let input = event.target
         let value = input.value
         if (value.length === 0) {
-          let value = this.value[this.value.length - 1]
-          this.value.$remove(value)
+          let index = this.value.indexOf(value)
+          this.value.splice(index, 1)
         }
       },
       onInput (event) {
@@ -210,7 +250,7 @@
         }
       },
       focusInput (ev) {
-        this.$els.searchField.focus()
+        this.$refs.searchField.focus()
       },
       selectDown (event) {
         // event.preventDefault()
@@ -242,34 +282,10 @@
           return
         }
         this.show = !this.show
-        if (this.multiple) {
+        if (this.multipleSelect) {
           this.showPlaceholder = false
-          setTimeout(() => me.$els.searchField.focus(), 10)
+          setTimeout(() => me.$refs.searchField.focus(), 10)
         }
-      }
-    },
-
-    events: {
-      'option-change' (option) {
-        this.showPlaceholder = false
-
-        if (this.multiple) {
-          let isSelected = this.value.indexOf(option.value) >= 0
-          if (!isSelected) {
-            this.value.push(option.value)
-          } else {
-            this.value.$remove(option.value)
-          }
-        } else {
-          this.value = option.value
-        }
-
-        if (!this.multiple) {
-          this.show = false
-        }
-        this.searchText = ''
-        // 需要把option的change事件继续冒泡给上一层级调用
-        // return true
       }
     }
   }

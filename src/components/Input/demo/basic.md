@@ -6,7 +6,7 @@ title:
 ---
 
 ## zh-CN
-
+可以通过给输入框绑定v-model来创建双向绑定
 
 
 ## en-US
@@ -14,7 +14,7 @@ title:
 
 ````jsx
 <div>
-  <v-input large type="text" placeholder="输入框－大尺寸"></v-input>
+  <v-input large type="text" v-model="val" placeholder="输入框－大尺寸"></v-input>
 </div>
 <br>
 <div>
@@ -35,6 +35,9 @@ new Vue({
   el: 'body',
   components: {
     vInput: atui.Input
+  },
+  data: {
+    val: '123'
   }
 })
 ````

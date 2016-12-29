@@ -5,7 +5,7 @@
 @zindex-modal-background: 1040;
 @zindex-modal: 1050;
 //** Padding applied to the modal body
-@modal-inner-padding: 15px;
+@modal-inner-padding: 25px;
 //** Padding applied to the modal title
 @modal-title-padding: 15px;
 //** Modal title line-height
@@ -46,8 +46,9 @@
 }
 
 .ie9 .@{prefix-cls-modal}-dialog {
-    position: static;
-    margin: 50px auto;
+    // position: static;
+    // margin: 50px auto;
+    -ms-transform: translate(-50%, -50%);
 }
 
 .@{prefix-cls-modal}-content {
@@ -87,27 +88,37 @@
 
 .@{prefix-cls-modal}-footer {
     padding: @modal-inner-padding;
+    padding-top: 0;
+    font-size: 0px; // 消除inline-block元素间默认的间隙
     text-align: right;
     &:extend(.clearfix all);
     .btn + .btn {
         margin-left: 5px;
         margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
     }
+
+    button {
+        margin-left: 10px;
+    }
 }
 
 .@{prefix-cls}-confirm {
     .@{prefix-cls}-iconfont {
         position: relative;
-        top: 5px;
+        float: left;
+        margin-right: 20px;
+    }
+    &-header {
+        height: 36px;
+        line-height: 36px;
     }
     &-title {
         font-size: 14px;
     }
     &-content {
-        margin-left: 50px;
+        margin-left: 55px;
         font-size: 12px;
         color: #666;
-        margin-top: 8px;
     }
 }
 

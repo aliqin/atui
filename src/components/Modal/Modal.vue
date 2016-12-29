@@ -1,8 +1,8 @@
 <template>
-  <div role="dialog" :class="[prefixCls + '-modal']" v-show="show"
+  <div role="dialog" :class="[prefixCls + '-modal']" v-show="visible"
     @click="clickBack"
     >
-    <div v-show="show"
+    <div v-show="visible"
          :class="dialogClassObj"
          :style="{width: width}"
          role="document">
@@ -30,6 +30,7 @@
 
 <script type="text/ecmascript-6">
 export default {
+  name: 'Modal',
   props: {
     title: String,
     show: {
@@ -51,8 +52,11 @@ export default {
     }
   },
   methods: {
+    open () {
+      this.visible = true
+    },
     close () {
-      this.show = false
+      this.visible = false
     },
     clickBack () {
       if (this.backdrop) {
@@ -60,16 +64,32 @@ export default {
       }
     }
   },
-  compiled () {
+  data () {
+    return {
+      visible: this.show
+    }
+  },
+  watch: {
+    show (val) {
+      this.visible = val
+    },
+    visible (val) {
+      let event = val ? 'open' : 'close'
+      this.$emit(event)
+    }
+  },
+  mounted () {
     var me = this
     window.addEventListener('keyup', (ev) => {
       if (ev.keyCode === 27) {
-        me.show = false
+        me.visible = false
       }
     })
-  },
-  attached () {
-    this.$appendTo(document.body)
+    document.body.appendChild(this.$el)
+
+    if (this.show) {
+      this.visible = true
+    }
   },
   computed: {
     dialogClassObj () {

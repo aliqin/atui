@@ -1,14 +1,15 @@
 <template>
 <div :class="[prefixCls + '-datepicker-rangepicker']">
-  <date-picker v-ref:start-date :value.sync="startDate" :disabled="disabled" :format="format" placeholder="开始日期" @change="onStartDateChange"></date-picker>
+  <date-picker ref="startDate" :value="selectedStartDate" :disabled="disabled" :format="format" placeholder="开始日期" @change="onStartDateChange" :disabled-date="disabledStartDate"></date-picker>
   <span :class="[prefixCls + '-datepicker-rangepicker-separator']"> - </span>
-  <date-picker v-ref:end-date :value.sync="endDate" :disabled="disabled" :format="format" placeholder="结束日期" :disabled-date="disabledEndDate" @change="onEndDateChange"></date-picker>
+  <date-picker ref="endDate" :value="selectedEndDate" :disabled="disabled" :format="format" placeholder="结束日期" :disabled-date="disabledEndDate" @change="onEndDateChange"></date-picker>
 </div>
 </template>
 <script>
   import DatePicker from './DatePicker.vue'
 
   export default {
+    name: 'RangePicker',
     props: {
       showTime: {
         type: Boolean
@@ -31,24 +32,34 @@
     components: {
       DatePicker
     },
+    data () {
+      return {
+        selectedStartDate: this.startDate,
+        selectedEndDate: this.endDate,
+        disabledEndDate: () => {},
+        disabledStartDate: () => {}
+      }
+    },
     methods: {
       onStartDateChange (value) {
         let me = this
         me.setDisabledEndDate(value)
-        if (me.endDate) {
-          me.$dispatch('change', me.startDate, me.endDate)
+        me.selectedStartDate = value
+        if (me.selectedStartDate) {
+          me.$emit('change', me.selectedStartDate, me.selectedEndDate)
         }
       },
       onEndDateChange (value) {
         let me = this
         me.setDisabledStartDate(value)
-        if (me.startDate) {
-          me.$dispatch('change', me.startDate, me.endDate)
+        me.selectedEndDate = value
+        if (me.selectedStartDate) {
+          me.$emit('change', me.selectedStartDate, me.selectedEndDate)
         }
       },
       setDisabledEndDate (value) { // value: "2016-07-07"
-        let endDate = this.$refs.endDate
-        endDate.disabledDate = (date) => { // date: "Thu Jul 07 2016 00:00:00 GMT+0800 (CST)"
+        // let endDate = this.$refs.endDate
+        this.disabledEndDate = (date) => { // date: "Thu Jul 07 2016 00:00:00 GMT+0800 (CST)"
           // new Date(value) 得到的值是早上8点0分0秒 如：2016-07-07 08:00:00
           // new Date(date) 得到的值是零晨0点0分0秒 如：2016-07-07 00:00:00
           // 通过对比发现，相同的年月日进行getTime()，下面代码一定返回true，即选择时间段结束时间的当天会被 disabled
@@ -59,8 +70,8 @@
         }
       },
       setDisabledStartDate (value) {
-        let startDate = this.$refs.startDate
-        startDate.disabledDate = (date) => {
+        // let startDate = this.$refs.startDate
+        this.disabledStartDate = (date) => {
           // 注释代码，原因同上
           // return date.getTime() >= new Date(value).getTime()
 

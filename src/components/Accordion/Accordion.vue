@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'accordion',
+    name: 'Accordion',
     props: {
       openOne: Boolean,
       prefixCls: {
@@ -26,7 +26,7 @@
         }
       })
     },
-    ready () {
+    mounted () {
       const me = this
       me.$children.forEach((item, index) => {
         item.index = index

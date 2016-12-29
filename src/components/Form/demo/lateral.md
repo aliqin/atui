@@ -33,13 +33,13 @@ title:
     <v-input type="text" placeholder="电话号码"></v-input>
   </form-item>
   <form-item required label="联系人电话:" :valid-status="telStatus" item-col="8" label-col="10" has-icon tips="123">
-    <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value.sync="tel" @click="clickFun"></v-input>
+    <v-input type="text" placeholder="电话号码" :valid-status="telStatus" :value="tel" @click.native="clickFun"></v-input>
   </form-item>
   <form-item required label="应用名/网站名:" item-col="8" label-col="10">
     <v-input type="text" placeholder="若还未上线可填无"></v-input>
   </form-item>
   <form-item required label="行业:" item-col="8" label-col="10">
-    <v-select :value.sync="arr" :options="industry" :close-on-select="true"></v-select>
+    <v-select :value="arr" :options="industry" :close-on-select="true"></v-select>
   </form-item>
   <form-item required label="电话号码:" item-col="8" label-col="10">
     <v-input placeholder="请输入电话号码"></v-input>
@@ -54,7 +54,7 @@ title:
     <label><input type="checkbox" />阅读并接受《用户协议》</label>
   </form-item>
   <form-item required label-col="4">
-    <v-button type="submit" primary @click="validFun">确定</v-button>
+    <v-button type="submit" primary @click.native="validFun">确定</v-button>
     <v-button type="reset" tertiary value="重置条件"></v-button>
   </form-item>
 </v-form>
@@ -71,6 +71,21 @@ new Vue({
     vButton: atui.Button,
     vButton: atui.Button,
     datePicker: atui.DatePicker
+  },
+  data:{
+    username: '',
+    tel: '',
+    arr: [],
+    telStatus: 'success',
+    industry: []
+  },
+  methods: {
+    clickFun: function(){
+
+    },
+    validFun: function(){
+      
+    }
   }
 })
 ````

@@ -29,7 +29,6 @@ export default class Demo extends React.Component {
 
   render() {
     const props = this.props;
-    console.log(this.props)
     const {
       meta,
       src,
@@ -46,9 +45,10 @@ export default class Demo extends React.Component {
     const execScript = () => {
       if (vueScript) {
         const fun = vueScript.replace(/([^\r?\n]el:\s*['"]{1})body(['"]{1})/, '$1#'+ randomEle +'$2');
+        // const transformedCode = Babel.transform(fun, {presets: ['es2015']}).code;
         setTimeout(() => {
           eval(fun);
-        })
+        },0)
       }
     }
 

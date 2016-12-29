@@ -6,7 +6,7 @@ title:
 ---
 
 ## zh-CN
-在columns项里增加filters可增加筛选功能
+在columns项里增加filters可增加筛选功能，可设置多选或单选，如果有onFilter则客户端进行过滤，如果没有onfilter则会触发table-change事件，自行去服务器端进行过滤
 
 ```js
 var columns = [{
@@ -23,7 +23,7 @@ var columns = [{
   width:150,
   onFilter: (names, record) => {
     return names.some(function(name){
-      return record.name.indexOf(name) == 0 
+      return record.name.indexOf(name) == 0
     })
   }
 }, {
@@ -36,12 +36,7 @@ var columns = [{
   }, {
     text: '42',
     value: '42',
-  }],
-  onFilter: (ages, record) => {
-    return ages.some(function(age){
-      return record.age == age
-    })
-  }
+  }]
 }, {
   title: '地址',
   dataIndex: 'address',
@@ -72,7 +67,7 @@ var columns = [{
 
 
 ````jsx
-<v-table :data-source="gridData" @table-change="onTableChange" :columns="gridColumns" row-key="key" :loading="loading"></v-table>
+<v-table :data-source="gridData" @table-change="onTableChange" :columns="gridColumns" row-key="key" ></v-table>
 ````
 
 ````vue-script
@@ -90,7 +85,7 @@ var columns = [{
   width:150,
   onFilter: (names, record) => {
     return names.some(function(name){
-      return record.name.indexOf(name) == 0 
+      return record.name.indexOf(name) == 0
     })
   }
 }, {
@@ -106,7 +101,7 @@ var columns = [{
   }],
   onFilter: (ages, record) => {
     return ages.some(function(age){
-      return record.age == age
+      return parseInt(record.age) === parseInt(age)
     })
   }
 }, {

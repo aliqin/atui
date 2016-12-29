@@ -13,17 +13,16 @@ title:
 
 
 ````jsx
-<tooltip content="Focus时我才显示" trigger="focus">
+<v-tooltip content="Focus时我才显示" trigger="focus">
   <v-input type="text" placeholder="Focus me"></v-input>
-</tooltip>
-
+</v-tooltip>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    tooltip: atui.Tooltip,
+    vTooltip: atui.Tooltip,
     vInput: atui.Input
   }
 })

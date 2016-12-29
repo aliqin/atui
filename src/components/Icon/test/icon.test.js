@@ -12,8 +12,7 @@ describe('Icon组件单元测试', () => {
     },
     template: `
       <icon type="search"></icon>
-    `,
-    replace: false
+    `
   }).$mount()
 
   it('基本功能渲染', () => {

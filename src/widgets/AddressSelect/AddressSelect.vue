@@ -179,7 +179,7 @@ export default {
       return text
     }
   },
-  ready () {
+  mounted () {
     let self = this
     const el = this.$el
 

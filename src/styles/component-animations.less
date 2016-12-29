@@ -67,16 +67,12 @@
   }
 }
 
-
-
-.movedown-transition {
+.movedown-enter-active,.movedown-leave-active {
   transition: top .3s @easeOutQuart;
 }
-.movedown-enter, .movedown-leave {
+.movedown-enter, .movedown-leave-active {
   top: -10px !important;
 }
-
-
 
 .slide-enter {
   animation: slideUpIn 0.1s @easeOutQuart;
@@ -145,4 +141,18 @@
 }
 .collapse-enter, .collapse-leave {
   max-height: 0!important;
+}
+
+// Tree expand & collapse
+.expand-enter {
+  transform: scaleY(0);
+}
+.expand-enter-active {
+  transform-origin: top;
+  transition: transform 0.2s ease-out;
+}
+.expand-leave-active {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.2s ease-in;
 }

@@ -25,6 +25,7 @@ secondary | 按钮类型，次按钮 | Boolean | false |
 tertiary | 按钮类型，三级按钮 | Boolean | false |
 text | 按钮类型，文字型按钮 | Boolean | false |
 disabled | 按钮类型，失效按钮 | Boolean | false |
+loading | 按钮类型，loading模式 | Boolean | false |
 
 ### Button.Group
 属性 | 说明 | 类型 | 默认值

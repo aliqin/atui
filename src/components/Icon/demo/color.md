@@ -15,28 +15,28 @@ title:
 
 ````jsx
 
-<icon type="info-s" color="#30b2f2"></icon>
-<icon type="error-s" color="#ff5959"></icon>
-<icon type="success-s" color="#1dbf38"></icon>
-<icon type="help-s" color="#ff9000"></icon>
-<icon type="warning-s" color="#b366ff"></icon>
-<icon type="info-s-b" color="#30b2f2"></icon>
-<icon type="error-s-b" color="#ff5959"></icon>
-<icon type="success-s-b" color="#1dbf38"></icon>
-<icon type="help-s-b" color="#ff9000"></icon>
-<icon type="warning-s-b" color="#b366ff"></icon>
+<v-icon type="info-s" color="#30b2f2"></v-icon>
+<v-icon type="error-s" color="#ff5959"></v-icon>
+<v-icon type="success-s" color="#1dbf38"></v-icon>
+<v-icon type="help-s" color="#ff9000"></v-icon>
+<v-icon type="warning-s" color="#b366ff"></v-icon>
+<v-icon type="info-s-b" color="#30b2f2"></v-icon>
+<v-icon type="error-s-b" color="#ff5959"></v-icon>
+<v-icon type="success-s-b" color="#1dbf38"></v-icon>
+<v-icon type="help-s-b" color="#ff9000"></v-icon>
+<v-icon type="warning-s-b" color="#b366ff"></v-icon>
 <br>
-<icon type="info" color="#30b2f2"></icon>
-<icon type="error" color="#ff5959"></icon>
-<icon type="success" color="#1dbf38"></icon>
-<icon type="help" color="#ff9000"></icon>
-<icon type="warning" color="#b366ff"></icon>
+<v-icon type="info" color="#30b2f2"></v-icon>
+<v-icon type="error" color="#ff5959"></v-icon>
+<v-icon type="success" color="#1dbf38"></v-icon>
+<v-icon type="help" color="#ff9000"></v-icon>
+<v-icon type="warning" color="#b366ff"></v-icon>
 <br>
-<icon type="info-l" color="#30b2f2"></icon>
-<icon type="error-l" color="#ff5959"></icon>
-<icon type="success-l" color="#1dbf38"></icon>
-<icon type="help-l" color="#ff9000"></icon>
-<icon type="warning-l" color="#b366ff"></icon>
+<v-icon type="info-l" color="#30b2f2"></v-icon>
+<v-icon type="error-l" color="#ff5959"></v-icon>
+<v-icon type="success-l" color="#1dbf38"></v-icon>
+<v-icon type="help-l" color="#ff9000"></v-icon>
+<v-icon type="warning-l" color="#b366ff"></v-icon>
 
 ````
 
@@ -44,7 +44,7 @@ title:
 new Vue({
     el: 'body',
     components: {
-        icon: atui.Icon
+        vIcon: atui.Icon
     }
 })
 ````

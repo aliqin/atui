@@ -24,4 +24,3 @@ current | 当前步骤 | Number | 0
 -----|-----|-----|------
 title | 标题 | String | |
 description | 描述 | String | |
-title | 标题 | String | |

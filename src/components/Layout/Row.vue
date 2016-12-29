@@ -4,6 +4,7 @@
 
 <script>
   export default {
+    name: 'Row',
     props: {
       prefixCls: {
         type: String,

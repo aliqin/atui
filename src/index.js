@@ -94,7 +94,6 @@ let ieVersion = getIEVersion()
 
 document.addEventListener('DOMContentLoaded', function (event) {
   if (ieVersion.major === '9' || ieVersion.major === '10') {
-    Vue.util.addClass(document.body, 'let-ie11')
-    Vue.util.addClass(document.body, 'ie' + ieVersion.major)
+    document.body.className += 'let-ie11 ie' + ieVersion.major
   }
 })

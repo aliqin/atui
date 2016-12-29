@@ -15,10 +15,10 @@ title:
 ````jsx
 <v-row>
   <v-col span="14">
-    <slider :value.sync="sliderValue"></slider>
+    <slider v-model="sliderValue"></slider>
   </v-col>
   <v-col span="10">
-    <v-input type="text" :value.sync="sliderValue"></v-input>
+    <v-input type="text" v-model="sliderValue"></v-input>
   </v-col>
 </v-row>
 ````

@@ -14,12 +14,9 @@ title:
 
 
 ````jsx
-<carousel height="300px" control-btn>
+<carousel height="300px" control-btn @before-change="beforeChange" @after-change="afterChange">
   <slide>
     <img src="http://placehold.it/400x300?text=one">
-    <div class="carousel-caption">
-      这是一个说明内容
-    </div>
   </slide>
   <slide>
     <img src="http://placehold.it/400x300?text=two">
@@ -37,12 +34,12 @@ new Vue({
         carousel: atui.Carousel,
         slide: atui.Carousel.Slide
     },
-    events: {
+    methods: {
       beforeChange (slide) {
-        //console.log('before',slide)
+        console.log('before',slide)
       },
       afterChange (slide) {
-        //console.log('after',slide)
+        console.log('after',slide)
       }
     }
 })

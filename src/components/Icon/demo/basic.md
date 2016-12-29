@@ -14,36 +14,36 @@ title:
 
 
 ````jsx
-<icon type="info-s"></icon>
-<icon type="error-s"></icon>
-<icon type="success-s"></icon>
-<icon type="help-s"></icon>
-<icon type="warning-s"></icon>
-<icon type="info-s-b"></icon>
-<icon type="error-s-b"></icon>
-<icon type="success-s-b"></icon>
-<icon type="help-s-b"></icon>
-<icon type="warning-s-b"></icon>
-<icon type="close"></icon>
-<icon type="head"></icon>
-<icon type="tail"></icon>
-<icon type="prev"></icon>
-<icon type="next"></icon>
-<icon type="filter"></icon>
-<icon type="tick"></icon>
-<icon type="up"></icon>
-<icon type="down"></icon>
-<icon type="search"></icon>
-<icon type="doc"></icon>
-<icon type="calendar"></icon>
-<icon type="time"></icon>
+<v-icon type="info-s"></v-icon>
+<v-icon type="error-s"></v-icon>
+<v-icon type="success-s"></v-icon>
+<v-icon type="help-s"></v-icon>
+<v-icon type="warning-s"></v-icon>
+<v-icon type="info-s-b"></v-icon>
+<v-icon type="error-s-b"></v-icon>
+<v-icon type="success-s-b"></v-icon>
+<v-icon type="help-s-b"></v-icon>
+<v-icon type="warning-s-b"></v-icon>
+<v-icon type="close"></v-icon>
+<v-icon type="head"></v-icon>
+<v-icon type="tail"></v-icon>
+<v-icon type="prev"></v-icon>
+<v-icon type="next"></v-icon>
+<v-icon type="filter"></v-icon>
+<v-icon type="tick"></v-icon>
+<v-icon type="up"></v-icon>
+<v-icon type="down"></v-icon>
+<v-icon type="search"></v-icon>
+<v-icon type="doc"></v-icon>
+<v-icon type="calendar"></v-icon>
+<v-icon type="time"></v-icon>
 ````
 
 ````vue-script
 new Vue({
     el: 'body',
     components: {
-        icon: atui.Icon
+        vIcon: atui.Icon
     }
 })
 ````

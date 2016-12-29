@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'Col',
   props: {
     span: {
       type: String,

@@ -1,6 +1,6 @@
 <template>
 <li role="menuitem"
-  :class="[prefixCls + '-menu-item', disabled && (prefixCls + '-menu-item-disabled') , selected && (prefixCls + '-menu-item-selected')]"
+  :class="[prefixCls + '-menu-item', disabled && (prefixCls + '-menu-item-disabled') , selectedStatus && (prefixCls + '-menu-item-selected')]"
   style="padding-left:48px"
   @click="selectItem($event)"
 >
@@ -9,29 +9,36 @@
 </template>
 
 <script>
+import EventBus from 'src/components/eventbus'
 export default {
+  name: 'MenuItem',
   props: {
     disabled: Boolean,
     prefixCls: {
       type: String,
       default: 'atui'
     },
-    key: String,
+    uuid: String,
     selected: Boolean
+  },
+  mixins: [EventBus],
+  data () {
+    return {
+      selectedStatus: this.selected
+    }
   },
   methods: {
     selectItem () {
-      this.$dispatch('itemClicked', this, this.key)
+      this.$bus.$emit('Menu-itemClicked', this, this.uuid)
     }
   },
-  events: {
-    // Menu 父组件传达查找子组件命令，指定选中状态
-    searchItem (key) {
-      this.selected = this.key === key
-      if (this.selected) {
-        this.$dispatch('open', this, this.key)
+  mounted () {
+    this.$bus.$on('Menu-searchItem', (uuid) => {
+      this.selectedStatus = this.uuid === uuid
+      if (this.selectedStatus) {
+        this.$bus.$emit('Menu-open', this, this.uuid)
       }
-    }
+    })
   }
 }
 </script>

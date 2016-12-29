@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<v-select multiple :value="['Apple','Banana']" placeholder="请输入" style="width:100%">
+<v-select multiple :default-value="['Apple','Banana']" placeholder="请输入" style="width:100%">
   <v-option value="Apple">AppleText</v-option>
   <v-option value="Banana">BananaText</v-option>
   <v-option value="Cherry">CherryText</v-option>
