@@ -8,19 +8,21 @@
         {{model.name}}
       </span>
     </a>
-    <ul v-show="open" v-if="isFolder" transition="slide" :class="[open && prefixCls + '-tree-child-tree-open']">
-      <tree-node
-        v-for="model in model.children"
-        :model="model">
-      </tree-node>
-    </ul>
+    <transition name="expand">
+      <ul v-show="open" v-if="isFolder" :class="[open && prefixCls + '-tree-child-tree-open']">
+        <tree-node
+          v-for="model in model.children"
+          :model="model">
+        </tree-node>
+      </ul>
+    </transition>
   </li>
 </template>
 
 <script>
 import Icon from '../Icon/'
 export default {
-  name: 'tree-node',
+  name: 'TreeNode',
   props: {
     disableCheckbox: {
       type: Boolean
@@ -40,13 +42,21 @@ export default {
   },
   watch: {
     open (status) {
-      this.$dispatch('expand', status, this.model)
+      this.tree.$emit('expand', status, this.model)
     }
   },
   computed: {
     isFolder () {
       return this.model.children &&
         this.model.children.length
+    }
+  },
+  created () {
+    let parent = this.$parent
+    if (parent.isTree) {
+      this.tree = parent
+    } else {
+      this.tree = parent.tree
     }
   },
   methods: {

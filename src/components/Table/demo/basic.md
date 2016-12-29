@@ -80,7 +80,8 @@ new Vue({
   el: 'body',
   components: {
     vTable: atui.Table,
-    icon: atui.Icon
+    icon: atui.Icon,
+    vButton: atui.Button
   },
   data () {
     return {
@@ -91,6 +92,12 @@ new Vue({
   methods: {
     rowClick (rowIndex, record) {
       console.log(rowIndex, record)
+    },
+    getData () {
+      let self = this
+      setTimeout(function(){
+        self.gridData = data
+      }) 
     }
   }
 })

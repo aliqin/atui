@@ -11,20 +11,20 @@ title:
 ## en-US
 
 ````jsx
-<trigger trigger="hover" placement="right">
-  <trigger trigger="hover" slot="trigger">
+<v-trigger trigger="hover" placement="right">
+  <v-trigger trigger="hover" slot="trigger">
     <v-button slot="trigger">同时多个popup</v-button>
     <div slot="popup">I'm popup-1</div>
-  </trigger>
+  </v-trigger>
   <div slot="popup">I'm popup-2</div>
-</trigger>
+</v-trigger>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    trigger: atui.Trigger,
+    vTrigger: atui.Trigger,
     vButton: atui.Button
   }
 })

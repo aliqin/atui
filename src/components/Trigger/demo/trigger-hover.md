@@ -11,17 +11,17 @@ title:
 ## en-US
 
 ````jsx
-<trigger trigger="hover">
+<v-trigger trigger="hover">
   <v-button slot="trigger">hover to show</v-button>
   <div slot="popup">I'm a hover popup</div>
-</trigger>
+</v-trigger>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    trigger: atui.Trigger,
+    vTrigger: atui.Trigger,
     vButton: atui.Button
   }
 })

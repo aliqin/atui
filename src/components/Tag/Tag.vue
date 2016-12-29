@@ -19,6 +19,7 @@
 import vIcon from '../Icon/'
 
 export default {
+  name: 'Tag',
   props: {
     color: String,
     closable: Boolean,
@@ -40,7 +41,7 @@ export default {
   methods: {
     closeHandler (e) {
       this.closed = true
-      this.$dispatch('close', e)
+      this.$emit('close', e)
     }
   },
   components: {

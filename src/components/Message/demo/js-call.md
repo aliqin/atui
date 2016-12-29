@@ -19,7 +19,7 @@ title:
 
 
 ````jsx
-<v-button @click="showMessage">
+<v-button @click.native="showMessage">
   点我会弹出提示
 </v-button>
 ````
@@ -33,7 +33,7 @@ new Vue({
   },
   methods: {
     showMessage () {
-      atui.Message.success('成功啦')
+      atui.Message.success('成功啦',3000)
     }
   }
 

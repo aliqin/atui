@@ -59,5 +59,6 @@ new Vue({
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
 dataSource | 数据源 | Object | |
+@expand | 展开/收起事件 | Function(status, model) | |
 
 

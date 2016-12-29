@@ -1,10 +1,10 @@
 <template>
-  <li :class="[prefixCls + '-menu-submenu', prefixCls + '-menu-submenu-' + mode, show && (prefixCls + '-menu-submenu-open')]">
+  <li :class="[prefixCls + '-menu-submenu', prefixCls + '-menu-submenu-' + mode, open && (prefixCls + '-menu-submenu-open')]">
     <div :class="[prefixCls + '-menu-submenu-title']" @click="triggerSub">
       {{title}}
-      <icon type="down" :class="[prefixCls + '-menu-icon']"></icon>
+      <icon v-if="$children.length" type="down" :class="[prefixCls + '-menu-icon']"></icon>
     </div>
-    <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="show" transition="collapse">
+    <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="open" transition="collapse">
       <slot></slot>
     </ul>
   </li>
@@ -12,8 +12,8 @@
 
 <script>
 import Icon from '../Icon'
-
 export default {
+  name: 'SubMenu',
   props: {
     title: String,
     show: Boolean,
@@ -23,18 +23,22 @@ export default {
     },
     type: Boolean,
     disabled: Boolean,
-    key: String
+    uuid: [String, Number]
   },
   components: {
     Icon
   },
   data () {
     return {
-      mode: this.$parent.mode
+      mode: this.$parent.mode,
+      open: this.show
     }
   },
+  mounted () {
+    this.$forceUpdate()
+  },
   watch: {
-    show (val) {
+    open (val) {
       if (val) {
         let me = this
         if (!me.$parent.openOne) {
@@ -43,7 +47,7 @@ export default {
         let sibling = me.$parent.$children
         sibling.forEach((item) => {
           if (me !== item) {
-            item.show = false
+            item.open = false
           }
         })
       }
@@ -51,14 +55,13 @@ export default {
   },
   methods: {
     triggerSub () {
-      let me = this
-      me.show = !me.show
+      this.open = !this.open
     }
   },
   events: {
     // 当子menu选中时，自动打开父菜单
     open () {
-      this.show = true
+      this.open = true
     }
   },
   transitions: {

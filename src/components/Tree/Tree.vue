@@ -9,6 +9,7 @@
 <script>
 import TreeNode from './TreeNode.vue'
 export default {
+  name: 'Tree',
   props: {
     checkable: Boolean,
     dataSource: Object,
@@ -19,6 +20,9 @@ export default {
   },
   components: {
     TreeNode
+  },
+  created () {
+    this.isTree = true
   }
 }
 </script>

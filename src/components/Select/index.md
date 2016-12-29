@@ -16,7 +16,7 @@ subtitle: 选择器
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-value | 选中的值，当设置为多选时用Array | String / Array | |
+defaultValue | 选中的值，当设置为多选时用Array | String / Array | |
 placeholder | 占位提示 | String | |
 multiple | 是否多选 | Boolean |  false |
 selectedOptions | 多选时选中的options | [] |

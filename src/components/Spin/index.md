@@ -17,4 +17,5 @@ size | 大小 | string | default
 show | 是否显示 | boolean | false
 tip  | 提示文字，在不支持animation的时候才会显示 | string | 加载中...
 sping | 是否加载中，只有在包裹元素时才可能用到 | boolean | false
+@toggle | 显示隐藏状态切换时派发的事件 | Function | |
 

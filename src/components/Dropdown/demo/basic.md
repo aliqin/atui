@@ -13,7 +13,7 @@ title:
 
 ````jsx
 
-<dropdown>
+<v-dropdown>
   <div>
     点击显示菜单 <icon type="down"></icon>
   </div>
@@ -24,7 +24,7 @@ title:
     <li role="separator" class="atui-dropdown-divider"></li>
     <li><a href="#">其它</a></li>
   </ul>
-</dropdown>
+</v-dropdown>
 
 ````
 
@@ -32,7 +32,7 @@ title:
 new Vue({
   el: 'body',
   components: {
-    dropdown: atui.Dropdown,
+    vDropdown: atui.Dropdown,
     icon: atui.Icon
   }
 })

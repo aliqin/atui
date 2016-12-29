@@ -15,47 +15,47 @@ title:
 ````jsx
 <div>
   <div :style="{marginLeft: '60px'}">
-    <tooltip content="提示内容" placement="topLeft">
+    <v-tooltip content="提示内容" placement="topLeft">
     <v-button>左上角</v-button>
-    </tooltip>
-    <tooltip content="提示内容" placement="top">
+    </v-tooltip>
+    <v-tooltip content="提示内容" placement="top">
     <v-button>上边</v-button>
-    </tooltip>
-    <tooltip content="提示内容" placement="topRight">
+    </v-tooltip>
+    <v-tooltip content="提示内容" placement="topRight">
     <v-button>上右</v-button>
   </div>
   <div :style="{width: '60px', float: 'left'}">
-    <tooltip content="提示内容" placement="leftTop">
+    <v-tooltip content="提示内容" placement="leftTop">
     <v-button>左上</v-button>
-    </tooltip>
-    <tooltip content="提示内容" placement="left">
+    </v-tooltip>
+    <v-tooltip content="提示内容" placement="left">
     <v-button>左边</v-button>
-    </tooltip>
-    <tooltip content="提示内容" placement="leftBottom">
+    </v-tooltip>
+    <v-tooltip content="提示内容" placement="leftBottom">
     <v-button>左下</v-button>
-    </tooltip>
+    </v-tooltip>
   </div>
   <div :style="{width: '60px', marginLeft: '270px'}">
-    <tooltip content="提示内容" placement="rightTop">
+    <v-tooltip content="提示内容" placement="rightTop">
       <v-button>右上</v-button>
-    </tooltip>
-    <tooltip content="提示内容" placement="right">
+    </v-tooltip>
+    <v-tooltip content="提示内容" placement="right">
       <v-button>右边</v-button>
-    </tooltip>
-    <tooltip content="提示内容" placement="rightBottom">
+    </v-tooltip>
+    <v-tooltip content="提示内容" placement="rightBottom">
       <v-button>右下</v-button>
-    </tooltip>
+    </v-tooltip>
   </div>
   <div :style="{marginLeft: '60px', clear: 'both'}">
-    <tooltip  placement="bottomLeft" content="提示内容">
+    <v-tooltip  placement="bottomLeft" content="提示内容">
       <v-button>下左</v-button>
-    </tooltip>
-    <tooltip  placement="bottom" content="提示内容">
+    </v-tooltip>
+    <v-tooltip  placement="bottom" content="提示内容">
       <v-button>下边</v-button>
-    </tooltip>
-    <tooltip  placement="bottomRight" content="提示内容">
+    </v-tooltip>
+    <v-tooltip  placement="bottomRight" content="提示内容">
       <v-button>下右</v-button>
-    </tooltip>
+    </v-tooltip>
   </div>
 </div>
 ````
@@ -64,7 +64,7 @@ title:
 new Vue({
   el: 'body',
   components: {
-    tooltip: atui.Tooltip,
+    vTooltip: atui.Tooltip,
     vButton: atui.Button
   }
 })

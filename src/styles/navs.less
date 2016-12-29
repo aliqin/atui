@@ -113,7 +113,8 @@
       overflow: hidden;
       // padding-left: 20px;
       // padding-right: 20px;
-      box-sizing: content-box;
+      width: 100%;
+      margin-bottom: 15px;
     }
 
     .@{prefix-cls-tab}-arrow-next ,.@{prefix-cls-tab}-arrow-prev {
@@ -155,6 +156,7 @@
       line-height: @line-height-base;
       border: 1px solid transparent;
       border-radius: @border-radius-base @border-radius-base 0 0;
+      outline: none;
       &:hover {
         border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
       }

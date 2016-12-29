@@ -28,13 +28,18 @@
 <script>
 import Icon from '../Icon/'
 export default {
+  name: 'Step',
+  data () {
+    return {
+      status: 'process',
+      stepNumber: 0,
+      lastStep: false,
+      tailWidth: 'auto'
+    }
+  },
   props: {
     title: String,
     description: String,
-    status: String,
-    stepNumber: Number,
-    lastStep: Boolean,
-    tailWidth: String,
     prefixCls: {
       type: String,
       default: 'atui'

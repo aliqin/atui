@@ -15,7 +15,6 @@ describe('Badge组件单元测试', () => {
     components: {
       Badge
     },
-    replace: false,
     template: `
       <badge :count="6">
         <a href="javascript:;" class="badge-count-example"></a>

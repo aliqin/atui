@@ -13,10 +13,10 @@ title:
 
 
 ````jsx
-<v-select value="Cherry" style="width:200px" @change="onSlectChange">
+<v-select :default-value="initObj.val" style="width:200px" @change="onSelectChange">
   <v-option value="Apple">苹果</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
-  <v-option value="Cherry">Cherry</v-option>
+  <v-option value="10">Cherry</v-option>
   <v-option value="Orange">OrangeText</v-option>
   <v-option value="Grape">Grape</v-option>
   <v-option value="chestnut">栗子</v-option>
@@ -42,11 +42,24 @@ new Vue({
   },
   data() {
     return {
-      single: ''
+      single: '',
+      initValue: 10,
+      initObj: {
+        val:'Apple'
+      },
+      activities: [
+        {
+          id:1,
+          text:'111'
+        },{
+          id:2,
+          text:'222'
+        }
+      ]
     }
   },
   methods: {
-    onSlectChange (obj) {
+    onSelectChange (obj) {
       this.single = obj.value;
     }
   }

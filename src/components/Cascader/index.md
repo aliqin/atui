@@ -50,7 +50,7 @@ new Vue({
   },
   methods: {
     selectChange(selectedValue, option) {
-      console.log(selectedValue)
+      //console.log(selectedValue)
     }
   }
 })

@@ -15,12 +15,17 @@
 
 <script type="text/babel">
 export default {
+  name: 'BreadcrumbItem',
   props: {
     href: String,
-    symbol: String,
     prefixCls: {
       type: String,
       default: 'atui'
+    }
+  },
+  data () {
+    return {
+      symbol: '/'
     }
   }
 }

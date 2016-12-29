@@ -1,31 +1,31 @@
 <template>
   <div :class="[prefixCls + '-trigger-cont']" style="width:100%">
     <div v-if="popupAlwaysShow"
-         v-el:trigger
+         ref="trigger"
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
       <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'click' && !popupAlwaysShow"
-         v-el:trigger
+         ref="trigger"
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @click="clickHandler">
       <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'hover'"
-         v-el:trigger
+         ref="trigger"
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]"
          @mouseenter="hoverHandler"
          @mouseleave="hoverHandler">
       <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'focus' || trigger === 'always'"
-         v-el:trigger
+         ref="trigger"
          :class="[prefixCls + '-trigger', disabled && (prefixCls + '-trigger-disabled')]">
       <slot name="trigger"></slot>
     </div>
     <div v-if="trigger === 'hover'"
-         v-el:popup
-         v-show="show"
+         ref="popup"
+         v-show="showPopup"
          :class="popupClassObj"
          :transition="effect"
          @mouseenter="hoverHandler"
@@ -33,8 +33,8 @@
       <slot name="popup"></slot>
     </div>
     <div v-else
-         v-el:popup
-         v-show="show"
+         ref="popup"
+         v-show="showPopup"
          :class="popupClassObj"
          :transition="effect">
       <slot name="popup"></slot>
@@ -47,8 +47,8 @@
   import EventListener from '../_utils/EventListener.js'
 
   export default {
+    name: 'Trigger',
     mixins: [GlobalMixin],
-
     props: {
       trigger: {
         type: String,
@@ -115,7 +115,9 @@
         position: {
           top: 0,
           left: 0
-        }
+        },
+        showPopup: this.show,
+        popupPlacement: this.placement
       }
     },
 
@@ -144,33 +146,33 @@
     },
 
     watch: {
-      'show' (val, oldVal) {
+      showPopup (val, oldVal) {
         // 向父组件派发事件
-        this.$dispatch('toggle-popup', val)
+        this.$emit('toggle-popup', val)
+      },
+      show (val, oldVal) {
+        this.showPopup = val
       }
     },
 
-    ready () {
-      const $trigger = this.$els.trigger
-      const $popup = this.$els.popup
-      const $triggerTarget = $trigger.querySelector('input, textarea')
+    mounted () {
       const me = this
+      const $trigger = me.$refs.trigger
+      const $popup = me.$refs.popup
+      const $triggerTarget = $trigger.querySelector('input, textarea')
       const { trigger, popupHideWhenClickOutside, triggerUsePopupWidth, popupAlwaysShow, popupUseTriggerWidth } = this
-
-      this.originalPlacement = this.placement
-
       if (trigger === 'focus') {
-        this._focusEvent = EventListener.listen($triggerTarget, 'focus', () => {
-          me.show = true
+        me._focusEvent = EventListener.listen($triggerTarget, 'focus', () => {
+          me.showPopup = true
           this.$nextTick(() => {
             this.resetPos()
           })
         })
 
-        this._blurEvent = EventListener.listen($triggerTarget, 'blur', () => {
+        me._blurEvent = EventListener.listen($triggerTarget, 'blur', () => {
           // blur触发的,延迟100ms关闭popup,保证popup上的交互事件触发
           setTimeout(() => {
-            me.show = false
+            me.showPopup = false
           }, 100)
         })
       }
@@ -179,7 +181,7 @@
       if (!popupAlwaysShow && popupHideWhenClickOutside) {
         this._closeEvent = EventListener.listen(window, 'click', (ev) => {
           if (!$popup.contains(ev.target) && !$trigger.contains(ev.target)) {
-            me.show = false
+            me.showPopup = false
           }
         })
       }
@@ -201,12 +203,24 @@
       if (popupAlwaysShow) {
         // 显示优化,避免上来出现在页面左上角
         $popup.style.visibility = 'hidden'
-        this.show = true
+        this.showPopup = true
         this.$nextTick(() => {
           this.resetPos()
         })
         $popup.style.visibility = ''
       }
+
+      // popup append to body
+      this.$nextTick(() => {
+        if (this.$refs.popup) {
+          document.body.appendChild(this.$refs.popup)
+        }
+      })
+    },
+
+    created () {
+      console.log('created')
+      this.showPopup = this.show
     },
 
     methods: {
@@ -214,53 +228,52 @@
        * 优先设置弹窗视图内可见
        */
       enablePopupInView (data) {
-        const { originalPlacement } = this
+        const { popupPlacement } = this
         const { triggerOffset, triggerWidth, triggerHeight, popupWidth, popupHeight } = data
         const triggerTop = triggerOffset.top
         const triggerLeft = triggerOffset.left
         const winWidth = window.innerWidth
         const winHeight = window.innerHeight
-        let fixedPlacement = originalPlacement
+        let fixedPlacement = popupPlacement
         let hasFix = false
 
-        if (fixedPlacement.startsWith('top')) {
+        if (~fixedPlacement.indexOf('top')) {
           if (triggerTop < popupHeight) {
             fixedPlacement = fixedPlacement.replace('top', 'bottom')
             hasFix = true
           }
-        } else if (fixedPlacement.startsWith('bottom')) {
+        } else if (~fixedPlacement.indexOf('bottom')) {
           if (winHeight - triggerTop - triggerHeight < popupHeight) {
             fixedPlacement = fixedPlacement.replace('bottom', 'top')
             hasFix = true
           }
-        } else if (fixedPlacement.startsWith('left')) {
+        } else if (~fixedPlacement.indexOf('left')) {
           if (triggerLeft < popupWidth) {
             fixedPlacement = fixedPlacement.replace('left', 'right')
             hasFix = true
           }
-        } else if (fixedPlacement.startsWith('right')) {
+        } else if (~fixedPlacement.indexOf('right')) {
           if (winWidth - triggerLeft - triggerWidth < popupWidth) {
             fixedPlacement = fixedPlacement.replace('right', 'left')
             hasFix = true
           }
         }
-
-        if (fixedPlacement.endsWith('Top')) {
+        if (this.endsWith('Top', fixedPlacement)) {
           if (winHeight - triggerTop - triggerHeight < popupHeight) {
             fixedPlacement = fixedPlacement.replace('Top', 'Bottom')
             hasFix = true
           }
-        } else if (fixedPlacement.endsWith('Bottom')) {
+        } else if (this.endsWith('Bottom', fixedPlacement)) {
           if (triggerTop < popupHeight) {
             fixedPlacement = fixedPlacement.replace('Bottom', 'Top')
             hasFix = true
           }
-        } else if (fixedPlacement.endsWith('Left')) {
+        } else if (this.endsWith('Left', fixedPlacement)) {
           if (winWidth - triggerLeft - triggerWidth < popupWidth) {
             fixedPlacement = fixedPlacement.replace('Left', 'Right')
             hasFix = true
           }
-        } else if (fixedPlacement.endsWith('Right')) {
+        } else if (this.endsWith('Right', fixedPlacement)) {
           if (triggerLeft < popupWidth) {
             fixedPlacement = fixedPlacement.replace('Right', 'Left')
             hasFix = true
@@ -270,7 +283,7 @@
         if (hasFix) {
           this.resetPos(fixedPlacement)
         } else {
-          this.resetPos(originalPlacement)
+          this.resetPos(this.placement)
         }
       },
 
@@ -280,7 +293,7 @@
       resetPos (inPlacement) {
         const me = this
         const { popupAlwaysInView, offset, popupCoverTrigger } = this
-        const $popup = me.$els.popup
+        const $popup = me.$refs.popup
         // 坐标修正
         if (!inPlacement && me.show && $popup.offsetWidth === 0) {
           setTimeout(() => {
@@ -289,7 +302,7 @@
           return
         }
 
-        const $trigger = me.$els.trigger.children[0]
+        const $trigger = me.$refs.trigger.children[0]
         const triggerOffset = $trigger.getBoundingClientRect()
         const triggerLeft = document.documentElement.scrollLeft + document.body.scrollLeft + triggerOffset.left
         const triggerTop = document.documentElement.scrollTop + document.body.scrollTop + triggerOffset.top
@@ -310,10 +323,10 @@
         }
 
         if (inPlacement) {
-          this.placement = inPlacement
+          this.popupPlacement = inPlacement
         }
         // @note top值减4，减去2px的border宽度，另外2px是保持trigger和popup保持2px的间距
-        switch (this.placement) {
+        switch (this.popupPlacement) {
           case 'top' :
             me.position.left = triggerLeft - popupWidth / 2 + triggerWidth / 2
             me.position.top = triggerTop - popupHeight - 4
@@ -367,9 +380,9 @@
         }
 
         if (popupCoverTrigger) {
-          if (this.placement.startsWith('top')) {
+          if (~this.placement.indexOf('top')) {
             offset[1] = triggerHeight
-          } else if (this.placement.startsWith('bottom')) {
+          } else if (~this.placement.indexOf('bottom')) {
             offset[1] = -triggerHeight
           }
         }
@@ -378,19 +391,25 @@
         $popup.style.top = this.position.top + offset[1] + 'px'
 
         // 向父组件派发事件
-        this.$dispatch('reset-pos', {
+        this.$emit('reset-pos', {
           $trigger: $trigger,
           $popup: $popup,
-          placement: this.placement
+          placement: this.popupPlacement
         })
+      },
+      /*
+      * 判断字符串source是否以target结尾
+      */
+      endsWith (target, source) {
+        return source.lastIndexOf(target) + target.length === source.length
       },
 
       clickHandler (ev) {
         if (this.disabled) return
 
-        this.show = !this.show
+        this.showPopup = !this.showPopup
 
-        if (this.show) {
+        if (this.showPopup) {
           this.$nextTick(() => {
             this.resetPos()
           })
@@ -407,17 +426,17 @@
         if (popupHideDelay && this._mouseLeaveTimer) clearTimeout(this._mouseLeaveTimer)
 
         if (type === 'mouseenter') {
-          this.show = true
+          this.showPopup = true
           this.$nextTick(() => {
             this.resetPos()
           })
         } else {
           if (popupHideDelay) {
             this._mouseLeaveTimer = setTimeout(() => {
-              me.show = false
+              me.showPopup = false
             }, popupHideDelay)
           } else {
-            this.show = false
+            this.showPopup = false
           }
         }
       },
@@ -428,24 +447,18 @@
         const { type } = ev
 
         if (type === 'focus') {
-          this.show = true
+          this.showPopup = true
           this.$nextTick(() => {
             this.resetPos()
           })
         } else {
-          this.show = false
+          this.showPopup = false
         }
       }
     },
 
-    attached () {
-      if (this.$els.popup) {
-        document.body.appendChild(this.$els.popup)
-      }
-    },
-
     beforeDestroy () {
-      const $popup = this.$els.popup
+      const $popup = this.$refs.popup
 
       if ($popup && $popup.nodeType) {
         $popup.parentNode.removeChild($popup)

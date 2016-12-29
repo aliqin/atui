@@ -31,10 +31,10 @@
         </div>
         <div :class="[prefixCls + '-calendar-body']">
           <div :class="[prefixCls + '-calendar-monthRange']">
-            <template v-for="m in monthNames">
+            <template v-for="(m, index) in monthNames">
               <span :class="[(monthNames[parse(value).getMonth()]  === m) &&
                   currDate.getFullYear() === parse(value).getFullYear() && prefixCls + '-calendar-dateRange-item-active']"
-                  @click="monthSelect($index)"
+                  @click="monthSelect(index)"
                 >{{m.substr(0,3)}}</span>
             </template>
           </div>
@@ -89,7 +89,7 @@
   export default {
 
     mixins: [GlobalMixin],
-
+    name: 'Calendar',
     props: {
       value: {
         type: String,
@@ -193,8 +193,8 @@
           return false
         } else {
           this.currDate = date
-          this.value = this.stringify(this.currDate)
-          this.$dispatch('change', this.value)
+          // this.value = this.stringify(this.currDate)
+          this.$emit('change', this.stringify(this.currDate))
         }
       },
       switchMonthView () {
@@ -357,8 +357,8 @@
         }
       }
     },
-    ready () {
-      this.$dispatch('child-created', this)
+    mounted () {
+      this.$emit('child-created', this)
       this.currDate = this.parse(this.value) || this.parse(new Date())
     }
   }

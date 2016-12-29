@@ -1,16 +1,17 @@
 <template>
   <span :class="switchClassObj"
-        :style="{borderColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf', backgroundColor: this.disabled? '#f2f2f2' : (this.checked) ? color : '#bfbfbf'}"
+        :style="{borderColor: this.isDisabled? '#f2f2f2' : (this.isChecked) ? color : '#bfbfbf', backgroundColor: this.isDisabled? '#f2f2f2' : (this.isChecked) ? color : '#bfbfbf'}"
         @click="changeHandler">
     <span :class="[prefixCls + '-switch-content']">
-      <slot v-if="checked && !small" name="checkedPart"></slot>
-      <slot v-if="!checked && !small" name="unCheckedPart"></slot>
+      <slot v-if="isChecked && !small" name="checkedPart"></slot>
+      <slot v-if="!isChecked && !small" name="unCheckedPart"></slot>
     </span>
   </span>
 </template>
 
 <script>
 export default {
+  name: 'Switch',
   props: {
     checked: Boolean,
     value: String,
@@ -22,26 +23,43 @@ export default {
       default: 'atui'
     }
   },
+  data () {
+    return {
+      isChecked: this.checked,
+      isDisabled: this.disabled
+    }
+  },
+  watch: {
+    checked: function (val, oldVal) {
+      this.isChecked = this.checked
+    },
+    isChecked: function (val, oldVal) {
+      this.$emit('check-change', val)
+    },
+    disabled: function (val, oldVal) {
+      this.isDisabled = val
+    }
+  },
   computed: {
     switchClassObj () {
-      let { prefixCls, small, checked, disabled } = this
+      let { prefixCls, small, isChecked, isDisabled } = this
       let classObj = {}
 
       classObj[prefixCls + '-switch'] = true
       classObj[prefixCls + '-switch-small'] = small
-      classObj[prefixCls + '-switch-checked'] = checked
-      classObj[prefixCls + '-switch-disabled'] = disabled
+      classObj[prefixCls + '-switch-checked'] = isChecked
+      classObj[prefixCls + '-switch-disabled'] = isDisabled
 
       return classObj
     }
   },
   methods: {
     changeHandler () {
-      if (this.disabled) {
+      if (this.isDisabled) {
         return
       }
-      this.checked = !this.checked
-      this.$dispatch('change', this)
+      this.isChecked = !this.isChecked
+      this.$emit('change', this)
     }
   }
 }

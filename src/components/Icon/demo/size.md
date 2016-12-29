@@ -15,23 +15,23 @@ title:
 
 ````jsx
 
-<icon type="info-l" size="50"></icon>
-<icon type="error-l" size="50"></icon>
-<icon type="success-l" size="50"></icon>
-<icon type="help-l" size="50"></icon>
-<icon type="warning-l" size="50"></icon>
-<icon type="close" size="50"></icon>
-<icon type="head" size="50"></icon>
-<icon type="tail" size="50"></icon>
-<icon type="prev" size="50"></icon>
-<icon type="next" size="50"></icon>
-<icon type="filter" size="50"></icon>
-<icon type="tick" size="50"></icon>
-<icon type="up" size="50"></icon>
-<icon type="down" size="50"></icon>
-<icon type="search" size="50"></icon>
-<icon type="doc" size="50"></icon>
-<icon type="calendar" size="50"></icon>
+<v-icon type="info-l" size="50"></v-icon>
+<v-icon type="error-l" size="50"></v-icon>
+<v-icon type="success-l" size="50"></v-icon>
+<v-icon type="help-l" size="50"></v-icon>
+<v-icon type="warning-l" size="50"></v-icon>
+<v-icon type="close" size="50"></v-icon>
+<v-icon type="head" size="50"></v-icon>
+<v-icon type="tail" size="50"></v-icon>
+<v-icon type="prev" size="50"></v-icon>
+<v-icon type="next" size="50"></v-icon>
+<v-icon type="filter" size="50"></v-icon>
+<v-icon type="tick" size="50"></v-icon>
+<v-icon type="up" size="50"></v-icon>
+<v-icon type="down" size="50"></v-icon>
+<v-icon type="search" size="50"></v-icon>
+<v-icon type="doc" size="50"></v-icon>
+<v-icon type="calendar" size="50"></v-icon>
 
 ````
 
@@ -39,7 +39,7 @@ title:
 new Vue({
     el: 'body',
     components: {
-        icon: atui.Icon
+        vIcon: atui.Icon
     }
 })
 ````

@@ -5,7 +5,7 @@ title: Dropdown
 subtitle: 下单菜单
 ---
 
-dropdown组件只提供了一种能力，只需要指定
+dropdown组件只提供了一种能力，只需要指定slot
 
 ## 何时使用
 

@@ -14,18 +14,18 @@ title:
 
 ````jsx
 
-<form id="upload1" method="post" action="{{ajaxUrl}}">
-  <uploader
+<form id="upload1" method="post" :action="ajaxUrl">
+  <v-uploader
     id="file-upload-click-test"
     form-id="upload1"
     upload-type="click"
     :ajax="ajaxUrl"
     :multiple="multiple"
     name="files1"
-    :auto-submit="true"
-    :hide-button="true"
-    :file-list.sync="fileList1">
-  </uploader>
+    auto-submit="true"
+    hide-button="true"
+    :file-list="fileList1">
+  </v-uploader>
 </form>
 ````
 
@@ -33,7 +33,12 @@ title:
 new Vue({
   el: 'body',
   components: {
-    uploader: atui.Uploader
+    vUploader: atui.Uploader
+  },
+  data: {
+    ajaxUrl:'about:blank',
+    multiple: false,
+    fileList1: []
   }
 })
 ````

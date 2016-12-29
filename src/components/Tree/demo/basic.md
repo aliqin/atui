@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<tree :data-source="dataSource"></tree>
+<v-tree :data-source="dataSource" ref="myTree" @expand="onExpand"></v-tree>
 ````
 
 ````vue-script
@@ -48,10 +48,15 @@ let treeData = {
 new Vue({
   el: 'body',
   components: {
-    tree: atui.Tree
+    vTree: atui.Tree
   },
   data: {
     dataSource: treeData
+  },
+  methods: {
+    onExpand () {
+      console.log(arguments)
+    }
   }
 })
 ````

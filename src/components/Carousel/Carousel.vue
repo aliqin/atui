@@ -7,7 +7,7 @@
                :style="{ transition: 'all ' + thisSpeed + 's' }"
                :speed="thisSpeed"
                :class="[prefixCls + '-carousel-content']"
-               v-ref:content>
+               ref="content">
       <slot></slot>
     </component>
 
@@ -25,9 +25,7 @@
     <div :class="[prefixCls + '-carousel-indicators',indicatorClass]"
          v-if="indicators !== false && childrenLength > 1"
          @click.stop>
-      <i :class="[prefixCls + '-carousel-indicator-icon' ,{ 'carousel-indicator-active': posFlag === $index }]"
-         v-for="i in childrenLength"
-         @click="jump2($index)"></i>
+      <i v-for="(item, index) in childrenLength" :class="[prefixCls + '-carousel-indicator-icon' ,{ 'carousel-indicator-active': posFlag === index }]" @click="jump2(index)"></i>
     </div>
   </div>
 </template>
@@ -35,6 +33,7 @@
 <script>
   import { normal, fade } from './animation'
   export default {
+    name: 'Carousel',
     data () {
       return {
         posFlag: 0,
@@ -80,7 +79,10 @@
         default: 'atui'
       }
     },
-
+    components: {
+      normal,
+      fade
+    },
     computed: {
       thisSpeed () {
         let speed = this.speed / 1000
@@ -92,11 +94,6 @@
         }
       }
     },
-    // watch: {
-    //   childrenLength (val) {
-
-    //   }
-    // },
     methods: {
       play () {
         // let timer
@@ -105,12 +102,11 @@
         let me = this
         function setTimer () {
           return setInterval(() => {
-            if (me.posFlag < me.$children.length - 2) {
+            if (me.posFlag < me.childrenLength - 1) {
               me.posFlag++
             } else {
               me.posFlag = 0
             }
-
             content.animation(me.posFlag)
           }, me.interval)
         }
@@ -120,7 +116,7 @@
             me.timer = setTimer()
           } else {
             // Config play & carousel item large than 2, coz carousel is one of items
-            if (me.autoPlay && me.$children.length > 2) {
+            if (me.autoPlay && me.childrenLength > 2) {
               me.timer = setTimer()
             }
           }
@@ -138,7 +134,7 @@
       },
       next () {
         let content = this.$refs.content
-        if (this.posFlag < this.$children.length - 2) {
+        if (this.posFlag < this.childrenLength - 1) {
           ++this.posFlag
         } else {
           this.posFlag = 0
@@ -153,7 +149,7 @@
         if (this.posFlag > 0) {
           --this.posFlag
         } else {
-          this.posFlag = this.$children.length - 2
+          this.posFlag = this.childrenLength - 2
         }
         content.animation(this.posFlag, 'preview')
         this.play()
@@ -163,44 +159,48 @@
         content.animation(index, 'jump')
         this.posFlag = index
         this.play()
+      },
+      newItem (item) {
+        const sliderContent = this.$refs.content
+        this.addChildrenLength()
+        this.scaleItemsWidth(item)
+        if (sliderContent.scaleWidth) {
+          sliderContent.scaleWidth(this.$el.clientWidth)
+        }
+        this.autoplay()
       }
     },
-    events: {
-      scaleSliderWidth (fn) {
-        let _this = this
-        fn(this.$el.clientWidth, this.$children.length - 1)
+    mounted () {
+      let me = this
+      me.$nextTick(() => {
+        me.play = me.play()
+        me.$el.clentHight
+        me.play()
+      })
+      me.$on('scaleSliderWidth', (fn) => {
+        fn(me.$el.clientWidth, me.childrenLength)
         // For addChildrenLength()
-        this.scaleSliderWidth = function () {
-          fn(_this.$el.clientWidth, _this.$children.length - 1)
+        me.scaleSliderWidth = () => {
+          fn(me.$el.clientWidth, me.childrenLength)
         }
-      },
-      addChildrenLength () {
-        this.childrenLength++
-        // this.childrenArr.push(this.childrenArr.length)
+      }).$on('addItem', () => {
+        me.childrenLength++
         if (this.animation === 'normal') {
-          this.scaleSliderWidth()
+          me.$nextTick(() => {
+            me.scaleSliderWidth()
+          })
         }
-        this.play()
-      },
-      scaleItemsWidth (fn) {
-        fn(this.$el.clientWidth)
-      },
-      beforeChange () {
-        return true
-      },
-      afterChange () {
-        return true
-      }
+        me.play()
+      }).$on('scaleItemsWidth', (fn) => {
+        fn(me.$el.clientWidth)
+      }).$on('before', (item) => {
+        me.$emit('before-change', item)
+      }).$on('after', (item) => {
+        me.$emit('after-change', item)
+      })
     },
-    ready () {
-      // Init play function.
-      this.play = this.play()
-      this.$el.clentHight
-      this.play()
-    },
-    components: {
-      normal,
-      fade
+    beforeDestroy: function () {
+      this.$off()
     }
   }
 </script>

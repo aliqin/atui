@@ -1,9 +1,7 @@
 import AddressSelect from './AddressSelect/'
-import Editor from './Editor/'
 
 const VueWidget = {
-  AddressSelect,
-  Editor
+  AddressSelect
 }
 // require.ensure([], function(require) {
 //   VueWidget.AddressSelect = require('./AddressSelect/')

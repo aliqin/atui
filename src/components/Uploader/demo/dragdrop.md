@@ -14,7 +14,7 @@ title:
 
 ````jsx
 <form id="upload2" method="post" action="/upload">
-  <uploader
+  <v-uploader
     id="file-upload-drag-test"
     form-id="upload2"
     upload-type="drag"
@@ -23,8 +23,8 @@ title:
     name="files2"
     :auto-submit="autoSubmit"
     :hide-button="hideButton"
-    :file-list.sync="fileList2">
-  </uploader>
+    :file-list="fileList2">
+  </v-uploader>
 </form>
 
 ````
@@ -33,7 +33,14 @@ title:
 new Vue({
   el: 'body',
   components: {
-    uploader: atui.Uploader
+    vUploader: atui.Uploader
+  },
+  data: {
+    ajaxUrl:'about:blank',
+    multiple: false,
+    fileList2: [],
+    hideButton: false,
+    autoSubmit: false
   }
 })
 ````

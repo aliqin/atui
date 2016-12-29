@@ -28,8 +28,7 @@ describe('Menu组件单元测试', () => {
           </v-menu-item-group>
         </v-sub-menu>
       </v-menu>
-    `,
-    replace: false
+    `
   }).$mount()
 
   it('基本功能渲染', () => {

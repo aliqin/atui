@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<slider :value="30"></slider>
+<slider v-model="value"></slider>
 ````
 
 ````vue-script
@@ -21,6 +21,11 @@ new Vue({
   el: 'body',
   components: {
     slider: atui.Slider
+  },
+  data () {
+    return {
+      value:30
+    }
   }
 })
 ````

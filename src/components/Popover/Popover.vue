@@ -1,15 +1,22 @@
 <template>
   <div :class="[prefixCls + '-popover-cont']">
-    <trigger v:ref="trigger" :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover" :popup-always-show="alwaysShow" :show.sync="visible">
-      <slot slot="trigger"></slot>
-      <slot slot="popup" name="popup" role="popover">
-        <div :class="[prefixCls + '-popover-arrow']"></div>
-        <h3 :class="[prefixCls + '-popover-title']" v-show="showHeader && title">{{title}}</h3>
-        <div :class="[prefixCls + '-popover-content']">
-          <slot name="content">{{{content}}}</slot>
-        </div>
-      </slot>
-    </trigger>
+    <trigger v:ref="trigger" :trigger="trigger" :effect="effect" :placement="placement" popup-cls="popover" :popup-always-show="alwaysShow" 
+      :show="visible"
+      @toggle-popup="onTogglePopup">
+      <template slot="trigger">
+        <slot></slot>
+      </template>
+      <template slot="popup">
+        <slot name="popup" role="popover">
+          <div :class="[prefixCls + '-popover-arrow']"></div>
+          <h3 :class="[prefixCls + '-popover-title']" v-show="showHeader && title">{{title}}</h3>
+          <div :class="[prefixCls + '-popover-content']">
+            <slot name="content">
+              <span v-html="content"></span>
+            </slot>
+          </div>
+        </slot>
+      </template>
   </div>
 </template>
 
@@ -18,6 +25,7 @@
   import Trigger from '../Trigger'
 
   export default {
+    name: 'Popover',
     mixins: [
       GlobalMixin
     ],
@@ -38,6 +46,11 @@
         default: true
       },
       alwaysShow: Boolean
+    },
+    methods: {
+      onTogglePopup (show) {
+        this.$emit('pop-change', show)
+      }
     }
   }
 </script>

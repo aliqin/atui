@@ -11,17 +11,17 @@ title:
 ## en-US
 
 ````jsx
-<trigger :popup-always-show="true">
+<v-trigger :popup-always-show="true">
   <v-button slot="trigger">不需要触发</v-button>
   <div slot="popup">我会永远展示</div>
-</trigger>
+</v-trigger>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    trigger: atui.Trigger,
+    vTrigger: atui.Trigger,
     vButton: atui.Button
   }
 })

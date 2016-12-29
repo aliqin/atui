@@ -7,7 +7,7 @@
     <title>Atui - 阿里通信组件库</title>
     <script>
       var hostname = location.hostname
-      root = 'http://g.alicdn.com/aliqin/atui/0.1.10/'
+      root = 'http://g.alicdn.com/aliqin/atui/0.1.19/'
       if(/localhost/ig.test(hostname)) {
         root = 'http://localhost:8080/build/'
       }
@@ -26,13 +26,15 @@
         </li>
       </ul>
     </div>
-    <script src="http://g.alicdn.com/aliqin/atui/0.1.3/vue.dev.js"></script>
     <script>
+      document.write('<script src="'+ root +'../dist/vue.dev.js"><\/script>')
       document.write('<script src="'+ root +'atui.js"><\/script>')
       document.write('<script src="'+ root +'atuiWidget.js"><\/script>')
     </script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script> -->
     <script src="{{ root }}common.js"></script>
     <script src="{{ root }}index.js"></script>
+    <script src="http://localhost:8080/webpack-dev-server.js"></script>
     <script>
 
       if (/(src\/components\/)|(src\/widgets\/)/.test(location.pathname) ) {

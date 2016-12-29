@@ -1,7 +1,7 @@
 <template>
   <div :id="sliderId" :class="sliderClassObj" @click="clickFun">
-    <template v-for="item in valuePercent">
-      <tooltip :content="valueArray[$index]">
+    <template v-for="(item, index) in valuePercent">
+      <tooltip :content="valueArray[index]">
         <div :class="[prefixCls + '-slider-handle']" :style="{'left': item+'%'}" @mousedown="mousedown"></div>
       </tooltip>
     </template>
@@ -23,6 +23,7 @@
   import EventListener from '../_utils/EventListener'
 
   export default {
+    name: 'Slider',
     props: {
       // 默认值/初识位置，也可实时获取最新值
       value: [String, Number, Array],
@@ -49,6 +50,9 @@
 
     data () {
       return {
+        currValue: this.value,
+        minValue: this.min,
+        maxValue: this.max,
         width: '',
         valueArray: [],
         valuePercent: [],
@@ -62,12 +66,15 @@
 
     watch: {
       value (val) {
-        this.valueArray = this.valueToArray()
+        this.currValue = val
       },
-
+      currValue (val) {
+        this.valueArray = this.valueToArray()
+        this.$emit('input', val)
+      },
       valueArray (val) {
         if (val.length === 1) {
-          this.value = val[0] + ''
+          this.currValue = val[0] + ''
         }
       }
     },
@@ -79,14 +86,14 @@
       range () {
         // let min = this.min
         // let max = this.max
-        this.min = this.min || 0
-        this.max = this.max || 100
-        if (this.max - this.min < 0) {
-          let mid = this.min
-          this.min = this.max
-          this.max = mid
+        this.minValue = this.minValue || 0
+        this.maxValue = this.maxValue || 100
+        if (this.maxValue - this.minValue < 0) {
+          let mid = this.minValue
+          this.minValue = this.maxValue
+          this.maxValue = mid
         }
-        return this.max - this.min
+        return this.maxValue - this.minValue
       },
       /**
        * 每个取值单位所占总长度的比例
@@ -111,7 +118,7 @@
       }
     },
 
-    ready () {
+    mounted () {
       let self = this
 
       setTimeout(() => {
@@ -137,10 +144,10 @@
        * 且最多只能配置两个取值数据
        */
       valueToArray () {
-        let value = this.value.toString().replace(/[\]\[]/g, '')
+        let value = this.currValue.toString().replace(/[\]\[]/g, '')
         let typeData = value.replace(/,/g, '')
         let unit = this.unit
-        let min = this.min || 0
+        let min = this.minValue || 0
         let valueArray = []
         let valuePercent = []
 
@@ -166,8 +173,8 @@
       },
 
       valueRange (value) {
-        let min = this.min
-        let max = this.max
+        let min = this.minValue
+        let max = this.maxValue
 
         if (min && min - 0 >= 0 && value < min) value = min
         if (!min && value < 0) value = 0
@@ -184,7 +191,7 @@
        * @return {[type]}       [description]
        */
       sliderStartCallBack (value) {
-        this.$dispatch('start', value, this)
+        this.$emit('start', value, this)
       },
 
       getWrapperElement (wrapper) {
@@ -208,8 +215,8 @@
         let range = this.range
         let unit = this.unit
         let clickRate = Math.round((clickLocal - wrapperLeft) / sliderWidth * range * unit)
-        let min = this.min || 0
-        let max = this.max || 100
+        let min = this.minValue || 0
+        let max = this.maxValue || 100
         let clickValue = Math.round((clickLocal - wrapperLeft) / sliderWidth * range) + min
         let valueArray = this.valueArray
         let valuePercent = this.valuePercent
@@ -244,7 +251,7 @@
         this.valueArray = valueArray.reverse().reverse()
         this.valuePercent = valuePercent.reverse().reverse()
 
-        this.$dispatch('change', this.valueArray, this)
+        this.$emit('change', this.valueArray, this)
       },
 
       preventEventDefaults (e) {
@@ -285,7 +292,7 @@
       mouseup (e) {
         if (this.dragging) {
           this.dragging = false
-          this.$dispatch('afterChange', this.valueArray, this)
+          this.$emit('afterChange', this.valueArray, this)
         }
       }
     }

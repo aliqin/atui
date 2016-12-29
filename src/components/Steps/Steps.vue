@@ -6,6 +6,7 @@
 
 <script type="text/ecmascript-6">
   export default {
+    name: 'Steps',
     props: {
       current: {
         type: Number,
@@ -66,7 +67,7 @@
         this.itemsWidth[i] = Math.ceil(this.$el.children[len].offsetWidth)
 
         this.previousStepsWidth = Math.floor(this.$el.offsetWidth)
-        this._update()
+        this._updateLayout()
 
         // this.$el.children[len].style.position = 'absolute'
 
@@ -79,7 +80,7 @@
         self._recoverDefaultStyle()
       },
 
-      _update () {
+      _updateLayout () {
         const len = this.$children.length - 1
         let tw = 0
         this.itemsWidth.forEach((w) => {
@@ -135,10 +136,10 @@
           return
         }
         this.previousStepsWidth = w
-        this._update()
+        this._updateLayout()
       }
     },
-    ready () {
+    mounted () {
       this.mapPropsToChildComponent()
 
       setTimeout(() => {

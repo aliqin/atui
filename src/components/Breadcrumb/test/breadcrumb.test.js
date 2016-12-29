@@ -18,7 +18,6 @@ describe('Breadcrumb组件单元测试', () => {
       Breadcrumb,
       BreadcrumbItem
     },
-    replace: false,
     template: `
       <breadcrumb>
         <breadcrumb-item :href="href">一级目录</breadcrumb-item>

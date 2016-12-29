@@ -8,16 +8,32 @@
 export default {
   data () {
     return {
-      items: {}
+      items: []
     }
   },
   props: {
     speed: String
   },
+  mounted () {
+    let items = this.items = this.$el.children
+    let length = items.length
+    Array.prototype.forEach.call(items, (item, index) => {
+      item.style.position = 'absolute'
+      if (index === 0) {
+        item.style.position = 'relative'
+      }
+      item.style.left = 0
+      item.style.top = 0
+      item.style.zIndex = length - index
+      item.style.transition = `opacity ${this.speed}s`
+      item.style.opacity = 0
+    })
+    items[ 0 ].style.opacity = 1
+  },
   methods: {
     animation (position, flag) {
       let me = this
-      me.$dispatch('beforeChange', me)
+      me.$parent.$emit('before', me)
 
       let length = this.items.length
       function fade (preview, next) {
@@ -57,31 +73,10 @@ export default {
 
       function endCall () {
         me.$el.removeEventListener('transitionend', endCall)
-        me.$dispatch('afterChange', me)
+        me.$parent.$emit('after', me)
       }
       me.$el.addEventListener('transitionend', endCall, false)
-    },
-    init () {
-      let items = this.items = this.$el.children
-      let length = items.length
-
-      Array.prototype.forEach.call(items, (item, index) => {
-        item.style.position = 'absolute'
-        if (index === 0) {
-          item.style.position = 'relative'
-        }
-        item.style.left = 0
-        item.style.top = 0
-        item.style.zIndex = length - index
-        item.style.transition = `opacity ${this.speed}s`
-        item.style.opacity = 0
-      })
-      items[ 0 ].style.opacity = 1
     }
-  },
-
-  ready () {
-    this.init()
   }
 }
 </script>

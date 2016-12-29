@@ -13,15 +13,14 @@ title:
 
 
 ````jsx
-<v-button @click="show = true"
-  >显示弹窗
+<v-button @click.native="show = true">
+  显示弹窗
 </v-button>
-<modal :show.sync="show">
+<modal :show="show" ref="dialog" @close="show = false">
   <div slot="modal-body" class="atui-modal-body">
     <textarea></textarea>
   </div>
 </modal>
-
 ````
 
 ````vue-script
@@ -34,6 +33,11 @@ new Vue({
   data: function() {
     return {
       show: false
+    }
+  },
+  methods: {
+    showModel: function () {
+      this.show = true
     }
   }
 })

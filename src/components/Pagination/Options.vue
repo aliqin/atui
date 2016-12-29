@@ -1,6 +1,6 @@
 <template>
     <div v-if="showSizeChanger" :class="[prefixCls + '-pagination-selector']">
-        <v-select :value="'' + defaultSize" @change="change" style="width:100px">
+        <v-select :default-value="'' + defaultSize" @change="change" style="width:100px">
             <v-option value="10">10 条/页</v-option>
             <v-option value="20">20 条/页</v-option>
             <v-option value="30">30 条/页</v-option>
@@ -16,6 +16,7 @@
   const vOption = vSelect.Option
 
   export default {
+    name: 'Options',
     props: {
       total: {
         type: Number
@@ -36,7 +37,7 @@
     },
     methods: {
       change (data) {
-        this.$dispatch('pagination-size-change', data)
+        this.$emit('pagination-size-change', data)
       }
     }
   }

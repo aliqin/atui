@@ -17,30 +17,30 @@ title:
 ````jsx
 
 <p>16px尺寸推荐使用：</p>
-<icon type="info-s"></icon>
-<icon type="error-s"></icon>
-<icon type="success-s"></icon>
-<icon type="help-s"></icon>
-<icon type="warning-s"></icon>
-<icon type="info-s-b"></icon>
-<icon type="error-s-b"></icon>
-<icon type="success-s-b"></icon>
-<icon type="help-s-b"></icon>
-<icon type="warning-s-b"></icon>
+<v-icon type="info-s"></v-icon>
+<v-icon type="error-s"></v-icon>
+<v-icon type="success-s"></v-icon>
+<v-icon type="help-s"></v-icon>
+<v-icon type="warning-s"></v-icon>
+<v-icon type="info-s-b"></v-icon>
+<v-icon type="error-s-b"></v-icon>
+<v-icon type="success-s-b"></v-icon>
+<v-icon type="help-s-b"></v-icon>
+<v-icon type="warning-s-b"></v-icon>
 <br>
 <p>24px尺寸推荐使用：</p>
-<icon type="info"></icon>
-<icon type="error"></icon>
-<icon type="success"></icon>
-<icon type="help"></icon>
-<icon type="warning"></icon>
+<v-icon type="info"></v-icon>
+<v-icon type="error"></v-icon>
+<v-icon type="success"></v-icon>
+<v-icon type="help"></v-icon>
+<v-icon type="warning"></v-icon>
 <br>
 <p>36px尺寸推荐使用：</p>
-<icon type="info-l"></icon>
-<icon type="error-l"></icon>
-<icon type="success-l"></icon>
-<icon type="help-l"></icon>
-<icon type="warning-l"></icon>
+<v-icon type="info-l"></v-icon>
+<v-icon type="error-l"></v-icon>
+<v-icon type="success-l"></v-icon>
+<v-icon type="help-l"></v-icon>
+<v-icon type="warning-l"></v-icon>
 
 ````
 
@@ -48,7 +48,7 @@ title:
 new Vue({
     el: 'body',
     components: {
-        icon: atui.Icon
+        vIcon: atui.Icon
     }
 })
 ````

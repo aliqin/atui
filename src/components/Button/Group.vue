@@ -7,6 +7,7 @@
 
 <script>
   export default {
+    name: 'Group',
     props: {
       large: Boolean,
       small: Boolean,
@@ -33,7 +34,7 @@
           }
           $btns[i].setAttribute('class', newClass)
         }
-        this.$dispatch('switch', this, index)
+        this.$emit('switch', this, index)
       }
     },
     computed: {

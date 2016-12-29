@@ -1,5 +1,5 @@
 <template>
-  <div :class="[prefixCls + '-upload']" id="upload-{{uploadId}}">
+  <div :class="[prefixCls + '-upload']" :id="'upload-' + uploadId">
     <div v-if="uploadType == 'click'">
       <label>
         <input
@@ -14,9 +14,9 @@
         </slot>
       </label>
       <div :class="[prefixCls + '-upload-list']">
-        <div :class="[prefixCls + '-upload-item']" v-for="file in fileList">
-          <div :class="[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]"
-               @mouseover="filemouseover($index)"
+        <div :class="[prefixCls + '-upload-item']" v-for="(file, index) in fileList">
+          <div :class="[prefixCls + '-upload-item-info', current == index && (prefixCls + '-active')]"
+               @mouseover="filemouseover(index)"
                @mouseout="filemouseout">
             <icon type="doc"
                   :class="[prefixCls + '-upload-file-icon']"
@@ -25,12 +25,12 @@
             <icon type="close"
                   :class="[prefixCls + '-upload-del-info']"
                   size="12"
-                  @click="delExistFile($index)"></icon>
+                  @click="delExistFile(index)"></icon>
           </div>
         </div>
-        <div :class="[prefixCls + '-upload-item']" v-for="file in uploadList">
-          <div :class="[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]"
-               @mouseover="filemouseover($index)"
+        <div :class="[prefixCls + '-upload-item']" v-for="(file, index) in uploadList">
+          <div :class="[prefixCls + '-upload-item-info', current == index && (prefixCls + '-active')]"
+               @mouseover="filemouseover(index)"
                @mouseout="filemouseout">
             <icon type="doc"
                   :class="[prefixCls + '-upload-file-icon']"
@@ -39,12 +39,12 @@
             <icon type="close"
                   :class="[prefixCls + '-upload-del-info']"
                   size="12"
-                  @click="delFile($index)"></icon>
+                  @click="delFile(index)"></icon>
           </div>
-          <div :class="[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]">
+          <div :class="[prefixCls + '-upload-item-progress', progress[index] == '100%' && (prefixCls + '-hide')]">
             <div :class="[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']">
               <div :class="[prefixCls + '-upload-progress-inner']">
-                <div :class="[prefixCls + '-upload-progress-bg']" :style="{width: progress[$index]}"></div>
+                <div :class="[prefixCls + '-upload-progress-bg']" :style="{width: progress[index]}"></div>
               </div>
             </div>
           </div>
@@ -62,16 +62,16 @@
                @change="onChange($event)" />
         <label :for="uploadId"
                :class="[prefixCls + '-upload-drag-area']">
-        <p :class="[prefixCls + '-upload-drag-icon']"></p>
-        <span v-if="advanceDrag">点击或将文件拖拽到此区域上传</span>
-        <span v-if="!advanceDrag">当前环境不支持拖拽上传，请点此上传</span>
-        <p v-if="fileList.length > 0" v-for="file in selectFiles">{{file}}</p>
-      </label>
+          <p :class="[prefixCls + '-upload-drag-icon']"></p>
+          <span v-if="advanceDrag">点击或将文件拖拽到此区域上传</span>
+          <span v-if="!advanceDrag">当前环境不支持拖拽上传，请点此上传</span>
+          <p v-if="fileList.length > 0" v-for="(file, index) in selectFiles">{{file}}</p>
+        </label>
       </div>
       <div :class="[prefixCls + '-upload-list']">
-        <div :class="[prefixCls + '-upload-item']" v-for="file in fileList">
-          <div :class="[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]"
-               @mouseover="filemouseover($index)"
+        <div :class="[prefixCls + '-upload-item']" v-for="(file, index) in fileList">
+          <div :class="[prefixCls + '-upload-item-info', current == index && (prefixCls + '-active')]"
+               @mouseover="filemouseover(index)"
                @mouseout="filemouseout">
             <icon type="doc"
                   :class="[prefixCls + '-upload-file-icon']"
@@ -80,12 +80,12 @@
             <icon type="close"
                   class="[prefixCls + '-upload-del-info']"
                   size="12"
-                  @click="delExistFile($index)"></icon>
+                  @click="delExistFile(index)"></icon>
           </div>
         </div>
-        <div :class="[prefixCls + '-upload-item']" v-for="file in uploadList">
-          <div :class="[prefixCls + '-upload-item-info', current == $index && (prefixCls + '-active')]"
-               @mouseover="filemouseover($index)"
+        <div :class="[prefixCls + '-upload-item']" v-for="(file, index) in uploadList">
+          <div :class="[prefixCls + '-upload-item-info', current == index && (prefixCls + '-active')]"
+               @mouseover="filemouseover(index)"
                @mouseout="filemouseout">
             <icon type="doc"
                   :class="[prefixCls + '-upload-file-icon']"
@@ -94,12 +94,12 @@
             <icon type="close"
                   :class="[prefixCls + '-upload-del-info']"
                   size="12"
-                  @click="delFile($index)"></icon>
+                  @click="delFile(index)"></icon>
           </div>
-          <div :class="[prefixCls + '-upload-item-progress', progress[$index] == '100%' && (prefixCls + '-hide')]">
+          <div :class="[prefixCls + '-upload-item-progress', progress[index] == '100%' && (prefixCls + '-hide')]">
             <div :class="[prefixCls + '-upload-progress', prefixCls + '-upload-progress-line', prefixCls + '-upload-progress-status-success']">
               <div :class="[prefixCls + '-upload-progress-inner']">
-                <div :class="[prefixCls + '-upload-progress-bg']" :style="{width: progress[$index]}"></div>
+                <div :class="[prefixCls + '-upload-progress-bg']" :style="{width: progress[index]}"></div>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@
   import Icon from '../Icon'
   import Message from '../Message'
   export default {
-    name: 'uploader',
+    name: 'Uploader',
     props: {
       id: {
         type: String,
@@ -170,7 +170,7 @@
       Icon,
       Message
     },
-    ready () {
+    mounted () {
       this._input = document.querySelector('#' + this.uploadId)
       this.$el = document.querySelector('#upload-' + this.uploadId)
 
@@ -353,26 +353,26 @@
         Message.success(msg)
       },
 
-      filemouseover ($index) {
-        this.current = $index
+      filemouseover (index) {
+        this.current = index
       },
 
       filemouseout () {
         this.current = -1
       },
 
-      delFile ($index) {
+      delFile (index) {
         this.$dispatch('delete::file-upload', {
-          file: this.uploadList[$index]
+          file: this.uploadList[index]
         })
-        this.uploadList.splice($index, 1)
+        this.uploadList.splice(index, 1)
       },
 
-      delExistFile ($index) {
+      delExistFile (index) {
         this.$dispatch('delete::file-upload', {
-          file: this.fileList[$index]
+          file: this.fileList[index]
         })
-        this.fileList.splice($index, 1)
+        this.fileList.splice(index, 1)
       },
 
       /**

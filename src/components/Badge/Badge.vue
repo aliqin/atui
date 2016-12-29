@@ -4,7 +4,7 @@
   <sup :class="[prefixCls + '-badge-dot']" v-if="dot"></sup>
   <template v-else>
     <sup v-if='count > 0' :class="[prefixCls + '-badge-count']">
-      {{count | short}}
+      {{ displayCount }}
     </sup>
   </template>
 </span>
@@ -12,7 +12,7 @@
 
 <script type="text/babel">
   export default {
-    name: 'badge',
+    name: 'Badge',
     props: {
       count: {
         type: Number
@@ -29,8 +29,9 @@
         default: 'atui'
       }
     },
-    filters: {
-      short (value) {
+    computed: {
+      displayCount () {
+        let value = this.count
         return value >= this.overflowCount ? this.overflowCount + '+' : value
       }
     }

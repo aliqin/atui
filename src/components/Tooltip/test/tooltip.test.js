@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Tooltip from '../'
 
-new Vue({
+let vm = new Vue({
   template: `
       <div>
       <tooltip content="我是tooltip" placement="top">
@@ -10,11 +10,11 @@ new Vue({
       </div>
       `,
   components: { Tooltip }
-}).$mount().$appendTo('body')
+}).$mount()
 
 // tooltip组件严重拉低了coverage summary统计数据
-/* describe('Tooltip', () => {
+describe('Tooltip', () => {
   it('Tooltip组件是否正常显示', () => {
-    expect(document.body.querySelectorAll('.tooltip-arrow').length).above(0)
+    expect(vm.$el.querySelectorAll('.tooltip-arrow').length).above(0)
   })
-})*/
+})

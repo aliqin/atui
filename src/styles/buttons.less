@@ -17,6 +17,7 @@
   cursor: pointer;
   touch-action: manipulation;
   outline: none;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   &:hover {
     background-color: tint(@primary-color, 40%);
@@ -129,6 +130,39 @@
     &:hover {
       &:focus, &:active, &.active {
         background-color: tint(@primary-color, 95%);
+      }
+    }
+  }
+
+  &.@{prefix-cls-btn}-loading {
+
+    @keyframes bouncedelay {
+      0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      } 40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+    }
+
+    .@{prefix-cls-btn}-loadingWrap {
+      span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        border-radius: 100%;
+        animation: bouncedelay 1.4s infinite ease-in-out;
+        animation-fill-mode: both;
+      }
+
+      .@{prefix-cls}-loading-bounce1 {
+        animation-delay: -0.32s;
+      }
+
+      .@{prefix-cls}-loading-bounce2 {
+        animation-delay: -0.16s;
       }
     }
   }

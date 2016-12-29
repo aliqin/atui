@@ -13,14 +13,14 @@ title:
 
 
 ````jsx
-<tabs>
-  <tab header="系统短信签名">
+<v-tabs>
+  <v-tab header="系统短信签名">
     系统短信签名内容
-  </tab>
-  <tab header="推广短信签名">
+  </v-tab>
+  <v-tab header="推广短信签名">
     推广短信签名内容
-  </tab>
-</tabs>
+  </v-tab>
+</v-tabs>
 
 ````
 
@@ -28,8 +28,8 @@ title:
 new Vue({
   el: 'body',
   components: {
-    tabs: atui.Tabs,
-    tab: atui.Tabs.Tab
+    vTabs: atui.Tabs,
+    vTab: atui.Tabs.Tab
   }
 })
 ````

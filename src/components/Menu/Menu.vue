@@ -6,6 +6,7 @@
 
 <script type="text/babel">
 export default {
+  name: 'Menu',
   props: {
     mode: {
       type: String,
@@ -18,19 +19,18 @@ export default {
     openOne: Boolean,
     selectedKey: String
   },
-  ready () {
+  created () {
+    this.$bus = new Vue({})
+  },
+  mounted () {
     let me = this
     if (me.selectedKey) {
-      this.$broadcast('searchItem', me.selectedKey)
+      me.$bus.$emit('Menu-searchItem', me.selectedKey)
     }
-  },
-  events: {
-    itemClicked (item, key) {
-      this.selectedKey = key
-      this.$broadcast('searchItem', key)
-      // 触发事件给调用上级组件
-      this.$dispatch('click', item, key)
-    }
+    me.$bus.$on('Menu-itemClicked', (item, uuid) => {
+      me.$bus.$emit('Menu-searchItem', uuid)
+      me.$emit('click', item, uuid)
+    })
   }
 }
 </script>

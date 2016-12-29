@@ -11,7 +11,7 @@
       </span>
       <div slot="popup"
            :class="[prefixCls + '-cascader-menus']">
-        <ul :class="[prefixCls + '-cascader-menu']" v-for="(index, menu) in menus">
+        <ul :class="[prefixCls + '-cascader-menu']" v-for="(menu, index) in menus">
           <li :class="[prefixCls + '-cascader-menu-item', selectedOptions[index] === option && prefixCls + '-cascader-selected', option.disabled && (prefixCls + '-cascader-disabled')]"
               v-for="option in menu" @click="changeOption(index,option,$event)">{{option.label}}</li>
         </ul>
@@ -26,8 +26,8 @@
   import Trigger from '../Trigger'
 
   export default {
+    name: 'Cascader',
     mixins: [GlobalMixin],
-
     props: {
       options: {
         type: Array,
@@ -118,7 +118,7 @@
           me.displayValue = me.displayRender(me.selectedLabel)
           // 有事件来的才触发自定义事件，使用defaultValue填充的不触发
           if (event) {
-            me.$dispatch('change', me.selectedValue, me.selectedOptions)
+            me.$emit('change', me.selectedValue, me.selectedOptions)
           }
           me.show = false
         }

@@ -13,7 +13,6 @@ describe('Calendar组件单元测试', () => {
     template: `
       <calendar @change="selectChange"></calendar>
     `,
-    replace: false,
     methods: {
       selectChange () {}
     }
