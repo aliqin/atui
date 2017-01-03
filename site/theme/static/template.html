@@ -7,15 +7,18 @@
     <title>Atui - 阿里通信组件库</title>
     <script>
       var hostname = location.hostname
-      root = 'http://g.alicdn.com/aliqin/atui/0.1.19/'
-      if(/localhost/ig.test(hostname)) {
-        root = 'http://localhost:8080/build/'
+      var env = 'online'
+      var root = '/'
+      if(~hostname.indexOf('localhost')){
+        env = 'dev'
+        root = '//localhost:8080/build/'
       }
     </script>
     <link rel="stylesheet" type="text/css" href="{{ root }}index.css"/>
-    <script>
-      document.write('<link id="J_ThemeCss" rel="stylesheet" type="text/css" href="'+ root +'greater-blue.css">')
+    <script type="text/javascript">
+      document.write('<link rel="stylesheet" type="text/css" id="J_ThemeCss" href="' + root + 'greater-blue.css" \/>')
     </script>
+    
   </head>
   <body>
     <div id="react-content"></div>
@@ -26,15 +29,13 @@
         </li>
       </ul>
     </div>
-    <script>
-      document.write('<script src="'+ root +'../dist/vue.dev.js"><\/script>')
-      document.write('<script src="'+ root +'atui.js"><\/script>')
-      document.write('<script src="'+ root +'atuiWidget.js"><\/script>')
+    <script type="text/javascript" src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+    <script type="text/javascript">
+      document.write('<script type="text/javascript" src="' + root + 'atui.js"><\/script>');
+      document.write('<script type="text/javascript" src="' + root + 'atuiWidget.js"><\/script>');
     </script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script> -->
     <script src="{{ root }}common.js"></script>
     <script src="{{ root }}index.js"></script>
-    <script src="http://localhost:8080/webpack-dev-server.js"></script>
     <script>
 
       if (/(src\/components\/)|(src\/widgets\/)/.test(location.pathname) ) {
@@ -74,8 +75,8 @@
               }
             })
             document.getElementById('J_ThemeCss').href = root + csslink
-            // document.body.className = csslink.replace('.css','')
-            Vue.util.addClass(document.body, csslink.replace('.css',''))
+            document.body.className = csslink.replace('.css','')
+            // Vue.util.addClass(document.body, csslink.replace('.css',''))
           }
         }
       })
