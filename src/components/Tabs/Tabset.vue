@@ -105,6 +105,12 @@ export default {
     }
   },
   watch: {
+    active (newVal, oldVal) {
+      this.currActive = newVal
+    },
+    currActive (newVal, oldVal) {
+      this.$emit('change', newVal)
+    },
     headers () {
       let me = this
       Vue.nextTick(function () {
@@ -182,7 +188,6 @@ export default {
   mounted () {
     this.$el.style.visibility = 'hidden'
     const self = this
-    console.log(self)
     /**
      * 动态去设置容器tabsWrapper的宽度以及内部nav的宽度，以便让它不溢出，类似于轮播图。
      * 这里需要用setTimeout函数，否则获取不到dom节点。

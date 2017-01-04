@@ -19,6 +19,7 @@ cols: 1
 -----|-----|-----|------
 trigger | 触发事件类型 | String | click
 base | 是否为基本类型 | Boolean | false
+@change | 当前激活的tab发生变化时派发的事件 | Function(currActiveIndex) | |
 
 ### Tabs.Tab
 
