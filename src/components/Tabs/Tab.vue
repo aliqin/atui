@@ -60,7 +60,7 @@ export default {
       })
       // fix activeIndex overflow
       let tabLen = me.$parent.renderData.length
-      me.$parent.active = Math.min(me.$parent.active, tabLen - 1)
+      me.$parent.currActive = Math.min(me.$parent.currActive, tabLen - 1)
     })
   },
   mounted () {
