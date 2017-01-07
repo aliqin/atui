@@ -49,6 +49,9 @@ module.exports = {
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
   },
+  externals: {
+    vue: 'Vue'
+  },
   module: {
     preLoaders: [{
       test: /\.vue$/,

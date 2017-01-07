@@ -30,7 +30,7 @@ new Vue({
 
 ```jsx
 
-<link rel="stylesheet" href="//unpkg.com/atui@0.0.3/dist/greater-blue.css">
+<link rel="stylesheet" href="//unpkg.com/atui@0.0.7/dist/greater-blue.css">
 ```
 > 注：目前支持三套皮肤，`greater-blue` ,`tao-orange`, `tmall-red`
 

@@ -38,6 +38,7 @@
 </template>
 
 <script type="text/babel">
+import Vue from 'vue'
 import Icon from '../Icon/'
 
 export default {
