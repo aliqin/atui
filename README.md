@@ -36,11 +36,11 @@ import 'atui/dist/greater-blue.css'
 import 'atui/style/themes/greater-blue.less'
 
 // 引入组件
-import { Alert } from 'atui'
+import atui from 'atui'
 
 new Vue({
   components: {
-    Alert
+    Alert:atui.Alert
   }
 })
 ```
@@ -49,8 +49,7 @@ new Vue({
 
 ```html
 <script src="//unpkg.com/vue@2.1.4"></script>
-<!--开发时建议引入vue.dev.js，发布时引用vue.js即可-->
-<script src="//unpkg.com/atui@0.0.1"></script>
+<script src="//unpkg.com/atui"></script>
 <script>
   const { Alert } = atui
   new Vue({

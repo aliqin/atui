@@ -93,6 +93,7 @@
 </template>
 
 <script type="text/babel">
+import Vue from 'vue'
 import Icon from '../Icon/'
 import Dropdown from '../Dropdown/'
 import Spin from '../Spin/'
