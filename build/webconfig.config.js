@@ -50,7 +50,11 @@ module.exports = {
     root: path.join(__dirname, 'node_modules')
   },
   externals: {
-    vue: 'Vue'
+    vue: {
+      commonjs: 'vue',
+      amd: 'vue',
+      root: 'Vue'
+    }
   },
   module: {
     preLoaders: [{

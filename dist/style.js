@@ -1,6 +1,6 @@
 
 /*!
- * atui v0.0.8
+ * atui vmaster
  * (c) 2017 alibaba
  * Released under the MIT License.
  */
