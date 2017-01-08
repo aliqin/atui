@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import TreeNode from './TreeNode.vue'
 export default {
   name: 'Tree',
