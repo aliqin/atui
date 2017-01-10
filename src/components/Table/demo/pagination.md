@@ -78,7 +78,8 @@ for (let i = 0; i < 46; i++) {
 }
 
 const pagination = {
-  total: data.length
+  total: data.length,
+  pageSize: 20
 }
 
 // 配置选择数据的选项

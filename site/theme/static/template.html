@@ -9,9 +9,11 @@
       var hostname = location.hostname
       var env = 'online'
       var root = '/'
+      var vuePath = '/vue.js'
       if(~hostname.indexOf('localhost')){
         env = 'dev'
         root = '//localhost:8080/build/'
+        vuePath = '//localhost:8080/dist' + vuePath
       }
     </script>
     <link rel="stylesheet" type="text/css" href="{{ root }}index.css"/>
@@ -29,8 +31,8 @@
         </li>
       </ul>
     </div>
-    <script type="text/javascript" src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
     <script type="text/javascript">
+      document.write('<script type="text/javascript" src="' + vuePath + '"><\/script>');
       document.write('<script type="text/javascript" src="' + root + 'atui.js"><\/script>');
       document.write('<script type="text/javascript" src="' + root + 'atuiWidget.js"><\/script>');
     </script>
