@@ -1,10 +1,7 @@
 <template>
     <div v-if="showSizeChanger" :class="[prefixCls + '-pagination-selector']">
-        <v-select :default-value="'' + defaultSize" @change="change" style="width:100px">
-            <v-option value="10">10 条/页</v-option>
-            <v-option value="20">20 条/页</v-option>
-            <v-option value="30">30 条/页</v-option>
-            <v-option value="40">40 条/页</v-option>
+        <v-select :default-value="defaultSize" @change="change" style="width:100px">
+            <v-option v-for="size in pageSizeOptions" :value="size" >{{size}} 条/页</v-option>
         </v-select>
         <div :class="[prefixCls + '-pagination-totalpage']">共{{ total }}条数据</div>
     </div>
@@ -23,6 +20,12 @@
       },
       defaultSize: {
         type: Number
+      },
+      pageSizeOptions: {
+        type: Array,
+        default () {
+          return [10, 20, 30, 40]
+        }
       },
       showSizeChanger: {
         type: Boolean
