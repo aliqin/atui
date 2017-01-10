@@ -87,7 +87,7 @@
       </table>
     </div>
     <div v-show="pagination && pagination.total > 0" :class="[prefixCls + '-table-pagination']">
-      <pagination ref="pager" :total="pagination.total" :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
+      <pagination ref="pager" :total="pagination.total" :page-size="pagination.pageSize" :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
     </div>
   </div>
 </template>
@@ -107,6 +107,7 @@ export default {
       default () {
         return {
           total: 0,
+          pageSize: 10,
           currPage: 1
         }
       }
