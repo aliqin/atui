@@ -1,7 +1,7 @@
 <template>
   <div :class="[prefixCls + '-pagination']">
   <template v-if="totalPage > 1">
-    <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
+    <options :total="total" :default-size="pageSize" :page-size-options="pageSizeOptions" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
     <jumper
         :quick-go="showJumper ? _handleChange.bind(this) : null"
         :curr-page="currPageNum"
@@ -24,6 +24,12 @@ export default {
     pageSize: {
       type: Number,
       default: 10
+    },
+    pageSizeOptions: {
+      type: Array,
+      default () {
+        return [10, 20, 30, 40]
+      }
     },
     total: Number,
     currPage: {
@@ -59,14 +65,16 @@ export default {
       this.getPageRange()
     },
     pageSize (pageSize) {
-      this.totalPage = Math.ceil(this.total / pageSize)
+      this.currPageSize = pageSize
+    },
+    currPageSize (newVal, oldVal) {
+      this.totalPage = Math.ceil(this.total / newVal)
       if (this.currPageNum > this.totalPage) {
         this.currPageNum = this.totalPage
       }
       this.getPageRange()
       this.$nextTick(() => {
-        // pagination-size-change将来要废弃，使用size-change
-        this.$emit('size-change', this.currPage, pageSize)
+        this.$emit('size-change', this.currPage, newVal)
       })
     },
     currPage () {
