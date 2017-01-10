@@ -4,7 +4,7 @@
     <options :total="total" :default-size="pageSize" :show-size-changer="showSizeChanger" @pagination-size-change="changePageSize"></options>
     <jumper
         :quick-go="showJumper ? _handleChange.bind(this) : null"
-        :curr-page="_currPage"
+        :curr-page="currPageNum"
         :total-page="totalPage"
         :mini="mini"
     ></jumper>
@@ -45,14 +45,14 @@ export default {
       prevShow: 1,
       nextShow: 1,
       totalPage: 0,
-      _pageSize: this.pageSize,
-      _currPage: this.currPage
+      currPageSize: this.pageSize,
+      currPageNum: this.currPage
     }
   },
   created () {
     this.totalPage = Math.ceil(this.total / this.pageSize)
-    this._currPage = this.currPage
-    this._pageSize = this.pageSize
+    this.currPageNum = this.currPage
+    this.currPageSize = this.pageSize
   },
   watch: {
     total () {
@@ -60,19 +60,23 @@ export default {
     },
     pageSize (pageSize) {
       this.totalPage = Math.ceil(this.total / pageSize)
-      if (this._currPage > this.totalPage) {
-        this._currPage = this.totalPage
+      if (this.currPageNum > this.totalPage) {
+        this.currPageNum = this.totalPage
       }
       this.getPageRange()
       this.$nextTick(() => {
         // pagination-size-change将来要废弃，使用size-change
-        this.$emit('pagination-size-change', this.currPage, pageSize)
         this.$emit('size-change', this.currPage, pageSize)
       })
     },
     currPage () {
       this.getPageRange()
-      this.onChange(this._currPage)
+      // this.onChange(this.currPageNum)
+    },
+    currPageNum (newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.$emit('change', newVal)
+      }
     },
     prevShow () {
       this.getPageRange()
@@ -88,7 +92,7 @@ export default {
   },
   methods: {
     changePageSize (option) {
-      this._pageSize = +option.value
+      this.currPageSize = +option.value
       this.getPageRange()
     },
     getPageRange () {
@@ -96,9 +100,9 @@ export default {
       let end = 0
       let me = this
       let showLen = me.prevShow + me.nextShow + 1
-      let totalPage = me.totalPage = Math.ceil(me.total / me._pageSize)
+      let totalPage = me.totalPage = Math.ceil(me.total / me.currPageSize)
       let prefixCls = me.prefixCls
-      let currPage = me._currPage
+      let currPage = me.currPageNum
 
       if (totalPage <= 1) {
         start = end = 1
@@ -181,21 +185,19 @@ export default {
       if (!i) {
         return false
       }
-      if (i === this._currPage) {
+      if (i === this.currPageNum) {
         return false
       }
-      this._currPage = i
+      this.currPageNum = i
       this.getPageRange()
       this.onChange(i)
     },
     onChange (pageNum) {
-      // 此事件在新版中废弃，统一使用change事件，但有历史原因有项目用了，暂时保留
-      this.$emit('pagination-page-change', pageNum)
       // 新加的，暂时保持新老并存
-      this.$emit('change', pageNum)
+      // this.$emit('change', pageNum)
     },
     _isValid (page) {
-      return typeof page === 'number' && page >= 1 && page !== this._currPage
+      return typeof page === 'number' && page >= 1 && page !== this.currPageNum
     },
     _handleChange (page) {
       let _page = page
@@ -203,14 +205,14 @@ export default {
         if (_page > this.totalPage) {
           _page = this.totalPage
         }
-        this._currPage = page
+        this.currPageNum = page
         this._current = page
         this.getPageRange()
         this.onChange(_page)
         return _page
       }
 
-      return this._currPage
+      return this.currPageNum
     }
   },
   mounted () {
