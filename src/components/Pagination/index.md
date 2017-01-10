@@ -24,4 +24,6 @@ showJumper | 是否可跳转自定义页 | Boolean | false
 showSizeChanger | 是否可改变页码大小 | Boolean | false
 simple | 简单版 | Boolean | false
 mini | 迷你版 | Boolean | false
+@change | 当前页吗发生变化时触发 | Function(currPage) |  | 
+@size-change | pageSize变化时触发 | Function(pageSize) |  |
 
