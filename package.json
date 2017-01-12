@@ -140,5 +140,8 @@
   },
   "bugs": {
     "url": "https://github.com/aliqin/atui/issues"
+  },
+  "tnpm": {
+    "mode": "npm"
   }
 }
