@@ -118,7 +118,6 @@
     "dev:test": "karma start build/karma.dev.config.js",
     "lesshint": "lesshint src/styles -r scripts/lesshint-report.js",
     "debug": "webpack-dev-server --host 0.0.0.0 --port 9999 --config  webpack.debug.js",
-    "deploy": "rm -rf _site && npm run site && node depoly.js",
     "publish-npm": "npm run authors && tnpm publish",
     "build": "npm run lint && NODE_ENV=production webpack --config build/webconfig.config.js --progress && cp node_modules/vue/dist/vue.js dist/vue.js && cp node_modules/vue/dist/vue.min.js dist/vue.min.js",
     "test": "npm run lint && npm run unit",

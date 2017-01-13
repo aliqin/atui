@@ -7,7 +7,6 @@ import Accordion from '../'
 const {Panel} = Accordion
 
 describe('Accordion组件单元测试', () => {
-
   let vm = new Vue({
     data () {
       return {
@@ -42,7 +41,6 @@ describe('Accordion组件单元测试', () => {
     `
   }).$mount()
 
-
   it('has a created hook', () => {
     assert(typeof Accordion.created === 'function', 'Accordion.created is funciton')
     assert(typeof Accordion.props === 'object', 'Accordion.data is funciton')
@@ -50,7 +48,7 @@ describe('Accordion组件单元测试', () => {
 
   it('基本功能渲染', () => {
       // console.log(vm.data())
-      assert(vm.$el.querySelectorAll('.atui-panel-group').length === 12)
+    assert(vm.$el.querySelectorAll('.atui-panel-group').length === 12)
   })
     // assert(vm.$el.querySelectorAll('.atui-panel-group').length === 1)
     // assert(vm.$el.querySelectorAll('.atui-panel').length === 4)
