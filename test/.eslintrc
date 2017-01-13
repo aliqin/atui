@@ -6,7 +6,8 @@
     "$": true,
     "jQuery": true,
     "casper": true,
-    "getWarnCount": true
+    "getWarnCount": true,
+    "assert": true
   },
   "rules": {
     "no-new": 0,
