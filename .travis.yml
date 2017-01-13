@@ -8,3 +8,5 @@ deploy:
     secure:
   on:
     branch: master
+notifications:
+   webhooks: https://oapi.dingtalk.com/robot/send?access_token=989f3762a7ce0663ca6b8c8041d29c44ccc344cdb734df55a7520c47860a447b

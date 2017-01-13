@@ -4,10 +4,10 @@
 
 import Vue from 'vue'
 import Accordion from '../'
-
 const {Panel} = Accordion
 
 describe('Accordion组件单元测试', () => {
+
   let vm = new Vue({
     data () {
       return {
@@ -41,15 +41,22 @@ describe('Accordion组件单元测试', () => {
       </div>
     `
   }).$mount()
-  console.log(vm.$el)
+
+
+  it('has a created hook', () => {
+    assert(typeof Accordion.created === 'function', 'Accordion.created is funciton')
+    assert(typeof Accordion.props === 'object', 'Accordion.data is funciton')
+  })
 
   it('基本功能渲染', () => {
-    expect(vm.$el.querySelectorAll('.atui-panel-group').length).to.be.equal(1)
-    expect(vm.$el.querySelectorAll('.atui-panel').length).to.be.equal(4)
+      // console.log(vm.data())
+      assert(vm.$el.querySelectorAll('.atui-panel-group').length === 12)
   })
+    // assert(vm.$el.querySelectorAll('.atui-panel-group').length === 1)
+    // assert(vm.$el.querySelectorAll('.atui-panel').length === 4)
 
-  it('test目录', () => {
-    expect(1).to.be.equal(1)
-  })
+  // it('test目录', () => {
+  //   expect(1).to.be.equal(1)
+  // })
 })
 
