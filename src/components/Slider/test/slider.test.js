@@ -12,7 +12,9 @@ describe('Slider组件单元测试', () => {
     },
     replace: false,
     template: `
+      <div>
       <slider :value="30"></slider>
+      </div>
     `
   }).$mount()
 

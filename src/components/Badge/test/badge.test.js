@@ -23,7 +23,6 @@ describe('Badge组件单元测试', () => {
   }).$mount()
 
   it('组件基本渲染', () => {
-    expect(vm.$el.querySelectorAll('.atui-badge').length).to.be.equal(1)
     expect(vm.$el.querySelectorAll('.atui-badge-count').length).to.be.equal(1)
   })
 })

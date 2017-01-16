@@ -83,13 +83,13 @@ const rowSelection = {
     }
   },
   onChange (selectedRowKeys, selectedRows) {
-    console.log('rowSelection.onChange', selectedRowKeys, selectedRows)
+    // console.log('rowSelection.onChange', selectedRowKeys, selectedRows)
   },
   onSelect (record, selected, selectedRows) {
-    console.log('rowSelection.onSelect', record, selected, selectedRows)
+    // console.log('rowSelection.onSelect', record, selected, selectedRows)
   },
   onSelectAll (selected, selectedRows, changeRows) {
-    console.log('rowSelection.onSelectAll', selected, selectedRows, changeRows)
+    // console.log('rowSelection.onSelectAll', selected, selectedRows, changeRows)
   }
 }
 let vm = new Vue({
