@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Modal from '../'
 
 describe('Modal', () => {
-  let vm = new Vue({
+  new Vue({
     data () {
       return {
         show: true
