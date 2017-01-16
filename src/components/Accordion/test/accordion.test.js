@@ -43,6 +43,5 @@ describe('Accordion组件单元测试', () => {
     assert(vm.$el.querySelectorAll('.atui-panel-group').length === 1)
     assert(vm.$el.querySelectorAll('.atui-panel').length === 4)
   })
-
 })
 

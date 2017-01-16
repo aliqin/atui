@@ -23,10 +23,8 @@ let vm = new Vue({
   components: {
     vTabs: Tabs,
     vTab: Tab
-  },
+  }
 }).$mount()
-
-
 
 describe('Tabs', () => {
   it('Tabs组件基础渲染', () => {
