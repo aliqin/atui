@@ -49,7 +49,7 @@
     props: {
       defaultValue: {
         type: [String, Number, Array],
-        default: null
+        default: ''
       },
       placeholder: {
         type: String,

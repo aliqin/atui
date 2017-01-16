@@ -1,13 +1,9 @@
-/**
- * Created by jiangyi on 16/7/1.
- */
-
 import Vue from 'vue'
 import Accordion from '../'
 const {Panel} = Accordion
 
 describe('Accordion组件单元测试', () => {
-  let vm = new Vue({
+  var vm = new Vue({
     data () {
       return {
         oneAtATime: false
@@ -41,20 +37,12 @@ describe('Accordion组件单元测试', () => {
     `
   }).$mount()
 
-  it('has a created hook', () => {
-    assert(typeof Accordion.created === 'function', 'Accordion.created is funciton')
-    assert(typeof Accordion.props === 'object', 'Accordion.data is funciton')
-  })
-
   it('基本功能渲染', () => {
-      // console.log(vm.data())
-    assert(vm.$el.querySelectorAll('.atui-panel-group').length === 12)
+    assert(typeof Accordion.created === 'function', 'Accordion.created is funciton')
+    assert(typeof Accordion.props === 'object', 'Accordion.props is object')
+    assert(vm.$el.querySelectorAll('.atui-panel-group').length === 1)
+    assert(vm.$el.querySelectorAll('.atui-panel').length === 4)
   })
-    // assert(vm.$el.querySelectorAll('.atui-panel-group').length === 1)
-    // assert(vm.$el.querySelectorAll('.atui-panel').length === 4)
 
-  // it('test目录', () => {
-  //   expect(1).to.be.equal(1)
-  // })
 })
 

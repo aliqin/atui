@@ -19,11 +19,13 @@ describe('Breadcrumb组件单元测试', () => {
       BreadcrumbItem
     },
     template: `
-      <breadcrumb>
-        <breadcrumb-item :href="href">一级目录</breadcrumb-item>
-        <breadcrumb-item :href="href">二级目录</breadcrumb-item>
-        <breadcrumb-item>三级别目录</breadcrumb-item>
-      </breadcrumb>
+      <div>
+        <breadcrumb>
+          <breadcrumb-item :href="href">一级目录</breadcrumb-item>
+          <breadcrumb-item :href="href">二级目录</breadcrumb-item>
+          <breadcrumb-item>三级别目录</breadcrumb-item>
+        </breadcrumb>
+      </div>
     `
   }).$mount()
 

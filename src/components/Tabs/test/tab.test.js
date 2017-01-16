@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Tabs from '../'
-const {
-    Tab
-} = Tabs
+let Tab = Tabs.Tab
+
 let vm = new Vue({
   data () {
     return {
@@ -11,28 +10,29 @@ let vm = new Vue({
   },
   template: `
       <div>
-      <tabs :base="true" size="small">
-        <tab header="系统短信签名">
-          <p>
-            选项卡一内容
-          </p>
-        </tab>
-        <tab header="推广短信签名">
-           <p>
-              选项卡二内容
-           </p>
-        </tab>
-        <tab header="被禁用的" disabled>
-        </tab>
-      </tabs></div>
+        <v-tabs>
+          <v-tab header="系统短信签名">
+            系统短信签名内容
+          </v-tab>
+          <v-tab header="推广短信签名">
+            推广短信签名内容
+          </v-tab>
+        </v-tabs>
+      </div>
       `,
   components: {
-    Tabs,
-    Tab
-  }
+    vTabs: Tabs,
+    vTab: Tab
+  },
 }).$mount()
+
+
+
 describe('Tabs', () => {
   it('Tabs组件基础渲染', () => {
-    expect(vm.$el.querySelectorAll('.atui-tab-header ul li').length).to.equal(3)
+    vm.$nextTick(() => {
+      expect(vm.$el.querySelectorAll('.atui-tab-header ul li').length).to.equal(2)
+      expect(vm.$el.querySelectorAll('.atui-tab-pane').length).to.equal(2)
+    })
   })
 })
