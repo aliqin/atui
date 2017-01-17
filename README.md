@@ -9,8 +9,8 @@
 
 [npmdl-image]: https://img.shields.io/npm/dm/atui.svg
 [npm-image]: https://img.shields.io/npm/v/atui.svg?style=flat
-[gzipjs-image]http://img.badgesize.io/https://unpkg.com/atui/dist/atui.js?compression=gzip&label=gzip%20size:%20JS
-[gzipcss-image]http://img.badgesize.io/https://unpkg.com/atui/dist/greater-blue.css?compression=gzip&label=gzip%20size:%20CSS
+[gzipjs-image]: http://img.badgesize.io/https://unpkg.com/atui/dist/atui.js?compression=gzip&label=gzip%20size:%20JS
+[gzipcss-image]: http://img.badgesize.io/https://unpkg.com/atui/dist/greater-blue.css?compression=gzip&label=gzip%20size:%20CSS
 [npm-url]: https://www.npmjs.com/package/atui
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
