@@ -11,7 +11,9 @@ describe('Icon组件单元测试', () => {
       Icon
     },
     template: `
+      <div>
       <icon type="search"></icon>
+      </div>
     `
   }).$mount()
 

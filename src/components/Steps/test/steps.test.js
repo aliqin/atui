@@ -20,12 +20,14 @@ describe('Steps组件单元测试', () => {
     },
     replace: false,
     template: `
-      <v-steps :current="current" color="#00a0ff">
-        <v-step title="已完成" ></v-step>
-        <v-step title="进行中"></v-step>
-        <v-step title="有一个待运行"></v-step>
-        <v-step title="待运行"></v-step>
-      </v-steps>
+      <div>
+        <v-steps :current="current" color="#00a0ff">
+          <v-step title="已完成" ></v-step>
+          <v-step title="进行中"></v-step>
+          <v-step title="有一个待运行"></v-step>
+          <v-step title="待运行"></v-step>
+        </v-steps>
+      </div>
     `
 
   }).$mount()

@@ -14,12 +14,14 @@ describe('Form组件单元测试', () => {
       vFormItem: FormItem
     },
     template: `
-      <v-form action="aaa.do" method="post">
-        <v-form-item required label="性取向" label-col="4">
-            <label><input type="checkbox" name="sexy" checked />男</label>
-            <label><input type="checkbox" name="sexy" />女</label>
-          </v-form-item>
-      </v-form>
+      <div>
+        <v-form action="aaa.do" method="post">
+          <v-form-item required label="性取向" label-col="4">
+              <label><input type="checkbox" name="sexy" checked />男</label>
+              <label><input type="checkbox" name="sexy" />女</label>
+            </v-form-item>
+        </v-form>
+      </div>
     `
   }).$mount()
 
