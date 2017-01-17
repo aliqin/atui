@@ -30,10 +30,10 @@ describe('Message', () => {
     expect(vm.$el.textContent).to.contain('我是具体内容.')
   })
 
-  it('定时消失', () => {
-    setTimeout(() => {
-      expect(vm.$el.style.display).to.equal('none')
-    }, 4000)
-  })
+  // it('定时消失', () => {
+  //   setTimeout(() => {
+  //     expect(vm.$el.style.display).to.equal('none')
+  //   }, 4000)
+  // })
 })
 
