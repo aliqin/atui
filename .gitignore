@@ -4,9 +4,9 @@
 node_modules
 npm-debug.log
 _site
+lib
 coverage
 vue-component.sublime-project
 
 vue-component.sublime-workspace
 .idea/
-lib/
