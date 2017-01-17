@@ -1,10 +1,15 @@
+sudo: false
+
 language: node_js
+
 node_js:
-  - '4.1'
-deploy:
-  provider: npm
-  email: ""
-  api_key:
-    secure:
-  on:
-    branch: master
+  - "6"
+
+env:
+  - MAX_WORKERS=2
+
+script:
+  - npm run test
+
+notifications:
+   webhooks: https://oapi.dingtalk.com/robot/send?access_token=989f3762a7ce0663ca6b8c8041d29c44ccc344cdb734df55a7520c47860a447b
