@@ -10,10 +10,10 @@
       var env = 'online'
       var root = '/'
       var vuePath = '/vue.js'
-      if(~hostname.indexOf('localhost')){
+      if(~hostname.indexOf('localhost') || ~hostname.indexOf('127.0.0.1')){
         env = 'dev'
-        root = '//localhost:8080/build/'
-        vuePath = '//localhost:8080/dist' + vuePath
+        root = '//' + hostname + ':8080/build/'
+        vuePath = '//' + hostname + ':8080/dist' + vuePath
       }
     </script>
     <link rel="stylesheet" type="text/css" href="{{ root }}index.css"/>
