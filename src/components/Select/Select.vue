@@ -85,9 +85,7 @@
       if (me.multiple || me.tags) {
         me.multipleSelect = true
       }
-      
-      value = me.getValue();
-
+      value = me.getValue()
       if ((me.defaultValue !== null) || me.selectedOptions.length) {
         me.showPlaceholder = false
       }
@@ -149,7 +147,7 @@
 
     watch: {
       defaultValue (val) {
-        this.value = this.getValue();
+        this.value = this.getValue()
       },
       value (val) {
         let me = this
@@ -209,8 +207,8 @@
        * @param defaultValue
        */
       getValue (defaultValue) {
-        let me = this;
-        let value = me.defaultValue;
+        let me = this
+        let value = me.defaultValue
         if (me.defaultValue === null) {
           value = me.multipleSelect ? [] : ''
         }
@@ -224,7 +222,7 @@
           value = me.defaultValue.slice(0, me.limit)
         }
 
-        return value;
+        return value
       },
       /**
        * 设置选中的值
