@@ -34,7 +34,7 @@ var entryMap = {},
     directiveMods = [],
     filterMods = [];
 
-function initEntries(){
+function initAllMods(){
   // components entry
   compDirs.forEach(function(dirname){
     var dashName = camel2Dash(dirname)
@@ -44,29 +44,24 @@ function initEntries(){
   // _utils
   fs.readdirSync(path.resolve(process.cwd(),'src/components/_utils')).forEach(function(filename){
     var modName = filename.replace(/\.js/,'');
-    // entryMap[`_utils/${modName}`] = `./src/components/_utils/${filename}`;
     utilMods.push(modName)
   })
 
   // directive
   fs.readdirSync(path.resolve(process.cwd(),'src/directives')).forEach(function(filename){
     var modName = filename.replace(/\.js/,'');
-    // entryMap[`directives/${modName}`] = `./src/directives/${filename}`;
     directiveMods.push(modName);
   })
 
   // filters
   fs.readdirSync(path.resolve(process.cwd(),'src/filters')).forEach(function(filename){
     var modName = filename.replace(/\.js/,'');
-    // entryMap[`filters/${modName}`] = `./src/filters/${filename}`;
     filterMods.push(modName);
   })
 }
 
 var config = {
   entry: {
-    //'button': ['./src/components/Button/index.js'],
-    //'icon': ['./src/components/Icon/index.js']
   },
   output: {
     path: './lib',
@@ -91,6 +86,7 @@ var config = {
       vue: {
         commonjs: 'vue',
         amd: 'vue',
+        commonjs2: 'vue',
         root: 'Vue'
       }
     },
@@ -103,22 +99,21 @@ var config = {
         return callback(null, "./" + camel2Dash(compName));
       }
 
-      // deal _utils
+      // deal with _utils
       var utilsMatch = request.match(/_utils\/([\w-]+)/);
       var utilFile = utilsMatch && utilsMatch[1];
       if(utilFile && ~utilMods.indexOf(utilFile)){
-        console.log(utilFile)
         return callback(null, "atui/lib/_utils/" + utilFile);
       }
 
-      // deal directives
+      // deal with directives
       var directivesMatch = request.match(/directives\/([\w-]+)/);
       var directivesFile = directivesMatch && directivesMatch[1];
       if(directivesFile && ~directiveMods.indexOf(directivesFile)){
         return callback(null, "atui/lib/directives/" + directivesFile);
       }
 
-      // deal filters
+      // deal with filters
       var filtersMatch = request.match(/filters\/([\w-]+)/);
       var filtersFile = filtersMatch && filtersMatch[1];
       if(filterMods && ~filterMods.indexOf(filtersFile)){
@@ -179,7 +174,7 @@ var config = {
 }
 
 function setup(){
-  initEntries();
+  initAllMods();
   // merge to config
   for(var key in entryMap){
     config.entry[key] = [entryMap[key]]
