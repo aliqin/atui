@@ -184,6 +184,7 @@
     },
     methods: {
       onChange (e) {
+        debugger
         let files = e.target.files
 
         if (files) {
@@ -212,6 +213,7 @@
        * 上传后自动提交
        */
       submitForm () {
+        debugger
         if (this.uploadList.length > 0) {
           if (this.url) {
             if (this.xhr) {

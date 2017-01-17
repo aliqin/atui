@@ -6,7 +6,8 @@ var webpackConfig = {
   resolve: {
     alias: {
       src: path.resolve(__dirname, '../src'),
-      test: path.resolve(__dirname, '../test')
+      test: path.resolve(__dirname, '../test'),
+      'vue$': 'vue/dist/vue.common.js'
     }
   },
   module: {

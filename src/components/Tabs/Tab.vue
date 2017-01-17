@@ -1,5 +1,5 @@
 <template>
-  <div role="tabpanel" :class="[prefixCls + 'tab-pane']"
+  <div role="tabpanel" :class="[prefixCls + '-tab-pane']"
       v-show="show"
       :transition="transition"
   >

@@ -49,7 +49,7 @@
     props: {
       defaultValue: {
         type: [String, Number, Array],
-        default: null
+        default: ''
       },
       placeholder: {
         type: String,
@@ -85,18 +85,7 @@
       if (me.multiple || me.tags) {
         me.multipleSelect = true
       }
-      if (me.defaultValue === null) {
-        value = me.multipleSelect ? [] : ''
-      }
-      if (me.multipleSelect && !Array.isArray(me.defaultValue)) {
-        value = [me.defaultValue]
-      }
-      if (!me.multipleSelect && Array.isArray(me.defaultValue)) {
-        value = me.defaultValue.slice(0, 1)
-      }
-      if (me.multipleSelect && me.defaultValue.length > me.limit) {
-        value = me.defaultValue.slice(0, me.limit)
-      }
+      value = me.getValue()
       if ((me.defaultValue !== null) || me.selectedOptions.length) {
         me.showPlaceholder = false
       }
@@ -157,6 +146,9 @@
     },
 
     watch: {
+      defaultValue (val) {
+        this.value = this.getValue()
+      },
       value (val) {
         let me = this
         if (!val) {
@@ -210,6 +202,28 @@
     },
 
     methods: {
+      /**
+       * 根据defaultValue获取初始的value
+       * @param defaultValue
+       */
+      getValue (defaultValue) {
+        let me = this
+        let value = me.defaultValue
+        if (me.defaultValue === null) {
+          value = me.multipleSelect ? [] : ''
+        }
+        if (me.multipleSelect && !Array.isArray(me.defaultValue)) {
+          value = [me.defaultValue]
+        }
+        if (!me.multipleSelect && Array.isArray(me.defaultValue)) {
+          value = me.defaultValue.slice(0, 1)
+        }
+        if (me.multipleSelect && me.defaultValue.length > me.limit) {
+          value = me.defaultValue.slice(0, me.limit)
+        }
+
+        return value
+      },
       /**
        * 设置选中的值
        * @param value {any}

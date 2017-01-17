@@ -16,6 +16,7 @@ describe('Menu组件单元测试', () => {
       vMenuItemGroup: MenuItemGroup
     },
     template: `
+      <div>
       <v-menu>
         <v-sub-menu title="导航一">
           <v-menu-item-group title="分组1">
@@ -28,6 +29,7 @@ describe('Menu组件单元测试', () => {
           </v-menu-item-group>
         </v-sub-menu>
       </v-menu>
+      </div>
     `
   }).$mount()
 

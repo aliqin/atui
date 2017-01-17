@@ -10,8 +10,9 @@ describe('Calendar组件单元测试', () => {
     components: {
       Calendar
     },
-    template: `
+    template: `<div>
       <calendar @change="selectChange"></calendar>
+      </div>
     `,
     methods: {
       selectChange () {}
