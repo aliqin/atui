@@ -129,10 +129,6 @@
   },
   "author": "aliqin fe team",
   "license": "MIT",
-  "ciPluginsDescription": "`ciPlugins` 每个 key 是插件，对应值是插件参数，插件支持参数请参考：http://uitest.taobao.net/plugin",
-  "ciPlugins": {
-    "test": ""
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
