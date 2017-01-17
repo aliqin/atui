@@ -40,6 +40,10 @@ import 'atui/style/themes/greater-blue.less'
 // 引入组件
 import atui from 'atui'
 
+// 如果只使用了少量的组件，也可以按需引入
+import vButton from 'atui/lib/button';
+import vDatePicker from 'atui/lib/date-picker';
+
 new Vue({
   components: {
     Alert:atui.Alert
