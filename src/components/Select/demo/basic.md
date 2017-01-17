@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<v-select :default-value="initObj.val" style="width:200px" @change="onSelectChange">
+<v-select :default-value="initValue" style="width:200px" @change="onSelectChange">
   <v-option value="Apple">苹果</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
   <v-option value="10">Cherry</v-option>
@@ -31,6 +31,8 @@ title:
   <v-option value="cantaloupe2">哈密瓜2</v-option>
   <v-option value="peaches2">水蜜桃2</v-option>
 </v-select>
+<br/>
+<v-button @click.native="changeSelect">改变选中项</v-button>
 ````
 
 ````vue-script
@@ -38,12 +40,13 @@ new Vue({
   el: 'body',
   components: {
     vSelect: atui.Select,
+    vButton: atui.Button,
     vOption: atui.Select.Option
   },
   data() {
     return {
       single: '',
-      initValue: 10,
+      initValue: 'Apple',
       initObj: {
         val:'Apple'
       },
@@ -61,6 +64,9 @@ new Vue({
   methods: {
     onSelectChange (obj) {
       this.single = obj.value;
+    },
+    changeSelect () {
+      this.initValue = 'Orange';
     }
   }
 })
