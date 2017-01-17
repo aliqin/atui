@@ -1,26 +1,29 @@
-var assign = require('object-assign')
 var base = require('./karma.base.config.js')
 
 module.exports = function (config) {
-  var options = assign(base, {
+  var options = Object.assign(base, {
     browsers: ['PhantomJS'],
-    reporters: ['progress', 'coverage'],
+    reporters: ['mocha', 'coverage'],
     coverageReporter: {
       reporters: [
         { type: 'lcov', dir: '../coverage', subdir: '.' },
         { type: 'text-summary', dir: '../coverage', subdir: '.' }
       ]
-    }
+    },
+    singleRun: true
   })
 
-  // add coverage post loader
-  options.webpack.module.postLoaders = [
-    {
-      test: /\.js$/,
-      exclude: /test|node_modules/,
-      loader: 'istanbul-instrumenter'
-    }
-  ]
+  // add babel-plugin-istanbul for code intrumentation
+  options.webpack.babel = {
+    plugins: [['istanbul', {
+      exclude: [
+        'test/',
+        'src/compiler/parser/html-parser.js',
+        'src/core/instance/proxy.js',
+        'src/sfc/deindent.js'
+      ]
+    }]]
+  }
 
   config.set(options)
 }
