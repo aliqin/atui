@@ -1,12 +1,14 @@
 # atui
 阿里通信基于Vue.js的组件库. http://aliqin.github.io
 
+[![NPM download][npmdl-image]][npm-url]
 [![NPM version][npm-image]][npm-url]
 [![issues][issue-image]][npm-url]
 [![forks][forks-image]][npm-url]
 [![stars][stars-image]][npm-url]
 [![license][license-image]][npm-url]
 
+[npmdl-image]: https://img.shields.io/npm/dm/atui.svg
 [npm-image]: https://img.shields.io/npm/v/atui.svg?style=flat
 [npm-url]: https://www.npmjs.com/package/atui
 [issue-image]: https://img.shields.io/github/issues/aliqin/atui.svg
