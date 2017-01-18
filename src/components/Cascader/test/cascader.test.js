@@ -97,7 +97,7 @@ const defaultValue = ['2016', '05']
 let vm = new Vue({
   template: `
       <div>
-        <cascader :options="options" @change="selectChange"
+        <cascader :options="options"
         :default-value="defaultValue">
         </cascader>
       </div>

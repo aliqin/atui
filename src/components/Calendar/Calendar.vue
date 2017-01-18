@@ -94,7 +94,7 @@
       value: {
         type: String,
         default () {
-          return new Date().toLocaleDateString()
+          return new Date().toString()
         }
       },
       format: {
