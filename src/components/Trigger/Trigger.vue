@@ -217,9 +217,7 @@
         }
       })
     },
-
     created () {
-      console.log('created')
       this.showPopup = this.show
     },
 

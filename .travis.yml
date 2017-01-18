@@ -9,7 +9,8 @@ env:
   - MAX_WORKERS=2
 
 script:
-  - npm run test
+  - npm run lint
+  - NODE_ENV=travis karma start build/karma.unit.config.js
 
 branches:
   only:

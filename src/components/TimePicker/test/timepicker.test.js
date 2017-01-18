@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import TimePicker from '../'
-
-let vm = new Vue({
+new Vue({
   template: `
       <div>
       <time-picker>
@@ -14,6 +13,6 @@ let vm = new Vue({
 // timepicker组件测试用例,拉低了coverage summary统计数据
 describe('TimePicker', () => {
   it('TimePicker组件是否正常显示', () => {
-    expect(vm.$el.querySelectorAll('.atui-time-picker-panel').length).above(2)
+    expect(document.body.querySelectorAll('.atui-time-picker-panel').length).above(2)
   })
 })

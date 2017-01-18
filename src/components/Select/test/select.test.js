@@ -11,7 +11,7 @@ describe('Select', () => {
     },
     template: `
     <div>
-    <v-select :value="Cherry" :placeholder="placeholder" style="width:200px;" class="j-basic">
+    <v-select value="Cherry" placeholder="请选择" style="width:200px;" class="j-basic">
     <v-option value="Apple">苹果</v-option>
     <v-option value="Banana" disabled>Banana</v-option>
     <v-option value="Cherry">Cherry</v-option>
@@ -32,8 +32,7 @@ describe('Select', () => {
   }).$mount()
 
   it('Select组件基础渲染', () => {
-    expect(vm.$el.querySelectorAll('.j-basic .atui-dropdown-option').length).to.equal(7)
-    expect(vm.$el.querySelectorAll('.j-basic span').length).to.equal(3)
+    expect(document.body.querySelectorAll('.atui-dropdown-option').length).to.above(10)
   })
 
   it('Select组件多选使用', () => {

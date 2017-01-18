@@ -15,6 +15,8 @@
   "dependencies": {
     "babel-plugin-istanbul": "^3.1.2",
     "conventional-changelog": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "phantomjs-prebuilt": "^2.1.14",
     "rc-animate": "^2.3.1",
     "vue": "2.1.4"
   },
