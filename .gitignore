@@ -4,6 +4,7 @@
 node_modules
 npm-debug.log
 _site
+lib
 coverage
 vue-component.sublime-project
 
