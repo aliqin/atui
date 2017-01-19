@@ -1,5 +1,10 @@
 # atui
 阿里通信基于Vue.js的组件库. http://aliqin.github.io
+
+[Vue.js](http://vuejs.org/) (基于Vue.js `v2.1.4 版本以上`).
+
+--------
+
 [![Build Status](https://travis-ci.org/aliqin/atui.svg?branch=dev)](https://travis-ci.org/aliqin/atui)
 [![NPM download][npmdl-image]][npm-url]
 [![NPM version][npm-image]][npm-url]
@@ -15,7 +20,7 @@
 [npm-url]: https://www.npmjs.com/package/atui
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
-* [Vue.js](http://vuejs.org/) (基于Vue.js `v2.1.4 版本以上`).
+
 
 
 ## 安装方法
