@@ -14,7 +14,7 @@ let vm = new Vue({
       `,
   components: { Pagination },
   data: {
-    current: 5
+    currPage: 5
   }
 }).$mount()
 
