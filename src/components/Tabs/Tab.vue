@@ -57,7 +57,6 @@ export default {
         return
       }
       me.$parent.$children.forEach((child) => {
-        console.log(child)
         child.index = index++
       })
       // fix activeIndex overflow

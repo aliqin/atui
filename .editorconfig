@@ -1,8 +1,4 @@
-# editorconfig文件定义一致的code style规范
-# 根据不同的开发IDE或编辑器统一代码风格
-# 详情见 editorconfig.org
 root = true
-
 
 [*]
 end_of_line = lf

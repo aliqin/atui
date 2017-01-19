@@ -106,7 +106,7 @@ let vm = new Vue({
   template: `
       <div><grid :data-source="gridData"
       :columns="gridColumns" :row-selection="rowSelection"
-      row-key="key" @table-change="onTableChange"
+      row-key="key"
       :loading="loading" :size="size"></grid></div>
       `,
   components: {

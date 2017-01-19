@@ -1,22 +1,26 @@
 # atui
 阿里通信基于Vue.js的组件库. http://aliqin.github.io
 
+[Vue.js](http://vuejs.org/) (基于Vue.js `v2.1.4 版本以上`).
+
+--------
+
+[![Build Status](https://travis-ci.org/aliqin/atui.svg?branch=dev)](https://travis-ci.org/aliqin/atui)
 [![NPM download][npmdl-image]][npm-url]
 [![NPM version][npm-image]][npm-url]
-[![issues][issue-image]][npm-url]
-[![forks][forks-image]][npm-url]
-[![stars][stars-image]][npm-url]
+[![gzip size:JS][gzipjs-image]][npm-url]
+[![gzip size:css][gzipcss-image]][npm-url]
 [![license][license-image]][npm-url]
+[![Gitter](https://badges.gitter.im/aliqin/atui.svg)](https://gitter.im/aliqin/atui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 [npmdl-image]: https://img.shields.io/npm/dm/atui.svg
 [npm-image]: https://img.shields.io/npm/v/atui.svg?style=flat
+[gzipjs-image]: http://img.badgesize.io/https://unpkg.com/atui/dist/atui.js?compression=gzip&label=gzip%20size:%20JS
+[gzipcss-image]: http://img.badgesize.io/https://unpkg.com/atui/dist/greater-blue.css?compression=gzip&label=gzip%20size:%20CSS
 [npm-url]: https://www.npmjs.com/package/atui
-[issue-image]: https://img.shields.io/github/issues/aliqin/atui.svg
-[forks-image]: https://img.shields.io/github/forks/aliqin/atui.svg
-[stars-image]: https://img.shields.io/github/stars/aliqin/atui.svg
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
-* [Vue.js](http://vuejs.org/) (基于Vue.js `v2.1.4 版本以上`).
+
 
 
 ## 安装方法
