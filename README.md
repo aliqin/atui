@@ -1,4 +1,6 @@
 # atui
+
+[![Join the chat at https://gitter.im/aliqin/atui](https://badges.gitter.im/aliqin/atui.svg)](https://gitter.im/aliqin/atui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 阿里通信基于Vue.js的组件库. http://aliqin.github.io
 
 [![NPM download][npmdl-image]][npm-url]
