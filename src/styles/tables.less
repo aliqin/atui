@@ -160,6 +160,20 @@
       &:hover {
         background-color: @tr-hover-color;
       }
+      i {
+        display: none;
+      }
+    }
+    li.selected {
+      background-color: #f2f2f2;
+
+      i {
+        display: inline;
+        font-weight: bold;
+      }
+    }
+    li.@{prefix-cls-table}-filter-single-item {
+      cursor: pointer;
     }
   }
 
