@@ -77,7 +77,7 @@
                 <td v-if="expandedRowRender" :class="[prefixCls + '-table-row-expand-icon-cell']">
                   <span v-if="!record.__no_expand" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (record.__expanded == 1 ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
                 </td>
-                <td v-for="column in columns">
+                <td v-for="column in columns" :class="[column.className || '']">
                   <template v-if="column.render && record">
                     <span v-html="column.render.call(this._context,record[column.dataIndex],record,rowIndex)" />
                   </template>
