@@ -1,7 +1,3 @@
-/**
- * Created by jiangyi on 16/7/13.
- */
-
 import Vue from 'vue'
 import Input from '../'
 

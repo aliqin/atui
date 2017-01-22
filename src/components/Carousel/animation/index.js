@@ -1,5 +1,5 @@
-import normal from './normal'
-import fade from './fade'
+import normal from './normal.vue'
+import fade from './fade.vue'
 
 export {
   normal,
