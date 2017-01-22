@@ -80,6 +80,7 @@ const columns = [{
 | filterMultiple | 是否多选 | Boolean    | true    |
 | sorter     | 排序函数，本地排序使用一个函数，需要服务端排序可设为 true | Function or Boolean | - |
 | width      | 列宽度 | String or Number | -  |
+| className  | 列className | String  | -  |
 | sortOrder | 排序的受控属性，外界可用此控制列的排序，可设置为 `'ascend'` `'descend'` `false` | Boolean or String | - |
 
 ### rowSelection

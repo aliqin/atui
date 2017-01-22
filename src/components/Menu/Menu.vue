@@ -1,11 +1,18 @@
 <template>
   <ul :class="[prefixCls + '-menu', prefixCls + '-menu-root', prefixCls + '-menu-'+ mode]">
     <slot></slot>
+    <template v-if="value.length">
+      <v-sub-menu v-for="item in value" :uuid="item.uuid" :title="item.title" v-model="item.children">
+      </v-sub-menu>
+    </template>
   </ul>
 </template>
 
 <script type="text/babel">
 import Vue from 'vue'
+import vSubMenu from './SubMenu.vue'
+import vMenuItemGroup from './MenuItemGroup.vue'
+import vMenuItem from './MenuItem.vue'
 
 export default {
   name: 'Menu',
@@ -18,8 +25,19 @@ export default {
       type: String,
       default: 'atui'
     },
+    value: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
     openOne: Boolean,
     selectedKey: String
+  },
+  components: {
+    vSubMenu,
+    vMenuItemGroup,
+    vMenuItem
   },
   created () {
     this.$bus = new Vue({})

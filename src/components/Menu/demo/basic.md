@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<v-menu @click="click">
+<v-menu @click.native="click">
   <v-sub-menu uuid="sub1" title="导航一">
     <v-menu-item-group title="分组1">
       <v-menu-item uuid="1">选项1</v-menu-item>
