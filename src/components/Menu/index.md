@@ -39,3 +39,84 @@ subtitle: 导航菜单
 | 参数     | 说明           | 类型     | 默认值       |
 |----------|----------------|----------|--------------|
 | title    | 分组标题       | String or React.Element |    |
+
+### Menu动态渲染的数据结构
+```jsx
+[
+  {
+    type: 'SubMenu',
+    uuid: 'sub1',
+    title: '导航一',
+    children: [
+      {
+        type: 'MenuItemGroup',
+        title: '分组1',
+        uuid: 'sub1',
+        children: [
+          {
+            type: 'MenuItem',
+            uuid: '1',
+            content: '选项1'
+          },
+          {
+            type: 'MenuItem',
+            uuid: '2',
+            content: '选项2'
+          }
+        ]
+      },
+      {
+        type: 'MenuItemGroup',
+        title: '分组2',
+        uuid: 'sub2',
+        children: [
+          {
+            type: 'MenuItem',
+            uuid: '3',
+            content: '选项3'
+          },
+          {
+            type: 'MenuItem',
+            uuid: '4',
+            content: '选项4'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    type: 'SubMenu',
+    title: '导航二',
+    uuid: 'sub2',
+    children: [
+      {
+        type: 'MenuItem',
+        uuid: '5',
+        content: '选项5'
+      },
+      {
+        type: 'MenuItem',
+        uuid: '6',
+        content: '选项6'
+      },
+      {
+        type: 'SubMenu',
+        uuid: 'sub3',
+        title: '三级导航',
+        children: [
+          {
+            type: 'MenuItem',
+            uuid: '7',
+            content: '选项7'
+          },
+          {
+            type: 'MenuItem',
+            uuid: '8',
+            content: '选项8'
+          }
+        ]
+      }
+    ]
+  }
+]
+```

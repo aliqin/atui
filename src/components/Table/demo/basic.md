@@ -21,11 +21,13 @@ title:
 var columns = [{
   title: '姓名<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">',
   dataIndex: 'name',
-  width:150
+  width:150,
+  className: 'name'
 }, {
   title: '年龄',
   dataIndex: 'age',
-  width:250
+  width:250,
+  className: 'age'
 }, {
   title: '地址',
   dataIndex: 'address',

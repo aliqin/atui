@@ -25,22 +25,34 @@
                   <icon type="filter" size="12"></icon>
                 </div>
                 <div name="dropdown-menu" slot="dropdown-menu" :class="[prefixCls + '-dropdown-menu', prefixCls + '-table-filter-dropdown']">
-                  <ul>
-                    <li v-for="filter in column.filters">
-                      <label>
-                        <template v-if="column.filterMultiple === false">
-                          <input type="radio" :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
-                        </template>
-                        <template v-else>
-                          <input type="checkbox" :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
-                        </template>
-                      </label>
-                    </li>
-                  </ul>
-                  <div :class="[prefixCls + '-table-filter-dropdown-btns']">
-                    <a :class="[prefixCls + '-table-filter-dropdown-link confirm']" @click="onFilter(column)">确定</a>
-                    <a :class="[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']" @click="resetFilter(column)">重置</a>
-                  </div>
+                  <template v-if="column.filterMultiple !== false">
+                    <ul>
+                      <li v-for="filter in column.filters">
+                        <label>
+                          <template v-if="column.filterMultiple === false">
+                            <input type="radio" :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
+                          </template>
+                          <template v-else>
+                            <input type="checkbox" :value="filter.value" v-model="filters[column.dataIndex]" />{{filter.text}}
+                          </template>
+                        </label>
+                      </li>
+                    </ul>
+                    <div :class="[prefixCls + '-table-filter-dropdown-btns']">
+                      <a :class="[prefixCls + '-table-filter-dropdown-link confirm']" @click="onFilter()">确定</a>
+                      <a :class="[prefixCls + '-table-filter-dropdown-link', prefixCls + '-table-clear']" @click="resetFilter(column)">重置</a>
+                    </div>
+                  </template>
+                  <template v-else>
+                    <ul :class="[prefixCls + '-table-filter-single']">
+                      <li :class="[prefixCls + '-table-filter-single-item', column.__selectedText === '全部'?'selected':'']" @click="resetFilter(column)">
+                        <icon type="tick" size="10"></icon><span>全部</span>
+                      </li>
+                      <li v-for="filter in column.filters" @click="onFilter(true, column, filter.value, filter.text)" :class="[column.__selectedText === filter.text?'selected':'', prefixCls + '-table-filter-single-item']">
+                        <icon type="tick" size="10"></icon><span>{{filter.text}}</span>
+                      </li>
+                    </ul>
+                  </template>
                 </div>
               </dropdown>
               <div v-if="dataList && dataList.length && column.sorter" :class="[prefixCls + '-table-sorter']">
@@ -65,7 +77,7 @@
                 <td v-if="expandedRowRender" :class="[prefixCls + '-table-row-expand-icon-cell']">
                   <span v-if="!record.__no_expand" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (record.__expanded == 1 ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
                 </td>
-                <td v-for="column in columns">
+                <td v-for="column in columns" :class="[column.className || '']">
                   <template v-if="column.render && record">
                     <span v-html="column.render.call(this._context,record[column.dataIndex],record,rowIndex)" />
                   </template>
@@ -155,6 +167,7 @@ export default {
     const filters = {}
     const columnMap = {}
     this.columns.forEach((item) => {
+      Vue.set(item, '__selectedText', '全部')
       columnMap[item.dataIndex] = item
       if (item.filters) {
         // 如果有filter的情况，则把filter保存为一个空对象，filter时的chechbox需要用到双向绑定
@@ -309,10 +322,15 @@ export default {
       }
       me.isCheckedAll = me.checkedRows.length === me.checkebleRows.length
     },
-    onFilter () {
+    // isSingle:是否为单选模式
+    onFilter (isSingle, column, fileterValue, filterText) {
       // 每次filter条件变化都应该拿原始数据把所有条件都过滤一遍
       let me = this
       let filters = me.filters
+      if (isSingle) {
+        filters[column.dataIndex] = fileterValue
+        Vue.set(column, '__selectedText', filterText)
+      }
       me.$refs.filterMenu.forEach((dropdown) => {
         dropdown.$emit('closeDropdown')
       })
@@ -339,6 +357,7 @@ export default {
       }
     },
     resetFilter (column) {
+      Vue.set(column, '__selectedText', '全部')
       this.filters[column.dataIndex] = []
       this.onFilter()
     },

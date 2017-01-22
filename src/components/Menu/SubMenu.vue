@@ -6,17 +6,34 @@
     </div>
     <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="open" transition="collapse">
       <slot></slot>
+      <template v-if="value.length" v-for="item in value">
+        <v-menu-item-group v-if="item.type == 'MenuItemGroup'" :title="item.title" v-model="item.children">
+        </v-menu-item-group>
+        <v-menu-item v-if="item.type == 'MenuItem'" :uuid="item.uuid" :disabled="item.disabled" :selected="item.selected">
+          {{item.content}}
+        </v-menu-item>
+        <sub-menu v-if="item.type == 'SubMenu'" :uuid="item.uuid" :title="item.title" v-model="item.children"></sub-menu>
+      </template>
     </ul>
   </li>
 </template>
 
 <script>
 import Icon from '../Icon'
+import vMenuItemGroup from './MenuItemGroup.vue'
+import vMenuItem from './MenuItem.vue'
+
 export default {
   name: 'SubMenu',
   props: {
     title: String,
     show: Boolean,
+    value: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
     prefixCls: {
       type: String,
       default: 'atui'
@@ -26,7 +43,9 @@ export default {
     uuid: [String, Number]
   },
   components: {
-    Icon
+    Icon,
+    vMenuItemGroup,
+    vMenuItem
   },
   data () {
     return {
