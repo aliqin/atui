@@ -1,81 +1,64 @@
 import Vue from 'vue'
-import Grid from '../'
-const columns = [{
-  title: '姓名',
+import Table from '../'
+
+var columns = [{
+  title: '姓名<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">',
   dataIndex: 'name',
-  filters: [{
-    text: '姓李的的',
-    value: '李'
-  }, {
-    text: '姓胡的',
-    value: '胡'
-  }],
-  sorter: true,
-  onFilter: (value, record) => record.name.indexOf(value) === 0,
-  width: 150
+  width:150
 }, {
   title: '年龄',
   dataIndex: 'age',
-  sorter: (a, b) => a.age - b.age,
-  render (text, record, index) {
-    if (record) {
-      return '<input type="text"/>'
-    }
-  },
-  width: 250
+  width:250
 }, {
   title: '地址',
   dataIndex: 'address',
-  filters: [{
-    text: '南湖',
-    value: '南湖'
-  }, {
-    text: '西湖',
-    value: '西湖'
-  }],
   filterMultiple: false,
-  width: 250,
-  onFilter: (value, record) => record.address.indexOf(value) === 0
-}, {
-  title: '操作',
-  key: 'operation',
-  render (text, record) {
-    if (record) {
-      return '<icon type="info"></icon><a href="' + record.key + '.html" target="_blank">详情</a>'
+  width:250
+},{
+    title: '操作',
+    key: 'operation',
+    render: function(text, record) {
+      if(record) {
+        return '<icon type="info-s"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
+      }
     }
   }
-}]
-const data = [{
+];
+
+var data = [{
   key: '1',
-  name: '胡斌',
+  name: '-1条',
   age: 32,
-  address: '南湖区湖底公园1号'
+  address: '南湖区湖底公园1号<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">',
 }, {
   key: '2',
   name: '胡彦祖',
   age: 42,
-  address: '西湖区湖底公园12号'
+  address: '西湖区湖底公园12号',
 }, {
   key: '3',
   name: '李大嘴',
   age: 32,
-  address: '南湖区湖底公园123号'
+  address: '南湖区湖底公园123号',
 }, {
   key: '4',
   name: '李秀莲大嘴哥',
   age: 32,
-  address: '西湖区湖底公园123号'
-}, {
+  address: '西湖区湖底公园123号',
+},
+{
   key: '5',
   name: '刘德华',
   age: 54,
-  address: '西湖区湖底公园999号'
-}, {
+  address: '西湖区湖底公园999号',
+},
+{
   key: '6',
   name: '洪金宝',
   age: 66,
-  address: '香港弥敦道'
+  address: '香港弥敦道1',
 }]
+
 const rowSelection = {
   getCheckboxProps (record) {
     return {
@@ -104,13 +87,23 @@ let vm = new Vue({
     }
   },
   template: `
-      <div><grid :data-source="gridData"
-      :columns="gridColumns" :row-selection="rowSelection"
-      row-key="key"
-      :loading="loading" :size="size"></grid></div>
+      <div>
+      <v-table :data-source="gridData" :columns="gridColumns" row-key="key" @row-click="rowClick"></v-table>
+      </div>
       `,
   components: {
-    Grid
+    vTable:Table
+  },
+  methods: {
+    rowClick (rowIndex, record) {
+      console.log(rowIndex, record)
+    },
+    getData () {
+      let self = this
+      setTimeout(function(){
+        self.gridData = data
+      })
+    }
   }
 }).$mount()
 
