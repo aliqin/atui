@@ -21,4 +21,5 @@ notifications:
    webhooks: https://oapi.dingtalk.com/robot/send?access_token=3bdd55a1ee8ddf4de6f708b7a0ac812c30a17c83faa705a15019aab84a32592b
 
 after_success:
+  - npm run codecov
   - bash <(curl -s https://codecov.io/bash)
