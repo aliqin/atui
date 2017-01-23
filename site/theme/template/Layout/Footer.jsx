@@ -62,7 +62,7 @@ export default class Footer extends React.Component {
           <li>
             <h2>GitLab</h2>
             <div>
-              <a target="_blank " href="http://gitlab.alibaba-inc.com/aliqin/atui/">仓库</a>
+              <a target="_blank " href="https://github.com/aliqin/atui">仓库</a>
             </div>
 
           </li>
@@ -73,17 +73,17 @@ export default class Footer extends React.Component {
           <li>
             <h2>联系我们</h2>
             <div>
-              <a target="_blank" href="http://gitlab.alibaba-inc.com/aliqin/atui/issues">
+              <a target="_blank" href="https://github.com/aliqin/atui/issues">
                 反馈和建议
               </a>
             </div>
             <div>
-              <a target="_blank" href="http://gitlab.alibaba-inc.com/aliqin/atui">
+              <a target="_blank" href="https://github.com/aliqin/atui">
                 讨论
               </a>
             </div>
             <div>
-              <a target="_blank" href="http://gitlab.alibaba-inc.com/aliqin/atui/issues/new">
+              <a target="_blank" href="https://github.com/aliqin/atui/issues/new">
                 报告 Bug
               </a>
             </div>
