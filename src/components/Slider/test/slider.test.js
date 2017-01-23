@@ -4,7 +4,7 @@ import Slider from '../'
 describe('Slider组件单元测试', () => {
   let vm = new Vue({
     components: {
-      vSlider:Slider
+      vSlider: Slider
     },
     replace: false,
     template: `
@@ -16,7 +16,7 @@ describe('Slider组件单元测试', () => {
     `,
     data: {
       sliderValue: 5,
-      initRange: [20,50]
+      initRange: [20, 50]
     }
   }).$mount()
 
