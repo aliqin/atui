@@ -82,7 +82,8 @@ new Vue({
   el: 'body',
   components: {
     vTable: atui.Table,
-    icon: atui.Icon
+    icon: atui.Icon,
+    vButton: atui.Button
   },
   data () {
     return {
