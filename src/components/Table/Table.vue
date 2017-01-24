@@ -243,6 +243,10 @@ export default {
         let me = this
         let rowStates = me.rowStates
         data.forEach && data.forEach((record, index) => {
+          if (!rowStates[index]) {
+            rowStates[index] = {}
+          }
+
           if (!rowStates[index].hasOwnProperty('__expanded')) {
             Vue.set(rowStates[index], '__expanded', false)
           }

@@ -191,7 +191,7 @@ new Vue({
   },
   data () {
     return {
-      gridData:data,
+      gridData: data,
       gridColumns: columns,
       rowSelection:rowSelection
     }
