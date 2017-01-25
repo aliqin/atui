@@ -7,13 +7,13 @@ title:
 
 ## zh-CN
 
-当表格内容较多不能一次性完全展示时，配置expandedRowRender函数，如果部分行不需要展开，该行record增加__no_expand字段，值为true
+当表格内容较多不能一次性完全展示时，配置expandedRowRender(record)函数，如果部分行不需要展开，可以给table绑定rowExpandable(record, rowIndex)函数，在函数中返回false即可
 
 ## en-US
 
 
 ````jsx
-<v-table :data-source="gridData" :columns="gridColumns" :expanded-row-render="expandedRowRender" row-key="key"></v-table>
+<v-table :data-source="gridData" :columns="gridColumns" :row-expandable="rowExpandable" :expanded-row-render="expandedRowRender" row-key="key"></v-table>
 ````
 
 
@@ -88,6 +88,7 @@ new Vue({
     return {
       gridData:data,
       gridColumns: columns,
+      rowExpandable: (record) => { return record.age === 32 },
       expandedRowRender: (record) => { return '<span>' + record.name + '</span>' }
     }
   },

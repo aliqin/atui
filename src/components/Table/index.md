@@ -63,6 +63,7 @@ const columns = [{
 | @change      | 分页、排序、筛选变化时触发 | Function(pagination, filters, sorter) |  |
 | @row-click    | 表格行点击事件 | Function(rowIndex, record) | |
 | expandedRowRender    | 额外的展开行 | Function(record) | |
+| rowExpandable | 决定该行是否可展开,返回false表示不支持展开 | Function(record, rowIndex) | |
 | loading       | 页面是否加载中 | Boolean | false |
 
 

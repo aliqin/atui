@@ -37,6 +37,8 @@ title:
 <v-icon type="doc"></v-icon>
 <v-icon type="calendar"></v-icon>
 <v-icon type="time"></v-icon>
+<v-icon type="star"></v-icon>
+<v-icon type="stared"></v-icon>
 ````
 
 ````vue-script
