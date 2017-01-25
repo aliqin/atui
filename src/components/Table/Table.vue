@@ -75,7 +75,7 @@
                   />
                 </td>
                 <td v-if="expandedRowRender" :class="[prefixCls + '-table-row-expand-icon-cell']">
-                  <span v-if="!record.__no_expand" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (record.__expanded == 1 ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
+                  <span v-if="rowExpandable(record, rowIndex)" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (rowStates[rowIndex].__expanded ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
                 </td>
                 <td v-for="column in columns" :class="[column.className || '']">
                   <template v-if="column.render && record">
@@ -86,9 +86,9 @@
                   </template>
                 </td>
               </tr>
-              <tr v-if="record.__expanded" :class="[prefixCls + '-table-expanded-row']">
+              <tr v-if="rowStates[rowIndex].__expanded" :class="[prefixCls + '-table-expanded-row']">
                 <td>
-                  <span :class="[prefixCls + '-expanded-row-indent']" v-if="!record.__no_expand"></span>
+                  <span :class="[prefixCls + '-expanded-row-indent']" v-if="rowExpandable(record, rowIndex)"></span>
                 </td>
                 <td :colspan="columns.length" v-html="expandedRowRender(record)">
                 </td>
@@ -140,6 +140,12 @@ export default {
         return []
       }
     },
+    rowExpandable: {
+      type: Function,
+      default () {
+        return true
+      }
+    },
     expandedRowRender: Function,
     rowSelection: Object,
     rowKey: String,
@@ -181,19 +187,23 @@ export default {
       isDisabledAll: false,
       sorderOrder: [],
       checkedRows: [],
+      rowStates: [],
       filterOpened: false,
       filters: filters,
       columnMap: columnMap,
       sorter: {}
     }
   },
-  mounted () {
+  created () {
+    let me = this
     if (this.dataList) {
-      this.dataList.forEach((record) => {
-        Vue.set(record, '__expanded', 0)
+      this.dataList.forEach((record, index) => {
+        Vue.set(me.rowStates, index, {})
+        Vue.set(me.rowStates[index], '__expanded', false)
       })
     }
-
+  },
+  mounted () {
     if (this.pagination.total > 0) {
       let pager = this.$refs.pager
       this.dataList = this.originDataSource.slice(pager.currPage || 0, pager.pageSize)
@@ -231,9 +241,10 @@ export default {
     dataList: {
       handler (data, oldData) {
         let me = this
-        data.forEach && data.forEach((record) => {
-          if (!record.hasOwnProperty('__expanded')) {
-            Vue.set(record, '__expanded', 0)
+        let rowStates = me.rowStates
+        data.forEach && data.forEach((record, index) => {
+          if (!rowStates[index].hasOwnProperty('__expanded')) {
+            Vue.set(rowStates[index], '__expanded', false)
           }
         })
         me.compileTbody()
@@ -255,7 +266,8 @@ export default {
       this.$emit('row-click', rowIndex, record)
     },
     onRowExpand (rowIndex, record) {
-      record.__expanded = !record.__expanded
+      let state = this.rowStates[rowIndex]
+      Vue.set(state, '__expanded', !state.__expanded)
     },
     compileTbody () {
       let me = this

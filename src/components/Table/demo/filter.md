@@ -67,7 +67,7 @@ var columns = [{
 
 
 ````jsx
-<v-table :data-source="gridData" @table-change="onTableChange" :columns="gridColumns" row-key="key" ></v-table>
+<v-table :data-source="gridData" @table-change="onTableChange" :row-expandable="rowExpandable" :columns="gridColumns" row-key="key" ></v-table>
 ````
 
 ````vue-script
@@ -202,6 +202,10 @@ new Vue({
       //let me = this
       //me.gridData = me.gridData.reverse()
     },
+    rowExpandable (record, index) {
+      debugger
+      return record.name == '李大嘴'
+    }
   }
 })
 ````
