@@ -57,6 +57,7 @@ const columns = [{
 | rowSelection  | 列表项是否可选择，[配置项](#rowSelection) | Object  | null  |
 | pagination    | 分页器，配置项参考 [pagination](/components/pagination)，设为 false 时不显示分页 | Object |  |
 | size          | 正常或迷你类型，`default` or `small`  | String | default |
+| noDataTip     | 当数据源为空时展示的文本，也可以给table传入名称为noDataTip的slot来自定义数据源为空时的展示 | String | |
 | dataSource    | 数据数组 | Array |            |
 | columns       | 表格列的配置描述，具体项见下表 | Array | - |
 | rowKey        | 表格行 key 的取值，可以是字符串或一个函数 | String or Function(record, index):string | 'key' |

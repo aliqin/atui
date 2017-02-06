@@ -65,7 +65,11 @@
         </thead>
         <tbody>
           <tr v-if="!dataList || !dataList.length">
-            <td colspan="20" style="text-align: center;" :class="[prefixCls + '-table-empty']">{{noDataTip}}</td>
+            <td colspan="20" style="text-align: center;" :class="[prefixCls + '-table-empty']">
+              <slot name="noDataTip">
+                {{noDataTip}}
+              </slot>
+            </td>
           </tr>
           <template v-for="(record, rowIndex) in dataList">
             <slot name="row" :record="record" :row-index="row-index">
