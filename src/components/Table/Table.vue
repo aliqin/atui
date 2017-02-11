@@ -77,7 +77,7 @@
                 <td v-if="expandedRowRender" :class="[prefixCls + '-table-row-expand-icon-cell']">
                   <span v-if="!record.__no_expand" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (record.__expanded == 1 ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
                 </td>
-                <td v-for="column in columns" :class="[column.className || '']">
+                <td v-for="column in columns" :class="[column.className || '']" @click="onColumnClick(column,record,rowIndex)">
                   <template v-if="column.render && record">
                     <span v-html="column.render.call(this._context,record[column.dataIndex],record,rowIndex)" />
                   </template>
@@ -251,6 +251,13 @@ export default {
     }
   },
   methods: {
+    //当点击字段的时候调用onColumnClick方法
+    //判定传入column的columnClick为方法时调用执行
+    onColumnClick (column, record, rowIndex) {
+      if (column.columnClick && typeof column.columnClick === 'function') {
+        column.columnClick(column, record, rowIndex)
+      }
+    },
     onRowClick (rowIndex, record) {
       this.$emit('row-click', rowIndex, record)
     },
