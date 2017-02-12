@@ -81,6 +81,11 @@
                   <template v-if="column.render && record">
                     <span v-html="column.render.call(this._context,record[column.dataIndex],record,rowIndex)" />
                   </template>
+                  <template v-else-if="column.renderList && record">
+                    <span v-for="render in column.renderList"
+                          @click.stop="render.renderClick.call(this._context,record[column.dataIndex],record,rowIndex)"
+                          v-html="render.renderHtml.call(this._context,record[column.dataIndex],record,rowIndex)"/>
+                  </template>
                   <template v-else>
                     <span v-html="record[column.dataIndex]"></span>
                   </template>
