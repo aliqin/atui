@@ -251,8 +251,6 @@ export default {
     }
   },
   methods: {
-    //  当点击字段的时候调用onColumnClick方法
-    //  判定传入columns对象的columnClick为方法时调用执行
     onColumnClick (column, record, rowIndex) {
       if (column.columnClick && typeof column.columnClick === 'function') {
         column.columnClick(column, record, rowIndex)
