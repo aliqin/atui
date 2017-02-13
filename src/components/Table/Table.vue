@@ -77,9 +77,14 @@
                 <td v-if="expandedRowRender" :class="[prefixCls + '-table-row-expand-icon-cell']">
                   <span v-if="!record.__no_expand" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (record.__expanded == 1 ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
                 </td>
-                <td v-for="column in columns" :class="[column.className || '']">
+                <td v-for="column in columns" :class="[column.className || '']" @click="onColumnClick(column,record,rowIndex)">
                   <template v-if="column.render && record">
                     <span v-html="column.render.call(this._context,record[column.dataIndex],record,rowIndex)" />
+                  </template>
+                  <template v-else-if="column.renderList && record">
+                    <span v-for="render in column.renderList"
+                          @click.stop="render.renderClick.call(this._context,record[column.dataIndex],record,rowIndex)"
+                          v-html="render.renderHtml.call(this._context,record[column.dataIndex],record,rowIndex)"/>
                   </template>
                   <template v-else>
                     <span v-html="record[column.dataIndex]"></span>
@@ -251,6 +256,11 @@ export default {
     }
   },
   methods: {
+    onColumnClick (column, record, rowIndex) {
+      if (column.columnClick && typeof column.columnClick === 'function') {
+        column.columnClick(column, record, rowIndex)
+      }
+    },
     onRowClick (rowIndex, record) {
       this.$emit('row-click', rowIndex, record)
     },
