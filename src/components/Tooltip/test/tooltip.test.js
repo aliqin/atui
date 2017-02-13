@@ -16,7 +16,7 @@ let vm = new Vue({
 describe('Tooltip', () => {
   it('Tooltip组件是否正常显示', () => {
     vm.$nextTick(() => {
-      expect(document.body.querySelectorAll('.atui-tooltip-arrow').length).above(0)
+      expect(document.body.querySelectorAll('.atui-tooltip-arrow').length).to.equal(1)
     })
   })
 })
