@@ -1,7 +1,3 @@
-/**
- * Created by jiangyi on 16/6/24.
- */
-
 import Vue from 'vue'
 import Steps from '../'
 

@@ -17,10 +17,7 @@ module.exports = function (config) {
   options.webpack.babel = {
     plugins: [['istanbul', {
       exclude: [
-        'test/',
-        'src/compiler/parser/html-parser.js',
-        'src/core/instance/proxy.js',
-        'src/sfc/deindent.js'
+        'test/'
       ]
     }]]
   }
