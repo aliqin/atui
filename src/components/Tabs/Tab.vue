@@ -4,6 +4,9 @@
       :transition="transition"
   >
     <slot></slot>
+    <div style="display: none">
+      <slot name="header"></slot>
+    </div>
   </div>
 </template>
 
@@ -37,12 +40,6 @@ export default {
       return this.$parent.effect
     }
   },
-  created () {
-    this.$parent.renderData.push({
-      header: this.header,
-      disabled: this.disabled
-    })
-  },
   beforeDestroy () {
     let renderData = this.$parent.renderData
     let me = this
@@ -65,6 +62,13 @@ export default {
     })
   },
   mounted () {
+    let customHeader = this.$slots && this.$slots.header && this.$slots.header[0].elm.outerHTML || ''
+    this.$parent.renderData.push({
+      header: this.header,
+      customHeader: customHeader,
+      disabled: this.disabled
+    })
+
     for (var c in this.$parent.$children) {
       if (this.$parent.$children[c].$el === this.$el) {
         this.index = +c
