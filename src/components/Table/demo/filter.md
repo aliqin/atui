@@ -191,10 +191,16 @@ new Vue({
   },
   data () {
     return {
-      gridData: data,
+      gridData: [],
       gridColumns: columns,
       rowSelection:rowSelection
     }
+  },
+  created () {
+    let me = this
+    setTimeout(function(){
+      me.gridData = data
+    },2000)
   },
   methods: {
     onTableChange(paging,filter,sorter) {

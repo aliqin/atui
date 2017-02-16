@@ -240,6 +240,7 @@ export default {
   },
   watch: {
     dataSource (data, oldData) {
+      this.originDataSource = Object.assign(this.dataSource || [], [])
       this.dataList = data
     },
     dataList: {
