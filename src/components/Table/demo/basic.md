@@ -35,15 +35,7 @@ var columns = [{
   dataIndex: 'address',
   filterMultiple: false,
   width:250
-},{
-    title: '操作',
-    key: 'operation',
-    render: function(text, record) {
-      if(record) {
-        return '<icon type="info-s"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
-      }
-    }
-  }
+}
 ];
 
 var data = [{
