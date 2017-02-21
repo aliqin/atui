@@ -82,14 +82,6 @@
                   <span v-if="rowExpandable(record, rowIndex)" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (rowStates[rowIndex].__expanded ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
                 </td>
                 <td v-for="column in columns" :class="[column.className || '']">
-                  <!--
-                  <template v-if="column.render && record">
-                    <span v-html="column.render.call(this._context,record[column.dataIndex],record,rowIndex)" />
-                  </template>
-                  <template v-else>
-                    <span v-html="record[column.dataIndex]"></span>
-                  </template>
-                  -->
                   <slot :name="column.dataIndex || column.key" :record="record" :row-index="row-index">
                     <span v-html="record[column.dataIndex]"></span>
                   </slot>
