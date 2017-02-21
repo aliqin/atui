@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 title:
   zh-CN: 过滤
   en-US: Filter
@@ -54,12 +54,7 @@ var columns = [{
   }
 },{
     title: '操作',
-    key: 'operation',
-    render: function(text, record) {
-      if(record) {
-        return '<icon type="info-s"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
-      }
-    }
+    key: 'operation'
   }
 ];
 ```
@@ -67,7 +62,11 @@ var columns = [{
 
 
 ````jsx
-<v-table :data-source="gridData" @table-change="onTableChange" :row-expandable="rowExpandable" :columns="gridColumns" row-key="key" ></v-table>
+<v-table :data-source="gridData" @table-change="onTableChange" :row-expandable="rowExpandable" :columns="gridColumns" row-key="key" >
+  <template scope="props" :slot="operation">
+    <v-button @click.native="onBtnClick(props.record)">操作</v-button>
+  </template>
+</v-table>
 ````
 
 ````vue-script
@@ -187,6 +186,7 @@ new Vue({
   el: 'body',
   components: {
     vTable: atui.Table,
+    vButton: atui.Button,
     icon: atui.Icon
   },
   data () {
@@ -207,6 +207,9 @@ new Vue({
       console.log('table-change',paging,filter,sorter)
       //let me = this
       //me.gridData = me.gridData.reverse()
+    },
+    onBtnClick (record) {
+      console.log(record)
     },
     rowExpandable (record, index) {
       debugger

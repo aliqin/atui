@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title:
   zh-CN: 可选择
   en-US: Type
@@ -31,7 +31,11 @@ const rowSelection = {
 
 
 ````jsx
-<v-table :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" :loading="loading"></v-table>
+<v-table :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" :loading="loading">
+  <template scope="props" :slot="operation">
+    <v-button>操作</v-button>
+  </template>
+</v-table>
 ````
 
 ````vue-script
@@ -51,9 +55,6 @@ var columns = [{
   title: '年龄',
   dataIndex: 'age',
   sorter: function(a, b) { return a.age - b.age },
-  render: function(text, record, index) {
-    return '<input v-model="gridData['+ index +'].age"/>'
-  },
   width:250
 }, {
   title: '地址',
@@ -70,12 +71,7 @@ var columns = [{
 
 },{
     title: '操作',
-    key: 'operation',
-    render: function(text, record) {
-      if(record) {
-        return '<icon type="info-s"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
-      }
-    }
+    key: 'operation'
   }
 ];
 
@@ -138,6 +134,7 @@ new Vue({
   components: {
     vTable: atui.Table,
     icon: atui.Icon,
+    vButton: atui.Button,
     row: atui.Layout.Row
   },
   data () {
