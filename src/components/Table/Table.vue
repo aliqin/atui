@@ -90,7 +90,7 @@
                     <span v-html="record[column.dataIndex]"></span>
                   </template>
                   -->
-                  <slot :name="column.dataIndex || column.key" :record="record" :row-index="row-index">
+                  <slot :name="column.dataIndex || column.key" :record="record" :row-index="rowIndex">
                     <span v-html="record[column.dataIndex]"></span>
                   </slot>
                 </td>
