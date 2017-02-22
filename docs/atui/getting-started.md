@@ -15,7 +15,7 @@ ATUI支持所有的现代浏览器和 IE9+。
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="//unpkg.com/atui@0.0.7/dist/greater-blue.css">
+    <link rel="stylesheet" href="//unpkg.com/atui@0.0.21/dist/greater-blue.css">
   </head>
   <body>
     <message>这是一个提示消息</message>
