@@ -3,6 +3,7 @@
     <trigger trigger="click" effect="slide"
     placement="bottomLeft"
     :disabled="disabled"
+    :offset="[0,0]"
     ref="trigger"
     popup-hide-when-click-outside>
       <div slot="trigger"

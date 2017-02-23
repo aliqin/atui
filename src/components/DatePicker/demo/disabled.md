@@ -1,12 +1,12 @@
 ---
 order: 1
 title:
-  zh-CN: 基本
+  zh-CN: 禁用状态
   en-US: Type
 ---
 
 ## zh-CN
-
+通过添加disabled属性来禁用组件
 
 
 ## en-US
