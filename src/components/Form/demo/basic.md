@@ -40,8 +40,7 @@ title:
     <v-textarea placeholder="变量格式：${name}; 示例：尊敬的${name}，您的快递已在飞奔的路上，将在今天$[time]送达您的手里，请留意查收。"></v-textarea>
   </form-item>
   <form-item label-col="4" wrapper-col="12">
-    <v-button type="submit" primary @click.native="validFun">确定</v-button>
-    <v-button type="reset" tertiary value="重置条件"></v-button>
+    <v-button type="submit" primary @click.native="validFun" style="margin-right:10px">确定</v-button><v-button type="reset" tertiary value="重置条件"></v-button>
   </form-item>
 </v-form>
 ````

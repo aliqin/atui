@@ -1,13 +1,21 @@
 // DatePicker
 // --------------------------------------------------
 @prefix-cls-datepicker: e("@{prefix-cls}-datepicker");
+@prefix-cls-input: e("@{prefix-cls}-input");
+
+.resetInput() {
+  box-shadow: none;
+  border-color: #bfbfbf;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
 
 .@{prefix-cls-datepicker} {
   display: inline-block;
   width: 100%;
   &-calendar {
     display: inline-block;
-    width: 218px;
+    width: 219px;
   }
   .@{prefix-cls}-calendar-body span {
     width: 28px;
@@ -41,6 +49,18 @@
     //   border: 1px solid @primary-color;
     //   box-shadow: none;
     // }
+    /*
+    .@{prefix-cls-input} {
+      &:hover {
+        &:active, &:focus {
+          .resetInput()
+        }
+      }
+      &:active, &:focus {
+        .resetInput()
+      }
+    }
+    */
   }
 
   .@{prefix-cls}-icon-calendar {
