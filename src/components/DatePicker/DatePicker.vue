@@ -62,7 +62,9 @@
       },
       disabledDate: {
         type: Function,
-        default: (date) => {}
+        default () {
+          return (date) => { return false }
+        }
       },
       disabled: Boolean,
       large: Boolean,
