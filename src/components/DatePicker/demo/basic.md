@@ -13,14 +13,14 @@ title:
 
 
 ````jsx
-<date-picker style="width: 219px"></date-picker>
+<date-picker style="width: 219px" :disabled-date="(date) => { return date.getMonth() === 1 }"></date-picker>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-      datePicker: atui.DatePicker
+    datePicker: atui.DatePicker
   }
 })
 ````
