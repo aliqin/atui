@@ -105,9 +105,7 @@
       },
       disabledDate: {
         type: Function,
-        default () {
-          return () => {}
-        }
+        default: () => {}
       },
       width: {
         type: String,
@@ -330,7 +328,6 @@
               }
             }
           }
-
           // 开发者指定的禁用日期
           if (this.disabledDate(date)) {
             sclass = 'atui-calendar-item-disable'

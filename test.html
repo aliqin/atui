@@ -1,42 +1,30 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/build/greater-blue.css"/>
+    <link rel="stylesheet" href="./build/greater-blue.css">
   </head>
   <body>
     <div id="app">
-    	<v-tabs>
-        <v-tab>
-          <span slot="header">我是自定义的头部区域111-{{foo}}</span>
-          系统短信签名内容
-        </v-tab>
-        <v-tab>
-          <span slot="header">我是自定义的头部区域222</span>
-          推广短信签名内容
-        </v-tab>
-      </v-tabs>
-      <v-button @click.native="changeHeader">change</v-button>
+      <v-button primary @click.native="onClick">这是一个按钮</v-button>
+      <div style="width:300px;">
+        <v-date-picker></v-date-picker>
+      </div>
     </div>
-    <script type="text/javascript" src="/dist/vue.js"></script> 
-    <script type="text/javascript" src="/build/atui.js"></script> 
-    <script type="text/javascript">
-    	new Vue({
-    		el: '#app',
+    <script src="./dist/vue.js"></script>
+    <script src="./build/atui.js"></script>
+    <script>
+      new Vue({
+        el:'#app',
         components: {
-          vTabs: atui.Tabs,
-          vTab: atui.Tabs.Tab,
-          vButton: atui.Button
-        },
-        data: {
-          foo: 'hello'
+          vButton: atui.Button,
+          vDatePicker: atui.DatePicker
         },
         methods: {
-          changeHeader: function() {
-            this.foo = 'world'
+          onClick () {
+            alert('button click')
           }
         }
-    	})
+      })
     </script>
-  </body>
+ </body>
 </html>

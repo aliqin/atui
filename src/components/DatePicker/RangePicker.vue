@@ -26,15 +26,11 @@
       disabled: Boolean,
       disabledStart: {
         type: Function,
-        default () {
-          return (date) => { return false }
-        }
+        default: (date) => { return false }
       },
       disabledEnd: {
         type: Function,
-        default () {
-          return (date) => { return false }
-        }
+        default: (date) => { return false }
       },
       prefixCls: {
         type: String,
