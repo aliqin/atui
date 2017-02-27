@@ -105,9 +105,7 @@
       },
       disabledDate: {
         type: Function,
-        default () {
-          return () => {}
-        }
+        default: () => {}
       },
       width: {
         type: String,
@@ -253,7 +251,7 @@
       },
       parse (str) {
         const date = new Date(str)
-        return isNaN(date.getFullYear()) ? null : date
+        return isNaN(date.getFullYear()) ? (new Date()) : date
       },
       getDayCount (year, month) {
         const dict = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -268,6 +266,7 @@
       getDateRange () {
         const { prefixCls } = this
         const today = new Date()
+
         const time = {
           year: this.currDate.getFullYear(),
           month: this.currDate.getMonth(),
@@ -329,7 +328,6 @@
               }
             }
           }
-
           // 开发者指定的禁用日期
           if (this.disabledDate(date)) {
             sclass = 'atui-calendar-item-disable'

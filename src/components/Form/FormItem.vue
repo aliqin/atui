@@ -12,7 +12,7 @@
       <template v-if="showIcon">
         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'warn'" type="waring-s"></icon>
         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'error'" type="error-s"></icon>
-        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'success-s'" type="success"></icon>
+        <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'success'" type="success-s"></icon>
         <icon :class="[prefixCls + '-form-status-icon']" v-if="validStatus == 'help'" type="help"></icon>
       </template>
     </div>
