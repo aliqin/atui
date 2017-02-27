@@ -3,6 +3,7 @@
     <trigger trigger="click" effect="slide"
     placement="bottomLeft"
     :disabled="disabled"
+    :offset="[0,0]"
     ref="trigger"
     popup-hide-when-click-outside>
       <div slot="trigger"
@@ -12,12 +13,6 @@
         :value="selectedValue"
         :placeholder="placeholder"
         readonly></v-input>
-        <!-- <input :class="[prefixCls + '-datepicker-input']"
-        v-bind="{disabled: disabled}"
-        type="text"
-        :value="value"
-        :placeholder="placeholder"
-        readonly /> -->
         <icon type="calendar" :color="iconColor"></icon>
       </div>
       <div slot="popup" :class="[prefixCls + '-datepicker-calendar']">
@@ -61,7 +56,7 @@
       },
       disabledDate: {
         type: Function,
-        default: (date) => {}
+        default: (date) => { return false }
       },
       disabled: Boolean,
       large: Boolean,

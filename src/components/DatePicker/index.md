@@ -32,3 +32,5 @@ startDate | 开始日期,如果不设置默认为今天 | String | |
 endDate | 结束日期,如果不设置默认为今天 | String | |
 disabled | 是否禁用 | Boolean | false
 format | 格式 | String | yyyy-MM-dd
+disabledStart | 禁用开始时间的部分日期 | Function | `(date) => { return false }` |
+disabledEnd | 禁用结束时间的部分日期 | Function | `(date) => { return false }` |
