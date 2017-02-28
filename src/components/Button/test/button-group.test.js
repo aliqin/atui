@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import Button from '../'
-let Group = Button.Group
+let ButtonGroup = Button.ButtonGroup
 let vm = new Vue({
   template: `
       <div>
-        <button-group>
+        <v-button-group>
           <v-button>
           </v-button>
           <v-button>
           </v-button>
-        </button-group>
+        </v-button-group>
       </div>
       `,
-  components: { vButton: Button, buttonGroup: Group },
+  components: { vButton: Button, vButtonGroup: ButtonGroup },
   data: {
 
   }
