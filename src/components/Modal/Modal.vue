@@ -5,6 +5,7 @@
     <div v-show="visible"
          :class="dialogClassObj"
          :style="{width: width}"
+         @click.stop="() => {}"
          role="document">
       <div :class="[prefixCls + '-modal-content']">
         <slot name="modal-header">

@@ -192,7 +192,7 @@
         } else {
           this.currDate = date
           // this.value = this.stringify(this.currDate)
-          this.$emit('change', this.stringify(this.currDate))
+          this.$emit('change', this.stringify(this.currDate), date)
         }
       },
       switchMonthView () {

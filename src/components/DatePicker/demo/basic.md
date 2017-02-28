@@ -13,7 +13,7 @@ title:
 
 
 ````jsx
-<date-picker style="width: 219px" :disabled-date="(date) => { return date.getMonth() === 1 }"></date-picker>
+<date-picker style="width: 219px" value="2017-03-02" format="yyyyMMdd" :disabled-date="(date) => { return date.getMonth() === 1 }"></date-picker>
 ````
 
 ````vue-script
