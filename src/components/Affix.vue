@@ -10,6 +10,7 @@
 <script>
 import EventListener from './_utils/EventListener.js'
 export default {
+  name: 'Affix',
   props: {
     offset: {
       type: Number,
