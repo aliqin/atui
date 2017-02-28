@@ -24,3 +24,22 @@ callback | 当点击主要按钮时触发的回调 | String |
 large | 大的弹窗 | Boolean | false
 small | 小的弹窗 | Boolean | false
 show | 是否显示 | Boolean | true
+
+### atui.Modal.xxx()
+
+包括：
+
+- Modal.info
+- Modal.success
+- Modal.error
+- Modal.confirm
+
+以上均为一个函数，参数为 object，具体属性如下：
+
+参数 | 说明 | 类型 | 默认值
+-----|-----|-----|-----|
+| title      | 标题           | string | 无           |
+| content    | 内容           | string | 无           |
+| onOk       | 点击确定回调，参数为关闭函数      | function         | 无           |
+| btnOkText     | 确认按钮文字    | string           | 确定       |
+| btnCancelText | 取消按钮文字    | string           | 取消       |
