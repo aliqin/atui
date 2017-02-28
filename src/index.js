@@ -74,7 +74,14 @@ const VueComponent = {
   Pagination
 }
 
-module.exports = VueComponent
+module.exports = { ...VueComponent }
+module.exports.version = '0.0.25'
+
+module.exports.install = (Vue, opts) => {
+  Object.keys(VueComponent).forEach((Comp) => {
+    Vue.component(Comp.name, Comp)
+  })
+}
 
 // ie10以及以下，对某些样式支持有问题，需要降级
 function getIEVersion () {

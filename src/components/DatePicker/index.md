@@ -16,6 +16,7 @@ subtitle: 日期选择器
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
+value | 默认值,格式为 `yyyy-MM-dd` | String | 无 | 
 placeholder | 占位文字 | String | 请选择日期
 disabled | 是否禁用 | Boolean | false
 format | 格式 | String | yyyy-MM-dd
@@ -28,8 +29,8 @@ locale | 语言 | String  `zh_CN` or  `en_US`| zh_CN
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-startDate | 开始日期,如果不设置默认为今天 | String | |
-endDate | 结束日期,如果不设置默认为今天 | String | |
+startDate | 开始日期,格式为 `yyyy-MM-dd`,如果不设置默认为今天 | String | |
+endDate | 结束日期,格式为 `yyyy-MM-dd`,如果不设置默认为今天 | String | |
 disabled | 是否禁用 | Boolean | false
 format | 格式 | String | yyyy-MM-dd
 disabledStart | 禁用开始时间的部分日期 | Function | `(date) => { return false }` |
