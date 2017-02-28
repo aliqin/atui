@@ -30,57 +30,106 @@ import Accordion from './components/Accordion/'
 
 // 导航类
 import Popover from './components/Popover/'
-import Tabs from './components/Tabs/'
+import Tabset from './components/Tabs/'
 import Steps from './components/Steps/'
 import Tree from './components/Tree/'
 import Menu from './components/Menu/'
 import Breadcrumb from './components/Breadcrumb/'
 import Pagination from './components/Pagination/'
 
+// 处理子组件
+const { Col, Row } = Layout
+
+const { ButtonGroup } = Button
+
+const { BreadcrumbItem } = Breadcrumb
+
+const { CSlide } = Carousel
+
+const { RangePicker } = DatePicker
+
+const { FormItem } = Form
+
+const { SubMenu, MenuItem, MenuItemGroup } = Menu
+
+const { Option } = Select
+
+const { Step } = Steps
+
+const { Tab } = Tabset
+
+const { TreeNode } = Tree
+
 const VueComponent = {
   Layout,
+  Col,
+  Row,
   Icon,
   Form,
+  FormItem,
   Searchbox,
   Uploader,
   Slider,
   Switch,
   Dropdown,
   Select,
+  Option,
   Calendar,
   TimePicker,
   DatePicker,
+  RangePicker,
   Message,
   Cascader,
   Modal,
   Table,
   Badge,
   Carousel,
+  CSlide,
   Affix,
   Spin,
   Textarea,
   Input,
   Button,
+  ButtonGroup,
   Tag,
   Tooltip,
   Trigger,
   Accordion,
   Popover,
-  Tabs,
+  Tabset,
+  Tab,
   Steps,
+  Step,
   Tree,
+  TreeNode,
   Menu,
+  SubMenu,
+  MenuItem,
+  MenuItemGroup,
   Breadcrumb,
+  BreadcrumbItem,
   Pagination
 }
 
 module.exports = { ...VueComponent }
-module.exports.version = '0.0.25'
+module.exports.version = '0.0.26'
 
 module.exports.install = (Vue, opts) => {
-  Object.keys(VueComponent).forEach((Comp) => {
-    Vue.component(Comp.name, Comp)
+  Object.keys(VueComponent).forEach((key) => {
+    // prefix component name with 'v'  <v-button></v-button>
+    let comp = VueComponent[key]
+    let compName = comp.name
+    if (compName) {
+      let dashCompName = 'v-' + camel2Dash(compName)
+      console.log(dashCompName)
+      Vue.component(dashCompName, comp)
+    }
   })
+}
+
+function camel2Dash (_str) {
+  const str = _str[0].toLowerCase() + _str.substr(1)
+  return str.replace(/([A-Z])/g, ($1) => `-${$1.toLowerCase()}`)
 }
 
 // ie10以及以下，对某些样式支持有问题，需要降级

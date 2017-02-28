@@ -13,11 +13,12 @@
     <script src="./dist/vue.js"></script>
     <script src="./build/atui.js"></script>
     <script>
+      Vue.use(atui)
+      
       new Vue({
         el:'#app',
         components: {
-          vButton: atui.Button,
-          vDatePicker: atui.DatePicker
+          
         },
         methods: {
           onClick () {

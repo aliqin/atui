@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    name: 'Group',
+    name: 'ButtonGroup',
     props: {
       large: Boolean,
       small: Boolean,

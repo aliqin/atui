@@ -1,4 +1,4 @@
 import Carousel from './Carousel.vue'
-import Slide from './Slide.vue'
-Carousel.Slide = Slide
+import CSlide from './CSlide.vue'
+Carousel.CSlide = CSlide
 export default Carousel

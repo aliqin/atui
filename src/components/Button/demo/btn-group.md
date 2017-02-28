@@ -55,7 +55,7 @@ new Vue({
   el: 'body',
   components: {
     vButton: atui.Button,
-    buttonGroup: atui.Button.Group,
+    buttonGroup: atui.Button.ButtonGroup,
     icon: atui.Icon
   }
 })
