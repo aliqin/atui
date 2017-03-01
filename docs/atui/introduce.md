@@ -20,7 +20,7 @@ english: AliTelecom UI System
 
 ## 版本
 
-目前最新版本 v0.0.21
+目前最新版本 v0.0.27
 
 ## 浏览器支持
 
@@ -31,7 +31,7 @@ english: AliTelecom UI System
 - [阿里天机](https://alitj.tmall.com/#!/)
 - [阿里大于](https://www.alidayu.com/)
 - [优酷移动](https://youku170.tmall.com/)
-
+- 阿里通信
 
 ## 如何贡献
 
