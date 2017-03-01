@@ -50,7 +50,7 @@ import vDatePicker from 'atui/lib/date-picker';
 
 new Vue({
   components: {
-    Alert:atui.Alert
+    vButton:atui.Button
   }
 })
 ```
@@ -61,10 +61,10 @@ new Vue({
 <script src="//unpkg.com/vue@2.1.4"></script>
 <script src="//unpkg.com/atui"></script>
 <script>
-  const { Alert } = atui
+  const { Button } = atui
   new Vue({
     components: {
-      Alert
+      Button
     }
   })
 </script>

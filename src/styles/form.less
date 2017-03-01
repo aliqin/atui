@@ -163,12 +163,18 @@ input[type="radio"] {
     padding-right: 30px;
     & > label {
       display: inline-block;
-      padding-bottom: 7px;
+      padding: 7px;
+
+      input[type="radio"], input[type="checkbox"] {
+        margin-right: 10px;
+      }
     }
   }
 
   .@{prefix-cls-form}-status-info {
     line-height: 20px;
+    position: absolute;
+    top: 100%;
   }
 }
 

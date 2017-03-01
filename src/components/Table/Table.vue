@@ -14,7 +14,7 @@
           <slot name = "head-row" :columns="columns">
           <tr>
             <th v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
-              <input v-if="dataList && dataList.length" type="checkbox" v-bind="{checked:isCheckedAll,disabled:isDisabledAll}" @change="onCheckAll"
+              <input v-if="dataList && dataList.length" type="checkbox"  @change="onCheckAllChange"
               />
             </th>
             <th v-if="expandedRowRender" :class="[prefixCls + '-table-expand-icon-th']"></th>
@@ -65,10 +65,14 @@
         </thead>
         <tbody>
           <tr v-if="!dataList || !dataList.length">
-            <td colspan="20" style="text-align: center;" :class="[prefixCls + '-table-empty']">{{noDataTip}}</td>
+            <td colspan="20" style="text-align: center;" :class="[prefixCls + '-table-empty']">
+              <slot name="noDataTip">
+                {{noDataTip}}
+              </slot>
+            </td>
           </tr>
           <template v-for="(record, rowIndex) in dataList">
-            <slot name="row" :record="record" :row-index="row-index">
+            <!--<slot name="row" :record="record" :row-index="row-index">-->
               <tr :track-by="rowIndex"  @click="onRowClick(rowIndex, record)">
                 <td v-if="rowSelection" :class="[prefixCls + '-table-selection-column']">
                   <input type="checkbox" v-model="checkedValues" :value="record[rowKey]" @change.stop="onCheckOne($event,record)" v-bind="rowSelection.getCheckboxProps && rowSelection.getCheckboxProps(record)"
@@ -78,12 +82,17 @@
                   <span v-if="rowExpandable(record, rowIndex)" :class="[prefixCls + '-table-row-expand-icon', prefixCls + (rowStates[rowIndex].__expanded ? '-table-row-expanded' : '-table-row-collapsed') ]"  @click="onRowExpand(rowIndex, record)"></span>
                 </td>
                 <td v-for="column in columns" :class="[column.className || '']">
+                  <!--
                   <template v-if="column.render && record">
                     <span v-html="column.render.call(this._context,record[column.dataIndex],record,rowIndex)" />
                   </template>
                   <template v-else>
                     <span v-html="record[column.dataIndex]"></span>
                   </template>
+                  -->
+                  <slot :name="column.dataIndex || column.key" :record="record" :row-index="rowIndex">
+                    <span v-html="record[column.dataIndex]"></span>
+                  </slot>
                 </td>
               </tr>
               <tr v-if="rowStates[rowIndex].__expanded" :class="[prefixCls + '-table-expanded-row']">
@@ -93,7 +102,7 @@
                 <td :colspan="columns.length" v-html="expandedRowRender(record)">
                 </td>
               </tr>
-            </slot>
+            <!--</slot> -->
           </template>
         </tbody>
       </table>
@@ -236,6 +245,7 @@ export default {
   },
   watch: {
     dataSource (data, oldData) {
+      this.originDataSource = Object.assign(this.dataSource || [], [])
       this.dataList = data
     },
     dataList: {
@@ -243,6 +253,10 @@ export default {
         let me = this
         let rowStates = me.rowStates
         data.forEach && data.forEach((record, index) => {
+          if (!rowStates[index]) {
+            rowStates[index] = {}
+          }
+
           if (!rowStates[index].hasOwnProperty('__expanded')) {
             Vue.set(rowStates[index], '__expanded', false)
           }
@@ -289,7 +303,7 @@ export default {
       })
     },
     // 点击全选框触发
-    onCheckAll (event) {
+    onCheckAllChange (event) {
       let me = this
       let changeRows = []
       let input = event.srcElement || event.target

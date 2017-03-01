@@ -384,7 +384,6 @@
             offset[1] = -triggerHeight
           }
         }
-
         $popup.style.left = this.position.left + offset[0] + 'px'
         $popup.style.top = this.position.top + offset[1] + 'px'
 
