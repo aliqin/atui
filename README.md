@@ -1,3 +1,8 @@
+<p align="center">
+  <img width="240" src="http://img.alicdn.com/tps/TB16_awMVXXXXcKXpXXXXXXXXXX-360-92.png">
+</p>
+
+
 # atui
 A Vue.js 2.0 UI Toolkit for Web http://aliqin.github.io
 
