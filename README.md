@@ -1,7 +1,7 @@
 # atui
-阿里通信基于Vue.js的组件库. http://aliqin.github.io
+A Vue.js 2.0 UI Toolkit for Web http://aliqin.github.io
 
-[Vue.js](http://vuejs.org/) (基于Vue.js `v2.1.4 版本以上`).
+[Vue.js](http://vuejs.org/) (require Vue.js `>=v2.1.4`).
 
 --------
 
@@ -23,7 +23,7 @@
 
 
 
-## 安装方法
+## install
 
 ### NPM
 
@@ -35,27 +35,33 @@ $ npm install atui --save-dev
 ```js
 $ npm install atui --save-dev
 
-// css引入 greater-blue | tao-orange | or tmall-red (推荐)
+// css
 import 'atui/dist/greater-blue.css'
 
-// 或less引入
+// or less
 import 'atui/style/themes/greater-blue.less'
 
-// 引入组件
+// import atui
 import atui from 'atui'
-
-// 如果只使用了少量的组件，也可以按需引入
-import vButton from 'atui/lib/button';
-import vDatePicker from 'atui/lib/date-picker';
 
 new Vue({
   components: {
-    vButton:atui.Button
+    vButton: atui.Button
+    vDatePicker: atui.vDatePicker
   }
 })
+
+// use as required
+import vDatePicker from 'atui/lib/date-picker';
+new Vue({
+  components: {
+    vDatePicker: vDatePicker
+  }
+})
+
 ```
 
-### 浏览器引用
+### use in browser
 
 ```html
 <script src="//unpkg.com/vue@2.1.4"></script>
