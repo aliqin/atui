@@ -71,10 +71,9 @@ new Vue({
 <script src="//unpkg.com/vue@2.1.4"></script>
 <script src="//unpkg.com/atui"></script>
 <script>
-  const { Button } = atui
   new Vue({
     components: {
-      Button
+      vButton: atui.Button
     }
   })
 </script>
