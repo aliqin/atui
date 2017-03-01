@@ -11,7 +11,8 @@
             @click.prevent="handleTabListClick(index, r)"
             :disabled="r.disabled"
         >
-            <a href="javascript:void(0);" v-html="r.header"></a>
+            <a v-if="r.customHeader" v-html="r.customHeader"></a>
+            <a v-else href="javascript:void(0);" v-html="r.header"></a>
         </li>
       </ul>
       <ul v-else :class="listClassObj" role="tablist">

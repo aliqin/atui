@@ -10,7 +10,7 @@ cols: 1
 
 ## 何时使用
 
-目前暂时还没有使用场景，日历控件没有经过业务考验，尚不成熟
+基础的日历控件
 
 ## API
 
@@ -19,5 +19,7 @@ cols: 1
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-
-
+value | 默认值,格式为 `yyyy-MM-dd` | String | 无 | 
+format | 格式 | String | `yyyy-MM-dd` |
+disabledDate | 禁用的日期 | Function | `function(){}` |
+@change | 选择日期后的回调函数 | Function(dateStr, date) | `function(){}` |

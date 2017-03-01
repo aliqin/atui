@@ -54,8 +54,7 @@ title:
     <label><input type="checkbox" />阅读并接受《用户协议》</label>
   </form-item>
   <form-item required label-col="4">
-    <v-button type="submit" primary @click.native="validFun">确定</v-button>
-    <v-button type="reset" tertiary value="重置条件"></v-button>
+    <v-button type="submit" primary @click.native="validFun" style="margin-right: 10px;">确定</v-button><v-button type="reset" tertiary value="重置条件"></v-button>
   </form-item>
 </v-form>
 ````

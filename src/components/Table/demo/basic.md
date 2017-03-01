@@ -7,13 +7,15 @@ title:
 
 ## zh-CN
 
-最基本的数据展示
+最基本的数据展示，当数据源为空时展示noDataTip的slot里的内容
 
 ## en-US
 
 
 ````jsx
-<v-table :data-source="gridData" :columns="gridColumns" row-key="key" @row-click="rowClick"></v-table>
+<v-table :data-source="gridData" :columns="gridColumns" row-key="key" @row-click="rowClick">
+  <div slot="noDataTip">if dataSource is null, i will displayed</div>
+</v-table>
 ````
 
 
@@ -33,15 +35,7 @@ var columns = [{
   dataIndex: 'address',
   filterMultiple: false,
   width:250
-},{
-    title: '操作',
-    key: 'operation',
-    render: function(text, record) {
-      if(record) {
-        return '<icon type="info-s"></icon><a href="'+ record.key+'.html" target="_blank">详情</a>'
-      }
-    }
-  }
+}
 ];
 
 var data = [{
@@ -87,7 +81,7 @@ new Vue({
   },
   data () {
     return {
-      gridData:data,
+      gridData: data,
       gridColumns: columns
     }
   },

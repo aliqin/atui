@@ -1,32 +1,23 @@
----
-order: 1
-english: 快速上手
----
----
-
-
-## 浏览器支持
-
-ATUI支持所有的现代浏览器和 IE9+。
-
-
-```html
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="//unpkg.com/atui/dist/greater-blue.css">
+    <link rel="stylesheet" href="./build/greater-blue.css">
   </head>
   <body>
     <div id="app">
       <v-button primary @click.native="onClick">这是一个按钮</v-button>
+      <div style="width:300px;">
+        <v-date-picker></v-date-picker>
+      </div>
     </div>
-    <script src="//unpkg.com/vue"></script>
-    <script src="//unpkg.com/atui"></script>
+    <script src="./dist/vue.js"></script>
+    <script src="./build/atui.js"></script>
     <script>
       new Vue({
         el:'#app',
         components: {
-          vButton: atui.Button
+          vButton: atui.Button,
+          vDatePicker: atui.DatePicker
         },
         methods: {
           onClick () {
@@ -37,5 +28,3 @@ ATUI支持所有的现代浏览器和 IE9+。
     </script>
  </body>
 </html>
-```
-
