@@ -4,12 +4,6 @@
 
 
 # atui
-A Vue.js 2.0 UI Toolkit for Web http://aliqin.github.io
-
-[Vue.js](http://vuejs.org/) (require Vue.js `>=v2.1.4`).
-
---------
-
 [![Build Status](https://travis-ci.org/aliqin/atui.svg?branch=dev)](https://travis-ci.org/aliqin/atui)
 [![NPM download][npmdl-image]][npm-url]
 [![NPM version][npm-image]][npm-url]
@@ -24,6 +18,13 @@ A Vue.js 2.0 UI Toolkit for Web http://aliqin.github.io
 [gzipcss-image]: http://img.badgesize.io/https://unpkg.com/atui/dist/greater-blue.css?compression=gzip&label=gzip%20size:%20CSS
 [npm-url]: https://www.npmjs.com/package/atui
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+
+> A Vue.js 2.0 UI Toolkit for Web
+
+[Vue.js](http://vuejs.org/) (require Vue.js `>=v2.1.4`).
+
+--------
+
 
 
 
