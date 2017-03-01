@@ -3,7 +3,7 @@
 </p>
 
 
-# atui
+# ATUI
 [![Build Status](https://travis-ci.org/aliqin/atui.svg?branch=dev)](https://travis-ci.org/aliqin/atui)
 [![NPM download][npmdl-image]][npm-url]
 [![NPM version][npm-image]][npm-url]
@@ -30,8 +30,6 @@
 
 
 ## Install
-
-### npm
 
 ```bash
 $ npm install atui --save-dev
