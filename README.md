@@ -29,17 +29,17 @@
 
 
 
-## install
+## Install
 
-### NPM
+### npm
 
 ```bash
 $ npm install atui --save-dev
 ```
 
 
+## Quick Start
 ```js
-$ npm install atui --save-dev
 
 // css
 import 'atui/dist/greater-blue.css'
@@ -81,3 +81,7 @@ new Vue({
   })
 </script>
 ```
+
+### LICENSE
+
+MIT
