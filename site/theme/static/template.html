@@ -8,7 +8,8 @@
     <script>
       var hostname = location.hostname
       var env = 'online'
-      var root = '/'
+      // aliqin.github.io/  or aliqin.github.io/atui
+      var root = location.pathname.indexOf('/atui') === 0 ? '/atui/' : '/'
       var vuePath = '/vue.js'
       if(~hostname.indexOf('localhost') || ~hostname.indexOf('127.0.0.1')){
         env = 'dev'
@@ -20,7 +21,6 @@
     <script type="text/javascript">
       document.write('<link rel="stylesheet" type="text/css" id="J_ThemeCss" href="' + root + 'greater-blue.css" \/>')
     </script>
-    
   </head>
   <body>
     <div id="react-content"></div>
