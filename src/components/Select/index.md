@@ -22,7 +22,7 @@ multiple | 是否多选 | Boolean |  false |
 selectedOptions | 多选时选中的options | [] |
 tags | 是否输入变Tag | Boolean | false |
 disabled | 是否禁用 | Boolean | false |
-dropdownClassName ｜ 下拉菜单的class名 | String | |
+dropdownClassName | 下拉菜单的class名 | String | |
 dropdownZIndex | 下拉菜单的zindex值 | Number | |
 
 ### Option
