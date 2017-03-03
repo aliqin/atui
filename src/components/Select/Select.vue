@@ -7,6 +7,8 @@
              :disabled="disabled"
              :width="width"
              :show="show"
+             :popup-z-index="dropdownZIndex ? dropdownZIndex : 0"
+             :custom-popup-cls="dropdownClassName"
              @toggle-popup="togglePopupHandler"
              popup-use-trigger-width
              ref="trigger">
@@ -47,13 +49,21 @@
     mixins: [GlobalMixin],
 
     props: {
-      defaultValue: {
+      value: {
         type: [String, Number, Array],
         default: ''
       },
       placeholder: {
         type: String,
         default: '请选择'
+      },
+      dropdownClassName: {
+        type: String,
+        default: ''
+      },
+      dropdownZIndex: {
+        type: Number,
+        default: 0
       },
       large: Boolean,
       small: Boolean,
@@ -72,37 +82,35 @@
         type: Boolean
       }
     },
-
     components: {
       Icon,
       Tag,
       Trigger
     },
-
     created () {
       let me = this
-      let value = me.defaultValue
+      let value = this.value
       if (me.multiple || me.tags) {
         me.multipleSelect = true
       }
-      value = me.getValue()
-      if ((me.defaultValue !== null) || me.selectedOptions.length) {
+      value = me.formatValue(value)
+      if ((me.value !== null) || me.selectedOptions.length) {
         me.showPlaceholder = false
       }
-      this.value = value
+      this.currValue = value
       this.$on('option-change', function (option) {
         me.showPlaceholder = false
-
         if (me.multipleSelect) {
-          let isSelected = me.value.indexOf(option.value) >= 0
+          let isSelected = me.currValue.indexOf(option.value) >= 0
           if (!isSelected) {
-            me.value.push(option.value)
+            me.currValue.push(option.value)
           } else {
-            let index = me.value.indexOf(option.value)
-            me.value.splice(index, 1)
+            let index = me.currValue.indexOf(option.value)
+            me.currValue.splice(index, 1)
           }
         } else {
-          me.value = option.value
+          me.currValue = option.value
+          this.selectedOptions = [option]
         }
         if (!this.multipleSelect) {
           // this.show = false
@@ -120,7 +128,7 @@
         showPlaceholder: true,
         showNotify: false,
         show: false,
-        value: [],
+        currValue: this.value,
         multipleSelect: false,
         options: [],
         selectedOptions: []
@@ -146,11 +154,12 @@
     },
 
     watch: {
-      defaultValue (val) {
-        this.value = this.getValue()
+      currValue (newVal, oldVal) {
+        this.$emit('input', newVal)
       },
       value (val) {
         let me = this
+        this.currValue = this.formatValue(val)
         if (!val) {
           me.showPlaceholder = true
           return
@@ -159,7 +168,7 @@
         if (me.multipleSelect) {
           if (val.length > this.limit) {
             me.showNotify = true
-            me.value.pop()
+            me.currValue.pop()
             setTimeout(() => { me.showNotify = false }, 1000)
           }
           // 多选时，当value有变化则重新设置selectedOptions
@@ -203,23 +212,24 @@
 
     methods: {
       /**
-       * 根据defaultValue获取初始的value
-       * @param defaultValue
+       * 根据绑定的value获取format后的
+       * @param value
        */
-      getValue (defaultValue) {
+      formatValue (value) {
         let me = this
-        let value = me.defaultValue
-        if (me.defaultValue === null) {
+        value = value || me.value
+
+        if (value === null) {
           value = me.multipleSelect ? [] : ''
         }
-        if (me.multipleSelect && !Array.isArray(me.defaultValue)) {
-          value = [me.defaultValue]
+        if (me.multipleSelect && !Array.isArray(value)) {
+          value = [value]
         }
-        if (!me.multipleSelect && Array.isArray(me.defaultValue)) {
-          value = me.defaultValue.slice(0, 1)
+        if (!me.multipleSelect && Array.isArray(value)) {
+          value = value.slice(0, 1)
         }
-        if (me.multipleSelect && me.defaultValue.length > me.limit) {
-          value = me.defaultValue.slice(0, me.limit)
+        if (me.multipleSelect && value.length > me.limit) {
+          value = value.slice(0, me.limit)
         }
 
         return value
@@ -229,18 +239,18 @@
        * @param value {any}
        */
       setValue (value) {
-        this.value = value
+        this.currValue = value
       },
       closeTag (option) {
-        let index = this.value.indexOf(option.value)
-        this.value.splice(index, 1)
+        let index = this.currValue.indexOf(option.value)
+        this.currValue.splice(index, 1)
       },
       deleteTag (event) {
         let input = event.target
         let value = input.value
         if (value.length === 0) {
-          let index = this.value.indexOf(value)
-          this.value.splice(index, 1)
+          let index = this.currValue.indexOf(value)
+          this.currValue.splice(index, 1)
         }
       },
       onInput (event) {
@@ -256,8 +266,8 @@
           if (!value || !value.trim().length) {
             return
           }
-          if (this.value.indexOf(value) === -1) {
-            this.value.push(value)
+          if (this.currValue.indexOf(value) === -1) {
+            this.currValue.push(value)
           }
           this.searchText = ''
           event.target.style.width = '10px'

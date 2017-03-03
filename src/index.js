@@ -112,16 +112,16 @@ const VueComponent = {
 }
 
 module.exports = { ...VueComponent }
-module.exports.version = '0.0.26'
+module.exports.version = '0.0.28'
 
 module.exports.install = (Vue, opts) => {
+  let prefix = opts.prefix || 'v'
   Object.keys(VueComponent).forEach((key) => {
     // prefix component name with 'v'  <v-button></v-button>
     let comp = VueComponent[key]
     let compName = comp.name
     if (compName) {
-      let dashCompName = 'v-' + camel2Dash(compName)
-      console.log(dashCompName)
+      let dashCompName = prefix + '-' + camel2Dash(compName)
       Vue.component(dashCompName, comp)
     }
   })

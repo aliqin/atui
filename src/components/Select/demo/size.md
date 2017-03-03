@@ -14,7 +14,7 @@ title:
 
 ````jsx
 <p>large</p>
-<v-select default-value="Orange" large style="width:200px" @change="onSlectChange">
+<v-select v-model="OrangeVal" large style="width:200px" @change="onSlectChange">
   <v-option value="Apple">苹果</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -22,7 +22,7 @@ title:
   <v-option value="Grape">Grape</v-option>
 </v-select>
 <p>default</p>
-<v-select default-value="Apple" style="width:200px" @change="onSlectChange">
+<v-select v-model="AppleVal" style="width:200px" @change="onSlectChange">
   <v-option value="Apple">苹果</v-option>
   <v-option value="Banana" disabled>Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -48,7 +48,9 @@ new Vue({
   },
   data() {
     return {
-      single: ''
+      single: '',
+      OrangeVal: 'Orange',
+      AppleVal: 'Apple'
     }
   },
   methods: {

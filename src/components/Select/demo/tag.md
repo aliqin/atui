@@ -14,7 +14,7 @@ tags(输入回车时变成一个tag)
 
 ````jsx
 
-<v-select tags placeholder="请输入" default-value="Banana" style="width:100%;">
+<v-select tags placeholder="请输入" v-model="selectedValue" style="width:100%;">
   <v-option value="Apple">Apple</v-option>
   <v-option value="Banana">Banana</v-option>
   <v-option value="Cherry">Cherry</v-option>
@@ -32,7 +32,8 @@ new Vue({
   },
   data() {
     return {
-      single: ''
+      single: '',
+      selectedValue: 'Banana'
     }
   },
   methods: {
