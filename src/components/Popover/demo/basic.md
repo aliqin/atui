@@ -17,7 +17,9 @@ title:
   effect="fade"
   placement="bottom"
   title="我是标题"
-  content="我是内容，我是内容，我是内容">
+  content="我是内容，我是内容，我是内容"
+  pop-cls="mypop"
+  :pop-z-index="9090">
   <v-button>Popover on bottom</v-button>
 </popover>
 ````
