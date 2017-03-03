@@ -28,6 +28,7 @@
          v-show="showPopup"
          :class="popupClassObj"
          :transition="effect"
+         :style="popupZIndex ? ('z-index:' + popupZIndex) : ''"
          @mouseenter="hoverHandler"
          @mouseleave="hoverHandler">
       <slot name="popup"></slot>
@@ -36,6 +37,7 @@
          ref="popup"
          v-show="showPopup"
          :class="popupClassObj"
+         :style="popupZIndex ? ('z-index:' + popupZIndex) : ''"
          :transition="effect">
       <slot name="popup"></slot>
     </div>
@@ -75,6 +77,14 @@
       popupCls: {
         type: String,
         default: 'popup'
+      },
+      customPopupCls: {
+        type: String,
+        default: ''
+      },
+      popupZIndex: {
+        type: Number,
+        default: 0
       },
       popupAlwaysInView: {
         type: Boolean,
@@ -123,7 +133,7 @@
 
     computed: {
       popupClassObj () {
-        let { prefixCls, popupCls, placement } = this
+        let { prefixCls, popupCls, placement, customPopupCls } = this
         let classObj = {}
 
         classObj[`${prefixCls}-popup`] = true
@@ -140,6 +150,10 @@
         classObj[`${prefixCls}-${popupCls}-bottom`] = placement === 'bottom'
         classObj[`${prefixCls}-${popupCls}-bottom-left`] = placement === 'bottomLeft'
         classObj[`${prefixCls}-${popupCls}-bottom-right`] = placement === 'bottomRight'
+
+        if (customPopupCls) {
+          classObj[customPopupCls] = true
+        }
 
         return classObj
       }
