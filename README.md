@@ -1,10 +1,9 @@
-# atui
-阿里通信基于Vue.js的组件库. http://aliqin.github.io
+<p align="center">
+  <img width="240" src="http://img.alicdn.com/tps/TB16_awMVXXXXcKXpXXXXXXXXXX-360-92.png">
+</p>
 
-[Vue.js](http://vuejs.org/) (基于Vue.js `v2.1.4 版本以上`).
 
---------
-
+# ATUI
 [![Build Status](https://travis-ci.org/aliqin/atui.svg?branch=dev)](https://travis-ci.org/aliqin/atui)
 [![NPM download][npmdl-image]][npm-url]
 [![NPM version][npm-image]][npm-url]
@@ -20,52 +19,66 @@
 [npm-url]: https://www.npmjs.com/package/atui
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
+> A Vue.js 2.0 UI Toolkit for Web
+
+[Vue.js](http://vuejs.org/) (require Vue.js `>=v2.1.4`).
+
+--------
 
 
 
-## 安装方法
 
-### NPM
+
+## Install
 
 ```bash
 $ npm install atui --save-dev
 ```
 
 
+## Quick Start
 ```js
-$ npm install atui --save-dev
 
-// css引入 greater-blue | tao-orange | or tmall-red (推荐)
+// css
 import 'atui/dist/greater-blue.css'
 
-// 或less引入
+// or less
 import 'atui/style/themes/greater-blue.less'
 
-// 引入组件
+// import atui
 import atui from 'atui'
-
-// 如果只使用了少量的组件，也可以按需引入
-import vButton from 'atui/lib/button';
-import vDatePicker from 'atui/lib/date-picker';
 
 new Vue({
   components: {
-    vButton:atui.Button
+    vButton: atui.Button,
+    vDatePicker: atui.vDatePicker
   }
 })
+
+// use as required
+import vDatePicker from 'atui/lib/date-picker';
+new Vue({
+  components: {
+    vDatePicker: vDatePicker
+  }
+})
+
 ```
 
-### 浏览器引用
+### use in browser
 
 ```html
 <script src="//unpkg.com/vue@2.1.4"></script>
 <script src="//unpkg.com/atui"></script>
 <script>
-  const { Button } = atui
   new Vue({
     components: {
-      Button
+      vButton: atui.Button
     }
   })
 </script>
 ```
+
+### LICENSE
+
+MIT
