@@ -21,7 +21,7 @@
 
 > A Vue.js 2.0 UI Toolkit for Web
 
-[Vue.js](http://vuejs.org/) (require Vue.js `>=v2.1.4`).
+require [Vue.js](http://vuejs.org/) `>=v2.1.4`
 
 --------
 
