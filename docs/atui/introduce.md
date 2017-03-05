@@ -20,7 +20,7 @@ english: AliTelecom UI System
 
 ## 版本
 
-目前最新版本 v0.0.27
+目前最新版本 v0.0.28
 
 ## 浏览器支持
 
