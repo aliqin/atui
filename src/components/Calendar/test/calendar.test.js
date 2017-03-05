@@ -18,4 +18,13 @@ describe('Calendar组件单元测试', () => {
   it('基本功能渲染', () => {
     expect(vm.$el.querySelectorAll('.atui-calendar').length).to.be.equal(1)
   })
+
+  it('显示隐藏', () => {
+    // vm.disabledDate = function () {
+    //   return date.getTime() < new Date(value + ' 00:00:00').getTime()
+    // }
+    vm.$nextTick(() => {
+      expect(vm.$el.querySelectorAll('.atui-calendar').length).to.be.equal(1)
+    })
+  })
 })
