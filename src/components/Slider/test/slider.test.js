@@ -25,4 +25,11 @@ describe('Slider组件单元测试', () => {
     expect(vm.$el.querySelectorAll('.atui-slider-step').length).to.be.equal(3)
     expect(vm.$el.querySelectorAll('.atui-slider-mark').length).to.be.equal(3)
   })
+
+  it('改变范围', () => {
+    vm.sliderValue = 20
+    vm.$nextTick(() => {
+
+    })
+  })
 })

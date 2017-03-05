@@ -112,10 +112,20 @@ describe('Table', () => {
   it('Table组件基础渲染', () => {
     expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(6)
   })
+
   it('Table数据清空', () => {
     vm.gridData = []
     vm.$nextTick(() => {
       expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(1)
+    })
+  })
+
+  it('展示分页', () => {
+    vm.pagination = {
+      total: 60
+    }
+    vm.$nextTick(() => {
+      expect(vm.$el.querySelectorAll('.atui-table-pagination').length).to.equal(1)
     })
   })
 })

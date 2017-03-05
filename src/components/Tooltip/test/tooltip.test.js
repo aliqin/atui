@@ -4,7 +4,7 @@ import Tooltip from '../'
 let vm = new Vue({
   template: `
       <div>
-      <tooltip content="我是tooltip" placement="top">
+      <tooltip :style="{width: '60px', float: 'left'}" content="我是tooltip" placement="topRight">
         <button class="btn btn-default ">上边</button>
       </tooltip>
       </div>

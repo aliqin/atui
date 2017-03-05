@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
   import Tooltip from '../Tooltip/'
   import EventListener from '../_utils/EventListener'
 
