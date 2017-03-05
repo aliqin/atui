@@ -20,7 +20,6 @@ import Modal from './components/Modal/'
 import Table from './components/Table/'
 import Badge from './components/Badge/'
 import Carousel from './components/Carousel/'
-import Affix from './components/Affix.vue'
 import Spin from './components/Spin/'
 import Textarea from './components/Textarea/'
 import Tag from './components/Tag/'
@@ -30,7 +29,7 @@ import Accordion from './components/Accordion/'
 
 // 导航类
 import Popover from './components/Popover/'
-import Tabset from './components/Tabs/'
+import Tabs from './components/Tabs/'
 import Steps from './components/Steps/'
 import Tree from './components/Tree/'
 import Menu from './components/Menu/'
@@ -44,7 +43,7 @@ const { ButtonGroup } = Button
 
 const { BreadcrumbItem } = Breadcrumb
 
-const { CSlide } = Carousel
+const { Slide } = Carousel
 
 const { RangePicker } = DatePicker
 
@@ -56,7 +55,7 @@ const { Option } = Select
 
 const { Step } = Steps
 
-const { Tab } = Tabset
+const { Tab } = Tabs
 
 const { TreeNode } = Tree
 
@@ -84,8 +83,7 @@ const VueComponent = {
   Table,
   Badge,
   Carousel,
-  CSlide,
-  Affix,
+  Slide,
   Spin,
   Textarea,
   Input,
@@ -96,7 +94,7 @@ const VueComponent = {
   Trigger,
   Accordion,
   Popover,
-  Tabset,
+  Tabs,
   Tab,
   Steps,
   Step,

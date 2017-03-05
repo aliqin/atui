@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Carousel from '../'
-const Slide = Carousel.CSlide
+const Slide = Carousel.Slide
 
 
 describe('Carousel组件单元测试', () => {

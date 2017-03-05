@@ -1,6 +1,6 @@
-import Tabset from './Tabset.vue'
+import Tabs from './Tabset.vue'
 import Tab from './Tab.vue'
 
-Tabset.Tab = Tab
+Tabs.Tab = Tab
 
-export default Tabset
+export default Tabs
