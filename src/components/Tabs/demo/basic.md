@@ -28,8 +28,8 @@ title:
 new Vue({
   el: 'body',
   components: {
-    vTabs: atui.Tabs,
-    vTab: atui.Tabs.Tab
+    vTabs: atui.Tabset,
+    vTab: atui.Tabset.Tab
   }
 })
 ````
