@@ -5,7 +5,7 @@
 
 # ATUI
 [![Build Status](https://travis-ci.org/aliqin/atui.svg?branch=dev)](https://travis-ci.org/aliqin/atui)
-[![codecov](https://codecov.io/gh/aliqin/atui/branch/master/graph/badge.svg)](https://codecov.io/gh/aliqin/atui)
+[![codecov](https://codecov.io/gh/aliqin/atui/branch/dev/graph/badge.svg)](https://codecov.io/gh/aliqin/atui/branch/dev)
 [![NPM download][npmdl-image]][npm-url]
 [![NPM version][npm-image]][npm-url]
 [![gzip size:JS][gzipjs-image]][npm-url]
