@@ -5,6 +5,7 @@
              popup-cls="dropdown"
              placement="bottomLeft"
              :popup-hide-delay="200"
+             :offset="offset"
              popup-hide-when-click-outside
              popup-use-trigger-width
              @toggle-popup="onTogglePopup"
@@ -12,7 +13,7 @@
       <template slot="trigger">
         <slot></slot>
       </template>
-      <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont','atui-dropdown-menu']">
+      <div slot="popup" :class="[prefixCls + '-dropdown-menu-cont','atui-dropdown-menu']" @click="onPopClick">
         <slot name="dropdown-menu" role="dropdown"></slot>
       </div>
     </trigger>
@@ -35,6 +36,16 @@
       },
       open: {
         type: Boolean
+      },
+      hideOnClick: {
+        type: Boolean,
+        default: true
+      },
+      offset: {
+        type: Array,
+        default () {
+          return [0, 2]
+        }
       }
     },
     components: {
@@ -45,14 +56,25 @@
         isOpen: this.open
       }
     },
+    watch: {
+      open (newVal, oldVal) {
+        this.isOpen = newVal
+      },
+      isOpen (newVal, oldVal) {
+        this.$emit('change', newVal)
+      }
+    },
     created () {
       this.$on('closeDropdown', () => {
         this.isOpen = false
       })
     },
     methods: {
-      onTogglePopup: function (val) {
+      onTogglePopup (val) {
         this.isOpen = val
+      },
+      onPopClick () {
+        this.hideOnClick && (this.isOpen = false)
       }
     }
   }

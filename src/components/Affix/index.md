@@ -1,6 +1,6 @@
 ---
 category: Components
-type: Basic
+type: Navigation
 title: Affix
 subtitle: 固钉
 ---
