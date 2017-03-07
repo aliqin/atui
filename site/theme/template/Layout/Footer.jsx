@@ -60,7 +60,7 @@ export default class Footer extends React.Component {
       <footer id="footer">
         <ul>
           <li>
-            <h2>GitLab</h2>
+            <h2>Github</h2>
             <div>
               <a target="_blank " href="https://github.com/aliqin/atui">仓库</a>
             </div>
