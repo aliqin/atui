@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div v-bind:class="{'vue-affix': affixed}"
+  <div v-bind:class="[prefixCls + '-affix', affixed ? 'vue-affix' : '' ]"
     v-bind:style="styles">
     <slot></slot>
   </div>
@@ -21,6 +21,10 @@ export default {
     target: {
       type: Function,
       default: () => window
+    },
+    prefixCls: {
+      type: String,
+      default: 'atui'
     }
   },
   data () {
@@ -43,10 +47,14 @@ export default {
           left: elementOffset.left + targetRect.left + 'px',
           width: this.$el.offsetWidth + 'px'
         }
+
+        this.$emit('change', this.affixed)
       }
       if (this.affixed && scrollTop < elementOffset.top) {
         this.affixed = false
         this.styles = {}
+
+        this.$emit('change', this.affixed)
       }
     },
     // reffered from antd

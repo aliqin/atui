@@ -115,6 +115,7 @@ module.exports = { ...VueComponent }
 module.exports.version = '0.0.29'
 
 module.exports.install = (Vue, opts) => {
+  opts = opts || {}
   let prefix = opts.prefix || 'v'
   Object.keys(VueComponent).forEach((key) => {
     // prefix component name with 'v'  <v-button></v-button>
