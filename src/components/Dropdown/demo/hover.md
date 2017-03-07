@@ -15,7 +15,7 @@ hover显示
 
 <dropdown trigger="hover">
   <div>
-    点击显示菜单 <icon type="down"></icon>
+    hover显示菜单 <icon type="down"></icon>
   </div>
   <ul slot="dropdown-menu">
     <li><a>选项一</a></li>
