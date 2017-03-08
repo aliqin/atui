@@ -60,6 +60,9 @@ const { Tab } = Tabset
 
 const { TreeNode } = Tree
 
+// 兼容老的tabs
+const Tabs = Tabset
+
 const VueComponent = {
   Layout,
   Col,
@@ -97,6 +100,7 @@ const VueComponent = {
   Accordion,
   Popover,
   Tabset,
+  Tabs,
   Tab,
   Steps,
   Step,
