@@ -37,7 +37,7 @@ new Vue({
   el: 'body',
   components: {
       carousel: atui.Carousel,
-      slide: atui.Carousel.Slide
+      slide: atui.Carousel.CSlide
   },
   data() {
     return {

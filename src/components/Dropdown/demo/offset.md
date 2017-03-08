@@ -1,19 +1,19 @@
 ---
 order: 0
 title:
-  zh-CN: 基本
+  zh-CN: 带偏移量的菜单
   en-US: Type
 ---
 
 ## zh-CN
-通过名为`dropdown-menu`的slot来自定义弹出层
+配置props:`offset=[0, 20]`,向下偏移量20px
 
 
 ## en-US
 
 ````jsx
 
-<v-dropdown>
+<v-dropdown :offset="[0, 20]">
   <div>
     点击显示菜单 <icon type="down"></icon>
   </div>

@@ -2,36 +2,57 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./build/greater-blue.css">
+    <style>
+    .header {
+      position: fixed;
+      width: 100%;
+      height: 100px;
+      background: yellow;
+      left: 0;
+      top: 0;
+    }
+    .content {
+      height: 100%;
+      padding-top:50px;
+      overflow-y: auto;
+    }
+    </style>
   </head>
   <body>
-    <div id="app">
-      <v-select v-model="initValue"  dropdown-class-name="aaaaa" :dropdown-z-index="9898"  style="width:200px" width="200px" @change="onSelectChange">
-        <v-option value="Apple">苹果</v-option>
-        <v-option value="Banana" disabled>Banana</v-option>
-        <v-option value="10">Cherry</v-option>
-        <v-option value="Orange">OrangeText</v-option>
-        <v-option value="Grape">Grape</v-option>
-        <v-option value="chestnut">栗子</v-option>
-        <v-option value="pear">梨</v-option>
-        <v-option value="cantaloupe">哈密瓜</v-option>
-        <v-option value="peaches">水蜜桃</v-option>
-        <v-option value="Cherry2">Cherry2</v-option>
-        <v-option value="Orange2">OrangeText2</v-option>
-        <v-option value="Grape2">Grape2</v-option>
-        <v-option value="chestnut2">栗子2</v-option>
-        <v-option value="pear2">梨2</v-option>
-        <v-option value="cantaloupe2">哈密瓜2</v-option>
-        <v-option value="peaches2">水蜜桃2</v-option>
-      </v-select>
-      <br/>
-      <v-button @click.native="changeSelect">改变选中项</v-button>
+    <div id="app" style="height:100%;overflow-y:auto;padding-top:100px">
+      <div class="header"></div>
+      <div class="content" id="content">
+        <v-affix :target="getTarget">
+          <div class="selectContainer">
+            <v-select v-model="initValue"  dropdown-class-name="aaaaa" :dropdown-z-index="9898"  style="width:200px" width="200px" @change="onSelectChange">
+              <v-option value="Apple">苹果</v-option>
+              <v-option value="Banana" disabled>Banana</v-option>
+              <v-option value="10">Cherry</v-option>
+              <v-option value="Orange">OrangeText</v-option>
+              <v-option value="Grape">Grape</v-option>
+              <v-option value="chestnut">栗子</v-option>
+              <v-option value="pear">梨</v-option>
+              <v-option value="cantaloupe">哈密瓜</v-option>
+              <v-option value="peaches">水蜜桃</v-option>
+              <v-option value="Cherry2">Cherry2</v-option>
+              <v-option value="Orange2">OrangeText2</v-option>
+              <v-option value="Grape2">Grape2</v-option>
+              <v-option value="chestnut2">栗子2</v-option>
+              <v-option value="pear2">梨2</v-option>
+              <v-option value="cantaloupe2">哈密瓜2</v-option>
+              <v-option value="peaches2">水蜜桃2</v-option>
+            </v-select>
+            <br/>
+            <v-button @click.native="changeSelect">改变选中项</v-button>
+          </div>
+        </v-affix>
+        <div style="height:2000px"></div>
+      </div>
     </div>
     <script src="./dist/vue.js"></script>
     <script src="./build/atui.js"></script>
     <script>
-      Vue.use(atui, {
-        prefix: 'v'
-      })
+      Vue.use(atui)
       
       new Vue({
         el:'#app',
@@ -61,6 +82,9 @@
           },
           changeSelect () {
             this.initValue = 'Orange';
+          },
+          getTarget () {
+            return document.getElementById('content')
           }
         }
       })
