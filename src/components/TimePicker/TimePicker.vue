@@ -6,6 +6,7 @@
              effect="slide"
              popup-hide-when-click-outside
              popup-cover-trigger
+             :show="showMenu"
              @toggle-popup="togglePopupHandler"
              ref="trigger">
       <div slot="trigger" :class="[prefixCls + '-time-picker-toggler']">
@@ -17,7 +18,7 @@
       </div>
       <div slot="popup"
            :class="[prefixCls + '-time-picker-menus']">
-        <icon type="clear" @click="closePopup"></icon>
+        <icon type="clear" @click.native="closePopup"></icon>
         <div>
           <v-input readonly
                    v-bind="{disabled: disabled, large: large, small: small}"
@@ -130,7 +131,8 @@
       return {
         hour: now.getHours(),
         minute: now.getMinutes(),
-        second: now.getSeconds()
+        second: now.getSeconds(),
+        showMenu: false
       }
     },
     computed: {
@@ -216,9 +218,10 @@
             this.selectChoosed('s', this.second, 1)
           })
         }
+        this.showMenu = show
       },
       closePopup () {
-        this.$refs.trigger.show = false
+        this.showMenu = false
       }
     }
   }
