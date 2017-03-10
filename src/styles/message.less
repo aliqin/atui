@@ -2,31 +2,31 @@
 // --------------------------------------------------
 @prefix-cls-message: e("@{prefix-cls}-message");
 
-@message-padding:               10px;
+@message-padding:               6px;
 @message-border-radius:         4px;
 @message-link-font-weight:      bold;
 
 @message-success-bg:            #f4fcf5;
 @message-success-text:          #666;
-@message-success-border:        #a5e5af;
+@message-success-border:        #1dbf38;
 
 
 @message-info-bg:               #f5fbfe;
 @message-info-text:             #666;
-@message-info-border:           #ace0fa;
+@message-info-border:           #30b2f2;
 
 @message-warning-bg:            #fff9f2;
 @message-warning-text:          #666;
-@message-warning-border:        #ffd399;
+@message-warning-border:        #ff9000;
 
 @message-danger-bg:             #fff7f7;
 @message-danger-text:           #666;
-@message-danger-border:         #ffbdbd;
+@message-danger-border:         #ff5959;
 
 
 @message-help-bg:             #fbf7ff;
 @message-help-text:           #666;
-@message-help-border:         #e1c2ff;
+@message-help-border:         #b366ff;
 
 .message-variant(@background; @border; @text-color) {
   .@{prefix-cls-message}-content {
@@ -95,6 +95,11 @@
     transform: translate(-50%, -50%);
   }
 
+  .@{prefix-cls}-close {
+    font-size: 18px;
+    color: #333;
+  }
+
   &-dismissable,
   &-dismissible {
     padding-right: (@message-padding + 20);
@@ -103,6 +108,7 @@
       top: -2px;
       right: -21px;
       color: inherit;
+      font-size: 18px;
     }
   }
   &-content {
@@ -111,6 +117,12 @@
     border: 1px solid transparent;
     border-radius: @message-border-radius;
     position: relative;
+    font-size: 12px;
+
+    .@{prefix-cls}-iconfont {
+      position: relative;
+      top: 1px;
+    }
   }
 
   &.@{prefix-cls-message}-arrow:before {

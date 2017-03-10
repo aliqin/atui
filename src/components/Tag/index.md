@@ -17,5 +17,6 @@ subtitle: 标签
 -----|-----|-----|------
 closable | 是否可关闭 | Boolean | false
 color | 背景颜色 | String | #f2f2f2
-href | 点击跳转链接 | String |
+href | 点击跳转链接 | String | ｜
+@close | tag关闭事件 | Function | |
 
