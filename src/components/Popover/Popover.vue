@@ -1,11 +1,11 @@
 <template>
   <div :class="[prefixCls + '-popover-cont']">
-    <trigger 
-      v:ref="trigger" 
-      :trigger="trigger" 
-      :effect="effect" 
-      :placement="placement" 
-      popup-cls="popover" 
+    <trigger
+      v:ref="trigger"
+      :trigger="trigger"
+      :effect="effect"
+      :placement="placement"
+      popup-cls="popover"
       :popup-always-show="alwaysShow"
       :show="visible"
       :popup-z-index="popZIndex ? popZIndex : 0"

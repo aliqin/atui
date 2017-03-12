@@ -9,7 +9,7 @@ describe('Slider组件单元测试', () => {
     replace: false,
     template: `
       <div>
-      <v-slider :value="30"></v-slider>
+      <v-slider :value="30" min="10" max="100"></v-slider>
       <v-slider v-model="sliderValue"></v-slider>
       <v-slider v-model="initRange"></v-slider>
       </div>
@@ -27,7 +27,10 @@ describe('Slider组件单元测试', () => {
   })
 
   it('改变范围', () => {
+    vm.value = 0
     vm.sliderValue = 20
+    // var e = document.createEvent('MouseEvents')
+    // vm.change(e)
     vm.$nextTick(() => {
 
     })
