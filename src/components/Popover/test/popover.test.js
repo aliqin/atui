@@ -31,7 +31,10 @@ describe('Popover组件单元测试', () => {
 
   it('关闭功能', () => {
     vm.visible = false
-    vm.$emit('pop-change', false)
+    // vm.$emit('pop-change', false)
+    // vm.onTogglePopup(0)
+    document.body.querySelector('.atui-popover button').click()
+
     vm.$nextTick(() => {
       expect(document.body.querySelectorAll('.atui-popup.atui-popover')[0].style.display).to.equal('none')
     })

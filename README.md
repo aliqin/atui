@@ -52,7 +52,7 @@ import atui from 'atui'
 new Vue({
   components: {
     vButton: atui.Button,
-    vDatePicker: atui.vDatePicker
+    vDatePicker: atui.DatePicker
   }
 })
 
