@@ -20,7 +20,7 @@
 
 @pagination-item-default-lineHeight:            30px;
 @pagination-item-mini-lineHeight:               20px;
-@pagination-item-default-prev-lineHeight:       2.2;
+@pagination-item-default-prev-lineHeight:       2.5;
 @pagination-item-mini-prev-lineHeight:          1.6;
 
 .@{prefix-cls-pagination} {
@@ -169,14 +169,6 @@
                 line-height: @pagination-item-default-prev-lineHeight;
             }
 
-            &-prev {
-                margin-right: 6px;
-            }
-
-            &-slash {
-                margin-left: 9px;
-            }
-
             &-disabled {
                 color: @pagination-disabled-color;
                 &:hover {
@@ -200,7 +192,7 @@
             text-align: center;
             list-style: none;
             float: left;
-            margin: 0 8px;
+            margin: 0 3px;
             user-select: none;
             color: #666;
             border-radius: 4px;

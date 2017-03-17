@@ -61,8 +61,12 @@
       line-height: 7px;
       i {
         display: inline-block;
-        transform: scale(.6) rotate(0deg);
+        transform: rotate(0deg);
         -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+        color: #999;
+        &:hover {
+          color: #333;
+        }
       }
       .@{prefix-cls-table}-active {
         color: @primary-color;
@@ -162,6 +166,10 @@
       }
       i {
         display: none;
+      }
+
+      input {
+        margin: 0 10px 0 5px;
       }
     }
     li.selected {

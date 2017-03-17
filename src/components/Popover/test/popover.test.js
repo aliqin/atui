@@ -1,42 +1,78 @@
 import Vue from 'vue'
 import Popover from '../'
+import util from 'test/unit/util.js'
 
 describe('Popover组件单元测试', () => {
-  let vm = new Vue({
-    components: {
-      Popover
-    },
-    data () {
-      return {
-        visible: true
-      }
-    },
-    template: `
-      <div>
-      <popover :visible="visible" effect="scale" title="this is title" content="this is content" placement="top" trigger="hover">
-        <div slot="content">
-        <p>我是文字，我是文字，我是文字，我是文字，我是文字，我是文字，我是文字，</p>
-        <button @click.native="visible = false">点我关闭</button>
+  let createInstance = function (options) {
+    options = options || {}
+    options.trigger = options.trigger || 'click'
+
+    let vm = new Vue({
+      components: {
+        Popover
+      },
+      replace: false,
+      template: `
+        <div>
+        <popover 
+          effect="scale" 
+          pop-cls="mypop" 
+          title="this is title" 
+          content="this is content" 
+          placement="top"
+          trigger="${options.trigger}" >
+            <button class="atui-btn">trigger</button>
+        </popover>
         </div>
-      </popover>
-      </div>
-    `
-  }).$mount()
+      `
+    }).$mount()
+
+    return vm
+  }
 
   it('基本渲染功能', () => {
+    let vm = createInstance()
     expect(vm.$el.querySelectorAll('.atui-trigger-cont').length).to.be.equal(1)
+    expect(vm.$el.querySelectorAll('.atui-btn').length).to.be.equal(1)
     expect(vm.$el.querySelectorAll('.atui-popover-cont').length).to.be.equal(1)
-    expect(document.body.querySelectorAll('.atui-popup.atui-popover').length).to.be.equal(1)
+    vm.$destroy()
   })
 
-  it('关闭功能', () => {
-    vm.visible = false
-    // vm.$emit('pop-change', false)
-    // vm.onTogglePopup(0)
-    document.body.querySelector('.atui-popover button').click()
+  it('click触发方式', (done) => {
+    let vm = createInstance({
+      trigger: 'click'
+    })
+    let btn = vm.$el.querySelector('.atui-btn')
 
-    vm.$nextTick(() => {
-      expect(document.body.querySelectorAll('.atui-popup.atui-popover')[0].style.display).to.equal('none')
+    vm.$nextTick(function () {
+      let pop = document.querySelector('.mypop')
+      expect(pop.style.display).to.be.equal('none')
+      btn.click()
+      vm.$nextTick(() => {
+        expect(pop.style.display).to.be.equal('')
+        vm.$destroy()
+        done()
+      })
+    })
+  })
+
+  it('hover触发', (done) => {
+    let vm = createInstance({
+      trigger: 'hover'
+    })
+
+    vm.$nextTick(function () {
+      let pop = document.querySelector('.mypop')
+      expect(pop.style.display).to.be.equal('none')
+      util.triggerEvent({
+        target: pop,
+        type: 'mouseenter'
+      })
+      vm.$nextTick(() => {
+        expect(pop.style.display).to.be.equal('')
+        vm.$destroy()
+        done()
+      })
     })
   })
 })

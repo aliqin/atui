@@ -1,6 +1,6 @@
 <template>
     <div v-if="showSizeChanger" :class="[prefixCls + '-pagination-selector']">
-        <v-select :default-value="defaultSize" @change="change" style="width:100px">
+        <v-select v-model="currSize" @change="change" style="width:100px">
             <v-option v-for="size in pageSizeOptions" :value="size" >{{size}} 条/页</v-option>
         </v-select>
         <div :class="[prefixCls + '-pagination-totalpage']">共{{ total }}条数据</div>
@@ -33,6 +33,11 @@
       prefixCls: {
         type: String,
         default: 'atui'
+      }
+    },
+    data () {
+      return {
+        currSize: this.defaultSize
       }
     },
     components: {

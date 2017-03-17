@@ -1,6 +1,6 @@
 <template>
   <div :class="[prefixCls + '-popover-cont']">
-    <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls" @reset-pos="resetPosHandler">
+    <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls">
       <template slot="trigger">
         <slot></slot>
       </template>
@@ -49,23 +49,6 @@
     },
 
     methods: {
-      resetPosHandler (data) {
-        const { prefixCls, popupCls } = this
-        const { $trigger, $popup, placement } = data
-        const $arrow = $popup.querySelector(`.${prefixCls}-${popupCls}-arrow`)
-        const triggerOffset = $trigger.getBoundingClientRect()
-
-        // 修正箭头坐标
-        if (placement.endsWith('Left')) {
-          $arrow.style.left = `${triggerOffset.width / 2}px`
-        } else if (placement.endsWith('Right')) {
-          $arrow.style.right = `${triggerOffset.width / 2}px`
-        } else if (placement.endsWith('Top')) {
-          $arrow.style.top = `${triggerOffset.height / 2}px`
-        } else if (placement.endsWith('Bottom')) {
-          $arrow.style.bottom = `${triggerOffset.height / 2}px`
-        }
-      }
     }
   }
 </script>
