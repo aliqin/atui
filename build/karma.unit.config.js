@@ -2,7 +2,7 @@ var base = require('./karma.base.config.js')
 
 module.exports = function (config) {
   var cfg = {
-    browsers: ['Chrome', 'Firefox', 'Safari'],
+    browsers: ['Chrome'/*, 'Firefox', 'Safari'*/],
     reporters: ['progress'],
     singleRun: true
   }

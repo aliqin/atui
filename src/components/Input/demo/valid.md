@@ -12,7 +12,7 @@ title:
 <h3>手机号校验：</h3>
 <p>校验结果：{{phoneValidResult.isPhoneValid.tips}}</p>
 <div>
-  <v-input type="text" placeholder="请输入手机号码" :rules="phoneValidRule" :valid-result="phoneValidResult"></v-input>
+  <v-input id="phone" type="text" placeholder="请输入手机号码" :rules="phoneValidRule" :valid-result="phoneValidResult"></v-input>
 </div>
 <br>
 <h3>非空校验</h3>
