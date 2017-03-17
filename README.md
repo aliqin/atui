@@ -1,5 +1,5 @@
 <p align="center">
-  [![logo](http://img.alicdn.com/tps/TB16WYGPFXXXXX4XXXXXXXXXXXX-400-172.png)](https://github.com/aliqin/atui)
+  <a href="https://github.com/aliqin/atui" target="blank"><img src="http://img.alicdn.com/tps/TB16WYGPFXXXXX4XXXXXXXXXXXX-400-172.png" /></a>
 </p>
 
 
