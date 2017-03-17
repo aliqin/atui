@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="240" src="http://img.alicdn.com/tps/TB16_awMVXXXXcKXpXXXXXXXXXX-360-92.png">
+  [![logo](http://img.alicdn.com/tps/TB16WYGPFXXXXX4XXXXXXXXXXXX-400-172.png)](https://github.com/aliqin/atui)
 </p>
 
 
