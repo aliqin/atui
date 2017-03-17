@@ -110,10 +110,10 @@ const VueComponent = {
 }
 
 module.exports = { ...VueComponent }
-module.exports.version = '0.0.28'
+module.exports.version = '0.0.34'
 
 module.exports.install = (Vue, opts) => {
-  let prefix = opts.prefix || 'v'
+  let prefix = opts && opts.prefix || 'v'
   Object.keys(VueComponent).forEach((key) => {
     // prefix component name with 'v'  <v-button></v-button>
     let comp = VueComponent[key]
