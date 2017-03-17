@@ -20,7 +20,7 @@ title:
   content="我是内容，我是内容，我是内容"
   pop-cls="mypop"
   :pop-z-index="9090">
-  <v-button>Popover on bottom</v-button>
+  <v-button class="abc">Popover on bottom</v-button>
 </popover>
 ````
 

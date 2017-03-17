@@ -30,7 +30,7 @@ var webpackConfig = {
   ],
   babel: {
     presets: ['es2015'],
-    plugins: ['transform-runtime']
+    plugins: ['transform-runtime', 'transform-object-assign']
   },
   vue: {
     loaders: {
@@ -39,6 +39,7 @@ var webpackConfig = {
   },
   devtool: '#inline-source-map'
 }
+
 
 // shared config for all unit tests
 module.exports = {
