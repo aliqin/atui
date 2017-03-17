@@ -20,7 +20,7 @@
             <th v-if="expandedRowRender" :class="[prefixCls + '-table-expand-icon-th']"></th>
             <th v-for="(column, index) in columns" :width="column.width">
               <span v-html="column['title']"></span>
-              <dropdown ref="filterMenu" v-if="column.filters" trigger="hover">
+              <dropdown ref="filterMenu" v-if="column.filters" trigger="hover" :hideOnClick="false">
                 <div>
                   <icon type="filter" size="12"></icon>
                 </div>

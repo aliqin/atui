@@ -17,13 +17,14 @@ title:
   effect="fade"
   placement="bottom"
   :visible="visible"
+  trigger="hover"
   @pop-change="(show) => visible = show"
   title="我是标题">
   <div slot="content">
   <p>我是文字，我是文字，我是文字，我是文字，我是文字，我是文字，我是文字，</p>
   <v-button @click.native="visible = false">点我关闭</v-button>
   </div>
-  <v-button>Popover on bottom</v-button>
+  <v-button class="aa">Popover on bottom</v-button>
 </popover>
 ````
 

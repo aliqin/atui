@@ -1,8 +1,11 @@
 var base = require('./karma.base.config.js')
 
+var env = process.env.NODE_ENV
+
 module.exports = function (config) {
   var options = Object.assign(base, {
-    browsers: ['PhantomJS'],
+    browsers: env === 'local' ? ['Chrome'] : ['PhantomJS'],
+    //plugins: ['karma-webpack', 'karma-mocha', 'karma-chrome-launcher', 'karma-firefox-launcher', 'karma-phantomjs-launcher', 'karma-coverage', 'karma-spec-reporter'],
     reporters: ['mocha', 'coverage'],
     coverageReporter: {
       reporters: [
@@ -19,7 +22,7 @@ module.exports = function (config) {
       exclude: [
         'test/'
       ]
-    }]]
+    }],'transform-runtime', 'transform-object-assign']
   }
 
   config.set(options)

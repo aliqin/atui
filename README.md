@@ -43,9 +43,6 @@ $ npm install atui --save-dev
 // css
 import 'atui/dist/greater-blue.css'
 
-// or less
-import 'atui/style/themes/greater-blue.less'
-
 // import atui
 import atui from 'atui'
 

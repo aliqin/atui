@@ -8,7 +8,7 @@
       <button v-show="closable" type="button" :class="[prefixCls + '-close']" @click="close">
       <span>&times;</span>
       </button>
-      <icon v-if="showIcon" :type="type + '-s'"></icon>
+      <icon v-if="showIcon" size="14" :type="type + '-s'"></icon>
       <slot>
         {{content}}
       </slot>

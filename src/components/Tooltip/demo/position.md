@@ -69,11 +69,3 @@ new Vue({
   }
 })
 ````
-<style>
-  .atui-popover-cont .atui-btn {
-    display: inline-block;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    border-radius: 6px;
-}
-</style>
