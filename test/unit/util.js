@@ -10,11 +10,17 @@ let util = {
   * @params options.type {String}
   */
   triggerEvent(options) {
+    // ci上的phantomjs不支持new MouseEvent,本地的chrome是支持的
+    /*
     let evt = new MouseEvent(options.type,{
       'view': window,
       'bubbles': true,
       'cancelable': true
     })
+    options.target.dispatchEvent(evt)
+    */
+    let evt = document.createEvent('MouseEvent')
+    evt.initEvent(options.type, true, true)
     options.target.dispatchEvent(evt)
   },
 
