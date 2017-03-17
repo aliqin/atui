@@ -1,6 +1,6 @@
 <template>
   <div :class="[prefixCls + '-popover-cont']">
-    <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls">
+    <trigger :trigger="trigger" :effect="effect" :placement="placement" :popup-cls="popupCls" :custom-popup-cls="customPopupCls">
       <template slot="trigger">
         <slot></slot>
       </template>
@@ -45,6 +45,10 @@
       popupCls: {
         type: String,
         default: 'tooltip'
+      },
+      customPopupCls: {
+        type: String,
+        default: ''
       }
     },
 
