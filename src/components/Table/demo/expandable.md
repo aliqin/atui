@@ -14,7 +14,7 @@ title:
 
 ````jsx
 <v-table :data-source="gridData" :columns="gridColumns" :row-expandable="rowExpandable" :expanded-row-render="expandedRowRender" row-key="key">
-  <template scope="props" :slot="operation">
+  <template scope="props" slot="operation">
     <v-button>操作</v-button>
   </template>
 </v-table>

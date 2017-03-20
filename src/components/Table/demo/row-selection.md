@@ -32,7 +32,7 @@ const rowSelection = {
 
 ````jsx
 <v-table :data-source="gridData" :columns="gridColumns" :row-selection="rowSelection" row-key="key" :loading="loading">
-  <template scope="props" :slot="operation">
+  <template scope="props" slot="operation">
     <v-button>操作</v-button>
   </template>
 </v-table>
