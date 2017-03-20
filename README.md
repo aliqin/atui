@@ -80,5 +80,10 @@ new Vue({
 ### Roadmap
 https://github.com/aliqin/atui/wiki/roadmap
 
-### LICENSE
+### License
 MIT
+
+### Thanks
+[ant.design](https://ant.design)
+[bisheng](https://github.com/benjycui/bisheng)
+

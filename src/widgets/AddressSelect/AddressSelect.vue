@@ -1,6 +1,6 @@
 <template>
   <div class="address-box" :class="classObj" @click.stop="showAddrPopFun" @blur="hideAddrPopFun">
-    <div v-if="province" class="ad-select has-select" v-html="selectAddr"></div>
+    <div v-if="province" class="ad-select has-select">{{selectAddr}}</div>
     <div v-else class="ad-select">{{placeholder}}</div>
     <i class="ad-drop" :class="{'drop-down': showAddrPop}"></i>
     <div class="ad-overlay" v-show="showAddrPop">
@@ -12,10 +12,10 @@
         </div>
         <div class="tab-content">
           <div class="province-content" v-show="current == 'province'">
-            <dl v-for="key in list.provinceList">
-              <dt>{{$key}}</dt>
+            <dl v-for="(item, key) in list.provinceList">
+              <dt>{{key}}</dt>
               <dd>
-                <a v-for="prov in key" :title="prov[1]" :attr-id="prov[0]" href="javascript:" @click="chooseProvince(prov[0], prov[1])" :class="{'active': provinceId == prov[0]}">
+                <a v-for="prov in item" :title="prov[1]" :attr-id="prov[0]" href="javascript:" @click="chooseProvince(prov[0], prov[1])" :class="{'active': provinceId == prov[0]}">
                   <input v-if="provinceId == prov[0]" :value="prov[1]" type="hidden" v-model="province" />
                   {{prov[1]}}
                 </a>
@@ -25,7 +25,7 @@
           <div class="city-content" v-show="current == 'city'">
             <dl>
               <dd>
-                <template v-for="item in list.countyList">
+                <template v-for="(item, key) in list.countyList">
                   <a v-if="item[2] == provinceId" :title="item[1]" attr-id="item[0]}}" href="javascript:" @click.stop="chooseCity(item[0], item[1])" :class="{'active': cityId == item[0]}" track-by="item[0]">
                     <input v-if="cityId == item[0]" :value="item[1]" type="hidden" v-model="city" />
                     {{item[1]}}
@@ -37,7 +37,7 @@
           <div class="county-content" v-if="tabList[2]" v-show="current == 'county'">
             <dl>
               <dd>
-                <template v-for="item in list.countyList">
+                <template v-for="(item, key) in list.countyList">
                   <a v-if="item[2] == cityId" :title="item[1]" :attr-id="item[0]" href="javascript:" @click.stop="chooseCounty(item[0], item[1])" :class="{'active': countyId == item[0]}" track-by="item[0]">
                     <input v-if="countyId == item[0]" :value="item[1]" type="hidden" v-model="county" />
                     {{item[1]}}
@@ -49,9 +49,9 @@
           <div class="street-content" v-if="tabList[3]" v-show="current == 'street'">
             <dl>
               <dd>
-                <template v-for="item in list.streetList">
-                  <a :title="item[0]" :attr-id="$key" :parent-id="item[1]" href="javascript:" @click.stop="chooseStreet($key, item[0])" :class="{'active': streetId == $key}" track-by="$key">
-                    <input v-if="streetId == $key" :value="item[0]" type="hidden" v-model="street" />
+                <template v-for="(item, key) in list.streetList">
+                  <a :title="item[0]" :attr-id="key" :parent-id="item[1]" href="javascript:" @click.stop="chooseStreet(key, item[0])" :class="{'active': streetId == key}" track-by="key">
+                    <input v-if="streetId == key" :value="item[0]" type="hidden" v-model="street" />
                     {{item[0]}}
                   </a>
                 </template>
@@ -163,7 +163,7 @@ export default {
     },
     selectAddr () {
       let text = this.province
-      let space = '<span>/</span>'
+      let space = '/'
       if (this.city) {
         text = text + space + this.city
       }
@@ -175,7 +175,6 @@ export default {
       if (this.street) {
         text = text + space + this.street
       }
-
       return text
     }
   },
@@ -317,10 +316,6 @@ export default {
       this.provinceId = provId
       this.current = this.tabList[1].id
       this.changeProvinceId()
-      this.$dispatch('select-province', {
-        provinceName: this.province,
-        provinceId: this.provinceId
-      }, this)
       this.addr.provinceId = this.provinceId
       this.addr.provinceName = this.province
       this.addr.cityId = ''
@@ -329,6 +324,10 @@ export default {
       this.addr.countyName = ''
       this.addr.streetId = ''
       this.addr.streetName = ''
+      this.$emit('select-province', {
+        provinceName: this.province,
+        provinceId: this.provinceId
+      }, this)
     },
     chooseCity (cityId, city) {
       var tabLen = this.tabList.length
@@ -340,7 +339,7 @@ export default {
         this.hideAddrPopFun()
       }
       this.changeCityId()
-      this.$dispatch('select-city', {
+      this.$emit('select-city', {
         cityName: this.city,
         cityId: this.cityId
       }, this)
@@ -361,7 +360,7 @@ export default {
         this.hideAddrPopFun()
       }
       this.changeCountyId()
-      this.$dispatch('select-county', {
+      this.$emit('select-county', {
         countyName: this.county,
         countyId: this.countyId
       }, this)
@@ -374,7 +373,7 @@ export default {
       this.street = street
       this.streetId = streetId
       this.hideAddrPopFun()
-      this.$dispatch('select-street', {
+      this.$emit('select-street', {
         streetName: this.street,
         streetId: this.streetId
       }, this)
