@@ -16,10 +16,10 @@ title:
 ````jsx
 <v-table :data-source="gridData" :columns="gridColumns" row-key="key">
   <div slot="noDataTip">if dataSource is null, i will displayed</div>
-  <template scope="props" :slot="age">
+  <template scope="props" slot="age">
     <span>年龄：{{props.record.age}}</span>
   </template>
-  <template scope="props" :slot="operation">
+  <template scope="props" slot="operation">
     <v-button @click.native="onBtnClick(props.record)">操作</v-button>
   </template>
 </v-table>

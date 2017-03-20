@@ -1,6 +1,6 @@
 {
   "name": "atui",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "components built with Vue.js",
   "main": "dist/atui.js",
   "repository": {
@@ -13,8 +13,7 @@
     "test": "test"
   },
   "dependencies": {
-
-    "vue": "2.1.4"
+    "vue": "2.2.4"
   },
   "files": [
     "LICENSE",
@@ -112,7 +111,7 @@
     "vue-loader": "10.0.0",
     "vue-router": "~0.7.13",
     "vue-style-loader": "^1.0.0",
-    "vue-template-compiler": "2.1.4",
+    "vue-template-compiler": "2.2.4",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.12.0"
   },
