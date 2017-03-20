@@ -10,6 +10,7 @@ let vm = new Vue({
         show-jumper
         :page-size="10"
         show-size-changer>
+        </pagination>
       </div>
       `,
   components: { Pagination },
