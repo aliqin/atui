@@ -63,7 +63,7 @@ var columns = [{
 
 ````jsx
 <v-table :data-source="gridData" @table-change="onTableChange" :row-expandable="rowExpandable" :columns="gridColumns" row-key="key" >
-  <template scope="props" :slot="operation">
+  <template scope="props" slot="operation">
     <v-button @click.native="onBtnClick(props.record)">操作</v-button>
   </template>
 </v-table>
