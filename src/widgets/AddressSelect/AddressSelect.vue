@@ -327,7 +327,7 @@ export default {
       this.$emit('select-province', {
         provinceName: this.province,
         provinceId: this.provinceId
-      }, this)
+      })
     },
     chooseCity (cityId, city) {
       var tabLen = this.tabList.length
@@ -342,7 +342,7 @@ export default {
       this.$emit('select-city', {
         cityName: this.city,
         cityId: this.cityId
-      }, this)
+      })
       this.addr.cityId = this.cityId
       this.addr.cityName = this.city
       this.addr.countyId = ''
@@ -363,7 +363,7 @@ export default {
       this.$emit('select-county', {
         countyName: this.county,
         countyId: this.countyId
-      }, this)
+      })
       this.addr.countyId = this.countyId
       this.addr.countyName = this.county
       this.addr.streetId = ''
@@ -376,7 +376,7 @@ export default {
       this.$emit('select-street', {
         streetName: this.street,
         streetId: this.streetId
-      }, this)
+      })
       this.addr.streetId = this.streetId
       this.addr.streetName = this.street
     },
