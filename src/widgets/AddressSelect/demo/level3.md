@@ -13,7 +13,7 @@ title:
 
 ````jsx
 <span>{{addr.city}}</span>
-<address-select level="3" placeholder="请选择省市区"  :city.sync="addr.city" ></address-select>
+<address-select level="3" placeholder="请选择省市区"  :city="addr.city" ></address-select>
 ````
 
 ````vue-script
@@ -37,7 +37,7 @@ new Vue({
   		console.log(data)
   	},
   	'select-county': function(data){
-  	
+
   	}
   }
 })

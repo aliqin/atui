@@ -12,7 +12,7 @@ title:
 
 
 ````jsx
-<address-select large level="4" placeholder="请选择详细地址" v-ref:select-addr></address-select>
+<address-select large level="4" placeholder="请选择详细地址"></address-select>
 ````
 
 ````vue-script
@@ -23,7 +23,7 @@ new Vue({
   },
   mounted() {
     // 获取当前地址
-    console.log(this.$refs.selectAddr.addr)
+    console.log(this.selectAddr)
   }
 })
 ````
