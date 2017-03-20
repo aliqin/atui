@@ -13,32 +13,34 @@ title:
 
 ````jsx
 <span>{{addr.city}}</span>
-<address-select level="3" placeholder="请选择省市区"  :city="addr.city" ></address-select>
+<address-select level="3" placeholder="请选择省市区"  :city="addr.city" @select-province="select-province" @select-county="select-county" @select-city="select-city"></address-select>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
-  data:function(){
+  data () {
   	return {
   		addr:{
-  			city:'aa'
+        county: '',
+        province: '',
+  			city: ''
   		}
   	}
   },
   components: {
     addressSelect: atuiWidget.AddressSelect
   },
-  events: {
-  	'select-city': function(data){
-  		console.log(data)
-  	},
-  	'select-province': function(data){
-  		console.log(data)
-  	},
-  	'select-county': function(data){
-
-  	}
+	methods: {
+    'select-city': function(data) {
+      this.addr.city = data.cityName
+    },
+    'select-province': function(data) {
+      this.addr.province = data.provinceName
+    },
+    'select-county': function(data) {
+      this.addr.county = data.countyName
+    }
   }
 })
 ````
