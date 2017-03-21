@@ -31,6 +31,7 @@ new Vue({
         type: 'SubMenu',
         uuid: 'sub1',
         title: '导航一',
+        show: true, // 是否展开SubMenu
         children: [
           {
             type: 'MenuItemGroup',
@@ -45,6 +46,7 @@ new Vue({
               {
                 type: 'MenuItem',
                 uuid: '2',
+                selected: true, // 是否选中该菜单项
                 content: '选项2'
               }
             ]
