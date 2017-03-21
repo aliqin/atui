@@ -22,6 +22,7 @@
 import Icon from '../Icon'
 import vMenuItemGroup from './MenuItemGroup.vue'
 import vMenuItem from './MenuItem.vue'
+import EventBus from 'src/components/eventbus'
 
 export default {
   name: 'SubMenu',
@@ -47,6 +48,7 @@ export default {
     vMenuItemGroup,
     vMenuItem
   },
+  mixins: [EventBus],
   data () {
     return {
       mode: this.$parent.mode,

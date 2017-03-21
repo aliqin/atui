@@ -24,14 +24,14 @@ subtitle: 导航菜单
 | 参数     | 说明           | 类型     | 默认值       |
 |----------|----------------|----------|--------------|
 | disabled    | 是否禁用 | Boolean   |  false  |
-| key   | item 的唯一标志 |  String |  |
+| uuid   | item 的唯一标志 |  String |  |
 
 ### Menu.SubMenu
 
 | 参数     | 说明           | 类型     | 默认值       |
 |----------|----------------|----------|--------------|
 | disabled    | 是否禁用 | Boolean   |  false  |
-| key | 唯一标志 |  String |  |
+| uuid | 唯一标志 |  String |  |
 | title    | 子菜单项值 | String or React.Element   |    |
 
 ### Menu.MenuItemGroup
