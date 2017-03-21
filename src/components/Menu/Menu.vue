@@ -2,7 +2,7 @@
   <ul :class="[prefixCls + '-menu', prefixCls + '-menu-root', prefixCls + '-menu-'+ mode]">
     <slot></slot>
     <template v-if="value.length">
-      <v-sub-menu v-for="item in value" :uuid="item.uuid" :title="item.title" v-model="item.children">
+      <v-sub-menu v-for="item in value" :uuid="item.uuid" :title="item.title" :show="item.show" v-model="item.children">
       </v-sub-menu>
     </template>
   </ul>
