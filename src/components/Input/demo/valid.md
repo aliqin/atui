@@ -42,7 +42,7 @@ title:
 <h3>最小长度校验</h3>
 <p>校验结果：{{minlengthValidResult.minlengthValid.tips}}</p>
 <div>
-  <v-input type="text" placeholder="最小长度是5" minlength="5" :valid-result="minlengthValidResult"></v-input>
+  <v-input type="text" placeholder="最小长度是5" minlength-tips="请输入至少5个字符" minlength="5" :valid-result="minlengthValidResult"></v-input>
 </div>
 <br>
 <h3>自定义正则校验</h3>
