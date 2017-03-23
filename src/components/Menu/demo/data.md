@@ -41,7 +41,7 @@ new Vue({
               {
                 type: 'MenuItem',
                 uuid: '1',
-                content: '选项1'
+                content: '<a href="//github.com/aliqin/atui">选项1</a>'
               },
               {
                 type: 'MenuItem',

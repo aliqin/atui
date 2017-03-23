@@ -110,7 +110,7 @@ const VueComponent = {
 }
 
 module.exports = { ...VueComponent }
-module.exports.version = '0.0.37'
+module.exports.version = '0.0.40'
 
 module.exports.install = (Vue, opts) => {
   let prefix = opts && opts.prefix || 'v'

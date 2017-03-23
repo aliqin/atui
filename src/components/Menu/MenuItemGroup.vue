@@ -1,11 +1,11 @@
 <template>
   <li :class="[prefixCls + '-menu-item-group']">
-    <div :class="[prefixCls + '-menu-item-group-title']">{{title}}</div>
+    <div :class="[prefixCls + '-menu-item-group-title']" v-html="title"></div>
     <ul :class="[prefixCls + '-menu-item-group-list']">
       <slot></slot>
       <template v-if="value.length" v-for="item in value">
         <v-menu-item v-if="item.type == 'MenuItem'" :uuid="item.uuid" :disabled="item.disabled" :selected="item.selected">
-          {{item.content}}
+          <span v-html="item.content"></span>
         </v-menu-item>
       </template>
     </ul>
