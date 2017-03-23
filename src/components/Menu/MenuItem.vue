@@ -4,7 +4,9 @@
   style="padding-left:48px"
   @click="selectItem($event)"
 >
-  <slot></slot>
+  <span>
+    <slot></slot>
+  </span>
 </li>
 </template>
 

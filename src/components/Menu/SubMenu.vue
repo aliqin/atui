@@ -1,7 +1,7 @@
 <template>
   <li :class="[prefixCls + '-menu-submenu', prefixCls + '-menu-submenu-' + mode, open && (prefixCls + '-menu-submenu-open')]">
     <div :class="[prefixCls + '-menu-submenu-title']" @click="triggerSub">
-      {{title}}
+      <span v-html="title"></span>
       <icon v-if="$children.length" type="down" :class="[prefixCls + '-menu-icon']"></icon>
     </div>
     <ul :class="[prefixCls + '-menu', prefixCls + '-menu-sub', prefixCls + '-menu-'+ mode]" v-show="open" transition="collapse">
@@ -10,7 +10,7 @@
         <v-menu-item-group v-if="item.type == 'MenuItemGroup'" :title="item.title" v-model="item.children">
         </v-menu-item-group>
         <v-menu-item v-if="item.type == 'MenuItem'" :uuid="item.uuid" :disabled="item.disabled" :selected="item.selected">
-          {{item.content}}
+          <span v-html="item.content"></span>
         </v-menu-item>
         <sub-menu v-if="item.type == 'SubMenu'" :uuid="item.uuid" :title="item.title" v-model="item.children"></sub-menu>
       </template>

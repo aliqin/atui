@@ -203,7 +203,6 @@
         let minlength = this.minlength - 0
         let results = {}
         let tips = this.minlengthTips || '输入字符数不能小于' + minlength
-
         if (val) {
           let len = val.length
           if (len < minlength) {
