@@ -13,7 +13,7 @@ datePicker抽像出来的日历组件，目前只有一种样式
 
 
 ````jsx
-<calendar value="2017-02-25" format="yyyyMMdd" @change="onChange"></calendar>
+<calendar :value="currDate" format="yyyyMMdd" @change="onChange"></calendar>
 ````
 
 ````vue-script
@@ -21,6 +21,9 @@ new Vue({
   el: 'body',
   components: {
     calendar: atui.Calendar
+  },
+  data: {
+    currDate: new Date('2017-03-31')
   },
   methods: {
     onChange (dateStr, date) {

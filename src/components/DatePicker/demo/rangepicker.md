@@ -13,7 +13,7 @@ DatePicker提供了一个子组件：`RangePicker`,使用`DatePicker.RangePicker
 
 
 ````jsx
-<range-picker @change="change" format="yyyy-MM-dd" start-date="2017-02-25"></range-picker>
+<range-picker @change="change" format="yyyy-MM-dd" :start-date="new Date()"></range-picker>
 ````
 
 ````vue-script
