@@ -13,14 +13,24 @@ title:
 
 
 ````jsx
-<date-picker style="width: 219px" value="2017-03-02" format="yyyyMMdd" :disabled-date="(date) => { return date.getMonth() === 1 }"></date-picker>
+<v-date-picker style="width: 219px" v-model="date" format="yyyyMMdd" :disabled-date="(date) => { return date.getMonth() === 1 }"></v-date-picker>
+<v-button @click.native="setDate">setDate</v-button>
 ````
 
 ````vue-script
 new Vue({
   el: 'body',
   components: {
-    datePicker: atui.DatePicker
+    vDatePicker: atui.DatePicker,
+    vButton: atui.Button
+  },
+  data: {
+    date: new Date('2017-03-02')
+  },
+  methods: {
+    setDate () {
+      this.date = new Date('2017-03-10')
+    }
   }
 })
 ````
