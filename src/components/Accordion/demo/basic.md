@@ -39,10 +39,8 @@ title:
 ````vue-script
 new Vue({
   el: 'body',
-  data () {
-      return {
-        open: true
-      }
+  data: {
+    open: true
   },
   components: {
     accordion: atui.Accordion,
