@@ -16,12 +16,12 @@ title:
 
 
 ````jsx
-<accordion :open-one="open">
+<accordion open-one>
   <panel>
     <div slot="panel-header" class="custom-class">Panel #1</div>
     内容一
   </panel>
-  <panel :open="open">
+  <panel open>
     <div slot="panel-header" class="custom-class">Panel #2</div>
     内容二
   </panel>
@@ -39,9 +39,6 @@ title:
 ````vue-script
 new Vue({
   el: 'body',
-  data: {
-    open: true
-  },
   components: {
     accordion: atui.Accordion,
     panel: atui.Accordion.Panel
