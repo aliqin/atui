@@ -17,11 +17,11 @@ title:
 
 ````jsx
 <accordion open-one>
-  <panel open>
+  <panel>
     <div slot="panel-header" class="custom-class">Panel #1</div>
     内容一
   </panel>
-  <panel>
+  <panel open>
     <div slot="panel-header" class="custom-class">Panel #2</div>
     内容二
   </panel>

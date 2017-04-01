@@ -20,7 +20,7 @@
           this.$children.forEach((item, index) => {
             item.index = index
             if (child !== item) {
-              item.open = false
+              item.openState = false
             }
           })
         }

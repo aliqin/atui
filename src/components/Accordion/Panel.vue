@@ -41,6 +41,7 @@ export default {
       this.openState = !this.openState
       this.onToggle(this)
       this.$emit('click', this)
+      this.$parent.$emit('isOpenEvent', this)
     }
   },
   mounted () {
