@@ -141,40 +141,53 @@
       }
     },
     watch: {
-      value (val) {
-        // alert(val)
-        if (val) {
-          this.placeholder = ''
-          const time = new Date()
-          time.setHours(this.hour)
-          time.setMinutes(this.minute)
-          time.setSeconds(this.second)
-          this.$emit('change', time, this.value)
+      value (newVal, oldVal) {
+        if (newVal) {
+          this.setTimeByValue(newVal)
+          this.$emit('change', newVal)
         }
       },
       hour (index) {
         this.selectChoosed('h', index)
+        let date = new Date()
+        date.setHours(index)
+        date.setMinutes(this.minute)
+        date.setSeconds(this.second)
+        this.$emit('input', date)
       },
       minute (index) {
         this.selectChoosed('m', index)
+        let date = new Date()
+        date.setHours(this.hour)
+        date.setMinutes(index)
+        date.setSeconds(this.second)
+        this.$emit('input', date)
       },
       second (index) {
         this.selectChoosed('s', index)
+        let date = new Date()
+        date.setHours(this.hour)
+        date.setMinutes(this.minute)
+        date.setSeconds(index)
+        this.$emit('input', date)
       }
     },
     created () {
-      if (this.value && this.value.constructor === Date) {
-        this.hour = this.value.getHours()
-        this.minute = this.value.getMinutes()
-        this.second = this.value.getSeconds()
-      } else if (this.value && typeof this.value === 'string') {
-        const arr = this.value.split(':')
-        this.hour = +arr[0]
-        this.minute = +arr[1]
-        this.second = +arr[2]
-      }
+      this.setTimeByValue(this.value)
     },
     methods: {
+      setTimeByValue (value) {
+        if (this.value && this.value.constructor === Date) {
+          this.hour = this.value.getHours()
+          this.minute = this.value.getMinutes()
+          this.second = this.value.getSeconds()
+        } else if (this.value && typeof this.value === 'string') {
+          const arr = this.value.split(':')
+          this.hour = +arr[0]
+          this.minute = +arr[1]
+          this.second = +arr[2]
+        }
+      },
       leftPad (value) {
         if (+value < 10) {
           return '0' + value

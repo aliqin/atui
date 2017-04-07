@@ -25,8 +25,8 @@
           <div class="city-content" v-show="current == 'city'">
             <dl>
               <dd>
-                <template v-for="(item, key) in list.countyList">
-                  <a v-if="item[2] == provinceId" :title="item[1]" attr-id="item[0]}}" href="javascript:" @click.stop="chooseCity(item[0], item[1])" :class="{'active': cityId == item[0]}" track-by="item[0]">
+                <template v-for="(item, key) in list.cityList">
+                  <a :title="item[1]" attr-id="item[0]}}" href="javascript:" @click.stop="chooseCity(item[0], item[1])" :class="{'active': cityId == item[0]}" track-by="item[0]">
                     <input v-if="cityId == item[0]" :value="item[1]" type="hidden" v-model="city" />
                     {{item[1]}}
                   </a>
@@ -35,12 +35,22 @@
             </dl>
           </div>
           <div class="county-content" v-if="tabList[2]" v-show="current == 'county'">
-            <dl>
+            <dl v-if="list.countyList && list.countyList.length">
               <dd>
                 <template v-for="(item, key) in list.countyList">
-                  <a v-if="item[2] == cityId" :title="item[1]" :attr-id="item[0]" href="javascript:" @click.stop="chooseCounty(item[0], item[1])" :class="{'active': countyId == item[0]}" track-by="item[0]">
+                  <a :title="item[1]" :attr-id="item[0]" href="javascript:" @click.stop="chooseCounty(item[0], item[1])" :class="{'active': countyId == item[0]}" track-by="item[0]">
                     <input v-if="countyId == item[0]" :value="item[1]" type="hidden" v-model="county" />
                     {{item[1]}}
+                  </a>
+                </template>
+              </dd>
+            </dl>
+            <dl  v-if="!list.countyList.length && !tabList[3]">
+              <dd>
+                <template v-for="(item, key) in list.streetList">
+                  <a :title="item[0]" :attr-id="key" :parent-id="item[1]" href="javascript:" @click.stop="chooseStreet(key, item[0])" :class="{'active': streetId == key}" track-by="key">
+                    <input v-if="streetId == key" :value="item[0]" type="hidden" v-model="street" />
+                    {{item[0]}}
                   </a>
                 </template>
               </dd>
@@ -113,7 +123,8 @@ export default {
       current: 'province',
       list: {
         provinceList: nation.province,
-        countyList: nation.county,
+        cityList: [],
+        countyList: [],
         streetList: {}
       },
       province: '',
@@ -240,7 +251,7 @@ export default {
     /**
      * 异步获取街道列表
      */
-    getStreet () {
+    getStreet (callback) {
       let self = this
       self.jsonp({
         url: '//lsp.wuliu.taobao.com/locationservice/addr/output_address_town.do',
@@ -255,6 +266,7 @@ export default {
           if (res && res.success) {
             self.list.streetList = res.result || {}
           }
+          callback && callback(res)
         },
         fail (res) {
           throw new Error(res.msg)
@@ -316,6 +328,7 @@ export default {
       this.provinceId = provId
       this.current = this.tabList[1].id
       this.changeProvinceId()
+      this.filterCityByProv()
       this.addr.provinceId = this.provinceId
       this.addr.provinceName = this.province
       this.addr.cityId = ''
@@ -339,6 +352,7 @@ export default {
         this.hideAddrPopFun()
       }
       this.changeCityId()
+      this.filterCountyByCity()
       this.$emit('select-city', {
         cityName: this.city,
         cityId: this.cityId
@@ -388,7 +402,27 @@ export default {
       this.street = ''
       this.streetId = ''
     },
-
+    filterCityByProv () {
+      let provinceId = this.provinceId
+      this.list.cityList = nation.county.filter((county) => {
+        return county[2] === provinceId
+      })
+    },
+    filterCountyByCity () {
+      let self = this
+      let cityId = this.cityId
+      this.list.countyList = nation.county.filter((county) => {
+        return county[2] === cityId
+      })
+      // 部分城市没有区县，只有街道，比如东莞，这个时候就去拉取街道信息
+      if (!this.list.countyList.length) {
+        this.getStreet((res) => {
+          if (self.tabList[3]) {
+            self.current = 'street'
+          }
+        })
+      }
+    },
     changeCityId () {
       this.county = ''
       this.countyId = ''
