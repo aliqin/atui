@@ -19,7 +19,7 @@ var columns = [{
     text: '姓胡的',
     value: '胡',
   }],
-  sorter:true,
+  sorter: quickSort,
   width:150,
   onFilter: (names, record) => {
     return names.some(function(name){
@@ -70,6 +70,7 @@ var columns = [{
 ````
 
 ````vue-script
+import quickSort from 'atui/src/utils/sort'
 var columns = [{
   title: '姓名ss',
   dataIndex: 'name',
@@ -80,7 +81,7 @@ var columns = [{
     text: '姓胡的',
     value: '胡',
   }],
-  sorter:true,
+  sorter: quickSort,
   width:150,
   onFilter: (names, record) => {
     return names.some(function(name){
