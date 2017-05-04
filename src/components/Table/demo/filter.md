@@ -13,6 +13,7 @@ import {quickSort} from 'atui/src/utils/sort.js'
 var columns = [{
   title: '姓名ss',
   dataIndex: 'name',
+  key: 'name',
   filters: [{
     text: '姓李的的',
     value: '李',
@@ -75,6 +76,7 @@ import {quickSort} from 'atui/src/utils/sort.js'
 var columns = [{
   title: '姓名ss',
   dataIndex: 'name',
+  key: 'name',
   filters: [{
     text: '姓李的的',
     value: '李',
