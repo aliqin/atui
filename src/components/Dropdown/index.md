@@ -2,7 +2,7 @@
 category: Components
 type: Views
 title: Dropdown
-subtitle: 下单菜单
+subtitle: 下拉菜单
 ---
 
 dropdown组件只提供了一种能力，只需要指定slot
