@@ -2,7 +2,7 @@
   <a href="https://github.com/aliqin/atui" target="blank"><img src="http://img.alicdn.com/tps/TB16WYGPFXXXXX4XXXXXXXXXXXX-400-172.png" /></a>
 </p>
 
-如果你有Vue组件建设经验，欢迎你[加入我们一起完善ATUI](http://aliqin.github.io/2016-10-28-ali-telecome-need-you/)
+如果你有Vue组件建设经验，欢迎你[加入我们一起完善ATUI](https://zhuanlan.zhihu.com/p/23035940)
 
 # ATUI
 [![Build Status](https://travis-ci.org/aliqin/atui.svg?branch=dev)](https://travis-ci.org/aliqin/atui)
