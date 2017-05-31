@@ -9,9 +9,11 @@ title:
 在columns项里增加filters可增加筛选功能，可设置多选或单选，如果有onFilter则客户端进行过滤，如果没有onfilter则会触发table-change事件，自行去服务器端进行过滤
 
 ```js
+import {quickSort} from 'atui/src/utils/sort.js'
 var columns = [{
   title: '姓名ss',
   dataIndex: 'name',
+  key: 'name',
   filters: [{
     text: '姓李的的',
     value: '李',
@@ -19,7 +21,7 @@ var columns = [{
     text: '姓胡的',
     value: '胡',
   }],
-  sorter:true,
+  sorter: quickSort,
   width:150,
   onFilter: (names, record) => {
     return names.some(function(name){
@@ -70,9 +72,11 @@ var columns = [{
 ````
 
 ````vue-script
+import {quickSort} from 'atui/src/utils/sort.js'
 var columns = [{
   title: '姓名ss',
   dataIndex: 'name',
+  key: 'name',
   filters: [{
     text: '姓李的的',
     value: '李',
@@ -80,7 +84,7 @@ var columns = [{
     text: '姓胡的',
     value: '胡',
   }],
-  sorter:true,
+  sorter: quickSort,
   width:150,
   onFilter: (names, record) => {
     return names.some(function(name){
