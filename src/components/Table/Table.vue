@@ -294,6 +294,7 @@ export default {
     sortAction (column, index, order) {
       if (typeof column.sorter === 'function') {
         // TODO:客户端排序
+        column.sorter(this.dataList, column.key, order)
       }
       this.sorderOrder[index] = order
       this.sorderOrder = Object.assign([], this.sorderOrder)
