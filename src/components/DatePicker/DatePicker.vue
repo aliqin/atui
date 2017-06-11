@@ -10,7 +10,7 @@
            :class="[prefixCls + '-datepicker-toggle']">
         <v-input v-bind="{disabled: disabled, large: large, small: small}"
         type="text"
-        :value="selectedValue"
+        :value="currDateText"
         :placeholder="placeholder"
         readonly></v-input>
         <icon type="calendar" :color="iconColor"></icon>
@@ -18,7 +18,7 @@
       <div slot="popup" :class="[prefixCls + '-datepicker-calendar']">
         <calendar ref="calendar"
           @change="selectChange"
-          :value="selectedValue"
+          :value="currDate"
           :format="format"
           :locale="locale"
           :disabled-date="disabledDate">
@@ -42,7 +42,8 @@
     ],
     props: {
       value: {
-        type: String
+        type: Date,
+        default: () => { return null }
       },
       placeholder: {
         type: String,
@@ -71,26 +72,39 @@
       return {
         iconColor: '#BFBFBF',
         show: false,
-        selectedValue: this.value
+        currDate: this.value,
+        currDateText: this.value && this.value.toString('yyyy-MM-dd') || this.placeholder
       }
     },
 
+    mounted () {
+      this.currDateText = this.$refs.calendar.stringify(this.currDate, this.format)
+    },
+
     watch: {
-      value (val) {
-        if (val) {
-          this.iconColor = '#666'
+      value (newVal, oldVal) {
+        if (+newVal === +oldVal) {
           return
         }
-        this.iconColor = '#BFBFBF'
+        if (newVal) {
+          this.iconColor = '#666'
+        } else {
+          this.iconColor = '#BFBFBF'
+        }
+        this.currDate = newVal
+      },
+      currDate (val) {
+        this.currDateText = this.$refs.calendar.stringify(this.currDate, this.format)
+        this.$emit('input', val)
       }
     },
 
     methods: {
-      selectChange (value) {
-        this.selectedValue = value
+      selectChange (text, date) {
+        this.currDate = date
         this.$refs.trigger.showPopup = false
         // 冒泡给上一层使用，比如rangePicker
-        this.$emit('change', value)
+        this.$emit('change', date)
       }
     }
   }

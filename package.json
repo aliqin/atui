@@ -1,6 +1,6 @@
 {
   "name": "atui",
-  "version": "0.0.40",
+  "version": "0.1.2",
   "description": "components built with Vue.js",
   "main": "dist/atui.js",
   "repository": {
@@ -133,7 +133,6 @@
     "codecov": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov",
     "authors": "git log --format='%aN <%aE>' | sort -u | grep -v 'users.noreply.github.com' | grep -v 'gitter.im' | grep -v '.local>' | grep -v 'alibaba-inc.com' > AUTHORS.txt",
     "start": "webpack-dev-server --config build/webconfig.config.js --host 0.0.0.0 & bisheng start -c ./site/bisheng.config.js",
-    "site": "bisheng build -c ./site/bisheng.config.js && sh post-site.sh && sh sync_doc.sh",
     "ghpages": "bisheng build -c ./site/bisheng.config.js && sh post-site.sh && gh-pages -d _site",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
     "lib": "npm run transform && NODE_ENV=production webpack --config build/webpack.lib.js --progress",

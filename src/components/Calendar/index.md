@@ -19,7 +19,7 @@ cols: 1
 
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
-value | 默认值,格式为 `yyyy-MM-dd` | String | 无 | 
+value | 默认值 | Date | 无 | 
 format | 格式 | String | `yyyy-MM-dd` |
 disabledDate | 禁用的日期 | Function | `function(){}` |
 @change | 选择日期后的回调函数 | Function(dateStr, date) | `function(){}` |

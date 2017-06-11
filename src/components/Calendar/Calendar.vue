@@ -32,8 +32,8 @@
         <div :class="[prefixCls + '-calendar-body']">
           <div :class="[prefixCls + '-calendar-monthRange']">
             <template v-for="(m, index) in monthNames">
-              <span :class="[(monthNames[parse(value).getMonth()]  === m) &&
-                  currDate.getFullYear() === parse(value).getFullYear() && prefixCls + '-calendar-dateRange-item-active']"
+              <span :class="[(monthNames[value && value.getMonth()]  === m) &&
+                  currDate.getFullYear() === value && value.getFullYear() && prefixCls + '-calendar-dateRange-item-active']"
                   @click="monthSelect(index)"
                 >{{m.substr(0,3)}}</span>
             </template>
@@ -51,7 +51,7 @@
         <div :class="[prefixCls + '-calendar-body']">
           <div :class="[prefixCls + '-calendar-monthRange decadeRange']">
             <template v-for="decade in decadeRange">
-              <span :class="[parse(value).getFullYear() === decade.text && prefixCls + '-calendar-dateRange-item-active']"
+              <span :class="[value && value.getFullYear() === decade.text && prefixCls + '-calendar-dateRange-item-active']"
                   @click.stop="yearSelect(decade.text)"
                 >{{decade.text}}</span>
             </template>
@@ -92,9 +92,9 @@
     name: 'Calendar',
     props: {
       value: {
-        type: String,
+        type: Date,
         default () {
-          return new Date().toString()
+          return new Date()
         }
       },
       format: {
@@ -133,6 +133,9 @@
       }
     },
     watch: {
+      value (val) {
+        this.currDate = val
+      },
       currDate () {
         this.getDateRange()
       },
@@ -234,6 +237,9 @@
         return date.getFullYear()
       },
       stringify (date, format = this.format) {
+        if (!date) {
+          return
+        }
         const year = date.getFullYear()
         const month = date.getMonth() + 1
         const day = date.getDate()
@@ -249,8 +255,8 @@
         .replace(/M(?!a)/g, month)
         .replace(/d/g, day)
       },
-      parse (str) {
-        const date = new Date(str)
+      parse (strOrDate) {
+        const date = new Date(strOrDate)
         return isNaN(date.getFullYear()) ? (new Date()) : date
       },
       getDayCount (year, month) {
@@ -320,7 +326,7 @@
           // 当前选择的日期
           if (i === time.day) {
             if (this.value) {
-              const valueDate = this.parse(this.value)
+              const valueDate = this.value
               if (valueDate) {
                 if (valueDate.getFullYear() === time.year && valueDate.getMonth() === time.month) {
                   sclass = 'atui-calendar-dateRange-item-active'
@@ -357,7 +363,7 @@
     },
     mounted () {
       this.$emit('child-created', this)
-      this.currDate = this.parse(this.value) || this.parse(new Date())
+      this.currDate = this.value || new Date()
     }
   }
 </script>

@@ -15,10 +15,12 @@
         type: Boolean
       },
       startDate: {
-        type: String
+        type: Date,
+        default: () => { return null }
       },
       endDate: {
-        type: String
+        type: Date,
+        default: () => { return null }
       },
       format: {
         default: 'yyyy-MM-dd'
@@ -65,7 +67,7 @@
           me.$emit('change', me.selectedStartDate, me.selectedEndDate)
         }
       },
-      setDisabledEndDate (value) { // value: "2016-07-07"
+      setDisabledEndDate (value) { // value: "2016-07-07" or Date Instance
         // let endDate = this.$refs.endDate
         let me = this
         this.disabledEndDate = (date) => { // date: "Thu Jul 07 2016 00:00:00 GMT+0800 (CST)"
@@ -75,7 +77,7 @@
           // return date.getTime() <= new Date(value).getTime()
 
           // 改造代码
-          return date.getTime() < new Date(value + ' 00:00:00').getTime() || me.disabledEnd(date)
+          return date.getTime() < new Date(value).getTime() || me.disabledEnd(date)
         }
       },
       setDisabledStartDate (value) {
@@ -86,7 +88,7 @@
           // return date.getTime() >= new Date(value).getTime()
 
           // 改造代码
-          return date.getTime() > new Date(value + ' 00:00:00').getTime() || me.disabledEnd(date)
+          return date.getTime() > new Date(value).getTime() || me.disabledEnd(date)
         }
       }
     }
