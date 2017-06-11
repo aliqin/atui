@@ -29,8 +29,8 @@ new Vue({
   el: 'body',
   components: {
     vButton: atui.Button,
-    vTabs: atui.Tabset,
-    vTab: atui.Tabset.Tab
+    vTabs: atui.Tabs,
+    vTab: atui.Tabs.Tab
   },
   data() {
     return {
