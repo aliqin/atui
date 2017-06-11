@@ -48,8 +48,8 @@ let Message = atui.Message
 new Vue({
   el: 'body',
   components: {
-    vTabs: atui.Tabset,
-    vTab: atui.Tabset.Tab
+    vTabs: atui.Tabs,
+    vTab: atui.Tabs.Tab
   },
   methods: {
     handleOnClick (index) {
