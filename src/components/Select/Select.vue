@@ -1,5 +1,5 @@
 <template>
-  <div :class="selectClassObj" :style="style">
+  <div :class="selectClassObj">
     <trigger trigger="click"
              placement="bottomLeft"
              effect="slide"
@@ -67,7 +67,6 @@
       },
       large: Boolean,
       small: Boolean,
-      style: String,
       width: {
         type: String,
         default: 'auto'
