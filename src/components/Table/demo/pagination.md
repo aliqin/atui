@@ -10,7 +10,9 @@ title:
 增加pagination属性以分页，
 ```
 const pagination = {
-  total: data.length
+  total: data.length,
+  pageSize: 20,
+  currPage: 1
 }
 
 ```
@@ -75,7 +77,8 @@ for (let i = 0; i < 46; i++) {
 
 const pagination = {
   total: data.length,
-  pageSize: 20
+  pageSize: 20,
+  currPage: 1
 }
 
 // 配置选择数据的选项
