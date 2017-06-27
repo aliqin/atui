@@ -108,7 +108,7 @@
       </table>
     </div>
     <div v-show="pagination && pagination.total > 0" :class="[prefixCls + '-table-pagination']">
-      <pagination ref="pager" :total="pagination.total" :page-size="pagination.pageSize" :show-jumper="true" :show-size-changer="true" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
+      <pagination ref="pager" :total="pagination.total" :currPage="pagination.currPage" :page-size="pagination.pageSize" :show-jumper="true" :show-size-changer="true" @change="changePage" @pagination-page-change="changePage" @pagination-size-change="changeSize"></pagination>
     </div>
   </div>
 </template>
@@ -215,7 +215,10 @@ export default {
   mounted () {
     if (this.pagination.total > 0) {
       let pager = this.$refs.pager
-      this.dataList = this.originDataSource.slice(pager.currPage || 0, pager.pageSize)
+      let startIndex = (pager.currPage - 1) * pager.pageSize
+      startIndex = startIndex >= pager.total ? 0 : startIndex
+      // this.dataList = this.originDataSource.slice(pager.currPage || 0, pager.pageSize)
+      this.dataList = this.originDataSource.slice(startIndex, startIndex + pager.pageSize)
     }
   },
   computed: {
