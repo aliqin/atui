@@ -70,7 +70,7 @@ for (let i = 0; i < 46; i++) {
   data.push({
     key: i,
     name: `李大嘴${i}`,
-    age: 32,
+    age: 10 + i,
     address: `西湖区湖底公园${i}号`,
   });
 }

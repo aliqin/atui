@@ -4,11 +4,19 @@ import Table from '../'
 var columns = [{
   title: '姓名<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">',
   dataIndex: 'name',
+  sorter: (a, b) => a.name.length - b.name.length,
   width: 150
 }, {
   title: '年龄',
   dataIndex: 'age',
-  width: 250
+  width: 250,
+  filters: [{
+    text: '32',
+    value: '32'
+  }, {
+    text: '42',
+    value: '42'
+  }]
 }, {
   title: '地址',
   dataIndex: 'address',
@@ -27,7 +35,7 @@ var columns = [{
 
 var data = [{
   key: '1',
-  name: '-1条',
+  name: '一',
   age: 32,
   address: '南湖区湖底公园1号<img src="//img.alicdn.com/tps/i2/TB1nff4IpXXXXc1XVXX.7lBQXXX-380-54.png" width="50px">'
 }, {
@@ -83,7 +91,8 @@ let vm = new Vue({
       loading: false,
       gridData: data,
       gridColumns: columns,
-      rowSelection: rowSelection
+      rowSelection: rowSelection,
+      selectRow: ''
     }
   },
   template: `
@@ -96,7 +105,7 @@ let vm = new Vue({
   },
   methods: {
     rowClick (rowIndex, record) {
-      console.log(rowIndex, record)
+      this.selectRow = rowIndex
     },
     getData () {
       let self = this
@@ -110,6 +119,7 @@ let vm = new Vue({
 // table组件测试用例,拉低了coverage summary统计数据
 describe('Table', () => {
   it('Table组件基础渲染', () => {
+    expect(vm.$el.querySelectorAll('table thead tr th').length).to.equal(columns.length)
     expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(6)
   })
 
@@ -120,12 +130,50 @@ describe('Table', () => {
     })
   })
 
+  it('Table行点击', () => {
+    vm.$el.querySelectorAll('table tbody tr')[1].click()
+    expect(vm.selectRow).to.equal(1)
+  })
+
+  it('Table排序', () => {
+    let ascend = vm.$el.querySelector('.atui-table-sorter .atui-icon-caretup')
+    let descend = vm.$el.querySelector('.atui-table-sorter .atui-icon-caretdown')
+    ascend.click()
+    vm.$nextTick(() => {
+      expect(vm.$el.querySelectorAll('table tbody tr td span')[0].textContent).to.equal('一')
+    })
+    descend.click()
+    vm.$nextTick(() => {
+      expect(vm.$el.querySelectorAll('table tbody tr td span')[0].textContent).to.equal('李秀莲大嘴哥')
+    })
+  })
+
   it('展示分页', () => {
     vm.pagination = {
       total: 60
     }
     vm.$nextTick(() => {
       expect(vm.$el.querySelectorAll('.atui-table-pagination').length).to.equal(1)
+    })
+    vm.pagination = false
+    vm.$nextTick(() => {
+      expect(vm.$el.querySelectorAll('.atui-table-pagination').length).to.equal(0)
+    })
+  })
+
+  it('点击分页按钮时table正确切换', () => {
+    vm.pagination = {
+      total: 6,
+      pageSize: 5,
+      currPage: 1
+    }
+    vm.$nextTick(() => {
+      let p = vm.$el.querySelectorAll('.atui-table-pagination')
+      expect(p.length).to.equal(2)
+      p[1].click()
+      vm.$nextTick(() => {
+        expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(1)
+      })
     })
   })
 })

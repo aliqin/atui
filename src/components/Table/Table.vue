@@ -296,7 +296,13 @@ export default {
     },
     sortAction (column, index, order) {
       if (typeof column.sorter === 'function') {
-        // TODO:客户端排序
+        this.originDataSource.sort((a, b) => {
+          const result = column.sorter(a, b)
+          if (result !== 0) {
+            return (order === 'descend') ? -result : result
+          }
+          return 0
+        })
       }
       this.sorderOrder[index] = order
       this.sorderOrder = Object.assign([], this.sorderOrder)
