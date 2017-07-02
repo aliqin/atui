@@ -30,8 +30,7 @@ var columns = [{
       return '<icon type="info-s"></icon><a href="' + record.key + '.html" target="_blank">详情</a>'
     }
   }
-}
-]
+}]
 
 var data = [{
   key: '1',
@@ -65,7 +64,8 @@ var data = [{
     name: '洪金宝',
     age: 66,
     address: '香港弥敦道1'
-  }]
+  }
+]
 
 const rowSelection = {
   getCheckboxProps (record) {
@@ -84,20 +84,20 @@ const rowSelection = {
   }
 }
 let vm = new Vue({
-  data () {
-    return {
-      size: 'default',
-      fixedHeader: false,
-      loading: false,
-      gridData: data,
-      gridColumns: columns,
-      rowSelection: rowSelection,
-      selectRow: ''
-    }
+  data: {
+    size: 'default',
+    fixedHeader: false,
+    loading: false,
+    gridData: data,
+    gridColumns: columns,
+    rowSelection: rowSelection,
+    selectRow: '',
+    pagination: {}
+
   },
   template: `
       <div>
-      <v-table :data-source="gridData" :columns="gridColumns" row-key="key" @row-click="rowClick"></v-table>
+      <v-table :data-source="gridData" :columns="gridColumns" row-key="key" @row-click="rowClick" :pagination="pagination"></v-table>
       </div>
       `,
   components: {
@@ -118,16 +118,12 @@ let vm = new Vue({
 
 // table组件测试用例,拉低了coverage summary统计数据
 describe('Table', () => {
+  after(() => {
+    vm.$destroy()
+  })
   it('Table组件基础渲染', () => {
     expect(vm.$el.querySelectorAll('table thead tr th').length).to.equal(columns.length)
     expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(6)
-  })
-
-  it('Table数据清空', () => {
-    vm.gridData = []
-    vm.$nextTick(() => {
-      expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(1)
-    })
   })
 
   it('Table行点击', () => {
@@ -135,45 +131,41 @@ describe('Table', () => {
     expect(vm.selectRow).to.equal(1)
   })
 
-  it('Table排序', () => {
+  it('Table排序', (done) => {
     let ascend = vm.$el.querySelector('.atui-table-sorter .atui-icon-caretup')
     let descend = vm.$el.querySelector('.atui-table-sorter .atui-icon-caretdown')
     ascend.click()
     vm.$nextTick(() => {
       expect(vm.$el.querySelectorAll('table tbody tr td span')[0].textContent).to.equal('一')
-    })
-    descend.click()
-    vm.$nextTick(() => {
-      expect(vm.$el.querySelectorAll('table tbody tr td span')[0].textContent).to.equal('李秀莲大嘴哥')
-    })
-  })
-
-  it('展示分页', () => {
-    vm.pagination = {
-      total: 60
-    }
-    vm.$nextTick(() => {
-      expect(vm.$el.querySelectorAll('.atui-table-pagination').length).to.equal(1)
-    })
-    vm.pagination = false
-    vm.$nextTick(() => {
-      expect(vm.$el.querySelectorAll('.atui-table-pagination').length).to.equal(0)
+      descend.click()
+      vm.$nextTick(() => {
+        expect(vm.$el.querySelectorAll('table tbody tr td span')[0].textContent).to.equal('李秀莲大嘴哥')
+        done()
+      })
     })
   })
 
-  it('点击分页按钮时table正确切换', () => {
+  it('点击分页按钮时table正确切换', (done) => {
     vm.pagination = {
       total: 6,
       pageSize: 5,
       currPage: 1
     }
     vm.$nextTick(() => {
-      let p = vm.$el.querySelectorAll('.atui-table-pagination')
-      expect(p.length).to.equal(2)
-      p[1].click()
+      let p = vm.$el.querySelectorAll('.atui-pagination-item')
+      expect(p.length).to.equal(4)
+      p[2].click()
       vm.$nextTick(() => {
         expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(1)
+        done()
       })
+    })
+  })
+  it('Table数据清空', (done) => {
+    vm.gridData = []
+    vm.$nextTick(() => {
+      expect(vm.$el.querySelectorAll('table tbody tr').length).to.equal(1)
+      done()
     })
   })
 })

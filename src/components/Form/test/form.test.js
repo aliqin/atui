@@ -24,7 +24,9 @@ describe('Form组件单元测试', () => {
       </div>
     `
   }).$mount()
-
+  after(() => {
+    vm.$destroy()
+  })
   it('基础功能渲染', () => {
     expect(vm.$el.querySelectorAll('.atui-form').length).to.be.equal(1)
     expect(vm.$el.querySelectorAll('.atui-form-item').length).to.be.equal(1)

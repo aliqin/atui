@@ -1,22 +1,21 @@
-import Vue from 'vue'
 import Accordion from '../'
-const {Panel} = Accordion
+import {
+  createVue
+} from 'test/unit/util.js'
+const {
+  Panel
+} = Accordion
 
 describe('Accordion组件单元测试', () => {
-  var vm = new Vue({
-    data () {
-      return {
-        oneAtATime: false
-      }
-    },
+  let vm = createVue({
     components: {
       Accordion,
       Panel
     },
     template: `
       <div id="app">
-        <accordion :one-at-a-time="oneAtATime">
-          <panel :is-open="true">
+        <accordion open-one>
+          <panel open>
             <div slot="panel-header" class="custom-class">Panel #1</div>
             内容一
           </panel>
@@ -35,13 +34,16 @@ describe('Accordion组件单元测试', () => {
         </accordion>
       </div>
     `
-  }).$mount()
-
+  })
+  after(() => {
+    vm.$destroy()
+  })
   it('基本功能渲染', () => {
-    assert(typeof Accordion.created === 'function', 'Accordion.created is funciton')
-    assert(typeof Accordion.props === 'object', 'Accordion.props is object')
-    assert(vm.$el.querySelectorAll('.atui-panel-group').length === 1)
-    assert(vm.$el.querySelectorAll('.atui-panel').length === 4)
+    expect(vm.$el.querySelectorAll('.atui-panel-group').length).to.equal(1)
+    expect(vm.$el.querySelectorAll('.atui-panel').length).to.equal(4)
+  })
+  it('panel点击事件', () => {
+    vm.$el.querySelectorAll('.atui-panel-heading')[1].click()
+    expect(vm.$el.querySelectorAll('.atui-panel-body')[1].style.display).not.to.equal('none')
   })
 })
-

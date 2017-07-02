@@ -16,6 +16,9 @@ let vm = new Vue({
 }).$mount()
 
 describe('Dropdown', () => {
+  after(() => {
+    vm.$destroy()
+  })
   it('Dropdown组件是否正常显示', () => {
     expect(vm.$el.querySelectorAll('.atui-dropdown-cont').length).to.equal(1)
   })

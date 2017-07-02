@@ -8,13 +8,18 @@ let vm = new Vue({
         <v-button small text value="小号+文字型按钮"></v-button>
       </div>
       `,
-  components: { vButton: Button },
+  components: {
+    vButton: Button
+  },
   data: {
 
   }
 }).$mount()
 
 describe('Button', () => {
+  after(() => {
+    vm.$destroy()
+  })
   it('Button组件是否正常显示', () => {
     expect(vm.$el.querySelectorAll('button.atui-btn').length).to.equal(3)
   })

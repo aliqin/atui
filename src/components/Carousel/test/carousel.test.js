@@ -39,7 +39,9 @@ describe('Carousel组件单元测试', () => {
       afterChange () {}
     }
   }).$mount()
-
+  after(() => {
+    vm.$destroy()
+  })
   it('基本功能渲染', () => {
     expect(vm.$el.querySelectorAll('.atui-carousel-item').length).to.be.equal(6)
   })

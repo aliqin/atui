@@ -4,13 +4,19 @@ import Spin from '../'
 let vm = new Vue({
   template: `
       <div>
-        <spin>
+        <spin @toggle="toggle" :show="show">
         </spin>
       </div>
       `,
   components: { Spin },
   data: {
-
+    show: true,
+    toggle: false
+  },
+  methods: {
+    toggle () {
+      this.toggle = true
+    }
   }
 }).$mount()
 
@@ -20,6 +26,9 @@ describe('Spin', () => {
   })
 
   it('事件回调', () => {
-
+    vm.show = false
+    vm.$nextTick(() => {
+      expect(vm.toggle).to.equal(true)
+    })
   })
 })

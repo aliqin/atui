@@ -21,7 +21,7 @@
         e.cancelBubble = true
         let target = e.target
         let $parent = target.parentNode
-        let $btns = $parent.getElementsByClassName('btn')
+        let $btns = $parent.getElementsByClassName(`${this.prefixCls}-btn`)
         let index = [].indexOf.call($btns, target)
         let len = $btns.length
         let oldClass = ''

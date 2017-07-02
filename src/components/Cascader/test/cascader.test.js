@@ -110,6 +110,9 @@ let vm = new Vue({
     defaultValue: defaultValue
   }
 }).$mount()
+after(() => {
+  vm.$destroy()
+})
 describe('Cascader', () => {
   it('Cascader组件是否正常显示', () => {
     expect(vm.$el.querySelectorAll('.atui-cascader-picker').length).above(0)

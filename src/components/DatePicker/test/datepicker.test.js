@@ -15,6 +15,9 @@ let vm = new Vue({
 }).$mount()
 
 describe('DatePicker', () => {
+  after(() => {
+    vm.$destroy()
+  })
   it('DatePicker组件是否正常显示', () => {
     expect(vm.$el.querySelectorAll('.atui-datepicker').length).to.equal(1)
   })

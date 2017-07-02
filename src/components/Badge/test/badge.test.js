@@ -21,7 +21,9 @@ describe('Badge组件单元测试', () => {
       </badge>
     `
   }).$mount()
-
+  after(() => {
+    vm.$destroy()
+  })
   it('组件基本渲染', () => {
     expect(vm.$el.querySelectorAll('.atui-badge-count').length).to.be.equal(1)
   })

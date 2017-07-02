@@ -17,21 +17,23 @@ let createInstance = function (options) {
         </tooltip>
         </div>
         `,
-    components: { Tooltip }
+    components: {
+      Tooltip
+    }
   }).$mount()
 
   return vm
 }
 
 describe('Tooltip', () => {
-  it('Tooltip组件是否正常显示', (done) => {
+  it('Tooltip组件是否正常显示', () => {
     let vm = createInstance()
-    vm.$nextTick(() => {
-      expect(document.body.querySelectorAll('.atui-tooltip-arrow').length).to.equal(1)
-      vm.$destroy()
-      done()
-    })
+    // vm.$nextTick(() => {
+    expect(document.body.querySelectorAll('.atui-tooltip-arrow').length).to.equal(1)
+    vm.$destroy()
+    // done()
   })
+  // })
 
   /*
   it('hover能否正常展示', (done) => {

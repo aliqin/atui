@@ -28,7 +28,9 @@ describe('Breadcrumb组件单元测试', () => {
       </div>
     `
   }).$mount()
-
+  after(() => {
+    vm.$destroy()
+  })
   it('基本功能渲染', () => {
     expect(vm.$el.querySelectorAll('.atui-breadcrumbs').length).to.be.equal(1)
     expect(vm.$el.querySelectorAll('.atui-breadcrumb').length).to.be.equal(3)

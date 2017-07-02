@@ -16,7 +16,9 @@ describe('Icon组件单元测试', () => {
       </div>
     `
   }).$mount()
-
+  after(() => {
+    vm.$destroy()
+  })
   it('基本功能渲染', () => {
     expect(vm.$el.querySelectorAll('.atui-icon-search').length).to.be.equal(1)
   })
