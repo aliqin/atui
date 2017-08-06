@@ -11,9 +11,9 @@
       // aliqin.github.io/  or aliqin.github.io/atui
       var root = location.pathname.indexOf('/atui') === 0 ? '/atui/' : '/'
       var vuePath = '/atui/vue.min.js'
-      if(~hostname.indexOf('localhost') || ~hostname.indexOf('127.0.0.1')){
+      if(~hostname.indexOf('localhost') || ~hostname.indexOf('127.0.0.1') || ~hostname.indexOf('0.0.0.0')){
         env = 'dev'
-        root = '//' + hostname + ':8080/build/'
+        root = '//' + hostname + ':8080/dist/'
         vuePath = '//' + hostname + ':8080/dist/vue.js'
       }
     </script>
