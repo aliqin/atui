@@ -19,7 +19,7 @@ title:
 <modal :show="show" ref="dialog" @close="show = false">
   <div slot="modal-body" class="atui-modal-body">
     <textarea></textarea>
-    <v-select v-model="initValue" dropdown-class-name="aaaaa" :dropdown-z-index="9898"  style="width:200px" width="200px" @change="onSelectChange">
+    <v-select dropdown-class-name="aaaaa" :dropdown-z-index="9898"  style="width:200px" width="200px">
       <v-option value="Apple">苹果</v-option>
       <v-option value="Banana" disabled>Banana</v-option>
       <v-option value="10">Cherry</v-option>
