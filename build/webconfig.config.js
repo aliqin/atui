@@ -9,8 +9,7 @@ var autoprefixer = require('autoprefixer')
 // var styleLintPlugin = require('stylelint-webpack-plugin')
 // var version = process.env.VERSION || require('./package.json').version
 var projectRoot = path.resolve(__dirname, 'src/')
-var git = require('git-rev-sync')
-var version = git.branch().replace('daily/','')
+const version = process.env.VERSION || require('../package.json').version
 
 var banner =
   '\n/*!\n' +
