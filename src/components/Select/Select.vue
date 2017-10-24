@@ -24,7 +24,7 @@
         </template>
         <div v-else @click="focusInput">
           <span :class="[prefixCls + '-select-placeholder']" v-show="showPlaceholder">{{placeholder}}</span>
-          <tag v-for="option in selectedOptions" closable @close="closeTag(option)" v-html="option.label"></tag>
+          <tag v-for="option in selectedOptions" closable @close="closeTag(option)">{{option.label}}</tag>
           <input type="text" ref="searchField" :class="[prefixCls + '-select-search-field']" @input="onInput" @keydown.delete="deleteTag" @blur="createTag" @keydown.enter.prevent="createTag" v-model="searchText" autocomplete="off"/>
         </div>
       </div>

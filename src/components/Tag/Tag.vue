@@ -1,5 +1,5 @@
 <template>
-  <div v-show="!closed"
+  <div v-if="!closed"
        :class="[prefixCls + '-tag', color && (prefixCls + '-tag-color')]"
        :style="{'background-color': color}">
     <a :href="href" :target="href ? '_blank' : ''"
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     closeHandler (e) {
-      this.closed = true
+      // this.closed = true
       this.$emit('close', e)
     }
   },

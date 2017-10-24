@@ -63,8 +63,9 @@
     line-height: 27px;
     color: @dropdown-link-color;
     white-space: nowrap;
+    user-select: none;
 
-    &:hover, &:focus, &.@{prefix-cls-dropdown}-option-active {
+    &:hover, &:focus, &.@{prefix-cls-dropdown}-option-active,&.@{prefix-cls-dropdown}-option-chosen {
       text-decoration: none;
       background-color: @dropdown-link-hover-bg;
     }
