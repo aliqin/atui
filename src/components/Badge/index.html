@@ -13,7 +13,7 @@
       var vuePath = '/atui/vue.min.js'
       if(~hostname.indexOf('localhost') || ~hostname.indexOf('127.0.0.1') || ~hostname.indexOf('0.0.0.0')){
         env = 'dev'
-        root = '//' + hostname + ':8080/dist/'
+        root = '//' + hostname + ':8080/build/'
         vuePath = '//' + hostname + ':8080/dist/vue.js'
       }
     </script>
