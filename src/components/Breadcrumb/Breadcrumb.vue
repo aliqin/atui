@@ -6,8 +6,8 @@
 
 <script type="text/babel">
 export default {
+  name: 'Breadcrumb',
   props: {
-    name: 'Breadcrumb',
     symbol: {
       type: String,
       default: '/'
