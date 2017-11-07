@@ -1,6 +1,5 @@
 ---
 category: Components
-type: Other
 title: Trigger
 subtitle: 触发器
 ---
