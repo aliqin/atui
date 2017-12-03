@@ -16,7 +16,8 @@ subtitle: 导航菜单
 | 参数     | 说明           | 类型     | 默认值       |
 |----------|---------------|----------|--------------|
 | mode | 菜单类型，现在支持垂直、水平、和内嵌模式三种 | String: `vertical` `horizontal` `inline` | `vertical` |
-| selectedKey | 当前选中的菜单项 key  | String |      |
+| defaultSelectedKey | 当前默认选中的菜单项的uuid  | String |      |
+| selectedKey | 当前选中的菜单项 uuid  | String |      |
 | openOne | 是否只打开一个面板 | Boolean | false
 
 ### Menu.Item
