@@ -32,7 +32,12 @@ export default {
       }
     },
     openOne: Boolean,
-    selectedKey: String
+    defaultSelectedKey: String
+  },
+  data () {
+    return {
+      selectedKey: this.defaultSelectedKey
+    }
   },
   components: {
     vSubMenu,
@@ -44,11 +49,12 @@ export default {
   },
   mounted () {
     let me = this
-    if (me.selectedKey) {
+    if (me.defaultSelectedKey) {
       me.$bus.$emit('Menu-searchItem', me.selectedKey)
     }
     me.$bus.$on('Menu-itemClicked', (item, uuid) => {
       me.$bus.$emit('Menu-searchItem', uuid)
+      me.selectedKey = uuid
       me.$emit('click', item, uuid)
     })
   }

@@ -38,7 +38,9 @@ export default {
     this.$bus.$on('Menu-searchItem', (uuid) => {
       this.selectedStatus = this.uuid === uuid
       if (this.selectedStatus) {
-        this.$bus.$emit('Menu-open', this, this.uuid)
+        // this.$bus.$emit('Menu-open', this, this.uuid)
+        console.log(this.$parent.$parent)
+        this.$parent.$parent.open = true
       }
     })
   }

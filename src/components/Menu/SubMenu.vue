@@ -57,6 +57,11 @@ export default {
   },
   mounted () {
     this.$forceUpdate()
+    // let me = this
+    // me.$bus.$on('Menu-open', (item, uuid) => {
+    //   console.log(me.$children)
+    //   // me.open = true
+    // })
   },
   watch: {
     open (val) {
@@ -77,12 +82,6 @@ export default {
   methods: {
     triggerSub () {
       this.open = !this.open
-    }
-  },
-  events: {
-    // 当子menu选中时，自动打开父菜单
-    open () {
-      this.open = true
     }
   },
   transitions: {
