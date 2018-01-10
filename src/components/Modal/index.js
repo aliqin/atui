@@ -40,7 +40,7 @@ const iconConfig = {
             </template>
             <template v-else>
             <button type="button" :class="[prefixCls + '-btn', prefixCls + '-btn-default']" @click="callback">{{btnOkText}}</button>
-            <button type="button" :class="[prefixCls + '-btn', prefixCls + '-btn-tertiary']" @click="close">${btnCancelText}</button>            
+            <button type="button" :class="[prefixCls + '-btn', prefixCls + '-btn-tertiary']" @click="close">${btnCancelText}</button>
             </template>
           </div>
         </modal>`,
@@ -54,8 +54,8 @@ const iconConfig = {
         type: iconConfig[type].icon,
         color: iconConfig[type].color,
         show: true,
-        btnOkText: '确定',
-        btnCancelText: '取消',
+        btnOkText: btnOkText,
+        btnCancelText: btnCancelText,
         prefixCls: 'atui'
       },
       methods: {
