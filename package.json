@@ -1,6 +1,6 @@
 {
   "name": "atui",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "description": "components built with Vue.js",
   "main": "dist/atui.js",
   "repository": {
