@@ -30,27 +30,28 @@
         <div :class="[prefixCls + '-time-picker-panel']">
           <ul ref="h"
             class="time-hours" v-on:mouseover="selection('H')">
-            <li v-for="index in 24"
-              v-if="disabledHours().indexOf(index) < 0"
-              :class="{selected: hour === index}"
-              @click="chooseHour(index, $event)">{{leftPad(index)}}
+            <li v-for="index in 24" :key="index"
+              v-if="disabledHours().indexOf(index-1) < 0"
+              :class="{selected: hour === index -1}"
+              @click="chooseHour(index-1, $event)">{{leftPad(index-1)}}
             </li>
           </ul>
         </div>
         <div :class="[prefixCls + '-time-picker-panel']">
           <ul ref="m" class="time-minute" @mouseover="selection('M')">
-            <li v-for="index in 60"
-              v-if="disabledMinutes().indexOf(index) < 0"
-              :class="{selected: minute === index}"
-              @click="chooseMinute(index, $event)">{{leftPad(index)}}
+            <li v-for="index in 60" :key="index"
+              v-if="disabledMinutes().indexOf(index-1) < 0"
+              :class="{selected: minute === index-1}"
+              @click="chooseMinute(index-1, $event)">{{leftPad(index-1)}}
             </li>
           </ul>
         </div>
         <div :class="[prefixCls + '-time-picker-panel']" @mouseover="selection('S')">
           <ul ref="s" class="time-seconds">
-            <li v-for="index in 60" v-if="disabledSeconds().indexOf(index) < 0"
-              :class="{selected: second === index}"
-              @click="chooseSecond(index, $event)">{{leftPad(index)}}
+            <li v-for="index in 60" :key="index"
+              v-if="disabledSeconds().indexOf(index-1) < 0"
+              :class="{selected: second === index-1}"
+              @click="chooseSecond(index-1, $event)">{{leftPad(index-1)}}
             </li>
           </ul>
         </div>

@@ -94,7 +94,8 @@
         type: Boolean
       },
       popupHideWhenClickOutside: {
-        type: Boolean
+        type: Boolean,
+        default: true
       },
       // todo: 增强trigger和popup坐标对齐方式
       // 参考 https://github.com/yiminghe/dom-align
