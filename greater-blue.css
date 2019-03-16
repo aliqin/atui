@@ -1,6 +1,6 @@
 
 /*!
- * atui v0.1.31
+ * atui v0.1.32
  * (c) 2018 alibaba
  * Released under the MIT License.
  */
