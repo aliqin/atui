@@ -213,8 +213,8 @@ export default {
         if (_page > this.totalPage) {
           _page = this.totalPage
         }
-        this.currPageNum = page
-        this._current = page
+        this.currPageNum = _page
+        this._current = _page
         this.getPageRange()
         this.onChange(_page)
         return _page
